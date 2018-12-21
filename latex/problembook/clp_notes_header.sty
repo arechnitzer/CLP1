@@ -1,3 +1,8 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
 \usepackage{graphicx}
 \usepackage{amsmath,amsthm,amsfonts, amssymb, mathtools, mathabx}
 \usepackage{mathrsfs}
@@ -31,10 +36,10 @@
 \lfoot{} \cfoot{\thepage} \rfoot{}
 
 %%%%%%%% fixing long section titles.
-%% from 
+%% from
 % http://tex.stackexchange.com/questions/241286/toc-and-header-versions-of-section
 % -titles-titlesec-interferes-with-fancyhdr
-% 
+%
 %second = short title for headers, first = long title for in text + toc.
 \newcommand{\longsection}[2]
      {\let\orisectionmark\sectionmark
@@ -42,7 +47,7 @@
      \section[{#1}]{{#1}\orisectionmark{{#2}}}
      \orisectionmark{{#2}}
      \let\sectionmark\orisectionmark}
-%%%%%% 
+%%%%%%
 % Fix footnotes to lie on one page
 \interfootnotelinepenalty=10000
 
@@ -59,7 +64,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Boxes and theorems 
+%% Boxes and theorems
 \usepackage{clp_boxes_theorems}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,7 +76,7 @@
 % messing with footnotes
 \newcommand{\neghphantom}[1]{\begingroup\sbox0{#1}\hspace*{-\wd0}\endgroup}
 \makeatletter
-\renewcommand\@makefntext[1]{\leftskip=2em\hskip-2em \@thefnmark 
+\renewcommand\@makefntext[1]{\leftskip=2em\hskip-2em \@thefnmark
 \neghphantom{\@thefnmark}\hskip2em #1}
 \makeatother
 
@@ -121,11 +126,11 @@
 %%%%
 \tikzset{weird fill/.style={append after command={
    \pgfextra
-        \draw[sharp corners, fill=#1]% 
-    (\tikzlastnode.west)% 
-    [rounded corners=0pt] |- (\tikzlastnode.north)% 
-    [rounded corners=5pt] -| (\tikzlastnode.east)% 
-    [rounded corners=0pt] |- (\tikzlastnode.south)% 
+        \draw[sharp corners, fill=#1]%
+    (\tikzlastnode.west)%
+    [rounded corners=0pt] |- (\tikzlastnode.north)%
+    [rounded corners=5pt] -| (\tikzlastnode.east)%
+    [rounded corners=0pt] |- (\tikzlastnode.south)%
     [rounded corners=5pt] -| (\tikzlastnode.west)%
     ;
    \endpgfextra}}}
@@ -141,7 +146,7 @@
     weird fill=_deepgreen, text=white, minimum width={0.9\textwidth},
     text width={0.9\textwidth}, align=center
   ](b) {\scshape\huge\filcenter #1};
-\node[right=10pt, rounded corners=0pt, draw, fill=white] at (b.north west) 
+\node[right=10pt, rounded corners=0pt, draw, fill=white] at (b.north west)
 {\chaptertitlename\ \thechapter};
 \end{tikzpicture}\end{center}
 }
@@ -160,7 +165,7 @@
     weird fill=_deepskyblue, text=white, minimum width={0.9\textwidth},
     text width={0.9\textwidth}, align=center
   ](b) {\scshape\huge\filcenter #1};
-\node[right=10pt, rounded corners=0pt, draw, fill=white] at (b.north west) 
+\node[right=10pt, rounded corners=0pt, draw, fill=white] at (b.north west)
 {\partname\ \thepart};
 \end{tikzpicture}\end{center}
 }
@@ -197,7 +202,7 @@ $\blacktriangleright\!\blacktriangleright\!\blacktriangleright$ #1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 % always load hyperref last
-\usepackage[colorlinks=true]{hyperref} 
+\usepackage[colorlinks=true]{hyperref}
 \makeatletter
 \Hy@AtBeginDocument{%
   \def\@pdfborder{0 0 1}% Overrides border definition set with colorlinks=true
@@ -206,4 +211,3 @@ $\blacktriangleright\!\blacktriangleright\!\blacktriangleright$ #1}
 }
 \makeatother
 \hypersetup{linkcolor=blue!50!black}
-

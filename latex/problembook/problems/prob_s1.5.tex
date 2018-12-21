@@ -1,0 +1,617 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s1.5}
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+\begin{Mquestion} Give a polynomial $f(x)$ with the property that both $\displaystyle\lim_{x \rightarrow\infty} f(x)$  and  $\displaystyle\lim_{x \rightarrow -\infty} f(x)$ are (finite) real numbers.
+\end{Mquestion}
+\begin{hint} It might not look like a traditional polynomial.
+\end{hint}
+\begin{answer} There are many answers: any constant polynomial has this property. One answer is $f(x)=1$.
+\end{answer}
+\begin{solution} Any polynomial of degree one or higher will go to $\infty$ or $-\infty$ as $x$ goes to $\infty$. So, we need a polynomial of degree 0--that is, $f(x)$ is a constant. One possible answer is $f(x)=1$.
+\end{solution}
+
+
+
+\begin{Mquestion}Give a polynomial $f(x)$ that satisfies $\displaystyle\lim_{x \rightarrow\infty} f(x) \neq \displaystyle\lim_{x \rightarrow -\infty} f(x)$.
+\end{Mquestion}
+\begin{hint} The degree of the polynomial matters.
+\end{hint}
+\begin{answer} There are many answers: any odd-degree polynomial has this property. One answer is $f(x)=x$.
+\end{answer}
+\begin{solution} This will be the case for any polynomial of \emph{odd} degree. For instance, $f(x)=x$.
+
+Many answers are possible: also $f(x)=x^{15}-32x^2+9$ satisfies $\displaystyle\lim_{x \rightarrow \infty} f(x) = \infty$ and $\displaystyle\lim_{x \rightarrow -\infty} f(x)= -\infty$.
+\end{solution}
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+\begin{question}Evaluate
+$\displaystyle\lim_{x \rightarrow \infty} 2^{-x}$
+\end{question}
+\begin{hint} What does a negative exponent do?
+\end{hint}
+\begin{answer} 0
+\end{answer}
+\begin{solution}
+$\displaystyle\lim_{x \rightarrow \infty} 2^{-x}=
+\displaystyle\lim_{x \rightarrow \infty} \frac{1}{2^x}=0
+$
+\end{solution}
+
+
+\begin{Mquestion}\label{s1.5limex}Evaluate
+$\displaystyle\lim_{x \rightarrow \infty} 2^x$
+\end{Mquestion}
+\begin{hint} You can think about the behaviour of this function by remembering how you first learned to describe exponentiation.
+\end{hint}
+\begin{answer} $\infty$
+\end{answer}
+\begin{solution} As $x$ gets larger and larger, $2^x$ grows without bound. (For integer values of $x$, you can imagine multiplying $2$ by itself more and more times.) So, $\displaystyle\lim_{x \rightarrow \infty}2^x=\infty$.
+\end{solution}
+
+
+\begin{Mquestion}Evaluate
+$\displaystyle\lim_{x \rightarrow -\infty} 2^x$
+\end{Mquestion}
+\begin{hint} The exponent will be a negative number.
+\end{hint}
+\begin{answer} $0$
+\end{answer}
+\begin{solution}
+Write $X=-x$. As $x$ becomes more and more negative,
+           $X$ becomes more and more positive. From Question~\ref{s1.5limex},
+           we know that $2^X$ grows without bound as $X$ gets
+           larger and larger. Since $2^x= 2^{-(-x)}= 2^{-X} =\frac{1}{2^X}$,
+           as we let $x$ become a huge negative number, we are in
+           effect dividing by a huge positive number; hence
+           $\lim\limits_{x\rightarrow-\infty} 2^x = 0$.
+
+           A more formulaic way to describe the above is this:
+           $\lim\limits_{x\rightarrow-\infty} 2^x
+            = \lim\limits_{X\rightarrow\infty} 2^{-X}
+            = \lim\limits_{X\rightarrow\infty} \frac{1}{2^X}
+            =0$.
+\end{solution}
+
+
+\begin{question}Evaluate
+$\displaystyle\lim_{x \rightarrow -\infty} \cos x$
+\end{question}
+\begin{hint} What \emph{single} number is the function approaching?
+\end{hint}
+\begin{answer} DNE
+\end{answer}
+\begin{solution} There is no single number that $\cos x$ approaches as $x$ becomes more and more strongly negative: as $x$ grows in the negative direction, the function oscillates between $-1$ and $+1$, never settling close to one particular number. So, this limit does not exist.
+\end{solution}
+
+
+
+\begin{question}Evaluate $\displaystyle\lim_{x \rightarrow\infty}x-3x^5+100x^2$.
+\end{question}
+\begin{hint} The highest-order term dominates when $x$ is large.
+\end{hint}
+\begin{answer} $-\infty$
+\end{answer}
+\begin{solution} The highest-order term in this polynomial is $-3x^5$, so this dominates the function's behaviour as $x$ goes to infinity. More formally:
+\begin{align*}
+\lim\limits_{x\rightarrow\infty} \big(x - 3x^5 +100 x^2\big)
+            &=\lim\limits_{x\rightarrow\infty} - 3x^5\left(1 -\frac{1}{3x^4}
+                            -\frac{100}{3 x^3}\right) \\
+          &  =\lim\limits_{x\rightarrow\infty} - 3x^5
+            =-\infty
+\intertext{because}
+ \lim\limits_{x\rightarrow\infty} \left(1 -\frac{1}{3x^4}
+                            -\frac{100}{3 x^3}\right)
+          &=1-0-0=1.
+          \end{align*}
+\end{solution}
+
+\begin{Mquestion}
+Evaluate $\displaystyle\lim_{x \rightarrow\infty} \dfrac{\sqrt{3x^8+7x^4}+10}{x^4-2x^2+1}$.
+\end{Mquestion}
+\begin{hint} Factor the highest power of $x$ out of both the numerator
+        and the denominator. You can factor through square roots (carefully).
+ \end{hint}
+\begin{answer} $\sqrt{3}$
+\end{answer}
+\begin{solution}
+Our standard trick is to factor out the highest power of $x$ in the denominator: $x^4$. We just have to be a little careful with the square root. Since we are taking the limit as $x$ goes to positive infinity, we have positive $x$-values, so $\sqrt{x^2}=x$ and $\sqrt{x^8}=x^4$.
+\begin{align*}
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{\sqrt{3x^8+7x^4}+10}{x^4-2x^2+1}&=
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{\sqrt{x^8(3+\frac{7}{x^4})}+10}{x^4(1-\frac{2}{x^2}+\frac{1}{x^4})}
+\\&=
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{\sqrt{x^8}\sqrt{3+\frac{7}{x^4}}+10}{x^4(1-\frac{2}{x^2}+\frac{1}{x^4})}\\&=
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{x^4\sqrt{3+\frac{7}{x^4}}+10}{x^4(1-\frac{2}{x^2}+\frac{1}{x^4})}\\&=
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{x^4\left(\sqrt{3+\frac{7}{x^4}}+\frac{10}{x^4}\right)}{x^4(1-\frac{2}{x^2}+\frac{1}{x^4})}\\&=
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{\sqrt{3+\frac{7}{x^4}}+\frac{10}{x^4}}{1-\frac{2}{x^2}+\frac{1}{x^4}}\\
+&=\frac{\sqrt{3+0}+0}{1-0+0}=\sqrt{3}
+\end{align*}
+\end{solution}
+
+
+\begin{Mquestion}[2012H]
+ $\lim\limits_{x\rightarrow \infty}
+               \left[\sqrt{x^2+5x}-\sqrt{x^2-x}\right]$
+\end{Mquestion}
+\begin{hint}
+Multiply and divide by the conjugate,
+$\sqrt{x^2+5x}+\sqrt{x^2-x}$.
+\end{hint}
+\begin{answer}
+3
+\end{answer}
+\begin{solution}
+We have two terms, each getting extremely large. It's unclear at first what happens when we subtract them. To get this equation into another form, we multiply and divide by the conjugate,
+$\sqrt{x^2+5x}+\sqrt{x^2-x}$.
+\begin{align*}
+\lim_{x\rightarrow \infty}\left[\sqrt{x^2+5x}-\sqrt{x^2-x}\right]
+&=\lim_{x\rightarrow \infty}\left[\dfrac{(\sqrt{x^2+5x}-\sqrt{x^2-x})(\sqrt{x^2+5x}+\sqrt{x^2-x})}{\sqrt{x^2+5x}+\sqrt{x^2-x}}\right]\\
+&= \lim_{x\rightarrow \infty}\dfrac{(x^2+5x)-(x^2-x)}
+                                     {\sqrt{x^2+5x}+\sqrt{x^2-x}}\\
+& = \lim_{x\rightarrow \infty}\dfrac{6x}{\sqrt{x^2+5x}+\sqrt{x^2-x}}
+\intertext{Now we divide the numerator and denominator by $x$. In the case of the denominator, since $x>0$, $x=\sqrt{x^2}$.}
+&= \lim_{x\rightarrow \infty}\dfrac{6(x)}{\sqrt{x^2}\sqrt{1+\frac{5}{x}}+\sqrt{x^2}\sqrt{1-\frac{1}{x}}}
+\\&= \lim_{x\rightarrow \infty}\dfrac{6(x)}{(x)\sqrt{1+\frac{5}{x}}+(x)\sqrt{1-\frac{1}{x}}}
+\\& = \lim_{x\rightarrow \infty}\dfrac{6}{\sqrt{1+\frac{5}{x}}+\sqrt{1-\frac{1}{x}}}\\
+ &=\frac{6}{\sqrt{1+0}+\sqrt{1-0}}= 3
+\end{align*}
+\end{solution}
+
+
+\begin{question}[2015Q]\label{s1.5first_neg_sqrt}
+ Evaluate $\displaystyle \lim_{x\to -\infty} \frac{3x}{\sqrt{4x^2+x}-2x}$.
+\end{question}
+\begin{hint}
+Divide both the numerator and the denominator by the highest
+         power of $x$ that is in the denominator.\\
+Remember that $\sqrt{\ }$ is defined to be the \emph{positive} square root.
+          Consequently, if $x<0$, then $\sqrt{x^2}$, which
+          is positive, is \emph{not} the same as $x$, which is negative.\end{hint}
+\begin{answer}
+$-\frac{3}{4}$
+\end{answer}
+\begin{solution}
+The two terms in the denominator grow at order $x$--that is, their largest power is $x$.  For $x<0$, we must remember $\sqrt{x^2}=|x|=-x$, so
+$$\sqrt{4x^2+x} = \sqrt{x^2}\sqrt{4+\frac{1}{x}} = -x \sqrt{4+\frac{1}{x}}.$$
+We conclude that
+$$\frac{3x}{\sqrt{4x^2+x}-2x} =  \frac{3}{-\sqrt{4+1/x}-2}.$$
+Since $1/x\to 0$ as $x\to -\infty$, we conclude that
+$$\lim_{x\to -\infty} \frac{3x}{\sqrt{4x^2+x}-2x} =
+      \frac{3}{-\sqrt{4+0}-2} = -\frac{3}{4}$$
+\end{solution}%oldQ14
+
+
+\begin{Mquestion}[2007H]
+Evaluate $\lim\limits_{x\rightarrow -\infty}\dfrac{1-x-x^2}{2x^2-7}$.
+\end{Mquestion}
+\begin{hint}
+Factor out the highest power of the denominator.
+\end{hint}
+\begin{answer}
+$-\dfrac{1}{2}$
+\end{answer}
+\begin{solution}
+The highest power of $x$ in the denominator is $x^2$, so we divide the numerator and denominator by $x^2$:
+\begin{align*}
+\lim\limits_{x\rightarrow -\infty}\frac{1-x-x^2}{2x^2-7}&=
+\lim\limits_{x\rightarrow -\infty}\frac{1/x^2-1/x-1}{2-7/x^2}\\
+&=\frac{0-0-1}{2-0}=-\frac{1}{2}
+\end{align*}
+\end{solution}
+
+
+
+
+
+
+
+\begin{question}[1999H]
+Evaluate
+$\lim\limits_{x\rightarrow\infty}\big(\sqrt{x^2+x}-x\big)$
+\end{question}
+\begin{hint}
+The conjugate of $(\sqrt{x^2+x}-x)$ is $(\sqrt{x^2+x}+x)$.\\
+ Multiply by $1=\dfrac{\sqrt{x^2+x}+x}
+                                 {\sqrt{x^2+x}+x}$
+             to coax your function into a fraction.
+\end{hint}
+\begin{answer} $\frac{1}{2}$
+\end{answer}
+\begin{solution}
+\begin{align*}
+\lim_{x\rightarrow\infty}\big(\sqrt{x^2+x}-x\big)
+&=\lim_{x\rightarrow\infty}
+\frac{\big(\sqrt{x^2+x}-x\big)\big(\sqrt{x^2+x}+x\big)}
+     {\sqrt{x^2+x}+x}
+=\lim_{x \to \infty}\frac{(x^2+x)-x^2}{\sqrt{x^2+x}+x}\\
+&=\lim_{x\rightarrow\infty}
+\frac{x}{\sqrt{x^2+x}+x}
+=\lim_{x\rightarrow\infty}
+\frac{1}{\sqrt{1+\frac{1}{x}}+1}
+=\frac{1}{2}
+\end{align*}\end{solution}
+
+
+
+\begin{question}[2015Q]
+Evaluate $\displaystyle \lim_{x\to +\infty} \frac{5x^2-3x+1}{3x^2 +x+7}.$
+\end{question}
+\begin{hint}
+Divide both the numerator and the denominator by the highest
+         power of $x$ that is in the denominator.
+\end{hint}
+\begin{answer}
+$\frac{5}{3}$
+\end{answer}
+\begin{solution}
+We have, after dividing both numerator and denominator by $x^2$ (which is the highest power of the denominator) that
+$$\frac{5x^2-3x+1}{3x^2+x+7}=\frac{5-\frac{3}{x}+\frac{1}{x^2}}{3+\frac{1}{x}+\frac{7}{x^2}}.$$
+Since $1/x\to 0$ and also $1/x^2\to 0$ as $x\to +\infty$, we conclude that
+$$\lim_{x\to +\infty} \frac{5x^2-3x+1}{3x^2 +x+7}=\frac{5}{3}.$$
+\end{solution}
+
+
+
+
+\begin{question}[2015Q]
+Evaluate $\displaystyle \lim_{x\to +\infty} \frac{ \sqrt{4\,x + 2}}{3\,x+4}$.
+\end{question}
+\begin{hint}
+Divide both the numerator and the denominator by the highest
+         power of $x$ that is in the denominator.
+\end{hint}
+\begin{answer} 0
+\end{answer}
+\begin{solution}
+We have, after dividing both numerator and denominator by $x$ (which is the highest power of the denominator) that
+$$\frac{ \sqrt{4\,x + 2}}{3x+4}=\frac{\sqrt{\frac 4 x + \frac 2 {x^2}}}{3 + \frac 4 x}.$$
+Since $1/x\to 0$ and also $1/x^2\to 0$ as $x\to +\infty$, we conclude that
+$$\lim_{x\to +\infty} \frac{ \sqrt{4\,x + 2}} {3\,x+4}=\frac {0}{3} = 0.$$
+\end{solution}
+
+
+
+
+\begin{question}[2015Q]
+ Evaluate $\displaystyle \lim_{x\to +\infty} \frac{4x^3+x}{7x^3 + x^2 - 2}$.
+\end{question}
+\begin{hint}
+Divide both the numerator and the denominator by the highest
+         power of $x$ that is in the denominator.
+\end{hint}
+\begin{answer}
+$\frac{4}{7}$
+\end{answer}
+\begin{solution}
+The dominant terms in the numerator and denominator have order $x^3$.  Taking
+out that common factor we get
+$$\frac{4x^3+x}{7x^3 + x^2 - 2}
+= \frac{4 + \frac{1}{x^2}}{7 + \frac{1}{x} - \frac{2}{x^3}}.$$
+Since $1/x^a\to 0$ as $x\to +\infty$ (for $a>0$),
+we conclude that $$\lim_{x\to +\infty} \frac{4x^3+x}{7x^3 +x^2-2}=\frac{4}{7}.$$
+\end{solution}
+
+
+\begin{question}Evaluate
+$\displaystyle\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{x^2+x}-\sqrt[4]{x^4+5}}{x+1}$
+\end{question}
+\begin{hint}
+Divide both the numerator and the denominator by $x$
+         (which is the largest power of $x$ in the denominator).
+         In the numerator, move the resulting factor of $1/x$ inside
+         the two roots. Be careful about the signs when you do so.
+         Even and odd roots behave differently-- see Question~\ref{s1.5first_neg_sqrt}.
+\end{hint}
+\begin{answer} 1
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item Solution 1\\
+We want to factor out $x$, the highest power in the denominator. Since our limit only sees negative values of $x$, we must remember that $\sqrt[4]{x^4}=|x|=-x$, although $\sqrt[3]{x^3}=x$.
+\begin{align*}
+\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{x^2+x}-\sqrt[4]{x^4+5}}{x+1}&=
+\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{x^3(\frac{1}{x}+\frac{1}{x^2})}-\sqrt[4]{x^4(1+\frac{5}{x^4})}}{x(1+\frac{1}{x})}\\&=
+\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{x^3}\sqrt[3]{\frac{1}{x}+\frac{1}{x^2}}-\sqrt[4]{x^4}\sqrt[4]{1+\frac{5}{x^4}}}{x(1+\frac{1}{x})}
+\\&=\lim_{x \rightarrow -\infty}\dfrac{x\sqrt[3]{\frac{1}{x}+\frac{1}{x^2}}-(-x)\sqrt[4]{1+\frac{5}{x^4}}}{x(1+\frac{1}{x})}
+\\&=\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{\frac{1}{x}+\frac{1}{x^2}}+\sqrt[4]{1+\frac{5}{x^4}}}{1+\frac{1}{x}}\\
+&=\frac{\sqrt[3]{0+0}+\sqrt[4]{1+0}}{1+0}=1
+\end{align*}
+
+\item Solution 2\\
+Alternately, we can use the transformation $\displaystyle\lim_{x \rightarrow -\infty} f(x)=\displaystyle\lim_{x \rightarrow \infty} f(-x)$. Then we only look at positive values of $x$, so roots behave nicely: $\sqrt[4]{x^4}=|x|=x$.
+\begin{align*}
+\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{x^2+x}-\sqrt[4]{x^4+5}}{x+1}&=
+\lim_{x \rightarrow \infty}\dfrac{\sqrt[3]{(-x)^2-x}-\sqrt[4]{(-x)^4+5}}{-x+1}\\
+&=
+\lim_{x \rightarrow \infty}\dfrac{\sqrt[3]{x^2-x}-\sqrt[4]{x^4+5}}{-x+1}\\
+&=
+\lim_{x \rightarrow \infty}\dfrac{\sqrt[3]{x^3}\sqrt[3]{\frac{1}{x}-\frac{1}{x^2}}-\sqrt[4]{x^4}\sqrt[4]{1+\frac{5}{x^4}}}{x(-1+\frac{1}{x})}\\
+&=
+\lim_{x \rightarrow \infty}\dfrac{x\sqrt[3]{\frac{1}{x}-\frac{1}{x^2}}-x\sqrt[4]{1+\frac{5}{x^4}}}{x(-1+\frac{1}{x})}
+\\
+&=
+\lim_{x \rightarrow \infty}\dfrac{\sqrt[3]{\frac{1}{x}-\frac{1}{x^2}}-\sqrt[4]{1+\frac{5}{x^4}}}{-1+\frac{1}{x}}\\
+&=\frac{\sqrt[3]{0-0}-\sqrt[4]{1+0}}{-1+0}=\frac{-1}{-1}=1
+\end{align*}
+\end{itemize}
+\end{solution}
+%oldQ9
+
+
+\begin{Mquestion}[2015Q]
+Evaluate
+$\displaystyle\lim_{x\rightarrow +\infty} \frac{5x^2+10}{3x^3 +2x^2+x}.$
+\end{Mquestion}
+\begin{hint}
+Divide both the numerator and the denominator by the highest
+         power of $x$ that is in the denominator.
+\end{hint}
+\begin{answer}
+0
+\end{answer}
+\begin{solution}
+We have, after dividing both numerator and denominator by $x^3$ (which is the
+highest power of the denominator) that:
+$$\lim_{x \to \infty} \frac{5x^2+10}{3x^3 +2x^2+x}=\lim_{x \to\infty}\frac{\frac{5}{x}+\frac{10}{x^3}}{3+\frac{2}{x}+\frac{1}{x^2}}=\frac{0}{3}=0.$$
+\end{solution}
+
+
+
+
+\begin{Mquestion}Evaluate $\displaystyle\lim_{x \rightarrow -\infty}\frac{x+1}{\sqrt{x^2}}$.
+\end{Mquestion}
+\begin{hint}
+Divide both the numerator and the denominator by the highest
+         power of $x$ that is in the denominator.
+It is \emph{not} always true that $\sqrt{x^2}=x$.
+\end{hint}
+\begin{answer} $-1$
+\end{answer}
+\begin{solution}
+Since we only consider negative values of $x$, $\sqrt{x^2}=|x|=-x$.
+\begin{align*}
+\displaystyle\lim_{x \rightarrow -\infty}\frac{x+1}{\sqrt{x^2}}&=
+\displaystyle\lim_{x \rightarrow -\infty}\frac{x+1}{-x}\\
+&=\displaystyle\lim_{x \rightarrow -\infty}\frac{x}{-x}+\frac{1}{-x}\\
+&=\displaystyle\lim_{x \rightarrow -\infty}-1-\frac{1}{x}\\
+&=-1
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{Mquestion}Evaluate $\displaystyle\lim_{x \rightarrow \infty}\frac{x+1}{\sqrt{x^2}}$
+\end{Mquestion}
+\begin{hint} Simplify.
+\end{hint}
+\begin{answer} $1$
+\end{answer}
+\begin{solution}
+Since we only consider positive values of $x$, $\sqrt{x^2}=|x|=x$.
+\begin{align*}
+\displaystyle\lim_{x \rightarrow \infty}\frac{x+1}{\sqrt{x^2}}&=
+\displaystyle\lim_{x \rightarrow \infty}\frac{x+1}{x}\\
+&=\displaystyle\lim_{x \rightarrow \infty}1+\frac{1}{x}=1+0=1
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}[2015Q]
+Find the limit $\displaystyle \lim_{x\to -\infty} \sin\left( \frac{\pi}{2}
+\frac{|x|}{x}\right) + \frac{1}{x}$.
+\end{question}
+\begin{hint}
+What is a simpler version of $|x|$ when you know $x<0$?
+\end{hint}
+\begin{answer}
+$-1$
+\end{answer}
+\begin{solution}
+When $x<0$, $|x|=-x$ and so $\ds\lim_{x\to\infty}\sin\left( \frac{\pi}{2} \cdot
+\frac{|x|}{x}\right) + \frac{1}{x} = \sin(-\pi/2) = -1$.
+\end{solution}
+
+
+
+
+\begin{question}[2015Q]
+Evaluate $\displaystyle \lim_{x\to -\infty} \frac{3x+5}{\sqrt{x^2+5}-x}$.
+\end{question}
+\begin{answer}
+$-\frac{3}{2}$
+\end{answer}
+\begin{solution}
+We divide both the numerator and the denominator by the
+             highest power of $x$ in the denominator, which is $x$.
+             Since $x<0$, we have $\sqrt{x^2}=|x|=-x$,
+             so that
+$$\frac{\sqrt{x^2+5}}{x}=-\sqrt{\frac{x^2+5}{x^2}}=-\sqrt{1+\frac{5}{x^2}}.$$
+Since $1/x\to 0$ and also $1/x^2\to 0$ as $x\to -\infty$, we conclude that
+$$\lim_{x\to -\infty} \frac{3x+5}{\sqrt{x^2+5}-x}=\lim_{x\to -\infty}\frac{3+\frac{5}{x}}{-\sqrt{1+\frac{5}{x^2}}-1}=\frac{3}{-1-1}=-\frac{3}{2}.$$
+\end{solution}
+
+
+
+\begin{question}[2015Q]
+Evaluate
+$\displaystyle\lim_{x\rightarrow -\infty} \frac{5x+7}{\sqrt{4x^2+15}-x}$
+\end{question}
+\begin{hint}
+Divide both the numerator and the denominator by the highest
+         power of $x$ that is in the denominator.
+         When is $\sqrt{x}=x$, and when is $\sqrt{x}=-x$?
+\end{hint}
+\begin{answer} $-\frac{5}{3}$
+\end{answer}
+\begin{solution}
+We divide both the numerator and the denominator by the
+             highest power of $x$ in the denominator, which is $x$.
+             Since $x<0$, we have $\sqrt{x^2}=|x|=-x$,
+             so that
+             $$\frac{\sqrt{4x^2+15}}{x}=
+\frac{\sqrt{4x^2+15}}{-\sqrt{x^2}}
+=-\sqrt{\frac{4x^2+15}{x^2}}=-\sqrt{4+\frac{15}{x^2}}.$$
+Since $1/x\to 0$ and also $1/x^2\to 0$ as $x\to -\infty$, we conclude that
+$$\lim_{x\to -\infty} \frac{5x+7}{\sqrt{4x^2+15}-x}=\lim_{x\to
+-\infty}\frac{5+\frac{7}{x}}{-\sqrt{4+\frac{15}{x^2}}-1}=\frac{5}{-2-1}=-\frac{5}{3}.$$
+\end{solution}
+
+
+\begin{Mquestion}Evaluate $\displaystyle\lim_{x \rightarrow -\infty}\dfrac{3x^7+x^5-15}{4x^2+32x}$.
+\end{Mquestion}
+\begin{hint}
+Divide both the numerator and the denominator by the highest
+         power of $x$ that is in the denominator.
+         Pay careful attention to signs.
+\end{hint}
+\begin{answer} $-\infty$
+\end{answer}
+\begin{solution}
+\begin{align*}
+\displaystyle\lim_{x \rightarrow -\infty}\dfrac{3x^7+x^5-15}{4x^2+32x}&=
+\displaystyle\lim_{x \rightarrow -\infty}\dfrac{x^2(3x^5+x^3-\frac{15}{x^2})}{x^2(4+\frac{32}{x})}\\
+&=\displaystyle\lim_{x \rightarrow -\infty}\dfrac{3x^5+x^3-\frac{15}{x^2}}{4+\frac{32}{x}}
+\\
+&=\displaystyle\lim_{x \rightarrow +\infty}\dfrac{3(-x)^5+(-x)^3-\frac{15}{(-x)^2}}{4+\frac{32}{-x}}\\
+&=\displaystyle\lim_{x \rightarrow +\infty}\dfrac{-3x^5-x^3-\frac{15}{x^2}}{4-\frac{32}{x}}
+\\&=-\infty
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}[2009H]
+Evaluate $\ds\lim_{n \to \infty}\left(\sqrt{n^2+5n}-n\right)$.
+\end{question}
+\begin{hint}
+Multiply and divide the expression by its conjugate, $\big(\sqrt{n^2+5n}+n\big)$.
+\end{hint}
+\begin{answer} $\dfrac{5}{2}$
+\end{answer}
+\begin{solution}
+We multiply and divide the expression by its conjugate, $\big(\sqrt{n^2+5n}+n\big)$.
+\begin{align*}
+\lim_{n\rightarrow\infty}\big(\sqrt{n^2+5n}-n\big)
+&=\lim_{n \to \infty}\big(\sqrt{n^2+5n}-n\big)
+\left(\frac{\sqrt{n^2+5n}+n}{\sqrt{n^2+5n}+n}\right)\\
+&=\lim_{n\rightarrow\infty}\frac{(n^2+5n)-n^2}{\sqrt{n^2+5n}+n}\\
+&=\lim_{n\rightarrow\infty}\frac{5n}{\sqrt{n^2+5n}+n}\\
+&=\lim_{n\rightarrow\infty}\frac{5\cdot n}{\sqrt{n^2}\sqrt{1+\frac{5}{n}}+n}
+\intertext{Since $n>0$, we can simplify $\sqrt{n^2}=n$.}
+&=\lim_{n\rightarrow\infty}\frac{5\cdot n}{n\sqrt{1+\frac{5}{n}}+n}\\
+&=\lim_{n\rightarrow\infty}\frac{5}{\sqrt{1+\frac{5}{n}}+1}\\
+&=\frac{5}{\sqrt{1+0}+1}=\frac{5}{2}
+\end{align*}
+\end{solution}
+
+\begin{question}
+Evaluate $\ds\lim_{a \to 0^+}\dfrac{a^2-\frac{1}{a}}{a-1}$.
+\end{question}
+\begin{hint}
+Consider what happens to the function as $a$ becomes very, very small. You shouldn't need to do much calculation.
+\end{hint}
+\begin{answer}
+$\ds\lim_{a \to 0^+}\dfrac{a^2-\frac{1}{a}}{a-1}=\infty$
+\end{answer}
+\begin{solution}
+\begin{itemize} \item \textbf{Solution 1:}\\
+When $a$ approaches 0 from the right, the numerator approaches negative infinity, and the denominator approaches $-1$. So, $\ds\lim_{a \to 0^+}\dfrac{a^2-\frac{1}{a}}{a-1}=\infty$.
+
+More precisely, using Theorem~\ref*{thm arith inf lim}:
+\begin{align*}
+&\lim_{a \to 0^+} \frac{1}{a}=+\infty\\
+\mbox{Also,}& \lim_{a \to 0^+} a^2=0\\
+\mbox{So, using Theorem~\ref*{thm arith inf lim},}& \lim_{a \to 0^+} a^2-\frac{1}{a}=-\infty\\
+\mbox{Furthermore,}&\lim_{a \to 0^+}a-1=-1\\
+\mbox{So, using our theorem,}&\lim_{a \to 0^+}\frac{a^2-\frac{1}{a}}{a-1}=\infty
+\end{align*}
+
+\item
+\textbf{Solution 2:}\\
+Since $a=0$ is not in the domain of our function, a reasonable impulse is to simplify.
+\begin{align*}
+\frac{a^2-\frac{1}{a}}{a-1}\left(\frac{a}{a}\right)&=\frac{a^3-1}{a(a-1)}=\frac{(a-1)(a^2+a+1)}{a(a-1)}
+\intertext{So,}
+\lim_{a \to 0^+}\frac{a^2-\frac{1}{a}}{a-1}&=
+\lim_{a \to 0^+}\frac{(a-1)(a^2+a+1)}{a(a-1)}\\
+&=\lim_{a \to 0^+}\frac{a^2+a+1}{a}\\
+&=\lim_{a \to 0^+}a+1+\frac{1}{a}=\infty
+\end{align*}
+\end{itemize}
+\end{solution}
+
+
+\begin{question}
+Evaluate $\ds\lim_{x \to 3}\dfrac{2x+8}{\frac{1}{x-3}+\frac{1}{x^2-9}}$.
+\end{question}
+\begin{hint}
+Since $x=3$ is not in the domain of the function, we need to be a little creative. Try simplifying the function.
+\end{hint}
+\begin{answer}
+$\ds\lim_{x \to 3}\dfrac{2x+8}{\frac{1}{x-3}+\frac{1}{x^2-9}}=0$
+\end{answer}
+\begin{solution}
+
+Since $x=3$ is not in the domain of the function, we simplify, hoping we can cancel a problematic term.
+\begin{align*}
+\lim_{x \to 3}\frac{2x+8}{\frac{1}{x-3}+\frac{1}{x^2-9}}&=\lim_{x \to 3}\frac{2x+8}{\frac{x+3}{x^2-9}+\frac{1}{x^2-9}}\\
+&=\lim_{x \to 3}\frac{2x+8}{\frac{x+4}{x^2-9}}\\
+&=\lim_{x \to 3}\frac{(2x+8)(x^2-9)}{x+4}=0
+\end{align*}
+
+\end{solution}
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion} Give a rational function $f(x)$ with the properties that $\displaystyle\lim_{x \rightarrow\infty} f(x) \neq \displaystyle\lim_{x \rightarrow -\infty} f(x)$, and both limits are (finite) real numbers.
+\end{Mquestion}
+\begin{hint} This is a bit of a trick question.
+Consider what happens to a rational function as
+         $x\rightarrow\pm \infty$ in each of these three cases:
+         \begin{itemize}
+          \item the degree of the numerator is smaller than the degree of
+             the denominator,
+           \item the degree of the numerator is the same as the degree of
+             the denominator, and
+           \item the degree of the numerator is larger than the degree of
+             the denominator.
+             \end{itemize}
+\end{hint}
+\begin{answer} No such rational function exists.
+\end{answer}
+\begin{solution} First, we need a rational function whose limit at infinity is a real number. This means that the degree of the bottom is greater than or equal to the degree of the top. There are two cases: the denominator has higher degree than the numerator, or the denominator has the same degree as the numerator.
+
+If the denominator has higher degree than the numerator, then $\displaystyle\lim_{x \rightarrow \infty} f(x)=\displaystyle\lim_{x \rightarrow -\infty} f(x)=0$, so the limits are equal--not what we're looking for.
+
+If the denominator has the same degree as the numerator, then the limit as $x$ goes to $\pm \infty$ is the ratio of the leading terms: again, the limits are equal. So no rational function exists as described.
+\end{solution}
+
+
+\begin{question}Suppose the concentration of a substance in your body $t$ hours after injection is given by some formula $c(t)$, and $\displaystyle\lim_{t \rightarrow \infty} c(t) \neq 0$. What kind of substance might have been injected?
+\end{question}
+\begin{hint} We tend to conflate ``infinity" with ``some really large number."
+\end{hint}
+\begin{answer} This is the amount of the substance that will linger long-term. Since it's nonzero, the substance would be something that would stay in your body. Something like ``tattoo ink" is a reasonable answer, while ``penicillin" is not.
+\end{answer}
+\begin{solution}
+The amount of the substance that will linger long-term is some positive number--the substance will stick around. One example of a substance that does this is the ink in a tattoo. (If the injection was of medicine, probably it will be metabolized, and $\displaystyle\lim_{t \rightarrow \infty} c(t)=0$.)
+
+Remark: it actually doesn't make much sense to let $t$ go to infinity: after a few million hours,  you won't even have a body, so what is $c(t)$ measuring? Often when we use formulas in the real world, there is an understanding that the are only good for some fixed range. We often use the limit as $t$ goes to infinity as a stand-in for the function's long-term behaviour.
+\end{solution}

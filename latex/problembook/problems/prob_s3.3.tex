@@ -1,0 +1,319 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s3.3}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{More Section 3.3 Problems}
+%%%%%%%%%%%%%%%%%%
+
+\begin{question}[2009H]
+Find $f(2)$ if $f'(x) = \pi f(x)$ for all $x$, and $f(0) = 2$.
+\end{question}
+\begin{hint}
+Use Theorem~\ref*{thm:growthDEsoln} to figure out what $f(x)$ looks like.
+\end{hint}
+\begin{answer} $f(2)=2e^{2\pi}$
+\end{answer}
+\begin{solution}
+The first piece of information given tells us $\ds\diff{f}{x}=\pi f(x)$. Then by
+Theorem~\ref*{thm:growthDEsoln},
+\begin{align*}
+f(x)&=Ce^{\pi x}
+\intertext{for some constant $C$. The second piece of given information tells us
+$f(0)=2$. Using this, we can solve for $C$:}
+2&=f(0)=Ce^{0}=C
+\intertext{Now, we know $f(x)$ entirely:}
+f(x)&=2e^{\pi t}
+\intertext{So, we can evaluate $f(2)$}
+f(2)&=2e^{2\pi}
+\end{align*}
+\end{solution}
+
+
+\begin{question}
+Which functions $T(t)$ satisfy the differential equation
+$\ds\diff{T}{t}=7T+9$?
+\end{question}
+\begin{hint}
+To use  Corollary~\ref*{cor:coolingDEsoln}, you need to re-write the differential equation as
+\[\diff{T}{t}=7\left[T-\left(-\frac{9}{7}\right)\right].\]
+\end{hint}
+\begin{answer}
+Solutions to the differential equation have the form
+\[T(t)=\left[T(0)+\frac{9}{7}\right]e^{7t}-\frac{9}{7}\]
+for some constant $T(0)$.
+\end{answer}
+\begin{solution}
+To use  Corollary~\ref*{cor:coolingDEsoln}, we re-write the differential equation as
+\[\diff{T}{t}=7\left[T-\left(-\frac{9}{7}\right)\right].\]
+Now, $A=-\dfrac{9}{7}$ and $K=7$, so we see that the solutions to the differential equation have the form
+\[T(t)=\left[T(0)+\frac{9}{7}\right]e^{7t}-\frac{9}{7}\]
+for some constant $T(0)$.
+\begin{align*}
+\intertext{We can check that this is reasonable: if }
+T(t)&=\left[T(0)+\frac{9}{7}\right]e^{7t}-\frac{9}{7}
+\intertext{then}
+\diff{T}{t}&=7\left[T(0)+\frac{9}{7}\right]e^{7t}\\
+&=7\left[T+\frac{9}{7}\right]\\
+&=7T+9.
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}[1998H]
+It takes 8 days for 20\% of a particular
+radioactive material to decay. How long does it take for 100 grams of the
+material to decay to 40 grams?
+\end{question}
+\begin{hint}
+The amount of the material at time $t$ will be $Q(t)=Ce^{-kt}$\\ for some constants $C$ and $k$.
+\end{hint}
+\begin{answer}
+$\dfrac{8\log(0.4)}{\log(0.8)}\approx 32.85$ days
+\end{answer}
+\begin{solution}
+Let $Q(t)$ denote the amount of radioactive material after $t$ days.
+Then
+$Q(t)=Q(0)e^{kt}$. We are  told
+\begin{align*}
+Q(8)&=0.8\,Q(0)
+\intertext{So,}
+Q(0)e^{8k}&=0.8\,Q(0)\\
+e^{8k}&=0.8\\
+e^k&=0.8^{\tfrac{1}{8}}
+\intertext{If $Q(0)=100$, the time $t$ at which $Q(t)=40$ is determined by}
+40=Q(t)&=Q(0)e^{kt}=100e^{kt}=100\left(0.8^{\tfrac{1}{8}}\right)^t=100\cdot 0.8^{\tfrac{t}{8}}
+\intertext{Solving for $t$:}
+\frac{40}{100}&=0.8^{\tfrac{t}{8}}\\
+\log\left(0.4\right)&=\log\left(0.8^{\tfrac{t}{8}}\right)=\frac{t}{8}\log(0.8)\\
+t&=\frac{8\log(0.4)}{\log(0.8)}\approx 32.85\mbox{ days}
+\end{align*}
+100 grams will decay to 40 grams in about 32.85 days.
+\end{solution}
+
+
+\begin{question}
+A glass of boiling water is left in a room. After 15 minutes, it has cooled to 85$^\circ$ C, and after 30 minutes it is 73$^\circ$ C. What temperature is the room?
+\end{question}
+\begin{hint}
+In your calculations, it might come in handy that $e^{30K}=\left(e^{15K}\right)^2$.
+\end{hint}
+\begin{answer}
+25$^\circ$ C
+\end{answer}
+\begin{solution}
+Let $t=0$ be the time the boiling water is left in the room, and let $T(t)$ be the temperature of the water $t$ minutes later, so $T(0)=100$.
+Using Newton's Law of Cooling, we model the temperature of the water at time $t$ as
+\begin{align*}
+T(t)&=[100-A]e^{Kt}+A
+\intertext{where $A$ is the room temperature, and $K$ is some constant. We are told that $T(15)=85$ and $T(30)=73$, so:}
+85=T(15)&=[100-A]e^{15K}+A\\
+73=T(30)&=[100-A]e^{30K}+A
+\intertext{Rearranging both equations:}
+\frac{85-A}{100-A}&=e^{15K}\\
+\frac{73-A}{100-A}&=e^{30K}=\left(e^{15K}\right)^2
+\intertext{Using these equations:}
+\left(\frac{85-A}{100-A}\right)^2=\left(e^{15K}\right)^2&=e^{30K}=\frac{73-A}{100-A}\\
+\frac{(85-A)^2}{100-A}&=73-A\\
+(85-A)^2&=(73-A)(100-A)\\
+85^2-170A+A^2&=7300-173A+A^2\\
+173A-170A&=7300-85^2\\
+3A&=75\\
+A&=25
+\end{align*}
+The room temperature is 25$^\circ$ C.
+\end{solution}
+
+
+\begin{Mquestion}[1997D]
+  A 25-year-old graduate of UBC is given \$50,000 which is invested
+at 5\% per year compounded continuously. The graduate also intends to
+deposit money continuously at the rate of \$2000 per year. Assuming that
+the interest rate remains 5\%, the amount $A(t)$ of money at time $t$ satisfies
+the equation
+$$
+\diff{A}{t}= 0.05 A+2000
+$$
+\begin{enumerate}[(a)]
+\item Solve this equation and determine the amount of money in the account when the graduate
+is 65.
+\item At age 65, the graduate will withdraw money continuously
+at the rate of $W$ dollars per year. If the money must last until the person
+is 85, what is the largest possible value of $W$?
+\end{enumerate}
+\end{Mquestion}
+\begin{hint}
+The differential equation in the problem has the same form as the differential equation from Newton's Law of Cooling.
+\end{hint}
+\begin{answer}
+\begin{enumerate}[(a)]
+\item $A(t)=90,\!000\cdot e^{0.05t}-40,\!000$ \\
+When the graduate is 65, they will have \$625,015.05 in the account.
+\item \$49,437.96
+\end{enumerate}
+\end{answer}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item The amount of money at time $t$ obeys
+\begin{align*}
+\diff{A}{t}&= 0.05 A+2,\!000=0.05[A-(-40,\!000)]
+\intertext{
+Using Corollary~\ref*{cor:coolingDEsoln},}
+A(t)&=[A(0)+40,\!000]e^{0.05t}-40,\!000\\
+&=90,\!000\cdot e^{0.05t}-40,\!000
+\intertext{where $t=0$ corresponds to the year when the graduate is 25.}
+\intertext{When the graduate is 65 years old, $t=40$, so}
+A(40)&=90,\!000\, e^{0.05 \times 40}-40,000\approx \$625,015.05
+\end{align*}
+\item
+When the graduate stops depositing money and instead
+starts withdrawing money at a rate $W$, the equation for $A$ becomes
+\begin{align*}
+\diff{A}{t}&= 0.05 A-W= 0.05 [A(t)-20 W]
+\intertext{
+Using Corollary~\ref*{cor:coolingDEsoln}, and
+assuming that the interest rate remains 5\%,}
+A(t)&=[A(0)-20W]e^{0.05t}+20W\\
+&=[625,015.05-20W]e^{0.05t}+20W
+\intertext{Note that, for part (b), we only care about what happens when the graduate starts withdrawing money. We take $t=0$ to correspond to the year when the graduate is 65--so we're using a different $t$ from part (a). Then from part (a), $A(0)=625,025.05$.}
+\intertext{We want the account to be depleted when the graduate is 85. So, we
+want }
+0&=A(20)\\
+0&=20W+ e^{0.05\times 20}(625,015.05-20W)
+\\
+0&=20W+ e(625,015.05-20W)\\
+20(e-1)W&= 625,015.05e\\
+W&=\frac{625,015.05e}{20(e-1)}\approx\$49,437.96
+\end{align*}
+\end{enumerate}
+\end{solution}
+
+
+\begin{question}[1996D]
+  An investor puts \$120,000 which into a bank account which pays
+6\% annual interest, compounded continuously. She plans to withdraw
+money continuously from the account at the rate of \$9000 per year. If
+ $A(t)$ is the amount of money at time $t$, then
+$$
+\diff{A}{t}= 0.06 A-9000
+$$
+\begin{enumerate}[(a)]
+\item\label{s3.3investor1} Solve this equation for $A(t)$.
+\item\label{s3.3investor2} When will the money run out?
+\end{enumerate}
+\end{question}
+\begin{hint} We know the form of the solution $A(t)$ from Corollary~\ref*{cor:coolingDEsoln}.
+\end{hint}
+\begin{answer}
+\eqref{s3.3investor1} $A(t)=150,\!000-30,\!000\, e^{0.06 t}$
+\hspace{1cm}\eqref{s3.3investor2} after {26.8 yrs}
+\end{answer}
+\begin{solution}
+\eqref{s3.3investor1}
+The amount of money at time $t$ obeys
+\begin{align*}
+\diff{A}{t}&= 0.06 A-9,\!000=0.06[A-150,\!000]
+\intertext{Using Corollary~\ref*{cor:coolingDEsoln},}
+A(t)&=[A(0)-150,\!000]e^{0.06t}+150,\!000\\
+&=[120,\!000-150,\!000]e^{0.06t}+150,\!000\\
+&=-30,\!000e^{0.06t}+150,\!000
+\end{align*}
+
+\eqref{s3.3investor2}
+The money runs out when $A(t)=0$.
+\begin{align*}
+A(t)&=0\\
+150,\!000-30,\!000\, e^{0.06 t}&=0\\
+30,\!000\, e^{0.06t}&=150,\!000\\
+e^{0.06 t}&=5\\
+0.06 t&=\log 5\\
+t&=\frac{\log 5}{0.06}\approx\mbox{26.8 yrs}
+\end{align*}
+The money runs out in about 26.8 years.
+
+Remark: without earning any interest, the money would have run out in about 13.3 years.
+\end{solution}
+
+
+\begin{question}[1997D]A particular bacterial culture grows at a rate proportional
+to the number of bacteria present. If the size of the culture triples every
+nine hours, how long does it take the culture to double?
+\end{question}
+\begin{hint}
+If a function's rate of change is proportional to the function itself, what does the function looks like?
+\end{hint}
+\begin{answer} $\dfrac{9\log 2}{\log 3}\approx5.68$ hr
+\end{answer}
+\begin{solution}
+Let $Q(t)$ denote the number of bacteria at time $t$. We are told that
+$Q'(t)=k Q(t)$ for some constant of proportionality $k$. Consequently,
+$Q(t)=Q(0)e^{kt}$ (Corollary~\ref*{thm:growthDEsoln}). We are also told
+\begin{align*}
+Q(9)&=3Q(0) \\
+\mbox{So,}\qquad Q(0)e^{9k}&=3Q(0)\\
+e^{9k}&=3\\
+e^{k}&=3^{\tfrac{1}{9}}
+\intertext{The doubling time $t$ obeys:}
+Q(t)&=2Q(0)\\
+\mbox{So,}\qquad Q(0)e^{kt}&=2Q(0)\\
+e^{kt}&=2\\
+3^{\tfrac{t}{9}}&=2\\
+\frac{t}{9}\log 3 &=\log 2\\
+t&=9\frac{\log 2}{\log 3}\approx5.68 \mbox{ hr}
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}[2012H]
+An object falls under gravity near the surface of the earth
+and its motion is impeded by air resistance proportional to its speed. Its
+velocity $v$ satisfies the differential equation
+$$
+\dfrac{dv}{dt}=-g-kv
+$$
+where $g$ and $k$ are positive constants.
+\begin{enumerate}[(a)]
+\item Find the velocity of the object as a function of time $t$,
+given that it was $v_0$ at $t=0$.
+\item Find $\lim\limits_{t\rightarrow\infty} v(t)$.
+\end{enumerate}
+\end{question}
+\begin{hint}
+The equation from Newton's Law of Cooling, in Corollary~\ref*{cor:coolingDEsoln},
+has a similar form to the differential equation in this question.
+\end{hint}
+\begin{answer}
+(a) $v(t)=\left[v_0+\frac{g}{k}\right]e^{-kt}-\frac{g}{k}$\\
+(b) $\lim\limits_{t\rightarrow\infty} v(t)=-\dfrac{g}{k}$
+\end{answer}
+\begin{solution}
+(a)  We want our differential equation to have the format of the equation in
+Corollary~\ref*{cor:coolingDEsoln}:
+\begin{align*}
+\frac{dv}{dt}(t)&=-g-kv(t)\\
+&=-k\left(v(t)+\frac{g}{k}\right)\\
+&=-k\left(v(t)-\left(-\frac{g}{k}\right)\right)
+\intertext{So, we can use the corollary, with $K=-k$, $T=v$, and $A=-\dfrac{g}{k}$.}
+v(t)&=\left(v(0)-\left(-\frac{g}{k}\right)\right)e^{-kt}-\frac{g}{k}\\
+&=\left(v_0+\frac{g}{k}\right)e^{-kt}-\frac{g}{k}
+\end{align*}
+
+
+(b)
+\begin{align*}
+\lim\limits_{t\rightarrow\infty} v(t)
+&=\lim_{t \to \infty}\left[\left(v_0+\frac{g}{k}\right)e^{-kt}-\frac{g}{k}\right]\\
+&=\left(v_0+\frac{g}{k}\right)\left(\lim_{t \to \infty}e^{-kt}\right)-\frac{g}{k}
+\intertext{Since $k$ is \emph{positive}:}
+&=\left(v_0+\frac{g}{k}\right)\left(0\right)-\frac{g}{k}
+\\
+&=-\dfrac{g}{k}\end{align*}
+
+Remark: This means, as the object falls, instead of accelerating without bound, it approaches some maximum speed. The velocity is negative because the object is moving in the negative direction--downwards.
+\end{solution}

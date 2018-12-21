@@ -1,0 +1,840 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s2.2}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{question}
+The function $f(x)$ is shown. Select all options below that describe its derivative, $\ds\diff{f}{x}$:
+\begin{center}
+(a) constant \qquad (b) increasing
+\qquad (c) decreasing\\
+(d) always positive
+\qquad (e) always negative
+
+\begin{tikzpicture}
+\YEaxis{5}{3}
+\draw[thick] plot[domain=-4:4](\x,{\x/5*3}) node[below right]{$y=f(x)$};
+\end{tikzpicture}
+\end{center}
+\end{question}
+\begin{hint} What are the properties of $f'$ when $f$ is a line?
+\end{hint}
+\begin{answer}(a), (d)
+\end{answer}
+\begin{solution} The function shown is a line, so it has a constant slope--(a) . Since the function is always increasing, $f'$ is always positive, so also (d) holds. Remark: it does not matter that the function itself is sometimes negative; the slope is always positive because the function is always increasing. Also, since the slope is constant, $f'$ is neither increasing nor decreasing: it is the \emph{function} that is increasing, not its derivative.
+\end{solution}
+
+
+\begin{question}
+The function $f(x)$ is shown. Select all options below that describe its derivative, $\ds\diff{f}{x}$:
+\begin{center}
+(a) constant \qquad (b) increasing
+\qquad (c) decreasing\\
+ (d) always positive
+\qquad (e) always negative
+
+\begin{tikzpicture}
+\YEaxis{5}{3}
+\draw[thick] plot[smooth] coordinates{(-4,3) (-3,2.75) (-2,2) (-1,1.75) (0,1)};
+\draw[thick] plot[domain=0:4](\x,{exp(-\x)})node[below right]{$y=f(x)$};
+\end{tikzpicture}
+\end{center}
+\end{question}
+\begin{hint} Be very careful not to confuse $f$ and $f'$.
+\end{hint}
+\begin{answer} (e)
+\end{answer}
+\begin{solution} The function is always decreasing, so $f'$ is always negative, option (e). However, the function alternates between being more and less steep, so $f'$ alternates between increasing and decreasing several times, and no other options hold.
+
+ Remark: $f$ is always positive, but (d) does not hold!
+\end{solution}
+
+
+\begin{Mquestion}
+The function $f(x)$ is shown. Select all options below that describe its derivative, $\ds\diff{f}{x}$:
+\begin{center}
+(a) constant \qquad (b) increasing
+\qquad (c) decreasing\\ (d) always positive
+\qquad (e) always negative
+
+\begin{tikzpicture}
+\YEaxis{5}{3}
+\draw[thick] plot[domain=-4:4](\x,{\x*\x/25*9-3}) node[below right]{$y=f(x)$};
+\end{tikzpicture}
+\end{center}
+\end{Mquestion}
+\begin{hint} Be very careful not to confuse $f$ and $f'$.
+\end{hint}
+\begin{answer} (b)
+\end{answer}
+\begin{solution}
+At the left end of the graph, $f$ is decreasing rapidly, so $f'$ is a strongly negative number. Then as we move towards $x=0$, $f$ decreases less rapidly, so $f'$ is a less strongly negative number. As we pass 0, $f$ increases, so $f'$ is a positive number. As we move to the right, $f$ increases more and more rapidly, so $f'$ is an increasing positive number. This description tells us that $f'$ increases for the entire range shown. So (b) holds, but not (a) or (c). Since $f'$ is negative to the left of the $y$ axis, and positive to the right of it, also (d) and (e) do not hold.
+\end{solution}
+
+
+\begin{question}[2006H]
+State, in terms of a limit, what it means for
+$f(x) = x^3$ to be differentiable at $x = 0$.
+\end{question}
+\begin{answer}
+By definition, $f(x) = x^3$ is differentiable at $x = 0$
+if the limit
+$$
+\lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}
+=\lim_{h\rightarrow 0}\frac{h^3-0}{h}
+$$
+exists.
+\end{answer}
+\begin{solution}
+By definition, $f(x) = x^3$ is differentiable at $x = 0$
+if the limit
+$$
+\lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}
+=\lim_{h\rightarrow 0}\frac{h^3-0}{h}
+$$
+exists.
+\end{solution}
+
+
+
+\begin{Mquestion}For which values of $x$ does $f'(x)$ not exist?
+\begin{center}
+\begin{tikzpicture}
+\YEaxis{5.2}{3.2}
+\draw[thin, gray, dotted] (-5,-3) grid (5,3);
+\draw[thick] (-5,-2) sin (-3,1) cos (-1,2)--(3,1);
+\draw (3,1) node[vertex]{};
+\draw (3,-2) node[opendot]{}--(5,-2.5);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\end{tikzpicture}
+\end{center}
+\end{Mquestion}
+\begin{hint} The slope has to look ``the same" from the left and the right.
+\end{hint}
+\begin{answer} $x=-1$ and $x=3$
+\end{answer}
+\begin{solution}
+$f'(-1)$ does not exist, because to the left of $x=-1$ the slope is a pretty big positive number (looks like around $+1$) and to the right the slope is $-1/4$. Since the derivative involves a limit, that limit needs to match the limit from the left and the limit from the right. The sharp angle made by the graph at $x=-1$ indicates that the left and right limits do not match, so the derivative does not exist.
+
+$f'(3)$ also does not exist.  One way to see this is to notice that the function is discontinuous here. More viscerally, note that $f(3)=1$, so as we take secant lines with one endpoint $(3,1)$, and the other endpoint just to the right of $x=3$, we get slopes that are more and more strongly negative, as shown in the picture below. If we take the limit of the slopes of these secant lines as $x$ goes to $3$ from the right, we get $-\infty$. (This certainly doesn't match the slope from the left, which is $-\frac{1}{4}$.)
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\YEaxis{5.2}{3.2}
+\draw[thin, gray, dotted] (-5,-3) grid (5,3);
+\draw[thick] (-5,-2) sin (-3,1) cos (-1,2)--(3,1);
+\draw (3,1) node[vertex]{};
+\draw (3,-2) node[opendot]{}--(5,-2.5);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw[thick,orange] (3,1) --(4,-2.25) node[vertex]{};
+\draw[thick,orange] (3,1) --(5,-2.5) node[vertex]{};
+\draw[thick,red] (3,1) node[vertex]{}--(3.5,-2.125) node[vertex]{};
+\end{tikzpicture}
+\end{center}
+
+At $x=-3$, there is some kind of ``change" in the graph; however, it is a smooth curve, so the derivative exists here.
+\end{solution}
+
+
+\begin{Mquestion}\label{s2.2onesided1}
+Suppose $f(x)$ is a function defined at $x=a$ with \[\lim_{h \to 0^-}\frac{f(a+h)-f(a)}{h}=\lim_{h \to 0^+}\frac{f(a+h)-f(a)}{h}=1.\] True or false: $f'(a)=1$.
+\end{Mquestion}
+\begin{hint} Use the definition of the derivative, and what you know about limits.
+\end{hint}
+\begin{answer} True. (Contrast to Question~\ref{s2.2onesided2}.)
+\end{answer}
+\begin{solution}
+True.
+The definition of the derivative tells us that
+\[f'(a) = \lim_{h \to 0}\dfrac{f(a+h)-f(a)}{h},\] if it exists. We know from our work with limits that if both one-sided limits\\
+$\ds\lim_{h \to 0^-}\frac{f(a+h)-f(a)}{h}$ and $\ds\lim_{h \to 0^+}\frac{f(a+h)-f(a)}{h}$ exist and are equal to each other, then $\ds \lim_{h \to 0}\dfrac{f(a+h)-f(a)}{h}$ exists and has the same value as the one-sided limits. So, since the one-sided limits exist and are equal to one, we conclude $f'(a)$ exists and is equal to one.
+\end{solution}
+
+\begin{Mquestion}\label{s2.2onesided2}
+Suppose $f(x)$ is a function defined at $x=a$ with
+\[\lim_{x \to a^-}f'(x)=\lim_{x \to a^+}f'(x)=1.\] True or false: $f'(a)=1$.
+\end{Mquestion}
+\begin{hint} Consider continuity. \end{hint}
+\begin{answer} In general, false. (Contrast to Question~\ref{s2.2onesided1}.)
+\end{answer}
+\begin{solution}
+In general, this is false. The key problem that can arise is that $f(x)$ might not be continuous at $x=1$.  One example is the function
+\[f(x)=\left\{\begin{array}{ll}
+x&x<0\\
+x-1&x \geq 0
+\end{array}\right.\]
+where $f'(x)=1$ whenever $x \neq 0$  (so in particular, $\ds\lim_{x \to 0^-}f'(x)=\ds\lim_{x \to 0^+} f'(x)=1$) but $f'(0)$ does not exist.
+
+There are two ways to see that $f'(0)$ does not exist. One is to notice that $f$ is not continuous at $x=0$.
+
+\begin{center}\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thick] plot[domain=-3:0](\x,\x);
+\draw node[opendot]{};
+\draw[thick] plot[domain=0:3](\x,{\x-1}) node[right]{$y=f(x)$};
+\draw (0,-1) node[vertex]{};
+\end{tikzpicture}\end{center}
+
+Another way to see that $f'(0)$ does not exist is to use the definition of the derivative. Remember, in order for a limit to exist, both one-sided limits must exist. Let's consider the limit from the left. If $h \to 0^-$, then $h<0$, so $f(h)$ is equal to $h$ (not $h-1$).
+
+\begin{align*}
+\lim_{h \to 0^-}\frac{f(0+h)-f(0)}{h}&=\lim_{h \to 0^-}\frac{(h)-(-1)}{h}\\
+&=\lim_{h \to 0^-}\frac{h+1}{h}\\
+&=\lim_{h \to 0^-}1+\frac{1}{h}\\
+&=-\infty
+\intertext{In particular, this limit does not exist. Since the one-sided limit does not exist,}
+\lim_{h \to 0}\frac{f(0+h)-f(0)}{h}&=DNE
+\end{align*}
+and so $f'(0)$ does not exist.
+\end{solution}
+
+
+
+\begin{Mquestion}
+Suppose $s(t)$ is a function, with $t$ measured in seconds, and $s$ measured in metres. What are the units of $s'(t)$?
+\end{Mquestion}
+\begin{hint}
+Look at the definition of the derivative. Your answer will be a fraction.
+\end{hint}
+\begin{answer} metres per second
+\end{answer}
+\begin{solution}
+Using the definition of the derivative,
+\[s'(t)=\lim_{h \to 0}\frac{s(t+h)-s(t)}{h}\]
+The units of the numerator are meters, and the units of the denominator are seconds (since the denominator comes from the change in the \emph{input} of the function). So, the units of $s'(t)$ are metres per second.
+
+Remark: we learned that the derivative of a position function gives velocity. In this example, the position is given in metres, and the velocity is measured in metres per second.
+\end{solution}
+
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{question}Use the definition of the derivative to find the equation of the tangent line to the curve $y(x)=x^3+5$ at the point $(1,6)$.
+\end{question}
+\begin{hint} You need a point (given), and a slope (derivative).
+\end{hint}
+\begin{answer} $y-6=3(x-1)$, or $y=3x +3$
+\end{answer}
+\begin{solution}
+We can use point-slope form to get the equation of the line, if we have a point and its slope. The point is given: $(1,6)$. The slope is the derivative:
+\begin{align*}
+y'(1)&=\lim_{h \rightarrow 0}\frac{y(1+h)-y(1)}{h}\\
+&=\lim_{h \rightarrow 0}\frac{[(1+h)^3+5]-[1^3+5]}{h}\\
+&=\lim_{h \rightarrow 0}\frac{[1+3h+3h^2+h^3+5]-[1+5]}{h}\\
+&=\lim_{h \rightarrow 0}\frac{3h+3h^2+h^3}{h}\\
+&=\lim_{h \rightarrow 0}{3+3h+h^2}\\
+&=3
+\end{align*}
+So our slope is 3, which gives a line of equation
+$y-6=3(x-1)$.
+\end{solution}
+
+
+
+\begin{question}Use the definition of the derivative to find the derivative of
+$f(x)=\frac{1}{x}$.
+\end{question}
+\begin{hint} You'll need to add some fractions.
+\end{hint}
+\begin{answer} $\dfrac{-1}{x^2}$
+\end{answer}
+\begin{solution}
+We set up the definition of the derivative.
+\begin{align*}
+f'(x)&=\lim_{h \rightarrow 0}\frac{f(x+h)-f(x)}{h}\\
+&=\lim_{h \rightarrow 0}\frac{\frac{1}{x+h}-\frac{1}{x}}{h}\\
+&=\lim_{h \rightarrow 0}\frac{\frac{x}{x(x+h)}-\frac{x+h}{x(x+h)}}{h}\\
+&=\lim_{h \rightarrow 0}\frac{\frac{x-(x+h)}{x(x+h)}}{h}\\
+&=\lim_{h \rightarrow 0}\frac{\frac{-h}{x(x+h)}}{h}\\
+&=\lim_{h \rightarrow 0}\frac{-1}{x(x+h)}\\
+&=\frac{-1}{x^2}
+\end{align*}
+\end{solution}
+
+
+\begin{question}[2007H]
+Let $f(x) = x|x|$.
+Using the definition of the derivative, show that
+$f(x)$ is differentiable at $x = 0$.
+\end{question}
+\begin{hint}
+You don't have to take the limit from the left and right separately--things will cancel nicely.
+\end{hint}
+\begin{answer}
+ By definition
+$$
+f'(0)=\lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}
+     =\lim_{h\rightarrow 0}\frac{h|h|}{h}
+     =\lim_{h\rightarrow 0}|h|=0
+$$
+In particular, the limit exists, so the derivative exists (and is equal to zero).
+\end{answer}
+\begin{solution}
+ By definition
+$$
+f'(0)=\lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}
+     =\lim_{h\rightarrow 0}\frac{h|h|}{h}
+     =\lim_{h\rightarrow 0}|h|=0
+$$
+In particular, the limit exists, so the derivative exists (and is equal to zero).
+\end{solution}
+
+
+
+
+\begin{Mquestion}[1997A]Use the definition of the derivative to compute the derivative
+of the function $f(x)=\frac{2}{x+1}$.
+\end{Mquestion}
+\begin{hint} You might have to add fractions
+\end{hint}
+\begin{answer} $\dfrac{-2}{(x+1)^2}$
+\end{answer}
+\begin{solution}
+We set up the definition of the derivative.
+\begin{align*}
+f'(x)&=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+=\lim_{h\rightarrow 0}\frac{1}{h}\Big(\frac{2}{x+h+1}
+-\frac{2}{x+1}\Big)
+=\lim_{h\rightarrow 0}\frac{2}{h}\ \frac{(x+1)-(x+h+1)}{(x+h+1)(x+1)}\cr
+&=\lim_{h\rightarrow 0}\frac{2}{h}\ \frac{-h}{(x+h+1)(x+1)}
+=\lim_{h\rightarrow 0}\frac{-2}{(x+h+1)(x+1)}
+=\frac{-2}{(x+1)^2}
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}[1996D]
+Use the definition of the derivative to compute the derivative
+of the function $f(x)=\frac{1}{x^2+3}$.
+\end{question}
+\begin{answer} {$\dfrac{-2x}{[x^2+3]^2}$}
+\end{answer}
+\begin{solution}
+\begin{align*}
+f'(x)&=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+=\lim_{h\rightarrow 0}\frac{1}{h}\Big(\frac{1}{(x+h)^2+3}
+-\frac{1}{x^2+3}\Big)
+=\lim_{h\rightarrow 0}\frac{1}{h}\frac{x^2-(x+h)^2}{[(x+h)^2+3][x^2+3]}\cr
+&=\lim_{h\rightarrow 0}\frac{1}{h}\frac{-2xh-h^2}{[(x+h)^2+3][x^2+3]}
+=\lim_{h\rightarrow 0}\frac{-2x-h}{[(x+h)^2+3][x^2+3]}
+=\boxed{\frac{-2x}{[x^2+3]^2}}
+\end{align*}
+\end{solution}
+
+
+
+
+
+
+
+\begin{question}Use the definition of the derivative to find the slope of the tangent line to the curve\\ $f(x)=x\log_{10}(2x+10)$ at the point $x=0$.
+\end{question}
+\begin{hint} Your limit should be easy.
+\end{hint}
+\begin{answer} 1
+\end{answer}
+\begin{solution} The slope of the tangent line is the derivative.
+We set this up using the same definition of the derivative that we always do. This limit is hard to take for general $x$, but easy when $x=0$.
+\begin{align*}
+f'(0)&=\lim_{h \rightarrow 0} \frac{f(0+h)-f(0)}{h}\\
+&=\lim_{h \rightarrow 0} \frac{h\log_{10}(2h+10)-0}{h}\\
+&=\lim_{h \rightarrow 0} \log_{10}(2h+10)=\log_{10}(10)=1
+\end{align*}
+So, the slope of the tangent line is 1.
+\end{solution}
+
+
+
+
+\begin{question}[1998H]
+Compute the derivative of $f(x)=\frac{1}{x^2}$ directly
+from the definition.
+\end{question}
+\begin{hint} add fractions
+\end{hint}
+\begin{answer} $f'(x)=-\dfrac{2}{x^3}$
+\end{answer}
+\begin{solution}
+\begin{align*}
+f'(x)&=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+=\lim_{h\rightarrow 0}\frac{\frac{1}{(x+h)^2}-\frac{1}{x^2}}{h}
+=\lim_{h\rightarrow 0}\frac{x^2-(x+h)^2}{(x+h)^2x^2h}
+=\lim_{h\rightarrow 0}\frac{-2xh-h^2}{(x+h)^2x^2h}\cr
+&=\lim_{h\rightarrow 0}\frac{-2x-h}{(x+h)^2x^2}=\frac{-2x}{x^4}
+=-\frac{2}{x^3}
+\end{align*}
+\end{solution}
+
+
+
+
+
+\begin{Mquestion}[2006H]
+Find the values of the constants $a$ and $b$ for which
+\begin{align*}
+f(x) = \left\{
+\begin{array}{lc}
+	 x^2 & x\le 2\\
+               ax + b   & x > 2
+               \end{array}\right.
+\end{align*}
+is differentiable everywhere.
+
+Remark: In the text, you have already learned the derivatives of $x^2$ and $ax+b$. In this question, you are only asked to find the values of $a$ and $b$---not to justify how you got them---so you don't have to use the definition of the derivative. However, on an exam, you might be asked to justify your answer, in which case you would show how to differentiate the two branches of $f(x)$ using the definition of a derivative.
+\end{Mquestion}
+\begin{hint}
+For $f$ to be differentiable at $x=2$, two things must be true: it must be continuous at $x=2$, and the derivative from the right must equal the derivative from the left.
+\end{hint}
+\begin{answer}
+$a=4$, $b=-4$
+\end{answer}
+\begin{solution}
+When $x$ is not equal to 2, then the function is differentiable-- the only place we have to worry about is when $x$ is exactly 2.
+
+In order for $f$ to be differentiable at $x=2$, it must also
+be continuous at $x=2$. This forces $x^2\big|_{x=2}=\big[ax+b\big]_{x=2}$
+or \[2a+b=4.\]
+
+In order for a limit to exist, the left- and right-hand limits must exist and be equal to each other. Since a derivative is a limit, in order for $f$ to be differentiable at $x=2$, the left hand
+derivative of $ax+b$ at $x=2$ must be
+the same as the right hand derivative of $x^2$ at $x=2$.
+Since $ax+b$ is a line, its derivative is $a$ everywhere. We've already seen the derivative of $x^2$ is $2x$, so we need
+\[a=2x\big|_{x=2}=4.\]
+
+So, the values of $a$ and $b$ that makes $f$ differentiable everywhere are $a=4$ and $b=-4$.
+\end{solution}
+
+
+
+
+
+\begin{question}[2009H]
+Use the definition of the derivative to compute
+$f'(x)$ if $f(x) = \sqrt{1 + x}$. Where does $f'(x)$ exist?
+\end{question}
+\begin{hint}
+After you plug in $f(x)$ to the definition of a derivative, you'll want to multiply and divide by the conjugate $\sqrt{1+x+h}+\sqrt{1+x}$.
+\end{hint}
+\begin{answer} $f'(x)=\dfrac{1}{2\sqrt{1+x}}$ when $x>-1$; $f'(x)$ does not exist when $x \leq -1$.
+\end{answer}
+\begin{solution}
+We plug in $f(x)$ to the definition of a derivative. To evaluate the limit, we multiply and divide by the conjugate of the numerator, then simplify.
+\begin{align*}
+f'(x)=\lim\limits_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+&=\lim\limits_{h\rightarrow 0}\frac{\sqrt{1+x+h}-\sqrt{1+x}}{h}\\
+&=\lim\limits_{h\rightarrow 0}\frac{\sqrt{1+x+h}-\sqrt{1+x}}{h}
+\left(\frac{\sqrt{1+x+h}+\sqrt{1+x}}{\sqrt{1+x+h}+\sqrt{1+x}}\right)\\
+&=\lim\limits_{h\rightarrow 0}\frac{(1+x+h)-(1+x)}{h(\sqrt{1+x+h}+\sqrt{1+x})}\\
+&=\lim\limits_{h\rightarrow 0}\frac{h}{h(\sqrt{1+x+h}+\sqrt{1+x})}\\
+&=\lim\limits_{h\rightarrow 0}\frac{1}{\sqrt{1+x+h}+\sqrt{1+x}}\\
+&=\frac{1}{\sqrt{1+x+0}+\sqrt{1+x}}=\frac{1}{2\sqrt{1+x}}
+\end{align*}
+
+The domain of the function is $[-1,\infty)$. In particular, $f(x)$ is defined when $x=-1$. However, $f'(x)$ is not defined when $x=-1$, so $f'(x)$ only exists over $(-1,\infty)$.
+
+Remark: $\ds\lim_{x \to -1^+}f'(x)=\infty$, so the tangent line to $f(x)$ at the point $x=-1$ has a vertical slope.
+\end{solution}
+
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{question} Use the definition of the derivative to find the velocity of an object whose position is given by the function $s(t)=t^4-t^2$.
+\end{question}
+\begin{hint} From Section~\ref*{sec velocity}, %1.2
+compare the definition of velocity to the definition of a derivative. When you're finding the derivative, you'll need to cancel a lot on the numerator, which you can do by expanding the polynomials.
+\end{hint}
+\begin{answer} $v(t)=4t^3-2t$
+\end{answer}
+\begin{solution}
+From Section~\ref*{sec velocity}, %1.2
+we see that the velocity is exactly the derivative.
+\begin{align*}
+v(t)&=\lim_{h \rightarrow 0}\frac{s(t+h)-s(t)}{h}\\
+&=\lim_{h \rightarrow 0}\frac{(t+h)^4-(t+h)^2-t^4+t^2}{h}\\
+&=\lim_{h \rightarrow 0}\frac{(t^4+4t^3h+6t^2h^2+4th^3+h^4)-(t^2+2th+h^2)-t^4+t^2}{h}
+\\
+&=\lim_{h \rightarrow 0}\frac{4t^3h+6t^2h^2+4th^3+h^4-2th-h^2}{h}
+\\
+&=\lim_{h \rightarrow 0}4t^3+6t^2h+4th^2+h^3-2t-h\\
+&=4t^3-2t
+\end{align*}
+So, the velocity is given by $v(t)=4t^3-2t$.
+\end{solution}
+
+
+\begin{Mquestion}[2015Q]
+ Determine whether the derivative of following function exists at
+$x=0$.
+\begin{align*}
+f(x) &=\begin{cases}
+  x \cos x & \text{ if }  x\ge 0\\
+  \sqrt{x^2+x^4} & \text{ if } x< 0
+\end{cases}
+\end{align*}
+You must justify your answer using the definition of a derivative.
+\end{Mquestion}
+\begin{hint} You'll need to look at limits from the left and right. The fact that $f(0)=0$ is useful for your computation. Recall that if $x<0$ then $\sqrt{x^2}=|x|=-x$.
+\end{hint}
+\begin{answer} No, it does not.
+\end{answer}
+\begin{solution}
+The function is differentiable at $x=0$ if the following limit:
+$$\lim_{x\to 0}\frac{f(x)-f(0)}{x-0} = \lim_{x\to 0}\frac{f(x)-0}{x}=\lim_{x\to
+0} \frac{f(x)}{x}$$
+exists (note that we used the fact that $f(0)=0$ as per the definition of the
+first branch which includes the point $x=0$). We start by computing the left limit. For this computation, recall that if $x<0$ then $\sqrt{x^2}=|x|=-x$.
+$$\lim_{x\to 0^-}\frac{f(x)}{x}=\lim_{x\to 0^-}\frac{\sqrt{x^2+x^4}}{x}=\lim_{x\to
+0^-} \frac{\sqrt{x^2}\sqrt{1+x^2}}{x}=\lim_{x \rightarrow 0}\frac{-x\sqrt{1+x^2}}{x}=-1$$
+Now, from the right:
+$$\lim_{x\to 0^+}\frac{x\cos x}{x}=\lim_{x\to
+0^+}\cos x = 1.$$
+Since the limit from the left does not equal the limit from the right, the derivative does not exist at $x=0$.
+\end{solution}
+
+
+\begin{question}[2015Q]
+ Determine whether the derivative of the following function exists at
+$x=0$
+\begin{align*}
+f(x) &=\begin{cases}
+  x \cos x & \text{ if }  x\le 0\\
+  \sqrt{1+x}-1 & \text{ if } x> 0
+\end{cases}
+\end{align*}
+You must justify your answer using the definition of a derivative.
+\end{question}
+\begin{hint} You'll need to look at limits from the left and right. The fact that $f(0)=0$ is useful for your computation.
+\end{hint}
+\begin{answer} No, it does not.
+\end{answer}
+\begin{solution}
+The function is differentiable at $x=0$ if the following limit:
+$$\lim_{x\to 0}\frac{f(x)-f(0)}{x-0} = \lim_{x\to 0}\frac{f(x)-0}{x}=\lim_{x\to
+0} \frac{f(x)}{x}$$
+exists (note that we used the fact that $f(0)=0$ as per the definition of the
+first branch which includes the point $x=0$).
+
+We start by computing the left limit.
+\begin{align*}
+\lim_{x\to 0^-}\frac{f(x)}{x}=\lim_{x\to 0^-} \frac{x\cos x}{x}
+=\lim_{x\to 0^-} \cos x = 1.
+\end{align*}
+Now, from the right:
+\begin{align*}
+\lim_{x\to 0^+}\frac{\sqrt{1+x}-1}{x}
+&= \lim_{x\to 0^+}\frac{\sqrt{1+x}-1}{x} \cdot \frac{\sqrt{1+x}+1}{\sqrt{1+x}+1} \\
+&= \lim_{x\to 0^+} \frac{1+x-1}{x(\sqrt{1+x}+1)}
+= \lim_{x\to 0^+} \frac{1}{\sqrt{1+x}+1} = \frac{1}{2}
+\end{align*}
+Since the limit from the left does not equal the limit from the right, the derivative
+does
+not exist at $x=0$.
+\end{solution}
+
+
+\begin{question}[2015Q]
+Determine whether the derivative of the following function exists at
+$x=0$
+\begin{align*}
+f(x) &=\begin{cases}
+  x^3-7x^2 & \text{ if }  x\le 0\\
+  x^3 \cos\left(\frac{1}{x}\right) & \text{ if } x> 0
+\end{cases}
+\end{align*}
+You must justify your answer using the definition of a derivative.
+\end{question}
+\begin{hint} You'll need to look at limits from the left and right. The fact that $f(0)=0$ is useful for your computation.
+\end{hint}
+\begin{answer} Yes, it is.
+\end{answer}
+\begin{solution}
+The function is differentiable at $x=0$ if the following limit:
+\begin{align*}
+\lim_{x\to 0}\frac{f(x)-f(0)}{x-0} = \lim_{x\to 0}\frac{f(x)-0}{x}=\lim_{x\to 0}
+\frac{f(x)}{x}
+\end{align*}
+exists (note that we used the fact that $f(0)=0$ as per the definition of the first branch
+which includes the point $x=0$). We compute left and right limits; so
+\begin{align*}
+\lim_{x\to 0^-}\frac{f(x)}{x}=\lim_{x\to 0^-}\frac{x^3-7x^2}{x}=\lim_{x\to 0^-}
+x^2-7x=0
+\end{align*}
+and
+\begin{align*}
+\lim_{x\to 0^+}\frac{x^3\cos\left(\frac{1}{x}\right)}{x}=\lim_{x\to 0^+}x^2\cdot
+\cos\left(\frac{1}{x}\right).
+\end{align*}
+This last limit equals $0$ by the Squeeze Theorem since
+\begin{align*}
+-1\le \cos\left(\frac{1}{x}\right)\le 1
+\end{align*}
+and so,
+\begin{align*}
+-x^2\le x^2\cdot \cos\left(\frac{1}{x}\right)\le x^2,
+\end{align*}
+where in these inequalities we used the fact that $x^2\ge 0$. Finally, since $\lim_{x\to 0^+}-x^2=\lim_{x\to 0^+}x^2=0$, the Squeeze Theorem
+yields that also $\lim_{x\to 0^+}x^2\cos\left(\frac{1}{x}\right) =0$, as claimed.
+
+Since the left and right limits match (they're both equal to $0$), we conclude that indeed
+$f(x)$ is differentiable at $x=0$ (and its derivative at $x=0$ is actually equal to $0$).
+\end{solution}
+
+
+\begin{question}[2015Q]
+Determine whether the derivative of the following function exists at
+$x=1$
+\begin{align*}
+f(x) &=\begin{cases}
+  4x^2-8x+4 & \text{ if }  x\le 1\\
+  (x-1)^2\sin\left(\dfrac{1}{x-1}\right) & \text{ if } x> 1
+\end{cases}
+\end{align*}
+You must justify your answer using the definition of a derivative.
+\end{question}
+\begin{hint} You'll need to look at limits from the left and right. The fact that $f(1)=0$ is useful for your computation.
+\end{hint}
+\begin{answer}
+Yes, it is.
+\end{answer}
+\begin{solution}
+The function is differentiable at $x=1$ if the following limit:
+$$\lim_{x\to 1}\frac{f(x)-f(1)}{x-1} = \lim_{x\to 1}\frac{f(x)-0}{x-1}=\lim_{x\to 1}
+\frac{f(x)}{x-1}$$
+exists (note that we used the fact that $f(1)=0$ as per the definition of the first branch which includes the point $x=0$). We compute left and right limits; so
+$$\lim_{x\to 1^-}\frac{f(x)}{x-1}=\lim_{x\to 1^-}\frac{4x^2-8x+4}{x-1}=\lim_{x\rightarrow 1^-}\frac{4(x-1)^2}{x-1} =\lim_{x\to 1^-} 4(x-1)=0$$
+and
+$$\lim_{x\to 1^+}\frac{(x-1)^2\sin\left(\frac{1}{x-1}\right)}{x-1}=\lim_{x\to 1^+}(x-1)\cdot \sin\left(\frac{1}{x-1}\right).$$
+This last limit equals $0$ by the Squeeze Theorem since
+$$-1\le \sin\left(\frac{1}{x-1}\right)\le 1$$
+and so,
+$$ -(x-1)\le (x-1)\cdot \sin\left(\frac{1}{x-1}\right)\le x-1,$$
+where in these inequalities we used the fact that $x\to 1^+$ yields positive values for
+$x-1$. Finally, since $\lim_{x\to 1^+}-x+1=\lim_{x\to 1^+}x-1=0$, the Squeeze Theorem
+yields that also $\lim_{x\to 1^+}(x-1)\sin\left(\frac{1}{x-1}\right) =0$, as claimed.
+
+Since the left and right limits match (they're both equal to $0$), we conclude that indeed $f(x)$ is differentiable at $x=1$ (and its derivative at $x=1$ is actually equal to $0$).
+\end{solution}
+
+
+
+
+\begin{Mquestion}
+Sketch a function $f(x)$ with $f'(0)=-1$ that takes the following values:
+
+~\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$\mathbf{x}$&$-1$&$-\frac{1^{ }}{2_{ }}$&$-\frac{1}{4}$&$-\frac{1}{8}$
+&$0$
+&$\frac{1}{8}$&$\frac{1}{4}$&$\frac{1}{2}$&$1$\\
+\hline
+$\mathbf{f(x)}$&$-1$&$-\frac{1^{ }}{2_{ }}$&$-\frac{1}{4}$&$-\frac{1}{8}$
+&$0$
+&$\frac{1}{8}$&$\frac{1}{4}$&$\frac{1}{2}$&$1$\\ \hline
+\end{tabular}\end{center}~
+
+Remark: you can't always guess the behaviour of a function from its points, even if the points seem to be making a clear pattern.
+\end{Mquestion}
+\begin{hint} There's lots of room between $0$ and $\frac{1}{8}$; see what you can do with it.
+\end{hint}
+\begin{answer} Many answers are possible; here is one.
+\begin{center}
+\begin{tikzpicture}
+\YEaxis{4.2}{4.2}
+\foreach \x in {1,1/2,1/4,1/8,0}{
+	\draw (4*\x,4*\x) node[vertex]{};
+	\draw (-\x*4,-\x*4) node[vertex]{};}
+\draw (4,.2)--(4,-.2) node[below]{1};
+\draw (.2,4)--(-.2,4) node[left]{1};
+\draw[thick] (-4,-4)--(-1/2,-1/2) (1/2,1/2)--(4,4);
+\draw[thick] (-1/2,-1/2) sin (-1/4,1/4) cos (0,0) sin (1/4,-1/4) cos (1/2,1/2);
+\end{tikzpicture}
+\end{center}
+\end{answer}
+\begin{solution}
+Many answers are possible; here is one.
+\begin{center}
+\begin{tikzpicture}
+\YEaxis{4.2}{4.2}
+\foreach \x in {1,1/2,1/4,1/8,0}{
+	\draw (4*\x,4*\x) node[vertex]{};
+	\draw (-\x*4,-\x*4) node[vertex]{};}
+\draw (4,.2)--(4,-.2) node[below]{1};
+\draw (.2,4)--(-.2,4) node[left]{1};
+\draw[thick] (-4,-4)--(-1/2,-1/2) (1/2,1/2)--(4,4);
+\draw[thick] (-1/2,-1/2) sin (-1/4,1/4) cos (0,0) sin (1/4,-1/4) cos (1/2,1/2);
+\end{tikzpicture}
+\end{center}
+The key is to realize that the few points you're given suggest a pattern, but don't guarantee it. You only know nine points; anything can happen in between.
+\end{solution}
+
+
+
+
+\begin{question}Let $p(x)=f(x)+g(x)$, for some functions $f$ and $g$ whose derivatives exist. Use limit laws and the definition of a derivative to show that $p'(x)=f'(x)+g'(x)$.
+
+Remark: this is called the sum rule, and we'll learn more about it in Lemma~\ref*{thm:DIFFaddsub}.
+\end{question}
+\begin{hint} Set up your usual limit, then split it into two pieces
+\end{hint}
+\begin{answer}\begin{align*}
+p'(x) &= \lim_{x \rightarrow 0} \frac{p(x+h)-p(x)}{h}\\
+&= \lim_{x \rightarrow 0} \frac{f(x+h)+g(x+h)-f(x)-g(x)}{h}\\
+&= \lim_{x \rightarrow 0} \frac{f(x+h)-f(x)+g(x+h)-g(x)}{h}\\
+&= \lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}+
+\frac{g(x+h)-g(x)}{h}\\
+(*)&= \left[\lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}\right]+ \left[\lim_{x \rightarrow 0}
+\frac{g(x+h)-g(x)}{h}\right]\\
+&= f'(x)+g'(x)
+\end{align*}
+At step ($*$), we use the limit law that $\displaystyle\lim_{x \rightarrow a} F(x)+G(x) = \displaystyle\lim_{x \rightarrow a} F(x)+\displaystyle\lim_{x \rightarrow a}G(x)$, as long as  $\displaystyle\lim_{x \rightarrow a} F(x)$ and $\displaystyle\lim_{x \rightarrow a}G(x)$ exist. Because the problem states that $f'(x)$ and $g'(x)$ exist, we know that $\displaystyle\lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}$ and $\displaystyle\lim_{x \rightarrow 0}
+\frac{g(x+h)-g(x)}{h}$ exist, so our work is valid.
+\end{answer}
+\begin{solution}
+\begin{align*}
+p'(x) &= \lim_{x \rightarrow 0} \frac{p(x+h)-p(x)}{h}\\
+&= \lim_{x \rightarrow 0} \frac{f(x+h)+g(x+h)-f(x)-g(x)}{h}\\
+&= \lim_{x \rightarrow 0} \frac{f(x+h)-f(x)+g(x+h)-g(x)}{h}\\
+&= \lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}+
+\frac{g(x+h)-g(x)}{h}\\
+(*)&= \left[\lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}\right]+ \left[\lim_{x \rightarrow 0}
+\frac{g(x+h)-g(x)}{h}\right]\\
+&= f'(x)+g'(x)
+\end{align*}
+At step ($*$), we use the limit law that $\displaystyle\lim_{x \rightarrow a} F(x)+G(x) = \displaystyle\lim_{x \rightarrow a} F(x)+\displaystyle\lim_{x \rightarrow a}G(x)$, as long as  $\displaystyle\lim_{x \rightarrow a} F(x)$ and $\displaystyle\lim_{x \rightarrow a}G(x)$ exist. Because the problem states that $f'(x)$ and $g'(x)$ exist, we know that $\displaystyle\lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}$ and $\displaystyle\lim_{x \rightarrow 0}
+\frac{g(x+h)-g(x)}{h}$ exist, so our work is valid.
+\end{solution}
+
+
+\begin{question}Let $f(x)=2x$, $g(x)=x$, and $p(x)=f(x) \cdot g(x)$.
+\begin{enumerate}[(a)]
+\item\label{s2.2prod1} Find $f'(x)$ and $g'(x)$.
+\item\label{s2.2prod2} Find $p'(x)$.
+\item\label{s2.2prod3} Is $p'(x)=f'(x) \cdot g'(x)$?
+\end{enumerate}
+In Theorem~\ref*{thm:DIFFprodRule}, you'll learn a rule for calculating the derivative of a product of two functions.
+\end{question}
+\begin{hint} You don't need the definition of the derivative for a line.\end{hint}
+\begin{answer}
+\eqref{s2.2prod1} $f'(x)=2$ and $g'(x)=1$
+\qquad \eqref{s2.2prod2} $p'(x)=4x$
+\qquad \eqref{s2.2prod3} no
+\end{answer}
+\begin{solution}
+\eqref{s2.2prod1}
+Since $y=f(x)=2x$ and $y=g(x)=x$ are straight lines, we don't need the definition of the derivative (although you can use it if you like). $f'(x)=2$ and $g'(x)=1$.
+
+\eqref{s2.2prod2} $p(x)=2x^2$, so $p(x)$ is not a line: we use the definition of a derivative to find $p'(x)$.
+\begin{align*}
+p'(x)&=\lim_{h \rightarrow 0} \frac{p(x+h)-p(x)}{h}\\
+&=\lim_{h \rightarrow 0} \frac{2(x+h)^2-2x^2}{h}\\
+&=\lim_{h \rightarrow 0} \frac{2x^2+4xh+2h^2-2x^2}{h}\\
+&=\lim_{h \rightarrow 0} \frac{4xh+2h^2}{h}\\
+&=\lim_{h \rightarrow 0} {4x+2h}\\&=4x
+\end{align*}
+
+\eqref{s2.2prod3} No, $p'(x) = 4x \ne 2\cdot 1 = f'(x)\cdot g'(x)$. In general, the derivative of a product is not the same as the derivative of the functions being multiplied.
+\end{solution}
+
+
+\begin{Mquestion}[2006H]
+There are two distinct straight lines that pass
+through the point $(1,-3)$ and are tangent to the curve $y = x^2$.
+Find equations for these two lines.
+
+Remark: the point $(1,-3)$ does not lie on the curve $y=x^2$.
+\end{Mquestion}
+\begin{hint}
+A generic point on the curve has coordinates $(\alpha, \alpha^2)$. In terms of $\alpha$, what is the equation of the tangent line to the curve at the point $(\alpha, \alpha^2)$? What does it mean for $(1,-3)$ to be on that line?
+\end{hint}
+\begin{answer}
+$y=6x-9$ and $y=-2x-1$
+\end{answer}
+\begin{solution}
+We know that $y'=2x$. So, if we choose a point $(\alpha,\alpha^2)$ on the curve $y=x^2$,
+then the tangent line to the curve at that point has slope $2\alpha$. That is, the tangent line has equation
+\begin{align*}
+(y-\alpha^2)&=2\alpha(x-\alpha)\\
+\mbox{simplified, } \qquad y&=(2\alpha)x-\alpha^2
+\intertext{So, if $(1,-3)$ is on the tangent line, then}
+-3&=(2\alpha)(1)-\alpha^2\\
+\iff\qquad 0&=\alpha^2-2\alpha-3\\
+\iff\qquad 0&=(\alpha-3)(\alpha+1)\\
+\iff\qquad \alpha&=3, \quad\mbox{or}\qquad \alpha=-1.
+\intertext{So, the tangent lines  $y=(2\alpha)x-\alpha^2$ are}
+y&=6x-9 \quad\mbox{and}\quad y=-2x-1.
+\end{align*}
+\end{solution}
+
+
+\begin{question}[2009H]
+ For which values of $a$ is the function
+\[
+f(x) =\left\{\begin{array}{ll}
+	0 & x\le 0\\
+             x^a \sin\frac{1}{x} & x > 0\end{array}\right.
+\]
+differentiable at 0?
+\end{question}
+\begin{hint}
+Remember for a constant $n$, \[\ds\lim_{h \to 0} h^{n} = \left\{\begin{array}{ll}
+0&n>0\\
+1&n=0\\
+DNE&n<0
+\end{array}\right.\]
+\end{hint}
+\begin{answer} $a>1$
+\end{answer}
+\begin{solution}
+Using the definition of the derivative, $f$ is differentiable at $0$ if and only if
+\begin{align*}
+\lim_{h \to 0}\frac{f(h)-f(0)}{h}&
+\intertext{exists. In particular, this means $f$ is differentiable at $0$ if and only if both one-sided limits exist and are equal to each other. }\intertext{When $h<0$, $f(h)=0$, so}
+\lim_{h \to 0^-}\frac{f(h)-f(0)}{h}&=\lim_{h \to 0^-}\frac{0-0}{h}=0
+\intertext{So, $f$ is differentiable at $x=0$ if and only if}
+\lim_{h \to 0^+}\frac{f(h)-f(0)}{h}&=0.
+\intertext{ To evaluate the  limit above, we note $f(0)=0$ and, when $h>0$, $f(h)=h^a\sin\left(\frac{1}{h}\right)$, so}
+\lim_{h \to 0^+}\frac{f(h)-f(0)}{h}&=\lim_{h \to 0^+}\frac{h^a\sin\left(\frac{1}{h}\right)}{h}\\
+&=\lim_{h \to 0^+}h^{a-1}\sin\left(\frac{1}{h}\right)
+\intertext{We will spend the rest of this solution evaluating the limit above for different values of $a$, to find when it is equal to zero and when it is not. Let's consider the different values that could be taken by $h^{a-1}$.}
+\end{align*}
+\begin{itemize}
+\item If $a=1$, then $a-1=0$, so $h^{a-1}=h^0=1$ for all values of $h$. Then
+\[\lim_{h \to 0^+}h^{a-1}\sin\left(\frac{1}{h}\right)=\lim_{h \to 0^+}\sin\left(\frac{1}{h}\right)=DNE\]
+(Recall that the function $\sin\left(\frac{1}{x}\right)$ oscillates faster and faster as $x$
+goes to 0. We first saw this behaviour in Example~\ref*{eg sinpix}.)
+
+\item If $a<1$, then $a-1<0$, so $\ds\lim_{h \to 0^+}h^{a-1}=\infty$. (Since we have a negative exponent, we are in effect \emph{dividing  by} a smaller and smaller positive number. For example, if $a=\frac{1}{2}$, then $\ds\lim_{h \to 0^+}h^{a-1}=\ds\lim_{h \to 0^+}h^{-\frac{1}{2}}=\ds\lim_{h \to 0^+}\frac{1}{\sqrt{h}}=\infty$.) Since $\sin\left(\frac{1}{x}\right)$ goes back and forth between one and negative one,
+\[\lim_{h \to 0^+}h^{a-1}\sin\left(\frac{1}{x}\right)=DNE\]
+since as $h$ goes to 0, the function oscillates between positive and negative numbers of ever-increasing magnitude.
+
+\item If $a>1$, then $a-1>0$, so $\ds\lim_{h \to 0^+}h^{a-1}=0$. Although $\sin\left(\frac{1}{x}\right)$ oscillates wildly near $x=0$, it is bounded by $-1$ and $1$. So,
+\[(-1)h^{a-1} \leq h^{a-1}\sin\left(\frac{1}{h}\right) \leq h^{a-1}\]
+Since both $\ds\lim_{h \to 0^+} (-1)h^{a-1}=0$ and $\ds\lim_{h \to 0^+} h^{a-1}=0$, by the Squeeze Theorem, \[\ds\lim_{h \to 0^+} h^{a-1}\sin\left(\frac{1}{x}\right)=0\] as well.
+\end{itemize}
+
+In the above cases, we learned \\
+$\ds\lim_{h \to 0^+}\frac{f(h)-f(0)}{h}=\ds\lim_{h \to 0^+} h^{a-1}\sin\left(\frac{1}{x}\right)=0$ when $a>1$, and \\
+$\ds\lim_{h \to 0^+}\frac{f(h)-f(0)}{h}=\ds\lim_{h \to 0^+} h^{a-1}\sin\left(\frac{1}{x}\right)\neq 0$ when $a \leq 1$.\\
+So, $f$ is differentiable at $x=0$ if and only if $a>1$.
+\end{solution}

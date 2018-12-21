@@ -1,0 +1,657 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s1.6}
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+\begin{question}Give an example of a function (you can write a formula, or sketch a graph) that has infinitely many infinite discontinuities.
+\end{question}
+\begin{hint} Try a repeating pattern.
+\end{hint}
+\begin{answer} Many answers are possible; the tangent function behaves like this.
+\end{answer}
+\begin{solution} Many answers are possible; the tangent function behaves like this.
+\end{solution}
+
+
+\begin{question}
+When I was born, I was less than one meter tall. Now, I am more than one meter tall.
+What is the conclusion of the Intermediate Value Theorem about my height?
+\end{question}
+\begin{hint} $f$ is my height.
+\end{hint}
+\begin{answer} At some time between my birth and now, I was exactly one meter tall.
+\end{answer}
+\begin{solution} If we let $f$ be my height, the time of my birth is $a$, and now is $b$, then we know that $f(a) \leq 1 \leq f(b)$. It is reasonable to assume that my height is a continuous function. So by the IVT, there is some value $c$ between $a$ and $b$ where $f(c)=1$. That is, there is some time (we called it $c$) between my birth and today when I was exactly one meter tall.
+
+Notice the IVT does not say precisely what day I was one meter tall; it only guarantees that such a day occurred between my birth and today.
+\end{solution}
+
+
+\begin{Mquestion}
+Give an example (by sketch or formula) of a function $f(x)$, defined on the interval $[0,2]$, with $f(0)=0$, $f(2)=2$, and $f(x)$ never equal to 1. Why does this not contradict the Intermediate Value Theorem?
+\end{Mquestion}
+\begin{hint} The intermediate value theorem only works for a certain kind of function.
+\end{hint}
+\begin{answer} One example is $f(x) = \left\{  \begin{array}{ll}
+0&\mbox{when }0 \leq x \leq 1\\
+2&\mbox{when }1<x \leq 2
+\end{array}\right.$. The IVT only guarantees $f(c)=1$ for some $c$ in $[0,2]$ when $f$ is \emph{continuous} over $[0,2]$. If $f$ is not continuous, the IVT says nothing.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{.5}{4.5}{.5}{2.5}
+\draw[thick] (0,0)node[vertex]{}--(2,0) node[vertex]{};
+\draw[thick] (2,2) node[opendot]{}--(4,2) node[vertex]{};
+\end{tikzpicture}\end{center}
+\end{answer}
+\begin{solution} One example is $f(x) = \left\{  \begin{array}{ll}
+0&\mbox{when }0 \leq x \leq 1\\
+2&\mbox{when }1<x \leq 2
+\end{array}\right.$. The IVT only guarantees $f(c)=1$ for some $c$ in $[0,2]$ when $f$ is \emph{continuous} over $[0,2]$. If $f$ is not continuous, the IVT says nothing.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{.5}{4.5}{.5}{2.5}
+\draw[thick] (0,0)node[vertex]{}--(2,0) node[vertex]{};
+\draw[thick] (2,2) node[opendot]{}--(4,2) node[vertex]{};
+\end{tikzpicture}\end{center}
+\end{solution}
+
+
+\begin{Mquestion} Is the following a valid statement?
+\begin{quote}Suppose $f$ is a continuous function over $[10,20]$, $f(10)=13$, and $f(20)=-13$. Then $f$ has a zero between $x=10$ and $x=20$.\end{quote}
+\end{Mquestion}
+\begin{answer} Yes
+\end{answer}
+\begin{solution} Yes. This is a straightforward application of IVT.
+\end{solution}
+
+\begin{Mquestion} Is the following a valid statement?
+\begin{quote} Suppose $f$ is a continuous function over $[10,20]$, $f(10)=13$, and $f(20)=-13$. Then $f(15)=0$.\end{quote}
+\end{Mquestion}
+\begin{answer} No
+\end{answer}
+\begin{solution} No. IVT says that $f(x)=0$ for some $x$ between $10$ and $20$, but it doesn't have to be \emph{exactly half way} between.
+\end{solution}
+
+
+\begin{Mquestion} Is the following a valid statement?
+\begin{quote} Suppose $f$ is a function over $[10,20]$, $f(10)=13$, and $f(20)=-13$, and $f$ takes on every value between $-13$ and $13$. Then $f$ is continuous.\end{quote}
+\end{Mquestion}
+\begin{answer}  No
+\end{answer}
+\begin{solution} No. IVT says nothing about functions that are not guaranteed to be continuous at the outset. It's quite easy to construct a function that is as described, but not continuous. For example, the function pictured below, whose equation format is somewhat less enlightening than its graph: $f(x)=\left\{\begin{array}{ll}
+-\frac{26}{5}x+65,&10 \leq x < 15\\
+-\frac{26}{5}x+91,&15 \leq x \leq 20
+\end{array}\right.$.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{1}{6.5}{3}{3}
+\draw (2,.2)--(2,-.2) node[below]{$10$};
+\draw (4,.2)--(4,-.2) node[below]{$15$};
+\draw (6,.2)--(6,-.2) node[below]{$20$};
+\draw (.2,2)--(-.2,2) node[left]{$13$};
+\draw (.2,-2)--(-.2,-2) node[left]{$-13$};
+\draw[thick] plot[domain=2:4](\x,{-2*\x+6});
+\draw[thick] plot[domain=4:6](\x,{-2*\x+10});
+\draw (2,2) node[vertex]{};
+\draw (4,-2) node[opendot]{};
+\draw (4,2) node[vertex]{};
+\draw (6,-2) node[vertex]{};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+
+
+\begin{question}
+Suppose $f(t)$ is continuous at $t=5$. True or false: $t=5$ is in the domain of $f(t)$.
+\end{question}
+\begin{hint}
+Compare what is given to you to the definition of continuity.
+\end{hint}
+\begin{answer}
+True.
+\end{answer}
+\begin{solution}
+True. Since $f(t)$ is continuous at $t=5$, that means $\ds\lim_{t \to 5} f(t)=f(5)$. For that to be true, $f(5)$ must exist --- that is, 5 is in the domain of $f(x)$.
+\end{solution}
+
+
+
+\begin{question}
+Suppose $\ds\lim_{t \rightarrow 5}f(t)=17$, and suppose $f(t)$ is continuous at $t=5$. True or false: $f(5)=17$.
+\end{question}
+\begin{hint}
+Compare what is given to you to the definition of continuity.
+\end{hint}
+\begin{answer}
+True.
+\end{answer}
+\begin{solution}
+True. Using the definition of continuity, $\ds\lim_{t \to 5} f(t)=f(5)=17$.
+\end{solution}
+
+
+
+
+\begin{question}
+Suppose  $\ds\lim_{t \rightarrow 5}f(t)=17$. True or false: $f(5)=17$.
+\end{question}
+\begin{hint}
+What if the function is discontinuous?
+\end{hint}
+\begin{answer}
+In general, false.
+\end{answer}
+\begin{solution}
+In general, false. If $f(t)$ is continuous at $t=5$, then $f(5)=17$; if $f(t)$ is discontinuous at $t=5$, then $f(5)$ either does not exist, or is a number other than 17.
+
+ An example of a function with $\ds\lim_{t \to 5}f(t)=17 \neq f(5)$ is $f(t)=\left\{
+\begin{array}{lcr}
+17&,&t \neq 5\\
+0&,&t=5
+\end{array}
+ \right.$, shown below.
+ \begin{center}
+ \begin{tikzpicture}
+ \YEaaxis{1}{4}{1}{3}
+ \draw[thick] (-1,2)--(4,2);
+ \draw (2,2) node[opendot]{};
+ \YExcoord{2}{5}
+ \draw (2,0) node[vertex]{};
+ \end{tikzpicture}
+ \end{center}
+\end{solution}
+
+
+
+\begin{question}
+Suppose $f(x)$ and $g(x)$ are continuous at $x=0$, and let $h(x)=\dfrac{xf(x)}{g^2(x)+1}$. What is $\ds\lim_{x \to 0^+} h(x)$?
+\end{question}
+\begin{hint}
+What is $h(0)$?
+\end{hint}
+\begin{answer}
+$\ds\lim_{x \to 0^+} h(x)=0$
+\end{answer}
+\begin{solution}
+Since $f(x)$ and $g(x)$ are continuous at zero, and since $g^2(x)+1$ must be nonzero, then $h(x)$ is continuous at 0 as well. According to the definition of continuity, then $\ds\lim_{x \to 0}h(x)$ exists and is equal to $h(0)=\frac{0f(0)}{g^2(0)+1}=0$.
+
+Since the limit $\ds\lim_{x \to 0}h(x)$ exists and is equal to zero, also the one-sided limit
+$\ds\lim_{x \to 0^+}h(x)$ exists and is equal to zero.
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion}Find a constant $k$ so that the function \[a(x)=\left\{\begin{array}{ll}
+x\sin\left(\frac{1}{x}\right)&\mbox{when } x \neq 0\\
+k&\mbox{when }x=0
+\end{array}\right.\]
+is continuous at $x=0$.
+\end{Mquestion}
+\begin{hint} Use the definition of continuity.
+\end{hint}
+\begin{answer}  $k=0$
+\end{answer}
+\begin{solution} Using the definition of continuity, we need $k=\displaystyle\lim_{x \rightarrow 0} f(x)$. Since the limit is blind to what actually happens to $f(x)$ at $x=0$, this is equivalent to $k=\displaystyle\lim_{x \rightarrow 0} x\sin\left(\frac{1}{x}\right)$. So if we find the limit, we solve the problem.
+
+As $x$ gets small, $\sin\left(\frac{1}{x}\right)$ goes a little crazy (see example~\ref*{eg sinpix}), %1.3.5
+  so let's get rid of it by using the Squeeze Theorem. We can bound the function above and below, but we should be a little careful about whether we're going from the left or the right. The reason we need to worry about direction is illustrated with the following observation:
+  %%%%%%%%
+  If $a\le b$ and $x>0$, then $xa\le xb$. (For example,
+           plug in $x=1$, $a=2$, $b=3$.) But if $a\le b$ and $x<0$,
+           then $xa \ge xb$. (For example, plug in $x=-1$, $a=2$, $b=3$.)
+           So first, let's find
+           $\lim\limits_{x\rightarrow 0^-}\sin\left(\frac{1}{x}\right)$.
+           When $x<0$,
+           \begin{align*}
+              1 \ge &\sin\left(\frac{1}{x}\right) \ge -1\\
+            \mbox{so: }~~~~
+              x(\textcolor{red}{1}) \le x\,&\textcolor{red}{\sin\left(\frac{1}{x}\right) }\le x(\textcolor{red}{-1})
+           \end{align*}
+and $\displaystyle\lim_{x \rightarrow 0^-} x = \displaystyle\lim_{x \rightarrow 0^-} -x = 0$, so by the Squeeze Theorem, also $\displaystyle\lim_{x \rightarrow 0^-} x\sin\left(\frac{1}{x}\right)=0$.
+
+Now, let's find $\displaystyle\lim_{x \rightarrow 0^+} x\sin\left(\frac{1}{x}\right)$. When $x>0$,
+\begin{align*}
+ -1 \le &\sin\left(\frac{1}{x}\right) \le 1\\
+\mbox{so: }~~~~
+x(\textcolor{red}{-1}) \leq x&\textcolor{red}{\sin\left(\frac{1}{x}\right)}\leq x(\textcolor{red}{1})
+\end{align*}
+and $\displaystyle\lim_{x \rightarrow 0^+} x = \displaystyle\lim_{x \rightarrow 0^+} -x = 0$, so by the Squeeze Theorem, also $\displaystyle\lim_{x \rightarrow 0^+} x\sin\left(\frac{1}{x}\right)=0$.
+
+Since the limits from the left and right agree, we conclude $\displaystyle\lim_{x \rightarrow 0} x\sin\left(\frac{1}{x}\right)=0$, so when $k=0$, the function is continuous at $x=0$.
+\end{solution}
+
+\begin{question}Use the Intermediate Value Theorem to show that the function $f(x)=x^3+x^2+x+1$ takes on the value 12345 at least once in its domain.
+\end{question}
+\begin{hint} If this is your password, you might want to change it.
+\end{hint}
+\begin{answer} Since $f$ is a polynomial, it is continuous over all real numbers. $f(0)=1<12345$ and $f(12345)=12345^3+12345^2+12345+1>12345$ (since all terms are positive). So by the IVT, $f(c)=12345$ for some $c$ between $0$ and $12345$.
+\end{answer}
+\begin{solution} Since $f$ is a polynomial, it is continuous over all real numbers. $f(0)=1<12345$ and $f(12345)=12345^3+12345^2+12345+1>12345$ (since all terms are positive). So by the IVT, $f(c)=12345$ for some $c$ between $0$ and $12345$.
+\end{solution}
+
+\begin{question}[2015Q]
+Describe all points for which the function is continuous: $f(x)=\dfrac{1}{x^2-1}$.
+\end{question}
+\begin{hint} Find the domain: when is the denominator zero?
+\end{hint}
+\begin{answer} $(-\infty, -1)\cup (-1,1) \cup (1,+\infty)$
+\end{answer}
+\begin{solution}
+$f(x)$ is a rational function and so is continuous except when
+        its denominator is zero. That is, except when $x=1$ and $x=-1$.
+\end{solution}
+
+
+\begin{Mquestion}[2015Q]
+ Describe all points for which this function is continuous:
+$f(x)=\dfrac{1}{\sqrt{x^2-1}}$.
+\end{Mquestion}
+\begin{hint}
+When is the denominator zero? When is the argument of
+         the square root negative?
+\end{hint}
+\begin{answer}
+$(-\infty, -1)\cup (1,+\infty)$
+\end{answer}
+\begin{solution}
+The function is continuous when $x^2-1> 0$, i.e. $(x-1)(x+1)> 0$, which yields the
+intervals $(-\infty, -1)\cup (1,+\infty)$.
+\end{solution}
+
+
+\begin{question}[2015Q]
+Describe all points for which this function is continuous:
+$\dfrac{1}{\sqrt{1+\cos(x)}}$.
+\end{question}
+\begin{hint} When is the denominator zero? When is the argument of the square root negative?
+\end{hint}
+\begin{answer}
+The function is continuous \emph{except} at
+$x=\pm \pi, \pm 3\pi, \pm 5\pi, \dots$.
+\end{answer}
+\begin{solution}
+The function $1/\sqrt{x}$ is continuous on $(0,+\infty)$ and the function  $\cos(x) +
+1$ is  continuous everywhere.
+
+So $1/\sqrt{\cos(x) + 1 }$ is continuous except when $\cos x=-1$. This
+happens when $x$ is an odd multiple of $\pi$. Hence the function is continuous except at
+$x=\pm \pi, \pm 3\pi, \pm 5\pi, \dots$.
+\end{solution}
+
+
+\begin{question}[2015Q]
+Describe all points for which this function is continuous: $f(x)=\dfrac{1}{\sin x}$.
+\end{question}
+\begin{hint}
+There are infinitely many points where it is \emph{not} continuous.
+\end{hint}
+\begin{answer} $x \neq n\pi,$ where $n$ is any integer
+\end{answer}
+\begin{solution}
+The function is continuous when $\sin(x)\neq 0$. That is, when $x$ is not an integer
+multiple of $\pi$.
+\end{solution}
+
+
+
+\begin{question}[2015Q]
+Find all values of $c$ such that the following function is continuous at $x=c$:
+\[f(x)=\left\{\begin{array}{ccc}
+8-cx & \text{if} & x\le c\\
+x^2 &  \text{if} & x> c
+\end{array}\right.\]
+Use the definition of continuity to justify your answer.
+\end{question}
+\begin{hint} $x=c$ is the important point.
+\end{hint}
+\begin{answer} $\pm 2$
+\end{answer}
+\begin{solution}
+The function is continuous for $x\ne c$ since each of those two branches are polynomials. So, the only question is whether the function is continuous at $x=c$; for this we need
+$$\lim_{x\to c^-}f(x)=f(c)=\lim_{x\to c+}f(x).$$
+We compute
+$$\lim_{x\to c^-}f(x)=\lim_{x\to c^-}8-cx = 8-c^2;$$
+$$f(c)=8-c\cdot c= 8-c^2\text{ and}$$
+$$\lim_{x\to c^+}f(x)=\lim_{x\to c^+}x^2=c^2.$$
+So, we need $8-c^2=c^2$, which yields $c^2=4$, i.e. $c=-2$ or $c=2$.
+\end{solution}
+
+
+\begin{question}[2015Q]
+Find all values of $c$ such that the following function is continuous everywhere:
+\begin{align*}
+  f(x) &= \begin{cases}
+           x^2+c & x\geq 0\\
+	  \cos cx & x< 0
+          \end{cases}
+\end{align*}
+Use the definition of continuity to justify your answer.
+\end{question}
+\begin{hint} The important place is $x=0$.
+\end{hint}
+\begin{answer} $c=1$
+\end{answer}
+\begin{solution}
+The function is continuous for $x \ne 0$ since $x^2+c$ and
+          $\cos cx$ are continuous everywhere. It remains to check continuity at
+$x=0$. To do this we must check that the following three are equal.
+\begin{align*}
+  \lim_{x \to 0^+} f(x) &= \lim_{x\to 0^+} x^2+c = c\\
+  f(0) &= c \\
+  \lim_{x \to 0^-} f(x) &= \lim_{x\to 0^-} \cos cx = \cos 0 = 1
+\end{align*}
+Hence when $c=1$ we have the limits agree.
+\end{solution}
+
+
+
+\begin{Mquestion}[2015Q]
+Find all values of $c$ such that the following function is continuous:
+\[f(x) = \begin{cases}
+      x^2-4 & \text{if } x< c\\
+      3x &  \text{if } x \ge c\,.
+\end{cases} \]
+Use the definition of continuity to justify your answer.
+\end{Mquestion}
+\begin{hint} The important point is $x=c$.
+\end{hint}
+\begin{answer}$-1$, $4$
+\end{answer}
+\begin{solution}
+The function is continuous for $x\ne c$ since each of those two branches are
+defined by polynomials.  Thus, the only question is
+whether the function is continuous at $x=c$. Furthermore,
+$$\lim_{x\to c^-}f(x) = c^2-4 $$
+and
+$$\lim_{x\to c^+}f(x) = f(c) = 3c\,.$$
+For continunity we need both limits and the value to agree, so $f$ is
+continuous if and only if $c^2-4 = 3c$, that is if and only if
+$$ c^2-3c-4 = 0\,.$$
+Factoring this as $(c-4)(c+1) = 0$ yields $c=-1$ or $c=+4$.
+\end{solution}
+
+\begin{question}[2015Q]
+Find all values of $c$ such that the following function is continuous:
+\[f(x)=\left\{\begin{array}{ccc}
+6-cx & \text{if} & x\le 2c\\
+x^2 &  \text{if} & x> 2c
+\end{array}\right.\]Use the definition of continuity to justify your answer.
+\end{question}
+\begin{hint} The important point is $x=2c$.
+\end{hint}
+\begin{answer} $c=1$, $c=-1$
+\end{answer}
+\begin{solution} The function is continuous for $x\ne c$ since each of those two branches are
+polynomials. So, the only question is whether the function is continuous at
+$x=c$; for this we need
+$$\lim_{x\to 2c^-}f(x)=f(2c)=\lim_{x\to 2c+}f(x).$$
+We compute
+$$\lim_{x\to 2c^-}f(x)=\lim_{x\to 2c^-}6-cx = 6-2c^2;$$
+$$f(2c)=6-c\cdot 2c= 6-2c^2\text{ and}$$
+$$\lim_{x\to 2c^+}f(x)=\lim_{x\to 2c^+}x^2=4c^2.$$
+So, we need $6-2c^2=4c^2$, which yields $c^2=1$, i.e. $c=-1$ or $c=1$.
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion}
+Show that there exists at least one real number $x$ satisfying $\sin x = x-1$
+\end{Mquestion}
+\begin{hint}
+Consider the function $f(x)=\sin x - x +1$.
+\end{hint}
+\begin{answer}
+This isn't the kind of equality that we can just solve; we'll need a trick, and that trick is the IVT. The general idea is to show that $\sin x$ is somewhere bigger, and somewhere smaller, than $x-1$. However, since the IVT can only show us that a function is equal to a constant, we need to slightly adjust our language. Showing $\sin x = x-1$ is equivalent to showing $\sin x - x + 1 = 0$, so let $f(x)=\sin x - x +1$, and let's show that it has a real root.
+
+First, we need to note that $f(x)$ is continuous (otherwise we can't use the IVT). Now, we need to find a value of $x$ for which it is positive, and for which it's negative. By checking a few values, we find $f(0)$ is positive, and $f(100)$ is negative.  So, by the IVT, there exists a value of $x$ (between $0$ and $100$) for which $f(x)=0$. Therefore, there exists a value of $x$ for which $\sin x = x-1$.
+\end{answer}
+\begin{solution}
+This isn't the kind of equality that we can just solve; we'll need a trick, and that trick is the IVT. The general idea is to show that $\sin x$ is somewhere bigger, and somewhere smaller, than $x-1$. However, since the IVT can only show us that a function is equal to a constant, we need to slightly adjust our language. Showing $\sin x = x-1$ is equivalent to showing $\sin x - x + 1 = 0$, so let $f(x)=\sin x - x +1$, and let's show that it has a real root.
+
+First, we need to note that $f(x)$ is continuous (otherwise we can't use the IVT). Now, we need to find a value of $x$ for which it is positive, and for which it's negative. By checking a few values, we find $f(0)$ is positive, and $f(100)$ is negative.  So, by the IVT, there exists a value of $x$ (between $0$ and $100$) for which $f(x)=0$. Therefore, there exists a value of $x$ for which $\sin x = x-1$.\end{solution}
+
+
+\begin{question}[2015Q]
+Show that there exists at least one real number $c$ such that
+$3^c=c^2$.
+\end{question}
+\begin{hint} Consider the function $f(x)=3^x-x^2$, and how it relates to the problem and the IVT.
+\end{hint}
+\begin{answer} We let $f(x)=3^x-x^2$. Then $f(x)$ is a continuous function, since both $3^x$ and $x^2$ are continuous for all real numbers.
+
+We want a value $a$ such that $f(a)>0$. We see that $a=0$ works since
+$$f(0)=3^0-0=1>0.$$
+
+We want a value $b$ such that $f(b)<0$. We see that
+$b=-1$ works since
+$$f(-1)=\frac{1}{3}-1<0.$$
+
+So, because $f(x)$ is continuous on $(-\infty, \infty)$ and $f(0)>0$ while
+$f(-1)<0$, then the Intermediate Value Theorem guarantees the existence of a
+real number $c\in (-1,0)$ such that $f(c)=0$.
+\end{answer}
+\begin{solution}
+We let $f(x)=3^x-x^2$. Then $f(x)$ is a continuous function, since both $3^x$ and $x^2$ are continuous for all real numbers.
+
+We find a value $a$ such that $f(a)>0$. We observe
+immediately that $a=0$ works since
+$$f(0)=3^0-0=1>0.$$
+
+We find a value $b$ such that $f(b)<0$. We see that
+$b=-1$ works since
+$$f(-1)=\frac{1}{3}-1<0.$$
+
+So, because $f(x)$ is continuous on $(-\infty, \infty)$ and $f(0)>0$ while
+$f(-1)<0$, then the Intermediate Value Theorem guarantees the existence of a
+real number $c$ in the interval $(-1,0)$ such that $f(c)=0$.
+\end{solution}
+
+
+
+\begin{question}[2015Q]
+Show that there exists at least one real number $c$ such that $2\tan(c)=c+1$.
+\end{question}
+\begin{hint} Consider the function $2\tan x - x - 1$ and its roots.
+\end{hint}
+\begin{answer}
+We let $f(x)=2\tan(x)-x-1$. Then $f(x)$ is a continuous function on the interval $(-\pi/2, \pi/2)$ since $\tan(x)=\sin(x)/\cos(x)$ is continuous on this interval, while $x+1$ is a polynomial and therefore continuous for all real numbers.
+
+We find a value $a\in (-\pi/2,\pi/2)$ such that $f(a)<0$. We observe immediately that $a=0$ works since
+$$f(0)=2\tan(0)-0-1=0-1=-1<0.$$
+
+We find a value $b\in (-\pi/2, \pi/2)$ such that $f(b)>0$. We see that $b=\pi/4$ works since
+$$f(\pi/4)=2\tan(\pi/4) -\pi/4 - 1=2-\pi/4 - 1=1-\pi/4=(4-\pi)/4>0,$$
+because $3<\pi<4$.
+
+So, because $f(x)$ is continuous on $[0,\pi/4]$ and $f(0)<0$ while $f(\pi/4)>0$, then the Intermediate Value Theorem guarantees the existence of a real number $c\in (0,\pi/4)$ such that $f(c)=0$.
+
+\end{answer}
+\begin{solution}
+We let $f(x)=2\tan(x)-x-1$. Then $f(x)$ is a continuous function on the interval $(-\pi/2, \pi/2)$ since $\tan(x)=\sin(x)/\cos(x)$ is continuous on this interval, while $x+1$ is a polynomial and therefore continuous for all real numbers.
+
+We find a value $a\in (-\pi/2,\pi/2)$ such that $f(a)<0$. We observe immediately that $a=0$ works since
+$$f(0)=2\tan(0)-0-1=0-1=-1<0.$$
+
+We find a value $b\in (-\pi/2, \pi/2)$ such that $f(b)>0$. We see that $b=\pi/4$ works since
+$$f(\pi/4)=2\tan(\pi/4) -\pi/4 - 1=2-\pi/4 - 1=1-\pi/4=(4-\pi)/4>0,$$
+because $3<\pi<4$.
+
+So, because $f(x)$ is continuous on $[0,\pi/4]$ and $f(0)<0$ while $f(\pi/4)>0$, then the Intermediate Value Theorem guarantees the existence of a real number $c\in (0,\pi/4)$ such that $f(c)=0$.
+\end{solution}
+
+
+
+\begin{question}[2015Q]
+Show that there exists at least one real number c such that
+$\sqrt{\cos(\pi c)} = \sin(2 \pi c) + \frac{1}{2}$.
+\end{question}
+\begin{hint} Consider the function $f(x) = \sqrt{\cos(\pi x)} - \sin(2\pi x) -1/2$, and be careful about where it is continuous.
+\end{hint}
+\begin{answer}
+Let $f(x) = \sqrt{\cos(\pi x)} - \sin(2\pi x) -1/2$. This function is
+continuous provided $\cos(\pi x)\geq 0$. This is  true for $0 \leq x
+\leq \frac{1}{2}$.
+
+Now $f$ takes positive values on $[0,1/2]$:
+\begin{align*}
+  f(0) &= \sqrt{\cos(0)} - \sin(0) -1/2 = \sqrt{1} -1/2 = 1/2.
+\end{align*}
+And $f$ takes negative values on $[0,1/2]$:
+\begin{align*}
+  f(1/2) &= \sqrt{\cos(\pi/2)}-\sin(\pi)-1/2 = 0-0-1/2 = -1/2
+\end{align*}
+(Notice that $f(1/3)=(\sqrt{2}-\sqrt{3})/2-1/2$ also works)
+
+So, because $f(x)$ is continuous on $[0,1/2)$ and $f(0)>0$ while $f(1/2)<0$,
+then the  Intermediate Value Theorem guarantees the existence of a real number
+$c\in (0,1/2)$ such that $f(c)=0$.
+\end{answer}
+\begin{solution}
+Let $f(x) = \sqrt{\cos(\pi x)} - \sin(2\pi x) -1/2$. This function is
+continuous provided $\cos(\pi x)\geq 0$. This is  true for $0 \leq x
+\leq \frac{1}{2}$.
+
+Now $f$ takes positive values on $[0,1/2]$:
+\begin{align*}
+  f(0) &= \sqrt{\cos(0)} - \sin(0) -1/2 = \sqrt{1} -1/2 = 1/2.
+\end{align*}
+And $f$ takes negative values on $[0,1/2]$:
+\begin{align*}
+  f(1/2) &= \sqrt{\cos(\pi/2)}-\sin(\pi)-1/2 = 0-0-1/2 = -1/2
+\end{align*}
+(Notice that $f(1/3)=(\sqrt{2}-\sqrt{3})/2-1/2$ also works)
+
+So, because $f(x)$ is continuous on $[0,1/2)$ and $f(0)>0$ while $f(1/2)<0$,
+then the  Intermediate Value Theorem guarantees the existence of a real number
+$c\in (0,1/2)$ such that $f(c)=0$.
+\end{solution}
+
+
+\begin{question}[2015Q]
+Show that there exists at least one real number $c$ such that
+$\dfrac{1}{(\cos\pi c)^2} = c+\dfrac{3}{2}$.
+\end{question}
+\begin{hint}
+Consider the function $f(x)=1/\cos^2(\pi x)-c-\frac{3}{2}$, paying attention to where it is continuous.
+\end{hint}
+\begin{answer}
+We let $f(x)=\dfrac{1}{\cos^2(\pi x)}-c-\dfrac{3}{2}$. Then $f(x)$ is a continuous function on the
+interval $(-1/2, 1/2)$ since $\cos x$ is continuous everywhere and non-zero on that
+interval.
+
+The function $f$ takes negative values.  For example, when $x=0$:
+\begin{align*}
+f(0) &= \frac{1}{\cos^2(0)} - 0 - \frac{3}{2} = 1-\frac{3}{2} = -\frac{1}{2} <0.
+\end{align*}
+It also takes positive values, for instance when $x=1/4$:
+\begin{align*}
+f(1/4) &= \frac{1}{(\cos \pi/4)^2} - \frac{1}{4} - \frac{3}{2} \\
+  &= \frac{1}{1/2} - \frac{1+6}{4} \\
+  &= 2 - 7/4 = 1/4 >0.
+\end{align*}
+
+By the IVT there is $c$, $0<c<1/3$ such that $f(c)=0$, in which case
+\begin{align*}
+\dfrac{1}{(\cos\pi c)^2} = c+\dfrac{3}{2}.
+\end{align*}
+\end{answer}
+\begin{solution}
+We let $f(x)=\dfrac{1}{\cos^2(\pi x)}-c-\dfrac{3}{2}$. Then $f(x)$ is a continuous function on the
+interval $(-1/2, 1/2)$ since $\cos x$ is continuous everywhere and non-zero on that
+interval.
+
+The function $f$ takes negative values.  For example, when $x=0$:
+\begin{align*}
+f(0) &= \frac{1}{\cos^2(0)} - 0 - \frac{3}{2} = 1-\frac{3}{2} = -\frac{1}{2} <0.
+\end{align*}
+It also takes positive values, for instance when $x=1/4$:
+\begin{align*}
+f(1/4) &= \frac{1}{(\cos \pi/4)^2} - \frac{1}{4} - \frac{3}{2} \\
+  &= \frac{1}{1/2} - \frac{1+6}{4} \\
+  &= 2 - 7/4 = 1/4 >0.
+\end{align*}
+
+By the IVT there is $c$, $0<c<1/3$ such that $f(c)=0$, in which case
+\begin{align*}
+\dfrac{1}{(\cos\pi c)^2} = c+\dfrac{3}{2}.
+\end{align*}
+\end{solution}
+
+
+
+
+
+
+
+\begin{question}Use the intermediate value theorem to find an interval of length one containing a root of $f(x)=x^7-15x^6+9x^2-18x+15$.
+\end{question}
+\begin{hint} We want $f(x)$ to be 0; 0 is between a positive number and a negative number. Try evaluating $f(x)$ for some integer values of $x$.
+\end{hint}
+\begin{answer} $[0,1]$ is the easiest answer to find. Also acceptable are $[-2,-1]$ and $[14,15]$.
+\end{answer}
+\begin{solution} $f(x)$ is a polynomial, so it's continuous everywhere. If we can find values $a$ and $b$ so that $f(a)>0$ and $f(b)<0$, then by the IVT, there will exist some $c$ in $(a,b)$ where $f(c)=0$; that is, there is a root in the interval $[a,b]$. Let's start plugging in easy values of $x$.
+
+$f(0)=15$, and $f(1)=1-15+9-18+15=-8$. Since 0 is between $f(0)$ and $f(1)$, and since $f$ is continuous, by IVT there must be some $x$ in $[0,1]$ for which $f(x)=0$: that is, there is some root in $[0,1]$.
+
+That was the easiest interval to find. If you keep playing around, you find two more. $f(-1)=26$ (positive) and $f(-2)=-1001$ (negative), so there is a root in $[-2,-1]$.
+
+The arithmetic is nasty, but there is also a root in $[14,15]$.
+
+This is an important trick. For high-degree polynomials, it is often impossible to get the exact values of the roots. Using the IVT, we can at least give a range where a root must be.
+\end{solution}
+
+
+\begin{question}Use the intermediate value theorem to give a decimal approximation of $\sqrt[3]{7}$ that is correct to at least two decimal places. You may use a calculator, but only to add, subtract, multiply, and divide.
+\end{question}
+\begin{hint} $\sqrt[3]{7}$ is the value where $x^3=7$.
+\end{hint}
+\begin{answer} 1.91
+\end{answer}
+\begin{solution}
+Let $f(x)=x^3$. Since $f$ is a polynomial, it is continuous everywhere. If $f(a)<7<f(b)$, then $\sqrt[3]{7}$ is somewhere between $a$ and $b$. If we can find $a$ and $b$ that satisfy these inequalities, and are very close together, that will give us a good approximation for $\sqrt[3]{7}$.
+
+\begin{itemize}
+\item Let's start with integers. $1^3<7<2^3$, so $\sqrt[3]{7}$ is in the interval $(1,2)$.
+\item Let's narrow this down, say by testing $f(1.5)$. $(1.5)^3 = 3.375<7$, so $\sqrt[3]{7}$ is in the interval $(1.5,2)$.
+\item  Let's narrow further, say by testing $f(1.75)$. $(1.75)^3\approx 5.34<7$, so $\sqrt[3]{7}$ is in the interval $(1.75,2)$.
+\item Testing various points, we find $f(1.9)<7<f(2)$, so $\sqrt[3]{7}$ is between $1.9$ and $2$.
+\item By testing more, we find
+$f(1.91)<7<f(1.92)$, so $\sqrt[3]{7}$ is in $(1.91,1.92)$.
+\item In order to get an approximation for $\sqrt[3]{7}$ that is rounded to two decimal places, we have to know whether $\sqrt[3]{7}$ is greater or less than $1.915$; indeed $f(1.915) \approx 7.02>7$, so
+$\sqrt[3]{7}<1.915$; then rounded to two decimal places, $\sqrt[3]{7}\approx 1.91$.
+\end{itemize}
+If this seems like the obvious way to approximate $\sqrt[3]{7}$, that's good. The IVT is a formal statement of a very intuitive principle.
+\end{solution}
+
+
+
+\begin{question}
+Suppose $f(x)$ and $g(x)$ are functions that are continuous over the interval $[a,b]$, with $f(a) \leq g(a)$ and $g(b)\leq f(b)$. Show that there exists some $c \in [a,b]$ with $f(c)=g(c)$.
+\end{question}
+\begin{hint}
+You need to consider separately the cases where $f(a) < g(a)$ and $f(a)=g(a)$. Let $h(x)=f(x)-g(x)$. What is $h(c)$?
+\end{hint}
+\begin{answer}
+\begin{itemize}
+\item If $f(a)=g(a)$, or $f(b)=g(b)$, then we simply take $c=a$ or $c=b$.
+\item Suppose $f(a) \neq g(a)$ and $f(b) \neq g(b)$. Then $f(a)<g(a)$ and $g(b)<f(b)$, so if we define $h(x)=f(x)-g(x)$, then $h(a)<0$ and $h(b)>0$. Since $h$ is the difference of two functions that are continuous over $[a,b]$, also $h$ is continuous over $[a,b]$. So, by the Intermediate Value Theorem, there exists some $c \in (a,b)$ with $h(c)=0$; that is, $f(c)=g(c)$.
+\end{itemize}
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item If $f(a)=g(a)$, or $f(b)=g(b)$, then we simply take $c=a$ or $c=b$.
+\item Suppose $f(a) \neq g(a)$ and $f(b) \neq g(b)$. Then $f(a)<g(a)$ and $g(b)<f(b)$, so if we define $h(x)=f(x)-g(x)$, then $h(a)<0$ and $h(b)>0$. Since $h$ is the difference of two functions that are continuous over $[a,b]$, also $h$ is continuous over $[a,b]$. So, by the Intermediate Value Theorem, there exists some $c \in (a,b)$ with $h(c)=0$; that is, $f(c)=g(c)$.
+\end{itemize}
+\end{solution}

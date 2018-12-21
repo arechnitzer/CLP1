@@ -1,0 +1,557 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s3.1}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{Mquestion}
+Suppose you throw a ball straight up in the air, and its height from $t=0$ to $t=4$
+is given by $h(t)=-4.9t^2+19.6t$. True or false: at time $t=2$, the acceleration of the ball is 0.
+\end{Mquestion}
+\begin{hint}
+Is the velocity changing at $t=2$?
+\end{hint}
+\begin{answer}
+False (but its \emph{velocity} is zero)
+\end{answer}
+\begin{solution}
+False. The acceleration of the ball is given by $h''(t)=-9.8$. This is constant throughout its trajectory (and is due to gravity).
+
+Remark: the \emph{velocity} of the ball at $t=2$ is zero, since $h'(2)=-9.8(2)+19.6=0$, but the velocity is only zero for an instant. Since the velocity is changing, the acceleration is nonzero.
+\end{solution}
+
+
+\begin{Mquestion}\label{s3.1constaccel}
+Suppose an object is moving with a constant acceleration. It takes ten seconds to accelerate from $1~\frac{\mathrm{m}}{\mathrm{s}}$ to $2~\frac{\mathrm{m}}{\mathrm{s}}$. How long does it take to accelerate from $2~\frac{\mathrm{m}}{\mathrm{s}}$   to $3~\frac{\mathrm{m}}{\mathrm{s}}$? How long does it take to accelerate from $3~\frac{\mathrm{m}}{\mathrm{s}}$ to $13~\frac{\mathrm{m}}{\mathrm{s}}$?
+\end{Mquestion}
+\begin{hint}
+The acceleration (rate of change of velocity) is \emph{constant}.
+\end{hint}
+\begin{answer}
+It takes 10 seconds to accelerate
+from $2~\frac{\mathrm{m}}{\mathrm{s}}$   to $3~\frac{\mathrm{m}}{\mathrm{s}}$, and $100$ seconds to accelerate from $3~\frac{\mathrm{m}}{\mathrm{s}}$ to $13~\frac{\mathrm{m}}{\mathrm{s}}$.
+\end{answer}
+\begin{solution}
+The acceleration is constant, which means the rate of change of the velocity is constant. So, since it took 10 seconds for the velocity to increase by 1 metre per second (from $1~\frac{\mathrm{m}}{\mathrm{s}}$ to $2~\frac{\mathrm{m}}{\mathrm{s}}$), then it \emph{always} takes 10 seconds for the velocity to increase by 1 metre per second.
+
+So, it takes 10 seconds to accelerate
+from $2~\frac{\mathrm{m}}{\mathrm{s}}$   to $3~\frac{\mathrm{m}}{\mathrm{s}}$. To accelerate from $3~\frac{\mathrm{m}}{\mathrm{s}}$ to $13~\frac{\mathrm{m}}{\mathrm{s}}$ (that is, to change its velocity by 10 metres per second), it takes $10\times 10=100$ seconds.
+\end{solution}
+
+\begin{Mquestion}\label{s3.1s''<0}
+Let $s(t)$ be the position of a particle at time $t$. True or false: if $s''(a)>0$ for some $a$, then the particle's speed is increasing when $t=a$.
+\end{Mquestion}
+\begin{hint}
+Remember the difference between speed and velocity.
+\end{hint}
+\begin{answer}
+In general, false.
+\end{answer}
+\begin{solution}
+Let $v(a) = s'(a)$ be the velocity of the particle. If  $s''(a)>0$, then $v'(a)>0$ --- so
+the \emph{velocity} of the particle is increasing. However, that does not mean that its \emph{speed} (the absolute value
+of velocity) is increasing as well. For example, if a velocity is increasing from $-4$ kph to $-3$ kph, the speed is
+decreasing from $4$ kph to $3$ kph. So, the statement is false in general.
+
+Contrast this to Question~\ref{s3.1s''<02}.
+\end{solution}
+
+
+\begin{question}\label{s3.1s''<02}
+Let $s(t)$ be the position of a particle at time $t$. True or false: if $s'(a)>0$ and $s''(a)>0$ for some $a$, then the particle's speed is increasing when $t=a$.
+\end{question}
+\begin{hint}
+How is this different from the wording of Question~\ref{s3.1s''<0}?
+\end{hint}
+\begin{answer}
+True
+\end{answer}
+\begin{solution}
+Since $s'(a)>0$, $|s'(a)|=s'(a)$: that is, the speed and velocity of the particle are the same. (This means the particle is moving in the positive direction.)
+If $s''(a)>0$, then the velocity (and hence speed) of the particle is increasing. So, the statement is true.
+\end{solution}
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+\Instructions{For this section, we will ask you a number of questions that have to do with objects falling on Earth. Unless otherwise stated, you should assume that an object falling through the air has an acceleration due to gravity of 9.8 meters per second per second.}
+
+
+\begin{question}
+A flower pot rolls out of a window 10m above the ground. How fast is it falling just as it smacks into the ground?
+\end{question}
+\begin{hint}
+The equation of an object falling from rest on the earth is derived in Example~\ref*{eg:fallingBallB}. It would be difficult to use exactly the version given for $s(t)$, but using the same logic, you can find an equation for the height of the flower pot at time $t$.
+\end{hint}
+\begin{answer}
+The pot is falling at 14 metres per second, just as it hits the ground.
+\end{answer}
+\begin{solution}
+From Example~\ref*{eg:fallingBallB}, we know that an object falling from rest on the Earth
+is subject to the acceleration due to gravity, $9.8~\frac{\mathrm{m}}{\mathrm{s}^2}$. So, if $h(t)$ is the height of the flower pot $t$ seconds after it rolls out the window, then $h''(t)=-9.8$. (We make the acceleration negative, since the measure ``height" has ``up" as the positive direction, while gravity pulls the pot in the negative direction, ``down.")
+
+Then $h'(t)$ is a function whose derivative is the constant $-9.8$ and with $h'(0)=0$ (since the object fell, instead of being thrown up or down), so $h'(t)=-9.8t$.
+
+What we want to know is $h'(t)$ at the time $t$ when the pot hits the ground. We don't know yet exactly what time that happens, so we go a little farther and find an expression for $h(t)$. The function $h(t)$ has derivative $-9.8t$ and $h(0)=10$, so (again following the ideas in Example~\ref*{eg:fallingBallB})
+\[h(t)=\frac{-9.8}{2}t^2+10\]
+Now, we can find the time when the pot hits the ground: it is the time when $h(t)=0$\\ (and $t>0$).
+\begin{align*}
+0&=\frac{-9.8}{2}t^2+10\\
+\frac{9.8}{2}t^2&=10\\
+t^2&=\frac{20}{9.8}\\
+t&=+\sqrt{\frac{20}{9.8}}\approx1.4 ~\mathrm{sec}
+\intertext{The velocity of the pot at this time is}
+h'\left(\sqrt{\frac{20}{9.8}}\right)&=-9.8\left(\sqrt{\frac{20}{9.8}}\right)=-\sqrt{20\cdot 9.8}
+=-14 \frac{\mathrm{m}}{\mathrm{s}}
+\end{align*}
+
+So, the pot is falling at 14 metres per second, just as it hits the ground.
+\end{solution}
+
+
+
+
+
+\begin{Mquestion}
+You want to know how deep a well is, so you drop a stone down and count the seconds until you hear it hit bottom.
+\begin{enumerate}[(a)]
+\item If the stone took $x$ seconds to hit bottom, how deep is the well?
+\item Suppose you think you dropped the stone down the well, but actually you \emph{tossed} it down, so instead of an initial velocity of 0 metres per second, you accidentally imparted an initial speed of $1$ metres per second. What is the actual depth of the well, if the stone fell for $x$ seconds?
+\end{enumerate}
+\end{Mquestion}
+\begin{hint}
+Remember that a falling object has an acceleration of $9.8~\frac{\mathrm{m}}{\mathrm{s}^2}$.
+\end{hint}
+\begin{answer}
+(a) $4.9x^2$ metres \qquad (b) $4.9x^2+x$ metres
+\end{answer}
+\begin{solution}
+(a)
+\begin{itemize}
+\item
+Let $s(t)$ be the distance the stone has fallen $t$ seconds after dropping it. Since the acceleration due to gravity is $9.8~\frac{\mathrm{m}}{\mathrm{s}^2}$, $s''(t)=9.8$. (We don't make this negative, because $s(t)$ measures how far the stone has fallen, which means the positive direction in our coordinate system is ``down," which is exactly the way gravity is pulling.)
+\item
+ Then $s'(t)$ has a constant derivative of 9.8, so $s'(t)=9.8t+c$ for some constant
+$c$. Notice $s'(0)=c$, so $c$ is the velocity of the stone at the very instant you dropped it, which is zero. Therefore, $s'(t)=9.8t$.
+\item So, $s(t)$ is a function with derivative $9.8t$. It's not too hard to figure out by guessing and checking that $s(t)=\frac{9.8}{2}t^2+d$ for some constant $d$.
+ Notice $s(0)=d$, so $d$ is the distance the rock has travelled at the instant you dropped it, which is zero. So, $s(t)=\frac{9.8}{2}t^2=4.9t^2$.
+
+Remark: this is exactly the formula found in Example~\ref*{eg:fallingBallB}. You may, in general, use that formula without proof, but you need to know where it comes from and be able to apply it in other circumstances where it might be slightly different--like part (b) below.
+\item
+The rock falls for $x$ seconds, so the distance fallen is
+\[4.9x^2 \]
+
+Remark: this is a decent (if imperfect) way to figure out how deep a well is, or how tall a cliff is, when you're out and about. Drop a rock, square the time, multiply by 5.
+\end{itemize}
+\medskip
+(b)
+We'll go through a similar process as before.
+
+Again, let $s(t)$ be the distance the rock has fallen $t$ seconds after it is let go. Then $s''(t)=9.8$, so $s'(t)=9.8t+c$. In this case, since the initial speed of the rock is $1$ metre per second, $1=s'(0)=c$, so $s'(t)=9.8t+1$.
+
+Then, $s(t)$ is a function whose derivative is $9.8t+1$, so
+$s(t)=\frac{9.8}{2}t^2+t+d$ for some constant $d$. Since $0=s(0)=d$, we see
+$s(t)=4.9t^2+t$.
+
+So, if the rock falls for $x$ seconds, the distance fallen is
+\[4.9x^2+x\]
+
+Remark: This means there is an error of $x$ metres in your estimation of the depth of the well.
+\end{solution}
+
+
+
+
+\begin{question}
+You toss a key to your friend, standing two metres away. The keys initially move towards your friend at 2 metres per second, but slow at a rate of 0.25 metres per second per second. How much time does your friend have to react to catch the keys? That is--how long are the keys flying before they reach your friend?
+\end{question}
+\begin{hint}
+Acceleration is constant, so finding a formula for the distance your keys have travelled is a similar problem to finding a formula for something falling.
+\end{hint}
+\begin{answer}
+$8-4\sqrt{3}\approx 1$ sec
+\end{answer}
+\begin{solution}
+Let $s(t)$ be the distance your keys have travelled since they left your hand. The rate at which they are travelling, $s'(t)$, is decreasing by 0.25 metres per second. That is,
+$s''(t)=-0.25$. Therefore, $s'(t)=-0.25t+c$ for some constant $c$. Since $c=s'(0)=2$, we see
+\[s'(t)=2-0.25t\]
+Then $s(t)$ has $2-0.25t$ as its derivative, so $s(t)=2t-\frac{1}{8}t^2+d$ for some constant $d$. At time $t=0$, the keys have not yet gone anywhere, so $0=s(0)=d$. Therefore,
+\[s(t)=2t-\frac{1}{8}t^2\]
+
+The keys reach your friend when $s(t)=2$ and $t>0$. That is:
+\begin{align*}
+2&=2t-\frac{1}{8}t^2\\
+0&=\frac{1}{8}t^2-2t+2\\
+t&=8\pm4\sqrt{3}
+\end{align*}
+
+We need to figure out which of these values of $t$ is really the time when the keys reach your friend. The keys travel this way from $t=0$ to the time they reach your friend. (Then $s(t)$ no longer describes their motion.) So, we need to find the first value of $t$ that is positive with $s(t)=2$. Since $8-4\sqrt{3}>0$, this is the first time $s(t)=2$ and $t>0$. So, the keys take
+\[8-4\sqrt{3}\approx 1~\mbox{second}\]
+to reach your friend.
+\end{solution}
+
+
+
+\begin{question}
+A car is driving at 100 kph, and it brakes with a deceleration of $50~000~ \frac{\mathrm{km}}{\mathrm{hr}^2}$. How long does the car take to come to a complete stop?
+\end{question}
+\begin{hint}
+See Example~\ref*{eg:braking}.
+\end{hint}
+\begin{answer}
+$7.2$ sec
+\end{answer}
+\begin{solution}
+We proceed with the technique of Example~\ref*{eg:braking} in mind.
+
+Let $v(t)$ be the velocity (in kph) of the car at time $t$, where $t$ is measured in hours and $t=0$ is the instant the brakes are applied. Then $v(0)=100$ and $v'(t)=-50~000$. Since $v'(t)$ is constant, $v(t)$ is a line with slope $-50~000$ and intercept $(0,100)$, so
+\[v(t)=100-50~000t\]
+The car comes to a complete stop when $v(t)=0$, which occurs at $t=\frac{100}{50~000}=\frac{1}{500}$ hours. This is a confusing measure, so we convert it to seconds:
+\[\left(\frac{1}{500}~\mathrm{hrs}\right)\left(\frac{3600~\mathrm{sec}}{1 \mathrm{hr}}\right)=7.2~\mathrm{sec}\]
+\end{solution}
+
+
+
+
+
+\begin{Mquestion}
+You are driving at 120 kph, and need to stop in 100 metres. How much deceleration do your brakes need to provide? You may assume the brakes cause a constant deceleration.
+\end{Mquestion}
+\begin{hint}
+Be careful to match up the units.
+\end{hint}
+\begin{answer}
+72 000 kph per hour
+\end{answer}
+\begin{solution}
+Suppose the deceleration provided by the brakes is $d~\frac{\mathrm{km}}{\mathrm{hr}^2}$. Then if $v(t)$ is the velocity of the car, $v(t)=120-dt$ (at $t=0$, the velocity is 120, and it decreases by $d$ kph per hour). The car stops when $0=v(t)$, so $t=\frac{120}{d}$ hours.
+
+Let $s(t)$ be the distance the car has travelled $t$ hours after applying the brakes. Then $s'(t)=v(t)$, so $s(t)=120t-\frac{d}{2}t^2+c$ for some constant $c$. Since $0=s(0)=c$,
+\[s(t)=120t-\frac{d}{2}t^2\]
+
+The car needs to stop in 100 metres, which is $\frac{1}{10}$ kilometres. We already found that the stopping time is $t=\frac{120}{d}$. So:
+\begin{align*}
+\frac{1}{10}&=s\left(\frac{120}{d}\right)\\
+\frac{1}{10}&=120\left(\frac{120}{d}\right)-\frac{d}{2}\left(\frac{120}{d}\right)^2\\
+\intertext{Multiplying both sides by $d$:}
+\frac{d}{10}&=120^2-\frac{120^2}{2}\\
+d&=5\cdot 120^2
+\end{align*}
+So, the brakes need to apply 72 000 kph per hour of deceleration.
+\end{solution}
+
+
+
+\begin{question}
+You are driving at 100 kph, and apply the brakes steadily, so that your car decelerates at a constant rate and comes to a stop in exactly 7 seconds. What was your speed one second before you stopped?
+\end{question}
+\begin{hint}
+Think about what it means for the car to decelerate at a constant rate. You might also review Question~\ref{s3.1constaccel}.
+\end{hint}
+\begin{answer}
+$\dfrac{100}{7}\approx 14$ kph
+\end{answer}
+\begin{solution}
+Since your deceleration is constant, your speed decreases smoothly from 100 kph to 0 kph. So, one second before your stop, you only have $\frac{1}{7}$ of our speed left: you're going $\frac{100}{7}$ kph.
+
+A less direct way to solve this problem is to note that $v(t)=100-dt$ is the velocity of car $t$ hours after braking, if $d$ is its deceleration. Since it stops in 7 seconds (or $\frac{7}{3600}$ hours), $0=v\left(\frac{7}{3600}\right)=100-\frac{7}{3600}d$, so $d=\frac{360000}{7}$.
+Then \[v\left(\frac{6}{3600}\right)=100-\left(\frac{360000}{7}\right)\left(\frac{6}{3600}\right)=100-\frac{6}{7}\cdot100=\frac{100}{7}~\mathrm{kph}\]
+\end{solution}
+
+\begin{question}
+About 8.5 minutes after liftoff, the US space shuttle has reached orbital velocity, 17 500 miles per hour. Assuming its acceleration was constant, how far did it travel in those 8.5 minutes?
+
+(Source: {\scriptsize\url{http://www.nasa.gov/mission_pages/shuttle/shuttlemissions/sts121/launch/qa-leinbach.html}})
+\end{question}
+\begin{hint}
+Let $a$ be the acceleration of the shuttle. Start by finding $a$, then find the position function of the shuttle.
+\end{hint}
+\begin{answer}
+about 1240 miles
+\end{answer}
+\begin{solution}
+If the acceleration was constant, then it was
+\[\frac{17 500~\mathrm{mph}}{\frac{8.5}{60}~\mathrm{hr}} \approx 123 500 ~\frac{\mathrm{miles}}{\mathrm{hr}^2}\]
+
+So, the velocity $t$ hours from liftoff is
+\[v(t)=123500t\]
+Therefore, the position of the shuttle $t$ hours from liftoff (taking $s(0)=0$ to be its initial position) is
+\[s(t)=\frac{123500}{2}t^2=61750t^2\]
+So, after $\frac{8.5}{60}$ hours, the shuttle has travelled
+\[s\left(\frac{8.5}{60}\right)=(61750)\left(\frac{8.5}{60}\right)^2\approx 1240 ~\mathrm{miles}\]
+or a little less than 2000 kilometres.
+\end{solution}
+
+
+\begin{question}
+A pitching machine has a dial to adjust the speed of the pitch. You rotate it so that it pitches the ball straight up in the air. How fast should the ball exit the machine, in order to stay in the air exactly 10 seconds?
+
+You may assume that the ball exits from ground level, and is acted on only by gravity, which causes a constant deceleration of 9.8 metres per second.
+\end{question}
+\begin{hint}
+Review Example~\ref*{eg:fallingBallB}, but account for the fact that your initial velocity is not zero.
+\end{hint}
+\begin{answer}
+$49$ metres per second
+\end{answer}
+\begin{solution}
+We know that the acceleration of the ball will be constant. If the height of the ball is given by $h(t)$ while it is in the air, $h''(t)=-9.8$. (The negative indicates that the \emph{velocity is decreasing}: the ball starts at its largest velocity, moving in the positive direction, then the velocity decreases to zero and then to a negative number as the ball falls.) As in Example~\ref*{eg:fallingBallB}, we need a function $h(t)$ with $h''(t)=-9.8$. Since this is a constant, $h'(t)$ is a line with slope $-9.8$, so it has the form \[h'(t)=-9.8t+a\] for some constant $a$. Notice when $t=0$, $h'(0)=a$, so in fact $a$ is the initial velocity of the ball--the quantity we want to solve for.
+
+Again, as in Example~\ref*{eg:fallingBallB}, we need a function $h(t)$ with $h'(t)=-9.8t+a$. Such a function must have the form \[h(t)=-4.9t^2+at+b\] for some constant $b$. You can find this by guessing and checking, or simply remember it from the text. (In Section~\ref*{sec antidiff}, you'll learn more about figuring out which functions have a particular derivative.) Notice when $t=0$, $h(0)=b$, so $b$ is the initial height of the baseball, which is 0.
+
+So, $h(t)=-4.9t^2+at = t(-4.9t+a)$. The baseball is at height zero when it is pitched ($t=0$) and when it hits the ground (which we want to be $t=10$). So, we want $(-4.9)(10)+a=0$. That is, $a=49$. So, the initial pitch should be at $49$ metres per second.
+
+Incidentally, this is on par with the fastest pitch in baseball, as recorded by Guiness World Records:\\ \small\url{http://www.guinnessworldrecords.com/world-records/fastest-baseball-pitch-(male)}
+\end{solution}
+
+
+
+\begin{question}
+A peregrine falcon can dive at a speed of 325 kph. If you were to drop a stone, how high up would you have to be so that the stone reached the same speed in its fall?
+\end{question}
+\begin{hint}
+Be very careful with units. The acceleration of gravity you're used to is $9.8$ metres per second squared, so you might want to convert $325$ kpm to metres per second.
+\end{hint}
+\begin{answer}
+About 416 metres
+\end{answer}
+\begin{solution}
+The acceleration of a falling object due to gravity is $9.8$ metres per second squared. So, the object's velocity $t$ seconds after being dropped is
+\[v(t)=9.8t~\frac{\mathrm{m}}{\mathrm{s}}\]
+We want $v(t)$ to be the speed of the peregrine's dive, so we should convert that to metres per second:
+\[325~\frac{\mathrm{km}}{\mathrm{hr}}\cdot
+\left(\frac{1000~\mathrm{m}}{1~\mathrm{km}}\right)\left(\frac{1~\mathrm{hr}}{3600~\mathrm{sec}}\right)=\frac{1625}{18}~\frac{\mathrm{m}}{\mathrm{s}}\]
+The stone will reach this velocity when
+\[9.8t=\frac{1625}{18}\qquad\Rightarrow\qquad t=\frac{1625}{18(9.8)}\]
+
+What is left to figure out is how far the stone will fall in this time. The position of the stone $s(t)$ has derivative $9.8t$, so
+\[s(t)=4.9t^2\]
+if we take $s(0)=0$. So, if the stone falls for $\frac{1625}{18(9.8)}$ seconds, in that time it travels
+\[s\left(\frac{1625}{18(9.8)}\right)=4.9\left(\frac{1625}{18(9.8)}\right)^2\approx 416 ~\mathrm{m}\]
+So, you would have to drop a stone from about 416 metres for it to fall as fast as the falcon.
+\end{solution}
+
+\begin{Mquestion}
+You shoot a cannon ball into the air
+with initial velocity $v_0$, and then gravity brings it back down (neglecting all other forces). If the cannon ball made it to a height of 100m, what was $v_0$?
+\end{Mquestion}
+\begin{hint}
+Since gravity alone brings it down, its acceleration is a constant $-9.8~\frac{\mathrm{m}}{\mathrm{s}^2}$.
+\end{hint}
+\begin{answer}
+$v_0=\sqrt{1960}\approx 44$ metres per second
+\end{answer}
+\begin{solution}
+Since gravity alone brings your cannon ball down, its acceleration is a constant $-9.8~\frac{\mathrm{m}}{\mathrm{s}^2}$. So, $v(t)=v_0-9.8t$ and thus its height is given by $s(t)=v_0t-4.9t^2$ (if we set $s(0)=0$).
+
+We want to know what value of $v_0$ makes the maximum height 100 metres. The maximum height is reached when $v(t)=0$, which is at time $t=\frac{v_0}{9.8}$. So, we solve:
+\begin{align*}
+100&=s\left(\frac{v_0}{9.8}\right)\\
+100&=v_0\left(\frac{v_0}{9.8}\right)-4.9\left(\frac{v_0}{9.8}\right)^2\\
+100&=\left(\frac{1}{9.8}-\frac{4.9}{9.8^2}\right)v_0^2\\
+100&=\frac{1}{2\cdot 9.8}v_0^2\\
+v_0^2&=1960\\
+v_0&=\sqrt{1960}\approx 44~\frac{\mathrm{m}}{\mathrm{s}}
+\end{align*}
+where we choose the positive square root because $v_0$ must be positive for the cannon ball to get off the ground.
+\end{solution}
+
+\begin{question}
+Suppose you are driving at 120 kph, and you start to brake at a deceleration of $50 000$ kph per hour. For three seconds you steadily increase your deceleration to $60 000$ kph per hour. (That is, for three seconds, the rate of change of your deceleration is constant.) How fast are you driving at the end of those three seconds?
+\end{question}
+\begin{hint}
+First, find an equation for $a(t)$, the acceleration of the car, noting that $a'(t)$ is constant. Then, use this to find an equation for the velocity of the car. Be careful about seconds versus hours.
+\end{hint}
+\begin{answer}
+$\approx 74.2$ kph
+\end{answer}
+\begin{solution}
+The derivative of acceleration is constant, so the acceleration $a(t)$ has the form $mt+b$. We know $a(0)=-50~000$ and $a\left(\frac{3}{3600}\right)=-60~000$ (where we note that $3$ seconds is $\frac{3}{3600}$ hours). So, the slope of $a(t)$ is
+$\frac{-60~000+50~000}{\frac{3}{3600}}=-12~000~000$, which leads us to
+\[a(t)=-50~000-(12~000~000)t\]
+where $t$ is measured in hours.
+
+Since $v'(t)=a(t)=-50~000-(12~000~000)t$, we see
+\[v(t)=\frac{-12~
+000~000}{2}t^2-50~000t+c=-6~000~000t^2-50~000t+c\]
+for some constant $c$. Since $120=v(0)=c$:
+\[v(t)=-6~000~000t^2-50~000t+120\]
+
+Then after three seconds of braking,
+\begin{align*}v\left(\frac{3}{3600}\right)
+&=-6~000~000\left(\frac{3}{3600}\right)^2-50~000\left(\frac{3}{3600}\right)+120\\
+&=-\frac{25}{6}-\frac{125}{3}+120\\
+&\approx 74.2 \mbox{ kph}
+\end{align*}
+
+Remark: When acceleration is constant, the position function is a quadratic function, but we don't want you to get the idea that position functions are \emph{always} quadratic functions--in the example you just did, it was the velocity function that was quadratic. Position, velocity, and acceleration functions don't have to be polynomial at all--it's only in this section, where we're dealing with the simplest cases, that they seem that way.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion}
+You jump up from the side of a trampoline with an initial upward velocity of $1$ metre per second. While you are in the air, your deceleration is a constant $9.8$ metres per second per second due to gravity. Once you hit the trampoline, as you fall your speed decreases by $4.9$ metres per second per second. How many seconds pass between the peak of your jump and the lowest part of your fall on the trampoline?
+\begin{center}
+\begin{tikzpicture}
+%trampoline
+\draw node[shape=ellipse, minimum width=5cm, minimum height=1cm, inner sep=0, draw, pattern=crosshatch] {};
+\draw node[shape=ellipse, minimum width=5.5cm, minimum height=1.25cm, inner sep=0, draw] {};
+\draw[line width=2pt] (2,-.5)--(2,-2);
+\draw[line width=2pt] (-2,-.5)--(-2,-2);
+\draw[line width=2pt] (1.75,-.6)--(1.75,-1.5);
+\draw[line width=2pt] (-1.75,-.6)--(-1.75,-1.5);
+%jumper
+\draw[fill=white] (2,0)--(2.5,1)--(3,0)--cycle;
+\draw (2.5,1.25) node[shape=circle, minimum size=5mm, inner sep=0, draw]{};
+%path
+\draw[line width=2pt, blue, dashed, ->] (2.5,1.75)--(2.5,3);
+\draw[line width=2pt, blue, dashed, ->] (2.5,3.25) arc(0:180:5mm);
+%jumper top
+\draw[fill=white] (.5,2.25)--(1,3.25)--(1.5,2.25)--cycle;
+\draw (1,3.5) node[shape=circle, minimum size=5mm, inner sep=0, draw]{};
+\end{tikzpicture}\hspace{1cm}
+\begin{tikzpicture}
+%saggytrampoline
+\draw[rounded corners, pattern=crosshatch] (-2.75,0)--(.5,-1.5)--(1.5,-1.5)-- (2.75,0) --cycle;
+%trampoline
+\draw node[shape=ellipse, minimum width=5.5cm, minimum height=1.25cm, inner sep=0, fill=white] {};
+\draw node[shape=ellipse, minimum width=5cm, minimum height=1cm, inner sep=0,  fill=white, pattern=crosshatch] {};
+\draw[line width=2pt] (2,-.5)--(2,-2);
+\draw[line width=2pt] (-2,-.5)--(-2,-2);
+\draw[line width=2pt] (1.75,-.6)--(1.75,-1.5);
+\draw[line width=2pt] (-1.75,-.6)--(-1.75,-1.5);
+%jumper
+\draw[fill=white] (.5,-1.5)--(1,-.5)--(1.5,-1.5)--cycle;
+\draw[pattern=crosshatch,  opacity=0.25] (.5,-1.5)--(1,-.5)--(1.5,-1.5)--cycle;
+\draw (1,-.25) node[shape=circle, minimum size=5mm, inner sep=0, draw, fill=white]{};
+%details
+\draw[line width=2pt, white]  node[ellipse, minimum height=1.125cm,minimum width=5cm,draw]{};
+\draw node[shape=ellipse, minimum width=5cm, minimum height=1cm, inner sep=0, draw] {};
+\draw node[shape=ellipse, minimum width=5.5cm, minimum height=1.25cm, inner sep=0, draw] {};
+%path
+\draw[line width=2pt, blue, dashed, ->] (2.5,1)--(2.5,3);
+\draw[line width=2pt, blue, dashed, ->] (2.5,3.25) arc(0:180:5mm);
+\draw[line width=2pt, blue, dashed, ->] (1.5,3)--(1.5,0);
+%\draw[red] node[circle, minimum size=1cm, fill, draw]{};
+\end{tikzpicture}
+\end{center}
+\end{Mquestion}
+\begin{hint}
+We recommend using two different functions to describe your height:\\
+$h_1(t)$ while you are in the air, not yet touching the trampoline, and\\
+$h_2(t)$ while you are in the trampoline, going down.
+
+Both $h_1(t)$ and $h_2(t)$ are quadratic equations, since your acceleration is constant over both intervals, but be very careful about signs.
+\end{hint}
+\begin{answer}
+Time elapsed: $\dfrac{1}{4.9}+\dfrac{1}{9.8}\approx 0.3$ seconds
+\end{answer}
+\begin{solution}
+Different forces are acting on you  (1) after you jump but before you land on the trampoline, and (2) while you are falling into the trampoline. In both instances, the acceleration is constant, so both height functions are quadratic, of the form $\frac{a}{2}t^2+vt+h$, where $a$ is the acceleration, $v$ is the velocity when $t=0$, and $h$ is the initial height.
+\begin{itemize}
+\item
+Let's consider (1) first, the time during your jump before your feet touch the trampoline. Let $t=0$ be the moment you jump, and  let the rim of the trampoline be height $0$. Then, since your initial velocity was (positive) $1$ meter per second, your height is given by
+\[h_1(t)=\frac{-9.8}{2}t^2+t=t\left(\frac{-9.8}{2}t+1\right)\]
+Notice that, because your acceleration is working against your positive velocity, it has a negative sign.
+\item
+We'll need to know your velocity when your feet first touch the trampoline on your fall. The time your feet first first touch the trampoline after your jump is precisely when $h_1(t)=0$ and $t>0$. That is, when $t=\frac{2}{9.8}$. Now, since $h'(t)=-9.8t+1$, $h'\left(\frac{2}{9.8}\right)=-9.8\left(\frac{2}{9.8}\right)+1=-1$. So, you are descending at a rate of 1 metre per second at the instant your feet touch the trampoline.
+
+Remark: it is not only coincidence that this was your initial speed. Think about the symmetries of parabolas, and conservation of energy.
+\item
+Now we need to think about your height as the trampoline is slowing your fall. One thing to remember about our general equation $\frac{a}{2}t^2+vt+h$ is that $v$ is the velocity when $t=0$. But, you don't hit the trampoline at $t=0$, you hit it at $t=\frac{2}{9.8}$. In order to keep things simple, let's use a \emph{different} time scale for this second part of your journey. Let's let $h_2(T)$ be your height at time $T$, from the moment your feet touch the trampoline skin ($T=0$) to the bottom of your fall. Now, we can use the fact that your initial velocity is $-1$ metres per second (negative, since your height is decreasing) and your acceleration is $4.9$ metres per second per second (positive, since your velocity is increasing from a negative number to zero):
+\[h_2(T)=\frac{4.9}{2}T^2-T\]
+where still the height of the rim of the trampoline is taken to be zero.
+
+Remark: if it seems very confusing that your free-falling acceleration is negative, while your acceleration in the trampoline is positive, remember that gravity is pushing you down, but the trampoline is pushing you up.
+\item How long were  you falling in the trampoline? The equation $h_2(T)$ tells you your height only as long as the trampoline is slowing your fall. You reach the bottom of your fall when your velocity is zero.
+\[h_2'(T)=4.9T-1\]
+so you reach the bottom of your fall at $T=\frac{1}{4.9}$. Be careful: this is $\frac{1}{4.9}$ seconds \emph{after you entered the trampoline}, not after the peak of your fall, or after you jumped.
+\item The last piece of the puzzle is how long it took you to fall from the peak of your jump to the surface of the trampoline. We know the equation of your motion during that time: $h_1(t)=\frac{-9.8}{2}t^2+t$. You reached the peak when your velocity was zero:
+\[h_1'(t)=-9.8t+1 =0\qquad\Rightarrow\qquad t=\frac{1}{9.8}\]
+So, you fell from your peak at $t=\frac{1}{9.8}$ and reached the level of the trampoline rim at $t=\frac{2}{1.98}$, which means the fall took $\frac{1}{9.8}$ seconds.
+
+Remark: by the symmetry mentioned early, the time it took to fall from the peak of your jump to the surface of the trampoline is the same as one-half the time from the moment you jumped off the rim to the moment you're back on the surface of the trampoline.
+\item So, your time falling from the peak of your jump to its bottom was $\frac{1}{9.8}+\frac{1}{4.9}\approx 0.3$ seconds.
+\end{itemize}
+\end{solution}
+
+
+
+\begin{question}
+Suppose an object is moving so that its velocity doubles every second. Give an expression for the acceleration of the object.
+\end{question}
+\begin{hint}
+First, find an expression for the speed of the object. You can let $v_0$ be its velocity at time $t=0$.
+\end{hint}
+\begin{answer}
+The acceleration is given by $2^tv_0\log 2$, where $v_0$ is the velocity of the object at time $t=0$.
+\end{answer}
+\begin{solution}
+Let $v(t)$ be the velocity of the object. From the given information:
+\begin{itemize}
+\item $v(0)$ is some value, call it $v_0$,
+\item $v(1)=2v_0$ (since the speed doubled in the first second),
+\item $v(2)=2(2)v_0$ (since the speed doubled in the second second),
+\item $v(3)=2(2)(2)v_0$, and so on.
+\end{itemize} So, for general $t$:
+\[v(t)=2^tv(0)\]
+To find its acceleration, we simply differentiate. Recall $\ds\diff{}{x}\{2^x\}=2^x\log 2$, where $\log$ denotes logarithm base $e$.
+\[a(t)=2^tv_0\log 2\]
+Remark: we can also write $a(t)=v(t)\log 2$. The acceleration doubles every second as well.
+\end{solution}
+
+
+
+%\begin{question}
+%A gun is fired into a pool of water. The bullet leaves the gun at $1000 \frac{\mathrm{m}}{\mathrm{s}}$, and after travelling $3 \mathrm{m}$ through the water, the bullet is travelling only as fast as it is sinking. That is, all its speed attributed to the gun is gone. What was the deceleration of the bullet due to the water,          assuming it was constant and assuming that the bullet has come to         a stop after travelling 3 metres?
+%\end{question}
+%\begin{hint}
+%If the acceleration is constant, the position of the bullet is a quadratic equation. Once you have the position function (in terms of time $t$, with a parameter $a$ for acceleration) you can find the time when the bullet stops, and use that to find the acceleration.
+%\end{hint}
+%\begin{answer}
+%The deceleration was $-\frac{500~000}{3}$ meters per second per second, and the bullet travelled for $0.006$ seconds.
+%\end{answer}
+%\begin{solution}
+%Let $v(t)$ be the velocity of the bullet due to the gun at $t$ seconds after it hits the water, measured in metres per second.
+%Then the given information tells us that $v(0) \approx 1000$ and $v'(t)=a$ for some constant $a$. Then
+%\[v(t)=at+1000\]
+%So, \textcolor{red}{the time the bullet stops is $t=\frac{-1000}{a}$}, but this answer is not complete because we don't yet know $a$.
+%If $s(t)$ is the position of the bullet, then $s'(t)=v(t)=at+1000$, so
+%\[s(t)=\frac{a}{2}t^2+1000t+s(0)\]
+%where $s(0)$ is a constant. We might as well define our system so that $s(0)=0$, so
+%\[s(t)=\frac{a}{2}t^2+1000t%=t\left(\frac{a}{2}t+1000\right)
+%\]
+%The other piece of information that we're given is that $v(t)=0$ when $s(t)=3$. Let's find this time:
+%\begin{align*}
+%3&=\frac{a}{2}t^2+1000t\\
+%0&=\frac{a}{2}t^2+1000t-3
+%\intertext{Using the quadratic equation:}
+%t&=\frac{-1000 \pm \sqrt{1000^2-4\left(\frac{a}{2}\right)(-3)}}{2\left(\frac{a}{2}\right)}\\
+%&=\frac{-1000\pm\sqrt{1000^2+6a}}{a}
+%\intertext{Since we also know that the bullet stops at time $t=\frac{-1000}{a}$ (from the text in red above):}
+%\frac{-1000}{a}&=\frac{-1000\pm\sqrt{1000^2+6a}}{a}\\
+%{-1000}&={-1000\pm\sqrt{1000^2+6a}}\\
+%0&=\pm\sqrt{1000^2+6a}\\
+%6a&=-1000^2\\
+%a&=-\frac{500~000}{3}
+%\end{align*}
+%It makes sense that acceleration should be negative, since the bullet is slowing down from its initial positive velocity. The question asks for the \emph{deceleration} of the bullet, which is (positive) $\frac{500~000}{3}~\frac{\mathrm{m}}{\mathrm{s}^2}$.
+%
+%We already know the bullet takes $\frac{-1000}{a}$ seconds to stop, and now we can find this explicitly: $\dfrac{-1000}{\frac{-500~000}{3}}=\dfrac{3}{500}=0.006$ seconds.
+%
+%Note: we're dealing with some pretty unimaginable numbers here, so a little reality check is a good idea. If the bullet were travelling at a constant speed of $1000$ metres per second, it would cover three metres in $\frac{3}{1000}=0.003$ seconds. A\emph{decelerating} bullet should take \emph{more} time to cover the same distance, and indeed $0.006>0.003$.
+%
+%Remark: the speed of the bullet and its distance travelled through water are loosely based on
+%a TV show that filmed a bullet being fired into water. However, the assumption that the deceleration due to water is constant is unrealistic.\\\small
+%\url{http://kwc.org/mythbusters/2005/07/mythbusters_bulletproof_water.html}.
+%\end{solution}

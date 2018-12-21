@@ -1,3 +1,8 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
 %%%%%%%%%%%%%%%%%%%%%%%%
 %Counters we'll need for references and question numbering.
 %Need a global counter for nice hyperlink references
@@ -59,10 +64,10 @@
   \BODY%
   \end{tcolorbox}%
   }{}
-  
+
 
 \newenvironment{hint}%
-{\addtostream{thehints}{\noexpand\flushleft \hyperref[q:\theGlobalQCounter]{H-\theQCounter:} } %This links to the original question 
+{\addtostream{thehints}{\noexpand\flushleft \hyperref[q:\theGlobalQCounter]{H-\theQCounter:} } %This links to the original question
 \writeverbatim{thehints}} %This writes the tex in the environment verbatim to the file hints.foo.
 {\endwriteverbatim}
 
@@ -82,9 +87,9 @@
 % \newcommand{\nicerule}{\raisebox{-0.5ex}{$\blacktriangleright\!$}\hrulefill\raisebox{-0.5ex}{$\;\diamond\;$}\hrulefill\raisebox{-0.5ex}{$\!\blacktriangleleft$}}
 \newcommand{\nicerule}{
 \begin{tikzpicture}
-\draw[ diamond-diamond, thick] 
+\draw[ diamond-diamond, thick]
 (0,0)--(\textwidth,0);
-% \node[draw=black, fill=white, rounded corners, right=10pt] at (0.5,0) 
+% \node[draw=black, fill=white, rounded corners, right=10pt] at (0.5,0)
 \end{tikzpicture}
 }
 
@@ -100,7 +105,7 @@ Jump to \hyperref[h #1]{\textsc{hints}}, \hyperref[a #1]{\textsc{answers}}, \hyp
 {\large\textbf{Hints for Exercises~\ref{#1}}.}%
 \noexpand\phantomsection\noexpand\label{h #1} --- Jump to \noexpand\hyperlink{toc}{\textsc{table of contents}}.
 \noexpand\addcontentsline{toc}{section}{\protect\ref*{#1} \hspace{2ex} \nameref*{#1}}%
-}%%% use \@refstar here so that it doesnt make a link to the original section 
+}%%% use \@refstar here so that it doesnt make a link to the original section
 %
 \addtostream{theanswers}{
 
@@ -155,7 +160,7 @@ Jump to \hyperlink{toc}{\textsc{table of contents}}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 % messing with footnotes again - more
 \makeatletter
-\renewcommand\@makefntext[1]{\leftskip=2em\hskip-2em \@thefnmark 
+\renewcommand\@makefntext[1]{\leftskip=2em\hskip-2em \@thefnmark
 \neghphantom{\@thefnmark}\hskip2em #1}
 \makeatother
 
@@ -166,5 +171,5 @@ Jump to \hyperlink{toc}{\textsc{table of contents}}.
 \end{tikzpicture}\vspace*{2ex}
 }
 
-\renewcommand{\thempfootnote}{\fnsymbol{mpfootnote}} 
+\renewcommand{\thempfootnote}{\fnsymbol{mpfootnote}}
 %% this is so that footnotes inside minipages etc appear as symbols instead of letters or numbers

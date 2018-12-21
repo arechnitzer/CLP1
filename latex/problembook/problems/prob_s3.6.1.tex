@@ -1,0 +1,204 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s3.6.1}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion}
+Suppose $f(x)$ is a function given by
+\[f(x)= \frac{g(x)}{x^2-9}\]
+where $g(x)$ is also a function. True or false: $f(x)$ has a vertical asymptote at $x=-3$.
+\end{Mquestion}
+\begin{hint}
+What happens if $g(x)=x+3$?
+\end{hint}
+\begin{answer}
+In general, false.
+\end{answer}
+\begin{solution}
+In general, this is false. For example, the function $f(x) = \dfrac{x^2-9}{x^2-9}$ has no vertical asymptotes, because it is equal to 1 in every point in its domain (and is undefined when $x=\pm3$).
+
+However, it is certainly \emph{possible} that $f(x)$ has a vertical asymptote at $x=-3$. For example, $f(x)=\dfrac{1}{x^2-9}$ has a vertical asymptote at $x=-3$.  More generally, if $g(x)$ is continuous and $g(-3)\ne 0$,
+          then $f(x)$ has a vertical asympotote at $x=-3$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{Mquestion}
+Match the functions $f(x)$, $g(x)$, $h(x)$, and $k(x)$ to the curves $y=A(x)$ through $y=D(x)$.
+\begin{center}
+$f(x)=\sqrt{x^2+1}$\hfill
+$g(x)=\sqrt{x^2-1}$\hfill
+$h(x)=\sqrt{x^2+4}$\hfill
+$k(x)=\sqrt{x^2-4}$
+
+\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{4}
+\draw[thick, orange] plot[domain=-3:3, samples=100](\x,{sqrt(\x*\x+1)}) node[right]{$y=A(x)$};
+\foreach \x in {1,-1,2,-2}{\YExcoord{\x}{\x}}
+\foreach \x in {1,2}{\YEycoord{\x}{\x}}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{4}
+\draw[thick, red] plot[domain=-3:3, samples=100](\x,{sqrt(\x*\x+4)}) node[right]{$y=B(x)$};
+\foreach \x in {1,-1,2,-2}{\YExcoord{\x}{\x}}
+\foreach \x in {1,2}{\YEycoord{\x}{\x}}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{4}
+\draw[thick, blue] plot[domain=-3:-1, samples=100](\x,{sqrt(\x*\x-1)});
+\draw[thick, blue] plot[domain=1:3, samples=100](\x,{sqrt(\x*\x-1)})node[right]{$y=C(x)$};
+\foreach \x in {1,-1,2,-2}{\YExcoord{\x}{\x}}
+\foreach \x in {1,2}{\YEycoord{\x}{\x}}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{4}
+\draw[thick, green!80!black] plot[domain=-3:-2, samples=100](\x,{sqrt(\x*\x-4)});
+\draw[thick, green!80!black] plot[domain=2:3, samples=100](\x,{sqrt(\x*\x-4)}) node[right]{$y=D(x)$};
+\foreach \x in {1,-1,2,-2}{\YExcoord{\x}{\x}}
+\foreach \x in {1,2}{\YEycoord{\x}{\x}}
+\end{tikzpicture}
+\end{center}
+\end{Mquestion}
+\begin{hint}
+Use domains and intercepts to distinguish between the functions.
+\end{hint}
+\begin{answer}
+\textcolor{orange}{$f(x)=A(x)$}
+\qquad
+\textcolor{blue}{$g(x)=C(x)$}
+\qquad
+\textcolor{red}{$h(x)=B(x)$}
+\qquad
+\textcolor{green!90!black}{$k(x)=D(x)$}
+\end{answer}
+\begin{solution}
+Since $x^2+1$ and $x^2+4$ are always positive, $f(x)$ and $h(x)$ are defined over all real numbers. So, $f(x)$ and $h(x)$ correspond to $A(x)$ and $B(x)$. Which is which? $A(0)=1=f(0)$ while $B(0)=2=h(0)$, so \textcolor{orange}{$A(x)=f(x)$} and
+\textcolor{red}{$B(x)=h(x)$}.
+
+That leaves $g(x)$ and $k(x)$ matching to $C(x)$ and $D(x)$. The domain of $g(x)$ is all $x$ such that $x^2-1\ge0$. That is, $|x|\ge1$, like $C(x)$.
+The domain of $k(x)$ is all $x$ such that $x^2-4\ge0$. That is, $|x|\ge2$, like $D(x)$.
+So, \textcolor{blue}{$C(x)=g(x)$} and \textcolor{green}{$D(x)=k(x)$}.
+\end{solution}
+
+\begin{Mquestion}
+Below is the graph of
+\[y=f(x)=\sqrt{\log^2(x+p)}\]
+\begin{enumerate}[(a)]
+\item What is $p$?
+\item What is $b$ (marked on the graph)?
+\item What is the $x$-intercept of $f(x)$?
+\end{enumerate}
+Remember $\log(x+p)$ is the natural logarithm of $x+p$, $\log_e(x+p)$.
+
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{9}{3}{1}{5}
+\draw[thick, red] plot[domain=-7.38:2, samples=200](\x,{sqrt(ln(\x+7.39)*ln(\x+7.39))});
+\draw[dashed] (-7.39,5)--(-7.39,-.2) node[below]{$b$};
+\foreach \y in {1,2,3}{\YEycoord{\y}{\y}}
+\foreach \x in {-6,...,-1}{\YExcoord{\x}{\x}}
+\foreach \x in {1,2,-8}{\YExcoord{\x}{\x}}
+\end{tikzpicture}
+\end{center}
+\end{Mquestion}
+\begin{hint}
+To find $p$, the equation $f(0)=2$ gives you two possible values of $p$. Consider the domain of $f(x)$ to decide between them.
+\end{hint}
+\begin{answer}
+(a) $p=e^2$ \qquad (b) $b=-e^2$ \qquad $1-e^2$
+\end{answer}
+\begin{solution}
+(a) Since $f(0)=2$, we solve
+\begin{align*}
+2&=\sqrt{\log^2(0+p)}\\
+&=\sqrt{\log^2 p}\\
+&=\left|\log p\right|\\
+\log p &= \pm 2\\
+p&=e^{\pm 2}\\
+p&=e^2 \mbox{ or } p=\frac{1}{e^2}
+\end{align*}
+We know that $p$ is $e^2$ or $\dfrac{1}{e^2}$, but we have to decide between the two. In both cases, $f(0)=2$. Let's consider the domain of $f(x)$. Since $\log^2(x+p)$ is never negative, the square root does not restrict our domain. However, we can only take the logarithm of positive numbers. Therefore, the domain is
+\begin{align*}
+x \mbox{ such that } &x+p>0\\
+x \mbox{ such that } &x>-p\\
+\end{align*}
+If $p=\dfrac{1}{e^2}$, then the domain of $f(x)$ is $\left(-\dfrac{1}{e^2},\infty\right)$. In particular, since $-\dfrac{1}{e^2}>-1$, the domain of $f(x)$ does not include $x=-1$. However, it is clear from the graph that $f(-1)$ exists. So, $p=e^2$.
+
+(b) Now, we need to figure out what $b$ is.
+Notice that $b$ is the end of the domain of $f(x)$, which we already found to be $(-p,\infty)$. So, $b=-p=-e^2$.
+
+ (As a quick check, if we take $e\approx 2.7$, then $-e^2=-7.29$, and this looks about right on the graph.)
+
+ (c) The $x$-intercept is the value of $x$ for which $f(x)=0$:
+ \begin{align*}
+ 0&=\sqrt{\log^2(x+p)}\\
+ 0&=\log(x+p)\\
+ 1&=x+p\\
+ x&=1-p=1-e^2
+ \end{align*}
+ The $x$-intercept is $1-e^2$.
+
+ (As another quick check, the $x$-intercept we found is a distance of 1 from the vertical asymptote, and this looks about right on the graph.)
+\end{solution}
+
+
+\begin{Mquestion}
+Find all asymptotes of $f(x)=\dfrac{x(2x+1)(x-7)}{3x^3-81}$.
+\end{Mquestion}
+\begin{hint}
+Check for horizontal asymptotes by evaluating $\ds\lim_{x \to \pm \infty}f(x)$, and
+check for vertical asymptotes by finding any value of $x$ near which $f(x)$ blows up.
+\end{hint}
+\begin{answer}
+ vertical asymptote at $x=3$; horizontal asymptotes $\ds\lim_{x \to \pm \infty}f(x)=\dfrac{2}{3}$
+\end{answer}
+\begin{solution}
+Vertical asymptotes occur where the function blows up. In rational functions, this can only happen when the denominator goes to 0. In our case, the denominator is 0 when $x=3$, and in this case the numerator is $147$. That means that as $x$ gets closer and closer to 3, the numerator gets closer and closer to 147 while the denominator gets closer and closer to 0, so $|f(x)|$ grows without bound. That is, there is a vertical asymptote at $x=3$.
+
+The horizontal asymptotes are found by taking the limits as $x$ goes to infinity and negative infinity. In our case, they are the same, so we condense our work.
+\begin{align*}
+\lim_{x \to \pm \infty}\dfrac{x(2x+1)(x-7)}{3x^3-81}
+&=\lim_{x \to \pm \infty}\dfrac{2x^3+ax^2+bx+c}{3x^3-81}
+\intertext{where $a$, $b$, ad $c$ are some constants. Remember, for rational functions, you can figure out the end behaviour by looking only at the terms with the highest degree--the others won't matter, so we don't bother finding them. From here, we  divide the numerator and denominator by the highest power of $x$ in the denominator, $x^3$.}
+&=\lim_{x \to \pm \infty}\dfrac{2x^3+ax^2+bx+c}{3x^3-81}\left(\frac{\tfrac{1}{x^3}}{\tfrac{1}{x^3}}\right)\\
+&=\lim_{x \to \pm \infty}\dfrac{2+\tfrac{a}{x}+\tfrac{b}{x^2}+\tfrac{c}{x^3}}{3-\tfrac{81}{x^3}}\\
+&=\dfrac{2+0+0+0}{3-0}=\frac{2}{3}
+\end{align*}
+So there is a horizontal asymptote of $y=\dfrac{2}{3}$ both as $x \to \infty$ and as $x \to -\infty$.
+\end{solution}
+
+\begin{question}
+Find all asymptotes of $f(x)=10^{3x-7}$.
+\end{question}
+\begin{hint}
+Check for horizontal asymptotes by evaluating $\ds\lim_{x \to \pm \infty}f(x)$, and
+check for vertical asymptotes by finding any value of $x$ near which $f(x)$ blows up.
+\end{hint}
+\begin{answer}
+horizontal asymptote $y=0$ as $x \to -\infty$; no other asymptotes
+\end{answer}
+\begin{solution}
+Since $f(x)$ is continuous over all real numbers, it has no vertical asymptote.
+
+To find the horizontal asymptotes, we evaluate
+$\ds\lim_{x \to \pm \infty}f(x)$.
+\begin{align*}
+\lim_{x \to \infty}10^{3x-7}&=\underbrace{\lim_{X \to \infty}10^X}_{\mbox{let }X=3x-7}=\infty
+\intertext{So, there's no horizontal asymptote as $x \to \infty$.}
+\lim_{x \to -\infty}10^{3x-7}&=\underbrace{\lim_{X \to -\infty}10^{X}}_{\mbox{let }X=3x-7}\\
+&=\underbrace{\lim_{X' \to \infty}10^{-X'}}_{\mbox{let }X'=-X}\\
+&=\lim_{X' \to \infty}\frac{1}{10^{X'}}\\
+&=0
+\end{align*}
+That is, $y=0$ is a horizontal asymptote as $x \to -\infty$.
+\end{solution}

@@ -1,0 +1,758 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s2.10}
+Reminder: in these notes, we use $\log x$ to mean $\log_e x$, which is also commonly written elsewhere as $\log x$.
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+\begin{question}
+The volume in decibels (dB) of a sound is given by the formula:
+\[V(P)=10\log_{10}\left(\frac{P}{S}\right)\]
+where $P$ is the intensity of the sound  and $S$ is the intensity of a standard baseline sound. (That is: $S$ is some constant.)
+
+How much noise will ten speakers make, if each speaker produces 3dB of noise? What about one hundred speakers?
+\end{question}
+\begin{hint}
+Each speaker produces 3dB of noise, so if $P$ is the power of one speaker,
+$3=V(P)=10\log_{10}\left(\frac{P}{S}\right)$. Use this to find $V(10P)$ and $V(100P)$.
+\end{hint}
+\begin{answer}
+Ten speakers: 13 dB. One hundred speakers: 23 dB.
+\end{answer}
+\begin{solution}
+We are given that one speaker produces 3dB. So if $P$ is the power of one speaker,
+\begin{align*}3=V(P)&=10\log_{10}\left(\frac{P}{S}\right).
+\intertext{So, for ten speakers:}
+V(10P)&=10\log_{10}\left(\frac{10P}{S}\right)=10\log_{10}\left(\frac{P}{S}\right)+10\log_{10}\left(10\right)\\
+&=3+10(1)=13 \mathrm{dB}
+\intertext{and for one hundred speakers:}
+V(100P)&=10\log_{10}\left(\frac{100P}{S}\right)=10\log_{10}\left(\frac{P}{S}\right)+10\log_{10}\left(100\right)\\
+&=3+10(2)=23 \mathrm{dB}
+\end{align*}
+\end{solution}
+
+\begin{Mquestion}
+An investment of \$1000 with an interest rate of 5\% per year grows to
+\[A(t)=1000e^{t/20}\]
+dollars after $t$ years. When will the investment double?
+\end{Mquestion}
+\begin{hint}
+The question asks you when $A(t)=2000$. So, solve $2000=1000e^{t/20}$ for $t$.
+\end{hint}
+\begin{answer}
+$20\log2 \approx 14$ years
+\end{answer}
+\begin{solution}
+The investment doubles when it hits \$2000. So, we find the value of  $t$
+that gives $A(t)=2000$:
+\begin{align*}
+2000&=A(t)\\
+2000&=1000e^{t/20}\\
+2&=e^{t/20}\\
+\log 2 &=\frac{t}{20}\\
+20\log2&=t
+\end{align*}
+\end{solution}
+
+
+\begin{Mquestion}
+Which of the following expressions, if any, is equivalent to $\log\left(\cos^2 x\right)$?
+\[(\mbox{a})~ 2\log(\cos x) \qquad (\mbox{b})~ 2\log|\cos x | \qquad (\mbox{c})~ \log^2(\cos x) \qquad (\mbox{d})~\log(\cos x^2))\]
+\end{Mquestion}
+\begin{hint}
+What happens when $\cos x$ is a negative number?
+\end{hint}
+\begin{answer}
+(b)
+\end{answer}
+\begin{solution}
+From our logarithm rules, we know that when $y$ is \emph{positive}, $\log (y^2)=2\log y$. However, the expression $\cos x$ does not always take on positive values, so (a) is not correct. (For instance, when $x=\pi$, $\log(\cos^2 x)=\log(\cos^2\pi)=\log\left((-1)^2\right) = \log(1)=0$, while $2\log (\cos \pi)=2\log(-1)$, which does not exist.)
+
+Because $\cos^2 x$ is never negative, we notice that $\cos^2 x = |\cos x|^2$. When $\cos x$ is nonzero, $|\cos x|$ is positive, so our logarithm rules tell us $\log\left(|\cos x|^2\right) =2\log|\cos x |$. When $\cos x$ is exactly zero, then both $\log(\cos^2x)$ and $2\log|\cos x|$ do not exist. So, $\log(\cos^2x) = 2\log|\cos x|$.
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+\begin{Mquestion}
+Differentiate $f(x)=\log(10x)$.
+\end{Mquestion}
+\begin{hint}
+There are two easy ways: use the chain rule, or simplify first.
+\end{hint}
+\begin{answer}
+$f'(x)=\dfrac{1}{x}$
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item Solution 1: Using the chain rule, $\ds\diff{}{x}\left\{\log(10x)\right\}=\dfrac{1}{10x}\cdot 10=\frac{1}{x}$.
+\item Solution 2: Simplifying,
+$\ds\diff{}{x}\left\{\log(10x)\right\}=\ds\diff{}{x}\left\{\log(10)+\log x\right\} = 0+\frac{1}{x}=\frac{1}{x}$.
+\end{itemize}
+\end{solution}
+
+\begin{Mquestion}
+Differentiate $f(x)=\log(x^2)$.
+\end{Mquestion}
+\begin{hint}
+There are two easy ways: use the chain rule, or simplify first.
+\end{hint}
+\begin{answer}
+$f'(x)=\dfrac{2}{x}$
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item Solution 1: Using the chain rule,
+$\ds\diff{}{x}\left\{\log(x^2)\right\}=\frac{1}{x^2}\cdot 2x = \frac{2}{x}$.
+\item Solution 2: Simplifying,
+$\ds\diff{}{x}\left\{\log(x^2)\right\}= \ds\diff{}{x}\left\{2\log(x)\right\}=   \frac{2}{x}$.
+\end{itemize}
+\end{solution}
+
+\begin{Mquestion}
+Differentiate $f(x)=\log(x^2+x)$.
+\end{Mquestion}
+\begin{hint}
+Don't be fooled by a common mistake: $\log(x^2+x)$ is \emph{not} the same as $\log(x^2)+\log x$.
+\end{hint}
+\begin{answer}
+$f'(x)=\dfrac{2x+1}{x^2+x}$
+\end{answer}
+\begin{solution}
+Don't be fooled by a common mistake: $\log(x^2+x)$ is \emph{not} the same as $\log(x^2)+\log x$. \\
+We differentiate using the chain rule:
+$\ds\diff{}{x}\left\{\log(x^2+x)\right\}=\dfrac{1}{x^2+x}\cdot(2x+1) = \dfrac{2x+1}{x^2+x}$.
+\end{solution}
+
+\begin{Mquestion}
+Differentiate $f(x)=\log_{10}x$.
+\end{Mquestion}
+\begin{hint}
+Use the base-change formula to convert this to natural logarithm (base $e$).
+\end{hint}
+\begin{answer}
+$f'(x) = \dfrac{1}{x\log10}$
+\end{answer}
+\begin{solution}
+We know the derivative of the natural logarithm (base $e$), so we use the base-change formula:
+\begin{align*}
+f(x)=\log_{10}x&=\frac{\log x}{\log 10}
+\intertext{Since $\log 10$ is a constant:}
+f'(x)&=\frac{1}{x\log 10}.
+\end{align*}
+\end{solution}
+
+
+\begin{question}[1997A]
+Find the derivative of $y=\dfrac{\log x}{x^3}$.
+\end{question}
+\begin{answer} $y'=\dfrac{1-3\log x}{x^4}$
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item Solution 1: Using the quotient rule,
+\[
+y'=\frac{x^3\frac{1}{x}-(\log x)\cdot 3x^2}{x^6}=
+\frac{x^2-3x^2\log x}{x^6}=\frac{1-3\log x}{x^4}.\]
+
+\item Solution 2: Using the product rule with
+$y=\log x \cdot x^{-3}$,
+\[y'=\frac{1}{x}x^{-3}+\log x \cdot(-3)x^{-4}=x^{-4}(1-3\log x)\]
+\end{itemize}
+\end{solution}
+
+
+
+\begin{Mquestion}
+Evaluate $\ds\diff{}{\theta} \log(\sec \theta)$.
+\end{Mquestion}
+\begin{hint}
+Use the chain rule.
+\end{hint}
+\begin{answer}
+$\ds\diff{}{\theta} \log(\sec \theta) = \tan \theta$
+\end{answer}
+\begin{solution}
+Using the chain rule,
+\begin{align*}
+\ds\diff{}{\theta} \log(\sec \theta)&=\frac{1}{\sec \theta}\cdot (\sec \theta \cdot \tan \theta)\\
+&=\tan\theta
+\end{align*}
+Remark: the domain of the function $\log(\sec \theta)$ is those values of $\theta$ for which $\sec\theta$ is positive: so, the intervals $\left(\left(2n-\frac{1}{2}\right)\pi,\left(2n+\frac{1}{2}\right)\pi\right)$ where $n$ is any integer. Certainly the tangent function has a larger domain than this, but outside the domain of $\log(\sec \theta)$, $\tan \theta$ is not the derivative of $\log(\sec \theta)$.
+\end{solution}
+
+
+
+
+\begin{question}
+Differentiate the function $f(x)=e^{\cos\left(\log x\right)}$.
+\end{question}
+\begin{hint}  Use the chain rule twice.
+\end{hint}
+\begin{answer}
+$f'(x)=\dfrac{-e^{\cos(\log x)}\sin(\log x)}{x}$
+\end{answer}
+\begin{solution}
+Let's start in with the chain rule.
+\begin{align*}
+f'(x)
+  &= e^{\textcolor{red}{\cos\left(\log x\right)}} \cdot \diff{}{x} \left\{ \textcolor{red}{\cos\left( \log x
+\right)}\right\}
+\intertext{We'll need the chain rule again:}
+  &= e^{\cos\left(\log x\right)} (-\sin(\textcolor{orange}{\log x})) \cdot \diff{}{x}\{\textcolor{orange}{ \log x} \}\\
+  &= e^{\cos\left(\log x\right)} (-\sin(\log x)) \cdot \frac{1}{x}\\
+  &=\frac{-e^{\cos(\log x)}\sin(\log x)}{x}
+\end{align*}
+Remark: Although we have a logarithm in the exponent, we can't cancel. The expression $e^{\cos (\log x)}$ is \emph{not} the same as the expression $x^{\cos x}$, or $\cos x$.
+\end{solution}
+
+
+\begin{question}[1996D]
+Evaluate the derivative. You do not need to simplify your answer.
+\[y=\log(x^2+\sqrt{x^4+1})\]
+\end{question}
+\begin{hint} You'll need to use the chain rule twice.
+\end{hint}
+\begin{answer} $y'=\dfrac{2x+\frac{4x^3}{2\sqrt{x^4+1}}}{x^2+\sqrt{x^4+1}}$
+\end{answer}
+\begin{solution}
+\begin{align*}
+y&=\log(x^2+\sqrt{x^4+1})
+\intertext{So, we'll need the chain rule:}
+y'&=\frac{\diff{}{x}\left\{\textcolor{red}{x^2+\sqrt{x^4+1}}\right\}}{\textcolor{red}{x^2+\sqrt{x^4+1}}}\\
+&=\frac{2x+\diff{}{x}\left\{\sqrt{x^4+1}\right\}}{x^2+\sqrt{x^4+1}}
+\intertext{We need the chain rule again:}
+&=\frac{2x+\frac{\diff{}{x}\left\{\textcolor{red}{x^4+1}\right\}}{2\sqrt{\textcolor{red}{x^4+1}}}}{x^2+\sqrt{x^4+1}}\\
+&=\frac{2x+\frac{4x^3}{2\sqrt{x^4+1}}}{x^2+\sqrt{x^4+1}}.
+\end{align*}
+\end{solution}
+
+\begin{question}[2015Q]
+ Differentiate $\sqrt{-\log(\cos x)}$.
+\end{question}
+\begin{hint} Use the chain rule.
+\end{hint}
+\begin{answer} $\dfrac{\tan x}{2\sqrt{-\log(\cos x)}}$
+\end{answer}
+\begin{solution}
+This requires us to apply the chain rule twice.
+\begin{align*}
+  \diff{}{x} \left\{ \sqrt{-\log(\cos x)} \right\}
+  &= \frac{1}{2\sqrt{\textcolor{red}{-\log(\cos x)}}} \cdot \diff{}{x} \left\{ \textcolor{red}{-\log\left(\cos x\right)} \right\}\\
+  &= -\frac{1}{2\sqrt{-\log(\cos x)}} \cdot \frac{1}{\textcolor{orange}{\cos x}} \diff{}{x} \left\{\textcolor{orange}{\cos x} \right\}\\
+  &= -\frac{1}{2\sqrt{-\log(\cos x)}} \cdot \frac{1}{\cos x} \cdot \left(-\sin x\right)\\
+  &=\frac{\tan x}{2\sqrt{-\log(\cos x)}}
+\end{align*}
+Remark: it looks strange to see a negative sign in the argument of a square root. Since the cosine function always gives values that are at  most 1, $\log(\cos x)$ is always negative or zero over its domain.
+So, $\sqrt{\log(\cos x)}$ is only defined for the points where $\cos x=1$ (and so $\log(\cos x) = 0$--this isn't a very interesting function!
+In contrast, $-\log(\cos x)$ is always positive or zero over its domain--and therefore we can always take its square root.
+\end{solution}
+
+
+\begin{question}[1999H]
+Calculate and simplify the derivative of
+$\log\big(x+\sqrt{x^2+4}\big)$.
+\end{question}
+\begin{hint}
+Use the chain rule to differentiate. It won't simplify to something particularly nice.
+\end{hint}
+\begin{answer} $\dfrac{\sqrt{x^2+4}+x}{x\sqrt{x^2+4}+x^2+4}$
+\end{answer}
+\begin{solution}
+Using the chain rule,
+\begin{align*}
+\diff{}{x}\left\{\log\big(x+\sqrt{x^2+4}\big)\right\}
+&=\frac{1}{\textcolor{red}{x+\sqrt{x^2+4}}} \cdot \diff{}{x}\left\{\textcolor{red}{x+\sqrt{x^2+4}}\right\}
+\\
+&=\frac{1}{x+\sqrt{x^2+4}}\cdot\left(1+\frac{2x}{2\sqrt{x^2+4}}\right)\\
+&=\frac{1+\frac{x}{\sqrt{x^2+4}}}{x+\sqrt{x^2+4}}\cdot \frac{\sqrt{x^2+4}}{\sqrt{x^2+4}}\\
+&=\frac{\sqrt{x^2+4}+x}{x\sqrt{x^2+4}+x^2+4} .
+\end{align*}
+\end{solution}
+
+
+\begin{question}[1998H]
+Evaluate the derivative of  $g(x)=\log (e^{x^2}+\sqrt{1+x^4})$.
+\end{question}
+\begin{hint} You can differentiate this by using the chain rule several times.
+\end{hint}
+\begin{answer}
+$g'(x)=\dfrac{2xe^{x^2}\sqrt{1+x^4}+2x^3}{e^{x^2}\sqrt{1+x^4}+1+x^4}$
+\end{answer}
+\begin{solution}
+Using the chain rule,
+\begin{align*}
+g'(x)&=\frac{\diff{}{x}\{e^{x^2}+\sqrt{1+x^4}\}}{e^{x^2}+\sqrt{1+x^4}}\\
+&=\frac{2xe^{x^2}+\frac{4x^3}{2\sqrt{1+x^4}}}{e^{x^2}+\sqrt{1+x^4}}\left(\frac{\sqrt{1+x^4}}{\sqrt{1+x^4}}\right)\\
+&=\frac{2xe^{x^2}\sqrt{1+x^4}+2x^3}{e^{x^2}\sqrt{1+x^4}+1+x^4}
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}[1997D]Evaluate the derivative of the following function at $x=1$:
+$g(x)=\log\Big(\dfrac{2x-1}{2x+1}\Big)$.
+\end{question}
+\begin{hint}  Using logarithm rules before you differentiate will make this easier.
+\end{hint}
+\begin{answer} $\dfrac{4}{3}$
+\end{answer}
+\begin{solution}
+Using logarithm rules makes this an easier problem:
+\begin{align*}
+g(x) &= \log(2x-1) -\log(2x+1)\\
+\mbox{So, }~
+g'(x) &= \dfrac{2}{2x-1} -\dfrac{2}{2x+1}\\
+\mbox{and }~
+g'(1) &= \dfrac{2}{1} -\dfrac{2}{3}=\dfrac{4}{3}
+\end{align*}
+\end{solution}
+
+
+\begin{Mquestion}
+Evaluate the derivative of the function $f(x) = \log\left(\sqrt{\dfrac{(x^2+5)^3}{x^4+10}}\right)$.
+\end{Mquestion}
+\begin{hint}   Using logarithm rules before you differentiate will make this easier.
+\end{hint}
+\begin{answer}
+$f'(x)=\dfrac{3x}{x^2+5}-\dfrac{2x^3}{x^4+10}$
+\end{answer}
+\begin{solution}
+We begin by simplifying:
+\begin{align*}
+f(x) &= \log\left(\sqrt{\dfrac{(x^2+5)^3}{x^4+10}}\right)\\
+&=\log\left(\left({\dfrac{(x^2+5)^3}{x^4+10}}\right)^{1/2}\right)\\
+&=\frac{1}{2}\log\left(\dfrac{(x^2+5)^3}{x^4+10}\right)\\
+&=\frac{1}{2}\left[\log\left({(x^2+5)^3}\right)-\log({x^4+10})\right]
+\\
+&=\frac{1}{2}\left[3\log\left({(x^2+5)}\right)-\log({x^4+10})\right]
+\intertext{Now, we differentiate using the chain rule:}
+f'(x)&=\frac{1}{2}\left[ 3\frac{2x}{x^2+5}-\frac{4x^3}{x^4+10} \right]\\
+&=\frac{3x}{x^2+5}-\frac{2x^3}{x^4+10}
+\end{align*}
+Remark: it is a common mistake to write $\log(x^2+4)$ as $\log(x^2)+\log(4)$. These expressions are not equivalent!
+\end{solution}
+
+
+\begin{question}
+Evaluate $f'(2)$ if $f(x) = \log\big(g\big(xh(x)\big)\big)$,
+$h(2) = 2$, $h'(2) = 3$, $g(4) = 3$, $g'(4) = 5$.
+\end{question}
+\begin{hint}
+First, differentiate using the chain rule and any other necessary rules. Then, plug in $x=2$.
+\end{hint}
+\begin{answer}
+$\dfrac{40}{3}$
+\end{answer}
+\begin{solution}
+We use the chain rule twice, followed by the product rule:
+\begin{align*}
+f'(x) &=
+\frac{1}{\textcolor{red}{g(xh(x))}}\cdot\diff{}{x}\{\textcolor{red}{g(xh(x))}\}\\
+&=\frac{1}{g(xh(x))}\cdot g'(\textcolor{orange}{xh(x)})\cdot\diff{}{x}\{\textcolor{orange}{xh(x)}\}
+\\ &=\dfrac{1}{g\big(xh(x)\big)}\cdot g'\big(xh(x)\big)\cdot\big[h(x)+xh'(x)\big]
+\intertext{In particular, when $x=2$:}
+f'(2) &= \dfrac{1}{g\big(2h(2)\big)}\cdot g'\big(2h(2)\big)\cdot \big[h(2)+2h'(2)\big]\\
+&= \dfrac{g'(4)}{g(4)}\big[2+2\times 3\big]
+= \dfrac{5}{3}\big[2+2\times 3\big]\\
+&=\dfrac{40}{3}
+\end{align*}
+\end{solution}
+
+
+\begin{Mquestion}[2010H]
+Differentiate the function
+\[g(x)=\pi^x+x^\pi.\]
+\end{Mquestion}
+\begin{hint}
+In the text, you are given the derivative $\ds\diff{}{x} a^x$, where $a$ is a constant.
+\end{hint}
+\begin{answer}
+$g'(x)=\pi^x\log \pi+\pi x^{\pi -1}$
+\end{answer}
+\begin{solution}
+In the text, we saw that $\ds\diff{}{x}\left\{a^x\right\}=a^x\log a$ for any constant $a$. So, $\ds\diff{}{x}\left\{\pi^x\right\}=\pi^x\log \pi$.
+
+ By the power rule, $\ds\diff{}{x}\left\{x^{\pi}\right\}=\pi x^{\pi-1}$.
+
+ Therefore, $g'(x)=\pi^x\log \pi+\pi x^{\pi-1}$.
+
+ Remark: we had to use two different rules for the two different terms in $g(x)$. Although the functions $\pi^x$ and $x^\pi$ look superficially the same, they behave differently, as do their derivatives. A function of the form $(\mbox{constant})^{x}$ is an exponential function and \emph{not eligible for the power rule}, while a function of the form $x^{\mbox{constant}}$ is exactly the class of function the power rule applies to.
+\end{solution}
+
+
+
+
+
+\begin{Mquestion}\label{s2.10xtox}
+Differentiate $f(x)=x^x$.
+\end{Mquestion}
+\begin{hint} You'll need to use logarithmic differentiation. Set $g(x)=\log(f(x))$, and find $g'(x)$. Then, use that to find $f'(x)$. This is the method used in the text to find $\ds\diff{}{x} a^x$.
+\end{hint}
+\begin{answer}
+$f'(x) = x^x(\log x + 1)$
+\end{answer}
+\begin{solution}
+We have the power rule to tell us the derivative of functions of the form $x^n$, where $n$ is a constant. However, here our exponent is not a constant. Similarly, in this section we learned the derivative of functions of the form $a^x$, where $a$ is a constant, but again, our base is not a constant! Although the result $\ds\diff{}{x} a^x=a^x\log a$ is not what we need, the \emph{method} used to differentiate $a^x$ will tell us the derivative of $x^x$.
+
+We'll set $g(x)=\log(x^x)$, because now we can use logarithm rules to simplify:
+\begin{align*}
+g(x)=\log(f(x))&=x\log x
+\intertext{Now, we can  use the product rule to differentiate the right side, and the chain rule to differentiate $\log(f(x))$:}
+g'(x)=\frac{f'(x)}{f(x)}&=\log x +x\frac{1}{x}=\log x +1
+\intertext{Finally, we solve for $f'(x)$:}
+f'(x)&=f(x)(\log x + 1) = x^x(\log x + 1)
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}[2011H]
+Find $f'(x)$ if $f(x) = x^x+\log_{10}x$.
+\end{question}
+\begin{hint}
+Use Question~\ref{s2.10xtox} and the base-change formula, $\log_b(a)=\dfrac{\log a}{\log b}$.
+\end{hint}
+\begin{answer} $x^x(\log x+1)+\dfrac{1}{x\log 10}$
+\end{answer}
+\begin{solution}
+In Question~\ref{s2.10xtox}, we saw $\ds\diff{}{x}\left\{x^x\right\}=x^x(\log x+1)$. Using
+the base-change formula, $\log_{10}(x)=\dfrac{\log x}{\log 10}$. Since $\log_{10}$ is a constant,
+\begin{align*}
+f'(x)&=\diff{}{x}\left\{x^x+\frac{\log x}{\log 10}\right\}\\
+&=x^x(\log x+1)+\frac{1}{x\log 10}
+\end{align*}
+\end{solution}
+
+
+\begin{question}
+Differentiate $f(x) = \sqrt[4]{\dfrac{(x^4+12)(x^4-x^2+2)}{x^3}}$.
+\end{question}
+\begin{hint} To make this easier, use logarithmic differentiation.
+Set $g(x)=\log(f(x))$, and find $g'(x)$. Then, use that to find $f'(x)$. This is the method used in the text to find $\ds\diff{}{x} a^x$, and again in Question~\ref{s2.10xtox}.
+\end{hint}
+\begin{answer}
+$f'(x)=\dfrac{1}{4}\left(
+{\sqrt[4]{\dfrac{(x^4+12)(x^4-x^2+2)}{x^3}}}\right)\left(\dfrac{4x^3}{x^4+12}+\dfrac{4x^3-2x}{x^4-x^2+2}-\dfrac{3}{x}\right)$
+\end{answer}
+\begin{solution}
+Rather than set in with a terrible chain rule problem, we'll use logarithmic differentiation. Instead of differentiating $f(x)$, we differentiate a new function $\log(f(x))$, after simplifying.
+\begin{align*}
+\log(f(x))&=\log\sqrt[4]{\dfrac{(x^4+12)(x^4-x^2+2)}{x^3}}\\
+&=\frac{1}{4}\log\left(\frac{(x^4+12)(x^4-x^2+2)}{x^3}\right)\\
+&=\frac{1}{4}\left(\log(x^4+12)+\log(x^4-x^2+2)-3\log x\right)
+\intertext{Now that we've simplified, we can efficiently differentiate both sides. It is important to remember that we aren't differentiating $f(x)$ directly--we're differentiating $\log(f(x))$.}
+\frac{f'(x)}{f(x)}&=\frac{1}{4}\left(\frac{4x^3}{x^4+12}+\frac{4x^3-2x}{x^4-x^2+2}-\frac{3}{x}\right)
+\intertext{Our final step is to solve for $f'(x)$:}
+{f'(x)}&=f(x)\frac{1}{4}\left(\frac{4x^3}{x^4+12}+\frac{4x^3-2x}{x^4-x^2+2}-\frac{3}{x}\right)
+\\
+&=\frac{1}{4}\left(
+{\sqrt[4]{\dfrac{(x^4+12)(x^4-x^2+2)}{x^3}}}\right)\left(\frac{4x^3}{x^4+12}+\frac{4x^3-2x}{x^4-x^2+2}-\frac{3}{x}\right)
+\end{align*}
+It was possible to differentiate this function without logarithms, but the logarithms make it more efficient.
+\end{solution}
+
+\begin{Mquestion}
+Differentiate $f(x)=(x+1)(x^2+1)^2(x^3+1)^3(x^4+1)^4(x^5+1)^5$.
+\end{Mquestion}
+\begin{hint} To make this easier, use logarithmic differentiation.
+Set $g(x)=\log(f(x))$, and find $g'(x)$. Then, use that to find $f'(x)$. This is the method used in the text to find $\ds\diff{}{x} a^x$, and again in Question~\ref{s2.10xtox}.
+\end{hint}
+\begin{answer}
+$f'(x)=(x+1)(x^2+1)^2(x^3+1)^3(x^4+1)^4(x^5+1)^5
+\left[\frac{1}{x+1}+\frac{4x}{x^2+1}
++\frac{9x^2}{x^3+1}+\frac{16x^3}{x^4+1}+\frac{25x^4}{x^5+1}\right]$
+\end{answer}
+\begin{solution}
+It's possible to do this using the product rule a number of times, but it's easier to use logarithmic differentiation. Set
+\begin{align*}
+g(x)=\log(f(x))&=\log\left[(x+1)(x^2+1)^2(x^3+1)^3(x^4+1)^4(x^5+1)^5\right]
+\intertext{Now we can use logarithm rules to change $g(x)$ into a form that is friendlier to differentiate:}
+&=\log(x+1)+\log(x^2+1)^2+\log(x^3+1)^3+\log(x^4+1)^4+\log(x^5+1)^5\\
+&=\log(x+1)+2\log(x^2+1)+3\log(x^3+1)+4\log(x^4+1)+5\log(x^5+1)
+\intertext{Now, we differentiate $g(x)$ using the chain rule:}
+g'(x)=\frac{f'(x)}{f(x)}&=\frac{1}{x+1}+\frac{4x}{x^2+1}
++\frac{9x^2}{x^3+1}+\frac{16x^3}{x^4+1}+\frac{25x^4}{x^5+1}
+\intertext{Finally, we solve for $f'(x)$:}
+f'(x)&=f(x)\left[\frac{1}{x+1}+\frac{4x}{x^2+1}
++\frac{9x^2}{x^3+1}+\frac{16x^3}{x^4+1}+\frac{25x^4}{x^5+1}\right]\\
+&=(x+1)(x^2+1)^2(x^3+1)^3(x^4+1)^4(x^5+1)^5\\
+&~~~\cdot\left[\frac{1}{x+1}+\frac{4x}{x^2+1}
++\frac{9x^2}{x^3+1}+\frac{16x^3}{x^4+1}+\frac{25x^4}{x^5+1}\right]
+\end{align*}
+\end{solution}
+
+
+\begin{question} Differentiate
+$f(x) = \left(\dfrac{5x^2+10x+15}{3x^4+4x^3+5}\right)\left(\dfrac{1}{10(x+1)}\right)$.
+\end{question}
+\begin{hint} It's not going to come out nicely, but there's a better way than blindly applying quotient and product rules, or expanding giant polynomials.
+\end{hint}
+\begin{answer}
+$\left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)\left(\dfrac{1}{x^2+2x+3}-\dfrac{6x^2}{3x^4+4x^3+5}-\dfrac{1}{2(x+1)^2}\right)
+$
+\end{answer}
+\begin{solution}
+We could do this with quotient and product rules, but it would be pretty painful. Insteady, let's use a logarithm.
+\begin{align*}
+f(x) &= \left(\dfrac{5x^2+10x+15}{3x^4+4x^3+5}\right)\left(\dfrac{1}{10(x+1)}\right)
+= \left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)\left(\dfrac{1}{2(x+1)}\right)
+\\
+\log(f(x)) &= \log\left[\left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)\left(\dfrac{1}{2(x+1)}\right)\right]\\
+&=\log\left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)
++
+\log\left(\dfrac{1}{2(x+1)}\right)
+\\&=\log\left({x^2+2x+3}\right)-
+\log\left({3x^4+4x^3+5}\right)
+-\log(x+1)-\log(2)
+\intertext{Now we have a function that we can differentiate more cleanly than our original function.}
+\diff{}{x}\left\{\log(f(x))\right\}&=\diff{}{x}\left\{
+\log\left({x^2+2x+3}\right)-
+\log\left({3x^4+4x^3+5}\right)
+-
+\log\left({x+1}\right)-
+\log\left({2}\right)
+\right\}\\
+\frac{f'(x)}{f(x)}&=\frac{2x+2}{x^2+2x+3}-\frac{12x^3+12x^2}{3x^4+4x^3+5}-\frac{1}{x+1}\\
+&=\frac{2(x+1)}{x^2+2x+3}-\frac{12x^2(x+1)}{3x^4+4x^3+5}-\frac{1}{x+1}
+\intertext{Finally, we solve for $f(x)$:}
+f'(x)&=f(x)\left(\frac{2(x+1)}{x^2+2x+3}-\frac{12x^2(x+1)}{3x^4+4x^3+5}-\frac{1}{x+1}\right)\\
+&= \left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)\left(\dfrac{1}{2(x+1)}\right)\left(\frac{2(x+1)}{x^2+2x+3}-\frac{12x^2(x+1)}{3x^4+4x^3+5}-\frac{1}{x+1}\right)\\
+&= \left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)\left(\frac{1}{x^2+2x+3}-\frac{6x^2}{3x^4+4x^3+5}-\frac{1}{2(x+1)^2}\right)
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{question}[2007H]\label{s2.10xtox2} Let $f(x) = (\cos x)^{\sin x}$,
+with domain $0<x<\tfrac{\pi}{2}$. Find $f'(x)$.
+\end{question}
+\begin{hint}
+You'll need to use logarithmic differentiation. Set $g(x)=\log(f(x))$, and find $g'(x)$. Then, use that to find $f'(x)$. This is the method used in the text to find $\ds\diff{}{x} a^x$, and again in Question~\eqref{s2.10xtox}.
+\end{hint}
+\begin{answer}
+$f'(x)=(\cos x)^{\sin x}\left[(\cos x) \log (\cos x) - \sin x \tan x\right]$
+\end{answer}
+\begin{solution}
+Since $f(x)$ has the form of a function raised to a functional power, we will use logarithmic differentiation.
+\begin{align*}
+\log(f(x))&=\log\left( (\cos x)^{\sin x}\right)=\sin x \cdot \log (\cos x)
+\intertext{Logarithm rules allowed us to simplify. Now, we differentiate both sides of this equation:}
+\frac{f'(x)}{f(x)}&=(\cos x ) \log(\cos x)+ \sin x \cdot \frac{-\sin x}{\cos x}\\
+&=(\cos x) \log (\cos x) - \sin x \tan x
+\intertext{Finally, we solve for $f'(x)$:}
+f'(x)&=f(x)\left[(\cos x) \log (\cos x) - \sin x \tan x\right]\\
+&= (\cos x)^{\sin x}\left[(\cos x) \log (\cos x) - \sin x \tan x\right]
+\end{align*}
+
+Remark: negative numbers behave in a complicated manner when they are the base of an exponential expression. For example, the expression $(-1)^x$ is defined when $x$ is the reciprocal of an odd number (like $x=\frac{1}{5}$ or $x=\frac{1}{7}$), but not when  $x$ is the reciprocal of an even number (like $x=\frac{1}{2}$). Since the domain of $f(x)$ was restricted to $(0,\tfrac{\pi}{2})$, $\cos x$ is always positive, and we avoid these complications.
+\end{solution}
+
+
+\begin{question}[2006H]\label{s2.10xtox3}
+ Find the derivative of $(\tan(x))^x$, when $x$ is in the interval $(0,\pi/2)$.
+\end{question}
+\begin{hint}
+You'll need to use logarithmic differentiation. Set $g(x)=\log(f(x))$, and find $g'(x)$. Then, use that to find $f'(x)$. This is the method used in the text to find $\ds\diff{}{x} a^x$, and again in Question~\eqref{s2.10xtox}.
+\end{hint}
+\begin{answer}
+${\ds\diff{}{x}\left\{(\tan x)^x\right\}}={(\tan x)^x}\left(\log(\tan x) + \dfrac{x}{\sin x \cos x}\right)$
+\end{answer}
+\begin{solution}
+Since $f(x)$ has the form of a function raised to a functional power, we will use logarithmic differentiation. We take the logarithm of the function, and make use of logarithm rules:
+\begin{align*}
+\log\left((\tan x)^x\right)&=x\log(\tan x)
+\intertext{Now, we can differentiate:}
+\frac{\diff{}{x}\left\{(\tan x)^x\right\}}{(\tan x)^x}&=\log(\tan x) + x\cdot\frac{\sec^2 x}{\tan x}\\
+&=\log(\tan x) + \frac{x}{\sin x \cos x}
+\intertext{Finally, we solve for the derivative we want, $\ds\diff{}{x}\{(\tan x)^x\}$:}
+{\diff{}{x}\left\{(\tan x)^x\right\}}&={(\tan x)^x}\left(\log(\tan x) + \frac{x}{\sin x \cos x}\right)
+\end{align*}
+
+Remark: the restricted domain $(0,\pi/2)$ ensures that $\tan x$ is a positive number, so we avoid the problems that arise by raising a negative number to a variety of powers.
+\end{solution}
+
+
+
+
+
+\begin{question}[2015Q]\label{s2.10xtox4} Find $f'(x)$ if $f(x)= (x^2+1)^{(x^2+1)}$
+\end{question}
+\begin{hint}
+You'll need to use logarithmic differentiation. Set $g(x)=\log(f(x))$, and find $g'(x)$. Then, use that to find $f'(x)$. This is the method used in the text to find $\ds\diff{}{x} a^x$, and again in Question~\eqref{s2.10xtox}.
+\end{hint}
+\begin{answer} $2x(x^2+1)^{x^2+1} (1+\log(x^2+1))$
+\end{answer}
+\begin{solution} We use logarithmic differentiation.
+\begin{align*}
+  \log f(x) &= \log(x^2+1) \cdot (x^2+1)
+\intertext{We differentiate both sides to obtain:}
+  \dfrac{f'(x)}{f(x)} &= \diff{}{x} \left\{ \log(x^2+1) \cdot (x^2+1) \right\}\\
+  &= \frac{2x}{x^2+1}(x^2+1)+2x\log(x^2+1)\\&=2x(1+\log(x^2+1))
+\intertext{Now, we solve for $f'(x)$:}
+  f'(x) &= f(x) \cdot 2x(1+\log(x^2+1))
+ \\
+&= (x^2+1)^{x^2+1} \cdot  2x(1+\log(x^2+1))
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{Mquestion}[2015Q]\label{s2.10xtox5}
+Differentiate $f(x)= (x^2+1)^{\sin(x)}$.
+\end{Mquestion}
+\begin{hint}
+You'll need to use logarithmic differentiation. Differentiate $\log(f(x))$, then solve for $f'(x)$. This is the method used in the text to find $\ds\diff{}{x} a^x$.
+\end{hint}
+\begin{answer}
+$f'(x)= (x^2+1)^{\sin(x)} \cdot \left( \cos x \cdot \log(x^2+1) + \frac{2x\sin x}{x^2+1}
+\right)$
+\end{answer}
+\begin{solution}
+We use logarithmic differentiation: we modify our function to consider
+\begin{align*}
+  \log f(x) &= \log(x^2+1) \cdot \sin x
+\intertext{We differentiate using the product and chain rules:}
+  \dfrac{f'(x)}{f(x)} &= \diff{}{x} \left\{ \log(x^2+1) \cdot \sin x \right\}
+  = \cos x \cdot \log(x^2+1) + \frac{2x\sin x}{x^2+1}
+\intertext{Finally, we solve for $f'(x)$}
+  f'(x) &= f(x) \cdot \left( \cos x \cdot \log(x^2+1) + \frac{2x\sin x}{x^2+1}
+\right)  \\
+&= (x^2+1)^{\sin(x)} \cdot \left( \cos x \cdot \log(x^2+1) + \frac{2x\sin x}{x^2+1}
+\right)
+\end{align*}
+\end{solution}
+
+
+\begin{question}[2015Q]\label{s2.10xtox6}
+Let $f(x)= x^{\cos^3(x)}$, with domain $(0,\infty)$. Find $f'(x)$.
+\end{question}
+\begin{hint} You'll need to use logarithmic differentiation. Differentiate $\log(f(x))$, then solve for $f'(x)$. This is the method used in the text to find $\ds\diff{}{x} a^x$.
+\end{hint}
+\begin{answer}
+$x^{\cos^3(x)} \cdot \left( -3\cos^2(x)\sin(x) \log(x) + \dfrac{\cos^3(x)}{x} \right)$
+\end{answer}
+\begin{solution}
+We use logarithmic differentiation; so we modify our function to consider
+\begin{align*}
+  \log f(x) &= \log(x) \cdot \cos^3(x)
+\intertext{Differentiating, we find:}
+  \dfrac{f'(x)}{f(x)} &= \diff{}{x} \left\{ \log(x) \cdot \cos^3(x) \right\}
+  = 3\cos^2(x)\cdot (-\sin(x)) \cdot \log(x) + \frac{\cos^3(x)}{x}
+\intertext{Finally, we solve for $f'(x)$:}
+  f'(x) &= f(x) \cdot \left(  -3\cos^2(x)\sin(x)  \log(x) + \frac{\cos^3(x)}{x}
+\right) \\
+&= x^{\cos^3(x)} \cdot \left( -3\cos^2(x)\sin(x) \log(x) + \frac{\cos^3(x)}{x}
+\right)
+\end{align*}
+
+
+Remark: negative numbers behave in a complicated manner when they are the base of an exponential expression. For example, the expression $(-1)^x$ is defined when $x$ is the reciprocal of an odd number (like $x=\frac{1}{5}$ or $x=\frac{1}{7}$), but not when  $x$ is the reciprocal of an even number (like $x=\frac{1}{2}$). Since the domain of $f(x)$ was restricted so that $x$ is always positive, we avoid these complications.
+\end{solution}
+
+\begin{question}[2015Q]\label{s2.10xtox7}
+Differentiate $f(x)= (3+\sin(x))^{x^2-3}$.
+\end{question}
+\begin{hint} You'll need to use logarithmic differentiation. Differentiate $\log(f(x))$, then solve for $f'(x)$. This is the method used in the text to find $\ds\diff{}{x} a^x$.
+\end{hint}
+\begin{answer}
+$(3+\sin(x))^{x^2-3}\cdot \left[ 2x\log(3+\sin(x)) + \dfrac{(x^2-3)\cos(x)}{3+\sin(x)}\right]$
+\end{answer}
+\begin{solution}
+We use logarithmic differentiation. So, we modify our function and consider
+\begin{align*}
+  \log f(x) &= (x^2-3)\cdot \log(3+\sin(x))\,.
+\intertext{We differentiate:}
+  \frac{f'(x)}{f(x)} &=  \diff{}{x} \left\{(x^2-3)\cdot \log(3+\sin(x)) \right\}\\
+  &=2x\log(3+\sin(x)) + (x^2-3)\frac{\cos(x)}{3+\sin(x)}
+  \intertext{Finally, we solve for $f'(x)$:}
+  f'(x)&= f(x)\cdot
+   \left[ 2x\log(3+\sin(x)) + \frac{(x^2-3)\cos(x)}{3+\sin(x)}\right]\\
+    &= (3+\sin(x))^{x^2-3}\cdot
+   \left[ 2x\log(3+\sin(x)) + \frac{(x^2-3)\cos(x)}{3+\sin(x)}\right]
+\end{align*}
+\end{solution}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+\begin{question}
+Let $f(x)$ and $g(x)$ be differentiable functions, with $f(x)>0$. Evaluate $\ds\diff{}{x}\left\{[f(x)]^{g(x)}\right\}$.
+\end{question}
+\begin{hint}
+Evaluate $\ds\diff{}{x}\left\{\log\left(\left[f(x)\right]^{g(x)}\right)\right\}$.
+\end{hint}
+\begin{answer}
+ $\ds\diff{}{x}\left\{[f(x)]^{g(x)}\right\}=\left[f(x)\right]^{g(x)}\left[
+g'(x)\log(f(x))+ \dfrac{g(x)f'(x)}{f(x)}
+ \right]$
+\end{answer}
+\begin{solution}
+We will use logarithmic differentiation. First, we take the logarithm of our function, so we can use logarithm rules.
+\begin{align*}
+\log\left([f(x)]^{g(x)}\right)&=g(x)\log(f(x))
+\intertext{Now, we differentiate. On the left side we use the chain rule, and on the right side we use product and chain rules.}
+\ds\diff{}{x}\left\{\log\left([f(x)]^{g(x)}\right)\right\}&=\ds\diff{}{x}\left\{g(x)\log(f(x))\right\}\\
+\frac{\diff{}{x}\{[f(x)]^{g(x)}\}}{[f(x)]^{g(x)}}&=
+g'(x)\log(f(x))+g(x)\cdot\frac{f'(x)}{f(x)}
+\intertext{Finally, we solve for the derivative of our original function.}
+{\diff{}{x}\{[f(x)]^{g(x)}\}}&={[f(x)]^{g(x)}}\left(
+g'(x)\log(f(x))+g(x)\cdot\frac{f'(x)}{f(x)}\right)
+\end{align*}
+
+Remark: in this section, we have differentiated problems of this type several times--for example, %Question~\ref{s2.10xtox}, and
+Questions \ref{s2.10xtox2}
+%\ref{s2.10xtox3},
+%\ref{s2.10xtox4},
+%\ref{s2.10xtox5},
+%\ref{s2.10xtox6}, and
+through \ref{s2.10xtox7}.
+\end{solution}
+
+
+
+
+\begin{Mquestion}
+Let $f(x)$ be a function whose range includes only positive numbers. Show that the curves $y=f(x)$ and $y=\log(f(x))$ have horizontal tangent lines at the same values of $x$.
+\end{Mquestion}
+\begin{hint}
+Differentiate $y=\log(f(x))$. When is the derivative equal to zero?
+\end{hint}
+\begin{answer}
+Let $g(x):=\log(f(x))$. Notice $g'(x)=\frac{f'(x)}{f(x)}$.\\
+
+In order to show that the two curves have horizontal tangent lines at the same values of $x$, we will show two things: first, that if $f(x)$ has a horizontal tangent line at some
+value of $x$, then also $g(x)$ has a horizontal tangent line at that value of $x$.
+Second, we will show that if $g(x)$ has a horizontal tangent line at some
+value of $x$, then also $f(x)$ has a horizontal tangent line at that value of $x$.
+
+Suppose $f(x)$ has a horizontal tangent line where $x=x_0$ for some point $x_0$. This means $f'(x_0)=0$. Then $g'(x_0)=\frac{f'(x_0)}{f(x_0)}$. Since $f(x_0) \neq 0$, $\frac{f'(x_0)}{f(x_0)}=\frac{0}{f(x_0)}=0$, so $g(x)$ also has a horizontal tangent line when $x=x_0$. This shows that whenever $f$ has a horizontal tangent line, $g$ has one too.
+
+Now suppose $g(x)$ has a horizontal tangent line where $x=x_0$ for some point $x_0$. This means $g'(x_0)=0$. Then $g'(x_0)=\frac{f'(x_0)}{f(x_0)}=0$,
+so $f'(x_0)$ exists and is equal to zero.
+Therefore, $f(x)$ also has a horizontal tangent line when $x=x_0$. This shows that whenever $g$ has a horizontal tangent line, $f$ has one too.
+\end{answer}
+\begin{solution}
+Let $g(x):=\log(f(x))$. Notice $g'(x)=\frac{f'(x)}{f(x)}$.\\
+
+In order to show that the two curves have horizontal tangent lines at the same values of $x$, we will show two things: first, that if $f(x)$ has a horizontal tangent line at some
+value of $x$, then also $g(x)$ has a horizontal tangent line at that value of $x$.
+Second, we will show that if $g(x)$ has a horizontal tangent line at some
+value of $x$, then also $f(x)$ has a horizontal tangent line at that value of $x$.
+
+Suppose $f(x)$ has a horizontal tangent line where $x=x_0$ for some point $x_0$. This means $f'(x_0)=0$. Then $g'(x_0)=\frac{f'(x_0)}{f(x_0)}$. Since $f(x_0) \neq 0$, $\frac{f'(x_0)}{f(x_0)}=\frac{0}{f(x_0)}=0$, so $g(x)$ also has a horizontal tangent line when $x=x_0$. This shows that whenever $f$ has a horizontal tangent line, $g$ has one too.
+
+Now suppose $g(x)$ has a horizontal tangent line where $x=x_0$ for some point $x_0$. This means $g'(x_0)=0$. Then $g'(x_0)=\frac{f'(x_0)}{f(x_0)}=0$,
+so $f'(x_0)$ exists and is equal to zero.
+Therefore, $f(x)$ also has a horizontal tangent line when $x=x_0$. This shows that whenever $g$ has a horizontal tangent line, $f$ has one too.
+
+Remark: if we were not told that $f(x)$ gives only positive numbers, it would not necessarily be true that $f(x)$ and $\log(f(x))$ have horizontal tangent lines at the same values of $x$. If $f(x)$ had a horizontal tangent line at an $x$-value where $f(x)$ were negative, then $\log(f(x))$ would not exist there, let alone have a horizontal tangent line.
+\end{solution}

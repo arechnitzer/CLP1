@@ -1,0 +1,436 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s3.4.3}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{Mquestion}
+The quadratic approximation of a function $f(x)$ about $x=3$ is
+\[f(x) \approx -x^2+6x \]
+What are the values of
+$f(3)$, $f'(3)$, $f''(3)$, and $f'''(3)$?
+\end{Mquestion}
+\begin{hint}
+If $Q(x)$ is the quadratic approximation of $f$ about $3$, then
+$Q(3)=f(3)$, $Q'(3)=f'(3)$, and $Q''(3)=f''(3)$.
+\end{hint}
+\begin{answer}
+$f(3)=9$, $f'(3)=0$, $f''(3)=-2$; there is not enough information to know $f'''(3)$.
+\end{answer}
+\begin{solution}
+If $Q(x)$ is the quadratic approximation of $f$ about $3$, then
+$Q(3)=f(3)$, $Q'(3)=f'(3)$, and $Q''(3)=f''(3)$.
+There is no guarantee that $f(x)$ and $Q(x)$ share the same third derivative, though, so we do not have enough information to know $f'''(3)$.
+\begin{align*}
+f(3)&=-3^2+6(3)=9\\
+f'(3)&=\left.\diff{}{x}\left\{-x^2+6x\right\}\right|_{x=3}=\left.-2x+6\right|_{x=3}=0\\
+f''(3)&=\left.\ddiff{2}{}{x}\left\{-x^2+6x\right\}\right|_{x=3}=
+\left.\diff{}{x}\left\{-2x+6\right\}\right|_{x=3}=-2
+\end{align*}
+\end{solution}
+
+
+\begin{question}
+Give a quadratic approximation of $f(x)=2x+5$ about $x=a$.
+\end{question}
+\begin{hint}
+It is a very good approximation.
+\end{hint}
+\begin{answer}
+ $f(x) \approx 2x+5$
+\end{answer}
+\begin{solution}
+The quadratic approximation of $f(x)$ about $x=a$ is
+\begin{align*}
+f(x) &\approx f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2
+\intertext{We subsitute $f(a)=2a+5$, $f'(a)=2$, and $f''(a)=0$:}
+f(x) &\approx (2a+5)+2(x-a)=2x+5
+\end{align*}
+So, our approximation is $f(x) \approx 2x+5$.
+
+Remark: Our approximation is exact for every value of $x$. This will always happen with a quadratic approximation of a function that is quadratic, linear, or constant.
+\end{solution}
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{Mquestion}
+Use a quadratic approximation to estimate $\log(0.93)$.
+\end{Mquestion}
+\begin{hint}
+Approximate $f(x)=\log x$.
+\end{hint}
+\begin{answer}
+$\log(0.93) \approx -0.07245$
+\end{answer}
+\begin{solution}
+We approximate the function $f(x)=\log x$ about the point $x=1$. We choose 1 because it is close to $0.93$, and we can evaluate $f(x)$ and its first two derivatives at $x=1$.
+\begin{align*}
+f(1)&=0\\
+f'(x)&=\frac{1}{x}\qquad \Rightarrow \qquad f'(1)=1\\
+f''(x)&=\frac{-1}{x^2} \qquad \Rightarrow \qquad f''(1)=-1
+\intertext{So,}
+f(x) &\approx f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2\\
+&=0+(x-1)-\frac{1}{2}(x-1)^2
+\intertext{When $x=0.93$:}
+f(0.93) &\approx (0.93-1)-\frac{1}{2}(0.93-1)^2=-0.07-\frac{1}{2}(0.0049)=-0.07245
+\end{align*}
+
+We estimate $\log(0.93) \approx -0.07245$.
+
+Remark: a calculator approximates $\log(0.93) \approx -0.07257$. We're pretty close.
+\end{solution}
+
+
+
+
+
+
+\begin{Mquestion}
+Use a quadratic approximation to estimate $\cos\left(\dfrac{1}{15}\right)$.
+\end{Mquestion}
+\begin{hint}
+You'll probably want to centre your approximation about $x=0$.
+\end{hint}
+\begin{answer}
+$\cos\left(\dfrac{1}{15}\right )\approx \dfrac{449}{450}$
+\end{answer}
+\begin{solution}
+We approximate the function $f(x)=\cos x$.
+We can easily evaluate $\cos x$ and $\sin x$ ($\sin x$ will appear in the first derivative) at $x=0$, and 0 is quite close to $\dfrac{1}{15}$, so we centre our approximation about $x=0$.
+\begin{align*}
+f(0)&=1\\
+f'(x)&=-\sin x\\
+f'(0)&=-\sin(0)=0\\
+f''(x)&=-\cos x\\
+f''(0)&=-\cos(0)=-1
+\intertext{Using the quadratic approximation $f(x) \approx f(0)+f'(0)(x-0)+\frac{1}{2}f''(0)(x-0)^2$:}
+f(x)&\approx 1 -\frac{1}{2}x^2\\
+f\left(\frac{1}{15}\right)&\approx 1-\frac{1}{2\cdot 15^2}=\frac{449}{450}
+\end{align*}
+We approximate $\cos\left(\dfrac{1}{15}\right)\approx\dfrac{449}{450} $.
+
+Remark: $\dfrac{449}{450}= 0.99\overline{77}$, while a calculator gives
+$\cos\left(\frac{1}{15}\right )\approx 0.9977786$. Our approximation has an error of about $0.000001$.
+\end{solution}
+
+
+\begin{question}
+Calculate the quadratic approximation of $f(x)=e^{2x}$ about $x=0$.
+\end{question}
+\begin{hint}
+The quadratic approximation of a function $f(x)$ about $x=a$ is
+\[f(x) \approx f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2\]
+\end{hint}
+\begin{answer}
+$e^{2x}\approx 1+2x+2x^2$
+\end{answer}
+\begin{solution}
+The quadratic approximation of a function $f(x)$ about $x=a$ is
+\begin{align*}f(x) &\approx f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2
+\intertext{We compute derivatives.}
+f(0)&=e^0=1\\
+f'(x)&=2e^{2x}\\
+f'(0)&=2e^0=2\\
+f''(x)&=4e^{2x}\\
+f''(0)&=4e^0=4
+\intertext{Substituting:}
+f(x) &\approx 1+2(x-0)+\frac{4}{2}(x-0)^2
+\\f(x) &\approx 1+2x+2x^2
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}
+Use a quadratic approximation to estimate $5^{\tfrac{4}{3}}$.
+\end{question}
+\begin{hint}
+One way to go about this is to approximate the function
+     $f(x) = 5 \cdot x^{1/3}$ , because then
+     $5^{4/3} = 5 \cdot 5^{1/3} =f(5)$.
+\end{hint}
+\begin{answer}
+One approximation: $e^{\tfrac{4}{3}}\approx\dfrac{275}{32}$
+\end{answer}
+\begin{solution}
+There are a few functions we could choose to approximate. For example:
+\begin{itemize}
+\item $f(x)=x^{4/3}$. In this case, we would probably choose to approximate $f(x)$ about $x=8$ (since 8 is a cube, $8^{4/3}=2^4=16$ is something we can evaluate) or $x=1$.
+\item $f(x)=5^{x}$. We can easily figure out $f(x)$ when $x$ is a whole number, so we would want to centre our approximation around some whole number $x=a$, but then
+$f'(a)=5^a\log(5)$ gives us a problem: without a calculator, it's hard to know what $\log(5)$ is.
+\item Since $5^{4/3}=5\sqrt[3]{5}$, we can use $f(x)=5\sqrt[3]{x}$. As in the first bullet, we would centre about $x=8$, or $x=1$.
+\end{itemize}
+There isn't much difference between the first and third bullets. We'll go with $f(x)=5\sqrt[3]{x}$, centred about $x=8$.
+\begin{align*}
+f(x)&=5x^{\frac{1}{3}}&&\Rightarrow&
+f(8)&=5\cdot 2 = 10\\
+f'(x)&=\frac{5}{3}x^{-\frac{2}{3}}&&\Rightarrow&
+f'(8)&=\frac{5}{3}\left(2^{-2}\right)=\frac{5}{12}\\
+f''(x)&=\frac{5}{3}\left(-\frac{2}{3}\right)x^{-\frac{5}{3}}=-\frac{10}{9}x^{-\frac{5}{3}}&&\Rightarrow&
+f''(8)&=-\frac{10}{9}\left(2^{-5}\right)=-\frac{5}{144}
+\intertext{Using the quadratic approximation $f(x) \approx f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2$:}
+f(x)&\approx 10+\frac{5}{12}(x-8)-\frac{5}{288}(x-8)^2\\
+f(5)&\approx 10+\frac{5}{12}(-3)-\frac{5}{288}(9)=\frac{275}{32}
+\end{align*}
+We estimate $5^{4/3}\approx\dfrac{275}{32}$
+
+Remark: $\dfrac{275}{32} = 8.59375$, and
+a calculator gives $5^{4/3}\approx 8.5499$. Although 5 and 8 are somewhat far apart, our estimate is only off by about $0.04$.
+\end{solution}
+
+\begin{question}
+Evaluate the expressions below.
+\begin{enumerate}[(a)]
+\item\label{s4.3.4sigma1} $\ds\sum_{n=5}^{30} 1$
+\item\label{s4.3.4sigma2} $\ds\sum_{n=1}^{3} \left[ 2(n+3)-n^2 \right]$
+\item\label{s4.3.4sigma3} $\ds\sum_{n=1}^{10} \left[\frac{1}{n}-\frac{1}{n+1}\right]$
+\item\label{s4.3.4sigma4} $\ds\sum_{n=1}^{4}\frac{5\cdot 2^n}{4^{n+1}} $
+\end{enumerate}
+\end{question}
+\begin{hint}
+For \eqref{s4.3.4sigma3}, look for cancellations.
+\end{hint}
+\begin{answer} \eqref{s4.3.4sigma1} $26$
+\qquad \eqref{s4.3.4sigma2} $16$
+\qquad \eqref{s4.3.4sigma3} $\dfrac{10}{11}$
+\qquad \eqref{s4.3.4sigma4} $\dfrac{75}{64}$
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item[\eqref{s4.3.4sigma1}]
+For every value of $n$, the term being added is simply the constant $1$. So, $\ds\sum_{n=5}^{30} 1 = 1+1+\cdots+1$. The trick is figuring out how many 1s are added. Our index $n$ takes on all integers from 5 to 30, \emph{including} 5 and 30, which is 26 numbers. So, $\ds\sum_{n=5}^{30}=26$.
+
+If you're having a hard time seeing why the sum is 26, instead of 25, think of it this way: there are thirty numbers in the collection $\{1,2,3,4,5,6,\ldots,29,30\}$. If we remove the first four, we get $30-4=26$ numbers in the collection $\{5,6,\ldots,30\}$.
+
+\item[\eqref{s4.3.4sigma2}]
+\begin{align*}
+\sum_{n=1}^3\left[2(n+3)-n^2\right]&=
+\underbrace{2(1+3)-1^2}_{n=1}+
+\underbrace{2(2+3)-2^2}_{n=2}+
+\underbrace{2(3+3)-3^2}_{n=3}\\
+&=8-1+10-4+12-9=16
+\end{align*}
+\item[\eqref{s4.3.4sigma3}]
+\begin{align*}
+\ds\sum_{n=1}^{10} \left[\frac{1}{n}-\frac{1}{n+1}\right]&=
+\underbrace{\frac{1}{1}-\frac{1}{1+1}}_{n=1}+
+\underbrace{\frac{1}{2}-\frac{1}{2+1}}_{n=2}+
+\underbrace{\frac{1}{3}-\frac{1}{3+1}}_{n=3}+
+\underbrace{\frac{1}{4}-\frac{1}{4+1}}_{n=4}+
+\underbrace{\frac{1}{5}-\frac{1}{5+1}}_{n=5}\\
+&+
+\underbrace{\frac{1}{6}-\frac{1}{6+1}}_{n=6}+
+\underbrace{\frac{1}{7}-\frac{1}{7+1}}_{n=7}+
+\underbrace{\frac{1}{8}-\frac{1}{8+1}}_{n=8}+
+\underbrace{\frac{1}{9}-\frac{1}{9+1}}_{n=9}+
+\underbrace{\frac{1}{10}-\frac{1}{10+1}}_{n=10}
+\intertext{Most of these cancel!}
+&=\frac{1}{1}\underbrace{-\frac{1}{2}+\frac{1}{2}}_0
+\underbrace{-\frac{1}{3}+\frac{1}{3}}_0
+\underbrace{-\frac{1}{4}+\frac{1}{4}}_0
+\underbrace{-\frac{1}{5}+\frac{1}{5}}_0
+\underbrace{-\frac{1}{6}+\frac{1}{6}}_0\\
+&\underbrace{-\frac{1}{7}+\frac{1}{7}}_0
+\underbrace{-\frac{1}{8}+\frac{1}{8}}_0
+\underbrace{-\frac{1}{9}+\frac{1}{9}}_0
+\underbrace{-\frac{1}{10}+\frac{1}{10}}_0
+-\frac{1}{11}\\
+&=1-\frac{1}{11}=\frac{10}{11}
+\end{align*}
+\item[\eqref{s4.3.4sigma4}]
+\begin{align*}
+\ds\sum_{n=1}^{4}\frac{5\cdot 2^n}{4^{n+1}} &=
+5\sum_{n=1}^{4}\frac{2^n}{4\cdot 4^n}=\frac{5}{4}\sum_{n=1}^4\frac{2^n}{4^n}
+=\frac{5}{4}\sum_{n=1}^4\frac{1}{2^n}\\
+&=\frac{5}{4}\left(
+\underbrace{\frac{1}{2}}_{n=1}+
+\underbrace{\frac{1}{4}}_{n=2}+
+\underbrace{\frac{1}{8}}_{n=3}+
+\underbrace{\frac{1}{16}}_{n=4}
+\right)=\frac{75}{64}
+\end{align*}
+\end{itemize}
+\end{solution}
+
+\begin{Mquestion}
+Write the following in sigma notation:
+\begin{enumerate}[(a)]
+\item $1+2+3+4+5$
+\item $2+4+6+8$
+\item $3+5+7+9+11$
+\item $9+16+25+36+49$
+\item $9+4+16+5+25+6+36+7+49+8$
+\item $8+15+24+35+48$
+\item $3-6+9-12+15-18$
+\end{enumerate}
+\end{Mquestion}
+\begin{hint}
+Compare (c) to (b).\\ Compare (e) and (f) to (d).\\ To get an alternating sign, consider  powers of $(-1)$.
+\end{hint}
+\begin{answer}
+For each of these, there are many solutions. We provide some below.
+\begin{enumerate}[(a)]
+\item $1+2+3+4+5 = \ds\sum_{n=1}^5n$
+\item $2+4+6+8=\ds\sum_{n=1}^42n$
+\item $3+5+7+9+11=\ds\sum_{n=1}^{5}(2n+1)$
+\item $9+16+25+36+49=\ds\sum_{n=3}^7 n^2$
+\item $9+4+16+5+25+6+36+7+49+8=\ds\sum_{n=3}^7 (n^2+n+1)$
+\item $8+15+24+35+48= \ds\sum_{n=3}^7 (n^2-1)$
+\item $3-6+9-12+15-18=\ds\sum_{n=1}^6 (-1)^{n+1}3n$
+\end{enumerate}
+\end{answer}
+\begin{solution}
+For each of these, there are many solutions. We provide some below.
+\begin{enumerate}[(a)]
+\item $1+2+3+4+5 = \ds\sum_{n=1}^5n$
+\item $2+4+6+8=\ds\sum_{n=1}^4 2n$
+\item $3+5+7+9+11=\ds\sum_{n=1}^{5}(2n+1)$
+\item $9+16+25+36+49=\ds\sum_{n=3}^7 n^2$
+\item $9+4+16+5+25+6+36+7+49+8=\ds\sum_{n=3}^7 (n^2+n+1)$
+\item $8+15+24+35+48= \ds\sum_{n=3}^7 (n^2-1)$
+\item $3-6+9-12+15-18=\ds\sum_{n=1}^6 (-1)^{n+1}3n$ \\Remark: if we had written $(-1)^n$ instead of $(-1)^{n+1}$, with everything else the same, the signs would have been reversed.
+\end{enumerate}
+
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion}
+Use a quadratic approximation of $f(x)=2\arcsin x$ about $x=0$ to approximate $f(1)$. What number are you approximating?
+\end{Mquestion}
+\begin{hint}
+You can evaluate $f(1)$ exactly. \\
+Recall $\ds\diff{}{x}\arcsin x = \dfrac{1}{\sqrt{1-x^2}}$.
+\end{hint}
+\begin{answer}
+$f(1) \approx 2$, $f(1)=\pi$
+\end{answer}
+\begin{solution}
+Let's start by taking the first two derivative of $f(x)$.
+\begin{align*}
+f(x)&=2\arcsin x&&\Rightarrow&
+f(0)&=2(0)=0\\
+f'(x)&=\frac{2}{\sqrt{1-x^2}}&&\Rightarrow&
+f'(0)&=\frac{2}{1}=2\\
+f''(x)&=\diff{}{x}\left\{2(1-x^2)^{-\tfrac{1}{2}}\right\}\\
+&=2\left(-\tfrac{1}{2}\right)(1-x^2)^{-\tfrac{3}{2}}(-2x) \qquad\mbox{(chain rule)}\\
+&=\frac{2x}{\left(\sqrt{1-x^2}\right)^3}&&\Rightarrow&
+f''(0)&=0
+\intertext{Now, we can find the quadratic approximation about $x=0$.}
+f(x)&\approx f(0)+f'(0)x+\frac{1}{2}f''(0)x^2\\
+&=2x\\
+f(1)& \approx 2
+\end{align*}
+Our quadratic approximation gives $2\arcsin(1) \approx 2$. However, $2\arcsin(1)$ is exactly equal to $2\left(\dfrac{\pi}{2}\right)=\pi$. We've just made the rather unfortunate approximation $\pi \approx 2$.
+\end{solution}
+
+
+\begin{Mquestion}
+Use a quadratic approximation of $e^x$ to estimate $e$ as a decimal.
+\end{Mquestion}
+\begin{hint}
+Let $f(x)=e^x$, and use the quadratic approximation of $f(x)$ about $x=0$ (given in your text, or you can reproduce it) to approximate $f(1)$.
+\end{hint}
+\begin{answer}
+$e\approx 2.5$
+\end{answer}
+\begin{solution}
+From the text, the quadratic approximation of $e^x$ about $x=0$ is
+\[e^x \approx 1+x+\frac{1}{2}x^2\]
+So,
+\[e=e^1 \approx 1+1+\frac{1}{2}=2.5\]
+We estimate $e \approx 2.5$.
+
+Remark: actually, $e \approx 2.718$.
+\end{solution}
+
+\begin{Mquestion}
+Group the expressions below into collections of equivalent expressions.
+\begin{enumerate}[(a)]
+\item\label{s3.4.3equiv1} $\ds\sum_{n=1}^{10} 2n$
+\item\label{s3.4.3equiv5} $\ds\sum_{n=1}^{10} 2^n$
+\item\label{s3.4.3equiv7}  $\ds\sum_{n=1}^{10} n^2$
+\item\label{s3.4.3equiv2}$2\ds\sum_{n=1}^{10} n$
+\item\label{s3.4.3equiv3}$2\ds\sum_{n=2}^{11} (n-1)$
+\item\label{s3.4.3equiv10}  $\ds\sum_{n=5}^{14} (n-4)^2$
+\item\label{s3.4.3equiv6} $\dfrac{1}{4}\ds\sum_{n=1}^{10}\left( \frac{4^{n+1}}{2^n}\right)$
+\end{enumerate}
+\end{Mquestion}
+\begin{hint}
+Be wary of indices: for example $\ds\sum_{n=1}^3 n = \ds\sum_{n=5}^7 (n-4)$.
+\end{hint}
+\begin{answer}
+\textcolor{blue}{$\{\eqref{s3.4.3equiv1},\eqref{s3.4.3equiv2},
+\eqref{s3.4.3equiv3}\}$},
+\textcolor{red}{$\{\eqref{s3.4.3equiv5},\eqref{s3.4.3equiv6}\}$},
+\textcolor{green}{$\{\eqref{s3.4.3equiv7},\eqref{s3.4.3equiv10}\}$}
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item First, we'll show that
+\[\color{blue}\eqref{s3.4.3equiv1},\,\eqref{s3.4.3equiv2},\,
+\eqref{s3.4.3equiv3}\]
+are equivalent:
+\begin{align*}
+\eqref{s3.4.3equiv2}&=2\sum_{n=1}^{10} n = 2(1+2+\cdots+10)=
+2(1)+2(2)+\cdots +2(10)=\sum_{n=1}^{10} 2n = \eqref{s3.4.3equiv1}
+\intertext{So \eqref{s3.4.3equiv1} and \eqref{s3.4.3equiv2} are equivalent.}
+\eqref{s3.4.3equiv3}&=2\ds\sum_{n=2}^{11} (n-1)=2(1+2+\cdots + 10) = \eqref{s3.4.3equiv2}
+\intertext{So \eqref{s3.4.3equiv3} and \eqref{s3.4.3equiv2} are equivalent.}
+\end{align*}
+%Since (a) gives the same number as (d), and (d) gives the same number as (e), also (a) gives the same number as (e). (This is called \emph{transitivity}.)
+\item
+Second, we'll show that
+\[\color{red}\eqref{s3.4.3equiv5},\,\eqref{s3.4.3equiv6}\]
+are equivalent.
+\begin{align*}
+\eqref{s3.4.3equiv6}&=\dfrac{1}{4}\ds\sum_{n=1}^{10}\left( \frac{4^{n+1}}{2^n}\right)
+=\frac{1}{4}\sum_{n=1}^{10}\left(\frac{4\cdot4^n}{2^n}\right)
+=\frac{4}{4}\sum_{n=1}^{10}\left(\frac{4^n}{2^n}\right)
+=\sum_{n=1}^{10}\left(\frac{4}{2}\right)^n
+=\sum_{n=1}^{10} 2^n=\eqref{s3.4.3equiv5}&
+\end{align*}
+\item
+Third, we'll show that
+\[\color{green}\eqref{s3.4.3equiv7},\,\eqref{s3.4.3equiv10}\]
+are equivalent.
+\begin{align*}
+\eqref{s3.4.3equiv10}  =\ds\sum_{n=5}^{14} (n-4)^2
+=1^2+2^2+\cdots + 10^2
+  =\ds\sum_{n=1}^{10} n^2=\eqref{s3.4.3equiv7}
+\end{align*}
+\item Now, we have three groups, where each group consists of equivalent expressions. To be quite thorough, we should show that no two of these groups contain expressions that are secretly equivalent. They would be hard to evaluate, but we can bound them and show that no two expressions in two separate groups could possibly be equivalent.
+Notice that
+\begin{align*}
+\color{red}\sum_{n=1}^{10} 2^n &=2^1+2^2+\cdots + 2^{10} > 2^{10}=1024\\
+\color{green} \sum_{n=1}^{10} n^2 &<\sum_{n=1}^{10} 10^2 = 10(100)=1000\\
+\color{green} \sum_{n=1}^{10} n^2 &=1^2+2^2+\cdots 8^2+9^2+10^2 > 8^2+9^2+10^2=245\\
+\color{blue}\sum_{n=1}^{10} 2n &<\sum_{n=1}^{10}20 = 200
+\end{align*}
+The expressions in the blue group add to less than 200, but the expressions in the green group add to more than 245, and the expressions in the red group add to more than 1024, so the blue groups expressions can't possibly simplify to the same number as the red and green group expressions.
+
+The expressions in the green group add to less than 1000. Since the expressions in the red group add to more than 1024, the expressions in the green and red groups can't possibly simplify to the same numbers.
+\end{itemize}
+We group our expressions in to collections of equivalent expressions as follows:\\
+\textcolor{blue}{$\{\eqref{s3.4.3equiv1},\eqref{s3.4.3equiv2},
+\eqref{s3.4.3equiv3}\}$},
+\textcolor{red}{$\{\eqref{s3.4.3equiv5},\eqref{s3.4.3equiv6}\}$},
+\textcolor{green}{$\{\eqref{s3.4.3equiv7},\eqref{s3.4.3equiv10}\}$}
+\end{solution}

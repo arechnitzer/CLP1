@@ -1,0 +1,682 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s3.7}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+\Instructions{In Questions~\ref{s3.7indet1} to \ref{s3.7indet3}, you are asked to give pairs of functions that combine to make indeterminate forms. Remember that an indeterminate form is indeterminate precisely because its limit can take on a number of values.}
+
+\begin{Mquestion}\label{s3.7indet1}
+Give two functions $f(x)$ and $g(x)$ with the following properties:
+\begin{enumerate}[(i)]
+\item $\ds\lim_{x \to \infty} f(x)=\infty$
+\item $\ds\lim_{x \to \infty} g(x)=\infty$
+\item $\ds\lim_{x \to \infty} \dfrac{f(x)}{g(x)}=2.5$
+\end{enumerate}
+\end{Mquestion}
+\begin{hint} Try making one function a multiple of the other.
+\end{hint}
+\begin{answer} There are many possible answers. Here is one: $f(x)=5x$, $g(x)=2x$.
+\end{answer}
+\begin{solution} There are many possible answers. Consider these: $f(x)=5x$, $g(x)=2x$.
+Then $\ds\lim_{x \rightarrow\infty}f(x)=\ds\lim_{x\to\infty}g(x)=\infty$, and
+$\ds\lim_{x\to\infty}\frac{f(x)}{g(x)}=\ds\lim_{x\to\infty}\frac{5x}{2x}=\ds\lim_{x\to\infty}\frac{5}{2}=\frac{5}{2}=2.5$.
+\end{solution}
+
+
+\begin{Mquestion}Give two functions $f(x)$ and $g(x)$ with the following properties:
+\begin{enumerate}[(i)]
+\item $\ds\lim_{x \to \infty} f(x)=\infty$
+\item $\ds\lim_{x \to \infty} g(x)=\infty$
+\item $\ds\lim_{x \to \infty} \dfrac{f(x)}{g(x)}=0$
+\end{enumerate}
+\end{Mquestion}
+\begin{hint} Try making one function a multiple of the other, but not a \emph{constant} multiple.
+\end{hint}
+\begin{answer} There are many possible answers. Here is one: $f(x)=x$, $g(x)=x^2$.
+\end{answer}
+\begin{solution} There are many possible answers. Consider these: $f(x)=x$, $g(x)=x^2$.
+Then $\ds\lim_{x \rightarrow\infty}f(x)=\ds\lim_{x\to\infty}g(x)=\infty$, and
+$\ds\lim_{x\to\infty}\frac{f(x)}{g(x)}=\ds\lim_{x\to\infty}\frac{x}{x^2}=\ds\lim_{x\to\infty}\frac{1}{x}=0$.
+\end{solution}
+
+
+
+
+\begin{Mquestion}\label{s3.7indet3}
+Give two functions $f(x)$ and $g(x)$ with the following properties:
+\begin{enumerate}[(i)]
+\item\label{s3.7conc1} $\ds\lim_{x \to \infty} f(x)=1$
+\item\label{s3.7conc2} $\ds\lim_{x \to \infty} g(x)=\infty$
+\item\label{s3.7conc3} $\ds\lim_{x \to \infty} [f(x)]^{g(x)}=5$
+\end{enumerate}
+\end{Mquestion}
+\begin{hint} Try modifying the function from Example~\ref*{eg:hopitalL}.%Examplt 3.7.20
+\end{hint}
+\begin{answer} There are many possible answers. Here is one: $f(x)=1+\frac{1}{x}$, $g(x)=x\log 5$ (recall we use $\log$ to mean logarithm base $e$).
+\end{answer}
+\begin{solution}
+From Example~\ref*{eg:hopitalL}, we know that $\ds\lim_{x \to 0} (1+x)^{\frac{a}{x}}=e^a$, so $\ds\lim_{x \to 0} (1+x)^{\frac{\log 5}{x}}=e^{\log 5}=5$. However, this is the limit as $x$ goes to 0, which is not what we were asked. So, we modify the functions by replacing $x$ with $\frac{1}{x}$. If $x \to 0^+$, then $\frac{1}{x} \to \infty$.
+
+Taking $f(x)=1+\frac{1}{x}$ and $g(x)=x\log 5$, we see:\\
+\eqref{s3.7conc1} $\ds\lim_{x \to \infty} f(x)=\ds\lim_{x \to \infty } \left(1+\frac{1}{x}\right)=1$\\
+\eqref{s3.7conc2} $\ds\lim_{x \to \infty} g(x)=\ds\lim_{x \to \infty} x\log 5=\infty$\\
+\eqref{s3.7conc3} Let us name $\dfrac{1}{x}=X$. Then as $x \to \infty$, $X \to 0^+$, so:\\
+ $\ds\lim_{x \to \infty} [f(x)]^{g(x)}=\ds\lim_{x \to \infty} \left[1+\frac{1}{x}\right]^{x\log 5}=\lim_{x \to \infty} \left[1+\frac{1}{x}\right]^{\frac{\log 5}{\frac{1}{x}}}=
+\lim_{X \to 0^+} \left[1+X\right]^{\frac{\log 5}{X}}=e^{\log 5}=5
+$,
+where in the penultimate step, we used  the result of Example~\ref*{eg:hopitalL}.
+\end{solution}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{Mquestion}[2009H]
+Evaluate $\lim\limits_{x\rightarrow 1}\dfrac{x^3-e^{x-1}}{\sin(\pi x)}$.
+\end{Mquestion}
+\begin{hint}
+Plugging in $x=1$ to the numerator and denominator makes both zero. This is exactly one of the indeterminate forms where l'H\^opital's rule can be directly applied.
+\end{hint}
+\begin{answer}  $-\dfrac{2}{\pi}$
+\end{answer}
+\begin{solution}
+If we plug in $x=1$ to the numerator and the denominator, we find they are both zero. So, we have an indeterminate form appropriate for L'H\^opital's Rule.
+\begin{align*}
+\lim\limits_{x\rightarrow 1}\underbrace{\frac{x^3-e^{x-1}}{\sin(\pi x)}}_{\atp
+	{\mathrm{num} \to 0}
+	{\mathrm{den} \to 0}}
+=\lim\limits_{x\rightarrow 1}\frac{3x^2-e^{x-1}}{\pi\cos(\pi x)}
+=-\frac{2}{\pi}\end{align*}
+\end{solution}
+
+
+\begin{question}[2010H]
+Evaluate $\lim\limits_{x\rightarrow 0+}\dfrac{\log x}{x}$. (Remember: in these notes, $\log$ means logarithm base $e$.)
+\end{question}
+\begin{hint}
+Is this an indeterminate form?
+\end{hint}
+\begin{answer} $-\infty$
+\end{answer}
+\begin{solution}
+Be careful-- this is not an indeterminate form!
+\medskip
+
+As $x\rightarrow 0+$, the numerator $\log x\rightarrow-\infty$. That is, the numerator is becoming an increasingly huge, negative number.
+As $x\rightarrow 0+$, the denominator $x\rightarrow 0+$, which only serves to make the total fraction even larger, and still negative. So, $\lim\limits_{x\rightarrow 0^+}\dfrac{\log x}{x}
+=-\infty$.
+\medskip
+
+Remark: if we had tried to use l'H\^opital's Rule here, we would have come up with the wrong answer. If we differentiate the numerator and the denominator, the fraction becomes $\dfrac{\frac{1}{x}}{1}=\frac{1}{x}$, and $\ds\lim_{x \to 0^+}\frac{1}{x}=\infty$. The reason we cannot apply l'H\^opital's Rule is that we do not have an indeterminate form, like both numerator and denominator going to infinity, or both numerator and denominator going to zero.
+\end{solution}
+
+
+
+\begin{question}[2012H]
+Evaluate $\lim\limits_{x\rightarrow\infty}(\log x)^2e^{-x}$.
+\end{question}
+\begin{hint}
+First, rearrange the expression to a more natural form (without a negative exponent).
+\end{hint}
+\begin{answer}
+0
+\end{answer}
+\begin{solution}
+We rearrange the expression to a more natural form:
+\begin{align*}
+\lim_{x\rightarrow\infty}(\log x)^2e^{-x}
+&=\lim_{x\rightarrow\infty}\underbrace{\dfrac{(\log x)^2}{e^{x}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+\intertext{If we plug in $x=0$, both numerator and denominator go to infinity. So, we can apply l'H\^opital's Rule. In fact, we end up applying it twice.}
+&=\lim_{x\rightarrow\infty}\underbrace{\dfrac{2\log x}{xe^{x}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+\\
+&=\lim_{x\rightarrow\infty}\dfrac{2/x}{xe^{x}+e^x}
+\intertext{The numerator gets smaller and smaller while the denominator gets larger and larger, so:}
+&={0}
+\end{align*}
+
+\end{solution}
+
+\begin{question}[1997D]
+Evaluate
+$\lim\limits_{x\rightarrow\infty}x^2e^{-x}$.
+\end{question}
+\begin{hint} If at first you don't succeed, try, try again.
+\end{hint}
+\begin{answer} 0
+\end{answer}
+\begin{solution}
+$$
+\lim_{x\rightarrow\infty}x^2e^{-x}
+=\lim_{x\rightarrow\infty}\underbrace{\frac{x^2}{e^{x}}}_{\atp
+	{\mathrm{num}\to \infty}
+	{\mathrm{den}\to \infty}}
+=\lim_{x\rightarrow\infty}\underbrace{\frac{2x}{e^{x}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+=\lim_{x\rightarrow\infty}\underbrace{\frac{2}{e^{x}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+={0}
+$$
+
+\end{solution}
+
+
+\begin{question}[1997D]
+Evaluate $\lim\limits_{x\rightarrow 0}\dfrac{x-x\cos x}{x-\sin x}$.
+\end{question}
+\begin{hint} Keep at it!
+\end{hint}
+\begin{answer} 3
+\end{answer}
+\begin{solution}
+\begin{align*}
+\lim_{x\rightarrow 0}\underbrace{\frac{x-x\cos x}{x-\sin x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+&= \lim_{x\rightarrow 0}\underbrace{\frac{1-\cos x+x\sin x}{1-\cos x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+= \lim_{x\rightarrow 0}\underbrace{\frac{\sin x+\sin x+x\cos x}{\sin x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}\\
+&= \lim_{x\rightarrow 0}\frac{2\cos x+\cos x-x\sin x}{\cos x}
+={3}
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{question}
+Evaluate
+$\ds\lim_{x \to 0}\dfrac{\sqrt{x^6+4x^4}}{x^2\cos x}$.
+\end{question}
+\begin{hint} Rather than use l'H\^opital, try factoring out $x^2$ from the numerator and denominator.
+\end{hint}
+\begin{answer}
+$2$
+\end{answer}
+\begin{solution}
+If we plug in $x=0$ to the numerator and denominator, both are zero, so this is a candidate for l'H\^opital's Rule. However, an easier way to evaluate the limit is to factor $x^2$ from the numerator and denominator, and cancel.
+\begin{align*}
+\lim_{x\to0}\frac{\sqrt{x^6+4x^4}}{x^2\cos x}
+&=\lim_{x\to0}\frac{\sqrt{x^4}\sqrt{x^2+4}}{x^2\cos x}\\
+&=\lim_{x\to0}\frac{x^2\sqrt{x^2+4}}{x^2\cos x}\\
+&=\lim_{x\to0}\frac{\sqrt{x^2+4}}{\cos x}\\
+&=\frac{\sqrt{0^2+4}}{\cos(0)}=2
+\end{align*}
+\end{solution}
+
+\begin{question}[1997A]
+Evaluate $\lim\limits_{x\rightarrow\infty}\dfrac{(\log x)^2}{x}$.
+\end{question}
+\begin{hint} Keep going!
+\end{hint}
+\begin{answer} 0
+\end{answer}
+\begin{solution}
+\begin{align*}\lim_{x\rightarrow\infty}\underbrace{\frac{(\log x)^2}{x}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+&=\lim_{x\rightarrow\infty}\frac{2(\log x)\frac{1}{x}}{1}
+=2\lim_{x\rightarrow\infty}\underbrace{\frac{\log x}{x}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+= 2\lim_{x\rightarrow\infty}\frac{\frac{1}{x}}{1}={0}
+\end{align*}
+\end{solution}
+
+
+\begin{question}[1997A]
+Evaluate $\lim\limits_{x\rightarrow0}\dfrac{1-\cos x}{\sin^2 x}$.
+\end{question}
+\begin{answer} $\frac{1}{2}$
+\end{answer}
+\begin{solution}
+\begin{align*}
+\lim_{x\rightarrow0}\underbrace{\frac{1-\cos x}{\sin^2 x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+&= \lim_{x\rightarrow0}\frac{\sin x}{2\sin x\cos x}
+=\lim_{x\rightarrow0}\frac{1}{2\cos x}
+={\frac{1}{2}}
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{question}
+Evaluate $\ds\lim_{x \to 0}\dfrac{x}{\sec x}$.
+\end{question}
+\begin{hint}
+Try plugging in $x=0$. Is this an indeterminate form?
+\end{hint}
+\begin{answer} 0
+\end{answer}
+\begin{solution}
+If we plug in $x=0$, the numerator is zero, and the denominator is \\
+$\sec 0 = \dfrac{1}{\cos 0}=\dfrac{1}{1}=1$. So the limit is $\dfrac{0}{1}=0$.
+
+\medskip
+Be careful: you cannot use l'H\^opital's Rule here, because the fraction does not give an indeterminate form. If you try to differentiate the numerator and the denominator, you get an expression whose limit does not exist:\\
+$\ds\lim_{x \to 0}\dfrac{1}{\sec x \tan x}=\ds\lim_{x \to 0}\cos x\cdot \dfrac{\cos x}{\sin x}=DNE$.
+\end{solution}
+
+
+
+
+\begin{Mquestion}
+Evaluate $\ds\lim_{x\to0}\dfrac{\csc x\cdot \tan x\cdot (x^2+5)}{e^x}$.
+\end{Mquestion}
+\begin{hint}
+Simplify the trigonometric part first.
+\end{hint}
+\begin{answer}
+$5$
+\end{answer}
+\begin{solution}
+If we plug $x=0$ into the denominator, we get 1. However, the numerator is an indeterminate form: $\tan 0 =0$,  while  $\ds\lim_{x \to 0^+}\csc x=\infty$ and
+$\ds\lim_{x \to 0^-}\csc x=-\infty$. If we use $\csc x = \frac{1}{\sin x}$, our expression becomes
+\begin{align*}
+\lim_{x\to0}\frac{\tan x\cdot (x^2+5)}{\sin x \cdot e^x}&
+\intertext{Since plugging in $x=0$ makes both the numerator and the denominator equal to zero, this is a candidate for l'H\^ospital's Rule. However, a much easier way is to simplify the trig first.}
+\lim_{x\to0}\frac{\tan x\cdot (x^2+5)}{\sin x \cdot e^x}&=
+\lim_{x\to0}\frac{\sin x\cdot (x^2+5)}{\cos x \cdot\sin x \cdot e^x}\\&=
+\lim_{x\to0}\frac{x^2+5}{\cos x \cdot e^x}\\
+&=\frac{0^2+5}{\cos(0)\cdot e^0}=5
+\end{align*}
+\end{solution}
+
+\begin{Mquestion}Evaluate $\ds\lim_{x \to \infty}\sqrt{2x^2+1}-\sqrt{x^2+x}$.
+\end{Mquestion}
+\begin{hint} Rationalize, then remember your training.
+\end{hint}
+\begin{answer} $\infty$
+\end{answer}
+\begin{solution}
+$\ds\lim_{x \to \infty}\sqrt{2x^2+1}-\sqrt{x^2+x}$ has the indeterminate form $\infty - \infty$. To get a better idea of what's going on, let's rationalize.
+\begin{align*}
+\lim_{x \to \infty}\sqrt{2x^2+1}-\sqrt{x^2+x}&=
+\lim_{x \to \infty}\left(\sqrt{2x^2+1}-\sqrt{x^2+x}\right)\left(
+\frac{\sqrt{2x^2+1}+\sqrt{x^2+x}}{\sqrt{2x^2+1}+\sqrt{x^2+x}}\right)\\
+&=\lim_{x \to \infty}
+\frac{(2x^2+1)-(x^2+x)}{\sqrt{2x^2+1}+\sqrt{x^2+x}}=
+\lim_{x \to \infty}
+\frac{x^2-x+1}{\sqrt{2x^2+1}+\sqrt{x^2+x}}
+\intertext{Here, we have the indeterminate form $\frac{\infty}{\infty}$, so l'H\^opital's Rule applies. However, if we try to use it here, we quickly get a huge mess. Instead, remember how we dealt with these kinds of limits in the past: factor out the highest power of the denominator, which is $x$.}
+&=\lim_{x \to \infty}
+\frac{x\left(x-1+\frac{1}{x}\right)}{\sqrt{x^2(2+\frac{1}{x^2})}+\sqrt{x^2(1+\frac{1}{x})}}\\
+&=\lim_{x \to \infty}
+\frac{x\left(x-1+\frac{1}{x}\right)}{x\left(\sqrt{2+\frac{1}{x^2}}+\sqrt{1+\frac{1}{x}}\right)}\\
+&=\lim_{x \to \infty}
+\underbrace{\frac{x-1+\frac{1}{x}}{\sqrt{2+\frac{1}{x^2}}+\sqrt{1+\frac{1}{x}}}}_{\atp
+	{\mathrm{num}\to \infty}
+	{\mathrm{den}\to \sqrt{2}+1}}\\
+&=\infty
+\end{align*}
+\end{solution}
+
+
+\begin{question}[2010H]
+Evaluate $\lim\limits_{x\rightarrow 0}\dfrac{\sin(x^3+3x^2)}{\sin^2x}$.
+\end{question}
+\begin{hint}
+If it is too difficult to take a derivative for l'H\^opital's Rule, try splitting up the function into smaller chunks and evaluating their limits independently.
+\end{hint}
+\begin{answer} 3
+\end{answer}
+\begin{solution}
+If we plug in $x=0$, both numerator and denominator become zero. So, we have exactly one of the indeterminate forms that l'H\^opital's Rule applies to.
+\begin{align*}
+\lim_{x\rightarrow 0}\underbrace{\dfrac{\sin(x^3+3x^2)}{\sin^2x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to 0}}
+&= \lim_{x\rightarrow 0}\dfrac{(3x^2+6x)\cos(x^3+3x^2)}{2\sin x\cos x}	\intertext{If we plug in $x=0$, still we find that both the numerator and the denominator go to zero. We could jump in with another iteration of l'H\^opital's Rule. However, the derivatives would be a little messy, so we use limit laws and break up the fraction into the product of two fractions. If both limits exist:}
+\lim_{x\rightarrow 0}\dfrac{(3x^2+6x)\cos(x^3+3x^2)}{2\sin x\cos x}&=\left(\lim_{x\rightarrow 0}\dfrac{x^2+2x}{\sin x}\right)\cdot
+\left(\lim_{x\rightarrow 0}\dfrac{3\cos(x^3+3x^2)}{2\cos x}\right)
+\intertext{We can evaluate the right-hand limit by simply plugging in $x=0$:}
+&=\dfrac{3}{2}\lim_{x\rightarrow 0}\underbrace{\dfrac{x^2+2x}{\sin x}}_
+{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to 0}}
+\\
+&= \dfrac{3}{2}\lim_{x\rightarrow 0}\dfrac{2x+2}{\cos x}\\
+&=\frac{3}{2}\left(\frac{2}{1}\right)=3\end{align*}
+\end{solution}
+
+
+
+\begin{question}[1996D]
+Evaluate $\lim\limits_{x\rightarrow1}\dfrac{\log(x^3)}{x^2-1}$.
+\end{question}
+\begin{answer} $\frac{3}{2}$
+\end{answer}
+\begin{solution}
+$$
+\lim_{x\rightarrow1}\frac{\log(x^3)}{x^2-1}
+=\lim_{x\rightarrow1}\underbrace{\frac{3\log(x)}{x^2-1}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+=\lim_{x\rightarrow1}\frac{3/x}{2x}
+=\frac{3}{2}
+$$
+\end{solution}
+
+\begin{Mquestion}[1996D]
+Evaluate $\lim\limits_{x\rightarrow 0}\dfrac{e^{-1/x^2}}{x^4}$.
+\end{Mquestion}
+\begin{hint} Try manipulating the function to get it into a nicer form
+\end{hint}
+\begin{answer} 0
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item Solution 1.
+$$
+\lim_{x\rightarrow 0}\frac{e^{-1/x^2}}{x^4}
+=\lim_{x\rightarrow 0}\underbrace{\frac{\frac{1}{x^4}}{e^{1/x^2}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+=\lim_{x\rightarrow 0}\frac{\frac{-4}{x^5}}{\frac{-2}{x^3}e^{1/x^2}}
+=\lim_{x\rightarrow 0}\underbrace{\frac{\frac{2}{x^2}}{e^{1/x^2}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+=\lim_{x\rightarrow 0}\frac{\frac{-4}{x^3}}{\frac{-2}{x^3}e^{1/x^2}}
+=\lim_{x\rightarrow 0}\frac{2}{e^{1/x^2}}
+={0}
+$$
+since, as $x\rightarrow 0$, the exponent $\frac{1}{x^2}\rightarrow\infty$
+so that $e^{1/x^2}\rightarrow\infty$ and $e^{-1/x^2}\rightarrow 0$.
+\item Solution 2.
+$$
+\lim_{x\rightarrow 0}\frac{e^{-1/x^2}}{x^4}
+=\lim_{t={1\over x^2}\rightarrow \infty}\frac{e^{-t}}{t^{-2}}
+=\lim_{t\rightarrow \infty}\underbrace{\frac{t^2}{e^{t}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+=\lim_{t\rightarrow \infty}\underbrace{\frac{2t}{e^{t}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+=\lim_{t\rightarrow \infty}\frac{2}{e^{t}}
+={0}
+$$
+\end{itemize}
+\end{solution}
+
+
+
+
+\begin{question}[1998H]
+Evaluate $\lim\limits_{x\rightarrow 0}
+\dfrac{xe^x}{\tan (3x)}$.
+\end{question}
+\begin{answer} $\frac{1}{3}$
+\end{answer}
+\begin{solution} $$
+\lim_{x\rightarrow 0}\underbrace{\frac{xe^x}{\tan (3x)}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+= \lim_{x\rightarrow 0}\frac{e^x+xe^x}{3\sec^2 (3x)}
+=\frac{1}{3}
+$$
+\end{solution}
+
+
+
+\begin{Mquestion}
+Evaluate $\lim\limits_{x \to 0}\sqrt[x^2]{\sin^2 x}$.
+\end{Mquestion}
+\begin{hint} $\lim\limits_{x \to 0}\sqrt[x^2]{\sin^2 x}=(\sin^2 x)^{\frac{1}{x^2}}$; what form is this?
+\end{hint}
+\begin{answer} 0
+\end{answer}
+\begin{solution} $\ds\lim_{x \to 0} \sin^2 x = 0$, and $\ds\lim_{x \to 0}\frac{1}{x^2}=\infty$, so we have the form $0^\infty$. (Note that $\sin^2 x$ is positive, so our root is defined.) This is not an indeterminate form: $\lim\limits_{x \to 0}\sqrt[x^2]{\sin^2 x}=0$.
+\end{solution}
+
+
+\begin{Mquestion}
+Evaluate $\lim\limits_{x \to 0}\sqrt[x^2]{\cos x}$.
+\end{Mquestion}
+\begin{hint} $\lim\limits_{x \to 0}\sqrt[x^2]{\cos x} = \ds\lim_{x \to 0}(\cos x)^{\frac{1}{x^2}}$
+\end{hint}
+\begin{answer} $\frac{1}{\sqrt{e}}$
+\end{answer}
+\begin{solution} $\ds\lim_{x \to 0} \cos x =1$ and $\ds\lim_{x \to 0}\frac{1}{x^2}=\infty$, so $\ds\lim_{x \to 0}(\cos x)^{\frac{1}{x^2}}$ has the indeterminate form $1^\infty$. We want to use l'H\^opital, but we need to get our function into a fractional indeterminate form. So, we'll use a logarithm.
+\begin{align*}
+y:&=(\cos x)^{\frac{1}{x^2}}\\
+\log y &= \log \left((\cos x)^{\frac{1}{x^2}}\right)=\frac{1}{x^2}\log(\cos x)=\frac{\log \cos x}{x^2}\\
+\lim_{x \to 0}\log y &=\lim_{x \to 0}\underbrace{\frac{\log \cos x}{x^2}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to 0}}
+	=
+	\lim_{x \to 0} \frac{\frac{-\sin x}{\cos x}}{2x}=
+	\lim_{x \to 0} \underbrace{\frac{-\tan x}{2x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to 0}}
+	=
+	\lim_{x \to 0}\frac{-\sec^2x}{2}\\
+	&=\lim_{x \to 0}\frac{-1}{2\cos^2 x}=-\frac{1}{2}\\
+\mbox{Therefore, } \lim_{x \to 0} y &=\lim_{x \to 0}e^{\log y}=e^{-1/2}=\frac{1}{\sqrt{e}}
+\end{align*}
+\end{solution}
+
+
+\begin{Mquestion}
+Evaluate $\ds\lim_{x \to 0^+} e^{x \log x}$.
+\end{Mquestion}
+\begin{hint} logarithms
+\end{hint}
+\begin{answer} 1
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item Solution 1
+\begin{align*}
+y:&= e^{x \log x} = (e^x)^{\log x} \\
+\lim_{x \to 0^+} y &=\lim_{x \to 0^+} (e^x)^{\log x}
+\intertext{This has the form $1^{-\infty} = \frac{1}{1^\infty}$, and $1^{\infty}$ is an indeterminate form. We want to use l'H\^opital, but we need to get a different indeterminate form. So, we'll use logarithms.}
+\lim_{x \to 0^+} \log y &=\lim_{x \to 0 ^+} \log\left((e^x)^{\log x} \right)
+=\lim_{x \to 0 ^+} \log x \log\left(e^x \right)=\lim_{x \to 0 ^+} (\log x)\cdot x
+\intertext{This has the indeterminate form $0 \cdot \infty$, so we need one last adjustment before we can use l'H\^opital's Rule.}
+&=\lim_{x \to 0 ^+} \underbrace{\frac{\log x}{\frac{1}{x}}}_{\atp
+	{\mathrm{num} \to -\infty}
+	{\mathrm{den} \to \infty}}
+=\lim_{x \to 0 ^+}\frac{\frac{1}{x}}{\frac{-1}{x^2}}
+=\lim_{x \to 0 ^+}-x=0
+\intertext{Now, we can figure out what happens to our original function, $y$:}
+\lim_{x \to 0^+} y &=\lim_{x \to 0^+} e^{\log y} = e^0=1
+\end{align*}
+
+\item Solution 2
+\begin{align*}
+y:&=e^{x\log x}=\left(e^{\log x}\right)^x=x^x\\
+\lim_{x \to 0^+} y &=\lim_{x \to 0^+}x^x
+\intertext{We have the indeterminate form $0^0$. We want to use l'H\^opital, but we need a different indeterminate form. So, we'll use logarithms.}
+\lim_{x \to 0^+}\log y &=\lim_{x \to 0^+}\log(x^x)=\lim_{x \to 0^+}x\log x
+\intertext{Now we have the indeterminate form $0 \cdot \infty$, so we need one last adjustment before we can use l'H\^opital's Rule.}
+\lim_{x \to 0^+} y &=\lim_{x \to 0^+}\underbrace{\frac{\log x}{\frac{1}{x}}}_{\atp
+	{\mathrm{num}\to 0}
+	{\mathrm{den} \to -\infty}}
+=\lim_{x \to 0^+}\frac{\frac{1}{x}}{\frac{-1}{x^2}}
+=\lim_{x \to 0^+}-x=0
+\intertext{Now, we can figure out what happens to our original function, $y$:}
+\lim_{x \to 0^+} y &=\lim_{x \to 0^+} e^{\log y} = e^0=1
+\end{align*}
+\end{itemize}
+\end{solution}
+
+
+\begin{question}Evaluate
+$\ds\lim_{x \rightarrow 0} \left[-\log(x^2)\right]^x$.
+\end{question}
+\begin{hint} Introduce yet another logarithm.
+\end{hint}
+\begin{answer} 1
+\end{answer}
+\begin{solution}
+First, note that the function exists near 0: $x^2$ is positive, so $\log(x^2)$ exists; near 0, $\log x^2$ is negative, so $-\log(x^2)$ is positive, so $\left[-\log(x^2)\right]^x$ exists even when $x$ is negative.
+
+Since $\ds\lim_{x \rightarrow 0} -\log(x^2)=\infty$ and $\ds\lim_{x \rightarrow 0}x=0$, we have the indeterminate form $\infty^0$. We need l'H\^opital, but we need to manipulate our function into an appropriate form. We do this using logarithms.
+\begin{align*}
+y:&=\left[-\log(x^2)\right]^x\\
+\log y &= \log \left( \left[-\log(x^2)\right]^x\right)=
+\underbrace{x}_{\to 0}\cdot\underbrace{\log\left(\underbrace{-\log(x^2)}_{\to\infty} \right)}_{\to\infty}=\frac{\log\left(-\log(x^2)\right)}{\frac{1}{x}}\\
+\lim_{x \to 0}\log y &=\lim_{x \to 0} \underbrace{\frac{\log\left(-\log(x^2)\right)}{\frac{1}{x}}}_{\atp
+	{\mathrm{num}\to \infty}
+	{\mathrm{den}\to \pm\infty}}
+=\lim_{x \to 0} \frac{\frac{-\frac{2}{x}}{-\log(x^2)}}{\frac{-1}{x^2}}
+=\lim_{x \to 0} \underbrace{\frac{-2x}{\log(x^2)}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to-\infty}}=0
+\intertext{Now, we're ready to figure out our original limit.}
+\lim_{x\to 0} y &= \lim_{x \to 0} e^{\log y}=e^0=1
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{question}[2009H]
+ Find $c$ so that $\lim\limits_{x\rightarrow 0}
+\dfrac{1+cx-\cos x}{ e^{x^2}-1}$ exists.
+\end{question}
+\begin{hint} If the denominator tends to zero, and the limit exists, what must be the limit of the numerator?
+\end{hint}
+\begin{answer} $c=0$
+\end{answer}
+\begin{solution}
+Both the numerator and denominator converge to $0$ as
+$x\rightarrow 0$. So, by l'H\^opital,
+$$
+\lim_{x\rightarrow 0}\underbrace{\frac{1+cx-\cos x}{ e^{x^2}-1}}_{\atp
+	{\mathrm{num}\to 0}{\mathrm{den}\to 0}}
+=\lim_{x\rightarrow 0}\frac{c+\sin x}{ 2xe^{x^2}}
+$$
+The new denominator still converges to $0$ as $x\rightarrow 0$. For
+the limit to exist, the same must be true for the new numerator. This  tells us that if $c \neq 0$, the limit does not exist. We should check whether the limit exists when $c=0$.
+Using l'H\^opital:
+\[\lim_{x \to 0}\underbrace{\frac{\sin x}{2xe^{x^2}}}_{\atp
+	{\mathrm{num}\to 0}{\mathrm{den}\to 0}}=\lim_{x \to 0}\frac{\cos x}{e^{x^2}(4x^2+2)}=\frac{1}{1(0+2)}=\frac{1}{2}.\]
+	So, the limit exists when $c=0$.
+\end{solution}
+
+
+
+\begin{question}[2010H]
+Evaluate $\lim\limits_{x\rightarrow 0}\dfrac{e^{k\sin(x^2)}-(1+2x^2)}{x^4}$,
+where $k$ is a constant.
+\end{question}
+\begin{hint}
+Start with one application of l'H\^opital's Rule. After that, you need to consider three distinct cases: $k>2$, $k<2$, and $k=2$.
+\end{hint}
+\begin{answer}
+$\lim\limits_{x\rightarrow 0}\dfrac{e^{k\sin(x^2)}-(1+2x^2)}{x^4}=\left\{\begin{array}{rl}
+-\infty&k<2\\
+2&k=2\\
+\infty&k>2
+\end{array}\right.$
+\end{answer}
+\begin{solution}
+The first thing we notice is, regardless of $k$, when we plug in $x=0$ both numerator and denominator become zero. Let's use this fact, and apply l'H\^opital's Rule.
+\begin{align*}
+\lim\limits_{x\rightarrow 0}\underbrace{\dfrac{e^{k\sin(x^2)}-(1+2x^2)}{x^4}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+&=\lim_{x\rightarrow 0}\dfrac{2kx\cos(x^2)e^{k\sin(x^2)}-4x}{4x^3}\\
+&=\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}
+\intertext{When we plug in $x=0$, the denominator becomes 0, and the numerator becomes $2k-4$. So, we'll need some cases, because the behaviour of the limit depends on $k$.}
+\intertext{For $k=2$:}
+\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}&=
+\lim_{x\rightarrow 0}\underbrace{\dfrac{4\cos(x^2)e^{2\sin(x^2)}-4}{4x^2}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}\\
+&= \lim_{x\rightarrow 0}\dfrac{-8x\sin(x^2)e^{2\sin(x^2)}
+ +16x\cos^2(x^2)e^{2\sin(x^2)}}{8x}\cr
+&= \lim_{x\rightarrow 0}\big[-\sin(x^2)e^{2\sin(x^2)}
+ +2\cos^2(x^2)e^{2\sin(x^2)}\big]\cr
+&=2
+\intertext{For $k>2$, the numerator goes to $2k-4$, which is a  positive constant, while the denominator goes to $0$ from the right, so:}
+\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}&=
+\infty
+\intertext{For $k<2$, the numerator goes to $2k-4$, which is a  negative constant, while the denominator goes to $0$ from the right, so:}
+\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}&=
+-\infty
+\end{align*}
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+%something about asymptotic equivalence
+\begin{question}
+Suppose an algorithm, given an input with with $n$ variables, will terminate in at most $S(n)=5n^4-13n^3-4n+\log (n)$ steps. A researcher writes that the algorithm will terminate in \emph{roughly} at most $A(n)=5n^4$ steps. Show that the percentage error involved in using $A(n)$ instead of $S(n)$ tends to zero as $n$ gets very large. What happens to the absolute error?
+
+\vspace{5mm}
+Remark: this is a very common kind of approximation. When people deal with functions that give very large numbers, often they don't care about the \emph{exact} large number--they only want a ballpark. So, a complicated function might be replaced by an easier function that doesn't give a large relative error. If you would like to know more about the ways people describe functions that give very large numbers, you can read about ``Big O Notation" in Section 3.6.3 of the CLP101 notes.
+\end{question}
+\begin{hint} Percentage error: $100\left|\frac{\mbox{exact}-\mbox{approx}}{\mbox{exact}}\right|$. Absolute error: $|\mbox{exact}-\mbox{approx}|$. (We'll see these definitions again in \ref*{def:APPrelError}.)
+\end{hint}
+\begin{answer}
+\begin{itemize}
+\item We want to find the limit as $n$ goes to infinity of the percentage error,
+$\ds\lim_{n \rightarrow \infty} 100\frac{|S(n)-A(n)|}{|S(n)|}$. Since $A(n)$ is a nicer function than $S(n)$, let's simplify: $\ds\lim_{n \rightarrow \infty} 100\frac{|S(n)-A(n)|}{|S(n)|} = 100\left|1-\ds\lim_{n \to \infty}\frac{A(n)}{S(n)}\right|$.
+
+We  figure out this limit the natural way:
+\begin{align*}
+100\left|1-\ds\lim_{n \to \infty}\frac{A(n)}{S(n)}\right|&=
+100\left|1-\ds\lim_{n \rightarrow \infty}\underbrace{\frac{5n^4}{5n^4-13n^3-4n+\log (n)}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}\right|\\
+&=
+100\left|1-\ds\lim_{n \rightarrow \infty}\frac{20n^3}{20n^3-39n^2-4+\frac{1}{n}}\right|\\
+&=
+100\left|1-\ds\lim_{n \rightarrow \infty}\frac{n^3}{n^3}\cdot\frac{20}{20-\frac{39}{n}-\frac{4}{n^3}+\frac{1}{n^4}}\right|\\
+&=100|1-1|=0
+\end{align*}
+So, as $n$ gets larger and larger, the relative error in the approximation gets closer and closer to 0.
+
+\item Now, let's look at the absolute error.
+\begin{align*}
+\lim_{n \rightarrow \infty} \left| S(n)-A(n)\right|&=\lim_{n \rightarrow \infty} |-13n^3-4n+\log n|=\infty
+\end{align*}
+So although the error gets small \emph{relative to the giant numbers we're talking about}, the absolute error grows without bound.
+\end{itemize}
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item We want to find the limit as $n$ goes to infinity of the percentage error,
+$\ds\lim_{n \rightarrow \infty} 100\frac{|S(n)-A(n)|}{|S(n)|}$. Since $A(n)$ is a nicer function than $S(n)$, let's simplify: $\ds\lim_{n \rightarrow \infty} 100\frac{|S(n)-A(n)|}{|S(n)|} = 100\left|1-\ds\lim_{n \to \infty}\frac{A(n)}{S(n)}\right|$.
+
+We  figure out this limit the natural way:
+\begin{align*}
+100\left|1-\ds\lim_{n \to \infty}\frac{A(n)}{S(n)}\right|&=
+100\left|1-\ds\lim_{n \rightarrow \infty}\underbrace{\frac{5n^4}{5n^4-13n^3-4n+\log (n)}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}\right|\\
+&=
+100\left|1-\ds\lim_{n \rightarrow \infty}\frac{20n^3}{20n^3-39n^2-4+\frac{1}{n}}\right|\\
+&=
+100\left|1-\ds\lim_{n \rightarrow \infty}\frac{n^3}{n^3}\cdot\frac{20}{20-\frac{39}{n}-\frac{4}{n^3}+\frac{1}{n^4}}\right|\\
+&=100|1-1|=0
+\end{align*}
+So, as $n$ gets larger and larger, the relative error in the approximation gets closer and closer to 0.
+
+\item Now, let's look at the absolute error.
+\begin{align*}
+\lim_{n \rightarrow \infty} \left| S(n)-A(n)\right|&=\lim_{n \rightarrow \infty} |-13n^3-4n+\log n|=\infty
+\end{align*}
+So although the error gets small \emph{relative to the giant numbers we're talking about}, the absolute error grows without bound.
+\end{itemize}
+\end{solution}

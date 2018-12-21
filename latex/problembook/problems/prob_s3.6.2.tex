@@ -1,0 +1,143 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s3.6.2}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion}
+Match each function graphed below to its \emph{derivative} from the list. (For example, which function on the list corresponds to $A'(x)$?)
+
+The $y$-axes have been scaled to make the curve's behaviour clear, so the vertical scales differ from graph to graph.
+
+\begin{center}
+$l(x)=(x-2)^4$
+\qquad
+$m(x)=(x-2)^4(x+2)$
+\qquad
+$n(x)=(x-2)^2(x+2)^2$
+\qquad
+$o(x)=(x-2)(x+2)^3$
+\qquad
+$p(x)=(x+2)^4$
+
+\begin{tikzpicture}[scale=0.9]
+\YEaaxis{3}{4}{3}{3}
+\draw[thick, green!80!black] plot[domain=-1.5:4, samples=100](\x,{(\x-2)*(\x-2)*(\x-2)*(\x-2)*(\x-2)/100+2}) node[above right]{$y=A(x)$};
+\foreach \x in {2,-2}{\YExcoord{\x}{\x}}
+\end{tikzpicture}
+%
+\begin{tikzpicture}[scale=0.9]
+\YEaaxis{4}{3}{3}{3}
+\draw[thick, blue] plot[domain=-4:1.5, samples=100](\x,{(\x+2)*(\x+2)*(\x+2)*(\x+2)*(\x+2)/100-2}) node[above right]{$y=B(x)$};
+\foreach \x in {2,-2}{\YExcoord{\x}{\x}}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\YEaaxis{3}{3}{3}{3}
+\draw[thick, red] plot[domain=-3:3, samples=100](\x,{(-.8*\x*\x*\x*\x*\x+16/3*\x*\x*\x+(\x*\x-4*\x+4)*(\x*\x+4*\x+4)*\x)/10}) node[right]{$y=C(x)$};
+\foreach \x in {2,-2}{\YExcoord{\x}{\x}}
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=0.8]
+\YEaaxis{3.5}{3}{3}{3}
+\draw[thick, orange] plot[domain=-4:3.1, samples=100](\x,{1/75*(\x-3)*(\x+2)*(\x+2)*(\x+2)*(\x+2)+1}) node[above right]{$y=D(x)$};
+\foreach \x in {2,-2}{\YExcoord{\x}{\x}}
+\end{tikzpicture}
+%
+\begin{tikzpicture}[scale=0.8]
+\YEaaxis{3}{4}{3}{3}
+\draw[thick, purple] plot[domain=-2.6:3.75, samples=100](\x,{1/900*(\x-2)*(\x-2)*(\x-2)*(\x-2)*(\x-2)*(5*\x+14)+1.5}) node[above right]{$y=E(x)$};
+\foreach \x in {2,-2}{\YExcoord{\x}{\x}}
+\end{tikzpicture}
+
+\end{center}
+\end{Mquestion}
+\begin{hint}
+For each of the graphs, consider where the derivative is positive, negative, and zero.
+\end{hint}
+\begin{answer}
+$\textcolor{green}{A'(x)=l(x)} \qquad \textcolor{blue}{B'(x)=p(x)}
+\qquad
+\textcolor{red}{C'(x)=n(x)}
+\qquad
+\textcolor{orange}{D'(x)=o(x)}\qquad \textcolor{purple}{E'(x)=m(x)}$
+\end{answer}
+\begin{solution}
+Functions $A(x)$ and $B(x)$ share something in common that sets them apart from the others: they have a horizontal tangent line only once. In particular, $A'(-2) \neq 0$ and $B'(2) \neq 0$. The only listed functions that do not have two distinct roots are $l(x)$ and $p(x)$. Since $l(-2) \neq 0$ and $p(2) \neq 0$, we conclude
+\[\textcolor{green}{A'(x)=l(x)} \qquad \textcolor{blue}{B'(x)=p(x)}\]
+
+Function $C(x)$ is never decreasing. Its tangent line is horizontal when $x = \pm 2$, but the curve never decreases, so $C'(x) \geq 0$ for all $x$ and $C'(2)=C'(-2)=0$. The only function that matches this is $n(x)=(x-2)^2(x+2)^2$. Since its linear terms have even powers, it is never negative, and its roots are precisely $x=\pm 2$.
+\[\textcolor{red}{C'(x)=n(x)}\]
+
+For the functions $D(x)$ and $E(x)$ we consider their behaviour
+          near $x=0$.  $D(x)$ is decreasing near $x=0$, so $D'(0)<0$, which matches with $o(0)<0$. Contrastingly, $E(x)$ is increasing near zero, so
+          $E'(0)>0$, which matches with $m(0)>0$.
+\[\textcolor{orange}{D'(x)=o(x)}\qquad \textcolor{purple}{E'(x)=m(x)}\]
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{question}[2015Q]
+Find the interval(s) where $f(x)=\dfrac{e^x}{x+3}$ is increasing.
+\end{question}
+\begin{hint}
+Where is $f'(x)>0$?
+\end{hint}
+\begin{answer}
+$(-2,\infty)$
+\end{answer}
+\begin{solution}
+The domain of $f(x)$ is all real numbers except $-3$ (because when $x=-3$ the denominator is zero). For $x\neq -3$, we differentiate using the quotient rule:
+$$f'(x)=\frac{e^x(x+3) - e^x(1)}{(x+3)^2} = \frac{e^x}{(x+3)^2} (x+2)\,.$$
+Since $e^x$ and $(x+3)^2$ are  positive for every $x$ in the domain of $f(x)$, the sign of $f'(x)$ is the same as the sign of $x+2$. We conclude that $f(x)$
+is increasing for every $x$ in its domain with $x+2>0$. That is, over the interval $(-2,\infty)$.
+\end{solution}
+
+
+
+
+\begin{question}[2015Q] Find the interval(s) where $f(x)=\dfrac{\sqrt{x-1}}{2x+4}$ is increasing.
+\end{question}
+\begin{hint}
+Consider the signs of the numerator and the denominator of $f'(x)$.
+\end{hint}
+\begin{answer}
+$(1,4)$ and $[1,4)$ are both acceptable answers
+\end{answer}
+\begin{solution}
+Since we can't take the square root of a negative number,  $f(x)$ is only defined
+when $x \ge 1$. Furthermore, since we can't have a zero as a denominator, $x=-2$ is  not in the domain--but as long as $x \ge 1$, also $x \ne -2$. So, the domain of the function is $[1,\infty)$.
+
+ In order to find where is $f(x)$ increasing, we find where is $f'(x)$ positive.
+$$f'(x)=\frac{\frac{2x+4}{2\sqrt{x-1}}-2\sqrt{x-1}}{(2x+4)^2}=\frac{(x+2)-2(x-1)}{\sqrt{x-1}(2x+4)^2}
+=\frac{-x+4}{\sqrt{x-1}(2x+4)^2}$$
+The denominator is never negative, so  $f(x)$ is increasing when the numerator of $f'(x)$ is positive, i.e. when $4-x>0$, or $x<4$. Recalling that the domain of definition for $f(x)$ is $[1,+\infty)$, we conclude that $f(x)$ is increasing on the interval $(1,4)$.
+
+Remark: $[1,4)$ is also an acceptable answer, but $[1,4]$ is not. At $x=4$ the function has a local maximum: $f(x)$ is increasing before $x=4$ and decreasing after.
+\end{solution}
+
+
+\begin{Mquestion}[2015Q]
+Find the interval(s) where $f(x)=2\arctan (x) - \log(1+x^2)$ is increasing.
+\end{Mquestion}
+\begin{hint}
+Remember $\ds\diff{}{x}\{\arctan x\}=\dfrac{1}{1+x^2}$.
+\end{hint}
+\begin{answer} $(-\infty,1)$
+\end{answer}
+\begin{solution}
+The domain of arctangent is all real numbers. The domain of the logarithm function is all positive numbers, and $1+x^2$ is positive for all $x$. So, the domain of $f(x)$ is all real numbers.
+
+In order to find where is $f(x)$ increasing, we find where is $f'(x)$ positive.
+$$f'(x)= \frac 2 {1+x^2} - \frac{2x}{1+x^2} = \frac{2-2x}{1+x^2}$$
+Since the denominator is always positive, $f(x)$ is increasing
+when when $2-2x>0$.We conclude that $f(x)$ is increasing on the interval $(-\infty,1)$.
+\end{solution}

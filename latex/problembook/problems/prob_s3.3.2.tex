@@ -1,0 +1,383 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s3.3.2}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion}
+Which of the following functions $T(t)$ satisfy the differential equation
+$\ds\diff{T}{t}=5\left[T-20\right]$?
+\[\mbox{(a) }
+T(t)=20
+\qquad
+\mbox{(b) }
+ T(t)=20e^{5t}-20
+\qquad
+\mbox{(c) }
+ T(t)=e^{5t}+20
+\qquad
+\mbox{(d) }
+ T(t)=20e^{5t}+20
+\]
+\end{Mquestion}
+\begin{hint}
+You can refer to Corollary~\ref*{cor:coolingDEsoln},
+but you can also just differentiate the various proposed functions and see whether, in fact, $\ds\diff{T}{t}$ is the same as $5[T-20]$.
+\end{hint}
+\begin{answer} (a), (c), (d)
+\end{answer}
+\begin{solution}
+Using Corollary~\ref*{cor:coolingDEsoln} (with $A=20$ and $K=5$),  solutions to the differential equation all have the form
+\[T(t)=[T(0)-20]e^{5t}+20\] for some constant $T(0)$. This fits (a) (with $T(0)=20$), (c) (with $T(0)=21)$, and (d) (with $T(0)=40$), but not (b) (since the constant has the wrong sign).
+
+Instead of using the corollary, we can also just check each function for ourselves.
+\begin{itemize}
+\item[(a)] $\ds\diff{T}{t}=0=5\cdot0=5[T(t)-20]$, so (a) gives a solution to the differential equation.
+\item[(b)] $\ds\diff{T}{t}=5[20e^{5t}]=5[T+20] \neq 5[T-20]$, so (b) does not give a solution to the differential equation.
+\item[(c)] $\ds\diff{T}{t}=5[e^{5t}]=5[T-20]$, so (c) gives a solution to the differential equation.
+\item[(d)] $\ds\diff{T}{t}=5[20e^{5t}]=5[T-20]$,
+so (d) gives a solution to the differential equation.
+\end{itemize}
+\end{solution}
+
+
+
+
+
+
+\begin{question}
+At time $t=0$, an object is placed in a room, of temperature $A$. After $t$ seconds, Newton's Law of Cooling gives the temperature of the object is as
+\[T(t)=35e^{Kt}-10\]
+What is the temperature of the room? Is the room warmer or colder than the object?
+\end{question}
+\begin{hint}
+From Newton's Law of Cooling and Corollary~\ref*{cor:coolingDEsoln}, the temperature of the object will be
+\[T(t)=[T(0)-A]e^{Kt}+A\]
+where $A$ is the ambient temperature, $T(0)$ is the initial temperature of the copper, and $K$ is some constant.
+\end{hint}
+\begin{answer}
+The temperature of the room is -10 degrees, and the room is colder than the object.
+\end{answer}
+\begin{solution}
+From Newton's Law of Cooling and Corollary~\ref*{cor:coolingDEsoln}, the temperature of the object will be
+\[T(t)=[T(0)-A]e^{Kt}+A\]
+where $A$ is the ambient temperature (the temperature of the room), $T(0)$ is the initial temperature of the copper, and $K$ is some constant. So, the ambient temperature--the temperature of the room-- is $-10$ degrees. Since the coefficient of the exponential part of the function is positive, the temperature of the object is higher than the temperature of the room.
+\end{solution}
+
+
+
+
+\begin{Mquestion}\label{s3.3.2Knegative}
+A warm object is placed in a cold room. The temperature of the object, over time, approaches the temperature of the room it is in. The temperature of the object at time $t$ is given by
+\[T(t)=[T(0)-A]e^{Kt}+A.\]
+Can $K$ be a positive number? Can $K$ be a negative number? Can $K$ be zero?
+\end{Mquestion}
+\begin{hint}
+What is $\ds\lim_{t \to \infty}e^{Kt}$ when $K$ is positive, negative, or zero?
+\end{hint}
+\begin{answer} $K$ is a negative number. It cannot be positive or zero.
+\end{answer}
+\begin{solution}
+As $t$ grows very large, $T(t)$ approaches $A$. That is:
+\begin{align*}
+\ds\lim_{t \to \infty}T(t)&=A\\
+\lim_{t \to \infty}[T(0)-A]e^{Kt}+A&=A\\
+\lim_{t \to \infty}[T(0)-A]e^{Kt}&=0
+\intertext{Since the object is warmer than the room, $T(0)-A$ is a nonzero constant. So,}
+\lim_{t \to \infty}e^{Kt}&=0
+\end{align*}
+This tells us that $K$ is a negative number. So, $K$ must be negative--not zero, and not positive.
+
+Remark: in our work, we used the fact that the object and the room have different temperatures (but it didn't matter which one was hotter). If not, then $T(0)=A$, and $T(t)=A$: that is, the temperature of the object is constant. In this case, our usual form for the temperature of the object looks like this:
+\[T(t)=0e^{Kt}+A\]
+Keeping the exponential piece in there is overkill: the temperature isn't changing, the function is simply constant. If the object and the room have the same temperature, $K$ could be any real number since we're multiplying $e^{Kt}$ by zero.
+
+Remark: contrast this to Question~\ref{s3.3.2Knegative2}.
+\end{solution}
+
+
+\begin{question}
+Suppose an object obeys Newton's Law of Cooling, and its temperature is given by
+\[T(t)=[T(0)-A]e^{kt}+A\]
+for some constant $k$. At what time is $T(t)=A$?
+\end{question}
+\begin{hint}
+Solve $A=[T(0)-A]e^{kt}$ for $t$.
+\end{hint}
+\begin{answer}
+If the object has a different initial temperature than its surroundings, then $T(t)$ is \emph{never} equal to $A$. (But as time goes on, it gets closer and closer.)\\
+If the object starts out with the same temperature as its surrounding, then $T(t)=A$ for all values of $t$.
+\end{answer}
+\begin{solution}
+We want to know when
+\begin{align*}
+[T(0)-A]e^{kt}+A&=A
+\intertext{That is, when}
+[T(0)-A]e^{kt}&=0
+\intertext{Since $e^{kt}>0$ for all values of $k$ and $t$, this happens exactly when}
+T(0)-A=0
+\end{align*}
+So: if the initial temperature of the object is not the same as the ambient temperature, then according to this model, it never will be! (However, as $t$ gets larger and larger, $T(t)$ gets closer and closer to $A$--it just never exactly reaches there.)
+
+If the initial temperature of the object starts out the same as the ambient temperature, then $T(t)=A$ for all values of $t$.
+\end{solution}
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{question}
+A piece of copper at room temperature (25$^\circ$) is placed in a boiling pot of water. After 10 seconds, it has heated to 90$^\circ$. When will it be 99.9$^\circ$?
+\end{question}
+\begin{hint}
+From Newton's Law of Cooling and Corollary~\ref*{cor:coolingDEsoln}, we know the temperature of the copper will be
+\[T(t)=[T(0)-A]e^{Kt}+A\]
+where $A$ is the ambient temperature, $T(0)$ is the initial temperature of the copper, and $K$ is some constant. Use the given information to find  an expression for $T(t)$ not involving any unknown constants.
+\end{hint}
+\begin{answer}
+$\dfrac{-10\log(750)}{\log\left(\tfrac{2}{15}\right)}\approx 32.9$ seconds
+\end{answer}
+\begin{solution}
+From Newton's Law of Cooling and Corollary~\ref*{cor:coolingDEsoln}, we know the temperature of the copper will be
+\[T(t)=[T(0)-A]e^{Kt}+A\]
+where $A$ is the ambient temperature (100$^\circ$), $T(0)$ is the temperature of the copper at time 0 (let's make this the instant it was dumped in the water, so $T(0)=25^\circ$), and $K$ is some constant. That is:
+\begin{align*}
+T(t)&=[25-100]e^{Kt}+100\\
+&=-75e^{Kt}+100
+\intertext{The information given tells us that $T(10)=90$, so}
+90&=-75e^{10K}+100\\
+75\left(e^K\right)^{10}&=10\\
+\left(e^K\right)^{10}&=\frac{2}{15}\\
+e^K&=\left(\frac{2}{15}\right)^{\tfrac{1}{10}}
+\intertext{This lets us describe $T(t)$ without any unknown constants.}
+T(t)&=-75\left(e^K\right)^{t}+100\\
+&=-75\left(\frac{2}{15}\right)^{\tfrac{t}{10}}+100
+\intertext{The question asks what value of $t$ gives $T(t)=99.9$.}
+99.9&=-75\left(\frac{2}{15}\right)^{\tfrac{t}{10}}+100\\
+75\left(\frac{2}{15}\right)^{\tfrac{t}{10}}&=0.1\\
+\left(\frac{2}{15}\right)^{\tfrac{t}{10}}&=\frac{1}{750}\\
+\log\left(\left(\frac{2}{15}\right)^{\tfrac{t}{10}}\right)&=\log\left(\frac{1}{750}\right)\\
+\frac{t}{10}\log\left(\frac{2}{15}\right)&=-\log(750)\\
+t&=\frac{-10\log(750)}{\log\left(\tfrac{2}{15}\right)}\approx 32.9
+\end{align*}
+It takes about 32.9 seconds.
+\end{solution}
+
+
+
+
+
+
+\begin{Mquestion}
+Today is a chilly day. We heated up a stone to 500$^\circ$ C in a bonfire, then took it out and left it outside, where the temperature is 0$^\circ$ C. After 10 minutes outside of the bonfire, the stone had cooled to a still-untouchable 100$^\circ$ C. Now the stone is at a cozy 50$^\circ$ C. How long ago was the stone taken out of the fire?
+\end{Mquestion}
+\begin{hint}
+From Newton's Law of Cooling and Corollary~\ref*{cor:coolingDEsoln}, we know the temperature of the stone $t$ minutes after it leaves the fire is
+\[T(t)=[T(0)-A]e^{Kt}+A\]
+where $A$ is the ambient temperature, $T(0)$ is the temperature of the stone the instant it left the fire, and $K$ is some constant.
+\end{hint}
+\begin{answer}
+$10\dfrac{\log(10)}{\log(5)}\approx 14.3$ minutes
+\end{answer}
+\begin{solution}
+The temperature of the stone $t$ minutes after taking it from the bonfire is
+\begin{align*}
+T(t)&=[T(0)-A]e^{Kt}+A\\
+&=[500-0]e^{Kt}+0\\
+&=500e^{Kt}
+\intertext{for some constant $K$. We are given that $T(10)=100$.}
+100=T(10)&=500e^{10K}\\
+e^{10K}&=\frac{1}{5}\\
+e^K&=5^{-\tfrac{1}{10}}
+\intertext{This gives us the more complete picture for the temperature of the stone.}
+T(t)&=500\left(e^K\right)^t=500\cdot 5^{-\tfrac{t}{10}}
+\intertext{If $T(t)=50:$}
+50=T(t)&=500\cdot 5^{-\tfrac{t}{10}}\\
+\frac{1}{10}=10^{-1}&=5^{-\tfrac{t}{10}}\\
+10&=5^{\tfrac{t}{10}}\\
+\log(10)&=\frac{t}{10}\log(5)\\
+t&=10\frac{\log(10)}{\log(5)}\approx 14.3
+\end{align*}
+So the stone  has been out of the fire for about 14.3 minutes.
+\end{solution}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+\begin{question}[1997H]
+Isaac Newton drinks his coffee with cream. To be exact, 9 parts coffee
+to 1 part cream. His landlady pours him a cup of coffee at
+$95^\circ$ C into which Newton stirs cream taken from the icebox at $5^\circ$ C.
+When he drinks the mixture ten minutes later, he notes that it has cooled
+to $54^\circ$ C.
+ Newton wonders if his coffee would be hotter (and by how much) if he
+waited until just before drinking it to add the cream. Analyze this question,
+assuming that:
+\begin{enumerate}[(i)]
+\item The temperature of the dining room is constant at $22^\circ$ C.
+\item When a volume $V_1$ of liquid at temperature $T_1$ is mixed
+with a volume $V_2$ at temperature $T_2$, the temperature of the mixture
+is $\dfrac{V_1T_1+V_2T_2}{V_1+V_2}$.
+\item Newton's Law of Cooling: The temperature of an object
+cools at a rate proportional to the difference in temperature between the
+object and its surroundings.
+\item The constant of proportionality is the same for the cup
+of coffee with cream as for the cup of pure coffee.
+\end{enumerate}
+\end{question}
+\begin{answer}
+If Newton adds his cream just before drinking, the coffee
+ends up {cooler by $0.85^\circ$ C}.
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item First scenario: At time $0$, Newton mixes 9 parts coffee at temperature
+$95^\circ$ C with 1 part cream at temperature $5^\circ$ C. The resulting
+mixture has temperature
+$$
+\frac{9\times 95+1\times 5}{9+1}=86^\circ
+$$
+The mixture cools according to Newton's Law of Cooling, with initial temperature 86$^\circ$ and ambient temperature 22$^\circ$:
+\begin{align*}
+T(t)&=[86-22]e^{-kt}+22\\
+T(t)&=64e^{-kt}+22
+\intertext{After 10 minutes,}
+\textcolor{red}{54}=T(10)&=22+64e^{-10 k}\\
+ e^{-10 k}&=\frac{54-22}{64}=\frac{1}{2}
+\end{align*}
+We could compute $k$ from this, but we don't need it.
+
+\item Second scenario: At time $0$, Newton gets hot coffee at temperature
+$95^\circ$ C. It cools according to Newton's Law of Cooling
+\begin{align*}
+T(t)=[T(0)-22]e^{-kt}+22
+\end{align*}
+In this second scenario, $T(0)=95$, so
+$$
+T(t)=[95-22]e^{-kt}+22=73e^{-kt}+22
+$$
+The value of $k$ is the same as in the first scenario, so after 10 minutes
+$$
+T(10)=22+73e^{-10k}=22+73\frac{1}{2}=58.5
+$$
+This cooled coffee is mixed with cold cream to yield a mixture of temperature
+$$
+\frac{9\times 58.5+1\times 5}{9+1}=\color{red}53.15
+$$
+\end{itemize}
+Under the second (add cream just before drinking) scenario, the coffee
+ends up {cooler by $0.85^\circ$ C}$\,$.
+\end{solution}
+
+
+\begin{Mquestion}[1997A]
+ The temperature of a glass of iced tea is initially $5^\circ$.
+After 5 minutes, the tea has heated to $10^\circ$ in a room where the air
+temperature is $30^\circ$.
+\begin{enumerate}[(a)]
+\item Use Newton's law of cooling to obtain a differential equation
+for the temperature $T(t)$ at time $t$.
+\item Determine when the tea will reach a temperature of $20^\circ$.
+\end{enumerate}
+\end{Mquestion}
+\begin{hint}
+Newton's Law of Cooling models the temperature of the tea after  $t$ minutes as
+\[T(t)=[T(0)-A]e^{Kt}+A\]
+where $A$ is the ambient temperature, $T(0)$ is the initial temperature of the tea, and $K$ is some constant.
+\end{hint}
+\begin{answer}
+\begin{enumerate}[(a)]
+\item $\ds\diff{T}{t}=\frac{1}{5}\log\left(\frac{4}{5}\right)(T-30)$
+\item $\dfrac{5\log(2/5)}{\log(4/5)}\approx 20.53$ min
+\end{enumerate}
+\end{answer}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item By Newton's law of cooling, the rate of change of temperature
+is proportional to the difference between $T(t)$ and the ambient temperature,
+which in this case is $30^\circ$. Thus
+$$
+\diff{T}{t}=k[T(t)-30]
+$$
+for some constant of proportionality $k$.
+To answer part (a), all we have to do is find $k$.
+
+Under Newton's Law of Cooling, the temperature at time $t$ will be given by
+\begin{align*}
+T(t)&=[T(0)-A]e^{kt}+A\\
+&=[5-30]e^{kt}+30\\
+&=-25e^{kt}+30
+\intertext{We are told $T(5)=10$:}
+10&=-25e^{5k}+30\\
+25e^{5k}&=20\\
+e^{5k}&=\frac{4}{5}\\
+5k&=\log(4/5)\\
+k&=\tfrac{1}{5}\log(4/5)
+\intertext{So, the differential equation is}
+\diff{T}{t}(t)&=\frac{1}{5}\log(4/5)[T(t)-30]
+\end{align*}
+\item
+Since $T(t)=30-25e^{kt}$, the temperature of the tea is $20^\circ$ when
+\begin{align*}
+30-25 e^{kt}&=20\\
+e^{kt}&=\frac{10}{25}\\
+ kt&=\log\left(\frac{10}{25}\right)\\
+ t&=\frac{1}{k}\log\frac{2}{5}\\
+ &=\frac{5\log(2/5)}{\log(4/5)}\\
+ &\approx{20.53 ~\mathrm{ min}}
+\end{align*}\end{enumerate}
+\end{solution}
+
+
+
+\begin{Mquestion}\label{s3.3.2Knegative2}
+Suppose an object is changing temperature according to Newton's Law of Cooling, and its temperature at time $t$ is given by
+\[T(t)=0.8^{kt}+15\]
+Is $k$ positive or negative?
+\end{Mquestion}
+\begin{hint}
+What is $\ds\lim_{t \to \infty}T(t)$?
+\end{hint}
+\begin{answer}
+positive
+\end{answer}
+\begin{solution}
+As time goes on, temperatures that follow Newton's Law of Cooling get closer and closer to the ambient temperature. So, $\ds\lim_{t \to \infty} T(t)$ exists. In particular,
+$\ds\lim_{t \to \infty} 0.8^{kt}$ exists.
+\begin{itemize}
+\item If $k<0$, then $\ds\lim_{t \to \infty}0.8^{kt} = \infty$, since $0.8<1$. So, $k \geq 0$.
+\item If $k=0$, then $T(t)=16$ for all values of $t$. But, in the statement of the question, the object is changing temperature. So, $k>0$.
+\end{itemize}
+Therefore, $k$ is positive.
+
+Remark: contrast this to Question~\ref{s3.3.2Knegative}. The reason we get a different answer is that our base in this question (0.8) is less than one, while the base in
+Question~\ref{s3.3.2Knegative} ($e$) is greater than one.
+
+Although the given equation $T(t)$ does not exactly look like the Newton's Law equations we're used to, it is equivalent.
+Remembering
+$e^{\log(0.8)}=0.8$:
+\begin{align*}
+            T(t) &= 0.8^{kt} + 15 \\
+                 &= \big(e^{\log 0.8}\big)^{kt} + 15 \\
+                 &= e^{(k\log 0.8)t} + 15 \\
+                 &= [16-15]  e^{(k\log 0.8)t} + 15 \\
+                 &= [16-15]  e^{Kt} + 15
+       \end{align*}
+       with $K=k\log 0.8$. This is now the more familiar form for Newton's Law of Cooling (with $A=15$ and $T(0)=16$).
+
+ Since $0.8<1$, $\log(0.8)$ is negative, so $k$ and $K$ have opposite signs.
+\end{solution}

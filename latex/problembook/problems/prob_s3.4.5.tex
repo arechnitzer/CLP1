@@ -1,0 +1,417 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+
+\questionheader{ex:s3.4.5}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{Mquestion}
+Give the 16th degree Maclaurin polynomial for $f(x)=\sin x+ \cos x$.
+\end{Mquestion}
+\begin{hint}
+The derivatives of $f(x)$ repeat themselves.
+\end{hint}
+\begin{answer}
+\begin{align*}
+T_{16}(x)&=1\textcolor{blue}{+}x
+\textcolor{red}{-}\frac{1}{2}x^2
+\textcolor{red}{-}\frac{1}{3!}x^3
+\textcolor{blue}{+}\frac{1}{4!}x^4
+\textcolor{blue}{+}\frac{1}{5!}x^5
+\textcolor{red}{-}\frac{1}{6!}x^6
+\textcolor{red}{-}\frac{1}{7!}x^7
+\textcolor{blue}{+}\frac{1}{8!}x^8
+\textcolor{blue}{+}\frac{1}{9!}x^9
+\textcolor{red}{-}\frac{1}{10!}x^{10}
+\textcolor{red}{-}\frac{1}{11!}x^{11}\\
+&\qquad\textcolor{blue}{+}\frac{1}{12!}x^{12}
+\textcolor{blue}{+}\frac{1}{13!}x^{13}
+\textcolor{red}{-}\frac{1}{14!}x^{14}
+\textcolor{red}{-}\frac{1}{15!}x^{15}
+\textcolor{blue}{+}\frac{1}{16!}x^{16}
+\end{align*}
+\end{answer}
+\begin{solution}
+If we were to find the 16th degree Maclaurin polynomial for a generic function, we might expect to have to differentiate 16 times (ugh). But, we know that the derivatives of sines and cosines repeat themselves. So, it's enough to figure out the pattern:
+\begin{align*}
+f(x)&=\sin x + \cos x & f(0)&=1\\
+f'(x)&=\cos x - \sin x & f'(0)&=1\\
+f''(x)&=-\sin x - \cos x & f''(0)&=-1\\
+f'''(x)&=-\cos x +\sin x & f'''(0)&=-1\\
+f^{(4)}&=\sin x + \cos x & f^{(4)}(0)&=1
+\end{align*}
+Since $f^{(4)}(x)=f(x)$, our derivatives repeat from here. They follow the pattern:\\ $\textcolor{blue}{+1}$, $\textcolor{blue}{+1}$, $\textcolor{red}{-1}$, $\textcolor{red}{-1}$.
+\begin{align*}
+T_{16}(x)&=1\textcolor{blue}{+}x
+\textcolor{red}{-}\frac{1}{2}x^2
+\textcolor{red}{-}\frac{1}{3!}x^3
+\textcolor{blue}{+}\frac{1}{4!}x^4
+\textcolor{blue}{+}\frac{1}{5!}x^5
+\textcolor{red}{-}\frac{1}{6!}x^6
+\textcolor{red}{-}\frac{1}{7!}x^7
+\textcolor{blue}{+}\frac{1}{8!}x^8
+\textcolor{blue}{+}\frac{1}{9!}x^9
+\textcolor{red}{-}\frac{1}{10!}x^{10}
+\textcolor{red}{-}\frac{1}{11!}x^{11}\\
+&\qquad\textcolor{blue}{+}\frac{1}{12!}x^{12}
+\textcolor{blue}{+}\frac{1}{13!}x^{13}
+\textcolor{red}{-}\frac{1}{14!}x^{14}
+\textcolor{red}{-}\frac{1}{15!}x^{15}
+\textcolor{blue}{+}\frac{1}{16!}x^{16}
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{Mquestion}
+Give the 100th degree Taylor polynomial for $s(t)=4.9t^2-t+10$ about $t=5$.
+\end{Mquestion}
+\begin{hint}
+You are approximating a polynomial with a polynomial.
+\end{hint}
+\begin{answer}
+$T_{100}(t)=4.9t^2-t+10$
+\end{answer}
+\begin{solution}
+A Taylor polynomial gives a polynomial approximation for a function $s(t)$. Since $s(t)$ is itself a polynomial, any $n$th-degree Taylor polynomial, with $n$ greater than or equal to the degree of $s(t)$, will simply give $s(t)$. So, in our case, $T_{100}(t)=s(t)=4.9t^2-t+10$.
+\medskip
+
+If that isn't satisfying, you can go through the normal method of calculating $T_{100}(t)$.
+\begin{align*}
+s(t)&=4.9t^2-t+10 & s(5)&=4.9(25)-5+10=4.9(25)+5\\
+s'(t)&=9.8t-1 & s'(5)&=9.8(5)-1\\
+s''(t)&=9.8 & s''(5)&=9.8
+\end{align*}
+The rest of the derivatives of $s(t)$ are identically zero, so they are (in particular) zero when $t=5$. Therefore,
+\begin{align*}
+T_{100}(t)&=4.9(25)+5+(9.8(5)-1)(t-5)+\frac{1}{2}9.8(t-5)^2\\
+&=4.9(25)+5+(9.8(5)-1)(t-5)+4.9(t^2-10t+25)\\
+&=[4.9(25)+5+(9.8(5)-1)(-5)+4.9(25)]+[9.8(5)-1-4.9(10)]t+4.9t^2\\
+&=10-t+4.9t^2=s(t)
+\end{align*}
+\end{solution}
+
+\begin{question}
+Write the $n$th-degree Taylor polynomial for $f(x)=2^x$ about $x=1$ in sigma notation.
+\end{question}
+\begin{hint}
+Recall $\ds\diff{}{x}\left\{2^x\right\}=2^x\log 2$, where $\log 2$ is the constant $\log_e2$.
+\end{hint}
+\begin{answer}
+$T_n(x)=\ds\sum_{k=0}^n \frac{2(\log 2)^k}{k!}(x-1)^k$
+\end{answer}
+\begin{solution}
+Let's start by differentiating $f(x)$ and looking for a pattern. Remember that $\log 2 = \log_e 2$ is a constant number.
+\begin{align*}
+f(x)&=2^x\\
+f'(x)&=2^x\log 2\\
+f''(x)&=2^x\left(\log 2\right)^2\\
+f^{(3)}(x)&=2^x\left(\log 2\right)^3\\
+f^{(4)}(x)&=2^x\left(\log 2\right)^4\\
+f^{(5)}(x)&=2^x\left(\log 2\right)^5
+\intertext{So, in general,}
+f^{(k)}(x)&=2^x\left(\log 2\right)^k
+\intertext{We notice that this formula works even when $k=0$ and $k=1$. When $x=1$,}
+f^{(k)}(1)&=2\left(\log 2\right)^k
+\intertext{The $n$th degree Taylor polynomial of $f(x)$ about $x=1$ is}
+T_{n}(x)&=\sum_{k=0}^n \frac{f^{(k)}(1)}{k!}(x-1)^k\\
+&=\sum_{k=0}^n \frac{2(\log 2)^k}{k!}(x-1)^k
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{Mquestion}
+Find the 6th degree Taylor polynomial of $f(x)=x^2\log x+2x^2+5$ about $x=1$, remembering that $\log x$ is the natural logarithm of $x$, $\log_ex$.
+\end{Mquestion}
+\begin{hint}
+Just keep differentiating--it gets easier!
+\end{hint}
+\begin{answer}
+$T_6(x)=7+5(x-1)+\frac{7}{2}(x-1)^2+\frac{1}{3}(x-1)^3-\frac{1}{12}(x-1)^4+\frac{1}{30}(x-1)^5-\frac{1}{60}(x-1)^6
+$
+\end{answer}
+\begin{solution}
+We need to know the first six derivatives of $f(x)$ at $x=1$. Let's get started.
+\begin{align*}
+f(x)&=x^2\log x + 2x^2+5 & \color{red}f(1)&\color{red}=7\\
+f'(x)&=(x^2)\frac{1}{x}+(2x)\log x + 4x \\
+&=2x\log x + 5x& \color{red}f'(1)&\color{red}=5\\
+f''(x)&=(2x)\frac{1}{x}+(2)\log x + 5\\
+&=2\log x + 7& \color{red}f''(1)&\color{red}=7\\
+f'''(x)&=2x^{-1}& \color{red}f'''(1)&\color{red}=2\\
+f^{(4)}&=-2x^{-2}& \color{red}f^{(4)}(1)&\color{red}=-2\\
+f^{(5)}&=4x^{-3}& \color{red}f^{(5)}(1)&\color{red}=4\\
+f^{(6)}&=-12x^{-4}& \color{red}f^{(6)}(1)&\color{red}=-12
+\end{align*}
+Now, we can plug in.
+\begin{align*}
+T_6(x)&=\textcolor{red}{f(1)}+\textcolor{red}{f'(1)}(x-1)+\frac{1}{2}\textcolor{red}{f''(1)}(x-1)^2+\frac{1}{3!}\textcolor{red}{f'''(1)}(x-1)^3\\
+&\quad
++\frac{1}{4!}\textcolor{red}{f^{(4)}(1)}(x-1)^4
++\frac{1}{5!}\textcolor{red}{f^{(5)}(1)}(x-1)^5
++\frac{1}{6!}\textcolor{red}{f^{(6)}(1)}(x-1)^6\\
+&=\textcolor{red}{7}+\textcolor{red}{5}(x-1)+\frac{1}{2}(\textcolor{red}{7})(x-1)^2
++\frac{1}{3!}(\textcolor{red}{2})(x-1)^3\\
+&\quad+\frac{1}{4!}(\textcolor{red}{-2})(x-1)^4
++\frac{1}{5!}(\textcolor{red}{4})(x-1)^5
++\frac{1}{6!}(\textcolor{red}{-12})(x-1)^6\\
+&=7+5(x-1)+\frac{7}{2}(x-1)^2+\frac{1}{3}(x-1)^3-\frac{1}{12}(x-1)^4+\frac{1}{30}(x-1)^5-\frac{1}{60}(x-1)^6
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{question}
+Give the $n$th degree Maclaurin polynomial for $\dfrac{1}{1-x}$ in sigma notation.
+\end{question}
+\begin{hint}
+Start by differentiating, and finding the pattern for $f^{(k)}(0)$. Remember the chain rule!
+\end{hint}
+\begin{answer}
+$T_n(x)=\ds\sum_{k=0}^n x^k$
+\end{answer}
+\begin{solution}
+We'll start by differentiating and looking for a pattern.
+\begin{align*}
+f(x)&=\frac{1}{1-x}=(1-x)^{-1}
+\intertext{Using the chain rule,}
+f'(x)&=(-1)(1-x)^{-2}(-1)=(1-x)^{-2}\\
+f''(x)&=(-2)(1-x)^{-3}(-1)=2(1-x)^{-3}\\
+f^{(3)}(x)&=(-3)(2)(1-x)^{-4}(-1)=2(3)(1-x)^{-4}\\
+f^{(4)}(x)&=(-4)(2)(3)(1-x)^{-5}(-1)=2(3)(4)(1-x)^{-5}\\
+f^{(5)}(x)&=(-5)(2)(3)(4)(1-x)^{-6}(-1)=2(3)(4)(5)(1-x)^{-6}
+\intertext{Recognizing the pattern,}
+f^{(k)}(x)&=k!(1-x)^{-(k+1)}\\
+f^{(k)}(0)&=k!(1)^{-(k+1)}=k!
+\intertext{The $n$th degree Maclaurin polynomial for $f(x)$ is}
+T_n(x)&=\sum_{k=0}^n \frac{f^{(k)}(0)}{k!}x^k\\
+&=\sum_{k=0}^n \frac{k!}{k!}x^k\\
+&=\sum_{k=0}^n x^k
+\end{align*}
+\end{solution}
+
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{Mquestion}
+Calculate the $3$rd-degree Taylor Polynomial for $f(x)=x^x$ about $x=1$.
+\end{Mquestion}
+\begin{hint}
+You'll need to differentiate $x^x$. This is accomplished using logarithmic differentiation, covered in Section~\ref*{sec diff logs}.
+\end{hint}
+\begin{answer}
+$T_3(x)=1+(x-1)+(x-1)^2+\frac{1}{2}(x-1)^3$
+\end{answer}
+\begin{solution}
+We'll need to know the first three derivatives of $x^x$ at $x=1$. This is a good review of logarithmic differentiation, covered in Section~\ref*{sec diff logs}.
+\begin{align*}
+f(x)&=x^x&
+\color{red}f(1)&\color{red}=1\\
+\log(f(x))&=\log\left(x^x\right)=x\log x\\
+\diff{}{x}\left\{\log(f(x))\right\}&=\diff{}{x}\left\{x\log x\right\}\\
+\frac{f'(x)}{f(x)}&=x\cdot\frac{1}{x}+\log x=1+\log x\\
+f'(x)&=x^x\left[1+\log x\right] &
+\color{red}f'(1)&\color{red}=1\\
+f''(x)&=\diff{}{x}\left\{x^x\right\}[1+\log x] + x^x \diff{}{x}\left\{1+\log x\right\}\\
+&=\left(x^x\left[1+\log x\right]\right)\left[1+\log x\right]+x^x\cdot\frac{1}{x}\\
+&=x^x\left((1+\log x)^2+\frac{1}{x}\right)&
+\color{red}f''(1)&\color{red}=2\\
+f'''(x)&=\diff{}{x}\left\{x^x\right\}\left((1+\log x)^2+\frac{1}{x}\right)+x^x\diff{}{x}\left\{(1+\log x)^2+\frac{1}{x}\right\}\\
+&=x^x\left[1+\log x\right]\left(\left(1+\log x\right)^2+\frac{1}{x}\right)+x^x
+\left[\frac{2}{x}(1+\log x)-\frac{1}{x^2}\right]\\
+&=x^x\left(\left(1+\log x\right)^3+\frac{3}{x}\left(1+\log x\right)-\frac{1}{x^2}\right)&
+\color{red}f'''(1)&\color{red}=3
+\intertext{Now, we can plug in:}
+T_3(x)&=\textcolor{red}{f(1)}+\textcolor{red}{f'(1)}(x-1)+\frac{1}{2}\textcolor{red}{f''(1)}(x-1)^2+\frac{1}{3!}\textcolor{red}{f'''(1)}(x-1)^3\\
+&=\textcolor{red}{1}+\textcolor{red}{1}(x-1)+\frac{1}{2}(\textcolor{red}{2})(x-1)^2+\frac{1}{6}(\textcolor{red}{3})(x-1)^3\\
+&=1+(x-1)+(x-1)^2+\frac{1}{2}(x-1)^3
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}
+Use a 5th-degree Maclaurin polynomial for $6\arctan x$ to approximate $\pi$.
+\end{question}
+\begin{hint}
+What is $6\arctan \left(\dfrac{1}{\sqrt{3}}\right)$?
+\end{hint}
+\begin{answer}
+$\pi=6\arctan\left(\dfrac{1}{\sqrt3}\right)\approx\dfrac{82}{45}\sqrt{3}\approx3.156$
+\end{answer}
+\begin{solution}
+We note that $6\arctan\left(\dfrac{1}{\sqrt3}\right)=6\left(\dfrac{\pi}{6}\right)=\pi$. We will find the 5th-degree Maclaurin polynomial $T_5(x)$ for $f(x)=6\arctan x$.
+Then $\pi=f\left(\dfrac{1}{\sqrt{3}}\right) \approx T_5\left(\dfrac{1}{\sqrt{3}}\right)$. Let's begin by finding the first five derivatives of $f(x)=6\arctan x$.
+\begin{align*}
+f(x)&=6\arctan x&f(0)&=0\\
+f'(x)&=6\left(\frac{1}{1+x^2}\right)&f'(0)&=6\\
+f''(x)&=6\left(\frac{0-2x}{(1+x^2)^2}\right)=-12\left(\frac{x}{(1+x^2)^2}\right)&f''(0)&=0\\
+f'''(x)&=-12\left(\frac{(1+x^2)^2-x\cdot 2(1+x^2)(2x)}{(1+x^2)^4}\right)\\
+&=-12\left(\frac{(1+x^2)-4x^2}{(1+x^2)^3}\right)\\
+&=-12\left(\frac{1-3x^2}{(1+x^2)^3}\right)&f'''(0)&=-12\\
+f^{(4)}(x)&=-12\left(\frac{(1+x^2)^3(-6x)-(1-3x^2)\cdot3(1+x^2)^2(2x)}{(1+x^2)^6}\right)\\
+&=-12\left(\frac{-6x(1+x^2)-6x(1-3x^2)}{(1+x^2)^4}\right)\\
+&=144\left(\frac{x-x^3}{(1+x^2)^4}\right)&f^{(4)}(0)&=0\\
+f^{(5)}(x)&=144\left(\frac{(1+x^2)^4(1-3x^2)-(x-x^3)\cdot4(1+x^2)^3(2x)}{(1+x^2)^{8}}\right)\\
+&=144\left(\frac{(1+x^2)(1-3x^2)-8x(x-x^3)}{(1+x^2)^{5}}\right)\\
+&=144\frac{5x^4-10x^2+1}{(1+x^2)^5}&f^{(5)}(0)&=144
+\end{align*}
+We now use these values to compute the 5th-degree Maclaurin polynomial for $f(x)$.
+\begin{align*}
+T_5(x)&=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3+\frac{1}{4!}f^{(4)}(0)x^4
++\frac{1}{5!}f^{(5)}(0)x^5\\
+&=6x-\frac{12}{6}x^3+\frac{144}{120}x^5\\
+&=6x-2x^3+\frac{6}{5}x^5
+\intertext{Now, if we want to approximate $f\left(\dfrac{1}{\sqrt{3}}\right)=6\arctan\left(\dfrac{1}{\sqrt{3}}\right)=\pi$:}
+\pi&=f\left(\dfrac{1}{\sqrt{3}}\right) \approx T_5\left(\dfrac{1}{\sqrt{3}}\right)=
+\frac{6}{\sqrt{3}}-\frac{2}{\sqrt{3}^3}+\frac{6}{5\sqrt{3}^5}\\
+&=2\sqrt{3}\left(1-\frac{1}{3\cdot3}+\frac{1}{5\cdot 9}\right)\approx 3.156
+\end{align*}
+
+Remark: There are numerous methods for computing $\pi$ to any
+           desired degree of accuracy. Many of them use the Maclaurin
+           expansion of $\arctan x$. In 1706 John Machin computed $\pi$
+           to 100 decimal digits by using the Maclaurin expansion together
+           with\\ $\pi = 16 \arctan\frac{1}{5} -4\arctan\frac{1}{239}$.
+\end{solution}
+
+
+\begin{question}
+Write the $100$th-degree Taylor polynomial for $f(x)=x(\log x -1)$ about $x=1$
+in sigma notation.
+\end{question}
+\begin{hint}
+After a few derivatives, this will be very similar to Example~\ref*{eg expand logx}.
+%3.4.13
+\end{hint}
+\begin{answer}
+$T_{100}(x)=-1+\ds\sum_{k=2}^{100}\frac{(-1)^k}{k(k-1)}(x-1)^k$
+\end{answer}
+\begin{solution}
+Let's start by differentiating, and looking for a pattern.
+\begin{align*}
+f(x)&=x(\log x -1)&f(1)&=-1\\
+f'(x)&=x\left(\frac{1}{x}\right)+\log x -1 = \log x&f'(1)&=0\\
+f''(x)&=\frac{1}{x}=x^{-1}&f''(1)&=1\\
+f^{(3)}(x)&=(-1)x^{-2}&f^{(3)}(1)&=-1\\
+f^{(4)}(x)&=(-2)(-1)x^{-3}=2!x^{-3}&f^{(4)}(1)&=2!\\
+f^{(5)}(x)&=(-3)(-2)(-1)x^{-4}=-3!x^{-4}&f^{(4)}(1)&=-3!\\
+f^{(6)}(x)&=(-4)(-3)(-2)(-1)x^{-5}=4!x^{-5}&f^{(4)}(1)&=4!\\
+f^{(7)}(x)&=(-5)(-4)(-3)(-2)(-1)x^{-6}=-5!x^{-6}&f^{(7)}(1)&=-5!\\
+f^{(8)}(x)&=(-6)(-5)(-4)(-3)(-2)(-1)x^{-7}=6!x^{-7}&f^{(8)}(1)&=6!
+\intertext{When $k \geq 2$, making use of the fact that $0!=1$ and $(-1)^{k-2}=(-1)^k$:}
+f^{(k)}(x)&=(-1)^{k-2}(k-2)!x^{-(k-1)}&f^{(k)}(1)&=(-1)^k(k-2)!
+\intertext{Now we use the standard form of a Taylor polynomial. Since the first two terms don't fit the pattern, we add those outside of the sigma.}
+T_{100}(x)&=\sum_{k=0}^{100}\frac{f^{(k)}(1)}{k!}(x-1)^k\\
+&=f(1)+f'(1)(x-1)+\sum_{k=2}^{100}\frac{f^{(k)}(1)}{k!}(x-1)^k\\
+&=-1+0(x-1)+\sum_{k=2}^{100}\frac{(-1)^k(k-2)!}{k!}(x-1)^k\\
+&=-1+\sum_{k=2}^{100}\frac{(-1)^k}{k(k-1)}(x-1)^k
+\end{align*}
+\end{solution}
+
+
+\begin{question}
+Write the $(2n)$th-degree Taylor polynomial for $f(x)=\sin x$ about $x=\dfrac{\pi}{4}$ in sigma notation.
+\end{question}
+\begin{hint}
+You'll have to deal with ``doubles" of coefficients in the Taylor polynomial. The following is a way of getting them into sigma notation:
+\begin{align*}
+&1+1-1-1+1+1-1-1  \\
+= &(1+1)+(-1-1)+(1+1)+(-1-1)\\
+=&\sum_{k=0}^3 \left[(-1)^k+(-1)^k\right]\end{align*}
+\end{hint}
+\begin{answer}
+$T_{2n}(x)=\ds\sum_{k=0}^n \left[\dfrac{(-1)^k}{(2k)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k}
++
+\dfrac{(-1)^k}{(2k+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k+1}\right]$
+\end{answer}
+\begin{solution}
+Let's start by taking some derivatives. Of course, since we're differentiating sine, the derivatives will repeat every four iterations.
+\begin{align*}
+f(x)&=\sin x & f\left(\frac{\pi}{4}\right)&=\frac{1}{\sqrt 2}\\
+f'(x)&=\cos x & f'\left(\frac{\pi}{4}\right)&=\frac{1}{\sqrt{2}}\\
+f''(x)&=-\sin x & f''\left(\frac{\pi}{4}\right)&=-\frac{1}{\sqrt 2}\\
+f'''(x)&=-\cos x & f'''\left(\frac{\pi}{4}\right)&=-\frac{1}{\sqrt{2}}\\
+\end{align*}
+So, the pattern of derivatives is $\dfrac{1}{\sqrt{2}}$, $\dfrac{1}{\sqrt{2}}$, $-\dfrac{1}{\sqrt{2}}$, $-\dfrac{1}{\sqrt{2}}$, $\dfrac{1}{\sqrt{2}}$, $\dfrac{1}{\sqrt{2}}$, $-\dfrac{1}{\sqrt{2}}$, $-\dfrac{1}{\sqrt{2}}$, etc. This is a little tricky to write in sigma notation. We can deal with the ``doubles" by pairing consecutive even and odd terms, as shown below.
+\begin{align*}
+T_{2n}(x)&=\sum_{k=0}^{2n} \frac{f^{(k)}\left(\frac{\pi}{4}\right)}{k!}\left(x-\frac{\pi}{4}\right)^k\\
+&=\sum_{k=0}^{n} \left[
+\underbrace{\frac{f^{(2k)}\left(\frac{\pi}{4}\right)}{(2k)!}\left(x-\frac{\pi}{4}\right)^{2k}}_{\mbox{even term}}
++
+\underbrace{\frac{f^{(2k+1)}\left(\frac{\pi}{4}\right)}{(2k+1)!}\left(x-\frac{\pi}{4}\right)^{2k+1}}_{\mbox{odd term}}\right]\\
+&=\sum_{k=0}^n \left[\frac{(-1)^k}{(2k)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k}
++
+\frac{(-1)^k}{(2k+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k+1}\right]
+\end{align*}
+To verify that the first sum really is the same as the second
+            sum, write out the first few terms of each explicitly.
+\end{solution}
+
+
+\begin{Mquestion}
+Estimate the sum below
+\[1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\]
+by interpreting it as a Maclaurin polynomial.
+\end{Mquestion}
+\begin{hint}
+Compare this to the Maclaurin polynomial for $e^x$.
+\end{hint}
+\begin{answer}
+\[1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\approx e\]
+\end{answer}
+\begin{solution}
+From Example~\ref*{eg taylor e to the x}
+%3.4.12
+in the text, we see that the $n$th Maclaurin polynomial for $f(x)=e^x$ is
+\begin{align*}
+T_n(x)&=\sum_{k=0}^n\frac{1}{k!}x^k
+\intertext{If $n=157$ and $x=1$,}
+T_{157}(1)&=\sum_{k=0}^{157}\frac{1}{k!}=1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}
+\end{align*}
+Although we wouldn't expect $T_{157}(1)$  to be exactly equal to $e^1$, it's probably pretty close since $T_{157}(x)$ is the Maclaurin polynomial for $e^x$, and 0 is pretty close to 1. So, we estimate
+\[1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\approx e\]
+
+\end{solution}
+
+\begin{Mquestion}
+Estimate the sum below
+\[\sum_{k=0}^{100}\frac{(-1)^k}{2k!}\left(\frac{5\pi}{4}\right)^{2k}\]
+by interpreting it as a Maclaurin polynomial.
+\end{Mquestion}
+\begin{hint}
+Compare this to the Maclaurin polynomial for cosine.
+\end{hint}
+\begin{answer}
+We estimate that the sum is close to $-\dfrac{1}{\sqrt{2}}$.
+\end{answer}
+\begin{solution}
+While you're working with sums, it's easy to mistake a constant for a function. The sum given in this question is some \emph{number}: $\pi$ is a constant, and $k$ is an index-- if you wrote out all 100 terms of this sum, there would be no letter $k$. So, the sum given is indeed a number, but we don't want to have to add 100 terms to get a good idea of what number it is.
+
+From Example~\ref*{eg expand cosx}
+%3.4.14
+ in the text, we see that the $(2n)$th-degree Maclaurin polynomial for $f(x)=\cos x$ is
+\begin{align*}
+T_{2n}(x)&=\sum_{k=0}^n  \frac{(-1)^k}{(2k)! }\cdot x^{2k}
+\intertext{If $n=100$ and $x=\dfrac{5\pi}{4}$, this equation becomes}
+T_{200}\left(\frac{5\pi}{4}\right)&=\sum_{k=0}^{100}  \frac{(-1)^k}{(2k)! }\cdot \left(\frac{5\pi}{4}\right)^{2k}
+\end{align*}
+So, the sum corresponds to the 200th Maclaurin polynomial for $f(x)=\cos x$ evaluated at $x=\frac{5\pi}{4}$. We should be careful to understand that $T_{200}(x)$ is \emph{not} equal to $f(x)$, in general. However, when $x$ is reasonably close to $0$, these two functions are approximations of one another. So, we estimate
+\[\sum_{k=0}^{100}\frac{(-1)^k}{2k!}\left(\frac{5\pi}{4}\right)^{2k} = T_{200}\left(\frac{5\pi}{4}\right) \approx \cos\left(\frac{5\pi}{4}\right)=-\frac{1}{\sqrt{2}}\]
+\end{solution}

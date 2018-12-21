@@ -1,0 +1,343 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s1.3}
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+\begin{question}
+Given the function shown below, evaluate the following:
+\begin{enumerate}[(a)]
+\item $\displaystyle \lim_{x \rightarrow -2} f(x)$
+\item $\displaystyle \lim_{x \rightarrow 0}f(x)$
+\item $\displaystyle \lim_{x \rightarrow 2}f(x)$
+\end{enumerate}
+\begin{center}
+\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thick] (-3,-1) cos (-2,1) sin (-1,-1) cos (0,0) sin (1.5,2)--(3,2) node[above right]{$y=f(x)$};
+\draw (2,2) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (2,-2) node[vertex]{};
+\foreach \x in {-2,2}{\YExcoord{\x}{\x}}
+\foreach \y in {-2,1,2}{\YEycoord{\y}{\y}}
+\end{tikzpicture}
+\end{center}
+\end{question}
+\begin{answer}
+\begin{enumerate}[(a)]
+\item $\displaystyle \lim_{x \rightarrow -2} f(x)=1$
+\item $\displaystyle \lim_{x \rightarrow 0}f(x)=0$
+\item $\displaystyle \lim_{x \rightarrow 2}f(x)=2$
+\end{enumerate}
+\end{answer}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item $\displaystyle \lim_{x \rightarrow -2} f(x)=1$: as $x$ gets very close to $-2$, $y$ gets very close to $1$.
+\item $\displaystyle \lim_{x \rightarrow 0}f(x)=0$: as $x$ gets very close to $0$, $y$ also gets very close to $0$.
+\item $\displaystyle \lim_{x \rightarrow 2}f(x)=2$: as $x$ gets very close to $2$, $y$ gets very close to $2$. We ignore the value of the function where $x$ is exactly $2$.
+\end{enumerate}
+\end{solution}
+
+\begin{question}
+Given the function shown below, evaluate $\displaystyle \lim_{x \rightarrow 0} f(x)$.
+\begin{center}
+\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thick] (-3,-3) cos (0,-1);
+\draw (0,1) sin (3,3) node[above right]{$y=f(x)$};
+\foreach \y in {-1,1}{\YEycoord{\y}{\y}}
+%\draw (.2,-1)--(-.2,-1) node[left]{-1};
+%\draw (.2,1)--(-.2,1) node[left]{1};
+\draw (0,-1) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (0,1) node[vertex]{};
+\end{tikzpicture}
+\end{center}
+\end{question}
+\begin{hint}
+Consider the difference between a limit and a one-sided limit.
+\end{hint}
+\begin{answer}
+DNE
+\end{answer}
+\begin{solution}
+The limit does not exist. As $x$ approaches 0 \emph{from the left}, $y$ approaches -1; as $x$ approaches 0 \emph{from the right}, $y$ approaches 1. This tells us $\displaystyle\lim_{x \rightarrow 0^-} f(x)=-1$ and
+$\displaystyle\lim_{x \rightarrow 0^+} f(x)=1$, but neither of these are what the question asked. Since the limits from left and right do not agree, the limit does not exist. Put another way, there is no single number $y$ approaches as $x$ approaches 0, so the limit $\displaystyle\lim_{x \rightarrow 0} f(x)$ does not exist.
+\end{solution}
+
+\begin{Mquestion}
+Given the function shown below, evaluate:
+\begin{enumerate}[(a)]
+\item $\displaystyle \lim_{x \rightarrow -1^{-}} f(x)$
+\item $\displaystyle \lim_{x \rightarrow -1^{+}} f(x)$
+\item $\displaystyle \lim_{x \rightarrow -1} f(x)$
+\item $\displaystyle \lim_{x \rightarrow -2^{+}} f(x)$
+\item $\displaystyle \lim_{x \rightarrow 2^{-}} f(x)$
+\end{enumerate}
+\begin{center}
+\begin{tikzpicture}
+\YEaxis{3.5}{3}
+\draw[thick] (-3,0)--(-1.5,2) (-1.5,-2)--(1.5,2) (1.5,-2)--(3,0);
+\draw (1.75,2) node[above right]{$y=f(x)$};
+\foreach \x in {-2,-1,1,2}{\YExcoord{1.5*\x}{\x}}
+\foreach \x in {-2,2}{\YEycoord{\x}{\x}}
+\draw (-3,0) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (-1.5,-2) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (-1.5,2) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (1.5,2) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (1.5,-2) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (3,0) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\end{tikzpicture}
+\end{center}
+\end{Mquestion}
+\begin{hint}
+Pay careful attention to which limits are one-sided and which are not.
+\end{hint}
+\begin{answer}
+\begin{enumerate}[(a)]
+\item $\displaystyle \lim_{x \rightarrow -1^{-}} f(x)=2$
+\item $\displaystyle \lim_{x \rightarrow -1^{+}} f(x)=-2$
+\item $\displaystyle \lim_{x \rightarrow -1} f(x)= $ DNE
+\item $\displaystyle \lim_{x \rightarrow -2^{+}} f(x) =0$
+\item $\displaystyle \lim_{x \rightarrow 2^{-}} f(x)=0$
+\end{enumerate}
+\end{answer}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item $\displaystyle \lim_{x \rightarrow -1^{-}} f(x)=2$: as $x$ approaches $-1$ from the left, $y$ approaches 2. It doesn't matter that the function isn't defined at $x=-1$, and it doesn't matter what happens to the right of $x=-1$.
+\item $\displaystyle \lim_{x \rightarrow -1^{+}} f(x)=-2$: as $x$ approaches $-1$ from the right, $y$ approaches -2. It doesn't matter that the function isn't defined at $-1$, and it doesn't matter what happens to the left of $-1$.
+\item $\displaystyle \lim_{x \rightarrow -1} f(x) =$ DNE: since the limits from the left and right don't agree, the limit does not exist.
+\item $\displaystyle \lim_{x \rightarrow -2^{+}} f(x) =0$: as $x$ approaches $-2$ from the right, $y$ approaches 0. It doesn't matter that the function isn't defined at 2, or to the left of 2.
+\item $\displaystyle \lim_{x \rightarrow 2^{-}} f(x)=0$: as $x$ approaches $2$ from the left, $y$ approaches 0. It doesn't matter that the function isn't defined at 2, or to the right of 2.
+\end{enumerate}
+\end{solution}
+
+
+\begin{Mquestion}\label{s1.3p1}
+Draw a curve $y=f(x)$ with $\displaystyle\lim_{x \rightarrow 3}f(x)=f(3)=10$.
+\end{Mquestion}
+\begin{answer}Many answers are possible; here is one.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{5}
+\draw[thick] plot[domain=-1:3] (\x,{1.5*\x+.5}) node[right]{$y=f(x)$};
+\draw (2.3,.2)--(2.3,-.2) node[below]{3};
+\draw (.2,4)--(-.2,4) node[left]{10};
+\draw[dashed] (2.3,.2) |- (.2,4);
+\end{tikzpicture}
+\end{center}
+\end{answer}
+\begin{solution}
+Many answers are possible; here is one.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{5}
+\draw[thick] plot[domain=-1:3] (\x,{1.5*\x+.5}) node[right]{$y=f(x)$};
+\draw (2.3,.2)--(2.3,-.2) node[below]{3};
+\draw (.2,4)--(-.2,4) node[left]{10};
+\draw[dashed] (2.3,.2) |- (.2,4);
+\end{tikzpicture}
+\end{center}
+As $x$ gets closer and closer to 3, $y$ gets closer and closer to 10: this shows $\displaystyle\lim_{x \rightarrow 3} f(x)=10$. Also, at 3 itself, the function takes the value 10; this shows $f(3)=10$.
+\end{solution}
+
+\begin{Mquestion}\label{s1.3p2}
+Draw a curve $y=f(x)$ with $\displaystyle\lim_{x \rightarrow 3}f(x)=10$ and $f(3)=0$.
+\end{Mquestion}
+\begin{hint}
+The function doesn't have to be continuous.
+\end{hint}
+\begin{answer}
+Many answers are possible; here is one.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{5}
+\draw[thick] plot[domain=-1:3] (\x,{1.5*\x+.5}) node[right]{$y=f(x)$};
+\draw (2.3,.2)--(2.3,-.2) node[below]{3};
+\draw (.2,4)--(-.2,4) node[left]{10};
+\draw[dashed] (2.3,.2) |- (.2,4);
+\draw (2.3,4) node[shape=circle, inner sep=0, minimum size=2mm, draw, fill=white]{};
+\draw (2.3,0) node[vertex]{};
+\end{tikzpicture}
+\end{center}
+\end{answer}
+\begin{solution}
+Many answers are possible; here is one.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{5}
+\draw[thick] plot[domain=-1:3] (\x,{1.5*\x+.5}) node[right]{$y=f(x)$};
+\draw (2.3,.2)--(2.3,-.2) node[below]{3};
+\draw (.2,4)--(-.2,4) node[left]{10};
+\draw[dashed] (2.3,.2) |- (.2,4);
+\draw (2.3,4) node[shape=circle, inner sep=0, minimum size=2mm, draw, fill=white]{};
+\draw (2.3,0) node[vertex]{};
+\end{tikzpicture}
+\end{center}
+
+Note that, as $x$ gets closer and closer to 3 \emph{except at 3 itself}, $y$ gets closer and closer to 10: this shows $\displaystyle\lim_{x \rightarrow 3} f(x)=10$.  Then, when $x=3$, the function has value 0: this shows $f(3)=0$.
+\end{solution}
+
+\begin{question}
+Suppose $\displaystyle\lim_{x \rightarrow 3} f(x)=10$. True or false: $f(3)=10$.
+\end{question}
+\begin{hint}
+See Question~\ref{s1.3p2}
+\end{hint}
+\begin{answer} In general, this is false.
+\end{answer}
+\begin{solution} In general, this is false. The limit as $x$ goes to 3 does not take into account the value of the function at 3: $f(3)$ can be anything.
+\end{solution}
+
+\begin{question}
+Suppose $f(3)=10$. True or false: $\displaystyle\lim_{x \rightarrow 3} f(x)=10$.
+\end{question}
+\begin{hint}
+See Question~\ref{s1.3p2}
+\end{hint}
+\begin{answer}
+False
+\end{answer}
+\begin{solution}
+False. The limit as $x$ goes to 3 does not take into account the value of the function at 3: $f(3)$ tells us nothing about $\displaystyle\lim_{x \rightarrow 3} f(x)$.
+\end{solution}
+
+
+\begin{Mquestion}
+Suppose $f(x)$ is a function defined on all real numbers, and $\displaystyle\lim_{x \rightarrow -2} f(x)=16$. What is $\displaystyle\lim_{x \rightarrow -2^-} f(x)$?
+\end{Mquestion}
+\begin{hint}
+What is the relationship  between the limit and the two one-sided limits?
+\end{hint}
+\begin{answer}
+$\displaystyle\lim_{x \rightarrow -2^-} f(x)=16$
+\end{answer}
+\begin{solution}
+$\displaystyle\lim_{x \rightarrow -2^-} f(x)=16$: in order for the limit $\displaystyle\lim_{x \rightarrow 2} f(x)$ to exist and be equal to 16, both one sided limits must exist and be equal to 16.
+\end{solution}
+
+\begin{Mquestion}
+Suppose $f(x)$ is a function defined on all real numbers, and $\displaystyle\lim_{x \rightarrow -2^-} f(x)=16$. What is $\displaystyle\lim_{x \rightarrow -2} f(x)$?
+\end{Mquestion}
+\begin{hint}
+What is the relationship  between the limit and the two one-sided limits?
+\end{hint}
+\begin{answer}
+Not enough information to say.
+\end{answer}
+\begin{solution}
+Not enough information to say.
+If $\displaystyle\lim_{x \rightarrow -2^+} f(x)=16$, then
+ $\displaystyle\lim_{x \rightarrow -2} f(x)=16$.
+If $\displaystyle\lim_{x \rightarrow -2^+} f(x)\neq 16$, then
+ $\displaystyle\lim_{x \rightarrow -2} f(x)$ does not exist.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+In Questions~\ref{s1.3first} through \ref{s1.3last}, evaluate the given limits. If you aren't sure where to begin, it's nice to start by drawing the function.
+
+\begin{question}\label{s1.3first}
+$\displaystyle\lim_{t \rightarrow 0} \sin t$
+\end{question}
+\begin{answer}
+$\displaystyle\lim_{t \rightarrow 0} \sin t=0$
+\end{answer}
+\begin{solution}
+$\displaystyle\lim_{t \rightarrow 0} \sin t=0$: as $t$ approaches 0, $\sin t$ approaches 0 as well.
+\end{solution}
+
+\begin{question}
+$\displaystyle\lim_{x \rightarrow 0^+} \ln x$
+\end{question}
+\begin{answer}
+$\displaystyle\lim_{x \rightarrow 0^+} \ln x = -\infty$
+\end{answer}
+\begin{solution}$\displaystyle\lim_{x \rightarrow 0^+} \ln x = -\infty$: as $x$ approaches 0 from the right, $\ln x$ is negative and increasingly large, growing without bound.
+\end{solution}
+
+
+\begin{question}
+$\displaystyle\lim_{y \rightarrow 3} y^2$
+\end{question}
+\begin{answer}$\displaystyle\lim_{y \rightarrow 3} y^2=9$
+\end{answer}
+\begin{solution}
+$\displaystyle\lim_{y \rightarrow 3} y^2=9$:
+as $y$ gets closer and closer to 3, $y^2$ gets closer and closer to $3^2$.
+\end{solution}
+
+
+\begin{question}
+$\displaystyle\lim_{x \rightarrow 0^-} \dfrac{1}{x}$
+\end{question}
+\begin{answer} $\displaystyle\lim_{x \rightarrow 0^-} \dfrac{1}{x}=-\infty$
+\end{answer}
+\begin{solution} $\displaystyle\lim_{x \rightarrow 0^-} \dfrac{1}{x}=-\infty$:
+as $x$ gets closer and closer to 0 from the left, $\dfrac{1}{x}$ becomes a larger and larger negative number.
+\end{solution}
+
+
+\begin{Mquestion}\label{s1.3p14}
+$\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}$
+\end{Mquestion}
+\begin{hint}
+What are the one-sided limits?
+\end{hint}
+\begin{answer} $\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}=$ DNE
+\end{answer}
+\begin{solution}
+$\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}=$ DNE:
+as $x$ gets closer and closer to 0 from the left, $\dfrac{1}{x}$ becomes a larger and larger negative number; but as $x$ gets closer and closer to 0 from the right, $\dfrac{1}{x}$ becomes a larger and larger positive number. So the limit from the left is not the same as the limit from the right, and so $\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}=$ DNE. Contrast this with Question~\ref{s1.3p15}.
+\end{solution}
+
+
+\begin{Mquestion}\label{s1.3p15}
+$\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x^2}$
+\end{Mquestion}
+\begin{answer}
+$\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x^2}=\infty$
+\end{answer}
+\begin{solution}
+$\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x^2}=\infty$:
+as $x$ gets closer and closer to 0 from the either side, $\dfrac{1}{x^2}$ becomes a larger and larger positive number, growing without bound.
+Contrast this with Question~\ref{s1.3p14}.
+\end{solution}
+
+\begin{Mquestion}
+$\displaystyle\lim_{x \rightarrow 3} \dfrac{1}{10}$
+\end{Mquestion}
+\begin{hint}
+Think about what it means that $x$ does not appear in the function $f(x)=\dfrac{1}{10}$.
+\end{hint}
+\begin{answer}
+$\displaystyle\lim_{x \rightarrow 3} \dfrac{1}{10}=\dfrac{1}{10}$
+\end{answer}
+\begin{solution}
+$\displaystyle\lim_{x \rightarrow 3} \dfrac{1}{10}=\dfrac{1}{10}$: no matter what $x$ is, $\dfrac{1}{10}$ is always $\dfrac{1}{10}$. In particular, as $x$ approaches 3, $\dfrac{1}{10}$ stays put at $\dfrac{1}{10}$.
+\end{solution}
+
+
+\begin{Mquestion}\label{s1.3last}
+$\displaystyle\lim_{x \rightarrow 3} f(x)$, where $f(x)=\left\{
+\begin{array}{ll}
+\sin x&x\leq 2.9\\
+x^2&x>2.9
+\end{array}
+\right.$.
+\end{Mquestion}
+\begin{hint}
+We only care about what happens really, really close to $x=3$.
+\end{hint}
+\begin{answer}
+9
+\end{answer}
+\begin{solution}
+When $x$ is very close to 3, $f(x)$ looks like the function $x^2$. So:
+$\displaystyle\lim_{x \rightarrow 3} f(x) =
+\displaystyle\lim_{x \rightarrow 3} x^2=9$
+\end{solution}

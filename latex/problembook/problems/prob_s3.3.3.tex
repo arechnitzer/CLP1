@@ -1,0 +1,205 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s3.3.3}
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{question}
+Let a population at time $t$ be given by the Malthusian model,
+\[P(t)=P(0)e^{bt}\mbox{ for some positive constant $b$.}\]
+Evaluate $\ds\lim_{t \to \infty}P(t)$. Does this model make sense for large values of $t$?
+\end{question}
+\begin{hint}
+$P(0)$ is also (probably) a positive constant.
+\end{hint}
+\begin{answer}
+If $P(0)=0$, yes. If $P(0) \neq 0$,
+no: it does not take into account external constraints on population growth.
+\end{answer}
+\begin{solution}
+Since $b$ is a positive constant, $\ds\lim_{t \to \infty}e^{bt}=\infty$. Therefore:
+\begin{align*}
+\lim_{t \to \infty}P(t)&=\lim_{t \to \infty} P(0)e^{bt}
+=\left\{\begin{array}{cc}
+0&\mbox{ if }P(0)=0\\
+\infty&\mbox{ if }P(0)>0
+\end{array}\right.
+\end{align*}
+
+If $P(0)=0$, then the model simply says ``a population that starts with no individuals continues to have no individuals indefinitely," which certainly makes sense. If $P(0) \neq 0$, then (since we can't have a negative population) $P(0)>0$, and the model says ``a population that starts out with some individuals will end up with any gigantically huge number you can think of, given enough time." This one doesn't make so much sense. Populations only grow to a certain finite amount, due to scarcity of resources and such. In the derivation of the Malthusian model, we assume a constant net birth rate--that the birth and death rates (per individual) don't depend on the population, which is not a reasonable assumption long-term.
+\end{solution}
+
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{Mquestion}
+In the 1950s, pure-bred wood bison were thought to be extinct. However, a small population was found in Canada. For decades, a captive breeding program has been working to increase their numbers, and from time to time wood bison are released to the wild. Suppose in 2015, a released herd numbered 121 animals, and a year later, there were 136\footnote{These numbers are loosely based on animals actually released near Shageluk, Alaska in 2015. Watch the first batch being released \href{https://www.youtube.com/watch?v=GqRHe769AQM}{here}.}. If the wood bison adhere to the Malthusian model (a big assumption!), and if there are no more releases of captive animals, how many animals will the herd have in 2020?
+\end{Mquestion}
+\begin{hint}
+The assumption that the animals grow according to the Malthusian model tells us that their population  $t$ years after 2015 is given by
+$P(t)=121e^{bt}$ for some constant $b$.
+\end{hint}
+\begin{answer}
+The Malthusian model predicts the herd will number 217
+            individuals in 2020.
+            \end{answer}
+\begin{solution}
+The assumption that the animals grow according to the Malthusian model tells us that their population  $t$ years after 2015 is given by
+$P(t)=121e^{bt}$ for some constant $b$, since $121=P(0)$, the population 0 years after 2015. The information about 2016 tells us
+\begin{align*}
+136=P(1)&=121e^{b}\\
+\frac{136}{121}&=e^b
+\intertext{This gives us a better idea of $P(t)$:}
+P(t)&=121e^{bt}=121\left(\frac{136}{121}\right)^t
+\intertext{2020 is 5 years after 2015, so in 2020 (assuming the population keeps growing according to the Malthusian model) the population will be}
+P(5)&=121\left(\frac{136}{121}\right)^5\approx217
+\end{align*}
+In 2020, the Malthusian model predicts the herd will number 217 individuals.
+\end{solution}
+
+
+
+
+\begin{question}
+A founding colony of 1,000 bacteria is placed in a petri dish of yummy bacteria food. After an hour, the population has doubled. Assuming the Malthusian model, how long will it take for the colony to triple its original population?
+\end{question}
+\begin{hint}
+The Malthusian model says that the population of bacteria $t$ hours after being placed in the dish will be $P(t)=1000e^{bt}$ for some constant $b$.
+\end{hint}
+\begin{answer}
+$\dfrac{\log(3)}{\log(2)}\approx 1.6$ hours
+\end{answer}
+\begin{solution}
+Since the initial population of bacteria is 1000 individuals, the Malthusian model says that the population of bacteria $t$ hours after being placed in the dish will be $P(t)=1000e^{bt}$ for some constant $b$. Since $P(1)=2000$,
+\begin{align*}
+2000=P(1)&=1000e^{b}\\
+2&=e^b
+\intertext{So, the population at time $t$ is}
+P(t)&=1000\cdot 2^t
+\intertext{We want to know at what time the population triples, to 3,000 individuals.}
+3000&=1000\cdot 2^t\\
+3&=2^t\\
+\log(3)&=\log\left(2^t\right)=t\log(2)\\
+t&=\frac{\log(3)}{\log(2)}\approx 1.6
+\end{align*}
+The population triples in about 1.6 hours.
+\end{solution}
+
+
+
+\begin{Mquestion}
+A single pair of  rats comes to an island after a shipwreck. They multiply according to the Malthusian model. In 1928, there were 1,000 rats on the island, and the next year there were 1500. When was the shipwreck?
+\end{Mquestion}
+\begin{hint}
+If 1928 is $a$ years after the shipwreck, you might want to make use of the fact that $e^{b(a+1)}=e^{ba}e^b$.
+\end{hint}
+\begin{answer}
+1912 or 1913
+\end{answer}
+\begin{solution}
+According to the Malthusian Model, if the ship wrecked at year $t=0$ and 2 rats washed up on the island, then $t$ years after the wreck, the population of rats will be
+\begin{align*}
+P(t)&=2e^{bt}
+\intertext{for some constant $b$. We want to get rid of this extraneous variable $b$, so we use the given information. If 1928 is $a$ years after the wreck:}
+1000=P(a)&=2e^{ba}\\
+1500=P(a+1)&=2e^{b(a+1)}=2e^{ba}e^b
+\intertext{So,}
+(1000)\left(e^b\right)&=\left(2e^{ba}\right)\left(e^b\right)=1500
+\intertext{Which tells us}
+e^b&=\frac{1500}{1000}=1.5
+\intertext{Now, our model is complete:}
+P(t)&=2\left(e^b\right)^t=2\cdot1.5^t
+\intertext{Since $P(a)=1000$, we can find $a$:}
+1000=P(a)&=2\cdot1.5^a\\
+500&=1.5^a\\
+\log(500)&=\log\left(1.5^a\right)=a\log(1.5)\\
+a&=\frac{\log(500)}{\log(1.5)}\approx 15.3
+\end{align*}
+So, the year 1928 was about 15.3 years after the shipwreck. Since we aren't given a month when the rats reached exactly 1000 in number, that puts the shipwreck at the year 1912 or 1913.
+\end{solution}
+
+
+
+\begin{question}
+A farmer wants to farm cochineals, which are insects used to make red dye. The farmer raises a small number of cochineals as a test. In three months, a test population of cochineals will increase from 200 individuals to 1000, given ample space and food.
+
+The farmer's plan is to start with an initial population of $P(0)$ cochineals,
+and after a year have $1\,000\,000+P(0)$ cochineals, so that one million can be harvested, and $P(0)$ saved to start breeding again. What initial population $P(0)$ does the Malthusian model suggest?
+\end{question}
+\begin{hint}
+If the population has a net birthrate per individual per unit time of $b$, then the Malthusian model predicts that the number of individuals at time $t$ will be
+$P(t)=P(0)e^{bt}$. You can use the test population to find $e^b$.
+\end{hint}
+\begin{answer}
+$\dfrac{10^6}{5^4-1}\approx 1603$
+\end{answer}
+\begin{solution}
+The Malthusian model suggests that, if we start with $P(0)$ cochineals, their population after 3 months will be
+\begin{align*}
+P(t)&=P(0)e^{bt}
+\intertext{for some constant $b$. The constant $b$ is the net birthrate per population member per unit time. Assuming that the net birthrate for a larger population will be the same as the test population, we can use the data from the test to find $e^b$. Let $Q(t)$ be the number of individuals in the test population at time $t$.}
+Q(t)&=Q(0)e^{bt}=200e^{bt}\\
+1000&=Q(3)=200e^{3b}\\
+5&=e^{3b}\\
+e^b&=5^{1/3}
+\intertext{Now that we have an idea of the birthrate, we predict}
+P(t)&=P(0)\left(e^{b}\right)^t=P(0)\cdot5^{\tfrac{t}{3}}
+\intertext{We want $P(12)=10^6+P(0)$.}
+10^6+P(0)=P(12)&=P(0)\cdot 5^{\tfrac{12}{3}}=P(0)\cdot 5^4\\
+10^6&=P(0)\cdot 5^4-P(0)=P(0)\left[5^4-1\right]\\
+P(0)&=\frac{10^6}{5^4-1}\approx 1603
+\end{align*}
+The farmer should use an initial population of (at least) about 1603 individuals.
+
+Remark: if we hadn't specified that we need to save $P(0)$ individuals to start next year's population, the number of individual cochineals we would want to start with to get a million in a year would be 1600--almost the same!
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{Mquestion}
+Let $f(t)=100e^{kt}$, for some constant $k$.
+\begin{enumerate}[(a)]
+\item If $f(t)$ is the amount of a decaying radioactive isotope in a sample at time $t$,
+what is the amount of the isotope in the sample when $t=0$? What is the sign of $k$?
+\item If $f(t)$ is the number of individuals in a population that is growing according to the Malthusian model, how many individuals are there when $t=0$? What is the sign of $k$?
+\item If $f(t)$ is the temperature of an object at time $t$, given by Newton's Law of Cooling, what is the ambient temperature surrounding the object? What is the sign of $k$?
+\end{enumerate}
+\end{Mquestion}
+\begin{hint}
+One way to investigate the sign of $k$ is to think about $f'(t)$: is it positive or negative?
+\end{hint}
+\begin{answer}
+(a) At $t=0$, there are 100 units of the radioactive isotope in the sample. $k$ is negative.\\
+(b) At $t=0$, there are 100 individuals in the population. $k$ is positive.\\
+(c) The ambient temperature is 0 degrees. $k$ is negative.
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item[(a)] Since $f(t)$ gives the amount of  the radioactive isotope in the sample at time $t$, the amount of the radioactive isotope in the sample when $t=0$ is $f(0)=100e^0=100$ units. Since the sample is decaying,  $f(t)$ is decreasing, so $f'(t)$ is negative. Differentiating, $f'(t)=k(100e^{kt})$. Since $100e^{kt}$ is positive and $f'(t)$ is negative, $k$ is negative.
+\item[(b)] Since $f(t)$ gives the size of the population at time $t$, the number of individuals in the population when $t=0$ is $f(0)=100e^0=100$. Since the population is growing,  $f(t)$ is increasing, so $f'(t)$ is positive. Differentiating, $f'(t)=k(100e^{kt})$. Since $100e^{kt}$ is positive and $f'(t)$ is positive, $k$ is also positive.
+\item[(c)] Newton's Law of Cooling give the temperature of an object at time $t$ as
+$f(t)=[f(0)-A]e^{kt}+A$, where $A$ is the ambient temperature surrounding the object. In our case, the ambient temperature is 0 degrees. In an object whose temperature is being modelled by Newton's Law of Cooling,  it doesn't matter whether the object is heating or cooling, $k$ is negative. We saw this in Question~\ref{s3.3.2Knegative} of Section~\ref*{sec:newtonCooling}, %3.3.2
+ but it bears repeating. Since $f(t)$ approaches the ambient temperature (in this case, 0) as $t$ goes to infinty:
+\[\lim_{t \to \infty}100e^{kt}=0\]
+so $k$ is negative.
+\end{itemize}
+\end{solution}

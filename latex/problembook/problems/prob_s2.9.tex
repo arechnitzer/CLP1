@@ -1,0 +1,1032 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s2.9}
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion}
+Suppose the amount of kelp in a harbour depends on the number of urchins. Urchins eat kelp: when there are more urchins, there is less kelp, and when there are fewer urchins, there is more kelp. Suppose further that the number of urchins in the harbour depends on the number of otters, who find urchins extremely tasty: the more otters there are, the fewer urchins there are.
+
+Let $O$, $U$, and $K$ be the populations of otters, urchins, and kelp, respectively.
+\begin{enumerate}[(a)]
+\item\label{s2.9otter1} Is $\diff{K}{U}$ positive or negative?
+\item\label{s2.9otter2} Is $\diff{U}{O}$ positive or negative?
+\item\label{s2.9otter3} Is $\diff{K}{O}$ positive or negative?
+\end{enumerate}
+Remark: An urchin barren is an area where unchecked sea urchin grazing has decimated the kelp population, which in turn causes the other species that shelter in the kelp forests to leave. Introducing otters to urchin barrens is one intervention to increase biodiversity. A short video with a more complex view of otters and urchins in Canadian waters is available on YouTube: \url{https://youtu.be/ASJ82wyHisE}
+\end{Mquestion}
+\begin{hint}
+For  parts~\eqref{s2.9otter1} and \eqref{s2.9otter2}, remember the definition of a derivative: \[\ds\diff{K}{U}=\ds\lim_{h \rightarrow 0}\dfrac{K(U+h)-K(U)}{h}.\] When $h$ is positive, $U+h$ is an increased urchin population; what is the sign of $K(U+h)-K(U)$?
+
+For part~\eqref{s2.9otter3}, use the chain rule!
+\end{hint}
+\begin{answer}
+\eqref{s2.9otter1} $\diff{K}{U}$ is negative\qquad
+\eqref{s2.9otter2} $\diff{U}{O}$ is negative\qquad
+\eqref{s2.9otter3} $\diff{K}{O}$ is positive
+\end{answer}
+\begin{solution}
+\eqref{s2.9otter1}
+More urchins means less kelp, and fewer urchins means more kelp. This means kelp and urchins are negatively correlated, so $\diff{K}{U}<0$.
+
+If you aren't sure why that is, we give a more detailed explanation here, using the definition of the derivative.
+When $h$ is a positive number, $U+h$ is greater than $U$, so $K(U+h)$ is less than $U$, hence $K(U+h)-K(U)<0$.
+ Therefore:
+\[\ds\lim_{h \rightarrow 0^+}\dfrac{K(U+h)-K(U)}{h} = \dfrac{\mbox{negative}}{\mbox{positive}}<0.\]
+
+Similarly, when $h$ is negative, $U+h$ is less than $U$, so $K(U+h)-K(U)>0$, and
+\[\ds\lim_{h \rightarrow 0^-}\dfrac{K(U+h)-K(U)}{h}= \dfrac{\mbox{positive}}{\mbox{negative}}<0.\]
+
+Therefore:
+\[\ds\diff{K}{U}=\ds\lim_{h \rightarrow 0}\dfrac{K(U+h)-K(U)}{h}<0.\]
+
+\eqref{s2.9otter2} More otters means fewer urchins, and fewer otters means more urchins. So, otters and urchins are negatively correlated: $\diff{U}{O}<0$.\\
+
+\eqref{s2.9otter3} Using the chain rule, $\diff{K}{O} = \diff{K}{U}\cdot\diff{U}{O}$. Parts \eqref{s2.9otter1} and \eqref{s2.9otter2} tell us both these derivatives are negative, so their product is positive: $\diff{K}{O}>0$.
+
+We can also see that $\diff{K}{O}>0$ by thinking about the relationships as described. When the otter population increases, the urchin population decreases, so the kelp population increases. That means when the otter population increases, the kelp population also increases, so kelp and otters are positively correlated. The chain rule is a formal version of this kind of reasoning.
+\end{solution}
+
+
+
+
+\begin{question}
+Suppose $A,~B,~C,~D,~$ and $E$ are functions describing an interrelated system, with the following signs: $\diff{A}{B}>0$, $\diff{B}{C}>0$, $\diff{C}{D}<0$, and $\diff{D}{E}>0$. Is $\diff{A}{E}$ positive or negative?
+\end{question}
+\begin{hint}
+Remember that Leibniz notation suggests fractional cancellation.
+\end{hint}
+\begin{answer}
+negative
+\end{answer}
+\begin{solution}
+\[\diff{A}{E}=\diff{A}{B}\cdot\diff{B}{C}\cdot\diff{C}{D}\cdot\diff{D}{E}<0\]
+since we multiply three positive quantities and one negative.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{Mquestion}
+Evaluate the derivative of $f(x)=\cos(5x+3)$.
+\end{Mquestion}
+\begin{hint}
+If $g(x)=\cos x$ and $h(x)=5x+3$, then $f(x)=g(h(x))$. So we apply the chain rule, with ``outside" function $\cos x$ and ``inside" function $5x+3$.
+\end{hint}
+\begin{answer}
+$-5\sin(5x+3)$
+\end{answer}
+\begin{solution}
+Applying the chain rule:
+\begin{align*}
+\diff{}{x}\{\cos(5x+3)\}&=-\sin(\textcolor{red}{5x+3})\cdot\diff{}{x}\{\textcolor{red}{5x+3}\}\\
+&=-\sin(5x+3)\cdot 5
+\end{align*}
+\end{solution}
+
+
+\begin{question}
+Evaluate the derivative of $f(x)=\left({x^2+2}\right)^5$.
+\end{question}
+\begin{hint}
+You can expand this into a polynomial, but it's easier to use the chain rule. If $g(x)=x^5$, and $h(x)=x^2+2$, then $f(x)=g(h(x))$.
+\end{hint}
+\begin{answer}
+$10x(x^2+2)^4$
+\end{answer}
+\begin{solution}
+Using the chain rule,
+\begin{align*}
+f'(x)&=\diff{}{x}\left\{\left({x^2+2}\right)^5\right\}\\
+&=5\left(\textcolor{red}{x^2+2}\right)^4\cdot\diff{}{x}\{\textcolor{red}{x^2+2}\}\\
+&=5(x^2+2)^4 \cdot 2x\\
+&=10x(x^2+2)^4
+\end{align*}
+\end{solution}
+
+
+\begin{Mquestion}
+Evaluate the derivative of $T(k)=\left({4k^4+2k^2+1}\right)^{17}$.
+\end{Mquestion}
+\begin{hint}
+You can expand this into a polynomial, but it's easier to use the chain rule. If $g(k)=k^{17}$, and $h(k)=4k^4+2k^2+1$, then $T(k)=g(h(k))$.
+\end{hint}
+\begin{answer}
+$17(4k^4+2k^2+1)^{16}\cdot(16k^3+4k)$
+\end{answer}
+\begin{solution}
+Using the chain rule,
+\begin{align*}
+T'(k)&=\diff{}{k}\left\{\left({4k^4+2k^2+1}\right)^{17}\right\}\\
+&=17(\textcolor{red}{4k^4+2k^2+1})^{16}\cdot\diff{}{k}\{\textcolor{red}{4k^4+2k^2+1}\}\\
+&=17(4k^4+2k^2+1)^{16}\cdot(16k^3+4k)
+\end{align*}
+\end{solution}
+
+
+
+\begin{Mquestion}
+Evaluate the derivative of $f(x)=\sqrt{\dfrac{x^2+1}{x^2-1}}$.
+\end{Mquestion}
+\begin{hint}
+If we define $g(x)=\sqrt{x}$ and $h(x)=\dfrac{x^2+1}{x^2-1}$, then $f(x)=g(h(x))$.\\
+To differentiate the square root function:
+$\ds\diff{}{x}\{\sqrt{x}\}=\ds\diff{}{x}\left\{x^{1/2}\right\}=\dfrac{1}{2}x^{-1/2}=\dfrac{1}{2\sqrt{x}}$.
+\end{hint}
+\begin{answer}
+$\frac{-2x}{({x^2-1})\sqrt{x^4-1}}$
+\end{answer}
+\begin{solution}
+Using the chain rule:
+\begin{align*}
+\diff{}{x}\left\{\sqrt{\frac{x^2+1}{x^2-1}}\right\}&=\frac{1}{2\sqrt{\textcolor{red}{\frac{x^2+1}{x^2-1}}}}\cdot \diff{}{x}\left\{\textcolor{red}{\frac{x^2+1}{x^2-1}}\right\}\\
+&=\frac{1}{2}\sqrt{\frac{x^2-1}{x^2+1}}\cdot\diff{}{x}\left\{\frac{x^2+1}{x^2-1}\right\}
+\intertext{And now, the quotient rule:}
+&=\frac{1}{2}\sqrt{\frac{x^2-1}{x^2+1}}\cdot\left(\frac{(x^2-1)(2x)-(x^2+1)2x}{(x^2-1)^2}\right)\\
+&=\frac{1}{2}\sqrt{\frac{x^2-1}{x^2+1}}\cdot\left(\frac{-4x}{(x^2-1)^2}\right)\\
+&=\sqrt{\frac{x^2-1}{x^2+1}}\cdot\left(\frac{-2x}{(x^2-1)^2}\right)\\
+&=\frac{-2x}{({x^2-1})\sqrt{x^4-1}}
+\end{align*}
+\end{solution}
+
+
+
+\begin{Mquestion}
+Evaluate the derivative of $f(x)=e^{\cos(x^2)}$.
+\end{Mquestion}
+\begin{hint}
+You'll need to use the chain rule twice.
+\end{hint}
+\begin{answer}
+$-e^{\cos(x^2)}\cdot \sin(x^2)\cdot 2x$
+\end{answer}
+\begin{solution}
+If we let $g(x)=e^x$ and $h(x)=\cos(x^2)$, then $f(x)=g(h(x))$, so $f'(x)=g'(h(x))\cdot h'(x)$.
+\begin{align*}
+f'(x)&=e^{\textcolor{red}{\cos(x^2)}}\cdot \diff{}{x}\{\textcolor{red}{\cos(x^2)}\}
+\intertext{In order to evaluate $\diff{}{x}\{{\cos(x^2)}\}$, we'll need the chain rule \emph{again}.}
+&=e^{\cos(x^2)}\cdot [-\sin(\textcolor{orange}{x^2})]\cdot\diff{}{x}\{\textcolor{orange}{x^2}\}\\
+&=-e^{\cos(x^2)}\cdot \sin(x^2)\cdot 2x
+\end{align*}
+\end{solution}
+
+
+\begin{question}[2006H]
+ Evaluate $f'(2)$ if $f(x) = g\big(x/h(x)\big)$,
+$h(2) = 2$, $h'(2) = 3$, $g'(1) = 4$.
+\end{question}
+\begin{hint}
+Use the chain rule.
+\end{hint}
+\begin{answer}
+$-4$
+\end{answer}
+\begin{solution}
+We use the chain rule, followed by the quotient rule:
+\begin{align*}
+f'(x) &=g'\left(\textcolor{red}{\frac{x}{h(x)}}\right)\cdot\diff{}{x}\left\{\textcolor{red}{\frac{x}{h(x)}}
+\right\}
+\\&= g'\left(\frac{x}{h(x)}\right)\cdot\frac{h(x)-xh'(x)}{h(x)^2}
+\intertext{When $x=2$:}
+f'(2) &=  g'\left(\frac{2}{h(2)}\right)\frac{h(2)-2h'(2)}{h(2)^2}\\
+&= 4\frac{2-2\times3}{2^2}
+=-4
+\end{align*}
+\end{solution}
+
+\begin{question}[2006D]
+ Find the derivative of $e^{x\cos(x)}$.
+\end{question}
+\begin{hint}
+Use the chain rule.
+\end{hint}
+\begin{answer}
+$[\cos x -x\sin x]e^{x\cos(x)}$
+\end{answer}
+\begin{solution}
+Using the chain rule, followed by the product rule:
+\begin{align*}
+\diff{}{x}\left\{e^{x\cos(x)}\right\}&=e^{\textcolor{red}{x\cos x}}\diff{}{x}\left\{
+\textcolor{red}{x\cos x}\right\}
+\\&=[\cos x -x\sin x]e^{x\cos(x)}
+\end{align*}
+\end{solution}
+
+\begin{question}[2009H]
+Evaluate $f'(x)$ if $f(x) = e^{x^2+\cos x}$.
+\end{question}
+\begin{hint}
+Use the chain rule.
+\end{hint}
+\begin{answer}
+$[2x-\sin x]e^{x^2+\cos(x)}$
+\end{answer}
+\begin{solution}
+Using the chain rule:
+\begin{align*}
+\diff{}{x}\left\{e^{x^2+\cos(x)}\right\}&=e^{\textcolor{red}{x^2+\cos x}}\diff{}{x}\left\{
+\textcolor{red}{x^2+\cos x}\right\}
+\\&=[2x-\sin x]e^{x^2+\cos(x)}
+\end{align*}
+\end{solution}
+
+\begin{question}[2009H]
+Evaluate $f'(x)$ if $f(x) = \sqrt{\dfrac{x-1}{x+2}}$.
+\end{question}
+\begin{hint}
+Use the chain rule.
+\end{hint}
+\begin{answer}
+$\frac{3}{2\sqrt{x-1}\sqrt{x+2}^3}$
+\end{answer}
+\begin{solution}
+Using the chain rule, followed by the quotient rule:
+\begin{align*}
+\diff{}{x}\left\{ \sqrt{\dfrac{x-1}{x+2}}\right\}&=\frac{1}{2\sqrt{\textcolor{red}{\dfrac{x-1}{x+2}}}}\diff{}{x}\left\{
+\textcolor{red}{\dfrac{x-1}{x+2}}\right\}
+\\&=\frac{\sqrt{x+2}}{2\sqrt{x-1}}\cdot \frac{(x+2)-(x-1)}{(x+2)^2}\\
+&=\frac{3}{2\sqrt{x-1}\sqrt{x+2}^3}
+\end{align*}
+\end{solution}
+
+\begin{Mquestion}[2010H]
+Differentiate the function
+\[f(x)=\frac{1}{x^2}+\sqrt{x^2-1}\]
+ and give
+the domain where the derivative exists.
+\end{Mquestion}
+\begin{hint}
+Recall $\dfrac{1}{x^2}=x^{-2}$ and $\sqrt{x^2-1}=(x^2-1)^{1/2}$.
+\end{hint}
+\begin{answer}
+ $f'(x)= -\dfrac{2}{x^3}+\dfrac{x}{\sqrt{x^2-1}}$ is defined
+for $x$ in $(-\infty,1) \cup (1,\infty)$.
+\end{answer}
+\begin{solution}
+First, we manipulate our function to make it easier to differentiate:
+\begin{align*}
+f(x)&=x^{-2}+(x^2-1)^{1/2}
+\intertext{Now, we can use the power rule to differentiate $\dfrac{1}{x^2}$. This will be easier than differentiating $\dfrac{1}{x^2}$ using quotient rule, but if you prefer, quotient rule will also work.}
+f'(x)&=-2x^{-3}+\frac{1}{2}(\textcolor{red}{x^2-1})^{-1/2}\cdot\diff{}{x}\{\textcolor{red}{x^2-1}\}\\
+&=-2x^{-3}+\frac{1}{2}({x^2-1})^{-1/2}(2x)\\
+&=\frac{-2}{x^3}+\frac{x}{\sqrt{x^2-1}}
+\end{align*}
+The function $f(x)$ is only defined when $x \neq 0$ and when $x^2-1 \geq 0$. That is, when $x$ is in $(-\infty,-1] \cup [1,\infty)$. We have an added restriction on the domain of $f'(x)$: $x^2-1$ must not be zero. So, the domain of $f'(x)$ is $(-\infty,-1)\cup(1,\infty)$.
+\end{solution}
+
+\begin{question}[1998H]
+Evaluate the derivative of
+$f(x)=\dfrac{\sin 5x}{1+x^2}$
+\end{question}
+\begin{answer} $ f'(x)=\dfrac{(1+x^2)(5\cos 5x)-(\sin 5x)(2x)}{{(1+x^2)}^2}$
+\end{answer}
+\begin{solution} We use the quotient rule, noting that $\ds\diff{}{x}\{\sin 5x\}=5\cos 5x$:
+\begin{align*}
+f'(x)&=\frac{(1+x^2)(5\cos 5x)-(\sin 5x)(2x)}{{(1+x^2)}^2}
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}
+Evaluate the derivative of $f(x)=\sec(e^{2x+7})$.
+\end{question}
+\begin{hint}
+If we let $g(x)=\sec x$ and ${h(x)}=e^{2x+7}$, then $f(x)=g(h(x))$, so by the chain rule,
+$f'(x)=g'(h(x))\cdot h'(x)$. However, in order to evaluate $h'(x)$, we'll need to use the chain rule \emph{again}.
+\end{hint}
+\begin{answer}
+$2e^{2x+7}\sec(e^{2x+7})\tan(e^{2x+7}) $
+\end{answer}
+\begin{solution}
+If we let $g(x)=\sec x$ and $h(x)=e^{2x+7}$, then $f(x)=g(h(x))$, so by the chain rule,
+$f'(x)=g'(h(x))\cdot h'(x)$. Since $g'(x)=\sec x \tan x$:
+\begin{align*}
+f'(x)&=g'(h(x))\cdot h'(x)\\
+&=\sec(h(x))\tan(h(x)) \cdot h'(x)\\
+&=\sec(e^{2x+7})\tan(e^{2x+7}) \cdot \diff{}{x}\left\{e^{2x+7}\right\}
+\intertext{Here, we need the chain rule again:}
+&=\sec(e^{2x+7})\tan(e^{2x+7}) \cdot \left[e^{\textcolor{red}{2x+7}}\cdot \diff{}{x}\{\textcolor{red}{2x+7}\}\right]\\
+&=\sec(e^{2x+7})\tan(e^{2x+7}) \cdot \left[e^{2x+7}\cdot2\right]\\
+&=2e^{2x+7}\sec(e^{2x+7})\tan(e^{2x+7})
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}
+Find the tangent line to the curve $y=\left(\tan^2 x +1\right)\left(\cos^2 x\right)$ at the point $x=\dfrac{\pi}{4}$.
+\end{question}
+\begin{hint}
+What trig identity can you use to simplify the first factor in the equation?
+\end{hint}
+\begin{answer} $y=1$
+\end{answer}
+\begin{solution}
+It is possible to start in on this problem with the product rule and then the chain rule, but it's easier if we simplify first. Since $\tan^2x+1=\sec^2 x=\frac{1}{\cos^2x}$, we see \[f(x)=\frac{\cos^2 x}{\cos^2 x}=1\] for all values of $x$ for which $\cos x$ is nonzero. That is, $f(x)=1$ for every $x$ that is not an integer multiple of $\pi/2$ (and $f(x)$ is not defined when $x$ is an integer multiple of $\pi/2$). Therefore, $f'(x)=0$ for every $x$ on which $f$ exists, and in particular $f'(\pi/4)=0$. Also, $f(\pi/4)=1$, so the tangent line to $f$ at $x=\pi/4$ is the line with slope 0, passing through the point $(\pi/4,1)$:
+\[y=1\]
+\end{solution}
+
+\begin{Mquestion}
+The position of a particle at time $t$ is given by $s(t)=e^{t^3-7t^2+8t}$. For which values of $t$ is the velocity of the particle zero?
+\end{Mquestion}
+\begin{hint}
+Velocity is the derivative of position with respect to time. In this case, the velocity of the particle is given by $s'(t)$.
+\end{hint}
+\begin{answer}
+$t=\frac{2}{3}$ and $t=4$
+\end{answer}
+\begin{solution}
+Velocity is the derivative of position with respect to time. So, the velocity of the particle is given by $s'(t)$. We need to find $s'(t)$, and determine when it is zero.
+
+To differentiate, we us the chain rule.
+\begin{align*}
+s'(t)&=e^{\textcolor{red}{t^3-7t^2+8t}}\cdot\diff{}{t}\{\textcolor{red}{t^3-7t^2+8t}\}\\
+&=e^{{t^3-7t^2+8t}}\cdot(3t^2-14t+8)
+\intertext{To determine where this function is zero, we factor:}
+&=e^{{t^3-7t^2+8t}}\cdot(3t-2)(t-4)
+\end{align*}
+So, the velocity is zero when $e^{{t^3-7t^2+8t}}=0$, when $3t-2=0$, and when $t-4=0$. Since $e^{{t^3-7t^2+8t}}$ is \emph{never} zero, this tells us that the velocity is zero precisely when $t=\frac{2}{3}$ or $t=4$.
+\end{solution}
+
+\begin{question}
+What is the slope of the tangent line to the curve $y=\tan\left(e^{x^2}\right)$ at the point $x=1$?
+\end{question}
+\begin{hint}
+The slope of the tangent line is the derivative.\\
+You'll need to use the chain rule twice.
+\end{hint}
+\begin{answer}
+$2e\sec^2(e)$
+\end{answer}
+\begin{solution}
+The slope of the tangent line is the derivative. If we let $f(x)=\tan x$ and $g(x)=e^{x^2}$, then $f(g(x))=\tan(e^{x^2})$, so $y'=f'(g(x)) \cdot g'(x)$:
+\begin{align*}
+y'&=\sec^2(\textcolor{red}{e^{x^2}})\cdot\diff{}{x}\{\textcolor{red}{e^{x^2}}\}
+\intertext{We find ourselves once more in need of the chain rule:}
+&=\sec^2({e^{x^2}})\cdot{e^{\textcolor{red}{x^2}}}\diff{}{x}\{\textcolor{red}{x^2}\}\\
+&=\sec^2(e^{x^2})\cdot e^{x^2}\cdot 2x
+\intertext{Finally, we evaluate this derivative at the point $x=1$:}
+y'(1)&=\sec^2(e)\cdot e \cdot 2\\
+&=2e\sec^2e
+\end{align*}
+\end{solution}
+
+
+\begin{Mquestion}[1997A]
+Differentiate $y=e^{4x}\tan x$. You do not need to simplify your answer.
+\end{Mquestion}
+\begin{hint} Start with the product rule, then use the chain rule to differentiate $e^{4x}$.
+\end{hint}
+\begin{answer}
+$y'=4e^{4x}\tan x+e^{4x}\sec^2 x$
+\end{answer}
+\begin{solution} Using the Product rule,
+\begin{align*}
+y'&=\diff{}{x}\{e^{4x}\}\tan x+e^{4x}\sec^2 x
+\intertext{and the chain rule:}
+&=e^{\textcolor{red}{4x}}\cdot\diff{}{x}\{\textcolor{red}{4x}\}\cdot\tan x+e^{4x}\sec^2 x\\
+&=4e^{4x}\tan x+e^{4x}\sec^2 x
+\end{align*}
+\end{solution}
+
+\begin{question}[1997D]Evaluate the derivative of the following function at $x=1$:
+$f(x)=\dfrac{x^3}{1+e^{3x}}$.
+\end{question}
+\begin{hint} Start with the quotient rule; you'll need the chain rule only to differentiate $e^{3x}$.
+\end{hint}
+\begin{answer} $\dfrac{3}{{(1+e^{3})}^2}$
+\end{answer}
+\begin{solution}
+Using the quotient rule,
+\begin{align*}
+f'(x)&=\frac{(3x^2)(1+e^{3x})-(x^3)\cdot\diff{}{x}\{1+e^{3x}\}}{{(1+e^{3x})}^2}
+\intertext{Now, the chain rule:}
+&=\frac{(3x^2)(1+e^{3x})-(x^3)(3e^{3x})}{{(1+e^{3x})}^2}
+\intertext{So, when $x=1$:}
+f'(1)&=\frac{3(1+e^{3})-3e^{3}}{{(1+e^{3})}^2}=\frac{3}{{(1+e^{3})}^2}
+\end{align*}
+\end{solution}
+
+
+
+\begin{question}[2015Q]
+Differentiate $e^{\sin^2(x)}$.
+\end{question}
+\begin{hint} More than one chain rule needed here.
+\end{hint}
+\begin{answer} $2 \sin(x) \cdot \cos(x) \cdot e^{\sin^2(x)}$
+\end{answer}
+\begin{solution}
+This requires us to apply the chain rule twice.
+\begin{align*}
+  \diff{}{x} \left\{ e^{\sin^2(x)} \right\}
+  &= e^{\sin^2(x)} \cdot \diff{}{x} \left\{ \sin^2(x)\right\}\\
+  &= e^{\sin^2(x)} (2\sin(x)) \cdot \diff{}{x} \sin(x) \\
+  &= e^{\sin^2(x)} (2\sin(x)) \cdot \cos(x)
+\end{align*}
+\end{solution}
+
+
+\begin{question}[2015Q]
+Compute the derivative of $y=\sin\left(e^{5x}\right)$
+\end{question}
+\begin{hint} More than one chain rule application is needed here.
+\end{hint}
+\begin{answer} $\cos\left(e^{5x}\right)\cdot e^{5x}\cdot 5$
+\end{answer}
+\begin{solution} This requires us to apply the chain rule twice.
+\begin{align*}
+  \diff{}{x} \left\{\sin(e^{5x}) \right\}
+  &= {\cos\left(\textcolor{red}{e^{5x}}\right)} \cdot \diff{}{x} \left\{ \textcolor{red}{e^{5x}}\right\}\\
+  &= \cos(e^{5x}) (e^{\textcolor{orange}{5x}}) \cdot \diff{}{x}\{\textcolor{orange}{5x}\} \\
+  &= \cos(e^{5x}) (e^{5x}) \cdot5
+ \end{align*}
+\end{solution}
+
+
+\begin{question}[2007H]
+Find the derivative of $e^{\cos(x^2)}$.
+\end{question}
+\begin{hint}
+More than one chain rule application is needed here.
+\end{hint}
+\begin{answer}
+$-e^{\cos(x^2)}\cdot \sin(x^2) \cdot 2x$
+\end{answer}
+\begin{solution}
+We'll use the chain rule twice.
+\begin{align*}
+\diff{}{x}\left\{e^{\cos(x^2)}\right\}&=
+e^{\textcolor{red}{\cos(x^2)}}\cdot\diff{}{x}\{\textcolor{red}{\cos(x^2)}\}\\
+&=e^{\cos(x^2)} \cdot(-\sin(\textcolor{orange}{x^2}))\cdot \diff{}{x}\{\textcolor{orange}{x^2}\}\\
+&=-e^{\cos(x^2)}\cdot \sin(x^2) \cdot 2x
+\end{align*}
+\end{solution}
+
+
+
+
+
+\begin{question}[1997A]
+Compute the derivative of $y=\cos\big(x^2+\sqrt{x^2+1}\big)$
+\end{question}
+\begin{hint} More than one chain rule application is needed here.
+\end{hint}
+\begin{answer} $y'=-\sin\big(x^2+\sqrt{x^2+1}\big)\left(2x+\dfrac{x}{\sqrt{x^2+1}}\right)$
+\end{answer}
+\begin{solution}
+We start with the chain rule:
+\begin{align*}
+y'&=-\sin\big(\textcolor{red}{x^2+\sqrt{x^2+1}}\big)\cdot\diff{}{x}\left\{\textcolor{red}{x^2+\sqrt{x^2+1}}\right\}\\
+&=-\sin\big(x^2+\sqrt{x^2+1}\big)\cdot\left(2x+\diff{}{x}\left\{\sqrt{x^2+1}\right\}\right)
+\intertext{and find ourselves in need of chain rule a second time:}
+&=-\sin\big(x^2+\sqrt{x^2+1}\big)\cdot\left(2x+\dfrac{1}{2\sqrt{\textcolor{red}{x^2+1}}}\cdot\diff{}{x}\left\{\textcolor{red}{x^2+1}\right\}\right)\\
+&=-\sin\big(x^2+\sqrt{x^2+1}\big)\cdot\left(2x+\dfrac{2x}{2\sqrt{x^2+1}}\right)
+\end{align*}
+\end{solution}
+
+\begin{question}[1996D]
+Evaluate the derivative.
+\[y=(1+x^2)\cos^2 x\]
+\end{question}
+\begin{hint} What rule do you need, besides chain? Also, remember that $\cos^2x = [\cos x]^2$.
+\end{hint}
+\begin{answer} $y'=2x\cos^2x-2(1+x^2) \sin x\cos x$
+\end{answer}
+\begin{solution}
+\begin{align*}
+y&=(1+x^2)\cos^2 x
+\intertext{Using the product rule,}
+y'&=(2x)\cos^2 x + (1+x^2)\diff{}{x}\{\cos^2 x\}
+\intertext{Here, we'll need to use the chain rule. Remember $\cos^2 x = [\cos x]^2$.}
+&=2x\cos^2x+(1+x^2) 2\textcolor{red}{\cos x} \cdot \diff{}{x}\{\textcolor{red}{\cos x}\}\\
+&=2x\cos^2x+(1+x^2) 2\cos x \cdot (-\sin x)\\
+&=2x\cos^2x-2(1+x^2) \sin x\cos x
+\end{align*}
+\end{solution}
+
+\begin{question}[1996D]
+Evaluate the derivative.
+\[y=\frac{e^{3x}}{1+x^2}\]
+\end{question}
+\begin{answer} $y'=\dfrac{e^{3x}(3x^2-2x+3)}{(1+x^2)^2}$
+\end{answer}
+\begin{solution}
+{We use the quotient rule, noting by the chain rule that $\diff{}{x}\{e^{3x}\}=3e^{3x}$:}
+\begin{align*}
+y'&=\frac{(1+x^2)\cdot3e^{3x}-e^{3x}(2x)}{(1+x^2)^2}\\
+&=\frac{e^{3x}(3x^2-2x+3)}{(1+x^2)^2}
+\end{align*}
+\end{solution}
+
+
+\begin{Mquestion}[1999H]
+Find $g'(2)$ if $g(x)=x^3h(x^2)$, where $h(4)=2$ and $h'(4)=-2$.
+\end{Mquestion}
+\begin{answer} $-40$
+\end{answer}
+\begin{solution}
+By the chain rule,
+\begin{align*}
+\diff{}{x}\left\{h\left(x^2\right)\right\}&=h'(x^2)\cdot 2x
+\end{align*}
+ Using the product rules and the result above,
+\begin{align*}
+g'(x)&=3x^2h(x^2)+x^3h'(x^2)2x
+\intertext{Plugging in $x=2$:}
+g'(2)&=3(2^2)h(2^2)+2^3h'(2^2)2\times 2\cr
+&=12h(4)+32h'(4)=12\times 2-32\times 2\cr
+&=-40
+\end{align*}
+\end{solution}
+
+\begin{question}[1999H]
+At what points $(x,y)$ does the curve $y=xe^{-(x^2-1)/2}$ have a
+horizontal tangent?
+\end{question}
+\begin{hint} The product of two functions is zero exactly when at least one of the functions is zero.
+\end{hint}
+\begin{answer} $(1,1)$ and $(-1,-1)$.
+\end{answer}
+\begin{solution}
+Let $f(x)=xe^{-(x^2-1)/2}=xe^{(1-x^2)/2}$. Then, using the product rule,
+\begin{align*}
+f'(x)&=e^{(1-x^2)/2}+x\cdot\diff{}{x}\left\{e^{(1-x^2)/2}\right\}
+\intertext{Here, we need the chain rule:}
+&=e^{(1-x^2)/2}+x\cdot e^{\textcolor{red}{(1-x^2)/2}}\diff{}{x}\left\{\textcolor{red}{\frac{1}{2}(1-x^2)}\right\}\\
+&=e^{(1-x^2)/2}+x\cdot e^{{(1-x^2)/2}}\cdot (-x)\\
+&=(1-x^2)e^{(1-x^2)/2}
+\end{align*}
+
+There is no power of $e$ that is equal to zero; so if the product above is zero, it must be that $1-x^2=0$. This happens for $x=\pm 1$. On the curve, when $x=1$, $y=1$, and
+when $x=-1$, $y=-1$. So the points are $(1,1)$ and $(-1,-1)$.
+\end{solution}
+
+
+\begin{Mquestion}
+A particle starts moving at time $t=1$, and its position thereafter  is given by
+\[s(t)=\sin\left(\frac{1}{t}\right).\]
+ When is the particle moving in the negative direction?
+\end{Mquestion}
+\begin{hint}
+If $t \ge 1$, then $0<\frac{1}{t} \leq 1$.
+\end{hint}
+\begin{answer}
+Always
+\end{answer}
+\begin{solution}
+The question asks when $s'(t)$ is negative. So, we start by differentiating. Using the chain rule:
+\begin{align*}
+s'(t)&=\cos\left(\textcolor{red}{\frac{1}{t}}\right)\cdot\diff{}{t}\left\{\textcolor{red}{\frac{1}{t}}\right\}\\
+&=\cos\left({\frac{1}{t}}\right)\cdot\frac{-1}{t^2}
+\end{align*}
+When $t\ge1$, $\frac{1}{t}$ is between 0 and 1. Since $\cos \theta$ is positive for $0 \leq \theta < \pi/2$, and $\pi/2 >1$, we see that $\cos\left(\frac{1}{t}\right)$ is positive for the entire domain of $s(t)$. Also, $\frac{-1}{t^2}$ is negative for the entire domain of the function. We conclude that $s'(t)$ is negative for the entire domain of $s(t)$, so the particle is \emph{always} moving in the negative direction.
+\end{solution}
+
+
+\begin{question}
+Compute the derivative of $f(x)=\dfrac{e^{x}}{\cos^3 (5x-7)}$.
+\end{question}
+\begin{hint}
+The notation $\cos^3(5x-7)$ means $\left[\cos(5x-7)\right]^3$. So, if $g(x)=x^3$ and $h(x)=\cos(5x-7)$, then $g(h(x))=\left[\cos(5x+7)\right]^3=\cos^3(5x+7)$.
+\end{hint}
+\begin{answer}
+$e^x\sec^3(5x-7)(1+15\tan(5x-7))$
+\end{answer}
+\begin{solution}
+We present two solutions: one where we dive right in and use the quotient rule, and another where we simplify first and use the product rule.
+\begin{itemize}
+\item Solution 1: We begin with the quotient rule:
+\begin{align*}
+f'(x) &= \frac{\cos^3(5x-7)\diff{}{x}\{e^x\}-e^x\diff{}{x}\{\cos^3(5x-7)\}}{\cos^6(5x-7)}\\
+&= \frac{\cos^3(5x-7)e^x-e^x\diff{}{x}\{\cos^3(5x-7)\}}{\cos^6(5x-7)}
+\intertext{Now, we use the chain rule. Since $\cos^3(5x-7)=[\cos(5x-7)]^3$, our ``outside" function is $g(x)=x^3$, and our ``inside" function is $h(x)=\cos(5x-1)$.}
+&= \frac{\cos^3(5x-7)e^x-e^x\cdot3\textcolor{red}{\cos}^2\textcolor{red}{(5x-7)} \cdot \diff{}{x}\{\textcolor{red}{\cos(5x-7)}\}}{\cos^6(5x-7)}
+\intertext{We need the chain rule again!}
+&= \frac{\cos^3(5x-7)e^x-e^x\cdot3{\cos}^2{(5x-7)} \cdot[{-\sin(\textcolor{red}{5x-7})\cdot \diff{}{x}\{\textcolor{red}{5x-7}\}}]}{\cos^6(5x-7)}\\
+&= \frac{\cos^3(5x-7)e^x-e^x\cdot3{\cos}^2{(5x-7)} \cdot[{-\sin({5x-7})\cdot5}]}{\cos^6(5x-7)}
+\intertext{We finish by simplifying:}
+&= \frac{e^x\cos^2(5x-7)\left(\cos(5x-7)+15\sin(5x-7)\right)}{\cos^6(5x-7)}\\
+&=e^x \frac{\cos(5x-7)+15\sin(5x-7)}{\cos^4(5x-7)}\\
+&=e^x(\sec^3(5x-7)+15\tan(5x-7)\sec^3(5x-7))\\
+&=e^x\sec^3(5x-7)(1+15\tan(5x-7))
+\end{align*}
+
+\item Solution 2: We simplify to avoid the quotient rule:
+\begin{align*}
+f(x)&=\dfrac{e^{x}}{\cos^3 (5x-7)}\\
+&=e^x\sec^3(5x-7)
+\intertext{Now we use the product rule to differentiate:}
+f'(x)&=e^x\sec^3(5x-7)+e^x\diff{}{x}\{\sec^3(5x-7)\}
+\intertext{Here, we'll need the chain rule. Since $\sec^3(5x-7)=[\sec (5x-7)]^3$, our ``outside" function is $g(x)=x^3$ and our ``inside" function is $h(x)=\sec(5x-7)$, so that
+$g(h(x))=[\sec(5x-7)]^3=\sec^3(5x-7)$.}
+&=e^x\sec^3(5x-7)+e^x\cdot3~\textcolor{red}{\sec}^2\textcolor{red}{(5x-7)} \cdot \diff{}{x}\{\textcolor{red}{\sec(5x-7)}\}
+\intertext{We need the chain rule again! Recall $\diff{}{x}\{\sec x\}=\sec x \tan x$.}
+&=e^x\sec^3(5x-7)+e^x\cdot3~{\sec}^2{(5x-7)} \cdot {\sec(\textcolor{orange}{5x-7})\tan(\textcolor{orange}{5x-7})\cdot\diff{}{x}\{\textcolor{orange}{5x-7}\}}\\
+&=e^x\sec^3(5x-7)+e^x\cdot3~{\sec}^2{(5x-7)} \cdot {\sec({5x-7})\tan({5x-7})\cdot 5}
+\intertext{We finish by simplifying:}
+&=e^x\sec^3(5x-7)(1+15\tan({5x-7}))
+\end{align*}
+\end{itemize}
+\end{solution}
+
+
+\begin{question}[2011H]
+Evaluate $\ds\diff{}{x}\left\{x e^{2x} \cos 4x\right\}$.
+\end{question}
+\begin{hint}
+In Example~\ref*{eg:DIFFsimpleToolsA}, we generalized the product rule to three factors:
+\[\diff{}{x}\{f(x)g(x)h(x)\}=f'(x)g(x)h(x)+f(x)g'(x)h(x)+f(x)g(x)h'(x)\]
+This isn't strictly necessary, but it will simplify your computations.
+\end{hint}
+\begin{answer}
+$e^{2x} \cos 4x + 2x e^{2x} \cos 4x -4 x e^{2x} \sin 4x$
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item Solution 1:
+In Example~\ref*{eg:DIFFsimpleToolsA}, we generalized the product rule to three factors:
+\[\diff{}{x}\{f(x)g(x)h(x)\}=f'(x)g(x)h(x)+f(x)g'(x)h(x)+f(x)g(x)h'(x)\]
+Using this rule:
+\begin{align*}
+\diff{}{x}\left\{(x) \left(e^{2x}\right)( \cos 4x)\right\}&=\diff{}{x}\{x\}\cdot e^{2x} \cos 4x
++
+x\cdot\diff{}{x}\left\{e^{2x}\right\}\cdot\cos 4x
++
+xe^{2x}\cdot\diff{}{x}\{\cos 4x\}\\
+&=e^{2x}\cos4x+x\left(2e^{2x}\right)\cos4x+
+xe^{2x}(-4\sin 4x)\\
+&=e^{2x}\cos4x+2xe^{2x}\cos4x-4xe^{2x}\sin 4x
+\end{align*}
+
+\item Solution 2: We can use the product rule twice. In the first step, we split the function $x e^{2x} \cos 4x$ into the product of two functions.
+\begin{align*}
+\diff{}{x}\left\{\left(x e^{2x}\right) (\cos 4x)\right\}&=
+\diff{}{x}\left\{xe^{2x}\right\}\cdot\cos4x
++
+xe^{2x}\cdot\diff{}{x}\left\{ \cos 4x\right\}\\
+&=
+\left(
+\diff{}{x}\left\{x\right\}\cdot e^{2x}+
+x\cdot\diff{}{x}\left\{e^{2x}\right\}
+\right)\cdot\cos4x
++
+xe^{2x}\cdot\diff{}{x}\left\{ \cos 4x\right\}\\
+&=
+\left(
+e^{2x}+
+x\left(2e^{2x}\right)
+\right)\cdot\cos4x
++
+xe^{2x}(-4\sin 4x)\\
+&=e^{2x}\cos4x+2xe^{2x}\cos4x-4xe^{2x}\sin4x
+\end{align*}
+\end{itemize}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{question} A particle moves along the Cartesian plane from time $t=-\pi/2$ to time $t=\pi/2$. The $x$-coordinate of the particle at time $t$ is given by $x=\cos t$, and the $y$-coordinate is given by $y=\sin t$, so the particle traces a curve in the plane. When does the tangent line to that curve have slope $-1$?
+\end{question}
+\begin{hint}
+           At time $t$, the particle is at the point $\big(x(t),y(t)\big)$,
+           with $x(t)=\cos t$ and $y(t)=\sin t$.
+           Over time, the particle traces out a curve; let's call that curve $y=f(x)$.
+           Then $y(t) = f\big(x(t)\big)$, so
+           the slope of the curve at the point $\big(x(t),y(t)\big)$
+           is $f'\big(x(t)\big)$. You are to determine the values of $t$
+           for which $f'\big(x(t)\big)=-1$.
+\end{hint}
+\begin{answer}
+$t=\dfrac{\pi}{4}$
+\end{answer}
+\begin{solution}
+At time $t$, the particle is at the point $\big(x(t),y(t)\big)$,
+           with $x(t)=\cos t$ and $y(t)=\sin t$.
+           Over time, the particle traces out a curve; let's call that curve $y=f(x)$.
+           Then $y(t) = f\big(x(t)\big)$, so
+           the slope of the curve at the point $\big(x(t),y(t)\big)$
+           is $f'\big(x(t)\big)$. You are to determine the values of $t$
+           for which $f'\big(x(t)\big)=-1$.
+
+           By the chain rule
+           \begin{align*}
+               y'(t) = f'\big(x(t)\big) \cdot x'(t)
+           \end{align*}
+           Substituting in $x(t)=\cos t$ and $y(t)=\sin t$ gives
+           \begin{align*}
+               \cos t = f'\big(x(t)\big) \cdot \big(-\sin t\big)
+           \end{align*}
+           so that
+           \begin{align*}
+              f'\big(x(t)\big)  = -\frac{\cos t}{\sin t}
+           \end{align*}
+           is $-1$ precisely when $\sin t = \cos t$. This happens whenever
+           $t = \frac{\pi}{4}$.
+
+           Remark: the path traced by the particle is a semicircle. You can
+           think about the point on the unit circle with angle t, or you
+           can notice that $x^2 + y^2 = \sin^2t + \cos^2t = 1$.
+\end{solution}
+
+
+
+%\begin{question}
+%A boat crossing the Georgia Straight has a maximum carrying capacity of 1 ton. The time the boat takes to cross depends on its load, given by
+%\[T(w) = 4-\cos\left({\pi w}\right)\]
+%where $w$ is the load measured in tons, and $T$ is the crossing time measured in hours. The boat burns
+%\[G(T)=2T-e^{-T}\] gallons of gas in a crossing that takes $T$ hours.
+%\begin{enumerate}[(a)]
+%\item\label{s2.9boat1} Calculate $\ds\diff{G}{w}(0)$ and $\ds\diff{G}{w}(1)$.
+%\item\label{s2.9boat2} What do the quantities in \eqref{s2.9boat1} tell you about how the load of the boat affects the gas used in the crossing?
+%\end{enumerate}
+%\end{question}
+%\begin{hint}
+%\eqref{s2.9boat1} The chain rule tells us $\ds\diff{G}{w}=\ds\diff{G}{T}\cdot\ds\diff{T}{w}$. Make sure your answer is in terms of $w$.\\
+%\eqref{s2.9boat2} What is the interpretation of $\ds\diff{G}{w}$, in general? If your values are a little surprising, keep in mind that $\ds\diff{G}{w}(a)$ is  different from $\ds\diff{G}{w}(0)$ when $a \neq 0,1$.
+%\end{hint}
+%\begin{answer}
+%\eqref{s2.9boat1} $\ds\diff{G}{w}=\left(2+e^{-4+\cos(\pi w)}\right)\cdot\pi \sin(\pi w)$\qquad
+%\eqref{s2.9boat2}
+%The slope is zero at the endpoints $w=0$ and $w=1$, but it's positive in between. Adding a little weight to a nearly empty or nearly full boat makes almost no difference in the amount of time (and hence the amount of gas) needed for the crossing. Adding a little weight to a boat that's partly filled will have a larger effect on the amount of time (and hence the amount of gas) needed for the crossing.
+%\end{answer}
+%\begin{solution}
+%\eqref{s2.9boat1}
+%The chain rule tells us $\ds\diff{G}{w}=\ds\diff{G}{T}\cdot\diff{T}{w}$. In order to find $\ds\diff{G}{T}$ and $\ds\diff{T}{w}$, we need to use the chain rule again.
+%\begin{align*}
+%\diff{G}{T}&=\diff{}{T}\left\{2T-e^{-T}\right\}\\
+%&=2-e^{-T}\cdot(-1)\\
+%&=2+e^{-T}\\
+%\diff{T}{w}&=\diff{}{w}\left\{4-\cos(\pi w)\right\}\\
+%&=\sin(\pi w) \cdot \pi\\
+%&=\pi\sin(\pi w)\\
+%\mbox{So, }~~~~\diff{G}{w}&=\diff{G}{T}\cdot\diff{T}{w}\\
+%&=(2+e^{-T})\cdot\pi \sin(\pi w)\\
+%&=\left(2+e^{-4+\cos(\pi w)}\right)\cdot\pi \sin(\pi w)
+%\intertext{Now, we can find the value when $w=0$ and when $w=1$:}
+%\diff{G}{w}(0)=(2+e^{-4+\cos 0})\cdot \pi \sin 0
+%&=0\\
+%\diff{G}{w}(1)=(2+e^{-4+\cos \pi})\cdot \pi \sin \pi
+%&=0
+%\end{align*}
+%Remark: since $\ds\diff{T}{w}(0)=\ds\diff{T}{w}(1)=0$, actually it was not necessary to calculate $\ds\diff{G}{T}$, since $\ds\diff{G}{w}=\ds\diff{G}{T}\cdot\ds\diff{T}{w}=\ds\diff{G}{T} \cdot  0 =0$.
+
+%\eqref{s2.9boat2}
+%$\ds\diff{G}{w}$ is the rate at which the amount of gas for the crossing increases, relative to the load on the boat. Since $\ds\diff{G}{w}(0)=\ds\diff{G}{w}(1)=0$, this means that when we add a little weight to a nearly empty boat, or to a nearly full boat, it has almost no effect on the amount of gas needed to make the crossing.
+
+%This is perhaps a confusing statement. Let's look at the function $T(w)$:
+%\begin{center}\begin{tikzpicture}
+%\draw[help lines, <->] (-.5,0)--(3.5,0) node[right]{$y$};
+%\draw[help lines, <->] (0,-.5)--(0,3) node[above]{$y$};
+%\draw (3.14,.2)--(3.14,-.2) node[below]{1};
+%\draw (.2,1.5)--(-.2,1.5) node[left]{3};
+%\draw (.2,2.5)--(-.2,2.5) node[left]{5};
+%\draw[thick] plot[domain=0:3.14](\x,{2-.5*cos(\x r)}) node[right]{$y=T(w)$};
+%\end{tikzpicture}\end{center}
+%\end{solution}
+
+
+\begin{question}[test]\label{s2.9ineq}
+Show that, for all $x>0$, $e^{x+x^2}>1+x$.
+\end{question}
+\begin{hint}  Set $f(x) = e^{x+x^2}$ and $g(x)=1+x$. Compare $f(0)$ and $g(0)$,
+         and compare $f'(x)$ and $g'(x)$.
+\end{hint}
+\begin{answer} Let $f(x)=e^{x+x^2}$ and $g(x)=1+x$. Then $f(0)=g(0)=1$.
+
+$f'(x)=(1+2x)e^{x+x^2}$ and $g'(x)=1$. When $x>0$,
+\[f'(x)=(1+2x)e^{x+x^2}>1\cdot e^{x+x^2}=e^{x+x^2}>e^{0+0^2}=1=g'(x).\] Since $f(0)=g(0)$, and $f'(x)>g'(x)$ for all $x>0$, that means $f$ and $g$ start at the same place, but $f$ always grows faster. Therefore, $f(x)>g(x)$ for all $x>0$.
+\end{answer}
+\begin{solution} Let $f(x)=e^{x+x^2}$ and $g(x)=1+x$. Then $f(0)=g(0)=1$.
+
+$f'(x)=(1+2x)e^{x+x^2}$ and $g'(x)=1$. When $x>0$,
+\[f'(x)=(1+2x)e^{x+x^2}>1\cdot e^{x+x^2}=e^{x+x^2}>e^{0+0^2}=1=g'(x).\] Since $f(0)=g(0)$, and $f'(x)>g'(x)$ for all $x>0$, that means $f$ and $g$ start at the same place, but $f$ always grows faster. Therefore, $f(x)>g(x)$ for all $x>0$.
+\end{solution}
+
+
+\begin{Mquestion}
+We know that $\sin (2x) = 2\sin x \cos x$. What other trig identity can you derive from this, using differentiation?
+\end{Mquestion}
+\begin{hint}
+If $\sin 2x$ and $2\sin x \cos x$ are the same, then they also have the same derivatives.
+\end{hint}
+\begin{answer}
+$\cos(2x)=\cos^2x-\sin^2x$
+\end{answer}
+\begin{solution}
+Since $\sin 2x$ and $2\sin x \cos x$ are the same function, they have the same derivative.
+\begin{align*}
+\sin 2x &= 2\sin x \cos x\\
+\Rightarrow \diff{}{x}\{\sin 2x\}&=\diff{}{x}\{2\sin x \cos x\}\\
+2\cos 2x &=2[\cos^2x-\sin^2x]\\
+\cos 2x &=\cos^2x-\sin^2 x
+\end{align*}
+We conclude $\cos 2x =\cos^2x-\sin^2 x$, which is another common trig identity.
+
+Remark: if we differentiate both sides of this equation, we get the original identity back.
+\end{solution}
+
+
+\begin{question}
+Evaluate the derivative of $f(x)=\sqrt[3]{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}$. You do not have to simplify your answer.
+\end{question}
+\begin{hint}
+This is a long, nasty problem, but it doesn't use anything you haven't seen before. Be methodical, and break the question into as many parts as you have to. At the end, be proud of yourself for your problem-solving abilities and tenaciousness!
+\end{hint}
+\begin{answer}
+\begin{align*} f'(x)&=
+\frac{1}{3}\left(
+\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
+\right)^{\frac{2}{3}}\cdot\\
+&~\left(\frac{ \sqrt{x^3-9}\tan x  {(-2x)e^{\csc x^2}\csc(x^2)\cot(x^2)}-e^{\csc x^2}{\left(\frac{3x^2\tan x}{2\sqrt{{x^3-9}}}+\sqrt{x^3-9}\sec^2 x\right)}}{(\tan^2 x)(x^3-9) }\right)
+\end{align*}
+\end{answer}
+\begin{solution}
+\begin{align*}
+f(x)&=\sqrt[3]{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\\
+&=\left({\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right)^{\frac{1}{3}}
+\intertext{To begin the differentiation, we can choose our ``outside" function to be $g(x)=x^{\frac{1}{3}}$, and our ``inside" function to be $h(x)=\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }$. Then $f(x)=g(h(x))$, so $f'(x)=g'(h(x))\cdot h'(x)=\frac{1}{3}(h(x))^{-\frac{2}{3}}h'(x)$:}
+f'(x)&=\frac{1}{3}\left(\textcolor{red}{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right)^{\frac{-2}{3}}\cdot\diff{}{x}\left\{\textcolor{red}{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right\}\\
+&=\frac{1}{3}
+\left(
+\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
+\right)^{\frac{2}{3}}
+\cdot
+\diff{}{x}\left\{\textcolor{red}{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right\}
+\intertext{This leads us to use the quotient rule:}
+&=\frac{1}{3}\left(
+\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
+\right)^{\frac{2}{3}}
+\left(\frac{ \sqrt{x^3-9}\tan x  \diff{}{x}\left\{e^{\csc x^2}\right\}-e^{\csc x^2}\diff{}{x}\left\{\sqrt{x^3-9}\tan x  \right\}}{(\tan^2 x)(x^3-9) }\right)
+\intertext{Let's figure out those two derivatives on their own, then plug them in. Using the chain rule twice:}
+\diff{}{x}\left\{e^{\csc x^2}\right\}&=e^{\textcolor{red}{\csc x^2}}\diff{}{x}\left\{\textcolor{red}{\csc x^2}\right\}=e^{\csc x^2}\cdot (-\csc(\textcolor{orange}{x^2})\cot(\textcolor{orange}{x^2}))\cdot\diff{}{x}\{\textcolor{orange}{x^2}\}\\&=-2xe^{\csc x^2}\csc(x^2)\cot(x^2)
+\intertext{For the other derivative, we start with the product rule, then chain:}
+\diff{}{x}\left\{ \sqrt{x^3-9} \tan x \right\}&=
+ \diff{}{x}\left\{\sqrt{x^3-9}\right\}\cdot\tan x+\sqrt{x^3-9}\sec^2 x\\
+ &=\frac{1}{2\sqrt{\textcolor{red}{x^3-9}}}\diff{}{x}\left\{\textcolor{red}{x^3-9}\right\}\cdot \tan x+\sqrt{x^3-9}\sec^2 x\\
+ &=\frac{3x^2 \tan x}{2\sqrt{{x^3-9}}}+\sqrt{x^3-9}\sec^2 x
+ \intertext{Now, we plug these into our equation for $f'(x)$:}
+ f'(x)&=\frac{1}{3}\left(
+\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
+\right)^{\frac{2}{3}}
+\left(\frac{ \sqrt{x^3-9}\tan x  \textcolor{blue}{\diff{}{x}\left\{e^{\csc x^2}\right\}}-e^{\csc x^2}\textcolor{blue}{\diff{}{x}\left\{\sqrt{x^3-9}\tan x  \right\}}}{(\tan^2 x)(x^3-9) }\right)\\
+&=\frac{1}{3}\left(
+\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
+\right)^{\frac{2}{3}}\cdot\\
+&~\left(\frac{ \sqrt{x^3-9}\tan x  \textcolor{blue}{(-2x)e^{\csc x^2}\csc(x^2)\cot(x^2)}-e^{\csc x^2}\textcolor{blue}{\left(\frac{3x^2\tan x}{2\sqrt{{x^3-9}}}+\sqrt{x^3-9}\sec^2 x\right)}}{(\tan^2 x)(x^3-9) }\right)
+\end{align*}
+\end{solution}
+
+
+\begin{question}
+Suppose a particle is moving in the Cartesian plane over time. For any real number $t \geq 0$, the coordinate of the particle at time $t$ is given by $(\sin t, \cos^2 t)$.
+\begin{enumerate}[(a)]
+\item\label{s2.9_parametricwiggle1} Sketch a graph of the curve traced by the particle in the plane by plotting points, and describe how the particle moves along it over time.
+\item\label{s2.9_parametricwiggle2} What is the slope of the curve traced by the particle at time $t=\dfrac{10\pi}{3}$?
+\end{enumerate}
+\end{question}
+\begin{hint} To sketch the curve, you can start by plotting points. Alternately, consider $x^2+y$.
+\end{hint}
+\begin{answer}
+\eqref{s2.9_parametricwiggle1}
+
+\begin{center}\begin{tikzpicture}
+\YEaaxis{3.5}{3.5}{.5}{4.5}
+\draw[thick] plot[smooth, scale=3, domain=-1:1] (\x,{1-\x*\x});
+\foreach \Point in {(-3,0), (-2.1,1.5), (0,3), (2.1,1.5), (3,0)}
+	{\draw \Point node[vertex]{};}
+\draw (3,0) node[vertex, label=below:{$\atp{(1,0)}{t=\pi/2}$}]{};
+\draw (-3,0) node[vertex, label=below:{$\atp{(-1,0)}{t=3\pi/2}$}]{};
+\draw (0,3) node[vertex, label=above right:{$\atp{(0,1)}{t=0, \pi,2\pi}$}]{};
+\draw (-2.1,1.5) node[vertex, label=left:{$\atp{\left(-\frac{1}{\sqrt{2}},\frac{1}{2}\right)}{t= 5\pi/4,7\pi/4}$}]{};
+\draw (2.1,1.5) node[vertex, label=right:{$\atp{\left(\frac{1}{\sqrt{2}},\frac{1}{2}\right)}{t= \pi/4,3\pi/4}$}]{};\end{tikzpicture}\end{center}
+
+The particle traces the curve $y=1-x^2$ restricted to domain $[-1,1]$. At $t=0$, the particle is at the top of the curve, $(1,0)$. Then it moves to the right, and goes back and forth along the curve, repeating its path every $2\pi$ units of time.\\
+
+\eqref{s2.9_parametricwiggle2} $\sqrt{3}$
+\end{answer}
+\begin{solution}
+
+\eqref{s2.9_parametricwiggle1}
+The table below gives us a number of points on our graph, and the times they occur.
+
+\begin{center}\begin{tabular}{c|c}
+$t$&$(\sin t,\cos^2 t)$\\ \hline
+$0$&$(0,1)$\\
+$\pi/4$&$(\frac{1}{\sqrt{2}},\frac{1}{2})$\\
+$\pi/2$&$(1,0)$\\
+$3\pi/4$&$(\frac{1}{\sqrt{2}},\frac{1}{2})$\\
+$\pi$&$(0,1)$\\
+$5\pi/4$&$(-\frac{1}{\sqrt{2}},\frac{1}{2})$\\
+$3\pi/2$&$(-1,0)$\\
+$7\pi/4$&$(-\frac{1}{\sqrt{2}},\frac{1}{2})$\\
+$2\pi$&$(0,1)$
+\end{tabular}\end{center}
+
+These points will repeat with a period of $2\pi$. With this information, we have a pretty good idea of the particle's motion:
+
+\begin{center}\begin{tikzpicture}
+\YEaaxis{3.5}{3.5}{.5}{4.5}
+%\draw[thick] plot[smooth, scale=3] coordinates {(-1,0) (-0.707,.5) (0,1) (0.707,.5) (1,0)};
+\draw[thick] plot[scale=3, domain=-1:1] (\x,{1-\x*\x});
+\foreach \Point in {(-3,0), (-2.1,1.5), (0,3), (2.1,1.5), (3,0)}
+	{\draw \Point node[vertex]{};}
+\draw (3,0) node[vertex, label=below:{$\atp{(1,0)}{t=\pi/2}$}]{};
+\draw (-3,0) node[vertex, label=below:{$\atp{(-1,0)}{t=3\pi/2}$}]{};
+\draw (0,3) node[vertex, label=above right:{$\atp{(0,1)}{t=0, \pi,2\pi}$}]{};
+\draw (-2.1,1.5) node[vertex, label=left:{$\atp{\left(-\frac{1}{\sqrt{2}},\frac{1}{2}\right)}{t= 5\pi/4,7\pi/4}$}]{};
+\draw (2.1,1.5) node[vertex, label=right:{$\atp{\left(\frac{1}{\sqrt{2}},\frac{1}{2}\right)}{t= \pi/4,3\pi/4}$}]{};\end{tikzpicture}\end{center}
+
+The particle traces out an arc, pointing down. It starts at $t=0$ at the top part of the graph at $(1,0)$, then is moves to the right until it hits $(1,0)$ at time $t=\pi/2$. From there it reverses direction and moves along the curve to the left, hitting the top at time $t=\pi$ and reaching $(-1,0)$ at time $t=3\pi/2$. Then it returns to the top at $t=2\pi$ and starts again.
+
+So, it starts at the top of the curve, then moves back for forth along the length of the curve. If goes right first, and repeats its cycle every $2\pi$ units of time.
+\medskip
+
+\eqref{s2.9_parametricwiggle2}
+Let $y=f(x)$ be the curve the particle traces in the $xy$-plane.  Since $x$ is a function of $t$, $y(t)=f(x(t))$. What we want to find is $\ds\diff{f}{x}$ when $t=\left(\dfrac{10\pi}{3}\right)$. Since $\ds\diff{f}{x}$ is a function of $x$, we note that when $t=\left(\dfrac{10\pi}{3}\right)$, $x=\sin\left(\dfrac{10\pi}{3}\right)=\sin\left(\dfrac{4\pi}{3}\right)=-\dfrac{\sqrt{3}}{2}$.  So, the quantity we want to find (the slope of the tangent line to the curve $y=f(x)$ traced by the particle at the time $t=\left(\dfrac{10\pi}{3}\right)$ is given by
+$\ds\diff{f}{x}\left(-\dfrac{\sqrt{3}}{2}\right)$.
+
+Using the chain rule:
+\begin{align*}
+y(t)&=f(x(t))\\
+\diff{y}{t}=\diff{}{t}\left\{f(x(t))\right\}&=\diff{f}{x}\cdot\diff{x}{t}\\
+\mbox{so, }\qquad\diff{f}{x}&=\diff{y}{t}\div \diff{x}{t}
+\intertext{Using $y(t)=\cos^2 t$ and $x(t)=\sin t$:}
+\diff{f}{x}&=\left(-2\cos t \sin t \right)\div\left( \cos t \right)=-2\sin t=-2x
+\intertext{So, when $t=\dfrac{10\pi}{3}$ and $x=-\dfrac{\sqrt{3}}{2},$}
+\diff{f}{x}\left(\dfrac{-\sqrt{3}}{2}\right)&=-2\cdot\frac{-\sqrt{3}}{2}=\sqrt{3}.
+\end{align*}
+
+Remark: The standard way to write this problem is to omit the notation $f(x)$, and let the variable $y$ stand for two functions. When $t$ is the variable, $y(t)=\cos^2t$ gives the $y$-coordinate of the particle at time $t$. When $x$ is the variable, $y(x)$ gives the $y$-coordinate of the particle given its position along the $x$-axis. This is an abuse of notation, because if we write $y(1)$, it is not clear whether we are referring to the $y$-coordinate of the particle when $t=1$ (in this case, $y=\cos^2 (1) \approx 0.3$), or the $y$-coordinate of the particle when $x=1$ (in this case, looking at our table of values, $y=0$). Although this notation is not strictly ``correct," it is very commonly used. So, you might see a solution that looks like this:
+\begin{quote}\color{blue}
+The slope of the curve is $\ds\diff{y}{x}$. To find $\ds\diff{y}{x}$, we use the chain rule:
+\begin{align*}
+\diff{y}{t}&=\diff{y}{x}\cdot\diff{x}{t}\\
+\diff{}{t}\left\{\cos^2 t\right\}&=\diff{y}{x}\cdot\diff{}{t}\{\sin t\}\\
+-2\cos t \sin t &= \diff{y}{x} \cdot \cos t\\
+\diff{y}{x}&=-2\sin t
+\intertext{So, when $t=\dfrac{10\pi}{3}$,}
+\diff{y}{x}&=-2\sin\left(\frac{10\pi}{3}\right)=-2\left(-\frac{\sqrt{3}}{2}\right)=\sqrt{3}.
+\end{align*}
+\end{quote}\color{black}
+
+In this case, it is up to the reader to understand when $y$ is used as a function of $t$, and when it is used as a function of $x$. This notation  (using $y$ to be two functions, $y(t)$ and $y(x)$) is actually the accepted standard, so you should be able to understand it.
+\end{solution}
+
+
+
+
+
+%\begin{question}
+%Suppose a gear of radius 1cm is connected to a gear of radius 2 cm, which in turn is connected to a gear of radius 3 cm. Let $A(t)$, $B(t)$, and $C(t)$ be the angular speed (measured in revolutions per minute, and neglecting direction) of the three gears, with $A(t)$ being the smallest gear and $C(t)$ the largest.
+%\begin{center}\begin{tikzpicture}
+%\draw(0,0) node[vertex]{};
+%\draw (0,0) node[shape=circle, minimum size=1cm, draw]{};
+%\draw (0,0)--(.5,0) node[midway, above]{1};
+%\draw[->] (-.25,-.75) arc (270:180:.5cm);
+%\draw(0,1.5) node[vertex]{};
+%\draw (0,1.5) node[shape=circle, minimum size=2cm, draw]{};
+%\draw (0,1.5)--(-1,1.5) node[midway, above]{2};
+%\draw[<-] (-.75,2.5) arc (135:45:1cm);
+%\draw(2.5,1.5) node[vertex]{};
+%\draw (2.5,1.5) node[shape=circle, minimum size=3cm, draw]{};
+%\draw (2.5,1.5)--(4,1.5) node[midway, above]{3};
+%\draw[->] (3.5,0) arc (-45:-135:1.5cm);
+%\end{tikzpicture}\end{center}
+%\begin{enumerate}[(a)]
+%\item\label{s2.9gears1} What is $\diff{B}{A}$?
+%\item\label{s2.9gears2} What is $\diff{C}{B}$?
+%\item\label{s2.9gears3} What is $\diff{C}{A}$?
+%\item\label{s2.9gears4} If the acceleration of the smallest gear doubles, what happens to the accelerations of the other two gears?
+%\end{enumerate}
+%\end{question}
+%\begin{answer}
+%\eqref{s2.9gears1} $\diff{B}{A}=\frac{1}{2}$\qquad
+%\eqref{s2.9gears2} $\diff{C}{B} = \frac{2}{3}$\qquad
+%\eqref{s2.9gears3} $\diff{C}{A}=\frac{1}{3}$\qquad
+%\eqref{s2.9gears4} $\diff{B}{t}$ and $\diff{C}{t}$ both double, as well.
+%\end{answer}
+%\begin{solution}
+%Since $A$, $B$, and $C$ are measured in revolutions per minute, we can figure out $A(B)$  ($A$ as a function of $B$) and $B(C)$ ($B$ as a function of $C$) easily. When the smallest gear makes one full rotation, a point on its outer edge has moved $2\pi$ centimetres; so a point on the outer edge of the middle gear has also moved $2\pi$ centimetres, which is half a revolution. So $B(A)=\frac{A}{2}$. Similarly, when the middle gear makes one rotation, the largest gear only makes $\frac{2}{3}$ of a rotation. So, $C(B)=\frac{2B}{3}$. This tells us directly \eqref{s2.9gears1} and \eqref{s2.9gears2}.\\
+%\eqref{s2.9gears1} \[\diff{B}{A} = \diff{}{A}\left[\dfrac{A}{2}\right]=\frac{1}{2}.\]
+%\eqref{s2.9gears2} \[\diff{C}{B}=\diff{}{B}\left[\dfrac{2B}{3}\right]=\frac{2}{3}.\]
+%\eqref{s2.9gears3} In order to find $\diff{C}{A}$, we can write $C$ as a function of $A$, or we can use the chain rule. Both give the same answer.
+%\begin{itemize}
+%\item $C=\frac{2}{3}B=\frac{2}{3} \cdot \frac{1}{2} \cdot A = \frac{1}{3}A$, so $\diff{C}{A}=\frac{1}{3}$.
+%\item $\diff{C}{A}=\diff{C}{B}\cdot\diff{B}{A}=\frac{2}{3}\cdot\frac{1}{2}=\frac{1}{3}$
+%\end{itemize}
+%\eqref{s2.9gears4} Acceleration is the derivative of speed with respect to time. So, the acceleration of the smallest gear is $\diff{A}{t}$, where $t$ is time. The question asks what happens to $\diff{B}{t}$ and $\diff{C}{t}$ when $\diff{A}{t}$ doubles. We can answer this using the chain rule, and our previous work. The chain rule tells us $\diff{B}{t}=\diff{B}{A}\cdot\diff{A}{t}$; since $\diff{B}{A}$ is a constant, when $\diff{A}{t}$ doubles, so does $\diff{B}{t}$. Likewise, since $\diff{C}{A}$ is a constant, when $\diff{A}{t}$ doubles, so does $\diff{C}{t}=\diff{C}{A}\cdot\diff{A}{t}$.
+%\end{solution}

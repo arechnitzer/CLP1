@@ -1,0 +1,751 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s2.8}
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion}
+Graph sine and cosine on the same axes, from $x=-2\pi$ to $x=2\pi$. Mark the points where $\sin x$ has a horizontal tangent. What do these points correspond to, on the graph of cosine?
+\end{Mquestion}
+\begin{hint}
+A horizontal tangent line is where the graph appears to ``level off."
+\end{hint}
+\begin{answer}
+\begin{center}\begin{tikzpicture}
+\YEaxis{7}{1.2}
+\draw (3.1,.2)--(3.1,-.2) node[below]{$\pi$};
+\draw (-3.1,.2)--(-3.1,-.2) node[below]{$-\pi$};
+\draw[thick, blue] plot[domain=-6.28:0](\x,{sin \x r});
+\draw[thick, blue] plot[domain=-6.28:0](\x+6.28,{sin \x r}) node[above]{$y=\sin x$};
+\foreach \x in {-4.71,1.57}
+	{\draw[blue] ( \x,1) node[vertex]{};
+	\draw[blue, dashed] (\x-.75,1)--(\x+.75,1);}
+\foreach \x in {4.71,-1.57}
+	{\draw[blue] ( \x,-1) node[vertex]{};
+	\draw[blue, dashed] (\x-.75,-1)--(\x+.75,-1);}
+\draw[thick, red] plot[domain=-6.28:0](\x,{cos \x r});
+\draw[thick, red] plot[domain=-6.28:0](\x+6.28,{cos \x r}) node[above]{$y=\cos x$};
+\foreach \x in {-4.71,4.71,1.57,-1.57}
+	{\draw[red] (\x,0) node[vertex]{};}
+\end{tikzpicture}\end{center}
+The graph $f(x)=\sin x$ has horizontal tangent lines precisely at those points where $\cos x=0$.
+\end{answer}
+\begin{solution}
+\begin{center}\begin{tikzpicture}
+\YEaxis{7}{1.2}
+\draw (3.1,.2)--(3.1,-.2) node[below]{$\pi$};
+\draw (-3.1,.2)--(-3.1,-.2) node[below]{$-\pi$};
+\draw[thick, blue] plot[domain=-6.28:0](\x,{sin \x r});
+\draw[thick, blue] plot[domain=-6.28:0](\x+6.28,{sin \x r}) node[above]{$y=\sin x$};
+\foreach \x in {-4.71,1.57}
+	{\draw[blue] ( \x,1) node[vertex]{};
+	\draw[blue, dashed] (\x-.75,1)--(\x+.75,1);}
+\foreach \x in {4.71,-1.57}
+	{\draw[blue] ( \x,-1) node[vertex]{};
+	\draw[blue, dashed] (\x-.75,-1)--(\x+.75,-1);}
+\draw[thick, red] plot[domain=-6.28:0](\x,{cos \x r});
+\draw[thick, red] plot[domain=-6.28:0](\x+6.28,{cos \x r}) node[above]{$y=\cos x$};
+\foreach \x in {-4.71,4.71,1.57,-1.57}
+	{\draw[red] (\x,0) node[vertex]{};}
+\end{tikzpicture}\end{center}
+The graph $f(x)=\sin x$ has horizontal tangent lines precisely at those points where $\cos x=0$. This must be true, since $\diff{}{x}\{\sin x\}=\cos x$: where the derivative of sine is zero, cosine itself is zero.
+\end{solution}
+
+\begin{Mquestion}
+Graph sine and cosine on the same axes, from $x=-2\pi$ to $x=2\pi$. Mark the points where $\sin x$ has a tangent line of maximum (positive) slope. What do these points correspond to, on the graph of cosine?
+\end{Mquestion}
+\begin{hint}
+You are going to mark there points on the sine graph where the graph is the steepest, going up.
+\end{hint}
+\begin{answer}
+\begin{center}\begin{tikzpicture}
+\YEaxis{7}{1.2}
+\draw (3.1,.2)--(3.1,-.2) node[below]{$\pi$};
+\draw (-3.1,.2)--(-3.1,-.2) node[below]{$-\pi$};
+\draw[thick, blue] plot[domain=-6.28:0](\x,{sin \x r});
+\draw[thick, blue] plot[domain=-6.28:0](\x+6.28,{sin \x r}) node[above]{$y=\sin x$};
+\foreach \x in {-6.28,0,6.28}
+	{\draw[blue] ( \x,0) node[vertex]{};
+	\draw[blue, dashed] (\x-1,-1)--(\x+1,1);}
+\draw[thick, red] plot[domain=-6.28:0](\x,{cos \x r});
+\draw[thick, red] plot[domain=-6.28:0](\x+6.28,{cos \x r}) node[above]{$y=\cos x$};
+\foreach \x in {-6.28,0,6.28}
+	{\draw[red] (\x,1) node[vertex]{};}
+\end{tikzpicture}\end{center}
+The graph $f(x)=\sin x$ has maximum slope at those points where $\cos x$ has a maximum. That is, where $\cos x = 1$.
+\end{answer}
+\begin{solution}
+\begin{center}\begin{tikzpicture}
+\YEaxis{7}{1.2}
+\draw (3.1,.2)--(3.1,-.2) node[below]{$\pi$};
+\draw (-3.1,.2)--(-3.1,-.2) node[below]{$-\pi$};
+\draw[thick, blue] plot[domain=-6.28:0](\x,{sin \x r});
+\draw[thick, blue] plot[domain=-6.28:0](\x+6.28,{sin \x r}) node[above]{$y=\sin x$};
+\foreach \x in {-6.28,0,6.28}
+	{\draw[blue] ( \x,0) node[vertex]{};
+	\draw[blue, dashed] (\x-1,-1)--(\x+1,1);}
+\draw[thick, red] plot[domain=-6.28:0](\x,{cos \x r});
+\draw[thick, red] plot[domain=-6.28:0](\x+6.28,{cos \x r}) node[above]{$y=\cos x$};
+\foreach \x in {-6.28,0,6.28}
+	{\draw[red] (\x,1) node[vertex]{};}
+\end{tikzpicture}\end{center}
+The graph $f(x)=\sin x$ has maximum slope at those points where $\cos x$ has a maximum. This makes sense, because $f'(x)=\cos x$: the maximum values of the slope of sine correspond to the maximum values of cosine.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{question}
+Differentiate $f(x)=\sin x + \cos x +\tan x$.
+\end{question}
+\begin{hint}
+You need to memorize the derivatives of sine, cosine, and tangent.
+\end{hint}
+\begin{answer}
+$f'(x)=\cos x - \sin x + \sec^2 x$
+\end{answer}
+\begin{solution}
+You should memorize the derivatives of sine, cosine, and tangent.\\
+$f'(x)=\cos x - \sin x + \sec^2 x$
+\end{solution}
+
+
+\begin{Mquestion}
+For which values of $x$ does the function $f(x)=\sin x + \cos x$ have a horizontal tangent?
+\end{Mquestion}
+\begin{hint}
+There are infinitely many values. You need to describe them all.
+\end{hint}
+\begin{answer}
+$x=\frac{\pi}{4}+\pi n$, for any integer $n$.
+\end{answer}
+\begin{solution}
+$f'(x)=\cos x - \sin x$, so $f'(x)=0$ precisely when $\sin x = \cos x$. This happens at $\pi/4$, but it also happens at $5\pi/4$. By looking at the unit circle, it is clear that $\sin x = \cos x$ whenever $x = \frac{\pi}{4}+\pi n$ for some integer $n$.
+\begin{center}
+\begin{tikzpicture}
+\YEaxis{2.75}{2.75}
+\draw[thick] node[shape=circle, minimum size=4cm, draw, inner sep=0]{};
+\draw[dashed] (-2.75,-2.75)--(2.75,2.75);
+\draw (1.41,1.41) node[vertex, label=right:{$\sin (\pi/4) = \cos (\pi/4)$}]{};
+\draw (-1.41,-1.41) node[vertex, label=left:{$\sin (5\pi/4) = \cos (5\pi/4)$}]{};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+
+
+\begin{Mquestion}
+Differentiate $f(x)=\sin^2 x + \cos^2 x$.
+\end{Mquestion}
+\begin{hint}
+Simplify first.
+\end{hint}
+\begin{answer}
+0
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item Solution 1: $f(x)=\sin^2x+\cos^2x=1$, so $f'(x)=\diff{}{x}\{1\}=0$.
+\item Solution 2: Using the formula for the derivative of a squared function,
+\begin{align*}
+f'(x)=2\sin x \cos x + 2\cos x(- \sin x)=2\sin x \cos x - 2 \sin x \cos x =0.
+\end{align*}
+\end{itemize}
+\end{solution}
+
+
+\begin{question}
+Differentiate $f(x)=2\sin x \cos x$.
+\end{question}
+\begin{hint}
+The identity won't help you.
+\end{hint}
+\begin{answer}
+$f'(x)=2(\cos^2 x - \sin ^2 x)$
+\end{answer}
+\begin{solution}
+It is true that $2\sin x \cos x = \sin (2x)$, but we don't know the derivative of $\sin(2x)$. So, we use the product rule: \[f'(x)=2\cos x \cos x+2\sin x (-\sin x)=2(\cos^2 x - \sin ^2 x).\]
+\end{solution}
+
+
+\begin{question}
+Differentiate $f(x)=e^x\cot x$.
+\end{question}
+\begin{answer}
+$f'(x)=e^x(\cot x - \csc^2 x)$
+\end{answer}
+\begin{solution}
+\begin{itemize}
+\item Solution 1:
+ using the product rule,
+\[f'(x)=e^x\cot x + e^x(-\csc^2 x)=e^x(\cot x - \csc^2 x).\]
+\item Solution 2:
+using the formula from Question~\ref{s2.7expprod}, Section~\ref*{sec exp func},
+\[f'(x)=e^x(\cot x - \csc^2 x).\]
+\end{itemize}
+\end{solution}
+
+
+\begin{Mquestion}
+Differentiate $f(x) = \dfrac{2\sin x + 3 \tan x}{\cos x + \tan x}$
+\end{Mquestion}
+\begin{hint}
+Quotient rule
+\end{hint}
+\begin{answer}
+$f'(x)=\dfrac{2+3 \sec x + 2 \sin x -2\tan x \sec x+3\sin x \tan x }{(\cos x + \tan x)^2}$
+\end{answer}
+\begin{solution}
+We use the quotient rule.
+\begin{align*}
+f'(x)&=\dfrac{(\cos x + \tan x)(2\cos x + 3 \sec^2 x)-(2\sin x+3\tan x)(-\sin x + \sec^2 x)}{(\cos x + \tan x)^2}\\
+&=\frac{2\cos^2x+3\cos x \sec^2 x + 2 \cos x \tan x + 3 \tan x \sec^2 x}{(\cos x + \tan x)^2}\\
+&~~~~
++\frac{2\sin^2x-2\sin x \sec^2x+3\sin x \tan x -3\tan x \sec^2 x}{(\cos x + \tan x)^2}\\
+&=\frac{2+3 \sec x + 2 \sin x -2\tan x \sec x+3\sin x \tan x }{(\cos x + \tan x)^2}
+\end{align*}
+\end{solution}
+
+\begin{Mquestion}
+Differentiate $f(x) = \dfrac{5\sec x+1}{e^x}$.
+\end{Mquestion}
+\begin{answer}
+$f'(x)=\dfrac{5\sec x \tan x - 5 \sec x - 1}{e^x}$
+\end{answer}
+\begin{solution}
+We use the quotient rule.
+\begin{align*}
+f'(x) &= \frac{e^x(5\sec x \tan x)-(5\sec x + 1) e^x}{(e^{x})^2}\\
+&=\frac{5\sec x \tan x - 5 \sec x - 1}{e^x}
+\end{align*}
+\end{solution}
+
+\begin{question}
+Differentiate $f(x)=(e^x+\cot x)(5x^6-\csc x)$.
+\end{question}
+\begin{answer}
+$f'(x)=(e^x+\cot x)(30x^5+\csc x \cot x)+(e^x-\csc^2x)(5x^6-\csc x)$
+\end{answer}
+\begin{solution}
+We use the product rule:
+\begin{align*}
+f'(x)&=(e^x+\cot x)(30x^5+\csc x \cot x)+(e^x-\csc^2x)(5x^6-\csc x)
+\end{align*}
+\end{solution}
+
+\begin{question}
+Differentiate $f(\theta)=\sin\left(\frac{\pi}{2}-\theta \right)$.
+\end{question}
+\begin{hint}
+Use an identity.
+\end{hint}
+\begin{answer}
+$-\sin(\theta)$
+\end{answer}
+\begin{solution}
+We don't know how to differentiate this function as it is written, but an identity helps us.
+Since $\sin\left(\frac{\pi}{2}-\theta \right)=\cos \theta$, we see
+$f'(\theta)=\diff{}{\theta}\{\cos \theta\}=-\sin(\theta)$.
+\end{solution}
+
+\begin{question}
+Differentiate $f(x)=\sin(-x)+\cos(-x)$.
+\end{question}
+\begin{hint}
+How can you move the negative signs to a location that you can more easily deal with?
+\end{hint}
+\begin{answer}
+$f'(x)=-\cos x - \sin x$
+\end{answer}
+\begin{solution}
+We know the derivative of $\sin x$, but not of $\sin(-x)$. So we re-write $f(x)$ using identities:
+\begin{align*}
+f(x)&=\sin(-x)+\cos(-x)\\
+&=-\sin x + \cos x\\
+f'(x)&=-\cos x - \sin x
+\end{align*}
+\end{solution}
+
+
+\begin{question}
+Differentiate $s(\theta)=\dfrac{\cos \theta + \sin \theta}{\cos \theta - \sin\theta}$.
+\end{question}
+\begin{hint} Apply the quotient rule.
+\end{hint}
+\begin{answer}
+$\left(\dfrac{\cos\theta+\sin\theta}{\cos\theta-\sin\theta}\right)^2+1$
+\end{answer}
+\begin{solution}
+We apply the quotient rule.
+\begin{align*}
+s'(\theta)&=\frac{(\cos \theta-\sin\theta)(-\sin\theta+\cos\theta)-(\cos\theta+\sin\theta)(-\sin\theta-\cos\theta)}{(\cos\theta-\sin\theta)^2}\\
+&=\frac{(\cos \theta-\sin\theta)^2+(\cos\theta+\sin\theta)^2}{(\cos\theta-\sin\theta)^2}\\
+&=1+\left(\frac{\cos\theta+\sin\theta}{\cos\theta-\sin\theta}\right)^2
+\end{align*}
+\end{solution}
+
+
+\begin{question}[2007H]
+Find the values of the constants $a$ and $b$ for which
+\[
+f(x) = \left\{
+	\begin{array}{cc} \cos(x) & x\le 0\\
+               ax + b   &  x> 0\end{array}
+               \right.
+\]
+is differentiable everywhere.
+\end{question}
+\begin{hint}
+The only spot to worry about is when $x=0$. For $f(x)$ to be differentiable, it must be continuous, so first find the value of $b$ that makes $f$ continuous at $x=0$. Then, find the value of $a$ that makes the derivatives from the left and right of $x=0$ equal to each other.
+\end{hint}
+\begin{answer}
+$a=0$, $b=1$.
+\end{answer}
+\begin{solution}
+In order for $f$ to be differentiable at $x=0$, it must also
+be continuous at $x=0$. This forces
+\[
+\lim_{x\to 0^-}f(x) =  \lim_{x\to 0^+}f(x) =f(0)\qquad\text{or}\qquad
+\lim_{x\to 0^-}\cos(x) =  \lim_{x\to 0^+}(ax+b) =1
+\]
+or $b=1$. In order for $f$ to be differentiable at $x=0$, we need the limit
+\[
+\lim_{h\to 0}\frac{f(0+h)-f(0)}{h}
+\]
+to exist. This is the case if and only if the two one--sided limits
+\begin{align*}
+\lim_{h\to 0^-}\frac{f(0+h)-f(0)}{h}
+&=\lim_{h\to 0^-}\frac{\cos(h)-\cos(0)}{h}
+\intertext{and}
+\lim_{h\to 0^+}\frac{f(0+h)-f(0)}{h}
+&=\lim_{h\to 0^+}\frac{(ah+b)-\cos(0)}{h}
+=a\qquad\text{since $b=1$}
+\intertext{exist and are equal.
+Because $\cos(x)$ is differentiable at $x=0$ we have}
+\lim_{h\to 0^-}\frac{\cos(h)-\cos(0)}{h} &= \diff{}{x}\cos(x)\bigg|_{x=0}
+                                         = -\sin(x)\Big|_{x=0}=0
+\end{align*}
+So, we need $a=0$ and $b=1$.
+\end{solution}
+
+
+
+
+\begin{Mquestion}[2015Q]
+Find the equation of the line tangent to the graph of $y=\cos(x)+2x$ at
+$x=\dfrac{\pi}{2}$.
+\end{Mquestion}
+\begin{answer} $y -  \pi = 1\cdot (x-\pi/2)$
+\end{answer}
+\begin{solution}
+We compute the derivative of $\cos(x)+2x$ as being $-\sin(x)+2$, which evaluated at
+$x=\frac{\pi}{2}$ yields $-1+2=1$. Since we also compute
+$\cos(\pi/2)+2(\pi/2)=0+\pi$, then the equation of the tangent line is
+\begin{align*}
+y -  \pi = 1\cdot (x-\pi/2).
+\end{align*}
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+\begin{question}[2015Q]
+ Evaluate $\displaystyle \lim_{x\to \pi/3}\left(
+\dfrac{\cos(x)-1/2}{x-\pi/3}\right).$  Use any method.
+\end{question}
+\begin{hint} This looks like a derivative that you know how to compute.
+\end{hint}
+\begin{answer}  $-\sqrt{3}/2$
+\end{answer}
+\begin{solution}
+This limit represents the derivative computed at $x=\pi/3$ of the function
+$f(x)=\cos x$. Since the derivative of $f(x)$ is $-\sin x$, then its
+value at $x=\pi/3$ is exactly $-\sqrt{3}/2$.
+\end{solution}
+
+\begin{question}
+Show how you can use the quotient rule to find the derivative of tangent, if you already know the derivatives of sine and cosine.
+\end{question}
+\begin{hint}
+$\tan \theta = \dfrac{\sin \theta}{\cos \theta}$
+\end{hint}
+\begin{answer}
+\begin{align*}
+\tan \theta &= \dfrac{\sin \theta}{\cos \theta}
+\intertext{So, using the quotient rule,}
+\diff{}{\theta}\{\tan \theta\}&=\frac{\cos\theta\cos\theta-\sin\theta(-\sin\theta)}{\cos^2\theta}
+=\frac{\cos^2\theta+\sin^2\theta}{\cos^2\theta}\\
+&=\left(\frac{1}{\cos \theta}\right)^2=\sec^2\theta
+\end{align*}
+\end{answer}
+\begin{solution}
+\begin{align*}
+\tan \theta &= \dfrac{\sin \theta}{\cos \theta}
+\intertext{So, using the quotient rule,}
+\diff{}{\theta}\{\tan \theta\}&=\frac{\cos\theta\cos\theta-\sin\theta(-\sin\theta)}{\cos^2\theta}
+=\frac{\cos^2\theta+\sin^2\theta}{\cos^2\theta}\\
+&=\left(\frac{1}{\cos \theta}\right)^2=\sec^2\theta
+\end{align*}
+\end{solution}
+
+
+\begin{question}[1997A]
+ The derivative of the function
+\[
+f(x)=\left\{\begin{array}{ll}
+ax+b& \mbox{for }x<0\\
+            \frac{6\cos x}{2+\sin x+\cos x}& \mbox{for }x\ge 0
+\end{array}\right.
+\]
+exists and is continuous for all $x$. Determine the values of the constants
+$a$ and $b$.
+\end{question}
+\begin{hint} In order for a derivative to exist, the function must be continuous, and the derivative from the left must equal the derivative from the right.
+\end{hint}
+\begin{answer} $a=-\frac{2}{3}$, $b=2$
+\end{answer}
+\begin{solution}  In order for the function $f(x)$ to be continuous at $x=0$,
+the left half formula $ax+b$ and the right half formula
+$\dfrac{6\cos x}{2+\sin x+\cos x}$ must match up at $x=0$. This
+forces
+$$
+a\times 0+b=\frac{6\cos 0}{2+\sin 0+\cos 0}=\frac{6}{3}
+\implies \boxed{b=2}
+$$
+
+In order for the derivative $f'(x)$ to exist at $x=0$,
+the limit $\ds\lim_{h \rightarrow 0} \dfrac{f(h)-f(0)}{h}$ must exist. In particular,
+the limits $\ds\lim_{h \rightarrow 0^-} \dfrac{f(h)-f(0)}{h}$
+and
+$\ds\lim_{h \rightarrow 0^+} \dfrac{f(h)-f(0)}{h}$ must exist and be equal to each other.
+
+When $h \to 0^-$, this means $h<0$, so $f(h)=ah+b=ah+2$. So:
+\[\ds\lim_{h\to 0^-}\dfrac{f(h)-f(0)}{h}=\ds\lim_{h\to 0^-}\dfrac{(ah+2)-2}{h}=\left.\ds\diff{}{x}\left\{ax+2\right\}\right|_{x=0}=a.\]
+
+Similarly, when $h \to 0^+$, then $h>0$, so $f(h)=\dfrac{6\cos h}{1+\sin h + \cos h}$ ~~and \begin{align*}
+\ds\lim_{h \rightarrow 0^+} \dfrac{f(h)-f(0)}{h} &= \left.\ds\diff{}{x}\left\{\dfrac{6\cos x}{2+\sin x + \cos x}\right\}\right|_{x=0}
+\\&=\left.\frac{-6\sin x(2+\sin x+\cos x)-6\cos x(\cos x-\sin x)}{(2+\sin x+\cos x)^2}\right|_{x=0}.\end{align*}
+
+Since the limits from the left and right must be equal, this forces
+$$
+a=\frac{-6\sin 0(2+\sin 0+\cos 0)-6\cos 0(\cos 0-\sin 0)}{(2+\sin 0+\cos 0)^2}
+=\frac{-6}{(2+1)^2}\implies\boxed{a=-\frac{2}{3}}
+$$
+\end{solution}
+
+
+\begin{question}[2015Q]
+For which values of $x$ does the derivative of $f(x) = \tan x$ exist?
+\end{question}
+\begin{hint}
+There are infinitely many places where it does \emph{not} exist.
+\end{hint}
+\begin{answer}
+All values of $x$ except $x=\frac{\pi}{2}+n\pi$, for any integer $n$.
+\end{answer}
+\begin{solution}
+In order for $f'(x)$ to exist, $f(x)$ has to exist. We already know that $\tan x $ does not exist whenever $x=\frac{\pi}{2}+n\pi$ for any integer $n$. If we look a little deeper, since $\tan x = \frac{\sin x}{\cos x}$, the points where tangent does not exist correspond exactly to the points where cosine doesn't exist.
+
+From its graph, tangent looks like a smooth curve over its domain, so we might guess that everywhere tangent is defined, its derivative is defined. We can check this: $f'(x) = \sec^2 x = \left(\frac{1}{\cos x}\right)^2$. Indeed, wherever $\cos x$ is nonzero, $f'$ exists.
+
+So, $f'(x)$ exists for all values of $x$ \emph{except} when $x=\frac{\pi}{2}+n\pi$ for some integer $n$.
+\end{solution}
+
+
+\begin{Mquestion}[2015Q]
+For what values of $x$ does the derivative of
+$\dfrac{10\sin(x)}{x^2+x-6}$ exist? Explain your answer.
+\end{Mquestion}
+\begin{answer}
+The function is differentiable whenever $x^2+x-6\ne 0$ since the derivative equals
+\begin{align*}
+\frac{10\cos(x)\cdot (x^2+x-6)-10\sin(x)\cdot (2x+1)}{(x^2+x-6)^2},
+\end{align*}
+which is well-defined unless $x^2+x-6=0$. We solve $x^2+x-6=(x-2)(x+3)=0,$
+and get $x=2$ and $x=-3$. So, the function is differentiable for all real values $x$ except for $x=2$ and for $x=-3$.
+\end{answer}
+\begin{solution}
+The function is differentiable whenever $x^2+x-6\ne 0$ since the derivative equals
+\begin{align*}
+\frac{10\cos(x)\cdot (x^2+x-6)-10\sin(x)\cdot (2x+1)}{(x^2+x-6)^2},
+\end{align*}
+which is well-defined unless $x^2+x-6=0$. We solve $x^2+x-6=(x-2)(x+3)=0,$
+and get $x=2$ and $x=-3$. So, the function is differentiable for all real values $x$ except for $x=2$ and for $x=-3$.
+\end{solution}
+
+
+
+\begin{question}[test]
+For what values of $x$ does the derivative of
+$\dfrac{x^2+6x+5}{\sin(x)}$ exist? Explain your answer.
+\end{question}
+\begin{answer}
+The function is differentiable whenever $\sin(x)\ne 0$ since the derivative equals
+\begin{align*}
+\frac{\sin(x)\cdot (2x+6) - \cos(x)\cdot (x^2+6x+5)}{(\sin x)^2},
+\end{align*}
+which is well-defined unless $\sin x = 0$. This happens when $x$ is an integer multiple
+of $\pi$. So, the function is differentiable for all real values $x$ except $x=n\pi,$, where $n$ is any integer.
+\end{answer}
+\begin{solution}
+The function is differentiable whenever $\sin(x)\ne 0$ since the derivative equals
+\begin{align*}
+\frac{\sin(x)\cdot (2x+6) - \cos(x)\cdot (x^2+6x+5)}{(\sin x)^2},
+\end{align*}
+which is well-defined unless $\sin x = 0$. This happens when $x$ is an integer multiple
+of $\pi$. So, the function is differentiable for all real values $x$ except $x=n\pi,$, where $n$ is any integer.
+\end{solution}
+
+
+\begin{question}[2015Q]
+ Find the equation of the line tangent to the graph of $y=\tan(x)$ at
+$x=\dfrac{\pi}{4}$.
+\end{question}
+\begin{answer}
+$y -  1 = 2\cdot (x-\pi/4)$
+\end{answer}
+\begin{solution}
+We compute the derivative of $\tan(x)$ as being $\sec^2(x)$, which evaluated at
+$x=\frac{\pi}{4}$ yields $2$. Since we also compute
+$\tan(\pi/4)=1$, then the equation of the tangent line is
+\begin{align*}
+y -  1 = 2\cdot (x-\pi/4).
+\end{align*}
+\end{solution}
+
+
+\begin{question}[2015Q]
+Find the equation of the line tangent to the graph of $y=\sin(x)+\cos(x)+e^x$
+at
+$x=0$.
+\end{question}
+\begin{answer} $y=2x+2$
+\end{answer}
+\begin{solution}
+We compute the derivative $y' = \cos(x)-\sin(x)+e^x$, which evaluated at
+$x=0$ yields $1-0+1 = 2$. Since we also compute $y(0)=0+1+1=2$, the equation of the
+tangent line is
+\begin{align*}
+y -  2 = 2(x-0)
+\end{align*}
+ie $y=2x+2$.
+\end{solution}
+
+
+\begin{question}
+For which values of $x$ does the function $f(x)=e^x\sin x$ have a horizontal tangent line?
+\end{question}
+\begin{answer}
+$x = \frac{3\pi}{4}+n\pi$ for any integer $n$.
+\end{answer}
+\begin{solution}
+We are asked to solve $f'(x)=0$. That is, $e^x[\sin x +  \cos x]=0$. Since $e^x$ is always positive, that means we need to find all points where $\sin x + \cos x =0$. That is, we need to find all values of $x$ where $\sin x = - \cos x$. Looking at the unit circle, we see this happens whenever $x = \frac{3\pi}{4}+n\pi$ for any integer $n$.
+\begin{center}
+\begin{tikzpicture}
+\YEaxis{2.75}{2.75}
+\draw[thick] node[shape=circle, minimum size=4cm, draw, inner sep=0]{};
+\draw[dashed] (2.75,-2.75)--(-2.75,2.75);
+\draw (1.41,-1.41) node[vertex, label=right:{$\sin (-\pi/4) = -\cos (-\pi/4)$}]{};
+\draw (-1.41,1.41) node[vertex, label=left:{$\sin (3\pi/4) = -\cos (3\pi/4)$}]{};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+
+%%%
+%%% Andrew - extra problem starts here
+%%%
+
+\begin{question}
+Let
+\[f(x)=\left\{\begin{array}{ccc}
+\frac{\sin x}{x}&,&x \neq 0\\
+1&,&x=0
+\end{array}\right.\]
+Find $f'(0)$, or show that it does not exist.
+\end{question}
+\begin{hint}
+You can set up the derivative using the limit definition: $f'(0)=\ds\lim_{h \to 0}\dfrac{f(h)-f(0)}{h}$. If the limit exists, it gives you $f'(0)$; if the limit does not exist, you conclude $f'(0)$ does not exist.
+
+To evaluate the limit, recall that when we differentiated sine, we learned that for $h$ near 0,
+\[\cos h \leq \frac{\sin h}{h}\leq 1\]
+\end{hint}
+\begin{answer}
+$f'(0)=0$
+\end{answer}
+\begin{solution}
+First, we note that our function is continuous, because
+\[\lim_{x \to 0} f(x)=\lim_{x \to 0} \frac{\sin x}{x}=1=f(0)\]
+This is a handy thing to check: if the function were discontinuous at $x=0$, then we would automatically know that it was not differentiable there.
+
+Now, on to the derivative. We can use the limit definition:
+\begin{align*}
+f'(0)&=\lim_{h \to 0}\frac{f(0+h)-f(0)}{h}\qquad\mbox{ if it exists}\\
+&=\lim_{h \to 0} \frac{f(h)-1}{h}\\
+&=\lim_{h \to 0} \frac{\frac{\sin h}{h}-1}{h}
+\end{align*}
+As $h$ approaches 0, both the numerator and the denominator approach 0. So, to evaluate the limit, we need to do more work. The key insight we can use is a result that was shown in the text while evaluating the derivative of sine. When $h$ is close to 0, $\cos h \leq \frac{\sin h}{h} \leq 1$. We use this to bound our limit, and then apply the squeeze theorem.
+\begin{align*}
+&\cos h&&\leq&&\frac{\sin h}{h}&&\leq&&1\\
+\mbox{So, }\qquad&\frac{\cos h-1}{h}&&\leq&&\frac{\frac{\sin h}{h}-1}{h}&&\leq&&\frac{1-1}{h}=0
+\end{align*}
+We evaluate the limits of the bounds. For the lower bound, notice its similarity to the definition of the derivative.
+\begin{align*}
+\lim_{h \to 0}\frac{\cos h-1}{h}&=\lim_{h \to 0}\frac{\cos(0+h)-\cos(0)}{h}\\
+&=\diff{}{x}\left.\left\{\cos x \right\}\right|_{x=0}=0\\
+\lim_{h \to 0}0&=0
+\end{align*}
+So, by the Squeeze Theorem, $f'(0)=\ds\lim_{h \to 0}\frac{\frac{\sin h}{h}-1}{h}=0$.
+\end{solution}
+
+%%%
+%%% Andrew - extra problem ends here
+%%%
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{Application of Understanding}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{question}[2010H]
+Differentiate the function \[h(x) = \sin(|x|)\] and give the domain where the derivative exists.
+\end{question}
+\begin{hint}
+Recall $|x|=\left\{\begin{array}{rl}
+x&x\ge 0\\
+-x&x<0
+\end{array}\right.$. To determine whether $h(x)$ is differentiable at $x=0$, use the definition of the derivative.
+\end{hint}
+\begin{answer}
+$h'(x)=\left\{\begin{array}{rl}
+\cos x&x> 0\\
+-\cos x&x<0
+\end{array}\right.$ It exists for all $x \neq 0$.
+\end{answer}
+\begin{solution}
+As usual, when dealing with the absolute value function, we can make things a little clearer by splitting it up into two pieces.
+\begin{align*}
+|x|&=\left\{\begin{array}{rl}
+x&x\ge 0\\
+-x&x<0
+\end{array}\right.\intertext{So,}
+\sin|x|&=\left\{\begin{array}{rl}
+\sin x&x\ge 0\\
+\sin(-x)&x<0
+\end{array}\right.
+=\left\{\begin{array}{rl}
+\sin x&x\ge 0\\
+-\sin x&x<0
+\end{array}\right.
+\intertext{where we used the identity $\sin(-x)=-\sin x$. From here, it's easy to see $h'(x)$ when $x$ is anything \emph{other than} zero.}
+\diff{}{x}\{\sin|x|\}&=\left\{\begin{array}{rl}
+\cos x&x> 0\\
+??&x=0\\
+-\cos x&x<0
+\end{array}\right.
+\intertext{To decide whether $h(x)$ is differentiable at $x=0$, we use the definition of the derivative. One word of explanation: usually in the definition of the derivative, $h$ is the tiny ``change in $x$" that is going to zero. Since $h$ is the name of our function, we need another letter to stand for the tiny change in $x$, the size of which is tending to zero. We chose $t$.}
+\lim_{t \to 0} \frac{h(t+0)-h(0)}{t}&=\lim_{t \to 0}\frac{\sin|t|}{t}
+\intertext{We consider the behaviour of this function to the left and right of $t=0$:}
+\frac{\sin |t|}{t}&=\left\{\begin{array}{ll}
+\frac{\sin t}{t} & t\ge 0\\
+\frac{\sin (-t)}{t} & t <0
+\end{array}\right.
+=\left\{\begin{array}{ll}
+\frac{\sin t}{t} & t\ge 0\\
+-\frac{\sin t}{t} & t <0
+\end{array}\right.
+\intertext{Since we're evaluating the limit as $t$ goes to zero, we need the fact that $\ds\lim_{t \to 0}\dfrac{\sin t}{t}=1$.
+We saw this in Section~\ref*{sec exp func}, but also we know enough now to evaluate it another way. Using the definition of the derivative: }
+\lim_{t \to 0}\frac{\sin t}{t}&=\lim_{t \to 0}\frac{\sin (t+0)-\sin (0)}{t}=\left.\diff{}{x}\{\sin x\}\right|_{t=0}=\cos 0=1
+\intertext{At any rate, since we know $\ds\lim_{t \to 0}\dfrac{\sin t}{t}=1$, then:}
+\lim_{t \to 0^+} \frac{h(t+0)-h(0)}{t}&=\lim_{t \to 0^+}\frac{\sin t}{t}=1\qquad
+\lim_{t \to 0^-} \frac{h(t+0)-h(0)}{t}=\lim_{t \to 0^-}\frac{-\sin t}{t}=-1
+\intertext{So, since the one-sided limits disagree,}
+\lim_{t \to 0} \frac{h(t+0)-h(0)}{t}&=DNE
+\intertext{so $h(x)$ is not differentiable at $x=0$. Therefore,}
+h'(x)&=\left\{\begin{array}{rl}
+\cos x&x> 0\\
+-\cos x&x<0
+\end{array}\right.
+\end{align*}
+
+\end{solution}
+
+
+\begin{Mquestion}[2006H]
+For the function
+\[
+f(x) =\left\{\begin{array}{ll} 0 & x\le 0\\
+               \frac{\sin(x)}{\sqrt{x}} & x > 0\end{array}\right.
+\]
+
+which of the following statements is correct?
+\begin{enumerate}[i.]
+\item\label{s2.8_2006i} $f$ is undefined at $x = 0$.
+\item\label{s2.8_2006ii}  $f$ is neither continuous nor differentiable at $x = 0$.
+\item\label{s2.8_2006iii}  $f$ is continuous but not differentiable at $x = 0$.
+\item\label{s2.8_2006iv} $f$ is differentiable but not continuous at $x = 0$.
+\item\label{s2.8_2006v} $f$ is both continuous and differentiable at $x = 0$.
+\end{enumerate}
+\end{Mquestion}
+\begin{hint} To decide whether the function is differentiable, use the definition of the derivative.
+\end{hint}
+\begin{answer} \ref{s2.8_2006iii}
+\end{answer}
+\begin{solution}
+Statement \ref{s2.8_2006i} is false, since $f(0)=0$.
+Statement \ref{s2.8_2006iv} cannot hold, since a function that is differentiable is also continuous.
+
+Since $\ds\lim_{x\rightarrow 0+}\frac{\sin x}{x}=1$ (we saw this in Section~\ref*{sec diff trig}%2.8
+),
+\begin{align*}
+\lim_{x\rightarrow 0+}f(x)&=\lim_{x\rightarrow 0+}\frac{\sin x}{\sqrt{x}}\\
+&=\lim_{x\rightarrow 0+}\sqrt{x}\frac{\sin x}{x}\\&=0\cdot 1=0
+\intertext{So $f$ is continuous at $x=0$, and so
+Statement \ref{s2.8_2006ii} does not hold. Now, let's consider $f'(x)$.}
+\lim_{x\rightarrow 0+}\frac{f(x)-f(0)}{x}
+&=\lim_{x\rightarrow 0+}\frac{\frac{\sin x}{\sqrt{x}}-0}{x}\\
+&=\lim_{x\rightarrow 0+}\frac{1}{\sqrt{x}}\frac{\sin x}{x}=+\infty
+\intertext{Therefore, using the definition of the derivative,}
+f'(0)&=\lim_{x \to 0}\frac{f(x)-f(0)}{x}~~\mbox{ if it exists, but}\\
+\lim_{x \to 0}\frac{f(x)-f(0)}{x}&=DNE
+\end{align*}
+since one of the one-sided limits does not exist. So $f$ is continuous but not differentiable
+at $x=0$. The correct statement is \ref{s2.8_2006iii}.
+\end{solution}
+
+
+
+
+
+\begin{question}[2011H]
+Evaluate $\lim\limits_{x\rightarrow 0}
+                 \dfrac{\sin x^{27}+2x^5 e^{x^{99}}}{\sin^5 x}$.
+\end{question}
+\begin{hint}
+In this chapter, we learned $\ds\lim_{x \to 0}\dfrac{\sin x}{x}=1$. If you divide the numerator and denominator by $x^5$, you can make use of this knowledge.
+\end{hint}
+\begin{answer} $2$
+\end{answer}
+\begin{solution}
+Recall that $\lim\limits_{x\rightarrow 0}\dfrac{\sin x}{x} =1$. In order to take advantage of this knowledge, we divide the numerator and denominator by $x^5$ (because $5$ is the power of sine in the denominator, and a denominator that goes to zero generally makes a limit harder).
+\begin{align*}
+\lim_{x\rightarrow 0}  \dfrac{\sin x^{27}+2x^5 e^{x^{99}}}{\sin^5 x}
+&=\lim_{x\rightarrow 0}  \dfrac{\dfrac{\sin x^{27}}{x^{5}}+2 e^{x^{99}}}
+                                {\left(\dfrac{\sin x}{x}\right)^5}
+\intertext{Now the denominator goes to 1, which is nice, but we need to take care of the fraction $\dfrac{\sin^{27}x}{x^5}$ in the numerator. This fraction isn't very familiar, but we know what happens to the fraction $\dfrac{\sin^{27}x}{x^{27}}=\left(\dfrac{\sin x}{x}\right)^{27}$:}
+&=\lim_{x\rightarrow 0}  \dfrac{x^{22}\dfrac{\sin x^{27}}{x^{27}}+2 e^{x^{99}}}
+                                {\left(\dfrac{\sin x}{x}\right)^5}
+=\dfrac{0\times 1+2\times 1}{1^5}
+=2
+\end{align*}
+
+\end{solution}

@@ -1,0 +1,215 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s3.5.2}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{question}
+Sketch a function $f(x)$ such that:
+\begin{itemize}
+\item $f(x)$ is defined over all real numbers
+\item $f(x)$ has a global max but no global min.
+\end{itemize}
+\end{question}
+\begin{hint}
+One way to avoid a global minimum is to have $\ds\lim_{x \to \infty}f(x)=-\infty$. Since $f(x)$ keeps getting lower and lower, there is no one value that is the lowest.
+\end{hint}
+\begin{answer}
+Two examples are given below, but many are possible.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{2}{2}{4}{1}
+\draw plot[domain=-1.75:1.75](\x,{-\x*\x}) node[right]{$y=f(x)$};
+\end{tikzpicture}
+\hspace{2cm}
+\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{2}
+\draw plot[domain=-2.75:-.1, samples=100](\x,{-sqrt(abs(\x))}) ;
+\draw plot[domain=.1:2.75, samples=100](\x,{-sqrt(abs(\x))}) node[right]{$y=f(x)$};
+\draw plot[domain=-.1:.1, samples=100](\x,{-sqrt(abs(\x))}) ;
+\end{tikzpicture}
+\end{center}
+\end{answer}
+\begin{solution}
+Two examples are given below, but many are possible.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{2}{2}{4}{1}
+\draw plot[domain=-1.75:1.75](\x,{-\x*\x}) node[right]{$y=-x^2$};
+\end{tikzpicture}
+\hspace{2cm}
+\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{2}
+\draw plot[domain=-2.75:-.1, samples=100](\x,{-sqrt(abs(\x))}) ;
+\draw plot[domain=.1:2.75, samples=100](\x,{-sqrt(abs(\x))}) node[right]{$y=-\sqrt{|x|}$};
+\draw plot[domain=-.1:.1, samples=100](\x,{-sqrt(abs(\x))}) ;
+\end{tikzpicture}
+\end{center}
+If $f(x)=-x^2$ or $f(x)=-\sqrt{|x|}$, then $f(x)$ has a global maximum at $x=0$. Since $f(x)$ keeps getting more and more strongly negative as $x$ gets farther and farther from 0, $f(x)$ has no global minimum.
+\end{solution}
+
+
+\begin{Mquestion}
+Sketch a function $f(x)$ such that:
+\begin{itemize}
+\item $f(x)$ is defined over all real numbers
+\item $f(x)$ is always positive
+\item $f(x)$ has no global max and no global min.
+\end{itemize}
+\end{Mquestion}
+\begin{hint}
+Try allowing the function to approach the $x$-axis without ever touching it.
+\end{hint}
+\begin{answer}
+Two examples are given below, but many are possible.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{2}{2}{1}{4}
+\draw plot[domain=-1.75:2](\x,{exp(\x)/2}) node[right]{$y=e^x$};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\YEaaxis{6}{6}{1}{4}
+\draw plot[domain=-1.4:1.4]({tan(\x r)},\x+2) node[right]{$y=\arctan x+2$};
+\end{tikzpicture}
+\end{center}
+\end{answer}
+\begin{solution}
+Two examples are given below, but many are possible.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{2}{2}{1}{4}
+\draw plot[domain=-1.75:2](\x,{exp(\x)/2}) node[right]{$y=e^x$};
+\end{tikzpicture}
+\end{center}
+If $f(x)=e^x$, then $f(x) > 0$ for all $x$. As we move left along the $x$-axis, $f(x)$ gets smaller and smaller, approaching 0 but never reaching it. Since $f(x)$ gets smaller and smaller as we move left, there is no global minimum. Likewise, $f(x)$ increases more and more as we move right, so there is no maximum.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{6}{6}{1}{4}
+\draw plot[domain=-1.4:1.4]({tan(\x r)},\x+2) node[right]{$y=\arctan x+2$};
+\end{tikzpicture}
+\end{center}
+If $f(x)=\arctan(x)+2$, then $f(x) >\left(-\frac{\pi}{2}\right)+2>0$ for all $x$.
+
+As we move left along the $x$-axis, $f(x)$ gets smaller and smaller, approaching $\left(-\frac{\pi}{2}+2\right)$ but never reaching it. Since $f(x)$ gets smaller and smaller as we move left, there is no global minimum.
+
+ Likewise, as we move right along the $x$-axis,
+$f(x)$ gets bigger and bigger, approaching $\left(\frac{\pi}{2}+2\right)$ but never reaching it. Since $f(x)$ gets bigger and bigger as we move right, there is no global maximum.
+\end{solution}
+
+
+\begin{question}
+Sketch a function $f(x)$ such that:
+\begin{itemize}
+\item $f(x)$ is defined over all real numbers
+\item $f(x)$ has a global minimum at $x=5$
+\item $f(x)$ has a global minimum at $x=-5$, too.
+\end{itemize}
+\end{question}
+\begin{hint}
+Since the global minimum value occurs at $x=5$ and $x=-5$, it must be true that $f(5)=f(-5)$.
+\end{hint}
+\begin{answer}
+One possible answer:
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{4}{4}{2}{5}
+\draw plot[domain=-3.5:3.5, samples=100](\x,{(\x*\x-9)*(\x*\x+9)*\x*\x/200}) node[right]{$y=f(x)$};
+\YExcoord{-2.3}{-5}
+\YExcoord{2.3}{5}
+\end{tikzpicture}
+\end{center}
+\end{answer}
+\begin{solution}
+Since $f(5)$ is a global minimum, $f(5) \leq f(x)$ for all $x$, and so in particular $f(5) \leq f(-5)$.\\
+Similarly, $f(-5) \leq f(x)$ for all $x$, so in particular $f(-5) \leq f(5)$. \\
+Since $f(-5) \leq f(5)$ AND $f(5) \leq f(-5)$, it must be true that $f(-5)=f(5)$.
+
+A sketch of one such graph is below.
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{4}{4}{2}{5}
+\draw plot[domain=-3.5:3.5, samples=100](\x,{(\x*\x-9)*(\x*\x+9)*\x*\x/200}) node[right]{$y=f(x)$};
+\YExcoord{-2.3}{-5}
+\YExcoord{2.3}{5}
+\end{tikzpicture}
+\end{center}
+
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{question}
+$f(x)=x^2+6x-10$.
+Find all global extrema on the interval $[-5,5]$
+\end{question}
+\begin{hint}
+Global extrema will either occur at critical points in the interval $(-5,5)$ or at the endpoints $x=5,\,x=-5$.
+\end{hint}
+\begin{answer}
+The global maximum is 45 at $x=5$ and the global minimum is $-19$ at $x=-3$.
+\end{answer}
+\begin{solution}
+Global extrema will occur at critical or singular points in the interval $(-5,5)$ or at the endpoints $x=5,\,x=-5$.
+
+$f'(x)=2x+6$. Since this is defined for all real numbers, there are no singular points. The only time $f'(x)=0$ is when $x=-3$. This is inside the interval $[-5,5]$. So, our points to check are $x=-3,\,x=-5,$ and $x=5$.
+
+\begin{center}
+\begin{tabular}{|c||c|c|c|}
+\hline
+$c$ & $-3$ &  $-5$ &  $5$ \\
+\hline
+type & critical point & endpoint & endpoint  \\
+\hline
+$f(c)$ & $-19$ & $-15$ & $45$\\
+\hline
+\end{tabular}
+\end{center}
+The global maximum is 45 at $x=5$ and the global minimum is $-19$ at $x=-3$.
+\end{solution}
+
+
+\begin{Mquestion}
+$f(x)=\dfrac{2}{3}x^3-2x^2-30x+7$.
+Find all global extrema on the interval $[-4,0]$.
+\end{Mquestion}
+\begin{hint}
+You only need to consider critical points that are in the interval $(-4,0).$
+\end{hint}
+\begin{answer}
+The global maximum over the interval is $61$ at $x=-3$, and the global minimum is $7$ at $x=0$.
+\end{answer}
+\begin{solution}
+Global extrema will occur at the endpoints of the interval, $x=-4$ and $x=0$, or at singular or critical points inside the interval. Since $f(x)$ is a polynomial, it is differentiable everywhere, so there are no singular points. To find the critical points, we set the derivative equal to zero.
+\begin{align*}
+f'(x)&=2x^2-4x-30\\
+0&=2x^2-4x-30
+&=(2x-10)(x+3)\\
+x&=5,\,-3
+\end{align*}
+The only critical point inside the interval is $x=-3$.
+
+
+\begin{center}
+\begin{tabular}{|c||c|c|c|}
+\hline
+$c$ & $-3$ &  $-4$ &  $0$ \\
+\hline
+type & critical point & endpoint & endpoint  \\
+\hline
+$f(c)$ & $61$ & $\frac{157}{3}=52+\frac{1}{3}$ & $7$\\
+\hline
+\end{tabular}
+\end{center}
+The global maximum over the interval is $61$ at $x=-3$, and the global minimum is $7$ at $x=0$.
+\end{solution}

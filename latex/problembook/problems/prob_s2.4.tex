@@ -1,0 +1,332 @@
+%
+% Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+\questionheader{ex:s2.4}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{question}True or false: $\ds\diff{}{x}\{f(x)+g(x)\}=f'(x)+g'(x)$ when $f$ and $g$ are differentiable functions.
+\end{question}
+\begin{hint} Look at the Sum rule
+\end{hint}
+\begin{answer} True
+\end{answer}
+\begin{solution} True: this is exactly what the Sum Rule states.
+\end{solution}
+
+
+\begin{question}
+True or false: $\ds\diff{}{x}\{f(x)g(x)\}=f'(x)g'(x)$ when $f$ and $g$ are differentiable functions.
+\end{question}
+\begin{hint} Try an example, like $f(x)=g(x)=x$.
+\end{hint}
+\begin{answer} False, in general
+\end{answer}
+\begin{solution} False, in general. The product rule tells us $\diff{}{x}\{f(x)g(x)\}=f'(x)g(x)+f(x)g'(x)$. An easy example of why we can't do it the other way is to take $f(x)=g(x)=x$. Then the equation becomes $\diff{}{x}\{x^2\}=(1)(1)$, which is false.
+\end{solution}
+
+
+\begin{question}True or false: $\ds\diff{}{x}\left\{\dfrac{f(x}{g(x)}\right\}=\dfrac{f'(x)}{g(x)}-\dfrac{f(x)g'(x)}{g^2(x)}$ when $f$ and $g$ are differentiable functions.
+\end{question}
+\begin{hint} Simplify
+\end{hint}
+\begin{answer} True
+\end{answer}
+\begin{solution} True: the quotient rule tells us \[\diff{}{x}\left\{\frac{f(x}{g(x)}\right\}=\frac{g(x)f'(x)-f(x)g'(x)}{g^2(x)} = \frac{g(x)f'(x)}{g^2(x)}-\frac{f(x)g'(x)}{g^2(x)} = \frac{f'(x)}{g(x)}-\frac{f(x)g'(x)}{g^2(x)}.\]
+\end{solution}
+
+\begin{Mquestion}
+True or false: $\ds\diff{}{x}\{2^x\}=x2^{x-1}$.
+\end{Mquestion}
+\begin{hint} When can you use the power rule?
+\end{hint}
+\begin{answer} False
+\end{answer}
+\begin{solution}
+False: the power rule tells us that, for a constant $n$, $\ds\diff{}{x}\{x^n\}=nx^{n-1}$. In the equation shown, the base is a constant, and the exponent is the variable: this is the opposite of the situation where the power rule applies.
+
+We do not yet know how to differentiate this function. We'll learn about it in Section~\ref*{sec exp func}.
+\end{solution}
+
+\begin{question}Let $f$ be a differentiable function. Use at least three different rules to differentiate\\ $g(x)=3f(x)$, and verify that they all give the same answer.
+\end{question}
+\begin{hint} $g(x)=f(x)+f(x)+f(x)$
+\end{hint}
+\begin{answer} If you're creative, you can find lots of ways to differentiate!\\
+Constant multiple: $g'(x)=3f'(x)$.\\
+Product rule: $g'(x) = \diff{}{x}\{3\}f(x)+3f'(x)=0f(x)+3f'(x)=3f'(x)$.\\
+Sum rule: $g'(x)=\diff{}{x}\{f(x)+f(x)+f(x)\}=f'(x)+f'(x)+f'(x)=3f'(x)$.\\
+Quotient rule: $g'(x)=\diff{}{x}\left\{\frac{f(x)}{\frac{1}{3}}\right\}=
+\frac{\frac{1}{3}f'(x)-f(x)(0)}{\frac{1}{9}}=\frac{\frac{1}{3}f'(x)}{\frac{1}{9}}=9\left(\frac{1}{3}\right)f'(x)=3f'(x)$.\\
+All rules give $g'(x)=3f'(x)$.
+\end{answer}
+\begin{solution} If you're creative, you can find lots of ways to differentiate!\\
+Constant multiple: $g'(x)=3f'(x)$.\\
+Product rule: $g'(x) = \diff{}{x}\{3\}f(x)+3f'(x)=0f(x)+3f'(x)=3f'(x)$.\\
+Sum rule: $g'(x)=\diff{}{x}\{f(x)+f(x)+f(x)\}=f'(x)+f'(x)+f'(x)=3f'(x)$.\\
+Quotient rule: $g'(x)=\diff{}{x}\left\{\frac{f(x)}{\frac{1}{3}}\right\}=
+\frac{\frac{1}{3}f'(x)-f(x)(0)}{\frac{1}{9}}=\frac{\frac{1}{3}f'(x)}{\frac{1}{9}}=9\left(\frac{1}{3}\right)f'(x)=3f'(x)$.\\
+All rules give $g'(x)=3f'(x)$.
+\end{solution}
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%
+
+\begin{question}Differentiate $f(x)=3x^5+4x^{2/3}$.
+\end{question}
+\begin{hint} Use linearity
+\end{hint}
+\begin{answer} $f'(x)=15x^4+\frac{8}{3}x^{-1/3}$
+\end{answer}
+\begin{solution}
+$f'(x)=5\cdot 3x^4+\frac{2}{3}\cdot 4x^{2/3-1}
+=15x^4+\frac{8}{3}x^{-1/3}$
+\end{solution}
+
+
+
+
+
+\begin{Mquestion}Use the product rule to differentiate $f(x)=(2x+5)(8\sqrt{x}-9x)$.
+\end{Mquestion}
+\begin{hint} You have already seen $\diff{}{x}\{\sqrt{x}\}$
+\end{hint}
+\begin{answer} $-36x+24\sqrt{x}+\frac{20}{\sqrt{x}}-45$
+\end{answer}
+\begin{solution} We have already seen $\diff{}{x}\{\sqrt{x}\}=\frac{1}{2\sqrt{x}}$, but if you forget the formula, it's easy to find using the power rule:
+ $\diff{}{x}\{\sqrt{x}\}=\diff{}{x}\left\{x^{1/2}\right\}=\frac{1}{2}x^{-1/2}=\frac{1}{2\sqrt{x}}$.
+
+ Now:
+ \begin{align*}f'(x) &= (2)(8\sqrt{x}-9x)+(2x+5)\left(\frac{8}{2\sqrt{x}}-9\right)\\
+ &= 16\sqrt{x}-18x+(2x+5)\left(\frac{4}{\sqrt{x}}-9\right)\\
+ &=-36x+24\sqrt{x}+\frac{20}{\sqrt{x}}-45
+ \end{align*}
+\end{solution}
+
+
+
+
+\begin{Mquestion}[2015Q]
+Find the equation of the tangent line to the graph of $y=x^3$ at
+$x=\dfrac{1}{2}$.
+\end{Mquestion}
+\begin{hint} The equation of a line can be determined using a point, and the slope.
+\end{hint}
+\begin{answer} $y -  \frac{1}{8} = \frac{3}{4}\cdot \left(x-\frac{1}{2}\right)$, or $y= \tfrac{3}{4} x - \tfrac{1}{4}$
+\end{answer}
+\begin{solution} We compute the derivative of $x^3$ as being $3x^2$, which evaluated at
+$x=\frac{1}{2}$ yields $\frac{3}{4}$. Since we also compute
+$\left( \frac{1}{2}\right)^3=\frac{1}{8}$, then the equation of the tangent line is
+\begin{align*}
+y -  \frac{1}{8} = \frac{3}{4}\cdot \left(x-\frac{1}{2}\right).
+\end{align*}
+\end{solution}
+
+
+\begin{Mquestion}[1999H]
+A particle moves along the $x$--axis so that its position
+ at time $t$ is given by $x=t^3-4t^2+1$ .
+\begin{enumerate}[(a)]
+\item\label{s2.4particle1}At $t=2$, what is the particle's speed?
+\item\label{s2.4particle2}At $t=2$, in what direction is the particle moving?
+\item\label{s2.4particle3}At $t=2$, is the particle's speed increasing or decreasing?
+\end{enumerate}
+\end{Mquestion}
+\begin{hint} Be careful to distinguish between speed and velocity.
+\end{hint}
+\begin{answer}
+\eqref{s2.4particle1} $4$\qquad
+\eqref{s2.4particle2} left \qquad
+\eqref{s2.4particle3} decreasing
+\end{answer}
+\begin{solution}
+Let $f(t)=t^3-4t^2+1$. Then
+\begin{align*}
+f'(t)&=3t^2-8t & f'(2)&=3\times 4-8\times 2=-4\cr
+f''(t)&=6t-8 & f''(2)&=6\times 2-8=4\cr
+\end{align*}
+Hence at $t=2$, \eqref{s2.4particle1}~the particle has speed of magnitude {4}, and \eqref{s2.4particle2}~is
+moving {towards the left}.
+At $t=2$, $f''(2)>0$, so $f'$ is increasing, i.e.
+becoming less negative. Since $f'$ is getting closer to zero, \eqref{s2.4particle3}~the magnitude of the speed is
+{decreasing}.
+\end{solution}
+
+
+\begin{question}[1999H]
+Calculate and simplify the derivative of
+$\dfrac{2x-1}{2x+1}$
+\end{question}
+\begin{answer}
+$\dfrac{1}{{(x+1/2)}^2}$, or $\dfrac{4}{(2x+1)^2}$
+\end{answer}
+\begin{solution}
+We can use the quotient rule here.
+\begin{align*}
+\diff{}{x}\left\{\frac{2x-1}{2x+1}\right\}&=\frac{(2x+1)(2)-(2x-1)(2)}{(2x+1)^2}
+=\frac{4}{(2x+1)^2}=\frac{1}{(x+1/2)^2}
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{question}What is the slope of the graph $y=\left(\dfrac{3x+1}{3x-2}\right)^2$ when $x=1$?
+\end{question}
+\begin{hint} How do you take care of that power?
+\end{hint}
+\begin{answer} $-72$
+\end{answer}
+\begin{solution} First, we find the $y'$ for general $x$. Using the corollary to Theorem~\ref*{thm:DIFFprodRule} and the quotient rule:
+\begin{align*}
+y'&=2\left(\dfrac{3x+1}{3x-2}\right)\cdot\diff{}{x}\left\{\dfrac{3x+1}{3x-2}\right\}\\
+&=2\left(\dfrac{3x+1}{3x-2}\right)\left(\dfrac{(3x-2)(3)-(3x+1)(3)}{(3x-2)^2}\right)
+\\
+&=2\left(\dfrac{3x+1}{3x-2}\right)\left(\dfrac{-9}{(3x-2)^2}\right)\\
+&=\dfrac{-18(3x+1)}{(3x-2)^3}
+\intertext{So, plugging in $x=1$:}
+y'(1)&=\dfrac{-18(3+1)}{(3-2)^3}=-72
+\end{align*}
+\end{solution}
+
+
+\begin{Mquestion}Find the equation of the tangent line to the curve $f(x)=\dfrac{1}{\sqrt{x}+1}$ at the point $\left(1,\frac{1}{2}\right)$.
+\end{Mquestion}
+\begin{hint} You know how to take the derivative of a reciprocal; this might be faster than using the quotient rule.
+\end{hint}
+\begin{answer} $y-\frac{1}{2}=-\frac{1}{8}(x-1)$, or $y=-\tfrac{1}{8}x +\tfrac{5}{8}$
+\end{answer}
+\begin{solution}
+We need $f'(1)$, so first we must find $f'(x)$. Since $f(x)$ is the reciprocal of $\sqrt{x}+1$, we can use the Corollary~\ref*{cor diff recip}: % 2.4.6
+\[f'(x) = \dfrac{-\diff{}{x}\{\sqrt{x}+1\}}{(\sqrt{x}+1)^2}=\dfrac{-\frac{1}{2\sqrt{x}}}{(\sqrt{x}+1)^2}= \dfrac{-1}{2\sqrt{x}(\sqrt{x}+1)^2},\] so $f'(1)=\dfrac{-1}{2\sqrt{1}(\sqrt{1}+1)^2}=\frac{-1}{8}.$
+
+Now, using the point $\left(1,\frac{1}{2}\right)$ and the slope $\frac{-1}{8}$, our tangent line has equation $y-\frac{1}{2}=-\frac{1}{8}(x-1)$.
+\end{solution}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+\begin{Mquestion}A town is founded in the year 2000. After $t$ years, it has had $b(t)$ births and $d(t)$ deaths. Nobody enters or leaves the town except by birth or death (whoa). Give an expression for the rate the population of the town is growing.
+\end{Mquestion}
+\begin{hint} Population growth is rate of change of population.
+\end{hint}
+\begin{answer} $b'(t)-d'(t)$
+\end{answer}
+\begin{solution} Population growth is rate of change of population.
+Population in year $2000+t$ is given by $P(t)=P_0+b(t)-d(t)$, where $P_0$ is the initial population of the town. Then $P'(t)$ is the expression we're looking for, and $P'(t)=b'(t)-d'(t)$.
+
+It is interesting to note that the initial population does not obviously show up in this calculation. It would probably affect $b(t)$ and $d(t)$, but if we know these we do not need to know $P_0$ to answer our question.
+\end{solution}
+
+
+\begin{question}[1997D]Find all points on the curve $y=3x^2$ where the tangent
+line passes through $(2,9)$.
+\end{question}
+\begin{answer}{$(1,3),\ (3,27)$}
+\end{answer}
+\begin{solution}
+The slope of $y=3x^2$ at $x=a$ is $6a$. The tangent line to
+$y=3x^2$ at $x=a, y=3a^2$ is $y-3a^2=6a(x-a)$. This tangent line passes
+through $(2,9)$ if
+\begin{align*}
+9-3a^2&=6a(2-a)\\
+ 3a^2-12a+9&=0\\
+  a^2-4a+3&=0\\
+  (a-3)(a-1)&=0\\
+\implies~~a&=1,3
+\end{align*}
+The points are {$(1,3),\ (3,27)$}.
+\end{solution}
+
+\begin{Mquestion}[2015Q]
+Evaluate $\displaystyle \lim_{y\rightarrow 0}\left(
+\dfrac{\sqrt{100180+y}-\sqrt{100180}}{y}\right)$ by interpreting the limit as a derivative.
+\end{Mquestion}
+\begin{hint} Interpret it as a derivative that you know how to compute.
+\end{hint}
+\begin{answer} $\dfrac{1}{2\sqrt{100180}}$
+\end{answer}
+\begin{solution} This limit represents the derivative computed at $x=100180$ of the function
+$f(x)=\sqrt{x}$. Since the derivative of $f(x)$ is $\dfrac{1}{2\sqrt{x}}$, then
+its value at $x=100180$ is exactly $\dfrac{1}{2\sqrt{100180}}$.
+\end{solution}
+
+
+\begin{Mquestion}
+A rectangle is growing. At time $t=0$, it is a square with
+           side length 1 metre. Its width increases at a constant rate
+           of 2 metres per second, and its length increases at a constant
+           rate of 5 metres per second. How fast is its area increasing
+           at time $t>0$?\end{Mquestion}
+\begin{hint} The answer is \emph{not} 10 square metres per second.
+\end{hint}
+\begin{answer} $20t+7$ square metres per second.
+\end{answer}
+\begin{solution} Let $w(t)$ and $l(t)$ be the width and length of the rectangle. Given in the problem is that $w'(t)=2$ and $l'(t)=5$. Since both functions have constant slopes, both must be lines. Their slopes are given, and their intercepts are $w(0)=l(0)=1$. So, $w(t)=2t+1$ and $l(t)=5t+1$.
+
+The area of the rectangle is $A(t)=w(t)\cdot l(t)$, so using the product rule, the rate at which the area is increasing is $A'(t)=w'(t)l(t)+w(t)l'(t)=2(5t+1)+5(2t+1)=20t+7$ square metres per second.
+\end{solution}
+
+
+
+\begin{question}Let $f(x)=x^2g(x)$ for some differentiable function $g(x)$. What is $ f'(0)$?
+\end{question}
+\begin{hint} You don't need to know $g(0)$ or $g'(0)$.
+\end{hint}
+\begin{answer} 0
+\end{answer}
+\begin{solution}
+Using the product rule, $f'(x)=(2x)g(x)+x^2g'(x)$, so $f'(0)=0\cdot g(x)+0\cdot g'(x)=0$. (Since $g$ is differentiable, $g'$ exists.)
+\end{solution}
+
+
+
+\begin{question}Verify that differentiating $f(x)=\dfrac{g(x)}{h(x)}$  using the quotient rule gives the same answer as differentiating $f(x)=\dfrac{g(x)}{k(x)}\cdot\dfrac{k(x)}{h(x)}$ using the product rule and the quotient rule.
+\end{question}
+\begin{answer}
+\begin{align*}
+\intertext{First expression, $f(x)=\dfrac{g(x)}{h(x)}$:}
+f'(x)&=\frac{h(x)g'(x)-g(x)h'(x)}{h^2(x)}
+\intertext{Second expresson, $f(x)=\dfrac{g(x)}{k(x)}\cdot\dfrac{k(x)}{h(x)}$:}
+f'(x)&=\left(\frac{k(x)g'(x)-g(x)k'(x)}{k^2(x)}\right)\left(\frac{k(x)}{h(x)}\right)+\left(\frac{g(x)}{k(x)}\right)\left(\frac{h(x)k'(x)-k(x)h'(x)}{h^2(x)}\right)\\
+&=\frac{k(x)g'(x)-g(x)k'(x)}{k(x)h(x)}+
+\frac{g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}\\
+&=\frac{h(x)k(x)g'(x)-h(x)g(x)k'(x)}{k(x)h^2(x)}+
+\frac{g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}\\
+&=\frac{h(x)k(x)g'(x)-h(x)g(x)k'(x)+g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}\\
+&=\frac{h(x)k(x)g'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}\\
+&=\frac{h(x)g'(x)-g(x)h'(x)}{h^2(x)}
+\intertext{and this is exactly what we got from differentiating the first expression.}
+\end{align*}
+\end{answer}
+\begin{solution}
+\begin{align*}
+\intertext{First expression, $f(x)=\dfrac{g(x)}{h(x)}$:}
+f'(x)&=\frac{h(x)g'(x)-g(x)h'(x)}{h^2(x)}
+\intertext{Second expresson, $f(x)=\dfrac{g(x)}{k(x)}\cdot\dfrac{k(x)}{h(x)}$:}
+f'(x)&=\left(\frac{k(x)g'(x)-g(x)k'(x)}{k^2(x)}\right)\left(\frac{k(x)}{h(x)}\right)+\left(\frac{g(x)}{k(x)}\right)\left(\frac{h(x)k'(x)-k(x)h'(x)}{h^2(x)}\right)\\
+&=\frac{k(x)g'(x)-g(x)k'(x)}{k(x)h(x)}+
+\frac{g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}\\
+&=\frac{h(x)k(x)g'(x)-h(x)g(x)k'(x)}{k(x)h^2(x)}+
+\frac{g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}\\
+&=\frac{h(x)k(x)g'(x)-h(x)g(x)k'(x)+g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}\\
+&=\frac{h(x)k(x)g'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}\\
+&=\frac{h(x)g'(x)-g(x)h'(x)}{h^2(x)}
+\intertext{and this is exactly what we got from differentiating the first expression.}
+\end{align*}
+\end{solution}
