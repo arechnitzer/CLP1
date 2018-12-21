@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_maxmin"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Identify every critical point and every singular point of <m>f(x)</m> shown on the graph below.
+ Which correspond to local extrema? </p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{4}{1}{4}
+\draw[thick] plot[domain=-2.5:2](\x,{\x*\x*\x/4+2});
+\draw[thick] plot[domain=2:2.5](\x,{3*(\x-3)*(\x-3)+1});
+\draw[thick] plot[domain=2.5:3.1](\x,{exp(-4*(\x-2.43))+1}) node[ right]{$y=f(x)$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+Estimate <m>f'(0)</m>.
+</p></hint>
+<answer>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{4}{1}{4}
+\draw[thick] plot[domain=-2.5:2](\x,{\x*\x*\x/4+2});
+\draw[thick] plot[domain=2:2.5](\x,{3*(\x-3)*(\x-3)+1});
+\draw[thick] plot[domain=2.5:3.1](\x,{exp(-4*(\x-2.43))+1}) node[ right]{$y=f(x)$};
+\draw[red] (2,4) node[vertex]{};
+\draw[blue] (0,2) node[vertex]{};
+\draw[thick, blue ] (0,.2)--(0,-.2);
+\draw[thick, red ] (2,.2)--(2,-.2);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> There is a critical point at <m>x=0</m>. The <m>x</m>-value of the red dot is a singular point, and a local maximum occurs there.
+</p></answer>
+<solution>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{4}{1}{4}
+\draw[thick] plot[domain=-2.5:2](\x,{\x*\x*\x/4+2});
+\draw[thick] plot[domain=2:2.5](\x,{3*(\x-3)*(\x-3)+1});
+\draw[thick] plot[domain=2.5:3.1](\x,{exp(-4*(\x-2.43))+1}) node[ right]{$y=f(x)$};
+\draw[red] (2,4) node[vertex]{};
+\draw[blue] (0,2) node[vertex]{};
+\draw[thick, blue ] (0,.2)--(0,-.2);
+\draw[thick, red ] (2,.2)--(2,-.2) node[below]{$a$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>When <m>x=0</m>, the curve <m>y=f(x)</m> appears to have a flat tangent line, so the <m>x=0</m> is a critical point. However, it is not a local extremum: it is not true that <m>f(0) \geq f(x)</m> for all <m>x</m> near 0, and it is not true that <m>f(0) \leq f(x)</m> for all <m>x</m> near 0.
+</p>
+
+<p>To the right of the <m>x</m>-axis, there is a spike where the derivative of <m>f(x)</m> does not exist. The <m>x</m>-value corresponding to this spike (call it <m>a</m>) is a singular point, and <m>f(x)</m> has a local maximum at <m>x=a</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Identify every critical point and every singular point of <m>f(x)</m>
+on the graph below. Which correspond to local extrema? Which correspond to global extrema over the interval shown?
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
+\YEaaxis{5}{5}{3}{8}
+\draw[thick] plot[domain=-5:1](\x,{-(\x*1.1+5)*(\x-2)*(\x-2)/8+4});
+\draw (-5,7) node[vertex]{};
+\draw (1,3.25) node[opendot]{};
+\draw[thick] plot[domain=1:5](\x,{-\x/4+2}) node[ above right]{$y=f(x)$};
+\draw (1,1.75) node[vertex]{};
+\draw (5,.75) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+If the graph is discontinuous at a point, it is not differentiable at that point.
+</p></hint>
+<answer>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
+\YEaaxis{5}{5}{3}{8}
+\draw[thick] plot[domain=-5:1](\x,{-(\x*1.1+5)*(\x-2)*(\x-2)/8+4});
+\draw (-5,7) node[vertex]{};
+\draw (1,3.25) node[opendot]{};
+\draw[thick] plot[domain=1:5](\x,{-\x/4+2}) node[ above right]{$y=f(x)$};
+\draw (1,1.75) node[vertex]{};
+\draw (5,.75) node[vertex]{};
+\color{blue}
+\draw (-2.36,-1.7) node[vertex]{};
+\draw[thick] (-2.36,.2)--(-2.36,-.2) node[below]{$a$};
+\color{red}
+\draw[thick] (1,.2)--(1,-.2) node[below]{$b$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>The <m>x</m>-coordinate corresponding to the blue dot (let's call it <m>a</m>) is a critical point, and <m>f(x)</m> has a local and global minimum at <m>x=a</m>. The <m>x</m>-coordinate corresponding to the discontinuity (let's call it <m>b</m>) is a singular point, but there is no a global or local extremum at <m>x=b</m>.
+</p></answer>
+<solution>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
+\YEaaxis{5}{5}{3}{8}
+\draw[thick] plot[domain=-5:1](\x,{-(\x*1.1+5)*(\x-2)*(\x-2)/8+4});
+\draw (-5,7) node[vertex]{};
+\draw (1,3.25) node[opendot]{};
+\draw[thick] plot[domain=1:5](\x,{-\x/4+2}) node[ above right]{$y=f(x)$};
+\draw (1,1.75) node[vertex]{};
+\draw (5,.75) node[vertex]{};
+\color{blue}
+\draw (-2.36,-1.7) node[vertex]{};
+\draw[thick] (-2.36,.2)--(-2.36,-.2) node[below]{$a$};
+\color{red}
+\draw[thick] (1,.2)--(1,-.2) node[below]{$b$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>The <m>x</m>-coordinate corresponding to the blue dot (let's call it <m>a</m>) is a critical point, because the tangent line to <m>f(x)</m> at <m>x=a</m> is horizontal. There is no lower point nearby, and actually no lower point on the whole interval shown, so <m>f(x)</m> has both a local minimum and  a global minimum at <m>x=a</m>.
+</p>
+
+<p>If a function is not continuous at a point, then it is not differentiable at that point. So, the <m>x</m>-coordinate  corresponding to the discontinuity (let's call it <m>b</m>) is a singular point. Values of <m>f(x)</m> immediately to the right of <m>b</m> are lower, and values immediately to the left of <m>b</m> are higher, so <m>f(x)</m> has no local (or global) extremum at <m>x=b</m>.
+</p>
+
+<p>If we wanted to know the derivative of the function at the left endpoint, we would take the derivative from the right. This looks to be some negative real number: so it exists (therefore, the left endpoint is not a singular point) and is not zero (therefore, the left endpoint is not a critical point). Endpoints <em>can</em> be critical and singular points, but this one happens to be neither.
+</p>
+
+<p>Similarly, at the right endpoint of the interval <m>f'(x)</m> is some negative real number, so this point is neither critical nor singular.
+</p>
+
+<p>Remark: <m>f(x)</m> has a global maximum at the left-most endpoint of the interval. However, we do not call this a local maximum. In order for <m>f(x)</m> to have a local maximum at <m>x=c</m>, <m>c</m> must be strictly inside the domain of the function. In short: <em>endpoints can't be local extrema</em>.
+</p>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Draw a graph <m>y=f(x)</m> where a <m>f(2)</m> is a local maximum, but it is not a  global maximum.
+</p></statement>
+<hint><p>
+Try making a little bump at <m>x=2</m>, the letting the function get quite large somewhere else.
+</p></hint>
+<answer><p>One possible answer is shown below.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1.5}{3}{3}{3}
+\draw[thick] plot[domain=-1:2.5](\x,{-\x*\x*(\x-2)});
+\YExcoord{1.3}{2}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>One possible answer is shown below.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1.5}{3}{3}{3}
+\draw[thick] plot[domain=-1:2.5](\x,{-\x*\x*(\x-2)});
+\YExcoord{1.3}{2}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> For every <m>x</m> in the red interval shown below, <m>f(2) \geq f(x)</m>, so <m>f(2)</m> is a local maximum. However, the point marked with a blue dot shows that <m>f(x) \gt f(2)</m> for some <m>x</m>, so <m>f(2)</m> is not a global maximum.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[dotted, fill=red!20] (1,-.5) rectangle (1.75,1.5);
+\YEaaxis{1.5}{3}{3}{3}
+\draw[thick] plot[domain=-1:2.4](\x,{-\x*\x*(\x-2)});
+\YExcoord{1.32}{2}
+\draw (-1,3) node[blue, vertex]{};
+\draw[dashed,red] (1,1.2)--(1.74,1.2);
+\draw (1.32,1.2) node[red, vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose <m>f(x)=\dfrac{x^2-10}{x-5}</m>.
+<ol label="a">
+<li> Find all critical points.
+</li>
+<li> Find all singular points.
+</li>
+<li> What are the possible points where local extrema of <m>f(x)</m> may exist?
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Critical points are those values of <m>x</m> in the domain of <m>f(x)</m>  for which <m>f'(x)=0</m>.
+</p>
+<p>
+Singular points are those values of <m>x</m> in the domain of <m>f(x)</m> for which <m>f(x)</m> is not differentiable.
+</p></hint>
+<answer><p>
+The critical points are <m>x=5+\sqrt{15}</m> and <m>x=5-\sqrt{15}</m>.
+These two points are the only places where local extrema might exist.
+There are no singular points.
+</p></answer>
+<solution><p>
+Critical points are those values of <m>x</m> in the domain of <m>f(x)</m>  for which <m>f'(x)=0</m>, and
+singular points are those values of <m>x</m>  in the domain of <m>f(x)</m> for which <m>f(x)</m> is not differentiable.
+So, we ought to find <m>f'(x)</m>.
+Using the quotient rule,
+<md>
+<mrow>
+f'(x)&amp;=\frac{(x-5)(2x)-(x^2-10)}{(x-5)^2}
+</mrow><mrow>
+&amp;=\frac{x^2-10x+10}{(x-5)^2}
+</mrow>
+<intertext>The only place where this function doesn't exist is <m>x=5</m>. Since <m>5</m> is not in the domain of <m>f(x)</m>,</intertext><mrow>
+</mrow>
+<intertext>(b) <m>f(x)</m> has no singular points. </intertext><mrow>
+</mrow>
+<intertext>To find the critical points, we find where <m>f'(x)=0</m>. That is:</intertext><mrow>
+0&amp;=x^2-10x+10
+</mrow>
+<intertext>Using the quadratic formula,</intertext><mrow>
+x&amp;=\dfrac{10\pm\sqrt{10^2-4(1)(10)}}{2}
+</mrow><mrow>
+&amp;=5 \pm \sqrt{15}
+</mrow>
+</md>
+(a) So the critical points of <m>f(x)</m> are <m>x=5+\sqrt{15}</m> and <m>x=5-\sqrt{15}</m>.
+</p>
+
+<p>(c) Theorem<nbsp/><xref ref="thm_APPlocalMaxMin"/> tells us that local extrema of <m>f(x)</m> can only occur at critical points and singular points.
+So, the possible points where extrema of <m>f(x)</m> may exist are <m>x=5+\sqrt{15}</m> and <m>x=5-\sqrt{15}</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Below are a number of curves, all of which have a singular point at <m>x=2</m>. For each, label whether <m>x=2</m> is a local maximum, a local minimum, or neither.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,\x);
+\draw[thick] plot[domain=1:2](\x,-\x+3);
+\draw (1,1) node[opendot]{};
+\draw (1,2) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,\x);
+\draw[thick] plot[domain=1:2](\x,-\x+3);
+\draw (1,2) node[opendot]{};
+\draw (1,1) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,\x/2);
+\draw[thick] plot[domain=1:2](\x,\x/2+1);
+\draw (1,.5) node[opendot]{};
+\draw (1,1.5) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,-\x/2+1);
+\draw[thick] plot[domain=1:2](\x,\x/2);
+\draw (1,.5) node[opendot]{};
+\draw (1,1) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+We're only after local extrema, not global. Let <m>f(x)</m> be our function.
+If there is some interval around <m>x=2</m> where nothing is bigger than <m>f(2)</m>, then <m>f(2)</m> is a local maximum, whether or not it is a maximum overall.
+</p></hint>
+<answer>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,\x);
+\draw[thick] plot[domain=1:2](\x,-\x+3);
+\draw (1,1) node[opendot]{};
+\draw (1,2) node[vertex]{};
+\draw (1,-1.5) node{local max};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,\x);
+\draw[thick] plot[domain=1:2](\x,-\x+3);
+\draw (1,2) node[opendot]{};
+\draw (1,1) node[vertex]{};
+\draw (1,-1.5) node{neither};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,\x/2);
+\draw[thick] plot[domain=1:2](\x,\x/2+1);
+\draw (1,.5) node[opendot]{};
+\draw (1,1.5) node[vertex]{};
+\draw (1,-1.5) node{neither};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,-\x/2+1);
+\draw[thick] plot[domain=1:2](\x,\x/2);
+\draw (1,.5) node[opendot]{};
+\draw (1,1) node[vertex]{};
+\draw (1,-1.5) node{local max};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,\x);
+\draw[thick] plot[domain=1:2](\x,-\x+3);
+\draw (1,1) node[opendot]{};
+\draw (1,2) node[vertex]{};
+\draw (1,-1.5) node{local max};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,\x);
+\draw[thick] plot[domain=1:2](\x,-\x+3);
+\draw (1,2) node[opendot]{};
+\draw (1,1) node[vertex]{};
+\draw (1,-1.5) node{neither};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,\x/2);
+\draw[thick] plot[domain=1:2](\x,\x/2+1);
+\draw (1,.5) node[opendot]{};
+\draw (1,1.5) node[vertex]{};
+\draw (1,-1.5) node{neither};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,-\x/2+1);
+\draw[thick] plot[domain=1:2](\x,\x/2);
+\draw (1,.5) node[opendot]{};
+\draw (1,1) node[vertex]{};
+\draw (1,-1.5) node{local max};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>For the first curve, the function's value at <m>x=2</m> (that is, the <m>y</m>-value of the solid dot) is higher than anything around it. So, it's a local maximum.
+</p>
+
+<p>For the second curve, the function's value at <m>x=2</m> (that is, the <m>y</m>-value of the solid dot) is higher than everything to the left, but lower than values immediately to the right. (On the graph reproduced below, <m>f(x)</m> is higher than everything in the red section, and lower than everything in the blue section.) So, it is neither a local max nor a local min.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[dotted, fill=red!20] (-.5,-1) rectangle (1,2.5);
+\draw[dotted, fill=blue!20](1,2.5) rectangle (1.5,-1);
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,\x);
+\draw[thick] plot[domain=1:2](\x,-\x+3);
+\draw (1,2) node[opendot]{};
+\draw (1,1) node[vertex]{};
+\draw[dashed] (-.5,1)--(1.5,1);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Similarly, for the third curve, <m>f(2)</m> is lower than the values to the right of it, and higher than values to the left of it, so it is neither a local minimum nor a local maximum.
+</p>
+
+<p>In the final curve, <m>f(2)</m> (remember--this is the <m>y</m>-value of the solid dot) is higher than everything immediately to the left or right of it (for instance, over the interval marked in red below), so it is a local maximum.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[dotted, fill=red!20] (.5,-1) rectangle (1.5,2.5);
+\draw[dashed, red] (.5,1)--(1.5,1);
+\YEaaxis{.5}{2}{.5}{2};
+\YExcoord{1}{2}
+\draw[thick] plot[domain=-.5:1](\x,-\x/2+1);
+\draw[thick] plot[domain=1:2](\x,\x/2);
+\draw (1,.5) node[opendot]{};
+\draw (1,1) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Draw a graph <m>y=f(x)</m> where <m>f(2)</m> is a local maximum, but <m>x=2</m> is not a critical point.
+</p></statement>
+<hint><p>
+By Theorem<nbsp/><xref ref="thm_APPlocalMaxMin"/>,
+if <m>x=2</m> not a critical point, then it must be a singular point. Remember that <em>endpoints</em> can't be local extrema.
+</p></hint>
+<answer><p>
+There are many possible answers. Every answer must have <m>x=2</m> as a singular point strictly inside the domain of <m>f(x)</m>. Two possibilities are shown below.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{2}{2}
+\YExcoord{1}{2}
+\draw [thick] (-2,1)--(2,1);
+\draw  (1,1) node[opendot]{};
+\draw (1,1.5) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{2}{2}
+\YExcoord{1}{2}
+\draw [thick] plot[domain=-1.5:1](\x,{\x*\x/1.5+.33});
+\draw [thick] plot[domain=1:2](\x,{-\x+2});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+By Theorem<nbsp/><xref ref="thm_APPlocalMaxMin"/>, if <m>x=2</m> not a critical point, then it must be a singular point. That is, <m>f(x)</m> is not differentiable at <m>x=2</m>. Also, remember that endpoints are not local extrema. Two possibilities are shown below, but there are infinitely many possible answers.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{2}{2}
+\YExcoord{1}{2}
+\draw [thick] (-2,1)--(2,1);
+\draw  (1,1) node[opendot]{};
+\draw (1,1.5) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{2}{2}
+\YExcoord{1}{2}
+\draw [thick] plot[domain=-1.5:1](\x,{\x*\x/1.5+.33});
+\draw [thick] plot[domain=1:2](\x,{-\x+2});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+ <me>
+f(x)=\sqrt{\left|(x-5)(x+7)\right|}</me>
+</p>
+
+<p>Find all critical points and all singular points of <m>f(x)</m>. You do not have to specify whether a point is critical or singular.
+</p></statement>
+<hint><p>
+You should be able to figure out the global minima of <m>f(x)</m> in your head.
+</p>
+<p>
+Remember with absolute values, <m>|X|=\left\{\begin{array}{ll}
+X&amp;X\ge0\\
+-X&amp;X \lt 0
+\end{array}\right.</m>.
+</p></hint>
+<answer><p>
+<m>x=-7</m>, <m>x=-1</m>, and <m>x=5</m>
+</p></answer>
+<solution><p>
+Critical points are those values of <m>x</m> for which <m>f'(x)=0</m>, and
+singular points are those values of <m>x</m> for which <m>f(x)</m> is not differentiable.
+So, we ought to find <m>f'(x)</m>. Since <m>f(x)</m> has an absolute value sign, let's re-write it in a version that is friendlier to differentiation. Remember that <m>|X|=X</m> when <m>X \geq 0</m>, and <m>|X|=-X</m> when <m>X \lt 0</m>.
+<md>
+<mrow>
+f(x)&amp;=\sqrt{\left|(x-5)(x+7)\right|}
+</mrow><mrow>
+&amp;=\left\{\begin{array}{cc}
+\sqrt{(x-5)(x+7)}&amp;\mbox{ if } (x-5)(x+7)\ge0
+</mrow><mrow>
+\sqrt{-(x-5)(x+7)}&amp;\mbox{ if } (x-5)(x+7) \lt 0
+\end{array}\right.
+</mrow>
+<intertext>The product <m>(x-5)(x+7)</m> is positive when <m>(x-5)</m> and <m>(x+7)</m> have the same sign, and negative when they have opposite signs, so</intertext><mrow>
+f(x)&amp;=\left\{\begin{array}{ll}
+\sqrt{(x-5)(x+7)}&amp;\mbox{ if } x\in (-\infty,-7] \cup [5,\infty)
+</mrow><mrow>
+\sqrt{-(x-5)(x+7)}&amp;\mbox{ if } x\in(-7,5)
+\end{array}\right.
+</mrow>
+<intertext>Now, when <m>x \neq -7,5</m>, we can differentiate, using the chain rule.</intertext><mrow>
+f'(x)&amp;=\left\{\begin{array}{ll}
+\frac{\diff{}{x}\left\{(x-5)(x+7)\right\}}{2\sqrt{(x-5)(x+7)}}&amp;\mbox{ if } x\in (-\infty,-7) \cup (5,\infty)
+</mrow><mrow>
+\frac{\diff{}{x}\left\{-(x-5)(x+7)\right\}}{2\sqrt{-(x-5)(x+7)}}&amp;\mbox{ if } x\in(-7,5)
+</mrow><mrow>
+?? &amp; \mbox{ if } x=-7,\,x=5
+\end{array}\right.
+</mrow><mrow>
+&amp;=\left\{\begin{array}{ll}
+\frac{2x+2}{2\sqrt{(x-5)(x+7)}}&amp;\mbox{ if } x\in (-\infty,-7) \cup (5,\infty)
+</mrow><mrow>
+\frac{-2x-2}{2\sqrt{-(x-5)(x+7)}}&amp;\mbox{ if } x\in(-7,5)
+</mrow><mrow>
+?? &amp; \mbox{ if } x=-7,\,x=5
+\end{array}\right.
+</mrow>
+</md>
+We are tempted to say that the derivative doesn't exist when <m>x=-7</m> and <m>x=5</m>, but be careful-- we don't actually know that yet. The formulas we have for the <m>f'(x)</m> are only good when <m>x</m> is <em>not</em> <m>-7</m> or <m>5</m>.
+</p>
+
+<p>The middle formula <m>\dfrac{-2x-2}{2\sqrt{-(x-5)(x+7)}}</m> tells us <m>x=-1</m> is a critical point: when <m>x=-1</m>, <m>f'(x)</m> is given by the middle line, and it is 0. Note that <m>x=-1</m> also makes the top formula 0, but <m>f'(-1)</m> is not given by the top formula, so that doesn't matter.
+</p>
+
+<p>What we've concluded so far is that <m>x=-1</m> is a critical point of <m>f(x)</m>, and <m>f(x)</m> has no other critical points or singular points when <m>x \neq -7,5</m>. It remains to figure out what's going on at <m>-7</m> and <m>5</m>. One way to do this is to use the definition of the derivative to figure out what <m>f'(-7)</m>  and <m>f'(5)</m> are, if they exist. This is somewhat laborious. Let's look for a better way.
+</p>
+
+<p><ul>
+<li> First, let's notice that <m>f(x)</m> is defined for all values of <m>x</m>, thanks to that handy absolute value sign.
+</li>
+<li> Next, notice <m>f(x) \geq 0</m> for all <m>x</m>, since square roots never give a negative value.
+</li>
+<li> Then if there is some value of <m>x</m> that gives <m>f(x)=0</m>, that <m>x</m> gives a global minimum, and therefore a local minimum.
+</li>
+<li> <m>f(x)=0</m> exactly when <m>(x-5)(x+7)=0</m>, which occurs at <m>x=-7</m> and <m>x=5</m>
+</li>
+<li> Therefore, <m>f(x)</m> has global and local minima at <m>x=-7</m> and <m>x=5</m>
+</li>
+<li> So, <m>x=-7</m> and <m>x=5</m> are critical points or singular points by Theorem<nbsp/><xref ref="thm_APPlocalMaxMin"/>.
+</li>
+</ul>
+</p>
+
+<p>So, all together:
+</p>
+
+<p><m>x=-1</m> is a critical point, and <m>x=-7</m> and <m>x=5</m> are critical points or singular pints (but we don't know which).
+</p>
+
+<p>Remark: if you would like a review of how to use the definition of the derivative, below we show that <m>f(x)</m> is not differentiable at <m>x=-7</m>. (In fact, <m>x=-7</m> and <m>x=5</m> are both singular points.)
+</p>
+
+<p><md>
+<mrow>
+f'(-7)&amp;=\lim_{h \to 0} \frac{f(-7+h)-f(-7)}{h}
+</mrow><mrow>
+&amp;=\lim_{h \to 0} \frac{\sqrt{|(-13+h)(h)|}-\sqrt{|0|}}{h}
+</mrow><mrow>
+&amp;=\lim_{h \to 0} \frac{\sqrt{|(-13+h)(h)|}}{h}
+</mrow>
+<intertext>Let's first consider the case <m>h \gt 0</m>.</intertext><mrow>
+\lim_{h \to 0^+} \frac{\sqrt{|(-13+h)(h)|}}{h}&amp;=\lim_{h \to 0^+}\frac{\sqrt{(13-h)(h)}}{h}
+</mrow><mrow>
+&amp;=\lim_{h \to 0^+}\frac{\sqrt{13h-h^2}}{\sqrt{h^2}}
+</mrow><mrow>
+&amp;=\lim_{h \to 0^+}\sqrt{\frac{13h-h^2}{h^2}}
+</mrow><mrow>
+&amp;=\lim_{h \to 0^+}\sqrt{\frac{13}{h}-1}
+</mrow><mrow>
+&amp;=\infty
+</mrow>
+<intertext>Since one side of the limit doesn't exist,</intertext><mrow>
+\lim_{h \to 0} \frac{f(-7+h)-(-7)}{h}&amp;=DNE
+</mrow>
+</md>
+so <m>f'(x)</m> is not differentiable at <m>x=-7</m>. Therefore, <m>x=-7</m> is a singular point.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose <m>f(x)</m> is the constant function <m>f(x)=4</m>. What are the critical points and singular points of <m>f(x)</m>? What are its local and global maxima and minima?
+</p></statement>
+<hint><p>
+Review the definitions of critical points and extrema: Definition<nbsp/><xref ref="def_APPcriticalPoint"/>
+and
+Definition<nbsp/><xref ref="def_APPlocalMaxMin"/>.
+</p></hint>
+<answer><p>
+Every real number <m>c</m> is a critical point of <m>f(x)</m>, and <m>f(x)</m> has a local and global maximum and minimum at <m>x=c</m>. There are no singular points.
+</p></answer>
+<solution><p>
+For any real number <m>c</m>, <m>c</m> is in the domain of <m>f(x)</m> and <m>f'(c)</m> exists and is equal to zero. So, following
+Definition<nbsp/><xref ref="def_APPcriticalPoint"/>, every real number is  a critical point of <m>f(x)</m>, and <m>f(x)</m> has no singular points.
+</p>
+
+<p>For every number <m>c</m>, let <m>a=c-1</m> and <m>b=c+1</m>, so <m>a \lt c \lt b</m>. Then <m>f(x)</m> is defined for every <m>x</m> in the interval <m>[a,b]</m>, and
+<m>f(x) =f(c)</m> for every <m>a \le x \le b</m>. That means <m>f(x) \leq f(c)</m> and <m>f(x) \geq f(c)</m>. So, comparing with Definition<nbsp/><xref ref="def_APPlocalMaxMin"/>, we see that <m>f(x)</m> has a global and local maximum AND minimum at every real number <m>x=c</m>.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

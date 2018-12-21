@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<chapter xml:id="chap_limits" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Limits</title>
+<introduction>
+
+<p>
+So very roughly speaking, <q>Differential Calculus</q> is the study of how a  function changes as its input changes. The mathematical object we use to  describe this is the <q>derivative</q> of a function. To properly describe what  this thing is we need some machinery; in particular we need to define what we  mean by <q>tangent</q> and <q>limit</q>. We'll get back to defining the derivative in  Chapter<nbsp/><xref ref="chap_deriv"/>.
+</p>
+</introduction>
+
+<xi:include href="limits01.xml" />
+<xi:include href="limits02.xml" />
+<xi:include href="limits03.xml" />
+<xi:include href="limits04.xml" />
+<xi:include href="limits05.xml" />
+<xi:include href="limits06.xml" />
+<xi:include href="limits07.xml" />
+<xi:include href="limits08.xml" />
+<xi:include href="limits09.xml" />
+
+</chapter>

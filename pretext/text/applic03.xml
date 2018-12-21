@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xml:id="sec_ExpGthDecay"  xmlns:xi="http://www.w3.org/2001/XInclude">
+<title title-simple="ARGH">Exponential growth and decay <mdash/> a first look at differential equations</title>
+<shorttitle>Exponential growth and decay</shorttitle>
+<introduction>
+<p>
+A differential equation is an equation for an unknown function  that involves the derivative of the unknown function. For example, Newton's law of cooling says:
+</p>
+<blockquote>
+<p>
+    The rate of change of temperature of an object is proportional  to the difference in temperature between the object and its surroundings.
+</p>
+</blockquote>
+<p>
+We can write this more mathematically using a differential equation <mdash/> an equation for  the unknown function <m>T(t)</m> that also involves its derivative <m>\diff{T}{t}(t)</m>. If we denote by <m>T(t)</m> the temperature of the  object at time <m>t</m> and by <m>A</m> the temperature of its surroundings, Newton's law of cooling says that there is some constant of proportionality,
+<m>K</m>, such that
+<md>
+<mrow>
+    \diff{T}{t}(t) &amp;= K\big[T(t)-A\big]
+</mrow>
+</md>
+</p>
+
+<p>
+Differential equations play a central role in modelling a huge number of  different phenomena, including the motion of particles, electromagnetic  radiation, financial options, ecosystem populations and nerve action potentials.  Most universities offer half a dozen different undergraduate courses on various  aspects of differential equations. We are barely going to scratch the surface  of the subject. At this point we are going to restrict ourselves  to a few very simple differential equations for which we can just  guess the solution. In particular, we shall learn how to solve systems obeying Newton's law of cooling in Section<nbsp/><xref ref="sec_newtonCooling"/>,  below. But first, here is another slightly simpler example.
+</p>
+</introduction>
+<subsection xml:id="ssec_carbon">
+<title>Carbon dating</title>
+<p>
+Scientists can determine the age of objects containing organic material by a  method called <em>carbon dating</em> or <em>radiocarbon dating</em>
+	<fn>
+		Willard Libby, of Chicago University was awarded the Nobel Prize in Chemistry in 1960,  for developing radiocarbon dating.
+	</fn>.
+Cosmic rays hitting the atmosphere convert  nitrogen into a radioactive isotope of carbon, <m>{}^{14}C</m>, with a half<ndash/>life of  about 5730 years
+	<fn>
+		A good question to ask yourself is <q>How can a  scientist (who presumably doesn't live 60 centuries) measure this quantity?</q>  One way exploits the little piece of calculus we are about to discuss.
+	</fn>.
+Vegetation absorbs carbon dioxide from the atmosphere through photosynthesis and  animals acquire <m>{}^{14}C</m> by eating plants. When a plant or animal dies, it  stops replacing its carbon and the amount of <m>{}^{14}C</m> begins to decrease  through radioactive decay. More precisely, let <m>Q(t)</m> denote the amount of  <m>{}^{14}C</m> in the plant or animal <m>t</m> years after it dies. The number of  radioactive decays per unit time, at time <m>t</m>, is proportional to the amount of  <m>{}^{14}C</m> present at time <m>t</m>, which is <m>Q(t)</m>. Thus
+</p>
+
+<fact xml:id="eq_carbonDating"><title>Radioactive decay</title>
+<statement><p>
+<md>
+<mrow>
+\diff{Q}{t}(t) &amp;=-k Q(t)
+</mrow>
+</md>
+</p></statement>
+</fact>
+
+<p>
+Here <m>k</m> is a constant of proportionality that is determined by the half<ndash/>life. We shall explain what half-life is and also determine  the value of <m>k</m> in Example <xref ref="eg_carbonDatingHalfLife"/>, below. Before we do so, let's  think about the sign in equation<nbsp/><xref ref="eq_carbonDating"/>.
+<ul>
+<li>
+	Recall that <m>Q(t)</m> denotes  a quantity, namely the amount of <m>{}^{14}C</m> present at  time <m>t</m>. There cannot be a negative amount of <m>{}^{14}C</m>, nor can this quantity be zero (otherwise we wouldn't use carbon dating, so we must have <m>Q(t) \gt  0</m>.
+</li>
+<li>
+	As the time <m>t</m> increases, <m>Q(t)</m> decreases, because <m>{}^{14}C</m> is being  continuously converted into <m>{}^{14}N</m> by radioactive decay
+	<fn>
+		The precise transition is <m>{}^{14}C\rightarrow {}^{14}N+ e^- + \bar{\nu}_e</m>  where <m>e^-</m> is an electron and <m>\bar{\nu}_e </m> is an electron neutrino.
+	</fn>.
+	Thus <m>\diff{Q}{t}(t) \lt  0</m>.
+</li>
+<li>
+	The signs <m>Q(t) \gt  0</m> and <m>\diff{Q}{t}(t) \lt  0</m> are consistent with equation<nbsp/><xref ref="eq_carbonDating"/> provided the constant of  proportionality <m>k \gt 0</m>.
+</li>
+<li>
+	In equation<nbsp/><xref ref="eq_carbonDating"/>, we chose to call the constant of  proportionality  <q><m>-k</m></q>. We did so in order to make <m>k \gt 0</m>. We could just as well have chosen to  call the constant of proportionality <q><m>K</m></q>.  That is, we could have replaced  equation<nbsp/><xref ref="eq_carbonDating"/> by <m>\diff{Q}{t}(t)=K Q(t)</m>. The constant of proportionality <m>K</m> would have to be negative, (and <m>K</m> and <m>k</m> would be related by  <m>K=-k</m>).
+</li>
+</ul>
+</p>
+
+<p>
+Now, let's guess some solutions to equation<nbsp/><xref ref="eq_carbonDating"/>. We  wish to guess a function <m>Q(t)</m> whose derivative is just a constant times itself. Here is a short table of derivatives. It is certainly not complete, but it contains the most important derivatives that we know.
+</p>
+
+<sidebyside>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>F(t)</m> </cell><cell> <m>1</m> </cell><cell>  <m>t^a</m> </cell><cell>     <m>\sin t</m> </cell><cell> <m>\cos t</m>
+                  </cell><cell> <m>\tan t</m> </cell><cell> <m>e^t</m> </cell><cell> <m>\log t</m>
+                  </cell><cell> <m>\arcsin t</m> </cell><cell> <m>\arctan t</m>
+           </cell>
+</row><row>
+<cell><m>\diff{}{t}F(t)</m> </cell><cell> <m>0</m> </cell><cell> <m>at^{a-1}</m> </cell><cell> <m>\cos t</m> </cell><cell> <m>-\sin t</m>
+                  </cell><cell>  <m>\sec^2 t</m> </cell><cell> <m>e^t</m> </cell><cell> <m>\frac{1}{t}</m>
+                  </cell><cell> <m>\frac{1}{\sqrt{1-t^2}}</m> </cell><cell> <m>\frac{1}{1+t^2}</m>
+           </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>
+There is exactly one function in this table whose derivative is just a  (nonzero) constant times itself. Namely, the derivative of <m>e^t</m> is exactly <m>e^t = 1\times e^t</m>. This is almost, but not quite what we want. We want  the derivative of <m>Q(t)</m> to be the constant <m>-k</m> (rather than the constant  <m>1</m>) times <m>Q(t)</m>. We want the derivative to <q>pull a constant</q> out of our guess. That is exactly what happens when we differentiate <m>e^{at}</m>, where <m>a</m> is a constant. Differentiating gives
+<md>
+<mrow>
+\diff{}{t}e^{at} = a e^{at}
+</mrow>
+</md>
+i.e. <q>pulls the constant <m>a</m> out of <m>e^{at}</m></q>.
+</p>
+
+<p>
+We have succeeded in guessing a single function, namely <m>e^{-kt}</m>, that obeys equation<nbsp/><xref ref="eq_carbonDating"/>. Can we guess any other solutions? Yes. If <m>C</m> is any constant, <m>Ce^{-kt}</m> also obeys equation<nbsp/><xref ref="eq_carbonDating"/>: <md>
+<mrow>
+\diff{}{t}(Ce^{-kt}) = C\diff{}{t}e^{-kt} = Ce^{-kt}(-k) = -k (Ce^{-kt})
+</mrow>
+</md>
+You can try guessing some more solutions, but you won't find any, because with a little trickery we can prove that a function <m>Q(t)</m> obeys equation<nbsp/><xref ref="eq_carbonDating"/> if and only if <m>Q(t)</m> is of the form <m>Ce^{-kt}</m>, where <m>C</m> is some constant.
+</p>
+
+<p>The trick
+	<fn>
+		Notice that is very similar to what we needed in Example<nbsp/><xref ref="eg_fallingBallB"/>,  except that here the constant is multiplicative rather than additive. That is  <m>const \times f(t)</m> rather than <m>const + f(t)</m>.
+	</fn>
+is to imagine that <m>Q(t)</m> is any (at this stage, unknown) solution to equation<nbsp/><xref ref="eq_carbonDating"/> and to compare <m>Q(t)</m> and our known solution <m>e^{-kt}</m>  by studying the ratio <m>Q(t)/e^{-kt}</m>. We will show that <m>Q(t)</m> obeys equation<nbsp/><xref ref="eq_carbonDating"/> if and only if the ratio <m>Q(t)/e^{-kt}</m> is a constant,  i.e. if and only if the derivative of the ratio is zero. By the product rule
+<md>
+<mrow>
+\diff{}{t}\big[Q(t)/e^{-kt}\big]=
+\diff{}{t}\big[e^{kt}Q(t)\big]
+=ke^{kt} Q(t)+e^{kt}Q'(t)
+</mrow>
+</md>
+Since <m>e^{kt}</m> is never <m>0</m>, the right hand side is zero if and only if <m>k Q(t)+Q'(t)=0</m>; that is <m>Q'(t)=-kQ(t)</m>. Thus
+<md>
+<mrow>
+\diff{}{t}Q(t) = -k Q(t)
+\iff
+\diff{}{t}\big[Q(t)/e^{-kt}\big]
+=0
+</mrow>
+</md>
+as required.
+</p>
+
+<p>
+We have succeed in finding all functions that obey<nbsp/><xref ref="eq_carbonDating"/>.
+That is we have found the general solution to<nbsp/><xref ref="eq_carbonDating"/>.
+This is worth stating as a theorem.
+</p>
+
+<theorem xml:id="thm_growthDEsoln">
+<statement><p>
+A differentiable function <m>Q(t)</m> obeys the differential equation
+<md>
+<mrow>
+\diff{Q}{t}(t)=-k Q(t)
+</mrow>
+</md>
+if and only if there is a constant <m>C</m> such that
+<md>
+<mrow>
+Q(t)= C e^{-kt}
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+
+<p>
+Before we start to apply the above theorem, we take this opportunity to remind the reader  that in this text we will use <m>\log x</m> with no base to indicate the natural logarithm.  That is
+<md>
+<mrow>
+  \log x = \log_e x = \ln x
+</mrow>
+</md>
+Both of the notations <m>\log(x)</m> and <m>\ln(x)</m> are used widely and the reader should be  comfortable with both.
+</p>
+
+<example xml:id="eg_carbonDatingHalfLife"><title>Carbon dating and half<ndash/>life</title>
+<p>
+In this example, we determine the value of the constant of proportionality <m>k</m> in equation<nbsp/><xref ref="eq_carbonDating"/> that corresponds to the half<ndash/>life of <m>{}^{14}C</m>, which is 5730 years.
+<ul>
+<li>
+	Imagine that some plant or animal contains a quantity <m>Q_0</m> of <m>{}^{14}C</m> at its  time of death. Let's choose the zero point of time <m>t=0</m> to be the instant that the plant  or animal died.
+</li>
+<li>
+	Denote by <m>Q(t)</m> the amount of <m>{}^{14}C</m> in the plant or animal <m>t</m> years after it  died. Then <m>Q(t)</m> must obey both equation<nbsp/><xref ref="eq_carbonDating"/> and <m>Q(0)=Q_0</m>.
+</li>
+<li>
+	Since <m>Q(t)</m> must obey equation<nbsp/><xref ref="eq_carbonDating"/>, Theorem  <xref ref="thm_growthDEsoln"/> tells us that there must be a constant <m>C</m> such that <m>Q(t)= C  e^{-kt}</m>. To also have <m>Q_0=Q(0) =Ce^{-k\times 0}</m>, the constant <m>C</m> must be <m>Q_0</m>. That  is, <m>Q(t) = Q_0 e^{-kt}</m> for all <m>t\ge 0</m>.
+</li>
+<li>
+	By definition, the half<ndash/>life of <m>{}^{14}C</m> is the length of time that it takes for half of the <m>{}^{14}C</m> to decay. That is, the half<ndash/>life <m>t_{1/2}</m> is determined by
+	<md>
+	<mrow>
+	Q(t_{1/2})=\half Q(0)&amp;=\half Q_0 &amp; \text{but we know }Q(t) = Q_0 e^{-kt}
+	</mrow><mrow>
+	  Q_0 e^{-kt_{1/2}}&amp;=\half Q_0 &amp; \text{now cancel } Q_0
+	</mrow><mrow>
+	  e^{-kt_{1/2}}&amp;=\half
+	</mrow>
+	<intertext>Taking the logarithm of both sides gives</intertext>
+	<mrow>
+	  -k t_{1/2} &amp;=\log \frac{1}{2} = -\log 2 &amp; \text{ and so}
+	</mrow><mrow>
+	  k &amp;=\frac{\log 2}{t_{1/2}}.
+	</mrow>
+	</md>
+	We are told that, for <m>{}^{14}C</m>, the half<ndash/>life <m>t_{1/2}=5730</m>, so
+	<md>
+	<mrow>
+	k&amp;=\frac{\log 2}{5730} = 0.000121 &amp;\text{ to 6 digits}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p></example>
+
+
+<p>
+From the work in the above example we have accumulated enough new facts to make  a corollary to Theorem<nbsp/><xref ref="thm_growthDEsoln"/>.
+</p>
+
+<corollary xml:id="cor_decay_soln">
+<statement><p>
+ The function <m>Q(t)</m> satisfies the equation
+<md>
+<mrow>
+  \diff{Q}{t} &amp;= -k Q(t)
+</mrow>
+</md>
+if and only if
+<md>
+<mrow>
+  Q(t) &amp;= Q(0) \cdot e^{-kt}.
+</mrow>
+</md>
+The half-life is defined to be the time <m>t_{1/2}</m> which obeys
+<md>
+<mrow>
+ Q(t_{1/2}) &amp;= \frac{1}{2} \cdot Q(0).
+</mrow>
+</md>
+The half-life is related to the constant <m>k</m> by
+<md>
+<mrow>
+  t_{1/2} &amp;=  \frac{\log 2}{k}
+</mrow>
+</md>
+</p>
+
+</statement>
+</corollary>
+
+<p>
+Now here is a typical problem that is solved using Corollary<nbsp/><xref ref="cor_decay_soln"/>.
+</p>
+
+<example xml:id="eg_carbonDating"><title>Determining the age of an artefact</title>
+<p>
+A particular piece of parchment contains about 64<m>\%</m> as much <m>{}^{14}C</m> as  plants do today. Estimate the age of the parchment.
+</p>
+
+<p>
+<alert>Solution</alert> Let <m>Q(t)</m> denote the amount of <m>{}^{14}C</m> in the parchment <m>t</m> years after it was first created.
+</p>
+
+<p>
+By equation<nbsp/><xref ref="eq_carbonDating"/> and  Example <xref ref="eg_carbonDatingHalfLife"/>,
+<md>
+<mrow>
+\diff{Q}{t}=-k Q(t)\qquad\text{with }k = \frac{\log 2}{5730} = 0.000121.
+</mrow>
+</md>
+By Corollary<nbsp/><xref ref="cor_decay_soln"/>
+<md>
+<mrow>
+  Q(t) &amp;= Q(0) \cdot e^{-kt}
+</mrow>
+</md>
+The time at which <m>Q(t)</m> reaches <m>0.64 Q(0)</m> is determined by
+<md>
+<mrow>
+  Q(t) &amp;=0.64 Q(0) &amp; \text{ but } Q(t) = Q(0) e^{-kt}
+</mrow><mrow>
+  Q(0)e^{-kt} &amp;=0.64 Q(0) &amp; \text{cancel $Q(0)$}
+</mrow><mrow>
+  e^{-kt} &amp;=0.64 &amp; \text{take logarithms}
+</mrow><mrow>
+  -kt &amp;=\log 0.64
+</mrow><mrow>
+  t &amp;=\frac{\log 0.64}{-k} =\frac{\log 0.64}{-0.000121} = 3700 &amp; \text{to 2} \text{significant digits.}
+</mrow>
+</md>
+That is, the parchment
+	<fn>
+		The British Museum has an Egyptian mathematical text from the seventeenth century B.C.
+	</fn>
+is about 37 centuries old.
+</p>
+</example>
+
+<p>
+We have stated that the half-life of <m>{}^{14}C</m> is 5730 years. How can this be  determined? We can explain this using the following example.
+</p>
+
+<example><title>Computing a half-life</title>
+<p>
+A scientist in a B-grade science fiction film is studying a sample of the rare  and fictitious   element, implausium
+	<fn>
+		Implausium leads to even weaker plots than  unobtainium.
+	</fn>.
+With great effort he has produced  a sample of pure implausium. The next day <mdash/> 17 hours later <mdash/> he comes back  to his lab and discovers that his sample is now only 37% pure. What is the  half-life of the element?
+</p>
+
+<p>
+<alert>Solution</alert> We can again set up our problem using Corollary<nbsp/><xref ref="cor_decay_soln"/>. Let  <m>Q(t)</m> denote the quantity of implausium at time <m>t</m>, measured in hours. Then  we know
+<md>
+<mrow>
+  Q(t)&amp;= Q(0) \cdot e^{-kt}
+</mrow>
+</md>
+We also know that
+<md>
+<mrow>
+  Q(17) &amp;= 0.37 Q(0).
+</mrow>
+</md>
+That enables us to determine <m>k</m> via
+<md>
+<mrow>
+  Q(17) = 0.37 Q(0) &amp;= Q(0) e^{-17k} &amp; \text{ divide both sides by $Q(0)$}
+</mrow><mrow>
+  0.37 &amp;= e^{-17k}
+</mrow>
+<intertext>and so</intertext>
+<mrow>
+  k &amp;= -\frac{\log 0.37}{17} = 0.05849
+</mrow>
+</md>
+We can then convert this to the half life using Corollary<nbsp/><xref ref="cor_decay_soln"/>:
+<md>
+<mrow>
+  t_{1/2} &amp;= \frac{\log 2}{k} \approx 11.85 \text{ hours}
+</mrow>
+</md>
+While this example is entirely fictitious, one really can use this approach to  measure the half-life of materials.
+</p>
+
+</example>
+
+
+</subsection>
+<subsection xml:id="sec_newtonCooling">
+<title>Newton's law of cooling</title>
+
+<p>
+Recall Newton's law of cooling from the start of this section:
+</p>
+
+<blockquote>
+<p>
+The rate of change of temperature of an object is proportional to the difference in temperature between the object and its surroundings.
+</p>
+</blockquote>
+
+<p>
+The temperature of the surroundings is sometimes called the ambient  temperature.
+We then translated this statement into the following differential equation
+</p>
+
+<fact xml:id="eq_newtonCooling"><title>Newton's law of cooling</title>
+<statement><p>
+<md>
+<mrow>
+\diff{T}{t}(t) = K\big[T(t)-A\big]
+</mrow>
+</md>
+</p></statement>
+</fact>
+<p>
+where <m>T(t)</m> is the temperature of the object at time <m>t</m>, <m>A</m> is the  temperature of its surroundings, and <m>K</m> is a constant of proportionality. This  mathematical model of temperature change works well when studying a small object  in a large, fixed temperature, environment. For example, a hot cup of coffee in  a large room
+	<fn>
+		It does not work so well when the object is of a similar  size to its surroundings since the temperature of the surroundings will rise as  the object cools. It also fails when there are phase transitions involved <mdash/>  for example, an ice-cube melting in a warm room does not obey Newton's law of  cooling.
+	</fn>.
+</p>
+
+<p>
+Before we worry about solving this equation, let's think a little about the sign of the  constant of proportionality. At any time <m>t</m>, there are three possibilities.
+<ul>
+<li>
+	If <m>T(t) \gt A</m>, that is, if the body is warmer than its surroundings, we would expect heat to flow from the body into its surroundings and so we would expect the body to cool off so that  <m>\diff{T}{t}(t) \lt 0</m>. For this  expectation to be consistent with equation<nbsp/><xref ref="eq_newtonCooling"/>, we need <m>K \lt 0</m>.
+</li>
+<li>
+	If <m>T(t) \lt A</m>, that is the body is cooler than its surroundings, we would expect heat to flow from the surroundings into the body and so we would expect the body to warm up so that  <m>\diff{T}{t}(t) \gt 0</m>. For this  expectation to be consistent with equation<nbsp/><xref ref="eq_newtonCooling"/>, we again need <m>K \lt 0</m>.
+</li>
+<li>
+	Finally if <m>T(t)=A</m>, that is the body and its environment have the same temperature, we would not expect any heat to flow between the two and so we would expect that <m>\diff{T}{t}(t)=0</m>. This does not impose any condition on <m>K</m>.
+</li>
+</ul>
+In conclusion, we would expect <m>K \lt 0</m>. Of course, we could have chosen to call the constant of proportionality <m>-k</m>, rather than <m>K</m>. Then the differential equation would be  <m>\diff{T}{t} = -k\big(T-A\big)</m> and we would expect <m>k \gt 0</m>.
+</p>
+
+<p>
+Now to find the general solution to equation<nbsp/><xref ref="eq_newtonCooling"/>. Since this  equation is so similar in form to equation<nbsp/><xref ref="eq_carbonDating"/>, we might expect a  similar solution. Start by trying <m>T(t) = Ce^{Kt}</m> and let's see what goes  wrong. Substitute it into the equation:
+<md>
+<mrow>
+  \diff{T}{t} &amp;= K( T(t)- A)
+</mrow><mrow>
+  K C e^{Kt} &amp;= KCe^{KT} - KA
+</mrow><mrow>
+  ?0 &amp; = -KA? &amp; \text{the constant $A$ causes problems!}
+</mrow>
+</md>
+Let's try something a little different <mdash/> recall that the derivative of a  constant is zero. So we can add or subtract a constant from <m>T(t)</m> without  changing its derivative. Set <m>Q(t) =  T(t)+B</m>, then
+<md>
+<mrow>
+  \diff{Q}{t}(t) &amp;= \diff{T}{t}(t) &amp; \text{by Newton's law of cooling}
+</mrow><mrow>
+    &amp; = K(T(t)-A) = K(Q(t)-B-A)
+</mrow>
+</md>
+So if we choose <m>B=-A</m> then we will have
+<md>
+<mrow>
+  \diff{Q}{t}(t) &amp;= K Q(t)
+</mrow>
+</md>
+which is exactly the same form as equation<nbsp/><xref ref="eq_carbonDating"/>, but with <m>K=-k</m>. So  by Theorem<nbsp/><xref ref="thm_growthDEsoln"/>
+<md>
+<mrow>
+  Q(t) &amp;= Q(0) e^{Kt}
+</mrow>
+</md>
+We can translate back to <m>T(t)</m>, since <m>Q(t)=T(t)-A</m> and <m>Q(0)=T(0)-A</m>. This gives us the solution.
+</p>
+
+<corollary xml:id="cor_coolingDEsoln">
+<statement><p>
+A differentiable function <m>T(t)</m> obeys the differential equation
+<md>
+<mrow>
+\diff{T}{t}(t) = K\big[T(t)-A\big]
+</mrow>
+</md>
+if and only if
+<md>
+<mrow>
+T(t) = [T(0)-A]\,e^{Kt} + A
+</mrow>
+</md>
+</p></statement>
+</corollary>
+
+<p>
+Just before we put this into action, we remind the reader that <m>\log x = \log_e x = \ln  x</m>.
+</p>
+
+<example xml:id="eg_SDEcoolingA"><title>Warming iced tea</title>
+<p>
+The temperature of a glass of iced tea is initially <m>5^\circ</m>. After 5 minutes, the tea has heated to <m>10^\circ</m> in a room where the air temperature is <m>30^\circ</m>.
+<ol label="a">
+<li>   Determine the temperature as a function of time. </li>
+<li>   What is the temperature after 10 minutes? </li>
+<li>  Determine when the tea will reach a temperature of <m>20^\circ</m>. </li>
+</ol>
+</p>
+
+<p>
+<alert>Solution</alert> Part<nbsp/>(a)
+<ul>
+<li>
+	Denote by <m>T(t)</m> the temperature of the tea <m>t</m> minutes after it was removed  from the fridge, and let <m>A=30</m> be the ambient temperature.
+</li>
+<li>
+	By Newton's law of cooling,
+	<md>
+	<mrow>
+	\diff{T}{t}=K(T-A) = K(T-30)
+	</mrow>
+	</md>
+	for some, as yet unknown, constant of proportionality <m>K</m>.
+</li>
+<li>
+	By Corollary <xref ref="cor_coolingDEsoln"/>,
+	<md>
+	<mrow>
+	T(t) = [T(0)-30]\,e^{Kt} + 30
+		  =30-25 e^{Kt}
+	</mrow>
+	</md>
+	since the initial temperature <m>T(0)=5</m>.
+</li>
+<li>
+	This solution is not complete because it still contains an unknown constant, namely  <m>K</m>. We have not yet used the given data that <m>T(5)=10</m>. We can use it to determine <m>K</m>. At <m>t=5</m>,
+	<md>
+	<mrow>
+	T(5) &amp;=30-25 e^{5K}=10 &amp; \text{rearrange}
+	</mrow><mrow>
+	e^{5K} &amp;=\frac{20}{25}
+	</mrow><mrow>
+	5K &amp;=\log\frac{20}{25} &amp; \text{and so}
+	</mrow><mrow>
+	K &amp;=\frac{1}{5}\log\frac{4}{5}=-0.044629 &amp; \text{ to 6 digits}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+
+<p>Part (b)
+<ul>
+<li>
+	To find the temperature at 10 minutes we can just use the solution we have  determined above.
+	<md>
+	<mrow>
+	T(10)&amp;=30-25 e^{10K}
+	</mrow><mrow>
+	  &amp;=30-25 e^{10\times\frac{1}{5}\log\frac{4}{5}}
+	</mrow><mrow>
+	  &amp;=30-25 e^{2\log\frac{4}{5}}  = 30-25 e^{\log\frac{16}{25}}
+	</mrow><mrow>
+	  &amp;=30-16=\text{$14^\circ$}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+
+<p> Part (c)
+<ul>
+<li>
+	We can find when the temperature is <m>20^\circ</m> by solving <m>T(t)=20</m>:
+	<md>
+	<mrow>
+	20 &amp;= 30-25 e^{Kt} &amp; \text{rearrange}
+	</mrow><mrow>
+	e^{Kt} &amp;=\frac{10}{25} = \frac{2}{5}
+	</mrow><mrow>
+	K t &amp;= \log \frac{2}{5}
+	</mrow><mrow>
+	  t &amp;= \frac{\log \frac{2}{5}}{K}
+	</mrow><mrow>
+	  &amp;= \text{20.5 minutes} &amp; \text{ to 1 decimal place}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+</example>
+
+
+<p>A slightly more gruesome example.</p>
+<example xml:id="eg_SDEcoolingC"><title>Determining a time from temperatures</title>
+<p>
+A dead body is discovered at 3:45pm in a room where the temperature is 20<m>^\circ</m>C. At  that time the temperature of the body is 27<m>^\circ</m>C.  Two hours later, at 5:45pm, the  temperature of the body is 25.3 <m>^\circ</m>C. What was the time of death? Note that  the normal (adult human) body temperature is <m>37^\circ</m>.
+</p>
+
+<p>
+<alert>Solution</alert> We will assume
+	<fn>
+		We don't know any other method!
+	</fn>
+that the body's temperature obeys Newton's law of cooling.
+<ul>
+<li>
+	Denote by <m>T(t)</m> the temperature of the body at time <m>t</m>, with <m>t=0</m> corresponding  to 3:45pm. We wish to find the time of death <mdash/> call it <m>t_d</m>.
+</li>
+<li>
+<p>
+	There is a lot of data in the statement of the problem; we are told that
+	<ul>
+	<li> the ambient temperature: <m>A=20</m> </li>
+	<li> the temperature of the body when discovered: <m>T(0)=27</m> </li>
+	<li> the temperature of the body 2 hours later: <m>T(2)=25.3</m> </li>
+	<li> assuming the person was a healthy adult right up until he died, the  temperature at the time of death: <m>T(t_d)=37</m>. </li>
+	</ul>
+</p>
+</li>
+<li>
+	Since we assume the temperature of the body obeys Newton's law of cooling, we use   Corollary <xref ref="cor_coolingDEsoln"/> to find,
+	<md>
+	<mrow>
+	T(t) = [T(0)-A]\,e^{Kt} + A
+		  =20+7 e^{Kt}
+	</mrow>
+	</md>
+	Two unknowns remain, <m>K</m> and <m>t_d</m>.
+</li>
+<li>
+	We can find the constant <m>K</m> by using <m>T(2)=25.3</m>:
+	<md>
+	<mrow>
+	25.3=T(2)&amp;= 20+7 e^{2K} &amp; \text{rearrange}
+	</mrow><mrow>
+	7 e^{2K}&amp;=5.3 &amp; \text{rearrange a bit more}
+	</mrow><mrow>
+	2K &amp;= \log\big(\tfrac{5.3}{7}\big)
+	</mrow><mrow>
+	K &amp;= \tfrac{1}{2} \log\big(\tfrac{5.3}{7}\big) = -0.139 &amp; \text{to 3 decimal places}
+	</mrow>
+	</md>
+</li>
+<li>
+	Since we know
+	<fn>
+		Actually, we are assuming again.
+	</fn>
+	that <m>t_d</m> is determined  by <m>T(t_d)=37</m>, we have
+	<md>
+	<mrow>
+	37 = T(t_d) &amp;= 20+7 e^{-0.139 t_d} &amp; \text{rearrange}
+	</mrow><mrow>
+	e^{-0.139 t_d} &amp;= \tfrac{17}{7}
+	</mrow><mrow>
+	-0.139 t_d &amp;=\log\big(\tfrac{17}{7}\big)
+	</mrow><mrow>
+	t_d &amp;= -\tfrac{1}{0.139}\log\big(\tfrac{17}{7}\big)
+	</mrow><mrow>
+	&amp; = - 6.38 &amp;\text{to 2 decimal places}
+	</mrow>
+	</md>
+	Now <m>6.38</m> hours is <m>6</m> hours and <m>0.38\times 60 = 23</m> minutes. So the time of death was <m>6</m> hours and <m>23</m> minutes before 3:45pm, which is 9:22am.
+</li>
+</ul>
+</p>
+
+</example>
+
+<p>
+A slightly tricky example <mdash/> we need to determine the ambient temperature from three  measurements at different times.</p> <example xml:id="eg_SDEcoolingB"><title>Finding the temperature outside</title>
+<p>
+	A glass of room-temperature water is carried out onto a balcony from an  apartment where the temperature is <m>22^\circ</m>C. After one minute the water has  temperature <m>26^\circ</m>C and after two minutes it has temperature <m>28^\circ</m>C.  What is the outdoor temperature?
+</p>
+
+<p>
+<alert>Solution</alert> We will assume that the temperature of the thermometer obeys Newton's law  of cooling.
+<ul>
+<li>
+	Let <m>A</m> be the outdoor temperature and <m>T(t)</m> be the temperature of the water <m>t</m> minutes after it is taken outside.
+</li>
+<li>
+	By Newton's law of cooling,
+	 <md>
+	<mrow>
+	 T(t)=A+\big(T(0)-A\big)e^{Kt}
+	 </mrow>
+	</md>
+	 by Corollary <xref ref="cor_coolingDEsoln"/>. Notice there are 3 unknowns here <mdash/> <m>A</m>,
+	<m>T(0)</m>
+	 and <m>K</m> <mdash/> so we need three pieces of information to find them all.
+	</li>
+	<li> We are told <m>T(0)=22</m>, so
+	 <md>
+	<mrow>
+	   T(t) &amp;=A+\big(22-A\big)e^{Kt}.
+	 </mrow>
+	</md>
+</li>
+<li>
+	We are also told <m>T(1)=26</m>, which gives
+	 <md>
+	<mrow>
+	   26 &amp;=A+\big(22-A\big)e^{K} &amp; \text{rearrange things}
+	</mrow><mrow>
+	   e^K&amp;=\frac{26-A}{22-A}
+	 </mrow>
+	</md>
+</li>
+<li>
+	Finally, <m>T(2)=28</m>, so
+	 <md>
+	<mrow>
+	 28&amp;=A+\big(22-A\big)e^{2K} &amp; \text{rearrange}
+	</mrow><mrow>
+	 e^{2K} &amp;= \frac{28-A}{22-A} &amp; \text{but $e^K=\frac{26-A}{22-A}$, so}
+	</mrow><mrow>
+	 \left(\frac{26-A}{22-A}\right)^2 &amp;=\frac{28-A}{22-A}
+			 &amp; \text{multiply through by  $(22-A)^2$}
+	</mrow><mrow>
+	 (26-A)^2 &amp;= (28-A)(22-A)
+	 </mrow>
+	</md>
+	 We can expand out both sides and collect up terms to get
+	 <md>
+	<mrow>
+	 \underbrace{26^2}_{=676}-52A+A^2 &amp;= \underbrace{28\times22}_{=616}-50A+A^2
+	</mrow><mrow>
+	  60 &amp;= 2A
+	</mrow><mrow>
+	   30 &amp;= A
+	 </mrow>
+	</md>
+	 So the temperature outside is <m>30^\circ</m>.
+</li>
+</ul>
+</p></example>
+
+</subsection>
+
+<subsection xml:id="ssec_pop">
+<title>Population growth</title>
+<introduction>
+
+<p>
+Suppose that we wish to predict the size <m>P(t)</m> of a  population as a function of the time <m>t</m>.  In the most naive model of population growth,  each couple produces  <m>\beta</m> offspring (for some constant <m>\beta</m>) and then dies. Thus  over the course of one generation <m>\beta\tfrac{P(t)}{2}</m> children are produced and <m>P(t)</m> parents die so that the size of the population grows  from  <m>P(t)</m> to
+<md>
+<mrow>
+  P(t+t_g)= \underbrace{P(t)+\beta\frac{P(t)}{2}}_{\text{parents+offspring}}
+  -\underbrace{P(t)}_{\text{parents  die}}=\frac{\beta}{ 2 } P(t)
+</mrow>
+</md>
+where <m>t_g</m> denotes the lifespan of one generation. The rate of change  of the size of the population per unit time is
+<md>
+<mrow>
+  \frac{P(t+t_g)-P(t)}{t_g}
+  =\frac{1}{t_g}\Big[\frac{\beta}{2}P(t) -P(t)\Big]
+  = b P(t)
+</mrow>
+</md>
+where <m> b=\tfrac{\beta-2}{2t_g}</m> is the net birthrate per member  of the population per unit time. If we approximate
+<md>
+<mrow>
+\tfrac{P(t+t_g)-P(t)}{t_g}\approx\diff{P}{t}(t)
+</mrow>
+</md>
+we get the differential equation</p>
+
+<fact xml:id="eqn_simple_pop"><title>Simple population model</title>
+<statement><p>
+<md>
+<mrow>
+  \diff{P}{t} = bP(t)
+</mrow>
+</md>
+</p></statement>
+</fact>
+
+<p>
+By Corollary<nbsp/><xref ref="cor_decay_soln"/>, with <m>-k</m> replaced by <m>b</m>,
+<md>
+<mrow>
+P(t) &amp;= P(0)\cdot e^{bt}
+</mrow>
+</md>
+This is called the Malthusian
+	<fn>
+		This is named after Rev. Thomas  Robert Malthus. He described this model in a 1798 paper called <q>An essay on  the principle of population</q>.
+	</fn>
+growth model. It is, of course, very  simplistic. One of its main characteristics is that, since <m>P(t+T) = P(0)\cdot  e^{b(t+T)} = P(t)\cdot e^{bT}</m>, every time you <em>add</em> <m>T</m> to the time, the  population size is <em>multiplied</em> by <m>e^{bT}</m>. In particular, the population  size doubles every <m>\frac{\log 2}{b}</m> units of time. The Malthusian growth model  can be a reasonably good model only when the population size is very small  compared to its environment
+	<fn>
+		That is, the population has plenty of food  and space to grow.
+	</fn>.
+A more sophisticated model of population growth, that takes  into account the <q>carrying capacity of the environment</q> is considered in the  optional subsection below.
+</p>
+
+<example xml:id="eg_SDEpopgthA"><title>A simple prediction of future population</title>
+<p>
+In 1927 the population of the world was about 2 billion. In 1974 it was about 4 billion. Estimate when it reached 6 billion. What will the population of the world be in 2100, assuming the Malthusian growth model?
+</p>
+
+<p>
+<alert>Solution</alert> We follow our usual pattern for dealing with such problems.
+<ul>
+<li>
+	Let <m>P(t)</m> be the world's population <m>t</m> years after 1927.  Note that 1974 corresponds to <m>t=1974-1927 = 47</m>.
+</li>
+<li>
+	We are assuming that <m>P(t)</m> obeys equation<nbsp/><xref ref="eqn_simple_pop"/>. So, by Corollary<nbsp/><xref ref="cor_decay_soln"/> with <m>-k</m> replaced by <m>b</m>,
+	 <md>
+	<mrow>
+			   P(t)=P(0)\cdot e^{bt}
+	 </mrow>
+	</md>
+	 Notice that there are 2 unknowns here <mdash/> <m>b</m> and <m>P(0)</m>  <mdash/> so we need two pieces of information to find them.
+</li>
+<li>
+	We are told <m>P(0)=2</m>, so
+	 <md>
+	<mrow>
+	   P(t)=2\cdot e^{bt}
+	 </mrow>
+	</md>
+</li>
+<li>
+	We are also told <m>P(47)=4</m>, which gives
+	 <md>
+	<mrow>
+	   4 &amp;=2\cdot e^{47b} &amp; \text{clean up}
+	</mrow><mrow>
+	   e^{47b}&amp;=2 &amp; \text{take the log and clean up}
+	</mrow><mrow>
+	   b&amp;=\frac{\log 2}{47} = 0.0147 &amp; \text{to 3 decimal places}
+	 </mrow>
+	</md>
+</li>
+<li>
+	We now know <m>P(t)</m> completely, so we can easily determine the predicted population
+		<fn>
+			The <em>2015 Revision of World Population</em>, a publication of the United Nations, predicts that the world's population in 2100 will be about 11 billion. But <q>about</q> covers a pretty large range. They give an 80<m>\%</m> confidence interval running from 10 billion to 12.5 billion.
+		</fn>
+	in 2100, i.e. at <m>t=2100-1927 = 173</m>.
+	 <md>
+	<mrow>
+	   P(173) = 2 e^{173 b} = 2 e^{173\times 0.0147} = 12.7\text{ billion}
+	 </mrow>
+	</md>
+</li>
+<li>
+	Finally, our crude model predicts that the population is 6 billion at the time <m>t</m> that obeys
+	<md>
+	<mrow>
+	   P(t) &amp;= 2 e^{b t} = 6 &amp; \text{clean up}
+	</mrow><mrow>
+	   e^{b t}&amp;=3 &amp; \text{take the log and clean up}
+	</mrow><mrow>
+	   t&amp;=\frac{\log 3}{b} = 47\frac{\log 3}{\log 2}
+						   = 74.5
+	 </mrow>
+	</md>
+	which corresponds
+	<fn>
+		The world population really reached  6 billion in about 1999.
+	</fn>
+	to the middle of 2001.
+</li>
+</ul>
+</p></example>
+</introduction>
+
+<subsubsection><title>(optional) <mdash/> Logistic population growth</title>
+<p>
+Logistic growth adds one more wrinkle to the simple population model. It assumes that the population only has access to limited resources. As the size of the population grows the amount of food available to each member decreases. This in turn causes the net birth rate <m>b</m> to decrease. In the logistic growth model <m>b=b_0\left(1-\tfrac{P}{K}\right)</m>, where <m>K</m> is called the carrying capacity of the environment,  so that
+<md>
+<mrow>
+  P'(t) =b_0\left(1-\frac{P(t)}{K}\right)P(t)
+</mrow>
+</md>
+</p>
+
+<p>
+We can learn quite a bit about the behaviour of solutions to differential equations like this, without ever finding formulae for the solutions,  just by watching the sign of <m>P'(t)</m>. For concreteness, we'll look at solutions of the differential equation
+<md>
+<mrow>
+  \diff{P}{t}(t)=\big(\,6000-3P(t)\,\big)\,P(t)
+</mrow>
+</md>
+We'll sketch the graphs of four functions <m>P(t)</m> that obey this equation.
+<ul>
+<li>    For the first function, <m>P(0)=0</m>. </li>
+<li>    For the second function, <m>P(0)=1000</m>. </li>
+<li>    For the third function, <m>P(0)=2000</m>. </li>
+<li>    For the fourth function, <m>P(0)=3000</m>. </li>
+</ul>
+</p>
+
+<p>
+The sketches will be based on the observation that <m>(6000-3P)\,P=3(2000-P)\,P</m>
+<ul>
+<li> is zero for <m>P=0,\ 2000</m>, </li>
+<li> is strictly positive for <m>0 \lt P \lt 2000</m> and </li>
+<li> is strictly negative for <m>P \gt 2000</m>. </li>
+</ul>
+Consequently
+<md>
+<mrow>
+  \diff{P}{t}(t)\ \begin{cases}
+				   =0  &amp; \text{if }P(t)=0\\
+				   \gt 0 &amp; \text{if }0 \lt P(t) \lt 2000\\
+				   =0 &amp; \text{if }P(t)=2000 \\
+				   \lt 0 &amp; \text{if }P(t) \gt 2000
+                  \end{cases}
+</mrow>
+</md>
+Thus if <m>P(t)</m> is some function that obeys  <m>\diff{P}{t}(t)=\big(6000-3P(t)\big)P(t)</m>, then as the graph of <m>P(t)</m> passes through <m>\big(t,P(t)\big)</m>
+<md>
+<mrow>
+\text{the graph has }
+  \begin{cases}
+     \text{slope zero,}&amp; \text{i.e. is horizontal, if }P(t)=0
+     \\
+     \text{positive slope,}&amp; \text{i.e. is increasing, if }
+                                                       0 \lt P(t) \lt 2000
+     \\
+     \text{slope zero,}&amp; \text{i.e. is horizontal, if }P(t)=2000
+     \\
+     \text{negative slope,}&amp; \text{i.e. is decreasing, if }0 \lt P(t) \lt 2000
+  \end{cases}
+</mrow>
+</md>
+as illustrated in the figure</p>
+
+<sidebyside width="66%">
+<image source="text/figs/pop1"/>
+</sidebyside>
+
+<p>As a result,
+<ul>
+<li>
+	if <m>P(0)=0</m>, the graph starts out horizontally. In other words, as <m>t</m> starts to increase, <m>P(t)</m> remains at zero, so the slope of the graph remains at zero. The population size remains zero for all time. As a check, observe that  the function <m>P(t)=0</m> obeys <m>\diff{P}{t}(t)=\big(6000-3P(t)\big)P(t)</m>  for all <m>t</m>.
+</li>
+<li>
+	Similarly, if <m>P(0)=2000</m>, the graph again starts out  horizontally. So <m>P(t)</m> remains at <m>2000</m> and the slope remains at zero.  The population size remains 2000 for all time. Again, the function  <m>P(t)=2000</m> obeys <m>\diff{P}{t}(t)=\big(6000-3P(t)\big)P(t)</m> for all <m>t</m>.
+</li>
+<li>
+	If <m>P(0)=1000</m>, the graph starts out with positive slope. So <m>P(t)</m> increases with <m>t</m>. As <m>P(t)</m> increases towards 2000, the slope <m>(6000-3P(t)\big)P(t)</m>, while remaining positive, gets closer and closer to zero. As the graph approaches height 2000, it becomes more and more  horizontal. The graph cannot actually cross from below 2000 to above 2000, because to do so, it would have to have strictly positive slope for  some value of <m>P</m> above 2000, which is not allowed.
+</li>
+<li>
+	If <m>P(0)=3000</m>, the graph starts out with negative slope. So <m>P(t)</m> decreases with <m>t</m>. As <m>P(t)</m> decreases towards 2000, the slope <m>(6000-3P(t)\big)P(t)</m>, while remaining negative, gets closer and closer to zero. As the graph approaches height 2000, it becomes more and more  horizontal. The graph cannot actually cross from above 2000 to below 2000, because to do so, it would have to have negative slope for some value of <m>P</m> below 2000. which is not allowed.
+</li>
+</ul>
+</p>
+
+<p>
+These curves are sketched in the figure below. We conclude that for any initial population size <m>P(0)</m>, except <m>P(0)=0</m>, the population size approaches <m>2000</m> as <m>t\rightarrow\infty</m>.
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/pop2"/>
+</sidebyside>
+
+</subsubsection>
+
+</subsection>
+
+<xi:include href="../problems/prob_s3.3.xml" />
+
+</section>

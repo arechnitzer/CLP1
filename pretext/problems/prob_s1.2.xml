@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+As they are used in this section, what is the difference between speed and velocity?
+</p></statement>
+<answer><p>
+Speed is nonnegative; velocity has a sign (positive or negative) that indicates direction.
+</p></answer>
+<solution><p>
+Speed is nonnegative; velocity has a sign (positive or negative) that indicates direction.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p> Speed can never be negative; can it be zero?
+</p></statement>
+<answer><p>
+Yes--an object that is not moving has speed 0.
+</p></answer>
+<solution><p>
+Yes--an object that is not moving has speed 0.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>Suppose you wake up in the morning in your room, then you walk two kilometres to school, walk another two kilometres to lunch, walk four kilometres to a coffee shop to study, then return to your room until the next morning. In the 24 hours from morning to morning, what was your average velocity?
+</p></statement>
+<hint><p>Where did you start, and where did you end?
+</p></hint>
+<answer><p>0 kph
+</p></answer>
+<solution><p>Since you started and ended in the same place, your difference in position was 0, and  your difference in time was 24 hours. So, your average velocity was <m>\dfrac{0}{24}=0</m> kph.
+</p></solution>
+</exercise>
+<exercise>
+<statement><p>
+Suppose you drop an object, and it falls for a few seconds. Which is larger: its speed at the one second mark, or its average speed from the zero second mark to the one second mark?
+</p></statement>
+<hint><p>
+Is the object falling faster and faster, slower and slower, or at a constant rate?
+</p></hint>
+<answer><p>
+The speed at the one second mark is larger than the average speed.
+</p></answer>
+<solution><p>
+Objects accelerate as they fall--their speed gets bigger and bigger. So in the entire first second of falling, the object is at its fastest at the one-second mark. The average speed, which includes the slower beginning of the fall, will be a smaller number then the speed at the one-second mark.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+The position of an object at time <m>t</m> is given by <m>s(t)</m>. Then its average velocity over the time interval <m>t=a</m> to <m>t=b</m> is given by <m>\dfrac{s(b)-s(a)}{b-a}</m>. Explain why this fraction also gives the slope of the secant line of the curve <m>y=s(t)</m> from the point <m>t=a</m> to the point <m>t=b</m>.
+</p></statement>
+<hint><p>
+Slope is change in vertical component over change in horizontal component.
+</p></hint>
+<answer><p>
+The slope of a curve is given by <m>\dfrac{\mbox{change in vertical component}}{\mbox{change in horizontal component}}</m>. The change in the vertical component is exactly <m>s(b)-s(a)</m>, and the change in the horizontal component is exactly <m>b-a</m>.
+</p></answer>
+<solution><p>
+The slope of a curve is given by <m>\dfrac{\mbox{change in vertical component}}{\mbox{change in horizontal component}}</m>. The change in the vertical component is exactly <m>s(b)-s(a)</m>, and the change in the horizontal component is exactly <m>b-a</m>.
+</p></solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>Below is the graph of the position of an object at time <m>t</m>. For what periods of time is the object's velocity positive?
+</p>
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEtaxis{1}{8}{1}{4}
+\foreach \x in {1,...,7}{\YExcoord{\x}{\x}}
+\draw[thick] plot[smooth] coordinates{(0,1) (2,3) (4,1) (6,0) (7,1)} node[right]{$y=s(t)$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+</statement>
+<hint><p>
+Sign of velocity gives direction of motion:
+the velocity is positive at time <m>t</m> if <m>s(t)</m> is
+            increasing at time <m>t</m>.
+</p></hint>
+<answer><p>
+<m>(0,2) \cup (6,7)</m>
+</p></answer>
+<solution><p>
+The velocity is positive when the object is going in the increasing direction; it is going <q>up</q> on the graph when <m>t</m> is between 0 and 2, and when <m>t</m> is between <m>6</m> and <m>7</m>. So, the velocity is positive when <m>t</m> is in <m>(0,2) \cup (6,7)</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+Suppose the position of a body at time <m>t</m> (measured in seconds) is given by
+<m>s(t)=3t^2+5</m>.
+<ol label="a">
+<li> What is the average velocity of the object from 3 seconds to 5 seconds?
+</li>
+<li> What is the velocity of the object at time <m>t=1</m>?
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Velocity is distance over time.
+</p></hint>
+<answer><p>
+<ol label="a">
+<li> 24 units per second.
+</li>
+<li> 6 units per second
+</li>
+</ol>
+</p></answer>
+<solution><p>
+<ol label="a">
+<li> Average velocity: <m>\dfrac{\mbox{change in position}}{\mbox{change in time}} = \dfrac{s(5)-s(3)}{5-3} = \dfrac{(3\cdot 5^2+5)-(3\cdot 3^2+5)}{5-3}=24</m> units per second.
+</li>
+<li> From the notes, we know the velocity of an object at time <m>a</m> is
+<me>
+v(a)=\lim_{h \rightarrow 0}\frac{s(a+h)-s(a)}{h}
+</me>
+So, in our case:
+<me>
+  v(1)=\lim_{h \rightarrow 0}\frac{s(1+h)-s(1)}{h} =
+\lim_{h \rightarrow 0}\frac{[3(1+h)^2+5]-[3(1)^2+5]}{h} =
+\lim_{h \rightarrow 0}\frac{6h+3h^2}{h}=
+\lim_{h \rightarrow 0}6+3h = 6
+</me>
+So the velocity when <m>t=1</m> is 6 units per second.
+</li>
+</ol>
+</p></solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+Suppose the position of a body at time <m>t</m> (measured in seconds) is given by
+<m>s(t)=\sqrt{t}</m>.
+<ol label="a">
+<li> What is the average velocity of the object from <m>t=1</m> second to <m>t=9</m> seconds?
+</li>
+<li> What is the velocity of the object at time <m>t=1</m>?
+</li>
+<li> What is the velocity of the object at time <m>t=9</m>?
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Use that <m>\frac{\sqrt{a}-b}{c}
+                  = \frac{\sqrt{a}-b}{c}\cdot
+                            \left(\frac{\sqrt{a}+b}{\sqrt{a}+b}\right)
+                  = \frac{a-b^2}{c(\sqrt{a}+b)}</m>.
+ </p></hint>
+<answer><p>
+<ol label="a">
+<li> <m>\frac{1}{4}</m> units per second
+</li>
+<li> <m>\frac{1}{2}</m> units per second
+</li>
+<li> <m>\frac{1}{6}</m> units per second
+</li>
+</ol>
+Remark: the average velocity is <em>not</em> the average of the two instantaneous velocities.
+</p></answer>
+<solution><p>
+<ol label="a">
+<li> Average velocity: <m>\dfrac{\mbox{change in position}}{\mbox{change in time}} = \dfrac{s(9)-s(1)}{9-1} = \dfrac{3-1}{9-1}=\dfrac{1}{4}</m> units per second.
+</li>
+<li> From the notes, we know the velocity of an object at time <m>a</m> is
+<me>
+  v(a)=\lim_{h \rightarrow 0}\frac{s(a+h)-s(a)}{h}
+</me>
+So, in our case:
+<md>
+<mrow>
+v(1)=\lim_{h \rightarrow 0}\frac{s(1+h)-s(1)}{h}
+&amp;=\lim_{h \rightarrow 0}\frac{\sqrt{1+h}-1}{h}
+</mrow><mrow>
+&amp;=\lim_{h \rightarrow 0}\frac{\sqrt{1+h}-1}{h}\cdot \left( \dfrac{\sqrt{1+h}+1}{\sqrt{1+h}+1}\right)
+</mrow><mrow>
+&amp;=\lim_{h \rightarrow 0}\frac{(1+h)-1}{h(\sqrt{1+h}+1)}
+</mrow><mrow>
+&amp;=\lim_{h \rightarrow 0}\frac{1}{\sqrt{1+h}+1}=\frac{1}{2}\mbox{ units per second}
+</mrow>
+</md>
+</li>
+<li> <md>
+<mrow>
+v(9)=\lim_{h \rightarrow 0}\frac{s(9+h)-s(9)}{h}
+&amp;=\lim_{h \rightarrow 0}\frac{\sqrt{9+h}-3}{h}
+</mrow><mrow>
+&amp;=\lim_{h \rightarrow 0}\frac{\sqrt{9+h}-3}{h}\cdot \left( \dfrac{\sqrt{9+h}+3}{\sqrt{9+h}+3}\right)
+</mrow><mrow>
+&amp;=\lim_{h \rightarrow 0}\frac{(9+h)-9}{h(\sqrt{9+h}+3)}
+</mrow><mrow>
+&amp;=\lim_{h \rightarrow 0}\frac{1}{\sqrt{9+h}+3}=\frac{1}{6}\mbox{ units per second}
+</mrow>
+</md>
+</li>
+</ol>
+Remark: the average velocity is <em>not</em> the average of the two instantaneous velocities.
+</p></solution>
+</exercise>
+</exercisegroup>
+</exercises>

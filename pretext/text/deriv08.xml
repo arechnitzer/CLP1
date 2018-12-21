@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_diff_trig">
+<title>Derivatives of trigonometric functions</title>
+<introduction>
+
+<p>We are now going to compute the derivatives of the various trigonometric
+functions, <m>\sin x</m>, <m>\cos x</m> and so on. The computations are more involved
+than the others that we have done so far and will take several steps.
+Fortunately, the final answers will be very simple.
+</p>
+
+<p>Observe that we only need to work out the derivatives
+of <m>\sin x</m> and <m>\cos x</m>, since the other trigonometric functions are really just
+quotients of these two functions. Recall:
+<md>
+<mrow>
+  \tan x &amp;= \frac{\sin x}{\cos x} &amp;
+  \cot x &amp;= \frac{\cos x}{\sin x} &amp;
+  \csc x &amp;= \frac{1}{\sin x} &amp;
+  \sec x &amp;= \frac{1}{\cos x}.
+</mrow>
+</md>
+</p>
+
+<p>The first steps towards computing the derivatives of <m>\sin x, \cos x</m> is
+to find their derivatives at <m>x=0</m>. The derivatives at general points <m>x</m>
+will follow quickly from these, using trig identities. It is important to note
+that we must measure angles in radians
+<fn>In science, radians is
+the standard unit for measuring angles. While you may be more familiar
+with degrees, radians should be used in any computation involving calculus.
+Using degrees will cause errors.
+Thankfully it is easy to translate between these two measures since <m>360^\circ
+= 2\pi</m> radians. See Appendix<nbsp/><xref ref="ssec_rad_deg"/>.</fn>
+, rather than
+degrees, in what follows. Indeed <mdash/> unless
+explicitly stated otherwise, any number that is put into a trigonometric
+function is measured in radians.
+</p>
+</introduction>
+
+<subsection><title>These proofs are optional, the results are not.</title>
+<p>
+While we expect you to read and follow these proofs, we do not expect you to be able to
+reproduce them. You will be required to know the results, in particular
+Theorem<nbsp/><xref ref="thm_DIFFtrigDerivs"/> below.
+</p>
+</subsection>
+<subsection><title>Step 1: <m>\mathbf{\diff{}{x} \{ \sin x \} \big|_{x=0}}</m></title>
+<p>By definition, the derivative of <m>\sin x</m> evaluated at <m>x=0</m> is
+<md>
+<mrow>
+\diff{}{x} \{ \sin x \} \Big|_{x=0}
+=\lim_{h\rightarrow 0}\frac{\sin h-\sin 0}{h}
+=\lim_{h\rightarrow 0}\frac{\sin h}{h}
+</mrow>
+</md>
+We will prove this limit by use of the squeeze theorem (Theorem<nbsp/><xref ref="thm_squeeze"/>). To
+get there we will first need to do some geometry. But first we will build some intuition.
+</p>
+
+<p>The figure below contains part of a circle of radius 1. Recall that
+an arc of length <m>h</m> on such a circle subtends an angle of <m>h</m>
+<alert>radians</alert> at the centre of the circle.
+So the darkened arc in the figure has length <m>h</m> and the darkened vertical
+line in the figure has length <m>\sin h</m>. We must determine what happens
+to the ratio of the lengths of the darkened vertical line
+and darkened arc as <m>h</m> tends to zero.
+</p>
+
+<sidebyside widths="35% 55%">
+<image source="text/figs/sinDerivL"/>
+<image source="text/figs/sinDerivR"/>
+</sidebyside>
+
+<p>Here is a magnified version of the part of the above figure
+that contains the darkened arc and vertical line.
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/sinDeriv2"/>
+</sidebyside>
+
+<p>This particular figure has been drawn with <m>h=.4</m> radians.
+Here are three more such blow ups. In  each successive figure, the
+value of <m>h</m> is smaller.
+To make the figures clearer, the degree of magnification was increased
+each time <m>h</m> was decreased.
+</p>
+
+<sidebyside width="90%">
+<image source="text/figs/sinDeriv345"/>
+</sidebyside>
+
+<p>As we make <m>h</m> smaller and smaller and look at the figure with ever increasing
+magnification, the arc of length <m>h</m> and vertical line of length <m>\sin h</m>
+look more and more alike. We would guess from this that
+<me>
+\lim_{h\rightarrow 0}\frac{\sin h}{h}=1
+</me>
+The following tables of values</p>
+
+<sidebyside>
+<tabular left="minor" right="minor" bottom="minor" top="minor">
+<row>
+<cell><m>h</m> </cell><cell>     <m>\sin h</m> </cell><cell>     <m>\tfrac{\sin h}{h}</m> </cell>
+</row><row>
+<cell>0.4 </cell><cell>      .3894 </cell><cell>          .9735 </cell>
+</row><row>
+<cell>0.2 </cell><cell>      .1987 </cell><cell>          .9934  </cell>
+</row><row>
+<cell>0.1 </cell><cell>      .09983 </cell><cell>         .9983  </cell>
+</row><row>
+<cell>0.05 </cell><cell>     .049979 </cell><cell>        .99958  </cell>
+</row><row>
+<cell> 0.01 </cell><cell>     .00999983 </cell><cell>      .999983  </cell>
+</row><row>
+<cell> 0.001 </cell><cell>    .0099999983 </cell><cell>    .9999983  </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<sidebyside>
+<tabular left="minor" right="minor" bottom="minor" top="minor">
+<row>
+<cell> h  </cell><cell>     <m>\sin h</m> </cell><cell>     <m>\tfrac{\sin h}{h}</m> </cell>
+</row><row>
+<cell><m>-0.4</m> </cell><cell>      <m>-.3894</m> </cell><cell>          .9735 </cell>
+</row><row>
+<cell><m>-0.2</m> </cell><cell>      <m>-.1987</m> </cell><cell>          .9934  </cell>
+</row><row>
+<cell><m>-0.1</m> </cell><cell>      <m>-.09983</m> </cell><cell>         .9983  </cell>
+</row><row>
+<cell><m>-0.05</m> </cell><cell>     <m>-.049979</m> </cell><cell>        .99958  </cell>
+</row><row>
+<cell><m>-0.01</m> </cell><cell>     <m>-.00999983</m> </cell><cell>      .999983  </cell>
+</row><row>
+<cell><m>-0.001</m> </cell><cell>    <m>-.0099999983</m> </cell><cell>    .9999983  </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>suggests the same guess. Here is an argument that shows that the guess
+really is correct.
+</p>
+</subsection>
+<subsection><title>Proof that
+<m>\mathbf{\lim\limits_{h\rightarrow 0}\tfrac{\sin h}{h}=1}</m></title>
+
+<sidebyside widths="40% 55%">
+<image source="text/figs/sinDeriv6L"/>
+<image source="text/figs/sinDeriv6RR"/>
+</sidebyside>
+
+<p>The circle in the figure above has radius <m>1</m>. Hence
+<md>
+<mrow>
+|OP|=|OR|&amp;=1 &amp;
+|PS|&amp;=\sin h
+</mrow><mrow>
+|OS|&amp;= \cos h &amp;
+|QR|&amp;=\tan h
+</mrow>
+</md>
+</p>
+<p>
+Now we can use a few geometric facts about this figure to establish both
+an upper bound and a lower bound on <m>\frac{\sin h}{h}</m> with both the upper
+and lower bounds tending to <m>1</m> as <m>h</m> tends to <m>0</m>. So the squeeze
+theorem will tell us that <m>\frac{\sin h}{h}</m> also tends to <m>1</m> as <m>h</m>
+tends to <m>0</m>.
+<ul>
+<li> The triangle <m>OPR</m> has base <m>1</m> and height <m>\sin h</m>, and hence
+<md>
+<mrow>
+\text{area of }\triangle OPR &amp;= \half\times1\times\sin h=\frac{\sin h}{2}.
+</mrow>
+</md>
+</li>
+<li> The triangle <m>OQR</m> has base <m>1</m> and height <m>\tan h</m>, and hence
+<md>
+<mrow>
+\text{area of }\triangle OQR &amp;= \half\times1\times\tan h=\frac{\tan h}{2}.
+</mrow>
+</md>
+</li>
+<li> The <q>piece of pie</q> <m>OPR</m> cut out of the circle  is the fraction
+<m>\frac{h}{2\pi}</m> of the whole circle (since the angle at the corner of
+the piece of pie is <m>h</m> radians and the angle for the whole circle is
+<m>2\pi</m> radians). Since the circle has radius <m>1</m> we have
+<md>
+<mrow>
+\text{area of pie } OPR &amp;=
+\frac{h}{2\pi} \cdot
+(\text{area of circle}) = \frac{h}{2\pi} \pi \cdot 1^2= \frac{h}{2}
+</mrow>
+</md>
+</li>
+</ul>
+Now the triangle <m>OPR</m> is contained inside the piece of pie <m>OPR</m>. and so the area of the
+triangle is smaller than the area of the piece of pie. Similarly, the piece of pie <m>OPR</m>
+is contained inside the triangle <m>OQR</m>. Thus we have
+<md>
+<mrow>
+  \text{area of triangle } OPR \leq \text{ area of pie } OPR
+                              \leq \text{ area of triangle } OQR
+</mrow>
+</md>
+Substituting in the areas we worked out gives
+<md>
+<mrow>
+  \frac{\sin h}{2}  &amp;\leq \frac{h}{2}  \leq \frac{\tan h}{2}
+</mrow>
+<intertext>which cleans up to give</intertext><mrow>
+  \sin h  &amp;\leq h  \leq \frac{\sin h}{\cos h}
+</mrow>
+</md>
+We rewrite these two inequalities so that <m>\frac{\sin h}{h}</m> appears in
+both.
+<ul>
+<li> Since <m>\sin h \leq h</m>, we have that <m>\ds \frac{\sin h}{h} \leq 1</m>.
+</li>
+<li> Since <m>\ds h \leq \frac{\sin h}{\cos h}</m> we have that <m>\ds \cos h \leq
+\frac{\sin h}{h}</m>.
+</li>
+</ul>
+Thus we arrive at the <q>squeezable</q> inequality
+<md>
+<mrow>
+  \cos h \leq \frac{\sin h}{h} \leq 1
+</mrow>
+</md>
+We know
+<fn>Again, refresh your memory by looking up Appendix<nbsp/><xref ref="app_sec_trig_graphs"/>.</fn>
+ that
+<md>
+<mrow>
+  \lim_{h \to 0} \cos h &amp;=1.
+</mrow>
+</md>
+Since <m>\tfrac{\sin h}{h}</m> is sandwiched between <m>\cos h</m> and 1, we can apply the
+squeeze theorem for limits (Theorem<nbsp/><xref ref="thm_squeeze"/>) to deduce the following lemma:</p>
+
+<lemma xml:id="lem_sinhoverh">
+<statement><p>
+<md>
+<mrow>
+  \lim_{h \to 0} \frac{\sin h}{h} &amp;= 1.
+</mrow>
+</md>
+</p></statement>
+</lemma>
+
+
+<p>Since this argument took a bit of work, perhaps we should remind ourselves why
+we needed it in the first place. We were computing
+<md>
+<mrow>
+  \diff{}{x} \{ \sin x\}\Big|_{x=0}
+  &amp;= \lim_{h \to 0} \frac{\sin h - \sin 0}{h}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} \frac{\sin h}{h} &amp; \text{(This is why!)}
+</mrow><mrow>
+  &amp;= 1
+</mrow>
+</md>
+</p>
+
+<p>This concludes Step 1. We now know that
+<m>\diff{}{x}\sin x\big|_{x=0}=1</m>. The remaining steps are easier.
+</p>
+</subsection>
+<subsection><title>Step 2: <m>\mathbf{\diff{}{x} \{ \cos x \} \big|_{x=0}}</m></title>
+<introduction>
+<p>By definition, the derivative of <m>\cos x</m> evaluated at <m>x=0</m> is
+<md>
+<mrow>
+\lim_{h\rightarrow 0}\frac{\cos h-\cos 0}{h}
+&amp;=\lim_{h\rightarrow 0}\frac{\cos h - 1}{h}
+</mrow>
+</md>
+Fortunately we don't have to wade through geometry like we did for the previous step.
+Instead we can recycle our work and massage the above limit to rewrite it in terms of
+expressions involving <m>\frac{\sin h}{h}</m>. Thanks to Lemma<nbsp/><xref ref="lem_sinhoverh"/> the work
+is then easy.
+</p>
+
+<p>We'll show you two ways to proceed <mdash/> one uses a method similar to <q>multiplying by the
+conjugate</q> that we have already used a few times (see Example<nbsp/><xref ref="eg_zero_cancel_limit_harder"/> and<nbsp/><xref ref="eg_DIFFderivXsqrt"/> ), while the other uses a nice trick involving
+the double<ndash/>angle formula
+<fn>See Appendix<nbsp/><xref ref="sec_must_deriv"/> if you have
+forgotten. You should also recall that <m>\sin^2\theta + \cos^2\theta =
+1</m>. Sorry for nagging.</fn>
+.
+</p>
+</introduction>
+<subsubsection><title>Method 1 <mdash/> multiply by the <q>conjugate</q></title>
+<p>
+Start by multiplying the expression inside the limit by 1, written as
+<m>\ds \frac{\cos h + 1}{\cos h +1}</m>:
+<md>
+<mrow>
+  \frac{\cos h - 1}{h}
+  &amp;= \frac{\cos h - 1}{h} \cdot\frac{\cos h + 1}{\cos h +1}
+</mrow><mrow>
+  &amp;= \frac{\cos^2 h - 1}{h (1+ \cos h)}
+           &amp;&amp;\text{$\big($since $(a-b)(a+b)=a^2-b^2\big)$}
+</mrow><mrow>
+  &amp;= -\frac{\sin^2 h}{h(1+\cos h)}
+           &amp;&amp;\text{(since $\sin^2 h + \cos^2 h=1$)}
+</mrow><mrow>
+  &amp;= - \frac{\sin h}{h} \cdot \frac{\sin h}{1 + \cos h}
+</mrow>
+</md>
+Now we can take the limit as <m>h \to 0</m> via Lemma<nbsp/><xref ref="lem_sinhoverh"/>.
+<md>
+<mrow>
+ \lim_{h \to 0} \frac{\cos h - 1}{h}
+  &amp;= \lim_{h \to 0} \left( \frac{-\sin h}{h} \cdot \frac{\sin h}{1 + \cos h}
+\right)
+</mrow><mrow>
+  &amp;= -\lim_{h \to 0}\left( \frac{\sin h}{h} \right) \cdot \lim_{h \to0}
+\left( \frac{\sin h}{1 + \cos h} \right)
+</mrow><mrow>
+  &amp;= - 1 \cdot \frac{0}{2}
+</mrow><mrow>
+  &amp;= 0
+</mrow>
+</md>
+</p>
+</subsubsection>
+
+<subsubsection><title>Method 2 <mdash/> via the double angle formula</title>
+<p>
+The other way involves the double angle formula
+<fn>I hope you looked this up in in Appendix<nbsp/><xref ref="sec_must_deriv"/>. Nag.</fn>,
+<md>
+<mrow>
+  \cos 2\theta = 1 - 2 \sin^2(\theta) \qquad\text{or}\qquad
+  \cos 2\theta -1 = - 2 \sin^2(\theta)
+</mrow>
+</md>
+Setting <m>\theta = h/2</m>, we have
+<md>
+<mrow>
+\frac{\cos h - 1}{h}
+  &amp;= \frac{-2\big(\sin\tfrac{h}{2}\big)^2}{h}
+</mrow>
+<intertext>Now this begins to look like <m>\frac{\sin h?}{h}</m>, except that inside
+the <m>\sin(\cdot)</m> we have <m>h/2</m>. So, setting <m>\theta =h/2</m>,</intertext><mrow>
+\frac{\cos h - 1}{h}   &amp;= - \frac{\sin^2 \theta}{\theta}
+  = - \theta \cdot\frac{ \sin^2 \theta}{\theta^2}
+</mrow><mrow>
+  &amp;= - \theta \cdot \frac{\sin \theta}{\theta} \cdot \frac{\sin \theta}{\theta}
+</mrow>
+</md>
+When we take the limit as <m>h \to 0</m>, we are also taking the limit as
+<m>\theta=h/2 \to 0</m>, and so
+<md>
+<mrow>
+\lim_{h \to 0} \frac{\cos h - 1}{h}
+  &amp;= \lim_{\theta \to 0} \left[
+  - \theta \cdot \frac{\sin \theta}{\theta} \cdot \frac{\sin \theta}{\theta}
+\right]
+</mrow><mrow>
+  &amp;= \lim_{\theta \to 0} \left[- \theta \right]
+  \cdot \lim_{\theta \to 0} \left[\frac{\sin \theta}{\theta}\right]
+  \cdot \lim_{\theta \to 0} \left[\frac{\sin \theta}{\theta}\right]
+</mrow><mrow>
+  &amp;= 0 \cdot 1 \cdot 1
+</mrow><mrow>
+  &amp;= 0
+</mrow>
+</md>
+where we have used the fact that <m>\ds \lim_{h \to 0} \frac{\sin h}{h} = 1</m> and
+that the limit of a product is the product of limits (i.e. Lemma<nbsp/><xref ref="lem_sinhoverh"/> and Theorem<nbsp/><xref ref="thm_arith_lim"/>).
+</p>
+
+</subsubsection>
+<conclusion>
+<p>Thus we have now produced two proofs of the following lemma:</p>
+
+<lemma>
+<statement><p>
+<md>
+<mrow>
+  \lim_{h \to 0} \frac{\cos h -1}{h} &amp;= 0
+</mrow>
+</md>
+</p></statement>
+</lemma>
+
+<p> Again, there has been a bit of work to get to here, so we should remind ourselves why we
+needed it. We were computing
+<md>
+<mrow>
+  \diff{}{x} \{ \cos x \} \Big|_{x=0}
+&amp;= \lim_{h \to 0} \frac{\cos h - \cos 0}{h}
+</mrow><mrow>
+&amp;= \lim_{h \to 0} \frac{\cos h - 1}{h}
+</mrow><mrow>
+&amp;= 0
+</mrow>
+</md>
+</p>
+
+<p>Armed with these results we can now build up the derivatives of sine and
+cosine.
+</p>
+</conclusion>
+</subsection>
+<subsection><title>Step 3: <m>\diff{}{x} \{ \sin x \}</m> and <m>\diff{}{x} \{ \cos x\}</m>
+for general <m>x</m></title>
+
+<p>To proceed to the general derivatives of <m>\sin x</m> and <m>\cos x</m>
+we are going to use the above
+two results and a couple of trig identities. Remember the addition
+formulae
+<fn>You really should. Look this up in Appendix<nbsp/><xref ref="sec_trig_add"/> if you
+have forgotten.</fn>
+</p>
+
+<p><md>
+<mrow>
+  \sin(a+b) &amp;= \sin(a) \cos(b) + \cos(a) \sin(b)
+</mrow><mrow>
+  \cos(a+b) &amp;= \cos(a) \cos(b) - \sin(a) \sin(b)
+</mrow>
+</md>
+To compute the derivative of <m>\sin(x)</m> we just start from the definition of the
+derivative:
+<md>
+<mrow>
+\diff{}{x}\sin x
+&amp;=\lim_{h\rightarrow 0}\frac{\sin (x+h)-\sin x}{h}
+</mrow><mrow>[0.05in]
+&amp;=\lim_{h\rightarrow 0}\frac{\sin x\cos h +\cos x\sin h-\sin x}{h}
+</mrow><mrow>[0.05in]
+&amp;=\lim_{h\rightarrow 0}\bigg[\sin x\frac{\cos h-1}{h}
+                            +\cos x\frac{\sin h-0}{h}\bigg]
+</mrow><mrow>[0.05in]
+&amp;=\sin x\ \lim_{h\rightarrow 0}\frac{\cos h-1}{h}
+  \ +\ \cos x\ \lim_{h\rightarrow 0}\frac{\sin h-0}{h}
+</mrow><mrow>[0.05in]
+&amp;=\sin x\ \underbrace{\bigg[\diff{}{x}\cos x\bigg]_{x=0}}_{=0}
+  \ +\ \cos x\ \underbrace{\bigg[\diff{}{x}\sin x\bigg]_{x=0}}_{=1}
+</mrow><mrow>
+&amp;=\cos x
+</mrow>
+</md>
+The computation of the derivative of <m>\cos x</m> is very similar.
+<md>
+<mrow>
+\diff{}{x}\cos x
+&amp;=\lim_{h\rightarrow 0}\frac{\cos (x+h)-\cos x}{h}
+</mrow><mrow>[0.05in]
+&amp;=\lim_{h\rightarrow 0}\frac{\cos x\cos h -\sin x\sin h-\cos x}{h}
+</mrow><mrow>[0.05in]
+&amp;=\lim_{h\rightarrow 0}\bigg[\cos x\frac{\cos h-1}{h}
+                            -\sin x\frac{\sin h-0}{h}\bigg]
+</mrow><mrow>[0.05in]
+&amp;=\cos x\ \lim_{h\rightarrow 0}\frac{\cos h-1}{h}
+  \ -\ \sin x\ \lim_{h\rightarrow 0}\frac{\sin h-0}{h}
+</mrow><mrow>[0.05in]
+&amp;=\cos x\ \underbrace{\bigg[\diff{}{x}\cos x\bigg]_{x=0}}_{=0}
+  \ -\ \sin x\ \underbrace{\bigg[\diff{}{x}\sin x\bigg]_{x=0}}_{=1}
+</mrow><mrow>
+&amp;=-\sin x
+</mrow>
+</md>
+We have now found the derivatives of both <m>\sin x</m> and <m>\cos x</m>,
+<em>provided <m>x</m> is measured in radians</em>.
+</p>
+
+<lemma xml:id="lem_DIFFsincos">
+<statement><p>
+<md>
+<mrow>
+\diff{}{x}\sin x &amp;=\cos x &amp;
+\diff{}{x}\cos x &amp;=-\sin x
+</mrow>
+</md>
+The above formulas hold provided <m>x</m> is measured in radians.
+</p></statement>
+</lemma>
+
+<p>These formulae are pretty easy to remember <mdash/> applying <m>\diff{}{x}</m>
+to <m>\sin x</m> and <m>\cos x</m> just exchanges <m>\sin x</m> and <m>\cos x</m>, except for
+the minus sign
+<fn>There is a bad pun somewhere in here about sine errors and sign
+errors.</fn>
+ in the derivative of <m>\cos x</m>.
+</p>
+
+<p>Note that if <m>x</m> is measured in degrees then the above work is wrong. There
+are similar formulas, but we need the chain rule to build them <mdash/> that is the
+subject of the next section. But first we should find the
+derivatives of the other trig functions.
+</p>
+
+</subsection>
+<subsection><title>Step 4: the remaining trigonometric functions</title>
+
+<p>It is now an easy matter to get the derivatives of the remaining
+trigonometric functions using basic trig identities and the
+quotient rule. Remember
+<fn>You really should. If you do not then take a
+quick look at the appropriate appendix.</fn>
+ that
+<md>
+<mrow>
+  \tan x&amp;=  \frac{\sin x}{\cos x} &amp; \cot x &amp;= \frac{\cos x}{\sin x}=
+\frac{1}{\tan x}
+</mrow><mrow>
+  \csc x&amp;=  \frac{1}{\sin x} &amp; \sec x &amp;= \frac{1}{\cos x}
+</mrow>
+</md>
+So, by the quotient rule,
+<md>
+<mrow>
+\diff{}{x}\tan x
+&amp;=\diff{}{x}\,\frac{\sin x}{\cos x} &amp;
+&amp;=\diff{}{x}\,\frac{
+         \overbrace{\big({\ts\diff{}{x}}\sin x\big)}^{\cos x}\cos x
+       -\sin x\overbrace{\big({\ts\diff{}{x}\cos x}\big)}^{-\sin x}}
+                         {\cos^2 x} &amp;
+&amp;=\sec^2 x
+</mrow><mrow>
+\diff{}{x}\,\csc x
+&amp;=\diff{}{x}\,\frac{1}{\sin x} &amp;
+&amp;=-\diff{}{x}\frac{
+         \overbrace{\big({\ts\diff{}{x}}\sin x\big)}^{\cos x}}
+                         {\sin^2 x} &amp;
+&amp;=-\csc x\cot x
+</mrow><mrow>
+\diff{}{x}\,\sec x
+&amp;=\diff{}{x}\,\frac{1}{\cos x} &amp;
+&amp;=-\diff{}{x}\frac{
+         \overbrace{\big({\ts\diff{}{x}}\cos x\big)}^{-\sin x}}
+                         {\cos^2 x} &amp;
+&amp;=\sec x\tan x
+</mrow><mrow>
+\diff{}{x}\cot x
+&amp;=\diff{}{x}\,\frac{\cos x}{\sin x} &amp;
+&amp;=\diff{}{x}\,\frac{
+         \overbrace{\big({\ts\diff{}{x}}\cos x\big)}^{-\sin x}\sin x
+       -\cos x\overbrace{{\ts\big(\diff{}{x}}\sin x\big)}^{\cos x}}
+                         {\sin^2 x} &amp;
+&amp;=-\csc^2 x
+</mrow>
+</md>
+</p>
+
+</subsection>
+<subsection><title>Summary</title>
+
+<p>To summarise all this work, we can write this up as a theorem:</p>
+
+<theorem xml:id="thm_DIFFtrigDerivs"><title>Derivative of trigonometric functions</title>
+<statement><p>
+ The derivatives of <m>\sin x</m> and <m>\cos x</m> are
+<md>
+<mrow>
+  \diff{}{x} \sin x &amp;= \cos x &amp; \diff{}{x} \cos x &amp;= - \sin x
+</mrow>
+</md>
+Consequently the derivatives of the other trigonometric functions are
+<md>
+<mrow>
+  \diff{}{x} \tan x &amp;= \sec^2 x &amp;
+  \diff{}{x} \cot x &amp;= -\csc^2 x
+</mrow><mrow>
+  \diff{}{x} \csc x &amp;= -\csc x \cot x &amp;
+  \diff{}{x} \sec x &amp;= \sec x \tan x
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p> Of these 6 derivatives you should really memorise those of sine, cosine and tangent. We
+certainly expect you to be able to work out those of cotangent, cosecant and secant.
+</p>
+</subsection>
+
+
+<xi:include href="../problems/prob_s2.8.xml"/>
+
+
+</section>

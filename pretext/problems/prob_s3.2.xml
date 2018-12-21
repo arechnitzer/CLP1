@@ -1,0 +1,1806 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose the quantities <m>P</m> and <m>Q</m> are related by the formula <m>P=Q^3</m>. <m>P</m> and <m>Q</m> are changing with respect to time, <m>t</m>. Given this information, which of the following are problems you could solve?
+<ol label="i">
+<li> Given <m>\ds\diff{P}{t}(0)</m>, find <m>\ds\diff{Q}{t}(0)</m>. (Remember: the notation <m>\ds\diff{P}{t}(0)</m> means the derivative of <m>P</m> with respect to <m>t</m> at the time <m>t=0</m>.)
+</li>
+<li> Given <m>\ds\diff{P}{t}(0)</m> and the value of <m>Q</m> when <m>t=0</m>, find <m>\ds\diff{Q}{t}(0)</m>.
+</li>
+<li> Given <m>\ds\diff{Q}{t}(0)</m>, find <m>\ds\diff{P}{t}(0)</m>.
+</li>
+<li> Given <m>\ds\diff{Q}{t}(0)</m>  and the value of <m>P</m> when <m>t=0</m>, find <m>\ds\diff{P}{t}(0)</m>.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+If you know <m>P</m>, you can figure out <m>Q</m>.
+</p></hint>
+<answer><p>
+ii and iv
+</p></answer>
+<solution><p>
+We have an equation relating <m>P</m> and <m>Q</m>:
+<md>
+<mrow>
+P&amp;=Q^3
+</mrow>
+<intertext>We differentiate implicitly with respect to a third variable, <m>t</m>:</intertext><mrow>
+\diff{P}{t}&amp;=3Q^2\cdot\diff{Q}{t}
+</mrow>
+</md>
+If we know two of the three quantities <m>\ds\diff{P}{t}</m>, <m>Q</m>, and <m>\ds\diff{Q}{t}</m>, then we can find the third. Therefore, ii is a question we can solve. If we know <m>P</m>, then we also know <m>Q</m> (it's just the cube root of <m>P</m>), so also we can solve iv. However, if we know neither <m>P</m> nor <m>Q</m>, then we can't find <m>\ds\diff{P}{t}</m> based only off <m>\ds\diff{Q}{t}</m>, and
+we can't find <m>\ds\diff{Q}{t}</m> based only off <m>\ds\diff{P}{t}</m>. So we can't solve i or iii.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+
+<introduction><p>For problems <xref ref="s3_2relationshipfirst"/> through
+<xref ref="s3_2relationshiplast"/>, the relationship between several variables is explicitly given. Use this information to relate their rates of change.</p></introduction>
+
+<exercise xml:id="s3_2relationshipfirst" purpose="RQS"> <title><fromexam>2007H</fromexam></title>
+<statement><p>
+ A point is moving on the unit circle
+<m>\set{ (x, y)\;:\; x^2 + y^2 = 1 }</m> in the <m>xy</m>--plane.
+At <m>(2/\sqrt{5}, 1/\sqrt{5})</m>, its <m>y</m>--coordinate is increasing at rate 3.
+What is the rate of change of its <m>x</m>--coordinate?
+</p></statement>
+<hint><p>
+Since the point moves along the unit circle, we know that <m>x^2+y^2=1</m>, where <m>x</m> and <m>y</m> are functions of time.
+</p></hint>
+<answer><p>
+<m>-\dfrac{3}{2}</m>
+</p></answer>
+<solution><p>
+ Suppose that at time <m>t</m>, the point is at <m>\big(x(t),y(t)\big)</m>.
+Then <m>x(t)^2+y(t)^2=1</m> so that <m>2x(t)x'(t)+2y(t)y'(t)=0</m>. We are told that
+at some time <m>t_0</m>, <m>x(t_0)=2/\sqrt{5}</m>, <m>y(t_0)=1/\sqrt{5}</m> and <m>y'(t_0)=3</m>.
+Then
+<md>
+<mrow>
+2x(t_0)x'(t_0)+2y(t_0)y'(t_0)&amp;=0 \qquad \Rightarrow
+</mrow><mrow>
+2\left(\frac{2}{\sqrt{5}}\right)x'(t)+2\left(\frac{1}{\sqrt5}\right)(3)&amp;=0
+\qquad \Rightarrow
+</mrow><mrow>
+x'(t_0)&amp;=-\frac{3}{2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997D, 2012H</fromexam></title>
+<statement><p>
+The quantities <m>P,\ Q</m> and <m>R</m> are functions of time and are related
+by the equation <m>R=PQ</m>. Assume that <m>P</m> is increasing instantaneously at
+the rate of <m>8\%</m> per year and that <m>Q</m> is decreasing instantaneously at
+the rate of <m>2\%</m> per year. That is, <m>\dfrac{P'}{P}=0.08</m> and <m>\dfrac{Q'}{Q}=-0.02</m>.
+Determine the percentage rate of change for <m>R</m>.
+</p></statement>
+<hint><p>
+You'll need some implicit differentiation: what should your variable be?
+Example<nbsp/><xref ref="eg_percentGrowth"/> shows how to work with percentage rate of change.
+</p></hint>
+<answer><p> <m>6\%</m>
+</p></answer>
+<solution><p>
+The instantaneous percentage rate of change for <m>R</m> is
+<md>
+<mrow>
+100\frac{R'}{R}&amp;=100\frac{(PQ)'}{PQ}&amp;\mbox{R=PQ}
+</mrow><mrow>
+&amp;=100\frac{P'Q+PQ'}{PQ}&amp;\mbox{product rule}
+</mrow><mrow>
+&amp;=100\left[\frac{P'}{P}+\frac{Q'}{Q}\right]&amp;\mbox{simplify}
+</mrow><mrow>
+&amp;=100[0.08-0.02]
+=6\%
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_2relationshiplast"><title><fromexam>1997A</fromexam></title>
+<statement><p>
+Three quantities, <m>F</m>, <m>P</m> and <m>Q</m> all depend upon time
+<m>t</m> and are related by the equation
+<me>
+F=\frac{P}{Q}
+</me>
+<ol label="a">
+<li xml:id="s3_2FPQ1"> Assume that at a particular moment in time <m>P=25</m> and <m>P</m>
+is increasing at the instantaneous rate of 5 units/min. At the same moment,
+<m>Q=5</m> and <m>Q</m> is increasing at the instantaneous rate of 1 unit/min. What
+is the instantaneous rate of change in <m>F</m> at this moment?
+</li>
+<li xml:id="s3_2FPQ2"> Assume that at another moment in time <m>P</m> is increasing at
+the instantaneous rate of <m>10\%</m> and <m>Q</m> is decreasing at the instantaneous
+rate <m>5\%</m>. What can you conclude about the rate of change of <m>F</m> at this
+moment?
+</li>
+</ol>
+</p></statement>
+<hint><p> For <xref ref="s3_2FPQ2"/>, refer to Example<nbsp/><xref ref="eg_percentGrowth"/> for percentage rate of change.
+</p></hint>
+<answer><p>
+<xref ref="s3_2FPQ1"/> 0
+</p>
+<p>
+<xref ref="s3_2FPQ2"/> <m>100\dfrac{F'}{F}=15\%</m>, or <m>F'=0.15F</m>
+</p></answer>
+<solution><p>
+<xref ref="s3_2FPQ1"/>
+By the quotient rule, <m>F'=\dfrac{P'Q-PQ'}{Q^2}</m>. At the moment in question,
+<m>F'=\dfrac{5\times5-25\times 1}{5^2}=0.</m>
+</p>
+
+<p><xref ref="s3_2FPQ2"/>
+We are told that, at the second moment in time,
+<m>P'=0.1 P</m>  and <m>Q'=-0.05 Q</m>
+</p>
+
+<p> <m>\big(</m>or equivalently <m>100\frac{P'}{P}=10</m> and <m>100\frac{Q'}{Q}=-5\big)</m>. Substituting in these values:
+</p>
+
+<p><md>
+<mrow>
+F'&amp;=\frac{P'Q-PQ'}{Q^2}
+</mrow><mrow>
+&amp;=\frac{0.1PQ-P(-0.05Q)}{Q^2}
+</mrow><mrow>
+&amp;=\frac{0.15PQ}{Q^2}
+</mrow><mrow>
+&amp;=0.15\frac{P}{Q}
+</mrow><mrow>
+&amp;=0.15 F\qquad
+\implies
+</mrow><mrow>
+ F'&amp;=0.15F</mrow>
+</md>
+</p>
+
+<p> or  <m>100\frac{F'}{F}=15\%</m>. That is, the instantaneous percentage rate of change of <m>F</m> is 15%.
+</p></solution>
+</exercise>
+
+<introduction><p>For Questions <xref ref="s3_2Pythagorusfirst"/> through
+<xref ref="s3_2Pythagoruslast"/>, look for a way to use the Pythagorean Theorem.</p></introduction>
+
+
+
+<exercise xml:id="s3_2Pythagorusfirst"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Two particles move in the Cartesian plane. Particle A travels on the <m>x</m>-axis
+starting at  <m>(10,0)</m> and moving towards the origin with a speed of <m>2</m> units
+per second. Particle B travels on the <m>y</m>-axis starting at <m>(0,12)</m> and moving
+towards the origin with a speed of <m>3</m> units per second. What is the rate of
+change of the distance between the two particles when particle A reaches the
+point <m>(4,0)</m>?
+</p></statement>
+<hint><p> Pay attention to direction, and what it means for the sign (plus/minus) of the velocities of the particles.
+</p></hint>
+<answer><p>
+<m>-\dfrac{17}{5}</m> units per second
+</p></answer>
+<solution><p>
+<ul>
+<li> The distance <m>z(t)</m> between the particles at any moment in time is
+<md>
+<mrow>
+z^2(t)&amp;= x(t)^2+y(t)^2,
+</mrow>
+</md>
+where <m>x(t)</m> is the position on the <m>x</m>-axis of the particle A at time <m>t</m>
+(measured in seconds) and <m>y(t)</m> is the position on the <m>y</m>-axis of the particle
+B at the same time <m>t</m>.
+</li>
+<li> We differentiate the above equation with respect to <m>t</m> and get
+<md>
+<mrow>
+2z \cdot z' &amp;= 2x \cdot x' + 2 y \cdot y',
+</mrow>
+</md>
+</li>
+<li> We are told that <m>x'=-2</m> and <m>y'=-3</m>. (The values are negative because <m>x</m> and <m>y</m> are decreasing.) It will take <m>3</m> seconds
+for particle <m>A</m> to reach <m>x=4</m>, and in this time particle <m>B</m> will reach
+<m>y=3</m>.
+</li>
+<li> At this point <m>z = \sqrt{x^2+y^2}=\sqrt{3^2+4^2}=5</m>.
+</li>
+<li> Hence
+<md>
+<mrow>
+  10z' &amp;= 8\cdot(-2)+6\cdot(-3) = -34
+</mrow><mrow>
+  z' &amp;= -\frac{34}{10} = -\frac{17}{5} \text{ units per second}.
+</mrow>
+</md>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Two particles <m>A</m> and <m>B</m> are placed on the Cartesian plane at <m>(0,0)</m> and <m>(3,0)</m>
+respectively. At time 0, both start to move in the <m>+y</m> direction. Particle <m>A</m> moves at
+3 units per second, while <m>B</m> moves at <m>2</m> units per second. How fast is the distance
+between the particles changing when particle <m>A</m> is at a distance of <m>5</m> units from <m>B</m>.
+</p></statement>
+<hint><p> You'll want to think about the difference in the <m>y</m>-coordinates of the two particles.
+</p></hint>
+<answer><p> <m>\dfrac{4}{5}</m> units per second
+</p></answer>
+<solution><p>
+<ul>
+<li> We compute the distance <m>z(t)</m> between the two particles after <m>t</m> seconds as
+<md>
+<mrow>
+z^2(t)&amp;= 3^2 + (y_A(t)-y_B(t))^2,
+</mrow>
+</md>
+where <m>y_A(t)</m> and <m>y_B(t)</m> are the <m>y</m>-coordinates of particles <m>A</m> and <m>B</m> after <m>t</m>
+seconds, and the horizontal distance between the two particles is always 3 units.
+</li>
+<li> We are told the distance between the particles is 5 units, this happens when
+<md>
+<mrow>
+  (y_A-y_B)^2 &amp;= 5^2-3^2 = 16
+</mrow><mrow>
+  y_A-y_B&amp;=4
+</mrow>
+</md>
+That is, when the difference in <m>y</m>-coordinates is <m>4</m>. This happens when <m>t=4</m>.
+</li>
+<li> We differentiate the distance equation (from the first bullet point) with respect to <m>t</m> and get
+<md>
+<mrow>
+2z \cdot z' &amp;= 2 ({y_A}' - {y_B}') (y_A - y_B),
+</mrow>
+</md>
+</li>
+<li> We know that <m>(y_A-y_B)=4</m>, and we are told that <m>z=5</m>, <m>y_A'=3</m>, and <m>y_B'=2</m>. Hence
+<md>
+<mrow>
+  10z'(4) &amp;=  2 \times1\times4 = 8
+</mrow>
+</md>
+</li>
+<li> Therefore
+<md>
+<mrow>
+  z'(4) &amp;= \frac{8}{10} = \frac{4}{5} \text{ units per second}.
+</mrow>
+</md>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1997D</fromexam></title>
+<statement><p>
+Ship A is 400 miles directly south of Hawaii and is sailing
+south at 20 miles/hour. Ship B is 300 miles directly east of Hawaii and
+is sailing west at 15 miles/hour. At what rate is the distance between
+the ships changing?
+</p></statement>
+<hint><p> Draw a picture, and be careful about signs.
+</p></hint>
+<answer><p> increasing at <m>7</m> mph
+</p></answer>
+<solution>
+<sidebyside>
+<image source="problems/figs/ship"/>
+</sidebyside>
+<p>If <m>x(t),\ y(t)</m> and <m>z(t)</m> are the distances shown, at time
+<m>t</m>, then
+<md>
+<mrow>
+x(t)^2+y(t)^2&amp;=z(t)^2
+</mrow>
+<intertext>Differentiating with respect to <m>t</m>,</intertext><mrow>
+2x(t)x'(t)+2y(t)y'(t)&amp;=2z(t)z'(t)
+</mrow><mrow>
+x(t)x'(t)+y(t)y'(t)&amp;=z(t)z'(t)
+</mrow>
+<intertext>At the specified time, <m>x(t)</m> is decreasing, so <m>x'(t)</m> is negative.</intertext><mrow>
+ (300)(-15)+(400)(20) &amp;= \sqrt{300^2+400^2}z'(t)
+</mrow><mrow>
+500 z'(t)&amp;=3500
+</mrow><mrow>
+z'(t)&amp;=7 \mbox{ mph}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Two tall sticks are vertically planted into the ground, separated by a distance of <m>30</m> cm. We simultaneously put two snails at the base of each stick. The two snails then begin to climb their respective sticks. The first snail is moving with a speed of <m>25</m> cm per minute, while the second snail is moving with a speed of <m>15</m> cm per minute.
+What is the rate of
+change of the distance between the two snails when the first snail reaches <m>100</m> cm above the ground?
+</p></statement>
+<hint><p>
+You'll want to think about the <em>difference</em> in height of the two snails.
+</p></hint>
+<answer><p>
+<m>8</m> cm per minute
+</p></answer>
+<solution><p>
+<ul>
+<li>
+We compute the distance <m>d(t)</m> between the two snails after <m>t</m> minutes as
+<md>
+<mrow>
+d^2(t)&amp;= 30^2 + (y_1(t)-y_2(t))^2,
+</mrow>
+</md>
+where <m>y_1(t)</m> is the altitude of the first snail, and <m>y_2(t)</m> the altitude of the second snail after <m>t</m> minutes.
+</li>
+<li> We differentiate the above equation with respect to <m>t</m> and get
+<md>
+<mrow>
+2d \cdot d' &amp;= 2 ({y_1}' - {y_2}') (y_1 - y_2)
+</mrow><mrow>
+d \cdot d' &amp;=  ({y_1}' - {y_2}') (y_1 - y_2)
+</mrow>
+</md>
+</li>
+<li> We are told that <m>{y_1}'=25</m> and <m>{y_2}'=15</m>. It will take <m>4</m> minutes
+for the first snail to reach <m>y_1=100</m>, and in this time  the second snail will reach
+<m>y_2=60</m>.
+</li>
+<li> At this point <m>d^2 = 30^2 + (100-60)^2 = 900 + 1600 = 2500</m>, hence <m>d = 50</m>.
+</li>
+<li> Therefore
+<md>
+<mrow>
+50  d' &amp;=  (25 - 15) \times (100 - 60)
+</mrow><mrow>
+  d' &amp;= \frac{400}{50} = 8 \text{ cm per minute}.
+</mrow>
+</md>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_2Pythagoruslast"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+A <m>20</m>m long extension ladder leaning against a wall starts collapsing in on itself at a
+rate of <m>2</m>m/s, while the foot of the ladder remains a constant <m>5</m>m from the wall.
+How fast is the ladder moving down the wall after <m>3.5</m> seconds?
+</p></statement>
+<hint><p> The length of the ladder is changing.
+</p></hint>
+<answer><p>
+<m>-\dfrac{13}{6}</m> metres per second
+</p></answer>
+<solution><p>
+<ul>
+<li> <p>
+    If we write <m>z(t)</m> for the length of the ladder at time <m>t</m> and <m>y(t)</m> for the height of the top end of the ladder at time <m>t</m> we have
+    <me>
+        z(t)^2 = 5^2 + y(t)^2.
+    </me>
+    </p>
+</li>
+<li> We differentiate the above equation with respect to <m>t</m> and get
+<md>
+<mrow>
+2z \cdot z' &amp;= 2y \cdot y',
+</mrow>
+</md>
+</li>
+<li> We are told that <m>z'(t)=-2</m>, so <m>z(3.5)=20-3.5\cdot2 = 13</m>.
+</li>
+<li> At this point <m>y = \sqrt{z^2-5^2} = \sqrt{169-25} = \sqrt{144} = 12</m>.
+</li>
+<li> Hence
+<md>
+<mrow>
+  2\cdot 13 \cdot (-2) &amp;= 2 \cdot 12 y'
+</mrow><mrow>
+  y' &amp;= -\frac{2\cdot 13}{12} = -\frac{13}{6} \text{ meters per second}.
+</mrow>
+</md>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<introduction><p>
+For Questions <xref ref="s3_2trianglesfirst"/> through
+<xref ref="s3_2triangleslast"/>, look for tricks from trigonometry.</p></introduction>
+
+<exercise xml:id="s3_2trianglesfirst" purpose="RQS">
+<statement><p>
+A watering trough has a cross section shaped like an isosceles trapezoid. The trough is 2 metres long, 50 cm high, 1 metre wide at the top, and 60 cm wide at the bottom.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}]
+\draw[fill=black!10] (0,0)--(3,0)--(4,2.5)--(-1,2.5)--cycle;
+\draw[fill=black!15] (4,2.5)--(7,3.5)--(6,1)--(3,0);
+\draw[fill=black!20] (-1,2.5)--(2,3.5)--(7,3.5)--(4,2.5)--cycle;
+\draw (2,3.5)--(2.2,2.5);
+\draw (1.5,-.5) node{$60$ cm};
+\draw (1.5,2) node{$1$ m};
+\draw[ \lt - \gt ] (-1.5,0)--(-1.5,2.5) node[midway, left]{$50$ cm};
+\draw[ \lt - \gt ] (-1.1,3)--(1.9,4) node[midway, above]{$2$ m};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>A pig is drinking water from the trough at a rate of 3 litres per minute. When the height of the water is 25 cm, how fast is the height decreasing?
+</p></statement>
+<hint><p>
+If a  trapezoid has height <m>h</m> and (parallel) bases <m>b_1</m> and <m>b_2</m>, then its area is <m>h\left(\frac{b_1+b_2}{2}\right)</m>. To figure out how wide the top of the water is when the water is at height <m>h</m>, you can cut the trapezoid up into a rectangle and two triangles, and make use of similar triangles.
+</p></hint>
+<answer><p> The height of the water is decreasing at
+<m>\dfrac{3}{16}=0.1875\;\frac{\mathrm{cm}}{\mathrm{min}}</m>.
+</p></answer>
+<solution><p>
+What we're given is <m>\ds\diff{V}{t}</m> (where <m>V</m> is volume of water in the trough, and <m>t</m> is time), and what we are asked for is <m>\ds\diff{h}{t}</m> (where <m>h</m> is the height of the water). So, we need an equation relating <m>V</m> and <m>h</m>. First, let's get everything in the same units: centimetres.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[fill=black!10] (0,0)--(3,0)--(4,2.5)--(-1,2.5)--cycle;
+\draw[fill=black!15] (4,2.5)--(7,3.5)--(6,1)--(3,0);
+\draw[fill=black!20] (-1,2.5)--(2,3.5)--(7,3.5)--(4,2.5)--cycle;
+\draw (2,3.5)--(2.2,2.5);
+\draw (1.5,-.5) node{$60$ cm};
+\draw (1.5,2) node{$100$ cm};
+\draw[ \lt - \gt ] (-1.5,0)--(-1.5,2.5) node[midway, left]{$50$ cm};
+\draw[ \lt - \gt ] (-1.1,3)--(1.9,4) node[midway, above, rotate=18]{$200$ cm};
+\draw[fill=blue!10] (0,0)--(3,0)--(3.4,1)--(-.4,1)--cycle;
+\draw[fill=blue!15](3,0)--(6,1)--(6.4,2)--(3.4,1)--cycle;
+\draw[ \lt - \gt , blue] (-.75,0)--(-.75,.9) node[midway, left]{$h$};
+\draw[blue] (1.5,.75)node{$w$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> We can calculate the volume of water in the trough by multiplying the area of its trapezoidal cross section by 200 cm. A  trapezoid with height <m>h</m> and bases <m>b_1</m> and <m>b_2</m> has area <m>h\left(\frac{b_1+b_2}{2}\right)</m>. (To see why this is so, draw the trapezoid as a rectangle flanked by two triangles.)
+So, using  <m>w</m> as the width of the top of the water (as in the diagram above), the area of the cross section of the water in the trough is
+<me>
+A=h\left(\frac{60+w}{2}\right)</me>
+</p>
+
+<p>and therefore the volume of water in the trough is
+<me>
+V=100h(60+w)\;\text{cm}^3.</me>
+</p>
+
+<p>We need a formula for <m>w</m> in terms of <m>h</m>.
+If we draw lines straight up from the bottom corners of the trapezoid, we break it into rectangles and triangles.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0)--(3,0)--(4,2.5)--(-1,2.5)--cycle;
+\draw[ \lt - \gt , dashed] (0,-.5)--(3,-.5) node[midway, shape=rectangle, fill=white, inner sep=0]{$60$ };\draw[ \lt - \gt , dashed] (-1.5,0)--(-1.5,2.5) node[midway, left]{$50$ };
+\draw[fill=blue!10] (0,0)--(3,0)--(3.4,1)--(-.4,1)--cycle;
+\draw[ \lt - \gt , blue, dashed] (-.75,0)--(-.75,.9) node[midway, left]{$h$};
+\draw[dashed] (0,0)--(0,2.5) (3,0)--(3,2.5);
+\draw[blue] (3.25,1.25) node{a};
+\draw[ \lt - \gt , dashed] (3,2.75) --(4,2.74)node[midway, shape=rectangle, fill=white, inner sep=0]{$20$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> Using similar triangles, <m>\dfrac{a}{h}=\dfrac{20}{50}</m>,
+so <m>a=\dfrac{2}{5}h</m>. Then
+<md>
+<mrow>
+w&amp;=60+2a
+</mrow><mrow>&amp;=60+2\left(\frac{2}{5}h\right)=60+\frac{4}{5}h
+</mrow>
+<intertext>so</intertext><mrow>
+V&amp;=100h(60+w)
+</mrow><mrow>&amp;=100h(120+\frac{4}{5}h)
+</mrow><mrow>
+&amp;=80h^2+12000h
+</mrow>
+<intertext>This is the equation we need, relating <m>V</m> and <m>h</m>. Differentiating implicitly with respect to <m>t</m>:</intertext><mrow>
+\diff{V}{t}
+&amp;=2\cdot80h\cdot\diff{h}{t}+12000\diff{h}{t}
+</mrow><mrow>
+&amp;=\left(160h+12000\right)\diff{h}{t}
+</mrow>
+<intertext>We are given that <m>h=25</m> and <m>\ds\diff{V}{t}=3</m> litres per minute. Converting to cubic centimetres, <m>\ds\diff{V}{t} = -3000</m> cubic centimetres per minute. So:</intertext><mrow>
+-3000&amp;=\left(160\cdot25+12000\right)\diff{h}{t}
+</mrow><mrow>
+\diff{h}{t}&amp;=-\frac{3}{16}=-.1875\;\frac{\mathrm{cm}}{\mathrm{min}}
+</mrow>
+</md>
+So, the water level is dropping at <m>\dfrac{3}{16}</m> centimetres per minute.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A tank is 5 metres long, and has a trapezoidal cross section with the dimensions shown below.
+</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0)--(12,0)--(6,5)--(-2,5)--cycle;
+\draw[fill=gray!20] (-2,5)--(-1,6)--(7,6)--(13,1)--(12,0)--(6,5)--(-2,5);
+\draw (6,5)--(7,6);
+\draw[dashed] (0,0)--(0,5) node[midway, right]{$1.25$ m};
+\draw[dashed] (6,0)--(6,5);
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}] (6,0)--(12,0) node[midway, yshift=-15pt]{3 m};
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}] (0,0)--(6,0) node[midway, yshift=-15pt]{3 m};
+\draw[decorate, decoration={brace, amplitude=10pt}] (-2,5)--(0,5) node[midway, yshift=15pt]{1 m};
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}] (12,0)--(13,1) node[midway, xshift=20pt, yshift=-10 pt]{5 m};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>A hose is filling the tank up at a rate of one litre per second. How fast is the height of the water increasing when the water is 10 centimetres deep?
+</p></statement>
+<hint><p>
+Be careful with units. One litre is 1000 cm<m>^3</m>, which is not the same as <m>10</m> m<m>^3</m>.
+</p></hint>
+<answer><p>
+<m>\dfrac{1}{29200}</m> metres per second (or about 1 centimetre every five minutes)
+</p></answer>
+<solution><p>
+If <m>V</m> is the volume of the water in the tank, and <m>t</m> is time, then we are given <m>\ds\diff{V}{t}</m>. What we want to know is <m>\ds\diff{h}{t}</m>, where <m>h</m> is the height of the water in the tank. A reasonable plan is to find an equation relating <m>V</m> and <m>h</m>, and differentiate it implicitly with respect to <m>t</m>.
+</p>
+
+<p>Let's be a little careful about units.
+The volume of water in the tank is
+<me>
+\text{(area of cross section of water)$\times$(length of tank)}
+</me>
+ If we measure these values in metres (area in square metres, length in metres), then the volume is going to be in cubic metres. So, when we differentiate with respect to time, our units will be cubic metres per second. The water is flowing in at one litre per second, or <m>1000</m> cubic centimetres per second. So, we either have to measure our areas and distances in centimetres, or convert litres to cubic metres. We'll do the latter, but both are fine.
+</p>
+
+<p> If we imagine one cubic metre as a cube, with each side of length 1 metre, then it's easy to see the volume inside is <m>(100)^3=10^6</m> cubic centimetres: it's the volume of a cube with each side of length 100 cm. Since a litre is <m>10^3</m> cubic centimetres, and a cubic metre is <m>10^{6}</m> cubic centimetres, one litre is <m>10^{-3}</m> cubic metres.
+So, <m>\textcolor{red}{\ds\diff{V}{t}=\frac{1}{10^3}}</m> cubic metres per second.
+</p>
+
+<p>Let <m>h</m> be the height of the water (in metres). We can figure out the area of the cross section by breaking it into three pieces: a triangle on the left, a rectangle in the middle, and a trapezoid on the right.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[blue, fill=blue!10] (-.8,2)--(9.6,2)--(12,0)--(0,0)--cycle;
+\draw[blue, dashed,  \lt - \gt , ultra thick] (-1,0)--(-1,2) node[midway, left]{$h$};
+\draw[blue, dashed,  \lt - \gt , ultra thick] (-1,2.25)--(0,2.25) node[midway, above]{$a$};
+\draw[blue, dashed,  \lt - \gt , ultra thick] (6.,2.25)--(9.5,2.25) node[midway, above]{$b$};
+\draw (0,0)--(12,0)--(6,5)--(-2,5)--cycle;
+\draw[dashed] (0,0)--(0,5);
+\draw[dashed,  \lt - \gt , ultra thick] (-2,0)--(-2,5) node[midway, left]{$1.25$ m};
+\draw[dashed] (6,0)--(6,5);
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}] (6,0)--(12,0) node[midway, yshift=-15pt]{3 m};
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}] (0,0)--(6,0) node[midway, yshift=-15pt]{3 m};
+\draw[decorate, decoration={brace, amplitude=10pt}] (-2,5)--(0,5) node[midway, yshift=15pt]{1 m};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>
+<ul>
+<li> The triangle on the left has height <m>h</m> metres. Let its base be <m>a</m> metres.
+It forms a similar triangle with the triangle whose height is 1.25 metres and width is 1 metre, so:
+<md>
+<mrow>
+\frac{a}{h}&amp;=\frac{1}{1.25}
+</mrow><mrow>
+a&amp;=\frac{4}{5}h
+</mrow>
+<intertext>So, the area of the triangle on the left is</intertext><mrow>
+\frac{1}{2}ah&amp;=\frac{2}{5}h^2
+</mrow>
+</md>
+</li>
+<li> The rectangle in the middle has length 3 metres and height <m>h</m> metres, so its area is <m>3h</m> square metres.
+</li>
+<li> The trapezoid on the right is a portion of a triangle with base 3 metres and height 1.25 metres. So, its area is
+<md>
+<mrow>&amp;\underbrace{\left(\frac{1}{2}(3)(1.25)\right) }_{\mbox{area of big triangle}}- \underbrace{\left(\frac{1}{2}(b)(1.25-h)\right)}_{\mbox{area of little triangle}}
+</mrow>
+<intertext>The little triangle (of base <m>b</m> and height <m>1.25-h</m>) is formed by the <em>air</em> on the right side of the tank. It is a similar triangle to the triangle of base 3 and height 1.25, so</intertext><mrow>
+\frac{b}{1.25-h}&amp;=\frac{3}{1.25}
+</mrow><mrow>
+b&amp;=\frac{3}{1.25}(1.25-h)
+</mrow>
+<intertext>So, the area of the trapezoid on the right is</intertext><mrow>
+&amp;\frac{1}{2}(3)(1.25)-\frac{1}{2}\left(\frac{3}{1.25}\right)\left(1.25-h\right)(1.25-h)
+</mrow><mrow>
+&amp;=3h-\frac{6}{5}h^2
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+
+<p>So, the area <m>A</m> of the cross section of the water is
+<md>
+<mrow>
+A&amp;=\underbrace{\frac{2}{5}h^2}_{\mbox{triangle}}+
+\underbrace{3h}_{\mbox{rectangle}}+
+\underbrace{3h-\frac{6}{5}h^2}_{\mbox{trapezoid}}
+</mrow><mrow>
+&amp;=6h-\frac{4}{5}h^2
+</mrow>
+<intertext>So, the volume of water is</intertext><mrow>
+V&amp;=5\left(6h-\frac{4}{5}h^2\right)=30h-4h^2
+</mrow>
+<intertext>Differentiating with respect to time, <m>t</m>:</intertext><mrow>
+\diff{V}{t}&amp;=30\diff{h}{t}-8h\diff{h}{t}
+</mrow>
+<intertext>When <m>h=\dfrac{1}{10}</m> metre, and <m>\ds\diff{V}{t}=\frac{1}{10^3}</m> cubic metres per second,</intertext><mrow>
+\frac{1}{10^3}&amp;=30\diff{h}{t}-8\left(\frac{1}{10}\right)\diff{h}{t}
+</mrow><mrow>
+\diff{h}{t}&amp;=\frac{1}{29200} \mbox{ metres per second}
+</mrow>
+</md>
+This is about 1 centimetre every five minutes. You might want a bigger hose.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A rocket is blasting off, 2 kilometres away from you. You and the rocket start at the same height. The height of the rocket in kilometres, <m>t</m> hours after liftoff, is given by
+<me>
+h(t)=61750t^2</me>
+</p>
+
+<p>How fast (in radians per second) is your line of sight rotating to keep looking at the rocket, one minute after liftoff?
+</p></statement>
+<hint><p>
+You, the rocket, and the rocket's original position form a right triangle.
+</p></hint>
+<answer><p>
+<m>\left(\dfrac{2}{\left(\frac{1235}{72}\right)^2+4}\right)\left(\dfrac{6175}{3}\right)\approx
+13.8\;\frac{\mathrm{rad}}{\mathrm{hour}} \approx 0.0038\;\frac{\mathrm{rad}}{\mathrm{sec}}</m>
+</p></answer>
+<solution><p>
+Let <m>\theta</m> be the angle of your head, where <m>\theta=0</m>  means you are looking straight ahead, and <m>\theta=\dfrac{\pi}{2}</m> means you are looking straight up.
+We are interested in <m>\ds\diff{\theta}{t}</m>, but we only have information about <m>h</m>. So, a reasonable plan is to find an equation relating <m>h</m> and <m>\theta</m>, and differentiate with respect to time.
+</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (1.5,0)--(0,0)--(1,1);
+\draw (1,0) arc(0:45:1cm);
+\draw (.8,.4) node[shape=ellipse, minimum height=.4cm, minimum width=0.2cm, draw, fill, inner sep=0, rotate=20]{};
+\draw[dashed] (4,.4)--(.8,.4)--(4,3);
+\draw (1.6,.4) arc(0:37:.8) ;
+\draw (1.75,0.75) node{$\theta$};
+\draw (4.5,2.5)--(4.5,3.5)--(4.75,4)--(5,3.5)--(5,2.5)--cycle;
+\draw[yshift=-2.6cm] (4.5,2.5)--(4.5,3.5)--(4.75,4)--(5,3.5)--(5,2.5)--cycle;
+\draw [thick, - \gt ] (4.75,1.75)--(4.75,2.25);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>The right triangle formed by you, the rocket, and the rocket's original position has adjacent side (to <m>\theta</m>) length 2km, and opposite side (to <m>\theta</m>) length <m>h(t)</m> kilometres, so
+<md>
+<mrow>
+\tan\theta&amp;=\frac{h}{2}
+</mrow>
+<intertext>Differentiating with respect to <m>t</m>:</intertext><mrow>
+\sec^2\theta \cdot \diff{\theta}{t}&amp;=\frac{1}{2}\diff{h}{t}
+</mrow><mrow>
+\diff{\theta}{t}&amp;=\frac{1}{2}\cos^2\theta\cdot\diff{h}{t}
+</mrow>
+</md>
+We know <m>\tan\theta= \frac{h}{2}</m>. We draw a right triangle with angle <m>\theta</m> (filling in the sides using SOH<nbsp/>CAH<nbsp/>TOA and the Pythagorean theorem) to figure out <m>\cos\theta</m>:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0)--(4,0)--(4,3)--cycle;
+\draw (.75,.2) node{$\theta$};
+\draw (2,0) node[below]{2};
+\draw (4.25,1.5) node{$h$};
+\draw (2,2) node[rotate=37]{$\sqrt{h^2+4}$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Using the triangle, <m>\cos\theta = \dfrac{2}{\sqrt{h^2+4}}</m>, so
+<md>
+<mrow>
+\diff{\theta}{t}&amp;=\frac{1}{2}\left(\frac{2}{\sqrt{h^2+4}}\right)^2\cdot\diff{h}{t}
+</mrow><mrow>
+&amp;=\left(\frac{2}{h^2+4}\right)\diff{h}{t}
+</mrow>
+<intertext>So, the quantities we need to know one minute after liftoff (that is, when <m>t = \dfrac{1}{60}</m>) are <m>h\left(\dfrac{1}{60}\right)</m> and <m>\ds\diff{h}{t}\left(\frac{1}{60}\right)</m>. Recall <m>h(t)=61750t^2</m>.</intertext>
+<mrow>
+h\left(\frac{1}{60}\right)&amp;=\frac{61750}{3600}=\frac{1235}{72}
+</mrow><mrow>
+\diff{h}{t}&amp;=2(61750)t
+</mrow><mrow>
+\diff{h}{t}\left(\frac{1}{60}\right)&amp;=\frac{2(61750)}{60}=\frac{6175}{3}
+</mrow>
+<intertext>Returning to the equation
+<m>\ds\diff{\theta}{t}=\left(\dfrac{2}{h^2+4}\right)\ds\diff{h}{t}
+</m>:</intertext><mrow>
+\diff{\theta}{t}\left(\frac{1}{60}\right)&amp;=\left(\frac{2}{\left(\frac{1235}{72}\right)^2+4}\right)\left(\frac{6175}{3}
+\right)\approx 13.8\;\frac{\mathrm{rad}}{\mathrm{hour}}\approx 0.0038\;\frac{\mathrm{rad}}{\mathrm{sec}}
+</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1998H</fromexam></title>
+<statement><p>
+A high speed train is traveling at 2 km/min
+along a straight track. The train is moving away from a movie camera which
+is located 0.5 km from the track.
+<ol label="a">
+<li xml:id="s3_2train1"> How fast is the distance between the train and the camera
+increasing when they are 1.3 km apart?
+</li>
+<li xml:id="s3_2train2">  Assuming that the camera is always pointed at the train,
+how fast (in radians per min) is the camera rotating when the train and the
+camera are 1.3 km apart?
+</li>
+</ol>
+</p></statement>
+<hint><p> Your picture should be a triangle.
+</p></hint>
+<answer><p>
+<xref ref="s3_2train1"/> <m>\dfrac{24}{13}\approx 1.85</m> km/min
+</p>
+<p>
+<xref ref="s3_2train2"/> about <m>.592</m> radians/min
+</p></answer>
+<solution><p>
+<xref ref="s3_2train1"/>
+Let <m>x(t)</m> be the distance of the train along the track at
+time <m>t</m>, measured
+from the point on the track nearest the camera. Let <m>z(t)</m> be the distance
+from the camera to the train at time <m>t</m>.
+</p>
+
+<sidebyside>
+<image source="problems/figs/train2"/>
+</sidebyside>
+<p> Then <m>\textcolor{red}{x'(t)=2}</m> and at the time
+in question, <m>\textcolor{red}{z(t)=1.3}</m> km and <m>\textcolor{red}{x(t)}=\sqrt{1.3^2-0.5^2}=\textcolor{red}{1.2}</m> km. So
+<md>
+<mrow>
+z(t)^2&amp;=x(t)^2+0.5^2
+</mrow><mrow>
+ 2z(t)z'(t)&amp;=2x(t)x'(t)
+</mrow><mrow>
+ 2\times 1.3z'(t)&amp;=2\times 1.2\times 2
+</mrow><mrow>
+\color{red}z'(t)&amp;\textcolor{red}{=\frac{2\times 1.2}{1.3}}\approx1.85 \mbox{ km/min}
+</mrow>
+</md>
+</p>
+
+<p><xref ref="s3_2train2"/>
+Let <m>\theta(t)</m> be the angle shown at time <m>t</m>. Then
+<md>
+<mrow>
+\sin\left(\theta(t)\right)&amp;=\frac{x(t)}{z(t)}</mrow>
+<intertext>Differentiating with respect to <m>t</m>:</intertext><mrow>
+\theta'(t)\cos\left(\theta(t)\right)
+&amp;=\frac{x'(t)z(t)-x(t)z'(t)}{z(t)^2}
+</mrow><mrow>
+\theta'(t)&amp;=\frac{x'(t)z(t)-x(t)z'(t)}{z(t)^2\cos\left(\theta(t)\right)}
+</mrow>
+<intertext>From our diagram, we see <m>\cos\left(\theta(t)\right)=\dfrac{0.5}{z(t)}</m>, so:</intertext><mrow>
+&amp;=2\frac{x'(t)z(t)-x(t)z'(t)}{z(t)}
+</mrow>
+<intertext>Substituting in <m>x'(t)=2</m>, <m>z(t)=1.3</m>, <m>x(t)=1.2</m>, and <m>z'(t)=\dfrac{2\times1.2}{1.3}</m>:</intertext><mrow>
+\theta'(t)
+&amp;=2\frac{2\times 1.3-1.2\times\frac{2\times 1.2}{1.3}}{1.3}
+\approx .592  \mbox{ radians/min}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1996D</fromexam></title>
+<statement><p>
+A ball is dropped from a height of <m>49</m> metres above the ground. The
+height of the ball at time <m>t</m> is <m>h(t)=49-4.9 t^2</m> m. A light, which is
+also <m>49</m> m above the ground, is <m>10</m> m to the left of the ball's original
+position. As the ball descends, the shadow of the ball caused by the light
+moves across the ground. How fast is the shadow moving one second after
+the ball is dropped?
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[red, dashed] (0,3)--(6,0);
+\draw[red] (0,3)--(2,3) node[midway, above]{10};
+\draw[ultra thick] (0,0)--(0,3) node[midway, left]{49} node[opendot, label= left:{light}]{};
+\draw[red, thick, \lt -] (2,1.5)--(2,3) ;
+\draw[red, thick] (2,1.5)--(2,0) ;
+\draw (2,2) node[shape=circle, minimum size=3mm, draw, fill=white, label=right:{$h(t)=49-4.9t^2$}]{};
+\draw (1.75,2) node[left]{ball};
+\draw[red] (2,0) -- (6,0) node[midway, below]{$s(t)$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p> In the diagram, find two similar triangles.
+</p></hint>
+<answer><p> 200 m/s to the left
+</p></answer>
+<solution><p>
+In the diagram, there are two right triangles: one formed by the light, the ball, and the ball's original position, and one formed by the ball, the tip of its shadow, and the ball's eventual position on the ground. The two angles marked below have the same measure, <m>\alpha</m>. (Whenever two straignt lines cross, the opposite angles formed have the same measure.)
+</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[red, dashed] (0,3)--(6,0);
+\draw[red] (0,3)--(2,3) node[midway, above]{10};
+\draw[dashed,  \lt - \gt , thick](0,0)--(0,2) node[midway,left]{$49-4.9t^2$};
+\draw[dashed,  \lt - \gt , thick](-1,2)--(-1,3) node[midway,left]{$4.9t^2$};
+\draw[red, thick] (2,0)--(2,3) ;
+\draw[red] (2,0) -- (6,0) node[midway, below]{$s(t)$};
+\draw (2,2.25) node[above left]{$\alpha$};
+\draw (2,1.75) node[below right]{$\alpha$};
+\draw (2,2.25) arc(90:145:.25);
+\draw (2,1.75) arc(-90:-35:.25);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Since the two triangles share two angles in common (a right angle, and an angle of measure <m>\alpha</m>), they are similar triangles.
+Let's call <m>s(t)</m> the distance from the shadow to the point
+on the ground directly underneath the ball. Since the triangles are similar,
+<md>
+<mrow>
+\frac{4.9 t^2}{10}&amp;=\frac{49-4.9 t^2}{s(t)}
+</mrow><mrow>
+ s(t)&amp;=10\frac{49-4.9 t^2}{4.9 t^2}=\frac{100}{t^2}-10
+</mrow><mrow>
+ s'(t)&amp;=-2\frac{100}{t^3}
+</mrow>
+</md>
+When <m>t=1</m>, <m>s'(1)=-200</m> m/sec. That is, {the shadow is moving to the
+left at <m>200</m> m/sec.}
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_2triangleslast">
+<statement><p>
+A clock has a minute hand that is 10 cm long, and an hour hand that is 5 cm long.
+Let <m>D</m> be the distance between the tips of the two hands. How fast is <m>D</m> decreasing at 4:00?</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick] node[shape=circle, minimum size=5cm, draw]{};
+\draw node[vertex]{};
+\draw[very thick, - \gt ] (0,0)--(0,2) node(m){};
+\draw[very thick, - \gt ] (0,0)--(0.866,-.5) node(h){};
+\draw[dashed, thick, red] (m)--(h) node[midway, right]{$D$};
+\foreach \x in {0,...,11}{
+	\draw (0,0)+(30*\x:2.1cm) node(o\x){};
+	\draw (0,0)+(30*\x:2.75cm) node(i\x){};
+	\draw (o\x)--(i\x);}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+Let <m>\theta</m> be the angle between the two hands. Using the Law of Cosines, you can get an expression for <m>D</m> in terms of <m>\theta</m>.  To find <m>\ds\diff{\theta}{t}</m>, use what you know about how fast clock hands move.
+</p></hint>
+<answer><p>
+<m>\dfrac{55\sqrt{21}\pi}{42}\approx 19</m> centimetres per hour.
+</p></answer>
+<solution><p>
+Let <m>\theta</m> be the angle between the two hands.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick] node[shape=circle, minimum size=5cm, draw]{};
+\draw node[vertex]{};
+\draw[very thick, - \gt ] (0,0)--(0,2) node(m){};
+\draw[very thick, - \gt ] (0,0)--(0.866,-.5) node(h){};
+\draw[dashed, thick, red] (m)--(h) node[midway, right]{$D$};
+\draw[red] (.25,.25) node{$\theta$};
+\draw (.25,-.5) node[rotate=-30]{5cm};
+\draw (-.35,1) node[rotate=90]{10cm};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>The Law of Cosines (Appendix<nbsp/><xref ref="app_cosine_law"/>) tells us that
+<md>
+<mrow>
+D^2&amp;=5^2+10^2-2\cdot5\cdot10\cdot\cos\theta
+</mrow><mrow>
+D^2&amp;=125-100\cos\theta</mrow>
+<intertext>Differentiating with respect to time <m>t</m>,</intertext><mrow>
+2D\diff{D}{t}&amp;=100\sin\theta\cdot\diff{\theta}{t}
+</mrow>
+</md>
+Our tasks now are to find  <m>D</m>, <m>\theta</m> and <m>\ds\diff{\theta}{t}</m> when the time is 4:00.
+At 4:00, the minute hand is straight up, and the hour hand is <m>\dfrac{4}{12}=\dfrac{1}{3}</m> of the way around the clock, so <m>\textcolor{red}{\theta = \dfrac{1}{3}(2\pi)=\dfrac{2\pi}{3}}</m> at 4:00. Then
+<m>D^2=125-100\cos\left(\frac{2\pi}{3}\right)=125-100\left(-\frac{1}{2}\right)=175</m>, so
+<m>\textcolor{red}{D=\sqrt{175}=5\sqrt{7}}</m> at 4:00.
+</p>
+
+<p>To calculate <m>\ds\diff{\theta}{t}</m>, remember that both hands are moving. The hour hand makes a full rotation every 12 hours, so its rotational speed is <m>\dfrac{2\pi}{12}=\dfrac{\pi}{6}</m> radians per hour. The hour hand is being chased by the minute hand. The minute hand makes a full rotation every hour, so its rotational speed is <m>\dfrac{2\pi}{1}=2\pi</m> radians per hour. Therefore, the angle <m>\theta</m> <em>between</em> the two hands is changing at a rate of
+<me>
+\color{red}\ds\diff{\theta}{t}=-\left(2\pi-\dfrac{\pi}{6}\right)=\dfrac{-11\pi}{6}\;\frac{\mathrm{rad}}{\mathrm{hr}}.</me>
+</p>
+
+<p>Now, we plug in <m>D</m>, <m>\theta</m>, and <m>\ds\diff{\theta}{t}</m> to find <m>\ds\diff{D}{t}</m>:
+<md>
+<mrow>
+2D\diff{D}{t}&amp;=100\sin\theta\cdot\diff{\theta}{t}
+</mrow><mrow>
+2\left(5\sqrt{7}\right)\diff{D}{t}&amp;=100\sin\left(\frac{2\pi}{3}\right)\left(\frac{-11\pi}{6}\right)
+</mrow><mrow>
+10\sqrt{7}\diff{D}{t}&amp;=
+100\left(\frac{\sqrt3}{2}\right)\left(\frac{-11\pi}{6}\right)
+=-\frac{275\pi}{\sqrt3}
+</mrow><mrow>
+\diff{D}{t}&amp;=\frac{-55\sqrt{21}\pi}{42}\;\frac{\mathrm{cm}}{\mathrm{hr}}
+</mrow>
+</md>
+So <m>D</m> is decreasing at <m>\dfrac{55\sqrt{21}\pi}{42} \approx 19</m> centimetres per hour.</p>
+
+</solution>
+</exercise>
+
+<introduction><p>For Questions <xref ref="s3_2annulus"/> through <xref ref="s3_2formulaslast"/>, you'll need to know formulas for volume or area.</p></introduction>
+
+<exercise xml:id="s3_2annulus"><title><fromexam>2006H</fromexam></title>
+<statement><p>
+Find the rate of change of the area of the annulus
+<m>\{ (x, y) \;:\; r^2 \le x^2 + y^2 \le R^2 \}</m>.
+(i.e. the points inside the circle of radius <m>R</m> but outside the circle
+of radius <m>r</m>) if <m>R = 3 \;\mathrm{cm}</m>, <m>r = 1\;\mathrm{cm}</m>, <m>\ds\diff{R}{t} = 2\;\frac{\mathrm{cm}}{\mathrm{s}}</m>, and <m>\ds\diff{r}{t} = 7\;\frac{\mathrm{cm}}{\mathrm{s}}</m>.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[thick] node[shape=circle, draw, minimum size=5cm, inner sep=0, fill=gray!20]{};
+\draw[thick] node[shape=circle, draw, minimum size=2cm, inner sep=0, fill=white]{};
+\draw node[vertex]{};
+\draw (0,0)--(2.5,0) node[midway,above]{$R$};
+\draw (0,-1)--(0,0) node[midway, left]{$r$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+The area in the annulus is the area of the outer circle minus the area of the inner circle.
+</p></hint>
+<answer><p>
+<m>\ds\diff{A}{t}=-2\pi\;\dfrac{\mathrm{cm}^2}{\mathrm{s}}</m>
+</p></answer>
+<solution><p>
+The area at time <m>t</m> is the area of the outer circle minus the area of the inner circle:<md>
+<mrow>A(t)&amp;=\pi\big(R(t)^2-r(t)^2\big)
+</mrow><mrow>
+\mbox{So, }\;A'(t)&amp;=2\pi\big(R(t)R'(t)-r(t)r'(t)\big)
+</mrow>
+<intertext>Plugging in the given data,</intertext><mrow>
+A'&amp;=2\pi\big(3\cdot 2-1\cdot 7\big)=-2\pi
+</mrow>
+</md>
+So the area is <em>shrinking</em> at a rate of <m>2\pi\;\dfrac{\mathrm{cm}^2}{\mathrm{s}}</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Two spheres are centred at the same point. The radius <m>R</m> of the bigger sphere at time <m>t</m> is given by <m>R(t)=10+2t</m>, while the radius <m>r</m> of the smaller sphere is given by <m>r(t)=6t</m>, <m>t \ge 0</m>. How fast is the volume between the spheres (inside the big sphere and outside the small sphere) changing when the bigger sphere has a radius twice as large as the smaller?
+</p></statement>
+<hint><p>
+The volume of a sphere with radius <m>R</m> is <m>\dfrac{4}{3}\pi r^3</m>.
+</p></hint>
+<answer><p>
+<m>288</m> cubic units per unit time
+</p></answer>
+<solution><p>
+The volume between the spheres, while the little one is inside the big one, is
+<me>
+V=\frac{4}{3}\pi R^3 - \frac{4}{3}\pi r^3</me>
+</p>
+
+<p>Differentiating implicitly with respect to <m>t</m>:
+<me>
+\diff{V}{t}=4\pi R^2\diff{R}{t}-4\pi r^2\diff{r}{t}</me>
+</p>
+
+<p>We differentiate <m>R=10+2t</m> and <m>r=6t</m> to find <m>\ds\diff{R}{t}=2</m> and <m>\ds\diff{r}{t}=6</m>. When <m>R=2r</m>, <m>10+2t=2(6t)</m>, so <m>t=1</m>. When <m>t=1</m>, <m>R=12</m> and <m>r=6</m>. So:
+<me>
+\diff{V}{t}=4\pi\left(12^2\right)(2)-4\pi\left(6^2\right)(6)=288\pi</me>
+</p>
+
+<p>So the volume between the two spheres is increasing at 288 cubic units per unit time.
+</p>
+
+<p>Remark: when the radius of the inner sphere increases, we are <q>subtracting</q> more area. Since the radius of the inner sphere grows faster than the radius of the outer sphere, we might expect the area between the spheres to be decreasing. Although the radius of the outer sphere grows more slowly, a small increase in the radius of the outer sphere results in a larger change in volume than the same increase in the radius of the inner sphere. So, a result showing that the volume between the spheres is increasing is not unreasonable.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+You attach two sticks together at their ends, and stick the other ends in the mud. One stick is 150 cm long, and the other is 200 cm.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick, brown!50] (-3,0)--(5,0);
+\draw[ultra thick] (-3,0)--(0,2)node[midway, above, rotate=31]{150 cm};
+\draw[ultra thick] (0,2)--(5,0)node[midway, above, rotate=-22]{200 cm};
+\draw[dashed,  \lt - \gt ] (-4,0)--(-4,2) node[midway, left]{1.4 m};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>The structure starts out being 1.4 metres high at its peak, but the sticks slide, and the height decreases at a constant rate of three centimetres per minute. How quickly is the area of the triangle (formed by the two sticks and the level ground) changing when the height of the structure is 120 cm?
+</p></statement>
+<hint><p>
+The area of a triangle is half its base times its height. To find the base, split the triangle into two right triangles.
+</p></hint>
+<answer><p>
+0 square centimetres per minute
+</p></answer>
+<solution><p>
+We know something about the rate of change of the  height <m>h</m> of the triangle, and we want to know something about the rate of change of its area, <m>A</m>. A reasonable plan is to find an equation relating <m>A</m> and <m>h</m>, and differentiate implicitly with respect to <m>t</m>.
+The area of a triangle with height <m>h</m> and base <m>b</m> is
+<md>
+<mrow>
+A&amp;=\frac{1}{2}bh</mrow>
+<intertext>Note, <m>b</m> will change with time as well as <m>h</m>. So, differentiating with respect to time, <m>t</m>:</intertext><mrow>
+\diff{A}{t}&amp;=\frac{1}{2}\left(\diff{b}{t}\cdot h+b\cdot\diff{h}{t}\right)
+</mrow>
+</md>
+We are given <m>\diff{h}{t}</m> and <m>h</m>, but those <m>b</m>'s are a mystery. We need to relate them to <m>h</m>. We can do this by breaking our triangle into  two right triangles and using the Pythagorean Theorem:
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick, brown!50] (-3,0)--(5,0);
+\draw[ultra thick] (-3,0)--(0,2)node[midway, above, rotate=31]{150 cm};
+\draw[ultra thick] (0,2)--(5,0)node[midway, above, rotate=-22]{200 cm};
+\draw[dashed] (0,0)--(0,2) node[midway, left]{$h$};
+\draw[decorate, decoration={brace, mirror, amplitude=10pt}] (-3,0)--(0,0) node[midway,below,yshift=-10pt]{$\sqrt{150^2-h^2}$};
+\draw[decorate, decoration={brace, mirror, amplitude=10pt}] (0,0)--(5,0) node[midway,below,yshift=-10pt]{$\sqrt{200^2-h^2}$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>So, the base of the triangle is
+<md>
+<mrow>b&amp;=\sqrt{150^2-h^2}+\sqrt{200^2-h^2}
+</mrow>
+<intertext>Differentiating with respect to <m>t</m>:</intertext><mrow>
+\diff{b}{t}&amp;=\frac{-2h\diff{h}{t}}{2\sqrt{150^2-h^2}}+
+\frac{-2h\diff{h}{t}}{2\sqrt{200^2-h^2}}
+</mrow><mrow>
+&amp;=\frac{-h\diff{h}{t}}{\sqrt{150^2-h^2}}+
+\frac{-h\diff{h}{t}}{\sqrt{200^2-h^2}}</mrow>
+<intertext>Using <m>\ds\diff{h}{t}=-3</m> centimetres per minute:</intertext>
+<mrow>
+\diff{b}{t}&amp;=\frac{3h}{\sqrt{150^2-h^2}}+
+\frac{3h}{\sqrt{200^2-h^2}}
+</mrow>
+<intertext>When <m>h=120</m>, <m>\sqrt{150^2-h^2}=90</m> and <m>\sqrt{200^2-h^2}=160</m>. So, at this moment in time:</intertext><mrow>
+b&amp;=90+160=250
+</mrow><mrow>
+\diff{b}{t}&amp;=\frac{3(120)}{90}+\frac{3(120)}{160}
+=
+4+\frac{9}{4}=\frac{25}{4}
+</mrow>
+<intertext>We return to our equation relating the derivatives of <m>A</m>, <m>b</m>, and <m>h</m>.</intertext><mrow>
+\diff{A}{t}&amp;=\frac{1}{2}\left(\diff{b}{t}\cdot h + b \cdot \diff{h}{t}\right)
+</mrow>
+<intertext>When <m>h=120</m> cm, <m>b=250</m>, <m>\ds\diff{h}{t}=-3</m>, and <m>\ds\diff{b}{t}=\dfrac{25}{4}</m>: </intertext><mrow>
+\diff{A}{t}&amp;=\frac{1}{2}\left(\frac{25}{4}(120)+250(-3)\right)
+</mrow><mrow>
+&amp;=0
+</mrow>
+</md>
+</p>
+
+<p>Remark: What does it mean that <m>\left.\ds\diff{A}{t}\right|_{h=120}=0</m>? Certainly, as the height changes, the area changes as well. As the height sinks to 120 cm, the area is increasing, but after it sinks <em>past</em> 120 cm, the area is <em>decreasing</em>. So, at the instant when the height is exactly 120 cm, the area is neither increasing nor decreasing: it is at a local maximum. You'll learn more about this kind of problem in Section<nbsp/><xref ref="sec_optimise"/>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_2segment">
+<statement><p>
+The circular lid of a salt shaker has radius 8. There is a cut-out to allow the salt to pour out of the lid, and a door that rotates around to cover the cut-out. The door is a quarter-circle of radius 7 cm. The cut-out has the shape of a quarter-annulus with outer radius 6 cm and inner radius 1 cm.
+If the uncovered area of the cut-out is <m>A</m> cm<m>^2</m>, then the salt flows out at <m>\frac{1}{5}A</m> cm<m>^3</m> per second.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw node[shape=circle, minimum size=4cm, fill=orange!20,draw]{};
+\draw[fill=white] (.5,0)--(1.5,0) arc(0:90:1.5cm)--(0,.5) arc(90:0:.5cm);
+\draw[fill=orange!40] (0,0)--(0,-1.75) arc(-90:-180:1.75cm)--(0,0);
+\draw[fill=orange!50] node[shape=circle, minimum size=1mm, draw, fill]{};
+\draw (0,-3) node{salt shaker lid};
+\draw (0,-3.5) node{cut-out uncovered};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw node[shape=circle, minimum size=4cm, fill=orange!20,draw]{};
+\draw[fill=white] (.5,0)--(1.5,0) arc(0:90:1.5cm)--(0,.5) arc(90:0:.5cm);
+\draw[fill=orange!40] (0,0)--(1.24,-1.24) arc(-45:45:1.75cm)--(0,0);
+\draw[fill=orange!50] node[shape=circle, minimum size=1mm, draw, fill]{};
+\draw[dashed, gray!75] (1.5,0) arc(0:45:1.5cm) (.35,.35) arc(45:0:.5cm)--(1.5,0);
+\draw (0,-3) node{salt shaker lid};
+\draw (0,-3.5) node{cut-out partially covered};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> Recall: an annulus is the set of points inside one circle and outside another,  like a flat doughnut (see Question<nbsp/><xref ref="s3_2annulus"/>).
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0) node[shape=circle, minimum size=3cm, draw, fill=gray!20]{};
+\draw (0,0) node[shape=circle, minimum size=1cm, draw, fill=white]{};
+\draw (0,-2) node{annulus};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[fill=gray!20] (.5,0) arc(0:90:.5cm)--(0,1.5) arc(90:0:1.5cm)--cycle;
+\draw[gray!50, dashed] (.5,0) arc(0:-270:.5cm) (0,1.5) arc(90:-270:1.5cm);
+\draw (0,-2) node{quarter annulus};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>While pouring out salt, you spin the door around the lid at a constant rate of <m>\frac{\pi}{6}</m> radians per second, covering more and more of the cut-out. When exactly half of the cut-out is covered, how fast is the flow of salt changing?
+</p></statement>
+<hint><p>
+The easiest way to figure out the area of the sector of an annulus (or a circle) is to
+figure out the area of the entire annulus, then multiply by what proportion of the entire annulus the sector is. For example, if your sector is <m>\frac{1}{10}</m> of the entire annulus, then its area is <m>\frac{1}{10}</m> of the area of the entire annulus. (See Section<nbsp/><xref ref="app_rad_arc_sec"/>
+to  see how this works out for circles.)
+</p></hint>
+<answer><p>
+<m>-\dfrac{7\pi}{12}\approx -1.8\;\dfrac{\mathrm{cm}^3}{\mathrm{sec}^2}</m>
+</p></answer>
+<solution><p>
+Let <m>S</m> be the flow of salt (in cubic centimetres per second). We want to know <m>\ds\diff{S}{t}</m>: how fast the flow is changing at time <m>t</m>. We are given an equation for <m>S</m>:
+<me>
+S=\frac{1}{5}A</me>
+</p>
+
+<p>where <m>A</m> is the uncovered area of the cut-out. So,
+<me>
+\diff{S}{t}=\frac{1}{5}\diff{A}{t}</me>
+</p>
+
+<p>If we can find <m>\ds\diff{A}{t}</m>, then we can find <m>\ds\diff{S}{t}</m>.
+We are given information about how quickly the door is rotating. If we let <m>\theta</m> be the angle made by the leading edge of the door and the far edge of the cut-out (shown below), then <m>\ds\diff{\theta}{t}=-\dfrac{\pi}{6}</m> radians per second. (Since the door is covering more and more of the cut-out, <m>\theta</m> is getting smaller, so <m>\ds\diff{\theta}{t}</m> is negative.)
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw node[shape=circle, minimum size=4cm, fill=orange!20,draw]{};
+\draw[fill=white] (.5,0)--(1.5,0) arc(0:90:1.5cm)--(0,.5) arc(90:0:.5cm);
+\draw[fill=orange!40] (0,0)--(1.24,-1.24) arc(-45:45:1.75cm)--(0,0);
+\draw[fill=orange!50] node[shape=circle, minimum size=1mm, draw, fill]{};
+\draw[dashed, gray!75] (1.5,0) arc(0:45:1.5cm) (.35,.35) arc(45:0:.5cm)--(1.5,0);
+\draw[thick, red] (0,0)-- (0,2.5) node[right, rotate=90]{edge of cut-out};
+\draw[thick, red] (0,0)--(1.7,1.77) node[right, rotate=45]{edge of door};
+\draw[red] (.25,.75) node{$\theta$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Since we know <m>\ds\diff{\theta}{t}</m>, and we want to know <m>\ds\diff{A}{t}</m> (in order to get <m>\ds\diff{S}{t}</m>), it is reasonable to look for an equation relating <m>A</m> and <m>\theta</m>, and differentiate it implicitly with respect to <m>t</m> to get an equation relating <m>\ds\diff{A}{t}</m> and <m>\ds\diff{\theta}{t}</m>.
+</p>
+
+<p>The area of an annulus with outer radius 6 cm and inner radius 1 cm is
+<m>\pi\cdot 6^2-\pi\cdot1^2=35\pi</m> square centimetres.
+A sector of that same annulus with angle <m>\theta</m> has area <m>\left(\frac{\theta}{2\pi}\right)(35\pi)</m>, since <m>\frac{\theta}{2\pi}</m> is the ratio of the sector to the entire annulus. (For example, if <m>\theta=\pi</m>, then the sector is  <em>half</em> of the entire annulus, so its area is <m>(1/2)35\pi</m>.)
+</p>
+
+<p>So, when <m>0 \leq \theta \leq \frac{\pi}{2}</m>, the area of the cutout that is open is
+<md>
+<mrow>
+A&amp;=\frac{\theta}{2\pi}(35\pi)=\frac{35}{2}\theta
+</mrow>
+<intertext>This is the formula we wanted, relating <m>A</m> and <m>\theta</m>. Differentiating with respect to <m>t</m>,</intertext><mrow>
+\diff{A}{t}&amp;=\frac{35}{2}\diff{\theta}{t}=\frac{35}{2}\left(-\frac{\pi}{6}\right)=-\frac{35\pi}{12}
+</mrow>
+<intertext>Since <m>\ds\diff{S}{t}=\frac{1}{5}\ds\diff{A}{t}</m>,</intertext><mrow>
+\diff{S}{t}&amp;=-\frac{1}{5}\frac{35\pi}{12}=-\frac{7\pi}{12}\approx -1.8\;\frac{\mathrm{cm}^3}{\mathrm{sec}^2}
+</mrow>
+</md>
+</p>
+
+<p>Remark: the change in flow of salt is constant while the door covers more and more of the cut-out, so we never used the fact that precisely half of the cut-out was open. We also never used the radius of the lid, which is immaterial to the flow of salt.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+A cylindrical sewer pipe with radius 1 metre has a vertical rectangular door that slides  in front of it to block the flow of water, as shown below. If the uncovered area of the pipe is <m>A</m> m<m>^2</m>, then the flow of water through the pipe is <m>\frac{1}{5}A</m> cubic metres per second.
+</p>
+
+<p>The door slides over the pipe, moving vertically at a rate of 1 centimetre per second. How fast is the flow of water changing when the door covers the top 25 centimetres of the pipe?
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (-3,0) arc(180:360:3cm);
+\draw[fill=gray!50] (-4,0) rectangle (4,4);
+\draw[dashed] (3,0) arc(0:180:3cm);
+\draw[- \gt , ultra thick, gray] (-4.5,3)--(-4.5,1);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+Think about the ways in which this problem is similar to and different from
+Example<nbsp/><xref ref="eg_fuel"/>
+and Question<nbsp/><xref ref="s3_2segment"/>.
+</p></hint>
+<answer><p>
+The flow is decreasing at a rate of <m>\dfrac{\sqrt{7}}{1000}\;\dfrac{\mathrm{m}^3}{\mathrm{sec}^2}</m>.
+</p></answer>
+<solution><p>
+Let <m>F</m> be the flow of water through the pipe, so <m>F=\dfrac{1}{5}A</m>. We want to know <m>\ds\diff{F}{t}</m>, so differentiating implicitly with respect to <m>t</m>, we find
+<me>
+\ds\diff{F}{t}=\frac{1}{5}\ds\diff{A}{t}.</me>
+</p>
+
+<p>If we can find <m>\ds\diff{A}{t}</m>, then we can find <m>\ds\diff{F}{t}</m>. We know something about the shape of the uncovered area of the pipe; a reasonable plan is to find an equation relating the height of the door with the uncovered area of the pipe. Let <m>h</m> be the distance from the top of the pipe to the bottom of the door, measured in metres.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[gray, fill=gray!70] (2.65,3) arc(49:132:4cm) --cycle;
+\draw node[shape=circle, minimum size=8cm, draw]{};
+\draw[dashed] (2.65,3)-|(6,5)-|(-6,3)--(-2.65,3);
+\draw(-2.65,3)--(2.65,3);
+\draw (5,4) node{door};
+\draw[thick, red] (0,4)--(0,3) node[right, midway]{$h$};
+\draw (0,0)--(2.65,3);
+\draw[blue] (0,0)--(-2.65,3) node[left, midway]{1};
+\draw[orange] (0,0)--(0,3) node[right, midway]{$1-h$};
+\draw[thick, green] (-2.65,3)--(0,3) node[midway, below]{$\sqrt{2h-h^2}$};
+\draw[double, very thick] (0,.5) arc(90:134:.5) ;
+\draw (-0.22, 0.7) node{$\theta$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Since the radius of the pipe is 1 metre, the orange line has length <m>1-h</m> metres, and the blue line has length 1 metre. Using the Pythagorean Theorem, the green line has length <m>\sqrt{1^2-(1-h)^2}=\sqrt{2h-h^2}</m> metres.
+</p>
+
+<p>The uncovered area of the pipe can be broken up into a triangle (of height <m>\textcolor{orange}{1-h}</m> and base <m>\textcolor{green}{2\sqrt{2h-h^2}}</m>) and a sector of a circle (with angle <m>2\pi-2\theta</m>). The area of the triangle is <me>
+\underbrace{(1-h)}_{\mbox{height}}\underbrace{\sqrt{2h-h^2}}_{\frac{1}{2}\mbox{base}}.</me>
+ The area of the sector is
+<me>
+\underbrace{\left(\frac{2\pi-2\theta}{2\pi}\right)}_{\atp{\mbox{fraction}}{\mbox{of circle}}}
+\underbrace{(\pi\cdot 1^2)}_{
+\atp{\mbox{area}
+}{\mbox{of circle}
+}}
+=\pi-\theta.</me>
+</p>
+
+<p>Remember: what we want is to find <m>\ds\diff{A}{t}</m>, and what we know is
+<m>\ds\diff{h}{t}=0.01</m> metres per second.
+If we find <m>\theta</m> in terms of <m>h</m>, we find <m>A</m> in terms of <m>h</m>, and then differentiate with respect to <m>t</m>.
+</p>
+
+<p>Since <m>\theta</m> is an angle in a right triangle with hypotenuse <m>1</m> and adjacent side length <m>1-h</m>, <m>\cos\theta = \frac{1-h}{1} =1-h</m>. We want to conclude that <m>\theta = \arccos(1-h)</m>, but let's be a little careful: remember that the range of the arccosine function is angles in <m>[0,\pi]</m>. We must be confident that <m>0\le\theta\le\pi</m> in order to conclude <m>\theta = \arccos(1-h)</m>--but clearly, <m>\theta</m> is in this range. (Remark: we could also have said <m>\sin\theta=\frac{\sqrt{2h-h^2}}{1}</m>, and so <m>\theta = \arcsin\left(\sqrt{2h-h^2}\right)</m>. This would require <m>-\frac{\pi}{2}\leq \theta\leq\frac{\pi}{2}</m>, which is true when <m>h \lt 1</m>, but false for <m>h \gt 1</m>. Since our problem asks about <m>h=0.25</m>, we could also use arcsine.)
+</p>
+
+<p>Now, we know the area of the open pipe in terms of <m>h</m>.
+<md>
+<mrow>
+A&amp;=(\mbox{area of triangle})+(\mbox{area of sector})
+</mrow><mrow>
+&amp;=(1-h)\sqrt{2h-h^2}+(\pi-\theta)
+</mrow><mrow>
+&amp;=(1-h)\sqrt{2h-h^2}+\pi-\arccos\left(1-h\right)
+</mrow>
+<intertext>We want to differentiate with respect to <m>t</m>. Using the chain rule:</intertext><mrow>
+\diff{A}{t}&amp;=\diff{A}{h}\cdot\diff{h}{t}
+</mrow><mrow>
+\diff{A}{t}&amp;=\left((1-h)\frac{2-2h}{2\sqrt{2h-h^2}}+(-1)\sqrt{2h-h^2}
++\frac{-1}{\sqrt{1-(1-h)^2}}\right)\diff{h}{t}
+</mrow><mrow>
+&amp;=\left(\frac{(1-h)^2}{\sqrt{2h-h^2}}-\sqrt{2h-h^2}-\frac{1}{\sqrt{2h-h^2}}\right)\diff{h}{t}
+</mrow><mrow>
+&amp;=\left(\frac{(1-h)^2-1}{\sqrt{2h-h^2}}-\sqrt{2h-h^2}\right)\diff{h}{t}
+</mrow><mrow>
+&amp;=\left(\frac{-(2h-h^2)}{\sqrt{2h-h^2}}-\sqrt{2h-h^2}\right)\diff{h}{t}
+</mrow><mrow>
+&amp;=\left(-\sqrt{2h-h^2}-\sqrt{2h-h^2}\right)\diff{h}{t}
+</mrow><mrow>
+&amp;=-2\sqrt{2h-h^2}\diff{h}{t}
+</mrow>
+<intertext>We note here that the negative sign makes sense: as the door lowers, <m>h</m> increases and <m>A</m> decreases, so <m>\ds\diff{h}{t}</m> and <m>\ds\diff{A}{t}</m> should have opposite signs.</intertext><mrow>
+</mrow>
+<intertext>When <m>h=\dfrac{1}{4}</m> metres, and <m>\ds\diff{h}{t}=\frac{1}{100}</m> metres per second:</intertext><mrow>
+\diff{A}{t}&amp;=-2\sqrt{\frac{2}{4}-\frac{1}{4^2}}\left(\frac{1}{100}\right)=-\frac{\sqrt{7}}{200}\;\frac{\mathrm{cm}^2}{\mathrm{s}}
+</mrow>
+<intertext>Since <m>\ds\diff{F}{t}=\frac{1}{5}\ds\diff{A}{t}</m>: </intertext><mrow>
+\diff{F}{t}&amp;=-\frac{\sqrt{7}}{1000}\;\frac{\mathrm{m}^3}{\mathrm{sec^2}}
+</mrow>
+</md>
+That is, the flow is decreasing at a rate of <m>\dfrac{\sqrt{7}}{1000}\;\dfrac{\mathrm{m}^3}{\mathrm{sec}^2}</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_2formulaslast" purpose="RQS">
+<statement><p>
+A martini glass is shaped like a cone, with top diameter 10 cm and side length 10 cm.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0) node[ellipse, minimum width=6cm,draw]{};
+\draw (-3,0)--(0,-5.2)--(3,0);
+\draw[ \lt - \gt , gray] (-3,1)--(3,1);
+\draw (0,1) node[shape=circle, fill=white, inner sep=0]{10};
+\draw[ \lt - \gt , gray] (4,0)--(1,-5.2);
+\draw (2.5,-2.6) node[shape=circle, fill=white, inner sep=0]{10};
+\draw[ \lt - \gt , gray] (-4,0)--(-1,-5.2);
+\draw(-2.5,-2.6) node[shape=circle, fill=white, inner sep=0]{10};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>When the liquid in the glass is 7 cm high, it is evaporating at a rate of 5 mL per minute. How fast is the height of the liquid decreasing?
+</p></statement>
+<hint><p>
+The volume of a cone with height <m>h</m> and radius <m>r</m> is <m>\frac{1}{3}\pi r^2h</m>.
+Also, one millilitre is the same as one cubic centimetre.
+</p></hint>
+<answer><p>
+<m>\dfrac{-15}{49\pi}\approx -0.097</m>  cm per minute
+</p></answer>
+<solution><p>
+We are given the rate of change of the volume of liquid, and are asked for the rate of change of the height of the liquid. So, we need an equation relating volume and height.
+</p>
+
+<p>The volume <m>V</m> of a cone with height <m>h</m> and radius <m>r</m> is <m>\frac{1}{3}\pi r^2h</m>. Since we know <m>\ds\diff{V}{t}</m>, and want to know <m>\ds\diff{h}{t}</m>, we need to find a way to deal with the unwanted variable <m>r</m>. We can find <m>r</m> in terms of <m>h</m> by using similar triangles. Viewed from the side, the conical glass is an equilateral triangle, as is the water in it. Using the Pythagorean Theorem, the cone has height <m>5\sqrt{3}</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\color{blue}
+\draw[fill=blue!20] (0,-5.2)--(1,-3.47)--(-1,-3.47)--cycle;
+\draw[decorate, decoration={brace, amplitude=10pt}] (-2,-5.2)--(-2,-3.47) node
+[midway, xshift=-15pt]{$h$};
+\draw[decorate, decoration={brace, amplitude=7pt}] (0,-3.47)--(1,-3.47) node
+[midway, yshift=15pt]{$r$};
+\color{black}
+\draw (-3,0)--(0,-5.2)--(3,0) node[midway, right]{10}--cycle;
+\draw (1.5,.25) node{5};
+\draw[dashed] (0,0)--(0,-5.2);
+\draw (-.5,-1) node{$5\sqrt{3}$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Using similar triangles, <m>\dfrac{r}{h}=\dfrac{5}{5\sqrt{3}}</m>, so <m>r=\dfrac{h}{\sqrt{3}}</m>. (Remark: we could also use the fact that the water forms a cone that looks like an equilateral triangle when viewed from the side to conclude <m>r=\dfrac{h}{\sqrt{3}}</m>.)
+</p>
+
+<p>Now, we can write the volume of water in the cone in terms of <m>h</m>, and no other variables.
+<md>
+<mrow>
+V&amp;=\frac{1}{3}\pi r^2h
+</mrow><mrow>
+&amp;=\frac{1}{3}\pi \left(\frac{h}{\sqrt{3}}\right)^2h
+</mrow><mrow>
+&amp;=\frac{\pi}{9}h^3
+</mrow>
+<intertext>Differentiating with respect to <m>t</m>:</intertext><mrow>
+\diff{V}{t}&amp;=\frac{\pi}{3}h^2\diff{h}{t}
+</mrow>
+<intertext>When <m>h=7</m> cm and <m>\ds\diff{V}{t}=-5</m> mL per minute, </intertext><mrow>
+-5&amp;=\frac{\pi}{3}(49)\diff{h}{t}
+</mrow><mrow>
+\diff{h}{t}&amp;=\frac{-15}{49\pi}\approx -0.097 \mbox{ cm per minute}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+A floating buoy is anchored to the bottom of a river. As the river flows, the buoy is pulled in the direction of flow until its 2-metre rope is taught. A sensor at the anchor reads the angle <m>\theta</m> between the rope and the riverbed, as shown in the diagram below. This data is used to measure the depth <m>D</m> of water in the river, which depends on time.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[line width=2pt] (-3,0)--(5,0);
+\draw (0,0) node[shape=circle, fill, minimum size=2mm]{};
+\draw[ultra thick] (0,0)--(3,2) node[above,shape=circle, minimum size=5mm, fill=orange,draw]{};
+\draw[blue, snake=saw, ultra thick] (-3,2)--(5,2);
+\draw[very thick, - \gt , blue] (4,1.75)--(5,1.75);
+\draw[thick, double] (1,0) arc (0:32:1);
+\draw (1.25,.4)node{$\theta$};
+\draw[blue, dashed, ultra thick,  \lt - \gt ] (-2,.1)--(-2,1.925) node[midway, right]{$D$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>
+<ol label="a">
+<li> If <m>\theta = \dfrac{\pi}{4}</m> and <m>\ds\diff{\theta}{t}=0.25\;\frac{\mathrm{rad}}{\mathrm{hr}}</m>, how fast is the depth <m>D</m> of the water changing?
+</li>
+<li> A measurement shows <m>\ds\diff{\theta}{t}=0</m>, but <m>\ds\diff{D}{t}\neq0</m>. Under what circumstances does this occur?
+</li>
+<li> A measurement shows <m>\ds\diff{\theta}{t} \gt 0</m>, but <m>\ds\diff{D}{t} \lt 0</m>. Under what circumstances does this occur?
+</li>
+</ol>
+</p></statement>
+<hint><p>
+If you were to install the buoy, how would you choose the length of rope? For which values of <m>\theta</m> do <m>\sin\theta</m> and <m>\cos\theta</m> have different signs? How would those values of <m>\theta</m> look on the diagram?
+</p></hint>
+<answer><p>
+<ul>
+<li>(a) <m>\ds\diff{D}{t}=\dfrac{1}{2\sqrt{2}}</m> metres per hour </li>
+<li>(b) The river is higher than 2 metres.</li>
+<li>(c) The river's flow has reversed direction. (This can happen near an ocean at high tide.)</li>
+</ul>
+</p></answer>
+<solution><p>
+As is so often the case, we use a right triangle in this problem to relate the quantities.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[line width=2pt] (-3,0)--(5,0);
+\draw (0,0) node[shape=circle, fill, minimum size=2mm]{};
+\draw[ultra thick] (0,0)--(3,2) node[above,shape=circle, minimum size=5mm, fill=orange,draw]{};
+\draw (1.25,1.25) node{$2$};
+\draw[blue, snake=saw, ultra thick] (-3,2)--(5,2);
+\draw[very thick, - \gt , blue] (4,1.75)--(5,1.75);
+\draw[thick, double] (1,0) arc (0:32:1);
+\draw (1.25,.4)node{$\theta$};
+\draw[blue] (3,0)--(3,2) node[midway, right]{$D$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>
+<md>
+<mrow>
+\sin\theta&amp;=\frac{D}{2}
+</mrow><mrow>
+D&amp;=2\sin\theta</mrow>
+<intertext>Using the chain rule, we differentiate both sides with respect to time, <m>t</m>.</intertext><mrow>
+\diff{D}{t}&amp;=2\cos\theta\cdot\diff{\theta}{t}
+</mrow>
+<intertext>So, if <m>\ds\diff{\theta}{t}=0.25</m> radians per hour and <m>\theta = \dfrac{\pi}{4}</m> radians, then</intertext><mrow>
+(a)\qquad\diff{D}{t}&amp;=2\cos\left(\frac{\pi}{4}\right)\cdot 0.25=2\left(\frac{1}{\sqrt{2}}\right)\frac{1}{4}=\frac{1}{2\sqrt{2}}\;\mbox{metres per hour}.
+</mrow>
+</md>
+</p>
+
+<p>Setting aside part (b) for a moment, let's think about (c). If <m>\ds\diff{\theta}{t}</m>
+and <m>\ds\diff{D}{t}</m> have different signs, then because <m>\ds\diff{D}{t}=2\cos\theta\cdot\ds\diff{\theta}{t}</m>, that means <m>\cos\theta \lt 0</m>. We have to have a nonnegative depth, so <m>D \gt 0</m> and <m>D=2\sin\theta</m> implies <m>\sin \theta  \gt 0</m>. If <m>\sin\theta\ge0</m> and <m>\cos \theta \lt 0</m>, then <m>\theta\in(\pi/2,\pi]</m>. On the diagram, that looks like this:</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[line width=2pt] (-5,0)--(5,0);
+\draw (0,0) node[shape=circle, fill, minimum size=2mm]{};
+\draw[ultra thick] (0,0)--(-3,2) node[above,shape=circle, minimum size=5mm, fill=orange,draw]{};
+\draw (-1.25,1.25) node{$2$};
+\draw[blue, snake=saw, ultra thick] (-5,2)--(5,2);
+\draw[very thick, - \gt , blue] (-4,1.75)--(-5,1.75);
+\draw[thick, double] (.75,0) arc (0:143:.75);
+\draw (0.3,1.0) node{$\theta$};
+\draw[blue] (-3,0)--(-3,2) node[midway, right]{$D$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>That is: the water has reversed direction. This happens, for instance, when a river empties into the ocean and the tide is high.  Skookumchuck Narrows provincial park, in the Sunshine Coast, has reversing rapids.
+</p>
+
+<p>Now, let's return to (b). If the rope is only 2 metres long, and the river rises <em>higher</em> than 2 metres, then our equation <m>D=2\sin\theta</m> doesn't work any more: the buoy might be stationary underwater while the water rises or falls (but stays at or above <m>2</m> metres deep).
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A point is moving in the <m>xy</m>-plane along the quadrilateral shown below.
+</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{4.25}{3.25}
+\draw[dotted, gray] (-4,-3) grid (4,3);
+\draw[ultra thick] (-2,3)--(-4,-2)--(3,-2)--(2,1)--cycle;
+\YExcoord{1}{1}
+\YEycoord{1}{1}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>
+<ol label="a">
+<li> When the point is at <m>(0,-2)</m>, it is moving to the right. An observer stationed at the origin must turn at a rate of one radian per second to keep looking directly at the point. How fast is the point moving?
+</li>
+<li> When the point is at <m>(0,2)</m>, its <m>x</m>-coordinate is increasing at a rate of one unit per second. How fast it its <m>y</m>-coordinate changing? How fast is  the point moving?
+</li>
+</ol>
+</p></statement>
+<hint><p>
+At both points of interest, the point is moving along  a straight line. From the diagram, you can figure out the equation of that line.
+</p>
+
+<p>For the question <q>How fast is the point moving?</q> in part (b), remember that the velocity of an object can be found by differentiating  (with respect to <em>time</em>) the equation that gives the position of the object. The complicating factors in this case are that (1) the position of our object is not given as a function of time, and (2) the position of our object is given in two dimensions, not one.
+</p></hint>
+<answer><p>
+(a) 2 units per second
+</p>
+<p>
+(b)
+Its <m>y</m>-coordinate is decreasing at <m>\dfrac{1}{2}</m> unit per second.
+The point is moving at <m>\dfrac{\sqrt{5}}{2}</m> units per second.
+</p></answer>
+<solution><p>
+(a) When the point is at <m>(0,-2)</m>, its <m>y</m>-coordinate is not changing, because it is moving along a horizontal line. So, the rate at which the particle moves is simply <m>\ds\diff{x}{t}</m>. Let <m>\theta</m> be the angle an observer would be looking at, in order to watch the point.
+Since we know <m>\ds\diff{\theta}{t}</m>, a reasonable plan is to find an equation relating <m>\theta</m> and <m>x</m>, and then differentiate implicitly with respect to <m>t</m>. To do this, let's return to our diagram.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{4.25}{3.25}
+\draw[ultra thick] (-2,3)--(-4,-2)--(3,-2)--(2,1)--cycle;
+\draw (0,-2) node[vertex]{};
+\draw (2,-2) node[vertex]{};
+\draw[decorate, decoration={brace, amplitude=10pt}] (2,-2)--(0,-2) node[midway, yshift=-.6cm]{$x$};
+\draw[dashed] (0,-2)--(0,0)--(2,-2);
+\draw (.25,-.5) node{$\theta$};
+\draw (-.25,-1) node{2};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>When the point is a little to the right of <m>(0,-2)</m>, then we can make a triangle with the origin, as shown. If we let <m>\theta</m> be the indicated angle, then <m>\ds\diff{\theta}{t}=1</m> radian per second. (It is given that the observer is turning one radian per second, so this is how fast <m>\theta</m> is increasing.) From the right triangle in the diagram, we see
+<me>
+\tan\theta=\frac{x}{2}</me>
+</p>
+
+<p>Now, we have to take care of a subtle point. The diagram we drew only makes sense for the point when it is at a position a little to the <em>right</em> of <m>(0,-2)</m>. So, right now, we've only made a set-up that will find the derivative <em>from the right</em>. But, with a little more thought, we see that even when <m>x</m> is negative (that is, when the point is a little to the <em>left</em> of <m>(0,-2)</m>), our equation holds if we are careful about how we define <m>\theta</m>. Let <m>\theta</m> be  the angle between the line connecting the point and the origin, and the <m>y</m>-axis, where <m>\theta</m> is <em>negative</em> when the point is to the left of the <m>y</m>-axis.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{4.25}{3.25}
+\draw[ultra thick] (-2,3)--(-4,-2)--(3,-2)--(2,1)--cycle;
+\draw (0,-2) node[vertex]{};
+\draw (-2,-2) node[vertex]{};
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}] (-2,-2)--(0,-2) node[midway, yshift=-.6cm]{$|x|$};
+\draw[dashed] (0,-2)--(0,0)--(-2,-2);
+\draw[decorate, decoration={brace, amplitude=10pt}] (0,0)--(0,-2) node[midway, xshift=.6cm]{$2$};
+\draw[thick, double] (0,-.75)arc(270:225:.75cm);
+\draw (-.4,-1) node{$|\theta|$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Since <m>x</m> and <m>\theta</m> are both negative when the point is to the left of the <m>y</m>-axis,
+<md>
+<mrow>
+\tan|\theta|&amp;=\frac{2}{|x|}
+</mrow><mrow>
+\tan(-\theta) &amp;= \frac{-x}{2}
+</mrow>
+<intertext>So, since <m>\tan(-\theta)=-\tan(\theta)</m>:</intertext><mrow>
+\tan\theta&amp;=\frac{x}{2}
+</mrow>
+</md>
+So, we've shown that the relationship <m>\tan\theta=\dfrac{x}{2}</m> holds when our point is at <m>(x,-2)</m>, regardless of the sign of <m>x</m>.
+</p>
+
+<p>Moving on, since we are given <m>\ds\diff{\theta}{t}</m> and asked for <m>\ds\diff{x}{t}</m>, we differentiate with respect to <m>t</m>:
+<md>
+<mrow>
+\sec^2\theta \cdot \diff{\theta}{t}&amp;=\frac{1}{2}\cdot\diff{x}{t}
+</mrow>
+<intertext>When the point is at <m>(0,-2)</m>, since the observer is turning at one radian per second, also <m>\ds\diff{\theta}{t}=1</m>. Also, looking at the diagram, <m>\theta=0</m>. Plugging in these values:</intertext><mrow>
+\sec^2\left(0\right)\cdot(1)&amp;=\frac{1}{2}\cdot\diff{x}{t}
+</mrow><mrow>
+1&amp;=\frac{1}{2}\cdot\diff{x}{t}
+</mrow><mrow>
+\diff{x}{t}&amp;=2
+</mrow>
+</md>
+So, the particle is moving at 2 units per second.
+</p>
+
+<p>(b) When the point is at <m>(0,2)</m>, it is moving along a line with slope <m>-\frac{1}{2}</m> and <m>y</m>-intercept <m>2</m>. So, it is on the line
+<me>
+y=2-\frac{1}{2}x</me>
+</p>
+
+<p>That is, at time <m>t</m>, if the point is at <m>(x(t),y(t))</m>, then <m>x(t)</m> and <m>y(t)</m> satisfy
+ <m>y(t)=2-\frac{1}{2}x(t)</m>. Implicitly differentiating with respect to <m>t</m>:
+<me>
+\diff{y}{t}=-\frac{1}{2}\cdot\diff{x}{t}</me>
+</p>
+
+<p>So, when <m>\ds\diff{x}{t}=1</m>, <m>\ds\diff{y}{t}=-\dfrac{1}{2}</m>. That is, its <m>y</m>-coordinate is decreasing at <m>\dfrac{1}{2}</m> unit per second.
+</p>
+
+<p>For the question <q>How fast is the point moving?</q>, remember that the velocity of an object can be found by differentiating  (with respect to <em>time</em>) the equation that gives the position of the object. The complicating factors in this case are that (1) the position of our object is not given as a function of time, and (2) the position of our object is given in two dimensions (an <m>x</m> coordinate and a <m>y</m> coordinate), not one.
+</p>
+
+<p><textblue>Remark: the solution below is actually pretty complicated.  It is within your abilities to figure it out, but later on in your mathematical career you will learn an easier way, using vectors. For now, take this as a relatively tough exercise, and a motivation to keep learning: your intuition that <em>there must be an easier way</em> is well founded!</textblue>
+</p>
+
+<p>The point is moving along a straight line. So, to take care of complication (2), we can give its position as a point on the line. We can take the line as a sort of axis. We'll need to choose a point on the axis to be the <q>origin</q>: <m>(2,1)</m> is a convenient point. Let <m>D</m> be the point's (signed) distance along the <q>axis</q> from <m>(2,1)</m>. When the point is a distance of one unit to the left of <m>(2,1)</m>, we'll have <m>D=-1</m>, and
+when the point is a distance of one unit to the right of <m>(2,1)</m>, we'll have <m>D=1</m>.
+Then <m>D</m> changes with respect to time, and <m>\ds\diff{D}{t}</m> is the velocity of the point. Since we know <m>\ds\diff{x}{t}</m> and <m>\ds\diff{y}{t}</m>, a reasonable plan is to find an equation relating <m>x</m>, <m>y</m>, and <m>D</m>, and differentiate implicitly with respect to <m>t</m>. (This implicit differentiation takes care of complication (1).) Using the Pythagorean Theorem:
+</p>
+
+<p><md>
+<mrow>
+D^2&amp;=(x-2)^2+(y-1)^2
+</mrow>
+<intertext>Differentiating with respect to <m>t</m>:</intertext><mrow>
+2D\cdot\diff{D}{t}&amp;=2(x-2)\cdot\diff{x}{t}+2(y-1)\cdot\diff{y}{t}
+</mrow>
+<intertext>We plug in <m>x=0</m>, <m>y=2</m>, <m>\diff{x}{t}=1</m>, <m>\diff{y}{t}=-\frac{1}{2}</m>, and <m>D=-\sqrt{(0-2)^2+(2-1)^2}=-\sqrt{5}</m> (negative because the point is to the left of <m>(2,1)</m>): </intertext><mrow>
+-2\sqrt{5}\cdot\diff{D}{t}&amp;=2(-2)(1)+2(1)\left(-\frac{1}{2}\right)
+</mrow><mrow>
+\diff{D}{t}&amp;=\frac{\sqrt{5}}{2}\;\mbox{units per second}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+You have a cylindrical water bottle 20 cm high, filled with water. Its cross section is a circle of radius 5. You slowly smoosh the sides, so the cross section becomes an ellipse with major axis (widest part) <m>2a</m> and minor axis (skinniest part) <m>2b</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw node[shape=ellipse, minimum width=4cm, minimum height=3.5cm, draw]{};
+\draw (-2,0)--(-2,-2) (2,0)--(2,-2);
+\draw (0,0)--(2,0) node[above, midway]{$5$};
+\draw (0,0)--(0,1.75) node[left, midway]{$5$};
+\draw (2,-2)arc (0:-180:2cm and 1.75cm);
+\draw (-2.5,-1) node{20};
+\draw[ultra thick, red,- \gt ] (3,-1)--(5,-1);
+\draw (9,0)node[shape=ellipse, minimum width=5cm, minimum height=2.5cm, draw]{};
+\draw (6.5,0)--(6.5,-2) (11.5,0)--(11.5,-2);
+\draw (9,0)--(11.5,0) node[above, midway]{$a$};
+\draw (9,0)--(9,1.25) node[left, midway]{$b$};
+\draw (11.5,-2)arc (0:-180:2.5cm and 1.25cm);
+\draw (6.,-1) node{20};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>After <m>t</m> seconds of smooshing the bottle, <m>a=5+t</m> cm. The perimeter of the cross section is unchanged as the bottle deforms. The perimeter of an ellipse is actually quite difficult to calculate, but we will use an approximation derived by Ramanujan and assume that the perimeter <m>p</m> of our ellipse is
+<me>
+p \approx \pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right].</me>
+</p>
+
+<p>The area of an ellipse is <m>\pi a b</m>.
+<ol label="a">
+<li> Give an equation that relates <m>a</m> and <m>b</m> (and no other variables).
+</li>
+<li> Give an expression for the volume of the bottle as it is being smooshed, in terms of <m>a</m> and <m>b</m> (and no other variables).
+</li>
+<li> Suppose the bottle was full when its cross section was a circle. How fast is the water spilling out when <m>a</m> is twice as big as <m>b</m>?
+</li>
+</ol>
+</p></statement>
+<hint><p>
+(a) Since the perimeter of the cross section of the bottle does not change, <m>p</m> (the perimeter of the ellipse) is the same as the perimeter of the circle of radius 5.</p>
+<p>
+(b) The volume of the bottle will be the area of its cross section times its height. This is always the case when you have some two-dimensional shape, and turn it into a three-dimensional object by <q>pulling</q> the shape straight up. (For example, you can think of a cylinder as a circle that has been <q>pulled</q> straight up. To understand why this formula works, think about what is means to measure the area of a shape in square centimetres, and the volume of an object in cubic centimetres.) </p>
+<p>
+(c) You can use what you know about <m>a</m> and the formula from (a) to find <m>b</m> and <m>\ds\diff{b}{t}</m>. Then use the formula from <m>(b)</m>.
+</p></hint>
+<answer><p>
+(a)  <m>10\pi=\pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right]</m> or equivalently,
+<m>10=3(a+b)+\sqrt{(a+3b)(3a+b)}
+</m>
+</p>
+<p>
+(b) <m>20\pi a b</m>
+</p>
+<p>
+(c) The water is spilling out at about
+36.64 cubic centimetres per second. The exact amount is
+ <m>-\dfrac{200\pi}{9+\sqrt{35}}\left(1-2\left(\dfrac{3\sqrt{35}+11}{3\sqrt{35}+13}\right)\right)\;\dfrac{\mathrm{cm}^3}{\mathrm{sec}}</m>.
+</p></answer>
+<solution><p>
+(a) Since the perimeter of the bottle is unchanged (you aren't stretching the plastic), it is always the same as the perimeter before it was smooshed, which is the circumference of a circle of radius 5, or <m>2\pi(5)=10\pi</m>. So, using our approximation for the perimeter of an ellipse,
+<md>
+<mrow>
+10\pi&amp;=\pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right]
+</mrow><mrow>
+10&amp;=3(a+b)+\sqrt{(a+3b)(3a+b)}
+</mrow>
+</md>
+</p>
+
+<p>(b) The area of the base of the bottle is <m>\pi a b</m>
+(see Section<nbsp/><xref ref="app_sec_areas"/>), and its height is 20 cm, so the volume of the bottle is
+<me>
+V=20\pi a b</me>
+</p>
+
+<p>(c) As you smoosh the bottle, its volume decreases, so the water spills out. (If it turns out that the volume is increasing, then no water is spilling out--but life experience suggests, and our calculations verify, that this is not the case.)
+The water will spill out at a rate of <m>-\ds\diff{V}{t}</m> cubic centimetres per second, where <m>V</m> is the volume inside the bottle. We know something about <m>a</m> and <m>\ds\diff{a}{t}</m>, so a reasonable plan is to differentiate the equation from (b) (relating <m>V</m> and <m>a</m>) with respect to <m>t</m>.
+</p>
+
+<p>Using the product rule, we differentiate the equation in (b) implicitly with respect to <m>t</m> and get
+<me>
+\diff{V}{t}=20\pi\left(\diff{a}{t}b+a\diff{b}{t}\right)</me>
+</p>
+
+<p>So, we need to find the values of <m>\textcolor{red}{a}</m>, <m>\textcolor{red}{b}</m>,
+<m>\textcolor{red}{\ds\diff{a}{t}}</m>, and <m>\textcolor{red}{\ds\diff{b}{t}}</m> at the moment when <m>a=2b</m>.
+</p>
+
+<p>The equation from (a) tells us <m>10=3(a+b)+\sqrt{(a+3b)(3a+b)}</m>. So, when <m>a=2b</m>,
+<md>
+<mrow>
+10&amp;=3(2b+b)+\sqrt{(2b+3b)(6b+b)}
+</mrow><mrow>
+10&amp;=9b+\sqrt{(5b)(7b)}=b\left(9+\sqrt{35}\right)
+</mrow><mrow>
+\color{red}b&amp;\color{red}=\frac{10}{9+\sqrt{35}}
+</mrow>
+<intertext>where we use the fact that <m>b</m> is a positive number, so <m>\sqrt{b^2}=|b|=b</m>. </intertext><mrow></mrow>
+<intertext>Since <m>a=2b</m>,</intertext><mrow>
+\color{red}a&amp;\color{red}=\frac{20}{9+\sqrt{35}}
+</mrow>
+<intertext>Now we know <m>a</m> and <m>b</m> at the moment when <m>a=2b</m>. We still need to know <m>\ds\diff{a}{t}</m> and <m>\ds\diff{b}{t}</m> at that moment. Since <m>a=5+t</m>, always <m>\textcolor{red}{\ds\diff{a}{t}=1}</m>. The equation from (a) relates <m>a</m> and <m>b</m>, so differentiating both sides with respect to <m>t</m> will give us an equation relating <m>\ds\diff{a}{t}</m> and <m>\ds\diff{b}{t}</m>. When differentiating the portion with a square root, be careful not to forget the chain rule.</intertext><mrow>
+0&amp;=3\left(\diff{a}{t}+\diff{b}{t}\right)+\frac{\left(\diff{a}{t}+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3\diff{a}{t}+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
+</mrow>
+<intertext>Since <m>\ds\diff{a}{t}=1</m>:</intertext><mrow>
+0&amp;=3\left(1+\diff{b}{t}\right)+\frac{\left(1+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
+</mrow>
+<intertext>At this point, we could plug in the values we know for <m>a</m> and <m>b</m> at the moment when <m>a=2b</m>. However, the algebra goes a little smoother if we start by plugging in <m>a=2b</m>:</intertext><mrow>
+0&amp;=3\left(1+\diff{b}{t}\right)+\frac{\left(1+3\diff{b}{t}\right)(7b)+(5b)\left(3+\diff{b}{t}\right)}{2\sqrt{(5b)(7b)}}
+</mrow><mrow>
+0&amp;=3\left(1+\diff{b}{t}\right)+\frac{b\left(7+21\diff{b}{t}+15+5\diff{b}{t}\right)}{2b\sqrt{35}}
+</mrow><mrow>
+0&amp;=3\left(1+\diff{b}{t}\right)+\frac{22+26\diff{b}{t}}{2\sqrt{35}}
+</mrow><mrow>
+0&amp;=3+3\diff{b}{t}+\frac{11}{\sqrt{35}}+\frac{13}{\sqrt{35}}\diff{b}{t}
+</mrow><mrow>
+-3-\frac{11}{\sqrt{35}}&amp;=\left(3+\frac{13}{\sqrt{35}}\right)\diff{b}{t}
+</mrow><mrow>
+\color{red}\diff{b}{t}&amp;=\frac{-3-\frac{11}{\sqrt{35}}}{3+\frac{13}{\sqrt{35}}}=\color{red}\frac{-3\sqrt{35}-11}{3\sqrt{35}+13}
+</mrow>
+<intertext>Now, we can calculate <m>\ds\diff{V}{t}</m> at the moment when <m>a=2b</m>. We already found</intertext><mrow>
+\diff{V}{t}&amp;=20\pi\left(\diff{a}{t}b+a\diff{b}{t}\right)
+</mrow>
+<intertext>So, plugging in the values of <m>a</m>, <m>b</m>, <m>\ds\diff{a}{t}</m>, and <m>\ds\diff{b}{t}</m> at the moment when <m>a=2b</m>: </intertext><mrow>
+\diff{V}{t}&amp;=20\pi\left((1)\left(\frac{10}{9+\sqrt{35}}\right)+\left(\frac{20}{9+\sqrt{35}}\right)\left(\frac{-3\sqrt{35}-11}{3\sqrt{35}+13}\right)\right)
+</mrow><mrow>
+&amp;=\frac{200\pi}{9+\sqrt{35}}\left(1-2\left(\frac{3\sqrt{35}+11}{3\sqrt{35}+13}\right)\right)
+</mrow><mrow>
+&amp;\approx -36.64\;\frac{\mathrm{cm}^3}{\mathrm{sec}}
+</mrow>
+</md>
+So the water is spilling out of the cup at about 36.64 cubic centimetres per second.
+</p>
+
+<p>Remark: the algebra in this problem got a little nasty, but the method behind its solution is no more difficult than most of the problems in this section. One of the reasons why calculus is so widely taught in universities is to give you lots of practice with problem-solving: taking a big problem, breaking it into pieces you can manage, solving the pieces, and getting a solution.
+</p>
+
+<p>A problem like this can sometimes derail people. Breaking it up into pieces isn't so hard, but when you actually do those pieces, you can get confused and forget why you are doing the calculations you're doing. If you find yourself in this situation, look back a few steps to remind yourself why you started the calculation you just did. It can also be helpful to write notes, like
+<q>We are trying to find <m>\diff{V}{t}</m>. We already know that
+                <m>\diff{V}{t} = ...</m>. We still need to find <m>a</m>, <m>b</m>,
+                <m>\diff{a}{t}</m> and <m>\diff{b}{t}</m>.</q>
+</p>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+The quantities <m>A</m>, <m>B</m>, <m>C</m>, and <m>D</m> all depend on time, and are related by the formula
+<me>
+AB=\log\left(C^2+D^2+1\right).</me>
+</p>
+
+<p>At time <m>t=10</m>, the following values are known:
+<ul>
+<li> <m>A=0</m>
+</li>
+<li> <m>\ds\diff{A}{t}=2</m> units per second
+</li>
+</ul>
+What is <m>B</m> when <m>t=10</m>?
+</p></statement>
+<hint><p>
+If <m>A=0</m>, you can figure out <m>C</m> and <m>D</m> from the relationship given.
+</p></hint>
+<answer><p>
+<m>B(10)=0</m>
+</p></answer>
+<solution><p>
+Since <m>A=0</m>, the equation relating the variables tells us:
+<md>
+<mrow>
+0&amp;=\log\left(C^2+D^2+1\right)
+</mrow><mrow>
+1&amp;=C^2+D^2+1
+</mrow><mrow>
+0&amp;=C^2+D^2
+</mrow><mrow>
+0&amp;=C=D
+</mrow>
+<intertext>This will probably be useful information. Since we're also given the value of a derivative, let's differentiate the equation relating the variables implicitly with respect to <m>t</m>. For ease of notation, we will write <m>\ds\diff{A}{t}=A'</m>, etc.</intertext><mrow>
+A'B+AB'&amp;=\frac{2CC'+2DD'}{C^2+D^2+1}
+</mrow>
+<intertext>At <m>t=10</m>, <m>A=C=D=0</m>:</intertext><mrow>
+A'B+0&amp;=\frac{0+0}{0+0+1}
+</mrow><mrow>
+<!--A'B&amp;=1-->
+A'B&amp;=0
+</mrow>
+<intertext>at <m>t=10</m>, <m>A'=2</m> units per second:</intertext><mrow>
+<!--2B&amp;=1-->
+2B&amp;=0
+</mrow><mrow>
+<!--B&amp;=\frac{1}{2}-->
+B&amp;=0.
+</mrow>
+</md>
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

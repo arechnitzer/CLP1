@@ -1,0 +1,1820 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_optimise">
+<title>Optimisation</title>
+<introduction>
+<p>
+One important application of differential calculus is to find the maximum (or minimum)
+value of a function. This often finds real world applications in problems such as the
+following.</p>
+
+<example><title>Enclosing a paddock</title>
+<p>
+A farmer has 400m of fencing materials. What is the largest rectangular paddock
+that can be enclosed?
+</p>
+
+<p><alert>Solution</alert> We will describe a general approach to these sorts of problems in
+Sections<nbsp/><xref ref="ssec_find_maxmin"/> and<nbsp/><xref ref="sec_opt_eg"/> below, but here we can take
+a stab at starting the problem.
+<ul>
+<li> Begin by defining variables and their units (more generally we might draw a
+picture too); let the dimensions of the paddock be <m>x</m> by <m>y</m> metres.
+</li>
+<li> The area enclosed is then <m>A m^2</m> where
+<md>
+<mrow>
+  A &amp;= x \cdot y
+</mrow>
+</md>
+At this stage we cannot apply the calculus we have developed since the area is a function
+of two variables and we only know how to work with functions of a single variable. We
+need to eliminate one variable.
+</li>
+<li> We know that the perimeter of the rectangle (and hence the dimensions <m>x</m>
+and <m>y</m>) are constrained by the amount of fencing materials the farmer has to
+hand:
+<md>
+<mrow>
+  2x+2y &amp;\leq 400
+</mrow>
+<intertext> and so we have</intertext><mrow>
+  y &amp;\leq 200-x
+</mrow>
+</md>
+Clearly the area of the paddock is maximised when we use all the fencing possible, so
+<md>
+<mrow>
+  y = 200-x
+</mrow>
+</md>
+</li>
+<li> Now substitute this back into our expression for the area
+<md>
+<mrow>
+  A &amp;= x \cdot (200-x)
+</mrow>
+</md>
+Since the area cannot be negative (and our lengths <m>x,y</m> cannot be negative either), we
+must also have
+<md>
+<mrow>
+  0 \leq x \leq 200
+</mrow>
+</md>
+</li>
+<li> Thus the question of the largest paddock enclosed becomes the problem of finding
+the maximum value of
+<md>
+<mrow>
+  A &amp;= x \cdot (200-x) &amp;\text{ subject to the constraint $0 \leq x \leq 200$.}
+</mrow>
+</md>
+</li>
+</ul>
+</p></example>
+
+<p>The above example is sufficiently simple that we can likely determine the answer by
+several different methods. In general, we will need more systematic methods for solving
+problems of the form</p>
+
+<blockquote>
+<p>
+ Find the maximum value of <m>y = f(x)</m> subject to <m>a \leq x \leq b</m>
+</p>
+</blockquote>
+<p>To do this we need to examine what a function looks like near its
+maximum and minimum values.
+</p>
+</introduction>
+
+<subsection xml:id="ssec_maxmin">
+<title>Local and global maxima and minima</title>
+
+<p>We start by asking:</p>
+<blockquote>
+<p>
+Suppose that the maximum (or minimum) value of <m>f(x)</m> is <m>f(c)</m> then what does that tell
+us about <m>c</m>?
+</p>
+</blockquote>
+<p>Notice that we have not yet made the ideas of maximum and minimum very precise.
+For the moment think of maximum as <q>the biggest value</q> and minimum as
+<q>the smallest value</q>.
+</p>
+
+<warning>
+<statement><p>
+It is important to distinguish between <q>the smallest value</q> and <q>the smallest
+magnitude</q>. For example, because
+<md>
+<mrow>
+  -5  \lt  -1
+</mrow>
+</md>
+the number <m>-5</m> is smaller than <m>-1</m>. But the magnitude of <m>-1</m>, which is <m>|-1|=1</m>, is
+smaller than the magnitude of <m>-5</m>, which is <m>|-5|=5</m>. Thus the smallest number in the set
+<m>\{-1, -5\}</m> is <m>-5</m>, while the number in the set <m>\{-1,-5\}</m> that has the smallest
+magnitude is <m>-1</m>.
+</p></statement>
+</warning>
+
+<p>Now back to thinking about what happens around a maximum. Suppose that the maximum value
+of <m>f(x)</m> is <m>f(c)</m>, then for all <q>nearby</q> points, the function should be smaller. </p>
+
+<sidebyside width="66%">
+ <image source="text/figs/loc_max"/>
+</sidebyside>
+
+<p>Consider the derivative of <m>f'(c)</m>:
+<md>
+<mrow>
+f'(c) &amp;= \lim_{h \to 0} \frac{f(c+h)-f(c)}{h}.
+</mrow>
+</md>
+Split the above limit into the left and right limits:
+<ul>
+<li> Consider points to the right of <m>x=c</m>, For all <m>h \gt 0</m>,
+<md>
+<mrow>
+f(c+h) &amp; \le f(c)  &amp; \text{which implies that}
+</mrow><mrow>
+f(c+h)-f(c) &amp;\le 0 &amp; \text{which also implies}
+</mrow><mrow>
+\frac{f(c+h)-f(c)}{h} &amp; \le 0 &amp; \text{since }
+\frac{\text{negative}}{\text{positive}} = \text{negative}.
+</mrow>
+</md>
+But now if we squeeze <m>h \to 0</m> we get
+<md>
+<mrow>
+  \lim_{h \to 0^+} \frac{f(c+h)-f(c)}{h} &amp;\leq 0
+</mrow>
+</md>
+(provided the limit exists).
+</li>
+<li> Consider points to the left of <m>x=c</m>. For all <m>h \lt 0</m>,
+<md>
+<mrow>
+f(c+h) &amp; \le f(c)  &amp; \text{which implies that}
+</mrow><mrow>
+f(c+h)-f(c) &amp;\le 0 &amp; \text{which also implies}
+</mrow><mrow>
+\frac{f(c+h)-f(c)}{h} &amp; \ge 0 &amp; \text{since }
+\frac{\text{negative}}{\text{negative}} = \text{positive}.
+</mrow>
+</md>
+But now if we squeeze <m>h \to 0</m> we get
+<md>
+<mrow>
+  \lim_{h \to 0^-} \frac{f(c+h)-f(c)}{h} &amp;\geq 0
+</mrow>
+</md>
+(provided the limit exists).
+</li>
+<li> So if the derivative <m>f'(c)</m> exists, then the above right- and left-hand
+limits must agree, which forces <m>f'(c) = 0</m>.
+</li>
+</ul>
+Thus we can conclude that</p>
+
+<blockquote>
+<p>
+ If the maximum value of <m>f(x)</m> is <m>f(c)</m> and <m>f'(c)</m> exists, then <m>f'(c)=0</m>.
+</p></blockquote>
+
+<p>Using similar reasoning one can also see that</p>
+<blockquote>
+<p>
+ If the minimum value of <m>f(x)</m> is <m>f(c)</m> and <m>f'(c)</m> exists, then <m>f'(c)=0</m>.
+</p></blockquote>
+
+<p>Notice two things about the above reasoning:
+<ul>
+<li>  Firstly, in order for the argument to work we
+only need that <m>f(x) \lt f(c)</m> for <m>x</m> close to <m>c</m> <mdash/> it does not matter what happens for
+<m>x</m> values far from <m>c</m>.
+</li>
+<li> Secondly, in the above argument we needed to consider <m>f(x)</m> for <m>x</m> both
+to the left of and to the right of <m>c</m>. If the function <m>f(x)</m> is defined on a
+closed interval <m>[a,b]</m>, then the above argument only applies when <m>a \lt c \lt b</m> <mdash/>
+not when <m>c</m> is either of the endpoints <m>a</m> and <m>b</m>.
+</li>
+</ul>
+Consider the function below
+</p>
+<sidebyside width="66%">
+<image source="text/figs/maxmin"/>
+</sidebyside>
+<p>
+This function has only 1 maximum value (the middle green point in the graph) and
+1 minimum value (the rightmost blue point), however it has 4 points at which the
+derivative is zero. In the small intervals around those points where the
+derivative is zero, we can see that function is <em>locally</em> a maximum or
+minimum, even if it is not the <em>global</em> maximum or minimum. We clearly need
+to be more careful distinguishing between these cases.
+</p>
+
+<definition xml:id="def_APPlocalMaxMin">
+<statement><p>
+Let <m>a\le b</m> and let the function <m>f(x)</m> be defined for all <m>x \in [a,b]</m>. Now
+let <m>a \leq c \leq b</m>, then
+<ul>
+<li> We say that <m>f(x)</m> has a global (or absolute)
+minimum at <m>x=c</m> if <m>f(x)\ge f(c)</m> for all <m>a\le x\le b</m>.
+</li>
+<li> Similarly, we say that <m>f(x)</m> has a global (or absolute)
+maximum at <m>x=c</m> if <m>f(x)\le f(c)</m> for all <m>a\le x\le b</m>.
+</li>
+</ul>
+Now let <m>a  \lt  c  \lt b</m> (note the strict inequalities), then
+<ul>
+<li> We say that <m>f(x)</m> has a local minimum at <m>x=c</m>
+if there are <m>a'</m> and <m>b'</m> obeying <m>a\le a' \lt c \lt b'\le b</m> such that
+<m>f(x)\ge f(c)</m> for all <m>x</m> obeying <m>a' \lt x \lt b'</m>.  Note the <em>strict</em>
+inequalities in <m>a' \lt c \lt b'</m>.
+</li>
+<li> Similarly, we say that <m>f(x)</m> has a local maximum at <m>x=c</m>
+if there are <m>a'</m> and <m>b'</m> obeying <m>a\le a' \lt c \lt b'\le b</m> such that
+<m>f(x)\le f(c)</m> for all <m>x</m> obeying <m>a' \lt x \lt b'</m>.  Note the <em>strict</em>
+inequalities in <m>a' \lt c \lt b'</m>.
+</li>
+</ul>
+The global maxima and minima of a function are called the
+global extrema of the function, while the local maxima and minima are called the local
+extrema.
+</p></statement>
+</definition>
+
+<p>Consider again the function we showed in the figure above</p>
+<sidebyside width="66%">
+ <image source="text/figs/maxmin2"/>
+ </sidebyside>
+<p>It has 2 local maxima and 2 local minima. The global maximum occurs at the middle green
+point (which is also a local maximum), while the global minimum occurs at the rightmost
+blue point (which is not a local minimum).
+</p>
+
+<p>Using the above definition we can summarise what we have learned above
+as the following theorem
+<fn>This is one of several important mathematical contributions made by Pierre
+de Fermat, a French government lawyer and amateur mathematician, who lived in the first half of
+the seventeenth century.
+</fn>:</p>
+
+<theorem xml:id="thm_APPlocalMaxMin">
+<statement><p>
+If a function <m>f(x)</m> has a local maximum or local minimum at <m>x=c</m>
+and if <m>f'(c)</m> exists, then <m>f'(c)=0</m>.
+</p></statement>
+</theorem>
+
+<p>
+<ul>
+<li>
+It is often (but not always) the case that, when <m>f(x)</m> has a local maximum
+at <m>x=c</m>, the function <m>f(x)</m> increases strictly as <m>x</m> approaches <m>c</m> from the
+left and decreases strictly as <m>x</m> leaves <m>c</m> to the right. That is,
+<m>f'(x) \gt 0</m> for <m>x</m> just to the left of <m>c</m> and <m>f'(x) \lt 0</m> for <m>x</m> just
+to the right of <m>c</m>. Then, it is often the case, because <m>f'(x)</m> is decreasing as <m>x</m>
+increases through <m>c</m>, that <m>f''(c) \lt 0</m>.
+</li>
+<li>
+Conversely, if <m>f'(c)=0</m> and <m>f''(c) \lt 0</m>,
+  then, just to the right of <m>c</m> <m>f'(x)</m> must be negative, so that
+  <m>f(x)</m> is decreasing, and  just to the left of <m>c</m> <m>f'(x)</m> must
+  be positive, so that <m>f(x)</m> is increasing.
+  So <m>f(x)</m> has a local maximum at <m>c</m>.
+</li>
+<li>
+ Similarly, it is often the case that, when <m>f(x)</m> has a local minimum
+ at <m>x=c</m>, <m>f'(x) \lt 0</m> for <m>x</m> just to the left of <m>c</m> and <m>f'(x) \gt 0</m> for
+ <m>x</m> just to the right of <m>c</m> and <m>f''(x) \gt 0</m>.
+</li>
+<li>
+Conversely, if <m>f'(c)=0</m> and <m>f''(c) \gt 0</m>,
+  then, just to the right of <m>c</m> <m>f'(x)</m> must be positive, so that
+  <m>f(x)</m> is increasing, and, just to the left of <m>c</m> <m>f'(x)</m> must be
+  negative, so that <m>f(x)</m> is decreasing.
+  So <m>f(x)</m> has a local minimum at <m>c</m>.
+</li>
+</ul>
+</p>
+
+<theorem xml:id="thm_APPsecondDerivTest">
+<statement><p>
+If <m>f'(c)=0</m> and <m>f''(c)  \lt 0</m>, then <m>f(x)</m> has a local maximum at <m>c</m>.
+</p>
+
+<p>If <m>f'(c)=0</m> and <m>f''(c)  \gt 0</m>, then <m>f(x)</m> has a local minimum at <m>c</m>.
+</p>
+
+<p><em>Note the strict inequalities</em>.
+</p>
+
+</statement>
+</theorem>
+
+<p>Theorem<nbsp/><xref ref="thm_APPlocalMaxMin"/> says that, when <m>f(x)</m> has a local maximum or
+minimum at <m>x=c</m>, there are two possibilities.
+<ul>
+<li><p> The derivative <m>f'(c)=0</m>. This case is illustrated in the following
+figure.</p>
+<sidebyside width="80%">
+ <image source="text/figs/localMaxMinFG"/>
+</sidebyside>
+<p>
+Observe that, in this example, <m>f'(x)</m> changes discontinuously from negative to
+positive at the local minimum (<m>x=0</m>) and <m>f'(0)</m> does not exist.</p>
+</li>
+</ul>
+This theorem demonstrates that the points at which the derivative is zero or
+does not exist are very important. It simplifies the discussion that follows if
+we give these points names.</p>
+
+<definition xml:id="def_APPcriticalPoint">
+<statement><p>
+Let <m>f(x)</m> be a function and let <m>c</m> be a point in its domain. Then
+<ul>
+<li> if <m>f'(c)</m> exists and is zero we call <m>x=c</m> a critical point of the
+function, and
+</li>
+<li> if <m>f'(c)</m> does not exist then we call <m>x=c</m> a singular point of the
+function.
+</li>
+</ul>
+</p></statement>
+</definition>
+
+<warning><statement><p>
+Note that some people (and texts) will combine both of these cases and call
+<m>x=c</m> a critical point when either the derivative is zero or does not exist.
+The reader should be aware of the lack of convention on this point
+<fn>No
+pun intended.</fn>
+ and should be careful to understand whether the more inclusive
+definition of critical point is being used, or if the text is using the more
+precise definition that distinguishes critical and singular points.
+</p>
+</statement>
+</warning>
+
+<p>We'll now look at a few simple examples involving local maxima and
+minima, critical points and singular points. Then we will move on to global
+maxima and minima.</p>
+
+<example xml:id="eg_localMinMaxA"><title>Local max and min of <m>x^3-6x</m></title>
+<p>
+In this example, we'll look for local maxima and minima of the function
+<m>f(x) = x^3-6x</m> on the interval <m>-2\le x\le 3</m>.
+<ul>
+<li> First compute the derivative
+<md>
+<mrow>
+  f'(x) &amp;= 3x^2-6.
+</mrow>
+</md>
+Since this is a polynomial it is defined everywhere on the domain and so there
+will not be any singular points. So we now look for critical points.
+</li>
+<li><p> To do so we look for zeroes of the derivative
+<md>
+<mrow>
+  f'(x) &amp;= 3x^2-6 = 3(x^2-2) = 3(x-\sqrt{2})(x+\sqrt{2}).
+</mrow>
+</md>
+This derivative takes the value <m>0</m> at two different values of <m>x</m>. Namely
+<m>x=c_-=-\sqrt{2}</m> and <m>x=c_+=\sqrt{2}</m>. Here is a sketch of the graph of
+<m>f(x)</m>.</p>
+
+<sidebyside width="80%">
+<image source="text/figs/localMaxMinA"/>
+</sidebyside>
+
+<p> From the figure we see that
+<ul>
+<li> <m>f(x)</m> has a local minimum at <m>x=c_+</m> (i.e. we have <m>f(x)\ge f(c_+)</m>
+whenever <m>x</m> is close to <m>c_+</m>) and
+</li>
+<li> <m>f(x)</m> has a local maximum at <m>x=c_-</m> (i.e. we have <m>f(x)\le f(c_-)</m>
+whenever <m>x</m> is close to <m>c_-</m>) and
+</li>
+<li> the global minimum of <m>f(x)</m>, for <m>x</m> in the interval <m>-2\le x\le 3</m>, is
+at <m>x=c_+</m> (i.e. we have <m>f(x)\ge f(c_+)</m> whenever <m>-2\le x\le 3</m>) and
+</li>
+<li> the global maximum of <m>f(x)</m>, for <m>x</m> in the interval <m>-2\le x\le 3</m>, is
+at <m>x=3</m> (i.e. we have <m>f(x)\le f(3)</m> whenever <m>-2\le x\le 3</m>).
+</li>
+</ul>
+</p></li>
+<li> Note that we have carefully constructed this example to illustrate that
+the global maximum (or minimum) of a function on an interval may or may not also
+be a local maximum (or minimum) of the function.
+</li>
+</ul>
+</p>
+
+</example>
+
+<example xml:id="eg_localMinMaxB"><title>Local max and min of <m>x^3</m></title>
+<p>
+In this example, we'll look for local maxima and minima of the function
+<m>f(x) = x^3</m> on the interval <m>-1\le x\le 1</m>.
+<ul>
+<li> First compute the derivative:
+<md>
+<mrow>
+  f'(x) &amp;= 3x^2.
+</mrow>
+</md>
+Again, this is a polynomial and so defined on all of the domain. The function
+will not have singular points, but may have critical points.
+</li>
+<li> The derivative is zero only when <m>x=0</m>, so <m>x=c=0</m> is the only critical
+point of the function.
+</li>
+<li><p> The graph of <m>f(x)</m> is sketched below. From that sketch we see that <m>f(x)</m>
+has <em>neither</em> a local maximum <em>nor</em> a local minimum at <m>x=c</m> despite
+the fact that <m>f'(c)=0</m> <mdash/> we have <m>f(x) \lt f(c)=0</m> for all <m>x \lt c=0</m> and
+<m>f(x) \gt f(c)=0</m> for all <m>x \gt c=0</m>.</p>
+
+<sidebyside width="66%">
+<image source="text/figs/localMaxMinB"/>
+</sidebyside>
+
+</li>
+<li> Note that this example has been constructed to illustrate that a critical
+point (or singular point) of a function <em>need not be a local maximum or
+minimum</em> for the function.
+</li>
+<li> Reread Theorem <xref ref="thm_APPlocalMaxMin"/>. It says
+<fn>A very common error of logic that people make is <q>Affirming the consequent</q>. <q>If P then Q</q>
+is true, then observe Q and conclude P <mdash/> this is false. <q>If he is Shakespeare then he
+is dead</q> <q>That man is dead</q> <q>He must be Shakespeare</q>. Or you may have also seen
+someone use this reasoning: <q>If a person is a genius before their time then they are
+misunderstood.</q> <q>I am misunderstood</q> <q>So I must be a genius before my time.</q>.
+</fn>
+that, <q>if <m>f(x)</m> has a local maximum/minimum at <m>x=c</m> and if <m>f</m> is differentiable at
+<m>x=c</m>, then <m>f'(c)=0</m></q>. It <alert>does not say</alert> that <q>if <m>f'(c)=0</m> then <m>f</m>
+has a local maximum/minimum at <m>x=c</m></q>.
+</li>
+</ul>
+</p></example>
+
+<example xml:id="eg_localMinMaxC"><title>Local max and min of <m>|x|</m></title>
+<p>
+In this example, we'll look for local maxima and minima of the function
+<md>
+<mrow>
+f(x) = |x| = \begin{cases}
+           x  &amp; \text{if }x \ge 0
+</mrow><mrow>
+           -x &amp; \text{if }x  \lt   0
+       \end{cases}
+</mrow>
+</md>
+on the interval <m>-1\le x\le 1</m>.
+<ul>
+<li> Again, start by computing the derivative (reread Example<nbsp/><xref ref="eg_diff_abs"/>):
+<md>
+<mrow>
+f'(x) = \begin{cases}
+           1  &amp; \text{if }x  \gt  0
+</mrow><mrow>
+           \text{undefined}  &amp; \text{if }x = 0
+</mrow><mrow>
+           -1 &amp; \text{if }x  \lt   0
+       \end{cases}
+</mrow>
+</md>
+</li>
+<li> This derivative <em>never</em> takes the value <m>0</m>, so the function does
+not have any critical points. However the derivative does not exist at the
+point <m>x=0</m>, so that point is a singular point.
+</li>
+<li><p> Here is a sketch of the graph of <m>f(x)</m>.</p>
+
+<sidebyside width="50%">
+<image source="text/figs/localMaxMinC"/>
+</sidebyside>
+<p>From the figure we see that <m>f(x)</m> has a local (and in fact global)
+minimum at <m>x=0</m> despite the fact that <m>f'(0)</m> is not a critical point.</p>
+</li>
+<li> Reread Theorem <xref ref="thm_APPlocalMaxMin"/> yet again. It says that,
+<q>if <m>f(x)</m> has a local maximum/minimum at <m>x=c</m>
+<em>and if <m>f</m> is differentiable at <m>x=c</m></em>, then <m>f'(c)=0</m></q>.
+It says nothing about what happens at points where the derivative does
+not exist. Indeed that is why we have to consider both critical points and
+singular points when we look for maxima and minima.
+</li>
+</ul>
+</p></example>
+
+</subsection>
+<subsection xml:id="ssec_find_maxmin">
+<title>Finding global maxima and minima</title>
+<p>
+We now have a technique for finding local maxima and minima <mdash/> just look
+for values of <m>x</m> for which either <m>f'(x)=0</m> or <m>f'(x)</m> does not exist.
+What about finding global maxima and minima? We'll start by stating
+explicitly that, under appropriate hypotheses, global maxima
+and minima are guaranteed to exist.</p>
+
+<theorem xml:id="thm_APPglobalMaxMinExist">
+<statement><p>
+Let the function <m>f(x)</m> be defined and continuous on the closed,
+finite interval
+<fn>The hypotheses that <m>f(x)</m> be continuous
+and that the interval be finite and closed are all essential.
+We suggest that you find three functions <m>f_1(x)</m>, <m>f_2(x)</m> and
+<m>f_3(x)</m> with <m>f_1</m> defined but not continous on <m>0\le x\le 1</m>,
+<m>f_2</m> defined and continuous on <m>-\infty \lt x \lt \infty</m>, and <m>f_3</m> defined
+and continuous on <m>0 \lt x \lt 1</m>, and with none of <m>f_1</m>, <m>f_2</m> and <m>f_3</m>
+attaining either a global maximum or a global minimum.</fn>
+</p>
+
+<p><m>-\infty \lt a\le x\le b \lt \infty</m>. Then <m>f(x)</m> attains
+a maximum and a minimum at least once. That is, there exist
+numbers <m>a\le x_m, x_M\le b</m> such that
+<md>
+<mrow>
+f(x_m)\le f(x)\le f(x_M)
+\qquad\text{for all }a\le x\le b
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>So let's again consider the question</p>
+
+<blockquote>
+<p>
+Suppose that the maximum (or minimum) value of <m>f(x)</m>, for <m>a\le x\le b</m>, is <m>f(c)</m>.
+What does that tell us about <m>c</m>?</p>
+</blockquote>
+
+<p>If <m>c</m> obeys <m>a \lt c \lt b</m> (note the strict inequalities), then <m>f</m> has
+a local maximum (or minimum) at <m>x=c</m> and Theorem  <xref ref="thm_APPlocalMaxMin"/>
+tells us that either <m>f'(c)=0</m> or <m>f'(c)</m> does not exist. The only other place that a
+maximum or minimum can occur are at the ends of the interval. We can summarise this as:</p>
+
+<theorem xml:id="thm_APPglobalMaxMin">
+<statement><p>
+If <m>f(x)</m> has a global maximum or global minimum, for <m>a\le x\le b</m>,
+at <m>x=c</m> then there are 3 possibilities. Either
+<ul>
+<li> <m>f'(c)=0</m>, or
+</li>
+<li> <m>f'(c)</m> does not exist, or
+</li>
+<li> <m>c=a</m> or <m>c=b</m>.
+</li>
+</ul>
+That is, a global maximum or minimum must occur either at a critical point, a singular
+point or at the endpoints of the interval.
+</p></statement>
+</theorem>
+
+<p>This theorem provides the basis for a method to find the maximum and
+minimum values of <m>f(x)</m> for <m>a\le x\le b</m>:</p>
+
+<corollary xml:id="cor_find_maxmin">
+<statement><p>
+ Let <m>f(x)</m> be a function on the interval <m>a \leq x \leq b</m>. Then to find the global
+maximum and minimum of the function:
+<ul>
+<li><p> Make a list of all values of <m>c</m>, with <m>a\le c\le b</m>, for which
+<ul>
+<li> <m>f'(c)=0</m>, or
+</li>
+<li> <m>f'(c)</m> does not exist, or
+</li>
+<li> <m>c=a</m> or <m>c=b</m>.
+</li>
+</ul>
+That is <mdash/> compute the function at all the critical points, singular points, and
+endpoints.
+</p></li>
+<li> Evaluate <m>f(c)</m> for each <m>c</m> in that list. The largest (or smallest)
+      of those values is the largest (or smallest) value of <m>f(x)</m>
+      for <m>a\le x\le b</m>.
+</li>
+</ul>
+</p></statement>
+</corollary>
+
+<p>Let's now demonstrate how to use this strategy. The function in  this first example is
+not too simple <mdash/> but it is a good example of a function that contains both a
+singular point and a critical point.</p>
+
+<example xml:id="APPglobalMaxMinA"><title>Find max and min of <m>2x^{5/3}+3x^{2/3}</m></title>
+<p>
+Find the largest and smallest values of the function <m>f(x)=2x^{5/3}+3x^{2/3}</m> for <m>-1\le
+x\le 1</m>.
+</p>
+
+<p><alert>Solution</alert> We will apply the method in Corollary<nbsp/><xref ref="cor_find_maxmin"/>. It is perhaps easiest
+to find the values at the endpoints of the intervals and then move on to the values at
+any critical or singular points.
+<ul>
+<li> Before we get into things, notice that we can rewrite the function by factoring
+it:
+<md>
+<mrow>
+  f(x) &amp;= 2x^{5/3}+3x^{2/3} = x^{2/3} \cdot \left(2x + 3\right)
+</mrow>
+</md>
+</li>
+<li> Let's compute the function at the endpoints of the interval:
+<md>
+<mrow>
+  f(1) &amp;= 2 +3 = 5
+</mrow><mrow>
+  f(-1) &amp;= 2 \cdot(-1)^{5/3} + 3\cdot (-1)^{2/3} =-2 + 3 = 1
+</mrow>
+</md>
+</li>
+<li> To compute the function at the critical and singular points we first need to find
+the derivative:
+<md>
+<mrow>
+  f'(x) &amp;= 2 \cdot \frac{5}{3} x^{2/3} + 3 \cdot \frac{2}{3} x^{-1/3}
+</mrow><mrow>
+  &amp;= \frac{10}{3} x^{2/3} + 2 x^{-1/3}
+</mrow><mrow>
+  &amp;= \frac{10 x + 6}{x^{1/3}}
+</mrow>
+</md>
+</li>
+<li> Notice that the numerator and denominator are defined for all <m>x</m>. The only place
+the derivative is undefined is when the denominator is zero. Hence the only singular
+point is at <m>x=0</m>. The corresponding function value is
+<md>
+<mrow>
+  f(0) &amp;= 0
+</mrow>
+</md>
+</li>
+<li> To find the critical points we need to solve <m>f'(x) = 0</m>:
+<md>
+<mrow>
+  0 &amp;= \frac{10 x + 6}{x^{1/3}}
+</mrow>
+</md>
+Hence we must have <m>10x=-6</m> or <m>x=-3/5</m>. The corresponding function value is
+<md>
+<mrow>
+  f(x) &amp;= x^{2/3} \cdot \left(2x + 3\right) &amp; \text{recall this from above, then}
+</mrow><mrow>
+  f(-3/5) &amp;= (-3/5)^{2/3} \cdot\left(2 \cdot \frac{-3}{5} + 3 \right)
+</mrow><mrow>
+  &amp;= \left(\frac{9}{25}\right)^{1/3} \cdot \frac{-6 + 15}{5}
+</mrow><mrow>
+  &amp;= \left(\frac{9}{25}\right)^{1/3} \cdot \frac{9}{5}  \approx 1.28
+</mrow>
+</md>
+Note that if we do not want to approximate the root (if, for example, we do not have a
+calculator handy), then we can also write
+<md>
+<mrow>
+  f(-3/5) &amp;= \left(\frac{9}{25}\right)^{1/3} \cdot \frac{9}{5}
+</mrow><mrow>
+  &amp;= \left(\frac{9}{25}\right)^{1/3} \cdot \frac{9}{25} \cdot 5
+</mrow><mrow>
+  &amp;= 5 \cdot \left( \frac{9}{25} \right)^{4/3}
+</mrow>
+</md>
+Since <m>0 \lt 9/25 \lt 1</m>, we know that <m>0  \lt  \left( \frac{9}{25} \right)^{4/3}  \lt  1</m>, and hence
+<md>
+<mrow>
+  0  \lt  f(-3/5) = 5 \cdot \left( \frac{9}{25} \right)^{4/3}  \lt  5.
+</mrow>
+</md>
+</li>
+<li><p> We summarise our work in this table</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell><m>c</m> </cell><cell> <m>-\frac{3}{5}</m> </cell><cell>  <m>0</m> </cell><cell>  <m>-1</m> </cell><cell> <m>1</m> </cell>
+</row><row>
+<cell> type </cell><cell> critical point </cell><cell> singular point </cell><cell> endpoint </cell><cell> endpoint </cell>
+</row><row>
+<cell> <m>f(c)</m> </cell><cell> <m>\frac{9}{5}\root{3}\of{\frac{9}{25}}\approx 1.28</m> </cell><cell> <m>0</m> </cell><cell> <m>1</m> </cell><cell> <m>5</m></cell>
+</row>
+</tabular>
+</sidebyside>
+</li>
+<li> The largest value of <m>f</m> in the table is <m>5</m> and the smallest value of <m>f</m> in the table is <m>0</m>.
+</li>
+<li> Thus on the interval <m>-1\leq x \leq 1</m> the global maximum of <m>f</m> is <m>5</m>, and is
+taken at <m>x=1</m>, while the global minimum value of <m>f(x)</m> is <m>0</m>, and is taken at <m>x=0</m>.
+</li>
+<li><p> For completeness we also sketch the graph of this function on the same interval.</p>
+<sidebyside width="66%">
+<image source="text/figs/globalMaxMinA"/>
+</sidebyside>
+<p> Later (in Section<nbsp/><xref ref="sec_curve_sketch"/>) we will see how to construct such a sketch without using a calculator or computer.</p>
+</li>
+</ul>
+</p></example>
+
+</subsection>
+
+<subsection xml:id="sec_opt_eg">
+<title>Max/min examples</title>
+<p>
+As noted at the beginning of this section, the problem of finding maxima and minima is
+a very important application of differential calculus in the real world. We now turn to a
+number of examples of this process. But to guide the reader we will describe a general
+procedure to follow for these problems.
+</p>
+
+<p>
+<ol label="1">
+<li> Read <mdash/> read the problem carefully. Work out what information is given in the
+statement of the problem and what we are being asked to compute.
+</li>
+<li> Diagram <mdash/> draw a diagram. This will typically help you to identify what you know
+about the problem and what quantities you need to work out.
+</li>
+<li> Variables <mdash/> assign variables to the quantities in the problem along
+with their units. It is typically a good idea to make sensible choices of variable names:
+<m>A</m> for area, <m>h</m> for height, <m>t</m> for time etc.
+</li>
+<li> Relations <mdash/> find relations between the variables. By now you should know the
+quantity we are interested in (the one we want to maximise or minimise) and we
+need to establish a relation between it and the other variables.
+</li>
+<li> Reduce <mdash/> the relation down to a function of one variable. In order to apply the
+calculus we know, we must have a function of a single variable. To do this we need to use
+all the information we have to eliminate variables. We should also work out
+the domain of the resulting function.
+</li>
+<li> Maximise or minimise <mdash/> we can now apply the methods of Corollary<nbsp/><xref ref="cor_find_maxmin"/>
+to find the maximum or minimum of the quantity we need (as the problem dictates).
+</li>
+<li> Be careful <mdash/> make sure your answer makes sense. Make sure quantities are
+physical. For example, lengths and areas cannot be negative.
+</li>
+<li> Answer the question <mdash/> be sure your answer really answers the question asked in
+the problem.
+</li>
+</ol>
+</p>
+
+<p>Let us start with a relatively simple problem:</p>
+
+<example xml:id="APPglobalMaxMinB"><title>Constructing a container of maximal volume</title>
+<p>
+A closed rectangular container with a square base is to be made
+from two different materials. The material for the base costs <dollar />5 per square
+meter, while the material for the other five sides costs <dollar />1 per square
+meter. Find the dimensions of the container which has the largest possible
+volume if the total cost of materials is <dollar />72.
+</p>
+
+<p><alert>Solution</alert> We can follow the steps we outlined above to find the solution.
+<ul>
+<li> We need to determine the area of the two types of materials used and the
+corresponding total cost.
+</li>
+<li><p> Draw a picture of the box.</p>
+<sidebyside width="90%">
+ <image source="text/figs/container"/>
+</sidebyside>
+
+<p>The more useful picture is the unfolded box on the right.</p>
+</li>
+<li> In the picture we have already introduced two variables. The square base has
+side-length <m>b</m> metres and it has height <m>h</m> metres. Let the area of the base be <m>A_b</m>
+and the area of the other fives sides be <m>A_s</m> (both in <m>m^2</m>), and the total cost be
+<m>C</m> (in dollars). Finally let the volume enclosed be <m>V m^3</m>.
+</li>
+<li> Some simple geometry tells us that
+<md>
+<mrow>
+  A_b &amp;= b^2
+</mrow><mrow>
+  A_s &amp;= 4 bh + b^2
+</mrow><mrow>
+  V &amp;= b^2h
+</mrow><mrow>
+  C &amp;= 5 \cdot A_b + 1\cdot A_s = 5b^2+4bh+b^2 = 6b^2+4bh.
+</mrow>
+</md>
+</li>
+<li> To eliminate one of the variables we use the fact that the total cost is <dollar />72.
+<md>
+<mrow>
+  C &amp;= 6b^2+4bh = 72 &amp; \text{rearrange}
+</mrow><mrow>
+  4bh &amp;= 72-6b^2  &amp; \text{isolate } h
+</mrow><mrow>
+  h &amp;= \frac{72-6b^2}{4b} = \frac{3}{2} \cdot \frac{12-b^2}{b}
+</mrow>
+</md>
+Substituting this into the volume gives
+<md>
+<mrow>
+  V&amp;= b^2 h = \frac{3b}{2} (12-b^2) = 18b - \frac{3}{2} b^3
+</mrow>
+</md>
+Now note that since <m>b</m> is a length it cannot be negative, so <m>b \geq 0</m>. Further since
+volume cannot be negative, we must also have
+<md>
+<mrow>
+  12-b^2 \geq 0
+</mrow>
+</md>
+and so <m>b \leq \sqrt{12}</m>.
+</li>
+<li> Now we can apply Corollary<nbsp/><xref ref="cor_find_maxmin"/> on the above expression for
+the volume with <m>0 \leq b \leq \sqrt{12}</m>. The endpoints give:
+<md>
+<mrow>
+  V(0) &amp;= 0
+</mrow><mrow>
+  V(\sqrt{12}) &amp;= 0
+</mrow>
+</md>
+The derivative is
+<md>
+<mrow>
+  V'(b) &amp;= 18 - \frac{9b^2}{2}
+</mrow>
+</md>
+Since this is a polynomial there are no singular points. However we can solve <m>V'(b) = 0</m>
+to find critical points:
+<md>
+<mrow>
+  18 - \frac{9b^2}{2} &amp;= 0  &amp; \text{divide by 9 and multiply by 2}
+</mrow><mrow>
+  4 - b^2 &amp;= 0
+</mrow>
+</md>
+Hence <m>b = \pm 2</m>. Thus the only critical point in the domain is <m>b=2</m>. The corresponding
+volume is
+<md>
+<mrow>
+V(2) &amp;= 18\times2 - \frac{3}{2} \times 2^3
+</mrow><mrow>
+  &amp;= 36 - 12 = 24.
+</mrow>
+</md>
+So by Corollary<nbsp/><xref ref="cor_find_maxmin"/>, the maximum volume is when 24 when <m>b=2</m> and
+<md>
+<mrow>
+  h &amp;= \frac{3}{2} \cdot \frac{12-b^2}{b} = \frac{3}{2} \frac{12-4}{2} = 6.
+</mrow>
+</md>
+</li>
+<li> All our quantities make sense; lengths, areas and volumes are all non-negative.
+</li>
+<li><p> Checking the question again, we see that we are asked for the dimensions of the
+container (rather than its volume) so we can answer with</p>
+
+<blockquote>
+<p>
+ The container with dimensions <m>2 \times 2 \times 6m</m> will be the largest possible.
+</p>
+</blockquote>
+
+</li>
+</ul>
+</p></example>
+
+<example xml:id="APPglobalMaxMinC"><title>Constructing another box</title>
+<p>
+A rectangular sheet of cardboard is 6 inches by 9 inches. Four
+identical squares are cut from the corners of the cardboard, as shown in
+the figure below, and the remaining piece is folded into an open
+rectangular box. What should the size of the cut out squares be in
+order to maximize the volume of the box?
+</p>
+
+<p><alert>Solution</alert> This one is quite similar to the previous one, so we perhaps don't need to go into
+so much detail.
+<ul>
+<li><p> After reading carefully we produce the following picture:</p>
+
+<sidebyside width="50%">
+<image source="text/figs/box_vol"/>
+</sidebyside>
+</li>
+<li> Let the height of the box be <m>x</m> inches, and the base be <m>\ell \times w</m> inches.
+The volume of the box is then <m>V</m> cubic inches.
+</li>
+<li> Some simple geometry tells us that <m>\ell = 9-2x, w=6-2x</m> and so
+<md>
+<mrow>
+V &amp;= x(9-2x)(6-2x) \text{cubic inches}
+</mrow><mrow>
+  &amp;= 54x-30x^2+4x^3.
+</mrow>
+</md>
+Notice that since all lengths must be non-negative, we must have
+<md>
+<mrow>
+  x,\ell,w \geq 0
+</mrow>
+</md>
+and so <m>0 \leq x \leq 3</m> (if <m>x \gt 3</m> then <m>w \lt 0</m>).
+</li>
+<li><p> We can now apply Corollary<nbsp/><xref ref="cor_find_maxmin"/>. First the endpoints of the
+interval give
+<md>
+<mrow>
+  V(0) &amp;= 0 &amp; V(3) &amp;= 0
+</mrow>
+</md>
+The derivative is
+<md>
+<mrow>
+  V'(x) &amp;= 54 - 60x +12x^2
+</mrow><mrow>
+  &amp;= 6(9-10x+2x^2)
+</mrow>
+</md>
+Since this is a polynomial there are no singular points. To find critical points we solve
+<m>V'(x) = 0</m> to get
+<md>
+<mrow>
+  x_\pm &amp;= \frac{10 \pm \sqrt{100 - 4\times2\times9}}{4}
+</mrow><mrow>
+  &amp;= \frac{10 \pm \sqrt{28}}{4} = \frac{10 \pm 2\sqrt{7}}{4} = \frac{5 \pm \sqrt{7}}{2}
+</mrow>
+</md>
+We can then use a calculator to approximate
+<md>
+<mrow>
+  x_+ &amp;\approx 3.82 &amp; x_- &amp;\approx 1.18.
+</mrow>
+</md>
+So <m>x_-</m> is inside the domain, while <m>x_+</m> lies outside.
+</p>
+
+<p>Alternatively
+<fn>Say if we do not have a calculator to hand, or your instructor
+insists that the problem be done without one.</fn>
+, we can bound <m>x_\pm</m> by first noting that
+<m>2 \leq \sqrt{7} \leq 3</m>. From this we know that
+<md>
+<mrow>
+  1=\frac{5-3}{2} &amp; \leq x_- = \frac{5 - \sqrt{7}}{2} \leq \frac{5-2}{2} = 1.5
+</mrow><mrow>
+  3.5=\frac{5+2}{2} &amp; \leq x_+ = \frac{5 + \sqrt{7}}{2} \leq \frac{5+3}{2} = 4
+</mrow>
+</md>
+</p>
+</li>
+<li> Since the volume is zero when <m>x=0,3</m>, it must be the case that the volume is
+maximised when <m>x = x_- = \frac{5 - \sqrt{7}}{2}</m>.
+</li>
+<li> Notice that since <m>0  \lt  x_-  \lt 3</m> we know that the other lengths are positive, so our
+answer makes sense. Further, the question only asks for the length <m>x</m> and not the
+resulting volume so we have answered the question.
+</li>
+</ul>
+</p>
+</example>
+
+<p>There is a new wrinkle in the next two examples. Each involves finding the
+minimum value of a function <m>f(x)</m> with <m>x</m> running over all real numbers,
+rather than just over a finite interval as in Corollary<nbsp/><xref ref="cor_find_maxmin"/>.
+Both in Example<nbsp/><xref ref="APPglobalMaxMinD"/> and in Example<nbsp/><xref ref="APPglobalMaxMinDist"/>
+the function <m>f(x)</m> tends to <m>+\infty</m> as <m>x</m> tends to either <m>+\infty</m> or
+<m>-\infty</m>. So the minimum value of <m>f(x)</m> will be achieved for some finite value
+of <m>x</m>, which will be a local minimum as well as a global minimum.
+</p>
+
+<theorem xml:id="thm_maxMinOnR">
+<statement><p>
+Let <m>f(x)</m> be defined and continuous for all <m>-\infty \lt x \lt \infty</m>. Let <m>c</m> be a finite
+real number.
+</p>
+
+<p>
+<ol label="a">
+<li><p> If <m>\displaystyle \lim_{x\rightarrow+\infty} f(x)=+\infty</m> and
+<m>\displaystyle \lim_{x\rightarrow-\infty} f(x)=+\infty</m> and if <m>f(x)</m> has a global
+minimum at <m>x = c</m>, then there are 2 possibilities. Either
+<ul>
+<li>  <m>f'(c) = 0</m>, or
+</li>
+<li>  <m>f'(c)</m> does not exist
+</li>
+</ul>
+That is, a global minimum must occur either at a critical point or at a singular point.
+</p>
+</li>
+<li><p> If <m>\displaystyle \lim_{x\rightarrow+\infty} f(x)=-\infty</m> and
+<m>\displaystyle \lim_{x\rightarrow-\infty} f(x)=-\infty</m> and if <m>f(x)</m> has a global
+maximum at <m>x = c</m>, then there are 2 possibilities. Either
+<ul>
+<li>  <m>f'(c) = 0</m>, or
+</li>
+<li>  <m>f'(c)</m> does not exist
+</li>
+</ul>
+That is, a global maximum must occur either at a critical point or at a singular point.
+</p>
+</li>
+</ol>
+</p></statement>
+</theorem>
+
+<example xml:id="APPglobalMaxMinD"><title>How far from a point to a line</title>
+<p>
+Find the point on the line <m>y=6-3x</m> that is closest to the point <m>(7,5)</m>.
+</p>
+
+<p><alert>Solution</alert> In this problem
+</p>
+
+<p><ul>
+<li><p> A simple picture</p>
+
+<sidebyside width="75%">
+ <image source="text/figs/line_dist"/>
+ </sidebyside>
+</li>
+<li> Some notation is already given to us. Let a point on the line have coordinates
+<m>(x,y)</m>, and we do not need units. And let <m>\ell</m> be the distance from the point <m>(x,y)</m>
+to the point<nbsp/><m>(7,5)</m>.
+</li>
+<li> Since the points are on the line the coordinates <m>(x,y)</m> must obey
+<md>
+<mrow>
+  y=6-3x
+</mrow>
+</md>
+Notice that <m>x</m> and <m>y</m> have no further constraints. The distance <m>\ell</m> is given by
+<md>
+<mrow>
+  \ell^2 &amp;= (x-7)^2 + (y-5)^2
+</mrow>
+</md>
+</li>
+<li> We can now eliminate the variable <m>y</m>:
+<md>
+<mrow>
+  \ell^2 &amp;= (x-7)^2 + (y-5)^2
+</mrow><mrow>
+  &amp;= (x-7)^2 + (6-3x-5)^2 = (x-7)^2 + (1-3x)^2
+</mrow><mrow>
+  &amp;= x^2-14x+49 + 1-6x+9x^2 = 10x^2-20x+50
+</mrow><mrow>
+  &amp;= 10(x^2-2x+5)
+</mrow><mrow>
+  \ell &amp;= \sqrt{10} \cdot \sqrt{x^2-2x+5}
+</mrow>
+</md>
+Notice that as <m>x \to \pm \infty</m> the distance <m>\ell \to +\infty</m>.
+</li>
+<li><p> We can now apply Theorem<nbsp/><xref ref="thm_maxMinOnR"/>
+<ul>
+<li> Since the distance is defined for all real <m>x</m>, we do not have to check the
+endpoints of the domain <mdash/> there are none.
+</li>
+<li> Form the derivative:
+<md>
+<mrow>
+  \diff{\ell}{x} &amp;= \sqrt{10} \frac{2x-2}{2\sqrt{x^2-2x+5}}
+</mrow>
+</md>
+It is zero when <m>x=1</m>, and undefined if <m>x^2-2x+5 \lt 0</m>. However, since
+<md>
+<mrow>
+  x^2-2x+5 &amp;= (x^2-2x+1)+4 = \underbrace{(x-1)^2}_{\geq0}+4
+</mrow>
+</md>
+we know that <m>x^2-2x+5 \geq 4</m>. Thus the function has no singular points and the only
+critical point occurs at <m>x=1</m>. The corresponding function value is then
+<md>
+<mrow>
+  \ell(1) &amp;=10 \sqrt{1-2+5} = 10 \sqrt{4} = 20.
+</mrow>
+</md>
+</li>
+<li> Thus the minimum value of the distance is <m>\ell=20</m> and occurs at <m>x=1</m>.
+</li>
+</ul>
+</p>
+</li>
+<li> This answer makes sense <mdash/> the distance is not negative.
+</li>
+<li><p> The question asks for the point that minimises the distance, not that minimum
+distance. Hence the answer is <m>x=1, y=6-3 = 3</m>. ie</p>
+
+<blockquote>
+<p>
+ The point that minimises the distance is <m>(1,3)</m>.
+</p></blockquote>
+</li>
+</ul>
+</p>
+
+<p>Notice that we can make the analysis easier by observing that the point that minimises
+the distance also minimises the squared-distance. So that instead of minimising the
+function <m>\ell</m>, we can just minimise <m>\ell^2</m>:
+<md>
+<mrow>
+  \ell^2 &amp;= 10(x^2-2x+5)
+</mrow>
+</md>
+The resulting algebra is a bit easier and we don't have to hunt for singular points.
+</p>
+
+</example>
+
+<example xml:id="APPglobalMaxMinDist"><title>How far from a point to a curve</title>
+<p>
+ Find the minimum distance from <m>(2,0)</m> to the curve <m>y^2=x^2+1</m>.
+</p>
+
+<p><alert>Solution</alert> This is very much like the previous question.
+<ul>
+<li><p> After reading the problem carefully we can draw a picture</p>
+
+<sidebyside width="50%">
+<image source="text/figs/hyperbolaMaxMin"/>
+</sidebyside>
+</li>
+<li> In this problem we do not need units and the variables <m>x,y</m> are supplied. We define
+the distance to be <m>\ell</m> and it is given by
+<md>
+<mrow>
+  \ell^2 &amp;= (x-2)^2+y^2.
+</mrow>
+</md>
+As noted in the previous problem, we will minimise the squared-distance since that also
+minimises the distance.
+</li>
+<li> Since <m>x,y</m> satisfy <m>y^2=x^2+1</m>, we can write the distance as a function of <m>x</m>:
+<md>
+<mrow>
+  \ell^2 &amp;= (x-2)^2 + y^2 = (x-2)^2 + (x^2+1)
+</mrow>
+</md>
+Notice that as <m>x \to \pm \infty</m> the squared-distance <m>\ell^2 \to +\infty</m>.
+</li>
+<li> Since the squared-distance is a polynomial it will not have any singular points,
+only critical points. The derivative is
+<md>
+<mrow>
+  \diff{}{x} \ell^2 &amp;= 2(x-2) + 2x = 4x-4
+</mrow>
+</md>
+so the only critical point occurs at <m>x=1</m>.
+</li>
+<li> When <m>x=1, y=\pm \sqrt{2}</m> and the distance is
+<md>
+<mrow>
+  \ell^2 &amp;= (1-2)^2 + (1+1) = 3 &amp; \ell=\sqrt{3}
+</mrow>
+</md>
+and thus the minimum distance from the curve to <m>(2,0)</m> is <m>\sqrt{3}</m>.
+</li>
+</ul>
+</p></example>
+
+<example xml:id="APPglobalMaxMinrain"><title>Constructing a trough</title>
+<p>
+A water trough is to be constructed from a metal sheet of width <m>45</m> cm
+by bending up one third of the sheet on each side through an angle
+<m>\theta</m>.  Which <m>\theta</m> will allow the trough to carry the maximum
+amount of water?
+</p>
+
+<p><alert>Solution</alert> Clearly <m>0 \leq \theta \leq \pi</m>, so we are back in the domain
+<fn>Again, no
+pun intended.</fn>
+ of Corollary<nbsp/><xref ref="cor_find_maxmin"/>.
+<ul>
+<li><p> After reading the problem carefully we should realise that it is really asking us
+to maximise the cross-sectional area. A figure really helps.</p>
+
+<sidebyside width="100%">
+<image source="text/figs/gutter"/>
+</sidebyside>
+</li>
+<li> From this we are led to define the height <m>h</m> <m>cm</m> and cross-sectional area <m>A</m>
+<m>cm^2</m>. Both are functions of <m>\theta</m>.
+<md>
+<mrow>
+  h &amp;= 15 \sin \theta
+</mrow>
+</md>
+while the area can be computed as the sum of the central <m>15 \times h</m> rectangle, plus
+two triangles. Each triangle has height <m>h</m> and base <m>15 \cos \theta</m>. Hence
+<md>
+<mrow>
+  A &amp;= 15h + 2 \cdot \frac{1}{2} \cdot h \cdot 15 \cos \theta
+</mrow><mrow>
+  &amp;= 15h \left(1 + \cos \theta \right)
+</mrow>
+</md>
+</li>
+<li> Since <m>h = 15\sin \theta</m> we can rewrite the area as a function of just <m>\theta</m>:
+<md>
+<mrow>
+  A(\theta) &amp;= 225 \sin\theta \left(1 + \cos \theta \right)
+</mrow>
+</md>
+where <m>0 \leq \theta \leq \pi</m>.
+</li>
+<li> Now we use Corollay<nbsp/><xref ref="cor_find_maxmin"/>. The ends of the interval give
+<md>
+<mrow>
+  A(0) &amp;= 225 \sin 0 (1 + \cos 0) = 0
+</mrow><mrow>
+  A(\pi) &amp;= 225 \sin \pi ( 1+ \cos \pi) = 0
+</mrow>
+</md>
+The derivative is
+<md>
+<mrow>
+  A'(\theta) &amp;= 225 \cos\theta \cdot (1+\cos\theta) + 225 \sin\theta \cdot(-\sin\theta)
+</mrow><mrow>
+  &amp;= 225 \left[ \cos \theta + \cos^2\theta - \sin^2\theta \right]
+  &amp;\text {recall }\sin^2\theta = 1 - \cos^2\theta
+</mrow><mrow>
+  &amp;= 225 \left[ \cos\theta +2\cos^2\theta -1 \right]
+</mrow>
+</md>
+This is a continuous function, so there are no singular points. However we can still hunt
+for critical points by solving <m>A'(\theta) = 0</m>. That is
+<md>
+<mrow>
+  2\cos^2\theta + \cos \theta -1 &amp;= 0 &amp; \text{factor carefully}
+</mrow><mrow>
+  (2\cos\theta -1)(\cos \theta+1) &amp;= 0
+</mrow>
+</md>
+Hence we must have <m>\cos \theta =-1</m> or <m>\cos\theta = \half</m>. On the domain <m>0\leq \theta
+\leq \pi</m>, this means <m>\theta = \pi/3</m> or <m>\theta = \pi</m>.
+<md>
+<mrow>
+  A(\pi) &amp;= 0
+</mrow><mrow>
+  A(\pi/3) &amp;= 225 \sin(\pi/3) (1 + \cos(\pi/3))
+</mrow><mrow>
+  &amp; = 225 \cdot \frac{\sqrt{3}}{2} \cdot \left( 1 + \frac{1}{2} \right)
+</mrow><mrow>
+  &amp;= 225 \cdot \frac{3\sqrt{3}}{4} \approx 292.28
+</mrow>
+</md>
+</li>
+<li> Thus the cross-sectional area is maximised when <m>\theta = \dfrac{\pi}{3}</m>.
+</li>
+</ul>
+</p>
+</example>
+
+<example xml:id="APPglobalMaxMinDD"><title>Closest and farthest points on a curve to a given point</title>
+<p>
+Find the points on the ellipse <m>\frac{x^2}{4}+y^2=1</m> that are nearest
+to and farthest from the point <m>(1,0)</m>.
+</p>
+
+<p><alert>Solution</alert> While this is another distance problem, the possible values of <m>x,y</m> are bounded,
+so we need Corollary<nbsp/><xref ref="cor_find_maxmin"/> rather than Theorem<nbsp/><xref ref="thm_maxMinOnR"/>.
+<ul>
+<li><p> We start by drawing a picture:</p>
+
+<sidebyside width="75%">
+<image source="text/figs/ellipseMaxMin"/>
+</sidebyside>
+</li>
+<li> Let <m>\ell</m> be the distance from the point <m>(x,y)</m> on the ellipse to the point
+<m>(1,0)</m>. As was the case above, we will maximise the squared-distance.
+<md>
+<mrow>
+  \ell^2 &amp;= (x-1)^2 + y^2.
+</mrow>
+</md>
+</li>
+<li><p> Since <m>(x,y)</m> lie on the ellipse we have
+<md>
+<mrow>
+\frac{x^2}{4}+y^2=1
+</mrow>
+</md>
+Note that this also shows that <m>-2 \leq x \leq 2</m> and <m>-1 \leq y \leq 1</m>.
+</p>
+
+<p>Isolating <m>y^2</m> and substituting this into our expression for <m>\ell^2</m> gives
+<md>
+<mrow>
+  \ell^2 &amp;= (x-1)^2 + \underbrace{1-x^2/4}_{=y^2}.
+</mrow>
+</md>
+</p></li>
+<li> Now we can apply Corollary<nbsp/><xref ref="cor_find_maxmin"/>. The endpoints of the domain give
+<md>
+<mrow>
+  \ell^2(-2) &amp;= (-2-1)^2 + 1 - (-2)^2/4 = 3^2+1-1 = 9
+</mrow><mrow>
+  \ell^2(2) &amp;= (2-1)^2 + 1 - 2^2/4 = 1+1-1 = 1
+</mrow>
+</md>
+The derivative is
+<md>
+<mrow>
+  \diff{}{x} \ell^2 &amp;= 2(x-1) - x/2 = \frac{3x}{2} - 2
+</mrow>
+</md>
+Thus there are no singular points, but there is a critical point at <m>x = 4/3</m>. The
+corresponding squared-distance is
+<md>
+<mrow>
+  \ell^2(4/3) &amp;= \left( \frac{4}{3}-1\right)^2 +1 - \frac{(4/3)^2}{4}
+</mrow><mrow>
+  &amp;= (1/3)^2 + 1 - (4/9) = 6/9 = 2/3.
+</mrow>
+</md>
+</li>
+<li><p> To summarise (and giving distances and coordinates of points):</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell><m>x</m> </cell><cell>  <m>(x,y)</m> </cell><cell>  <m>\ell</m></cell>
+</row><row>
+<cell><m>-2</m> </cell><cell> <m>(-2,0)</m> </cell><cell> <m>3</m>
+           </cell>
+</row><row>
+<cell><m>\frac{4}{3}</m>
+                   </cell><cell> <m>\big(\frac{4}{3},\pm\frac{\sqrt{5}}{3}\big)</m>
+                   </cell><cell> <m>\sqrt{\frac{2}{3}}</m>
+           </cell>
+</row><row>
+<cell><m>2</m> </cell><cell> <m>(2,0)</m> </cell><cell> <m>1</m>
+           </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>The point of maximum distance is <m>(-2,0)</m>, and the point of minimum distance is
+<m>\left(\frac{4}{3},\pm\frac{\sqrt{5}}{3}\right)</m>.</p>
+</li>
+</ul>
+</p>
+
+</example>
+
+
+<example xml:id="APPglobalMaxMinE"><title>Largest rectangle inside a triangle</title>
+<p>
+Find the dimensions of the rectangle of largest area that can be inscribed in an
+equilateral triangle of side <m>a</m> if one side of the rectangle lies on the base
+of the triangle.
+</p>
+
+<p><alert>Solution</alert> Since the rectangle must sit inside the triangle, its dimensions are
+bounded and we will end up using Corollary<nbsp/><xref ref="cor_find_maxmin"/>.
+<ul>
+<li><p> Carefully draw a picture:</p>
+<sidebyside widths="40% 55%">
+<image source="text/figs/inscribedB"/>
+   <image source="text/figs/inscribed"/>
+</sidebyside>
+<p>We have drawn (on the left) the triangle in the <m>xy</m>-plane with its base on the
+<m>x</m>-axis. The base has been drawn running from <m>(-a/2,0)</m> to <m>(a/2,0)</m> so
+its centre lies at the origin. A little Pythagoras (or a little trigonometry)
+tells us that the height of the triangle is
+<md>
+<mrow>
+  \sqrt{a^2-(a/2)^2} &amp;= \frac{\sqrt{3}}{2}\cdot a = a\cdot \sin\frac{\pi}{3}
+</mrow>
+</md>
+Thus the vertex at the top of the triangle lies at
+<m>\left(0,\frac{\sqrt{3}}{2}\cdot a\right)</m>.</p>
+</li>
+<li> If we construct a rectangle that does not touch the sides of the
+triangle, then we can increase the dimensions of the rectangle until it touches
+the triangle and so make its area larger. Thus we can assume that the
+two top corners of the rectangle touch the triangle as drawn in the
+right-hand figure above.
+</li>
+<li> Now let the rectangle be <m>2x</m> wide and <m>y</m> high. And let <m>A</m> denote its
+area. Clearly
+<md>
+<mrow>
+  A &amp;= 2xy.
+</mrow>
+</md>
+where <m>0 \leq x \leq a/2</m> and <m>0\leq y\leq \frac{\sqrt{3}}{2}a</m>.
+</li>
+<li> Our construction means that the top-right corner of the rectangle will
+have coordinates <m>(x,y)</m> and lie on the line joining the top vertex of the
+triangle at <m>(0,\sqrt{3}a/2)</m> to the bottom-right vertex at <m>(a/2,0)</m>. In order
+to write the area as a function of <m>x</m> alone, we need the equation for this
+line since it will tell us how to write <m>y</m> as a function of <m>x</m>. The line has
+slope
+<md>
+<mrow>
+  \text{slope} &amp;= \frac{\sqrt{3}a/2 - 0}{0-a/2} = -\sqrt{3}.
+</mrow>
+</md>
+and passes through the point <m>(0,\sqrt{3}a/2)</m>, so any point <m>(x,y)</m> on that
+line satisfies:
+<md>
+<mrow>
+  y &amp;= -\sqrt{3}x + \frac{\sqrt{3}}{2}a.
+</mrow>
+</md>
+</li>
+<li> We can now write the area as a function of <m>x</m> alone
+<md>
+<mrow>
+  A(x) &amp;= 2x \left( -\sqrt{3}x + \frac{\sqrt{3}}{2}a \right)
+</mrow><mrow>
+  &amp;= \sqrt{3} x(a-2x).
+</mrow>
+</md>
+with <m>0\leq x \leq a/2</m>.
+</li>
+<li> The ends of the domain give:
+<md>
+<mrow>
+  A(0) &amp;= 0 &amp; A(a/2) &amp;= 0.
+</mrow>
+</md>
+The derivative is
+<md>
+<mrow>
+  A'(x) &amp;= \sqrt{3} \left( x \cdot (-2) + 1 \cdot (a-2x) \right) = \sqrt{3}
+(a-4x).
+</mrow>
+</md>
+Since this is a polynomial there are no singular points, but there is a
+critical point at <m>x=a/4</m>. There
+<md>
+<mrow>
+  A(a/4) &amp;= \sqrt{3} \cdot \frac{a}{4} \cdot (a - a/2) = \sqrt{3} \cdot
+\frac{a^2}{8}.
+</mrow><mrow>
+  y &amp;= -\sqrt{3}\cdot (a/4) + \frac{\sqrt{3}}{2} a = \sqrt{3}\cdot \frac{a}{4}.
+</mrow>
+</md>
+</li>
+<li><p> Checking the question again, we see that we are asked for the dimensions
+rather than the area, so the answer is <m>2x \times y</m>:</p>
+
+<blockquote>
+<p>
+ The largest such rectangle has dimensions <m>\frac{a}{2} \times \frac{\sqrt{3}
+a}{4}</m>.
+</p></blockquote>
+</li>
+</ul>
+</p>
+
+</example>
+
+<p>This next one is a good physics example. In it we will derive Snell's
+Law
+<fn>Snell's law is named after the Dutch astronomer Willebrord Snellius
+who derived it in around 1621, though it was first stated accurately in 984 by
+Ibn Sahl.</fn>
+ from Fermat's principle
+<fn>Named after Pierre de Fermat who
+described it in a letter in 1662. The beginnings of the idea, however, go back
+as far as Hero of Alexandria in around 60CE. Hero is credited with many
+inventions including the first vending machine, and a precursor of the steam
+engine called an aeolipile.</fn>
+.</p>
+
+<example xml:id="APPglobalMaxMinF"><title>Snell's law</title>
+<p>Consider the figure below which shows the trajectory of a ray of light as it
+passes through two different mediums (say air and water).</p>
+
+<sidebyside width="66%">
+<image source="text/figs/snell"/>
+</sidebyside>
+
+<p>Let <m>c_a</m> be the speed of light in air and <m>c_w</m> be the speed of
+light in water. Fermat's principle states that a ray of light will always
+travel along a path that minimises the time taken. So if a ray of light travels
+from <m>P</m> (in air) to <m>Q</m> (in water) then it will <q>choose</q> the point <m>O</m> (on
+the interface) so as to minimise the total time taken. Use this idea to show
+Snell's law,
+<md>
+<mrow>
+  \frac{\sin\theta_i}{\sin\theta_r}&amp;=\frac{c_a}{c_w}
+</mrow>
+</md>
+where <m>\theta_i</m> is the angle of incidence and <m>\theta_r</m> is the angle
+of refraction (as illustrated in the figure above).
+</p>
+
+<p><alert>Solution</alert> This problem is a little more abstract than the others we have examined,
+but we can still apply Theorem<nbsp/><xref ref="thm_maxMinOnR"/>.
+<ul>
+<li><p> We are given a figure in the statement of the problem and it contains
+all the relevant points and angles. However it will simplify things if we
+decide on a coordinate system. Let's assume that the point <m>O</m> lies on the
+<m>x</m>-axis, at coordinates <m>(x,0)</m>. The point <m>P</m> then lies above the axis at
+<m>(X_P,+Y_P)</m>, while <m>Q</m> lies below the axis at <m>(X_Q,-Y_Q)</m>. This is drawn below.</p>
+
+<sidebyside width="80%">
+<image source="text/figs/snellB"/>
+</sidebyside>
+</li>
+<li> The statement of Snell's law contains terms <m>\sin \theta_i</m> and <m>\sin
+\theta_r</m>, so it is a good idea for us to see how to express these in terms of
+the coordinates we have just introduced:
+<md>
+<mrow>
+  \sin \theta_i &amp;=  \frac{\text{opposite}}{\text{hypotenuse}}
+  = \frac{(x-X_P)}{\sqrt{(X_P-x)^2 + Y_P^2}}
+</mrow><mrow>
+  \sin \theta_r &amp;=  \frac{\text{opposite}}{\text{hypotenuse}}
+  = \frac{(X_Q-x)}{\sqrt{(X_Q-x)^2 + Y_Q^2}}
+</mrow>
+</md>
+</li>
+<li> Let <m>\ell_P</m> denote the distance <m>PO</m>, and <m>\ell_Q</m> denote the distance
+<m>OQ</m>. Then we have
+<md>
+<mrow>
+  \ell_P &amp;= \sqrt{(X_P-x)^2+Y_P^2}
+</mrow><mrow>
+  \ell_Q &amp;= \sqrt{(X_Q-x)^2+Y_Q^2}
+</mrow>
+</md>
+If we then denote the total time taken by <m>T</m>, then
+<md>
+<mrow>
+  T &amp;= \frac{\ell_P}{c_a} + \frac{\ell_Q}{c_w}
+  = \frac{1}{c_a}\sqrt{(X_P-x)^2+Y_P^2} + \frac{1}{c_w}\sqrt{(X_Q-x)^2+Y_Q^2}
+</mrow>
+</md>
+which is written as a function of <m>x</m> since all the other terms are
+constants.
+</li>
+<li> Notice that as <m>x \to +\infty</m> or <m>x\to-\infty</m> the total time <m>T \to
+\infty</m> and so we can apply Theorem<nbsp/><xref ref="thm_maxMinOnR"/>. The derivative is
+<md>
+<mrow>
+  \diff{T}{x} &amp;=
+  \frac{1}{c_a} \frac{-2(X_P-x)}{2\sqrt{(X_P-x)^2+Y_P^2}} +
+  \frac{1}{c_w} \frac{-2(X_Q-x)}{2\sqrt{(X_Q-x)^2+Y_Q^2}}
+</mrow>
+</md>
+Notice that the terms inside the square-roots cannot be zero or negative since
+they are both sums of squares and <m>Y_P,Y_Q  \gt  0</m>. So there are no singular
+points, but there is a critical point when <m>T'(x) = 0</m>, namely when
+<md>
+<mrow>
+  0 &amp;= \frac{1}{c_a} \frac{X_P-x}{\sqrt{(X_P-x)^2+Y_P^2}} +
+  \frac{1}{c_w} \frac{X_Q-x}{\sqrt{(X_Q-x)^2+Y_Q^2}}
+</mrow><mrow>
+  &amp;= \frac{-\sin\theta_i}{c_a} + \frac{\sin\theta_r}{c_w}
+</mrow>
+</md>
+Rearrange this to get
+<md>
+<mrow>
+  \frac{\sin\theta_i}{c_a} &amp;= \frac{\sin\theta_r}{c_w}
+</mrow>
+<intertext>move sines to one side</intertext>
+<mrow>
+  \frac{\sin\theta_i}{\sin \theta_r} &amp;= \frac{c_a}{c_w}
+</mrow>
+</md>
+which is exactly Snell's law.
+</li>
+</ul>
+</p></example>
+
+
+<example xml:id="APPglobalMaxMinG"><title>Finding the best viewing angle</title>
+<p>
+The Statue of Liberty has height <m>46</m>m and stands on a <m>47</m>m
+tall pedestal. How far from the statue should an observer stand
+to maximize the angle subtended by the statue at the observer's eye,
+which is <m>1.5</m>m above the base of the pedestal?
+</p>
+
+<p><alert>Solution</alert> Obviously if we stand too close then all the observer sees is the
+pedestal, while if they stand too far then everything is tiny. The best spot
+for taking a photograph is somewhere in between.
+<ul>
+<li><p> Draw a careful picture
+<fn>And make some healthy use of public domain clip art.</fn></p>
+<sidebyside width="90%">
+<image source="text/figs/liberty"/>
+</sidebyside>
+<p>and we can put in the relevant lengths and angles.</p>
+</li>
+<li> The height of the statue is <m>h = 46</m>m, and the height of the pedestal (above the
+eye) is <m>p = 47-1.5 = 45.5</m>m. The horizontal distance from the statue to the eye is <m>x</m>.
+There are two relevant angles. First <m>\theta</m> is the angle subtended by the statue, while
+<m>\varphi</m> is the angle subtended by the portion of the pedestal above the eye.
+</li>
+<li> Some trigonometry gives us
+<md>
+<mrow>
+\tan \varphi &amp;= \frac{p}{x}
+</mrow><mrow>
+\tan (\varphi+\theta) &amp;= \frac{p+h}{x}
+</mrow>
+</md>
+Thus
+<md>
+<mrow>
+  \varphi &amp;= \arctan \frac{p}{x}
+</mrow><mrow>
+  \varphi+\theta &amp;= \arctan \frac{p+h}{x}
+</mrow>
+</md>
+and so
+<md>
+<mrow>
+  \theta &amp;= \arctan \frac{p+h}{x} - \arctan\frac{p}{x}.
+</mrow>
+</md>
+</li>
+<li><p> If we allow the viewer to stand at any point in front of the statue, then <m>0\le x
+ \lt \infty</m>. Further observe that as <m>x \rightarrow \infty</m> or <m>x \rightarrow 0</m> the angle
+<m>\theta \rightarrow 0</m>,  since
+<md>
+<mrow>
+  \lim_{x\rightarrow 0} \arctan \frac{p+h}{x} &amp;= \frac{\pi}{2}
+</mrow><mrow>
+  \lim_{x\rightarrow 0} \arctan \frac{p}{x} &amp;= \frac{\pi}{2}
+</mrow>
+</md>
+Clearly the largest value of <m>\theta</m> will be strictly positive and so has to be taken for
+some <m>0 \lt x \lt \infty</m>. (Note the strict inequalities.) This <m>x</m> will be a local maximum as
+well as a global maximum. As <m>\theta</m> is not singular at any <m>0 \lt x \lt \infty</m>, we need only
+search for critical points.
+</p>
+
+<p>A careful application of the chain rule shows that
+the derivative is
+<md>
+<mrow>
+  \diff{\theta}{x}
+  &amp;=
+  \frac{1}{1+(\frac{p+h}{x})^2}\cdot \left(\frac{-(p+h)}{x^2}\right) -
+  \frac{1}{1+(\frac{p}{x})^2}\cdot \left(\frac{-p}{x^2}\right)
+</mrow><mrow>
+  &amp;= \frac{-(p+h)}{x^2+(p+h)^2} + \frac{p}{x^2+p^2}
+</mrow>
+</md>
+So a critical point occurs when
+<md>
+<mrow>
+  \frac{(p+h)}{x^2+(p+h)^2} &amp;= \frac{p}{x^2+p^2} &amp; \text{cross multiply}
+</mrow><mrow>
+  (p+h)(x^2+p^2) &amp;= p(x^2+(p+h)^2) &amp; \text{collect $x$ terms}
+</mrow><mrow>
+  x^2 (p+h-p) &amp;= p(p+h)^2 - p^2 (p+h) &amp; \text{clean up}
+</mrow><mrow>
+  h x^2 &amp;= p(p+h)(p+h-p) = ph(p+h) &amp; \text{cancel common factors}
+</mrow><mrow>
+  x^2 &amp;= p(p+h)
+</mrow><mrow>
+  x &amp;= \pm\sqrt{p(p+h)} \approx \pm 64.9m
+</mrow>
+</md></p>
+</li>
+<li> Thus the best place to stand approximately <m>64.9</m>m in front or behind the statue.
+At that point <m>\theta \approx 0.348</m> radians or <m>19.9^\circ</m>.
+</li>
+</ul>
+</p></example>
+
+
+<example xml:id="APPglobalMaxMinJ"><title>Moving objects around corners</title>
+<p>
+Find the length of the longest rod that can be carried horizontally (no
+tilting allowed) from a corridor <m>3</m>m wide into a corridor <m>2</m>m wide.
+The two corridors are perpendicular to each other.
+</p>
+
+<p><alert>Solution</alert>
+<ul>
+<li><p> Suppose that we are carrying the rod around the corner, then if the rod is as long
+as possible it must touch the corner and the outside walls of both corridors. A
+picture of this is show below.</p>
+
+<sidebyside width="100%">
+<image source="text/figs/corridor"/>
+</sidebyside>
+
+<p>You can see that this gives rise to two similar triangles, one inside each corridor. Also
+the maximum length of the rod changes with the angle it makes with the walls of the
+corridor.</p>
+</li>
+<li> Suppose that the angle between the rod and the inner wall of the <m>3</m>m
+corridor is <m>\theta</m>, as illustrated in the figure above. At the same time it will make an
+angle of <m>\frac{\pi}{2}-\theta</m> with the outer wall of the 2m corridor. Denote by
+<m>\ell_1(\theta)</m> the length of the part of the rod forming the hypotenuse of the upper
+triangle in the figure above. Similarly, denote by <m>\ell_2(\theta)</m> the length of the part
+of the rod forming the hypotenuse of the lower triangle in the figure above.  Then
+<md>
+<mrow>
+\ell_1(\theta) = \frac{3}{\sin\theta}\qquad
+\ell_2(\theta) = \frac{2}{\cos\theta}
+</mrow>
+</md>
+and the total length is
+<md>
+<mrow>
+\ell(\theta) = \ell_1(\theta) +\ell_2(\theta)
+             = \frac{3}{\sin\theta}+\frac{2}{\cos\theta}
+</mrow>
+</md>
+where <m>0 \leq \theta \leq \frac{\pi}{2}</m>.
+</li>
+<li><p> The length of the longest rod we can move through the corridor in this way is the
+minimum of <m>\ell(\theta)</m>. Notice that <m>\ell(\theta)</m> is not defined at <m>\theta = 0,
+\frac{\pi}{2}</m>. Indeed we find that as <m>\theta \rightarrow 0^+</m> or <m>\theta\rightarrow
+\frac{\pi}{2}^-</m>, the length <m>\ell\rightarrow +\infty</m>. (You should be able to picture
+what happens to our rod in those two limits). Clearly the minimum allowed <m>\ell(\theta)</m>
+is going to be finite and will be achieved for some <m>0 \lt \theta \lt \frac{\pi}{2}</m> (note the
+strict inequalities) and so will be a local minimum as well as a global minimum. So we
+only need to find zeroes of <m>\ell'(\theta)</m>.
+</p>
+
+<p>Differentiating <m>\ell</m> gives
+<md>
+<mrow>
+  \diff{\ell}{\theta} &amp;= -\frac{3 \cos\theta}{\sin^2\theta} +
+\frac{2\sin\theta}{\cos^2\theta}
+  = \frac{-3\cos^3\theta  +2 \sin^3\theta}{\sin^2\theta
+\cos^2\theta}.
+</mrow>
+</md>
+This does not exist at <m>\theta = 0, \frac{\pi}{2}</m> (which we have already
+analysed) but does exist at every <m>0  \lt \theta \lt  \frac{\pi}{2}</m> and is equal to zero when the
+numerator is zero. Namely when
+<md>
+<mrow>
+  2\sin^3\theta &amp;= 3 \cos^3 \theta &amp; \text{divide by $\cos^3 \theta$}
+</mrow><mrow>
+  2 \tan^3\theta &amp;= 3
+</mrow><mrow>
+  \tan\theta &amp;= \sqrt[3]{\frac{3}{2}}
+</mrow>
+</md>
+</p>
+</li>
+<li> <p> From this we can recover <m>sin\theta</m> and  <m>cos\theta</m>, without having to compute <m>\theta</m> itself. We can, for example, construct a right-angle triangle with adjacent length
+<m>\sqrt[3]{2}</m> and opposite length <m>\sqrt[3]{3}</m> (so that <m>\tan\theta=\sqrt[3]{3/2}</m>):</p>
+
+<sidebyside width="33%">
+ <image source="text/figs/triangleCor"/>
+ </sidebyside>
+
+<p>It has hypotenuse <m>\sqrt{ 3^{2/3} + 2^{2/3}}</m>, and so
+<md>
+<mrow>
+  \sin \theta &amp;= \frac{3^{1/3}}{\sqrt{3^{2/3}+2^{2/3}}}
+</mrow><mrow>
+  \cos \theta &amp;= \frac{2^{1/3}}{\sqrt{3^{2/3}+2^{2/3}}}
+</mrow>
+</md>
+Alternatively could use the identities:
+<md>
+<mrow>
+  1 + \tan^2\theta &amp;= \sec^2\theta &amp; 1+\cot^2\theta &amp;= \csc^2\theta
+</mrow>
+</md>
+to obtain expressions for <m>1/\cos\theta</m> and <m>1/\sin\theta</m>.</p>
+</li>
+<li> Using the above expressions for <m>\sin\theta, \cos\theta</m> we find the minimum of
+<m>\ell</m> (which is the longest rod that we can move):
+<md>
+<mrow>
+  \ell &amp;= \frac{3}{\sin\theta} + \frac{2}{\cos\theta}
+=\frac{3}{ \frac{\root 3\of 3}
+         {\sqrt{2^{\frac{2}{3}}+3^{\frac{2}{3}}}} }
++\frac{2}{ \frac{\root 3\of 2}{\sqrt{2^{\frac{2}{3}}+3^{\frac{2}{3}}}} }
+</mrow><mrow>
+&amp; =\sqrt{2^{\frac{2}{3}}+3^{\frac{2}{3}}}
+                 \big[3^{\frac{2}{3}}+2^{\frac{2}{3}}\big]
+</mrow><mrow>
+&amp; ={\big[2^{\frac{2}{3}}+3^{\frac{2}{3}}\big]}^{\frac{3}{2}}
+\approx 7.02\text{m}
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+
+</example>
+
+</subsection>
+
+<xi:include href="../problems/prob_s3.5.xml" />
+
+</section>

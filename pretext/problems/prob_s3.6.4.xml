@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_sketch_SYM"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+What symmetries (even, odd, periodic) does the function graphed below have?</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[samples=100,domain=-1.5:1.5](3*\x,{4*(\x*\x-1)*(\x*\x-1)-2.5}) node[right]{$y=f(x)$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+This function is symmetric across the <m>y</m>-axis.
+</p></hint>
+<answer><p>
+even
+</p></answer>
+<solution><p>
+This function is symmetric across the <m>y</m>-axis, so it is even.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+What symmetries (even, odd, periodic) does the function graphed below have?</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[samples=100,domain=-12:12](\x/2,{2*sin(\x r)+sin(2*\x r)}) node[right]{$y=f(x)$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+There are two.
+</p></hint>
+<answer><p>
+ odd, periodic
+ </p></answer>
+<solution><p>
+The function is not even, because it is not mirrored across the <m>y</m>-axis.
+</p>
+
+<p>Assuming it continues as shown, the function is periodic, because the unit shown below is repeated:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{8}{4}
+\draw plot[samples=100,domain=-12:12](\x/2,{2*sin(\x r)+sin(2*\x r)}) node[right]{$y=f(x)$};
+\draw[ultra thick, red] plot[samples=100,domain=0:6.28](\x/2,{2*sin(\x r)+sin(2*\x r)});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Additionally, <m>f(x)</m> is odd. In a function with odd symmetry, if we mirror the right-hand portion of the curve (the portion to the right of the <m>y</m>-axis) across both the <m>y</m>-axis and the <m>x</m>-axis, it lines up with the left-hand portion of the curve.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[samples=100,domain=0:12](\x/2,{2*sin(\x r)+sin(2*\x r)}) node[right]{$y=f(x)$};
+\draw[dashed] plot[samples=100,domain=-12:0](\x/2,{-2*sin(\x r)-sin(2*\x r)});
+\draw (-3,-3) node{reflected across $y$-axis};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,1) node{};
+\draw (0,-3) node{};
+\draw[ultra thick, - \gt ] (0,0)--(0,-2);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[samples=100,domain=0:12](\x/2,{2*sin(\x r)+sin(2*\x r)}) node[right]{$y=f(x)$};
+\draw[loosely dashed, gray] plot[samples=100,domain=-12:0](\x/2,{-2*sin(\x r)-sin(2*\x r)});
+\draw[red, thick] plot[samples=100,domain=-12:0](\x/2,{2*sin(\x r)+sin(2*\x r)});
+\draw[red] (-3,-3) node{reflected across both axes};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p> Since reflecting the right-hand portion of the graph across the <m>y</m>-axis, then the <m>x</m>-axis, gives us <m>f(x)</m>, we conclude <m>f(x)</m> is odd.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose <m>f(x)</m> is an even function defined for all real numbers. Below is the curve <m>y=f(x)</m> when <m>x \lt 0</m>. Complete the sketch of the curve.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[domain=0:6, samples=100](\x,{cos(\x r)+\x^2/12-1});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+Since the function is even, you only have to reflect the portion shown across the <m>y</m>-axis to complete the sketch.
+</p></hint>
+<answer>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[domain=0:6, samples=100](\x,{cos(\x r)+\x^2/12-1});
+\draw plot[domain=0:6, samples=100](-\x,{cos(\x r)+\x^2/12-1});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+Since the function is even, we simply reflect the portion shown across the <m>y</m>-axis to complete the sketch.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[domain=0:6, samples=100](\x,{cos(\x r)+\x^2/12-1});
+\draw plot[domain=0:6, samples=100](-\x,{cos(\x r)+\x^2/12-1});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose <m>f(x)</m> is an odd function defined for all real numbers. Below is the curve <m>y=f(x)</m> when <m>x \lt 0</m>. Complete the sketch of the curve.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[domain=0:6, samples=100](\x,{cos(\x r)+\x^2/12-1});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+Since the function is odd, to complete the sketch, reflect the portion shown across the <m>y</m>-axis, then the <m>x</m>-axis.
+</p></hint>
+<answer>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[domain=0:6, samples=100](\x,{cos(\x r)+\x^2/12-1});
+\draw plot[domain=0:6, samples=100](-\x,{-cos(\x r)-\x^2/12+1});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+Since the function is odd, to complete the sketch, we reflect the portion shown across the <m>y</m>-axis (shown dashed), then the <m>x</m>-axis (shown in red).</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[domain=0:6, samples=100](\x,{cos(\x r)+\x^2/12-1});
+\draw[loosely dashed] plot[domain=0:6, samples=100](-\x,{cos(\x r)+\x^2/12-1});
+\draw[red] plot[domain=0:6, samples=100](-\x,{-cos(\x r)-\x^2/12+1});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+</exercisegroup>
+
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+
+<exercise purpose="RQS">
+<statement><p>
+<me>
+f(x)=\frac{x^4-x^6}{e^{x^2}}</me>
+</p>
+
+<p>Show that <m>f(x)</m> is even.
+</p></statement>
+<hint><p>
+A function is even if <m>f(-x)=f(x)</m>.
+</p></hint>
+<answer><p>
+A function is even if <m>f(-x)=f(x)</m>.
+<md>
+<mrow>
+f(-x)&amp;=\frac{(-x)^4-(-x)^6}{e^{(-x)^2}}
+</mrow><mrow>
+&amp;=\frac{x^4-x^6}{e^{x^2}}
+</mrow><mrow>
+&amp;=f(x)
+</mrow>
+</md>
+So, <m>f(x)</m> is even.
+</p></answer>
+<solution><p>
+A function is even if <m>f(-x)=f(x)</m>.
+<md>
+<mrow>
+f(-x)&amp;=\frac{(-x)^4-(-x)^6}{e^{(-x)^2}}
+</mrow><mrow>
+&amp;=\frac{x^4-x^6}{e^{x^2}}
+</mrow><mrow>
+&amp;=f(x)
+</mrow>
+</md>
+So, <m>f(x)</m> is even.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+<me>
+f(x)=\sin(x)+\cos\left(\frac{x}{2}\right)</me>
+</p>
+
+<p>Show that <m>f(x)</m> is periodic.
+</p></statement>
+<hint><p>
+Its period is not <m>2\pi</m>.
+</p></hint>
+<answer><p>
+For any real number <m>x</m>, we will show that <m>f(x)=f(x+4\pi)</m>.
+<md>
+<mrow>
+f(x+4\pi)&amp;=\sin(x+4\pi)+\cos\left(\frac{x+4\pi}{2}\right)
+</mrow><mrow>
+&amp;=\sin(x+4\pi)+\cos\left(\frac{x}{2}+2\pi\right)
+</mrow><mrow>
+&amp;=\sin(x)+\cos\left(\frac{x}{2}\right)
+</mrow><mrow>
+&amp;=f(x)
+</mrow>
+</md>
+So, <m>f(x)</m> is periodic.
+</p></answer>
+<solution><p>
+For any real number <m>x</m>, we will show that <m>f(x)=f(x+4\pi)</m>.
+<md>
+<mrow>
+f(x+4\pi)&amp;=\sin(x+4\pi)+\cos\left(\frac{x+4\pi}{2}\right)
+</mrow><mrow>
+&amp;=\sin(x+4\pi)+\cos\left(\frac{x}{2}+2\pi\right)
+</mrow><mrow>
+&amp;=\sin(x)+\cos\left(\frac{x}{2}\right)
+</mrow><mrow>
+&amp;=f(x)
+</mrow>
+</md>
+So, <m>f(x)</m> is periodic.
+</p></solution>
+</exercise>
+
+<introduction><p>In Questions<nbsp/><xref ref="s3_6_4eqfirst"/> through <xref ref="s3_6_4eqlast"/>, find the symmetries of a function from its equation.</p></introduction>
+
+
+<exercise xml:id="s3_6_4eqfirst" purpose="RQS">
+<statement><p>
+<me>
+f(x)=x^4+5x^2+\cos\left(x^3\right)</me>
+</p>
+
+<p>What symmetries (even, odd, periodic) does <m>f(x)</m> have?
+</p></statement>
+<hint><p>
+Simplify <m>f(-x)</m> to see whether it is the same as <m>f(x)</m>, <m>-f(x)</m>, or neither.
+</p></hint>
+<answer><p>
+even
+</p></answer>
+<solution><p>
+<m>f(x)</m> is not periodic. (You don't really have to justify this, but if you wanted to, you could say something like this. Notice <m>f(0)=1</m>. Whenever <m>x \gt 10</m>, <m>f(x) \gt 1</m>. Then the value of <m>f(0)</m> is <em>not</em> repeated indefinitely, so <m>f(x)</m> is not periodic.)
+</p>
+
+<p>To decide whether <m>f(x)</m> is even, odd, or neither, simplify <m>f(-x)</m>:
+<md>
+<mrow>
+f(-x)&amp;=(-x)^4+5(-x)^2+\cos\left((-x)^3\right)
+</mrow><mrow>
+&amp;=x^4+5x^3+\cos(-x)
+</mrow><mrow>&amp;=x^4+5x^3+\cos(x)
+</mrow><mrow>
+&amp;=f(x)
+</mrow>
+</md>
+Since <m>f(-x)=f(x)</m>, our function is even.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+<me>
+f(x)=x^5+5x^4</me>
+</p>
+
+<p>What symmetries (even, odd, periodic) does <m>f(x)</m> have?
+</p></statement>
+<hint><p>
+Simplify <m>f(-x)</m> to see whether it is the same as <m>f(x)</m>, <m>-f(x)</m>, or neither.
+</p></hint>
+<answer><p>
+none
+</p></answer>
+<solution><p>
+It should be clear that <m>f(x)</m> is not periodic.  (If you wanted to justify this, you could note that <m>f(x)=0</m> has exactly two solutions, <m>x=0,\,-{5}</m>. Since the value of <m>f(0)</m> is repeated only twice, and not indefinitely, <m>f(x)</m> is not periodic.)
+</p>
+
+<p>To decide whether <m>f(x)</m> is odd, even, or neither, we simplify <m>f(-x)</m>.
+<md>
+<mrow>
+f(-x)&amp;=(-x)^5+5(-x)^{4}
+</mrow><mrow>
+&amp;=-x^5+5x^4
+</mrow>
+</md>
+We see that  <m>f(-x)</m> is not equal to <m>f(x)</m> or to <m>-f(x)</m>.
+For instance, when <m>x=1</m>:
+<ul>
+<li> <m>f(-x)=f(-1)=4</m>,
+</li>
+<li> <m>f(x)=f(1)=6</m>, and
+</li>
+<li> <m>-f(x)=-f(1)=-6</m>.
+</li>
+</ul>
+Since <m>f(-x)</m> is not equal to <m>f(x)</m> or to <m>-f(x)</m>, <m>f(x)</m> is neither even nor odd.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+<me>
+f(x)=\tan\left(\pi x\right)</me>
+</p>
+
+<p> What is the period of <m>f(x)</m>?
+</p></statement>
+<hint><p>
+Find the smallest value <m>k</m> such that <m>f(x+k)=f(x)</m> for any <m>x</m> in the domain of <m>f</m>.
+</p>
+
+<p>You may use the fact that the period of <m>g(X)=\tan X</m> is <m>\pi</m>.
+</p></hint>
+<answer><p>
+1
+</p></answer>
+<solution><p>
+Recall the period of <m>g(X)=\tan X </m> is <m>\pi</m>.
+<md>
+<mrow>
+\tan(X+\pi)&amp;=\tan(X)&amp;&amp;\mbox{for any $X$ in the domain of $\tan X$}
+</mrow>
+<intertext>Replacing <m>X</m> with <m>\pi x</m>:</intertext><mrow>
+\tan(\pi x + \pi)&amp;=\tan(\pi x)&amp;&amp;\mbox{for any $x$ in the domain of $\tan(\pi x)$}
+</mrow><mrow>
+\tan(\pi(x+1))&amp;=\tan(\pi x)&amp;&amp;\mbox{for any $x$ in the domain of $\tan(\pi x)$}
+</mrow><mrow>
+f(x+1)&amp;=f(x)&amp;&amp;\mbox{for any $x$ in the domain of $\tan(\pi x)$}
+</mrow>
+</md>
+The period of <m>f(x)</m> is 1.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise xml:id="s3_6_4eqlast">
+<statement><p>
+<me>
+f(x)=\tan\left(3 x\right)+\sin\left(4 x\right)</me>
+</p>
+
+<p>What is the period of <m>f(x)</m>?
+</p></statement>
+<hint><p>
+It is true that <m>f(x)=f(x+2\pi)</m> for every <m>x</m> in the domain of <m>f(x)</m>, but the period is not <m>2\pi</m>.
+</p></hint>
+<answer><p>
+<m>\pi</m>
+</p></answer>
+<solution><p>
+Let's consider <m>g(x)=\tan(3x)</m> and <m>h(x)=\sin(4x)</m> separately. Recall that <m>\pi</m> is the period of tangent.
+<md>
+<mrow>
+\tan X &amp;= \tan(X+\pi)&amp;&amp;\mbox{for every $X$ in the domain of $\tan X$}
+</mrow>
+<intertext>Replacing <m>X</m> with <m>3x</m>:</intertext><mrow>
+\tan(3x)&amp;=\tan(3x+\pi)&amp;&amp;\mbox{for every $x$ in the domain of $\tan 3x$}
+</mrow><mrow>
+\tan(3x)&amp;=\tan\left(3\left(x+\frac{\pi}{3}\right)\right)&amp;&amp;\mbox{for every $x$ in the domain of $\tan 3x$}
+</mrow><mrow>
+g(x)&amp;=g\left(x+\frac{\pi}{3}\right)&amp;&amp;\mbox{for every $x$ in the domain of $\tan 3x$}
+</mrow>
+<intertext>So, the period of <m>g(x)=\tan(3x)</m> is <m>\dfrac{\pi}{3}</m>. </intertext><mrow>
+</mrow>
+<intertext>Similarly, <m>2\pi</m> is the period of sine.</intertext><mrow>
+\sin(X)&amp;=\sin(X+2\pi)&amp;&amp;\mbox{for every $X$ in the domain of  $\sin(X)$}
+</mrow>
+<intertext>Replacing <m>X</m> with <m>4x</m>:</intertext><mrow>
+\sin(4x)&amp;=\sin(4x+2\pi)&amp;&amp;\mbox{for every $x$ in the domain of  $\sin(4x)$}
+</mrow><mrow>
+\sin(4x)&amp;=\sin\left(4\left(x+\frac{\pi}{2}\right)\right)&amp;&amp;\mbox{for every $x$ in the domain of  $\sin(4x)$}
+</mrow><mrow>
+h(x)&amp;=h\left(x+\frac{\pi}{2}\right)&amp;&amp;\mbox{for every $x$ in the domain of  $\sin(4x)$}
+</mrow>
+</md>
+So, the period of <m>h(x)=\sin(4x)</m> is <m>\dfrac{\pi}{2}</m>.
+</p>
+
+<p>All together, <m>f(x)=g(x)+h(x)</m> will repeat when both <m>g(x)</m> and <m>h(x)</m> repeat. The least common integer multiple of <m>\dfrac{\pi}{3}</m> and <m>\dfrac{\pi}{2}</m> is <m>\pi</m>. Since <m>g(x)</m> repeats every <m>\dfrac{\pi}{3}</m> units, and <m>h(x)</m> repeats every <m>\dfrac{\pi}{2}</m> units, they will not both repeat until we move <m>\pi</m> units. So, the period of <m>f(x)</m> is <m>\pi</m>.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_exp_func">
+<title>Derivatives of Exponential Functions</title>
+<introduction>
+
+<p>
+Now that we understand how derivatives interact with products and quotients, we  are able to compute derivatives of
+<ul>
+<li> polynomials, </li>
+<li> rational functions, and </li>
+<li> powers and roots of rational functions. </li>
+</ul>
+Notice that all of the above come from knowing
+	<fn>
+		Differentiating powers  and roots of functions is actually quite a bit easier once one knows the chain  rule <mdash/> which we will discuss soon.
+	</fn>
+the derivative of <m>x^n</m> and applying  linearity of derivatives and the product rule.
+</p>
+
+<p>
+There is still one more <q>rule</q> that we need to complete our toolbox and that  is the chain rule. However before we get there, we will add a few functions  to our list of things we can differentiate
+	<fn>
+		One reason we add these  functions is that they interact very nicely with the derivative. Another  reason is that they turn up in many <q>real world</q> examples.
+	</fn>.
+The  first of these is the exponential function.
+</p>
+
+<p>
+Let <m>a \gt 0</m> and set <m>f(x) = a^x</m> <mdash/> this is what is known as an  exponential function. Let's see what happens when we try to compute  the derivative of this function just using the definition of the derivative.
+<md>
+<mrow>
+  \diff{f}{x} &amp;= \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+  = \lim_{h \to 0} \frac{a^{x+h} - a^x}{h}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} a^x \cdot \frac{a^{h} - 1}{h}
+  = a^x \cdot \lim_{h \to 0} \frac{a^{h} - 1}{h}
+</mrow>
+</md>
+Unfortunately we cannot complete this computation because we cannot evaluate the  last  limit directly. For the moment, let us assume this limit exists and name it
+<md>
+<mrow>
+  C(a) &amp;= \lim_{h \to 0} \frac{a^{h} - 1}{h}
+</mrow>
+</md>
+It depends only on <m>a</m> and is completely independent of <m>x</m>. Using  this  notation (which  we will quickly improve upon below), our desired derivative is now
+<md>
+<mrow>
+  \diff{}{x}a^x &amp;=  C(a)\cdot a^x.
+</mrow>
+</md>
+Thus the derivative of <m>a^x</m> is <m>a^x</m> multiplied by some constant <mdash/> i.e. the  function  <m>a^x</m> is nearly unchanged by differentiating. If we can tune <m>a</m> so that <m>C(a) =  1</m> then the derivative would just be the original function! This turns out to be  very useful.
+</p>
+
+<p>
+To try finding an <m>a</m> that obeys <m>C(a)=1</m>, let us investigate how <m>C(a)</m> changes  with  <m>a</m>. Unfortunately (though this fact is not at all obvious) there is no way to  write  <m>C(a)</m> as a finite combination of any of the functions we have examined  so far
+	<fn>
+		To a bit more be precise, we say that a number <m>q</m> is algebraic  if we can write <m>q</m> as the zero of a polynomial with integer coefficients. When <m>a</m> is any  positive algebraic number other <m>1</m>, <m>C(a)</m> is not algebraic. A number that is not  algebraic is called transcendental. The best known example of a transcendental number is  <m>\pi</m> (which follows from the Lindemann-Weierstrass Theorem <mdash/> way beyond the scope of this  course).
+	</fn>.
+To get started, we'll try to guess <m>C(a)</m>, for a few values of <m>a</m>, by plugging in some small values of <m>h</m>.
+</p>
+
+<example xml:id="eg_log_est"><title>Estimates of <m>C(a)</m></title>
+<p>
+Let <m>a =1</m> then <m>C(1) = \ds \lim_{h \to 0} \frac{1^h-1}{h} = 0</m>. This is not  surprising  since <m>1^x=1</m> is constant, and so its derivative must be zero everywhere. Let <m>a  =2</m>  then <m>C(2) = \ds \lim_{h \to 0} \frac{2^h-1}{h}</m>. Setting <m>h</m> to smaller and  smaller numbers gives
+</p>
+
+<sidebyside>
+<tabular bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>h</m> </cell><cell> 0.1 </cell><cell> 0.01 </cell><cell> 0.001 </cell><cell> 0.0001 </cell><cell> 0.00001 </cell><cell> 0.000001 </cell><cell> 0.0000001 </cell>
+</row><row>
+<cell><m>\tfrac{2^h-1}{h}</m> </cell><cell> 0.7177 </cell><cell> 0.6956 </cell><cell> 0.6934 </cell><cell> 0.6932 </cell><cell>
+             0.6931 </cell><cell> 0.6931 </cell><cell> 0.6931 </cell>
+</row>
+</tabular>
+</sidebyside>
+<p>Similarly when <m>a=3</m> we get</p>
+
+<sidebyside>
+<tabular bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>h</m> </cell><cell> 0.1 </cell><cell> 0.01 </cell><cell> 0.001 </cell><cell> 0.0001 </cell><cell> 0.00001 </cell><cell> 0.000001 </cell><cell> 0.0000001 </cell>
+</row><row>
+<cell><m>\tfrac{3^h-1}{h}</m> </cell><cell> 1.1612 </cell><cell> 1.1047 </cell><cell> 1.0992 </cell><cell> 1.0987 </cell><cell>
+             1.0986 </cell><cell> 1.0986 </cell><cell> 1.0986 </cell>
+</row>
+</tabular>
+</sidebyside>
+<p>and <m>a=10</m></p>
+
+<sidebyside>
+<tabular bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>h</m> </cell><cell> 0.1 </cell><cell> 0.01 </cell><cell> 0.001 </cell><cell> 0.0001 </cell><cell> 0.00001 </cell><cell> 0.000001 </cell><cell> 0.0000001 </cell>
+</row><row>
+<cell><m>\tfrac{10^h-1}{h}</m> </cell><cell> 2.5893 </cell><cell> 2.3293 </cell><cell> 2.3052 </cell><cell> 2.3028 </cell><cell>
+             2.3026 </cell><cell> 2.3026 </cell><cell> 2.3026 </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>
+From this example it appears that <m>C(a)</m> increases as we increase <m>a</m>,  and that <m>C(a) = 1</m> for some value of <m>a</m> between <m>2</m> and <m>3</m>.
+</p>
+</example>
+
+<p>
+We can learn a lot more about <m>C(a)</m>, and, in particular, confirm the  guesses that we made in the last example, by making use of logarithms <mdash/>  this would be a good time for you to review them.
+</p>
+</introduction>
+
+<subsection><title>Whirlwind review of logarithms</title>
+<introduction>
+<p>
+Before you read much further into this little review on logarithms,  you should first go back and take a look at the review of inverse  functions in Section<nbsp/><xref ref="sec_inverse_functions"/>.
+</p>
+</introduction>
+<subsubsection><title>Logarithmic functions</title>
+<p>
+We are about to define the <q>logarithm with base <m>q</m></q>. In principle, <m>q</m> is allowed to be any strictly positive real number, except <m>q=1</m>. However we shall restrict our attention to <m>q \gt 1</m>, because, in practice, the only <m>q</m>'s that are ever used are <m>e</m> (a number that we shall define in the next few pages),  <m>10</m> and, if you are a computer scientist, <m>2</m>. So, fix any <m>q \gt 1</m> (if you like, pretend that <m>q=10</m>). The function <m>f(x)=q^x</m>
+<ul>
+<li>
+	increases as <m>x</m> increases (for example if <m>x' \gt x</m>, then <m>10^{x'} = 10^x \cdot 10^{x'-x}  \gt 10^x</m> since <m>10^{x'-x} \gt 1</m>)
+</li>
+<li>
+	obeys <m>\lim\limits_{x\rightarrow-\infty} q^x=0</m> (for example <m>10^{-1000}</m> is really small) and
+</li>
+<li>
+	obeys <m>\lim\limits_{x\rightarrow+\infty} q^x=+\infty</m> (for example <m>10^{+1000}</m> is really big).
+</li>
+</ul>
+Consequently, for any <m>0 \lt Y \lt \infty</m>, the horizontal straight line <m>y=Y</m> crosses the graph of <m>y=f(x)=q^x</m> at exactly one point, as illustrated in the figure below.
+</p>
+
+<sidebyside width="66%">
+  <image source="text/figs/expGraphB"/>
+</sidebyside>
+
+<p>
+The <m>x</m><ndash/>coordinate of that intersection point, denoted <m>X</m> in the figure, is <m>\log_q(Y)</m>.  So <m>\log_q(Y)</m> is the power to which you have to raise <m>q</m> to get <m>Y</m>.  It is the inverse function of <m>f(x)=q^x</m>. Of course we are free to rename the dummy variables <m>X</m> and <m>Y</m>. If, for example,  we wish to graph our logarithm function, it is natural to rename  <m>Y\rightarrow x</m> and <m>X\rightarrow y</m>, giving
+</p>
+
+<definition>
+<statement><p>
+Let <m>q \gt 1</m>. Then the logarithm with base <m>q</m> is defined
+	<fn>
+		We can also define logarithms with base <m>0 \lt r \lt 1</m> but doing so is not necessary.  To see this, set <m>q=1/r \gt 1</m>. Then it is reasonable to define <m>\log_r(x) = -  \log_q(x)</m> since
+		<me>
+		r^{\log_r(x)}
+		  = \left(\frac{1}{q}\right)^{\log_r(x)}
+		  = \left(\frac{1}{q}\right)^{-\log_q(x)}
+		  = q^{\log_q(x)} = x
+		</me>
+		as required.
+	</fn>
+by
+<md>
+<mrow>
+  y=\log_q(x) &amp; \liff x=q^y
+</mrow>
+</md>
+</p></statement>
+</definition>
+
+<p>
+Obviously the power to which we have to raise <m>q</m> to get <m>q^x</m> is <m>x</m>, so we have both
+<md>
+<mrow>
+  \log_q( q^x ) &amp;=x &amp; q^{\log_q(x)} &amp;=x
+</mrow>
+</md>
+From the exponential properties
+<md>
+<mrow>
+   q^{log_q(xy)} &amp;= xy &amp;&amp;= q^{log_q(x)} q^{log_q(y)} = q^{log_q(x)+log_q(y)}
+</mrow>
+<mrow>
+  q^{log_q(x/y)} &amp;= x/y&amp;&amp;= q^{log_q(x)} / q^{log_q(y)} = q^{log_q(x)-log_q(y)}
+</mrow>
+<mrow>
+	q^{log_q(x^r)} &amp;= x^r &amp;&amp;= \big(q^{log_q(x)}\big)^r = q^{r log_q(x)}
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+  \log_q(xy) &amp;= \log_q(x) + \log_q(y)
+</mrow><mrow>
+  \log_q(x/y) &amp;= \log_q(x) - \log_q(y)
+</mrow><mrow>
+  \log_q( x^r ) &amp;= r \log_q (x)
+</mrow>
+</md>
+</p>
+</subsubsection>
+<conclusion>
+<p>
+Can we convert from logarithms in one base to logarithms in another?  For example, if our calculator computes logarithms base 10 for us (which it very likely does), can we also use it to compute a  logarithm base <m>q</m>? Yes, using
+<md>
+<mrow>
+  \log_q(x) &amp;= \frac{\log_{10} x}{\log_{10} q}
+</mrow>
+</md>
+How did we get this? Well, let's start with a number <m>x</m> and suppose that we want to compute
+<md>
+<mrow>
+    y &amp;= \log_q x
+</mrow>
+<intertext>We can rearrange this by exponentiating both sides</intertext>
+<mrow>
+  q^y &amp;= q^{\log_q x} = x
+</mrow>
+<intertext>Now take log base 10 of both sides</intertext>
+<mrow>
+  \log_{10} q^y &amp;= \log_{10} x
+</mrow>
+<intertext>But recall that <m>\log_q( x^r ) = r \log_q(x)</m>, so</intertext>
+<mrow>
+  y \log_{10} q &amp;= \log_{10} x
+</mrow><mrow>
+  y &amp;= \frac{\log_{10} x}{\log_{10} q}
+</mrow>
+</md>
+</p>
+</conclusion>
+</subsection>
+<subsection><title>Back to that limit</title>
+<p>
+Recall that we are trying to choose <m>a</m> so that
+<md>
+<mrow>
+  \lim_{h\to0} \frac{a^h-1}{h} &amp;= C(a) = 1.
+</mrow>
+</md>
+We can estimate the correct value of <m>a</m> by using our numerical estimate of  <m>C(10)</m>  above. The way to do this is to first rewrite <m>C(a)</m> in terms of logarithms.
+<md>
+<mrow>
+  a&amp;= 10^{\log_{10} a} &amp; \text{ and so }&amp;&amp; a^h &amp;= 10^{h\log_{10} a}.
+</mrow>
+</md>
+Using this we rewrite <m>C(a)</m> as
+<md>
+<mrow>
+  C(a) &amp;= \lim_{h\to0} \frac{1}{h} \left( 10^{h\log_{10} a}-1 \right)
+</mrow>
+<intertext>Now set <m>H = h\log_{10}(a)</m>, and notice that as <m>h\to 0</m> we also have  <m>H \to 0</m></intertext>
+<mrow>
+&amp;= \lim_{H \to 0} \frac{\log_{10} a}{H} \left(10^H-1\right)
+</mrow><mrow>
+&amp;= \log_{10} a \cdot \lim_{H \to 0} \frac{10^H-1}{H}
+</mrow><mrow>
+&amp;= \log_{10} a \cdot C(10).
+</mrow>
+</md>
+Below is a sketch of <m>C(a)</m> against <m>a</m>.</p>
+
+<figure xml:id="fig_CofA2">
+<caption/>
+<image width="75%" source="text/figs/CofA2"/>
+</figure>
+
+<p>
+Remember that we are trying to find an <m>a</m> with <m>C(a)=1</m>. We can do so by  recognising that  <m>C(a)=C(10)\,(\log_{10}a)</m> has the following properties.
+<ul>
+<li>
+	When <m>a=1</m>, <m>\log_{10}(a) = \log_{10} 1 =0</m> so that <m>C(a) = C(10)  \log_{10}(a) = 0</m>. Of course, we should have expected this, because when <m>a=1</m> we have <m>a^x = 1^x = 1</m> which is just the constant  function and <m>\diff{}{x} 1 = 0</m>.
+</li>
+<li>
+	<m>\log_{10}a</m> increases as <m>a</m> increases, and hence <m>C(a)=C(10)\   \log_{10}a</m> increases as <m>a</m> increases.
+</li>
+<li>
+	<m>\log_{10}a</m> tends to <m>+\infty</m> as <m>a\rightarrow\infty</m>, and hence <m>C(a)</m>  tends to <m>+\infty</m> as <m>a\rightarrow\infty</m>.
+</li>
+</ul>
+Hence the graph of <m>C(a)</m> passes through <m>(1,0)</m>, is always increasing as <m>a</m>  increases and goes off to <m>+\infty</m>  as <m>a</m> goes off to <m>+\infty</m>. See Figure<nbsp/><xref ref="fig_CofA2"/>. Consequently
+	<fn>
+		We are applying the Intermediate Value Theorem here,  but we have neglected to verify the hypothesis that <m>\log_{10} (a)</m>  is a continuous function. Please forgive us <mdash/> we could do this if we really  had to, but it would make a big mess without adding much understanding, if we were to do  so here in the text. Better to just trust us on this.
+	</fn>
+there is exactly one value of <m>a</m> for which <m>C(a) = 1</m>.
+</p>
+
+<p>
+The value of <m>a</m> for which <m>C(a)=1</m> is given the name <m>e</m>. It is called Euler's  constant
+	<fn>
+		Unfortunately there is another Euler's constant, <m>\gamma</m>,  which is more properly called the  Euler<ndash/>Mascheroni constant. Anyway like many  mathematical discoveries, <m>e</m> was first found by someone else <mdash/> Napier used the  constant <m>e</m> in order to compute logarithms but only implicitly. Bernoulli was probably  the first to approximate it when examining continuous compound interest. It first  appeared explicitly in work of Leibniz, though he denoted it <m>b</m>. It was Euler, though,  who established the notation we now use and who showed how important the constant is to  mathematics.
+	</fn>.
+In Example<nbsp/><xref ref="eg_log_est"/>, we estimated <m>C(10)\approx 2.3026</m>. So if we  assume  <m>C(a)=1</m> then the above equation becomes
+<md>
+<mrow>
+  2.3026 \cdot \log_{10} a &amp;\approx 1
+</mrow><mrow>
+  \log_{10} a &amp;\approx \frac{1}{2.3026} \approx 0.4343
+</mrow><mrow>
+  a &amp;\approx 10^{0.4343} \approx 2.7813
+</mrow>
+</md>
+This gives us the estimate <m>a \approx 2.7813</m> which is not too bad. In  fact
+	<fn>
+		Recall <m>n</m> factorial, written <m>n!</m> is the product  <m>n\times(n-1)\times(n-2)\times\cdots\times2\times1</m>.
+	</fn>
+</p>
+
+<fact xml:id="eq_eulerconst"><title>Euler's constant</title>
+<p>
+<md>
+<mrow>
+e &amp;= 2.7182818284590452354\dots
+</mrow><mrow>
+  &amp;= 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \cdots
+</mrow>
+</md></p>
+</fact>
+
+<p>
+We will be able to explain this last formula once we develop Taylor polynomials  later in the course.
+</p>
+
+<p>To summarise</p>
+
+<theorem>
+<statement><p>
+The constant <m>e</m> is the unique real number that satisfies
+<md>
+<mrow>
+	\lim_{h \to 0} \frac{e^h-1}{h} &amp;= 1
+</mrow>
+</md>
+Further,
+<md>
+<mrow>
+	\bdiff{e^x}{x} &amp;= e^x
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>We plot <m>e^x</m> in the graph below</p>
+<sidebyside width="66%">
+<image source="text/figs/expGraph"/>
+</sidebyside>
+
+<p>
+And just a reminder of some of its
+	<fn>
+		The function <m>e^x</m> is of course the special  case of the function <m>a^x</m> with <m>a = e</m>. So it inherits all the usual algebraic properties  of <m>a^x</m>.
+	</fn>
+properties<ellipsis/>
+<ol>
+<li> <m>e^0=1</m> </li>
+<li> <m>e^{x+y}=e^xe^y</m> </li>
+<li> <m>e^{-x}=\tfrac{1}{e^x}</m> </li>
+<li> <m>\big(e^x\big)^y=e^{xy}</m> </li>
+<li>
+	<m>\lim\limits_{x\rightarrow\infty}e^x=\infty</m>,  <m>\lim\limits_{x\rightarrow-\infty}e^x=0</m>
+</li>
+</ol>
+</p>
+
+<p>
+Now consider again the problem of differentiating <m>a^x</m>. We saw above that
+<md>
+<mrow>
+  \diff{}{x} a^x &amp;= C(a) \cdot a^x &amp; \text{ and }
+  C(a) &amp;= C(10) \cdot \log_{10} a &amp; \text{ which gives }
+  \diff{}{x} a^x &amp;= C(10)\cdot \log_{10} a \cdot a^x
+</mrow>
+</md>
+We can eliminate the <m>C(10)</m> term with a little care. Since we know that <m>\diff{}{x} e^x  = e^x</m>, we have <m>C(e)=1</m>. This allows us to express
+<md>
+<mrow>
+  1 = C(e) &amp;= C(10) \cdot \log_{10} e &amp; \text{ and so}
+</mrow><mrow>
+  C(10) &amp;= \frac{1}{\log_{10} e}
+</mrow>
+</md>
+Putting things back together gives
+<md>
+<mrow>
+  \diff{}{x} a^x &amp;= \frac{\log_{10} a}{\log_{10} e} \cdot a^x
+</mrow><mrow>
+  &amp;= \log_e a \cdot a^x.
+</mrow>
+</md>
+There is more than one way to get to this result. For example, let <m>f(x) =  a^x</m>, then
+<md>
+<mrow>
+  \log_e f(x) &amp;= x \log_e a
+</mrow><mrow>
+  f(x) &amp;= e^{ x \log_e a}
+</mrow>
+</md>
+So if we write <m>g(x) = e^x</m> then we are really attempting to differentiate the  function
+<md>
+<mrow>
+  \diff{f}{x} &amp;= \diff{}{x} g(x \cdot \log_e a).
+</mrow>
+</md>
+In order to compute this derivative we need to know how to differentiate
+<md>
+<mrow>
+  \diff{}{x} g( q x)
+</mrow>
+</md>
+where <m>q</m> is a constant. We'll hold off on learning this for the moment until  we have introduced the chain rule (see Section<nbsp/><xref ref="sec_chain_rule"/> and in  particular Corollary<nbsp/><xref ref="cor_f_of_axb"/>). Similarly we'd like to know how to  differentiate logarithms <mdash/> again this has to wait until we have learned the  chain rule.
+</p>
+
+<p>Notice that the derivatives
+<md>
+<mrow>
+  \diff{}{x} x^n &amp;= n x^{n-1} &amp; \text{ and }&amp;&amp;
+  \diff{}{x} e^x &amp;= e^x
+</mrow>
+</md>
+are either nearly unchanged or actually unchanged by differentiating. It turns  out that some of the trigonometric functions also have this property of being  <q>nearly unchanged</q> by differentiation. That brings us to the next section.
+</p>
+</subsection>
+
+
+<xi:include href="../problems/prob_s2.7.xml"/>
+
+
+</section>

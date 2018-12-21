@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="sec_opt_eg"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+
+<introduction><p>For Questions<nbsp/>
+<xref ref="s3_5_3given1"/> through <xref ref="s3_5_3given3"/>, the quantity to optimize is already given to you as a function of a single variable.</p></introduction>
+
+<exercise xml:id="s3_5_3given1"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Find the global maximum and the global minimum for <m>f(x)=x^5 - 5x + 2</m> on the interval <m>[-2,0]</m>.
+</p></statement>
+<hint><p>
+Factor the derivative.
+</p></hint>
+<answer><p>
+The global maximum is <m>f(-1) = 6</m>, the global minimum is <m>f(-2) = -20</m>.
+</p></answer>
+<solution><p>
+We compute <m>f'(x)=5\,x^4 - 5</m>, which means that <m>f(x)</m> has no singular points (i.e., it is
+differentiable for all values of <m>x</m>), but it has two critical points:
+<md>
+<mrow>
+0&amp;=5x^4-5
+</mrow><mrow>
+0&amp;=x^4-1=(x^2+1)(x^2-1)
+</mrow><mrow>
+0&amp;=x^2-1
+</mrow><mrow>
+x&amp;= \pm 1
+</mrow>
+</md>
+Note, however, that <m>1</m> is not in the interval <m>[-2,0]</m>.
+</p>
+
+<p>The global maximum and the  global minimum for <m>f(x)</m> on the interval <m>[-2,0]</m> will occur at <m>x=-2</m>, <m>x=0</m>, or <m>x=-1</m>.</p>
+<sidebyside>
+<tabular>
+<row>
+<cell><m>c</m> </cell><cell> <m>-2</m> </cell><cell>  <m>0</m> </cell><cell>  <m>-1</m>  </cell>
+</row><row>
+<cell>type </cell><cell> endpoint </cell><cell> endpoint </cell><cell> critical point  </cell>
+</row><row>
+<cell><m>f(c)</m> </cell><cell> <m>-20</m> </cell><cell> <m>2</m> </cell><cell> <m>6</m> </cell>
+</row>
+</tabular>
+</sidebyside>
+<p>
+So, the global maximum is <m>f(-1) = 6</m> while the global minimum is <m>f(-2) = -20</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Find the global maximum and the global minimum for <m>f(x)=x^5 - 5x - 10</m> on the interval <m>[0,2]</m>.
+</p></statement>
+<hint><p> Remember to test endpoints.
+</p></hint>
+<answer><p> Global maximum is <m>f(2) = 12</m>, global minimum is <m>f(1) = -14</m>.
+</p></answer>
+<solution><p> We compute <m>f'(x)=5x^4-5</m>, which means that <m>f(x)</m> has no singular points (i.e., it is differentiable for all values of <m>x</m>), but it has two critical points:
+<md>
+<mrow>
+0&amp;=5x^4-5
+</mrow><mrow>
+0&amp;=x^4-1=(x^2+1)(x^2-1)
+</mrow><mrow>
+0&amp;=x^2-1
+</mrow><mrow>
+x&amp;= \pm 1
+</mrow>
+</md>
+Note, however, that <m>-1</m> is not in the interval <m>[0,2]</m>.
+</p>
+
+<p>The global maximum and the
+global minimum for <m>f(x)</m> on the interval <m>[0,2]</m> will occur at <m>x=2</m>, <m>x=0</m>, or <m>x=1</m>.</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell><m>c</m> </cell><cell> <m>2</m> </cell><cell>  <m>0</m> </cell><cell>  <m>1</m>  </cell>
+</row><row>
+<cell>type </cell><cell> endpoint </cell><cell> endpoint </cell><cell> critical point  </cell>
+</row><row>
+<cell><m>f(c)</m> </cell><cell> <m>12</m> </cell><cell> <m>-10</m> </cell><cell> <m>-14</m> </cell>
+</row></tabular>
+</sidebyside>
+
+<p>So, the global maximum is <m>f(2) = 12</m> while the global minimum is <m>f(1) = -14</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_5_3given3"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Find the global maximum and the global minimum for <m>f(x)=2x^3 - 6x^2 - 2</m> on the interval <m>[1,4]</m>.
+</p></statement>
+<answer><p>
+Global maximum is <m>f(4) = 30</m>, global minimum is <m>f(2) = -10</m>.
+</p></answer>
+<solution><p>
+We compute <m>f'(x)=6x^2 - 12x = 6x(x-2)</m>, which means that <m>f(x)</m> has no singular points
+(i.e., it is differentiable for all values of <m>x</m>), but it has the two critical points:
+<m>x=0</m> and <m>x=2</m>.
+Note, however, <m>0</m> is not in the interval <m>[1,4]</m>.</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell><m>c</m> </cell><cell> <m>1</m> </cell><cell>  <m>4</m> </cell><cell>  <m>2</m>  </cell>
+</row><row>
+<cell>type </cell><cell> endpoint </cell><cell> endpoint </cell><cell> critical point  </cell>
+</row><row>
+<cell><m>f(c)</m> </cell><cell> <m>-6</m> </cell><cell> <m>30</m> </cell><cell> <m>-10</m> </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>So, the global maximum is <m>f(4) = 30</m> while the global minimum is <m>f(2) = -10</m>.
+</p></solution>
+</exercise>
+
+<introduction><p>For Questions<nbsp/><xref ref="s3_5_3firstderivfirst"/> and <xref ref="s3_5_3firstderivlast"/>, you  can decide whether a critical point is a local extrema by considering the derivative of the function.</p></introduction>
+
+<exercise xml:id="s3_5_3firstderivfirst" purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Consider the function <m>h(x)=x^3-12x+4</m>.
+What are the coordinates of the local maximum of <m>h(x)</m>? What are the coordinates of the local minimum of <m>h(x)</m>?
+</p></statement>
+<hint><p>
+One way to decide whether a critical point <m>x=c</m> is a local extremum is to consider the first derivative. For example: if <m>f'(x)</m> is negative for all <m>x</m> just to the left of <m>c</m>, and positive for all <m>x</m> just to the right of <m>c</m>, then <m>f(x)</m> decreases up till <m>c</m>, then increases after <m>c</m>, so <m>f(x)</m> has a local minimum at <m>c</m>.
+</p></hint>
+<answer><p> Local max at <m>(-2,20)</m>, local min at <m>(2,-12)</m>.
+</p></answer>
+<solution><p>
+Since <m>h(x)</m> is a polynomial, it has no singular points. We compute its critical points:
+<md>
+<mrow>
+h'(x)&amp;=3x^2-12
+</mrow><mrow>
+0&amp;=3x^2-12
+</mrow><mrow>
+x&amp;=\pm 2
+</mrow>
+</md>
+Notice as <m>x\to\infty</m>, <m>h(x)\to\infty</m>, and as <m>x\to-\infty</m> <m>h(x)\to-\infty</m>. So Theorem<nbsp/><xref ref="thm_maxMinOnR"/> doesn't exactly apply. Instead, let's consider the signs of <m>h'(x)</m>.
+</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell><m>x</m> </cell><cell> <m>(-\infty,-2)</m> </cell><cell>  <m>(-2,2)</m> </cell><cell>  <m>(2,\infty)</m>  </cell>
+</row><row>
+<cell><m>h'(x)</m> </cell><cell> <m> \gt 0</m> </cell><cell> <m> \lt 0</m> </cell><cell> <m> \gt 0</m> </cell>
+</row><row>
+<cell><m>h(x)</m> </cell><cell> increasing </cell><cell> decreasing </cell><cell> increasing  </cell>
+</row></tabular>
+</sidebyside>
+
+<p>So, <m>h(x)</m> increases until <m>x=-2</m>, then decreases. That means <m>h(x)</m> has a local maximum at <m>x=-2</m>. The function decreases from <m>-2</m> until <m>2</m>, after which is increases, so <m>h(x)</m> has a local minimum at <m>x=2</m>.
+We compute <m>f(-2)=20</m> and <m>f(2)=-12</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_5_3firstderivlast"> <title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Consider the function <m>h(x)=2x^3-24x+1</m>.
+What are the coordinates of the local maximum of <m>h(x)</m>? What are the coordinates of the local minimum of <m>h(x)</m>?
+</p></statement>
+<hint><p>
+One way to decide whether a critical point <m>x=c</m> is a local extremum is to consider the first derivative. For example: if <m>f'(x)</m> is negative for all <m>x</m> just to the left of <m>c</m>, and positive for all <m>x</m> just to the right of <m>c</m>, then <m>f(x)</m> decreases up till <m>c</m>, then increases after <m>c</m>, so <m>f(x)</m> has a local minimum at <m>c</m>.
+</p></hint>
+<answer><p>
+<m>(-2,33)</m> max, and <m>(2,-31)</m> min
+</p></answer>
+<solution><p>
+Since <m>h(x)</m> is a polynomial, it has no singular points. We compute its critical points:
+<md>
+<mrow>
+h'(x)&amp;=6x^2-24
+</mrow><mrow>
+0&amp;=6x^2-24
+</mrow><mrow>
+x&amp;=\pm2
+</mrow>
+</md>
+Notice as <m>x\to\infty</m>, <m>h(x)\to\infty</m>, and as <m>x\to-\infty</m> <m>h(x)\to-\infty</m>. So Theorem<nbsp/><xref ref="thm_maxMinOnR"/> doesn't exactly apply. Instead, let's consider the signs of <m>h'(x)</m>.
+</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell><m>x</m> </cell><cell> <m>(-\infty,-2)</m> </cell><cell>  <m>(-2,2)</m> </cell><cell>  <m>(2,\infty)</m>  </cell>
+</row><row>
+<cell><m>h'(x)</m> </cell><cell> <m> \gt 0</m> </cell><cell> <m> \lt 0</m> </cell><cell> <m> \gt 0</m> </cell>
+</row><row>
+<cell><m>h(x)</m> </cell><cell> increasing </cell><cell> decreasing </cell><cell> increasing  </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>So, <m>h(x)</m> increases until <m>x=-2</m>, then decreases. That means <m>h(x)</m> has a local maximum at <m>x=-2</m>. The function decreases from <m>-2</m> until <m>2</m>, after which is increases, so <m>h(x)</m> has a local minimum at <m>x=2</m>.
+</p>
+
+<p> We compute <m>f(-2)=33</m> and <m>f(2)=-31</m>.
+</p></solution>
+</exercise>
+
+<introduction><p>For Questions <xref ref="s3_5_3formulafirst"/> through <xref ref="s3_5_3formulalast"/>, you will have to find an expression for the quantity you want to optimize as a function of a single variable.</p></introduction>
+
+<exercise xml:id="s3_5_3formulafirst" purpose="RQS"><title><fromexam>1999H, 2012H</fromexam></title>
+<statement><p>
+You are in a dune buggy at a point <m>P</m> in the desert, 12
+km due south of the nearest point <m>A</m> on a straight east-west road. You
+want to get to a town <m>B</m> on the road <m>18</m> km east of <m>A</m>. If your dune
+buggy can travel at an average speed of 15 km/hr through the desert and
+30 km/hr along the road, towards what point <m>Q</m> on the road should you
+head to minimize your travel time from <m>P</m> to <m>B</m>?
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[gray, line width=5pt, opacity=0.5] (-.5,3) -- (4.5,3);
+\draw (0,3) node[vertex, label=above:$A$](A){};
+\draw (3,3) node[vertex, label=above:$Q$](Q){};
+\draw (4,3) node[vertex, label=above:$B$](B){};
+\draw (0,0) node[vertex, label=left:$P$](P){};
+\draw (A)--(P) node[midway, left]{12 km};
+\draw[very thick] (P)--(Q)--(B);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p> Start with a formula for travel time from <m>P</m> to <m>B</m>. You might want to assign a variable to the distance from <m>A</m> where your buggy first reaches the road.
+</p></hint>
+<answer><p> <m>Q</m> should be <m>4\sqrt{3}</m> kilometres from <m>A</m>
+</p></answer>
+<solution><p>
+Suppose that <m>Q</m> is a distance of <m>x</m> from <m>A</m>.
+Then it is a distance of <m>18-x</m> from <m>B</m>.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[gray, line width=5pt, opacity=0.5] (-.5,3) -- (4.5,3);
+\draw (0,3) node[vertex, label=above:$A$](A){};
+\draw (3,3) node[vertex, label=above:$Q$](Q){};
+\draw (4,3) node[vertex, label=above:$B$](B){};
+\draw (0,0) node[vertex, label=left:$P$](P){};
+\draw (A)--(P) node[midway, left]{12 km};
+\draw[very thick] (P)--(Q)--(B);
+\draw[decorate, decoration={brace, amplitude=7pt}](0,3.75)--(3,3.75) node[midway, yshift=.5cm]{$x$};
+\draw[decorate, decoration={brace, amplitude=7pt}](3,3.75)--(4,3.75) node[midway, yshift=.5cm]{$18-x$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Using the Pythagorean Theorem, the distance from <m>P</m> to <m>Q</m> is <m>\sqrt{12^2+x^2}</m> kilometres, and the buggy travels 15 kph over this off-road stretch.
+The travel time
+from <m>P</m> to <m>Q</m> is <m>\dfrac{\sqrt{12^2+x^2}}{15}</m> hours.
+</p>
+
+<p>The distance from <m>Q</m> to <m>B</m> is <m>18-x</m> kilometres, and the dune buggy travels <m>30</m> kph along this road. The travel time from <m>Q</m>
+to <m>B</m> is <m>\dfrac{18-x}{30}</m> hours.
+So, the total travel time is
+<me>
+f(x)= \dfrac{\sqrt{12^2+x^2}}{15}+\dfrac{18-x}{30}.</me>
+ We wish to minimize
+this for <m>0\le x\le 18</m>. We will test all singular points, critical points, and endpoints to find which yields the smallest value of <m>f(x)</m>. Since there are no singular points, we begin by locating the critical points.
+<md>
+<mrow>
+0=f'(x)&amp;=\dfrac{1}{15}\cdot\dfrac{1}{2}(144+x^2)^{-1/2}(2x)-\dfrac{1}{30}
+</mrow><mrow>
+\dfrac{1}{15}\cdot\dfrac{x}{\sqrt{144+x^2}}&amp;=\dfrac{1}{30}
+</mrow><mrow>
+ \dfrac{x}{\sqrt{144+x^2}}&amp;=\dfrac{1}{2}
+</mrow><mrow>
+ \dfrac{x^2}{144+x^2}&amp;=\dfrac{1}{4}
+</mrow><mrow>
+ 4x^2&amp;=144+x^2
+</mrow><mrow>
+ x&amp;=\dfrac{12}{\sqrt{3}}=4\sqrt{3}
+</mrow>
+</md>
+So the minimum travel times must be one of <m>f(0)</m>, <m>f(18)</m>, and <m>f\left(4\sqrt{3}\right)</m>.
+<md>
+<mrow>
+f(0)&amp;=\dfrac{12}{15}+\dfrac{18}{30}=1.4\cr
+f(18)&amp;=\dfrac{\sqrt{12^2+18^2}}{15}\approx1.44\cr
+f\left({4\sqrt{3}}\right)&amp;=
+\dfrac{\sqrt{144+144/3}}{15}+\dfrac{18-12/\sqrt{3}}{30}
+\approx1.29
+</mrow>
+</md>
+So <m>Q</m> should be <m>4\sqrt{3}</m> km from <m>A</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997D</fromexam></title>
+<statement><p>
+A closed three dimensional box is to be constructed in such
+a way that its volume is 4500 cm<m>{}^3</m>. It is also specified that the length
+of the base is 3 times the width of the base. Find the dimensions of the
+box that satisfies these conditions and has the minimum possible
+surface area. Justify your answer.
+</p></statement>
+<hint><p>
+A box has three dimensions; make variables for them, and write the relations given in the problem in terms of these variables.
+</p></hint>
+<answer><p>
+<m>10\times 30 \times 15</m>
+</p></answer>
+<solution><p>
+Let <m>\ell,\ w</m> and <m>h</m> denote the length, width and height
+of the box respectively.
+ We are told that <m>\ell w h =4500</m> and that
+<m>\ell=3w</m>. Hence <m>h=\dfrac{4500}{\ell w}=\dfrac{4500}{3 w^2}=\dfrac{1500}{w^2}</m>.
+The surface area of the box is
+<me>
+A=2\ell w+2\ell h+2 wh=2\left(3w^2+3w\dfrac{1500}{w^2}+w\dfrac{1500}{w^2}\right)
+=2\left(3w^2+\dfrac{6000}{w}\right)=6\left(w^2+\dfrac{2000}{w}\right)
+</me></p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0) rectangle (2,3);
+\draw[fill=gray!15] (2,3)--(4,4)--(4,1)--(2,0)--cycle;
+\draw[fill=gray!5] (0,3)--(2,4)--(4,4)--(2,3)--cycle;
+\draw (1,0) node[below]{$w$};
+\draw (0,1.5) node[left]{$h$};
+\draw (3,.5) node[below]{$\ell$};
+\draw (1,1.5) node{$wh$};
+\draw (2,3.5) node[rotate=-10]{$\ell w$};
+\draw (3,2) node[rotate=10]{$\ell h$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>As <m>w</m> tends to zero or to infinity, the surface area approaches infinity.
+By Theorem<nbsp/><xref ref="thm_maxMinOnR"/> the minimum surface area must occur at a critical point of
+<m>w^2+\dfrac{2000}{w}</m>.
+<md>
+<mrow>
+0&amp;=\diff{}{w}\left\{w^2+\dfrac{2000}{w}\right\}
+</mrow><mrow>
+&amp;=2w-\dfrac{2000}{w^2}
+</mrow><mrow>
+2w&amp;=\dfrac{2000}{w^2}
+</mrow><mrow>
+w^3&amp;=1000\hskip-3pt
+</mrow><mrow>
+ w&amp;=10
+ </mrow>
+<intertext>Therefore,</intertext><mrow>
+  \ell&amp;=3w=30
+</mrow><mrow>
+   h&amp;=\frac{1500}{w^2}=15.
+</mrow>
+</md>
+The dimensions of the box with minimum surface area are <m>10 \times 30 \times 15</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1996D</fromexam></title>
+<statement><p>
+A closed rectangular container with a square base is to be made
+from two different materials. The material for the base costs <dollar />5 per square
+metre, while the material for the other five sides costs <dollar />1 per square
+metre. Find the dimensions of the container which has the largest possible
+volume if the total cost of materials is <dollar />72.
+</p></statement>
+<hint><p> Find a formula for the cost of the base, and another formula for the cost of the other sides. The total cost is the sum of these two formulas.
+</p></hint>
+<answer><p>
+<m>2\times 2\times 6</m>
+</p></answer>
+<solution><p>
+Let the length of the sides of the square base be <m>b</m> metres
+and let the height be <m>h</m> metres. The area of the base is <m>b^2</m>, the area of the top is <m>b^2</m>  and the area of each of the remaining four sides is <m>bh</m> so the total cost is
+<me>
+\underbrace{5(b^2)}_{\mbox{cost of base}}+\underbrace{1(b^2+4bh)}_{\mbox{cost of 5 sides}}=6b^2+4bh=72</me>
+</p>
+
+<p>Solving for <m>h</m>
+<md>
+<mrow>
+h&amp;=\dfrac{72-6b^2}{4b}
+</mrow><mrow>
+&amp;=\dfrac{6}{4}\left(\dfrac{12-b^2}{b}\right)
+</mrow><mrow>
+&amp;=\dfrac{3}{2}\left(\dfrac{12-b^2}{b}\right)
+</mrow>
+</md>
+The volume is
+<md>
+<mrow>
+V=b^2h&amp;=b^2\cdot \dfrac{3}{2}\left(\dfrac{12-b^2}{b}\right)
+</mrow><mrow>
+&amp;=18b-\dfrac{3}{2}b^3.
+</mrow>
+</md>
+This is the function we want to maximize.
+Since volume is never negative, the endpoints of the functions are the values of <m>b</m> that make the volume 0. So, the maximum volume will not occur at an endpoint, it will occur at a critical point.
+The only critical point is <m>b=2</m>:
+<md>
+<mrow>
+0&amp;=\diff{}{b}\left\{18b-\dfrac{3}{2}b^3\right\}
+</mrow><mrow>
+&amp;=18-\dfrac{9}{2}b^2
+</mrow><mrow>
+ b^2&amp;=4
+</mrow><mrow>
+  b&amp;=2,\ h=\dfrac{3}{2}\left(\dfrac{12-4}{2}\right)=6
+</mrow>
+</md>
+The desired dimensions are <m>2\times 2\times 6</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1998H</fromexam></title>
+<statement><p>
+Find a point <m>X</m> on the positive <m>x</m>--axis and a point <m>Y</m>
+on the positive <m>y</m>--axis such that (taking <m>O=(0,0)</m>)
+<ol label="i">
+<li xml:id="s3_5inscribed1"> The triangle <m>XOY</m> contains the first quadrant portion of
+the unit circle <m>x^2+y^2=1</m> and
+</li>
+<li xml:id="s3_5inscribed2"> the area of the triangle <m>XOY</m> is as small as possible.
+</li>
+</ol>
+A complete and careful mathematical justification of property <xref ref="s3_5inscribed1"/>
+is required.
+</p></statement>
+<hint><p>The setup is this:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\YExcoord{2.5}{X}
+\YEycoord{2}{Y}
+\draw (0,0) node[below left]{$O$};
+\draw[fill=gray!10] (0,0)--(2.5,0)--(0,2)--cycle;
+\draw (1,0) arc (0:90:1cm);
+\draw[dashed] (0,1) arc(90:360:1cm);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</hint>
+<answer><p>
+<m>X=Y=\sqrt{2}</m>
+</p></answer>
+<solution><p>
+ It suffices to consider <m>X</m> and <m>Y</m> such that the line <m>XY</m>
+is tangent to the circle. Otherwise we could reduce the area of the triangle
+by, for example, holding <m>X</m> fixed and reducing <m>Y</m>. So let <m>X</m> and <m>Y</m>
+be the <m>x</m>-- and <m>y</m>--intercepts of the line tangent to the circle at
+<m>(\cos\theta,\sin\theta)</m>. Then <m>\dfrac{1}{X}=\cos\theta</m> and
+<m>\dfrac{1}{Y}=\cos\left(\dfrac{\pi}{2}-\theta\right)
+=\sin\theta</m>. The area of the triangle is
+<me>
+\dfrac{1}{2} XY=\dfrac{1}{2\cos\theta\sin\theta}=\dfrac{1}{\sin(2\theta)}
+</me>
+</p>
+
+<sidebyside>
+<image source="problems/figs/minTriangle"/>
+</sidebyside>
+
+<p>This is a minimum when <m>\sin(2\theta)</m> is a maximum. That is when
+<m>2\theta=\dfrac{\pi}{2}</m>. Hence <m>X=\dfrac{1}{\cos(\pi/4)}</m> and
+<m>Y=\dfrac{1}{\sin(\pi/4)}</m>. That is, <m>X=Y=\sqrt{2}</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2006H</fromexam></title>
+<statement><p>
+ A rectangle is inscribed in a semicircle of radius <m>R</m>
+so that one side of the rectangle lies along a diameter of the semicircle.
+Find the largest possible perimeter of such a rectangle, if it exists,
+or explain why it does not. Do the same for the smallest possible perimeter.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[thick] (3,0) arc (0:180:3cm) --cycle;
+\draw (2,0)--(2,2.24)-|(-2,0);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+Put the whole system on <m>xy</m>-axes, so that you can easily describe the pieces using <m>(x,y)</m>-coordinates.
+</p></hint>
+<answer><p>
+The largest possible perimeter is <m>2\sqrt{5}R</m> and
+the smallest possible perimeter is <m>2R</m>.
+</p></answer>
+<solution><p>
+For ease of notation, we place the semicircle on a Cartesian plane with diameter along the <m>x</m>-axis and centre at the origin.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{4}{.5}{4}
+\draw[thick] (3,0) arc (0:180:3cm) --cycle;
+\draw (2,0)--(2,2.24)-|(-2,0);
+\draw (2,.2)--(2,-.2) node[below]{$x$};
+\draw[dashed] (0,0)--(2,2.24) node[midway, left]{$R$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p> If <m>x</m> is the point where the rectangle touches the diameter to the right of the <m>y</m>-axis, then <m>2x</m> is the width of the rectangle. The origin and the two right corners of the rectangle form a right triangle with hypotenuse <m>R</m>, so by the Pythagorean Theorem,
+the upper right hand corner
+of the rectangle is at <m>\big(x,\sqrt{R^2-x^2}\big)</m>. The perimeter of the rectangle is given by the function:
+<md>
+<mrow>
+P(x)&amp;=4x+2\sqrt{R^2-x^2}
+</mrow>
+<intertext>So, this is what we optimize. The endpoints of the domain for this function are <m>x=0</m> and <m>x=R</m>. To find the critical points, we differentiate:</intertext><mrow>
+ P'(x)&amp;=4-\dfrac{2x}{\sqrt{R^2-x^2}}
+</mrow><mrow>
+P'(x)=0\iff 4&amp;=\dfrac{2x}{\sqrt{R^2-x^2}}
+</mrow><mrow>
+ x&amp;=2\sqrt{R^2-x^2}
+</mrow><mrow>
+x^2&amp;=4(R^2-x^2)
+</mrow><mrow>
+5x^2&amp;=4R^2
+</mrow><mrow>
+x&amp;=\dfrac{2}{\sqrt{5}}R
+</mrow>
+</md>
+Note that since our perimeter formula was defined to work only for <m>x</m> in <m>[0,R]</m>, we neglect the negative square root, <m>-\dfrac{2}{\sqrt{5}}R</m>.
+</p>
+
+<p>Now, we find the size of the perimeter at the critical point and the endpoints:
+</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell>
+<m>c</m> </cell><cell> <m>0</m> </cell><cell>  <m>R</m> </cell><cell>  <m>\frac{2}{\sqrt{5}}R</m>  </cell>
+</row><row>
+<cell>type </cell><cell> endpoint </cell><cell> endpoint </cell><cell> critical point </cell>
+</row><row>
+<cell><m>P(c)</m> </cell><cell> <m>2R</m> </cell><cell> <m>4R</m> </cell><cell> <m>2\sqrt{5}R</m> </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>So, the largest possible perimeter is <m>2\sqrt{5}R</m> and
+the smallest possible perimeter is <m>2R</m>.
+</p>
+
+<p>Remark: as a check on the correctness of our formula for <m>P(x)</m>,
+          when <m>x=0</m> the rectangle degenerates to the line segment from
+          <m>(0,0)</m> to <m>(0,R)</m>. The perimeter of this <q>width zero rectangle</q>
+          is <m>2R</m>, agreeing with <m>P(0)</m>.
+          Similarly, when <m>x=R</m> the rectangle degenerates
+          to the line segment from <m>(R,0)</m> to <m>(-R,0)</m>. The perimeter
+          of this <q>width zero rectangle</q> is <m>4R</m>, agreeing with <m>P(R)</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2009H</fromexam></title>
+<statement><p>
+Find the maximal possible volume of a cylinder with surface
+area <m>A</m>.
+<fn>Food is often packaged in cylinders, and companies wouldn't want to waste the metal they are made out of. So, you might expect the dimensions you find in this problem to describe a tin of, say, cat food.
+<url href="http://jerryfarlow.com/wp-content/uploads/2015/11/A24-YOU-DO-THE-CALCULUS-WE-WILL-DO-THE-CAT-FOOD.pdf">
+Read here</url> about why this <em>isn't</em> the case.</fn>
+</p></statement>
+<hint><p>
+The surface area consists of two discs and a
+strip. Find the areas of these pieces.
+</p>
+
+<p>The volume of a cylinder with radius <m>r</m> and height <m>h</m> is <m>\pi r^2 h</m>.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,3) node[shape=ellipse, inner sep=0, minimum width=3cm, minimum height=1cm, draw, fill=blue, fill opacity=0.1]{};
+\draw (0,0) node[shape=ellipse, inner sep=0, minimum width=3cm, minimum height=1cm, draw]{};
+\draw (-1.5,0)--(-1.5,3);
+\draw (1.5,0)--(1.5,3) node[midway, right]{$h$};
+\draw (0,3)node[vertex]{};
+\draw (0,3)--(1.5,3) node[midway, above]{$r$};
+\draw[- \gt , ultra thick, red] (3,1.5)--(4,1.5) ;
+\draw (8,-1.5) node[shape=circle, minimum size=3cm, draw, inner sep=0]{};
+\draw (8,4.5) node[shape=circle, minimum size=3cm, draw, inner sep=0, fill=blue, fill opacity=0.1]{};
+\draw (8,4.5) node[vertex]{} -- (9.5,4.5) node[midway, above]{$r$};
+\draw (5,0)--(14,0)--(14,3)node[midway, right]{$h$}--(5,3) --(5,0);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</hint>
+<answer><p>
+<m>\dfrac{A^{3/2}}{3\sqrt{6\pi}}</m>
+</p></answer>
+<solution><p> Let the cylinder have radius <m>r</m> and height <m>h</m>. If we imagine popping off the ends, they are two circular disks, each with surface area <m>\pi r^2</m>. Then we imagine unrolling the remaining tube. It has height <m>h</m>, and its other dimension is given by the circumference of the disks, which is <m>2\pi r</m>. Then the area of the <q>unrolled tube</q> is <m>2\pi rh</m>.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,3) node[shape=ellipse, inner sep=0, minimum width=3cm, minimum height=1cm, draw, fill=blue, fill opacity=0.1]{};
+\draw (0,0) node[shape=ellipse, inner sep=0, minimum width=3cm, minimum height=1cm, draw]{};
+\draw (-1.5,0)--(-1.5,3);
+\draw (1.5,0)--(1.5,3) node[midway, right]{$h$};
+\draw (0,3)node[vertex]{};
+\draw (0,3)--(1.5,3) node[midway, above]{$r$};
+\draw[- \gt , ultra thick, red] (3,1.5)--(4,1.5) ;
+\draw (8,-1.5) node[shape=circle, minimum size=3cm, draw, inner sep=0]{};
+\draw (8,4.5) node[shape=circle, minimum size=3cm, draw, inner sep=0, fill=blue, fill opacity=0.1]{};
+\draw (8,4.5) node[vertex]{} -- (9.5,4.5) node[midway, above]{$r$};
+\draw (5,0)--(14,0)--(14,3)node[midway, right]{$h$}--(5,3)  --(5,0);
+\draw (9.5,1.5) node{$(2\pi r) h$};
+\draw (8,-1.5) node{$\pi r^2$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>So, the surface area is <m>2\pi r^2+2\pi r h</m>. Since the area is given as <m>A</m>, we can solve for <m>h</m>:
+<md>
+<mrow>
+A&amp;=2\pi r^2+2\pi r h
+</mrow><mrow>
+2\pi r h &amp;=A-2\pi r^2
+</mrow><mrow>
+ h&amp;=\dfrac{A-2\pi r^2}{2\pi r}.
+</mrow>
+</md>
+Then we can write the volume as a function of the variable <m>r</m> and the constant <m>A</m>:
+<md>
+<mrow>
+V(r)&amp;=\pi r^2 h
+</mrow><mrow>
+&amp;=\pi r^2 \left(\dfrac{A-2\pi r^2}{2\pi r}\right)
+</mrow><mrow>
+&amp;=\dfrac{1}{2}\left(Ar-2\pi r^3\right)
+</mrow>
+<intertext>This is the function we want to maximize. Let's find its critical points.</intertext><mrow>
+V'(r)&amp;=\dfrac{1}{2}\left(A-6\pi r^2\right)
+</mrow><mrow>
+V'(r)=0 &amp;\iff A=6\pi r^2 \iff r=\sqrt{\dfrac{A}{6\pi}}
+</mrow>
+<intertext>since negative values of <m>r</m> don't make sense. At this critical point,</intertext><mrow>
+V\left(\sqrt{\dfrac{A}{6\pi}}\right)&amp;=
+\dfrac{1}{2}\left[A\left(\sqrt{\dfrac{A}{6\pi}}\right)-2\pi \left(\sqrt{\dfrac{A}{6\pi}}\right)^3\right]
+</mrow><mrow>
+&amp;=\dfrac{1}{2}\left[\dfrac{A^{3/2}}{\sqrt{6\pi}}-\dfrac{2\pi A^{3/2}}{6\pi\sqrt{6\pi}}\right]
+</mrow><mrow>
+&amp;=\dfrac{1}{2}\left[\dfrac{A^{3/2}}{\sqrt{6\pi}}-\dfrac{A^{3/2}}{3\sqrt{6\pi}}\right]
+</mrow><mrow>
+&amp;=\dfrac{A^{3/2}}{3\sqrt{6\pi}}.
+</mrow>
+</md>
+We should also check the volume of the cylinder at the endpoints of the function. Since <m>r \geq 0</m>, one endpoint is <m>r=0</m>. Since <m>h \geq 0</m>, and <m>r</m> grows as <m>h</m> shrinks, the other endpoint is whatever value of <m>r</m> causes <m>h</m> to be 0. We could find this value of <m>r</m>, but it's not strictly necessary: when <m>r=0</m>, the volume of the cylinder is zero, and when <m>h=0</m>, the volume of the cylinder is still zero. So, the maximum volume does not occur at the endpoints.
+</p>
+
+<p>Therefore, the maximum volume is achieved at the critical
+point, where <me>
+V_{\rm max}=\dfrac{A^{3/2}}{3\sqrt{6\pi}}.
+</me>
+</p>
+
+<p>Remark: as a check, <m>A</m> has units <m>m^2</m> and, because of the
+         <m>A^{3/2}</m>, our answer has units <m>m^3</m>, which are the correct
+         units for a volume.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2007H</fromexam></title>
+<statement><p>
+ What is the largest possible area of a window, with perimeter <m>P</m>,
+in the shape of a rectangle with a semicircle on top (so the diameter of the
+semicircle equals the width of the rectangle)?
+</p></statement>
+<hint><p>
+If the circle has radius <m>r</m>, and the entire window has perimeter <m>P</m>, what is the height of the rectangle?
+</p></hint>
+<answer><p>
+<m>\dfrac{P^2}{2(\pi+4)}</m>
+</p></answer>
+<solution><p>
+ Denote by <m>r</m> the radius of the semicircle, and let <m>h</m> be the height of the recangle.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (3,0) arc  (0:180:3);
+\draw (3,0)--(3,-2)--(-3,-2)--(-3,0);
+\draw[dashed] (0,0)--(3,0) node[midway, above]{$r$};
+\draw (0,0) node[vertex]{};
+\draw[dashed](0,0)--(0,-2) node[midway, right]{$h$};
+\draw[red,  \lt - \gt ] (3.5,0) arc  (0:180:3.5);
+\draw[red] (0,3.75)node{$\pi r$};
+\draw[red,  \lt - \gt ] (3,-2.5)--(-3,-2.5) node[midway, below]{$2 r$};
+\draw[blue,  \lt - \gt ] (-3.75,0)--(-3.75,-2) node[midway, left]{$h$};
+\draw[blue,  \lt - \gt ] (3.75,0)--(3.75,-2) node[midway, right]{$h$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Since the perimeter is required to be <m>P</m>, the height, <m>h</m>, of the rectangle must obey
+<md>
+<mrow>
+P&amp;=\pi r+2r+2h
+</mrow><mrow>
+h&amp;=\dfrac{1}{2}(P-\pi r -2r)
+</mrow>
+</md>
+So the area is
+<md>
+<mrow>
+A(r)&amp;=\half\pi r^2 +2rh
+</mrow><mrow>
+    &amp;=\half\pi r^2 +r(P-\pi r-2r)
+</mrow><mrow>
+    &amp;=rP-\half(\pi+4)r^2
+    </mrow>
+<intertext>Finding all critical points:</intertext><mrow>
+0=A'(r)&amp;=P-(\pi+4)r
+</mrow><mrow>
+ r&amp;=\dfrac{P}{\pi+4}
+</mrow>
+</md>
+</p>
+
+<p>Now we want to know what radius yields the maximum area. We notice that
+<m>A'(r) \gt 0</m> for <m>r \lt \dfrac{P}{\pi+4}</m> and <m>A'(r) \lt 0</m> for <m>r \gt \dfrac{P}{\pi+4}</m>.
+So, <m>A(r)</m> is increasing until the critical point, then decreasing after it. That means
+ <em>the global maximum occurs at the critical point,</em>
+<m>r=\dfrac{P}{\pi+4}</m>. The maximum area is
+<md>
+<mrow>
+rP-\frac{1}{2}(\pi+4)r^2&amp;=\dfrac{P^2}{\pi+4}-\frac{1}{2}(\pi+4)\dfrac{P^2}{(\pi+4)^2}
+</mrow><mrow>
+&amp;=\dfrac{P^2}{2(\pi+4)}
+</mrow>
+</md>
+</p>
+
+<p>Remark: another way to see that the global maximum occurs at the critical point is to compare the area at the critical point to the areas at the endpoints of the function. The smallest value of <m>r</m> is 0, while the biggest is <m>\dfrac{P}{\pi+2}</m> (when the shape is simply a half-circle). Comparing <m>A(0)</m>, <m>A\left(\dfrac{P}{\pi+2}\right)</m>, and
+<m>A\left(\dfrac{P}{\pi+4}\right)</m> is somewhat laborious, but certainly possible.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_5_3formulalast"><title><fromexam>2010H</fromexam></title>
+<statement><p>
+Consider an open-top rectangular baking pan with base dimensions
+<m>x</m> centimetres by <m>y</m> centimetres and height <m>z</m> centimetres that is
+made from <m>A</m> square centimetres of tin plate. Suppose <m>y = px</m> for some
+fixed constant <m>p</m>.
+<ol label="a">
+<li> Find the dimensions of the baking pan with the maximum
+capacity (i.e., maximum volume). Prove that your answer yields the
+baking pan with maximum capacity. Your answer will depend on the value of <m>p</m>.
+</li>
+<li> Find the value of the constant <m>p</m> that yields the baking
+pan with maximum capacity and give the dimensions of the resulting
+baking pan. Prove that your answer yields the baking pan with maximum
+capacity.
+</li>
+</ol>
+</p></statement>
+<answer><p>
+(a)
+<m>x=\sqrt{\dfrac{A}{3p}}</m>,
+<m>y=\sqrt{\dfrac{Ap}{3}}</m>, and
+<m>z=\dfrac{\sqrt{Ap}}{\sqrt{3}(1+p)}</m>
+</p>
+
+<p>(b) <m>p=1</m>
+</p>
+
+<p>(The dimensions of the resulting baking pan are
+      <m>x=y=\sqrt{ \dfrac{A}{3} }</m> and <m>z=\dfrac{1}{2}\sqrt{ \dfrac{A}{3} }</m>.)
+</p></answer>
+<solution>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[fill=black, fill opacity=0.1] (0,0)--(3,0)--(3,1)--(0,1)--cycle;
+\draw[fill=black, fill opacity=0.2] (3,0)--(3,1)--(5,2)--(5,1)--cycle;
+\draw (5,2)--(2,2)--(0,1);
+\draw (2,2)--(2,1);
+\draw (1.5,0) node[below]{$y=px$};
+\draw (4,0.25) node[right]{$x$};
+\draw (3,.5) node[left]{$z$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>
+<ol label="a">
+<li><p>The surface area of the pan is
+<md>
+<mrow>
+xy+2xz+2yz&amp;=px^2+2xz+2pxz
+</mrow><mrow>
+&amp;=px^2+2(1+p)xz
+</mrow>
+</md>
+and the volume of the pan is <m>xyz=px^2z</m>. Assuming that all <m>A\,{\rm cm}^2</m>
+is used, we have the constraint
+<me>
+px^2+2(1+p)xz=A \qquad\hbox{or}\quad z=\dfrac{A-px^2}{2(1+p)x}
+</me>
+So
+<md>
+<mrow>
+V(x)&amp;=xyz=x(px)\left(\frac{A-px^2}{2(1+p)x}\right)
+</mrow><mrow>
+&amp;=\dfrac{p}{2(1+p)}x(A-px^2)</mrow>
+<intertext>Using the product rule,</intertext><mrow>
+  V'(x)&amp;=\dfrac{p}{2(1+p)}\left[x(-2px)+(A-px^2)\right]
+</mrow><mrow>
+  &amp;=\dfrac{p}{2(1+p)}\big[A-3px^2\big]
+</mrow>
+</md>
+The derivative <m>V'(x)</m> is 0 when <m>x=\sqrt{\dfrac{A}{3p}}</m>. The derivative
+is positive (i.e. <m>V(x)</m> is increasing) for <m>x \lt  \sqrt{\dfrac{A}{3p}}</m> and
+is negative (i.e. <m>V(x)</m> is decreasing) for <m>x \gt \sqrt{\dfrac{A}{3p}}</m>. So
+the pan of maximum volume has dimensions <m>x=\sqrt{\dfrac{A}{3p}}</m>,
+<m>y=p\sqrt{\dfrac{A}{3p}}=\sqrt{\dfrac{Ap}{3}}</m> and
+<m>z=\dfrac{2A/3}{2(1+p)\sqrt{A/(3p)}}=\dfrac{\sqrt{Ap}}{\sqrt{3}(1+p)}</m>.
+</p>
+</li>
+<li><p> The volume of the pan from part (a) is
+<me>
+V(p)=\left(\sqrt{\dfrac{A}{3p}}\right)\left(p\sqrt{\dfrac{A}{3p}}\right)
+\dfrac{\sqrt{Ap}}{\sqrt{3}(1+p)}
+=\left(\dfrac{A}{3}\right)^{3/2}\dfrac{\sqrt{p}}{1+p}
+</me>
+Since
+<me>
+\diff{}{p}\left\{\dfrac{\sqrt{p}}{1+p}\right\}=\dfrac{\half (1+p)/\sqrt{p}-\sqrt{p}}{(1+p)^2}
+=\dfrac{\sqrt{p}\left(\dfrac{1}{p}-1\right)}{2(1+p)^2}
+</me>
+the volume is increasing with <m>p</m> for <m>p \lt 1</m> and decreasing with <m>p</m> for
+<m>p \gt 1</m>. So the maximum volume is achieved for <m>p=1</m> (a square base).
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS"><title><fromexam>1999H</fromexam></title>
+<statement><p>
+Let <m>f(x)=x^x</m> for <m>x \gt 0</m>.<ol label="a">
+<li xml:id="s2_10xx1"> Find <m>f'(x)</m>.
+</li>
+<li xml:id="s2_10xx2"> At what value of <m>x</m> does the curve <m>y=f(x)</m> have a horizontal
+tangent line?
+</li>
+<li xml:id="s2_10xx3"> Does the function <m>f</m> have a local maximum, a local minimum,
+or neither of these at the point <m>x</m> found in part <xref ref="s2_10xx2"/>?
+</li>
+</ol>
+</p></statement>
+<hint><p> Use logarithmic differentiation to find <m>f'(x)</m>.
+</p></hint>
+<answer><p>
+<xref ref="s2_10xx1"/> <m>x^x(1+\log x)</m>
+</p>
+<p>
+<xref ref="s2_10xx2"/> <m>x=\dfrac{1}{e}</m>
+<p></p>
+<xref ref="s2_10xx3"/> local minimum
+</p></answer>
+<solution><p>
+<xref ref="s2_10xx1"/> We use logarithmic differentiation.
+<md>
+<mrow>
+f(x)&amp;=x^x
+</mrow><mrow>
+\log f(x)&amp;=\log \left(x^x\right)=x\log x
+</mrow><mrow>
+\diff{}{x}\left\{\log f(x)\right\}&amp;=\diff{}{x}\left\{x\log x\right\}
+</mrow><mrow>
+\frac{f'(x)}{f(x)}&amp;=x\left(\frac{1}{x}\right)+\log x=1+\log x
+</mrow><mrow>
+f'(x)&amp;=f(x)\left(1+\log x\right)=x^x(1+\log x)
+</mrow>
+</md>
+</p>
+
+<p><xref ref="s2_10xx2"/> Since <m>x \gt 0</m>, <m>x^x \gt 0</m>. Therefore,
+<me>
+f'(x)=0\iff 1+\log x=0\iff \log x=-1\iff x=\dfrac{1}{e}</me>
+</p>
+
+<p><xref ref="s2_10xx3"/>
+ Since <m>x \gt 0</m>, <m>x^x \gt 0</m>. So, the sign of <m>f'(x)</m> is the same as the sign of <m>1+\log x</m>.
+</p>
+
+<p> For <m>x \lt \dfrac{1}{e}</m>, <m>\log x \lt -1</m> and <m>f'(x) \lt 0</m>. That is, <m>f(x)</m>
+decreases as <m>x</m> increases, when <m>x \lt \dfrac{1}{e}</m>.
+For <m>x \gt \dfrac{1}{e}</m>, <m>\log x \gt -1</m> and <m>f'(x) \gt 0</m>.  That is, <m>f(x)</m>
+increases as <m>x</m> increases, when <m>x \gt \dfrac{1}{e}</m>. Hence <m>f(x)</m>
+is a {local minimum} at <m>x=\dfrac{1}{e}</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2011H</fromexam></title>
+<statement><p>
+A length of wire is cut into two pieces, one of which is bent
+to form a circle, the other to form a square. How should the wire be cut
+if the area enclosed by the two curves is maximized?
+How should the wire be cut
+if the area enclosed by the two curves is minimized? Justify your answers.
+</p></statement>
+<hint><p>
+When you are finding the global extrema of a function, remember to check endpoints as well as critical points.
+</p></hint>
+<answer><p>
+Maximum area: do not cut, make a circle and no square.
+</p>
+<p>
+Minimum area: make a square out of a piece that is <m>\dfrac{4}{4+\pi}</m> of the total length of the wire.
+</p></answer>
+<solution><p>
+Call the length of the wire <m>L</m> units and suppose that it
+is cut <m>\ell</m> units from one end. Make the square from the piece of length <m>\ell</m>, and make the circle from the remaining piece of length <m>L-\ell</m>.
+</p>
+
+<p>The square has perimeter <m>\ell</m>, so its side length is <m>\ell/4</m>
+and its area is <m>\left(\dfrac{\ell}{4}\right)^2</m>.
+The circle has circumference <m>L-\ell</m>, so its radius is
+<m>\dfrac{L-\ell}{2\pi}</m> and its area is <m>\pi\left(\dfrac{L-\ell}{2\pi}\right)^2=\dfrac{(L-\ell)^2}{4\pi}</m>.
+</p>
+
+<p>The area enclosed by the shapes, when the square is made from a length of size <m>\ell</m>, is
+<md>
+<mrow>
+A(\ell)&amp;=\dfrac{\ell^2}{16}+\dfrac{(L-\ell)^2}{4\pi}
+</mrow>
+<intertext>We want to find the global max and min for this function, given the constraint <m>0 \leq \ell \leq L</m>, so we find its derivative:</intertext><mrow>
+A'(\ell)&amp;=\dfrac{\ell}{8} -\dfrac{L-\ell}{2\pi}
+         =\dfrac{\pi+4}{8\pi}\ell-\dfrac{L}{2\pi}
+</mrow>
+<intertext>Now, we find the critical point.</intertext><mrow>
+A'(\ell)&amp;=0
+</mrow><mrow>
+\frac{\pi+4}{8\pi}\ell&amp;=\frac{L}{2\pi}
+</mrow><mrow>
+\ell&amp;=\frac{4L}{\pi+4}
+</mrow>
+</md></p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell> <m>\ell</m> </cell><cell> <m>0</m> </cell><cell>  <m>L</m> </cell><cell>  <m>\textcolor{white}{\dfrac{.^.}{.}}\frac{4L}{\pi+4}</m>  </cell>
+</row><row>
+<cell> type </cell><cell> endpoint </cell><cell> endpoint </cell><cell> critical point  </cell>
+</row><row>
+<cell><m>A(\ell)</m> </cell><cell> <m>\textcolor{white}{\dfrac{.^.}{.}}\frac{L^2}{4\pi}</m> </cell><cell> <m>\frac{L^2}{16}_{}</m> </cell><cell> <m>A\left(\frac{4L}{\pi+4}\right)</m> </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>It seems obnoxious to evaluate <m>A\left(\frac{4L}{\pi+4}\right)</m>, and the problem doesn't ask for it--but we still have to figure out whether it is a global max or min.
+</p>
+
+<p> When <m>\ell \lt \frac{4L}{\pi+4}</m>, <m>A'(\ell) \lt 0</m>, and when
+ <m>\ell \gt \frac{4L}{\pi+4}</m>, <m>A'(\ell) \gt 0</m>. So, <m>A(\ell)</m> is decreasing until <m>\ell=\frac{4L}{\pi+4}</m>, then increasing. That means our critical point <m>\ell=\frac{4L}{\pi+4}</m>
+ is a local minimum.
+</p>
+
+<p>So, the minimum occurs at the only critical point, which is <m>\ell=\left(\dfrac{4}{4+\pi}\right)L</m>. This corresponds to <m>\dfrac{\ell}{L}=\dfrac{4}{4+\pi}</m>: the proportion of the wire that is cut is <m>\dfrac{4}{4+\pi}</m>.
+</p>
+
+<p>The maximum has to be either at <m>\ell=0</m> or at <m>\ell=L</m>.
+As <m>A(0)=\dfrac{L^2}{4\pi}  \gt  A(L)=\dfrac{L^2}{16}</m>, the maximum has <m>\ell=0</m>
+(that is, no square).
+</p></solution>
+</exercise>
+
+</exercisegroup>
+
+</exercises>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises>
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement>
+<p>On the graph below, draw:
+<ol label="a">
+<li> The tangent line to <m>y=f(x)</m> at <m>P</m>,
+</li>
+<li>  the tangent line to <m>y=f(x)</m> at <m>Q</m>, and
+</li>
+<li>  the secant line to <m>y=f(x)</m> through <m>P</m> and <m>Q</m>.
+</li>
+</ol>
+</p>
+<sidebyside width="75%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{5}{1}{3}
+\draw[thick] plot[domain=-1:5, samples=100](\x,{(3*\x-10)*(\x+1)*(\x-2)/30}) node[right]{$y=f(x)$};
+\draw (1,7/15) node[vertex, label=above:$P$]{};
+\draw (4.5,7*11/48) node[vertex, label= left:$Q$]{};
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</statement>
+<answer>
+<sidebyside width="75%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{5}{1}{3}
+\draw[thick] plot[domain=-1:5, samples=100](\x,{(3*\x-10)*(\x+1)*(\x-2)/30}) node[right]{$y=f(x)$};
+\draw (1,7/15) node[vertex, label=above:$P$]{};
+\draw (4.5,7*11/48) node[vertex, label= left:$Q$]{};
+\draw[thick, blue] plot[domain=-1:3.5] (\x,{27/30-13/30*\x}) node[below left]{(a)};
+\draw[thick, green] plot[domain=3.5:5.5] (\x,{7*11/48+2.31*(\x-4.5)}) node[left]{(b)};
+\draw[thick, red] plot[domain=0:5.5] (\x,{7/15+.325*(\x-1)}) node[right]{(c)};
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution>
+<sidebyside width="75%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{5}{1}{3}
+\draw[thick] plot[domain=-1:5, samples=100](\x,{(3*\x-10)*(\x+1)*(\x-2)/30}) node[right]{$y=f(x)$};
+\draw (1,7/15) node[vertex, label=above:$P$]{};
+\draw (4.5,7*11/48) node[vertex, label= left:$Q$]{};
+\draw[thick, blue] plot[domain=-1:3.5] (\x,{27/30-13/30*\x}) node[below left]{(a)};
+\draw[thick, green] plot[domain=3.5:5.5] (\x,{7*11/48+2.31*(\x-4.5)}) node[left]{(b)};
+\draw[thick, red] plot[domain=0:5.5] (\x,{7/15+.325*(\x-1)}) node[right]{(c)};
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+<p>
+The tangent line to <m>y=f(x)</m> at a point should go through the point, and be <q>in the same direction</q> as <m>f</m> at that point. The secant line through <m>P</m> and <m>Q</m> is simply the straight line passing through <m>P</m> and <m>Q</m>.
+</p>
+</solution>
+</exercise>
+
+
+<exercise purpose="RQS">
+<statement>
+<p>
+Suppose a curve <m>y=f(x)</m> has tangent line <m>y=2x+3</m> at the point <m>x=2</m>.
+<ol label="a">
+<li> True or False: <m>f(2)=7</m> </li>
+<li> True or False: <m>f(3)=9</m> </li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+The tangent line to a curve at point <m>P</m> passes through <m>P</m>.
+</p>
+</hint>
+<answer>
+<p>
+<ol label="a">
+<li> True </li>
+<li> In general, this is false. For most functions <m>f(x)</m> this will be false, but there are some functions for which it is true.
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+<p>
+<ol label="a">
+<li xml:id="test">
+	True: since <m>y=2x+3</m> is the tangent line to <m>y=f(x)</m> <em>at the point</em> <m>x=2</m>, this means the function and the tangent line have the same value at <m>x=2</m>. So <m>f(2)=2(2)+3=7</m>.
+</li>
+<li>
+	In general, this is false. We are only guaranteed that the curve <m>y=f(x)</m> and its tangent line <m>y=2x+3</m> agree at <m>x=2</m>. The functions <m>f(x)</m> and <m>2x+3</m> may or  may not take the same values when <m>x\ne 2</m>. For example, if <m>f(x)=2x+3</m>, then of course <m>f(x)</m> and <m>2x+3</m> agree for all values of <m>x</m>. But if <m>f(x) = 2x+3 +(x-2)^2</m>, then <m>f(x)</m> and <m>2x+3</m> agree only for <m>x=2</m>.
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>L</m> be the tangent line to a curve <m>y=f(x)</m> at some point <m>P</m>. How many times will <m>L</m> intersect the curve <m>y=f(x)</m>?
+</p>
+</statement>
+<hint>
+<p>
+Try drawing tangent lines to the following curves, at the given points <m>P</m>:
+</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
+\YEaaxis{2}{2}{1}{2}
+\draw[thick] plot[domain=-1.5:1.5](\x,\x*\x) node[right]{$y=f(x)$};
+\draw (0,0) node[vertex, label=below right:$P$]{};
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
+\YEaaxis{2}{2}{1}{2}
+\draw[thick] plot[smooth] coordinates {(-2,-1) (-1,.5)  (1,-.5) (2,2)} node[right]{$y=f(x)$};
+\draw (-1,.5) node[vertex, label=above right:$P$]{};
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
+\YEaaxis{2}{2}{2}{2}
+\draw[thick] plot[domain=-2:1.75, samples=200] (\x, {(3/8*\x+5/4)*sin(\x*10 r)}) node[right]{$y=f(x)$};
+\draw (-1.73,.6) node[vertex, label=above:$P$]{};
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</hint>
+<answer>
+<p>At least once.</p>
+</answer>
+<solution>
+<p>
+Since the tangent line to the curve at point <m>P</m> passes through point <m>P</m>, the curve and the tangent line touch at point <m>P</m>. So, they must intersect at least once. By drawing various examples, we can see that different curves may touch their tangent lines exactly once, exactly twice, exactly three times, etc.
+</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{2}{1}{2}
+\draw[thick] plot[domain=-1.5:1.5](\x,\x*\x) node[right]{$y=f(x)$};
+\draw (0,0) node[vertex, label=below right:$P$]{};
+\draw[blue, very thick] (-1.75,0)--(1.75,0);
+\draw (0,-1.5) node{Blue tangent line touches curve only once, at $P$};
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{2}{1}{2}
+\draw[thick] plot[smooth] coordinates {(-2,-1) (-1,.5)  (1,-.5) (2,2)} node[right]{$y=f(x)$};
+\draw (-1,.5) node[vertex, label=above right:$P$]{};
+\draw[blue, very thick] (-2,.5)--(2,.5);
+\draw (0,-1.5) node{Blue tangent line touches curve twice};
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{2}{2}{2}
+\draw[thick] plot[domain=-2:1.75, samples=200] (\x, {(3/8*\x+5/4)*sin(\x*10 r)}) node[right]{$y=f(x)$};
+\draw (-1.73,.6) node[vertex, label=above:$P$]{};
+\draw[blue, very thick] (-2,.6)--(2,.6);
+\draw (0,-3.5) node{Blue tangent line touches curve many times};
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+</exercisegroup>
+</exercises>

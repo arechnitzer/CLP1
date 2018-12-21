@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>True or false: <m>\ds\diff{}{x}\{f(x)+g(x)\}=f'(x)+g'(x)</m> when <m>f</m> and <m>g</m> are differentiable functions.
+</p></statement>
+<hint><p> Look at the Sum rule
+</p></hint>
+<answer><p> True
+</p></answer>
+<solution><p> True: this is exactly what the Sum Rule states.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+True or false: <m>\ds\diff{}{x}\{f(x)g(x)\}=f'(x)g'(x)</m> when <m>f</m> and <m>g</m> are differentiable functions.
+</p></statement>
+<hint><p> Try an example, like <m>f(x)=g(x)=x</m>.
+</p></hint>
+<answer><p> False, in general
+</p></answer>
+<solution><p> False, in general. The product rule tells us <m>\diff{}{x}\{f(x)g(x)\}=f'(x)g(x)+f(x)g'(x)</m>. An easy example of why we can't do it the other way is to take <m>f(x)=g(x)=x</m>. Then the equation becomes <m>\diff{}{x}\{x^2\}=(1)(1)</m>, which is false.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>True or false: <m>\ds\diff{}{x}\left\{\dfrac{f(x}{g(x)}\right\}=\dfrac{f'(x)}{g(x)}-\dfrac{f(x)g'(x)}{g^2(x)}</m> when <m>f</m> and <m>g</m> are differentiable functions.
+</p></statement>
+<hint><p> Simplify
+</p></hint>
+<answer><p> True
+</p></answer>
+<solution><p> True: the quotient rule tells us <me>
+\diff{}{x}\left\{\frac{f(x}{g(x)}\right\}=\frac{g(x)f'(x)-f(x)g'(x)}{g^2(x)} = \frac{g(x)f'(x)}{g^2(x)}-\frac{f(x)g'(x)}{g^2(x)} = \frac{f'(x)}{g(x)}-\frac{f(x)g'(x)}{g^2(x)}.</me>
+</p>
+</solution>
+
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+True or false: <m>\ds\diff{}{x}\{2^x\}=x2^{x-1}</m>.
+</p></statement>
+<hint><p> When can you use the power rule?
+</p></hint>
+<answer><p> False
+</p></answer>
+<solution><p>
+False: the power rule tells us that, for a constant <m>n</m>, <m>\ds\diff{}{x}\{x^n\}=nx^{n-1}</m>. In the equation shown, the base is a constant, and the exponent is the variable: this is the opposite of the situation where the power rule applies.
+</p>
+
+<p>We do not yet know how to differentiate this function. We'll learn about it in Section<nbsp/><xref ref="sec_exp_func"/>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>Let <m>f</m> be a differentiable function. Use at least three different rules to differentiate <m>g(x)=3f(x)</m>, and verify that they all give the same answer.
+</p></statement>
+<hint><p> <m>g(x)=f(x)+f(x)+f(x)</m>
+</p></hint>
+<answer><p> If you're creative, you can find lots of ways to differentiate!
+<ul>
+<li> Constant multiple: <m>g'(x)=3f'(x)</m>.</li>
+<li>Product rule: <m>g'(x) = \diff{}{x}\{3\}f(x)+3f'(x)=0f(x)+3f'(x)=3f'(x)</m>.</li>
+<li> Sum rule: <m>g'(x)=\diff{}{x}\{f(x)+f(x)+f(x)\}=f'(x)+f'(x)+f'(x)=3f'(x)</m>.</li>
+<li>Quotient rule: <m>g'(x)=\diff{}{x}\left\{\frac{f(x)}{\frac{1}{3}}\right\}=
+\frac{\frac{1}{3}f'(x)-f(x)(0)}{\frac{1}{9}}=\frac{\frac{1}{3}f'(x)}{\frac{1}{9}}=9\left(\frac{1}{3}\right)f'(x)=3f'(x)</m>.</li>
+</ul>
+All rules give <m>g'(x)=3f'(x)</m>.</p>
+</answer>
+<solution><p> If you're creative, you can find lots of ways to differentiate!
+<ul>
+<li>Constant multiple: <m>g'(x)=3f'(x)</m>.</li>
+<li>Product rule: <m>g'(x) = \diff{}{x}\{3\}f(x)+3f'(x)=0f(x)+3f'(x)=3f'(x)</m>.</li>
+<li>Sum rule: <m>g'(x)=\diff{}{x}\{f(x)+f(x)+f(x)\}=f'(x)+f'(x)+f'(x)=3f'(x)</m>.</li>
+<li>Quotient rule: <m>g'(x)=\diff{}{x}\left\{\frac{f(x)}{\frac{1}{3}}\right\}=
+\frac{\frac{1}{3}f'(x)-f(x)(0)}{\frac{1}{9}}=\frac{\frac{1}{3}f'(x)}{\frac{1}{9}}=9\left(\frac{1}{3}\right)f'(x)=3f'(x)</m>.</li>
+</ul>
+All rules give <m>g'(x)=3f'(x)</m>.
+</p></solution>
+</exercise>
+
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>Differentiate <m>f(x)=3x^5+4x^{2/3}</m>.
+</p></statement>
+<hint><p> Use linearity
+</p></hint>
+<answer><p> <m>f'(x)=15x^4+\frac{8}{3}x^{-1/3}</m>
+</p></answer>
+<solution><p>
+<m>f'(x)=5\cdot 3x^4+\frac{2}{3}\cdot 4x^{2/3-1}
+=15x^4+\frac{8}{3}x^{-1/3}</m>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>Use the product rule to differentiate <m>f(x)=(2x+5)(8\sqrt{x}-9x)</m>.
+</p></statement>
+<hint><p> You have already seen <m>\diff{}{x}\{\sqrt{x}\}</m>
+</p></hint>
+<answer><p> <m>-36x+24\sqrt{x}+\frac{20}{\sqrt{x}}-45</m>
+</p></answer>
+<solution><p> We have already seen <m>\diff{}{x}\{\sqrt{x}\}=\frac{1}{2\sqrt{x}}</m>, but if you forget the formula, it's easy to find using the power rule:
+ <m>\diff{}{x}\{\sqrt{x}\}=\diff{}{x}\left\{x^{1/2}\right\}=\frac{1}{2}x^{-1/2}=\frac{1}{2\sqrt{x}}</m>.
+</p>
+
+<p> Now:
+ <md>
+<mrow>f'(x) &amp;= (2)(8\sqrt{x}-9x)+(2x+5)\left(\frac{8}{2\sqrt{x}}-9\right)
+</mrow><mrow>
+ &amp;= 16\sqrt{x}-18x+(2x+5)\left(\frac{4}{\sqrt{x}}-9\right)
+</mrow><mrow>
+ &amp;=-36x+24\sqrt{x}+\frac{20}{\sqrt{x}}-45
+ </mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Find the equation of the tangent line to the graph of <m>y=x^3</m> at
+<m>x=\dfrac{1}{2}</m>.
+</p></statement>
+<hint><p> The equation of a line can be determined using a point, and the slope.
+</p></hint>
+<answer><p> <m>y -  \frac{1}{8} = \frac{3}{4}\cdot \left(x-\frac{1}{2}\right)</m>, or <m>y= \tfrac{3}{4} x - \tfrac{1}{4}</m>
+</p></answer>
+<solution><p> We compute the derivative of <m>x^3</m> as being <m>3x^2</m>, which evaluated at
+<m>x=\frac{1}{2}</m> yields <m>\frac{3}{4}</m>. Since we also compute
+<m>\left( \frac{1}{2}\right)^3=\frac{1}{8}</m>, then the equation of the tangent line is
+<md>
+<mrow>
+y -  \frac{1}{8} = \frac{3}{4}\cdot \left(x-\frac{1}{2}\right).
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1999H</fromexam></title>
+<statement><p>
+A particle moves along the <m>x</m>--axis so that its position
+ at time <m>t</m> is given by <m>x=t^3-4t^2+1</m> .
+<ol label="a">
+<li xml:id="s2_4particle1"> At <m>t=2</m>, what is the particle's speed?
+</li>
+<li xml:id="s2_4particle2"> At <m>t=2</m>, in what direction is the particle moving?
+</li>
+<li xml:id="s2_4particle3"> At <m>t=2</m>, is the particle's speed increasing or decreasing?
+</li>
+</ol>
+</p></statement>
+<hint><p> Be careful to distinguish between speed and velocity.
+</p></hint>
+<answer><p>
+<xref ref="s2_4particle1"/> <m>4</m>
+</p>
+<p>
+<xref ref="s2_4particle2"/> left
+</p>
+<p>
+<xref ref="s2_4particle3"/> decreasing
+</p></answer>
+<solution><p>
+Let <m>f(t)=t^3-4t^2+1</m>. Then
+<md>
+<mrow>
+f'(t)&amp;=3t^2-8t &amp; f'(2)&amp;=3\times 4-8\times 2=-4\cr
+f''(t)&amp;=6t-8 &amp; f''(2)&amp;=6\times 2-8=4\cr
+</mrow>
+</md>
+Hence at <m>t=2</m>, <xref ref="s2_4particle1"/><nbsp/>the particle has speed of magnitude {4}, and <xref ref="s2_4particle2"/><nbsp/>is
+moving {towards the left}.
+At <m>t=2</m>, <m>f''(2) \gt 0</m>, so <m>f'</m> is increasing, i.e.
+becoming less negative. Since <m>f'</m> is getting closer to zero, <xref ref="s2_4particle3"/><nbsp/>the magnitude of the speed is
+{decreasing}.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1999H</fromexam></title>
+<statement><p>
+Calculate and simplify the derivative of
+<m>\dfrac{2x-1}{2x+1}</m>
+</p></statement>
+<answer><p>
+<m>\dfrac{1}{{(x+1/2)}^2}</m>, or <m>\dfrac{4}{(2x+1)^2}</m>
+</p></answer>
+<solution><p>
+We can use the quotient rule here.
+<md>
+<mrow>
+\diff{}{x}\left\{\frac{2x-1}{2x+1}\right\}&amp;=\frac{(2x+1)(2)-(2x-1)(2)}{(2x+1)^2}
+=\frac{4}{(2x+1)^2}=\frac{1}{(x+1/2)^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>What is the slope of the graph <m>y=\left(\dfrac{3x+1}{3x-2}\right)^2</m> when <m>x=1</m>?
+</p></statement>
+<hint><p> How do you take care of that power?
+</p></hint>
+<answer><p> <m>-72</m>
+</p></answer>
+<solution><p> First, we find the <m>y'</m> for general <m>x</m>. Using the corollary to Theorem<nbsp/><xref ref="thm_DIFFprodRule"/> and the quotient rule:
+<md>
+<mrow>
+y'&amp;=2\left(\dfrac{3x+1}{3x-2}\right)\cdot\diff{}{x}\left\{\dfrac{3x+1}{3x-2}\right\}
+</mrow><mrow>
+&amp;=2\left(\dfrac{3x+1}{3x-2}\right)\left(\dfrac{(3x-2)(3)-(3x+1)(3)}{(3x-2)^2}\right)
+</mrow><mrow>
+&amp;=2\left(\dfrac{3x+1}{3x-2}\right)\left(\dfrac{-9}{(3x-2)^2}\right)
+</mrow><mrow>
+&amp;=\dfrac{-18(3x+1)}{(3x-2)^3}
+</mrow>
+<intertext>So, plugging in <m>x=1</m>:</intertext><mrow>
+y'(1)&amp;=\dfrac{-18(3+1)}{(3-2)^3}=-72
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>Find the equation of the tangent line to the curve <m>f(x)=\dfrac{1}{\sqrt{x}+1}</m> at the point <m>\left(1,\frac{1}{2}\right)</m>.
+</p></statement>
+<hint><p> You know how to take the derivative of a reciprocal; this might be faster than using the quotient rule.
+</p></hint>
+<answer><p> <m>y-\frac{1}{2}=-\frac{1}{8}(x-1)</m>, or <m>y=-\tfrac{1}{8}x +\tfrac{5}{8}</m>
+</p></answer>
+<solution><p>
+We need <m>f'(1)</m>, so first we must find <m>f'(x)</m>. Since <m>f(x)</m> is the reciprocal of <m>\sqrt{x}+1</m>, we can use the Corollary<nbsp/><xref ref="cor_diff_recip"/>:
+<me>
+f'(x) = \dfrac{-\diff{}{x}\{\sqrt{x}+1\}}{(\sqrt{x}+1)^2}=\dfrac{-\frac{1}{2\sqrt{x}}}{(\sqrt{x}+1)^2}= \dfrac{-1}{2\sqrt{x}(\sqrt{x}+1)^2},</me>
+ so <m>f'(1)=\dfrac{-1}{2\sqrt{1}(\sqrt{1}+1)^2}=\frac{-1}{8}.</m>
+</p>
+
+<p>Now, using the point <m>\left(1,\frac{1}{2}\right)</m> and the slope <m>\frac{-1}{8}</m>, our tangent line has equation <m>y-\frac{1}{2}=-\frac{1}{8}(x-1)</m>.
+</p></solution>
+</exercise>
+
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>A town is founded in the year 2000. After <m>t</m> years, it has had <m>b(t)</m> births and <m>d(t)</m> deaths. Nobody enters or leaves the town except by birth or death (whoa). Give an expression for the rate the population of the town is growing.
+</p></statement>
+<hint><p> Population growth is rate of change of population.
+</p></hint>
+<answer><p> <m>b'(t)-d'(t)</m>
+</p></answer>
+<solution><p> Population growth is rate of change of population.
+Population in year <m>2000+t</m> is given by <m>P(t)=P_0+b(t)-d(t)</m>, where <m>P_0</m> is the initial population of the town. Then <m>P'(t)</m> is the expression we're looking for, and <m>P'(t)=b'(t)-d'(t)</m>.
+</p>
+
+<p>It is interesting to note that the initial population does not obviously show up in this calculation. It would probably affect <m>b(t)</m> and <m>d(t)</m>, but if we know these we do not need to know <m>P_0</m> to answer our question.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997D</fromexam></title>
+<statement><p>Find all points on the curve <m>y=3x^2</m> where the tangent
+line passes through <m>(2,9)</m>.
+</p></statement>
+<answer><p>{<m>(1,3),\ (3,27)</m>}
+</p></answer>
+<solution><p>
+The slope of <m>y=3x^2</m> at <m>x=a</m> is <m>6a</m>. The tangent line to
+<m>y=3x^2</m> at <m>x=a, y=3a^2</m> is <m>y-3a^2=6a(x-a)</m>. This tangent line passes
+through <m>(2,9)</m> if
+<md>
+<mrow>
+9-3a^2&amp;=6a(2-a)
+</mrow><mrow>
+ 3a^2-12a+9&amp;=0
+</mrow><mrow>
+  a^2-4a+3&amp;=0
+</mrow><mrow>
+  (a-3)(a-1)&amp;=0
+</mrow><mrow>
+\implies \;\; a&amp;=1,3
+</mrow>
+</md>
+The points are {<m>(1,3),\ (3,27)</m>}.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Evaluate <m>\displaystyle \lim_{y\rightarrow 0}\left(
+\dfrac{\sqrt{100180+y}-\sqrt{100180}}{y}\right)</m> by interpreting the limit as a derivative.
+</p></statement>
+<hint><p> Interpret it as a derivative that you know how to compute.
+</p></hint>
+<answer><p> <m>\dfrac{1}{2\sqrt{100180}}</m>
+</p></answer>
+<solution><p> This limit represents the derivative computed at <m>x=100180</m> of the function
+<m>f(x)=\sqrt{x}</m>. Since the derivative of <m>f(x)</m> is <m>\dfrac{1}{2\sqrt{x}}</m>, then
+its value at <m>x=100180</m> is exactly <m>\dfrac{1}{2\sqrt{100180}}</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+A rectangle is growing. At time <m>t=0</m>, it is a square with
+           side length 1 metre. Its width increases at a constant rate
+           of 2 metres per second, and its length increases at a constant
+           rate of 5 metres per second. How fast is its area increasing
+           at time <m>t \gt 0</m>?</p></statement>
+<hint><p> The answer is <em>not</em> 10 square metres per second.
+</p></hint>
+<answer><p> <m>20t+7</m> square metres per second.
+</p></answer>
+<solution><p> Let <m>w(t)</m> and <m>l(t)</m> be the width and length of the rectangle. Given in the problem is that <m>w'(t)=2</m> and <m>l'(t)=5</m>. Since both functions have constant slopes, both must be lines. Their slopes are given, and their intercepts are <m>w(0)=l(0)=1</m>. So, <m>w(t)=2t+1</m> and <m>l(t)=5t+1</m>.
+</p>
+
+<p>The area of the rectangle is <m>A(t)=w(t)\cdot l(t)</m>, so using the product rule, the rate at which the area is increasing is <m>A'(t)=w'(t)l(t)+w(t)l'(t)=2(5t+1)+5(2t+1)=20t+7</m> square metres per second.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>Let <m>f(x)=x^2g(x)</m> for some differentiable function <m>g(x)</m>. What is <m> f'(0)</m>?
+</p></statement>
+<hint><p> You don't need to know <m>g(0)</m> or <m>g'(0)</m>.
+</p></hint>
+<answer><p> 0
+</p></answer>
+<solution><p>
+Using the product rule, <m>f'(x)=(2x)g(x)+x^2g'(x)</m>, so <m>f'(0)=0\cdot g(x)+0\cdot g'(x)=0</m>. (Since <m>g</m> is differentiable, <m>g'</m> exists.)
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>Verify that differentiating <m>f(x)=\dfrac{g(x)}{h(x)}</m>  using the quotient rule gives the same answer as differentiating <m>f(x)=\dfrac{g(x)}{k(x)}\cdot\dfrac{k(x)}{h(x)}</m> using the product rule and the quotient rule.
+</p></statement>
+<answer><p>
+<md>
+<mrow>
+</mrow>
+<intertext>First expression, <m>f(x)=\dfrac{g(x)}{h(x)}</m>:</intertext><mrow>
+f'(x)&amp;=\frac{h(x)g'(x)-g(x)h'(x)}{h^2(x)}
+</mrow>
+<intertext>Second expresson, <m>f(x)=\dfrac{g(x)}{k(x)}\cdot\dfrac{k(x)}{h(x)}</m>:</intertext><mrow>
+f'(x)&amp;=\left(\frac{k(x)g'(x)-g(x)k'(x)}{k^2(x)}\right)\left(\frac{k(x)}{h(x)}\right)+\left(\frac{g(x)}{k(x)}\right)\left(\frac{h(x)k'(x)-k(x)h'(x)}{h^2(x)}\right)
+</mrow><mrow>
+&amp;=\frac{k(x)g'(x)-g(x)k'(x)}{k(x)h(x)}+
+\frac{g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}
+</mrow><mrow>
+&amp;=\frac{h(x)k(x)g'(x)-h(x)g(x)k'(x)}{k(x)h^2(x)}+
+\frac{g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}
+</mrow><mrow>
+&amp;=\frac{h(x)k(x)g'(x)-h(x)g(x)k'(x)+g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}
+</mrow><mrow>
+&amp;=\frac{h(x)k(x)g'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}
+</mrow><mrow>
+&amp;=\frac{h(x)g'(x)-g(x)h'(x)}{h^2(x)}
+</mrow>
+</md>
+and this is exactly what we got from differentiating the first expression.
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+</mrow>
+<intertext>First expression, <m>f(x)=\dfrac{g(x)}{h(x)}</m>:</intertext><mrow>
+f'(x)&amp;=\frac{h(x)g'(x)-g(x)h'(x)}{h^2(x)}
+</mrow>
+<intertext>Second expresson, <m>f(x)=\dfrac{g(x)}{k(x)}\cdot\dfrac{k(x)}{h(x)}</m>:</intertext><mrow>
+f'(x)&amp;=\left(\frac{k(x)g'(x)-g(x)k'(x)}{k^2(x)}\right)\left(\frac{k(x)}{h(x)}\right)+\left(\frac{g(x)}{k(x)}\right)\left(\frac{h(x)k'(x)-k(x)h'(x)}{h^2(x)}\right)
+</mrow><mrow>
+&amp;=\frac{k(x)g'(x)-g(x)k'(x)}{k(x)h(x)}+
+\frac{g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}
+</mrow><mrow>
+&amp;=\frac{h(x)k(x)g'(x)-h(x)g(x)k'(x)}{k(x)h^2(x)}+
+\frac{g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}
+</mrow><mrow>
+&amp;=\frac{h(x)k(x)g'(x)-h(x)g(x)k'(x)+g(x)h(x)k'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}
+</mrow><mrow>
+&amp;=\frac{h(x)k(x)g'(x)-g(x)k(x)h'(x)}{k(x)h^2(x)}
+</mrow><mrow>
+&amp;=\frac{h(x)g'(x)-g(x)h'(x)}{h^2(x)}
+</mrow>
+</md>
+and this is exactly what we got from differentiating the first expression.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+</exercises>

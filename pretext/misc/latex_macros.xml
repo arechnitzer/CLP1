@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<macros>
+	\newcommand{\dee}[1]{\mathrm{d}#1}
+	\newcommand{\half}{ \frac{1}{2} }
+	\newcommand{\ds}{\displaystyle}
+	\newcommand{\ts}{\textstyle}
+	\newcommand{\es}{ {\varnothing}}
+	\newcommand{\st}{ {\mbox{ s.t. }} }
+	\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+	\newcommand{\set}[1]{ \left\{#1\right\} }
+	\newcommand{\lin}{{\text{LIN}}}
+	\newcommand{\quot}{{\text{QR}}}
+	\newcommand{\simp}{{\text{SMP}}}
+	\newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+	\newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+	\newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+	\renewcommand{\neg}{ {\sim} }
+	\newcommand{\limp}{ {\;\Rightarrow\;} }
+	\newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+	\newcommand{\liff}{ {\;\Leftrightarrow\;} }
+	\newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+	\newcommand{\De}{\Delta}
+	\newcommand{\bbbn}{\mathbb{N}}
+	\newcommand{\bbbr}{\mathbb{R}}
+	\newcommand{\bbbp}{\mathbb{P}}
+	\newcommand{\cI}{\mathcal{I}}
+	\newcommand{\cR}{\mathcal{R}}
+	\newcommand{\cV}{\mathcal{V}}
+	\newcommand{\Si}{\Sigma}
+
+	\newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+	\newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+	\newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+	\newcommand{\erf}{\mathop{\mathrm{erf}}}
+	\newcommand{\smsum}{\mathop{{\ts \sum}}}
+	\newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+	\newcommand{\ave}{\mathrm{ave}}
+	\newcommand{\llt}{\left \lt }
+	\newcommand{\rgt}{\right \gt }
+
+
+	\newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+	\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+	\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+	\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+	\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+	\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+	\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+	\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+	\newcommand{\YEstickfig}[3]{
+	\draw (#1,#2) arc(-90:270:2mm);
+	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+	<!-- IBP choice table
+	% (variable)(part)(deriv)(int)(part)(deriv)(int) -->
+	\newcommand{\IBP}[7]{
+	\begin{array}{|c  | l | l |}
+	\hline
+	\color{red}{\text{Option 1:}}
+	&amp; u=#2
+	&amp;\color{red}{\dee{u}=#3 ~ \dee{#1}}
+	\\
+	&amp; \dee{v}=#5~\dee{#1}
+	&amp;\color{red}{v=#7}
+	\\
+	\hline
+	\color{blue}{\text{Option 2:}}
+	&amp; u=#5
+	&amp;\color{blue}{\dee{u}=#6 ~ \dee{#1}}
+	\\
+	&amp;\dee{v}=#2 \dee{#1}
+	&amp;\color{blue}{v=#4}
+	\\
+	\hline
+	\end{array}
+	}
+
+	<!-- fixes \color{}{} vs \textcolor{}{} mathjax vs latex issue -->
+	\renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+
+
+	%%Elyse - right triangle = (angle)(adjacent)(opposite)(hypotenuse)
+	\newcommand{\trigtri}[4]{
+	\begin{tikzpicture}
+	\draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+	\draw (1.8,0) |- (2,.2);
+	\draw[double] (0,0) arc(0:30:.5cm);
+	\draw (0,.2) node[right]{$#1$};
+	\draw (1,-.5) node{$#2$};
+	\draw (2,.75) node[right]{$#3$};
+	\draw (.6,1.1) node[rotate=30]{$#4$};
+	\end{tikzpicture}}
+</macros>

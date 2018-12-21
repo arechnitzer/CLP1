@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Calculating limits with limit laws</title>
+
+<subsection><title>Calculating limits with limit laws</title>
+
+<p>
+Think back to the functions you know and the sorts of things you have  been  asked to draw, factor and so on. Then they are all constructed from simple  pieces, such as
+<ul>
+<li> constants <mdash/> <m>c</m> </li>
+<li> monomials <mdash/> <m>x^n</m> </li>
+<li> trigonometric functions <mdash/> <m>\sin(x), \cos(x)</m> and <m>\tan(x)</m> </li>
+</ul>
+These are the building blocks from which we construct functions. Soon we will  add a few more functions to this list, especially the exponential function and  various inverse functions.
+</p>
+
+<p>
+We then take these building blocks and piece them together using arithmetic
+<ul>
+<li> addition and subtraction <mdash/> <m>f(x)  = g(x) + h(x)</m> and <m>f(x) = g(x) -  h(x)</m> </li>
+<li> multiplication <mdash/> <m>f(x) = g(x) \cdot h(x)</m> </li>
+<li> division <mdash/> <m>f(x) = \frac{g(x)}{h(x)}</m> </li>
+<li>
+	substitution <mdash/> <m>f(x) = g( h(x) )</m> <mdash/> this is also called  the composition of <m>g</m> with <m>h</m>.
+</li>
+</ul>
+The idea of building up complicated functions from simpler pieces was discussed  in <xref ref="sec_parsing" text="type-global"/>.
+</p>
+
+<p>
+What we will learn in this section is how to compute the limits of the basic  building blocks and then how we can compute limits of sums, products and so  forth using <q>limit laws</q>. This process allows us to compute limits of  complicated functions, using very simple tools and without having to resort to  <q>plugging in numbers</q> or <q>closer and closer</q> or <q><m>\epsilon-\delta</m>  arguments</q>.
+</p>
+
+<p>
+In the examples we saw above, almost all the <em>interesting</em> limits happened  at points where the underlying function was badly behaved <mdash/> where it jumped,  was not defined or blew up to infinity. In those cases we had to be careful and  think about what was happening. Thankfully most functions we will see do not  have too many points at which these sorts of things happen.
+</p>
+
+<p>
+For example, polynomials do not have any nasty jumps and are defined everywhere  and do not <q>blow up</q>. If you plot them, they look smooth
+	<fn>
+		We have  used this term in an imprecise way, but it does have a precise  mathematical meaning.
+	</fn>.
+Polynomials and limits behave very nicely together,  and for any polynomial <m>P(x)</m> and any real number <m>a</m> we have that
+<md>
+<mrow>
+  \lim_{x \to a} P(x) &amp;= P(a)
+</mrow>
+</md>
+That is <mdash/> to evaluate the limit we just plug in the number. We will build up  to this result over the next few pages.
+</p>
+
+<p>
+Let us start with the two easiest limits
+	<fn>
+		Though it lies outside the  scope of the course, you can find the formal <m>\epsilon</m>-<m>\delta</m> proof of this  result at the end of Section<nbsp/><xref ref="sec_opt_formal_limit"/>.
+	</fn>
+</p>
+
+<theorem xml:id="thm_easy_lim"><title>Easiest limits</title>
+<statement><p>
+Let <m>a,c \in \mathbb{R}</m>. The following two limits hold
+<md>
+<mrow>
+  \lim_{x \to a} c &amp; = c &amp; \text{ and }&amp;&amp;
+  \lim_{x \to a} x &amp;= a.
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>
+Since we have not seen too many theorems yet, let us examine it carefully piece  by piece.
+<ul>
+<li>
+	<alert>Let <m>a,c \in \mathbb{R}</m></alert> <mdash/> just as was the case for  definitions, we start a theorem by defining terms and setting the scene. There  is not too much scene to set: the symbols <m>a</m> and <m>c</m> are real numbers.
+</li>
+<li>
+	<alert>The following two limits hold</alert> <mdash/> this doesn't really  contribute much to the statement of the theorem, it just makes it easier to  read.
+</li>
+<li>
+	<m>\ds \mathbf{\lim_{x \to a} c  = c}</m>  <mdash/> when we take the  limit of a  constant function (for example think of <m>c=3</m>), the limit is (unsurprisingly)  just that same constant.
+</li>
+<li>
+	<m>\ds \mathbf{\lim_{x \to a} x = a}</m> <mdash/> as we noted above for general  polynomials, the limit of the function <m>f(x) = x</m> as <m>x</m> approaches a given  point <m>a</m>, is just <m>a</m>. This says something quite obvious <mdash/> as <m>x</m> approaches  <m>a</m>, <m>x</m> approaches <m>a</m> (if you are not convinced then sketch the graph).
+</li>
+</ul>
+</p>
+
+<p>
+Armed with only these two limits, we cannot do very much. But combining these  limits with some arithmetic we can do quite a lot. For a moment, take a step  back from limits for a moment and think about how we construct functions. To  make the discussion a little more precise think about how we might construct  the function
+<md>
+<mrow>
+  h(x) &amp;= \frac{2x-3}{x^2+5x-6}
+</mrow>
+</md>
+</p>
+
+<p>
+If we want to compute the value of the function at
+<m>x=2</m>, then we would
+<ul>
+<li> compute the numerator at <m>x=2</m> </li>
+<li> compute the denominator at <m>x=2</m> </li>
+<li> compute the ratio </li>
+</ul>
+Now to compute the numerator we
+<ul>
+<li> take <m>x</m> and multiply it by 2 </li>
+<li> subtract 3 to the result </li>
+</ul>
+While for the denominator
+<ul>
+<li> multiply <m>x</m> by <m>x</m> </li>
+<li> multiply <m>x</m> by 5 </li>
+<li> add these two numbers and subtract <m>6</m> </li>
+</ul>
+This sequence of operations can be represented pictorially as the tree shown in Figure<nbsp/><xref ref="fig_parse_me"/> below.</p>
+
+<figure xml:id="fig_parse_me">
+ <caption/>
+ <image width="80%" source="text/figs/tree3"/>
+</figure >
+
+<p>
+Such trees were discussed in Section<nbsp/><xref ref="sec_parsing"/> (now is not a bad time to quickly review that section before proceeding). The point here is that in order to compute the  value of the function we just repeatedly add, subtract, multiply and divide constants and  <m>x</m>.
+</p>
+
+<p>
+To compute the limit of the above function at <m>x=2</m> we can do something very  similar. From the previous theorem we know how to compute
+<md>
+<mrow>
+  \lim_{x \to 2} c &amp;= c &amp;&amp; \text{and} &amp; \lim_{x \to 2} x &amp;= 2
+</mrow>
+</md>
+and the next theorem will tell us how to stitch together these two limits using  the arithmetic we used to construct the function.
+</p>
+
+<theorem xml:id="thm_arith_lim"><title>Arithmetic of limits</title>
+<statement><p>
+Let <m>a,c \in \mathbb{R}</m>, let <m>f(x)</m> and <m>g(x)</m> be defined for all <m>x</m>'s that lie in  some interval about <m>a</m> (but <m>f,g</m> need not be defined exactly at <m>a</m>).
+<md>
+<mrow>
+  \lim_{x \to a} f(x)&amp;=F &amp; \lim_{x \to a} g(x) &amp;=G
+</mrow>
+</md>
+exist with <m>F,G \in \mathbb{R}</m>. Then the following limits hold
+<ul>
+<li>
+	<m>\ds \lim_{x \to a} ( f(x) + g(x) ) = F+G</m> <mdash/> limit of the sum is the  sum of the limits.
+</li>
+<li>
+	<m>\ds \lim_{x \to a} ( f(x) - g(x) ) = F - G</m> <mdash/> limit of the difference  is the difference of the limits.
+</li>
+<li> <m>\ds \lim_{x \to a} c f(x) = c F</m>. </li>
+<li>
+	<m>\ds \lim_{x \to a} ( f(x) \cdot g(x) ) = F \cdot G</m> <mdash/> limit of  the product is the product of limits.
+</li>
+<li> If <m>G \neq 0</m> then <m>\ds \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{F}{G}</m> </li>
+</ul>
+Note <mdash/> be careful with this last one <mdash/> the denominator cannot be zero.
+</p></statement>
+</theorem>
+
+<p>
+The above theorem shows that limits interact very simply with arithmetic. If  you are asked to find the limit of a sum then the answer is just the sum of the  limits. Similarly the limit of a product is just the product of the limits.
+</p>
+
+<p>
+How do we apply the above theorem to the rational function <m>h(x)</m> we defined  above? Here is a warm-up example:
+</p>
+
+<example><title>Using limit laws</title>
+<p>
+You are given two functions <m>f,g</m> (not explicitly) which have the following  limits as <m>x</m> approaches 1:
+<md>
+<mrow>
+  \lim_{x \to 1} f(x)&amp;=3 &amp;&amp; \text{and} &amp; \lim_{x\to 1} g(x)&amp;=2
+</mrow>
+</md>
+Using the above theorem we can compute
+<md>
+<mrow>
+ \lim_{x \to 1} 3f(x) &amp;= 3 \times 3 = 9
+</mrow><mrow>
+ \lim_{x \to 1} 3f(x) -g(x) &amp;= 3\times 3 -2 = 7
+</mrow><mrow>
+ \lim_{x \to 1} f(x) g(x) &amp;= 3\times 2 = 6
+</mrow><mrow>
+ \lim_{x \to 1} \frac{f(x)}{f(x) -g(x)} &amp;= \frac{3}{3-2} = 3
+</mrow>
+</md>
+</p>
+</example>
+
+
+<p>Another simple example</p>
+<example><title>More using limit laws</title>
+<p>
+Find <m>\ds \lim_{x \to 3} 4x^2-1</m>
+</p>
+
+<p>
+We use the arithmetic of limits:
+<md>
+<mrow>
+  \lim_{x \to 3} 4x^2-1
+  &amp;= \left( \lim_{x \to 3} 4x^2 \right) - \lim_{x \to 3} 1
+  &amp; \text{difference of limits}
+</mrow><mrow>
+  &amp;= \left( \lim_{x \to 3} 4  \cdot \lim_{x \to 3} x^2 \right) -  \lim_{x \to 3} 1
+  &amp; \text{product of limits}
+</mrow><mrow>
+  &amp;= 4 \cdot \left( \lim_{x \to 3} x^2 \right) -  1
+  &amp; \text{limit of constant}
+</mrow><mrow>
+  &amp;= 4 \cdot \left( \lim_{x \to 3} x \right) \cdot \left( \lim_{x \to 3} x  \right)-1
+  &amp; \text{product of limits}
+</mrow><mrow>
+  &amp;= 4 \cdot 3 \cdot 3 - 1
+  &amp; \text{limit of $x$}
+</mrow><mrow>
+  &amp;= 36 - 1
+</mrow><mrow>
+  &amp;= 35
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+This is an excruciating level of detail, but when you first use this theorem  and try some examples it is a good idea to do things step by step by step until  you are comfortable with it.
+</p>
+
+<example><title>Yet more using limit laws</title>
+<p>
+Yet another limit <mdash/> compute <m>\ds \lim_{x\to 2} \frac{x}{x-1}</m>.
+</p>
+
+<p>
+To apply the arithmetic of limits, we need to examine numerator and  denominator separately and make sure the limit of the denominator is non-zero.  Numerator first:
+<md>
+<mrow>
+  \lim_{x \to 2} x &amp; = 2 &amp; \text{limit of $x$}
+</mrow>
+<intertext>and now the denominator:</intertext><mrow>
+  \lim_{x \to 2} x-1
+  &amp; = \left( \lim_{x \to 2} x \right) - \left( \lim_{x \to 2} 1 \right)
+  &amp; \text{difference of limits}
+</mrow><mrow>
+  &amp; = 2 - 1
+  &amp; \text{limit of $x$ and limit of constant}
+  &amp; = 1
+</mrow>
+</md>
+Since the limit of the denominator is non-zero we can put it back together to  get
+<md>
+<mrow>
+  \lim_{x\to 2} \frac{x}{x-1} &amp;= \frac{\ds \lim_{x\to 2} x}{\ds \lim_{x \to
+2}(x-1)}
+</mrow><mrow>
+  &amp;= \frac{2}{1}
+</mrow><mrow>
+  &amp;= 2
+</mrow>
+</md>
+</p></example>
+
+<p>
+In the next example we show that many different things can happen if  the limit of the denominator is zero.
+</p>
+
+<example xml:id="eg_lim_rat"><title>Be careful with limits of ratios</title>
+<p>
+We must be careful when computing the limit of a ratio <mdash/> it  is the ratio of the limits except when the limit of the denominator is zero.  When the limit of the denominator is zero Theorem<nbsp/><xref ref="thm_arith_lim"/>  <alert>does not apply</alert> and a few interesting things can happen
+<ul>
+<li>
+	If the limit of the numerator is non-zero then the limit of the ratio  does not exist
+	<md>
+	<mrow>
+	  \lim_{x \to a} \frac{f(x)}{g(x)} &amp;= DNE &amp; \text{when $\lim_{x\to a} f(x) \neq
+	0$ and $\lim_{x \to a} g(x)=0$}
+	</mrow>
+	</md>
+	For example, <m>\ds \lim_{x \to 0} \frac{1}{x^2} = DNE</m>.
+</li>
+<li>
+<p>
+	If the limit of the numerator is zero then the above theorem does not  give us enough information to decide whether or not the limit exists. It is  possible that
+	<ul>
+	<li>
+		the limit does not exist, eg. <m>\ds \lim_{x \to 0} \frac{x}{x^2} =  \lim_{x  \to 0} \frac{1}{x} = DNE</m>
+	</li>
+	<li>
+		the limit is <m>\pm \infty</m>, eg. <m>\ds \lim_{x \to 0} \frac{x^2}{x^4} =  \lim_{x  \to 0} \frac{1}{x^2} = +\infty</m> or <m>\ds \lim_{x \to 0} \frac{-x^2}{x^4} =  \lim_{x\to 0} \frac{-1}{x^2} = -\infty</m>.
+	</li>
+	<li> the limit is zero, eg. <m>\ds \lim_{x \to 0} \frac{x^2}{x} = 0</m> </li>
+	<li> the limit exists and is non-zero, eg. <m>\ds \lim_{x \to 0} \frac{x}{x} =  1</m>
+	</li>
+	</ul>
+</p>
+</li>
+</ul>
+Now while the above examples are very simple and a little contrived they serve  to illustrate the point we are trying to make <mdash/> be careful if the limit of  the denominator is zero.
+</p>
+</example>
+
+<p>
+We now have enough theory to return to our rational function and compute its  limit as <m>x</m> approaches 2.
+</p>
+
+<example><title>More on limits of ratios</title>
+<p>
+Let <m>\ds h(x) = \frac{2x-3}{x^2+5x-6}</m> and find its limit as <m>x</m> approaches  <m>2</m>.
+</p>
+
+<p>
+Since this is the limit  of a ratio, we compute the limit of the numerator and  denominator separately. Numerator first:
+<md>
+<mrow>
+  \lim_{x \to 2} 2x-3
+  &amp;= \left( \lim_{x \to 2} 2x \right) - \left( \lim_{x \to 2} 3 \right)
+  &amp; \text{difference of limits}
+</mrow><mrow>
+  &amp;= 2 \cdot \left( \lim_{x \to 2} x \right) -3
+  &amp; \text{product of limits and limit of constant}
+</mrow><mrow>
+  &amp;= 2 \cdot 2 -3
+  &amp; \text{limits of $x$}
+</mrow><mrow>
+  &amp;= 1
+</mrow>
+</md>
+Denominator next:
+<md>
+<mrow>
+  \lim_{x \to 2} x^2+5x-6
+  &amp;= \left( \lim_{x \to 2} x^2 \right) + \left( \lim_{x \to 2} 5x \right)
+  - \left( \lim_{x \to 2} 6 \right)
+  &amp; \text{sum of limits}
+</mrow><mrow>
+  &amp;= \left( \lim_{x \to 2} x \right)\cdot \left( \lim_{x \to 2} x \right)
+  + 5 \cdot \left( \lim_{x \to 2} x \right) - 6
+  &amp; \text{product of limits and limit of constant}
+</mrow><mrow>
+  &amp;= 2 \cdot 2 + 5 \cdot 2 - 6
+  &amp; \text{limits of $x$}
+</mrow><mrow>
+  &amp;= 8
+</mrow>
+</md>
+Since the limit of the denominator is non-zero, we can obtain our result by  taking the ratio of the separate limits.
+<md>
+<mrow>
+\lim_{x \to 2} \frac{2x-3}{x^2+5x-6}
+  &amp;= \frac{\ds \lim_{x \to 2} 2x-3}{\ds \lim_{x \to 2} x^2+5x-6} = \frac{1}{8}
+</mrow>
+</md>
+</p>
+
+<p>
+The above works out quite simply. However, if we were to take the limit as <m>x  \to 1</m> then things are a bit harder. The limit of the numerator is:
+<md>
+<mrow>
+  \lim_{x \to 1} 2x-3 &amp;= 2 \cdot 1 - 3 = -1
+</mrow>
+</md>
+(we have not listed all the steps). And the limit of the denominator is
+<md>
+<mrow>
+  \lim_{x \to 1} x^2 +5x-6 &amp;= 1 \cdot 1 + 5 - 6 = 0
+</mrow>
+</md>
+Since the limit of the numerator is non-zero, while the limit of the  denominator is zero, the limit of the ratio does not exist.
+<md>
+<mrow>
+\lim_{x \to 1} \frac{2x-3}{x^2+5x-6}
+  &amp;= DNE
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+It is <alert>IMPORTANT TO NOTE</alert> that it is not correct to write
+<md>
+<mrow>
+\lim_{x \to 2} \frac{2x-3}{x^2+5x-6}
+  &amp;= \frac{-1}{0} = DNE
+</mrow>
+</md>
+Because we can only write
+<md>
+<mrow>
+  \lim_{x \to a} \frac{f(x)}{g(x)}
+  &amp;= \frac{\ds \lim_{x \to a} f(x)}{\ds \lim_{x \to a} g(x) } = \text{something}
+</mrow>
+</md>
+when the limit of the denominator is non-zero (see Example<nbsp/><xref ref="eg_lim_rat"/> above).
+</p>
+
+<p>
+With a little care you can use the arithmetic of limits to obtain the  following rules for limits of powers of functions and limits of roots of  functions:
+</p>
+
+<theorem xml:id="thm_lim_powers"><title>More arithmetic of limits <mdash/> powers and roots</title>
+<statement><p>
+Let <m>n</m> be a positive integer, let <m>a \in \mathbb{R}</m> and let <m>f</m> be a  function so that
+<md>
+<mrow>
+  \lim_{x \to a} f(x) &amp;= F
+</mrow>
+</md>
+for some real number <m>F</m>. Then the following holds
+<md>
+<mrow>
+  \lim_{x \to a} \left( f(x) \right)^n
+  &amp;= \left(\lim_{x \to a} f(x) \right)^n = F^n
+</mrow>
+</md>
+so that the limit of a power is the power of the limit. Similarly, if
+<ul>
+<li> <m>n</m> is an even number and <m>F \gt 0</m>, or </li>
+<li> <m>n</m> is an odd number and <m>F</m> is any real number </li>
+</ul>
+then
+<md>
+<mrow>
+  \lim_{x \to a} \left( f(x) \right)^{1/n}
+  &amp;= \left(\lim_{x \to a} f(x) \right)^{1/n} = F^{1/n}
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>
+Notice that we have to be careful when taking roots of limits that might be  negative numbers. To see why, consider the case <m>n=2</m>, the limit
+<md>
+<mrow>
+  \lim_{x \to 4} x^{1/2} &amp;= 4^{1/2} = 2
+</mrow><mrow>
+  \lim_{x \to 4} (-x)^{1/2} &amp;= (-4)^{1/2} = \text{not a real number}
+</mrow>
+</md>
+In order to evaluate such limits properly we need to use complex numbers which  are beyond the scope of this text.
+</p>
+
+<p>
+Also note that the notation <m>x^{1/2}</m> refers to the <em>positive</em> square root  of <m>x</m>. While <m>2</m> and <m>(-2)</m> are both square-roots of <m>4</m>, the notation  <m>4^{1/2}</m> means <m>2</m>. This is something we must be careful of
+	<fn>
+		Like  ending sentences in prepositions <mdash/> <q>This is something up with which we will  not put.</q> This quote is attributed to Churchill though there is some dispute as to  whether or not he really said it.
+	</fn>.
+</p>
+
+<p>
+So again <mdash/> let us do a few examples and carefully note what we are doing.
+</p>
+
+<example><title><m>\ds \lim_{x \to 2} (4x^2-3)^{1/3}</m></title>
+<p>
+<md>
+<mrow>
+  \lim_{x \to 2} (4x^2-3)^{1/3} &amp;=
+  \left( (\lim_{x\to 2} 4x^2) - (\lim_{x \to 2} 3) \right)^{1/3}
+</mrow><mrow>
+  &amp;= \left( 4 \cdot 2^2  - 3 \right)^{1/3}
+</mrow><mrow>
+  &amp;= \left( 16-3 \right)^{1/3}
+</mrow><mrow>
+  &amp;= 13^{1/3}
+</mrow>
+</md>
+</p></example>
+
+
+<p>
+By combining the last few theorems we can make the evaluation of limits of  polynomials and rational functions much easier:
+</p>
+
+<theorem><title>Limits of polynomials and rational functions</title>
+<statement><p>
+Let <m>a \in \mathbb{R}</m>, let <m>P(x)</m> be a polynomial and let <m>R(x)</m> be a rational  function. Then
+<md>
+<mrow>
+  \lim_{x \to a} P(x) &amp;= P(a)
+</mrow>
+</md>
+and provided <m>R(x)</m> is defined at <m>x=a</m> then
+<md>
+<mrow>
+  \lim_{x \to a} R(x) &amp;= R(a)
+</mrow>
+</md>
+If <m>R(x)</m> is not defined at <m>x=a</m> then we are not able to apply this result.
+</p></statement>
+</theorem>
+
+<p>
+So the previous examples are now much easier to compute:
+<md>
+<mrow>
+  \ds\lim_{x \to 2} \frac{2x-3}{x^2+5x-6} &amp;=&amp; \ds \frac{4-3}{4+10-6} &amp;=&amp; \ds \frac{1}{8}
+</mrow><mrow>
+  \ds\lim_{x\to 2} (4x^2-1) &amp;=&amp; 16-1 &amp;=&amp; 15
+</mrow><mrow>
+  \ds\lim_{x\to 2} \frac{x}{x-1} &amp;=&amp; \ds \frac{2}{2-1} &amp;=&amp; 2
+</mrow>
+</md>
+</p>
+
+<p>
+It is clear that limits of polynomials are very easy, while those of rational  functions are easy except when the denominator might go to zero. We have seen  examples where the resulting limit does not exist, and some where it does. We  now work to explain this more systematically. The following example demonstrates that it  is sometimes possible to take the limit of a rational function to a point at which the  denominator is zero. Indeed we must be able to do exactly this in order to be able to define derivatives in the next chapter.
+</p>
+
+<example xml:id="eg_zero_cancel_limit"><title>Numerator and denominator both go to 0</title>
+<p>
+Consider the limit
+<md>
+<mrow>
+    \lim_{x \to 1} \frac{x^3-x^2}{x-1}.
+</mrow>
+</md>
+If we try to apply the arithmetic of limits then we compute the limits of the numerator and denominator separately
+<md>
+<mrow>
+    \lim_{x \to 1} x^3-x^2 &amp;= 1-1 = 0
+</mrow>
+<mrow>
+    \lim_{x \to 1} x-1 &amp;= 1-1 = 0
+</mrow>
+</md>
+Since the denominator is zero, we cannot apply our theorem and we are, for the  moment, stuck. However, there is more that we can do here <mdash/> the hint is that  the numerator and denominator <em>both</em> approach zero as <m>x</m> approaches 1. This  means that there might be something we can cancel.
+</p>
+
+<p>
+So let us play with the expression a little more before we take the limit:
+<md>
+<mrow>
+  \frac{x^3-x^2}{x-1} &amp;= \frac{x^2(x-1)}{x-1} = x^2  &amp; \text{ provided } x \neq 1.
+</mrow>
+</md>
+So what we really have here is the following function
+<md>
+<mrow>
+  \frac{x^3-x^2}{x-1} &amp;= \begin{cases}
+                          x^2 &amp; x \neq 1\\
+                          \text{undefined } &amp; x = 1
+                         \end{cases}
+</mrow>
+</md>
+If we plot the above function the graph looks exactly the same as <m>y=x^2</m>  except that the function is not defined at <m>x=1</m> (since at <m>x=1</m> both numerator and  denominator are zero).
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/rat1"/>
+</sidebyside>
+
+<p>
+When we compute a limit as <m>x \to a</m>, the value of the function exactly at  <m>x=a</m> is irrelevant. We only care what happens to the function as we bring <m>x</m>  very close to <m>a</m>. So for the above problem we can write
+<md>
+<mrow>
+    \frac{x^3-x^2}{x-1} &amp;= x^2 &amp; \text{when $x$ is close to $1$ but not at $x=1$}
+</mrow>
+</md>
+So the limit as <m>x \to 1</m> of the function is the same as the limit <m>\ds \lim_{x\to  1} x^2</m> since the functions are the same except exactly at <m>x=1</m>. By this  reasoning we get
+<md>
+<mrow>
+    \lim_{x \to 1} \frac{x^3-x^2}{x-1} &amp;=
+    \lim_{x \to 1} x^2 = 1
+</mrow>
+</md>
+</p>
+</example>
+
+<p>The reasoning in the above example can be made more general:</p>
+
+<theorem>
+<statement><p>
+If <m>f(x) = g(x)</m> except when <m>x=a</m> then <m>\ds \lim_{x\to a} f(x) = \lim_{x\to a}  g(x)</m> provided the limit of <m>g</m> exists.
+</p></statement>
+</theorem>
+
+<p>
+How do we know when to use this theorem? The big clue is that when we try to  compute the limit in a naive way, we end up with <m>\frac{0}{0}</m>. We know that  <m>\frac{0}{0}</m> does not make sense, but it is an indication that there might be a  common factor between numerator and denominator that can be cancelled. In the  previous example, this common factor was <m>(x-1)</m>.
+</p>
+
+<example xml:id="eg_easy_0on0_limit"><title>Another numerator and denominator both go to 0 limit</title>
+<p>
+Using this idea compute
+<md>
+<mrow>
+  \lim_{h \to 0} \frac{(1+h)^2-1}{h}
+ </mrow>
+</md>
+</p>
+
+<p><ul>
+<li>
+	First we should check that we cannot just substitute <m>h=0</m> into this <mdash/>  clearly we cannot because the denominator would be <m>0</m>.
+</li>
+<li>
+	But we should also check the numerator to see if we have <m>\frac{0}{0}</m>, and we see  that the numerator gives us <m>1-1 = 0</m>.
+</li>
+<li>
+	Thus we have a hint that there is a common factor that we might be able to  cancel. So now we look for the common factor and try to cancel it.
+	<md>
+	<mrow>
+	  \frac{(1+h)^2-1}{h} &amp;= \frac{1+2h+h^2-1}{h} &amp; \text{expand}
+	</mrow><mrow>
+	  &amp;= \frac{2h+h^2}{h} = \frac{h(2+h)}{h} &amp; \text{factor and then cancel}
+	</mrow><mrow>
+	  &amp;= 2+h
+	</mrow>
+	</md>
+</li>
+<li>
+	Thus we really have that
+	<md>
+	<mrow>
+	  \frac{(1+h)^2-1}{h}&amp;= \begin{cases}
+							 2+h &amp; h \neq 0 \\
+				\text{undefined} &amp; h=0
+							\end{cases}
+	</mrow>
+	</md>
+	and because of this
+	<md>
+	<mrow>
+	  \lim_{h \to 0} \frac{(1+h)^2-1}{h}
+	  &amp;= \lim_{h \to 0} 2+h
+	</mrow><mrow>
+	  &amp;= 2
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+</example>
+
+<p
+>Of course <mdash/> we have written everything out in great detail here and  that is way more than is required for a solution to such a problem. Let us do  it again a little more succinctly.
+</p>
+
+<example><title><m>\ds \lim_{h \to 0} \frac{(1+h)^2-1}{h}</m></title>
+<p>
+Compute the following limit:
+<md>
+<mrow>
+  \lim_{h \to 0} \frac{(1+h)^2-1}{h}
+</mrow>
+</md>
+If we try to use the arithmetic of limits, then we see that the limit of the  numerator and the limit of the denominator are both zero. Hence we should try  to factor them and cancel any common factor. This gives
+<md>
+<mrow>
+  \lim_{h \to 0} \frac{(1+h)^2-1}{h}
+  &amp;= \lim_{h \to 0} \frac{1+2h+h^2-1}{h}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} 2+h
+</mrow><mrow>
+  &amp;= 2
+ </mrow>
+</md>
+</p>
+</example>
+
+<p>
+Notice that even though we did this example carefully above, we have still  written some text in our working explaining what we have done. You should  always think about the reader and if in doubt, put in more explanation rather  than less. We could make the above example even more terse
+</p>
+
+<example><title>Redoing previous example with fewer words</title>
+<p>
+Compute the following limit:
+<md>
+<mrow>
+  \lim_{h \to 0} \frac{(1+h)^2-1}{h}
+ </mrow>
+</md>
+Numerator and denominator both go to zero as <m>h\to 0</m>. So factor and simplify:
+<md>
+<mrow>
+  \lim_{h \to 0} \frac{(1+h)^2-1}{h} &amp;= \lim_{h \to 0} \frac{1+2h+h^2-1}{h}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} 2+h = 2
+</mrow>
+</md>
+</p></example>
+
+
+<p>A slightly harder one now</p>
+
+<example xml:id="eg_zero_cancel_limit_harder"><title>A harder limit with cancellations</title>
+<p>
+Compute the limit
+<md>
+<mrow>
+  \lim_{x \to 0} \frac{x}{\sqrt{1+x}-1}
+</mrow>
+</md>
+If we try to use the arithmetic of limits we get
+<md>
+<mrow>
+  \lim_{x \to 0} x &amp;= 0
+</mrow><mrow>
+  \lim_{x \to 0} \sqrt{1+x}-1 &amp;= \sqrt{ \lim_{x \to 0} 1+x}-1 = 1-1 =0
+</mrow>
+</md>
+So doing the naive thing we'd get <m>0/0</m>. This suggests a common factor that can  be cancelled. Since the numerator and denominator are not polynomials we have  to try other tricks
+	<fn>
+		While these tricks are useful (and even cute<fn>
+			Mathematicians tend to have quite strong opinions on the
+			beauty of mathematics. For example, Paul Erdős
+			<fn>
+				Arguably the most prolific mathematician of the 20th century  <mdash/> definitely worth a google. The authors do not know his opinion on nested  footnotes
+				<fn>
+					Nested footnotes are generally frowned upon, since they can get  quite contorted; see XKCD-1208 and also the novel <q>House of Leaves</q> by Mark Z. Danielewski.
+				</fn>.
+			</fn>
+			said <q>Why are numbers beautiful? It's like asking why is Beethoven's Ninth
+			Symphony beautiful. If you don't see why, someone can't tell you. I know
+			numbers are beautiful. If they aren't beautiful, nothing is.</q>.
+		</fn> <mdash/> this footnote is better in the online edition),
+		Taylor polynomials (see Section<nbsp/><xref ref="sec_DIFFTaylor"/>) give us a more systematic way of approaching this problem.
+	</fn>.
+We can simplify the denominator <m>\sqrt{1+x}-1</m> a  lot, and in particular eliminate the square root, by multiplying it by  its conjugate <m>\sqrt{1+x}+1</m>.
+<md>
+<mrow>
+  \frac{x}{\sqrt{1+x}-1}
+  &amp;=\frac{x}{\sqrt{1+x}-1} \times \frac{\sqrt{1+x}+1}{\sqrt{1+x}+1}
+  &amp; \text{multiply by $\frac{\text{conjugate}}{\text{conjugate}}=1$}
+</mrow><mrow>
+    &amp;=\frac{x \left( \sqrt{1+x}+1\right)}
+  {\left(\sqrt{1+x}-1\right)\left(\sqrt{1+x}+1\right)}
+  &amp; \text{bring things together }
+</mrow><mrow>
+    &amp;=\frac{x \left( \sqrt{1+x}+1\right)}
+  {\left(\sqrt{1+x}\right)^2 - 1\cdot 1}
+  &amp; \text{since $(a-b)(a+b)=a^2-b^2$}
+</mrow><mrow>
+    &amp;=\frac{x \left( \sqrt{1+x}+1\right)}
+  {1+x - 1}
+  &amp; \text{clean up a little}
+</mrow><mrow>
+    &amp;=\frac{x \left( \sqrt{1+x}+1\right)}{x}
+</mrow><mrow>
+  &amp;= \sqrt{1+x}+1
+  &amp; \text{cancel the $x$}
+</mrow>
+</md>
+So now we have
+<md>
+<mrow>
+  \lim_{x \to 0} \frac{x}{\sqrt{1+x}-1} &amp;= \lim_{x \to 0} \sqrt{1+x}+1
+</mrow><mrow>
+  &amp;= \sqrt{1+0}+1 = 2
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+How did we know what to multiply by? Our function was of the form
+<md>
+<mrow>
+  \frac{a}{\sqrt{b} - c}
+</mrow>
+</md>
+so, to eliminate the square root from the denominator, we employ a trick <mdash/> we multiply  by 1. Of course, multiplying by 1 doesn't do anything. But if you multiply by 1  carefully you can leave the value the same, but change the form of the  expression. More precisely
+<md>
+<mrow>
+  \frac{a}{\sqrt{b} - c}  &amp;= \frac{a}{\sqrt{b} - c} \cdot 1
+</mrow><mrow>
+  &amp;= \frac{a}{\sqrt{b} - c} \cdot  \underbrace{\frac{\sqrt{b}+c}{\sqrt{b}+c}}_{=1}
+</mrow><mrow>
+  &amp;= \frac{a \left(\sqrt{b}+c \right)}{\left(\sqrt{b} - c\right)\left(\sqrt{b}+c \right)}
+  &amp; \text{expand denominator carefully}
+</mrow><mrow>
+  &amp;= \frac{a \left(\sqrt{b}+c \right)}
+  	{\sqrt{b} \cdot \sqrt{b} - c\sqrt{b} + c\sqrt{b} - c\cdot c}
+  &amp; \text{do some cancellation}
+</mrow><mrow>
+  &amp;= \frac{a \left(\sqrt{b}+c \right)} {b - c^2}
+</mrow>
+</md>
+Now the numerator contains roots, but the denominator is just a polynomial.
+</p>
+
+<p>
+Before we move on to limits at infinity, there is one more theorem to see.  While the scope of its application is quite limited, it can be extremely  useful. It is called a sandwich theorem or a squeeze theorem for reasons that  will become apparent.
+</p>
+
+<p>
+Sometimes one is presented with an unpleasant ugly function such as
+<md>
+<mrow>
+  f(x) &amp;= x^2 \sin(\pi/x)
+</mrow>
+</md>
+It is a fact of life, that not all the functions that are encountered in  mathematics will be elegant and simple; this is especially true when the  mathematics gets applied to real world problems. One just has to work with what one gets.  So how can we compute
+<md>
+<mrow>
+  \lim_{x \to 0} x^2 \sin(\pi/x) ?
+</mrow>
+</md>
+Since it is the product of two functions, we might try
+<md>
+<mrow>
+  \lim_{x \to 0} x^2 \sin(\pi/x)
+  &amp;=
+  \left( \lim_{x \to 0} x^2 \right) \cdot \left( \lim_{x \to 0} \sin(\pi/x)
+\right)
+</mrow><mrow>
+  &amp;= 0 \cdot \left( \lim_{x \to 0} \sin(\pi/x)  \right)
+</mrow><mrow>
+  &amp; = 0
+</mrow>
+</md>
+But we just cheated <mdash/> we cannot use the arithmetic of limits theorem here, because the  limit
+<md>
+<mrow>
+  \lim_{x \to 0} \sin(\pi/x) &amp;= DNE
+</mrow>
+</md>
+does not exist. Now we did see the function <m>\sin(\pi/x)</m> before (in  Example<nbsp/><xref ref="eg_sinpix"/>), so you should go back and look at it again.  Unfortunately the theorem <q>the limit of a product is the product of the  limits</q> only holds when the limits you are trying to multiply together actually  exist. So we cannot use it.
+</p>
+
+<p>
+However, we do see that the function naturally decomposes into the product of  two pieces <mdash/> the functions <m>x^2</m> and <m>\sin(\pi/x)</m>. We have sketched the two  functions  in the figure on the left below.
+</p>
+
+<sidebyside width="90%">
+<image source="text/figs/squeeze1"/>
+</sidebyside>
+
+<p>
+While <m>x^2</m> is a very well behaved function and we know quite a lot about it,  the function <m>\sin(\pi/x)</m> is quite ugly. One of the few things we can say  about it is the following
+<md>
+<mrow>
+  -1 \leq \sin(\pi/x) \leq 1 &amp;&amp; \text{provided $x \neq 0$}
+</mrow>
+</md>
+But if we multiply this expression by <m>x^2</m> we get (because <m>x^2 \geq 0</m>)
+<md>
+<mrow>
+  -x^2 \leq x^2\sin(\pi/x) \leq x^2 &amp;&amp; \text{provided $x \neq 0$}
+</mrow>
+</md>
+and we have sketched the result in the figure above (on the right). So the  function we are interested in is <em>squeezed</em> or <em>sandwiched</em> between  the functions <m>x^2</m> and <m>-x^2</m>.
+</p>
+
+<p>
+If we focus in on the picture close to <m>x=0</m> we see that <m>x</m> approaches <m>0</m>,  the functions <m>x^2</m> and <m>-x^2</m> both approach <m>0</m>. Further, because <m>x^2\sin(\pi/x)</m> is sandwiched between them, it seems that it also approaches  <m>0</m>.
+</p>
+
+<p>The following theorem tells us that this is indeed the case:</p>
+
+<theorem xml:id="thm_squeeze"><title>Squeeze theorem (or sandwich theorem or pinch theorem)</title>
+<statement><p>
+Let <m>a \in \mathbb{R}</m> and let <m>f,g,h</m> be three functions so that
+<md>
+<mrow>
+    f(x) \leq g(x) \leq h(x)
+  </mrow>
+</md>
+for all <m>x</m> in an interval around <m>a</m>, except possibly exactly at <m>x=a</m>. Then  if
+<md>
+<mrow>
+    \lim_{x \to a} f(x) &amp;= \lim_{x \to a} h(x) = L
+</mrow>
+</md>
+then it is also the case that
+<md>
+<mrow>
+	\lim_{x \to a} g(x) &amp;= L
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+
+<p>
+Using the above theorem we can compute the limit we want and write it up nicely.
+</p>
+
+<example><title><m>\ds \lim_{x \to 0} x^2 \sin(\pi/x) </m></title>
+<p>
+Compute the limit
+<me>
+\lim_{x \to 0} x^2 \sin(\pi/x)
+</me>
+</p>
+
+<p>
+Since <m>-1 \leq \sin(\theta) \leq 1</m> for all real numbers <m>\theta</m>, we have
+<md>
+<mrow>
+  -1 \leq \sin(\pi /x ) \leq 1 &amp;&amp; \text{for all } x \neq 0
+</mrow>
+</md>
+Multiplying the above by <m>x^2</m> we see that
+<md>
+<mrow>
+  -x^2 \leq x^2 \sin(\pi /x ) \leq x^2 &amp;&amp; \text{for all } x\neq0
+</mrow>
+</md>
+Since <m>\ds \lim_{x \to 0} x^2 = \lim_{x \to 0} (-x^2) = 0</m> by the sandwich  (or squeeze or pinch) theorem we have
+<md>
+<mrow>
+  \lim_{x \to 0} x^2 \sin(\pi/x) &amp;= 0
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+Notice how we have used <q>words</q>. We have remarked on this several times  already in the text, but we will keep mentioning it. It is okay to use words in  your answers to maths problems <mdash/> and you should do so! These let the reader  know what you are  doing and help you understand what you are doing.
+</p>
+
+<example><title>Another sandwich theorem example</title>
+<p>
+Let <m>f(x)</m> be a function such that <m>1 \leq f(x) \leq x^2-2x+2</m>. What is  <m>\ds \lim_{x \to 1} f(x)</m>?
+</p>
+
+<p>
+We are already supplied with an inequality, so it is likely that it is going to  help us. We should examine the limits of each side to see if they are the same:
+<md>
+<mrow>
+  \lim_{x \to 1} 1 &amp;= 1
+</mrow><mrow>
+  \lim_{x \to 1} x^2-2x+2 &amp;= 1-2+2 = 1
+</mrow>
+</md>
+So we see that the function <m>f(x)</m> is trapped between two functions that both  approach <m>1</m> as <m>x \to 1</m>. Hence by the sandwich / pinch / squeeze theorem, we  know that
+<md>
+<mrow>
+  \lim_{x \to 1} f(x) &amp; =1
+</mrow>
+</md>
+</p>
+</example>
+
+
+<p>
+To get some intuition as to why the squeeze theorem is true, consider when <m>x</m> is very very close to <m>a</m>.  In particular, consider when <m>x</m> is sufficiently close to <m>a</m> that we know <m>h(x)</m> is within <m>10^{-6}</m> of <m>L</m>  and that <m>f(x)</m> is also within <m>10^{-6}</m> of <m>L</m>. That is
+<md>
+<mrow>
+	|h(x)-L| &amp; \lt 10^{-6}  &amp; \text{and}&amp;&amp; |f(x)-L| &amp; \lt 10^{-6}.
+</mrow>
+</md>
+This means that
+<md>
+<mrow>
+	L-10^{-6} &amp; \lt  f(x) \leq h(x)  \lt  L+10^{-6}
+</mrow>
+</md>
+since we know that <m>f(x) \leq h(x)</m>.
+</p>
+
+<p>
+But now by the hypothesis of the squeeze theorem we know that <m>f(x) \leq g(x) \leq h(x)</m> and so we have
+<md>
+<mrow>
+L-10^{-6} &amp; \lt  f(x) \leq g(x) \leq h(x)  \lt  L+10^{-6}
+</mrow>
+</md>
+And thus we know that
+<me>
+L-10^{-6} \leq g(x) \leq L+10^{-6}
+</me>
+That is <m>g(x)</m> is also within <m>10^{-6}</m> of <m>L</m>.
+</p>
+
+<p>
+In this argument our choice of <m>10^{-6}</m> was arbitrary, so we can really replace <m>10^{-6}</m> with any small number we like.  Hence we know that we can force <m>g(x)</m> as close to <m>L</m> as we like, by bringing <m>x</m> sufficiently close to <m>a</m>. We give  a more formal and rigorous version of this argument at the end of Section<nbsp/><xref ref="sec_proof_arith_lim"/>.
+</p>
+
+</subsection>
+
+
+<xi:include href="../problems/prob_s1.4.xml"/>
+
+</section>

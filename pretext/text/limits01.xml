@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_first_lim">
+<title>Drawing tangents and a first limit</title>
+<subsection><title>Drawing tangents and a first limit</title>
+
+
+<p>
+Our motivation for developing <q>limit</q> <mdash/> being the title and subject of this  chapter <mdash/> is going to be two related problems of drawing tangent lines and  computing velocity.
+</p>
+
+<p>
+Now <mdash/> our treatment of limits is not going to be completely mathematically  rigorous, so we won't have too many formal definitions. There will be a few  mathematically precise definitions and theorems as we go, but we'll make sure  there is plenty of explanation around them.
+</p>
+
+<p>
+Let us start with the <q>tangent line</q> problem. Of course, we need to define  <q>tangent</q>, but we won't do this formally. Instead let us draw some pictures.
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/tang1"/>
+</sidebyside>
+<p>
+Here we have drawn two very rough sketches of the curve <m>y=x^2</m> for <m>x \geq 0</m>.  These are not very good sketches for a couple of reasons
+<ul>
+<li> The curve in the figure does not pass through <m>(0,0)</m>, even though  <m>(0,0)</m> lies on <m>y=x^2</m>. </li>
+<li>
+	The top-right end of the curve doubles back on itself and so fails the  vertical line test  that all functions must satisfy
+	<fn>
+		Take a moment to  go back and reread Definition<nbsp/><xref ref="def_function"/>.
+	</fn>
+	<mdash/> for each <m>x</m>-value there  is exactly one <m>y</m>-value for which <m>(x,y)</m> lies on the curve <m>y=x^2</m>.
+</li>
+</ul>
+So let's draw those more carefully.
+</p>
+
+<figure xml:id="fig_tang1a">
+<caption>Sketches of the curve <m>{y=x^2}</m>. (left) shows a tangent line, while  (right) shows a line that is not a tangent.</caption>
+<image width="80%" source="text/figs/tang1a"/>
+</figure>
+
+<p>
+These are better. In both cases we have drawn <m>y=x^2</m> (carefully) and then  picked a point on the curve <mdash/> call it <m>P</m>. Let us zoom in on the <q>good</q>  example:
+</p>
+
+<figure xml:id="fig_tang1aa">
+<caption>
+	We see that, the more we zoom in on the point <m>P</m>, the more the graph of the function  (drawn in black) looks like a straight line <mdash/> that line is the tangent line (drawn in  blue).
+</caption>
+<image width="90%" source="text/figs/tang1aa"/>
+</figure>
+
+<p>
+We see that as we zoom in on the point <m>P</m>, the graph of the function looks  more and more like a straight line. If we kept on zooming in on <m>P</m> then the  graph of the function would be indistinguishable from a straight line. That  line is the tangent line (which we have drawn in blue). A little more  precisely, the blue line is <q>the tangent line to the function at <m>P</m></q>. We  have to be a little careful, because if we zoom in at a different point, then  we will find a different tangent line.
+</p>
+
+<p>
+Now lets zoom in on the <q>bad</q> example we see that the blue line looks very  different from the function; because of this, the blue line is not the tangent  line at <m>P</m>.
+</p>
+
+<figure xml:id="fig_tang1ab">
+<caption>
+	Zooming in on <m>P</m> we see that the function (drawn in black) looks more  and more like a straight line <mdash/> however it is not the same line as that drawn  in blue. Because of this the blue line is not the tangent line.
+</caption>
+<image width="90%" source="text/figs/tang1ab"/>
+</figure>
+
+
+<p>
+Here are a couple more examples of tangent lines
+</p>
+<figure xml:id="fig_tang1b">
+<caption>More examples of tangent lines.</caption>
+<image width="80%" source="text/figs/tang1b"/>
+</figure>
+
+<p>
+The one on the left is very similar to the good example on <m>y=x^2</m> that we saw  above, while the one on the right is different <mdash/> it looks a little like the  <q>bad</q> example, in that it crosses our function the curve at some distant  point. Why is the line in Figure<nbsp/><xref ref="fig_tang1b"/>(right) a tangent while the  line in Figure<nbsp/><xref ref="fig_tang1a"/>(right) not a tangent? To see why, we should  again zoom in close to the point where we are trying to draw the tangent.
+</p>
+
+<sidebyside width="100%">
+<image source="text/figs/tang1c"/>
+</sidebyside>
+
+<p>
+As we saw above in Figure<nbsp/><xref ref="fig_tang1ab"/>, when we zoom in around our example  of <q>not a tangent line</q> we see that the straight line looks very different  from the curve at the <q>point of tangency</q> <mdash/> i.e. where we are trying to draw  the tangent. The line drawn in Figure<nbsp/><xref ref="fig_tang1b"/>(right) looks more and  more like the function as we zoom in.
+</p>
+
+<p>
+This example raises an important point <mdash/> when we are trying to draw a  tangent line, we don't care what the function does a long way from the  point; the tangent line to the curve at a particular point <m>P</m>, depends only on  what the function looks like close to that point <m>P</m>.
+</p>
+
+<p>
+To illustrate this consider the sketch of the function <m>y = \sin(x)</m> and its  tangent line at<nbsp/><m>(x,y)=(0,0)</m>:
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/tang1d"/>
+</sidebyside>
+
+<p>
+As we zoom in, the graph of <m>\sin(x)</m> looks more and more like a straight line  <mdash/> in fact it looks more and more like the line <m>y=x</m>. We have also sketched  this tangent line. What makes this example a little odd is that the tangent  line crosses the function. In the examples above, our tangent lines just  <q>kissed</q> the curve and did not cross it (or at least did not cross it  nearby).
+</p>
+
+<p>
+Using this idea of zooming in at a particular point, drawing a tangent line is  not too hard. However,  finding the equation of the tangent line presents us  with a few challenges. Rather than leaping into the general  theory, let us do a  specific example. Let us find the the equation of the tangent line to the curve  <m>y=x^2</m> at the point <m>P</m> with coordinates
+	<fn>
+		Note that the <em>coordinates</em> <m>(x,y)</m> is an ordered pair of two numbers <m>x</m>  and <m>y</m>. Traditionally the first number is called the <em>abscissa</em> while the  second is the <em>ordinate</em>, but these terms are a little archaic. It is now  much more common to hear people refer to the first number as  the <em><m>x</m>-coordinate</em> and the second as <em><m>y</m>-coordinate</em>.
+	</fn>
+<m>(x,y)=(1,1)</m>.
+</p>
+
+<p>
+To find the equation of a line we either need
+<ul>
+<li> the slope of the line and a point on the line, or </li>
+<li>
+	two points on the line, from which we can compute the slope via the  formula
+	<me>m = \frac{y_2 - y_1}{x_2 - x_1}</me>
+</li>
+</ul>
+and then write down the equation for the line via a formula such as
+<me>  y = m \cdot(x - x_1) + y_1.</me>
+</p>
+
+<p>
+We cannot use the first method because we do not know what the slope of the  tangent line should be. To work out the slope we need calculus <mdash/> so we'll  be able to use this method once we get to the next chapter on <q>differentiation</q>.
+</p>
+
+<p>
+It is not immediately obvious how we can use the second method, since we only  have one point on the curve, namely <m>(1,1)</m>. However we can use it to <q>sneak  up</q> on the answer.  Let's approximate the tangent line, by drawing a line that  passes through <m>(1,1)</m> and some nearby point <mdash/> call it <m>Q</m>. Here is our recipe:
+<ul>
+<li>
+<p>
+	We are given the point <m>P=(1,1)</m> and we are told
+</p>
+	<blockquote>
+	<p>
+	Find the tangent line to the curve <m>y=x^2</m> that passes through <m>P = (1,1)</m>.
+	</p>
+	</blockquote>
+</li>
+<li>
+<p>
+	We don't quite know how to find a line given just 1 point, however we do  know how to find a line passing through 2 points. So pick another point on the  curves whose coordinates are very close to <m>P</m>. Now rather than picking some  actual numbers, I am going to write our second point as <m>Q = (1+h, (1+h)^2)</m>.  That is, a point <m>Q</m> whose <m>x</m>-coordinate is equal to that of <m>P</m> plus a little  bit <mdash/> where the little bit is some small number <m>h</m>.  And since this point  lies on the curve <m>y=x^2</m>, and <m>Q</m>'s x-coordinate is <m>1+h</m>, <m>Q</m>'s y-coordinate must  be <m>(1+h)^2</m>.
+</p>
+
+<p>
+	If having <m>h</m> as an variable rather than a number bothers you, start by  thinking of <m>h</m> as<nbsp/><m>0.1</m>.</p>
+</li>
+<li> A picture of the situation will help. </li>
+</ul>
+</p>
+<sidebyside width="66%">
+  <image source="text/figs/tang2"/>
+</sidebyside>
+<p>
+
+<ul>
+<li>
+	This line that passes through the curve in two places <m>P</m> and <m>Q</m> is  called a <q>secant line</q>.
+</li>
+<li>
+	The slope of the line is then
+	<md>
+	<mrow>
+	  m &amp;= \frac{y_2 - y_1}{x_2-x_1}
+	</mrow><mrow>
+	  &amp;= \frac{(1+h)^2-1}{(1+h)-1}
+	  =  \frac{1+2h+h^2-1}{h}
+	  = \frac{2h+h^2}{h}
+	  = 2+h
+	</mrow>
+	</md>
+	where we have expanded <m>(1+h)^2 = 1+2h+h^2</m> and then cleaned up a bit.
+</li>
+</ul>
+Now this isn't our tangent line because it passes through 2 nearby points on  the curve <mdash/> however it is a reasonable approximation of it. Now we can make  that approximation better and so <q>sneak up</q> on the tangent line by considering  what happens when we move this point <m>Q</m> closer and closer to <m>P</m>. i.e. make the  number <m>h</m> closer and closer to zero.
+</p>
+
+<sidebyside width="90%">
+<image source="text/figs/tang2a"/>
+</sidebyside>
+
+<p>
+First look at the picture. The original choice of <m>Q</m> is on the left, while on  the right we have drawn what happens if we choose <m>h'</m> to be some number a  little smaller than <m>h</m>, so that our point <m>Q</m> becomes a new point <m>Q'</m> that is  a little closer to <m>P</m>. The new approximation is better than the first.
+</p>
+
+<p>
+So as we make <m>h</m> smaller and smaller, we bring <m>Q</m> closer and closer to  <m>P</m>, and make our secant line a better and better approximation of the  tangent line. We can observe what happens to the slope of the line as we  make <m>h</m> smaller by plugging some numbers into our formula <m>m=2+h</m>:
+<md>
+<mrow>
+ h=0.1 &amp;&amp; m = 2.1
+</mrow><mrow>
+ h=0.01 &amp;&amp; m= 2.01
+</mrow><mrow>
+ h=0.001 &amp;&amp; m= 2.001.
+</mrow>
+</md>
+So again we see that as this difference in <m>x</m> becomes smaller and smaller, the  slope appears to be getting closer and closer to <m>2</m>. We can write this more  mathematically as
+<md>
+<mrow>
+ \lim_{h \to 0} \frac{(1+h)^2-1}{h} &amp;= 2
+ </mrow>
+</md>
+This is read as</p>
+
+<blockquote>
+<p>
+ The limit, as <m>h</m> approaches <m>0</m>, of <m>\frac{(1+h)^2-1}{h}</m> is <m>2</m>.
+</p>
+</blockquote>
+
+<p>
+This is our first limit! Notice that we can see this a little more clearly with a quick  bit of algebra:
+<md>
+<mrow>
+\frac{(1+h)^2-1}{h} &amp;= \frac{(1+2h+h^2)-1}{h}
+</mrow><mrow>
+  &amp;= \frac{2h+h^2}{h}
+  &amp; (2+h)
+</mrow>
+<intertext>So it is not unreasonable to expect that</intertext>
+<mrow>
+\lim_{h \to 0} \frac{(1+h)^2-1}{h} &amp;= \lim_{h \to 0} (2+h) = 2.
+</mrow>
+</md>
+</p>
+
+<p>
+Our tangent line can be thought of as the end of this process <mdash/> namely as we  bring <m>Q</m> closer and closer to <m>P</m>, the slope of the secant line comes  closer and closer to that of the tangent line we want. Since we have worked out  what the slope is <mdash/> that is the limit we saw just above <mdash/> we now know  the slope of the tangent line is <m>2</m>. Given this, we can work out the  equation for the tangent line.
+<ul>
+<li>
+	The equation for the line is <m>y=mx+c</m>. We have 2 unknowns <m>m</m> and <m>c</m> <mdash/>  so we need 2 pieces of information to find them.
+</li>
+<li>
+	Since the line is tangent to <m>P = (1,1)</m> we know the line must pass  through <m>(1,1)</m>. From the limit we computed above, we also know that the line  has slope <m>2</m>.
+</li>
+<li>
+	Since the slope is <m>2</m> we know that <m>m=2</m>. Thus the equation of the line  is <m>y=2x+c</m>.
+</li>
+<li>
+	We know that the line passes through <m>(1, 1)</m>, so that <m>y=2x+c</m> must be <m>1</m> when <m>x=1</m>. So <m>1 = 2 \cdot 1 + c</m>, which forces <m>c = -1</m>.
+</li>
+</ul>
+So our tangent line is <m>y=2x-1</m>.
+</p>
+
+</subsection>
+
+<xi:include href="../problems/prob_s1.1.xml"/>
+
+</section>

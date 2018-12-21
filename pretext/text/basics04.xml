@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Functions</title>
+<introduction>
+
+<p>
+Now that we have reviewed basic ideas about sets we can start doing more interesting things with them <mdash/> functions.
+</p>
+
+<p>
+When we are introduced to functions in mathematics, it is almost always as formulas. We take a number <m>x</m> and do some things to it to get a new number <m>y</m>. For example,
+<md>
+<mrow>
+  y = f(x) &amp;= 3x-7
+</mrow>
+</md>
+Here, we take a number <m>x</m>, multiply it by 3 and then subtract seven to get the result.
+</p>
+
+<p>
+This view of functions <mdash/> a function is a formula <mdash/> was how mathematicians defined them up until the 19th century. As basic ideas of sets became better defined, people revised ideas surrounding functions. The more modern definition of a  function between two sets is that it is a rule which assigns to each element of the first  set a unique element of the second set.
+</p>
+
+<p>
+Consider the set of days of the week, and the set containing the alphabet
+<md>
+<mrow>
+  A &amp;= \set{\text{Sunday, Monday}, \text{Tuesday, Wednesday}, \text{Thursday, Friday}, \text{Saturday}, \text{Sunday}}
+</mrow><mrow>
+  B &amp;= \set{\text{a,b,c,d,e}, \dots,\text{x,y,z}}
+</mrow>
+</md>
+We can define a function <m>f</m> that takes a day (that is, an element of <m>A</m>) and turns it into the first letter of that day (that is, an element of <m>B</m>). This is a valid function, though there is no formula. We can draw a picture of the function as
+</p>
+<sidebyside  width="66%">
+<image source="text/figs/days"/>
+</sidebyside>
+<p>
+Clearly such pictures will work for small sets, but will get very messy for big ones. When we shift back to talking about functions on real numbers, then we will switch to using graphs of functions on the Cartesian plane.
+</p>
+
+<p>
+This example is pretty simple, but this serves to illustrate some important points. If our function gives us a rule for taking elements in <m>A</m> and turning them into elements from <m>B</m> then
+<ul>
+<li>
+	the function must be defined for all elements of <m>A</m> <mdash/> that is, no matter which element of <m>A</m> we choose, the function must be able to give us an answer. Every function must have this property.
+</li>
+<li>
+	on the other hand, we don't have to <q>hit</q> every element from <m>B</m>. In the above example, we miss almost all the letters in <m>B</m>. A function that does reach every element of <m>B</m> is said to be <q>surjective</q> or <q>onto</q>.
+</li>
+<li>
+	a given element of <m>B</m> may be reached by more than one element of <m>A</m>. In the above example, the days <q>Tuesday</q> and <q>Thursday</q> both map to the letter <m>T</m> and similarly the letters <m>S</m> is mapped to by both <q>Sunday</q> and <q>Saturday</q>. A function which does not do this, that is, every element in <m>A</m> maps to a different element in <m>B</m> is called <q>injective</q> or  <q>one-to-one</q> <mdash/> again we will come back to this later when we discuss inverse function in <xref text="type-global" ref="sec_inverse_functions"/>.
+</li>
+</ul>
+</p>
+
+<p>
+Summarising this more formally, we have
+</p>
+
+<definition xml:id="def_function">
+<statement><p>
+Let <m>A, B</m> be non-empty sets. A function <m>f</m> from <m>A</m> to <m>B</m>, is a rule or formula that takes elements of <m>A</m> as inputs and returns elements of <m>B</m> as outputs. We write this as
+<md>
+<mrow>
+  f: A \to B
+</mrow>
+</md>
+and if <m>f</m> takes <m>a \in A</m> as an input and returns <m>b\in B</m> then we write this as <m>f(a) = b</m>. Every function must satisfy the following two conditions
+<ul>
+<li>
+	The function must be defined on every possible input from the set <m>A</m>. That is, no matter which element <m>a \in A</m> we choose, the function must return an element <m>b \in B</m> so that <m>f(a)=b</m>.
+</li>
+<li>
+	The function is only allowed to return one result for each input
+	<fn>
+		You may have learnt this in the context of plotting functions on the Cartesian plane, as <q>the vertical line test</q>. If the graph intersects a vertical line twice, then the same <m>x</m>-value will give two <m>y</m>-values and so the graph does not represent a function.
+	</fn>.
+	So if we find that <m>f(a)=b_1</m> and <m>f(a)=b_2</m> then the only way that <m>f</m> can be a function is if <m>b_1</m> is exactly the same as <m>b_2</m>.
+</li>
+</ul>
+</p></statement>
+</definition>
+
+<p>
+We must include the input and output sets <m>A</m> and <m>B</m> in the definition of the function. This is one of the reasons that we should not think of functions as just formulas. The input and output sets have proper mathematical names, which we give below:
+</p>
+
+<definition>
+<statement><p>
+Let <m>f:A \to B</m> be a function. Then
+<ul>
+<li> the set <m>A</m> of inputs to our function is the <q>domain</q> of <m>f</m>, </li>
+<li> the set <m>B</m> which contains all the results is called the codomain, </li>
+<li>
+	We read <q><m>f(a) = b</m></q> as <q><m>f</m> of <m>a</m> is <m>b</m></q>, but sometimes we might say <q><m>f</m> maps <m>a</m> to <m>b</m></q> or <q><m>b</m> is the image of <m>a</m></q>.
+</li>
+<li>
+	The codomain must contain all the possible results of the function, but it might also contain a few other elements. The subset of <m>B</m> that is exactly the outputs of <m>A</m> is called the <q>range</q> of <m>f</m>. We define it more formally by
+	<md>
+	<mrow>
+		\text{range of } f &amp;= \set{b \in B \;|\; \text{there is some } a \in
+	A \text{ so that } f(a) = b}
+	</mrow><mrow>
+	  &amp;= \set{f(a) \in B \;|\; a \in A}
+	</mrow>
+	</md>
+	The only elements allowed in that set are those elements of <m>B</m> that are the images of elements in <m>A</m>.
+</li>
+</ul>
+</p></statement>
+</definition>
+
+
+<example><title>domains and ranges</title>
+<p>
+Let us go back to the <q>days of the week</q> function example that we worked on above, we can define the domain, codomain and range:
+<ul>
+<li> The domain, <m>A</m>, is the set of days of the week. </li>
+<li> The codomain, <m>B</m>, is the 26 letters of the alphabet. </li>
+<li> The range is the set <m>\set{F,M,T,S,W}</m> <mdash/> no other elements of <m>B</m> are images of inputs from <m>A</m>. </li>
+</ul>
+</p></example>
+
+<example><title>more domains and ranges</title>
+<p>
+A more numerical example <mdash/> let <m>g: \mathbb{R} \to \mathbb{R}</m> be defined by the formula <m>g(x) = x^2</m>. Then
+<ul>
+<li> the domain and codomain are both the set of all real numbers, but </li>
+<li> the range is the set <m>[0, \infty)</m>. </li>
+</ul>
+</p>
+
+<p>
+Now <mdash/> let <m>h:[0,\infty) \to [0,\infty)</m> be defined by the formula <m>h(x) =  \sqrt{x}</m>. Then
+<ul>
+<li>
+	the domain and codomain are both the set <m>[0,\infty)</m>, that is all non-negative real numbers, and
+</li>
+<li> in this case the range is equal to the codomain, namely <m>[0, \infty)</m>. </li>
+</ul>
+</p>
+</example>
+
+<example xml:id="eg_piecewise"><title>piece-wise function</title>
+<p>
+Yet another numerical example.
+<md>
+<mrow>
+  V:[-1,1] \to \mathbb{R} &amp;&amp; \text{defined by }
+  V(t) &amp;= \begin{cases}
+          0 &amp; \text{if } -1 \leq t  \lt  0
+</mrow><mrow>
+	  120 &amp; \text{if } 0 \leq t \leq 1
+          \end{cases}
+</mrow>
+</md>
+This is an example of a <q>piece-wise</q> function <mdash/> that is, one that is not defined by a single formula, but instead defined piece-by-piece. This function has domain <m>[-1,1]</m> and its range is <m>\set{0,120}</m>. We could interpret this function as measuring the voltage across a switch that is flipped on at time <m>t=0</m>.
+</p></example>
+
+
+<p>
+Almost all the functions we look at from here on will be formulas. However it is important to note, that we have to include the domain and codomain when we describe the function. If the domain and codomain are not stated explicitly then we should assume that both are <m>\mathbb{R}</m>.
+</p>
+
+</introduction>
+</section>

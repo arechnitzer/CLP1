@@ -1,0 +1,1532 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<appendix xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Origin of trig, area and volume formulas</title>
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Theorems about triangles</title>
+<subsection>
+<title>Thales' theorem</title>
+
+<p>
+We want to get at right-angled triangles. A classic construction for this is to  draw a triangle inside a circle, so that all three corners lie on the circle  and the longest side forms the diameter of the circle. See the figure below in  which we have scaled the circle to have radius 1 and the triangle has longest  side 2.
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/thales"/>
+</sidebyside>
+<p>
+Thales theorem states that the angle at <m>C</m> is always a right-angle. The proof  is quite straight-forward and relies on two facts:
+<ul>
+<li> the angles of a triangle add to <m>\pi</m>, and </li>
+<li> the angles at the base of an isosceles triangle are equal. </li>
+</ul>
+So we split the triangle <m>ABC</m> by drawing a line from the centre of the circle to <m>C</m>. This creates two isosceles triangles <m>OAC</m> and <m>OBC</m>. Since they are isosceles, the angles at their bases <m>\alpha</m> and <m>\beta</m> must be equal (as shown).  Adding the angles of the original triangle now gives
+<md>
+<mrow>
+  \pi &amp;= \alpha + (\alpha+\beta) + \beta = 2(\alpha+\beta)
+</mrow>
+</md>
+So the angle at <m>C = \pi - (\alpha+\beta) = \pi/2</m>.
+</p>
+</subsection>
+<subsection>
+<title>Pythagoras</title>
+
+<p>
+Since trigonometry, at its core, is the study of lengths and angles in right-angled  triangles, we must include a result you all know well, but likely do not know how to  prove.
+</p>
+<sidebyside width="33%">
+<image source="text/figs/right_triangle"/>
+</sidebyside>
+<p>
+The lengths of the sides of any right-angled triangle are related by the famous result due to Pythagoras
+<md>
+<mrow>
+  c^2 &amp;= a^2+b^2.
+</mrow>
+</md>
+There are many ways to prove this, but we can do so quite simply by studying the following diagram:
+</p>
+<sidebyside width="90%">
+<image source="text/figs/pythag"/>
+</sidebyside>
+<p>
+We start with a right-angled triangle with sides labeled <m>a,b</m> and <m>c</m>. Then we construct a square of side-length <m>a+b</m> and draw inside it 4 copies of the triangle arranged as shown in the centre of the above figure. The area in white is then <m>a^2+b^2</m>. Now move the triangles around to create the arrangement shown on the right of the above figure. The area in white is bounded by a square of side-length <m>c</m> and so its area is <m>c^2</m>. The area of the outer square didn't change when the triangles were moved, nor did the area of the triangles, so the white area cannot have changed either. This proves <m>a^2+b^2=c^2</m>.
+</p>
+</subsection>
+</section>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Trigonometry</title>
+<subsection xml:id="ssec_rad_deg">
+<title>Angles <mdash/> radians vs degrees</title>
+<p>
+For mathematics, and especially in calculus, it is much better to measure angles in units  called radians rather than degrees. By definition, an arc of length <m>\theta</m> on a circle  of radius one subtends an angle of <m>\theta</m> radians at the centre of the  circle.
+</p>
+
+<sidebyside width="75%">
+<image source="text/figs/radian"/>
+</sidebyside>
+
+<p>
+The circle on the left has radius 1, and the arc swept out by an angle of  <m>\theta</m> radians has length<nbsp/><m>\theta</m>. Because a circle of radius one has circumference  <m>2\pi</m> we have
+<md>
+<mrow>
+   2\pi\text{ radians }&amp;=360^\circ &amp;
+    \pi\text{ radians }&amp;=180^\circ &amp;
+    \frac{\pi}{2}\text{ radians }&amp;=90^\circ
+</mrow><mrow>
+\frac{\pi}{3}\text{ radians }&amp;=60^\circ &amp;
+  \frac{\pi}{4}\text{ radians }&amp;=45^\circ &amp;
+  \frac{\pi}{6}\text{ radians }&amp;=30^\circ
+</mrow>
+</md>
+</p>
+
+<p>
+More generally, consider a circle of radius <m>r</m>. Let <m>L(\theta)</m> denote the length of  the arc swept out by an angle of <m>\theta</m> radians and let <m>A(\theta)</m> denote the area of  the sector (or wedge) swept out by the same angle. Since the angle sweeps out the  fraction <m>\frac{\theta}{2\pi}</m> of a whole circle, we have
+<md>
+<mrow>
+  L(\theta) &amp;= 2\pi r \cdot \frac{\theta}{2\pi} = \theta r &amp; \text{and}
+</mrow><mrow>
+  A(\theta) &amp;= \pi r^2 \cdot \frac{\theta}{2\pi} = \frac{\theta}{2} r^2
+</mrow>
+</md>
+</p>
+</subsection>
+
+<subsection>
+<title>Trig function definitions</title>
+<p>The trigonometric functions are defined as ratios of the lengths of the sides of a
+right-angle triangle as shown in the left of the diagram below . These ratios depend only
+on the angle<nbsp/><m>\theta</m>.
+</p>
+
+<sidebyside width="75%">
+<image source="text/figs/trig_defn"/>
+</sidebyside>
+
+<p>The trigonometric functions sine, cosine and tangent are defined as ratios of
+the lengths of the sides
+<md>
+<mrow>
+\sin\theta &amp;= \frac{\text{opposite}}{\text{hypotenuse}} &amp;
+\cos\theta &amp;= \frac{\text{adjacent}}{\text{hypotenuse}} &amp;
+\tan\theta &amp;= \frac{\text{opposite}}{\text{adjacent}} = \frac{\sin \theta}{\cos \theta}.
+</mrow>
+<intertext>These are frequently abbreviated as</intertext><mrow>
+\sin\theta &amp;= \frac{\text{o}}{\text{h}} &amp;
+\cos\theta &amp;= \frac{\text{a}}{\text{h}} &amp;
+\tan\theta &amp;= \frac{\text{o}}{\text{a}}
+</mrow>
+</md>
+which gives rise to the mnemonic
+<md>
+<mrow>
+  \text{SOH} &amp;&amp; \text{CAH} &amp;&amp; \text{TOA}
+</mrow>
+</md>
+If we scale the triangle so that they hypotenuse has length <m>1</m> then we obtain the  diagram on the right. In that case, <m>\sin \theta</m> is the height of the triangle, <m>\cos  \theta</m> the length of its base and <m>\tan \theta</m> is the length of the line tangent to the  circle of radius 1 as shown.
+</p>
+
+<p>
+Since the angle <m>2\pi</m> sweeps out a full circle, the angles <m>\theta</m> and <m>\theta+2\pi</m> are really the same.
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/trig_defn3"/>
+</sidebyside>
+
+<p>
+Hence all the trigonometric functions are periodic with period <m>2\pi</m>. That is
+<md>
+<mrow>
+  \sin(\theta+2\pi) &amp;= \sin(\theta) &amp;
+  \cos(\theta+2\pi) &amp;= \cos(\theta) &amp;
+  \tan(\theta+2\pi) &amp;= \tan(\theta)
+</mrow>
+</md>
+The plots of these functions are shown below
+</p>
+<sbsgroup>
+<sidebyside>
+<p><me>\sin \theta</me> </p><p> <me>\cos \theta</me> </p><p> <me>\tan \theta</me></p>
+</sidebyside>
+<sidebyside>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=1.1,ymin=-1.1, ytick={-1,1},
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=100] {sin(deg(x))};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=1.1,ymin=-1.1, ytick={-1,1},
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=100] {cos(deg(x))};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=4.1,ymin=-4.1, ymajorticks=false,
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=100] {tan(deg(x))};
+\addplot[line width=1pt,red] coordinates {(-1.570796327,4.15) (-1.570796327,-4.15)};
+\addplot[line width=1pt,red] coordinates {(1.570796327,4.15) (1.570796327,-4.15)};
+\addplot[line width=1pt,red] coordinates {(4.71238898,4.15) (4.71238898,-4.15)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</sbsgroup>
+
+<p>
+The reciprocals (cosecant, secant and cotangent) of these functions also play important roles in trigonometry and calculus:
+<md>
+<mrow>
+\csc \theta &amp;= \frac{1}{\sin\theta} = \frac{\text{h}}{\text{o}} &amp;
+\sec\theta &amp;= \frac{1}{\cos \theta} = \frac{\text{h}}{\text{a}} &amp;
+\cot\theta &amp;= \frac{1}{\tan \theta} = \frac{\cos \theta}{\sin\theta} =
+\frac{\text{a}}{\text{o}}
+</mrow>
+</md>
+The plots of these functions are shown below
+</p>
+<sbsgroup>
+<sidebyside>
+<p><me>\csc \theta</me></p><p><me>\sec \theta</me></p><p><me>\cot \theta</me></p>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=4.1,ymin=-4.1,ytick={-1,1},
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$,$-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=200] {cosec(deg(x))};
+\addplot[line width=1pt,red] coordinates {(-3.141592654,4.15) (-3.141592654,-4.15)};
+\addplot[line width=1pt,red] coordinates {(0,3.7) (0,-3.7)};
+\addplot[line width=1pt,red] coordinates {(3.141592654,4.15) (3.141592654,-4.15)};
+\addplot[line width=1pt,red] coordinates {(6.283185307,4.15) (6.283185307,-4.15)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=4.1,ymin=-4.1, ytick={-1,1},
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=100] {sec(deg(x))};
+\addplot[line width=1pt,red] coordinates {(-1.570796327,4.15) (-1.570796327,-4.15)};
+\addplot[line width=1pt,red] coordinates {(1.570796327,4.15) (1.570796327,-4.15)};
+\addplot[line width=1pt,red] coordinates {(4.71238898,4.15) (4.71238898,-4.15)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=4.1,ymin=-4.1, ymajorticks=false,
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=400] {cot(deg(x))};
+\addplot[line width=1pt,red] coordinates {(-3.14,4.15) (-3.14,-4.15)};
+\addplot[line width=1pt,red] coordinates {(0,4) (0,-4)};
+\addplot[line width=1pt,red] coordinates {(3.14,4.15) (3.14,-4.15)};
+\addplot[line width=1pt,red] coordinates {(6.3,4.15) (6.3,-4.15)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</sbsgroup>
+
+<p>
+These reciprocal functions also have geometric interpretations:
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/trig_defn2"/>
+</sidebyside>
+
+<p>
+Since these are all right-angled triangles we can use Pythagoras to obtain the following  identities:
+<md>
+<mrow>
+\sin^2\theta + \cos^2 \theta &amp;=1 &amp;
+\tan^2\theta + 1  &amp;= \sec^2\theta &amp;
+1 + \cot^2 \theta &amp;=\csc^2\theta
+</mrow>
+</md>
+Of these it is only necessary to remember the first
+<md>
+<mrow>
+\sin^2\theta + \cos^2 \theta &amp;=1
+</mrow>
+</md>
+The second can then be obtained by dividing this by <m>\cos^2\theta</m> and the third by  dividing by <m>\sin^2\theta</m>.
+</p>
+</subsection>
+
+<subsection>
+<title>Important triangles</title>
+<p>
+Computing sine and cosine is non-trivial for general angles <mdash/> we need Taylor series (or  similar tools) to do this. However there are some special angles (usually small  integer fractions of <m>\pi</m>) for which we can use a little geometry to help. Consider the  following two triangles.
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/special_triangles"/>
+</sidebyside>
+
+<p>
+The first results from cutting a square along its diagonal, while the second is obtained  by cutting an equilateral triangle from one corner to the middle of the opposite side.  These, together with the angles <m>0,\frac{\pi}{2}</m> and <m>\pi</m> give the following table of values
+</p>
+
+<sidebyside>
+<tabular halign="center" top="medium" bottom="minor" right="minor" left="medium">
+<col right="medium"/>
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+<row bottom="medium">
+	<cell><m>\theta</m></cell>
+	<cell> <m>\sin\theta</m> </cell>
+	<cell> <m>\cos\theta</m> </cell>
+	<cell> <m>\tan\theta</m>  </cell>
+	<cell><m>\csc\theta</m> </cell>
+	<cell> <m>\sec\theta</m> </cell>
+	<cell> <m>\cot\theta</m></cell>
+</row>
+<row>
+	<cell><m>0</m> rad </cell>
+	<cell> 0 </cell>
+	<cell> 1 </cell>
+	<cell> 0 </cell>
+	<cell> DNE </cell>
+	<cell> 1 </cell>
+	<cell> DNE  </cell>
+</row>
+<row>
+	<cell><m>\tfrac{\pi}{2}</m> rad  </cell>
+	<cell> 1 </cell>
+	<cell> 0  </cell>
+	<cell> DNE </cell>
+	<cell> 1</cell>
+	<cell> DNE </cell>
+	<cell> 0 </cell>
+</row>
+<row>
+	<cell><m>\pi</m> rad </cell>
+	<cell> 0 </cell>
+	<cell> -1 </cell>
+	<cell> 0 </cell>
+	<cell> DNE </cell>
+	<cell> -1 </cell>
+	<cell> DNE </cell>
+</row>
+<row>
+	<cell><m>\tfrac{\pi}{4}</m> rad </cell>
+	<cell> <m>\tfrac{1}{\sqrt{2}}</m> </cell>
+	<cell> <m>\tfrac{1}{\sqrt{2}}</m> </cell>
+	<cell> 1 </cell>
+	<cell>  <m>\sqrt{2}</m> </cell>
+	<cell> <m>\sqrt{2}</m> </cell>
+	<cell> 1 </cell>
+</row>
+<row>
+	<cell><m>\tfrac{\pi}{6}</m> rad </cell>
+	<cell>  <m>\tfrac{1}{2}</m> </cell>
+	<cell> <m>\tfrac{\sqrt{3}}{2}</m> </cell>
+	<cell> <m>\tfrac{1}{\sqrt{3}}</m> </cell>
+	<cell> 2 </cell>
+	<cell> <m>\tfrac{2}{\sqrt{3}}</m> </cell>
+	<cell> <m>\sqrt{3}</m>  </cell>
+</row><row>
+	<cell><m>\tfrac{\pi}{3}</m> rad </cell>
+	<cell> <m>\tfrac{\sqrt{3}}{2}</m> </cell>
+	<cell> <m>\tfrac{1}{2}</m> </cell>
+	<cell> <m>\sqrt{3}</m> </cell>
+	<cell> <m>\tfrac{2}{\sqrt{3}}</m> </cell>
+	<cell>  2 </cell>
+	<cell> <m>\tfrac{1}{\sqrt{3}}</m>  </cell>
+</row>
+</tabular>
+</sidebyside>
+
+</subsection>
+
+<subsection>
+<title>Some more simple identities</title>
+<p>Consider the figure below</p>
+<sidebyside width="80%">
+<image source="text/figs/trig_defn4"/>
+</sidebyside>
+
+<p>
+The pair triangles on the left shows that there is a simple relationship between  trigonometric functions evaluated at <m>\theta</m> and at <m>-\theta</m>:
+<md>
+<mrow>
+  \sin(-\theta)&amp;=-\sin(\theta) &amp; \cos(-\theta) &amp;=\cos(\theta)
+</mrow>
+</md>
+That is <mdash/> sine is an odd function, while cosine is even. Since the other trigonometric  functions can be expressed in terms of sine and cosine we obtain
+<md>
+<mrow>
+  \tan(-\theta) &amp;=-\tan(\theta) &amp;
+  \csc(-\theta) &amp;=-\csc(\theta) &amp;
+  \sec(-\theta) &amp;=\sec(\theta) &amp;
+  \cot(-\theta) &amp;=-\cot(\theta)
+</mrow>
+</md>
+Now consider the triangle on the right <mdash/> if we consider the angle  <m>\frac{\pi}{2}-\theta</m> the side-lengths of the triangle remain unchanged, but the roles  of <q>opposite</q> and <q>adjacent</q> are swapped. Hence we have
+<md>
+<mrow>
+\sin\left(\tfrac{\pi}{2}-\theta\right)&amp;=\cos\theta &amp;
+\cos\left(\tfrac{\pi}{2}-\theta\right)&amp;=\sin\theta
+</mrow>
+</md>
+Again these imply that
+<md>
+<mrow>
+\tan\left(\tfrac{\pi}{2}-\theta\right)&amp;=\cot\theta &amp;
+\csc\left(\tfrac{\pi}{2}-\theta\right)&amp;=\sec\theta &amp;
+\sec\left(\tfrac{\pi}{2}-\theta\right)&amp;=\csc\theta &amp;
+\cot\left(\tfrac{\pi}{2}-\theta\right)&amp;=\tan\theta
+</mrow>
+</md>
+</p>
+
+<p>We can go further. Consider the following diagram:</p>
+
+<sidebyside width="75%">
+<image source="text/figs/trig_defn5"/>
+</sidebyside>
+
+<p>
+This implies that
+<md>
+<mrow>
+  \sin(\pi-\theta)&amp;=\sin(\theta) &amp; \cos(\pi-\theta) &amp;= -\cos(\theta)
+</mrow><mrow>
+  \sin(\pi+\theta)&amp;=-\sin(\theta) &amp; \cos(\pi+\theta) &amp;=-\cos(\theta)
+</mrow>
+</md>
+From which we can get the rules for the other four trigonometric functions.
+</p>
+
+</subsection>
+
+<subsection>
+<title>Identities <mdash/> adding angles</title>
+<p>We wish to explain the origins of the identity
+<md>
+<mrow>
+  \sin(\alpha+\beta) &amp;= \sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta).
+</mrow>
+</md>
+A very geometric demonstration uses the figure below and an observation about areas.
+</p>
+
+<sidebyside width="100%">
+<image source="text/figs/add_angles"/>
+</sidebyside>
+
+<p>
+<ul>
+<li>
+	The left-most figure shows two right-angled triangles with angles <m>\alpha</m> and <m>\beta</m> and both with hypotenuse length <m>1</m>.
+</li>
+<li>
+	The next figure simply rearranges the triangles <mdash/> translating and rotating the lower triangle so that it lies adjacent to the top of the upper triangle.
+</li>
+<li>
+	Now scale the lower triangle by a factor of <m>q</m> so that edges opposite the angles <m>\alpha</m> and <m>\beta</m> are flush. This means that <m>q \cos \beta = \cos \alpha</m>. ie
+	<md>
+	<mrow>
+	  q &amp;= \frac{\cos\alpha}{\cos\beta}
+	</mrow>
+	</md>
+	Now compute the areas of these (blue and red) triangles
+	<md>
+	<mrow>
+	  A_\text{red} &amp;= \frac{1}{2} q^2 \sin\beta \cos \beta
+	</mrow><mrow>
+	  A_\text{blue} &amp;= \frac{1}{2} \sin \alpha \cos \alpha
+	</mrow>
+	<intertext>So twice the total area is</intertext><mrow>
+	  2 A_\text{total} &amp;= \sin \alpha \cos \alpha  + q^2 \sin\beta \cos \beta
+	</mrow>
+	</md>
+</li>
+<li>
+	But we can also compute the total area using the rightmost triangle:
+	<md>
+	<mrow>
+	  2 A_\text{total} &amp;= q \sin(\alpha+\beta)
+	</mrow>
+	</md>
+</li>
+</ul>
+Since the total area must be the same no matter how we compute it we have
+<md>
+<mrow>
+q \sin(\alpha+\beta) &amp;=  \sin \alpha \cos \alpha  + q^2 \sin\beta \cos \beta
+</mrow><mrow>
+  \sin(\alpha+\beta) &amp;= \frac{1}{q} \sin \alpha \cos \alpha + q \sin\beta \cos \beta
+</mrow><mrow>
+  &amp;= \frac{\cos \beta}{\cos \alpha} \sin \alpha \cos \alpha + \frac{\cos \alpha}{\cos \beta} \sin\beta \cos \beta
+</mrow><mrow>
+  &amp;= \sin \alpha \cos \beta +  \cos \alpha \sin\beta
+</mrow>
+</md>
+as required.
+</p>
+
+<p>
+We can obtain the angle addition formula for cosine by substituting <m>\alpha \mapsto \pi/2-\alpha</m> and <m>\beta \mapsto -\beta</m> into our sine formula: <md>
+<mrow>
+  \sin(\alpha+\beta) &amp;= \sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta) &amp; \text{becomes}
+</mrow><mrow>
+  \underbrace{\sin(\pi/2-\alpha-\beta)}_{\cos(\alpha+\beta)} &amp;= \underbrace{\sin(\pi/2-\alpha)}_{\cos(\alpha)}\cos(-\beta) + \underbrace{\cos(\pi/2-\alpha)}_{\sin(\alpha)}\sin(-\beta)
+</mrow><mrow>
+  \cos(\alpha+\beta) &amp;= \cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta)
+</mrow>
+</md>
+where we have used <m>\sin(\pi/2-\theta)=\cos(\theta)</m> and <m>\cos(\pi/2-\theta)=\sin(\theta)</m>.
+</p>
+
+<p>
+It is then a small step to the formulas for the difference of angles. From the relation
+<md>
+<mrow>
+  \sin(\alpha+\beta) &amp;= \sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta)
+</mrow>
+</md>
+we can substitute <m>\beta \mapsto -\beta</m> and so obtain
+<md>
+<mrow>
+  \sin(\alpha - \beta) &amp;= \sin(\alpha)\cos(-\beta) + \cos(\alpha)\sin(-\beta)
+</mrow><mrow>
+  &amp;= \sin(\alpha)\cos(\beta) - \cos(\alpha)\sin(\beta)
+</mrow>
+</md>
+The formula for cosine can be obtained in a similar manner. To summarise
+<md>
+<mrow>
+  \sin(\alpha \pm \beta) &amp;= \sin(\alpha)\cos(\beta) \pm \cos(\alpha)\sin(\beta)
+</mrow><mrow>
+  \cos(\alpha \pm \beta) &amp;= \cos(\alpha)\cos(\beta) \mp \sin(\alpha)\sin(\beta)
+</mrow>
+</md>
+</p>
+
+<p>
+The formulas for tangent are a bit more work, but
+<md>
+<mrow>
+  \tan(\alpha + \beta) &amp;= \frac{\sin(\alpha + \beta)}{\cos(\alpha + \beta)}
+</mrow><mrow>
+  &amp;= \frac{\sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta)}{\cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta) }
+</mrow><mrow>
+  &amp;= \frac{\sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta)}{\cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta) }
+  \cdot \frac{\sec(\alpha) \sec(\beta)}{\sec(\alpha) \sec(\beta)}
+</mrow><mrow>
+  &amp;= \frac{\sin(\alpha)\sec(\alpha) + \sin(\beta)\sec(\beta)}{1 - \sin(\alpha)\sec(\alpha)\sin(\beta)\sec(\beta) }
+</mrow><mrow>
+  &amp;= \frac{\tan(\alpha) + \tan(\beta)}{1 - \tan(\alpha)\tan(\beta) }
+</mrow>
+<intertext>and similarly we get</intertext><mrow>
+  \tan(\alpha - \beta) &amp;=  \frac{\tan(\alpha) - \tan(\beta)}{1 + \tan(\alpha)\tan(\beta) }
+</mrow>
+</md>
+</p>
+</subsection>
+
+<subsection>
+<title>Identities <mdash/> double-angle formulas</title>
+
+<p>
+If we set <m>\beta=\alpha</m> in the angle-addition formulas we get
+<md>
+<mrow>
+  \sin(2\alpha) &amp;= 2\sin(\alpha)\cos(\alpha)
+</mrow><mrow>
+  \cos(2\alpha) &amp;= \cos^2(\alpha)-\sin^2(\alpha)
+</mrow><mrow>
+  &amp;= 2\cos^2(\alpha)-1 &amp; \text{since } \sin^2\theta =1-\cos^2\theta
+</mrow><mrow>
+  &amp;= 1-2\sin^2(\alpha) &amp; \text{since } \cos^2\theta =1-\sin^2\theta
+</mrow><mrow>
+  \tan(2\alpha) &amp;= \frac{2\tan(\alpha)}{1-\tan^2(\alpha)}
+</mrow><mrow>
+  &amp;= \frac{2}{\cot(\alpha)-\tan(\alpha)} &amp;\text{divide top and bottom by
+$\tan(\alpha)$}
+</mrow>
+</md>
+</p>
+</subsection>
+
+<subsection>
+<title>Identities <mdash/> extras</title>
+<subsubsection><title>Sums to products</title>
+<p>
+Consider the identities
+<md>
+<mrow>
+\sin(\alpha+\beta) &amp;= \sin(\alpha)\cos(\beta) + \cos(\alpha) \sin(\beta) &amp;
+\sin(\alpha-\beta) &amp;= \sin(\alpha)\cos(\beta) - \cos(\alpha) \sin(\beta)
+</mrow>
+</md>
+If we add them together some terms on the right-hand side cancel:
+<md>
+<mrow>
+\sin(\alpha+\beta) +  \sin(\alpha-\beta) &amp;= 2\sin(\alpha)\cos(\beta).
+</mrow>
+</md>
+If we now set <m>u=\alpha+\beta</m> and <m>v = \alpha-\beta</m> (i.e. <m>\alpha=\frac{u+v}{2},
+\beta=\frac{u-v}{2}</m>) then
+<md>
+<mrow>
+\sin(u) +  \sin(v) &amp;= 2\sin\left(\frac{u+v}{2}\right)\cos\left(\frac{u-v}{2}\right)
+</mrow>
+</md>
+This transforms a sum into a product. Similarly:
+<md>
+<mrow>
+\sin(u) -  \sin(v) &amp;= 2\sin\left(\frac{u - v}{2}\right)\cos\left(\frac{u + v}{2}\right)
+</mrow><mrow>
+\cos(u) +  \cos(v) &amp;= 2\cos\left(\frac{u + v}{2}\right)\cos\left(\frac{u - v}{2}\right)
+</mrow><mrow>
+\cos(u) - \cos(v) &amp;= -2\sin\left(\frac{u + v}{2}\right)\sin\left(\frac{u - v}{2}\right)
+</mrow>
+</md>
+</p>
+</subsubsection>
+
+<subsubsection><title>Products to sums</title>
+<p>
+Again consider the identities
+<md>
+<mrow>
+\sin(\alpha+\beta) &amp;= \sin(\alpha)\cos(\beta) + \cos(\alpha) \sin(\beta) &amp;
+\sin(\alpha-\beta) &amp;= \sin(\alpha)\cos(\beta) - \cos(\alpha) \sin(\beta)
+</mrow>
+</md>
+and add them together:
+<md>
+<mrow>
+\sin(\alpha+\beta) +  \sin(\alpha-\beta) &amp;= 2\sin(\alpha)\cos(\beta).
+</mrow>
+</md>
+Then rearrange:
+<md>
+<mrow>
+\sin(\alpha)\cos(\beta)&amp;= \frac{\sin(\alpha+\beta) +  \sin(\alpha-\beta)}{2}
+</mrow>
+</md>
+</p>
+
+<p>
+In a similar way, start with the identities
+<md>
+<mrow>
+  \cos(\alpha+\beta) &amp;= \cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta) &amp;
+  \cos(\alpha-\beta) &amp;= \cos(\alpha)\cos(\beta) + \sin(\alpha)\sin(\beta)
+</mrow>
+</md>
+If we add these together we get
+<md>
+<mrow>
+  2\cos(\alpha)\cos(\beta) &amp;= \cos(\alpha+\beta) + \cos(\alpha-\beta)
+</mrow>
+<intertext>while taking their difference gives</intertext><mrow>
+  2\sin(\alpha)\sin(\beta) &amp;= \cos(\alpha-\beta) - \cos(\alpha+\beta)
+</mrow>
+</md>
+Hence
+<md>
+<mrow>
+\sin(\alpha)\sin(\beta)&amp;= \frac{\cos(\alpha-\beta) - \cos(\alpha+\beta)}{2}
+</mrow><mrow>
+\cos(\alpha)\cos(\beta)&amp;= \frac{\cos(\alpha-\beta) + \cos(\alpha+\beta)}{2}
+</mrow>
+</md>
+</p>
+</subsubsection>
+</subsection>
+</section>
+
+<section><title>Inverse trigonometric functions</title>
+<p>
+In order to construct inverse trigonometric functions we first have to  restrict their domains so as to make them one-to-one (or injective). We do this as shown below
+</p>
+
+<sbsgroup>
+<sidebyside>
+<p><me>\sin\theta</me> </p><p> <me>\cos \theta </me> </p><p> <me>\tan \theta</me></p>
+</sidebyside>
+<sidebyside>
+<p>Domain: <m>-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}</m></p>
+<p>Domain: <m>0 \leq \theta \leq \pi</m></p>
+<p>Domain: <m>-\frac{\pi}{2}  \lt  \theta  \lt  \frac{\pi}{2}</m></p>
+</sidebyside>
+<sidebyside>
+<p>Range: <m>-1 \leq \sin \theta \leq 1</m></p>
+<p>Range: <m>-1 \leq \cos \theta \leq 1</m></p>
+<p>Range: all real numbers</p>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[
+ \begin{tikzpicture}
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center,
+  ymax=1.1,ymin=-1.1, ytick={-1,1},
+  xmin=-2, xmax=2,
+  xtick={-1.570796327,1.570796327},
+  xticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
+  ]
+\addplot[blue,domain=-0.5*pi:0.5*pi,samples=100] {sin(deg(x))};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=1.1,ymin=-1.1, ytick={-1,1},
+  xmin=-0.3,xmax=3.4,
+  xtick={0,1.570796327,3.141592654},
+  xticklabels={0,$\frac{\pi}{2}$, $\pi$}
+  ]
+\addplot[blue,domain=0:pi,samples=100] {cos(deg(x))};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center,
+  ymax=4.1,ymin=-4.1, ymajorticks=false,
+  xmin=-2,xmax=2,
+  xtick={-1.570796327,1.570796327},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$}
+  ]
+\addplot[blue,domain=-0.49*pi:0.49*pi,samples=100] {tan(deg(x))};
+\addplot[line width=1pt,red] coordinates {(-1.570796327,4.15) (-1.570796327,-4.15)};
+\addplot[line width=1pt,red] coordinates {(1.570796327,4.15) (1.570796327,-4.15)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+
+<!-- Keep this here so there is a nice gap -->
+<sidebyside>
+<p></p> <p></p> <p></p>
+</sidebyside>
+
+<sidebyside>
+<p><me>\arcsin x</me> </p><p> <me>\arccos x</me> </p><p> <me>\arctan x</me></p>
+</sidebyside>
+
+<sidebyside>
+<p>Domain: <m>-1 \leq x \leq 1</m></p>
+<p>Domain: <m>-1 \leq x \leq 1</m></p>
+<p>Domain: all real numbers</p>
+</sidebyside>
+
+<sidebyside>
+<p>Range: <m>-\frac{\pi}{2} \leq \arcsin x \leq \frac{\pi}{2}</m></p>
+<p>Range: <m>0 \leq \arccos x \leq \pi</m></p>
+<p>Range: <m>-\frac{\pi}{2}  \lt  \arctan x  \lt  \frac{\pi}{2}</m></p>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center,
+  xmax=1.1,xmin=-1.1, xtick={-1,1},
+  ymin=-2, ymax=2,
+  ytick={-1.570796327,1.570796327},
+  yticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
+  ]
+\addplot[blue,domain=-1:1,samples=100] {asin(x)/180*pi};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  xmax=1.1,xmin=-1.1, xtick={-1,1},
+  ymin=-0.3,ymax=3.4,
+  ytick={0,1.570796327,3.141592654},
+  yticklabels={0,$\frac{\pi}{2}$, $\pi$}
+  ]
+ \addplot[blue,domain=-1:1,samples=100] {acos(x)/180*pi};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center,
+  xmax=4.3,xmin=-4.3, xmajorticks=false,
+  ymin=-2,ymax=2,
+  ytick={-1.570796327,1.570796327},
+  yticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
+  ]
+\addplot[blue,domain=-4:4,samples=100] {atan(x)/180*pi};
+\addplot[line width=1pt,red] coordinates {(4.15,-1.570796327) (-4.15,-1.570796327)};
+\addplot[line width=1pt,red] coordinates {(4.15,1.570796327) (-4.15,1.570796327)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</sbsgroup>
+
+<p>
+Since these functions are inverses of each other we have
+<md>
+<mrow>
+  \arcsin(\sin \theta) &amp;= \theta &amp; -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}
+</mrow><mrow>
+  \arccos(\cos \theta) &amp;= \theta &amp; 0 \leq \theta \leq \pi
+</mrow><mrow>
+  \arctan(\tan \theta) &amp;= \theta &amp; -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}
+</mrow>
+</md>
+and also
+<md>
+<mrow>
+  \sin(\arcsin x) &amp;= x &amp; -1 \leq x \leq 1
+</mrow><mrow>
+  \cos(\arccos x) &amp;= x &amp; -1 \leq x \leq 1
+</mrow><mrow>
+  \tan(\arctan x) &amp;= x &amp; \text{any real $x$}
+</mrow>
+</md>
+We can read other combinations of trig functions and their inverses, like, for example, <m>\cos(\arcsin x)</m>, off of triangles like
+</p>
+
+<sidebyside width="33%">
+<image source="text/figs/triangleAsin"/>
+</sidebyside>
+
+<p>
+We have chosen the hypotenuse and opposite sides of the triangle to be of length 1 and <m>x</m>, respectively, so that <m>\sin(\theta)=x</m>. That is, <m>\theta =  \arcsin x</m>. We can then read off of the triangle that
+<md>
+<mrow>
+  \cos(\arcsin x) &amp;= \cos(\theta) = \sqrt{1-x^2}
+</mrow>
+</md>
+We can reach the same conclusion using trig identities, as follows.
+<ul>
+<li>
+	Write <m>\arcsin x=\theta</m>. We know that <m>\sin(\theta)=x</m> and we wish to  compute <m>\cos(\theta)</m>. So we just need to express <m>\cos(\theta)</m> in terms of  <m>\sin(\theta)</m>.
+</li>
+<li>
+	To do this we make use of one of the Pythagorean identities
+	<md>
+	<mrow>
+	  \sin^2\theta + \cos^2\theta &amp;=1
+	</mrow><mrow>
+	  \cos\theta &amp;= \pm \sqrt{1-\sin^2\theta}
+	</mrow>
+	</md>
+</li>
+<li>
+	Thus
+	<md>
+	<mrow>
+	  \cos(\arcsin x) = \cos\theta = \pm\sqrt{1-\sin^2\theta}
+	</mrow>
+	</md>
+</li>
+<li>
+	To determine which branch we should use we need to consider the domain  and range of <m>\arcsin x</m>:
+	<md>
+	<mrow>
+	  \text{Domain: } -1 \leq x \leq 1 &amp;&amp; \text{Range: } -\frac{\pi}{2} \leq \arcsin x \leq \frac{\pi}{2}
+	</mrow>
+	</md>
+	Thus we are applying cosine to an angle that always lies between <m>-\frac{\pi}{2}</m> and <m>\frac{\pi}{2}</m>. Cosine is non-negative on this range. Hence we should take the positive branch and
+	<md>
+	<mrow>
+	  \cos(\arcsin x) &amp;= \sqrt{1-\sin^2\theta}= \sqrt{1-\sin^2(\arcsin x)}
+	</mrow><mrow>
+	  &amp;= \sqrt{1-x^2}
+	</mrow>
+	</md>
+</li>
+</ul>
+In a very similar way we can simplify <m>\tan(\arccos x)</m>.
+<ul>
+<li>
+	Write <m>\arccos x=\theta</m>, and then
+	<md>
+	<mrow>
+	  \tan( \arccos x) &amp;= \tan \theta = \frac{\sin\theta}{\cos \theta}
+	</mrow>
+	</md>
+</li>
+<li> Now the denominator is easy since <m>\cos \theta = \cos \arccos x = x</m>. </li>
+<li>
+	The numerator is almost the same as the previous computation.
+	<md>
+	<mrow>
+	  \sin\theta &amp;= \pm \sqrt{1-\cos^2\theta}
+	</mrow><mrow>
+	  &amp;= \pm \sqrt{1-x^2}
+	</mrow>
+	</md>
+</li>
+<li>
+	To determine which branch we again consider domains and   and ranges:
+	<md>
+	<mrow>
+	  \text{Domain: } -1 \leq x \leq 1 &amp;&amp; \text{Range: } 0 \leq \arccos x \leq \pi
+	</mrow>
+	</md>
+	Thus we are applying sine to an angle that always lies between  <m>0</m> and <m>\pi</m>. Sine is non-negative on this range and so we take the positive  branch.
+</li>
+<li>
+	Putting everything back together gives
+	<md>
+	<mrow>
+	  \tan(\arccos x) &amp;= \frac{\sqrt{1-x^2}}{x}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+
+<p>
+Completing the 9 possibilities gives:
+<md>
+<mrow>
+  \sin( \arcsin x ) &amp;= x &amp;
+  \sin( \arccos x ) &amp;= \sqrt{1-x^2} &amp;
+  \sin( \arctan x ) &amp;= \frac{x}{\sqrt{1+x^2}}
+</mrow><mrow>
+\cos( \arcsin x ) &amp;= \sqrt{1-x^2} &amp;
+  \cos( \arccos x ) &amp;= x &amp;
+  \cos( \arctan x ) &amp;= \frac{1}{\sqrt{1+x^2}}
+</mrow><mrow>
+\tan( \arcsin x ) &amp;= \frac{x}{\sqrt{1-x^2}} &amp;
+  \tan( \arccos x ) &amp;= \frac{\sqrt{1-x^2}}{x} &amp;
+  \tan( \arctan x ) &amp;= x
+</mrow>
+</md>
+</p>
+</section>
+
+<section><title>Cosine and sine laws</title>
+<subsection xml:id="app_cosine_law">
+<title>Cosine law or Law of cosines</title>
+<p>
+The cosine law says that, if a triangle has sides of length <m>a</m>, <m>b</m> and <m>c</m> and  the angle opposite the side of length <m>c</m> is <m>\gamma</m>, then
+<md>
+<mrow>
+  c^2 &amp;= a^2+b^2 - 2ab\cos\gamma
+</mrow>
+</md>
+Observe that, when <m>\gamma=\tfrac{\pi}{2}</m>, this reduces to, (surpise!)  Pythagoras' theorem <m>c^2=a^2+b^2</m>. Let's derive the cosine law.
+</p>
+
+<sidebyside width="75%">
+<image source="text/figs/cosines"/>
+</sidebyside>
+
+<p>
+Consider the triangle on the left. Now draw a perpendicular line from the side  of length <m>c</m> to the opposite corner as shown. This demonstrates that
+<md>
+<mrow>
+  c &amp;= a \cos \beta + b \cos \alpha
+</mrow>
+<intertext>Multiply this by <m>c</m> to get an expression for <m>c^2</m>:</intertext>
+<mrow>
+  c^2 &amp;= ac \cos \beta + bc \cos \alpha
+</mrow>
+<intertext>Doing similarly for the other corners gives</intertext>
+<mrow>
+  a^2 &amp;= ac \cos \beta + ab \cos \gamma
+</mrow><mrow>
+  b^2 &amp;= bc \cos \alpha + ab \cos \gamma
+</mrow>
+</md>
+Now combining these:
+<md>
+<mrow>
+  a^2+b^2-c^2 &amp;=  (bc-bc) \cos \alpha + (ac-ac)\cos\beta + 2ab \cos \gamma
+</mrow><mrow>
+  &amp;= 2ab\cos \gamma
+</mrow>
+</md>
+as required.
+</p>
+</subsection>
+
+<subsection>
+<title>Sine law or Law of sines</title>
+<p>
+The sine law says that, if a triangle has sides of length <m>a, b</m> and <m>c</m> and  the angles opposite those sides are <m>\alpha</m>, <m>\beta</m> and <m>\gamma</m>, then
+<md>
+<mrow>
+  \frac{a}{\sin \alpha} &amp;= \frac{b}{\sin \beta} = \frac{c}{\sin \gamma}.
+</mrow>
+</md>
+</p>
+
+<sidebyside width="100%">
+<image source="text/figs/sines"/>
+</sidebyside>
+
+<p>
+This rule is best understood by computing the area of the triangle using the  formula <m>A = \frac{1}{2}ab\sin\theta</m> of Appendix<nbsp/><xref ref="app_sec_areas"/>. Doing  this three ways gives
+<md>
+<mrow>
+  2A &amp;= bc \sin \alpha
+</mrow><mrow>
+  2A &amp;= ac \sin \beta
+</mrow><mrow>
+  2A &amp;= ab \sin \gamma
+</mrow>
+</md>
+Dividing these expressions by <m>abc</m> gives
+<md>
+<mrow>
+  \frac{2A}{abc} &amp;= \frac{\sin \alpha}{a} = \frac{\sin\beta}{b} = \frac{\sin \gamma}{c}
+</mrow>
+</md>
+as required.
+</p>
+</subsection>
+</section>
+
+<section>
+<title>Circles, cones and spheres</title>
+
+<subsection>
+<title>Where does the formula for the area of a circle come from?</title>
+<p>
+Typically when we come across <m>\pi</m> for the first time it is as the ratio of the circumference of a circle to its diameter
+<md>
+<mrow>
+  \pi &amp;= \frac{C}{d} = \frac{C}{2r}
+</mrow>
+</md>
+Indeed this is typically the first definition we see of <m>\pi</m>.  It is easy to build an intuition that the area of the circle should be propotional to the square of its radius. For example we can draw the largest possible square inside the circle (an <em>inscribed</em> square) and the smallest possible square outside the circle (a <em>circumscribed</em> square):
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/archimedes0"/>
+</sidebyside>
+
+<p>
+The smaller square has side-length <m>\sqrt{2} r</m> and the longer has side-length <m>2r</m>. Hence
+<md>
+<mrow>
+  2 r^2 &amp; \leq A \leq 4r^2 &amp; \text{ or }  2 &amp; \leq \frac{A}{r^2} \leq 4
+</mrow>
+</md>
+That is, the area of the circle is between 2 and 4 times the square of the radius. What is perhaps less obvious (if we had not been told this in school) is that the constant of propotionality for area is also <m>\pi</m>:
+<md>
+<mrow>
+  \pi &amp;= \frac{A}{r^2}.
+</mrow>
+</md>
+</p>
+
+<p>
+We will show this using Archimedes' proof. He makes use of these inscribed and circumscribed polygons to make better and better approximations of the circle. The steps of the proof are somewhat involved and the starting point is to rewrite the area of a circle as
+<md>
+<mrow>
+  A &amp;= \frac{1}{2} C r
+</mrow>
+</md>
+where <m>C</m> is (still) the circumference of the circle. This suggests that this  area is the same as that of a triangle of height <m>r</m> and base length <m>C</m>
+<md>
+<mrow>
+  T &amp;= \frac{1}{2} C r
+</mrow>
+</md>
+</p>
+
+<sidebyside width="66%">
+<image source="text/figs/archimedes1"/>
+</sidebyside>
+
+<p>
+Archimedes' proof then demonstrates that indeed this triangle and the circle have the same  area. It relies on a <q>proof by contradiction</q> <mdash/> showing that <m>T \lt A</m> and <m>T \gt A</m> cannot  be true and so the only possibility is that <m>A=T</m>.
+</p>
+
+<p>
+We will first show that <m>T \lt A</m> cannot happen. Construct an <m>n</m>-sided <q>inscribed</q> polygon as shown below:
+</p>
+
+<sidebyside width="100%">
+<image source="text/figs/archimedes2"/>
+</sidebyside>
+
+<p>Let <m>p_n</m> be the inscribed polygon as shown.</p>
+
+<sidebyside width="100%">
+<image source="text/figs/archimedes3"/>
+</sidebyside>
+
+<p>
+We need 4 steps.
+<ul>
+<li>
+	The area of <m>p_n</m> is smaller than that of the circle <mdash/> this follows since we can  construct <m>p_n</m> by cutting slices from the circle.
+</li>
+<li>
+<p>
+	Let <m>E_n</m> be the difference between the area of the circle and <m>p_n</m>: <m>E_n = A -  A(p_n)</m> (see the left of the previous figure). By the previous point we know <m>E_n \gt 0</m>.  Now as we increase the number of sides, this difference becomes smaller. To be more  precise
+	<md>
+	<mrow>
+	  E_{2n} &amp; \leq \frac{1}{2} E_n.
+	  </mrow>
+	</md>
+	The error <m>E_n</m> is made up of <m>n</m> <q>lobes</q>. In the centre-left of the previous figure we  draw one such lobe and surround it by a rectangle of dimensions <m>a \times 2b</m> <mdash/> we could determine these more precisely using a little trigonometry, but it is not necessary.
+</p>
+
+<p>
+	This diagram shows the lobe is smaller than the rectangle of base <m>2b</m> and height <m>a</m> Since there are <m>n</m> copies of the lobe, we have
+	<md>
+	<mrow>
+	  E_n &amp; \leq n  \times 2ab &amp; \text{rewrite as } \frac{E_n}{2} &amp; \leq nab
+	</mrow>
+	</md>
+</p>
+
+<p>
+	Now draw in the polygon <m>p_{2n}</m> and consider the associated <q>error</q> <m>E_{2n}</m>. If we  focus on the two lobes shown then we see that the area of these two new lobes is equal to  that of the old lobe (shown in centre-left) minus the area of the triangle with base <m>2b</m>  and height <m>a</m> (drawn in purple). Since there are <m>n</m> copies of this  picture we have
+	<md>
+	<mrow>
+	  E_{2n} &amp;= E_n - nab &amp; \text{now use that $nab \geq  E_n/2$}
+	</mrow><mrow>
+	  &amp; \leq E_n - \frac{E_n}{2} = \frac{E_n}{2}
+	</mrow>
+	</md>
+</p>
+</li>
+<li>
+	The area of <m>p_n</m> is smaller than <m>T</m>. To see this decompose <m>p_n</m> into <m>n</m>  isosceles triangles. Each of these has base shorter than <m>C/n</m>; the straight line is  shorter than the corresponding arc <mdash/> though strictly speaking we should prove this. The  height of each triangle is shorter than <m>r</m>. Thus
+	<md>
+	<mrow>
+	  A(p_n) &amp;= n \times \frac{1}{2} \text{(base)}\times \text{(height)}
+	</mrow><mrow>
+	  &amp; \leq n \times \frac{Cr}{2n} = T
+	</mrow>
+	</md>
+</li>
+<li>
+	If we assume that <m>T \lt A</m>, then <m>A-T = d</m> where <m>d</m> is some positive number.  However we know from point 2 that we can make <m>n</m> large enough so that <m>E_n  \lt  d</m>  (each time we double <m>n</m> we halve the error). But now we have a contradiction to  step<nbsp/>3, since we have just shown that
+	<md>
+	<mrow>
+	  E_n = A-A(p_n) &amp;  \lt  A-T &amp; \text{which implies that}
+	</mrow><mrow>
+	  A(p_n) &amp;  \gt  T.
+	</mrow>
+	</md>
+</li>
+</ul>
+Thus we cannot have <m>T \lt A</m>.
+</p>
+
+<p>
+If we now assume that <m>T \gt A</m> we will get a similar contradiction by a similar  construction. Now we use regular <m>n</m>-sided <em>circumscribed</em> polygons, <m>P_n</m>.
+</p>
+<sidebyside width="90%">
+<image source="text/figs/archimedes4"/>
+</sidebyside>
+<p>
+The proof can be broken into 4 similar steps.
+</p>
+<sidebyside width="100%">
+<image source="text/figs/archimedes5"/>
+</sidebyside>
+<p>
+<ol>
+<li>
+	The area of <m>P_n</m> is greater than that of the circle <mdash/> this follows since we  can construct the circle by trimming the polygon <m>P_n</m>.
+</li>
+<li>
+<p>
+	Let <m>E_n</m> be the difference between the area of the polygon and the circle: <m>E_n =  A(P_n)-A</m> (see the left of the previous figure). By the previous point we know <m>E_n \gt 0</m>.  Now as we increase the number of sides, this difference becomes smaller. To be more  precise we will show
+	<md>
+	<mrow>
+	  E_{2n} &amp; \leq \frac{1}{2} E_n.
+	  </mrow>
+	</md>
+	The error <m>E_n</m> is made up of <m>n</m> <q>lobes</q>. In the centre-left of the previous figure we  draw one such lobe. Let <m>L_n</m> denote the area of one of these lobes, so <m>E_n = nL_n</m>.  In  the centre of the previous figure we have labelled this lobe carefully and also shown how  it changes when we create the polygon <m>P_{2n}</m>. In particular, the original lobe is  bounded by the straight lines <m>\vec{ad}, \vec{af}</m> and the arc <m>\widehat{fbd}</m>. We create  <m>P_{2n}</m> from <m>P_n</m> by cutting away the corner triangle <m>\triangle aec</m>. Accordingly the  lines <m>\vec{ec}</m> and <m>\vec{ba}</m> are orthogonal and the segments <m>|bc|=|cd|</m>.
+</p>
+
+<p>
+	By the construction of <m>P_{2n}</m> from <m>P_n</m>, we have
+	<md>
+	<mrow>
+	  2L_{2n} &amp;= L_n - A( \triangle aec) &amp; \text{or equivalently }
+	  L_{2n} &amp;= \frac{1}{2} L_n - A( \triangle abc)
+	</mrow>
+	</md>
+	And additionally
+	<md>
+	<mrow>
+	  L_{2n} &amp; \leq A( \triangle bcd)
+	</mrow>
+	</md>
+</p>
+
+<p>
+	Now consider the triangle <m>\triangle abd</m> (centre-right of the previous figure) and the  two triangles within it <m>\triangle abc</m> and <m>\triangle bcd</m>. We know that <m>\vec{ab}</m> and  <m>\vec{cb}</m> form a right-angle. Consequently <m>\vec{ac}</m> is the hypotenuse of a right-angled  triangle, so <m>|ac| \gt |bc| = |cd|</m>. So now, the triangles <m>\triangle abc</m> and <m>\triangle bcd</m>  have the same heights, but the base of <m>\vec{ac}</m> is longer than <m>\vec{cd}</m>. Hence the  area of <m>\triangle abc</m> is strictly larger than that of <m>\triangle bcd</m>.
+</p>
+
+<p>
+	Thus we have
+	<md>
+	<mrow>
+	  L_{2n} &amp; \leq A(\triangle bcd)  \lt  A(\triangle abc)
+	</mrow>
+	</md>
+	But now we can write
+	<md>
+	<mrow>
+	  L_{2n} &amp;= \frac{1}{2} L_n - A( \triangle abc)  \lt  \frac{1}{2} L_n - L_{2n}  &amp;
+	\text{rearrange}
+	</mrow><mrow>
+	  2L_{2n} &amp; \lt  \frac{1}{2} L_n &amp; \text{there are $n$ such lobes, so }
+	</mrow><mrow>
+	  2n L_{2n} &amp; \lt  \frac{n}{2} L_n &amp; \text{since $E_n = n L_n$, we have}
+	</mrow><mrow>
+	  E_{2n} &amp;  \lt  \frac{1}{2} E_n &amp; \text{which is what we wanted to show.}
+	</mrow>
+	</md>
+</p>
+</li>
+<li>
+	The area of <m>P_n</m> is greater than <m>T</m>. To see this decompose <m>P_n</m> into <m>n</m>  isosceles triangles. The height of each triangle is <m>r</m>, while the base of each is longer  than <m>C/n</m> (this is a subtle point and its proof is equivalent to showing that <m>\tan  \theta  \gt  \theta</m>). Thus
+	<md>
+	<mrow>
+	  A(P_n) &amp;= n \times \frac{1}{2} \text{(base)}\times \text{(height)}
+	</mrow><mrow>
+	  &amp; \geq n \times \frac{Cr}{2n} = T
+	</mrow>
+	</md>
+</li>
+<li>
+	If we assume that <m>T \gt A</m>, then <m>T-A = d</m> where <m>d</m> is some positive number.  However we know from point 2 that we can make <m>n</m> large enough so that <m>E_n  \lt  d</m> (each  time we double <m>n</m> we halve the error). But now we have a contradiction since we have just  shown that
+	<md>
+	<mrow>
+	  E_n = A(P_n) - A &amp;  \lt  T-A &amp; \text{which implies that}
+	</mrow><mrow>
+	  A(p_n) &amp;  \gt  T.
+	</mrow>
+	</md>
+</li>
+</ol>
+Thus we cannot have <m>T \gt A</m>. The only possibility that remains is that <m>T=A</m>.
+</p>
+</subsection>
+
+<subsection xml:id="apendix_volume">
+<title>Where do these volume formulas come from?</title>
+<p>
+We can establish the volumes of cones and spheres from the formula for the volume of a  cylinder and a little work with limits and some careful summations. We first need a few facts.
+<ul>
+<li>
+	Every square number can be written as a sum of consecutive odd numbers. More  precisely
+	<md>
+	<mrow>
+	  n^2 &amp;= 1 + 3 + \cdots + (2n-1)
+	</mrow>
+	</md>
+</li>
+<li>
+	The sum of the first <m>n</m> positive integers is <m>\frac{1}{2} n(n+1)</m>. That is
+	<md>
+	<mrow>
+	  1 + 2 +3 + \cdots +n &amp;= \frac{1}{2}n(n+1)
+	</mrow>
+	</md>
+</li>
+<li>
+	The sum of the squares of the first <m>n</m> positive integers is <m>\frac{1}{6}  n(n+1)(2n+1)</m>.
+	<md>
+	<mrow>
+	  1^2 + 2^2 +3^2 + \cdots + n^2 &amp;= \frac{1}{6}n(n+1)(2n+1)
+	</mrow>
+	</md>
+</li>
+</ul>
+We will not give completely rigorous proofs of the above identities (since we are not  going to assume that the reader knows mathematical induction), rather we will explain  them using pictorial arguments. The first two of these we can explain by some quite simple  pictures:
+</p>
+
+<sidebyside width="100%">
+<image source="text/figs/sums1"/>
+</sidebyside>
+
+<p>
+We see that we can decompose any square of unit-squares into a sequence of strips, each  of which consists of an odd number of unit-squares. This is really just from the fact that
+<md>
+<mrow>
+  n^2 - (n-1)^2 &amp;= 2n-1
+</mrow>
+</md>
+Similarly, we can represent the sum of the first <m>n</m> integers as a triangle of unit  squares as shown. If we make a second copy of that triangle and arrange it as shown, it  gives a rectangle of dimensions <m>n</m> by <m>n+1</m>. Hence the rectangle, being exactly twice the  size of the original triangle, contains <m>n(n+1)</m> unit squares.
+</p>
+
+<p>
+The explanation of the last formula takes a little more work and a carefully  constructed picture:
+</p>
+<sidebyside width="100%">
+<image source="text/figs/sums2"/>
+</sidebyside>
+
+<p>
+Let us break these pictures down step by step
+<ul>
+<li> Leftmost represents the sum of the squares of the first <m>n</m> integers. </li>
+<li>
+	Centre <mdash/> We recall from above that each square number can be written as a sum of  consecutive odd numbers, which have been represented as coloured bands of unit-squares.
+</li>
+<li>
+<p>
+	Make three copies of the sum and arrange them carefully as shown. The first and  third copies are obvious, but the central copy is rearranged considerably; all  bands of the same colour have the same length and have been arranged into  rectangles as shown.
+</p>
+
+<p>
+	Putting everything from the three copies together creates a rectangle of dimensions  <m>(2n+1)\times(1+2+3+\cdots+n)</m>.
+</p>
+</li>
+</ul>
+We know (from above) that <m>1+2+3+\cdots+n = \frac{1}{2} n(n+1)</m> and so
+<md>
+<mrow>
+  (1^2+2^2+\cdots+n^2 ) &amp;= \frac{1}{3} \times \frac{1}{2} n(n+1)(2n+1)
+</mrow>
+</md>
+as required.
+</p>
+
+<p>
+Now we can start to look at volumes. Let us start with the volume of a cone; consider the  figure below. We bound the volume of the cone above and below by stacks of cylinders. The  cross-sections of the cylinders and cone are also shown.
+</p>
+
+<sidebyside width="90%">
+<image source="text/figs/cone"/>
+</sidebyside>
+
+<p>
+To obtain the bounds we will construct two stacks of <m>n</m> cylinders, <m>C_1,C_2,\dots,C_n</m>.  Each cylinder has height <m>h/n</m> and radius that varies with height. In particular, we  define cylinder <m>C_k</m> to have height <m>h/n</m> and radius <m>k \times r/n</m>. This radius was  determined using similar triangles so that cylinder <m>C_n</m> has radius <m>r</m>. Now cylinder  <m>C_k</m> has volume
+<md>
+<mrow>
+  V_k &amp;= \pi \times \text{radius}^2 \times \text{height}
+  = \pi \left( \frac{kr}{n} \right)^2 \cdot \frac{h}{n}
+</mrow><mrow>
+  &amp;= \frac{\pi r^2h}{n^3} k^2
+</mrow>
+</md>
+</p>
+
+<p>
+We obtain an upper bound by stacking cylinders <m>C_1,C_2,\dots,C_n</m> as shown. This object  has volume
+<md>
+<mrow>
+  V &amp;= V_1 + V_2 + \cdots + V_n
+</mrow><mrow>
+  &amp;= \frac{\pi r^2h}{n^3} \left(1^2 + 2^2 + 3^2 + \cdots + n^2 \right)
+</mrow><mrow>
+  &amp;= \frac{\pi r^2h}{n^3} \cdot \frac{n(n+1)(2n+1)}{6}
+</mrow>
+</md>
+A similar lower bound is obtained by stacking cylinders <m>C_1,\dots,C_{n-1}</m> which gives a  volume of
+<md>
+<mrow>
+  V &amp;= V_1 + V_2 + \cdots+ V_{n-1}
+</mrow><mrow>
+  &amp;= \frac{\pi r^2h}{n^3} \left(1^2 + 2^2 + 3^2 + \cdots + (n-1)^2 \right)
+</mrow><mrow>
+  &amp;= \frac{\pi r^2h}{n^3} \cdot \frac{(n-1)(n)(2n-1)}{6}
+</mrow>
+</md>
+Thus the true volume of the cylinder is bounded between
+<md>
+<mrow>
+  \frac{\pi r^2h}{n^3} \cdot \frac{(n-1)(n)(2n-1)}{6}
+  &amp; \leq \text{correct volume}
+  \leq \frac{\pi r^2h}{n^3} \cdot \frac{n(n+1)(2n+1)}{6}
+</mrow>
+</md>
+We can now take the limit as the number of cylinders, <m>n</m>, goes to infinity. The upper  bound becomes
+<md>
+<mrow>
+  \lim_{n \to \infty} \frac{\pi r^2h}{n^3} \frac{n(n+1)(2n+1)}{6}
+  &amp;= \frac{\pi r^2h}{6} \lim_{n\to\infty} \frac{n(n+1)(2n+1)}{n^3}
+</mrow><mrow>
+  &amp;= \frac{\pi r^2h}{6} \lim_{n\to\infty} \frac{(1+1/n)(2+1/n)}{1}
+</mrow><mrow>
+  &amp;= \frac{\pi r^2h}{6} \times 2
+</mrow><mrow>
+  &amp;= \frac{\pi r^2h}{3}
+</mrow>
+</md>
+The other limit is identical, so by the squeeze theorem we have
+<md>
+<mrow>
+  \text{Volume of cone } &amp;= \frac{1}{3} \pi r^2h
+</mrow>
+</md>
+</p>
+
+<p>
+Now the sphere <mdash/> though we will do the analysis for a hemisphere of radius <m>R</m>. Again  we bound the volume above and below by stacks of cylinders. The cross-sections of the  cylinders and cone are also shown.
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/sphere"/>
+</sidebyside>
+
+<p>
+To obtain the bounds we will construct two stacks of <m>n</m> cylinders, <m>C_1,C_2,\dots,C_n</m>.  Each cylinder has height <m>R/n</m> and radius that varies with its position in the  stack. To describe the position, define
+<md>
+<mrow>
+  y_k &amp;= k \times \frac{R}{n}
+</mrow>
+</md>
+That is, <m>y_k</m>, is <m>k</m> steps of distance <m>\frac{R}{n}</m> from the top of the  hemisphere. Then we set the <m>k^\mathrm{th}</m> cylinder, <m>C_k</m> to have height <m>R/n</m>  and radius <m>r_k</m> given by
+<md>
+<mrow>
+  r_k^2 &amp;= R^2 - (R-y_k)^2 = R^2 - R^2(1-k/n)^2
+</mrow><mrow>
+  &amp;= R^2( 2k/n - k^2/n^2)
+</mrow>
+</md>
+as shown in the top-right and bottom-left illustrations. The volume of <m>C_k</m> is then
+<md>
+<mrow>
+  V_k &amp;= \pi \times \text{radius}^2 \times \text{height}
+  = \pi \times R^2 \left(2k/n - k^2/n^2  \right) \times \frac{R}{n}
+</mrow><mrow>
+  &amp;=  \pi R^3 \cdot \left( \frac{2k}{n^2}  - \frac{k^2}{n^3} \right)
+</mrow>
+</md>
+</p>
+
+<p>
+We obtain an upper bound by stacking cylinders <m>C_1,C_2,\dots,C_n</m> as shown. This object  has volume
+<md>
+<mrow>
+  V &amp;= V_1 + V_2 + \cdots + V_n
+</mrow><mrow>
+  &amp;=
+\pi R^3 \cdot \left( \frac{2}{n^2}\left(1 + 2 + 3 + \cdots + n \right) - \frac{1}{n^3}\left(1^2 + 2^2 + 3^2 + \cdots + n^2 \right) \right)
+</mrow>
+</md>
+Now recall from above that
+<md>
+<mrow>
+  1 + 2 + 3 + \cdots +n &amp;= \frac{1}{2} n(n+1) &amp;
+  1^2 + 2^2 + 3^2 + \cdots +n^2 &amp;= \frac{1}{6} n(n+1)(2n+1)
+</mrow>
+</md>
+so
+<md>
+<mrow>
+  V &amp;= \pi R^3 \cdot \left( \frac{n(n+1)}{n^2}
+- \frac{n(n+1)(2n+1)}{6n^3} \right)
+</mrow>
+</md>
+</p>
+
+<p>
+Again, a lower bound is obtained by stacking cylinders <m>C_1,\dots,C_{n-1}</m> and a similar  analysis gives
+<md>
+<mrow>
+  V &amp;= \pi R^3 \cdot \left( \frac{n(n-1)}{(n-1)^2}
+- \frac{n(n-1)(2n-1)}{6(n-1)^3} \right)
+</mrow>
+</md>
+</p>
+
+<p>
+Thus the true volume of the hemisphere is bounded between
+<md>
+<mrow>
+  \pi R^3 \cdot \left( \frac{n(n+1)}{n^2}
+- \frac{n(n+1)(2n+1)}{6n^3} \right)
+  &amp; \leq \text{correct volume}
+  \leq \pi R^3 \cdot \left( \frac{n(n+1)}{n^2}
+- \frac{n(n+1)(2n+1)}{6n^3} \right)
+</mrow>
+</md>
+We can now take the limit as the number of cylinders, <m>n</m>, goes to infinity. The upper  bound becomes
+<md>
+<mrow>
+  \lim_{n \to \infty} \pi R^3 \cdot \left( \frac{n(n+1)}{n^2}
+- \frac{n(n+1)(2n+1)}{6n^3} \right)
+  &amp;= \pi R^3 \left( \lim_{n\to\infty} \frac{n(n+1)}{n^2} -
+\frac{n(n+1)(2n+1)}{6n^3}
+\right)
+</mrow><mrow>
+  &amp;= \pi R^3 \left( 1 - \frac{2}{6} \right) = \frac{2}{3} \pi R^3.
+</mrow>
+</md>
+The other limit is identical, so by the squeeze theorem we have
+<md>
+<mrow>
+  \text{Volume of hemisphere } &amp;= \frac{2}{3} \pi R^3 &amp; \text{ and so}
+</mrow><mrow>
+  \text{Volume of sphere } &amp;= \frac{4}{3} \pi R^3
+</mrow>
+</md>
+</p>
+
+</subsection>
+</section>
+
+</appendix>

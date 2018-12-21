@@ -1,0 +1,2385 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_sketch_SE"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS"><title><fromexam>2007H</fromexam></title>
+<statement><p>
+ Let <m>f(x) = x\sqrt{3 - x}</m>.
+<ol label="a">
+<li xml:id="s3_62007_1"> Find the domain of <m>f(x)</m>.
+</li>
+<li xml:id="s3_62007_2"> Determine the <m>x</m>-coordinates of the local
+maxima and minima (if any) and intervals where <m>f(x)</m> is increasing or decreasing.
+</li>
+<li xml:id="s3_62007_3">  Determine intervals where <m>f(x)</m> is concave
+upwards or downwards, and the <m>x</m> coordinates of inflection points (if any).
+You may use, without verifying it, the formula <m>f''(x) = (3x -12)(3 - x)^{-3/2}/4</m>.
+</li>
+<li xml:id="s3_62007_4">  There is a point at which the tangent line to the
+curve <m>y = f(x)</m> is vertical. Find this point.
+</li>
+<li xml:id="s3_62007_6"> Sketch the graph <m>y = f(x)</m>, showing
+the features given in items (a) to (d) above and giving the <m>(x, y)</m> coordinates
+for all points occurring above.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+You'll find the intervals of increase and decrease. These will give you a basic outline of the behaviour of the function. Use  concavity to refine your picture.
+</p></hint>
+<answer><p>
+<xref ref="s3_62007_1"/> <m>(-\infty,3]</m>
+</p>
+<p>
+<xref ref="s3_62007_2"/> <m>f(x)</m> in increasing on <m>(-\infty,2)</m> and decreasing on <m>(2,3)</m>. There is a local maximum at <m>x=2</m>.
+</p>
+<p>
+<xref ref="s3_62007_3"/> <m>f(x)</m> is always concave down and has no inflection points.
+</p>
+<p>
+<xref ref="s3_62007_4"/> <m>(3,0)</m>
+</p>
+<sidebyside>
+<p><xref ref="s3_62007_6"/></p>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{6.4}{3}{3}
+\draw plot[domain=-1.5:3, samples=100](2*\x,{\x*sqrt(3-\x)});
+\draw (6,0) node[vertex, label=below:{$(3,0)$}]{};
+\draw (4,2) node[vertex, label=above:{$(2.2)$}]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+ <xref ref="s3_62007_1"/> Since we must have <m>3-x \ge 0</m>, this tells us <m>x \leq 3</m>.
+ So, the domain is <m>(-\infty,3]</m>.
+</p>
+
+<p><xref ref="s3_62007_2"/>  <me>
+f'(x)=\sqrt{3-x}-\frac{x}{2\sqrt{3-x}}
+                       =3\frac{2-x}{2\sqrt{3-x}}</me>
+</p>
+
+<p>For every <m>x</m> in the domain of <m>f'(x)</m>, the denominator is positive, so the sign of <m>f'(x)</m> depends only on the numerator.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m>  </cell><cell> <m>(-\infty,2)</m> </cell><cell><m>2</m> </cell><cell> <m>(2,3)</m> </cell><cell> <m>3</m> </cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell> positive  </cell><cell> 0 </cell><cell> negative </cell><cell> DNE  </cell>
+</row><row>
+<cell><m>f(x)</m> </cell><cell> increasing </cell><cell> maximum </cell><cell> decreasing </cell><cell> endpoint </cell>
+</row>
+</tabular>
+</sidebyside>
+<p>So, <m>f</m> is increasing for <m>x \lt 2</m>, has a local (in fact global) maximum at <m>x=2</m>,
+and is decreasing for <m>2 \lt x \lt 3</m>.
+</p>
+
+<p>Remark: this shows us the basic skeleton of the graph. It consists of a single hump.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ \lt - \gt , help lines] (-4,0)--(4,0) node[right]{$x$};
+\foreach\x in {2,3}{\YExcoord{\x}{\x}}
+\draw[thick] (-3.8,.25)--(2,1)--(3,.25);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p> <xref ref="s3_62007_3"/> When <m>x \lt 3</m>,
+ <me>
+f''(x) = \frac{1}{4}(3x -12)(3 - x)^{-3/2} \lt 0</me>
+</p>
+
+<p>The domain of <m>f''(x)</m> is <m>(-\infty,-3)</m>, and over its domain it is always negative
+ (the factor
+              <m>(3x-12)</m> is negative for all <m>x \lt 4</m> and the factor
+              <m>(3-x)^{-3/2}</m> is positive for all <m>x \lt 3</m>). So, <m>f(x)</m> has no inflection points and is concave
+down everywhere.
+</p>
+
+<p><xref ref="s3_62007_4"/> We already found
+<md>
+<mrow>f'(x)&amp;=3\dfrac{2-x}{2\sqrt{3-x}}.
+</mrow>
+<intertext> This is undefined at <m>x=3</m>. Indeed,</intertext><mrow>
+\ds\lim_{x \rightarrow 3^-} 3\dfrac{2-x}{2\sqrt{3-x}}&amp;=-\infty,
+</mrow>
+</md> so
+ <m>f(x)</m> has a vertical tangent line at <m>(3,0)</m>.
+</p>
+
+<p><xref ref="s3_62007_6"/>
+To sketch the curve <m>y=f(x)</m>, we already know its intervals of increase and decrease, and its concavity. We also note its intercepts are <m>(0,0)</m> and <m>(3,0)</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{6.4}{3}{3}
+\draw plot[domain=-1.5:3, samples=100](2*\x,{\x*sqrt(3-\x)});
+\draw (6,0) node[vertex, label=below:{$(3,0)$}]{};
+\draw (4,2) node[vertex, label=above:{$(2.2)$}]{};
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}, red] (-3,-3.25)--(4,-3.25) ;
+\draw[red] (.5,-4) node{increasing};
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}, blue] (4,-3.25)--(6,-3.25) ;
+\draw[blue] (5,-4) node{decreasing};
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}, blue] (-3,-4.5)--(6,-4.5) ;
+\draw[blue] (2,-5) node{concave down};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+
+<introduction><p>In Questions<nbsp/><xref ref="s3_6_6rationalfirst"/> through <xref ref="s3_6_6rationallast"/>, you will sketch the graphs of rational functions.</p></introduction>
+
+<exercise xml:id="s3_6_6rationalfirst"><title><fromexam>1998H</fromexam></title>
+<statement><p>
+Sketch the graph of
+<me>
+ f(x)= \dfrac{x^3-2}{x^4}.</me>
+</p>
+
+<p>Indicate the critical points, local and absolute maxima and minima,
+vertical and horizontal asymptotes, inflection points and regions where the
+curve is concave upward or downward.
+</p></statement>
+<hint><p>
+The local maximum is also a global maximum.
+</p></hint>
+<answer><p>
+The open dot is the inflection point, and the closed dot is the local and global maximum.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{5}{5}{4}{1}
+\draw[thick, red] plot[domain=-5:-1.15](\x,{2*(\x*\x*\x-2)/(\x*\x*\x*\x)});
+\draw[thick, red] plot[domain=.9:5](\x,{2*(\x*\x*\x-2)/(\x*\x*\x*\x)});
+\draw (2.7,0.65) node[opendot]{};
+\draw (2,.75) node[vertex, label=above:{$\left(2,\frac{3}{8}\right)$}]{};
+\YExcoord{2}{2}
+\YExcoord{2.7}{\sqrt[3]{20}}
+\YExcoord{1.3}{\sqrt[3]{2}}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+<ul>
+<li><p> Asymptotes:
+<me>
+\ds\lim_{x \to \pm \infty}f(x) = \ds\lim_{x \to \pm \infty}\dfrac{1}{x}-\dfrac{2}{x^4}=0</me>
+</p>
+
+<p>So <m>y=0</m> is a horizontal asymptote both at <m>x=\infty</m> and
+<m>x=-\infty</m>.
+</p>
+
+<p><me>
+\ds\lim_{x \to0}f(x) = \ds\lim_{x \to 0}\dfrac{x^3-2}{x^4}=-\infty</me>
+</p>
+
+<p>So there is a vertical asymptote at  <m>x=0</m>, where the function plunges downwards from both the right and the left.</p>
+</li>
+<li><p> Intervals of increase and decrease:
+</p>
+
+<p><me>
+f'(x)=-\frac{1}{x^2}+\frac{8}{x^5}=\frac{8-x^3}{x^5}</me>
+</p>
+
+<p>The only place where <m>f'(x)</m> is zero only at <m>x=2</m>. So <m>f(x)</m> has a horizontal tangent at <m>x=2</m>,
+<m>y=\frac{3}{8}</m>. This is a critical point.
+</p>
+
+<p>The derivative is undefined at <m>x=0</m>, as is the function.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m>  </cell><cell> <m>(-\infty,0)</m> </cell><cell><m>0</m> </cell><cell> <m>(0,2)</m> </cell><cell> <m>2</m></cell><cell><m>(2,\infty)</m> </cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell> negative  </cell><cell> DNE </cell><cell> positive </cell><cell> 0</cell><cell>  negative</cell>
+</row><row>
+<cell><m>f(x)</m> </cell><cell> decreasing </cell><cell> vertical asymptote </cell><cell> increasing </cell><cell>local max </cell><cell> decreasing</cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>Since the function changes from increasing to decreasing at <m>x=2</m>, the only local maximum is at <m>x=2</m>.
+</p>
+
+<p>At this point, we get a rough sketch of <m>f(x)</m>.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{5}{5}{4}{1}
+\draw[thick] (-4.5,-.25)--(-1,-.5)--(-.5,-4);
+\draw[thick] (.5,-4)--(2,1)--(4.5,.25);
+\YExcoord{2}{2}
+\draw[thick,  \lt -, orange] (-4,1)--(-2,2.5) ;
+\draw[orange] (0,3)node{horizontal asymptotes $y=0$};
+\draw[thick,  \lt -, orange] (4,1)--(2,2.5);
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-5,-4.25)--(0,-4.25);
+\draw[blue] (-2.5,-5)node{decreasing};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (2,-4.25)--(5,-4.25);
+\draw[blue] (3.5,-5)node{decreasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (0,-4.25)--(2,-4.25);
+\draw[red] (1,-5)node{increasing};
+\draw (2,1) node[vertex, label=above:{$\left(2,\frac{3}{8}\right)$}]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</li>
+<li><p> Concavity:
+<me>
+f''(x)=\frac{2}{x^3}-\frac{40}{x^6}=\frac{2x^3-40}{x^6}</me>
+</p>
+
+<p>The second derivative of <m>f(x)</m> is positive for <m>x \gt \root 3\of 20</m> and negative for <m>x \lt \root 3\of 20</m>.
+So the curve is concave up for <m>x \gt \root 3\of 20</m> and concave down for
+<m>x \lt \root 3\of 20</m>. There is an inflection point at <m>x=\root 3\of 20\approx 2.7</m>,
+<m>y=\frac{18}{20^{4/3}}\approx 0.3</m>.</p>
+</li>
+<li><p> Intercepts:
+</p>
+
+<p>Since <m>f(x)</m> is not defined at <m>x=0</m>, there is no <m>y</m>-intercept. The only <m>x</m>-intercept is <m>x=\sqrt[3]{2}\approx 1.3</m>.</p>
+</li>
+<li><p> Sketch:
+</p>
+
+<p>We can add concavity to our skeleton sketched above, and label our intercept and inflection point (the open dot).</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{5}{5}{4}{1}
+\draw[thick, red] plot[domain=-5:-1.15](\x,{2*(\x*\x*\x-2)/(\x*\x*\x*\x)});
+\draw[thick, red] plot[domain=.9:5](\x,{2*(\x*\x*\x-2)/(\x*\x*\x*\x)});
+\draw (2.7,0.65) node[opendot]{};
+\draw (2,.75) node[vertex, label=above:{$\left(2,\frac{3}{8}\right)$}]{};
+\YExcoord{2}{2}
+\YExcoord{2.7}{\sqrt[3]{20}}
+\YExcoord{1.3}{\sqrt[3]{2}}
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-5,-4.25)--(0,-4.25);
+\draw[blue] (-2.5,-5)node{decreasing};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (2,-4.25)--(5,-4.25);
+\draw[blue] (3.5,-5)node{decreasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (0,-4.25)--(2,-4.25);
+\draw[red] (1,-5)node{increasing};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-5,-5.5)--(2.7,-5.5);
+\draw[blue] (-1,-6.25)node{concave down};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (2.7,-5.5)--(5,-5.5);
+\draw[red] (4,-6.25)node{concave up};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</li>
+</ul>
+</p>
+</solution>
+</exercise>
+
+<exercise><title><fromexam>1997A</fromexam></title>
+<statement><p>
+The first and second derivatives of the function <m>f(x)=\dfrac{x^4}{1+x^3}</m> are:
+<me>
+f'(x)=\frac{4x^3+x^6}{(1+x^3)^2}\qquad\hbox{and}\qquad f''(x)=\frac{12x^2-6x^5}{(1+x^3)^3}
+</me>
+Graph <m>f(x)</m>. Include local
+and absolute maxima and minima, regions where <m>f(x)</m> is increasing or
+decreasing, regions where the curve is concave upward
+or downward, and any asymptotes.
+</p></statement>
+<hint><p>
+The sign of the first derivative is determined entirely by the numerator, but the sign of the second derivative depends on both the numerator and the denominator.
+</p></hint>
+<answer><p>The open dot marks the inflection point.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[domain=-3:-1.1, samples=50](2*\x,{\x*\x*\x*\x/(1+\x*\x*\x)});
+\draw plot[domain=-0.93:3, samples=100](2*\x,{\x*\x*\x*\x/(1+\x*\x*\x)});
+\draw[dashed](-2,-4)--(-2,-.75) (-2,.5)--(-2,4);
+\YExcoord{-2}{-1}
+\YExcoord{-3.2}{-\sqrt[3]{4}}
+\YExcoord{2.52}{\sqrt[3]{2}}
+\draw (2.53,0.84) node[opendot]{};
+\draw (0,0) node[vertex]{};
+\draw (-3.2,-2.12) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+<ul>
+<li><p>  Asymptotes:
+</p>
+
+<p>When <m>x=-1</m>, the denominator <m>1+x^3</m> of <m>f(x)</m> is zero while the numerator is 1,  so <m>x=-1</m> is a vertical asymptote. More precisely,
+<me>
+\lim_{x \to -1^-}f(x)=-\infty
+\qquad
+\lim_{x \to -1^+}f(x)=\infty</me>
+</p>
+
+<p>There are no horizontal asymptotes, because
+<me>
+\lim_{x \to \infty} \frac{x^4}{1+x^3}=\infty \qquad \lim_{x \to- \infty} \frac{x^4}{1+x^3}=-\infty</me></p>
+</li>
+<li><p>  Intervals of increase and decrease:
+</p>
+
+<p>We note that <m>f'(x)</m> is defined for all <m>x \neq -1</m>, so <m>f'(x)</m> is defined for all <m>x</m> in the domain of <m>f(x)</m>. Therefore, <m>f(x)</m> has no singular points.
+</p>
+
+<p>To find critical points, we set
+<md>
+<mrow>
+f'(x)&amp;=0
+</mrow><mrow>
+4x^3+x^6 &amp;=0
+</mrow><mrow>
+x^3(4+x^3)&amp;=0
+</mrow><mrow>
+x^3=0 \qquad &amp;\mbox{or} \qquad 4+x^3=0
+</mrow><mrow>
+x=0 \qquad &amp;\mbox{or} \qquad x=-\sqrt[3]{4}\approx-1.6
+</mrow>
+</md>
+</p>
+
+<p>At these critical points, <m>f(0)=0</m> and
+<m>f(-\root 3 \of 4)=\frac{4\root 3 \of 4}{-3} \lt 0</m>.
+The denominator of <m>f'(x)</m> is never negative, so the sign of <m>f'(x)</m> is the same as the sign of its numerator, <m>x^3(4+x^3)</m>.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m>  </cell><cell> <m>(-\infty,-\sqrt[3]{4})</m> </cell><cell><m>-\sqrt[3]{4}</m> </cell><cell> <m>(-\sqrt[3]{4},-1)</m> </cell><cell> <m>-1</m> </cell><cell><m>(-1,0)</m>
+</cell><cell><m>0</m></cell><cell><m>(0,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell>  positive </cell><cell>0  </cell><cell>negative  </cell><cell>DNE </cell><cell>negative </cell><cell>0</cell><cell>positive </cell>
+</row><row>
+<cell><m>f(x)</m> </cell><cell> increasing </cell><cell> l. max</cell><cell>decreasing</cell><cell>VA </cell><cell>decreasing</cell><cell>l. min</cell><cell>increasing</cell>
+</row>
+</tabular>
+</sidebyside>
+<p>Now, we have enough information to make a skeleton of our graph.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\YExcoord{-2}{-1}
+\draw[dashed](-2,-4)--(-2,-.75) (-2,.5)--(-2,4);
+\YExcoord{-3.2}{-\sqrt[3]{4}}
+\draw[thick] (-6,-4)--(-3.2,-1)--(-2.3,-2)--(-2.1,-4);
+\draw[thick] (-1.9,4)--(-1.7,2)--(0,0)--(6,4);
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-6,-4.25)--(-3.2,-4.25);
+\draw[red] (-4.8,-5)node{increasing};
+\draw[blue, decorate, decoration={brace, amplitude=8pt, mirror}] (-3.2,-4.25)--(-2,-4.25);
+\draw[blue] (-2.6,-5)node{decr};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-2,-4.25)--(0,-4.25);
+\draw[blue] (-1,-5)node{decr};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (0,-4.25)--(6,-4.25);
+\draw[red] (3,-5)node{increasing};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</li>
+<li><p> Concavity:
+</p>
+
+<p>The second derivative is undefined when <m>x=-1</m>. It is zero when <m>12x^2-6x^5=6x^2(2-x^3)=0</m>.
+That is, at <m>x=\root 3\of 2\approx 1.3</m> and <m>x=0</m>.  Notice that the sign of <m>f''(x)</m> does not change at <m>x=0</m>, so <m>x=0</m> is not an inflection point.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m>  </cell><cell> <m>(-\infty,-1)</m> </cell><cell><m>-1</m> </cell><cell> <m>(-1,0)</m> </cell><cell> <m>0</m> </cell><cell><m>(0,\sqrt[3]{2})</m>
+</cell><cell><m>\sqrt[3]{2}</m></cell><cell><m>(\sqrt[3]{2},\infty)</m></cell>
+</row><row>
+<cell><m>f''(x)</m>  </cell><cell>  negative </cell><cell>DNE  </cell><cell>positive  </cell><cell>0 </cell><cell>positive </cell><cell>0</cell><cell>negative </cell>
+</row><row>
+<cell><m>f(x)</m> </cell><cell> concave down </cell><cell> VA</cell><cell>concave up</cell><cell></cell><cell>concave up</cell><cell>IP</cell><cell>concave down</cell>
+</row>
+</tabular>
+</sidebyside>
+<p>Now we can refine our skeleton by adding concavity.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[domain=-3:-1.1, samples=50](2*\x,{\x*\x*\x*\x/(1+\x*\x*\x)});
+\draw plot[domain=-0.93:3, samples=100](2*\x,{\x*\x*\x*\x/(1+\x*\x*\x)});
+\draw[dashed](-2,-4)--(-2,-.75) (-2,.5)--(-2,4);
+\YExcoord{-2}{-1}
+\YExcoord{-3.2}{-\sqrt[3]{4}}
+\YExcoord{2.52}{\sqrt[3]{2}}
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-6,-4.25)--(-3.2,-4.25);
+\draw[red] (-4.8,-5)node{increasing};
+\draw[blue, decorate, decoration={brace, amplitude=8pt, mirror}] (-3.2,-4.25)--(-2,-4.25);
+\draw[blue] (-2.8,-5)node{decr};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-2,-4.25)--(0,-4.25);
+\draw[blue] (-1,-5)node{decr};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (0,-4.25)--(6,-4.25);
+\draw[red] (3,-5)node{increasing};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-6,-5.5)--(-2,-5.5);
+\draw[blue] (-4,-6.25)node{concave down};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-2,-5.5)--(2.5,-5.5);
+\draw[red] (0.25,-6.25)node{concave up};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (2.5,-5.5)--(6,-5.5);
+\draw[blue] (4.25,-6.25)node{concave down};
+\draw (2.53,0.84) node[opendot]{};
+\draw (0,0) node[vertex]{};
+\draw (-3.2,-2.12) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+</li>
+</ul>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="s3_6_6rationallast" purpose="RQS"><title><fromexam>1996D</fromexam></title>
+<statement><p>
+ The first and second derivatives of the function <m>f(x)=\dfrac{x^3}{1-x^2}</m> are:
+<me>
+f'(x)=\frac{3x^2-x^4}{(1-x^2)^2}\qquad\hbox{and}\qquad f''(x)=\frac{6x+2x^3}{(1-x^2)^3}
+</me>
+Graph <m>f(x)</m>. Include local
+and absolute maxima and minima, regions where the curve is concave upward
+or downward, and any asymptotes.
+</p></statement>
+<hint><p>
+The function is odd.
+</p></hint>
+<answer>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[domain=-3:-1.08, samples=50](2*\x,{\x*\x*\x/(1-\x*\x)/2});
+\draw plot[domain=-.945:.945, samples=50](2*\x,{\x*\x*\x/(1-\x*\x)/2});
+\draw plot[domain=1.08:3, samples=50](2*\x,{\x*\x*\x/(1-\x*\x)/2});
+\YExcoord{-2}{-1}
+\YExcoord{2}{1}
+\YExcoord{-3.46}{-\sqrt{3}}
+\YExcoord{3.46}{\sqrt{3}}
+\YEycoord{1.3}{\frac{3\sqrt{3}}{2}}
+\YEycoord{-1.3}{-\frac{3\sqrt{3}}{2}}
+\draw[dashed] (-2,-4)--(-2,-1) (-2,.5)--(-2,4);
+\draw[dashed] (2,-4)--(2,-1) (2,.5)--(2,4);
+\draw(-3.46,1.3) node[vertex]{};
+\draw(3.46,-1.3) node[vertex]{};
+\draw(0,0) node[opendot]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+<ul>
+<li><p> Asymptotes:
+<me>
+\lim_{x \to -\infty}\frac{x^3}{1-x^2}=\infty \qquad
+\lim_{x \to \infty}\frac{x^3}{1-x^2}=-\infty </me>
+</p>
+
+<p>So, <m>f(x)</m> has no horizontal asymptotes.
+</p>
+
+<p> On the other hand <m>f(x)</m> blows up at both <m>x=1</m>
+and <m>x=-1</m>, so there are vertical asymptotes at <m>x=1</m> and <m>x=-1</m>.
+More precisely,
+<md>
+<mrow>
+\lim_{x \to -1^-}\frac{x^3}{1-x^2}&amp;=\infty
+&amp;
+\lim_{x \to -1^+}\frac{x^3}{1-x^2}&amp;=-\infty
+</mrow><mrow>
+\lim_{x \to 1^-}\frac{x^3}{1-x^2}&amp;=\infty
+&amp;
+\lim_{x \to 1^+}\frac{x^3}{1-x^2}&amp;=-\infty
+</mrow>
+</md>
+</p>
+</li>
+<li><p> Symmetry:</p>
+<p><m>f(x)</m> is an odd function, because
+<me>
+f(-x)=\frac{(-x)^3}{1-(-x)^2}=\frac{-x^3}{1-x^2}=-f(x)</me>
+</p>
+</li>
+<li><p> Intercepts:
+</p>
+
+<p>The only intercept of <m>f(x)</m> is the origin. In particular, that means that out of the three intervals where it is continuous,
+                  namely <m>(-\infty,-1)</m>, <m>(-1,1)</m> and <m>(1,\infty)</m>, in two of them <m>f(x)</m> is always positive or always negative.
+<ul>
+<li> When <m>x \lt -1</m>: <m>1-x^2 \lt 0</m> and <m>x^3 \lt 0</m>, so <m>f(x) \gt 0</m>.
+</li>
+<li> When <m>x \gt 1</m>: <m>1-x^2 \lt 0</m> and <m>x^3 \gt 0</m>, so <m>f(x) \lt 0</m>.
+</li>
+<li> When <m>-1 \lt x \lt 0</m>, <m>1-x^2 \gt 0</m> and <m>x^3 \lt 0</m> so <m>f(x) \lt 0</m>.
+</li>
+<li> When <m>0 \lt x \lt 1</m>, <m>1-x^2 \gt 0</m> and <m>x^3 \gt 0</m> so <m>f(x) \gt 0</m>.
+</li>
+</ul>
+</p>
+</li>
+<li><p> Intervals of increase and decrease:
+</p>
+
+<p><me>
+f'(x)=\dfrac{3x^2-x^4}{(1-x^2)^2}=\frac{x^2(3-x^2)}{(1-x^2)^2}</me>
+</p>
+
+<p>There are no singular points (but remember the domain of <m>f(x)</m> does not include <m>x=\pm 1</m> ). The critical points are:
+<md>
+<mrow>
+f'(x)&amp;=0
+</mrow><mrow>
+x^2=0\qquad&amp;\mbox{or}\qquad 3-x^2=0
+</mrow><mrow>
+x=0\qquad&amp;\mbox{or}\qquad x=\pm\sqrt{3}\approx\pm 1.7
+</mrow>
+</md>
+</p>
+
+<p>The values of <m>f</m> at its critical points are
+<m>f(0)=0</m>, <m>f(\sqrt{3})=-\dfrac{3\sqrt{3}}{2}\approx -2.6</m> and <m>f(-\sqrt{3})=\dfrac{3\sqrt{3}}{2}\approx2.6</m>.
+</p>
+
+<p>Notice the sign of <m>f'(x)</m> is the same as the sign of <m>3-x^2</m>.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m>  </cell><cell> <m>(-\infty,-\sqrt{3})</m> </cell><cell><m>-\sqrt{3}</m></cell><cell><m>(-\sqrt 3,-1)</m></cell><cell><m>-1</m></cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>DNE</cell>
+</row><row>
+<cell><m>f(x)</m> </cell><cell> decreasing</cell><cell>local min</cell><cell>increasing</cell><cell>VA</cell>
+</row>
+</tabular>
+</sidebyside>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m>  </cell><cell> <m>(-1,0)</m> </cell><cell><m>0</m></cell><cell><m>(0,\sqrt 3)</m></cell><cell><m>\sqrt{3}</m></cell><cell><m>(\sqrt{3},\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell>positive</cell><cell>0</cell><cell>positive</cell><cell>0</cell><cell>negative</cell>
+</row><row>
+<cell><m>f(x)</m> </cell><cell>increasing </cell><cell> </cell><cell> increasing </cell><cell> local max </cell><cell> decreasing </cell>
+</row></tabular>
+</sidebyside>
+
+<p>Now we have enough information to sketch a skeleton of <m>f(x)</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\YExcoord{-2}{-1}
+\YExcoord{2}{1}
+\YExcoord{-3.46}{-\sqrt{3}}
+\YExcoord{3.46}{\sqrt{3}}
+\YEycoord{1.3}{\frac{3\sqrt{3}}{2}}
+\YEycoord{-1.3}{-\frac{3\sqrt{3}}{2}}
+\draw[dashed] (-2,-4)--(-2,-1) (-2,.5)--(-2,4);
+\draw[dashed] (2,-4)--(2,-1) (2,.5)--(2,4);
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-6,-4.25)--(-3.46,-4.25);
+\draw[blue] (-4.75,-5) node{decreasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-3.46,-4.25)--(-2,-4.25);
+\draw[red] (-2.75,-5) node{incr};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-2,-4.25)--(2,-4.25);
+\draw[red] (0,-5) node{increasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (2,-4.25)--(3.46,-4.25);
+\draw[red] (2.75,-5) node{incr};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (3.46,-4.25)--(6,-4.25);
+\draw[blue] (4.75,-5) node{decreasing};
+\draw(-3.46,1.3) node[vertex]{};
+\draw(3.46,-1.3) node[vertex]{};
+\draw(0,0) node[vertex]{};
+\draw[thick] (-6,4)--(-3.46,1.3)--(-2.2,2)--(-2.1,4);
+\draw[thick] (6,-4)--(3.46,-1.3)--(2.2,-2)--(2.1,-4);
+\draw[thick] (-1.9,-4)--(-1.8,-1)--(-.5,0)--(.5,0)--(1.8,2)--(1.9,4);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</li>
+<li><p> Concavity:
+<me>
+f''(x)=\frac{2x(3+x^2)}{(1-x^2)^3}</me>
+</p>
+
+<p>The second derivative is zero when <m>x=0</m>, and is undefined when <m>x=\pm 1</m>.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m>  </cell><cell> <m>(-\infty,-1)</m> </cell><cell><m>(-1,0)</m></cell><cell>0</cell><cell><m>(0,1)</m></cell><cell><m>(1,\infty)</m></cell>
+</row><row>
+<cell><m>f''(x)</m>  </cell><cell>positive</cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>negative</cell>
+</row><row>
+<cell><m>f(x)</m> </cell><cell> concave up</cell><cell>concave down</cell><cell>inflection point</cell><cell>concave up</cell><cell>concave down</cell>
+</row></tabular>
+</sidebyside>
+
+<p>Now, we can refine our skeleton.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw plot[domain=-3:-1.08, samples=50](2*\x,{\x*\x*\x/(1-\x*\x)/2});
+\draw plot[domain=-.945:.945, samples=50](2*\x,{\x*\x*\x/(1-\x*\x)/2});
+\draw plot[domain=1.08:3, samples=50](2*\x,{\x*\x*\x/(1-\x*\x)/2});
+\YExcoord{-2}{-1}
+\YExcoord{2}{1}
+\YExcoord{-3.46}{-\sqrt{3}}
+\YExcoord{3.46}{\sqrt{3}}
+\YEycoord{1.3}{\frac{3\sqrt{3}}{2}}
+\YEycoord{-1.3}{-\frac{3\sqrt{3}}{2}}
+\draw[dashed] (-2,-4)--(-2,-1) (-2,.5)--(-2,4);
+\draw[dashed] (2,-4)--(2,-1) (2,.5)--(2,4);
+\draw(-3.46,1.3) node[vertex]{};
+\draw(3.46,-1.3) node[vertex]{};
+\draw(0,0) node[opendot]{};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-6,-4.25)--(-3.46,-4.25);
+\draw[blue] (-4.75,-5) node{decreasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-3.46,-4.25)--(-2,-4.25);
+\draw[red] (-2.75,-5) node{incr};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-2,-4.25)--(2,-4.25);
+\draw[red] (0,-5) node{increasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (2,-4.25)--(3.46,-4.25);
+\draw[red] (2.75,-5) node{incr};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (3.46,-4.25)--(6,-4.25);
+\draw[blue] (4.75,-5) node{decreasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-6,-5.5)--(-2,-5.5);
+\draw[red] (-4,-6.25) node{concave up};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-2,-5.5)--(0,-5.5);
+\draw[blue] (-1,-6.25) node{cc down};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (0,-5.5)--(2,-5.5);
+\draw[red] (1,-6.25) node{concave up};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (2,-5.5)--(6,-5.5);
+\draw[blue] (4,-6.25) node{concave down};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2006H</fromexam></title>
+<statement><p>
+The function <m>f(x)</m> is defined by
+<me>
+f(x) =
+\left\{\begin{array}{lc}
+e^x &amp;x \lt 0\\
+ \frac{x^2+3}{3(x+1)} &amp; x \ge 0
+ \end{array}\right.
+</me>
+</p>
+
+<p><ol label="a">
+<li xml:id="s3_6_2006_a"> Explain why <m>f(x)</m> is continuous everywhere.
+</li>
+<li xml:id="s3_6_2006_b"><p> Determine all of the following if they are present:
+<ol label="i">
+<li xml:id="s3_6_2006_i"> <m>x</m>--coordinates of local maxima and minima, intervals where <m>f(x)</m> is increasing or decreasing;
+</li>
+<li xml:id="s3_6_2006_ii"> intervals where <m>f(x)</m> is concave upwards or downwards;
+</li>
+<li xml:id="s3_6_2006_iii"> equations of any horizontal or vertical asymptotes.
+</li>
+</ol></p>
+</li>
+<li xml:id="s3_6_2006_c"> Sketch the graph of <m>y = f(x)</m>, giving the <m>(x, y)</m>  coordinates for all points of interest above.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+The function is continuous at <m>x=0</m>, but its derivative is not.
+</p></hint>
+<answer><p>
+<xref ref="s3_6_2006_a"/>
+One branch of the function,
+the exponential function <m>e^x</m>, is continuous everywhere. So <m>f(x)</m> is continuous for <m>x \lt 0</m>. When <m>x \geq 0</m>, <m>f(x)=\dfrac{x^2+3}{3(x+1)}</m>, which is continuous whenever <m>x \neq 1</m> (so it's continuous for all <m>x  \gt 0</m>). So, <m>f(x)</m> is continuous for <m>x \gt 0</m>. To see that <m>f(x)</m> is continuous at <m>x=0</m>, we see:
+<md>
+<mrow>
+\lim_{x\rightarrow0-}f(x)=\lim_{x\rightarrow0-}e^x&amp;=1
+</mrow><mrow>
+\lim_{x\rightarrow0+}f(x)=\lim_{x\rightarrow0+}\frac{x^2+3}{3(x+1)}&amp;=1
+</mrow><mrow>
+\mbox{So, } \lim_{x \rightarrow 0}f(x)&amp;=1=f(0)
+</mrow>
+</md>
+Hence <m>f(x)</m> is continuous at <m>x=0</m>, so <m>f(x)</m> is continuous everywhere.
+</p>
+<p>
+<xref ref="s3_6_2006_b"/>
+<ul>
+<li> i. <m>f(x)</m> is increasing for <m>x \lt 0</m> and <m>x \gt 1</m>, decreasing for <m>0 \lt x \lt 1</m>, has a local max at <m>(0,1)</m>, and has a local min at <m>\left(1,\frac{2}{3}\right)</m>.</li>
+<li> ii. <m>f(x)</m> is concave upwards for all <m>x\ne 0</m>.</li>
+<li> iii. The <m>x</m>--axis is a horizontal asymptote as <m>x\rightarrow-\infty</m>.
+</li>
+</ul>
+</p>
+
+<p><xref ref="s3_6_2006_c"/>
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{.5}{2}
+\draw[thick] plot[domain=-3:0](\x,{exp(\x)});
+\draw (0,1) node[vertex, label=above left:{$(0,1)$}]{};
+\draw[thick] plot[domain=0:3](\x,{(\x*\x+3)/(3*\x+3)});
+\draw (1,2/3) node[vertex, label=above:{$(1,\frac{2}{3})$}]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+<xref ref="s3_6_2006_a"/>
+One branch of the function,
+the exponential function <m>e^x</m>, is continuous everywhere. So <m>f(x)</m> is continuous for <m>x \lt 0</m>. When <m>x \geq 0</m>, <m>f(x)=\dfrac{x^2+3}{3(x+1)}</m>, which is continuous whenever <m>x \neq 1</m> (so it's continuous for all <m>x  \gt 0</m>). So, <m>f(x)</m> is continuous for <m>x \gt 0</m>. To see that <m>f(x)</m> is continuous at <m>x=0</m>, we see:
+<md>
+<mrow>
+\lim_{x\rightarrow0-}f(x)=\lim_{x\rightarrow0-}e^x&amp;=1
+</mrow><mrow>
+\lim_{x\rightarrow0+}f(x)=\lim_{x\rightarrow0+}\frac{x^2+3}{3(x+1)}&amp;=1
+</mrow><mrow>
+\mbox{So, } \lim_{x \rightarrow 0}f(x)&amp;=1=f(0)
+</mrow>
+</md>
+Hence <m>f(x)</m> is continuous at <m>x=0</m>, so <m>f(x)</m> is continuous everywhere.
+</p>
+<p>
+<xref ref="s3_6_2006_b"/>
+We differentiate the function twice.
+ Notice
+ <md>
+<mrow>
+ \diff{}{x}\left\{\dfrac{x^2+3}{3(x+1)}\right\}&amp;=\frac{3(x+1)(2x)-(x^2+3)(3)}{9(x+1)^2}
+</mrow><mrow>
+&amp;=\frac{x^2+2x-3}{3(x+1)^2}
+</mrow><mrow>
+ &amp;=\frac{(x-1)(x+3)}{3(x+1)^2}\qquad\mbox{where $x \neq -1$}
+</mrow><mrow>
+ \mbox{Then}\qquad
+  \lim_{x \to 0^+}f'(x)&amp;=\frac{(0-1)(0+3)}{3(0+1)^2}=-1 \neq 1 =e^0= \lim_{x \to 0^-}f'(x)
+</mrow><mrow>
+ \mbox{so}\qquad
+f'(x)&amp;=\left\{\begin{array}{ll}
+e^x&amp;x \lt 0
+</mrow><mrow>
+DNE&amp;x=0
+</mrow><mrow>
+\frac{(x-1)(x+3)}{3(x+1)^2}&amp;x  \gt  0
+\end{array}\right.
+</mrow><mrow>
+ </mrow>
+<intertext>Differentiating again,</intertext><mrow>
+ \diff{^2}{x^2}\left\{\dfrac{x^2+3}{3(x+1)}\right\}&amp;=
+ \diff{}{x}\left\{\frac{x^2+2x-3}{3(x+1)^2}
+ \right\}
+</mrow><mrow>
+ &amp;=\frac{3(x+1)^2(2x+2)-(x^2+2x-3)(6)(x+1)}{9(x+1)^4}\left(\frac{\div3(x+1)}{\div3(x+1)}\right)
+</mrow><mrow>
+ &amp;=\frac{(x+1)(2x+2)-2(x^2+2x-3)}{3(x+1)^3}
+</mrow><mrow>
+ &amp;=\frac{8}{3(x+1)^3}\qquad\mbox{where $x \neq -1$}
+</mrow><mrow>
+ \mbox{so}\qquad
+f''(x)&amp;=\left\{\begin{array}{ll}
+e^x&amp;x \lt 0
+</mrow><mrow>
+DNE&amp;x=0
+</mrow><mrow>
+\frac{8}{3(x+1)^3}&amp;x  \gt  0
+\end{array}\right.
+ </mrow>
+</md>
+</p>
+
+<p>i.
+The only singular point is <m>x=0</m>, and the only critical point is <m>x=1</m>. (When you're reading off the expression for <m>f'(x)</m>, remember that the bottom line only applies when <m>x \gt 0</m>.)</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>(-\infty,0)</m></cell><cell><m>0</m></cell><cell><m>(0,1)</m></cell><cell>1</cell><cell><m>(1,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m></cell><cell>positive</cell><cell>DNE</cell><cell>negative</cell><cell>0</cell><cell>positive</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell>increasing</cell><cell>local max</cell><cell>decreasing</cell><cell>local min</cell><cell>increasing</cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p> The coordinates of the local maximum are <m>(0,1)</m>
+and the coordinates of the local minimum are <m>\left(1,\frac{2}{3}\right)</m>.
+</p>
+
+<p>ii.  When <m>x \neq 0</m>, <m>f''(x)</m> is always positive, so <m>f(x)</m> is concave up.
+</p>
+<p>iii.
+<md>
+<mrow>
+\lim_{x \to \infty} f(x)&amp;=\lim_{x \to \infty} \frac{x^2+3}{3x+3}
+</mrow><mrow>
+&amp;=\lim_{x \to \infty}\frac{x+\frac{3}{x}}{1+\frac{3}{x}}=\infty
+</mrow>
+<intertext>So, there is no horizontal asymptote to the right.</intertext><mrow>
+\lim_{x \to -\infty} f(x)&amp;=\lim_{x \to -\infty}e^x=0
+</mrow>
+</md>
+So, <m>y=0</m> is a horizontal asymptote to the left.
+</p>
+<p>
+Since <m>f(x)</m> is continuous everywhere, there are no vertical asymptotes.
+</p>
+
+<p><xref ref="s3_6_2006_c"/>
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{.5}{2}
+\draw[thick] plot[domain=-3:0](\x,{exp(\x)});
+\draw (0,1) node[vertex, label=above left:{$(0,1)$}]{};
+\draw[thick] plot[domain=0:3](\x,{(\x*\x+3)/(3*\x+3)});
+\draw (1,2/3) node[vertex, label=above:{$(1,\frac{2}{3})$}]{};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}](-3,-.75)--(0,-.75);
+\draw[red] (-1.5,-1.5) node{increasing};
+\draw[blue, decorate, decoration={brace, amplitude=6pt, mirror}](0,-.75)--(1,-.75);
+\draw[blue] (.5,-1.5) node{decr};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}](1,-.75)--(3,-.75);
+\draw[red] (2,-1.5) node{increasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}](-3,-2)--(0,-2);
+\draw[red] (-1.5,-2.75) node{concave up};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}](0,-2)--(3,-2);
+\draw[red] (1.5,-2.75) node{concave up};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+<introduction><p>In Questions<nbsp/><xref ref="s3_6_6expfirst"/> and <xref ref="s3_6_6explast"/>, you will sketch the graphs of functions with an exponential component. In the next section, you will learn how to find their horizontal asymptotes, but for now these are given to you.</p></introduction>
+
+<exercise xml:id="s3_6_6expfirst"><title><fromexam>1997D</fromexam></title>
+<statement><p>
+The function <m>f(x)</m> and its derivative are given below:
+<me>
+f(x)=(1+2x)e^{-x^2}\qquad\hbox{and}\qquad f'(x)=2(1-x-2x^2)e^{-x^2}
+</me>
+</p>
+
+<p>Sketch the graph of <m>f(x)</m>. Indicate the critical points, local
+and/or absolute maxima and minima, and asymptotes. Without actually calculating
+the inflection points, indicate on the graph their approximate location.
+</p>
+
+<p>Note: <m>\ds\lim_{x \to \pm\infty}f(x)=0</m>.
+</p></statement>
+<hint><p>
+Since you aren't asked to find the intervals of concavity exactly, sketch the intervals of increase and decrease, and turn them into a smooth curve. You might not get exactly the intervals of concavity that are given in the solution, but there should be the same number of intervals as the solution, and they should have the same positions relative to the local extrema.
+</p></hint>
+<answer>
+<sidebyside>
+<image source="problems/figs/graphE12"/>
+</sidebyside>
+</answer>
+<solution><p>
+<ul>
+<li><p> Asymptotes:
+In the problem statement, we are told:
+<me>
+\lim_{x \to \pm \infty}\frac{1+2x}{e^{x^2}}=0</me>
+</p>
+
+<p>So, <m>y=0</m> is a horizontal asymptote both at <m>x=\infty</m> and at <m>x=-\infty</m>.
+</p>
+
+<p>Since <m>f(x)</m> is continuous, it has no vertical asymptotes.</p>
+</li>
+<li><p> Intervals of increase and decrease:
+</p>
+
+<p>The critical points are the zeroes of <m>1-x-2x^2=(1-2x)(1+x)</m>. That is,
+ <m>x=\frac{1}{2},\ -1</m>.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>(-\infty,-1)</m></cell><cell><m>-1</m></cell><cell><m>(-1,\frac{1}{2})</m></cell><cell><m>\frac{1}{2}</m></cell><cell><m>(\frac{1}{2},\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m></cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>0</cell><cell>negative</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell>decreasing</cell><cell>local min</cell><cell>increasing</cell><cell>local max</cell><cell>decreasing</cell>
+</row></tabular>
+</sidebyside>
+
+<p>At these critical points, <m>f\big(\frac{1}{2}\big)=2e^{-1/4} \gt 0</m> and <m>f(-1)=-e^{-1} \lt 0</m>.
+</p>
+
+<p>From here, we can sketch a skeleton of the graph.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4.25}{4.25}{1}{3}
+\YExcoord{-2}{-1}
+\YExcoord{1}{\frac{1}{2}}
+\draw[thick] (-4,-.1)--(-2,-.3)--(1,2)--(2,.5)--(4,.25);
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-4,-1)--(-2,-1);
+\draw[blue] (-3,-1.75) node{decreasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-2,-1)--(1,-1);
+\draw[red] (-.5,-1.75) node{increasing};
+\draw[blue, decorate, decoration={brace, amplitude=6pt, mirror}] (1,-1)--(2,-1);
+\draw[blue] (1.5,-1.75) node{decr};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (2,-1)--(4,-1);
+\draw[red] (3,-1.75) node{increasing};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+</li>
+<li><p> Concavity:
+</p>
+
+<p>We are told that we don't have to actually solve for the inflection points. We just need to know enough to get a basic idea. So, we'll turn the skeleton of the graph into smooth curve.
+</p>
+
+<sidebyside>
+<image source="problems/figs/graphE12"/>
+</sidebyside>
+
+<p>Inflection points are points where the convexity changes from up
+to down or vice versa. It looks like our graph is convex down for <m>x</m> from
+<m>-\infty</m> to about <m>-1.8</m>, convex up from about <m>x=-1.8</m> to about <m>x=-0.1</m>,
+convex down from about <m>x=-0.1</m> to about <m>x=1.4</m> and convex up from about
+<m>x=1.4</m> to infinity. So there are three inflection points at roughly
+<m>x=-1.8,\ -0.1,\ 1.4</m>.
+</p>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_6_6explast" purpose="RQS"><title><fromexam>2009H</fromexam></title>
+<statement><p>
+Consider the function <m>f(x) = xe^{-x^2/2}</m>.
+</p>
+
+<p>Note: <m>\ds\lim_{x \to \pm\infty}f(x)=0</m>.
+<ol label="a">
+<li xml:id="s3_62009_2"> Find all inflection points and intervals of increase, decrease,
+ convexity up, and convexity down. You may use without proof the formula
+<m>f''(x) = (x^3-3x)e^{-x^2/2}</m>.
+</li>
+<li xml:id="s3_62009_3"> Find local and global minima and maxima.
+</li>
+<li xml:id="s3_62009_4">  Use all the above to draw a graph for <m>f</m>. Indicate all
+special points on the graph.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Use intervals of increase and decrease, concavity, and asymptotes to sketch the curve.
+</p></hint>
+<answer><p>
+<xref ref="s3_62009_2"/>
+<ul>
+<li>Increasing: <m>(-1,1)</m>, decreasing: <m>(-\infty,-1)\cup (1,\infty)</m></li>
+<li> concave up: <m>(-\sqrt{3},0) \cup (\sqrt{3},\infty)</m>, concave down: <m>(-\infty,-\sqrt{3}) \cup (0 ,\sqrt{3})</m></li>
+<li> inflection points: <m>x=\pm\sqrt{3}, 0</m></li>
+</ul>
+</p>
+
+<p><xref ref="s3_62009_3"/>
+The local and global minimum of <m>f(x)</m> is at <m>(-1,\frac{-1}{\sqrt{e}})</m>, and the local and global maximum of <m>f(x)</m> is at <m>(1,\frac{1}{\sqrt{e}})</m>.
+</p>
+
+<p><xref ref="s3_62009_4"/>
+In the graph below, open dots are inflection points, and
+solid dots are extrema.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6.5}{3};
+\draw[thick] plot[domain=-3:3, scale=2, samples=100](\x,{2*\x*exp(-\x*\x/2)});
+\draw (3.5,1.54) node[opendot]{};
+\draw (-3.5,-1.53) node[opendot]{};
+\YExcoord{-2}{-1}
+\YExcoord{2}{1}
+\draw (-3.5,.2) -- (-3.5,-.05) node[below]{$-\sqrt{3}$};
+\YExcoord{3.5}{\sqrt{3}}
+\YEycoord{-2.4}{\dfrac{-1}{\sqrt e}}
+\YEycoord{2.4}{\dfrac{1}{\sqrt e}}
+\draw (2,2.4) node[vertex]{};
+\draw (-2,-2.4) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+
+<solution><p>
+<xref ref="s3_62009_2"/>  We need to know the first and second derivative of <m>f(x)</m>. Using the product and chain rules, <m>f'(x)=e^{-x^2/2}(1-x^2)</m>. Given to us is <m>f''(x) = (x^3-3x)e^{-x^2/2}</m>. (These derivatives are also easy to find using the formula developed in Question<nbsp/><xref ref="s2_14expprod"/>, Section<nbsp/><xref ref="sec_higher_diff"/>.)
+</p>
+
+<p>Since <m>e^{-x^2/2}</m> is always positive, the sign of <m>f'(x)</m> is the same as the sign of <m>1-x^2</m>. <m>f(x)</m> has no singular points and its only critical points are <m>x=\pm 1</m>. At these critical points, <m>f(-1)=-\dfrac{1}{\sqrt{e}}</m> and <m>f(1)=\dfrac{1}{\sqrt{e}}</m>.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>(-\infty,-1)</m></cell><cell><m>-1</m></cell><cell><m>(-1,1)</m></cell><cell><m>1</m></cell><cell><m>(1,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m></cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>0</cell><cell>negative</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell>decreasing</cell><cell>local min</cell><cell>increasing</cell><cell>local max</cell><cell>decreasing</cell>
+</row></tabular>
+</sidebyside>
+
+<p> This, together with the observations that <m>f(x) \lt 0</m> for <m>x \lt 0</m>,
+          <m>f(0)=0</m> and <m>f(x) \gt 0</m> for <m>x \gt 0</m> (in fact <m>f</m> is an odd function),
+          is enough to sketch a skeleton of our graph.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{5}{2};
+\draw (-2,.2) -- (-2,-.2) node[below]{$-1$};
+\draw (2,.2) -- (2,-.2) node[below]{$1$};
+\draw (.2,-1)--(-.2,-1) node[left]{$-\frac{1}{\sqrt{e}}$};
+\draw (.2,1)--(-.2,1) node[left]{$\frac{1}{\sqrt{e}}$};
+\draw[ thick] (-5,-.1)-- (-4,-.2)--(-2,-1);
+\draw[thick] (-2,-1)--(2,1);
+\draw[thick] (2,1)--(4,.2)--(5,.1);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>We can factor <m>f''(x) = (x^3-3x)e^{-x^2/2}=x(x+\sqrt{3})(x-\sqrt{3})e^{-x^2/2}</m>. Since <m>e^{-x^2/2}</m> is always positive, the sign of <m>f''(x)</m> is the same as the sign of <m>x(x+\sqrt{3})(x-\sqrt{3})</m>.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>(-\infty,-\sqrt{3})</m></cell><cell><m>-\sqrt{3}</m></cell><cell><m>(-\sqrt{3},0)</m>
+</cell><cell>0</cell><cell><m>(0,\sqrt{3})</m>
+</cell><cell><m>\sqrt{3}</m></cell><cell><m>(\sqrt{3},\infty)</m></cell>
+</row><row>
+<cell><m>f''(x)</m></cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>0</cell><cell>negative</cell><cell>0</cell><cell>positive</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell>concave down</cell><cell>IP</cell><cell>concave up</cell><cell>IP</cell><cell>concave down</cell><cell>IP</cell><cell>concave up</cell>
+</row></tabular>
+</sidebyside>
+
+<p> <xref ref="s3_62009_3"/> We've already seen that <m>f(x)</m> has a local min at <m>x=-1</m> and a local max at <m>x=1</m>.
+</p>
+
+<p>As <m>x</m> tends to negative infinity, <m>f(x)</m> tends to 0, and <m>f(x)</m> is decreasing on <m>(-\infty,-1)</m>. Then <m>f(x)</m> is between <m>0</m> and <m>f(-1)=\frac{-1}{\sqrt{e}}</m> on <m>(-\infty,-1)</m>. Then <m>f(x)</m> is increasing on <m>(-1,1)</m> from <m>f(-1)=\frac{-1}{\sqrt{e}}</m> to <m>f(1)=\frac{1}{\sqrt{e}}</m>. Finally, for <m>x \gt 1</m>, <m>f(x)</m> is decreasing from <m>f(1)=\frac{1}{\sqrt{e}}</m> and tending to 0. So when <m>x \gt 1</m>, <m>f(x)</m> is between <m>\frac{1}{\sqrt{e}}</m> and <m>0</m>.
+</p>
+
+<p>So, over its entire domain, <m>f(x)</m> is between <m>\frac{-1}{\sqrt{e}}</m> and <m>\frac{1}{\sqrt{e}}</m>, and it only achieves those values at <m>x=-1</m> and <m>x=1</m>, respectively. Therefore, the local and global min of <m>f(x)</m> is at <m>(-1,\frac{-1}{\sqrt{e}})</m>, and the local and global max of <m>f(x)</m> is at <m>(1,\frac{1}{\sqrt{e}})</m>.
+</p>
+
+<p><xref ref="s3_62009_4"/>
+In the graph below, open dots are inflection points, and
+solid dots are extrema.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6.5}{3};
+\draw[thick] plot[domain=-3:3, scale=2, samples=100](\x,{2*\x*exp(-\x*\x/2)});
+\draw (3.5,1.54) node[opendot]{};
+\draw (-3.5,-1.53) node[opendot]{};
+\YExcoord{-2}{-1}
+\YExcoord{2}{1}
+\draw (-3.5,.2) -- (-3.5,-.05) node[below]{$-\sqrt{3}$};
+\YExcoord{3.5}{\sqrt{3}}
+\YEycoord{-2.4}{\dfrac{-1}{\sqrt e}}
+\YEycoord{2.4}{\dfrac{1}{\sqrt e}}
+\draw (2,2.4) node[vertex]{};
+\draw (-2,-2.4) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+<introduction><p>In Questions<nbsp/><xref ref="s3_6_6trig1"/> and <xref ref="s3_6_6trig2"/>, you will sketch the graphs of functions that have a trigonometric component.</p></introduction>
+
+<exercise xml:id="s3_6_6trig1">
+<statement><p>
+Use the techniques from this section to sketch the graph of <m>f(x)=x+2\sin x</m>.
+</p></statement>
+<hint><p>
+Although the function exhibits a certain kind of repeating behaviour, it is not periodic.
+</p></hint>
+<answer><p>
+Local maxima occur at <m>x=\frac{2\pi}{3}+2\pi n</m> for all integers <m>n</m>, and local minima occur at <m>x=-\frac{2\pi}{3}+2\pi n</m> for all integers <m>n</m>. Inflection points occur at
+every integer multiple of <m>\pi</m>.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{5.5}{5.5};
+\draw[thick] plot[domain=-15:15, samples=100](\x/3,{(\x+2*sin(\x r))/3});
+\foreach \x in {2,4,8,10,14}
+	{\YExcoord{\x*3.14/9}{\frac{\x \pi}{3}}
+	\YExcoord{-\x*3.14/9}{\frac{-\x \pi}{3}}
+	}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+
+<solution><p>
+<ul>
+<li><p> Symmetry:
+</p>
+
+<p><me>
+f(-x)=-x+2\sin(-x)=-x-2\sin x = -f(x)</me>
+</p>
+
+<p>So, <m>f(x)</m> is an odd function. If we can sketch <m>y=f(x)</m> for nonnegative <m>x</m>, we can use symmetry to complete the curve for all <m>x</m>.
+</p>
+</li>
+<li><p> Asymptotes:
+</p>
+
+<p>Since <m>f(x)</m> is continuous, it has no vertical asymptotes. It also has no horizontal asymptotes, since
+<me>
+\lim_{x \to -\infty}f(x)=-\infty \qquad \lim_{x \to \infty}f(x)=\infty </me>
+</p>
+</li>
+<li><p> Intervals of increase and decrease:
+</p>
+
+<p>Since <m>f(x)</m> is differentiable everywhere, there are no singular points.
+<md>
+<mrow>
+f'(x)&amp;=1+2\cos x
+</mrow>
+<intertext>So, the critical points of <m>f(x)</m> occur when</intertext><mrow>
+\cos x &amp;= -\frac{1}{2}
+</mrow><mrow>
+x&amp;=2\pi n \pm \frac{2\pi}{3}\mbox{ for any integer } n
+</mrow>
+</md>
+For instance, <m>f(x)</m> has critical points at <m>x=\dfrac{2\pi}{3}</m>, <m>x=\dfrac{4\pi}{3}</m>, <m>x=\dfrac{8\pi}{3}</m>, and <m>x=\dfrac{10\pi}{3}</m>.
+</p>
+
+<p>From  the  unit circle, or the graph of <m>y=1+2\cos x</m>, we see:</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>\left(-\frac{2\pi}{3},\frac{2\pi}{3}\right)</m></cell><cell><m>\frac{2\pi}{3}</m></cell><cell><m>\left(\frac{2\pi}{3},\frac{4\pi}{3}\right)</m>
+</cell><cell><m>\frac{4\pi}{3}</m></cell><cell><m>\left(\frac{4\pi}{3},\frac{8\pi}{3}\right)</m>
+</cell><cell><m>\frac{8\pi}{3}</m></cell><cell><m>\left(\frac{8\pi}{3},\frac{10\pi}{3}\right)</m></cell>
+</row><row>
+<cell><m>f'(x)</m></cell><cell>positive</cell><cell>0</cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>0</cell><cell>negative</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell>increasing</cell><cell>l. max </cell><cell> decreasing </cell><cell> l. min</cell><cell>increasing</cell><cell>l. max </cell><cell> decreasing</cell>
+</row></tabular>
+</sidebyside>
+
+<p> We have enough information to sketch a skeleton of the curve <m>y=f(x)</m>. We use the pattern above for the graph to the right of the <m>y</m>-axis, and use odd symmetry for the graph to the left of the <m>y</m>-axis.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{5.5}{5.5};
+\foreach \x in {2,4,8,10,14,-8,-10,-14}
+	{\YExcoord{\x*3.14/9}{\frac{\x \pi}{3}}
+	}
+\foreach \x in {-2,-4}
+	{\YExcoord{\x*3.14/9}{}
+	}
+\color{orange}
+\foreach \x in {2,8,14}
+	{
+	\draw (\x*3.14/9,\x/3) node[vertex](p\x){};
+	\draw (-\x*3.14/9,-\x/3) node[vertex](n\x){};
+	}
+\foreach \x in {4,10}
+	{
+	\draw (\x*3.14/9,\x/3-1) node[vertex](p\x){};
+	\draw (-\x*3.14/9,-\x/3+1) node[vertex](n\x){};
+	}
+\draw (p2)--(p4)--(p8)--(p10)--(p14);
+\draw (p2)--(n2)--(n4)--(n8)--(n10)--(n14);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+</li>
+<li><p> Concavity:
+<me>
+f''(x)=-2\sin x</me>
+</p>
+
+<p>So, <m>f''(x)</m> exists everywhere, and is zero for <m>x=\pi+\pi n</m> for every integer <m>n</m>.</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>\left(0,\pi\right)</m></cell><cell><m>\pi</m></cell><cell><m>\left(\pi,2\pi\right)</m>
+</cell><cell><m>2\pi</m></cell><cell><m>\left(2\pi,3\pi\right)</m>
+</cell><cell><m>3\pi</m></cell><cell><m>\left(3\pi,4\pi\right)</m></cell>
+</row><row>
+<cell><m>f''(x)</m></cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>0</cell><cell>negative</cell><cell>0</cell><cell>positive</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell>concave down </cell><cell> IP </cell><cell> concave up </cell><cell> IP </cell><cell> concave down </cell><cell> IP </cell><cell> concave up</cell>
+</row></tabular>
+</sidebyside>
+
+<p>Using these values, and the odd symmetry of <m>f(x)</m>, we can refine our skeleton. The closed dots are local extrema, and the open dots are inflection points occurring at every integer multiple of <m>\pi</m>.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=1.2]
+\YEaxis{5.5}{5.5};
+\foreach \x in {2,4,8,10,14,-2,-4,-8,-10,-14}
+	{\YExcoord{\x*3.14/9}{\frac{\x \pi}{3}}}
+\foreach \x in {2,8,14,-4,-10}
+	{\draw (\x*3.14/9,\x*3.14/9+0.58) node[vertex]{};}
+\foreach \x in {4,10,-2,-8,-14}
+	{\draw (\x*3.14/9,\x*3.14/9-0.58) node[vertex]{};}
+	\draw[thick] plot[domain=-15:15, samples=100](\x/3,{(\x+2*sin(\x r))/3});
+\foreach \x in {-4,...,4}
+	{\draw (\x*1.05,\x*1.05) node[opendot]{};}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_6_6trig2"><title><fromexam>2010H</fromexam></title>
+<statement><p>
+<me>
+ f(x) = 4\sin x - 2\cos 2x</me>
+</p>
+
+<p> Graph the equation <m>y = f(x)</m>,
+including all important features. (In particular, find all local maxima and
+minima and all inflection points.)
+Additionally, find the maximum and minimum values of <m>f(x)</m> on the interval <m>[0,\pi]</m>.
+</p></statement>
+<hint><p>
+The period of this function is <m>2\pi</m>. So, it's enough to graph the curve <m>y=f(x)</m> over the interval <m>[-\pi,\pi]</m>, because that figure will simply repeat.
+</p>
+
+<p>Use trigonometric identities to write <m>f''(x)=-4(4\sin^2 x + \sin x -2)</m>. Then you can find where <m>f''(x)=0</m> by setting <m>y=\sin x</m> and solving <m>0=4y^2+y-2</m>.
+</p></hint>
+<answer><p>
+Below is the graph <m>y=f(x)</m> over the interval <m>[-\pi,\pi]</m>. The sketch of the curve over a larger domain is simply a repetition of this figure.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{4}{3.5}{6.5}
+\draw plot[domain=-3.14:3.14, samples=100](\x,{4*sin (\x r)-2*cos(2*\x r)});
+\draw (3.14,.2)--(3.14,-.2) node[below]{$\pi$};
+\draw (-3.14,.2)--(-3.14,-.2) node[below]{$-\pi$};
+\draw (1.57,.2)--(1.57,-.2) node[below]{$\frac{\pi}{2}$};
+\draw (-1.57,.2)--(-1.57,-.2) node[below]{$-\frac{\pi}{2}$};
+\draw (-.52,.2)--(-.52,-.5) node[below]{$-\frac{\pi}{6}$};
+\draw (-2.62,.2)--(-2.62,-.5) node[below]{$-\frac{5\pi}{6}$};
+\draw[blue] (.635,-.1)--(.635,.5) node[above]{$a$};
+\draw[blue] (-1.003,-.1)--(-1.003,.5) node[above]{$b$};
+\draw[blue] (2.5,-.1)--(2.5,.5) node[above]{$\pi-a$};
+\draw[blue] (-2.14,-.1)--(-2.14,.5) node[above]{$-\pi-b$};
+\draw (-.2,6)--(.2,6) node[right]{$6$};
+\draw (-.2,-3)--(.2,-3) node[right]{$-3$};
+\draw (-.2,-2)--(.2,-2) node[right]{$-2$};
+\draw[blue] (.635,1.78) node[opendot]{};
+\draw[blue] (-1,-2.53) node[opendot]{};
+\draw[blue] (2.5,1.78) node[opendot]{};
+\draw[blue] (-2.14,-2.53) node[opendot]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>On the interval <m>[0,\pi]</m>, the maximum value of <m>f(x)</m> is <m>6</m> and the minimum value is <m>-2</m>.
+</p>
+
+<p>Let <textblue><m>a=\arcsin \left(\dfrac{-1+\sqrt{33}}{8}\right)\approx 0.635\approx0.2\pi</m></textblue> and
+<textblue><m>b=\arcsin \left(\dfrac{-1-\sqrt{33}}{8}\right)\approx -1.003\approx -0.3\pi</m></textblue>. The points <textblue><m>-\pi-b</m></textblue>, <textblue><m>b</m></textblue>, <textblue><m>a</m></textblue>, and <textblue><m>\pi-a</m></textblue> are inflection points.
+</p>
+</answer>
+<solution><p>
+We first compute the derivatives <m>f'(x)</m> and <m>f''(x)</m>.
+<md>
+<mrow>
+f'(x) &amp;= 4\cos x + 4\sin 2x= 4\cos x + 8\sin x\cos x=4\cos x(1+2\sin x) \cr
+f''(x) &amp;= -4\sin x + 8\cos 2x= -4\sin x + 8-16\sin^2x
+=-4(4\sin^2x+\sin x-2)
+</mrow>
+</md>
+The graph has the following features.
+<ul>
+<li><p> Symmetry: <m>f(x)</m> is periodic of period <m>2\pi</m>. We'll consider only <m>-\pi\le x\le \pi</m>. (Any interval of length <m>2\pi</m> will do.)
+</p>
+</li>
+<li> <m>y</m>-intercept: <m>f(0)=-2</m>
+</li>
+<li><p> Intervals of increase and decrease: <m>f'(x)=0</m> when <m>\cos x=0</m>, i.e. <m>x=\pm\dfrac{\pi}{2}</m>,
+and when <m>\sin x =-\dfrac{1}{2}</m>, i.e. <m>x=-\dfrac{\pi}{6}, -\dfrac{5\pi}{6}</m>.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>(-\pi,-\frac{5\pi}{6})</m></cell><cell><m>\left(-\frac{5\pi}{6},-\frac{\pi}{2}\right)</m></cell><cell>
+<m>\left(-\frac{\pi}{2},-\frac{\pi}{6}\right)</m></cell><cell>
+<m>\left(-\frac{\pi}{6},\frac{\pi}{2}\right)</m>
+</cell><cell><m>\left(\frac{\pi}{2},\pi\right)</m>
+</cell>
+</row><row>
+<cell><m>f'(x)</m></cell><cell>negative</cell><cell>positive</cell><cell>negative</cell><cell>positive</cell><cell>negative</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell>decreasing</cell><cell>increasing</cell><cell>decreasing</cell><cell>increasing</cell><cell>decreasing</cell>
+</row></tabular>
+</sidebyside>
+
+<p> This tells us local maxima occur at <m>x=\pm\dfrac{\pi}{2}</m> and local minima occur at
+<m>x=-\dfrac{5\pi}{6}</m> and <m>x=-\dfrac{\pi}{6}</m>.
+</p>
+
+<p>Here is a table giving the value of <m>f</m> at each of its critical
+points.</p>
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell>
+<cell><m>-\dfrac{5}{6}\pi</m></cell>
+<cell><m>-\dfrac{\pi}{2}</m></cell>
+<cell><m>\dfrac{\pi}{2}</m></cell>
+<cell><m>\dfrac{5}{6}\pi</m></cell>
+</row>
+<row>
+<cell><m>\sin(x)</m></cell>
+<cell><m>-\frac{1}{2}</m></cell>
+<cell><m>-1</m></cell>
+<cell><m>-\frac{1}{2}</m></cell>
+<cell><m>1</m></cell>
+</row>
+<row>
+<cell><m>\cos(2x)</m></cell>
+<cell><m>\frac{1}{2}</m></cell>
+<cell><m>-1</m></cell>
+<cell><m>\frac{1}{2}</m></cell>
+<cell><m>-1</m></cell>
+</row>
+<row>
+<cell><m>f(x)</m></cell>
+<cell><m>-3</m></cell>
+<cell><m>-2</m></cell>
+<cell><m>-3</m></cell>
+<cell><m>6</m></cell>
+</row>
+</tabular>
+</sidebyside>
+
+
+<p>From here, we can graph a skeleton of of <m>f(x)</m>:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{4}{3.5}{6.5}
+\draw[- \gt , thick] (-3.14,-2)--(-2.62,-3);
+\draw[- \gt , thick] (-2.62,-3)--(-1.57,-2);
+\draw[- \gt , thick] (-1.57,-2)--(-.52,-3);
+\draw[- \gt , thick] (-.52,-3)--(0,-2)--(1.57,6);
+\draw[- \gt , thick] (1.57,6)--(3.14,-2);
+\draw (3.14,.2)--(3.14,-.2) node[below]{$\pi$};
+\draw (-3.14,.2)--(-3.14,-.2) node[below]{$-\pi$};
+\draw (1.57,.2)--(1.57,-.2) node[below]{$\frac{\pi}{2}$};
+\draw (-1.57,.2)--(-1.57,-.2) node[below]{$-\frac{\pi}{2}$};
+\draw (-.52,.2)--(-.52,-.5) node[below]{$-\frac{\pi}{6}$};
+\draw (-2.62,.2)--(-2.62,-.5) node[below]{$-\frac{5\pi}{6}$};
+\draw (-.2,6)--(.2,6) node[right]{$6$};
+\draw (-.2,-3)--(.2,-3) node[right]{$-3$};
+\draw (-.2,-2)--(.2,-2) node[right]{$-2$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</li>
+<li><p> Concavity: To find the points where <m>f''(x)=0</m>, set <m>y=\sin x</m>, so
+<m>f''(x)=-4(4y^2+y-2)</m>.
+Then we really need to solve
+<md>
+<mrow>
+  4y^2 +y-2 &amp;=0 &amp; \text{which gives us}
+</mrow><mrow>
+  y &amp;= \dfrac{-1 \pm \sqrt{33}}{8}
+</mrow>
+</md>
+These two <m>y</m>-values map to the following two <m>x</m>-values, which we'll name <m>a</m> and <m>b</m> for convenience:
+<md>
+<mrow>
+  a &amp;= \arcsin\left(\dfrac{-1 + \sqrt{33}}{8} \right) \approx 0.635
+</mrow><mrow>
+  b &amp;= \arcsin\left(\dfrac{-1 - \sqrt{33}}{8} \right)\approx -1.003
+</mrow>
+</md>
+However, these are not the only values of <m>x</m> in <m>[-\pi,\pi]</m> with <m>\sin x = \frac{-1\pm\sqrt{33}}{8}</m>.
+The analysis above misses the others because the arcsine
+function only returns numbers in the range <m>\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]</m>. The graph below shows that there should be other values of <m>x</m> with <m>\sin x = \frac{-1\pm\sqrt{33}}{8}</m>, and hence <m>f''(x)=0</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6.5}{3}
+\draw[thick] plot[domain=-3.14:3.14, samples=100, scale=2](\x,{sin(\x r)});
+\draw (4,2) node[right]{$y=\sin x$};
+\YEycoord{1.19}{\frac{-1+\sqrt{33}}{8}}
+\draw (-.2,-1.69)--(.2,-1.69) node[right]{$\frac{-1-\sqrt{33}}{8}$};
+\YExcoord{-2.01}{b}
+\YExcoord{1.23}{a}
+\draw[densely dashed] (.2,1.19)--(6.28,1.19);
+\draw[densely dashed] (1.23,1.19)--(1.23,.2);
+\draw[densely dashed] (-2.01,-.7)--(-2.01,-1.69);
+\draw[densely dashed] (-6.28,-1.69)--(-.2,-1.69);
+\draw (-2.01,-1.69) node[vertex]{};
+\draw (1.23,1.19) node[vertex]{};
+\draw (-4.28,-1.69) node[vertex]{};
+\draw (5,1.19) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>We can recover the other solutions in <m>[-\pi,\pi]</m> by recalling that
+<md>
+<mrow>
+  \sin(x) &amp;= \sin(\pi-x)
+</mrow>
+</md>
+(see CLP appendix A7). So, if we choose <m>x =\arcsin\left(\frac{-1 + \sqrt{33}}{8} \right) \approx 0.635</m> to make
+<m>\sin(x)=\frac{-1 + \sqrt{33}}{8}</m> so that <m>f''(x) = 0</m>, then setting
+<md>
+<mrow>
+x &amp;= \pi-a=\pi-\arcsin\left(\dfrac{-1 + \sqrt{33}}{8} \right) \approx 2.507
+</mrow>
+</md>
+will also give us <m>\sin(x)=\frac{-1 + \sqrt{33}}{8}</m> and <m>f''(x) = 0</m>. Similarly, setting
+<md>
+<mrow>
+x &amp;=\pi-b= \pi-\arcsin\left(\dfrac{-1 - \sqrt{33}}{8} \right) \approx 4.145
+</mrow>
+</md>
+would give us <m>f''(x)=0</m>. However, this value is outside <m>[-\pi,\pi]</m>. To find another solution inside <m>[-\pi,\pi]</m> we
+use the identity
+<md>
+<mrow>
+  \sin(x) &amp;= \sin(-\pi-x)
+</mrow>
+</md>
+(which we can obtain from the identity we used above and the fact that <m>\sin(\theta)=\sin(\theta\pm2\pi)</m> for any angle <m>\theta</m>). Using this,
+we can show that
+<md>
+<mrow>
+x &amp;=-\pi-b= -\pi-\arcsin\left(\dfrac{-1 - \sqrt{33}}{8} \right) \approx -2.139
+</mrow>
+</md>
+also gives <m>f''(x)=0</m>.
+</p>
+
+<p>So, all together, <m>f''(x)=0</m> when <m>x=-\pi-b</m>, <m>x=b</m>, <m>x=a</m>, and <m>x=\pi-a</m>.
+</p>
+
+<p>Now, we should compute the sign of <m>f''(x)</m> while <m>x</m> is between <m>-\pi</m> and <m>\pi</m>. Recall that, if <m>y=\sin x</m>, then <m>f''(x)=-4(4y^2+y-2)</m>. So, in terms of <m>y</m>, <m>f''</m> is a parabola pointing down, with intercepts <m>y=\frac{-1\pm\sqrt{33}}{8}</m>. Then <m>f''</m> is positive when <m>y</m> is in the interval <m>\left(\frac{-1-\sqrt{33}}{8},\frac{-1+\sqrt{33}}{8}\right)</m>, and <m>f''</m> is negative otherwise. From the graph of sine, we see that <m>y</m>  is between
+<m>\frac{-1-\sqrt{33}}{8}</m> and <m>\frac{-1+\sqrt{33}}{8}</m> precisely on the intervals <m>(-\pi,-\pi-b)</m>,
+<m>(b,a)</m>, and <m>(\pi-a,\pi)</m>.
+</p>
+
+<p>Therefore,
+<m>f(x)</m> is concave up on the intervals <m>(-\pi,-\pi-b)</m>, <m>(b,a)</m>, and <m>(\pi-a,\pi)</m>, and
+<m>f(x)</m> is concave down on the intervals <m>(-\pi-b,b)</m> and <m>(a,\pi-a)</m>. So, the inflection points of <m>f</m> occur at
+ <m>x=-\pi-b</m>, <m>x=b</m>, <m>x=a</m>, and <m>x=\pi-a</m>.
+ </p>
+</li>
+</ul>
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{4}{3.5}{6.5}
+\draw plot[domain=-3.14:3.14, samples=100](\x,{4*sin (\x r)-2*cos(2*\x r)});
+\draw (3.14,.2)--(3.14,-.2) node[below]{$\pi$};
+\draw (-3.14,.2)--(-3.14,-.2) node[below]{$-\pi$};
+\draw (1.57,.2)--(1.57,-.2) node[below]{$\frac{\pi}{2}$};
+\draw (-1.57,.2)--(-1.57,-.2) node[below]{$-\frac{\pi}{2}$};
+\draw (-.52,.2)--(-.52,-.5) node[below]{$-\frac{\pi}{6}$};
+\draw (-2.62,.2)--(-2.62,-.5) node[below]{$-\frac{5\pi}{6}$};
+\draw[blue] (.635,-.1)--(.635,.5) node[above]{$a$};
+\draw[blue] (-1.003,-.1)--(-1.003,.5) node[above]{$b$};
+\draw[blue] (2.5,-.1)--(2.5,.5) node[above]{$\pi-a$};
+\draw[blue] (-2.14,-.1)--(-2.14,.5) node[above]{$-\pi-b$};
+\draw (-.2,6)--(.2,6) node[right]{$6$};
+\draw (-.2,-3)--(.2,-3) node[right]{$-3$};
+\draw (-.2,-2)--(.2,-2) node[right]{$-2$};
+\draw[blue] (.635,1.78) node[opendot]{};
+\draw[blue] (-1,-2.53) node[opendot]{};
+\draw[blue] (2.5,1.78) node[opendot]{};
+\draw[blue] (-2.14,-2.53) node[opendot]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>To find the maximum and minimum values of <m>f(x)</m> on <m>[0,\pi]</m>, we compare the values of <m>f(x)</m> at its critical points in this interval (only <m>x=\frac{\pi}{2}</m>) with the values of <m>f(x)</m> at its endpoints <m>x=0</m>, <m>x=\pi</m>.
+</p>
+
+<p>Since <m>f(0)=f(\pi)=-2</m>, the minimum value
+of <m>f</m> on <m>[0,\pi]</m> is <m>-2</m>, achieved at <m>x=0,\pi</m> and the maximum value of <m>f</m>  on <m>[0,\pi]</m> is <m>6</m>, achieved at <m>x=\dfrac{\pi}{2}</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Sketch the curve <m>y=\sqrt[3]{\dfrac{x+1}{x^2}}</m>.
+</p>
+
+<p>You may use the facts  <m>y'(x)=\dfrac{-(x+2)}{3x^{5/3}(x+1)^{2/3}}</m> and
+<m>y''(x)=\dfrac{4x^2+16x+10}{9x^{8/3}(x+1)^{5/3}}</m>.
+</p></statement>
+<hint><p>
+There is one point where the curve is continuous but has a vertical tangent line.
+</p></hint>
+<answer><p>
+The closed dot is the local minimum, and the open dots are inflection points at <m>x=-1</m> and <m>x=-2\pm\sqrt{1.5}</m>. The graph has horizontal asymptotes <m>y=0</m> as <m>x</m> goes to <m>\pm \infty</m>.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\clip (-8.25,-2.75) rectangle(6.5,5.5);
+\YEaaxis{8}{6}{2.5}{5}
+\color{red}
+\draw[thick, red] plot[domain=0.3:3, samples=100](2*\x,{2*((\x+1)/(\x*\x))^(1/3)});
+\draw[thick, red] plot[domain=-4:-1.001, samples=100](2*\x,{-2*((-1-\x)/(\x*\x))^(1/3)});
+\draw[thick, red] plot[domain=-.9999:-0.23, samples=100](2*\x,{2*((1+\x)/(\x*\x))^(1/3)});
+\draw(-4,-1.26) node[vertex]{};
+\draw(-6.22,-1.2) node[opendot]{};
+\draw(-1.55,1.44) node[opendot]{};
+\color{black}
+\foreach \x in {-1,-2}{\YExcoord{2*\x}{\x}}
+\foreach \y in {-1,1}{\YEycoord{2*\y}{\y}}
+\draw[red](-2,0) node[opendot]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution>
+<p>
+Let <m>f(x)=\sqrt[3]{\dfrac{x+1}{x^2}}</m>.
+<ul>
+<li><p> Asymptotes: Since <m>\ds\lim_{x \to 0} f(x) = \infty</m>, <m>f(x)</m> has a vertical asymptote at <m>x=0</m> where the curve reaches steeply upward from both the left and the right.
+</p>
+
+<p><m>\ds\lim_{x \to \pm \infty} f(x)=0</m>, so <m>y=0</m> is a horizontal asymptote for <m>x \to \pm \infty</m>.
+</p>
+</li>
+<li>Intercepts: <m>f(-1)=0</m>.
+</li>
+<li><p> Intervals of increase and decrease:
+<me>
+f'(x)=\dfrac{-(x+2)}{3x^{5/3}(x+1)^{2/3}}</me>
+</p>
+
+<p>There is a singular point at <m>x=-1</m> and a critical point at <m>x=-2</m>, in addition to a discontinuity at <m>x=0</m>. Note that <m>(x+1)^{2/3}=\left(\sqrt[3]{x+1}\right)^2</m>, which is never negative. Note also that <m>\ds\lim_{x \to -1}f'(x)=\infty</m>, so <m>f(x)</m> has a vertical tangent line at <m>x=-1</m>.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>(-\infty,-2)</m></cell><cell><m>-2</m></cell><cell><m>(-2,-1)</m></cell><cell><m>-1</m></cell><cell><m>(-1,0)</m></cell><cell>0</cell><cell><m>(0,\infty)</m>
+</cell>
+</row><row>
+<cell><m>f'(x)</m></cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>DNE</cell><cell>positive</cell><cell>DNE</cell><cell>negative</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell>decreasing</cell><cell>l. min</cell><cell>increasing</cell><cell>vertical</cell><cell>increasing</cell><cell>VA</cell><cell>decreasing</cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>This gives us enough information to sketch a skeleton of the curve.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{6}{2}{1.7}{2.2}
+\foreach \x in {-2,-1}{\YExcoord{2*\x}{\x}}
+\draw (-2,0) node[vertex]{};
+\draw (-4,-1.5) node[vertex]{};
+\draw[thick] (-6,-.25)--(-5,-.5)--(-4,-1.5)--(-2,-.25)--(-2,.25)--(-.25,1)--(-.1,2);
+\draw[thick] (.1,2)--(.2,.5)--(2,.25);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+</li>
+<li><p> Concavity:
+<me>
+f''(x)=\dfrac{4x^2+16x+10}{9x^{8/3}(x+1)^{5/3}}</me>
+</p>
+
+<p>We still have a discontinuity at <m>x=0</m>, and <m>f''(x)</m> does not exist at <m>x=-1</m>. The second derivative is zero when <m>4x^2+16x+10=0</m>. Using the quadratic formula, we find this occurs when <m>x=-2\pm\sqrt{1.5} \approx -0.8,-3.2</m>. Note <m>x^{8/3}=\left(\sqrt[3]{x}\right)^8</m> is never negative.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>\left(-\infty,-2-\sqrt{1.5}\right)</m></cell><cell><m>-2-\sqrt{1.5}</m></cell><cell><m>(-2-\sqrt{1.5},-1)</m></cell><cell>
+<m>-1</m>
+</cell>
+</row><row>
+<cell><m>f''(x)</m></cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>DNE</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell>concave down</cell><cell>IP</cell><cell>concave up</cell><cell>IP</cell>
+</row></tabular>
+</sidebyside>
+
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>(-1,-2+\sqrt{1.5})</m></cell><cell><m>-2+\sqrt{1.5}</m></cell><cell><m>(-2+\sqrt{1.5},0)</m>
+</cell><cell><m>(0,\infty)</m></cell>
+</row><row>
+<cell><m>f''(x)</m></cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>positive</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell>concave down</cell><cell>IP</cell><cell>concave up</cell><cell>concave up</cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>Now, we can refine our skeleton. The closed dot is the local minimum, and the open dots are inflection points.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\clip (-8.25,-2.75) rectangle(6.5,5.5);
+\YEaaxis{8}{6}{2.5}{5}
+\color{red}
+\draw[thick, red] plot[domain=0.3:3, samples=100](2*\x,{2*((\x+1)/(\x*\x))^(1/3)});
+\draw[thick, red] plot[domain=-4:-1.001, samples=100](2*\x,{-2*((-1-\x)/(\x*\x))^(1/3)});
+\draw[thick, red] plot[domain=-.9999:-.23, samples=100](2*\x,{2*((1+\x)/(\x*\x))^(1/3)});
+\draw(-4,-1.26) node[vertex]{};
+\draw(-6.22,-1.2) node[opendot]{};
+\draw(-1.55,1.44) node[opendot]{};
+\color{black}
+\foreach \x in {-1,-2}{\YExcoord{2*\x}{\x}}
+\foreach \y in {-1,1}{\YEycoord{2*\y}{\y}}
+\draw[red](-2,0) node[opendot]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</li>
+</ul>
+</p>
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise><title><fromexam>1999H,2012H</fromexam></title>
+<statement><p>
+A function <m>f(x)</m> defined on the whole real number line satisfies
+the following conditions
+<me>
+f(0)=0\qquad
+f(2)=2\qquad
+\lim_{x\rightarrow+\infty}f(x)=0\qquad
+f'(x)=K(2x-x^2)e^{-x}
+</me>
+for some positive constant <m>K</m>. (Read carefully: you are given the <em>derivative</em> of <m>f(x)</m>, not <m>f(x)</m> itself.)
+</p>
+
+<p><ol label="a">
+<li xml:id="s3_6K1"> Determine the intervals on which <m>f</m> is increasing and decreasing
+and the location of any local maximum and minimum values of <m>f</m>.
+</li>
+<li xml:id="s3_6K2"> Determine the intervals on which <m>f</m> is concave up or down
+and the <m>x</m>--coordinates of any inflection points of <m>f</m>.
+</li>
+<li xml:id="s3_6K3"> Determine  <m>\lim\limits_{x\rightarrow-\infty}f(x)</m>.
+</li>
+<li xml:id="s3_6K4"> Sketch the graph of <m>y=f(x)</m>, showing any asymptotes and the
+information determined in parts <xref ref="s3_6K1"/> and <xref ref="s3_6K2"/>.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Use <m>\displaystyle\lim_{x \rightarrow - \infty}f'(x)</m> to determine <m>\displaystyle\lim_{x \rightarrow - \infty}f(x)</m>.
+</p></hint>
+<answer><p>
+<ul>
+<li><xref ref="s3_6K1"/> decreasing for <m>x \lt 0</m> and <m>x \gt 2</m>, increasing for <m>0  \lt  x  \lt  2</m>, minimum at <m>(0,0)</m>, maximum at <m>(2,2)</m>.</li>
+<li><xref ref="s3_6K2"/> concave up for <m>x \lt 2-\sqrt{2}</m> and <m>x \gt 2+\sqrt{2}</m>, concave down for <m>2-\sqrt 2  \lt  x  \lt  2+\sqrt 2</m>, inflection points at <m>x = 2\pm \sqrt{2}</m>.
+</li>
+<li> <xref ref="s3_6K3"/><m>\infty</m></li>
+</ul>
+</p>
+
+<p><xref ref="s3_6K4"/>
+</p>
+
+<p>Open dots indicate inflection points, and closed dots indicate local extrema.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=1.2]
+\YEaaxis{1}{6.2}{.25}{4}
+\draw[thick] plot[domain=-.72:6, samples=100](\x,{3.7*\x*\x*exp(-\x)});
+\draw (0,0) node[vertex]{};
+\draw (2,2) node[vertex]{};
+\draw (0.59,0.7) node[opendot]{};
+\draw (3.4,1.4) node[opendot]{};
+\YExcoord{2}{2}
+\YExcoord{0.59}{2-\sqrt 2}
+\YExcoord{3.4}{2+\sqrt 2}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+The parts of the question are just scaffolding to lead you through sketching the curve. Their answers are given explicitly, in an organized manner, in the <q>answers</q> section. In this solution, they are scattered throughout.
+<ul>
+<li><p> Asymptotes:
+</p>
+
+<p>Since the function has a derivative at every real number, the function is continuous for every real number, so it has no vertical asymptotes. In the problem statement, you are told <m>\ds\lim_{x \to \infty} f(x)=0</m>, so <m>y=0</m> is a horizontal asymptote as <m>x</m> goes to infinity.  It remains to evaluate <m>\ds\lim_{x \to -\infty} f(x)</m>. Let's consider the limit of <m>f'(x)</m> instead. Recall <m>K</m> is a positive constant.
+<md>
+<mrow>
+&amp;\lim_{x \to -\infty}e^{-x}=\lim_{x \to \infty}e^x=\infty
+</mrow><mrow>
+&amp;\lim_{x \to -\infty}K(2x-x^2)=-\infty
+</mrow>
+<intertext>So,</intertext><mrow>
+&amp;\lim_{x \to -\infty} K(2x-x^2)e^{-x}=-\infty
+</mrow>
+</md>
+That is, as <m>x</m> becomes a hugely negative number, <m>f'(x)</m> also becomes a hugely negative number. As we move left along the <m>x</m>-axis, <m>f(x)</m> is decreasing with a steeper and steeper slope, as in the sketch below. That means
+<m>\ds\lim_{x \to -\infty}f(x)=\infty</m>.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{6}{1}{1}{8}
+\draw[thick] (-1,1)--(-2,2) (-2.5,2.5)--(-3.5,4.5) (-3.75,5)--(-4.5,8);
+\draw (-1.5,1.5) node[vertex]{};
+\draw (-3,3.5) node[vertex]{};
+\draw (-4.125,6.5) node[vertex]{};
+\draw (-3,-1.5) node{Sketch: various tangent lines to $f(x)$,};
+\draw (-3,-2) node{their slopes getting more strongly negative};
+\draw (-3,-2.5) node{as $x$ gets more strongly negative.};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</li>
+
+<li><p> Intervals of increase and decrease:
+</p>
+
+<p>We are given <m>f'(x)</m> (although we don't know <m>f(x)</m>):
+<me>
+f'(x)=Kx(2-x)e^{-x}</me>
+</p>
+
+<p>The critical points of <m>f(x)</m> are <m>x=0</m> and <m>x=2</m>, and there are no singular points. Recall <m>e^{-x}</m> is always positive, and <m>K</m> is a positive constant.</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>(-\infty,0)</m></cell><cell>0</cell><cell><m>(0,2)</m></cell><cell>2</cell><cell><m>(2,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m></cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>0</cell><cell>negative</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell> decreasing </cell><cell> local min </cell><cell> increasing </cell><cell> local max </cell><cell> decreasing</cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>So, <m>f(0)=0</m> is a local minimum, and <m>f(2)=2</m> is a local maximum.
+</p>
+
+<p>Looking ahead to part <xref ref="s3_6K4"/>, we have a skeleton of the curve.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{5.2}{.75}{4}
+\draw[thick] (-4,4)--(0,0)--(2,2)--(4,.5)--(5,.25);
+\draw (0,0) node[vertex]{};
+\draw (2,2) node[vertex]{};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (-4,-1)--(0,-1);
+\draw[blue] (-2,-1.75) node{decreasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (0,-1)--(2,-1);
+\draw[red] (1,-1.75) node{increasing};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (2,-1)--(4,-1);
+\draw[blue] (3,-1.75) node{decreasing};
+\YExcoord{2}{2}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+</li>
+<li><p> Concavity:
+</p>
+
+<p>Since we're given <m>f'(x)</m>, we can find <m>f''(x)</m>.
+<md>
+<mrow>
+f''(x)&amp;=K(2-2x-2x+x^2)e^{-x}
+</mrow><mrow>
+&amp;=K(2-4x+x^2)e^{-x}
+</mrow><mrow>
+&amp;=K\big(x-2-\sqrt{2}\big)\big(x-2+\sqrt{2}\big)e^{-x}
+</mrow>
+</md>
+where the last line can be found using the quadratic equation. So,
+<m>f''(x)=0</m>  for <m>x=2\pm\sqrt{2}</m>, and <m>f''(x)</m> exists everywhere.
+</p>
+
+<sidebyside>
+<tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>x</m></cell><cell><m>(-\infty,2-\sqrt{2})</m></cell><cell><m>2-\sqrt{2}</m></cell><cell><m>(2-\sqrt{2},2+\sqrt{2})</m></cell><cell><m>2+\sqrt 2</m></cell><cell><m>(2+\sqrt 2,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m></cell><cell>positive</cell><cell>0</cell><cell>negative</cell><cell>0</cell><cell>positive</cell>
+</row><row>
+<cell><m>f(x)</m></cell><cell> concave up </cell><cell> IP </cell><cell> concave down </cell><cell> IP </cell><cell> concave up</cell>
+</row></tabular>
+</sidebyside>
+<p>Now, we can add concavity to our sketch. </p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=1.2]
+\YEaaxis{1}{6.2}{.25}{4}
+\draw[thick] plot[domain=-.72:6, samples=100](\x,{3.7*\x*\x*exp(-\x)});
+\draw (0,0) node[vertex]{};
+\draw (2,2) node[vertex]{};
+\draw (0.59,0.7) node[opendot]{};
+\draw (3.4,1.4) node[opendot]{};
+\YExcoord{2}{2}
+\YExcoord{0.59}{2-\sqrt 2}
+\YExcoord{3.4}{2+\sqrt 2}
+\draw[blue, decorate, decoration={brace, amplitude=8pt, mirror}] (-1,-1)--(0,-1);
+\draw[blue] (-.5,-1.5) node{decr};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (0,-1)--(2,-1);
+\draw[red] (1,-1.5) node{increasing};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (2,-1)--(6,-1);
+\draw[blue] (4,-1.5) node{decreasing};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-1,-2.25)--(.59,-2.25);
+\draw[red] (-.2,-2.75) node{cc up};
+\draw[blue, decorate, decoration={brace, amplitude=10pt, mirror}] (.59,-2.25)--(3.4,-2.25);
+\draw[blue] (2,-2.75) node{concave down};
+\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (3.4,-2.25)--(6,-2.25);
+\draw[red] (4.7,-2.75) node{concave up};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2010H</fromexam></title>
+<statement><p>
+ Let <m>f(x) = e^{-x}</m> , <m>x \ge 0</m>.
+<ol label="a">
+<li xml:id="s3_62010exp1"> Sketch the graph of the equation <m>y = f(x)</m>. Indicate any
+local extrema and inflection points.
+</li>
+<li xml:id="s3_62010exp4"> Sketch the graph of  the inverse function <m>y = g (x)=f^{-1}(x)</m>.
+</li>
+<li xml:id="s3_62010exp2"> Find the domain and range of the inverse function <m>g(x)= f^{-1}(x)</m>.
+</li>
+<li xml:id="s3_62010exp3"> Evaluate <m>g'(\half)</m>.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Once you have the graph of a function, reflect it over the line <m>y=x</m> to graph its inverse.
+Be careful of the fact that <m>f(x)</m> is only defined in this problem for <m>x \geq 0</m>.
+</p></hint>
+<answer>
+<p><xref ref="s3_62010exp1"/></p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{6}{1}{6}
+\draw[thick] plot[domain=0:5.5, samples=100](\x,{exp(-\x)}) node[above]{$y=f(x)$};
+\YEycoord{1}{1};
+\YExcoord{1}{1};
+\draw (0,1) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>
+There are no inflection points or extrema, except the endpoint <m>(0,1)</m>.
+</p>
+
+<p><xref ref="s3_62010exp4"/></p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{6}{2}{6}
+\draw[thick, blue] plot[domain=0:5.5, samples=100]({exp(-\x)},\x) ;
+\draw[blue] (1,1)node[right]{$y=g(x)$};
+\YEycoord{1}{1};
+\YExcoord{1}{1};
+\draw[blue](1,0) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>There are no inflection points or extrema, except the endpoint <m>(1,0)</m>.
+</p>
+
+<p><xref ref="s3_62010exp2"/>
+The domain of <m>g</m> is  <m>(0,1]</m>.
+The range of <m>g</m> is <m>[0,\infty)</m>.
+</p>
+
+<p><xref ref="s3_62010exp3"/>
+<m>g'(\half)=-2</m>
+</p></answer>
+<solution><p>
+<xref ref="s3_62010exp1"/>
+You should be familiar with the graph of <m>y=e^x</m>. You can construct the
+graph of <m>y=e^{-x}</m> just by reflecting the graph of <m>y=e^x</m> across the
+<m>y</m>--axis. To see why this is the case, imagine swapping each value of
+<m>x</m> its negative: for example, swapping the point at <m>x = -1</m> with the
+point at <m>x = 1</m>, etc. Alternatively, you can graph <m>y=f(x)=e^{-x}</m>,
+<m>x\ge 0</m>, using the methods of this section: at <m>x=0</m>,
+<m>y=f(0)=1</m>; as <m>x</m> increases, <m>y=f(x)=e^{-x}</m> decreases, with no
+local extrema; and as <m>x\rightarrow+\infty</m>, <m>y=f(x)\rightarrow 0</m>.
+</p>
+
+<p>There are no inflection points or extrema, except the endpoint <m>(0,1)</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{6}{1}{6}
+\draw[thick, red] plot[domain=0:5.5, samples=100](\x,{exp(-\x)}) node[above]{$y=f(x)$};
+\YEycoord{1}{1};
+\YExcoord{1}{1};
+\draw[red] (0,1) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> <xref ref="s3_62010exp4"/>
+</p>
+
+<p>Recall that, to graph the inverse of a function, we reflect the original function across the line <m>y=x</m>.
+</p>
+
+<p>You should be familiar with the graph of <m>y=e^x</m>. You can construct the
+graph of <m>y=e^{-x}</m> just by reflecting the graph of <m>y=e^x</m> across the
+<m>y</m>--axis. To see why this is the case, imagine swapping each value of
+<m>x</m> its negative: for example, swapping the point at <m>x = -1</m> with the
+point at <m>x = 1</m>, etc.
+</p>
+
+<p> Alternatively, you can graph <m>y=f(x)=e^{-x}</m>, <m>x\ge 0</m>, using the
+methods of this section: at <m>x=0</m>, <m>y=f(0)=1</m>; as <m>x</m> increases,
+<m>y=f(x)=e^{-x}</m> decreases, with no local extrema; and as
+<m>x\rightarrow+\infty</m>, <m>y=f(x)\rightarrow 0</m>.
+</p>
+
+<p> To see why this is true, consider the following. Since <m>g(x)</m> is the
+inverse of <m>f(x)</m>, then, for any pair of numbers <m>x</m> and <m>y</m>, we
+have <me> f(x) = y\text{ if and only }g(y) = x </me> That is, <m>g</m> is the
+function that swaps the input and output of <m>f</m>.  Now the point <m>(x,y)</m>lies on the graph of <m>f</m> if and only if <m>y=f(x)</m>. Similarly, the point
+<m>(X,Y)</m> lies on the graph of <m>g</m> if and only if <m>Y=g(X)</m>. Setting
+<m>Y=x</m> and <m>X=y</m> we see that the point <m>(y,x)</m> lies on the graph
+of <m>g</m> if and only if <m>x=g(y)</m>, which in turn is the case if and only
+if <m>y=f(x)</m>. So</p>
+
+<blockquote>
+<p><m>(y,x)</m> is on the graph of <m>g</m> if and only if <m>(x,y)</m> is on the graph of <m>f</m>. </p>
+</blockquote>
+
+<p>To get from the point<m>(x,y)</m> to the point <m>(y,x)</m> we have to exchange <m>x \leftrightarrow y</m>, which we can do by reflecting over the line <m>y=x</m>. Thus we can
+construct the graph of <m>g</m> by reflecting the curve <m>y = f(x)</m> over the
+line <m>y = x</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{6}{2}{6}
+\draw[thick, dashed, red] plot[domain=0:5.5, samples=100](\x,{exp(-\x)}) node[above]{$y=f(x)$};
+\draw[dashed] (-2,-2)--(6,6) node[right]{$y=x$};
+\draw[thick, blue] plot[domain=0:5.5, samples=100]({exp(-\x)},\x) ;
+\draw[blue] (0,5)node[right]{$y=g(x)$};
+\YEycoord{1}{1};
+\YExcoord{1}{1};
+\draw[red] (0,1) node[vertex]{};
+\draw[blue] (1,0) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p> <xref ref="s3_62010exp2"/>
+The domain of <m>g</m> is the range of <m>f</m>, which is <m>(0,1]</m>.
+The range of <m>g</m> is the domain of <m>f</m>, which is <m>[0,\infty)</m>.
+</p>
+
+<p><xref ref="s3_62010exp3"/>
+Since <m>g</m> and <m>f</m> are inverses,
+<md>
+<mrow>
+g(f(x))&amp;=x
+</mrow>
+<intertext>Using the chain rule,</intertext><mrow>
+g'(f(x))\cdot f'(x)&amp;=1
+</mrow>
+<intertext>Since <m>f'(x)=-e^{-x}=-f(x)</m>:</intertext><mrow>
+g'(f(x))\cdot f(x)&amp;=-1
+</mrow>
+<intertext>We plug in <m>f(x)=\frac{1}{2}</m>.</intertext><mrow>
+g'\left(\frac{1}{2}\right)\cdot \frac{1}{2}&amp;=-1
+</mrow><mrow>
+g'\left(\frac{1}{2}\right)&amp;=-2
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2011H</fromexam></title>
+<statement><p>
+<ol label="a">
+<li> Sketch the graph of <m>y=f(x)=x^5-x</m>, indicating asymptotes,
+local maxima and minima, inflection points, and where the
+graph is concave up/concave down.
+</li>
+<li> Consider the function <m>f(x)=x^5-x+k</m>, where <m>k</m> is a constant,
+<m>-\infty \lt k \lt \infty</m>. How many roots does the function have? (Your answer might
+depend on the value of <m>k</m>.)
+</li>
+</ol>
+</p></statement>
+<hint><p>
+
+</p></hint>
+<answer><p>
+(a)</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{4}{4}
+\draw[thick] plot[domain=-1.3:1.3, yscale=1.5, xscale=3, samples=100](\x,{\x*\x*\x*\x*\x-\x});
+\draw (-2,.2) --(-2,-.2)node[below]{$\frac{-1}{\sqrt[4]{5}}$};
+\draw (2,-.2) --(2,.2)node[above]{$\frac{1}{\sqrt[4]{5}}$};
+\draw (.2,.78)--(-.2,.78) node[left]{$\frac{4}{5\sqrt[4]{5}}$};
+\draw (.2,-.78)--(-.2,-.78) node[left]{$\frac{-4}{5\sqrt[4]{5}}$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>
+Local extrema are shown; inflection point at the origin.
+</p>
+
+<p>(b) The number of distinct real roots of <m>x^5-x+k</m> is:
+<ul>
+<li> 1 when <m>|k| \gt \dfrac{4}{5\root{4}\of{5}}</m>
+</li>
+<li> 2 when <m>|k|=\dfrac{4}{5\root{4}\of{5}}</m>
+</li>
+<li> 3 when <m>|k| \lt \dfrac{4}{5\root{4}\of{5}}</m>
+</li>
+</ul>
+</p></answer>
+<solution><p>
+(a)
+First, we differentiate.
+<me>
+f(x) = x^5-x\qquad
+f'(x)=5x^4-1\qquad
+f''(x)=20x^3\qquad
+</me>
+</p>
+
+<p>The function and its first derivative tells us the following:
+<ul>
+<li> <m>\ds\lim_{x \to \infty} f(x)=\infty</m>, <m>\ds\lim_{x \to -\infty} f(x)=-\infty</m>
+</li>
+<li> <m>f'(x) \gt  0</m> (i.e. <m>f</m> is increasing) for
+   <m>|x| \gt  \dfrac{1}{\root{4}\of{5}}</m>
+</li>
+<li>{}<m>f'(x)=0</m> (i.e. <m>f</m> has critical points) for <m>x= \pm\dfrac{1}{\root{4}\of{5}} \approx \pm 0.67</m>
+</li>
+<li>{}<m>f'(x) \lt  0</m> (i.e. <m>f</m> is decreasing) for <m>|x|  \lt  \dfrac{1}{\root{4}\of{5}}</m>
+</li>
+<li> <m>f\left(\pm\dfrac{1}{\sqrt[4]{5}}\right)=\mp\dfrac{4}{5\sqrt[4]{5}}\approx\mp0.53</m>
+</li>
+</ul>
+This gives us a first idea of the shape of the graph. </p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{5}{3}
+\draw[- \gt , thick] (-5,-3)--(-2,1.5);
+\draw[- \gt , thick] (-2,1.5)--(2,-1.5);
+\draw[- \gt , thick] (2,-1.5)--(5,3);
+\draw (-2,.2) --(-2,-.2)node[below]{$\frac{-1}{\sqrt[4]{5}}$};
+\draw (2,.2) --(2,-.2)node[below]{$\frac{1}{\sqrt[4]{5}}$};
+\draw (.2,1.5)--(-.2,1.5) node[left]{$\frac{4}{5\sqrt[4]{5}}$};
+\draw (.2,-1.5)--(-.2,-1.5) node[left]{$\frac{-4}{5\sqrt[4]{5}}$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>We refine this skeleton using information from the second derivative.
+<ul>
+<li> <m>f''(x) \gt  0</m> (i.e. <m>f</m> is concave up) for <m>x \gt  0</m>,
+</li>
+<li>{}<m>f''(x)=0</m> (i.e. <m>f</m> has an inflection point) for <m>x=0</m>, and
+</li>
+<li>{}<m>f''(x) \lt  0</m> (i.e. <m>f</m> is concave down) for <m>x \lt 0</m>
+</li>
+</ul>
+Thus
+<ul>
+<li> <m>f</m> has no asymptotes
+</li>
+<li> <m>f</m> has a local maximum at <m>x=-\dfrac{1}{\root{4}\of{5}}</m>
+           and  a local minimum at <m>x=\dfrac{1}{\root{4}\of{5}}</m>
+</li>
+<li> <m>f</m> has an inflection point at <m>x=0</m>
+</li>
+<li> <m>f</m> is concave down for <m>x \lt 0</m> and concave up for <m>x \gt 0</m>
+</li>
+</ul>
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{4}{4}
+\draw[thick] plot[domain=-1.3:1.3, yscale=1.5, xscale=3, samples=100](\x,{\x*\x*\x*\x*\x-\x});
+\draw (-2,.2) --(-2,-.2)node[below]{$\frac{-1}{\sqrt[4]{5}}$};
+\draw (2,-.2) --(2,.2)node[above]{$\frac{1}{\sqrt[4]{5}}$};
+\draw (.2,.78)--(-.2,.78) node[left]{$\frac{4}{5\sqrt[4]{5}}$};
+\draw (.2,-.78)--(-.2,-.78) node[left]{$\frac{-4}{5\sqrt[4]{5}}$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>(b) The function
+<m>x^5-x+k</m> has a root at <m>x=x_0</m> if and only if <m>x^5-x=-k</m>
+  at <m>x=x_0</m>. So the number of distinct real roots of <m>x^5-x+k</m> is the
+  number of times the curve <m>y=x^5-x</m> crosses the horizontal line <m>y=-k</m>.
+  The local maximum of <m>x^5-x</m> (when <m>x=-\dfrac{1}{\root{4}\of{5}}</m>)
+  is <m>\dfrac{4}{5\root{4}\of{5}}</m>, and the local minimum of <m>x^5-x</m>
+ (when <m>x=\dfrac{1}{\root{4}\of{5}}</m>) is <m>-\dfrac{4}{5\root{4}\of{5}}</m>.
+  So, looking at the graph of <m>x^5-x</m> above, we see that the number of distinct
+  real roots of <m>x^5-x+k</m> is
+<ul>
+<li> 1 when <m>|k| \gt \dfrac{4}{5\root{4}\of{5}}</m>
+</li>
+<li> 2 when <m>|k|=\dfrac{4}{5\root{4}\of{5}}</m>
+</li>
+<li> 3 when <m>|k| \lt \dfrac{4}{5\root{4}\of{5}}</m>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2012H</fromexam></title>
+<statement><p>
+The hyperbolic trigonometric functions <m>\sinh(x)</m> and
+<m>\cosh(x)</m> are defined by
+<me>
+\sinh(x)=\dfrac{e^x-e^{-x}}{2}\qquad
+\cosh(x)=\dfrac{e^x+e^{-x}}{2}
+</me>
+They have many properties that are similar to corresponding properties
+of <m>\sin(x)</m> and <m>\cos(x)</m>. In particular, it is easy to see that
+<me>
+\diff{}{x} \sinh(x)=\cosh(x)\qquad
+\diff{}{x} \cosh(x)=\sinh(x)\qquad
+\cosh^2(x)-\sinh^2(x)=1
+</me>
+You may use these properties in your solution to this question.
+<ol label="a">
+<li> Sketch the graphs of <m>\sinh(x)</m> and <m>\cosh(x)</m>.
+</li>
+<li> Define inverse hyperbolic trigonometric functions
+<m>\sinh^{-1}(x)</m> and <m>\cosh^{-1}(x)</m>, carefully specifing their domains
+of definition. Sketch the graphs of <m>\sinh^{-1}(x)</m> and <m>\cosh^{-1}(x)</m>.
+</li>
+<li> Find
+<m>\diff{}{x}\left\{ \cosh^{-1}(x)\right\}</m>.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+For (a), don't be intimidated by the new names: we can graph these functions using the methods learned in this section.
+</p>
+
+<p>For (b), remember that to define an inverse of a function, we need to restrict the domain of that function to an interval where it is one-to-one. Then to graph the inverse, we can simply reflect the original function over the line <m>y=x</m>.
+</p>
+
+<p>For (c), set <m>y(x)=\cosh^{-1}(x)</m>, so <m>\cosh(y(x))=x</m>. The differentiate using the chain rule. To get your final answer in terms of <m>x</m> (instead of <m>y</m>), use the identity <m>\cosh^2(y)-\sinh^2(y)=1</m>.
+</p></hint>
+<answer><p>
+(a)
+</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw plot[domain=-3:3, scale=0.3](\x,{sinh(\x)});
+\draw (2,3) node[right]{$y=\sinh x$};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{.5}{3}
+\draw plot[domain=-3:3, scale=0.3](\x,{cosh(\x)});
+\draw (2,3) node[right]{$y=\cosh x$};
+\draw (.2,.3)--(-.4,.3) node[left]{1};
+\draw (0,-3) node{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>(b)
+For any real <m>x</m>, define <m>\sinh^{-1}(x)</m> to be
+the unique solution of <m>\sinh(y)=x</m>. For every <m>x\in[1,\infty)</m>, define <m>\cosh^{-1}(x)</m> to be the
+unique <m>y\in[0,\infty)</m> that obeys <m>\cosh(y)=x</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{2}
+\draw[blue, very thick] plot[domain=-3:3, scale=0.3]({sinh(\x)},\x);
+\draw[blue] (1.5,1.25) node[right]{$y=\sinh^{-1} x$};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{.5}{2}
+\draw[blue, very thick] plot[domain=0:3, scale=0.3]({cosh(\x)},\x);
+\draw[blue] (1.5,1.25) node[right]{$y=\cosh^{-1} x$};
+\draw (0,-2) node{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>(c) <m>\ds\diff{}{x}\{\cosh^{-1}(x)\}=\dfrac{1}{\sqrt{x^2-1}}</m>
+</p></answer>
+<solution>
+<p> (a)
+ You might not be familiar with hyperbolic sine and cosine, but you don't need to be. We can graph them using  the same methods as the other curves in this section. The derivatives are given to us:
+ <me>
+\diff{}{x}\{\sinh x\}=\cosh x =\frac{e^x+e^{-x}}{2}\qquad\diff{}{x}\{\cosh x\}=\sinh x = \frac{e^x-e^{-x}}{2}
+</me>
+</p>
+
+<p>
+<me>
+\left(\diff{}{x}\right)^2\{\sinh x\}=\sinh x =\frac{e^x-e^{-x}}{2}\qquad
+ \left(\diff{}{x}\right)^2\{\cosh x\}=\cosh x = \frac{e^x+e^{-x}}{2}
+ </me>
+</p>
+
+<p>  Observe that:
+ <ul>
+<li><p> <m>\sinh(x)</m> has a derivative that is always positive, so <m>\sinh(x)</m> is always increasing. The second derivative of <m>\sinh(x)</m> is negative to the left of <m>x=0</m> and positive to the right of <m>x=0</m>, so <m>\sinh(x)</m> is concave down to the left of the <m>y</m>-axis and concave up to its right, with an inflection point at <m>x=0</m>.</p>
+</li>
+<li><p> <m>\cosh(x)</m> has a derivative that is positive when <m>x \gt 0</m> and negative when <m>x \lt 0</m>. The second derivative of <m>\cosh(x)</m> is always positive, so it is always concave up.</p>
+</li>
+<li> <m>\cosh(0)=1</m> and <m>\sinh(0)=0</m>.</li>
+<li>
+ <m>\ds\lim_{x\rightarrow\infty}\sinh x = \ds\lim_{x\rightarrow\infty}\cosh x
+ =\ds\lim_{x\rightarrow\infty}\frac{e^x}{2}=\infty</m>, since <m>\ds\lim_{x \to \infty}e^{-x}=0</m>
+</li>
+<li><p>
+<me>\ds\lim_{x \to -\infty}\sinh x =\ds\lim_{x \to -\infty}\left(\frac{e^x}{2}-\frac{e^{-x}}{2}\right)
+=\ds\lim_{x \to \infty}\left(\frac{e^{-x}}{2}-\frac{e^x}{2}\right)=-\infty
+</me>
+and
+<me>\ds\lim_{x \to -\infty}\cosh x =\ds\lim_{x \to -\infty}\left(\frac{e^x}{2}+\frac{e^{-x}}{2}\right)
+=\ds\lim_{x \to \infty}\left(\frac{e^{-x}}{2}+\frac{e^x}{2}\right)=\infty
+</me>
+</p>
+</li>
+<li><p> <m>\cosh(x)</m> is even, since <me>\cosh(-x)=\dfrac{e^{-x}+e^{-(-x)}}{2}=\dfrac{e^{-x}+e^x}{2}=\cosh (x)</me>
+and
+<m>\sinh (x)</m> is odd, since <me>\sinh(-x)=\dfrac{e^{-x}-e^{-(-x)}}{2}=\dfrac{e^{-x}-e^x}{2}=\dfrac{-\left(e^x-e^{-x}\right)}{2}=-\sinh(x)</me>
+</p></li>
+</ul>
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw plot[domain=-3:3, scale=0.3](\x,{sinh(\x)});
+\draw (2,3) node[right]{$y=\sinh x$};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{.5}{3}
+\draw plot[domain=-3:3, scale=0.3](\x,{cosh(\x)});
+\draw (2,3) node[right]{$y=\cosh x$};
+\draw (.2,.3)--(-.4,.3) node[left]{1};
+\draw (0,-3) node{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>
+(b)
+<ul>
+<li> As <m>y</m> runs over <m>(-\infty,\infty)</m> the function
+<m>\sinh(y)</m> takes every real value exactly once. So,
+for each <m>x\in(-\infty,\infty)</m>, define <m>\sinh^{-1}(x)</m> to be
+the unique solution of <m>\sinh(y)=x</m>.
+</li>
+<li> As <m>y</m> runs over <m>[0,\infty)</m> the function
+<m>\cosh(y)</m> takes every real value in <m>[1,\infty)</m> exactly once.
+In particular, the smallest value of <m>\cosh(y)</m> is <m>\cosh(0)=1</m>.
+So, for each <m>x\in[1,\infty)</m>, define <m>\cosh^{-1}(x)</m> to be the
+unique <m>y\in[0,\infty)</m> that obeys <m>\cosh(y)=x</m>.
+</li>
+</ul>
+</p>
+
+<p>
+To graph the inverse of a (one-to-one) function, we reflect the original function over the line <m>y=x</m>. Using this method to graph <m>y=\sinh^{-1}(x)</m> is straightforward. To graph <m>y=\cosh(x)</m>, we need to be careful of the domains: we are restricting <m>\cosh(x)</m> to values of <m>x</m> in <m>[0,\infty)</m>.
+The graphs are
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[red, thin] plot[domain=-3:3, scale=0.3](\x,{sinh(\x)});
+\draw[red] (1,3) node[below right]{$y=\sinh x$};
+\draw[dashed] (-3,-3)--(2,2);
+\draw[blue, very thick] plot[domain=-3:3, scale=0.3]({sinh(\x)},\x);
+\draw[blue] (1.5,1.25) node[right]{$y=\sinh^{-1} x$};
+\draw[ultra thick, - \gt ] (4,0)--(5,0);
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[blue, very thick] plot[domain=-3:3, scale=0.3]({sinh(\x)},\x);
+\draw[blue] (1.5,1.25) node[right]{$y=\sinh^{-1} x$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{.5}{2}
+\draw[red, thin] plot[domain=0:3, scale=0.3](\x,{cosh(\x)});
+\draw[red] (1,3) node[below right]{$y=\cosh x$};
+\draw[dashed] (-1,-1)--(2,2);
+\draw[blue, very thick] plot[domain=0:3, scale=0.3]({cosh(\x)},\x);
+\draw[blue] (1.5,1.25) node[right]{$y=\cosh^{-1} x$};
+\draw[ultra thick, - \gt ] (4,1)--(5,1);
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{.5}{2}
+\draw[blue, very thick] plot[domain=0:3, scale=0.3]({cosh(\x)},\x);
+\draw[blue] (1.5,1.25) node[right]{$y=\cosh^{-1} x$};
+\draw (-1,-1) node{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>(c) Let <m>y(x)= \cosh^{-1}(x)</m>. Then, using the definition of <m>\cosh^{-1}</m>,
+<md>
+<mrow>
+\cosh y(x)&amp;=x
+</mrow>
+<intertext>We differentiate with respect to <m>x</m> using the chain rule.</intertext><mrow>
+\diff{}{x}\left\{\cosh y(x)\right\}&amp;=\diff{}{x}\{x\}
+</mrow><mrow>
+y'(x) \sinh y(x)&amp;=1
+</mrow>
+<intertext>We solve for <m>y'(x)</m>.</intertext><mrow>
+y'(x) &amp;=\dfrac{1}{\sinh y(x)}
+</mrow>
+<intertext>We want to have our answer in terms of <m>x</m>, not <m>y</m>. We know that <m>\cosh y=x</m>, so if we can convert hyperbolic sine into hyperbolic cosine, we can get rid of <m>y</m>. Our tool for this is the identity, given in the question statement, <m>\cosh^2(x)-\sinh^2(x)=1</m>. This tells us <m>\sinh^2(y)=1-\cosh^2(y)</m>.
+Now we have to decide whether <m>\sinh(y)</m> is the positive or negative square root of <m>1-\cosh^2(y)</m> in our context. Looking at the graph of <m>y(x)=\cosh^{-1}(x)</m>, we see <m>y'(x) \gt 0</m>. So we use the positive square root:</intertext><mrow>
+y'(x) &amp; =\dfrac{1}{\sqrt{\cosh^2 y(x)-1}}
+  =\dfrac{1}{\sqrt{x^2-1}}
+</mrow>
+</md>
+Remark: <m>\ds\diff{}{x}\left\{\arccos(x)\right\}=\dfrac{-1}{\sqrt{1-x^2}}</m>, so again the hyperbolic trigonometric function has properties similar to (but not exactly the same as) its trigonometric counterpart.
+</p>
+</solution>
+</exercise>
+</exercisegroup>
+
+</exercises>

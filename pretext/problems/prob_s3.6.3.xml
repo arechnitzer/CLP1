@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_sketch_SD"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+On the graph below, mark the intervals where <m>f''(x) \gt 0</m> (i.e. <m>f(x)</m> is concave up) and where <m>f''(x) \lt 0</m> (i.e. <m>f(x)</m> is concave down).</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw[thick] plot[domain=-6:-2](\x,{exp(\x+2)+1});
+\draw[thick] plot[domain=-2:4](\x,{cos(\x*.785 r)+2});
+\draw[thick] plot[domain=0:2](\x+4,{3*cos(\x*.785 r)-2});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+There are two intervals where the function is concave up, and two where it is concave down.
+</p></hint>
+<answer>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw[thick, red] plot[domain=-6:-2](\x,{exp(\x+2)+1});
+\draw[thick, blue] plot[domain=-2:2](\x,{cos(\x*.785 r)+2});
+\draw[thick, red] plot[domain=2:4](\x,{cos(\x*.785 r)+2});
+\draw[thick, blue] plot[domain=0:2](\x+4,{3*cos(\x*.785 r)-2});
+\draw[thick, red, decorate, decoration={brace, amplitude=10pt, mirror}]
+(-6,0)--(-2,0);
+\draw[red] (-4,-1) node{concave up};
+\draw[thick, blue, decorate, decoration={brace, amplitude=10pt, mirror}]
+(-2,0)--(2,0);
+\draw[blue] (0,-1) node{concave down};
+\draw[thick, red, decorate, decoration={brace, amplitude=10pt, mirror}]
+(2,0)--(4,0);
+\draw[red] (3,-1) node{concave up};
+\draw[thick, blue, decorate, decoration={brace, amplitude=10pt}]
+(4,2)--(6,2);
+\draw[blue] (5,2.75) node{concave down};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6}{4}
+\draw[thick, red] plot[domain=-6:-2](\x,{exp(\x+2)+1});
+\draw[thick, blue] plot[domain=-2:2](\x,{cos(\x*.785 r)+2});
+\draw[thick, red] plot[domain=2:4](\x,{cos(\x*.785 r)+2});
+\draw[thick, blue] plot[domain=0:2](\x+4,{3*cos(\x*.785 r)-2});
+\draw[thick, red, decorate, decoration={brace, amplitude=10pt, mirror}]
+(-6,0)--(-2,0);
+\draw[red] (-4,-1) node{concave up};
+\draw[thick, blue, decorate, decoration={brace, amplitude=10pt, mirror}]
+(-2,0)--(2,0);
+\draw[blue] (0,-1) node{concave down};
+\draw[thick, red, decorate, decoration={brace, amplitude=10pt, mirror}]
+(2,0)--(4,0);
+\draw[red] (3,-1) node{concave up};
+\draw[thick, blue, decorate, decoration={brace, amplitude=10pt}]
+(4,2)--(6,2);
+\draw[blue] (5,2.75) node{concave down};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>In the graph above, the concave-up sections are marked in red. These are where the graph has an increasing derivative; equivalently, where the graph lies above its tangent lines; more descriptively, where it curves like a smiley face.
+</p>
+
+<p>Concave-down sections are marked in blue. These are where the graph has a decreasing derivative; equivalently, where the graph lies below its tangent lines; more descriptively, where it curves like a frowney face.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Sketch a curve that is:
+<ul>
+<li> concave up when <m>|x| \gt 5</m>,
+</li>
+<li> concave down when <m>|x| \lt 5</m>,
+</li>
+<li> increasing when <m>x \lt 0</m>, and
+</li>
+<li> decreasing when <m>x \gt 0</m>.
+</li>
+</ul>
+</p></statement>
+<hint><p>
+Try allowing your graph to have horizontal asymptotes. For example, let the function get closer and closer to the <m>x</m>-axis (or another horizontal line) without touching it.
+</p></hint>
+<answer>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{6}{6}{1}{4}
+\draw[thick] plot[domain=-3:0] (\x-3,{exp(\x)});
+\draw[thick] plot[domain=0:3] (\x+3,{exp(-\x)});
+\draw[thick] plot[domain=-3:3] (\x,{cos(\x*0.523 r)/0.523+1});
+\YExcoord{-3}{-5}
+\YExcoord{3}{5}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+The most basic shape of the graph is given by the last two bullet points:</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{6}{6}{1}{4}
+\draw[thick,  \lt - \gt ] (-6,1)--(0,3)--(6,1);
+\YExcoord{-3}{-5}
+\YExcoord{3}{5}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>The curve is concave down over the interval <m>(-5,5)</m>, so let's give it a frowney-face curvature there.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{6}{6}{1}{4}
+\draw[thick] plot[domain=-3:3] (\x,{cos(\x*0.523 r)/0.523+1});
+\draw[thick] (-6,-.25)--(-3,1) (3,1)--(6,-.25);
+\YExcoord{-3}{-5}
+\YExcoord{3}{5}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Finally, when <m>x \gt 5</m> or <m>x \lt -5</m>, our curve should be concave up, so let's give it smiley-face curvature there, without changing its basic increasing/decreasing shape.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{6}{6}{1}{4}
+\draw[thick] plot[domain=-3:0] (\x-3,{exp(\x)});
+\draw[thick] plot[domain=0:3] (\x+3,{exp(-\x)});
+\draw[thick] plot[domain=-3:3] (\x,{cos(\x*0.523 r)/0.523+1});
+\YExcoord{-3}{-5}
+\YExcoord{3}{5}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>This finishes our sketch.</p>
+</solution>
+</exercise>
+
+<exercise xml:id="s3_6_3converse">
+<statement><p>
+Suppose <m>f(x)</m> is a function whose second derivative exists and is continuous for all real numbers.
+</p>
+
+<p>True or false: if <m>f''(3)=0</m>, then <m>x=3</m> is an inflection point of <m>f(x)</m>.
+</p>
+
+<p>Remark: compare to Question<nbsp/><xref ref="s3_6_3IVT"/>
+</p></statement>
+<hint><p>
+Consider <m>f(x)=(x-3)^4</m>.
+</p></hint>
+<answer><p>
+In general, false.
+</p></answer>
+<solution><p>
+An inflection point is where the concavity of a function changes. It is possible that <m>x=3</m> is an inflection point, but it is also possible that is not. So, the statement is false, in general.
+</p>
+
+<p>For example, let <m>f(x)=(x-3)^4</m>. Since <m>f(x)</m> is a polynomial, all its derivatives exist and are continuous. <m>f''(x)=12(x-3)^2</m>, so <m>f(3)=0</m>. However, since <m>f''(x)</m> is something squared, it is never negative, so <m>f(x)</m> is never concave down. Since <m>f(x)</m> is never concave down, it never changes concavity, so it has no inflection points.
+</p>
+
+<p>Remark: finding inflection points is somewhat reminiscent of finding local extrema. To find local extrema, we first find all critical and singular points, since local extrema can only occur there. Then, we have to figure out which critical and singular points are actually local extrema. Similarly, if you want to find inflection points, start by finding where <m>f''(x)</m> is zero or non-existant, because inflection points can only occur there (see Question<nbsp/><xref ref="s3_6_3IVT"/>). Then, you still have to check whether those points are actually inflection points.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS"><title><fromexam>1997D</fromexam></title>
+<statement><p>
+Find all inflection points for the graph of <m>f(x)=3x^5-5x^4+13x</m>.
+</p></statement>
+<answer><p>
+<m>x=1,\ y=11</m>
+</p></answer>
+<solution><p>
+Inflection points occur where <m>f''(x)</m> changes sign. Since <m>f(x)</m> is a polynomial, its first and second derivatives exist everywhere, and are themselves polynomials. In particular,
+<md>
+<mrow>f(x)&amp;=3x^5-5x^4+13x
+</mrow><mrow>
+f'(x)&amp;=15x^4-20x^3+13
+</mrow><mrow>
+f''(x)&amp;=60x^3-60x^2=60x^2(x-1)
+</mrow>
+</md>
+The second derivative is negative for <m>x \lt 1</m> and positive for <m>x \gt 1</m>. Thus
+the concavity changes between concave up and concave down at
+{<m>x=1,\ y=11</m>}.
+</p>
+
+<p>This is the only inflection point. It is true that <m>f''(0)=0</m>, but for values of <m>x</m> both a little larger than and a little smaller than 0, <m>f''(x) \lt 0</m>, so the concavity does not change at <m>x=0</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+
+<introduction><p>Questions<nbsp/><xref ref="s3_6_3proof1"/> through <xref ref="s3_6_3IVT"/> ask you to show that certain things are true. Give a clear explanation using concepts and theorems from this semester.</p></introduction>
+
+<exercise xml:id="s3_6_3proof1" purpose="RQS"><title><fromexam>1997A</fromexam></title>
+<statement><p>
+Let
+<me>
+f(x)=\frac{x^5}{20}+\frac{5x^3}{6}-10x^2+500x+1000</me>
+</p>
+
+<p>Show that <m>f(x)</m> has exactly one inflection point.
+</p></statement>
+<hint><p>
+You must show it has at least one inflection point (try the Intermediate Value Theorem), and at most one inflection point (consider whether the second derivative is increasing or decreasing).
+</p></hint>
+<answer><p>
+Let <me>
+g(x)=f''(x)=x^3+5x-20.</me>
+ Then <m>g'(x)=3x^2+5</m>, which is always positive. That means <m>g(x)</m> is strictly increasing for all <m>x</m>. So, <m>g(x)</m> can change signs once, from negative to positive, but it can never change back to negative. An inflection point of <m>f(x)</m> occurs when <m>g(x)</m> changes signs. So, <m>f(x)</m> has <em>at most one</em> inflection point.
+</p>
+
+<p>Since <m>g(x)</m> is continuous, we can apply the Intermediate Value Theorem to it. Notice
+<m>g(3) \gt 0</m> while <m>g(0) \lt 0</m>. By the IVT, <m>g(x)=0</m> for at least one <m>x \in (0,3)</m>. Since <m>g(x)</m> is strictly increasing, at the point where <m>g(x)=0</m>, <m>g(x)</m> changes from negative to positive. So, the concavity of <m>f(x)</m> changes. Therefore, <m>f(x)</m> has <em>at least one</em> inflection point.
+</p>
+
+<p>Now that we've shown that <m>f(x)</m> has at most one inflection point, and at least one inflection point, we conclude it has exactly one inflection point.</p></answer>
+<solution><p>
+In order to show that <m>f(x)</m> has <em>exactly one</em> inflection point, we will show that is has <em>at least one</em>, and <em>no more than one</em>.
+</p>
+
+<p>Let <me>
+g(x)=f''(x)=x^3+5x-20.</me>
+ Then <m>g'(x)=3x^2+5</m>, which is always positive. That means <m>g(x)</m> is strictly increasing for all <m>x</m>. So, <m>g(x)</m> can change signs once, from negative to positive, but it can never change back to negative. An inflection point of <m>f(x)</m> occurs when <m>g(x)</m> changes signs. So, <m>f(x)</m> has at most one inflection point. (At this point, we don't know that <m>f(x)</m> has any inflection points: maybe <m>g(x)</m> is always positive.)
+</p>
+
+<p>Since <m>g(x)</m> is continuous, we can apply the Intermediate Value Theorem to it. Notice
+<m>g(3) \gt 0</m> while <m>g(0) \lt 0</m>. By the IVT, <m>g(x)=0</m> for at least one <m>x \in (0,3)</m>. Since <m>g(x)</m> is strictly increasing, at the point where <m>g(x)=0</m>, <m>g(x)</m> changes from negative to positive. So, the concavity of <m>f(x)</m> changes. Therefore, <m>f(x)</m> has at least one inflection point.
+</p>
+
+<p>Now that we've shown that <m>f(x)</m> has at most one inflection point, and at least one inflection point, we conclude it has exactly one inflection point.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1996D</fromexam></title>
+<statement><p>
+Let <m>f(x)</m> be a function whose first two derivatives exist everywhere, and <m>f''(x) \gt 0</m> for all <m>x</m>.
+<ol label="a">
+<li xml:id="s3_6interval1"> Show that <m>f(x)</m> has at most one critical point and that any critical point is an absolute minimum for <m>f(x)</m>.
+</li>
+<li xml:id="s3_6interval2"> Show that the maximum value of <m>f(x)</m> on any finite interval
+occurs at one of the endpoints of the interval.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Use <xref ref="s3_6interval1"/> in
+proving <xref ref="s3_6interval2"/>.
+</p></hint>
+<answer><p>
+<xref ref="s3_6interval1"/>
+Let
+<me>
+g(x)=f'(x)</me>
+</p>
+
+<p>Then <m>f''(x)</m> is the derivative of <m>g(x)</m>. Since <m>f''(x) \gt 0</m> for all <m>x</m>, <m>g(x)=f'(x)</m> is strictly increasing
+for all <m>x</m>.
+In other words, if <m>y \gt x</m> then <m>g(y) \gt g(x)</m>.
+</p>
+
+<p>Suppose <m>g(x)=0</m>. Then for every <m>y</m> that is larger than <m>x</m>, <m>g(y) \gt g(x)</m>, so <m>g(y) \neq 0</m>. Similarly, for every <m>y</m> that is smaller than <m>x</m>, <m>g(y) \lt g(x)</m>, so <m>g(y) \neq 0</m>. Therefore, <m>g(x)</m> can only be zero for at most one value of <m>x</m>. Since <m>g(x)=f'(x)</m>, that means <m>f(x)</m> can have at most one critical point.
+</p>
+
+<p>Suppose <m>f'(c)=0</m>. Since
+<m>f'(x)</m> is a strictly increasing function, <m>f'(x) \lt 0</m> for all <m>x \lt c</m> and <m>f'(x) \gt 0</m> for all <m>x \gt c</m>.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
+\YExcoord{0}{c}
+\draw[blue, decorate, decoration={brace, mirror, amplitude=10pt}] (-4.1,-.75)--(0,-.75);
+\draw[blue] (-2,-1.5) node{$x \lt c$, so};
+\draw[blue] (-2,-2) node{$f'(x) \lt f'(c)=0$};
+\draw[red, decorate, decoration={brace, amplitude=10pt}] (4.1,-.75)--(0,-.75);
+\draw[red] (2,-1.5) node{$x \gt c$, so};
+\draw[red] (2,-2) node{$f'(x) \gt f'(c)=0$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Then <m>f(x)</m> is decreasing for <m>x \lt c</m> and increasing for <m>x \gt c</m>.
+So <m>f(x) \gt f(c)</m> for all <m>x\neq c</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
+\YExcoord{0}{c}
+\draw[blue, decorate, decoration={brace, mirror, amplitude=10pt}] (-4.1,-.75)--(0,-.75);
+\draw[blue] (-2,-1.5) node{$f(x)$ decreasing, so};
+\draw[blue] (-2,-2) node{$f(x) \gt f(c)$};
+\draw[red, decorate, decoration={brace, amplitude=10pt}] (4.1,-.75)--(0,-.75);
+\draw[red] (2,-1.5) node{$f(x)$ increasing, so};
+\draw[red] (2,-2) node{$f(x) \gt f(c)$};
+\draw[thick, dashed] (-4,3)--(0,1)--(4,3) node[right]{$y=f(x)$};
+\draw[blue] (-2,2) node[vertex]{};
+\draw (0,1) node[vertex]{};
+\draw[red] (2,2) node[vertex]{};
+\color{blue}\YExcoord{-2}{x \lt c}
+\color{red}\YExcoord{2}{x \gt c}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> Since <m>f(x) \gt f(c)</m> for all <m>x\ne c</m>, so <m>c</m> is an absolute minimum for <m>f(x)</m>.
+</p>
+
+<p><xref ref="s3_6interval2"/>
+We know that the maximum over an interval occurs at an endpoint,
+a critical point, or a singular point.
+<ul>
+<li>  Since <m>f'(x)</m> exists everywhere, there are no singular points.
+</li>
+<li> If the maximum were achieved at a critical point, that critical point would
+have to provide both the absolute maximum and the absolute minimum (by part (a)).
+So, the function would have to be a constant and consequently could not have
+a nonzero second derivative. So the maximum is not at a critical point.
+</li>
+</ul>
+That leaves only the endpoints of the interval.
+</p></answer>
+<solution><p>
+<xref ref="s3_6interval1"/>
+Let
+<me>
+g(x)=f'(x)</me>
+</p>
+
+<p>Then <m>f''(x)</m> is the derivative of <m>g(x)</m>. Since <m>f''(x) \gt 0</m> for all <m>x</m>, <m>g(x)=f'(x)</m> is strictly increasing
+for all <m>x</m>.
+In other words, if <m>y \gt x</m> then <m>g(y) \gt g(x)</m>.
+</p>
+
+<p>Suppose <m>g(x)=0</m>. Then for every <m>y</m> that is larger than <m>x</m>, <m>g(y) \gt g(x)</m>, so <m>g(y) \neq 0</m>. Similarly, for every <m>y</m> that is smaller than <m>x</m>, <m>g(y) \lt g(x)</m>, so <m>g(y) \neq 0</m>. Therefore, <m>g(x)</m> can only be zero for at most one value of <m>x</m>. Since <m>g(x)=f'(x)</m>, that means <m>f(x)</m> can have at most one critical point.
+</p>
+
+<p>Suppose <m>f'(c)=0</m>. Since
+<m>f'(x)</m> is a strictly increasing function, <m>f'(x) \lt 0</m> for all <m>x \lt c</m> and <m>f'(x) \gt 0</m> for all <m>x \gt c</m>.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
+\YExcoord{0}{c}
+\draw[blue, decorate, decoration={brace, mirror, amplitude=10pt}] (-4.1,-.75)--(0,-.75);
+\draw[blue] (-2,-1.5) node{$x \lt c$, so};
+\draw[blue] (-2,-2) node{$f'(x) \lt f'(c)=0$};
+\draw[red, decorate, decoration={brace, amplitude=10pt}] (4.1,-.75)--(0,-.75);
+\draw[red] (2,-1.5) node{$x \gt c$, so};
+\draw[red] (2,-2) node{$f'(x) \gt f'(c)=0$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Then <m>f(x)</m> is decreasing for <m>x \lt c</m> and increasing for <m>x \gt c</m>.
+So <m>f(x) \gt f(c)</m> for all <m>x \lt c</m> and <m>f(x) \gt f(c)</m> for all <m>x \gt c</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
+\YExcoord{0}{c}
+\draw[blue, decorate, decoration={brace, mirror, amplitude=10pt}] (-4.1,-.75)--(0,-.75);
+\draw[blue] (-2,-1.5) node{$f(x)$ decreasing, so};
+\draw[blue] (-2,-2) node{$f(x) \gt f(c)$};
+\draw[red, decorate, decoration={brace, amplitude=10pt}] (4.1,-.75)--(0,-.75);
+\draw[red] (2,-1.5) node{$f(x)$ increasing, so};
+\draw[red] (2,-2) node{$f(x) \gt f(c)$};
+\draw[thick, dashed] (-4,3)--(0,1)--(4,3) node[right]{$y=f(x)$};
+\draw[blue] (-2,2) node[vertex]{};
+\draw (0,1) node[vertex]{};
+\draw[red] (2,2) node[vertex]{};
+\color{blue}\YExcoord{-2}{x \lt c}
+\color{red}\YExcoord{2}{x \gt c}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> We have concluded that <m>f(x) \gt f(c)</m> for
+all <m>x\ne c</m>, so <m>c</m> is an absolute minimum for <m>f(x)</m>.
+</p>
+
+<p><xref ref="s3_6interval2"/>
+We know that the maximum over an interval occurs at an endpoint,
+at a critical point, or at a singular point.
+<ul>
+<li>  Since <m>f'(x)</m> exists everywhere, there are no singular points.
+</li>
+<li> If the maximum were achieved at a critical point, that critical point would
+have to provide both the absolute maximum and the absolute minimum (by part a).
+So, the function would have to be a constant and consequently could not have
+a nonzero second derivative. So the maximum is not at a critical point.
+</li>
+</ul>
+That leaves only the endpoints of the interval.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="s3_6_3IVT">
+<statement><p>
+Suppose <m>f(x)</m> is a function whose second derivative exists and is continuous for all real numbers, and <m>x=3</m> is an inflection point of <m>f(x)</m>. Use the Intermediate Value Theorem to show that <m>f''(3)=0</m>.
+</p>
+
+<p>Remark: compare to Question<nbsp/><xref ref="s3_6_3converse"/>.
+</p></statement>
+<hint><p>
+Since <m>x=3</m> is an inflection point, we know the concavity of <m>f(x)</m> changes at <m>x=3</m>.
+That is, there is some interval around 3, with endpoints <m>a</m> and <m>b</m>, such that
+<ul>
+<li> <textblue><m>f''(a) \lt 0</m> and <m>f''(x) \lt 0</m> for every <m>x</m> between <m>a</m> and 3,</textblue> and
+</li>
+<li> <textred><m>f''(b) \gt 0</m> and <m>f''(x) \gt 0</m> for every <m>x</m> between <m>b</m> and 3.</textred>
+</li>
+</ul>
+Use the IVT to show that <m>f''(x)=3</m> for <em>some</em> <m>x</m> between <m>a</m> and <m>b</m>; then show that this value of <m>x</m> can't be anything <em>except</em> <m>x=3</m>.
+</p></hint>
+<answer><p>
+If <m>x=3</m> is an inflection point, then the concavity of <m>f(x)</m> changes at <m>x=3</m>. That is, there is some interval strictly containing 3, with endpoints <m>a</m> and <m>b</m>, such that
+<ul>
+<li> <textblue><m>f''(a) \lt 0</m> and <m>f''(x) \lt 0</m> for every <m>x</m> between <m>a</m> and 3,</textblue> and
+</li>
+<li> <textred><m>f''(b) \gt 0</m> and <m>f''(x) \gt 0</m> for every <m>x</m> between <m>b</m> and 3.</textred>
+</li>
+</ul>
+</p>
+
+<p>Since <m>f''(a) \lt 0</m> and <m>f''(b) \gt 0</m>, and since <m>f''(x)</m> is continuous, the Intermediate Value Theorem tells us that there exists some <m>x</m> strictly between <m>a</m> and <m>b</m> with <m>f''(x)=0</m>. So, we know <m>f''(x)=0</m> somewhere between <m>a</m> and <m>b</m>. The question is, where exactly could that be?
+</p>
+
+<p><ul>
+<li> <m>f''(x) \lt 0</m> (and hence <m>f''(x) \neq 0</m>) for all <m>x</m> between <m>a</m> and 3
+</li>
+<li> <m>f''(x) \gt 0</m> (and hence <m>f''(x) \neq 0</m>)  for all <m>x</m> between <m>b</m> and 3
+</li>
+<li> So, any number between <m>a</m> and <m>b</m> that is not 3 has <m>f''(x)\neq 0</m>.
+</li>
+</ul>
+So, <m>x=3</m> is the only possible place between <m>a</m> and <m>b</m> where <m>f''(x)</m> could be zero. Therefore, <m>f''(3)=0</m>.
+</p></answer>
+<solution><p>
+If <m>x=3</m> is an inflection point, then the concavity of <m>f(x)</m> changes at <m>x=3</m>. That is, there is some interval strictly containing 3, with endpoints <m>a</m> and <m>b</m>, such that
+<ul>
+<li> <textblue><m>f''(a) \lt 0</m> and <m>f''(x) \lt 0</m> for every <m>x</m> between <m>a</m> and 3,</textblue> and
+</li>
+<li> <textred><m>f''(b) \gt 0</m> and <m>f''(x) \gt 0</m> for every <m>x</m> between <m>b</m> and 3.</textred>
+</li>
+</ul>
+Remark: we are leaving unknown whether <m>a \lt 3 \lt b</m> or <m>b \lt 3 \lt a</m>. Since we don't know whether <m>f(x)</m> changes from concave up to concave down, or from concave down to concave up, by remaining vague we cover both cases.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
+\YExcoord{0}{3}
+\YExcoord{-3}{\textcolor{blue}{a}}
+\YExcoord{3}{\textcolor{red}{b}}
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}, blue] (-3,-.75)--(0,-.75);
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}, red] (0,-.75)--(3,-.75);
+\draw[blue] (-1.5,-1.5) node{concave down};
+\draw[red] (1.5,-1.5) node{concave up};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+
+<p>OR</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
+\YExcoord{0}{3}
+\YExcoord{-3}{\textcolor{red}{b}}
+\YExcoord{3}{\textcolor{blue}{a}}
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}, red] (-3,-.75)--(0,-.75);
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}, blue] (0,-.75)--(3,-.75);
+\draw[red] (-1.5,-1.5) node{concave up};
+\draw[blue] (1.5,-1.5) node{concave down};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Since <m>f''(a) \lt 0</m> and <m>f''(b) \gt 0</m>, and since <m>f''(x)</m> is continuous, the Intermediate Value Theorem tells us that there exists some <m>x</m> strictly between <m>a</m> and <m>b</m> with <m>f''(x)=0</m>. <textred>So, we know <m>f''(x)=0</m> somewhere between <m>a</m> and <m>b</m>. The question is, where exactly could that be?</textred>
+</p>
+
+<p><ul>
+<li> <m>f''(x) \lt 0</m> (and hence <m>f''(x) \neq 0</m>) for all <m>x</m> between <m>a</m> and 3
+</li>
+<li> <m>f''(x) \gt 0</m> (and hence <m>f''(x) \neq 0</m>)  for all <m>x</m> between <m>b</m> and 3
+</li>
+<li> So, any number between <m>a</m> and <m>b</m> that is not 3 has <m>f''(x)\neq 0</m>.
+</li>
+</ul>So, <m>x=3</m> is the only possible place between <m>a</m> and <m>b</m> where <m>f''(x)</m> could be zero. Therefore, <m>f''(3)=0</m>.
+</p>
+
+<p>Remark: this is why, in general, we set <m>f''(x)=0</m> to find inflection points. (They can also occur where <m>f''(x)</m> does not exist.)
+</p></solution>
+</exercise>
+
+</exercisegroup>
+
+</exercises>

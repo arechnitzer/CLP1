@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+Given the function shown below, evaluate the following:
+<ol label="a">
+<li> <m>\displaystyle \lim_{x \rightarrow -2} f(x)</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow 0}f(x)</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow 2}f(x)</m>
+</li>
+</ol>
+</p>
+
+<sidebyside  width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thick] (-3,-1) cos (-2,1) sin (-1,-1) cos (0,0) sin (1.5,2)--(3,2) node[above right]{$y=f(x)$};
+\draw (2,2) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (2,-2) node[vertex]{};
+\foreach \x in {-2,2}{\YExcoord{\x}{\x}}
+\foreach \y in {-2,1,2}{\YEycoord{\y}{\y}}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<answer><p>
+<ol label="a">
+<li> <m>\displaystyle \lim_{x \rightarrow -2} f(x)=1</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow 0}f(x)=0</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow 2}f(x)=2</m>
+</li>
+</ol>
+</p></answer>
+<solution><p>
+<ol label="a">
+<li> <m>\displaystyle \lim_{x \rightarrow -2} f(x)=1</m>: as <m>x</m> gets very close to <m>-2</m>, <m>y</m> gets very close to <m>1</m>.
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow 0}f(x)=0</m>: as <m>x</m> gets very close to <m>0</m>, <m>y</m> also gets very close to <m>0</m>.
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow 2}f(x)=2</m>: as <m>x</m> gets very close to <m>2</m>, <m>y</m> gets very close to <m>2</m>. We ignore the value of the function where <m>x</m> is exactly <m>2</m>.
+</li>
+</ol>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Given the function shown below, evaluate <m>\displaystyle \lim_{x \rightarrow 0} f(x)</m>.</p>
+
+<sidebyside width="50%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thick] (-3,-3) cos (0,-1);
+\draw (0,1) sin (3,3) node[above right]{$y=f(x)$};
+\foreach \y in {-1,1}{\YEycoord{\y}{\y}}
+\draw (0,-1) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (0,1) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+Consider the difference between a limit and a one-sided limit.
+</p></hint>
+<answer><p>
+DNE
+</p></answer>
+<solution><p>
+The limit does not exist. As <m>x</m> approaches 0 <em>from the left</em>, <m>y</m> approaches -1; as <m>x</m> approaches 0 <em>from the right</em>, <m>y</m> approaches 1. This tells us <m>\displaystyle\lim_{x \rightarrow 0^-} f(x)=-1</m> and
+<m>\displaystyle\lim_{x \rightarrow 0^+} f(x)=1</m>, but neither of these are what the question asked. Since the limits from left and right do not agree, the limit does not exist. Put another way, there is no single number <m>y</m> approaches as <m>x</m> approaches 0, so the limit <m>\displaystyle\lim_{x \rightarrow 0} f(x)</m> does not exist.
+</p></solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+Given the function shown below, evaluate:
+<ol label="a">
+<li> <m>\displaystyle \lim_{x \rightarrow -1^{-}} f(x)</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow -1^{+}} f(x)</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow -1} f(x)</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow -2^{+}} f(x)</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow 2^{-}} f(x)</m>
+</li>
+</ol>
+</p>
+
+<sidebyside width="50%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3.5}{3}
+\draw[thick] (-3,0)--(-1.5,2) (-1.5,-2)--(1.5,2) (1.5,-2)--(3,0);
+\draw (1.75,2) node[above right]{$y=f(x)$};
+\foreach \x in {-2,-1,1,2}{\YExcoord{1.5*\x}{\x}}
+\foreach \x in {-2,2}{\YEycoord{\x}{\x}}
+\draw (-3,0) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (-1.5,-2) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (-1.5,2) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (1.5,2) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (1.5,-2) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\draw (3,0) node[shape=circle, minimum size=2mm, draw, fill=white, inner sep=0]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+Pay careful attention to which limits are one-sided and which are not.
+</p></hint>
+<answer><p>
+<ol label="a">
+<li> <m>\displaystyle \lim_{x \rightarrow -1^{-}} f(x)=2</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow -1^{+}} f(x)=-2</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow -1} f(x)= </m> DNE
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow -2^{+}} f(x) =0</m>
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow 2^{-}} f(x)=0</m>
+</li>
+</ol>
+</p></answer>
+<solution><p>
+<ol label="a">
+<li> <m>\displaystyle \lim_{x \rightarrow -1^{-}} f(x)=2</m>: as <m>x</m> approaches <m>-1</m> from the left, <m>y</m> approaches 2. It doesn't matter that the function isn't defined at <m>x=-1</m>, and it doesn't matter what happens to the right of <m>x=-1</m>.
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow -1^{+}} f(x)=-2</m>: as <m>x</m> approaches <m>-1</m> from the right, <m>y</m> approaches -2. It doesn't matter that the function isn't defined at <m>-1</m>, and it doesn't matter what happens to the left of <m>-1</m>.
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow -1} f(x) =</m> DNE: since the limits from the left and right don't agree, the limit does not exist.
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow -2^{+}} f(x) =0</m>: as <m>x</m> approaches <m>-2</m> from the right, <m>y</m> approaches 0. It doesn't matter that the function isn't defined at 2, or to the left of 2.
+</li>
+<li> <m>\displaystyle \lim_{x \rightarrow 2^{-}} f(x)=0</m>: as <m>x</m> approaches <m>2</m> from the left, <m>y</m> approaches 0. It doesn't matter that the function isn't defined at 2, or to the right of 2.
+</li>
+</ol>
+</p></solution>
+</exercise>
+<exercise xml:id="s1_3p1" purpose="RQS">
+<statement><p>
+Draw a curve <m>y=f(x)</m> with <m>\displaystyle\lim_{x \rightarrow 3}f(x)=f(3)=10</m>.
+</p></statement>
+<answer><p>Many answers are possible; here is one.</p>
+<sidebyside width="50%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{5}
+\draw[thick] plot[domain=-1:3] (\x,{1.5*\x+.5}) node[right]{$y=f(x)$};
+\draw (2.3,.2)--(2.3,-.2) node[below]{3};
+\draw (.2,4)--(-.2,4) node[left]{10};
+\draw[dashed] (2.3,.2) |- (.2,4);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+Many answers are possible; here is one.</p>
+
+<sidebyside width="50%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{5}
+\draw[thick] plot[domain=-1:3] (\x,{1.5*\x+.5}) node[right]{$y=f(x)$};
+\draw (2.3,.2)--(2.3,-.2) node[below]{3};
+\draw (.2,4)--(-.2,4) node[left]{10};
+\draw[dashed] (2.3,.2) |- (.2,4);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>As <m>x</m> gets closer and closer to 3, <m>y</m> gets closer and closer to 10: this shows <m>\displaystyle\lim_{x \rightarrow 3} f(x)=10</m>. Also, at 3 itself, the function takes the value 10; this shows <m>f(3)=10</m>.
+</p></solution>
+</exercise>
+<exercise xml:id="s1_3p2" purpose="RQS">
+<statement><p>
+Draw a curve <m>y=f(x)</m> with <m>\displaystyle\lim_{x \rightarrow 3}f(x)=10</m> and <m>f(3)=0</m>.
+</p></statement>
+<hint><p>
+The function doesn't have to be continuous.
+</p></hint>
+<answer><p>
+Many answers are possible; here is one.</p>
+
+<sidebyside width="50%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{5}
+\draw[thick] plot[domain=-1:3] (\x,{1.5*\x+.5}) node[right]{$y=f(x)$};
+\draw (2.3,.2)--(2.3,-.2) node[below]{3};
+\draw (.2,4)--(-.2,4) node[left]{10};
+\draw[dashed] (2.3,.2) |- (.2,4);
+\draw (2.3,4) node[shape=circle, inner sep=0, minimum size=2mm, draw, fill=white]{};
+\draw (2.3,0) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+Many answers are possible; here is one.</p>
+
+<sidebyside width="50%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{5}
+\draw[thick] plot[domain=-1:3] (\x,{1.5*\x+.5}) node[right]{$y=f(x)$};
+\draw (2.3,.2)--(2.3,-.2) node[below]{3};
+\draw (.2,4)--(-.2,4) node[left]{10};
+\draw[dashed] (2.3,.2) |- (.2,4);
+\draw (2.3,4) node[shape=circle, inner sep=0, minimum size=2mm, draw, fill=white]{};
+\draw (2.3,0) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Note that, as <m>x</m> gets closer and closer to 3 <em>except at 3 itself</em>, <m>y</m> gets closer and closer to 10: this shows <m>\displaystyle\lim_{x \rightarrow 3} f(x)=10</m>.  Then, when <m>x=3</m>, the function has value 0: this shows <m>f(3)=0</m>.
+</p></solution>
+</exercise>
+<exercise>
+<statement><p>
+Suppose <m>\displaystyle\lim_{x \rightarrow 3} f(x)=10</m>. True or false: <m>f(3)=10</m>.
+</p></statement>
+<hint><p>
+See Question<nbsp/><xref ref="s1_3p2"/>
+</p></hint>
+<answer><p> In general, this is false.
+</p></answer>
+<solution><p> In general, this is false. The limit as <m>x</m> goes to 3 does not take into account the value of the function at 3: <m>f(3)</m> can be anything.
+</p></solution>
+</exercise>
+<exercise>
+<statement><p>
+Suppose <m>f(3)=10</m>. True or false: <m>\displaystyle\lim_{x \rightarrow 3} f(x)=10</m>.
+</p></statement>
+<hint><p>
+See Question<nbsp/><xref ref="s1_3p2"/>
+</p></hint>
+<answer><p>
+False
+</p></answer>
+<solution><p>
+False. The limit as <m>x</m> goes to 3 does not take into account the value of the function at 3: <m>f(3)</m> tells us nothing about <m>\displaystyle\lim_{x \rightarrow 3} f(x)</m>.
+</p></solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+Suppose <m>f(x)</m> is a function defined on all real numbers, and <m>\displaystyle\lim_{x \rightarrow -2} f(x)=16</m>. What is <m>\displaystyle\lim_{x \rightarrow -2^-} f(x)</m>?
+</p></statement>
+<hint><p>
+What is the relationship  between the limit and the two one-sided limits?
+</p></hint>
+<answer><p>
+<m>\displaystyle\lim_{x \rightarrow -2^-} f(x)=16</m>
+</p></answer>
+<solution><p>
+<m>\displaystyle\lim_{x \rightarrow -2^-} f(x)=16</m>: in order for the limit <m>\displaystyle\lim_{x \rightarrow 2} f(x)</m> to exist and be equal to 16, both one sided limits must exist and be equal to 16.
+</p></solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+Suppose <m>f(x)</m> is a function defined on all real numbers, and <m>\displaystyle\lim_{x \rightarrow -2^-} f(x)=16</m>. What is <m>\displaystyle\lim_{x \rightarrow -2} f(x)</m>?
+</p></statement>
+<hint><p>
+What is the relationship  between the limit and the two one-sided limits?
+</p></hint>
+<answer><p>
+Not enough information to say.
+</p></answer>
+<solution><p>
+Not enough information to say.
+If <m>\displaystyle\lim_{x \rightarrow -2^+} f(x)=16</m>, then
+ <m>\displaystyle\lim_{x \rightarrow -2} f(x)=16</m>.
+If <m>\displaystyle\lim_{x \rightarrow -2^+} f(x)\neq 16</m>, then
+ <m>\displaystyle\lim_{x \rightarrow -2} f(x)</m> does not exist.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction>
+  <p>
+In Questions<nbsp/><xref ref="s1_3first"/> through <xref ref="s1_3last"/>, evaluate the given limits. If you aren't sure where to begin, it's nice to start by drawing the function.
+</p>
+</introduction>
+
+<exercise  xml:id="s1_3first">
+<statement><p>
+<m>\displaystyle\lim_{t \rightarrow 0} \sin t</m>
+</p></statement>
+<answer><p>
+<m>\displaystyle\lim_{t \rightarrow 0} \sin t=0</m>
+</p></answer>
+<solution><p>
+<m>\displaystyle\lim_{t \rightarrow 0} \sin t=0</m>: as <m>t</m> approaches 0, <m>\sin t</m> approaches 0 as well.
+</p></solution>
+</exercise>
+<exercise>
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 0^+} \ln x</m>
+</p></statement>
+<answer><p>
+<m>\displaystyle\lim_{x \rightarrow 0^+} \ln x = -\infty</m>
+</p></answer>
+<solution><p><m>\displaystyle\lim_{x \rightarrow 0^+} \ln x = -\infty</m>: as <m>x</m> approaches 0 from the right, <m>\ln x</m> is negative and increasingly large, growing without bound.
+</p></solution>
+</exercise>
+<exercise>
+<statement><p>
+<m>\displaystyle\lim_{y \rightarrow 3} y^2</m>
+</p></statement>
+<answer><p><m>\displaystyle\lim_{y \rightarrow 3} y^2=9</m>
+</p></answer>
+<solution><p>
+<m>\displaystyle\lim_{y \rightarrow 3} y^2=9</m>:
+as <m>y</m> gets closer and closer to 3, <m>y^2</m> gets closer and closer to <m>3^2</m>.
+</p></solution>
+</exercise>
+<exercise>
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 0^-} \dfrac{1}{x}</m>
+</p></statement>
+<answer><p> <m>\displaystyle\lim_{x \rightarrow 0^-} \dfrac{1}{x}=-\infty</m>
+</p></answer>
+<solution><p> <m>\displaystyle\lim_{x \rightarrow 0^-} \dfrac{1}{x}=-\infty</m>:
+as <m>x</m> gets closer and closer to 0 from the left, <m>\dfrac{1}{x}</m> becomes a larger and larger negative number.
+</p></solution>
+</exercise>
+<exercise xml:id="s1_3p14" purpose="RQS">
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}</m>
+</p></statement>
+<hint><p>
+What are the one-sided limits?
+</p></hint>
+<answer><p> <m>\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}=</m> DNE
+</p></answer>
+<solution><p>
+<m>\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}=</m> DNE:
+as <m>x</m> gets closer and closer to 0 from the left, <m>\dfrac{1}{x}</m> becomes a larger and larger negative number; but as <m>x</m> gets closer and closer to 0 from the right, <m>\dfrac{1}{x}</m> becomes a larger and larger positive number. So the limit from the left is not the same as the limit from the right, and so <m>\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}=</m> DNE. Contrast this with Question<nbsp/><xref ref="s1_3p15"/>.
+</p></solution>
+</exercise>
+<exercise xml:id="s1_3p15" purpose="RQS">
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x^2}</m>
+</p></statement>
+<answer><p>
+<m>\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x^2}=\infty</m>
+</p></answer>
+<solution><p>
+<m>\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x^2}=\infty</m>:
+as <m>x</m> gets closer and closer to 0 from the either side, <m>\dfrac{1}{x^2}</m> becomes a larger and larger positive number, growing without bound.
+Contrast this with Question<nbsp/><xref ref="s1_3p14"/>.
+</p></solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 3} \dfrac{1}{10}</m>
+</p></statement>
+<hint><p>
+Think about what it means that <m>x</m> does not appear in the function <m>f(x)=\dfrac{1}{10}</m>.
+</p></hint>
+<answer><p>
+<m>\displaystyle\lim_{x \rightarrow 3} \dfrac{1}{10}=\dfrac{1}{10}</m>
+</p></answer>
+<solution><p>
+<m>\displaystyle\lim_{x \rightarrow 3} \dfrac{1}{10}=\dfrac{1}{10}</m>: no matter what <m>x</m> is, <m>\dfrac{1}{10}</m> is always <m>\dfrac{1}{10}</m>. In particular, as <m>x</m> approaches 3, <m>\dfrac{1}{10}</m> stays put at <m>\dfrac{1}{10}</m>.
+</p></solution>
+</exercise>
+<exercise xml:id="s1_3last" purpose="RQS">
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 3} f(x)</m>, where <m>f(x)=\left\{
+\begin{array}{ll}
+\sin x&amp;x\leq 2.9\\
+x^2&amp;x \gt 2.9
+\end{array}
+\right.</m>.
+</p></statement>
+<hint><p>
+We only care about what happens really, really close to <m>x=3</m>.
+</p></hint>
+<answer><p>
+9
+</p></answer>
+<solution><p>
+When <m>x</m> is very close to 3, <m>f(x)</m> looks like the function <m>x^2</m>. So:
+<m>\displaystyle\lim_{x \rightarrow 3} f(x) =
+\displaystyle\lim_{x \rightarrow 3} x^2=9</m>
+</p></solution>
+</exercise>
+
+</exercisegroup>
+
+</exercises>

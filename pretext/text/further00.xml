@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Towards integral calculus</title>
+<introduction>
+<p>
+We have now come to the final topic of the course <mdash/> antiderivatives. This is only a  short section since it is really just to give a taste of the next calculus subject:  integral calculus.
+</p>
+</introduction>
+<section xml:id="sec_antidiff">
+<title>Introduction to antiderivatives</title>
+<subsection><title>Introduction to antiderivatives</title>
+<p>
+So far in the course we have learned how to determine the rate of change (i.e. the  derivative) of a given function. That is
+<md>
+<mrow>
+  \text{given a function } f(x) \text{ find } \diff{f}{x}.
+</mrow>
+</md>
+Along the way we devloped an understanding of limits, which allowed us to define  instantaneous rates of change <mdash/> the derivative. We then went on to develop a number of  applications of derivatives to modelling and approximation. In this last section we want  to just introduce the idea of antiderivatives. That is
+<md>
+<mrow>
+  \text{given a derivative } \diff{f}{x} \text{ find the original function } f(x).
+</mrow>
+</md>
+</p>
+
+<p>
+For example <mdash/> say we know that
+<md>
+<mrow>
+  \diff{f}{x} &amp;= x^2
+</mrow>
+</md>
+and we want to find <m>f(x)</m>. From our previous experience differentiating we know  that derivatives of polynomials are again polynomials. So we guess that our  unkown function <m>f(x)</m> is a polynomial. Further we know that when we  differentiate <m>x^n</m> we get <m>n x^{n-1}</m> <mdash/> multiply by the exponent and reduce  the exponent by 1. So to end up with a derivative of <m>x^2</m> we need to have  differentiated an <m>x^3</m>. But <m>\diff{}{x} x^3 = 3x^2</m>, so we need to divide both  sides by 3 to get the answer we want. That is
+<md>
+<mrow>
+  \diff{}{x} \left(\frac{1}{3}x^3 \right) &amp;= x^2
+</mrow>
+</md>
+However we know that the derivative of a constant is zero, so we also have
+<md>
+<mrow>
+  \diff{}{x} \left(\frac{1}{3}x^3 +1 \right) &amp;= x^2
+</mrow>
+<intertext>and</intertext>
+<mrow>
+  \diff{}{x} \left(\frac{1}{3}x^3 - \pi \right) &amp;= x^2
+</mrow>
+</md>
+At this point it will really help the discussion to give a name to what we are doing.</p>
+
+<definition xml:id="def_antiderivative">
+<statement><p>
+ A function <m>F(x)</m> that satisfies
+<md>
+<mrow>
+  \diff{}{x} F(x) &amp;= f(x)
+</mrow>
+</md>
+is called an antiderivative of <m>f(x)</m>.
+</p></statement>
+</definition>
+
+<p>
+Notice the use of the indefinite article there <mdash/> <em>an</em> antiderivative. This is  precisely because we can always add or subtract a constant to an antiderivative and  when we differentiate we'll get the same answer.  We can write this as a lemma,  but it is actually just Corollary<nbsp/><xref ref="cor_equal_diff"/> (from back in the section  on the mean-value theorem) in disguise.
+</p>
+
+<lemma>
+<statement><p>
+Let <m>F(x)</m> be an antiderivative of <m>f(x)</m>, then for any constant <m>c</m>, the function  <m>F(x)+c</m> is also an antiderivative of <m>f(x)</m>.
+</p></statement>
+</lemma>
+
+<p>
+Because of this lemma we typically write antiderivatives with <q><m>+c</m></q> tacked on the  end. That is, if we know that <m>F'(x)=f(x)</m>, then we would state that  <em>the</em> antiderivative of <m>f(x)</m> is
+<md>
+<mrow>
+  F(x)+c
+</mrow>
+</md>
+where this <q><m>+c</m></q> is there to remind us that we can always add or subtract some  constant and it will still be an antiderivative of <m>f(x)</m>. Hence the antiderivative of  <m>x^2</m> is
+<md>
+<mrow>
+  \frac{1}{3}x^3 + c
+</mrow>
+</md>
+Similarly, the antiderivative of <m>x^4</m> is
+<md>
+<mrow>
+  \frac{1}{5}x^5 + c
+</mrow>
+</md>
+and for <m>\sqrt{x} = x^{1/2}</m> it is
+<md>
+<mrow>
+  \frac{2}{3}x^{3/2} + c
+</mrow>
+</md>
+This last one is tricky (at first glance) <mdash/> but we can always check our answer by  differentiating.
+<md>
+<mrow>
+  \diff{}{x} \left(\frac{2}{3}x^{3/2} + c \right) &amp;=
+ \frac{2}{3} \cdot \frac{3}{2} x^{1/2} + 0 &amp; \checkmark
+</mrow>
+</md>
+</p>
+
+<p>
+Now in order to determine the value of <m>c</m> we need more information. For example, we  might be asked
+</p>
+
+<blockquote>
+<p>
+  Given that <m>g'(t) = t^2</m> and <m>g(3)=7</m> find <m>g(t)</m>.
+</p>
+</blockquote>
+
+<p>
+We are given the derivative and one piece of additional information and from these  two facts we need to find the original function. From our work above we know that
+<md>
+<mrow>
+  g(t) &amp;= \frac{1}{3}t^3 + c
+</mrow>
+</md>
+and we can find <m>c</m> from the other piece of information
+<md>
+<mrow>
+  7 = g(3) &amp;= \frac{1}{3} \cdot 27 + c = 9+c
+</mrow>
+</md>
+Hence <m>c=-2</m> and so
+<md>
+<mrow>
+  g(t) &amp;= \frac{1}{3}t^3 -2
+</mrow>
+</md>
+We can then very easily check our answer by recomputing <m>g(3)</m> and <m>g'(t)</m>. This is a  good habit to get into.
+</p>
+
+<p>
+Finding antiderivatives of polynomials is generally not too hard. We just  need to use the rule
+<md>
+<mrow>
+  \text{if } f(x) = x^n \text{ then } F(x) = \frac{1}{n+1} x^{n+1} + c.
+</mrow>
+</md>
+Of course this breaks down when <m>n=-1</m>. In order to find an antiderivative  for <m>f(x)=\frac{1}{x}</m> we need to remember that <m>\diff{}{x}\log x =  \frac{1}{x}</m>, and more generally that <m>\diff{}{x}\log |x| = \frac{1}{x}</m>. See  Example<nbsp/><xref ref="eg_diff_log_abs_x"/>. So
+<md>
+<mrow>
+	    \text{if } f(x)=\frac{1}{x}
+	    \text{ then } F(x) = \log|x| + c
+</mrow>
+</md>
+</p>
+
+<example xml:id="eg_antidiff_poly"><title>Antiderivative of <m>3x^5-7x^2+2x+3 + x^{-1} - x^{-2}</m></title>
+<p>
+ Let <m>f(x) = 3x^5-7x^2+2x+3 + x^{-1} - x^{-2}</m>. Then the antiderivative of <m>f(x)</m> is
+<md>
+<mrow>
+  F(x) &amp;= \frac{3}{6}x^6 - \frac{7}{3}x^3 + \frac{2}{2}x^2 + 3x +\log|x| - \frac{1}{-1}
+x^{-1} + c &amp; \text{clean it up}
+</mrow><mrow>
+  &amp;= \frac{1}{2}x^6 - \frac{7}{3}x^3 +  x^2 + 3x +\log|x| + x^{-1} + c
+</mrow>
+</md>
+Now to check we should differentiate and hopefully we get back to where we started
+<md>
+<mrow>
+  F'(x) &amp;= \frac{6}{2}x^5 - \frac{7}{3} \cdot 3 x^2 +  2 x + 3 + \frac{1}{x} - x^{-2}
+</mrow><mrow>
+  &amp;= 3 x^5 - 7 x^2 +  2 x + 3 + \frac{1}{x} - x^{-2} &amp; \checkmark
+</mrow>
+</md>
+</p></example>
+
+<p>
+In your next calculus course you will develop a lot of machinery to help you find antiderivatives. At this stage about all that we can do is continue the sort of thing we have done. Think about the derivatives we know and  work backwards. So, for example, we can take a list of derivatives </p>
+
+<sidebyside>
+<tabular bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>F(x)</m> </cell><cell>   <m>1</m> </cell><cell>  <m>x^n</m> </cell><cell> <m>\sin x</m> </cell><cell> <m>\cos x</m>
+                  </cell><cell> <m>\tan x</m> </cell><cell> <m>e^x</m> </cell><cell> <m>\ln |x|</m>
+                  </cell><cell> <m>\arcsin x</m> </cell><cell> <m>\arctan x</m>
+           </cell>
+</row><row>
+<cell>            <m>f(x)=\diff{}{x}F(x)</m> </cell><cell> <m>0</m> </cell><cell> <m>nax^{n-1}</m> </cell><cell> <m>\cos x</m>
+                  </cell><cell> <m>-\sin x</m>
+                  </cell><cell>  <m>\sec^2 x</m> </cell><cell> <m>e^x</m> </cell><cell> <m>\frac{1}{x}</m>
+                  </cell><cell> <m>\frac{1}{\sqrt{1-x^2}}</m> </cell><cell> <m>\frac{1}{1+x^2}</m>
+           </cell>
+</row>
+</tabular>
+</sidebyside>
+<p>and flip it upside down to give the tables of antiderivatives.</p>
+<sidebyside>
+<tabular bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell> <m>f(x)=\diff{}{x}F(x)</m> </cell><cell> <m>0</m> </cell><cell> <m>nx^{n-1}</m> </cell><cell> <m>\cos x</m>
+                  </cell><cell> <m>-\sin x</m>
+                  </cell><cell>  <m>\sec^2 x</m> </cell><cell> <m>e^x</m> </cell><cell> <m>\frac{1}{x}</m>
+           </cell>
+</row><row>
+<cell><m>F(x)</m> </cell><cell>   <m>c</m> </cell><cell>  <m>x^n+c</m> </cell><cell> <m>\sin x+c</m> </cell><cell> <m>\cos x+c</m>
+                  </cell><cell> <m>\tan x+c</m> </cell><cell> <m>e^x+c</m> </cell><cell> <m>\ln |x|+c</m>
+           </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<sidebyside>
+<tabular bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell> <m>f(x)=\diff{}{x}F(x)</m>
+                  </cell><cell> <m>\frac{1}{\sqrt{1-x^2}}</m> </cell><cell> <m>\frac{1}{1+x^2}</m>
+           </cell>
+</row><row>
+<cell><m>F(x)</m>
+                  </cell><cell> <m>\arcsin x+c</m> </cell><cell> <m>\arctan x+c</m>
+           </cell>
+</row>
+</tabular>
+</sidebyside>
+<p>
+Here <m>c</m> is just a constant <mdash/> any constant. But we can do  a little more; clean up <m>x^n</m> by dividing by <m>n</m> and then replacing <m>n</m> by <m>n+1</m>. Similarly we can tweak <m>\sin x</m> by multiplying by <m>-1</m>:
+</p>
+<sidebyside>
+<tabular bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>f(x)=\diff{}{x}F(x)</m> </cell><cell> <m>0</m> </cell><cell> <m>x^{n}</m> </cell><cell> <m>\cos x</m>
+                  </cell><cell> <m>\sin x</m>
+                  </cell><cell>  <m>\sec^2 x</m> </cell><cell> <m>e^x</m> </cell><cell> <m>\frac{1}{x}</m>
+           </cell>
+</row><row>
+<cell> <m>F(x)</m> </cell><cell>   <m>c</m> </cell><cell>  <m>\frac{1}{n+1}x^{n+1}+c</m> </cell><cell> <m>\sin x+c</m> </cell><cell>
+<m>-\cos x+c</m>
+                  </cell><cell> <m>\tan x+c</m> </cell><cell> <m>e^x+c</m> </cell><cell> <m>\ln |x|+c</m>
+           </cell>
+</row>
+</tabular>
+</sidebyside>
+<sidebyside>
+<tabular bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>f(x)=\diff{}{x}F(x)</m>
+                  </cell><cell> <m>\frac{1}{\sqrt{1-x^2}}</m> </cell><cell> <m>\frac{1}{1+x^2}</m>
+           </cell>
+</row><row>
+<cell><m>F(x)</m>
+                  </cell><cell> <m>\arcsin x+c</m> </cell><cell> <m>\arctan x+c</m>
+           </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>Here are a couple more examples.</p>
+<example><title>Antiderivatives of <m>\sin x, \cos 2x</m> and <m>\frac{1}{1+4x^2}</m></title>
+<p>
+Consider the functions
+<md>
+<mrow>
+  f(x) &amp;= \sin x + \cos 2x &amp; g(x) &amp;= \frac{1}{1+4x^2}
+</mrow>
+</md>
+Find their antiderivatives.
+</p>
+
+<p><alert>Solution</alert>
+The first one we can almost just look up our table. Let <m>F</m> be the  antiderivative of <m>f</m>, then
+<md>
+<mrow>
+  F(x) &amp;= -\cos x + \sin 2x + c &amp; \text{is not quite right}.
+</mrow>
+</md>
+When we differentiate to check things, we get a factor of two coming from the  chain rule. Hence to compensate for that we multiply <m>\sin2x</m> by <m>\frac{1}{2}</m>:
+<md>
+<mrow>
+  F(x) &amp;= -\cos x + \frac{1}{2} \sin 2x + c
+</mrow>
+</md>
+Differentiating this shows that we have the right answer.
+</p>
+
+<p>
+Similarly, if we use <m>G</m> to denote the antiderivative of <m>g</m>, then it appears  that <m>G</m> is nearly <m>\arctan x</m>. To get this extra factor of <m>4</m> we need to  substitute <m>x \mapsto 2x</m>. So we try
+<md>
+<mrow>
+  G(x) &amp;= \arctan(2x)+c  &amp; \text{which is nearly correct}.
+</mrow>
+</md>
+Differentiating this gives us
+<md>
+<mrow>
+  G'(x) &amp;= \frac{2}{1+(2x)^2} = 2g(x)
+</mrow>
+</md>
+Hence we should multiply by <m>\frac{1}{2}</m>. This gives us
+<md>
+<mrow>
+  G(x) &amp;= \frac{1}{2} \arctan(2x) + c.
+</mrow>
+</md>
+We can then check that this is, in fact, correct just by differentiating.
+</p></example>
+
+<p>Now let's do a more substantial example.</p>
+
+<example xml:id="eg_antiDerivA"><title>Position as antiderivative of velocity</title>
+<p>
+Suppose that we are driving to class. We start at <m>x=0</m> at time <m>t=0</m>. Our velocity is <m>v(t) = 50\sin(t)</m>. The class is at <m>x=25</m>. When do we get there?
+</p>
+
+<p>
+<alert>Solution</alert>. Let's denote by <m>x(t)</m> our position at time <m>t</m>. We are told that
+<ul>
+<li> <m>x(0) = 0</m> </li>
+<li> <m>x'(t) = 50\sin t</m> </li>
+</ul>
+We have to determine <m>x(t)</m> and then find the time <m>T</m> that obeys <m>x(T)=25</m>. Now armed with our table above we know that the antiderivative of <m>\sin  t</m> is just <m>-\cos t</m>. We can check this:
+<md>
+<mrow>
+  \diff{}{t}\left(-\cos t\right) &amp;= \sin t
+</mrow>
+</md>
+We can then get the factor of <m>50</m> by multiplying both sides of the above equation by 50:
+<md>
+<mrow>
+  \diff{}{t}\left(-50\cos t\right) &amp;= 50\sin t
+</mrow>
+</md>
+And of course, this is just <em>an</em> antiderivative of <m>50\sin t</m>; to write down the  general antiderivative we just add a constant <m>c</m>:
+<md>
+<mrow>
+  \diff{}{t}\left(-50\cos t + c\right) &amp;= 50\sin t
+</mrow>
+</md>
+Since <m>v(t) = \diff{}{t}x(t)</m>, this antiderivative is <m>x(t)</m>:
+<md>
+<mrow>
+  x(t) &amp;= -50\cos t + c
+</mrow>
+</md>
+To determine <m>c</m> we make use of the other piece of information we are given, namely
+<md>
+<mrow>
+  x(0) &amp;= 0.
+</mrow>
+<intertext>Substituting this in gives us</intertext>
+<mrow>
+  x(0) &amp;= -50\cos 0 + c = -50+c
+</mrow>
+</md>
+Hence we must have <m>c=50</m> and so
+<md>
+<mrow>
+  x(t) &amp;= -50\cos t + 50 = 50(1-\cos t).
+</mrow>
+</md>
+</p>
+
+<p>
+Now that we have our position as a function of time, we can determine how long it takes  us to arrive there. That is, we can find the time <m>T</m> so that <m>x(T)=25</m>.
+<md>
+<mrow>
+  25 = x(T) &amp;= 50(1-\cos T) &amp; \text{so}
+</mrow><mrow>
+  \frac{1}{2} &amp;= 1-\cos T
+</mrow><mrow>
+  -\frac{1}{2} &amp;= -\cos T
+</mrow><mrow>
+  \frac{1}{2} &amp;= \cos T.
+</mrow>
+</md>
+Recalling our special triangles, we see that <m>T=\frac{\pi}{3}</m>.
+</p></example>
+
+<p>
+Another example which shows how antiderivatives arise naturally when studying  differential equations.
+</p>
+
+<example><title><xref text="type-global" ref="thm_growthDEsoln"/> revisited.</title>
+<p>
+Back in Section<nbsp/><xref ref="sec_ExpGthDecay"/> we encountered a simple differential  equation, namely equation<nbsp/><xref ref="eq_carbonDating"/>. We were able to solve this  equation by guessing the answer and then checking it carefully. We can derive  the solution more systematically by using antiderivatives.
+</p>
+
+<p>
+Recall equation<nbsp/><xref ref="eq_carbonDating"/>:
+<md>
+<mrow>
+  \diff{Q}{t} &amp;= -k Q
+</mrow>
+</md>
+where <m>Q(t)</m> is the amount of radioactive material at time <m>t</m> and we assume  <m>Q(t)  \gt  0</m>. Take this equation and divide both sides by <m>Q(t)</m> to get
+<md>
+<mrow>
+  \frac{1}{Q(t)} \diff{Q}{t} &amp;= -k
+</mrow>
+</md>
+At this point we should
+	<fn>
+		Well <mdash/> perhaps it is better to say <q>notice  that</q>. Let's not make this a moral point.
+	</fn>
+think that the left-hand side is  familiar. Now is a good moment to look back at logarithmic differentiation in Section<nbsp/><xref ref="sec_diff_logs"/>.
+</p>
+
+<p>
+The left-hand side is just the derivative of <m>\log Q(t)</m>:
+<md>
+<mrow>
+  \diff{}{t}\left( \log Q(t) \right) &amp;= \frac{1}{Q(t)} \diff{Q}{t}
+</mrow><mrow>
+  &amp;= -k
+</mrow>
+</md>
+</p>
+
+<p>
+So to solve this equation, we are really being asked to find all functions  <m>\log Q(t)</m> having derivative <m>-k</m>. That is, we need to find  all  antiderivatives of <m>-k</m>. Of course that is just <m>-kt + c</m>. Hence we must have
+<md>
+<mrow>
+  \log Q(t) &amp;= -kt +c
+</mrow>
+</md>
+and then taking the exponential of both sides gives
+<md>
+<mrow>
+  Q(t) &amp;= e^{-kt+c} = e^c \cdot e^{-kt}  = C e^{-kt}
+</mrow>
+</md>
+where <m>C = e^c</m>. This is precisely Theorem<nbsp/><xref ref="thm_growthDEsoln"/>.
+</p>
+</example>
+
+<p>
+The above is a small example of the interplay between antiderivatives and differential equations.
+</p>
+
+<p>
+Here is another example of how we might use antidifferentiation to compute areas or volumes.</p>
+
+<example xml:id="eg_vol_cone"><title>Volume of a cone</title>
+<p>
+We know (especially if one has revised the material in the appendix and  Appendix<nbsp/><xref ref="apendix_volume"/> in particular) that the volume of a right-circular cone is
+<md>
+<mrow>
+  V &amp;= \frac{\pi}{3} r^2h
+</mrow>
+</md>
+where <m>h</m> is the height of the cone and <m>r</m> is the radius of its base. Now, the  derivation of this formula given in Appendix<nbsp/><xref ref="apendix_volume"/> is not too  simple. We present an alternate proof here that uses antiderivatives.
+</p>
+
+<sidebyside width="100%">
+ <image source="text/figs/cones"/>
+</sidebyside>
+
+<p>
+Consider cutting off a portion of the cone so that its new height is <m>x</m>  (rather than <m>h</m>). Call the volume of the resulting smaller cone <m>V(x)</m>. We are  going to determine <m>V(x)</m> for all <m>x\ge 0</m>, including <m>x=h</m>, by first evaluating  <m>V'(x)</m> and <m>V(0)</m> (which is obviously <m>0</m>).
+</p>
+
+<p>
+Call the radius of the base of the new smaller cone <m>y</m> (rather than <m>r</m>). By  similar triangles we know that
+<md>
+<mrow>
+  \frac{r}{h} &amp;= \frac{y}{x}.
+</mrow>
+</md>
+Now keep <m>x</m> and <m>y</m> fixed and consider cutting off a little more of the cone so  its height is <m>X</m>. When we do so, the radius of the base changes from <m>y</m> to  <m>Y</m> and again by similar triangles we know that
+<md>
+<mrow>
+  \frac{Y}{X} &amp;= \frac{y}{x} = \frac{r}{h}
+</mrow>
+</md>
+The change in volume is then
+<md>
+<mrow>
+  V(x) - V(X)
+</mrow>
+</md>
+Of course if we knew the formula for the volume of a cone, then we could compute  the above exactly. However, even without knowing the volume of a cone, it is  easy to derive upper and lower bounds on this quantity. The piece removed  has bottom radius <m>y</m> and top radius <m>Y</m>. Hence its volume is bounded above  and below by the cylinders of height <m>x-X</m> and with radius <m>y</m> and <m>Y</m>  respectively. Hence
+<md>
+<mrow>
+  \pi Y^2 (x-X) &amp; \leq V(x)-V(X) \leq \pi y^2 (x-X)
+</mrow>
+</md>
+since the volume of a cyliner is just the area of its base times its height. Now massage  this expression a little
+<md>
+<mrow>
+  \pi Y^2 &amp; \leq \frac{V(x)-V(X)}{x-X} \leq \pi y^2
+</mrow>
+</md>
+The middle term now looks like a derivative; all we need to do is take the limit  as <m>X \to x</m>:
+<md>
+<mrow>
+  \lim_{X\to x} \pi Y^2 &amp; \leq \lim_{X\to x} \frac{V(x)-V(X)}{x-X} \leq
+\lim_{X\to x} \pi y^2
+</mrow>
+</md>
+The rightmost term is independent of <m>X</m> and so is just <m>\pi y^2</m>. In the  leftmost term, as <m>X \to x</m>, we must have that <m>Y \to y</m>. Hence the leftmost  term is just <m>\pi y^2</m>. Then by the squeeze theorem (Theorem<nbsp/><xref ref="thm_squeeze"/>)  we know that
+<md>
+<mrow>
+  \diff{V}{x} = \lim_{X\to x} \frac{V(x)-V(X)}{x-X} &amp;= \pi y^2.
+</mrow>
+</md>
+But we know that
+<md>
+<mrow>
+  y &amp;= \frac{r}{h} \cdot x
+</mrow>
+</md>
+so
+<md>
+<mrow>
+  \diff{V}{x} &amp;= \pi \left( \frac{r}{h} \right)^2 x^2
+</mrow>
+</md>
+Now we can antidifferentiate to get back to <m>V</m>:
+<md>
+<mrow>
+  V(x) &amp;= \frac{\pi}{3} \left( \frac{r}{h} \right)^2 x^3 + c
+</mrow>
+</md>
+To determine <m>c</m> notice that when <m>x=0</m> the volume of the cone is just zero and  so <m>c=0</m>. Thus
+<md>
+<mrow>
+V(x) &amp;= \frac{\pi}{3} \left( \frac{r}{h} \right)^2 x^3
+</mrow>
+</md>
+and so when <m>x=h</m> we are left with
+<md>
+<mrow>
+  V(h) &amp;= \frac{\pi}{3} \left( \frac{r}{h} \right)^2 h^3 = \frac{\pi}{3} r^2 h
+</mrow>
+</md>
+as required.
+</p>
+</example>
+
+</subsection>
+
+<xi:include href="../problems/prob_s4.1.xml"/>
+
+</section>
+
+
+</chapter>

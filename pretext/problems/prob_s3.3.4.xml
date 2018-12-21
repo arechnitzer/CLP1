@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Further problems for <sect/><nbsp/><xref ref="sec_ExpGthDecay"/> </title>
+<introduction></introduction>
+
+
+<exercise><title><fromexam>2009H</fromexam></title>
+<statement><p>
+Find <m>f(2)</m> if <m>f'(x) = \pi f(x)</m> for all <m>x</m>, and <m>f(0) = 2</m>.
+</p></statement>
+<hint><p>
+Use Theorem<nbsp/><xref ref="thm_growthDEsoln"/> to figure out what <m>f(x)</m> looks like.
+</p></hint>
+<answer><p> <m>f(2)=2e^{2\pi}</m>
+</p></answer>
+<solution><p>
+The first piece of information given tells us <m>\ds\diff{f}{x}=\pi f(x)</m>. Then by Theorem<nbsp/><xref ref="thm_growthDEsoln"/>,
+<md>
+<mrow>
+f(x)&amp;=Ce^{\pi x}
+</mrow>
+<intertext>for some constant <m>C</m>. The second piece of given information tells us
+<m>f(0)=2</m>. Using this, we can solve for <m>C</m>:</intertext><mrow>
+2&amp;=f(0)=Ce^{0}=C
+</mrow>
+<intertext>Now, we know <m>f(x)</m> entirely:</intertext><mrow>
+f(x)&amp;=2e^{\pi t}
+</mrow>
+<intertext>So, we can evaluate <m>f(2)</m></intertext><mrow>
+f(2)&amp;=2e^{2\pi}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Which functions <m>T(t)</m> satisfy the differential equation
+<m>\ds\diff{T}{t}=7T+9</m>?
+</p></statement>
+<hint><p>
+To use  Corollary<nbsp/><xref ref="cor_coolingDEsoln"/>, you need to re-write the differential equation as
+<me>
+\diff{T}{t}=7\left[T-\left(-\frac{9}{7}\right)\right].
+</me>
+</p>
+</hint>
+<answer><p>
+Solutions to the differential equation have the form
+<me>
+T(t)=\left[T(0)+\frac{9}{7}\right]e^{7t}-\frac{9}{7}</me>
+</p>
+
+<p>for some constant <m>T(0)</m>.
+</p></answer>
+<solution><p>
+To use  Corollary<nbsp/><xref ref="cor_coolingDEsoln"/>, we re-write the differential equation as
+<me>
+\diff{T}{t}=7\left[T-\left(-\frac{9}{7}\right)\right].</me>
+</p>
+
+<p>Now, <m>A=-\dfrac{9}{7}</m> and <m>K=7</m>, so we see that the solutions to the differential equation have the form
+<me>
+T(t)=\left[T(0)+\frac{9}{7}\right]e^{7t}-\frac{9}{7}</me>
+</p>
+
+<p>for some constant <m>T(0)</m>.
+<md>
+<mrow>
+</mrow>
+<intertext>We can check that this is reasonable: if </intertext><mrow>
+T(t)&amp;=\left[T(0)+\frac{9}{7}\right]e^{7t}-\frac{9}{7}
+</mrow>
+<intertext>then</intertext><mrow>
+\diff{T}{t}&amp;=7\left[T(0)+\frac{9}{7}\right]e^{7t}
+</mrow><mrow>
+&amp;=7\left[T+\frac{9}{7}\right]
+</mrow><mrow>
+&amp;=7T+9.
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1998H</fromexam></title>
+<statement><p>
+It takes 8 days for 20<percent /> of a particular
+radioactive material to decay. How long does it take for 100 grams of the
+material to decay to 40 grams?
+</p></statement>
+<hint><p>
+The amount of the material at time <m>t</m> will be <m>Q(t)=Ce^{-kt}</m> for some constants <m>C</m> and <m>k</m>.
+</p></hint>
+<answer><p>
+<m>\dfrac{8\log(0.4)}{\log(0.8)}\approx 32.85</m> days
+</p></answer>
+<solution><p>
+Let <m>Q(t)</m> denote the amount of radioactive material after <m>t</m> days.
+Then
+<m>Q(t)=Q(0)e^{kt}</m>. We are  told
+<md>
+<mrow>
+Q(8)&amp;=0.8\,Q(0)
+</mrow>
+<intertext>So,</intertext><mrow>
+Q(0)e^{8k}&amp;=0.8\,Q(0)
+</mrow><mrow>
+e^{8k}&amp;=0.8
+</mrow><mrow>
+e^k&amp;=0.8^{\tfrac{1}{8}}
+</mrow>
+<intertext>If <m>Q(0)=100</m>, the time <m>t</m> at which <m>Q(t)=40</m> is determined by</intertext><mrow>
+40=Q(t)&amp;=Q(0)e^{kt}=100e^{kt}=100\left(0.8^{\tfrac{1}{8}}\right)^t=100\cdot 0.8^{\tfrac{t}{8}}
+</mrow>
+<intertext>Solving for <m>t</m>:</intertext><mrow>
+\frac{40}{100}&amp;=0.8^{\tfrac{t}{8}}
+</mrow><mrow>
+\log\left(0.4\right)&amp;=\log\left(0.8^{\tfrac{t}{8}}\right)=\frac{t}{8}\log(0.8)
+</mrow><mrow>
+t&amp;=\frac{8\log(0.4)}{\log(0.8)}\approx 32.85\mbox{ days}
+</mrow>
+</md>
+100 grams will decay to 40 grams in about 32.85 days.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A glass of boiling water is left in a room. After 15 minutes, it has cooled to 85<m>^\circ</m> C, and after 30 minutes it is 73<m>^\circ</m> C. What temperature is the room?
+</p></statement>
+<hint><p>
+In your calculations, it might come in handy that <m>e^{30K}=\left(e^{15K}\right)^2</m>.
+</p></hint>
+<answer><p>
+25<m>^\circ</m> C
+</p></answer>
+<solution><p>
+Let <m>t=0</m> be the time the boiling water is left in the room, and let <m>T(t)</m> be the temperature of the water <m>t</m> minutes later, so <m>T(0)=100</m>.
+Using Newton's Law of Cooling, we model the temperature of the water at time <m>t</m> as
+<md>
+<mrow>
+T(t)&amp;=[100-A]e^{Kt}+A
+</mrow>
+<intertext>where <m>A</m> is the room temperature, and <m>K</m> is some constant. We are told that <m>T(15)=85</m> and <m>T(30)=73</m>, so:</intertext><mrow>
+85=T(15)&amp;=[100-A]e^{15K}+A
+</mrow><mrow>
+73=T(30)&amp;=[100-A]e^{30K}+A
+</mrow>
+<intertext>Rearranging both equations:</intertext><mrow>
+\frac{85-A}{100-A}&amp;=e^{15K}
+</mrow><mrow>
+\frac{73-A}{100-A}&amp;=e^{30K}=\left(e^{15K}\right)^2
+</mrow>
+<intertext>Using these equations:</intertext><mrow>
+\left(\frac{85-A}{100-A}\right)^2=\left(e^{15K}\right)^2&amp;=e^{30K}=\frac{73-A}{100-A}
+</mrow><mrow>
+\frac{(85-A)^2}{100-A}&amp;=73-A
+</mrow><mrow>
+(85-A)^2&amp;=(73-A)(100-A)
+</mrow><mrow>
+85^2-170A+A^2&amp;=7300-173A+A^2
+</mrow><mrow>
+173A-170A&amp;=7300-85^2
+</mrow><mrow>
+3A&amp;=75
+</mrow><mrow>
+A&amp;=25
+</mrow>
+</md>
+The room temperature is 25<m>^\circ</m> C.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1997D</fromexam></title>
+<statement><p>
+  A 25-year-old graduate of UBC is given <dollar />50,000 which is invested
+at 5<percent /> per year compounded continuously. The graduate also intends to
+deposit money continuously at the rate of <dollar />2000 per year. Assuming that
+the interest rate remains 5<percent />, the amount <m>A(t)</m> of money at time <m>t</m> satisfies
+the equation
+<me>
+\diff{A}{t}= 0.05 A+2000
+</me>
+<ol label="a">
+<li> Solve this equation and determine the amount of money in the account when the graduate
+is 65.
+</li>
+<li> At age 65, the graduate will withdraw money continuously
+at the rate of <m>W</m> dollars per year. If the money must last until the person
+is 85, what is the largest possible value of <m>W</m>?
+</li>
+</ol>
+</p></statement>
+<hint><p>
+The differential equation in the problem has the same form as the differential equation from Newton's Law of Cooling.
+</p></hint>
+<answer><p>
+<ol label="a">
+<li> <m>A(t)=90,\!000\cdot e^{0.05t}-40,\!000</m>.
+When the graduate is 65, they will have <dollar />625,015.05 in the account.
+</li>
+<li> <dollar />49,437.96
+</li>
+</ol>
+</p></answer>
+<solution><p>
+<ol label="a">
+<li> The amount of money at time <m>t</m> obeys
+<md>
+<mrow>
+\diff{A}{t}&amp;= 0.05 A+2,\!000=0.05[A-(-40,\!000)]
+</mrow>
+<intertext>Using Corollary<nbsp/><xref ref="cor_coolingDEsoln"/> </intertext><mrow>
+A(t)&amp;=[A(0)+40,\!000]e^{0.05t}-40,\!000
+</mrow><mrow>
+&amp;=90,\!000\cdot e^{0.05t}-40,\!000
+</mrow>
+<intertext>where <m>t=0</m> corresponds to the year when the graduate is 25.</intertext><mrow>
+</mrow>
+<intertext>When the graduate is 65 years old, <m>t=40</m>, so</intertext><mrow>
+A(40)&amp;=90,\!000\, e^{0.05 \times 40}-40,000\approx <dollar />625,015.05
+</mrow>
+</md>
+</li>
+<li>
+When the graduate stops depositing money and instead
+starts withdrawing money at a rate <m>W</m>, the equation for <m>A</m> becomes
+<md>
+<mrow>
+\diff{A}{t}&amp;= 0.05 A-W= 0.05 [A(t)-20 W]
+</mrow>
+<intertext>
+Using Corollary<nbsp/><xref ref="cor_coolingDEsoln"/> and assuming that the interest rate remains 5<percent /></intertext><mrow>
+A(t)&amp;=[A(0)-20W]e^{0.05t}+20W
+</mrow><mrow>
+&amp;=[625,015.05-20W]e^{0.05t}+20W
+</mrow>
+<intertext>Note that, for part (b), we only care about what happens when the graduate starts withdrawing money. We take <m>t=0</m> to correspond to the year when the graduate is 65--so we're using a different <m>t</m> from part (a). Then from part (a), <m>A(0)=625,025.05</m>.</intertext><mrow>
+</mrow>
+<intertext>We want the account to be depleted when the graduate is 85. So, we
+want </intertext><mrow>
+0&amp;=A(20)
+</mrow><mrow>
+0&amp;=20W+ e^{0.05\times 20}(625,015.05-20W)
+</mrow><mrow>
+0&amp;=20W+ e(625,015.05-20W)
+</mrow><mrow>
+20(e-1)W&amp;= 625,015.05e
+</mrow><mrow>
+W&amp;=\frac{625,015.05e}{20(e-1)}\approx\$49,437.96
+</mrow>
+</md>
+</li>
+</ol>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1996D</fromexam></title>
+<statement><p>
+  An investor puts <dollar />120,000 which into a bank account which pays
+6<percent /> annual interest, compounded continuously. She plans to withdraw
+money continuously from the account at the rate of <dollar />9000 per year. If
+ <m>A(t)</m> is the amount of money at time <m>t</m>, then
+<me>
+\diff{A}{t}= 0.06 A-9000
+</me>
+<ol label="a">
+<li xml:id="s3_3investor1"> Solve this equation for <m>A(t)</m>.
+</li>
+<li xml:id="s3_3investor2"> When will the money run out?
+</li>
+</ol>
+</p></statement>
+<hint><p> We know the form of the solution <m>A(t)</m> from Corollary<nbsp/><xref ref="cor_coolingDEsoln"/>.
+</p></hint>
+<answer><p>
+<xref ref="s3_3investor1"/> <m>A(t)=150,\!000-30,\!000\, e^{0.06 t}</m>
+</p>
+<p><xref ref="s3_3investor2"/> after {26.8 yrs}
+</p></answer>
+<solution><p>
+<xref ref="s3_3investor1"/>
+The amount of money at time <m>t</m> obeys
+<md>
+<mrow>
+\diff{A}{t}&amp;= 0.06 A-9,\!000=0.06[A-150,\!000]
+</mrow>
+<intertext>Using Corollary<nbsp/><xref ref="cor_coolingDEsoln"/> </intertext><mrow>
+A(t)&amp;=[A(0)-150,\!000]e^{0.06t}+150,\!000
+</mrow><mrow>
+&amp;=[120,\!000-150,\!000]e^{0.06t}+150,\!000
+</mrow><mrow>
+&amp;=-30,\!000e^{0.06t}+150,\!000
+</mrow>
+</md>
+</p>
+
+<p><xref ref="s3_3investor2"/>
+The money runs out when <m>A(t)=0</m>.
+<md>
+<mrow>
+A(t)&amp;=0
+</mrow><mrow>
+150,\!000-30,\!000\, e^{0.06 t}&amp;=0
+</mrow><mrow>
+30,\!000\, e^{0.06t}&amp;=150,\!000
+</mrow><mrow>
+e^{0.06 t}&amp;=5
+</mrow><mrow>
+0.06 t&amp;=\log 5
+</mrow><mrow>
+t&amp;=\frac{\log 5}{0.06}\approx\mbox{26.8 yrs}
+</mrow>
+</md>
+The money runs out in about 26.8 years.
+</p>
+
+<p>Remark: without earning any interest, the money would have run out in about 13.3 years.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997D</fromexam></title>
+<statement><p>A particular bacterial culture grows at a rate proportional
+to the number of bacteria present. If the size of the culture triples every
+nine hours, how long does it take the culture to double?
+</p></statement>
+<hint><p>
+If a function's rate of change is proportional to the function itself, what does the function looks like?
+</p></hint>
+<answer><p> <m>\dfrac{9\log 2}{\log 3}\approx5.68</m> hr
+</p></answer>
+<solution><p>
+Let <m>Q(t)</m> denote the number of bacteria at time <m>t</m>. We are told that
+<m>Q'(t)=k Q(t)</m> for some constant of proportionality <m>k</m>. Consequently,
+<m>Q(t)=Q(0)e^{kt}</m> (Corollary<nbsp/><xref ref="thm_growthDEsoln"/>). We are also told
+<md>
+<mrow>
+Q(9)&amp;=3Q(0)
+</mrow><mrow>
+\mbox{So,}\qquad Q(0)e^{9k}&amp;=3Q(0)
+</mrow><mrow>
+e^{9k}&amp;=3
+</mrow><mrow>
+e^{k}&amp;=3^{\tfrac{1}{9}}
+</mrow>
+<intertext>The doubling time <m>t</m> obeys:</intertext><mrow>
+Q(t)&amp;=2Q(0)
+</mrow><mrow>
+\mbox{So,}\qquad Q(0)e^{kt}&amp;=2Q(0)
+</mrow><mrow>
+e^{kt}&amp;=2
+</mrow><mrow>
+3^{\tfrac{t}{9}}&amp;=2
+</mrow><mrow>
+\frac{t}{9}\log 3 &amp;=\log 2
+</mrow><mrow>
+t&amp;=9\frac{\log 2}{\log 3}\approx5.68 \mbox{ hr}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2012H</fromexam></title>
+<statement><p>
+An object falls under gravity near the surface of the earth
+and its motion is impeded by air resistance proportional to its speed. Its
+velocity <m>v</m> satisfies the differential equation
+<me>
+\dfrac{dv}{dt}=-g-kv
+</me>
+where <m>g</m> and <m>k</m> are positive constants.
+<ol label="a">
+<li> Find the velocity of the object as a function of time <m>t</m>,
+given that it was <m>v_0</m> at <m>t=0</m>.
+</li>
+<li> Find <m>\lim\limits_{t\rightarrow\infty} v(t)</m>.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+The equation from Newton's Law of Cooling, in Corollary<nbsp/><xref ref="cor_coolingDEsoln"/>,
+has a similar form to the differential equation in this question.
+</p></hint>
+<answer><p>
+(a) <m>v(t)=\left[v_0+\frac{g}{k}\right]e^{-kt}-\frac{g}{k}</m>
+</p>
+<p>
+(b) <m>\lim\limits_{t\rightarrow\infty} v(t)=-\dfrac{g}{k}</m>
+</p></answer>
+<solution><p>
+(a)  We want our differential equation to have the format of the equation in
+Corollary<nbsp/><xref ref="cor_coolingDEsoln"/>:
+<md>
+<mrow>
+\frac{dv}{dt}(t)&amp;=-g-kv(t)
+</mrow><mrow>
+&amp;=-k\left(v(t)+\frac{g}{k}\right)
+</mrow><mrow>
+&amp;=-k\left(v(t)-\left(-\frac{g}{k}\right)\right)
+</mrow>
+<intertext>So, we can use the corollary, with <m>K=-k</m>, <m>T=v</m>, and <m>A=-\dfrac{g}{k}</m>.</intertext><mrow>
+v(t)&amp;=\left(v(0)-\left(-\frac{g}{k}\right)\right)e^{-kt}-\frac{g}{k}
+</mrow><mrow>
+&amp;=\left(v_0+\frac{g}{k}\right)e^{-kt}-\frac{g}{k}
+</mrow>
+</md>
+</p>
+
+<p>(b)
+<md>
+<mrow>
+\lim\limits_{t\rightarrow\infty} v(t)
+&amp;=\lim_{t \to \infty}\left[\left(v_0+\frac{g}{k}\right)e^{-kt}-\frac{g}{k}\right]
+</mrow><mrow>
+&amp;=\left(v_0+\frac{g}{k}\right)\left(\lim_{t \to \infty}e^{-kt}\right)-\frac{g}{k}
+</mrow>
+<intertext>Since <m>k</m> is <em>positive</em>:</intertext><mrow>
+&amp;=\left(v_0+\frac{g}{k}\right)\left(0\right)-\frac{g}{k}
+</mrow><mrow>
+&amp;=-\dfrac{g}{k}</mrow>
+</md>
+</p>
+
+<p>Remark: This means, as the object falls, instead of accelerating without bound, it approaches some maximum speed. The velocity is negative because the object is moving in the negative direction--downwards.
+</p></solution>
+</exercise>
+
+</exercises>

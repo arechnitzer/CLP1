@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_taylor_more"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose <m>f(x)</m> is a function that we approximated by <m>F(x)</m>. Further, suppose
+ <m>f(10)=-3</m>, while our approximation was <m>F(10)=5</m>. Let <m>R(x)=f(x)-F(x)</m>.
+ <ol label="a">
+<li> True or false: <m>|R(10)| \leq 7</m>
+</li>
+<li> True or false: <m>|R(10)| \leq 8</m>
+</li>
+<li> True or false: <m>|R(10)| \leq 9</m>
+</li>
+<li> True or false: <m>|R(10)| \leq 100</m>
+</li>
+</ol>
+</p></statement>
+<hint><p>
+<m>R(10)=f(10)-F(10)=-3-5</m>
+</p></hint>
+<answer><p> (a) False
+</p>
+<p>
+(b) True
+</p>
+<p>
+(c) True
+</p><p>
+(d) True
+</p></answer>
+<solution><p>
+From the given information,
+<me>
+|R(10)|=|f(10)-F(10)|=|-3-5|=|-8|=8</me>
+</p>
+
+<p>So, (a) is false (since 8 is not less than or equal to 7), while (b), (c), and (d) are true.
+</p>
+
+<p>Remark: <m>R(x)</m> is the error in our approximation. As mentioned in the text, we almost never know <m>R</m> exactly, but we can give a bound. We don't need the tightest bound--just a reasonable one that is easy to calculate. If we were dealing with real functions and approximations, we might not know that <m>|R(10)|=8</m>, but if we knew it was at most 9, that would be a pretty decent approximation.
+</p>
+
+<p> Often in this section, we will make simplifying assumptions to get a bound that is easy to calculate. But, don't go overboard! It is a true statement to say that our absolute error is at most 100, but this statement would probably not be very helpful as a bound.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Let <m>f(x)=e^x</m>, and let <m>T_3(x)</m> be the third-degree Maclaurin polynomial for <m>f(x)</m>,
+<me>
+T_3(x)=1+x+\frac{1}{2}x^2+\frac{1}{3!}x^3</me>
+</p>
+
+<p>Use Equation<nbsp/><xref ref="eq_taylorErrorN"/> to give a reasonable bound on the error <m>|f(2)-T_3(2)|</m>.
+Then, find the error <m>|f(2)-T_3(2)|</m> using a calculator.
+</p></statement>
+<hint><p>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us
+<me>
+|f(2)-T_3(2)| = \left|\frac{f^{(4)}(c)}{4!}(2-0)^4\right|</me>
+</p>
+
+<p>for some <m>c</m> strictly between 0 and 2.
+</p></hint>
+<answer><p>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> gives us the bound <m>|f(2)-T_3(2)| \lt 6</m>. A calculator tells us actually <m>|f(2)-T_3(2)|\approx 1.056</m>.
+</p></answer>
+<solution><p>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+<md>
+<mrow>
+|f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
+</mrow>
+<intertext> for some <m>c</m> strictly between <m>x</m> and <m>a</m>. In our case, <m>n=3</m>, <m>a=0</m>, <m>x=2</m>, and <m>f^{(4)}(c)=e^c</m>, so </intertext><mrow>
+|f(2)-T_3(2)| &amp;= \left|\frac{f^{(4)}(c)}{4!}(2-0)^4\right|
+</mrow><mrow>
+&amp;=\frac{2^4}{4!}e^c=\frac{2}{3}e^c
+</mrow>
+<intertext>Since <m>c</m> is strictly between 0 and 2, <m>e^c  \lt  e^2</m>:</intertext><mrow>
+&amp;\leq \frac{2}{3}e^2
+</mrow>
+<intertext>but this isn't a number we really know. Indeed: <m>e^2</m> is the very number we're trying to approximate. So, we use the estimation <m>e  \lt  3</m>:</intertext><mrow>
+&amp; \lt  \frac{2}{3}\cdot 3^2 =6
+</mrow>
+</md>
+We conclude that the error <m>|f(2)-T_3(2)|</m> is <em>less than</em> 6.
+</p>
+
+<p>Now we'll get a more exact idea of the error using a calculator. (Calculators will also only give approximations of numbers like <m>e</m>, but they are generally very good approximations.)
+<md>
+<mrow>
+|f(2)-T_3(2)|&amp;=\left|e^2-\left(1+2+\frac{1}{2}\cdot2^2+\frac{1}{3!}\cdot2^3\right)\right|
+</mrow><mrow>
+&amp;=\left|e^2-\left(1+2+2+\frac{4}{3}\right)\right|
+</mrow><mrow>
+&amp;=\left|e^2-\frac{19}{3}\right| \approx 1.056
+</mrow>
+</md>
+ So, our actual answer was only off by about 1.
+</p>
+
+<p> Remark: <m>1 \lt 6</m>, so this does not in any way contradict our bound <m>|f(2)-T_3(2)| \lt 6</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>f(x)= 5x^3-24x^2+ex-\pi^4</m>, and let <m>T_5(x)</m> be the fifth-degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m>. Give the best bound you can on the error <m>|f(37)-T(37)|</m>.
+</p></statement>
+<hint><p>
+You are approximating a third-degree polynomial with a fifth-degree Taylor polynomial. You should be able to tell how  good your approximation will be without a long calculation.
+</p></hint>
+<answer><p>
+<m>|f(37)-T(37)|=0</m>
+</p></answer>
+<solution><p>
+Whenever you approximate a polynomial with a Taylor polynomial of greater or equal degree, your Taylor polynomial is <em>exactly the same</em> as the function you are approximating. So, the error is zero.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+You and your friend both want to approximate <m>\sin(33)</m>. Your friend uses the first-degree Maclaurin polynomial for <m>f(x)=\sin x</m>, while you use the zeroth-degree (constant) Maclaurin polynomial for <m>f(x)=\sin x</m>. Who has a better approximation, you or your friend?
+</p></statement>
+<hint><p>
+Draw a picture--it should be clear how the two approximations behave.
+</p></hint>
+<answer><p>
+You do, you clever goose!
+</p></answer>
+<solution><p>
+The constant approximation gives
+<md>
+<mrow>
+\sin(33)&amp;\approx \sin (0)=0
+</mrow>
+<intertext>while the linear approximation gives</intertext><mrow>
+f(x)&amp;\approx f(0)+f'(0)x
+</mrow><mrow>
+\sin(x)&amp; \approx \sin (0)+\cos(0) x
+</mrow><mrow>&amp;= x
+</mrow><mrow>
+\sin(33)&amp;\approx 33
+</mrow>
+</md>
+Since <m>-1 \leq \sin(33)\leq 1</m>, the constant approximation is better. (But both are a little silly.)</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{10}{2}{6}
+\draw[thick] plot[domain=-.5:9, samples=200](\x,{1.5*sin(4*\x r) });
+\draw[thick, red] (-0.5,0)--(9.5,0) node[above]{$T_0(x)$};
+\draw[thick, blue] plot[domain=-0.5:1](\x,{6*\x}) node[right]{$T_1(x)$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose a function <m>f(x)</m> has sixth derivative <me>
+f^{(6)}(x)=\dfrac{6!(2x-5)}{x+3}.</me>
+ Let <m>T_5(x)</m> be the 5th-degree Taylor polynomial for <m>f(x)</m> about <m>x=11</m>.
+</p>
+
+<p>Give a bound for the error
+<m>|f(11.5)-T_5(11.5)|</m>.
+</p></statement>
+<hint><p>
+In this case, Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that
+<me>
+\left|f(11.5)-T_5(11.5)\right| = \left|\dfrac{f^{(6)}(c)}{6!}(11.5-11)^{6}\right|</me>
+ for some <m>c</m> strictly between 11 and 11.5.
+</p></hint>
+<answer><p>
+<m>|f(11.5)-T_5(11.5)| \lt \dfrac{9}{7\cdot 2^6} \lt 0.02</m>
+</p></answer>
+<solution><p>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+<md>
+<mrow>
+|f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
+</mrow>
+<intertext>for some <m>c</m> strictly between <m>x</m> and <m>a</m>. In our case, <m>n=5</m>, <m>a=11</m>, <m>x=11.5</m>, and <m>f^{(6)}(c)=\dfrac{6!(2c-5)}{c+3}</m>. </intertext><mrow>
+\left|f(11.5)-T_5(11.5)\right|&amp; = \left|\dfrac{1}{6!}\left(\dfrac{6!(2c-5)}{c+3}\right)(11.5-11)^{6}\right|
+</mrow><mrow>
+&amp; = \left|\dfrac{2c-5}{c+3}\right|\cdot\frac{1}{2^6}
+</mrow>
+</md>
+for some <m>c</m> in <m>(11,11.5)</m>. We don't know exactly which <m>c</m> this is true for, but since we know that <m>c</m> lies in <m>(11,11.5)</m>, we can provide bounds.
+<ul>
+<li> <m>2c-5  \lt  2(11.5)-5=18</m>
+</li>
+<li> <m>c+3  \gt  11+3=14</m>
+</li>
+<li> Therefore, <m>\left|\dfrac{2c-5}{c+3}\right|=\dfrac{2c-5}{c+3} \lt \dfrac{18}{14}=\dfrac{9}{7}</m> when <m>c \in (11,11.5)</m>.
+</li>
+</ul>
+With this bound, we see
+<md>
+<mrow>
+|f(11.5)-T_5(11.5)| &amp;= \left|\dfrac{2c-5}{c+3}\right|\cdot\frac{1}{2^6}
+</mrow><mrow>
+&amp; \lt \left(\frac{9}{7}\right)\left(\frac{1}{ 2^6}\right)\approx 0.0201
+</mrow>
+</md>
+Our error is less than 0.02.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>f(x)= \tan x</m>, and let <m>T_2(x)</m> be the second-degree Taylor polynomial for <m>f(x)</m> about <m>x=0</m>. Give a reasonable bound on the error <m>|f(0.1)-T(0.1)|</m> using Equation<nbsp/><xref ref="eq_taylorErrorN"/>.
+</p></statement>
+<hint><p>
+In this case, Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that
+<m>\left|f(0.1)-T_2(0.1)\right| = \left|\dfrac{f^{(3)}(c)}{3!}(0.1-0)^{3}\right|</m> for some <m>c</m> strictly between 0 and 0.1.
+</p></hint>
+<answer><p>
+<m>\left|f(0.1)-T_2(0.1)\right|  \lt  \dfrac{1}{1125}</m>
+</p></answer>
+<solution><p>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+<md>
+<mrow>
+|f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
+</mrow>
+<intertext>for some <m>c</m> strictly between <m>x</m> and <m>a</m>. In our case, <m>n=2</m>, <m>a=0</m>, and <m>x=0.1</m>,  so </intertext><mrow>
+\left|f(0.1)-T_2(0.1)\right| &amp;= \left|\frac{f^{(3)}(c)}{3!}(0.1-0)^{3}\right|
+</mrow><mrow>
+&amp;=\frac{\left|f'''(c)\right|}{6000}
+</mrow>
+</md>
+for some <m>c</m> in <m>(0,0.1)</m>.
+</p>
+
+<p><textred>We will find <m>f'''(x)</m>, and use it to give an upper bound for
+<me>
+\left|f(0.1)-T_2(0.1)\right|=\dfrac{\left|f'''(c)\right|}{6000}</me>
+ when  <m>c</m> is in <m>(0,0.1)</m>.</textred>
+<md>
+<mrow>
+f(x)&amp;=\tan x
+</mrow><mrow>
+f'(x)&amp;=\sec^2 x
+</mrow><mrow>
+f''(x)&amp;=2\sec x \cdot \sec x \tan x
+</mrow><mrow>
+&amp;=2\sec^2 x \tan x
+</mrow><mrow>
+f'''(x)&amp;=\left(2\sec^2x\right)\sec^2 x+ \left(4\sec x \cdot \sec x \tan x\right)\tan x
+</mrow><mrow>
+&amp;=2\sec^4 x + 4 \sec^2 x \tan ^2 x
+</mrow>
+</md>
+When <m>0  \lt  c  \lt  \dfrac{1}{10}</m>, also <m>0  \lt  c  \lt  \dfrac{\pi}{6}</m>, so:
+<ul>
+<li> <m> \tan c  \lt  \tan\left(\dfrac{\pi}{6}\right)=\dfrac{1}{\sqrt{3}}</m>
+</li>
+<li> <m>\cos c  \gt \cos\left(\dfrac{\pi}{6}\right)=\dfrac{\sqrt{3}}{2}</m>
+</li>
+<li> <m> \sec c  \lt  \dfrac{2}{\sqrt{3}}</m>
+</li>
+</ul>
+With these bounds in mind for secant and tangent, we return to the expression we found for our error.
+<md>
+<mrow>
+\left|f(0.1)-T_2(0.1)\right|
+&amp;=\frac{\left|f'''(c)\right|}{6000}=
+\frac{\left|2\sec^4 x + 4 \sec^2 x \tan ^2 x\right|}{6000}
+</mrow><mrow>
+&amp; \lt  \frac{2\left(\frac{2}{\sqrt{3}}\right)^4+4\left(\frac{2}{\sqrt{3}}\right)^2\left(\frac{1}{\sqrt{3}}\right)^2}{6000}
+</mrow><mrow>
+&amp;=\frac{1}{1125}
+</mrow>
+</md>
+The error is less than <m>\dfrac{1}{1125}</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Let <m>f(x)=\log (1-x)</m>, and let <m>T_5(x)</m> be the fifth-degree Maclaurin polynomial for <m>f(x)</m>. Use Equation<nbsp/><xref ref="eq_taylorErrorN"/> to give a bound on the error <m>|f\left(-\frac{1}{4}\right)-T_5\left(-\frac{1}{4}\right)|</m>.
+</p>
+
+<p>(Remember <m>\log x=\log_ex</m>, the natural logarithm of <m>x</m>.)
+</p></statement>
+<hint><p>
+In our case, Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us
+<me>
+\left|f\left(-\dfrac{1}{4}\right)-T_5\left(-\dfrac{1}{4}\right)\right| = \left|\dfrac{f^{(6)}(c)}{6!}\left(-\dfrac{1}{4}-0\right)^6\right|</me>
+</p>
+
+<p>for some <m>c</m> between <m>-\dfrac{1}{4}</m> and 0.
+</p></hint>
+<answer><p>
+<m>\left|f\left(-\dfrac{1}{4}\right)-T_5\left(-\dfrac{1}{4}\right)\right|  \lt  \dfrac{1}{6\cdot 4^6} \lt 0.00004</m>
+</p></answer>
+<solution><p>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+<md>
+<mrow>
+|f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
+</mrow>
+<intertext>for some <m>c</m> strictly between <m>x</m> and <m>a</m>. In our case, <m>n=5</m>, <m>a=0</m>, and <m>x=-\dfrac{1}{4}</m>,  so </intertext><mrow>
+\left|f\left(-\frac{1}{4}\right)-T_5\left(-\frac{1}{4}\right)\right| &amp;= \left|\frac{f^{(6)}(c)}{6!}\left(-\frac{1}{4}-0\right)^6\right|
+</mrow><mrow>
+&amp;= \frac{\left|f^{(6)}(c)\right|}{6!\cdot 4^6}
+</mrow>
+<intertext>for some <m>c</m> in <m>\left(-\frac{1}{4},0\right)</m>. We'll need to know the sixth derivative of <m>f(x)</m>.</intertext><mrow>
+f(x)&amp;=\log (1-x)
+</mrow><mrow>
+f'(x)&amp;=-(1-x)^{-1}
+</mrow><mrow>
+f''(x)&amp;=-(1-x)^{-2}
+</mrow><mrow>
+f'''(x)&amp;=-2(1-x)^{-3}
+</mrow><mrow>
+f^{(4)}(x)&amp;=-3!(1-x)^{-4}
+</mrow><mrow>
+f^{(5)}(x)&amp;=-4!(1-x)^{-5}
+</mrow><mrow>
+f^{(6)}(x)&amp;=-5!(1-x)^{-6}
+</mrow>
+<intertext>Plugging in <m>\left|f^{(6)}(c)\right|=\dfrac{5!}{(1-c)^{6}}</m>: </intertext><mrow>
+\left|f\left(-\frac{1}{4}\right)-T_5\left(-\frac{1}{4}\right)\right| &amp;=
+\frac{5!}{6!\cdot 4^6\cdot(1-c)^6}=\frac{1}{6\cdot 4^6 \cdot (1-c)^6}
+</mrow>
+</md>
+for some <m>c</m> in <m>\left(-\frac{1}{4},0\right)</m>.
+</p>
+
+<p>We're interested in an upper bound for the error: we want to know the worst case scenario, so we can say that the error is <em>no worse</em> than that.
+ We need to know what the biggest possible value of
+<m>\dfrac{1}{6\cdot 4^6 \cdot (1-c)^6}</m> is, given <m>-\dfrac{1}{4} \lt c \lt 0</m>.
+That means we want to know the biggest possible value of <m>\dfrac{1}{(1-c)^6}</m>. This corresponds to the smallest possible value of <m>(1-c)^6</m>, which in turn corresponds to the smallest absolute value of <m>1-c</m>.
+<ul>
+<li> Since <m>-\dfrac{1}{4}\leq c \leq 0</m>, the smallest absolute value of <m>1-c</m> occurs when <m>c=0</m>. In other words, <m>|1-c| \leq 1</m>.
+</li>
+<li>  That means the smallest possible value of <m>(1-c)^6</m> is <m>1^6=1</m>.
+</li>
+<li> Then the largest possible value of <m>\dfrac{1}{(1-c)^6}</m> is 1.
+</li>
+<li> Then the largest possible value of <m>\dfrac{1}{6\cdot 4^6}\cdot\dfrac{1}{(1-c)^6}</m> is
+<m>\dfrac{1}{6\cdot 4^6}\approx 0.0000407</m>.
+</li>
+</ul>
+Finally, we conclude
+<me>
+\left|f\left(-\frac{1}{4}\right)-T_5\left(-\frac{1}{4}\right)\right| =\frac{1}{6\cdot 4^6 \cdot (1-c)^6} \lt  \dfrac{1}{6\cdot 4^6} \lt 0.00004</me>
+</p>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>f(x)=\sqrt[5]{x}</m>, and let <m>T_3(x)</m> be the third-degree Taylor polynomial for <m>f(x)</m> about <m>x=32</m>. Give a bound on the error <m>|f(30)-T_3(30)|</m>.
+</p></statement>
+<hint><p>
+In this case, Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that
+<m>\left|f(30)-T_3(30)\right| = \left|\dfrac{f^{(4)}(c)}{4!}(30-32)^{4}\right|</m> for some <m>c</m> strictly between 30 and 32.
+</p>
+</hint>
+<answer><p>
+Your answer may vary. One reasonable answer is
+<m>\left|f(30)-T_3(30)\right| \lt \dfrac{14}{5^7\cdot9\cdot15} \lt 0.000002</m>.
+</p>
+<p>
+Another reasonable answer is
+<m>\left|f(30)-T_3(30)\right| \lt \dfrac{14}{5^7\cdot9} \lt 0.00002</m>.
+</p></answer>
+<solution><p>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+<md>
+<mrow>
+|f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
+</mrow>
+<intertext>for some <m>c</m> strictly between <m>x</m> and <m>a</m>. In our case, <m>n=3</m>, <m>a=30</m>, and <m>x=32</m>,  so </intertext><mrow>
+|f(30)-T_3(30)| &amp;= \left|\frac{f^{(4)}(c)}{4!}(30-32)^{4}\right|
+</mrow><mrow>
+&amp;=\frac{2}{3}\left|f^{(4)}(c)\right|
+</mrow>
+</md>
+for some <m>c</m> in <m>(30,32)</m>.
+</p>
+
+<p><textred>We will now find <m>f^{(4)}(x)</m>. Then we can give an upper bound on
+<m>|f(30)-T_3(30)| =\dfrac{2}{3}\left|f^{(4)}(c)\right|</m> when <m>c \in (30,32)</m>.</textred>
+<md>
+<mrow>
+f(x)&amp;=x^{\tfrac{1}{5}}
+</mrow><mrow>
+f'(x)&amp;=\frac{1}{5}x^{-\tfrac{4}{5}}
+</mrow><mrow>
+f''(x)&amp;=-\frac{4}{5^2}x^{-\tfrac{9}{5}}
+</mrow><mrow>
+f'''(x)&amp;=\frac{4\cdot 9}{5^3}x^{-\tfrac{14}{5}}
+</mrow><mrow>
+f^{(4)}(x)&amp;=-\frac{4\cdot 9\cdot 14}{5^4}x^{-\tfrac{19}{5}}
+</mrow>
+</md>
+Using this,
+<md>
+<mrow>
+|f(30)-T_3(30)|
+&amp;=\frac{2}{3}\left|f^{(4)}(c)\right|
+</mrow><mrow>
+&amp;=\frac{2}{3}\left| -\frac{4\cdot 9\cdot 14}{5^4}c^{-\tfrac{19}{5}}\right|
+</mrow><mrow>
+&amp;=\frac{336}{5^4\cdot c^{\tfrac{19}{5}}}
+</mrow>
+<intertext>Since <m>30  \lt  c \lt  32</m>,</intertext><mrow>
+&amp; \lt  \frac{336}{5^4\cdot 30^{\tfrac{19}{5}}}
+=\frac{336}{5^4\cdot 30^3 \cdot 30^{\tfrac{4}{5}}}
+</mrow><mrow>
+&amp;=\frac{14}{5^7\cdot 9 \cdot 30^{\tfrac{4}{5}}}
+</mrow>
+<intertext>This isn't a number we know. We're trying to find the error in our estimation of <m>\sqrt[5]{30}</m>, but <m>\sqrt[5]{30}</m> shows up in our error. From here, we have to be a little creative to get a bound that actually makes sense to us. There are different ways to go about it.
+You could simply use <m>30^{\tfrac{4}{5}} \gt 1</m>. We will be a little more careful, and use the following estimation:</intertext><mrow>
+\frac{14}{5^7 \cdot 9 \cdot \textcolor{red}{30^{\tfrac{4}{5}}}}&amp;=
+\frac{14\cdot \textcolor{red}{30^{\tfrac{1}{5}}}}{5^7 \cdot 9 \cdot \textcolor{red}{30}}
+</mrow><mrow>
+&amp; \lt \frac{14\cdot \textcolor{red}{32^{\tfrac{1}{5}}}}{5^7 \cdot 9 \cdot \textcolor{red}{30}}
+</mrow><mrow>
+&amp; \lt \frac{14\cdot \textcolor{red}{2}}{5^7 \cdot 9 \cdot \textcolor{red}{30}}
+</mrow><mrow>
+&amp; \lt \frac{14}{5^7\cdot 9 \cdot \textcolor{red}{15}}
+</mrow><mrow>
+&amp; \lt  0.000002
+</mrow>
+</md>
+We conclude <m>\left|f(30)-T_3(30)\right| \lt 0.000002</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <me>
+f(x)= \sin\left(\dfrac{1}{x}\right),</me>
+ and let <m>T_1(x)</m> be the first-degree Taylor polynomial for <m>f(x)</m> about <m>x=\dfrac{1}{\pi}</m>. Give a bound on the error <m>|f(0.01)-T_1(0.01)|</m>, using Equation<nbsp/><xref ref="eq_taylorErrorN"/>. You may leave your answer in terms of <m>\pi</m>.
+</p>
+
+<p>Then, give a <em>reasonable</em> bound on the error <m>|f(0.01)-T_1(0.01)|</m>.
+</p></statement>
+<hint><p>
+In our case, Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us
+<m>\left|f\left(0.01\right)-T_1\left(0.01\right)\right| = \left|\dfrac{f^{(2)}(c)}{2!}\left(0.01-\frac{1}{\pi}\right)^2\right|</m> for some <m>c</m> between 0.01 and <m>\dfrac{1}{\pi}</m>.
+</p></hint>
+<answer><p>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/>  gives the bound
+<m>|f(0.01)-T_n(0.01)| \leq 100^2\left(\frac{100}{\pi}-1\right)^2</m>.
+</p>
+
+<p>A more reasonable bound on the error is that it is less than 5.
+</p></answer>
+<solution><p>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+<md>
+<mrow>
+|f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
+</mrow>
+<intertext>for some <m>c</m> strictly between <m>x</m> and <m>a</m>. In our case, <m>n=1</m>, <m>a=\dfrac{1}{\pi}</m>, and <m>x=0.01</m>,  so </intertext><mrow>
+|f(0.01)-T_1(0.01)| &amp;= \left|\frac{f''(c)}{2}\left(0.01-\frac{1}{\pi}\right)^{2}\right|
+</mrow><mrow>
+&amp;=\frac{1}{2}\left(\frac{100-\pi}{100\pi}\right)^2\cdot\left|f''(c)\right|
+</mrow>
+</md>
+for some <m>c</m> in <m>\left(\frac{1}{100},\frac{1}{\pi}\right)</m>.
+</p>
+
+<p>Let's find <m>f''(x)</m>.
+<md>
+<mrow>
+f(x)&amp;=\sin\left(\frac{1}{x}\right)
+</mrow><mrow>
+f'(x)&amp;=\cos\left(\frac{1}{x}\right)\cdot\frac{-1}{x^2}=\frac{-\cos\left(\frac{1}{x}\right)}{x^2}
+</mrow><mrow>
+f''(x)&amp;=\frac{x^2\sin\left(\frac{1}{x}\right)(-x^{-2})+\cos\left(\frac{1}{x}\right)(2x)}{x^4}
+</mrow><mrow>
+&amp;=\frac{2x\cos\left(\frac{1}{x}\right)-\sin\left(\frac{1}{x}\right)}{x^4}
+</mrow>
+</md>
+</p>
+
+<p>Now we can plug in a better expression for <m>f''(c)</m>:
+<md>
+<mrow>
+|f(0.01)-T_1(0.01)| &amp;=\frac{1}{2}\left(\frac{100-\pi}{200\pi}\right)^2\cdot\left|f''(c)\right|
+</mrow><mrow>
+&amp;=\frac{1}{2}\left(\frac{100-\pi}{100\pi}\right)^2\cdot
+\frac{\left|2c\cos\left(\frac{1}{c}\right)-\sin\left(\frac{1}{c}\right)\right|}{c^4}
+</mrow>
+</md>
+for some <m>c</m> in <m>\left(\frac{1}{100},\frac{1}{\pi}\right)</m>.
+</p>
+
+<p>
+<textred>What we want to do now is find an upper bound on this expression containing <m>c</m>,
+<m>\dfrac{1}{2}\left(\dfrac{100-\pi}{100\pi}\right)^2\cdot
+\dfrac{\left|2c\cos\left(\frac{1}{c}\right)-\sin\left(\frac{1}{c}\right)\right|}{c^4}</m>
+.</textred>
+<ul>
+<li> Since <m>c \geq \dfrac{1}{100}</m>, it follows that <m>c^4 \geq \dfrac{1}{100^4}</m>, so
+<m>\dfrac{1}{c^4}\leq 100^4</m>.
+</li>
+<li> For any value of <m>x</m>, <m>|\cos x|</m> and <m>|\sin x|</m> are at most 1.
+Since <m>|c| \lt 1</m>, also <m>|c\cos\left(\frac{1}{c}\right)|  \lt |\cos\left(\frac{1}{c}\right)|  \leq 1</m>.
+ So,
+<m>\left|2c\cos\left(\frac{1}{c}\right)-\sin\left(\frac{1}{c}\right)\right|  \lt  3</m>
+</li>
+<li> Therefore,
+<md>
+<mrow>
+|f(0.01)-T_n(0.01)|=&amp;\,\dfrac{1}{2}\left(\dfrac{100-\pi}{100\pi}\right)^2\cdot\frac{1}{c^4}\cdot
+\left|2c\cos\left(\frac{1}{c}\right)-\sin\left(\frac{1}{c}\right)\right|
+</mrow><mrow>
+ \lt
+&amp;\,\dfrac{1}{2}\left(\dfrac{100-\pi}{100\pi}\right)^2\cdot100^4\cdot3
+</mrow><mrow>
+=&amp;\,\frac{3\cdot 100^2}{2}\left(\frac{100}{\pi}-1\right)^2
+</mrow>
+</md>
+</li>
+</ul>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/>  gives the bound
+<m>|f(0.01)-T_1(0.01)| \leq \frac{3\cdot 100^2}{2}\left(\frac{100}{\pi}-1\right)^2</m>.
+</p>
+
+<p>The bound above works out to approximately fourteen million. One way to understand why the bound is so high is that <m>\sin\left(\frac{1}{x}\right)</m> moves about crazily when <m>x</m> is near zero--it moves up and down incredibly fast, so a straight line isn't going to approximate it very well at all.
+</p>
+
+<p>That being said, because <m>\sin\left(\frac{1}{x}\right)</m> is still <q>sine of something</q>, we know <m>-1 \leq f\left(0.01\right) \leq 1</m>. To get a better bound on the error, let's find <m>T_1(x)</m>.
+<md>
+<mrow>
+f(x)&amp;=\sin\left(\frac{1}{x}\right)
+&amp;
+f\left(\frac{1}{\pi}\right)&amp;=\sin(\pi)=0
+</mrow><mrow>
+f'(x)&amp;=\frac{-\cos\left(\frac{1}{x}\right)}{x^2} &amp;
+f'\left(\frac{1}{\pi}\right)&amp;=-\pi^2\cos(\pi)=\pi^2</mrow>
+</md>
+<md>
+<mrow>
+T_1(x)&amp;=f\left(\frac{1}{\pi}\right)+f'\left(\frac{1}{\pi}\right)\left(x-\frac{1}{\pi}\right)
+</mrow><mrow>
+&amp;=0+\pi^2\left(x-\frac{1}{\pi}\right)
+</mrow><mrow>&amp;=\pi^2x-\pi
+</mrow><mrow>
+T_1\left(0.01\right)&amp; = \frac{\pi^2}{100}-\pi
+</mrow>
+</md>
+Now that we know <m>T_1(0.01)</m>, and we know <m>-1 \leq f(0.01) \leq 1</m>, we can give the bound
+<md>
+<mrow>
+\left|f(0.01)-T_1(0.01)\right|&amp;\leq
+\left|f(0.01)\right|+\left|T_1(0.01)\right|
+</mrow><mrow>
+&amp;\leq 1 +\left| \frac{\pi^2}{100}-\pi\right|
+</mrow><mrow>
+&amp;=1+\pi\left|1-\frac{\pi}{100}\right|
+</mrow><mrow>
+&amp; \lt 1+\pi
+</mrow><mrow>
+&amp; \lt 1+4=5
+</mrow>
+</md>
+A more reasonable bound on the error is that it is less than 5.
+</p>
+
+<p>Still more reasonably, we would not use <m>T_1(x)</m> to
+           evaluate <m>\sin(100)</m> approximately.  We would write
+           <m>\sin(100) = \sin(100-32\pi)</m> and approximate the right
+           hand side, which is roughly <m>\sin(-\pi/6)</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Let <m>f(x)=\arcsin x</m>, and let <m>T_2(x)</m> be the second-degree Maclaurin polynomial for <m>f(x)</m>. Give a reasonable bound on the error <m>\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right|</m>
+using Equation<nbsp/><xref ref="eq_taylorErrorN"/>. What is the exact value of the error <m>\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right|</m>?
+</p></statement>
+<hint><p>
+Using Equation<nbsp/><xref ref="eq_taylorErrorN"/>,
+<m>\left|f\left(\dfrac{1}{2}\right)-T_2\left(\dfrac{1}{2}\right)\right| = \left|\dfrac{f^{(3)}(c)}{3!}\left(\dfrac{1}{2}-0\right)^{3}\right|</m> for some <m>c</m> in <m>\left(0,\dfrac{1}{2}\right)</m>.
+</p></hint>
+<answer><p>
+Using Equation<nbsp/><xref ref="eq_taylorErrorN"/>,
+<md>
+<mrow>
+\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right|&amp; \lt \frac{1}{10}.
+</mrow>
+<intertext>The actual error is</intertext><mrow>
+\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right|&amp;= \frac{\pi}{6}-\frac{1}{2}</mrow>
+</md>
+which is about 0.02.
+</p></answer>
+<solution><p>
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+<md>
+<mrow>
+|f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
+</mrow>
+<intertext>for some <m>c</m> strictly between <m>x</m> and <m>a</m>. In our case, <m>n=2</m>, <m>a=0</m>, and <m>x=\dfrac{1}{2}</m>,  so </intertext><mrow>
+\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right| &amp;= \left|\frac{f^{(3)}(c)}{3!}\left(\frac{1}{2}-0\right)^{3}\right|
+</mrow><mrow>
+&amp;= \frac{\left|f^{(3)}(c)\right|}{3!\cdot2^3}
+</mrow>
+</md>
+for some <m>c</m> in <m>\left(0,\frac{1}{2}\right)</m>.
+<textcolorred> The next task that suggests itself is finding <m>f^{(3)}(x)</m>.</textcolorred>
+<md>
+<mrow>
+f(x)&amp;=\arcsin x
+</mrow><mrow>
+f'(x)&amp;=\frac{1}{\sqrt{1-x^2}}=(1-x^2)^{-\tfrac{1}{2}}
+</mrow><mrow>
+f''(x)&amp;=-\frac{1}{2}(1-x^2)^{-\tfrac{3}{2}}(-2x)
+</mrow><mrow>
+&amp;=x(1-x^2)^{-\tfrac{3}{2}}
+</mrow><mrow>
+f'''(x)&amp;=x\left(-\frac{3}{2}\right)(1-x^2)^{-\tfrac{5}{2}}(-2x)+(1-x^2)^{-\tfrac{3}{2}}
+</mrow><mrow>
+&amp;=3x^2(1-x^2)^{-\tfrac{5}{2}}+(1-x^2)^{-\tfrac{5}{2}+1}
+</mrow><mrow>
+&amp;=(1-x^2)^{-\tfrac{5}{2}}\left(3x^2+(1-x^2)\right)
+</mrow><mrow>
+&amp;=(1-x^2)^{-\tfrac{5}{2}}\left(2x^2+1\right)
+</mrow>
+<intertext>Since  <m>\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right| =\dfrac{\left|f^{(3)}(c)\right|}{3!\cdot2^3}</m> for some <m>c</m> in <m>\left(0,\frac{1}{2}\right)</m>,</intertext><mrow>
+\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right| &amp;=\dfrac{\left|\dfrac{1+2c^2}
+{\left(\sqrt{1-c^2}\right)^5}
+\right|}{3!\cdot2^3}=
+\frac{1+2c^2}{48\left(\sqrt{1-c^2}\right)^5}
+</mrow>
+</md>
+for some <m>c</m> in <m>\left(0,\frac{1}{2}\right)</m>.
+</p>
+
+<p>
+We want to know what is the worst case scenario-what's the biggest this expression can be.
+ <textred>So, now we find an upper bound on <m>\dfrac{1+2c^2}{48\left(\sqrt{1-c^2}\right)^5}</m> when <m>0 \leq c \leq \dfrac{1}{2}</m>.</textred>
+  Remember that our bound doesn't have to be exact, but it should be relatively easy to calculate.
+<ul>
+<li><p> When <m>0 \leq c \leq\dfrac{1}{2}</m>, the biggest <m>1+2c^2</m> can be is <m>1+2\left(\dfrac{1}{2}\right)^2=\dfrac{3}{2}</m>.</p>
+<p>So, the <textred>numerator</textred> of <m>\dfrac{1+2c^2}{48\left(\sqrt{1-c^2}\right)^5}</m> is at most <m>\dfrac{3}{2}</m>.</p>
+</li>
+<li> The smallest <m>1-c^2</m> can be is <m>1-\left(\dfrac{1}{2}\right)^2=\dfrac{3}{4}</m>.
+</li>
+<li> So, the smallest <m>\left(\sqrt{1-c^2}\right)^5</m> can be is
+<m>\left(\sqrt{\dfrac{3}{4}}\right)^5=\left(\dfrac{\sqrt{3}}{2}\right)^5</m>.
+</li>
+<li> Then smallest possible value for the <textred>denominator</textred> of <m>\dfrac{1+2c^2}{48\left(\sqrt{1-c^2}\right)^5}</m> is <m>48\left(\dfrac{\sqrt{3}}{2}\right)^5</m>
+</li>
+<li> Then
+<md>
+<mrow>
+\dfrac{1+2c^2}{48\left(\sqrt{1-c^2}\right)^5}
+&amp; \leq \frac{\dfrac{3}{2}}{48\left(\dfrac{\sqrt{3}}{2}\right)^5}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{3}^5}=\frac{1}{9\sqrt{3}}
+</mrow><mrow>
+&amp; \lt \frac{1}{10}
+</mrow>
+</md>
+</li>
+</ul>
+Let's put together these pieces. We found that
+<me>
+\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right| =\frac{1+2c^2}{48\left(\sqrt{1-c^2}\right)^5}</me>
+</p>
+
+<p>for some <m>c</m> in <m>\left(0,\frac{1}{2}\right)</m>. We also found that
+<me>
+\frac{1+2c^2}{48\left(\sqrt{1-c^2}\right)^5} \lt \frac{1}{10}</me>
+</p>
+
+<p>when <m>c</m> is in <m>\left(0,\frac{1}{2}\right)</m>.
+We conclude
+<me>
+\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right| \lt \frac{1}{10}.</me>
+</p>
+
+<p><textblue>For the second part of the question, we need to find <m>f\left(\frac{1}{2}\right)</m> and <m>T_2\left(\frac{1}{2}\right)</m>.</textblue>
+ Finding <m>f\left(\frac{1}{2}\right)</m> is not difficult.
+<md>
+<mrow>
+f(x)&amp;=\arcsin x
+</mrow><mrow>
+f\left(\frac{1}{2}\right)&amp;=\arcsin\left(\frac{1}{2}\right)=\frac{\pi}{6}
+</mrow>
+</md>
+<textblue>In order to find <m>T_2\left(\frac{1}{2}\right)</m>, we need to find <m>T_2(x)</m>.</textblue>
+<md>
+<mrow>
+T_2(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2
+</mrow>
+<intertext>Conveniently, we've already found the first few derivatives of <m>f(x)</m>.</intertext><mrow>
+T_2(x)&amp;=\arcsin(0)+\left(\frac{1}{\sqrt{1-0^2}}\right)x+\frac{1}{2}\left(\frac{0}{\left(\sqrt{1-0^2}\right)^3}\right)x^2
+</mrow><mrow>
+&amp;=0+x+0
+</mrow><mrow>
+&amp;=x
+</mrow><mrow>
+T_2\left(\frac{1}{2}\right)&amp;=\frac{1}{2}
+</mrow>
+<intertext>So, the actual error is</intertext><mrow>
+\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right|&amp;=\left| \frac{\pi}{6}-\frac{1}{2}\right|= \frac{\pi}{6}-\frac{1}{2}
+</mrow>
+</md>
+A calculator tells us that this is about 0.02.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+Let <m>f(x)=\log(x)</m>, and let <m>T_n(x)</m> be the <m>n</m>th-degree Taylor polynomial for <m>f(x)</m> about
+<m>x=1</m>. You use <m>T_n(1.1)</m> to estimate <m>\log (1.1)</m>.
+If your estimation needs to have an error of no more than <m>10^{-4}</m>, what is an acceptable value of <m>n</m> to use?
+</p></statement>
+<hint><p>
+It helps to have a formula for <m>f^{(n)}(x)</m>. You can figure it out by taking several derivatives and noticing the pattern, but also this has been given previously in the text.
+</p></hint>
+<answer><p>
+Any <m>n</m> greater than or equal to 3.
+</p></answer>
+<solution><p>
+Our error will have the form <m>\dfrac{f^{(n+1)}(c)}{(n+1)!}(x-1)^{n+1}</m> for some constant <m>c</m>, so let's find an equation for <m>f^{(n)}(x)</m>. This has been done before in the text, but we'll do it again here: we'll take several derivatives, then notice the pattern.
+<md>
+<mrow>
+f(x)&amp;=\log x
+</mrow><mrow>
+f'(x)&amp;=x^{-1}
+</mrow><mrow>
+f''(x)&amp;=-x^{-2}
+</mrow><mrow>
+f'''(x)&amp;=2!\,x^{-3}
+</mrow><mrow>
+f^{(4)}(x)&amp;=-3!\,x^{-4}
+</mrow><mrow>
+f^{(5)}(x)&amp;=4!\,x^{-5}
+</mrow>
+<intertext>So, when <m>n \geq 1</m>,</intertext><mrow>
+f^{(n)}(x)&amp;=(-1)^{n-1}(n-1)!\cdot x^{-n}
+</mrow>
+</md>
+Now that we know the derivative of <m>f(x)</m>, we have a better idea what the error in our approximation looks like.
+<md>
+<mrow>
+\left|f(1.1)-T_n(1.1)\right|&amp;=\left|\dfrac{f^{(n+1)}(c)}{(n+1)!}(1.1-1)^{n+1}\right|
+</mrow><mrow>
+&amp;=\left|f^{(n+1)}(c)\right|\frac{0.1^{n+1}}{(n+1)!}
+</mrow><mrow>
+&amp;=\left|\frac{n!}{c^{n+1}}
+\right|\frac{1}{10^{n+1}(n+1)!}
+</mrow><mrow>
+&amp;=\frac{1}{ |c|^{n+1}\cdot10^{n+1}\cdot(n+1)}
+</mrow>
+<intertext>for some <m>c</m> in <m>(1,1.1)</m></intertext><mrow>
+&amp; \lt \frac{1}{(n+1)10^{n+1}\cdot 1^{n+1}}
+</mrow><mrow>
+&amp;=\frac{1}{(n+1)10^{n+1}}
+</mrow>
+<intertext>What we've shown so far is </intertext><mrow>
+|f(1.1)-T_n(1.1)|&amp; \lt \dfrac{1}{(n+1)10^{n+1}}
+</mrow>
+<intertext>If we can show that <m>\dfrac{1}{(n+1)10^{n+1}}\le10^{-4}</m>, then we'll be able to conclude </intertext><mrow>
+|f(1.1)-T_n(1.1)|&amp; \lt \dfrac{1}{(n+1)10^{n+1}}\le10^{-4}
+</mrow>
+</md>
+That is, our error is less than <m>10^{-4}</m>.
+</p>
+
+<p>So, our goal for the problem is to find a value of <m>n</m> that makes <m>\dfrac{1}{(n+1)10^{n+1}}\le10^{-4}</m>. Certainly, <m>n=3</m> is such a number. Therefore,  any <m>n</m> greater than or equal to 3 is an acceptable value.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Give an estimation of <m>\sqrt[7]{2200}</m> using a Taylor polynomial. Your estimation should have an error of less than 0.001.
+</p></statement>
+<hint><p>
+You can approximate the function <m>f(x)=x^{\tfrac{1}{7}}</m>.
+</p>
+<p>It's a good bit of trivia to know <m>3^7=2187</m>.</p>
+<p>A low-degree Taylor approximation will give you a good enough estimation.
+If you guess a degree, and take that Taylor polynomial, the error will <em>probably</em> be less than 0.001 (but you still need to check).
+</p></hint>
+<answer><p>
+<m>\sqrt[7]{2200}\approx3+\dfrac{13}{7\cdot 3^6}
+\approx 3.00255</m>
+</p></answer>
+<solution><p>
+We will approximate <m>f(x)=x^{\tfrac{1}{7}}</m> using a Taylor polynomial. Since <m>3^7=2187</m>, we will use <m>x=2187</m> as our centre.
+</p>
+
+<p> <textred>We need to figure out which degree Taylor polynomial will result in a  small-enough error. </textred>
+</p>
+
+<p>If we use the <m>n</m>th Taylor polynomial, our error will be
+<md>
+<mrow>
+\left|f(2200)-T_n(2200)\right|&amp;=\left|\frac{f^{(n+1)}(c)}{(n+1)!}(2200-2187)^{n+1}\right|
+</mrow><mrow>
+&amp;=\left|f^{(n+1)}(c)\right|\cdot\frac{13^{n+1}}{(n+1)!}
+</mrow>
+<intertext>for some <m>c</m> in <m>(2187,2200)</m>. In order for this to be less than 0.001, we need</intertext><mrow>
+\left|f^{(n+1)}(c)\right|\cdot\frac{13^{n+1}}{(n+1)!}&amp; \lt 0.001
+</mrow><mrow>
+\left|f^{(n+1)}(c)\right|&amp; \lt \frac{ (n+1)!}{1000\cdot13^{n+1}}
+</mrow>
+</md>
+It's a tricky thing to figure out which <m>n</m> makes this true. Let's make a table. We won't show all the work of filling it in, but the work is standard.
+</p>
+
+<p>
+<me>
+\begin{array}{c|c|c|c}
+n &amp; \dfrac{(n+1)!}{1000\cdot 13^{n+1}}
+&amp;
+\left|f^{(n+1)}(c)\right|
+&amp;
+\textup{Is }\left|f^{(n+1)}(c)\right| \lt \dfrac{ (n+1)!}{1000\cdot13^{n+1}}\textup{?}
+\\
+\;\;&amp;\;\;&amp;\;\;\\
+\hline
+\;\;&amp;\;\;&amp;\;\;\\
+0&amp;\dfrac{1}{1000\cdot 13}&amp;|f'(c)|=\dfrac{1}{7c^{6/7}} \lt \dfrac{1}{7\cdot 3^6}&amp;
+\\\;\;&amp;\;\;&amp;\;\;\\
+\hline
+\;\;&amp;\;\;&amp;\;\;\\
+1&amp;\dfrac{2}{1000\cdot 13^2}&amp;|f''(c)|=\dfrac{6}{7^2\cdot c^{\tfrac{13}{7}}} \lt \dfrac{6}{7^2\cdot 3^{13}}&amp;\textup{Yes!}
+\end{array}
+</me>
+</p>
+
+<p>That is: if we use the first-degree Taylor polynomial, then for some <m>c</m> between <m>2187</m> and <m>2200</m>,
+<md>
+<mrow>
+|f(2200)-T_1(2200)|&amp;=\left|f''(c)\right|\cdot\frac{13^2}{2!}
+</mrow><mrow>
+&amp;=\frac{6}{7^2\cdot c^{\tfrac{13}{7}}}\cdot\frac{13^2}{2}
+</mrow><mrow>
+&amp; \lt \dfrac{6}{7^2\cdot 3^{13}}\cdot\dfrac{13^2}{2}
+</mrow><mrow>
+&amp;=\dfrac{3\cdot 13^2}{7^2 \cdot 3^{13}}\approx 0.0000065
+</mrow>
+</md>
+</p>
+
+<p>So, actually, the linear Taylor polynomial (or any higher-degree Taylor polynomial) will result in an approximation that is much more accurate than required. (We don't know, however, that the constant approximation will be accurate enough--so we'd better stick with <m>n \geq 1</m>.)
+</p>
+
+<p> <textred>Now that we know we can take the first-degree Taylor polynomial, let's compute <m>T_1(x)</m>.</textred> Recall we are taking the Taylor polynomial for <m>f(x)=x^{\tfrac{1}{7}}</m> about <m>x=2187</m>.
+<md>
+<mrow>
+f(2187)&amp;=2187^{\tfrac{1}{7}}=3
+</mrow><mrow>
+f'(x)&amp;=\frac{1}{7}x^{-\tfrac{6}{7}}
+</mrow><mrow>
+f'(2187)&amp;=\frac{1}{7\sqrt[7]{2187}^6}=\frac{1}{7\cdot3^6}
+</mrow><mrow>
+T_1(x)&amp;=f(2187)+f'(2187)(x-2187)
+</mrow><mrow>
+&amp;=3+\frac{x-2187}{7\cdot3^6}
+</mrow><mrow>
+T_1(2200)&amp;=3+\frac{2200-2187}{7\cdot3^6}
+</mrow><mrow>
+&amp;=3+\frac{13}{7\cdot 3^6}
+</mrow><mrow>
+&amp;\approx 3.00255
+</mrow>
+</md>
+We conclude <m>\sqrt[7]{2200}\approx 3.00255</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Use Equation<nbsp/><xref ref="eq_taylorErrorN"/> to show that
+<me>
+\frac{4241}{5040}\leq\sin(1) \leq\frac{4243}{5040}</me>
+</p>
+
+</statement>
+<hint><p>
+Use the 6th-degree Maclaurin approximation for <m>f(x)=\sin x</m>.
+</p></hint>
+<answer><p>
+If we're going to use  Equation<nbsp/><xref ref="eq_taylorErrorN"/>, then we'll probably be taking a Taylor polynomial. Using Example<nbsp/><xref ref="eg_expand_sinx"/>,
+the 6th-degree Maclaurin polynomial for <m>\sin x</m> is
+<me>
+T_6(x)=T_5(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}</me>
+</p>
+
+<p>so let's play with this a bit. Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that the error will depend on the seventh derivative of <m>f(x)</m>, which is <m>-\cos x</m>:
+<md>
+<mrow>
+f(1)-T_6(1)&amp;=f^{(7)}(c)\frac{1^7}{7!}
+</mrow><mrow>
+\sin(1)-\left(1-\frac{1}{3!}+\frac{1}{5!}\right)&amp;=\frac{-\cos c}{7!}
+</mrow><mrow>
+\sin(1)-\frac{101}{5!}&amp;=\frac{-\cos c}{7!}
+</mrow><mrow>
+\sin(1)&amp;=\frac{4242-\cos c}{7!}
+</mrow>
+<intertext>for some <m>c</m> between 0 and 1. Since <m>-1 \leq \cos c \leq 1</m>,</intertext><mrow>
+\frac{4242-1}{7!}\leq \sin(1)&amp;\leq \frac{4242+1}{7!}
+</mrow><mrow>
+\frac{4241}{7!}\leq \sin(1)&amp;\leq \frac{4243}{7!}
+</mrow><mrow>
+\frac{4241}{5040}\leq \sin(1)&amp;\leq \frac{4243}{5040}
+</mrow>
+</md>
+</p>
+
+<p>Remark: there are lots of ways to play with this idea to get better estimates. One way is to take a higher-degree Maclaurin polynomial. Another is to note that, since <m>0 \lt c \lt 1 \lt \dfrac{\pi}{3}</m>, then <m>\dfrac{1}{2} \lt \cos c  \lt  1</m>, so
+<md>
+<mrow>
+\dfrac{4242-1}{7!} \lt \sin(1) \lt \dfrac{4242-\frac{1}{2}}{7!}
+</mrow><mrow>
+\dfrac{4241}{5040} \lt \sin(1) \lt \dfrac{8483}{10080} \lt \frac{4243}{5040}
+</mrow>
+</md>
+If you got tighter bounds than asked for in the problem, congratulations!
+</p></answer>
+<solution><p>
+If we're going to use  Equation<nbsp/><xref ref="eq_taylorErrorN"/>, then we'll probably be taking a Taylor polynomial. Using Example<nbsp/><xref ref="eg_expand_sinx"/>,
+the 6th-degree Maclaurin polynomial for <m>\sin x</m> is
+<me>
+T_6(x)=T_5(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}</me>
+</p>
+
+<p>so let's play with this a bit. Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that the error will depend on the seventh derivative of <m>f(x)</m>, which is <m>-\cos x</m>:
+<md>
+<mrow>
+f(1)-T_6(1)&amp;=f^{(7)}(c)\frac{1^7}{7!}
+</mrow><mrow>
+\sin(1)-\left(1-\frac{1}{3!}+\frac{1}{5!}\right)&amp;=\frac{-\cos c}{7!}
+</mrow><mrow>
+\sin(1)-\frac{101}{5!}&amp;=\frac{-\cos c}{7!}
+</mrow><mrow>
+\sin(1)&amp;=\frac{4242-\cos c}{7!}
+</mrow>
+<intertext>for some <m>c</m> between 0 and 1. Since <m>-1 \leq \cos c \leq 1</m>,</intertext><mrow>
+\frac{4242-1}{7!}\leq \sin(1)&amp;\leq \frac{4242+1}{7!}
+</mrow><mrow>
+\frac{4241}{7!}\leq \sin(1)&amp;\leq \frac{4243}{7!}
+</mrow><mrow>
+\frac{4241}{5040}\leq \sin(1)&amp;\leq \frac{4243}{5040}
+</mrow>
+</md>
+</p>
+
+<p>Remark: there are lots of ways to play with this idea to get better estimates. One way is to take a higher-degree Maclaurin polynomial. Another is to note that, since <m>0 \lt c \lt 1 \lt \dfrac{\pi}{3}</m>, then <m>\dfrac{1}{2} \lt \cos c  \lt  1</m>, so
+<md>
+<mrow>
+\dfrac{4242-1}{7!} \lt \sin(1) \lt \dfrac{4242-\frac{1}{2}}{7!}
+</mrow><mrow>
+\dfrac{4241}{5040} \lt \sin(1) \lt \dfrac{8483}{10080} \lt \frac{4243}{5040}
+</mrow>
+</md>
+If you got tighter bounds than asked for in the problem, congratulations!
+</p></solution>
+</exercise>
+
+<!--  extra problems added Dec 2018. -->
+<exercise>
+<statement><p>
+In this question, we use the remainder of a Maclaurin polynomial to approximate <m>e</m>.
+<ol label="a">
+<li xml:id="s3_4_8Tx"> Write out the 4th degree Maclaurin polynomial <m>T_4(x)</m> of the function <m>e^x</m>.
+</li>
+<li xml:id="s3_4_8T1"> Compute <m>T_4(1)</m>.
+</li>
+<li xml:id="s3_4_8e"> Use your answer from <xref ref="s3_4_8T1"/> to conclude <m>\dfrac{326}{120} \lt e \lt \dfrac{325}{119}</m>.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+For part <xref ref="s3_4_8e"/>, after you plug in the appropriate values to Equation<nbsp/><xref ref="eq_taylorErrorN"/>, simplify the upper and lower bounds for <m>e</m> separately. In particular, for the upper bound, you'll have to solve for <m>e</m>.
+</p></hint>
+<answer><p>
+(a) <m>T_4(x)=\sum_{n=0}^4\frac{x^n}{n!}</m>
+</p><p>
+(b) <m>T_4(1)=\frac{65}{24}</m>
+</p></answer>
+<solution>
+  <p> <xref ref="s3_4_8Tx"/> For every whole number <m>n</m>, the <m>n</m>th derivative of <m>e^x</m> is <m>e^x</m>. So:
+<me>
+T_4(x)=\sum_{n=0}^4\frac{e^0}{n!}x^n =\sum_{n=0}^4\frac{x^n}{n!}
+</me>
+</p>
+
+<p><xref ref="s3_4_8T1"/>
+<md>
+<mrow>
+T_4(1)&amp;=\sum_{n=0}^4\frac{1^n}{n!}=\sum_{n=0}^4\frac{1}{n!}
+</mrow><mrow>
+&amp;=\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}
+</mrow><mrow>
+&amp;=\frac{1}{1}+\frac{1}{1}+\frac{1}{2}+\frac{1}{6}+\frac{1}{24}
+</mrow><mrow>
+&amp;=\frac{65}{24}
+</mrow>
+</md>
+</p>
+
+<p><xref ref="s3_4_8e"/> Using Equation<nbsp/><xref ref="eq_taylorErrorN"/>,
+<md>
+<mrow>
+e^1-T_4(1)&amp;=\frac{1}{5!}e^c\qquad\mbox{for some <m>c</m> strictly between 0 and 1. So,}
+</mrow><mrow>
+e-\frac{65}{24}&amp;=\frac{e^c}{120}
+</mrow><mrow>
+e&amp;=\frac{65}{24}	+\frac{e^c}{120}
+</mrow>
+<intertext>Since <m>e^x</m> is a strictly increasing function, and <m>0 \lt c \lt 1</m>, we conclude <m>e^0 \lt e^c \lt e^1</m>:</intertext><mrow>
+\frac{65}{24}	+\frac{1}{120}&amp;  \lt e \lt \frac{65}{24}	+\frac{e}{120}
+</mrow>
+<intertext>Simplifying the left inequality, we see</intertext>
+<mrow>
+\frac{326}{120}&amp; \lt e
+</mrow>
+<intertext>From the right inequality, we see</intertext>
+<mrow>
+e&amp; \lt \frac{65}{24}+\frac{e}{120}
+</mrow><mrow>
+e-\frac{e}{120}&amp; \lt \frac{65}{24}
+</mrow><mrow>
+e\cdot \frac{119}{120}&amp; \lt \frac{65}{24}
+</mrow><mrow>
+e&amp; \lt \frac{65}{24}\cdot \frac{120}{119}=\frac{325}{119}
+</mrow>
+<intertext>So, we conclude</intertext><mrow>
+\frac{326}{120}&amp; \lt e \lt \frac{325}{119},
+</mrow>
+</md>
+as desired.
+</p>
+
+<p>Remark: <m>\dfrac{326}{120}\approx 2.717</m>, and
+<m>\dfrac{325}{119}\approx 2.731</m>.
+</p>
+
+</solution>
+</exercise>
+</exercisegroup>
+
+</exercises>

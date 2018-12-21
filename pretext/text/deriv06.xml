@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Using the arithmetic of derivatives <ndash/>  examples</title>
+<subsection><title>Using the arithmetic of derivatives <ndash/>  examples</title>
+
+<p>
+In this section we illustrate the computation of derivatives using the arithmetic of  derivatives <mdash/> Theorems<nbsp/><xref ref="thm_DIFFlinearity"/>,<nbsp/><xref ref="thm_DIFFprodRule"/>  and<nbsp/><xref ref="thm_DIFFquotRule"/>. To make it clear which rules we are using during the examples we will note which theorem we are using:
+</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell><m>\bullet \lin</m> to stand for <q>linearity</q> </cell>
+<cell><m>\diff{}{x}\{\alpha\,f(x)+\beta\,g(x)\} = \alpha\,f'(x)+\beta\,g'(x)</m>
+</cell><cell>Theorem<nbsp/><xref ref="thm_DIFFlinearity"/>
+</cell>
+</row><row>
+<cell>
+<m>\bullet \text{PR}</m> to stand for <q>product rule</q></cell>
+<cell><m>\diff{}{x}\{f(x)\,g(x)\}=f'(x)\,g(x)+f(x)\,g'(x)</m>
+</cell><cell>Theorem<nbsp/><xref ref="thm_DIFFprodRule"/></cell>
+</row><row>
+<cell><m>\bullet \quot</m> to stand for <q>quotient rule</q></cell>
+<cell><m>\diff{}{x}\Big\{\frac{f(x)}{g(x)}\Big\}= \frac{f'(x)\,g(x)-f(x)\,g'(x)}{g(x)^2}</m>
+</cell><cell>Theorem<nbsp/><xref ref="thm_DIFFquotRule"/></cell>
+</row>
+</tabular>
+</sidebyside>
+
+
+
+<p>We'll start with a really easy example.</p>
+
+<example xml:id="eg_DIFFsimpleToolsAA"><title><m>\diff{}{x} \{ 4x + 7 \} </m></title>
+<p>
+<md>
+<mrow>
+  \diff{}{x} \{ 4x + 7 \}
+  &amp;= 4 \cdot \diff{}{x} \{ x \}  + 7 \cdot \diff{}{x} \{ 1 \} &amp; \text{LIN}
+</mrow><mrow>
+  &amp;= 4 \cdot 1 + 7 \cdot 0 = 4
+</mrow>
+</md>
+where we have used LIN with <m>f(x)=x</m>, <m>g(x)=1</m>, <m>\alpha=4</m>, <m>\beta=7</m>.
+</p>
+</example>
+
+
+<example xml:id="eg_DIFFsimpleToolsAB"><title><m>\diff{}{x} \big\{ x ( 4x + 7) \big\}</m></title>
+<p>
+Continuing on from the previous example, we can use the product rule  and the previous result to compute
+<md>
+<mrow>
+  \diff{}{x} \big\{ x ( 4x + 7) \big\}
+  &amp;= x \cdot \diff{}{x} \{ 4x + 7 \} + (4x+7) \diff{}{x} \{ x \} &amp;
+\text{PR}
+</mrow><mrow>
+  &amp;= x \cdot 4 + (4x+7) \cdot 1
+</mrow><mrow>
+  &amp;= 8x+7
+</mrow>
+</md>
+where we have used the product rule PR with <m>f(x) =x</m> and <m>g(x)=4x+7</m>.
+</p>
+</example>
+
+<example xml:id="eg_DIFFsimpleToolsAB2"><title><m>\diff{}{x} \left\{ \frac{x}{4x + 7} \right \}</m></title>
+<p>
+In the same vein as the previous example, we can use the quotient rule to compute
+<md>
+<mrow>
+  \diff{}{x} \left\{ \frac{x}{4x + 7} \right \}
+  &amp;= \frac{ (4x+7) \cdot \diff{}{x} \{x\}  - x \cdot \diff{}{x} \{ 4x + 7 \} }{(4x+7)^2}
+&amp; \text{QR}
+</mrow><mrow>
+  &amp;= \frac{ (4x+7) \cdot 1  - x \cdot 4 }{(4x+7)^2}
+</mrow><mrow>
+&amp;= \frac{7}{(4x+7)^2}
+</mrow>
+</md>
+where we have used the quotient rule QR with <m>f(x) =x</m> and <m>g(x)=4x+7</m>.
+</p>
+</example>
+
+
+<p>Now for a messier example.</p>
+<example xml:id="eg_DIFFsimpleToolsNA"><title>Some examples should be messy</title>
+<p>
+Differentiate
+<md>
+<mrow>
+f(x)&amp;=\frac{x}{2x+\frac{1}{3x+1}}
+</mrow>
+</md>
+</p>
+
+<p>
+This problem looks nasty. But it isn't so hard if we just  build it up a bit at a time.
+<ul>
+<li>
+	First, <m>f(x)</m> is the ratio of
+	<md>
+	<mrow>
+	f_1(x)=x\qquad\text{and}\qquad f_2(x)=2x+\frac{1}{3x+1}
+	</mrow>
+	</md>
+	If we can find the derivatives of <m>f_1(x)</m> and <m>f_2(x)</m>, we will be able to get the derivative of <m>f(x)</m> just by applying the quotient rule. The derivative,  <m>f'_1(x)=1</m>, of <m>f_1(x)</m> is easy, so let's work on  <m>f_2(x)</m>.
+</li>
+<li>
+	The function <m>f_2(x)</m> is the linear combination
+	<md>
+	<mrow>
+	f_2(x)=2f_3(x)+f_4(x)\qquad\text{with}\qquad
+	f_3(x)=x \quad\text{and}\quad f_4(x)= \frac{1}{3x+1}
+	</mrow>
+	</md>
+	If we can find the derivatives of <m>f_3(x)</m> and <m>f_4(x)</m>, we will be able to get the derivative of <m>f_2(x)</m> just by applying linearity  (Theorem<nbsp/><xref ref="thm_DIFFlinearity"/>). The derivative, <m>f'_3(x)=1</m>, of <m>f_3(x)</m> is easy.  So let's work of <m>f_4(x)</m>.
+</li>
+<li>
+	The function <m>f_4(x)</m> is the ratio
+	<me>
+	f_4(x)=\frac{1}{f_5(x)}\qquad\text{with}\qquad f_5(x)=3x+1
+	</me>
+	If we can find the derivative of <m>f_5(x)</m>, we will be able to get  the derivative of <m>f_4(x)</m> just by applying the special case the quotient rule (Corollary<nbsp/><xref ref="cor_diff_recip"/>). The derivative of  <m>f_5(x)</m> is easy.
+</li>
+<li>
+	So we have completed breaking down <m>f(x)</m> into easy pieces. It is now just a matter of reversing the break down steps, putting everything back together, starting with the easy pieces  and working up to <m>f(x)</m>. Here goes.
+	<md>
+	<mrow>
+	f_5(x)&amp;=3x+1 &amp;\text{ so } \diff{}{x} f_5(x) &amp;= 3\diff{}{x} x +\diff{}{x} 1
+		=3\cdot 1+0 = 3 &amp; \text{LIN}
+	</mrow><mrow>[0.1in]
+	f_4(x)&amp;=\frac{1}{f_5(x)}
+	   &amp;\text{ so } \diff{}{x} f_4(x)&amp;=-\frac{f'_5(x)}{f_5(x)^2}=-\frac{3}{(3x+1)^2}
+						&amp; \text{QR}
+	</mrow><mrow>[0.1in]
+	f_2(x)&amp;=2f_3(x)+f_4(x) &amp;\text{ so }
+		\diff{}{x} f_2(x) &amp;= 2f'_3(x)+ f'_4(x)=2-\frac{3}{(3x+1)^2}
+						&amp; \text{LIN}
+	</mrow><mrow>[0.1in]
+	f(x)&amp;=\frac{f_1(x)}{f_2(x)}&amp;\text{ so }
+		 \diff{}{x} f(x)&amp;=\frac{f'_1(x)f_2(x)-f_1(x)f'_2(x)}{f_2(x)^2}
+						&amp; \text{QR}
+	</mrow><mrow>
+		&amp; &amp;             &amp;=\frac{1\big[2x+\frac{1}{3x+1}\big]
+								-x\big[2-\frac{3}{(3x+1)^2}\big]}
+						   {\big[2x+\frac{1}{3x+1}\big]^2}
+	</mrow>
+	</md>
+	Oof!
+</li>
+<li>
+	We now have an answer. But we really should clean it up, not only to make it easier to read, but also because invariably such computations are  just small steps inside much larger computations. Any future computations involving this expression will be a lot easier and less error prone  if we clean it up now. Cancelling the <m>2x</m> and the <m>-2x</m> in
+	<md>
+	<mrow>
+	  1\big[2x+\frac{1}{3x+1}\big]
+								-x\big[2-\frac{3}{(3x+1)^2}\big]
+	&amp;=2x+\frac{1}{3x+1} -2x+\frac{3x}{(3x+1)^2}
+	</mrow><mrow>
+	&amp;=\frac{1}{3x+1}+\frac{3x}{(3x+1)^2}
+	</mrow>
+	</md>
+	and multiplying both the numerator  and denominator by <m>(3x+1)^2</m> gives
+	<md>
+	<mrow>
+	f'(x)&amp;=\frac{\frac{1}{3x+1}+\frac{3x}{(3x+1)^2}}
+						   {\big[2x+\frac{1}{3x+1}\big]^2}
+	\ \frac{(3x+1)^2}{(3x+1)^2}
+	</mrow><mrow>[0.1in]
+	&amp;=\frac{(3x+1)+3x}{\big[2x(3x+1)+1\big]^2}
+	</mrow><mrow>[0.1in]
+	&amp;=\frac{6x+1}{[6x^2+2x+1]^2}.
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+
+</example>
+
+
+<p>
+While the linearity theorem (Theorem <xref ref="thm_DIFFlinearity"/>) is stated  for a linear combination of two functions, it is not difficult to extend it  to linear combinations of three or more functions as the following  example shows.
+</p>
+
+<example xml:id="eg_DIFFsimpleToolsB"><title>Linearity of the derivative of three or more functions</title>
+<p>
+We'll start by generalising linearity to three functions.
+<md>
+<mrow>
+\diff{}{x}\big\{a F(x)+ b G(x)+ c H(x)\big\}
+ &amp;=\diff{}{x}\big\{\ a \cdot [F(x)]\ +\ 1\cdot[b G(x)+c H(x)]\ \big\}
+</mrow><mrow>
+   &amp;=a F'(x)+\diff{}{x}\{b G(x)+c H(x)\}
+</mrow><mrow>
+   &amp;\qquad\qquad\text{by \lin\ with $\alpha=a, f(x)=F(x), \beta=1$,}
+</mrow><mrow>
+   &amp;\qquad\qquad\text{and } g(x)=b G(x)+c H(x)
+</mrow><mrow>
+   &amp;=a F'(x)+b G'(x)+c H'(x)
+</mrow><mrow>
+   &amp;\qquad\qquad\text{by \lin\ with } \alpha=b, f(x)=G(x), \beta=c,
+</mrow><mrow>
+   &amp;\qquad\qquad\text{and } g(x)=H(x)
+</mrow>
+</md>
+This gives us linearity for three terms, namely (just replacing upper case names by lower case names)
+<md>
+<mrow>
+\diff{}{x}\{af(x)+bg(x)+ch(x)\} =af'(x)+bg'(x)+ch'(x)
+</mrow>
+</md>
+Just by repeating the above argument many times, we may generalise to linearity for <m>n</m> terms, for any natural number <m>n</m>:
+<md>
+<mrow>
+\diff{}{x}\{a_1f_1(x)+a_2f_2(x)+\cdots+a_n f_n(x)\}
+=a_1f'_1(x)+a_2f'_2(x)+\cdots+a_n f'_n(x)
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+Similarly, while the product rule is stated for the product of  two functions, it is not difficult to extend it to the product of  three or more functions as the following example shows.
+</p>
+
+<example xml:id="eg_DIFFsimpleToolsA"><title>Extending the product rule to more than two factors</title>
+<p>
+Once again, we'll start by generalising the product rule to three factors.
+<md>
+<mrow>
+\diff{}{x}\{F(x)\,G(x)\,H(x)\}
+   &amp;=F'(x)\,G(x)\,H(x)
+    +F(x)\, \diff{}{x}\{G(x)\,H(x)\}
+</mrow><mrow>
+   &amp; \text{by PR with} f(x)=F(x) \text{ and } g(x)=G(x)H(x)
+</mrow><mrow>
+   &amp;=F'(x)\,G(x)\,H(x)
+    +F(x)\, \big\{G'(x)\,H(x)+G(x)\,H'(x)\big\}
+</mrow><mrow>
+   &amp;\text{by PR with} f(x)=G(x) \text{ and } g(x)=H(x)
+</mrow>
+</md>
+This gives us a product rule for three factors, namely (just replacing upper case names by lower case names)
+<md>
+<mrow>
+\diff{}{x}\{f(x)\,g(x)\,h(x)\}
+ = f'(x)\,g(x)\,h(x)
+    +f(x)\,g'(x)\,h(x)+f(x)\,g(x)\,h'(x)
+</mrow>
+</md>
+Observe that when we differentiate a product of three factors, the answer is a sum of three terms and in each term the derivative acts on exactly one of the original factors. Just by repeating the above argument many times, we may generalise the product rule to give the derivative of a product of <m>n</m> factors, for any natural number <m>n</m>:
+<md>
+<mrow>
+\diff{}{x}\{f_1(x)\,f_2(x)\,\cdots\,f_n(x)\}
+ =\quad &amp;f'_1(x)\,f_2(x)\,\cdots\,f_n(x)
+</mrow><mrow>
+  +&amp;f_1(x)\,f'_2(x)\,\cdots\,f_n(x)
+</mrow><mrow>
+   &amp;\qquad \qquad\vdots
+</mrow><mrow>
+  +&amp;f_1(x)\,f_2(x)\,\cdots\,f'_n(x)
+</mrow>
+</md>
+We can also write the above as
+<md>
+<mrow>
+\diff{}{x}\{f_1(x)\,f_2(x)\,\cdots\,f_n(x)\}
+&amp;=
+\left[
+\frac{f_1'(x)}{f_1(x)}+
+\frac{f_2'(x)}{f_2(x)}+
+\cdots
++\frac{f_n'(x)}{f_n(x)}
+\right]
+\cdot   f_1(x)\,f_2(x)\,\cdots\,f_n(x)
+</mrow>
+</md>
+</p>
+
+<p>
+When we differentiate a product of <m>n</m> factors, the answer is a sum of <m>n</m> terms and in each term the derivative acts on exactly one of the original factors. In the first term, the derivative acts on the first of the original factors. In the second term, the derivative acts on the second of the original factors. And so on.
+</p>
+
+<p>
+If we make <m>f_1(x) = f_2(x) = \cdots = f_n(x) = f(x)</m> then each of the <m>n</m> terms on the right hand side of the above equation is the product of <m>f'(x)</m> and exactly <m>n-1</m> <m>f(x)</m>'s, and so is exactly  <m>f(x)^{n-1}\,f'(x)</m>. So we get the following useful result
+<md>
+<mrow>
+  \diff{}{x} f(x)^n &amp;= n\cdot  f(x)^{n-1} \cdot  f'(x).
+</mrow>
+</md>
+</p>
+</example>
+
+<p>This last result is quite useful, so let us write it as a lemma for future reference.</p>
+
+<lemma xml:id="lem_diff_ftothen">
+<statement><p>
+Let <m>n</m> be a natural number and <m>f</m> be a differentiable function. Then
+<md>
+<mrow>
+\diff{}{x} f(x)^n &amp;= n\cdot  f(x)^{n-1} \cdot  f'(x).
+</mrow>
+</md>
+</p></statement>
+</lemma>
+
+<p>This immediately gives us another useful result.</p>
+
+<example xml:id="eg_DIFFsimpleToolsC"><title>Derivative of <m>x^n</m></title>
+<p>
+We can now compute the derivative of <m>x^n</m> for any natural number <m>n</m>. Start with  Lemma<nbsp/><xref ref="lem_diff_ftothen"/> and substitute <m>f(x)=x</m> and <m>f'(x)=1</m>:
+<md>
+<mrow>
+\diff{}{x}x^n &amp;= n \cdot  x^{n-1} \cdot  1 = n\, x^{n-1}
+</mrow>
+</md>
+</p>
+</example>
+
+
+<p>
+Again <mdash/> this is a result we will come back to quite a few times in the future, so we  should make sure we can refer to it easily.  However, at present this statement only  holds  when <m>n</m> is a positive integer. With a little more work we can extend this to  compute <m>x^q</m> where <m>q</m> is any positive rational number and then any rational number at  all (positive or negative). So let us hold off for a little  longer. Instead we can make it a lemma, since it will be an ingredient in quite  a few of the examples following below and in constructing the final corollary.
+</p>
+
+<lemma xml:id="lem_dxn"><title>Derivative of <m>x^n</m></title>
+<statement><p>
+Let <m>n</m> be a positive integer then
+<me>
+\diff{}{x} x^n = n x^{n-1}
+</me>
+</p></statement>
+</lemma>
+
+<p>Back to more examples.</p>
+<example xml:id="eg_DIFFsimpleToolsD"><title>Derivative of a polynomial</title>
+<p>
+<md>
+<mrow>
+\diff{}{x}\big\{2x^3+4x^5\big\}
+&amp;=2\diff{}{x}\{x^3\}+4\diff{}{x}\{x^5\}
+</mrow><mrow>
+   &amp;\qquad\qquad\text{by \lin\ with } \alpha=2, f(x)=x^3, \beta=4 \text{ and } g(x)=x^5
+</mrow><mrow>
+&amp;=2\{3x^2\}+4\{5x^4\}
+</mrow>
+<intertext>
+by  Lemma<nbsp/><xref ref="lem_dxn"/>, once with <m>n=3</m>, and once with <m>n=5</m>
+</intertext>
+<mrow>
+&amp;=6x^2+20x^4
+</mrow>
+</md>
+</p>
+</example>
+
+<example xml:id="eg_DIFFsimpleToolsE"><title>Derivative of product of polynomials</title>
+<p>
+In this example we'll compute <m>\diff{}{x}\big\{(3x+9)(x^2+4x^3)\big\}</m> in two different ways. For the first, we'll start with the product rule.
+<md>
+<mrow>
+\diff{}{x}\big\{(3x+9)(x^2+4x^3)\big\}
+&amp;=\Big\{\diff{}{x}(3x+9)\Big\}\ (x^2+4x^3)
+   +(3x+9)\ \diff{}{x}\{x^2+4x^3\}
+</mrow><mrow>
+&amp;=\big\{3\times 1+9\times 0\big\}\ (x^2+4x^3)
+   +(3x+9)\ \{2x+4(3x^2)\}
+</mrow><mrow>
+&amp;=3(x^2+4x^3)+(3x+9)\ (2x+12x^2)
+</mrow><mrow>
+&amp;=3x^2+12x^3+(6x^2+18x+36x^3+108x^2)
+</mrow><mrow>
+&amp;=18x+117x^2+48x^3
+</mrow>
+</md>
+For the second, we expand the product first and then differentiate.
+<md>
+<mrow>
+\diff{}{x}\big\{(3x+9)(x^2+4x^3)\big\}
+&amp;=\diff{}{x}\big\{9x^2+39x^3+12x^4\big\}
+</mrow><mrow>
+&amp;=9(2x)+39(3x^2)+12(4x^3)
+</mrow><mrow>
+&amp;=18x+117x^2+48x^3
+</mrow>
+</md>
+</p>
+</example>
+
+<example xml:id="eg_DIFFsimpleToolsH"><title>Derivative of a rational function</title>
+<p>
+<md>
+<mrow>
+\diff{}{x}\bigg\{\frac{4x^3-7x}{4x^2+1}\bigg\}
+&amp;=\frac{(12x^2-7)(4x^2+1)-(4x^3-7x)(8x)}{(4x^2+1)^2}
+</mrow><mrow>
+   &amp;\qquad\qquad\text{by \quot\ with } f(x)=4x^3-7x, f'(x)=12x^2-7,
+</mrow><mrow>
+   &amp;\qquad\qquad\text{and } g(x)=4x^2+1, g'(x)=8x
+</mrow><mrow>
+&amp;=\frac{(48x^4-16x^2-7)-(32x^4-56x^2)}{(4x^2+1)^2}
+</mrow><mrow>
+&amp;=\frac{16x^4+40 x^2-7}{(4x^2+1)^2}
+</mrow>
+</md>
+</p></example>
+
+<example xml:id="eg_DIFFsimpleToolsF"><title>Derivative of a cube-root</title>
+<p>
+In this example, we'll use a little trickery to find the derivative of <m>\root{3}\of{x}</m>. The trickery consists of observing that,  by the definition of the cube root,
+<md>
+<mrow>
+x= \left(\root{3}\of{x}\right)^3.
+</mrow>
+</md>
+Since both sides of the expression are the same, they must have the same derivatives:
+<md>
+<mrow>
+\diff{}{x}\left\{x\right\}
+= \diff{}{x}\left(\root{3}\of{x}\right)^3.
+</mrow>
+</md>
+We already know by Theorem<nbsp/><xref ref="thm_DIFFbasicderivs"/> that
+<md>
+<mrow>
+\diff{}{x}\big\{x\big\}=1
+</mrow>
+</md>
+and that, by Lemma<nbsp/><xref ref="lem_diff_ftothen"/> with <m>n=3</m> and <m>f(x)=\root{3}\of{x}</m>,
+<md>
+<mrow>
+\diff{}{x}\big(\root{3}\of{x}\big)^3
+ = 3\ \big(\root{3}\of{x}\big)^2\cdot \diff{}{x}\big\{\root{3}\of{x}\big\}
+ = 3\,x^{2/3}\cdot \diff{}{x}\big\{\root{3}\of{x}\big\}.
+</mrow>
+</md>
+Since we know that <m>\diff{}{x}\left\{x\right\} = \diff{}{x}\left(\root{3}\of{x}\right)^3</m>, we must have
+<md>
+<mrow>
+1=3x^{2/3}\cdot \diff{}{x}\big\{\root{3}\of{x}\big\}
+</mrow>
+<intertext>which we can rearrange to give the result we need</intertext>
+<mrow>
+\diff{}{x}\big\{\root{3}\of{x}\big\} &amp;=\tfrac{1}{3} x^{-2/3}
+</mrow>
+</md>
+</p>
+</example>
+
+<example xml:id="eg_DIFFsimpleToolsG"><title>Derivative of a positive rational power of <m>x</m></title>
+<p>
+In this example, we'll use the same trickery as in Example <xref ref="eg_DIFFsimpleToolsF"/> to find the derivative <m>x^{p/q}</m> for any two natural numbers <m>p</m> and <m>q</m>. By definition of the <m>q^{\rm th}</m> root,
+<md>
+<mrow>
+x^p= \big(x^{p/q}\big)^q.
+</mrow>
+</md>
+That is, <m>x^p</m> and  <m>\big(x^{p/q}\big)^q</m> are the same function, and so have the same  derivative. So we differentiate both of them. We already know that, by Lemma <xref ref="lem_dxn"/>  with <m>n=p</m>,
+<md>
+<mrow>
+\diff{}{x}\big\{x^p\big\}=p x^{p-1}
+</mrow>
+</md>
+and that, by Lemma<nbsp/><xref ref="lem_diff_ftothen"/> with <m>n=q</m> and <m>f(x)=x^{p/q}</m>,
+<md>
+<mrow>
+\diff{}{x}\big\{\big(x^{p/q}\big)^q\big\}
+&amp; = q\ \big(x^{p/q}\big)^{q-1}\ \diff{}{x}\big\{x^{p/q}\big\}
+</mrow>
+</md>
+Remember that <m>(x^a)^b = x^{(a \cdot b)}</m>. Now these two derivatives  must be the same. So
+<md>
+<mrow>
+p x^{p-1} &amp;=q\cdot x^{(pq-p)/q} \diff{}{x}\big\{x^{p/q}\big\}
+</mrow>
+<intertext>and, rearranging things,</intertext><mrow>
+\diff{}{x}\big\{x^{p/q}\big\}
+   &amp; =\frac{p}{q} x^{p-1-(pq-p)/q}
+</mrow><mrow>[0.05in]
+   &amp; =\frac{p}{q} x^{(pq-q-pq+p)/q}
+</mrow><mrow>[0.05in]
+   &amp; =\frac{p}{q} x^{\frac{p}{q}-1}
+</mrow>
+</md>
+So finally
+<me>
+  \diff{}{x} \left\{ x^{p/q} \right\} = \frac{p}{q} x^{\frac{p}{q} -1 }
+</me>
+Notice that this has the same form as Lemma <xref ref="lem_dxn"/>, above,  except with <m>n=\frac{p}{q}</m> allowed to be any positive rational  number, not just a positive integer.
+</p></example>
+
+<example xml:id="eg_DIFFsimpleToolsI"><title>Derivative of <m>x^{-n}</m></title>
+<p>
+In this example we'll use the quotient rule to find the derivative of  <m>x^{-m}</m>, for any natural number <m>m</m>.
+</p>
+
+<p>
+By the special case of the quotient rule (Corollary<nbsp/><xref ref="cor_diff_recip"/>) with <m>g(x)=x^m</m>  and <m>g'(x)=mx^{m-1}</m>
+<md>
+<mrow>
+\diff{}{x}\big\{x^{-m}\big\}
+=\diff{}{x}\bigg\{\frac{1}{x^m}\bigg\}
+=-\,\frac{mx^{m-1}}{{(x^m)}^2}
+=-m x^{-m-1}
+</mrow>
+</md>
+Again, notice that this has the same form as Lemma<nbsp/><xref ref="lem_dxn"/>,  above, except with <m>n=-m</m> being a negative integer.
+</p>
+</example>
+
+<example xml:id="eg_DIFFsimpleToolsJ"><title>Derivative of a negative rational power of <m>x</m></title>
+<p>
+In this example we'll use the quotient rule to find the derivative of  <m>x^{-p/q}</m>, for any pair of natural numbers <m>p</m> and <m>q</m>. By the special case the quotient rule (Corollary<nbsp/><xref ref="cor_diff_recip"/>) with  <m>g(x)=x^{\frac{p}{q}}</m> and <m>g'(x)=\frac{p}{q}x^{\frac{p}{q}-1}</m>,
+<md>
+<mrow>
+\diff{}{x}\big\{x^{-\frac{p}{q}}\big\}
+=\diff{}{x}\bigg\{\frac{1}{x^{\frac{p}{q}}}\bigg\}
+=-\,\frac{\frac{p}{q}x^{\frac{p}{q}-1}}{{(x^{\frac{p}{q}})}^2}
+=-\frac{p}{q}\ x^{-\frac{p}{q}-1}
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+Note that we have found, in Examples <xref ref="eg_DIFFderivX0"/>,  <xref ref="eg_DIFFsimpleToolsG"/> and <xref ref="eg_DIFFsimpleToolsJ"/>, the derivative of <m>x^a</m> for any rational number <m>a</m>, whether 0, positive, negative, integer or fractional. In all cases, the answer is
+</p>
+
+<corollary xml:id="cor_DIFFxtoa"><title>Derivative of <m>x^a</m></title>
+<statement><p>
+Let <m>a</m> be a rational number, then
+<me>
+\diff{}{x} x^a = a x^{a-1}
+</me>
+</p></statement>
+</corollary>
+
+<p>
+Back in Example<nbsp/><xref ref="eg_DIFFderivXsqrt"/> we computed the derivative of <m>\sqrt{x}</m> from the  definition of the derivative. The above corollary (correctly) gives
+<md>
+<mrow>
+  \diff{}{x} x^{\frac{1}{2}} &amp;= \frac{1}{2} x^{-\frac{1}{2}}
+</mrow>
+</md>
+but with far less work.
+</p>
+
+<p>Here's an (optional) messy example.</p>
+
+<example xml:id="eg_DIFFsimpleToolsNB"><title>Optional messy example</title>
+<p>
+Find the derivative of
+<me>
+f(x)=\frac{(\sqrt{x}-1)(2-x)(1-x^2)}{\sqrt{x}(3+2x)}
+</me>
+</p>
+
+<p>
+<ul>
+<li>
+	As we seen before, the best strategy for dealing with nasty expressions is to break them up into easy pieces. We can think of <m>f(x)</m> as the five<ndash/>fold product
+	<me>
+	f(x)=f_1(x)\cdot f_2(x)\cdot f_3(x)\cdot \frac{1}{f_4(x)}\cdot \frac{1}{f_5(x)}
+	</me>
+	with
+	<md>
+	<mrow>
+	f_1(x)=\sqrt{x}-1\quad
+	f_2(x)=2-x\quad
+	f_3(x)=1-x^2\quad
+	f_4(x)=\sqrt{x}\quad
+	f_5(x)=3+2x
+	</mrow>
+	</md>
+</li>
+<li>
+	By now, the derivatives of the <m>f_j</m>'s should be easy to find:
+	<md>
+	<mrow>
+	f'_1(x)=\frac{1}{2\sqrt{x}}\quad
+	f'_2(x)=-1\quad
+	f'_3(x)=-2x\quad
+	f'_4(x)=\frac{1}{2\sqrt{x}}\quad
+	f'_5(x)=2
+	</mrow>
+	</md>
+</li>
+<li>
+	Now, to get the derivative <m>f(x)</m> we use the <m>n</m><ndash/>fold product rule which was  developed in Example<nbsp/><xref ref="eg_DIFFsimpleToolsA"/>, together with the special case of the quotient rule (Corollary<nbsp/><xref ref="cor_diff_recip"/>).
+	<md>
+	<mrow>
+	f'(x)&amp;=f'_1f_2f_3\frac{1}{f_4}\frac{1}{f_5}
+	+f_1f'_2f_3\frac{1}{f_4}\frac{1}{f_5}
+	+f_1f_2f'_3\frac{1}{f_4}\frac{1}{f_5}
+	-f_1f_2f_3\frac{f'_4}{f^2_4}\frac{1}{f_5}
+	-f_1f_2f_3\frac{1}{f_4}\frac{f'_5}{f^2_5}
+	</mrow><mrow>[0.1in]
+	&amp;=\Big[\frac{f'_1}{f_1}+\frac{f'_2}{f_2}+\frac{f'_3}{f_3}-\frac{f'_4}{f_4}
+	-\frac{f'_5}{f_5}\Big]f_1f_2f_3\frac{1}{f_4}\frac{1}{f_5}
+	</mrow><mrow>[5mm]
+	&amp;=\bigg[\frac{1}{2\sqrt{x}(\sqrt{x}-1)}
+		   -\frac{1}{2-x}-\frac{2x}{1-x^2}-\frac{1}{2x}
+	-\frac{2}{3+2x}\bigg]\frac{(\sqrt{x}-1)(2-x)(1-x^2)}{\sqrt{x}(3+2x)}
+	</mrow>
+	</md>
+	The trick that we used in going from the first line to the second line, namely multiplying term number <m>j</m> by <m>\frac{f_j(x)}{f_j(x)}</m> is often useful in simplifying the derivative of a product of many  factors
+	<fn>
+		Also take a look at <q>logarithmic differentiation</q> in  Section<nbsp/><xref ref="sec_diff_logs"/>.
+	</fn>.
+</li>
+</ul>
+</p>
+</example>
+
+</subsection>
+
+
+<xi:include href="../problems/prob_s2.6.xml"/>
+
+
+</section>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_sketch_FD"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Match each function graphed below to its <em>derivative</em> from the list. (For example, which function on the list corresponds to <m>A'(x)</m>?)
+</p>
+
+<p>The <m>y</m>-axes have been scaled to make the curve's behaviour clear, so the vertical scales differ from graph to graph.
+</p>
+
+<p><m>l(x)=(x-2)^4</m>
+</p>
+<p>
+<m>m(x)=(x-2)^4(x+2)</m>
+</p>
+<p>
+<m>n(x)=(x-2)^2(x+2)^2</m>
+</p>
+<p>
+<m>o(x)=(x-2)(x+2)^3</m>
+</p>
+<p>
+<m>p(x)=(x+2)^4</m>
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.9]
+\YEaaxis{3}{4}{3}{3}
+\draw[thick, green!80!black] plot[domain=-1.5:4, samples=100](\x,{(\x-2)*(\x-2)*(\x-2)*(\x-2)*(\x-2)/100+2}) node[above right]{$y=A(x)$};
+\foreach \x in {2,-2}{\YExcoord{\x}{\x}}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.9]
+\YEaaxis{4}{3}{3}{3}
+\draw[thick, blue] plot[domain=-4:1.5, samples=100](\x,{(\x+2)*(\x+2)*(\x+2)*(\x+2)*(\x+2)/100-2}) node[above right]{$y=B(x)$};
+\foreach \x in {2,-2}{\YExcoord{\x}{\x}}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{3}{3}
+\draw[thick, red] plot[domain=-3:3, samples=100](\x,{(-.8*\x*\x*\x*\x*\x+16/3*\x*\x*\x+(\x*\x-4*\x+4)*(\x*\x+4*\x+4)*\x)/10}) node[right]{$y=C(x)$};
+\foreach \x in {2,-2}{\YExcoord{\x}{\x}}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
+\YEaaxis{3.5}{3}{3}{3}
+\draw[thick, orange] plot[domain=-4:3.1, samples=100](\x,{1/75*(\x-3)*(\x+2)*(\x+2)*(\x+2)*(\x+2)+1}) node[above right]{$y=D(x)$};
+\foreach \x in {2,-2}{\YExcoord{\x}{\x}}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
+\YEaaxis{3}{4}{3}{3}
+\draw[thick, purple] plot[domain=-2.6:3.75, samples=100](\x,{1/900*(\x-2)*(\x-2)*(\x-2)*(\x-2)*(\x-2)*(5*\x+14)+1.5}) node[above right]{$y=E(x)$};
+\foreach \x in {2,-2}{\YExcoord{\x}{\x}}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+</statement>
+<hint><p>
+For each of the graphs, consider where the derivative is positive, negative, and zero.
+</p></hint>
+<answer><p>
+<m>\textcolor{green}{A'(x)=l(x)} \qquad \textcolor{blue}{B'(x)=p(x)}
+\qquad
+\textcolor{red}{C'(x)=n(x)}
+\qquad
+\textcolor{orange}{D'(x)=o(x)}\qquad \textcolor{purple}{E'(x)=m(x)}</m>
+</p></answer>
+<solution><p>
+Functions <m>A(x)</m> and <m>B(x)</m> share something in common that sets them apart from the others: they have a horizontal tangent line only once. In particular, <m>A'(-2) \neq 0</m> and <m>B'(2) \neq 0</m>. The only listed functions that do not have two distinct roots are <m>l(x)</m> and <m>p(x)</m>. Since <m>l(-2) \neq 0</m> and <m>p(2) \neq 0</m>, we conclude
+<me>
+\textcolor{green}{A'(x)=l(x)} \qquad \textcolor{blue}{B'(x)=p(x)}</me>
+</p>
+
+<p>Function <m>C(x)</m> is never decreasing. Its tangent line is horizontal when <m>x = \pm 2</m>, but the curve never decreases, so <m>C'(x) \geq 0</m> for all <m>x</m> and <m>C'(2)=C'(-2)=0</m>. The only function that matches this is <m>n(x)=(x-2)^2(x+2)^2</m>. Since its linear terms have even powers, it is never negative, and its roots are precisely <m>x=\pm 2</m>.
+<me>
+\textcolor{red}{C'(x)=n(x)}</me>
+</p>
+
+<p>For the functions <m>D(x)</m> and <m>E(x)</m> we consider their behaviour
+          near <m>x=0</m>.  <m>D(x)</m> is decreasing near <m>x=0</m>, so <m>D'(0) \lt 0</m>, which matches with <m>o(0) \lt 0</m>. Contrastingly, <m>E(x)</m> is increasing near zero, so
+          <m>E'(0) \gt 0</m>, which matches with <m>m(0) \gt 0</m>.
+<me>
+\textcolor{orange}{D'(x)=o(x)}\qquad \textcolor{purple}{E'(x)=m(x)}</me>
+</p>
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Find the interval(s) where <m>f(x)=\dfrac{e^x}{x+3}</m> is increasing.
+</p></statement>
+<hint><p>
+Where is <m>f'(x) \gt 0</m>?
+</p></hint>
+<answer><p>
+<m>(-2,\infty)</m>
+</p></answer>
+<solution><p>
+The domain of <m>f(x)</m> is all real numbers except <m>-3</m> (because when <m>x=-3</m> the denominator is zero). For <m>x\neq -3</m>, we differentiate using the quotient rule:
+<me>f'(x)=\frac{e^x(x+3) - e^x(1)}{(x+3)^2} = \frac{e^x}{(x+3)^2} (x+2)\,.</me>
+Since <m>e^x</m> and <m>(x+3)^2</m> are  positive for every <m>x</m> in the domain of <m>f(x)</m>, the sign of <m>f'(x)</m> is the same as the sign of <m>x+2</m>. We conclude that <m>f(x)</m>
+is increasing for every <m>x</m> in its domain with <m>x+2 \gt 0</m>. That is, over the interval <m>(-2,\infty)</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p> Find the interval(s) where <m>f(x)=\dfrac{\sqrt{x-1}}{2x+4}</m> is increasing.
+</p></statement>
+<hint><p>
+Consider the signs of the numerator and the denominator of <m>f'(x)</m>.
+</p></hint>
+<answer><p>
+<m>(1,4)</m> and <m>[1,4)</m> are both acceptable answers
+</p></answer>
+<solution><p>
+Since we can't take the square root of a negative number,  <m>f(x)</m> is only defined
+when <m>x \ge 1</m>. Furthermore, since we can't have a zero as a denominator, <m>x=-2</m> is  not in the domain--but as long as <m>x \ge 1</m>, also <m>x \ne -2</m>. So, the domain of the function is <m>[1,\infty)</m>.
+</p>
+
+<p> In order to find where is <m>f(x)</m> increasing, we find where is <m>f'(x)</m> positive.
+<me>f'(x)=\frac{\frac{2x+4}{2\sqrt{x-1}}-2\sqrt{x-1}}{(2x+4)^2}=\frac{(x+2)-2(x-1)}{\sqrt{x-1}(2x+4)^2}
+=\frac{-x+4}{\sqrt{x-1}(2x+4)^2}</me>
+The denominator is never negative, so  <m>f(x)</m> is increasing when the numerator of <m>f'(x)</m> is positive, i.e. when <m>4-x \gt 0</m>, or <m>x \lt 4</m>. Recalling that the domain of definition for <m>f(x)</m> is <m>[1,+\infty)</m>, we conclude that <m>f(x)</m> is increasing on the interval <m>(1,4)</m>.
+</p>
+
+<p>Remark: <m>[1,4)</m> is also an acceptable answer, but <m>[1,4]</m> is not. At <m>x=4</m> the function has a local maximum: <m>f(x)</m> is increasing before <m>x=4</m> and decreasing after.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Find the interval(s) where <m>f(x)=2\arctan (x) - \log(1+x^2)</m> is increasing.
+</p></statement>
+<hint><p>
+Remember <m>\ds\diff{}{x}\{\arctan x\}=\dfrac{1}{1+x^2}</m>.
+</p></hint>
+<answer><p> <m>(-\infty,1)</m>
+</p></answer>
+<solution><p>
+The domain of arctangent is all real numbers. The domain of the logarithm function is all positive numbers, and <m>1+x^2</m> is positive for all <m>x</m>. So, the domain of <m>f(x)</m> is all real numbers.
+</p>
+
+<p>In order to find where is <m>f(x)</m> increasing, we find where is <m>f'(x)</m> positive.
+<me>f'(x)= \frac 2 {1+x^2} - \frac{2x}{1+x^2} = \frac{2-2x}{1+x^2}</me>
+Since the denominator is always positive, <m>f(x)</m> is increasing
+when when <m>2-2x \gt 0</m>.We conclude that <m>f(x)</m> is increasing on the interval <m>(-\infty,1)</m>.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

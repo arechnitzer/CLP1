@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Other important sets</title>
+<introduction>
+
+<p>
+We have seen a few important sets above <mdash/> namely <m>\mathbb{N}, \mathbb{Z}, \mathbb{Q}</m> and <m>\mathbb{R}</m>. However, arguably the most important set in mathematics is the empty set.
+</p>
+
+<definition><title>Empty set</title>
+<statement><p>
+	The empty set (or null set or void set) is the set which contains no elements. It is denoted <m>\es</m>. For any object <m>x</m>, we always have <m>x \notin \es</m>; hence <m>\es = \{ \}</m>.
+</p></statement>
+</definition>
+
+<p>
+Note that it is important to realise that the empty set is not <em>nothing</em>; think of it  as an empty bag. Also note that with quite a bit of hard work you can actually define the  natural numbers in terms of the empty set. Doing so is very formal and well beyond the  scope of this text.
+</p>
+
+<p>
+When a set does not contain too many elements it is fine to specify it by listing out its  elements.  But for infinite sets or even just big sets we can't do this and instead we  have to give the defining rule. For example the set of all perfect square numbers we write as
+<md>
+<mrow>
+  S &amp;= \{x \st x = k^2 \mbox{ where } k \in \mathbb{Z} \}
+</mrow>
+</md>
+Notice we have used another piece of short-hand here, namely <m>\st</m>, which stands for <q>such that</q> or <q>so that</q>. We read the above statement as <q><m>S</m> is the set of elements <m>x</m> such that <m>x</m> equals <m>k</m>-squared where <m>k</m> is an integer</q>. This is the standard way of writing a set defined by a rule, though there are  several shorthands for <q>such that</q>. We shall use two them:
+<md>
+<mrow>
+  P &amp;= \{ p \st p \mbox{ is prime} \} = \{ p \,|\, p \mbox{ is prime} \}
+</mrow>
+</md>
+Other people also use <q>:</q> is shorthand for <q>such that</q>. You should recognise all  three of these shorthands.
+</p>
+
+<p>
+In this text we will use <q><m>|</m></q> or <q><m>\st</m></q> (being the preference of the authors), but some other texts use <q>:</q>. You should recognise all of these.
+</p>
+
+<example><title>examples of sets</title>
+<p>
+Even more examples<ellipsis/>
+<ul>
+<li> Let <m>A = \{2,3,5,7,11,13,17,19\}</m> and let
+<md>
+<mrow>
+  B &amp;= \{ a \in A | a \lt 8\} = \{2,3,5,7\}
+  </mrow>
+</md>
+the set of elements of <m>A</m> that are strictly less than 8.
+</li>
+<li> Even and odd integers
+<md>
+<mrow>
+E &amp;= \{ n | n \mbox{ is an even integer} \}
+</mrow><mrow>
+ &amp;= \{n | n =2k \mbox{ for some $k \in \mathbb{Z}$ } \}
+</mrow><mrow>
+ &amp;= \{2n | n \in \mathbb{Z}\},
+</mrow>
+</md>
+and similarly
+<md>
+<mrow>
+  O &amp;= \{ n | n \mbox{ is an odd integer} \}
+</mrow><mrow>
+  &amp;= \{2n+1 | n \in \mathbb{Z}\}.
+</mrow>
+</md>
+</li>
+<li>Square integers
+<md>
+<mrow>
+  S &amp;= \{n^2 | n \in \mathbb{Z}\}.
+</mrow>
+</md>
+The set
+	<fn>
+	Notice here we are using another common piece of mathematical short-hand. Very often in mathematics we will be talking or writing about some object, like the set <m>S</m> above, and then we will create a closely related object. Rather than calling this new object by a new symbol (we could have used <m>T</m> or <m>R</m> or<ellipsis/>), we instead use the same symbol but with some sort of accent <mdash/> such as the little single quote mark we added to the symbol <m>S</m> to make <m>S'</m> (read <q>S prime</q>). The point of this is to let the reader know that this new object is related to the original one, but not the same. You might also see <m>\dot{S}, \hat{S}, \bar{S}, \tilde{S}</m> and others.
+	</fn>
+<m>S'= \set{n^2 | n \in \mathbb{N}}</m> is not the same as <m>S</m> because <m>S'</m> does not contain the number <m>0</m>, which is definitely a square integer and <m>0</m> is in <m>S</m>. We could also write <m>S = \set{n^2 | n \in \mathbb{Z}, n \geq 0}</m> and <m>S=\set{n^2 | n=0,1,2,\dots}</m>.
+</li>
+</ul>
+</p>
+</example>
+
+
+<p>
+The sets <m>A</m> and <m>B</m> in the above example illustrate an important point. Every element in <m>B</m> is an element in <m>A</m>, and so we say that <m>B</m> is a subset of <m>A</m>
+</p>
+
+<definition>
+<statement><p>
+Let <m>A</m> and <m>B</m> be sets. We say <q><m>A</m> is a subset of <m>B</m></q> if every element of <m>A</m> is also an element of <m>B</m>. We denote this <m>A \subseteq B</m> (or <m>B \supseteq A</m>). If <m>A</m> is a subset of <m>B</m> and <m>A</m> and <m>B</m> are not the same , so that there is some element of <m>B</m> that is not in <m>A</m> then we say that <m>A</m> is a proper subset of <m>B</m>. We denote this by <m>A \subset B</m> (or <m>B \supset A</m>).
+</p></statement>
+</definition>
+
+<p>
+Two things to note about subsets:
+<ul>
+<li> Let <m>A</m> be a set. It is always the case that <m>\es \subseteq A</m>. </li>
+<li>
+If <m>A</m> is not a subset of <m>B</m> then we write <m>A \not\subseteq B</m>. This is the same as saying that there is some element of <m>A</m> that is not in <m>B</m>. That is, there is some <m>a \in A</m> such that <m>a \notin B</m>.
+</li>
+</ul>
+</p>
+
+<example><title>subsets</title>
+<p>
+Let <m>S = \{1,2\}</m>. What are all the subsets of <m>S</m>? Well <mdash/> each element of <m>S</m> can either be in the subset or not (independent of the other elements of the set). So we have <m>2\times2 = 4</m> possibilities: neither <m>1</m> nor <m>2</m> is in the subset, <m>1</m> is but <m>2</m> is not, <m>2</m> is but <m>1</m> is not, and both <m>1</m> and <m>2</m> are. That is
+<md>
+<mrow>
+  \es, \{1\}, \{2\}, \{1,2\} &amp; \subseteq S
+</mrow>
+</md>
+This argument can be generalised with a little work to show that a set that contains exactly <m>n</m> elements has exactly <m>2^n</m> subsets.
+</p>
+</example>
+
+<p>
+In much of our work with functions later in the text we will need to work with subsets of real numbers, particularly segments of the <q>real line</q>. A convenient and standard way of representing such subsets is with interval notation.
+</p>
+
+<definition xml:id="def_intervals"><title>Open and closed intervals of <m>\mathbb{R}</m></title>
+<statement><p>
+Let <m>a, b \in \mathbb{R}</m> such that <m>a \lt b</m>. We name the subset of all numbers between <m>a</m> and <m>b</m> in different ways depending on whether or not the ends of the interval (<m>a</m> and <m>b</m>) are elements of the subset.
+<ul>
+<li>
+The closed interval <m>[a,b] = \{x \in \mathbb{R} : a \leq x \leq b\}</m> <mdash/> both end points are included.
+</li>
+<li>
+The open interval <m>(a,b) = \{x \in \mathbb{R} : a  \lt  x  \lt  b\}</m> <mdash/> neither end point is included.
+</li>
+</ul>
+</p>
+
+<p>
+We also define half-open
+	<fn>
+	Also called <q>half-closed</q>. The  preference for one term over the other may be related to whether a 500ml glass containing 250ml of water is half-full or half-empty.
+	</fn>
+intervals which contain one end point but not the other:
+<md>
+<mrow>
+  (a,b] &amp;= \{ x \in \mathbb{R} : a  \lt  x \leq b\}
+  &amp; [a,b) &amp;= \{ x \in \mathbb{R} : a \leq x  \lt  b\}
+  </mrow>
+</md>
+We sometimes also need unbounded intervals
+<md>
+<mrow>
+  [a, \infty) &amp;= \{ x \in \mathbb{R} : a \leq x \}
+  &amp; (a, \infty) &amp;= \{ x \in \mathbb{R} : a  \lt  x \}
+</mrow><mrow>
+  (\infty, b] &amp;= \{ x \in \mathbb{R} : x \leq b \}
+  &amp; (\infty, b) &amp;= \{ x \in \mathbb{R} : x  \lt  b \}
+  </mrow>
+</md>
+These unbounded intervals do not include <q><m>\infty</m></q>, so that end of the interval is always open
+	<fn>
+	Infinity is not a real number. As mentioned in an earlier footnote, Cantor proved that there are an infinite number of different infinities and so it is incorrect to think of <m>\infty</m> as being a single number. As such it cannot be an element in an interval of the real line. We suggest that the reader that wants to learn  more about how mathematics handles infinity look up transfinite numbers and  transfinite arithmetic. Needless to say these topics are beyond the scope of this text.
+	</fn>.
+</p></statement>
+</definition>
+</introduction>
+
+<subsection><title>More on sets</title>
+<p>
+So we now know how to say that one set is contained within another. We will now define some other operations on sets. Let us also start to be a bit more precise with our definitions and set them out carefully as we get deeper into the text.
+</p>
+
+
+<definition>
+<statement><p>
+Let <m>A</m> and <m>B</m> be sets. We define the union of <m>A</m> and <m>B</m>, denoted <m>A \cup B</m>, to be the set of all elements that are in at least one of <m>A</m> or <m>B</m>.
+<md>
+<mrow>
+  A \cup B &amp;= \{x | x\in A \mbox{ or } x \in B \}
+</mrow>
+</md>
+</p></statement>
+</definition>
+
+<p>
+It is important to realise that we are using the word <q>or</q> in a careful mathematical sense. We mean that <m>x</m> belongs to <m>A</m> or <m>x</m> belongs to <m>B</m> <em>or both</em>. Whereas in normal every-day English <q>or</q> is often used to be <q>exclusive or</q> <mdash/> <m>A</m> or <m>B</m> but not both
+	<fn>
+	When you are asked for your dining preferences on a long flight you are usually asked something like <q>Chicken or beef?</q> <mdash/> you get one or the other, but not both. Unless you are way at the back near the toilets in which case you will be presented with which ever meal was less popular. Probably fish.
+	</fn>.
+</p>
+
+<p>
+We also start the definition by announcing <q>Definition</q> so that the reader knows <q>We are about to define something important</q>. We should also make sure that everything is (reasonably) self-contained <mdash/> we are not assuming the reader already knows <m>A</m> and <m>B</m> are sets.
+</p>
+
+<p>
+It is vital that we make our definitions clear otherwise anything we do with the definitions will be very difficult to follow. As writers we must try to be nice to our readers
+	<fn>
+	If you are finding this text difficult to follow then please complain to us authors and we will do our best to improve it.
+	</fn>.
+</p>
+
+<definition>
+<statement><p>
+Let <m>A</m> and <m>B</m> be sets. We define the intersection of <m>A</m> and <m>B</m>, denoted <m>A \cap B</m>, to be the set of elements that belong to both <m>A</m> and <m>B</m>.
+<md>
+<mrow>
+ A \cap B &amp;= \{ x \;|\; x\in A \mbox{ and } x \in B \}
+</mrow>
+</md>
+</p></statement>
+</definition>
+
+<p>
+Again note that we are using the word <q>and</q> in a careful mathematical sense (which is pretty close to the usual use in English).
+</p>
+
+<example><title>Union and intersection</title>
+<p>
+Let <m>A = \{1,2,3,4 \}</m>, <m>B = \{p : p \mbox{ is prime} \}</m>, <m>C = \{5,7,9\}</m> and <m>D = \{\mbox{even positive integers}\}</m>. Then
+<md>
+<mrow>
+  A \cap B &amp;= \{2,3\}
+</mrow><mrow>
+  B \cap D &amp;= \{2 \}
+</mrow><mrow>
+  A \cup C &amp;= \{1,2,3,4,5,7,9\}
+</mrow><mrow>
+  A \cap C &amp;= \es
+</mrow>
+</md>
+In this last case we see that the two sets have no elements in common <mdash/> they are said to be<nbsp/><em>disjoint</em>.
+</p>
+</example>
+
+</subsection>
+</section>

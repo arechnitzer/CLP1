@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Arithmetic of derivatives - a differentiation toolbox</title>
+<subsection><title>Arithmetic of derivatives - a differentiation toolbox</title>
+
+<p>
+So far, we have evaluated derivatives only by applying  Definition <xref ref="def_DIFFderiv"/> to the function at hand and then computing the  required limits directly. It is quite obvious that as the function being  differentiated becomes even a little complicated, this procedure quickly becomes  extremely unwieldy. It is many orders of magnitude more efficient to have  access to
+<ul>
+<li> a list of derivatives of some simple functions and </li>
+<li>
+	a collection of rules for breaking down complicated derivative computations into sequences of simple derivative computations.
+</li>
+</ul>
+This is precisely what we did to compute limits. We started with limits of  simple functions and then used <q>arithmetic of limits</q> to computed limits of  complicated functions.
+</p>
+
+<p>
+We have already started building our list of derivatives of simple functions. We have shown, in  Examples<nbsp/><xref ref="eg_DIFFderivX0"/>,<nbsp/><xref ref="eg_DIFFderivX1"/>,<nbsp/><xref ref="eg_DIFFderivX2"/>  and<nbsp/><xref ref="eg_DIFFderivXsqrt"/>, that
+<md>
+<mrow>
+\diff{}{x} 1 &amp;= 0 &amp;
+\diff{}{x} x &amp;= 1 &amp;
+\diff{}{x} x^2 &amp;= 2x &amp;
+\diff{}{x} \sqrt{x} &amp;= \frac{1}{2\sqrt{x}}
+</mrow>
+</md>
+We'll expand this list later.
+</p>
+
+<p>
+We now start building a collection of tools that help reduce the problem of computing the  derivative of a complicated function to that of computing the derivatives of a number of  simple functions. In this section we give three derivative <q>rules</q> as three separate  theorems. We'll give the proofs of these theorems in the next section and examples of how they are used in the following section.
+</p>
+
+<p>
+As was the case for limits, derivatives interact very cleanly with addition, subtraction  and multiplication by a constant. The following result actually follows very directly  from the first three points of Theorem<nbsp/><xref ref="thm_arith_lim"/>.
+</p>
+
+<lemma xml:id="thm_DIFFaddsub"><title>Derivative of sum and difference</title>
+<statement><p>
+Let <m>f(x),g(x)</m> be differentiable functions and let <m>c \in \mathbb{R}</m> be a constant.  Then
+<md>
+<mrow>
+  \diff{}{x} \big\{ f(x)+g(x) \big\} &amp;= f'(x)+g'(x)
+</mrow><mrow>
+  \diff{}{x} \big\{ f(x)-g(x)\big\} &amp;= f'(x)-g'(x)
+</mrow><mrow>
+  \diff{}{x} \big\{ c f(x) \big\} &amp;= c f'(x)
+</mrow>
+</md>
+That is,  the derivative of the sum is the sum of the derivatives, and so forth.
+</p></statement>
+</lemma>
+
+<p>
+Following this we can combine the three statements in this lemma into a single rule which  captures the <q>linearity of differentiation</q>.
+</p>
+
+<theorem xml:id="thm_DIFFlinearity"><title>Linearity of differentiation</title>
+<statement><p>
+Again, let <m>f(x),g(x)</m> be differentiable functions, let <m>\alpha, \beta \in \mathbb{R}</m>  be constants and define the  <q>linear combination</q>
+<md>
+<mrow>
+  S(x) &amp;= \alpha f(x) + \beta g(x).
+</mrow>
+</md>
+Then the derivative of <m>S(x)</m> at <m>x=a</m> exists and is
+<md>
+<mrow>
+  \diff{S}{x} = S'(x) &amp;= \alpha f'(x) + \beta g'(x).
+</mrow>
+</md>
+Note that we can recover the three rules in the previous lemma by setting  <m>\alpha=\beta=1</m> or <m>\alpha=1, \beta=-1</m> or <m>\alpha=c</m>, <m>\beta=0</m>.
+</p></statement>
+</theorem>
+
+<p>
+Unfortunately, the derivative does not act quite as simply on  products or quotients. The rules for computing derivatives of products and  quotients get their own names and theorems:
+</p>
+
+<theorem xml:id="thm_DIFFprodRule"><title>The product rule</title>
+<statement><p>
+Let <m>f(x),g(x)</m> be differentiable functions, then the derivative of the product  <m>f(x)g(x)</m> exists and is given by
+<md>
+<mrow>
+  \diff{}{x} \big\{ f(x) \, g(x) \big\} &amp;= f'(x) \, g(x) + f(x) \, g'(x).
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>
+Before we proceed to the derivative of the ratio of two functions, it is worth noting a  special case of the product rule when <m>g(x)=f(x)</m>. In fact, since this is a useful  special case, let us call it a corollary
+	<fn>
+		Recall that a corollary is an important  result that follows from one or more theorems <mdash/> typically without too much extra work  <mdash/> as is the case here.
+	</fn>:
+</p>
+
+<corollary><title>Derivative of a square</title>
+<statement><p>
+Let <m>f(x)</m> be a differentiable function, then the derivative of its square is:
+<md>
+<mrow>
+  \diff{}{x} \big\{ f(x)^2 \big\} &amp;=  2\, f(x)\, f'(x)
+</mrow>
+</md>
+</p></statement>
+</corollary>
+
+<p>
+	With a little work this can be generalised to other powers <mdash/> but that is best done once  we understand how to compute the derivative of the composition of two functions. That  requires the chain rule (see Theorem<nbsp/><xref ref="thm_DIFFchainRuleV1"/> below). But before we get to that, we need to see how to take the derivative of a quotient of two functions.
+</p>
+
+<theorem xml:id="thm_DIFFquotRule"><title>The quotient rule</title>
+<statement><p>
+Let <m>f(x), g(x)</m> be differentiable functions. Then the derivative of their quotient  is
+<md>
+<mrow>
+  \diff{}{x} \left\{ \frac{f(x)}{g(x)} \right\} &amp;=
+\frac{f'(x) \, g(x) - f(x) \, g'(x)}{g(x)^2}.
+</mrow>
+</md>
+This derivative exists except at points where <m>g(x)=0</m>.
+</p></statement>
+</theorem>
+
+<p>
+There is a useful special case of this theorem which we obtain by setting <m>f(x)=1</m>. In  that case, the quotient rule tells us how to compute the derivative of the reciprocal of  a function.
+</p>
+
+<corollary xml:id="cor_diff_recip"><title>Derivative of a reciprocal</title>
+<statement><p>
+Let <m>g(x)</m> be a differentiable function. Then the derivative of the reciprocal of <m>g</m> is  given by
+<md>
+<mrow>
+  \diff{}{x} \left\{ \frac{1}{g(x)} \right\} &amp;= -\frac{g'(x)}{g(x)^2}
+</mrow>
+</md>
+and exists except at those points where <m>g(x)=0</m>.
+</p></statement>
+</corollary>
+
+
+<p>
+So we have covered, sums, differences, products and quotients. This allows us  to compute derivatives of many different functions <mdash/> including polynomials  and rational functions. However we are still missing trigonometric functions  (for example), and a rule for computing derivatives of compositions. These will  follow in the near future, but there are a couple of things to do before that  <mdash/> understand where the above theorems come from, and practice using them.
+</p>
+
+</subsection>
+
+<xi:include href="../problems/prob_s2.4.xml"/>
+
+</section>

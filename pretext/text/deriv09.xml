@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_chain_rule">
+<title>One more tool  <ndash/> the chain rule</title>
+<introduction>
+
+<p>We have built up most of the tools that we need to express derivatives of
+complicated functions in terms of derivatives of simpler known functions.
+We started by learning how to evaluate
+<ul>
+<li> derivatives of sums, products and quotients
+</li>
+<li> derivatives of constants and monomials
+</li>
+</ul>
+These tools allow us to compute derivatives of polynomials and
+rational functions. In the previous sections, we added exponential and trigonometric
+functions to our list. The final tool we add is called the chain rule.
+It tells us how to take the derivative of a composition of two functions.
+That is if we know <m>f(x)</m> and <m>g(x)</m> and their derivatives, then the chain
+rule tells us the derivative of <m>f\big(g(x)\big)</m>.
+</p>
+
+<p>Before we get to the statement of the rule, let us look at an
+example showing how such a composition might arise (in the  <q>real-world</q>).
+</p>
+
+<example xml:id="eg_DIFFcampfire"><title>Walking towards a campfire</title>
+<p>
+You are out in the woods after a long day of mathematics and are
+walking towards your camp fire on a beautiful still night. The heat
+from the fire means that the air temperature depends on your position.
+Let your position at time <m>t</m> be <m>x(t)</m>. The temperature of the air
+at position <m>x</m> is <m>f(x)</m>. What instantaneous rate of change of
+temperature do you feel at time<nbsp/><m>t</m>?</p>
+
+<sidebyside width="66%">
+<image source="text/figs/campfire2"/>
+</sidebyside>
+
+<p>
+<ul>
+<li> Because your position at time <m>t</m> is <m>x=x(t)</m>, the temperature you feel
+at time <m>t</m> is <m>F(t)=f\big(x(t)\big)</m>.
+</li>
+<li> The instantaneous rate of change of temperature that you feel is <m>F'(t)</m>. We have a
+complicated function, <m>F(t)</m>, constructed by composing two simpler functions, <m>x(t)</m> and
+<m>f(x)</m>.
+</li>
+<li> We wish to compute the derivative, <m>F'(t) = \diff{}{t} f( x(t) )</m>,
+of the complicated function <m>F(t)</m> in terms of the derivatives,  <m>x'(t)</m>
+and <m>f'(x)</m>, of the two simple functions. This is exactly what the
+chain rule does.
+</li>
+</ul>
+</p></example>
+
+</introduction>
+
+<subsection>
+<title>Statement of the chain rule</title>
+
+<theorem xml:id="thm_DIFFchainRuleV1"><title>The chain rule  <mdash/> version 1</title>
+<statement><p>
+  Let <m>a \in \mathbb{R}</m> and let <m>g(x)</m> be a function that is differentiable at
+<m>x=a</m>. Now let <m>f(u)</m> be a function that is differentiable at
+<m>u=g(a)</m>. Then the function <m>F(x) = f(g(x))</m> is differentiable at <m>x=a</m> and
+<md>
+<mrow>
+  F'(a) &amp;=f'\big(g(a)\big)\,g'(a)
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>
+Here, as was the case earlier in this chapter,  we have been very
+careful to give the point at which the derivative is evaluated a special
+name (i.e. <m>a</m>). But of course this evaluation point can really be
+any point (where the derivative is defined).
+So it is very common to just call the evaluation point <q><m>x</m></q> rather
+than give it a special name like <q><m>a</m></q>, like this:
+</p>
+
+<theorem xml:id="thm_DIFFchainRuleV2"><title>The chain rule <mdash/> version 2</title>
+<statement><p>
+ Let <m>f</m> and <m>g</m> be differentiable functions then
+  <md>
+<mrow>
+  \diff{}{x} f\big( g( x) \big) &amp;= f'\big(g(x)\big) \cdot g'(x)
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>
+Notice that when we form the composition <m>f\big(g(x)\big)</m> there
+is an <q>outside</q> function (namely <m>f(x)</m>) and an <q>inside</q> function
+(namely <m>g(x)</m>). The chain rule tells us that when we differentiate
+a composition that we have to differentiate the outside and then
+multiply by the derivative of the inside.
+<md>
+<mrow>
+  \diff{}{x} f\big( g( x) \big)
+   &amp;= \underbrace{f'\big(g(x)\big)}_\text{diff outside} \cdot
+                          \underbrace{g'(x)}_\text{diff inside}
+</mrow>
+</md>
+Here is another statement of the chain rule which makes this idea more
+explicit.
+</p>
+
+<theorem xml:id="thm_DIFFchainRuleV3"><title>The chain rule <mdash/> version 3</title>
+<statement><p>
+  Let <m>y = f(u)</m> and <m>u = g(x)</m> be differentiable functions, then
+  <md>
+<mrow>
+  \diff{y}{x} &amp;= \diff{y}{u} \cdot \diff{u}{x}
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p> This particular form is easy to remember because it looks like we can just
+<q>cancel</q> the <m>\mathrm{d}u</m> between the two terms.
+  <md>
+<mrow>
+  \diff{y}{x} &amp;= \frac{\mathrm{d}{y}}{\cancel{\mathrm{d}u}} \cdot
+\frac{\cancel{\mathrm{d}{u}}}{\mathrm{d}x}
+</mrow>
+</md>
+</p>
+
+<p>Of course,  <m>\mathrm{d}u</m> is not, by itself, a number or variable
+<fn>In this context <m>\mathrm{d}u</m> is called a differential. There are ways to
+understand and manipulate these in calculus but they are beyond the scope of
+this course.</fn>
+that can be cancelled. But this is still a good memory aid.
+</p>
+
+<p>The hardest part about applying the chain rule is recognising
+when the function you are trying to differentiate is really
+the composition of two simpler functions. This takes a little practice.
+We can warm up with a couple of simple examples.
+</p>
+
+<example xml:id="eg_DIFFchainruleA"><title>Derivative of a power of <m>\sin x</m></title>
+<p>
+ Let <m>f(u) = u^5</m> and <m>g(x) = \sin(x)</m>. Then set
+<m>F(x) = f\big(g(x)\big) = \big(\sin(x)\big)^5</m>. To find the
+derivative of <m>F(x)</m> we can simply apply the chain rule  <mdash/>
+the pieces of the composition have been laid out for us. Here
+they are.
+<md>
+<mrow>
+  f(u) &amp;= u^5 &amp; f'(u) &amp;= 5u^4
+</mrow><mrow>
+  g(x) &amp;= \sin(x) &amp; g'(x) &amp;= \cos x
+</mrow>
+</md>
+We now just put them together as the chain rule tells us
+<md>
+<mrow>
+  \diff{F}{x} &amp;= f'\big(g(x)\big) \cdot g'(x)
+</mrow><mrow>
+  &amp;= 5\big(g(x)\big)^4 \cdot \cos(x) &amp; \text{since } f'(u) = 5u^4
+</mrow><mrow>
+  &amp;= 5 \big(\sin(x)\big)^4 \cdot \cos(x)
+</mrow>
+</md>
+</p>
+
+<p>Notice that it is quite easy to extend this to any power.
+Set <m>f(u) = u^n</m>. Then follow the same steps and we arrive at
+<md>
+<mrow>
+  F(x) &amp;= (\sin(x))^n &amp; F'(x) &amp;= n \big(\sin(x) \big)^{n-1} \cos(x)
+</mrow>
+</md>
+</p></example>
+
+
+<p>This example shows one of the ways that the chain rule appears
+very frequently <mdash/> when we need to differentiate the power of
+some simpler function. More generally we have the following.</p>
+
+<example><title>Derivative of a power of a function</title>
+<p>
+ Let <m>f(u) = u^n</m> and let <m>g(x)</m> be any differentiable function.
+Set <m>F(x) = f\big(g(x)\big) = g(x)^n</m>. Then
+<md>
+<mrow>
+  \diff{F}{x} = \diff{}{x} \big( g(x)^n \big) &amp;= n g(x)^{n-1} \cdot g'(x)
+</mrow>
+</md>
+This is precisely the result in Example<nbsp/><xref ref="eg_DIFFsimpleToolsA"/>  and
+Lemma<nbsp/><xref ref="lem_diff_ftothen"/>.
+</p></example>
+
+
+<example><title>Derivative of <m>\cos(3x-2)</m></title>
+<p>
+  Let <m>f(u) = \cos(u)</m> and <m>g(x) = 3x-2</m>. Find the derivative of
+<md>
+<mrow>
+  F(x) &amp;= f\big(g(x)\big) = \cos(3x-2).
+</mrow>
+</md>
+</p>
+
+<p>Again we should approach this by first writing down <m>f</m> and <m>g</m> and their
+derivatives and then putting everything together as the chain rule tells us.
+<md>
+<mrow>
+  f(u) &amp;= \cos(u) &amp; f'(u) &amp;= -\sin(u)
+</mrow><mrow>
+  g(x) &amp;= 3x-2 &amp; g'(x) &amp;= 3
+</mrow>
+</md>
+So the chain rule says
+<md>
+<mrow>
+  F'(x) &amp;= f'\big(g(x)\big) \cdot g'(x)
+</mrow><mrow>
+  &amp;= -\sin\big( g(x) \big) \cdot 3
+</mrow><mrow>
+  &amp;= -3 \sin(3x-2)
+</mrow>
+</md>
+</p></example>
+
+
+<p>This example shows a second way that the chain rule appears
+very frequently <mdash/> when we need to differentiate some function
+of <m>ax+b</m>. More generally we have the following.</p>
+
+<example xml:id="eg_DIFFchainaxb"><title>Derivative of <m>f(ax+b)</m></title>
+<p>
+  Let <m>a,b \in \mathbb{R}</m> and let <m>f(x)</m> be a differentiable function.
+Set  <m>g(x) = ax+b</m>. Then
+  <md>
+<mrow>
+  \diff{}{x} f(ax+b) &amp;= \diff{}{x} f\big(g(x)\big)
+</mrow><mrow>
+  &amp;= f'\big(g(x)\big) \cdot g'(x)
+</mrow><mrow>
+  &amp;= f'(ax+b) \cdot a
+</mrow>
+</md>
+So the derivative of <m>f(ax+b)</m> with respect to <m>x</m> is just <m>a f'(ax+b)</m>.
+</p></example>
+
+<p>The above is a very useful result that follows from the chain rule, so lets make it a
+corollary to highlight it.</p>
+
+<corollary xml:id="cor_f_of_axb">
+<statement><p>
+  Let <m>a,b \in \mathbb{R}</m> and let <m>f(x)</m> be a differentiable function, then
+<md>
+<mrow>
+  \diff{}{x} f(ax+b) &amp;= af'(ax+b).
+</mrow>
+</md>
+</p></statement>
+</corollary>
+
+<example xml:id="eg_DIFFcampfireB"><title><xref ref="eg_DIFFcampfire"/> continued</title>
+<p>
+Let us now go back to our motivating campfire example. There we had
+<md>
+<mrow>
+  f(x) &amp;= \text{ temperature at position $x$}
+</mrow><mrow>
+  x(t) &amp;= \text{ position at time $t$}
+</mrow><mrow>
+  F(t) &amp;= f(x(t)) = \text{ temperature at time $t$}
+</mrow>
+</md>
+The chain rule gave
+<md>
+<mrow>
+  F'(t) &amp;= f'\big(x(t)\big) \cdot x'(t)
+</mrow>
+</md>
+Notice that the units of measurement on both sides of the equation agree
+<mdash/> as indeed they must. To see this, let us assume that <m>t</m> is measured
+in seconds, that <m>x(t)</m> is measured in metres and that <m>f(x)</m> is measured in
+degrees. Because of this <m>F(x(t))</m> must also be measured in degrees (since it is
+a temperature).
+</p>
+
+<p>What about the derivatives? These are rates of change. So
+<ul>
+<li> <m>F'(t)</m> has units <m>\frac{\rm degrees}{\rm second}</m>,
+</li>
+<li> <m>f'(x)</m> has units <m>\frac{\rm degrees}{\rm metre}</m>, and
+</li>
+<li> <m>x'(t)</m> has units <m>\frac{\rm metre}{\rm second}</m>.
+</li>
+</ul>
+Hence the product
+<md>
+<mrow>
+  f'\big(x(t)\big) \cdot x'(t) &amp;
+   \text{ has units } = \frac{\rm degrees}{\rm metre} \cdot
+                              \frac{\rm metre}{\rm second}
+   = \frac{\rm degrees}{\rm second}.
+</mrow>
+</md>
+has the same units as <m>F'(t)</m>.
+So the units on both sides of the equation agree. Checking
+that the units on both sides of an equation agree is a good
+check of consistency, but of course it does not prove that both sides
+are in fact the same.
+</p></example>
+
+</subsection>
+
+<subsection>
+<title>(optional) <mdash/> Derivation of the chain rule</title>
+
+<p>First, let's review what our goal is. We have been given a function
+<m>g(x)</m>, that is differentiable at some point <m>x=a</m>, and another function
+<m>f(u)</m>, that is differentiable at the point <m>u=b = g(a)</m>. We have defined
+the composite function <m>F(x) = f\big(g(x)\big)</m> and we wish to show that
+<md>
+<mrow>
+  F'(a) &amp;= f'\big(g(a)\big) \cdot g'(a)
+</mrow>
+</md>
+</p>
+
+<p>Before we can compute <m>F'(a)</m>, we need to set up some
+ground work, and in particular the definitions of our given derivatives:
+<md>
+<mrow>
+  f'(b) &amp;= \lim_{H \to 0} \frac{f(b+H)-f(b)}{H} &amp; \text{and }&amp;&amp;
+  g'(a) &amp;= \lim_{h \to 0} \frac{g(a+h)-g(a)}{h}.
+</mrow>
+</md>
+We are going to use similar manipulation tricks as we did back in the proofs of the
+arithmetic of derivatives in Section<nbsp/><xref ref="sec_proof_arith_deriv"/>. Unfortunately, we have
+already used up the symbols <q><m>F</m></q> and <q><m>H</m></q>, so we are going to make use the Greek
+letters <m>\gamma, \varphi</m>.
+</p>
+
+<p>As was the case in our derivation of the product rule it is convenient to
+introduce a couple of new functions. Set
+<md>
+<mrow>
+  \varphi(H) &amp;= \frac{f(b+H)-f(b)}{H}
+</mrow>
+</md>
+Then we have
+<md>
+<mrow>
+  \lim_{H \to 0} \varphi(H) &amp;= f'(b) = f'\big(g(a)\big) &amp; \text{since } b=g(a),
+</mrow>
+</md>
+and we can also write (with a little juggling)
+<md>
+<mrow>
+  f(b+H) &amp;= f(b) + H \varphi(H)
+</mrow>
+</md>
+Similarly set
+<md>
+<mrow>
+  \gamma(h) &amp;= \frac{g(a+h)-g(a)}{h}
+</mrow>
+</md>
+which gives us
+<md>
+<mrow>
+  \lim_{h \to 0} \gamma(h) &amp;= g'(a)
+  &amp; \text{ and } &amp;&amp;
+  g(a+h) &amp;= g(a) + h \gamma(h).
+</mrow>
+</md>
+</p>
+
+<p>Now we can start computing
+<md>
+<mrow>
+  F'(a) &amp;= \lim_{h \to 0} \frac{F(a+h)-F(a)}{h}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} \frac{f\big(g(a+h)\big)-f\big(g(a)\big)}{h}
+</mrow>
+</md>
+We know that <m>g(a) = b</m> and <m>g(a+h) = g(a) + h \gamma(h))</m>, so
+<md>
+<mrow>
+  F'(a)
+  &amp;= \lim_{h \to 0} \frac{f\big(g(a) + h\gamma(h) \big)-f\big(g(a)\big)}{h}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} \frac{f(b + h\gamma(h) )-f(b)}{h}
+</mrow>
+</md>
+Now for the sneaky bit. We can turn <m>f(b + h\gamma(h) )</m>
+into <m>f(b+H)</m> by setting
+<md>
+<mrow>
+H = h\gamma(h)
+</mrow>
+</md>
+Now notice that as <m>h \to 0</m> we have
+<md>
+<mrow>
+  \lim_{h \to 0} H &amp;= \lim_{h \to 0} h \cdot \gamma(h)
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} h \cdot \lim_{h \to 0} \gamma(h)
+</mrow><mrow>
+  &amp;= 0 \cdot g'(a) = 0
+</mrow>
+</md>
+So as <m>h\to 0</m> we also have <m>H \to 0</m>.
+</p>
+
+<p>We now have
+<md>
+<mrow>
+  F'(a)
+  &amp;= \lim_{h \to 0} \frac{f\big(b + H\big)-f(b)}{h}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0}
+    \underbrace{\frac{f\big(b + H\big)-f(b)}{H}}_{= \varphi(H) } \cdot
+    \underbrace{\frac{H}{h}}_{ = \gamma(h)}
+&amp; \text{remember that } H= h \gamma(h)
+</mrow><mrow>
+  &amp;= \lim_{h \to 0}\big( \varphi(H) \cdot \gamma(h) \big)
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} \varphi(H) \cdot \lim_{h \to 0} \gamma(h)  &amp; \text{since $H\to0$ as $h\to 0$}
+</mrow><mrow>
+  &amp;= \lim_{H \to 0} \varphi(H) \cdot \lim_{h \to 0} \gamma(h)
+  &amp;= f'(b) \cdot g'(a)
+</mrow>
+</md>
+This is exactly the RHS of the product rule.
+</p>
+</subsection>
+
+<subsection>
+<title>Chain Rule Examples</title>
+
+<p>We'll now use the chain rule to compute some more derivatives.
+</p>
+
+<example xml:id="eg_DIFFchainA"><title><m>\diff{}{x}\big(1+3x\big)^{75}</m></title>
+<p>
+Find <m>\diff{}{x}\big(1+3x\big)^{75}</m>.
+</p>
+
+<p>This is a concrete version of Example <xref ref="eg_DIFFchainaxb"/>.
+We are to find the derivative of a function that is built up by first
+computing <m>1+3x</m> and then taking the <m>75^{\rm th}</m> power of the result.
+So we set
+<md>
+<mrow>
+f(u)&amp;=u^{75} &amp;
+f'(u)&amp;=75 u^{74}
+</mrow><mrow>
+g(x)&amp;=1+3x &amp;
+g'(x)&amp;=3
+</mrow><mrow>
+F(x)&amp;=f\big(g(x)\big)=g(x)^{75}=\big(1+3x\big)^{75}
+</mrow>
+</md>
+By the chain rule
+<md>
+<mrow>
+F'(x)&amp;= f'\big(g(x)\big)\,g'(x)
+     = 75\, g(x)^{74} \,g'(x)
+     = 75\, \big(1+3x\big)^{74} \cdot 3
+</mrow><mrow>
+     &amp;= 225\, \big(1+3x\big)^{74}
+</mrow>
+</md>
+</p></example>
+
+
+<example xml:id="eg_DIFFchainB"><title><m>\diff{}{x}\sin(x^2)</m></title>
+<p>
+Find <m>\diff{}{x}\sin(x^2)</m>.
+</p>
+
+<p>In this example we are to compute the derivative of <m>\sin</m> with a
+(slightly) complicated argument. So we apply the chain rule with <m>f</m>
+being <m>\sin</m> and <m>g(x)</m> being the complicated argument. That is, we set
+<md>
+<mrow>
+f(u)&amp;=\sin u &amp;
+f'(u)&amp;=\cos u
+</mrow><mrow>
+g(x)&amp;=x^2 &amp;
+g'(x)&amp;=2x
+</mrow><mrow>
+F(x)&amp;=f\big(g(x)\big)=\sin\big(g(x)\big)=\sin(x^2)
+</mrow>
+</md>
+By the chain rule
+<md>
+<mrow>
+F'(x)&amp;= f'\big(g(x)\big)\,g'(x)
+     = \cos\big(g(x)\big) \,g'(x)
+     = \cos(x^2) \cdot 2x
+</mrow><mrow>
+     &amp;= 2x\cos(x^2)
+</mrow>
+</md>
+</p></example>
+
+
+<example xml:id="eg_DIFFchainC"><title><m>\diff{}{x}\root{3}\of{\sin(x^2)}</m></title>
+<p>
+Find <m>\diff{}{x}\root{3}\of{\sin(x^2)}</m>.
+</p>
+
+<p>In this example we are to compute the derivative of the cube root of a
+(moderately) complicated argument, namely <m>\sin(x^2)</m>. So we apply
+the chain rule with <m>f</m> being <q>cube root</q> and <m>g(x)</m> being the
+complicated argument. That is, we set
+<md>
+<mrow>
+f(u)&amp;=\root{3}\of{u}=u^{\tfrac{1}{3}} &amp;
+f'(u)&amp;=\tfrac{1}{3}u^{-\tfrac{2}{3}}
+</mrow><mrow>
+g(x)&amp;=\sin(x^2) &amp;
+g'(x)&amp;=2x\cos(x^2)
+</mrow><mrow>
+F(x)&amp;=f\big(g(x)\big)=\root{3}\of{g(x)}=\root{3}\of{\sin(x^2)}
+</mrow>
+</md>
+In computing <m>g'(x)</m> here, we have already used the chain rule once
+(in Example <xref ref="eg_DIFFchainB"/>).
+By the chain rule
+<md>
+<mrow>
+F'(x)&amp;= f'\big(g(x)\big)\,y'(x)
+     = \tfrac{1}{3} g(x)^{-\tfrac{2}{3}} \cdot 2x\cos(x^2)
+</mrow><mrow>
+     &amp;= \frac{2x}{3}\,\frac{\cos(x^2)}{[\sin(x^2)]^{\frac{2}{3}}}
+</mrow>
+</md>
+</p></example>
+
+
+<example><title>Derivative of a double-composition</title>
+<p>
+ Find the derivative of <m>\diff{}{x} f(g(h(x)))</m>.
+</p>
+
+<p>This is very similar to the previous example. Let us set <m>F(x) = f(g(h(x)))</m>
+with <m>u=g(h(x))</m> then the chain rule tells us
+<md>
+<mrow>
+\diff{F}{x} &amp;= \diff{f}{u} \cdot \diff{u}{x}
+</mrow><mrow>
+  &amp;= f'(g(h(x))) \cdot \diff{}{x} g(h(x))
+</mrow>
+<intertext>We now just apply the chain rule again</intertext><mrow>
+  &amp;= f'(g(h(x))) \cdot g'(h(x)) \cdot h'(x).
+</mrow>
+</md>
+Indeed it is not too hard to generalise further (in the manner of
+Example<nbsp/><xref ref="eg_DIFFsimpleToolsA"/> to find the derivative of the composition of 4 or
+more functions (though things start to become tedious to write down):
+<md>
+<mrow>
+\diff{}{x} f_1(f_2(f_3(f_4(x))))
+&amp;= f'_1(f_2(f_3(f_4(x)))) \cdot \diff{}{x} f_2(f_3(f_4(x)))
+</mrow><mrow>
+&amp;= f'_1(f_2(f_3(f_4(x)))) \cdot f'_2(f_3(f_4(x))) \cdot \diff{}{x} f_3(f_4(x))
+</mrow><mrow>
+&amp;= f'_1(f_2(f_3(f_4(x)))) \cdot f'_2(f_3(f_4(x))) \cdot f'_3(f_4(x)) \cdot
+f'_4(x)
+</mrow>
+</md>
+</p>
+
+</example>
+
+<example><title>Finding the quotient rule from the chain rule</title>
+<p>
+ We can also use the chain rule to recover Corollary<nbsp/><xref ref="cor_diff_recip"/> and from there
+we can use the product rule to recover the quotient rule.
+</p>
+
+<p>We want to differentiate <m>F(x) = \frac{1}{g(x)}</m> so set <m>f(u) = \frac{1}{u}</m> and
+<m>u=g(x)</m>. Then the chain rule tells us
+<md>
+<mrow>
+  \diff{}{x} \left\{\frac{1}{g(x)}\right\} = \diff{F}{x}
+&amp;= \diff{f}{u} \cdot \diff{u}{x}
+</mrow><mrow>
+  &amp;= \frac{-1}{u^2} \cdot g'(x)
+</mrow><mrow>
+  &amp;= -\frac{g'(x)}{g(x)^2}.
+</mrow>
+</md>
+Once we know this, a quick application of the product rule will give us the quotient rule.
+<md>
+<mrow>
+\diff{}{x} \left\{ \frac{f(x)}{g(x)} \right\}
+&amp;= \diff{}{x} \left\{ f(x) \cdot \frac{1}{g(x)}  \right\} &amp; \text{use PR}
+</mrow><mrow>
+&amp;= f'(x)\cdot \frac{1}{g(x)}  + f(x) \cdot \diff{}{x} \left\{\frac{1}{g(x)}\right\} &amp;
+\text{use the result from above}
+</mrow><mrow>
+&amp;= f'(x)\cdot \frac{1}{g(x)}  - f(x) \cdot \frac{g'(x)}{g(x)^2} &amp;
+\text{place over a common denominator}
+</mrow><mrow>
+ &amp;= \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{g(x)^2}
+</mrow>
+</md>
+which is exactly the quotient rule.
+</p></example>
+
+
+<example xml:id="eg_DIFFchainD"><title>A nice messy example</title>
+<p>
+Compute the following derivative:
+<md>
+<mrow>
+\diff{}{x}\cos\left(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\right)
+</mrow>
+</md>
+</p>
+
+<p>This time we are to compute the derivative of <m>\cos</m> with a really
+complicated argument.
+<ul>
+<li> So, to start, we apply
+the chain rule with <m>g(x)=\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}</m>
+being the really complicated argument and <m>f</m> being <m>\cos</m>. That is,
+<m>f(u)=\cos(u)</m>. Since  <m>f'(u)=-\sin(u)</m>, the chain rule gives
+<md>
+<mrow>
+\diff{}{x}\cos\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)
+=-\sin\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)\
+\diff{}{x} \left\{\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3} \right\}
+</mrow>
+</md>
+</li>
+<li> This reduced our problem to that of computing the derivative
+of the really complicated argument <m>\tfrac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}</m>.
+We can think of the argument as being built up out of three pieces,
+namely <m>x^5</m>, multiplied by <m>\sqrt{3+x^6}</m>, divided by
+<m>{(4+x^2)}^3</m>, or, equivalently, multiplied by <m>{(4+x^2)}^{-3}</m>. So we may
+rewrite <m>\tfrac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}</m> as
+<m>x^5\,\big(3+x^6\big)^{\frac{1}{2}}\ {(4+x^2)}^{-3}</m>,
+and then apply the product rule to reduce the problem to that of computing
+the derivatives of the three pieces.
+</li>
+<li> Here goes (recall Example<nbsp/><xref ref="eg_DIFFsimpleToolsA"/>):
+<md>
+<mrow>
+\diff{}{x}\big[x^5\,{(3+x^6)}^{\frac{1}{2}}\ {(4+x^2)}^{-3}\big]
+&amp;=\diff{}{x}\big[x^5\big] \cdot {(3+x^6)}^{\frac{1}{2}}\cdot {(4+x^2)}^{-3}
+</mrow><mrow>
+&amp;\phantom{=} +x^5\cdot \diff{}{x}\big[{(3+x^6)}^{\frac{1}{2}}\big]
+    \cdot {(4+x^2)}^{-3}
+</mrow><mrow>
+&amp;\phantom{=} +x^5\cdot {(3+x^6)}^{\frac{1}{2}}\cdot
+           \diff{}{x}\big[{(4+x^2)}^{-3}\big]
+</mrow>
+</md>
+This has reduced our problem to computing the derivatives of <m>x^5</m>, which
+is easy, and of <m>{(3+x^6)}^{\frac{1}{2}}</m> and <m>{(4+x^2)}^{-3}</m>,
+both of which can be done by the chain rule. Doing so,
+<md>
+<mrow>
+\diff{}{x}\big[x^5\,{(3+x^6)}^{\frac{1}{2}}\ {(4+x^2)}^{-3}\big]
+&amp;=\overbrace{\diff{}{x}\big[x^5\big]}^{5x^4}
+     \cdot{(3+x^6)}^{\frac{1}{2}}\cdot {(4+x^2)}^{-3}
+</mrow><mrow>
+&amp; \phantom{=}+x^5\cdot
+    \overbrace{\diff{}{x}\big[{(3+x^6)}^{\frac{1}{2}}\big]}^
+                     {\frac{1}{2}(3+x^6)^{-\frac{1}{2}}\cdot 6x^5}
+    \cdot {(4+x^2)}^{-3}
+</mrow><mrow>
+&amp;\phantom{=} +x^5\cdot{(3+x^6)}^{\frac{1}{2}}\cdot
+   \overbrace{\diff{}{x}\big[{(4+x^2)}^{-3}\big]}^
+      {-3{(4+x^2)}^{-4}\cdot 2x}
+</mrow>
+</md>
+</li>
+<li><p> Now we can clean things up in a sneaky way by observing
+<ul>
+<li> differentiating <m>x^5</m>, to get <m>5x^4</m>, is the same as multiplying <m>x^5</m>
+by <m>\frac{5}{x}</m>, and
+</li>
+<li> differentiating <m>{(3+x^6)}^{\frac{1}{2}}</m> to get
+<m>\frac{1}{2}(3+x^6)^{-\frac{1}{2}}\cdot 6x^5</m> is the same as
+multiplying <m>{(3+x^6)}^{\frac{1}{2}}</m> by  <m>\frac{3x^5}{3+x^6}</m>, and
+</li>
+<li> differentiating <m>{(4+x^2)}^{-3}</m> to get  <m>-3{(4+x^2)}^{-4}\cdot 2x</m>
+is the same as multiplying <m>{(4+x^2)}^{-3}</m> by <m>-\frac{6x}{4+x^2}</m>.
+</li>
+</ul>
+Using these sneaky tricks we can write our solution quite neatly:
+<md>
+<mrow>
+\diff{}{x}\cos\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)
+=-\sin\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)\
+\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\
+\bigg\{\frac{5}{x}+\frac{3x^5}{3+x^6}-\frac{6x}{4+x^2}\bigg\}
+</mrow>
+</md></p>
+</li>
+<li> This method of cleaning up the derivative of a messy product is actually something
+more systematic in disguise <mdash/> namely logarithmic differentiation. We will come to
+this later.
+</li>
+</ul>
+</p></example>
+
+</subsection>
+
+
+<xi:include href="../problems/prob_s2.9.xml"/>
+
+
+</section>

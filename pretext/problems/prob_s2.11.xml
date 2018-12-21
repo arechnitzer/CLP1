@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+If we implicitly differentiate <m>x^2+y^2=1</m>, we get the equation <m>2x+2yy'=0</m>. In the step where we differentiate <m>y^2</m> to obtain <m>2yy'</m>, which rule(s) below are we using?
+(a) power rule,  (b) chain rule,
+ (c) quotient rule , (d) derivatives of exponential functions
+</p></statement>
+<hint><p>
+Where did the <m>y'</m> come from?
+</p></hint>
+<answer><p>
+(a) and (b)
+</p></answer>
+<solution><p>
+We use the power rule (a) and the chain rule (b): the power rule tells us to <q>bring down the 2</q>, and the chain rule tells us to multiply by <m>y'</m>.
+</p>
+
+<p>There is no need for the quotient rule here, as there are no quotients. Exponential functions have the form <m>(\mbox{constant})^{\mbox{function}}</m>, but our function has the form <m>(\mbox{function})^{\mbox{constant}}</m>, so we did not use (d).
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Using the picture below, estimate <m>\ds\diff{y}{x}</m> at the three points where the curve crosses the <m>y</m>-axis.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{4.5}{4.5}
+\foreach\x in {1,...,4}{\YExcoord{\x}{\x}}
+\foreach\x in {1,...,3}{\YEycoord{\x}{\x}}
+\draw (.2,4)--(-.7,4) node[left]{4};
+\foreach\x in {-4,-3,-2,-1}{\YExcoord{\x}{\x}}
+\foreach\x in {-4,-3,-2,-1}{\YEycoord{\x}{\x}}
+\draw[shift={(-3,0)}, rotate=90 ] [thick, domain=0:2*pi, samples=200, smooth]
+  plot (xy polar cs:angle={\x r}, radius={2-5*sin(\x r)});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Remark: for this curve, one value of <m>x</m> may correspond to multiple values of <m>y</m>. So, we cannot express this curve as <m>y=f(x)</m> for any function <m>x</m>. This is one typical situation where we might use implicit differentiation.
+</p></statement>
+<hint><p>
+The three points to look at are <m>(0,-4)</m>, <m>(0,0)</m>, and <m>(0,4)</m>. What does the slope of the tangent line look like there?
+</p></hint>
+<answer><p>
+At <m>(0,4)</m> and <m>(0,-4)</m>, <m>\ds\diff{y}{x}</m> is 0; at <m>(0,0)</m>, <m>\ds\diff{y}{x}</m> does not exist.
+</p></answer>
+<solution><p>
+At <m>(0,4)</m> and <m>(0,-4)</m>, the curve looks to be horizontal, if you zoom in: a tangent line here would have derivative zero. At the origin, the curve looks like its tangent line is vertical, so <m>\ds\diff{y}{x}</m> does not exist.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{4.5}{4.5}
+\draw[shift={(-3,0)}, rotate=90 ,thick] [domain=0:2*pi, samples=100]
+  plot (xy polar cs:angle={\x r}, radius={2-5*sin(\x r)});
+  \color{red};
+  \draw[thick, dashed] (2,4)--(-2,4);
+    \draw[thick, dashed] (2,-4)--(-2,-4);
+      \draw[ultra thick, dashed] (0.05,-1.5)--(0.05,1.5);
+     \draw (0,0) node[vertex]{};
+         \draw (0,4) node[vertex]{};
+             \draw (0,-4) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Consider the unit circle, formed by all points <m>(x,y)</m> that satisfy <m>x^2+y^2=1</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{2.5}{2.5}
+\draw[thick] node[shape=circle, minimum size=4cm, inner sep=0, draw]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>
+<ol label="a">
+<li> Is there a function <m>f(x)</m> so that <m>y=f(x)</m> completely describes the unit circle? That is, so that the points <m>(x,y)</m> that make the equation <m>y=f(x)</m> true are exactly the same points that make the equation <m>x^2+y^2=1</m> true?
+</li>
+<li> Is there a function <m>f'(x)</m> so that <m>y=f'(x)</m> completely describes the slope of the unit circle? That is, so that for every point <m>(x,y)</m> on the unit circle, the slope of the tangent line to the circle at that point is given by <m>f'(x)</m>?
+</li>
+<li> Use implicit differentiation to find an expression for <m>\ds\diff{y}{x}</m>. Simplify until the expression is a function in terms of <m>x</m> only (not <m>y</m>), or explain why this is impossible.
+</li>
+</ol>
+</p></statement>
+<hint><p> A function must pass the vertical line test: one input <em>cannot</em> result in two different outputs.
+</p></hint>
+<answer><p>
+(a) no
+</p>
+<p>
+(b) no
+<m>\ds\diff{y}{x}=-\dfrac{x}{y}</m>. It is not possible to write <m>\ds\diff{y}{x}</m> as a function of <m>x</m>, because (as stated in (b)) one value of <m>x</m> may give two values of <m>\ds\diff{y}{x}</m>. For instance, when <m>x=\pi/4</m>, at the point <m>\left(\dfrac{\pi}{4},\dfrac{1}{\sqrt{2}}\right)</m> the circle has slope <m>\ds\diff{y}{x}=-1</m>, while
+at the point <m>\left(\dfrac{\pi}{4},\dfrac{-1}{\sqrt{2}}\right)</m> the circle has slope <m>\ds\diff{y}{x}=1</m>.
+</p></answer>
+<solution><p>
+(a) No. A function must pass the vertical line test: one input cannot result in two (or more) outputs. Since one value of <m>x</m> sometimes corresponds to two values of <m>y</m> (for example, when <m>x=\pi/4</m>, <m>y</m> is <m>\pm 1/\sqrt{2}</m>), there is no function <m>f(x)</m> so that <m>y=f(x)</m> captures every point on the circle.
+</p>
+
+<p>Remark: <m>y=\pm\sqrt{1-x^2}</m> does capture every point on the unit circle. However, since one input <m>x</m> sometimes results in two outputs <m>y</m>, this expression is not a function.
+</p>
+
+<p>(b) No, for the same reasons as (a). If <m>f'(x)</m> is a function, then it can give at most one slope corresponding to one value of <m>x</m>.
+Since one value of <m>x</m> can correspond to two points on the circle with different slopes, <m>f'(x)</m> cannot give the slope of every point on the circle.
+For example, fix any <m>0 \lt a \lt 1</m>. There are two points
+         on the circle with <m>x</m>-coordinate equal to <m>a</m>. At the upper one, the slope
+         is strictly negative. At the lower one, the slope is
+         strictly positive.
+</p>
+
+<p>(c) We differentiate:
+<md>
+<mrow>
+2x+2y\diff{y}{x}&amp;=0
+</mrow>
+<intertext>and solve for <m>\ds\diff{y}{x}</m></intertext><mrow>
+\diff{y}{x}&amp;=-\frac{x}{y}
+</mrow>
+</md>
+But there is a <m>y</m> in the right-hand side of this equation, and it's not clear how to get it out. Our answer in (b) tells us that, actually, we <em>can't</em> get it out, if we want the right-hand side to be a function of <m>x</m>. The derivative cannot be expressed as a function of <m>x</m>, because one value of <m>x</m> corresponds to multiple points on the circle.
+</p>
+
+<p>Remark: since <m>y=\pm\sqrt{1-x^2}</m>, we could try writing
+<me>
+\diff{y}{x}=-\frac{x}{y}=\pm\frac{x}{\sqrt{1-x^2}}</me>
+</p>
+
+<p>but this is not a <em>function</em> of <m>x</m>. Again, in a function, one input leads to at most one output, but here one value of <m>x</m> will usually lead to two values of <m>\diff{y}{x}</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS"><title><fromexam>2009H</fromexam></title>
+<statement><p>
+Find <m>\ds\diff{y}{x}</m> if <m>xy + e^x + e^y = 1</m>.
+</p></statement>
+<hint><p> Remember that <m>y</m> is a function of <m>x</m>.
+Use implicit differentiation, then collect all the terms containing <m>\ds\diff{y}{x}</m> on one side of the equation to solve for <m>\ds\diff{y}{x}</m>.
+</p></hint>
+<answer><p>
+<m>\ds\diff{y}{x}=-\dfrac{e^x+y}{e^y+x}</m>
+</p></answer>
+<solution><p> Remember that <m>y</m> is a function of <m>x</m>.
+We begin with implicit differentiation.
+<md>
+<mrow>
+xy + e^x + e^y &amp;= 1
+</mrow><mrow>
+y+x\diff{y}{x}+e^x+e^y\diff{y}{x}&amp;=0
+</mrow>
+<intertext>Now, we solve for <m>\ds\diff{y}{x}</m>.</intertext><mrow>
+x\diff{y}{x}+e^y\diff{y}{x}&amp;=-(e^x+y)
+</mrow><mrow>
+(x+e^y)\diff{y}{x}&amp;=-(e^x+y)
+</mrow><mrow>
+\diff{y}{x}&amp;=-\frac{e^x+y}{e^y+x}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+If <m>e^y=xy^2+x</m>, compute <m>\ds\diff{y}{x}</m>.
+</p></statement>
+<hint><p> Differentiate implicitly, then solve for <m>y'</m>.
+</p></hint>
+<answer><p> <m>\ds\diff{y}{x} = \dfrac{y^2+1}{e^y-2xy}</m>
+</p></answer>
+<solution><p> Differentiate both sides of the equation with respect to <m>x</m>:
+<md>
+<mrow>
+e^y\diff{y}{x}&amp;=x\cdot2y\diff{y}{x}+y^2+1
+</mrow>
+<intertext>Now, get the derivative on one side and solve</intertext><mrow>
+e^y\diff{y}{x}-2xy\diff{y}{x}&amp;=y^2+1
+</mrow><mrow>
+\diff{y}{x}\left(e^y-2xy\right)&amp;=y^2+1
+</mrow><mrow>
+\diff{y}{x}&amp;=\frac{y^2+1}{e^y-2xy}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+If <m>x^2\tan(\pi y/4)+2x\log(y) = 16</m>, then find <m>y'</m> at the points where <m>y=1</m>.
+</p></statement>
+<hint><p>
+Remember that <m>y</m> is a function of <m>x</m>. You can determine
+        explicitly the values of <m>x</m> for which <m>y(x)=1</m>.
+</p></hint>
+<answer><p>
+At <m>(x,y)=(4,1)</m>, <m>y' =
+-\dfrac{1}{\pi + 1}</m>.
+At <m>(x,y)=(-4,1)</m>,  <m>y' = \dfrac{1}{\pi-1}</m>.
+</p></answer>
+<solution><p>
+<ul>
+<li> First we find the <m>x</m>-coordinates where <m>y=1</m>.
+<md>
+<mrow>
+  x^2\tan\left(\frac{\pi}{4}\right)+2x\log(1) &amp;= 16
+</mrow><mrow>
+  x^2\cdot 1 +2x\cdot 0 &amp;=16
+</mrow><mrow>
+  x^2 &amp;= 16
+</mrow>
+</md>
+So <m>x=\pm 4</m>.
+</li>
+<li> Now we use implicit differentiation to get <m>y'</m> in terms of <m>x,y</m>:
+<md>
+<mrow>
+  x^2\tan(\pi y/4)+2x\log(y) &amp;= 16
+</mrow><mrow>
+  2x\tan(\pi y/4) + x^2 \frac{\pi}{4}\sec^2(\pi y/4)\cdot y' + 2\log(y) + \frac{2x}{y} \cdot y' &amp;= 0\,.
+</mrow>
+</md>
+</li>
+<li> Now set <m>y=1</m> and use <m>\tan(\pi/4)=1\,, \sec(\pi/4)=\sqrt{2}</m> to get
+<md>
+<mrow>
+  2x\tan(\pi/4) + x^2 \frac{\pi}{4} \sec^2(\pi/4)y' + 2\log(1) + 2x\cdot y' &amp;= 0
+</mrow><mrow>
+  2x + \frac{\pi}{2} x^2 y' +2x y' &amp;= 0
+</mrow><mrow>
+  y' = -\frac{2x}{x^2 \pi/2 + 2x} &amp;= -\frac{4}{\pi x + 4}
+</mrow>
+</md>
+</li>
+<li> So at <m>(x,y)=(4,1)</m> we have <m>y' = -\dfrac{4}{4\pi+4} =
+-\dfrac{1}{\pi + 1}</m>
+</li>
+<li> and at <m>(x,y)=(-4,1)</m> we have <m>y' = \dfrac{1}{\pi-1}</m>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+ If <m>x^3+y^4 = \cos(x^2+y)</m> compute <m>\diff{y}{x}</m>.
+</p></statement>
+<answer><p>
+<m> -\ds\frac{2x\sin(x^2+y)+3x^2}{4y^3+\sin(x^2+y)}</m>
+</p></answer>
+<solution><p>
+Differentiate the equation and solve:
+<md>
+<mrow>
+  3x^2 + 4y^3 \diff{y}{x} &amp;= -\sin(x^2+y) \cdot\left(2x + \diff{y}{x}\right)
+</mrow><mrow>
+  \diff{y}{x} &amp;= -\frac{2x\sin(x^2+y)+3x^2}{4y^3+\sin(x^2+y)}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+If <m>x^2e^y + 4x\cos(y) = 5</m>, then find <m>y'</m> at the points where <m>y=0</m>.
+</p></statement>
+<hint><p> Plug in <m>y=0</m> at a strategic point in your work to simplify your computation.
+</p></hint>
+<answer><p>
+At <m>(x,y)=(1,0)</m>,  <m>y' = -6</m>,
+and at <m>(x,y)=(-5,0)</m>,  <m>y' = \frac{6}{25}</m>.
+</p></answer>
+<solution><p>
+<ul>
+<li> First we find the <m>x</m>-coordinates where <m>y=0</m>.
+<md>
+<mrow>
+  x^2e^0+4x\cos(0) &amp;= 5
+</mrow><mrow>
+  x^2 +4x - 5 &amp;=0
+</mrow><mrow>
+  (x+5)(x-1)&amp;=0
+</mrow>
+</md>
+So <m>x=1,-5</m>.
+</li>
+<li> Now we use implicit differentiation to get <m>y'</m> in terms of <m>x,y</m>:
+<md>
+<mrow>
+  x^2e^y+4x\cos(y) &amp;= 5 &amp; \text{differentiate both sides}
+</mrow><mrow>
+  x^2 \cdot e^y \cdot y' + 2x e^y + 4x(-\sin(y)) \cdot y' + 4\cos(y) &amp;= 0
+</mrow>
+</md>
+</li>
+<li> Now set <m>y=0</m> to get
+<md>
+<mrow>
+  x^2 \cdot e^0 \cdot y' + 2x e^0 + 4x(-\sin(0)) \cdot y' + 4\cos(0) &amp;= 0
+</mrow><mrow>
+  x^2y' + 2x  + 4 &amp;=0
+</mrow><mrow>
+  y' &amp;= - \frac{4+2x}{x^2}.
+</mrow>
+</md>
+</li>
+<li> So at <m>(x,y)=(1,0)</m> we have <m>y' = -6</m>,
+</li>
+<li> and at <m>(x,y)=(-5,0)</m> we have <m>y' = \frac{6}{25}</m>.
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+If <m>x^2+y^2 = \sin(x+y)</m> compute <m>\diff{y}{x}</m>.
+</p></statement>
+<answer><p>
+<m>\diff{y}{x} = \dfrac{\cos(x+y)-2x}{2y-\cos(x+y)}</m>
+</p></answer>
+<solution><p>
+ Differentiate the equation  and solve:
+<md>
+<mrow>
+  2x + 2y \diff{y}{x} &amp;= \cos(x+y) \cdot\left(1 + \diff{y}{x}\right)
+</mrow><mrow>
+  \diff{y}{x} &amp;= \frac{\cos(x+y)-2x}{2y-\cos(x+y)}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+If <m>x^2\cos(y)+2xe^y = 8</m>, then find <m>y'</m> at the points where <m>y=0</m>.
+</p></statement>
+<hint><p> Plug in <m>y = 0</m> at a strategic point in your work to
+        simplify your computation.
+       </p></hint>
+<answer><p>
+At <m>(x,y)=(2,0)</m> we have <m>y' = -\frac{3}{2}</m>,
+ and at <m>(x,y)=(-4,0)</m> we have <m>y' = -\frac{3}{4}</m>.
+</p></answer>
+<solution><p>
+<ul>
+<li> First we find the <m>x</m>-coordinates where <m>y=0</m>.
+<md>
+<mrow>
+  x^2\cos(0)+2xe^0 &amp;= 8
+</mrow><mrow>
+  x^2 +2x - 8 &amp;=0
+</mrow><mrow>
+  (x+4)(x-2)&amp;=0
+</mrow>
+</md>
+So <m>x=2,-4</m>.
+</li>
+<li> Now we use implicit differentiation to get <m>y'</m> in terms of <m>x,y</m>:
+<md>
+<mrow>
+  x^2\cos(y)+2xe^y &amp;= 8 &amp; \text{differentiate both sides}
+</mrow><mrow>
+  x^2 \cdot (-\sin y) \cdot y' + 2x \cos y + 2xe^y \cdot y' + 2e^y &amp;= 0
+</mrow>
+</md>
+</li>
+<li> Now set <m>y=0</m> to get
+<md>
+<mrow>
+  x^2 \cdot (-\sin 0) \cdot y' + 2x \cos 0 + 2xe^0 \cdot y' + 2e^0 &amp;= 0
+</mrow><mrow>
+  0 + 2x + 2xy' + 2 &amp;=0
+</mrow><mrow>
+  y' &amp;= - \frac{2+2x}{2x} = -\frac{1+x}{x}
+</mrow>
+</md>
+</li>
+<li> So at <m>(x,y)=(2,0)</m> we have <m>y' = -\frac{3}{2}</m>,
+</li>
+<li> and at <m>(x,y)=(-4,0)</m> we have <m>y' = -\frac{3}{4}</m>.
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+At what points on the ellipse <m>x^2+3y^2=1</m> is the tangent line parallel to the line <m>y=x</m>?
+</p></statement>
+<hint><p>
+If the tangent line has slope <m>y'</m>, and it is parallel to <m>y=x</m>, then <m>y'=1</m>.
+</p></hint>
+<answer><p>
+<m>\left(\dfrac{\sqrt{3}}{2},\dfrac{-1}{2\sqrt{3}}\right)</m>,
+<m>\left(\dfrac{-\sqrt{3}}{2},\dfrac{1}{2\sqrt{3}}\right)</m>
+</p></answer>
+<solution><p>
+The question asks at which points on the ellipse <m>\ds\diff{y}x{}=1</m>. So, we begin by differentiating, implicitly:
+<md>
+<mrow>
+2x+6y\diff{y}{x}&amp;=0
+</mrow>
+<intertext>We could solve for <m>\ds\diff{y}{x}</m> at this point, but it's not necessary. We want to know when <m>\ds\diff{y}{x}</m> is equal to one:</intertext><mrow>
+2x+6y(1)&amp;=0
+</mrow><mrow>
+x&amp;=-3y
+</mrow>
+<intertext>That is, <m>\ds\diff{y}{x}=1</m> at those points along the ellipse where <m>x=-3y</m>. We plug this into the equation of the ellipse to find the coordinates of these points.</intertext><mrow>
+\left(-3y\right)^2+3y^2&amp;=1
+</mrow><mrow>
+12y^2&amp;=1
+</mrow><mrow>
+y=\pm\frac{1}{\sqrt{12}}=\pm\frac{1}{2\sqrt{3}}
+</mrow>
+</md>
+So, the points along the ellipse where the tangent line is parallel to the line <m>y=x</m> occur when <m>y=\dfrac{1}{2\sqrt{3}}</m> and <m>x=-3y</m>, and when <m>y=\dfrac{-1}{2\sqrt{3}}</m> and <m>x=-3y</m>. That is, the points <m>\left(\dfrac{-\sqrt{3}}{2},\dfrac{1}{2\sqrt{3}}\right)</m> and
+<m>\left(\dfrac{\sqrt{3}}{2},\dfrac{-1}{2\sqrt{3}}\right)</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2007H</fromexam></title>
+<statement><p>
+ For the curve defined by the equation
+<m>\sqrt{xy} = x^2y-2</m>, find the slope of the tangent
+line at the point <m>(1, 4)</m>.
+</p></statement>
+<hint><p>
+You don't need to solve for <m>y'</m> in general: only at a single point.
+</p></hint>
+<answer><p>
+<m>-\dfrac{28}{3}</m>
+</p></answer>
+<solution><p>
+First, we differentiate implicitly with respect to <m>x</m>.
+<md>
+<mrow>
+\sqrt{xy} &amp;= x^2y-2
+</mrow><mrow>
+\frac{1}{2\sqrt{xy}}\cdot \diff{}{x}\{xy\}&amp;=(2x)y+x^2\ds\diff{y}{x}
+</mrow><mrow>
+\frac{y+x\diff{y}{x}}{2\sqrt{xy}}&amp;=2xy+x^2\diff{y}{x}
+</mrow>
+<intertext>Now, we plug in <m>x=1</m>, <m>y=4</m>, and solve for <m>\ds\diff{y}{x}</m>:</intertext><mrow>
+\frac{4+\diff{y}{x}}{4}&amp;=8+\diff{y}{x}
+</mrow><mrow>
+\diff{y}{x}&amp;=-\frac{28}{3}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2006H</fromexam></title>
+<statement><p>
+If <m>x^2y^2+x\sin(y)=4</m>, find <m>\ds\diff{y}{x}</m>.
+</p></statement>
+<hint><p> After you differentiate implicitly, get all the terms containing <m>y'</m> onto one side so you can solve for <m>y'</m>.
+</p></hint>
+<answer><p>
+<m>\ds\diff{y}{x}=-\dfrac{2xy^2+\sin y}{2x^2y+x\cos y}</m>
+</p></answer>
+<solution><p>
+Implicitly differentiating <m>x^2y(x)^2+x\sin(y(x))=4</m> with respect to <m>x</m>
+gives
+<md>
+<mrow>
+2xy^2&amp;+2x^2yy'+\sin y+xy'\cos y=0
+</mrow>
+<intertext>Then we gather the terms containing <m>y'</m> on one side, so we can solve for <m>y'</m>:</intertext><mrow>
+2x^2yy'&amp;+xy'\cos y=-2xy^2-\sin y
+</mrow><mrow>
+y'(2x^2y&amp;+x\cos y)=-2xy^2-\sin y
+</mrow><mrow>
+ y'&amp;=-\frac{2xy^2+\sin y}{2x^2y+x\cos y}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>If <m>x^2+(y+1)e^y = 5</m>, then find <m>y'</m> at the points where <m>y=0</m>.
+</p></statement>
+<hint><p> You don't need to solve for <m>\diff{y}{x}</m> for all values of <m>x</m>--only when <m>y=0</m>.
+</p></hint>
+<answer><p> At <m>(x,y)=(2,0)</m>, <m>y' = -2</m>. At  <m>(x,y)=(-2,0)</m>,  <m>y' = 2</m>.
+</p></answer>
+<solution><p>
+<ul>
+<li> First we find the <m>x</m>-ordinates where <m>y=0</m>.
+<md>
+<mrow>
+  x^2+(1)e^0 &amp;= 5
+</mrow><mrow>
+  x^2 +1 &amp;=5
+</mrow><mrow>
+  x^2&amp;=4
+</mrow>
+</md>
+So <m>x=2,-2</m>.
+</li>
+<li> Now we use implicit differentiation to get <m>y'</m> in terms of <m>x,y</m>:
+<md>
+<mrow>
+2x+(y+1)e^y\diff{y}{x}+e^y\diff{y}{x}&amp;=0
+</mrow>
+</md>
+</li>
+<li> Now set <m>y=0</m> to get
+<md>
+<mrow>
+2x+(0+1)e^0\diff{y}{x}+e^0\diff{y}{x}&amp;=0
+</mrow><mrow>
+2x+\diff{y}{x}+\diff{y}{x}&amp;=0
+</mrow><mrow>
+2x&amp;=-2\diff{y}{x}
+</mrow><mrow>
+x&amp;=-\diff{y}{x}
+</mrow>
+</md>
+</li>
+<li> So at <m>(x,y)=(2,0)</m> we have <m>y' = -2</m>,
+</li>
+<li> and at <m>(x,y)=(-2,0)</m> we have <m>y' = 2</m>.
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+For what values of <m>x</m> do the circle <m>x^2+y^2=1</m> and the ellipse <m>x^2+3y^2=1</m> have parallel tangent lines?
+</p></statement>
+<hint><p></p></hint>
+<answer><p> <m>x=0</m>, <m>x=1</m>, <m>x=-1</m>
+</p></answer>
+<solution><p>
+The slope of the tangent line is, of course, given by the derivative, so let's start by finding <m>\diff{y}{x}</m> of both shapes.
+<md>
+<mrow>
+</mrow>
+<intertext>For the circle, we differentiate implicitly</intertext><mrow>
+2x+2y\diff{y}{x}&amp;=0
+</mrow>
+<intertext>and solve for <m>\ds\diff{y}{x}</m></intertext><mrow>
+\diff{y}{x}&amp;=-\frac{x}{y}
+</mrow>
+<intertext>For the ellipse, we also differentiate implicitly:</intertext><mrow>
+2x+6y\diff{y}{x}&amp;=0
+</mrow>
+<intertext>and solve for <m>\ds\diff{y}{x}</m></intertext><mrow>
+\diff{y}{x}&amp;=-\frac{x}{3y}
+</mrow>
+<intertext>What we want is a value of <m>x</m> where both derivatives are equal. However, they might have different values of <m>y</m>, so let's let <m>y_1</m> be the <m>y</m>-values associated with <m>x</m> on the circle, and let <m>y_2</m> be the <m>y</m>-values associated with <m>x</m> on the ellipse.
+That is, <m>x^2+ y_1^2=1</m> and <m>x^2+3y_2^2=1</m>. For the slopes             at <m>(x,y_1)</m> on the circle and <m>(x,y_2)</m> on the ellipse to             be equal, we need:</intertext><mrow>
+-\frac{x}{y_1}&amp;=-\frac{x}{3y_2}
+</mrow><mrow>
+x\left(\frac{1}{y_1}-\frac{1}{3y_2}\right)&amp;=0
+</mrow>
+<intertext>So <m>x=0</m> or <m>y_1=3y_2</m>. Let's think about which <m>x</m>-values will have a <m>y</m>-coordinate of the circle be three times as large as a <m>y</m>-coordinate of the ellipse. If <m>y_1=3y_2</m>,  <m>(x,y_1)</m> is on the circle, and <m>(x,y_2)</m> is on the ellipse, then
+<m>x^2+y_1^2 =x^2+(3y_2)^2=1</m> and <m>x^2+3y_2^2=1</m>. In this case:</intertext><mrow>
+x^2+9y_2^2&amp;=x^2+3y_2^2
+</mrow><mrow>
+9y_2^2&amp;=3y_2^2
+</mrow><mrow>
+y_2&amp;=0
+</mrow><mrow>
+x&amp;=\pm 1
+</mrow>
+</md>
+We need to be a tiny bit careful here: when <m>y=0</m>, <m>y'</m> is not defined for either curve. For both curves, when <m>y=0</m>, the tangent lines are vertical (and so have no real-valued slope!). Two vertical lines are indeed parallel.
+</p>
+
+<p>So, for <m>x=0</m> and for <m>x=\pm1</m>, the two curves have parallel tangent lines.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{4}{4};
+\draw[thick] plot[domain=-3:3, samples=100](\x,{sqrt(9-\x*\x)});
+\draw[thick] plot[domain=-3:3, samples=100](\x,{-sqrt(9-\x*\x)});
+\draw (.5,-3) node[below right]{$x^2+y^2=1$};
+\draw[thick, blue] plot[domain=-3:3, samples=100](\x,{sqrt(3-\x*\x/3)});
+\draw[thick, blue] plot[domain=-3:3, samples=100](\x,{-sqrt(3-\x*\x/3)});
+\draw[blue] (2,1) node[above right]{$x^2+3y^2=1$};
+\color{red}
+\draw (3,0) node[vertex]{};
+\draw[thick, dashed] (3,-1)--(3,1);
+\draw (-3,0) node[vertex]{};
+\draw[thick, dashed] (-3,-1)--(-3,1);
+\draw (0,1.73) node[vertex]{};
+\draw[thick, dashed] (-1,1.73)--(1,1.73);
+\draw (0,-1.73) node[vertex]{};
+\draw[thick, dashed] (-1,-1.73)--(1,-1.73);
+\draw (0,3) node[vertex]{};
+\draw[thick, dashed] (-1,3)--(1,3);
+\draw (0,-3) node[vertex]{};
+\draw[thick, dashed] (-1,-3)--(1,-3);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise></exercisegroup>
+
+</exercises>

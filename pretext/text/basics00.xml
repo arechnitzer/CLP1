@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<chapter xml:id="chap_basics" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>The basics</title>
+	<introduction>
+		<p>
+		We won't make this section of the text too long <mdash/> all we really want to do here is to take a short memory-jogging excursion through little bits and pieces you should remember about sets and numbers. The material in this chapter will not  be (directly) examined.
+		</p>
+	</introduction>
+
+	<xi:include href="basics01.xml" />
+	<xi:include href="basics02.xml" />
+	<xi:include href="basics03.xml" />
+	<xi:include href="basics04.xml" />
+	<xi:include href="basics05.xml" />
+	<xi:include href="basics06.xml" />
+
+</chapter>

@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_rrates">
+<title>Related rates</title>
+<subsection><title>Related rates</title>
+
+<p>Consider the following problem</p>
+
+<blockquote>
+<p>
+ A spherical balloon is being inflated at a rate of <m>13cm^3/sec</m>. How fast is
+the radius changing when the balloon has radius <m>15cm</m>?
+</p>
+</blockquote>
+
+<p>There are several pieces of information in the statement:
+<ul>
+<li> The balloon is spherical
+</li>
+<li> The volume is changing at a rate of <m>13cm^3/sec</m> <mdash/> so we need variables
+for volume (in <m>cm^3</m>) and time (in <m>sec</m>). Good choices are <m>V</m> and <m>t</m>.
+</li>
+<li> We are asked for the rate at which the radius is changing <mdash/> so we need
+a variable for radius and units. A good choice is <m>r</m>, measured in <m>cm</m> <mdash/>
+since volume is measured in <m>cm^3</m>.
+</li>
+</ul>
+Since the balloon is a sphere we know
+<fn>If you don't know the formula
+for the volume of a sphere, now is a good time to revise by looking at
+Appendix<nbsp/><xref ref="sec_volumes"/>.</fn>
+ that
+<md>
+<mrow>
+  V &amp;= \frac{4}{3} \pi r^3
+</mrow>
+</md>
+Since both the volume and radius are changing with time, both <m>V</m> and <m>r</m> are
+implicitly functions of time; we could really write
+<md>
+<mrow>
+  V(t) &amp;= \frac{4}{3}\pi r(t)^3.
+</mrow>
+</md>
+We are told the rate at which the volume is changing and we need to find the
+rate at which the radius is changing. That is, from a knowledge of
+<m>\diff{V}{t}</m>, find the related rate
+<fn>Related rate problems are problems in which
+you are given the rate of change of one quantity and are to determine the rate of
+change of another, related, quantity.</fn>
+ <m>\diff{r}{t}</m>.
+</p>
+
+<p>In this case, we can just differentiate our equation by <m>t</m> to get
+<md>
+<mrow>
+  \diff{V}{t} &amp;= 4 \pi r^2 \diff{r}{t}
+</mrow>
+<intertext>This can then be rearranged to give</intertext><mrow>
+  \diff{r}{t} &amp;= \frac{1}{4\pi r^2} \diff{V}{t}.
+</mrow>
+</md>
+Now we were told that <m>\diff{V}{t} = 13</m>, so
+<md>
+<mrow>
+  \diff{r}{t} &amp;= \frac{13}{4\pi r^2}.
+</mrow>
+</md>
+We were also told that the radius is <m>15cm</m>, so at that moment in time
+<md>
+<mrow>
+  \diff{r}{t} &amp;= \frac{13}{\pi 4 \times 15^2}.
+</mrow>
+</md>
+</p>
+
+<p>This is a very typical example of a related rate problem. This section is really
+just a collection of problems, but all will follow a similar pattern.
+<ul>
+<li> The statement of the problem will tell you quantities that must be
+related (above it was volume, radius and, implicitly, time).
+</li>
+<li> Typically a little geometry (or some physics or<ellipsis/>) will allow you to
+relate these quantities (above it was the formula that links the volume of a
+sphere to its radius).
+</li>
+<li> Implicit differentiation will then allow you to link the rate of change
+of one quantity to another.
+</li>
+</ul>
+</p>
+
+<p>Another balloon example</p>
+
+<example><title>A rising balloon</title>
+<p>
+Consider a helium balloon rising vertically from a fixed point 200m away from
+you. You are trying to work out how fast it is rising. Now <mdash/> computing the
+velocity directly is difficult, but you can measure angles. You observe that
+when it is at an angle of <m>\pi/4</m> its angle is changing by <m>0.05</m> radians per
+second.
+</p>
+
+<p><ul>
+<li><p> Start by drawing a picture with the relevant variables</p>
+<sidebyside width="75%">
+<image source="text/figs/balloon1"/>
+</sidebyside>
+</li>
+<li> So denote the angle to be <m>\theta</m> (in radians), the height of the balloon (in m)
+by <m>h</m> and time (in seconds) by <m>t</m>. Then trigonometry tells us
+<md>
+<mrow>
+  h &amp;= 200 \cdot \tan \theta
+</mrow>
+</md>
+</li>
+<li> Differentiating allows us to relate the rates of change
+<md>
+<mrow>
+  \diff{h}{t} &amp;= 200 \sec^2 \theta \cdot \diff{\theta}{t}
+</mrow>
+</md>
+</li>
+<li> We are told that when <m>\theta =\pi/4</m> we observe <m>\diff{\theta}{t} =
+0.05</m>, so
+<md>
+<mrow>
+  \diff{h}{t} &amp;= 200 \cdot \sec^2(\pi/4) \cdot 0.05
+</mrow><mrow>
+  &amp;= 200 \cdot 0.05 \cdot \left( \sqrt{2} \right)^2
+</mrow><mrow>
+  &amp;= 200 \cdot \frac{5}{100} \cdot 2
+  &amp;= 20 m/s
+</mrow>
+</md>
+</li>
+<li> So the balloon is rising at a rate of 20m/s.
+</li>
+</ul>
+</p>
+
+</example>
+
+<p>The following problem is perhaps <em>the</em> classic related rate problem.</p>
+
+<example><title>A sliding ladder</title>
+<p>
+ A 5m ladder is leaning against a wall. The floor is quite slippery and the
+base of the ladder slides out from the wall at a rate of <m>1m/s</m>. How fast is
+the top of the ladder sliding down the wall when the base of the ladder is 3m
+from the wall?
+</p>
+
+<p><ul>
+<li><p> A good first step is to draw a picture stating all relevant quantities.
+This will also help us define variables and units.</p>
+<sidebyside width="66%">
+<image source="text/figs/ladder1"/>
+</sidebyside>
+</li>
+<li> So now define <m>x(t)</m> to be the distance between the bottom of the ladder and the
+wall, at time <m>t</m>, and let <m>y(t)</m> be the distance between the top of the ladder and the
+ground at time <m>t</m>. Measure time in seconds, but both distances in meters.
+</li>
+<li> We can relate the quantities using Pythagoras:
+<md>
+<mrow>
+  x^2 + y^2 &amp;= 5^2
+</mrow>
+</md>
+</li>
+<li> Differentiating with respect to time then gives
+<md>
+<mrow>
+  2x \diff{x}{t} + 2y \diff{y}{t} &amp;= 0
+</mrow>
+</md>
+</li>
+<li> We know that <m>\diff{x}{t} = 1</m> and <m>x=3</m>, so
+<md>
+<mrow>
+  6 \cdot 1 + 2y \diff{y}{t} &amp;= 0
+</mrow>
+</md>
+but we need to determine <m>y</m> before we can go further. Thankfully we know that
+<m>x^2+y^2=25</m> and <m>x=3</m>, so <m>y^2=25-9=16</m> and
+<fn>Since the ladder
+isn't burried in the ground, we can discard the solution <m>y=-4</m>.</fn>
+ so <m>y=4</m>.
+</li>
+<li> So finally putting everything together
+<md>
+<mrow>
+  6 \cdot 1 + 8 \diff{y}{t} &amp;= 0
+</mrow><mrow>
+  \diff{y}{t} &amp;= - \frac{3}{4} m/s.
+</mrow>
+</md>
+Thus the top of the ladder is sliding towards the floor at a rate of <m>3/4 m/s</m>.
+</li>
+</ul>
+</p>
+
+</example>
+
+<p>The next example is complicated by the rates of change being stated not just as <q>the
+rate of change per unit time</q> but instead being stated as <q>the percentage rate of
+change per unit time</q>. If a quantity <m>f</m> is changing with rate <m>\diff{f}{t}</m>, then we can say that</p>
+
+<blockquote>
+<p>
+ <m>f</m> is changing at a rate of <m>\ds 100 \cdot \frac{\diff{f}{t}}{f}</m> percent.
+</p>
+</blockquote>
+
+<p>Thus if, at time <m>t</m>, <m>f</m> has rate of change <m>r\%</m>, then
+<md>
+<mrow>
+    100\frac{f'(t)}{f(t)}=r
+    \implies f'(t) =\frac{r}{100} f(t)
+</mrow>
+</md>
+so that if <m>h</m> is a very small time increment
+<md>
+<mrow>
+    \frac{f(t+h) - f(t)}{h} \approx \frac{r}{100} f(t)
+    \implies f(t+h) \approx f(t) + \frac{rh}{100} f(t)
+</mrow>
+</md>
+That is, over a very small time interval <m>h</m>, <m>f</m> increases
+by the fraction <m>\frac{rh}{100}</m> of its value at time <m>t</m>.
+</p>
+
+<p>So armed with this, let's look at the problem.</p>
+
+<example xml:id="eg_percentGrowth"><title>Percentage rate of change of <m>R=PQ</m></title>
+<p>
+The quantities <m>P,\ Q</m> and <m>R</m> are functions of time and are related
+by the equation <m>R=PQ</m>. Assume that <m>P</m> is increasing instantaneously at
+the rate of <m>8\%</m> per year (meaning that <m>100\frac{P'}{P}=8</m>) and that
+<m>Q</m> is decreasing instantaneously at the rate of <m>2\%</m> per year (meaning
+that <m>100\frac{Q'}{Q}=-2</m>).
+Determine the percentage rate of change for <m>R</m>.
+</p>
+
+<p><alert>Solution</alert> This one is a little different <mdash/> we are given the variables and
+the formula, so no picture drawing or defining required. Though we do need to
+define a time variable <mdash/> let <m>t</m> denote time in years.
+<ul>
+<li> Since <m>R(t) = P(t)\cdot Q(t)</m> we can differentiate with respect to <m>t</m> to get
+<md>
+<mrow>
+  \diff{R}{t} &amp;= P Q' + Q P'
+</mrow>
+</md>
+</li>
+<li> But we need the percentage change in <m>R</m>, namely
+<md>
+<mrow>
+  100 \frac{R'}{R} &amp;= 100 \frac{PQ' +QP'}{R}
+</mrow>
+<intertext>but <m>R = PQ</m>, so rewrite it as</intertext><mrow>
+  &amp;= 100 \frac{PQ' +QP'}{PQ}
+</mrow><mrow>
+  &amp;= 100 \frac{PQ'}{PQ} + 100 \frac{QP'}{PQ}
+</mrow><mrow>
+  &amp;= 100 \frac{Q'}{Q} + 100 \frac{P'}{P}
+</mrow>
+</md>
+so we have stated the instantaneous percentage rate of change
+in <m>R</m> as the sum of the percentage rate of change in <m>P</m> and <m>Q</m>.
+</li>
+<li> We know the percentage rate of change of <m>P</m> and <m>Q</m>, so
+<md>
+<mrow>
+  100 \frac{R'}{R} &amp;= -2 + 8 =6
+</mrow>
+</md>
+That is, the instantaneous percentage rate of change of <m>R</m> is 6<m>\%</m> per year.
+</li>
+</ul>
+</p></example>
+
+<p>Yet another falling object example.</p>
+
+<example xml:id="eg_fallingBall"><title>The shadow of a falling ball</title>
+<p>
+A ball is dropped from a height of <m>49</m>m above level ground. The
+height of the ball at time <m>t</m> is <m>h(t)=49-4.9 t^2</m> m. A light,
+which is also <m>49</m>m above the ground, is <m>10</m>m to the left of
+the ball's original position. As the ball descends, the shadow
+of the ball caused by the light moves across the ground. How
+fast is the shadow moving one second after the ball is dropped?
+</p>
+
+<p><alert>Solution</alert> There is quite a bit going on in this example, so read carefully.
+<ul>
+<li><p> First a diagram; the one below is perhaps a bit over the top.</p>
+
+<sidebyside width="90%">
+<image source="text/figs/falling_ball"/>
+</sidebyside>
+</li>
+<li> Let's call <m>s(t)</m> the distance from the shadow to the point
+on the ground directly underneath the ball.
+</li>
+<li> By similar triangles we see that
+<md>
+<mrow>
+\frac{4.9 t^2}{10}=\frac{49-4.9 t^2}{s(t)}
+</mrow>
+</md>
+We can then solve for <m>s(t)</m> by just multiplying both sides by
+<m>\frac{10}{4.9 t^2}s(t)</m>. This gives
+<md>
+<mrow>
+s(t)=10\frac{49-4.9 t^2}{4.9 t^2}=\frac{100}{t^2}-10
+</mrow>
+</md>
+</li>
+<li> Differentiating with respect to <m>t</m> will then give us the rates,
+<md>
+<mrow>
+s'(t)=-2\frac{100}{t^3}
+</mrow>
+</md>
+</li>
+<li> So, at <m>t=1</m>, <m>s'(1)=-200</m>m/sec. That is, the shadow is moving
+to the left at <m>200</m>m/sec.
+</li>
+</ul>
+</p>
+
+</example>
+
+<p>A more nautical example.</p>
+
+<example><title>The distance between moving boats</title>
+<p>
+Two boats spot each other in the ocean at midday <mdash/> Boat <m>A</m> is 15km west of
+Boat <m>B</m>. Boat <m>A</m> is travelling east at 3km/h and boat <m>B</m> is travelling north at 4km/h.
+At 3pm how fast is the distance between the boats changing.
+<ul>
+<li><p> First we draw a picture.</p>
+
+<sidebyside width="100%">
+<image source="text/figs/boats1"/>
+</sidebyside>
+</li>
+<li> Let <m>x(t)</m> be the distance at time <m>t</m>, in km, from boat <m>A</m> to the original
+position of boat <m>B</m> (i.e. to the position of boat <m>B</m> at noon). And let <m>y(t)</m> be the
+distance at time <m>t</m>, in km, of boat <m>B</m> from its original position. And let <m>z(t)</m> be the
+distance between the two boats at time <m>t</m>.
+</li>
+<li> Additionally we are told that <m>x'=-3</m> and <m>y'=4</m> <mdash/> notice that <m>x'  \lt 0</m> since that
+distance is getting smaller with time, while <m>y' \gt 0</m> since that distance is
+increasing with time.
+</li>
+<li> Further at <m>3pm</m> boat <m>A</m> has travelled 9km towards the original position of boat
+<m>B</m>, so <m>x=15-9 = 6</m>, while boat <m>B</m> has travelled 12km away from its original position,
+so <m>y=12</m>.
+</li>
+<li> The distances <m>x,y</m> and <m>z</m> form a right-angled triangle, and Pythagoras
+tells us that
+<md>
+<mrow>
+  z^2 &amp;= x^2 + y^2.
+</mrow>
+</md>
+At 3pm we know <m>x=6,y=12</m> so
+<md>
+<mrow>
+  z^2 &amp;= 36 + 144 = 180
+</mrow><mrow>
+  z&amp;= \sqrt{180} = 6\sqrt{5}.
+</mrow>
+</md>
+</li>
+<li> Differentiating then gives
+<md>
+<mrow>
+  2z \diff{z}{t} &amp;= 2x \diff{x}{t} + 2y \diff{y}{t}
+</mrow><mrow>
+  &amp;= 12 \cdot (-3) + 24 \cdot(4)
+</mrow><mrow>
+  &amp;= 60.
+</mrow>
+<intertext>Dividing through by <m>2z = 12\sqrt{5}</m> then gives</intertext>
+<mrow>
+\diff{z}{t} &amp;= \frac{60}{12\sqrt{5}} = \frac{5}{\sqrt{5}} = \sqrt{5}
+</mrow>
+</md>
+So the distance between the boats is increasing at <m>\sqrt{5} km/h</m>.
+</li>
+</ul>
+</p>
+</example>
+
+<p>One last one before we move on to another topic.</p>
+
+<example xml:id="eg_fuel"><title>Fuel level in a cylindrical tank</title>
+<p>
+Consider a cylindrical fuel tank of radius <m>r</m> and length <m>L</m> (in some appropriate units)
+that is lying on its side. Suppose that fuel is being pumped into the tank at
+a rate <m>q</m>. At what rate is the fuel level rising? </p>
+
+<sidebyside width="40%">
+<image source="text/figs/fuel1"/>
+</sidebyside>
+
+<p><alert>Solution</alert> If the tank were vertical everything would be much easier. Unfortunately the tank
+is on its side, so we are going to have to work a bit harder to establish the relation
+between the depth and volume. Also notice that we have not been supplied with units for
+this problem <mdash/> so we do not need to state the units of our variables.
+</p>
+
+<p>
+<ul>
+<li><p> Again <mdash/> draw a picture. Here is an end view of the tank; the shaded part of the
+circle  is filled with fuel.</p>
+
+<sidebyside width="40%">
+<image source="text/figs/fuel2"/>
+</sidebyside>
+
+</li>
+<li> Let us denote by <m>V(t)</m> the volume of fuel in the tank at time
+  <m>t</m> and by <m>h(t)</m> the fuel level at time <m>t</m>.
+</li>
+<li> We have been told that <m>V'(t)=q</m> and have been asked to determine <m>h'(t)</m>. While it is
+possible to do so by finding a formula relating <m>V(t)</m> and <m>h(t)</m>, it turns out to be
+quite a bit easier to first find a formula relating <m>V</m> and the angle <m>\theta</m> shown in
+the end view. We can then translate this back into a formula in terms of <m>h</m> using the
+relation
+<md>
+<mrow>
+  h(t) &amp;= r - r\cos \theta(t).
+</mrow>
+</md>
+Once we know <m>\theta'(t)</m>, we can easily obtain <m>h'(t)</m> by differentiating the above
+equation.
+</li>
+<li> The computation that follows below gets a little involved in places, so we will
+drop the <q><m>(t)</m></q> on the variables <m>V,h</m> and <m>\theta</m>. The reader must never forget that
+these three quantities are really functions of time, while <m>r</m> and <m>L</m> are constants that
+do not depend on time.
+</li>
+<li>
+<p> The volume of fuel is <m>L</m> times the cross<ndash/>sectional area filled by
+the fuel. That is,</p>
+
+<sidebyside valign="middle" widths="15% 25% 20%">
+<p><m>V = </m></p>
+<p><m>L \times</m> Area of </p>
+<image source="text/figs/fuel3"/>
+</sidebyside>
+
+<p>While we do not have a canned formula for the area of a chord of a circle
+like this, it is easy to express the area of the chord in terms of two areas that we can
+compute.</p>
+
+<sbsgroup valign="middle" widths="10% 25% 15% 17% 15% 0%">
+<sidebyside>
+<p><m>V</m></p>
+<p><m>= L\times\text{Area of}</m></p>
+<image source="text/figs/fuel3"/>
+<p></p>
+<p></p>
+<p></p>
+</sidebyside>
+<sidebyside>
+<p></p>
+<p><m>= L\times\bigg[ \text{Area of}</m></p>
+<image source="text/figs/fuel4"/>
+<p>- Area of</p>
+<image source="text/figs/fuel5"/>
+<p><m>\bigg]</m></p>
+</sidebyside>
+</sbsgroup>
+</li>
+<li><p> The piece of pie</p>
+<sidebyside width="33%">
+<image source="text/figs/fuel4"/>
+</sidebyside>
+<p>is the fraction <m>\tfrac{2\theta}{2\pi}</m> of the full
+circle, so its area is <m>\tfrac{2\theta}{2\pi}\pi r^2=\theta r^2</m>.
+</p>
+</li>
+<li><p> The triangle</p>
+
+<sidebyside width="33%">
+<image source="text/figs/fuel5"/>
+</sidebyside>
+<p>has height <m>r\cos\theta</m> and base <m>2r\sin\theta</m>
+and hence has area <m>\frac{1}{2}(r\cos\theta)(2r\sin\theta)=r^2\sin\theta\cos\theta =
+\frac{r^2}{2} \sin(2\theta)</m>, where we have used a double-angle formula (see
+Appendix<nbsp/><xref ref="sec_must_deriv"/>).
+</p>
+</li>
+<li>
+Subbing these two areas into the above expression for <m>V</m> gives
+<md>
+<mrow>
+  V &amp; = L\times\left[\theta r^2- \frac{r^2}{2}\sin2\theta\right]
+  = \frac{Lr^2}{2} \big[2\theta-\sin2\theta \big]
+</mrow>
+</md>
+Oof!
+</li>
+<li> Now we can differentiate to find the rate of change. Recalling that <m>V=V(t)</m> and
+<m>\theta=\theta(t)</m>, while <m>r</m> and <m>L</m> are constants,
+<md>
+<mrow>
+  V'
+  &amp;=\frac{Lr^2}{2} \left[ 2\theta' - 2\cos2\theta \cdot \theta' \right]
+</mrow><mrow>
+  &amp;= Lr^2 \cdot \theta' \cdot \left[1 - \cos2\theta \right]
+</mrow>
+</md>
+Solving this for <m>\theta'</m> and using <m>V'=q</m> gives
+<md>
+<mrow>
+  \theta' &amp;= \frac{q}{Lr^2 (1-\cos2\theta)}
+</mrow>
+</md>
+This is the rate at which <m>\theta</m> is changing, but we need the rate at which <m>h</m> is
+changing. We get this from
+<md>
+<mrow>
+  h &amp;= r - r\cos \theta &amp; \text{differentiating this gives}
+</mrow><mrow>
+  h' &amp;= r\sin\theta \cdot \theta'
+</mrow>
+</md>
+Substituting our expression for <m>\theta'</m> into the expression for <m>h'</m> gives
+<md>
+<mrow>
+  h' &amp;= r\sin\theta \cdot \frac{q}{Lr^2 (1-\cos2\theta)}
+</mrow>
+</md>
+</li>
+<li> We can clean this up a bit more <mdash/> recall more double-angle
+formulas
+<fn>Take another look at Appendix<nbsp/><xref ref="sec_must_deriv"/>.</fn>
+<md>
+<mrow>
+  h'
+&amp;= r\sin\theta \cdot \frac{q}{Lr^2 (1-\cos2\theta)} &amp; \text{substitute $\cos2\theta =
+1-2\sin^2\theta$}
+</mrow><mrow>
+&amp;= r\sin\theta \cdot \frac{q}{Lr^2 \cdot 2\sin^2\theta} &amp; \text{now cancel $r$'s and a $\sin\theta$}
+</mrow><mrow>
+&amp;= \frac{q}{2Lr\sin\theta}
+</mrow>
+</md>
+</li>
+<li><p> But we can clean this up even more <mdash/> instead of writing this rate in terms of
+<m>\theta</m> it is more natural to write it in terms of <m>h</m> (since the initial problem is
+stated in terms of <m>h</m>). From the triangle</p>
+
+<sidebyside width="33%">
+<image source="text/figs/fuel6"/>
+</sidebyside>
+
+<p> and Pythagoras we have
+<md>
+<mrow>
+  \sin\theta =\frac{\sqrt{r^2-(r-h)^2}}{r}=\frac{\sqrt{2rh-h^2}}{r}
+</mrow>
+</md>
+and hence
+<md>
+<mrow>
+  h' = \frac{q}{2L\sqrt{2rh-h^2}}.
+</mrow>
+</md></p>
+</li>
+<li> As a check, notice that <m>h'</m> becomes undefined when <m>h \lt 0</m> and also when <m>h \gt 2r</m>,
+because then the argument of the square root in the denominator is negative. Both make
+sense <mdash/> the fuel level in the tank must obey <m>0\le h\le 2r</m>.
+</li>
+</ul>
+</p>
+
+</example>
+
+</subsection>
+
+<xi:include href="../problems/prob_s3.2.xml" />
+
+</section>

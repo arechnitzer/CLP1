@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_velocity">
+<title>Another limit and computing velocity</title>
+<subsection><title>Another limit and computing velocity</title>
+
+<p>
+Computing tangent lines is all very well, but what does this have to do with  applications or the <q>Real World</q>? Well - at least initially our use of limits  (and indeed of calculus) is going to be a little removed from real world  applications. However as we go further and learn more about limits and  derivatives we will be able to get closer to real problems and their solutions.
+</p>
+
+<p>
+So stepping just a little closer to the real world, consider the following  problem. You drop a ball from the top of a very very tall building. Let <m>t</m> be  elapsed time measured in seconds, and <m>s(t)</m> be the distance the ball has fallen  in metres. So <m>s(0) = 0</m>.
+</p>
+
+<p>
+<em>Quick aside:</em> there is quite a bit going on in the statement of this  problem. We have described the general picture <mdash/> tall building, ball, falling  <mdash/> but we have also introduced notation, variables and units. These will be  common first steps in applications and are necessary in order to translate a  real world problem into mathematics in a clear and consistent way.
+</p>
+
+<p>
+Galileo
+	<fn>
+		Perhaps one of the most famous experiments in all of physics  is Galileo's leaning tower of Pisa experiment, in which he dropped two balls  of different masses from the top of the tower and observed that the time  taken to reach the ground was independent of their mass. This  disproved Aristotle's assertion that heavier objects fall faster. It is quite  likely that Galileo did not actually perform this experiment. Rather it was a  thought-experiment. However a quick glance at wikipedia will turn up some  wonderful footage from the Apollo 15 mission showing a hammer and feather being  dropped from equal height hitting the moon's surface at the same time.  Finally, Galileo determined that the speed of falling objects increases at a  constant rate, which is equivalent to the formula stated here, but it is  unlikely that he wrote down an equation exactly as it is here.
+	</fn>
+worked out that <m>s(t)</m> is a quadratic function:
+<md>
+<mrow>
+  s(t) &amp;= 4.9 t^2.
+</mrow>
+</md>
+The question that is posed is
+</p>
+
+<blockquote>
+<p>
+ How fast is the ball falling after 1 second?
+</p>
+</blockquote>
+
+<p>
+Now before we get to answering this question, we should first be a little more  precise. The wording of this question is pretty sloppy for a couple of reasons:
+<ul>
+<li>
+	What we do mean by  <q>after 1 second</q>? We know the ball  will move faster and faster as time passes, so after 1 second it does not fall  at one fixed speed.
+</li>
+<li>
+	As it stands a reasonable answer to the question would be just <q>really  fast</q>. If the person asking the question wants a numerical answer it  would be better to ask <q>At what speed</q> or <q>With what velocity</q>.
+</li>
+</ul>
+We should also be careful using the words <q>speed</q> and <q>velocity</q> <mdash/> they  are not interchangeable.
+<ul>
+<li>
+	Speed means the distance travelled per unit time and is always a  non-negative number. An unmoving object has speed <m>0</m>, while a moving object has  positive speed.
+</li>
+<li>
+	Velocity, on the other hand, also specifies the direction of motion.  In this text we will almost exclusively deal with objects moving along  straight lines. Because of this velocities will be positive or negative  numbers indicating  which direction the object is moving along the line. We  will be more precise about this later
+	<fn>
+		Getting the sign of velocity  wrong is a very common error <mdash/> you should be careful with it.
+	</fn>.
+</li>
+</ul>
+A better question is
+</p>
+<blockquote>
+<p>
+ What is the velocity of the ball precisely 1 second after it is dropped?
+</p>
+</blockquote>
+<p>or even better:</p>
+<blockquote>
+<p>
+ What is the velocity of the ball at the 1 second mark?
+</p>
+</blockquote>
+
+<p>
+This makes it very clear that we want to know what is happening at exactly 1  second after the ball is dropped.
+</p>
+
+<p>
+There is something a little subtle going on in this question. In particular,  what do we mean by the velocity at <m>t=1</m>?. Surely if we freeze time at <m>t=1</m>  second, then the object is not moving at all? This is definitely <em>not</em>  what we mean.
+</p>
+
+<p>
+If an object is moving at a constant velocity
+	<fn>
+		Newton's first law of  motion states that an object in motion moves with constant velocity unless a  force acts on it <mdash/> for example gravity or friction.
+	</fn>
+in the positive direction, then that velocity is just the distance travelled divided by the time  taken. That is
+<md>
+<mrow>
+  v &amp;= \frac{\text{distance moved}}{\text{time taken}}
+</mrow>
+</md>
+An object moving at constant velocity that moves <m>27</m> metres in <m>3</m> seconds has  velocity
+<md>
+<mrow>
+  v &amp;= \frac{27 m}{3 s} = 9 m/s.
+</mrow>
+</md>
+When velocity is constant everything is easy.
+</p>
+
+<p>
+However, in our falling object example, the object is being acted on by  gravity and its speed is definitely not constant. Instead of asking for  <em>THE</em> velocity, let us examine the <q>average velocity</q> of the object over  a certain window of time. In this case the formula is very similar
+<md>
+<mrow>
+  \text{average velocity } &amp;= \frac{\text{distance moved}}{\text{time taken}}
+</mrow>
+</md>
+But now I want to be more precise, instead write
+<md>
+<mrow>
+  \text{average velocity } &amp;= \frac{\text{difference in} \text{ distance}}{\text{difference in time}}
+</mrow>
+</md>
+Now in spoken English we haven't really changed much <mdash/> the distance moved is  the difference in position, and the time taken is just the difference in time  <mdash/> but the latter is more mathematically precise, and is easy to translate  into the following equation
+<md>
+<mrow>
+  \text{average velocity } &amp;= \frac{s(t_2) - s(t_1)}{t_2 - t_1}.
+</mrow>
+</md>
+This is the formula for the average velocity of our object between time <m>t_1</m>  and <m>t_2</m>. The denominator is just the difference between these times and the  numerator is the difference in position <mdash/> i.e. position at time <m>t_1</m> is just  <m>s(t_1)</m> and position at time <m>t_2</m> is just <m>s(t_2)</m>.
+</p>
+
+<p>
+So what is the average velocity of the falling ball between <m>1</m> and <m>1.1</m>  seconds? All we need to do now is plug some numbers into our formula
+<md>
+<mrow>
+  \mbox{average velocity} &amp;= \frac{\text{difference in}\text{ position}}{\mbox{difference in time}}
+</mrow><mrow>
+  &amp;= \frac{s(1.1) - s(1)}{1.1-1}
+</mrow><mrow>
+  &amp;= \frac{4.9 (1.1)^2 - 4.9(1)}{0.1} = \frac{4.9 \times 0.21}{0.1} = 10.29 m/s
+</mrow>
+</md>
+And we have our average velocity. However there is something we should notice  about this formula and it is easier to see if we sketch a graph of the function <m>s(t)</m>
+</p>
+
+<sidebyside width="90%">
+<image source="text/figs/vel1"/>
+</sidebyside>
+
+<p>
+So on the left I have drawn the graph and noted the times <m>t=1</m> and <m>t=1.1</m>.  The corresponding positions on the axes and the two points on the curve.  On the  right I have added a few more details. In particular I have noted the  differences in position and time, and the line joining the two points. Notice  that the slope of this line is
+<md>
+<mrow>
+  \text{slope} &amp;= \frac{\text{change in $y$}}{\text{change in $x$}}
+  = \frac{\text{difference in $s$}}{\text{difference in $t$}}
+</mrow>
+</md>
+which is precisely our expression for the average velocity.
+</p>
+
+<p>
+Let us examine what happens to the average velocity as we look over smaller and  smaller time-windows.
+<md>
+<mrow>
+  \text{time window} &amp;&amp; \text{average velocity}
+</mrow><mrow>
+  1 \leq t \leq 1.1 &amp;&amp; 10.29
+</mrow><mrow>
+  1 \leq t \leq 1.01 &amp;&amp; 9.849
+</mrow><mrow>
+  1 \leq t \leq 1.001 &amp;&amp; 9.8049
+</mrow><mrow>
+  1 \leq t \leq 1.0001 &amp;&amp; 9.80049
+</mrow>
+</md>
+As we make the time interval smaller and smaller we find that the average  velocity is getting closer and closer to <m>9.8</m>. We can be a little more precise  by finding the average velocity between <m>t=1</m> and <m>t=1+h</m> <mdash/> this is very  similar to what we did for tangent lines.
+<md>
+<mrow>
+  \text{average velocity} &amp;= \frac{s(1+h) - s(1)}{(1+h)-1}
+</mrow><mrow>
+  &amp;= \frac{4.9(1+h)^2 - 4.9}{h}
+</mrow><mrow>
+  &amp;= \frac{9.8h + 4.9h^2}{h}
+</mrow><mrow>
+  &amp;= 9.8 + 4.9h
+</mrow>
+</md>
+Now as we squeeze this window between <m>t=1</m> and <m>t=1+h</m> down towards zero, the  average velocity becomes the <q>instantaneous velocity</q> <mdash/> just as the  slope of the secant line becomes the slope of the tangent line. This is  our second limit
+<md>
+<mrow>
+ v(1) &amp;= \lim_{h \to 0} \frac{s(1+h)-s(1)}{h} = 9.8
+</mrow>
+</md>
+More generally we define the instantaneous velocity at time <m>t=a</m> to be the  limit
+<md>
+<mrow>
+  v(a) &amp;= \lim_{h \to 0} \frac{ s(a+h) - s(a) }{h}
+</mrow>
+</md>
+We read this as
+</p>
+<blockquote>
+<p>
+ The velocity at time <m>a</m> is equal to the limit as <m>h</m> goes to zero of  <m>\frac{s(a+h)-s(a)}{h}</m>.
+</p>
+</blockquote>
+
+<p>
+While we have solved the problem stated at the start of this section, it is  clear that if we wish to solve similar problems that we will need to  understand limits in a more general and systematic way.
+</p>
+</subsection>
+
+<xi:include href="../problems/prob_s1.2.xml"/>
+
+
+</section>

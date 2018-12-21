@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Revisiting tangent lines</title>
+<subsection><title>Revisiting tangent lines</title>
+
+<p>
+By way of motivation for the definition of the derivative, we return to the discussion of tangent lines that we started in the previous chapter on limits. We consider, in  Examples<nbsp/><xref ref="eg_DIFFslopeA"/> and<nbsp/><xref ref="eg_DIFFslopeB"/>,  below, the problem of finding the slope of the tangent line to a curve at a point. But  let us start  by recalling, in Example <xref ref="eg_DIFFlineslope"/>, what is meant by the slope  of a straight line.
+</p>
+
+<example xml:id="eg_DIFFlineslope"><title>What is slope</title>
+<p>
+In this example, we recall what is meant by the slope of the straight line
+<md>
+<mrow>
+y&amp;=\tfrac{1}{2}x+\tfrac{3}{2}
+</mrow>
+</md>
+<ul>
+<li>
+	We claim that if, as we walk along this straight line, our <m>x</m><ndash/>coordinate changes  by an amount<nbsp/><m>\De x</m>, then our <m>y</m><ndash/>coordinate changes by exactly<nbsp/><m>\De y =  \tfrac{1}{2}\De x</m>.
+</li>
+<li>
+<p>
+	For example, in the figure on the left below, we move from the point
+	<md>
+	<mrow>
+	(x_0,y_0)=(1\,,\,2=\tfrac{1}{2}\times 1+\tfrac{3}{2})
+	</mrow>
+	</md>
+	on the line to the point
+	<md>
+	<mrow>
+	(x_1,y_1)=(5\,,\,4=\tfrac{1}{2}\times 5+\tfrac{3}{2})
+	</mrow>
+	</md>
+	on the line. In this move our <m>x</m><ndash/>coordinate changes by
+	<md>
+	<mrow>
+	\De x= 5-1=4
+	</mrow>
+	</md>
+	and our <m>y</m><ndash/>coordinate changes by
+	<md>
+	<mrow>
+	\De y=4-2=2
+	</mrow>
+	</md>
+	which is indeed <m>\tfrac{1}{2}\times 4=\tfrac{1}{2}\De x</m>, as claimed.
+</p>
+
+<sidebyside width="100%">
+<image source="text/figs/slopeAB"/>
+</sidebyside>
+</li>
+<li>
+	In general, when we move from the point
+	<md>
+	<mrow>
+	(x_0,y_0) &amp;= (x_0, \tfrac{1}{2}x_0+\tfrac{3}{2})
+	</mrow>
+	</md>
+	on the line to the point
+	<md>
+	<mrow>
+	(x_1,y_1) &amp;= (x_1, \tfrac{1}{2}x_1+\tfrac{3}{2})
+	</mrow>
+	</md>
+	on the line, our <m>x</m><ndash/>coordinate changes by
+	<md>
+	<mrow>
+	\De x=x_1-x_0
+	</mrow>
+	</md>
+	and our <m>y</m><ndash/>coordinate changes by
+	<md>
+	<mrow>
+	\De y&amp;=y_1-y_0
+	</mrow><mrow>
+	&amp;=\big[\tfrac{1}{2}x_1+\tfrac{3}{2}\big]
+	-\big[\tfrac{1}{2}x_0+\tfrac{3}{2}\big]
+	</mrow><mrow>
+	&amp;=\tfrac{1}{2}(x_1-x_0)
+	</mrow>
+	</md>
+	which is indeed <m>\tfrac{1}{2}\De x</m>, as claimed.
+</li>
+<li>
+	So, for the straight line <m>y=\tfrac{1}{2}x+\tfrac{3}{2}</m>, the ratio <m>\tfrac{\De  y}{\De x} =\tfrac{y_1-y_0}{x_1-x_0}</m> always takes the value <m>\frac{1}{2}</m>,  regardless of the choice of initial point <m>(x_0,y_0)</m> and final point  <m>(x_1,y_1)</m>. This constant ratio is the slope of the line <m>y=\tfrac{1}{2}x+\tfrac{3}{2}</m>.
+</li>
+</ul>
+</p>
+</example>
+
+
+<p>
+Straight lines are special in that for each straight line, there is a fixed number <m>m</m>, called the slope of the straight line, with the property that if you  take <em>any</em> two different points, <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m>, on the line,  the ratio  <m>\tfrac{\De y}{\De x}=\tfrac{y_1-y_0}{x_1-x_0}</m>, which is called the rate of change of <m>y</m> per unit rate of  change
+	<fn>
+		In the <q>real world</q> the phrase <q>rate of change</q> usually refers to rate of change per unit time. In science it used more generally.
+	</fn>
+of <m>x</m>, always takes the value <m>m</m>. This is the property that distinguishes  lines from other curves.
+</p>
+
+<p>
+Other curves do not have this property. In the next two examples we illustrate this  point with the parabola <m>y=x^2</m>. Recall that we studied this example back in  Section<nbsp/><xref ref="sec_first_lim"/>. In Example<nbsp/><xref ref="eg_DIFFslopeA"/> we find the slope of the  tangent line to <m>y=x^2</m> at a particular point. We generalise this in Example  <xref ref="eg_DIFFslopeB"/>, to show that we can define <q>the slope of the curve <m>y=x^2</m></q> at an  arbitrary point <m>x=x_0</m> by  considering <m>\tfrac{\De y}{\De x}=\tfrac{y_1-y_0}{x_1-x_0}</m>  with <m>(x_1,y_1)</m> very close to <m>(x_0,y_0)</m>.
+</p>
+
+<example xml:id="eg_DIFFslopeA"><title>Slope of secants of <m>y=x^2</m></title>
+<p>
+In this example, let us fix <m>(x_0,y_0)</m> to be the point <m>(2,4)</m> on the parabola <m>y=x^2</m>. Now let <m>(x_1, y_1) = (x_1, x_1^2)</m> be some other  point on the parabola; that is, a point with <m>x_1 \neq x_0</m>.
+</p>
+
+<p>
+<ul>
+<li>
+	Draw the straight line through <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m> <mdash/> this is a secant  line and we saw these in Chapter<nbsp/><xref ref="chap_limits"/> when we discussed tangent  lines
+	<fn>
+		If you do not remember this, then please revisit the first couple of  sections of Chapter<nbsp/><xref ref="chap_limits"/>.
+	</fn>.
+</li>
+<li>
+<p>
+	The following table gives the slope, <m>\tfrac{y_1-y_0}{x_1-x_0}</m>, of the secant line  through <m>(x_0,y_0)=(2,4)</m> and <m>(x_1,y_1)</m>, for various different choices of  <m>(x_1,y_1=x_1^2)</m>.
+</p>
+
+<sidebyside>
+<tabular top="minor" left="minor" right="minor" bottom="minor">
+<row>
+<cell><m>x_1</m> </cell><cell><m>1</m> </cell><cell> <m>1.5</m> </cell><cell> <m>1.9</m> </cell><cell> <m>1.99</m> </cell><cell> <m>1.999</m> </cell><cell> <m>\circ</m> </cell><cell> <m>2.001</m> </cell><cell> <m>2.01</m>  </cell><cell> <m>2.1</m> </cell><cell> <m>2.5</m> </cell><cell> <m>3</m> </cell>
+</row>
+<row>
+<cell><m>y_1=x_1^2</m> </cell><cell>  <m>1</m> </cell><cell> <m>2.25</m> </cell><cell> <m>3.61</m> </cell><cell> <m>3.9601</m> </cell><cell> <m>3.9960</m> </cell><cell> <m>\circ</m> </cell><cell> <m>4.0040</m> </cell><cell> <m>4.0401</m>  </cell><cell> <m>4.41</m> </cell><cell> <m>6.25</m> </cell><cell> <m>9</m> </cell> </row>
+<row>
+<cell><m>\tfrac{y_1-y_0}{x_1-x_0}=\tfrac{y_1-4}{x_1-2}\!</m> </cell><cell>  <m>3</m> </cell><cell> <m>3.5</m> </cell><cell> <m>3.9</m> </cell><cell> <m>3.99</m> </cell><cell> <m>3.999</m> </cell><cell> <m>\circ</m> </cell><cell> <m>4.001</m> </cell><cell> <m>4.01</m>  </cell><cell> <m>4.1</m> </cell><cell> <m>4.5</m> </cell><cell> <m>5</m> </cell>
+</row>
+</tabular>
+</sidebyside>
+
+</li>
+<li>
+<p>
+	So now we have a big table of numbers <mdash/> what do we do with them? Well, there are messages we can take away from this table.
+<ul>
+	<li>
+	<p>
+		Different choices of <m>x_1</m> give different values for the  slope, <m>\tfrac{y_1-y_0}{x_1-x_0}</m>, of the secant through  <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m>. This is illustrated in Figure  <xref ref="fig_multislope"/> below <mdash/> the slope of the secant through <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m> is different from the  slope of the secant through <m>(x_0,y_0)</m> and <m>(x'_1,y'_1)</m>.
+	</p>
+
+	<figure xml:id="fig_multislope">
+	<caption>For a curvy curve, different secants have different slopes.</caption>
+	<image width="80%" source="text/figs/slopeD"/>
+	</figure>
+
+	<p>
+		If the parabola were a straight line this would not be the case  <mdash/> the secant through any two different points on a line is always identical to the line itself and so always has exactly the same slope as the line itself, as is illustrated in Figure <xref ref="fig_singleslope"/> below <mdash/> the (yellow) secant through  <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m> lies exactly on top of the (red)  line <m>y=\tfrac{1}{2}x+\tfrac{3}{2}</m>.
+	</p>
+
+
+	<figure xml:id="fig_singleslope">
+	 <caption>For a straight line, all secants have the same slope.</caption>
+	 <image width="80%" source="text/figs/slopeE"/>
+	</figure>
+
+</li>
+<li>
+	Now look at the columns of the table closer to the middle. As <m>x_1</m> gets closer  and closer to <m>x_0=2</m>, the slope, <m>\tfrac{y_1-y_0}{x_1-x_0}</m>, of the secant through  <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m> appears to get closer and closer to the value <m>4</m>.
+</li>
+</ul>
+</p>
+</li>
+</ul>
+</p>
+</example>
+
+
+<example xml:id="eg_DIFFslopeB"><title>More on secants of <m>y=x^2</m></title>
+<p>
+It is very easy to generalise what is happening in Example <xref ref="eg_DIFFslopeA"/>.
+<ul>
+<li>
+	Fix any point <m>(x_0,y_0)</m> on the parabola <m>y=x^2</m>. If <m>(x_1,y_1)</m> is any other  point on the parabola <m>y=x^2</m>, then <m>y_1=x_1^2</m> and the slope of the secant through  <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m> is
+	<md>
+	<mrow>
+	   \text{slope}
+	   &amp;= \frac{y_1-y_0}{x_1-x_0}
+		=\frac{x_1^2-x_0^2}{x_1-x_0} &amp;&amp; \text{since }y=x^2
+	</mrow><mrow>
+	  &amp; =\frac{(x_1-x_0)(x_1+x_0)}{x_1-x_0} &amp;&amp; \text{remember } a^2-b^2 = (a-b)(a+b)
+	</mrow><mrow>
+	  &amp; =x_1+x_0
+	</mrow>
+	</md>
+	You should check the values given in the table of Example <xref ref="eg_DIFFslopeA"/> above to convince yourself that the slope <m>\tfrac{y_1-y_0}{x_1-x_0}</m>  of the secant line really is <m>x_0+x_1 = 2+x_1</m> (since we set  <m>x_0=2)</m>.
+</li>
+<li>
+<p>
+	Now as we move <m>x_1</m> closer and closer to <m>x_0</m>, the slope should move  closer and closer to <m>2x_0</m>. Indeed if we compute the limit carefully <mdash/> we  now have the technology to do this <mdash/> we see that in the limit as  <m>x_1 \to x_0</m> the slope becomes <m>2x_0</m>.  That is
+	<md>
+	<mrow>
+	  \lim_{x_1 \to x_0} \frac{y_1-y_0}{x_1-x_0}
+	  &amp;= \lim_{x_1 \to x_0} (x_1+x_0) \qquad \text{by the work we did just above}
+	</mrow><mrow>
+	  &amp;= 2x_0
+	</mrow>
+	</md>
+	Taking this limit gives us our first derivative. Of course we haven't yet  given the definition of a derivative, so we perhaps wouldn't recognise it yet.  We rectify this in the next section.
+</p>
+
+<figure xml:id="fig_secantToTangent">
+<caption>Secants approaching a tangent line</caption>
+<image width="80%" source="text/figs/slopeC"/>
+</figure>
+
+</li>
+<li>
+<p>
+	So it is reasonable to say <q>as <m>x_1</m> approaches <m>x_0</m>, the secant through  <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m> approaches the tangent line to the parabola <m>y=x^2</m> at  <m>(x_0,y_0)</m></q>. This is what we did back in Section<nbsp/><xref ref="sec_first_lim"/>.
+</p>
+
+<p>
+	The figure above shows four different secants through <m>(x_0,y_0)</m> for the curve <m>y=x^2</m>.  The four hollow circles are four different choices of <m>(x_1,y_1)</m>. As <m>(x_1,y_1)</m>  approaches <m>(x_0,y_0)</m>, the corresponding secant does indeed approach the tangent to  <m>y=x^2</m> at <m>(x_0,y_0)</m>, which is the heavy (red) straight line in the figure.
+</p>
+
+<p>
+	Using limits we determined the slope of the tangent line to <m>y=x^2</m> at <m>x_0</m> to be  <m>2x_0</m>. Often we will be a little sloppy with our language and instead say <q>the  slope of the parabola <m>y=x^2</m> at <m>(x_0,y_0)</m> is <m>2x_0</m></q> <mdash/> where we really mean the  slope of the line tangent to the parabola at <m>x_0</m>.
+</p>
+</li>
+</ul>
+</p>
+</example>
+
+</subsection>
+
+<xi:include href="../problems/prob_s2.1.xml"/>
+
+
+</section>

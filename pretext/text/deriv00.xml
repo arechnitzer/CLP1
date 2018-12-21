@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chap_deriv">
+<title>Derivatives</title>
+<introduction>
+<p>
+Calculus is built on two operations <mdash/> differentiation, which is used to analyse  instantaneous rate of change, and integration, which is used to analyse areas.  Understanding differentiation and using it compute derivatives of functions is one of the  main aims of this course.
+</p>
+
+<p>
+We had a glimpse of derivatives in the previous chapter on limits <mdash/> in particular  Sections<nbsp/><xref ref="sec_first_lim"/> and<nbsp/><xref ref="sec_velocity"/> on tangents and velocities introduced  derivatives in disguise. One of the main reasons that we teach limits is to understand  derivatives. Fortunately, as we shall see, while one does need to understand limits in  order to correctly understand derivatives, one does not need the full machinery of limits  in order to <em>compute and work with</em> derivatives. The other main part of calculus,  integration, we (mostly) leave until a later course.
+</p>
+
+<p>
+The derivative finds many applications in many different areas of the sciences. Indeed  the  reason that calculus is taken by so many university students is so that they may then use  the ideas both in subsequent mathematics courses and in other fields. In almost any field  in which you study quantitative data you can find calculus lurking somewhere nearby.
+</p>
+
+<p>
+Its development
+	<fn>
+		A quick google will turn up many articles on the development and  history of calculus. Wikipedia has a good one.
+	</fn>
+came about over a very long time, starting with the ancient Greek geometers. Indian, Persian and Arab mathematicians made significant contributions from around the <m>6^{\rm th}</m> century. But modern calculus really starts with Newton and Leibniz in the <m>17^{\rm th}</m> century who developed independently based on ideas of others including Descartes. Newton applied his work to many physical problems (including orbits of moons and planets) but didn't publish his work. When Leibniz subsequently published his <q>calculus</q>, Newton accused him of plagiarism <mdash/> this caused a huge rift between British and continental-European mathematicians which wasn't closed for another century.
+</p>
+
+</introduction>
+<xi:include href="deriv01.xml" />
+<xi:include href="deriv02.xml" />
+<xi:include href="deriv03.xml" />
+<xi:include href="deriv04.xml" />
+<xi:include href="deriv05.xml" />
+<xi:include href="deriv06.xml" />
+<xi:include href="deriv07.xml" />
+<xi:include href="deriv08.xml" />
+<xi:include href="deriv09.xml" />
+<xi:include href="deriv10.xml" />
+<xi:include href="deriv11.xml" />
+<xi:include href="deriv12.xml" />
+<xi:include href="deriv13.xml" />
+<xi:include href="deriv14.xml" />
+</chapter>

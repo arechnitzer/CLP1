@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Applications of derivatives</title>
+
+<introduction>
+<p>
+In Section<nbsp/><xref ref="sec_def_deriv"/> we defined the derivative at <m>x=a</m>, <m>f'(a)</m>, of an abstract function <m>f(x)</m>, to be its instantaneous rate of change at <m>x=a</m>:
+<md>
+<mrow>
+    f'(a) &amp;= \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}
+    </mrow>
+</md>
+This abstract definition, and the whole theory that we have developed to deal  with it, turns out be extremely useful simply because  <q>instantaneous rate of  change</q> appears in a huge number of settings. Here are a few examples.
+<ul>
+<li>
+	If you are moving along a line and <m>x(t)</m> is your position on the line at  time <m>t</m>, then your rate of change of position, <m>x'(t)</m>, is your velocity. If,  instead, <m>v(t)</m> is your velocity at time <m>t</m>, then your rate of change of  velocity, <m>v'(t)</m>, is your acceleration. We shall explore this further in  Section<nbsp/><xref ref="sec_vel_acc"/>.
+</li>
+<li>
+	If <m>P(t)</m> is the size of some population (say the number of humans on the  earth) at time <m>t</m>, then <m>P'(t)</m> is the rate at which the size of that  population is changing. It is called the net birth rate. We shall explore it  further in Section<nbsp/><xref ref="ssec_pop"/>.
+</li>
+<li>
+	Radiocarbon dating, a procedure used to determine the age of, for example,  archaeological materials, is based on an understanding of the rate at which an unstable  isotope of carbon decays. We shall look at this procedure in Section<nbsp/><xref ref="ssec_carbon"/>
+</li>
+<li>
+	A capacitor is an electrical component that is used to repeatedly store  and release electrical charge (say electrons) in an electronic circuit. If <m>Q(t)</m> is the  charge on a capacitor at time <m>t</m>, then <m>Q'(t)</m> is the instantaneous rate at which charge  is flowing into the capacitor. That's called the current. The standard unit of charge is  the coulomb. One coulomb is the magnitude of the charge of approximately <m>6.241  \times 10^{18}</m> electrons. The standard unit for current is the amp. One amp represents  one coulomb per second.
+</li>
+</ul>
+</p>
+</introduction>
+
+<xi:include href="applic01.xml" />
+<xi:include href="applic02.xml" />
+<xi:include href="applic03.xml" />
+<xi:include href="applic04.xml" />
+<xi:include href="applic05.xml" />
+<xi:include href="applic06.xml" />
+<xi:include href="applic07.xml" />
+
+
+</chapter>

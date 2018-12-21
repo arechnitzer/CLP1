@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+
+<introduction><p>In Questions<nbsp/><xref ref="s3_7indet1"/> to <xref ref="s3_7indet3"/>, you are asked to give pairs of functions that combine to make indeterminate forms. Remember that an indeterminate form is indeterminate precisely because its limit can take on a number of values.</p></introduction>
+
+<exercise xml:id="s3_7indet1" purpose="RQS">
+<statement><p>
+Give two functions <m>f(x)</m> and <m>g(x)</m> with the following properties:
+<ol label="i">
+<li> <m>\ds\lim_{x \to \infty} f(x)=\infty</m>
+</li>
+<li> <m>\ds\lim_{x \to \infty} g(x)=\infty</m>
+</li>
+<li> <m>\ds\lim_{x \to \infty} \dfrac{f(x)}{g(x)}=2.5</m>
+</li>
+</ol>
+</p></statement>
+<hint><p> Try making one function a multiple of the other.
+</p></hint>
+<answer><p> There are many possible answers. Here is one: <m>f(x)=5x</m>, <m>g(x)=2x</m>.
+</p></answer>
+<solution><p> There are many possible answers. Consider these: <m>f(x)=5x</m>, <m>g(x)=2x</m>.
+Then <m>\ds\lim_{x \rightarrow\infty}f(x)=\ds\lim_{x\to\infty}g(x)=\infty</m>, and
+<m>\ds\lim_{x\to\infty}\frac{f(x)}{g(x)}=\ds\lim_{x\to\infty}\frac{5x}{2x}=\ds\lim_{x\to\infty}\frac{5}{2}=\frac{5}{2}=2.5</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>Give two functions <m>f(x)</m> and <m>g(x)</m> with the following properties:
+<ol label="i">
+<li> <m>\ds\lim_{x \to \infty} f(x)=\infty</m>
+</li>
+<li> <m>\ds\lim_{x \to \infty} g(x)=\infty</m>
+</li>
+<li> <m>\ds\lim_{x \to \infty} \dfrac{f(x)}{g(x)}=0</m>
+</li>
+</ol>
+</p></statement>
+<hint><p> Try making one function a multiple of the other, but not a <em>constant</em> multiple.
+</p></hint>
+<answer><p> There are many possible answers. Here is one: <m>f(x)=x</m>, <m>g(x)=x^2</m>.
+</p></answer>
+<solution><p> There are many possible answers. Consider these: <m>f(x)=x</m>, <m>g(x)=x^2</m>.
+Then <m>\ds\lim_{x \rightarrow\infty}f(x)=\ds\lim_{x\to\infty}g(x)=\infty</m>, and
+<m>\ds\lim_{x\to\infty}\frac{f(x)}{g(x)}=\ds\lim_{x\to\infty}\frac{x}{x^2}=\ds\lim_{x\to\infty}\frac{1}{x}=0</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_7indet3" purpose="RQS">
+<statement><p>
+Give two functions <m>f(x)</m> and <m>g(x)</m> with the following properties:
+<ol label="i">
+<li xml:id="s3_7conc1"> <m>\ds\lim_{x \to \infty} f(x)=1</m>
+</li>
+<li xml:id="s3_7conc2"> <m>\ds\lim_{x \to \infty} g(x)=\infty</m>
+</li>
+<li xml:id="s3_7conc3"> <m>\ds\lim_{x \to \infty} [f(x)]^{g(x)}=5</m>
+</li>
+</ol>
+</p></statement>
+<hint><p> Try modifying the function from Example<nbsp/><xref ref="eg_hopitalL"/>.
+</p></hint>
+<answer><p> There are many possible answers. Here is one: <m>f(x)=1+\frac{1}{x}</m>, <m>g(x)=x\log 5</m> (recall we use <m>\log</m> to mean logarithm base <m>e</m>).
+</p></answer>
+<solution><p>
+From Example<nbsp/><xref ref="eg_hopitalL"/>, we know that <m>\ds\lim_{x \to 0} (1+x)^{\frac{a}{x}}=e^a</m>, so <m>\ds\lim_{x \to 0} (1+x)^{\frac{\log 5}{x}}=e^{\log 5}=5</m>. However, this is the limit as <m>x</m> goes to 0, which is not what we were asked. So, we modify the functions by replacing <m>x</m> with <m>\frac{1}{x}</m>. If <m>x \to 0^+</m>, then <m>\frac{1}{x} \to \infty</m>.
+</p>
+
+<p>Taking <m>f(x)=1+\frac{1}{x}</m> and <m>g(x)=x\log 5</m>, we see:
+<ul>
+<li><xref ref="s3_7conc1"/> <m>\ds\lim_{x \to \infty} f(x)=\ds\lim_{x \to \infty } \left(1+\frac{1}{x}\right)=1</m></li>
+<li><xref ref="s3_7conc2"/> <m>\ds\lim_{x \to \infty} g(x)=\ds\lim_{x \to \infty} x\log 5=\infty</m></li>
+<li> <xref ref="s3_7conc3"/> Let us name <m>\dfrac{1}{x}=X</m>. Then as <m>x \to \infty</m>, <m>X \to 0^+</m>, so:
+ <m>\ds\lim_{x \to \infty} [f(x)]^{g(x)}=\ds\lim_{x \to \infty} \left[1+\frac{1}{x}\right]^{x\log 5}=\lim_{x \to \infty} \left[1+\frac{1}{x}\right]^{\frac{\log 5}{\frac{1}{x}}}=
+\lim_{X \to 0^+} \left[1+X\right]^{\frac{\log 5}{X}}=e^{\log 5}=5
+</m>,
+where in the penultimate step, we used  the result of Example<nbsp/><xref ref="eg_hopitalL"/>.
+</li>
+</ul>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS"><title><fromexam>2009H</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow 1}\dfrac{x^3-e^{x-1}}{\sin(\pi x)}</m>.
+</p></statement>
+<hint><p>
+Plugging in <m>x=1</m> to the numerator and denominator makes both zero. This is exactly one of the indeterminate forms where l'Hôpital's rule can be directly applied.
+</p></hint>
+<answer><p>  <m>-\dfrac{2}{\pi}</m>
+</p></answer>
+<solution><p>
+If we plug in <m>x=1</m> to the numerator and the denominator, we find they are both zero. So, we have an indeterminate form appropriate for L'Hôpital's Rule.
+<md>
+<mrow>
+\lim\limits_{x\rightarrow 1}\underbrace{\frac{x^3-e^{x-1}}{\sin(\pi x)}}_{\atp
+	{\mathrm{num} \to 0}
+	{\mathrm{den} \to 0}}
+=\lim\limits_{x\rightarrow 1}\frac{3x^2-e^{x-1}}{\pi\cos(\pi x)}
+=-\frac{2}{\pi}</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2010H</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow 0+}\dfrac{\log x}{x}</m>. (Remember: in these notes, <m>\log</m> means logarithm base <m>e</m>.)
+</p></statement>
+<hint><p>
+Is this an indeterminate form?
+</p></hint>
+<answer><p> <m>-\infty</m>
+</p></answer>
+<solution><p>
+Be careful-- this is not an indeterminate form!
+</p>
+
+<p>As <m>x\rightarrow 0+</m>, the numerator <m>\log x\rightarrow-\infty</m>. That is, the numerator is becoming an increasingly huge, negative number.
+As <m>x\rightarrow 0+</m>, the denominator <m>x\rightarrow 0+</m>, which only serves to make the total fraction even larger, and still negative. So, <m>\lim\limits_{x\rightarrow 0^+}\dfrac{\log x}{x}
+=-\infty</m>.
+</p>
+
+<p>Remark: if we had tried to use l'Hôpital's Rule here, we would have come up with the wrong answer. If we differentiate the numerator and the denominator, the fraction becomes <m>\dfrac{\frac{1}{x}}{1}=\frac{1}{x}</m>, and <m>\ds\lim_{x \to 0^+}\frac{1}{x}=\infty</m>. The reason we cannot apply l'Hôpital's Rule is that we do not have an indeterminate form, like both numerator and denominator going to infinity, or both numerator and denominator going to zero.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2012H</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow\infty}(\log x)^2e^{-x}</m>.
+</p></statement>
+<hint><p>
+First, rearrange the expression to a more natural form (without a negative exponent).
+</p></hint>
+<answer><p>
+0
+</p></answer>
+<solution><p>
+We rearrange the expression to a more natural form:
+<md>
+<mrow>
+\lim_{x\rightarrow\infty}(\log x)^2e^{-x}
+&amp;=\lim_{x\rightarrow\infty}\underbrace{\dfrac{(\log x)^2}{e^{x}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+</mrow>
+<intertext>If we plug in <m>x=0</m>, both numerator and denominator go to infinity. So, we can apply l'Hôpital's Rule. In fact, we end up applying it twice.</intertext><mrow>
+&amp;=\lim_{x\rightarrow\infty}\underbrace{\dfrac{2\log x}{xe^{x}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+</mrow><mrow>
+&amp;=\lim_{x\rightarrow\infty}\dfrac{2/x}{xe^{x}+e^x}
+</mrow>
+<intertext>The numerator gets smaller and smaller while the denominator gets larger and larger, so:</intertext><mrow>
+&amp;={0}
+</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise><title><fromexam>1997D</fromexam></title>
+<statement><p>
+Evaluate
+<m>\lim\limits_{x\rightarrow\infty}x^2e^{-x}</m>.
+</p></statement>
+<hint><p> If at first you don't succeed, try, try again.
+</p></hint>
+<answer><p> 0
+</p></answer>
+<solution><p>
+<me>
+\lim_{x\rightarrow\infty}x^2e^{-x}
+=\lim_{x\rightarrow\infty}\underbrace{\frac{x^2}{e^{x}}}_{\atp
+	{\mathrm{num}\to \infty}
+	{\mathrm{den}\to \infty}}
+=\lim_{x\rightarrow\infty}\underbrace{\frac{2x}{e^{x}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+=\lim_{x\rightarrow\infty}\underbrace{\frac{2}{e^{x}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+={0}
+</me>
+</p>
+</solution>
+</exercise>
+
+<exercise><title><fromexam>1997D</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow 0}\dfrac{x-x\cos x}{x-\sin x}</m>.
+</p></statement>
+<hint><p> Keep at it!
+</p></hint>
+<answer><p> 3
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+\lim_{x\rightarrow 0}\underbrace{\frac{x-x\cos x}{x-\sin x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+&amp;= \lim_{x\rightarrow 0}\underbrace{\frac{1-\cos x+x\sin x}{1-\cos x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+= \lim_{x\rightarrow 0}\underbrace{\frac{\sin x+\sin x+x\cos x}{\sin x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+</mrow><mrow>
+&amp;= \lim_{x\rightarrow 0}\frac{2\cos x+\cos x-x\sin x}{\cos x}
+={3}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate
+<m>\ds\lim_{x \to 0}\dfrac{\sqrt{x^6+4x^4}}{x^2\cos x}</m>.
+</p></statement>
+<hint><p> Rather than use l'Hôpital, try factoring out <m>x^2</m> from the numerator and denominator.
+</p></hint>
+<answer><p>
+<m>2</m>
+</p></answer>
+<solution><p>
+If we plug in <m>x=0</m> to the numerator and denominator, both are zero, so this is a candidate for l'Hôpital's Rule. However, an easier way to evaluate the limit is to factor <m>x^2</m> from the numerator and denominator, and cancel.
+<md>
+<mrow>
+\lim_{x\to0}\frac{\sqrt{x^6+4x^4}}{x^2\cos x}
+&amp;=\lim_{x\to0}\frac{\sqrt{x^4}\sqrt{x^2+4}}{x^2\cos x}
+</mrow><mrow>
+&amp;=\lim_{x\to0}\frac{x^2\sqrt{x^2+4}}{x^2\cos x}
+</mrow><mrow>
+&amp;=\lim_{x\to0}\frac{\sqrt{x^2+4}}{\cos x}
+</mrow><mrow>
+&amp;=\frac{\sqrt{0^2+4}}{\cos(0)}=2
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997A</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow\infty}\dfrac{(\log x)^2}{x}</m>.
+</p></statement>
+<hint><p> Keep going!
+</p></hint>
+<answer><p> 0
+</p></answer>
+<solution><p>
+<md>
+<mrow>\lim_{x\rightarrow\infty}\underbrace{\frac{(\log x)^2}{x}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+&amp;=\lim_{x\rightarrow\infty}\frac{2(\log x)\frac{1}{x}}{1}
+=2\lim_{x\rightarrow\infty}\underbrace{\frac{\log x}{x}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+= 2\lim_{x\rightarrow\infty}\frac{\frac{1}{x}}{1}={0}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997A</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow0}\dfrac{1-\cos x}{\sin^2 x}</m>.
+</p></statement>
+<answer><p> <m>\frac{1}{2}</m>
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+\lim_{x\rightarrow0}\underbrace{\frac{1-\cos x}{\sin^2 x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+&amp;= \lim_{x\rightarrow0}\frac{\sin x}{2\sin x\cos x}
+=\lim_{x\rightarrow0}\frac{1}{2\cos x}
+={\frac{1}{2}}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate <m>\ds\lim_{x \to 0}\dfrac{x}{\sec x}</m>.
+</p></statement>
+<hint><p>
+Try plugging in <m>x=0</m>. Is this an indeterminate form?
+</p></hint>
+<answer><p> 0
+</p></answer>
+<solution><p>
+If we plug in <m>x=0</m>, the numerator is zero, and the denominator is
+<m>\sec 0 = \dfrac{1}{\cos 0}=\dfrac{1}{1}=1</m>. So the limit is <m>\dfrac{0}{1}=0</m>.
+</p>
+
+<p>
+Be careful: you cannot use l'Hôpital's Rule here, because the fraction does not give an indeterminate form. If you try to differentiate the numerator and the denominator, you get an expression whose limit does not exist:
+<me>\ds\lim_{x \to 0}\dfrac{1}{\sec x \tan x}=\ds\lim_{x \to 0}\cos x\cdot \dfrac{\cos x}{\sin x}=DNE</me>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Evaluate <m>\ds\lim_{x\to0}\dfrac{\csc x\cdot \tan x\cdot (x^2+5)}{e^x}</m>.
+</p></statement>
+<hint><p>
+Simplify the trigonometric part first.
+</p></hint>
+<answer><p>
+<m>5</m>
+</p></answer>
+<solution><p>
+If we plug <m>x=0</m> into the denominator, we get 1. However, the numerator is an indeterminate form: <m>\tan 0 =0</m>,  while  <m>\ds\lim_{x \to 0^+}\csc x=\infty</m> and
+<m>\ds\lim_{x \to 0^-}\csc x=-\infty</m>. If we use <m>\csc x = \frac{1}{\sin x}</m>, our expression becomes
+<md>
+<mrow>
+\lim_{x\to0}\frac{\tan x\cdot (x^2+5)}{\sin x \cdot e^x}&amp;
+</mrow>
+<intertext>Since plugging in <m>x=0</m> makes both the numerator and the denominator equal to zero, this is a candidate for l'Hôspital's Rule. However, a much easier way is to simplify the trig first.</intertext><mrow>
+\lim_{x\to0}\frac{\tan x\cdot (x^2+5)}{\sin x \cdot e^x}&amp;=
+\lim_{x\to0}\frac{\sin x\cdot (x^2+5)}{\cos x \cdot\sin x \cdot e^x}
+</mrow><mrow>&amp;=
+\lim_{x\to0}\frac{x^2+5}{\cos x \cdot e^x}
+</mrow><mrow>
+&amp;=\frac{0^2+5}{\cos(0)\cdot e^0}=5
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>Evaluate <m>\ds\lim_{x \to \infty}\sqrt{2x^2+1}-\sqrt{x^2+x}</m>.
+</p></statement>
+<hint><p> Rationalize, then remember your training.
+</p></hint>
+<answer><p> <m>\infty</m>
+</p></answer>
+<solution><p>
+<m>\ds\lim_{x \to \infty}\sqrt{2x^2+1}-\sqrt{x^2+x}</m> has the indeterminate form <m>\infty - \infty</m>. To get a better idea of what's going on, let's rationalize.
+<md>
+<mrow>
+\lim_{x \to \infty}\sqrt{2x^2+1}-\sqrt{x^2+x}&amp;=
+\lim_{x \to \infty}\left(\sqrt{2x^2+1}-\sqrt{x^2+x}\right)\left(
+\frac{\sqrt{2x^2+1}+\sqrt{x^2+x}}{\sqrt{2x^2+1}+\sqrt{x^2+x}}\right)
+</mrow><mrow>
+&amp;=\lim_{x \to \infty}
+\frac{(2x^2+1)-(x^2+x)}{\sqrt{2x^2+1}+\sqrt{x^2+x}}=
+\lim_{x \to \infty}
+\frac{x^2-x+1}{\sqrt{2x^2+1}+\sqrt{x^2+x}}
+</mrow>
+<intertext>Here, we have the indeterminate form <m>\frac{\infty}{\infty}</m>, so l'Hôpital's Rule applies. However, if we try to use it here, we quickly get a huge mess. Instead, remember how we dealt with these kinds of limits in the past: factor out the highest power of the denominator, which is <m>x</m>.</intertext><mrow>
+&amp;=\lim_{x \to \infty}
+\frac{x\left(x-1+\frac{1}{x}\right)}{\sqrt{x^2(2+\frac{1}{x^2})}+\sqrt{x^2(1+\frac{1}{x})}}
+</mrow><mrow>
+&amp;=\lim_{x \to \infty}
+\frac{x\left(x-1+\frac{1}{x}\right)}{x\left(\sqrt{2+\frac{1}{x^2}}+\sqrt{1+\frac{1}{x}}\right)}
+</mrow><mrow>
+&amp;=\lim_{x \to \infty}
+\underbrace{\frac{x-1+\frac{1}{x}}{\sqrt{2+\frac{1}{x^2}}+\sqrt{1+\frac{1}{x}}}}_{\atp
+	{\mathrm{num}\to \infty}
+	{\mathrm{den}\to \sqrt{2}+1}}
+</mrow><mrow>
+&amp;=\infty
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2010H</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow 0}\dfrac{\sin(x^3+3x^2)}{\sin^2x}</m>.
+</p></statement>
+<hint><p>
+If it is too difficult to take a derivative for l'Hôpital's Rule, try splitting up the function into smaller chunks and evaluating their limits independently.
+</p></hint>
+<answer><p> 3
+</p></answer>
+<solution><p>
+If we plug in <m>x=0</m>, both numerator and denominator become zero. So, we have exactly one of the indeterminate forms that l'Hôpital's Rule applies to.
+<md>
+<mrow>
+\lim_{x\rightarrow 0}\underbrace{\dfrac{\sin(x^3+3x^2)}{\sin^2x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to 0}}
+&amp;= \lim_{x\rightarrow 0}\dfrac{(3x^2+6x)\cos(x^3+3x^2)}{2\sin x\cos x}	</mrow>
+<intertext>If we plug in <m>x=0</m>, still we find that both the numerator and the denominator go to zero. We could jump in with another iteration of l'Hôpital's Rule. However, the derivatives would be a little messy, so we use limit laws and break up the fraction into the product of two fractions. If both limits exist:</intertext><mrow>
+\lim_{x\rightarrow 0}\dfrac{(3x^2+6x)\cos(x^3+3x^2)}{2\sin x\cos x}&amp;=\left(\lim_{x\rightarrow 0}\dfrac{x^2+2x}{\sin x}\right)\cdot
+\left(\lim_{x\rightarrow 0}\dfrac{3\cos(x^3+3x^2)}{2\cos x}\right)
+</mrow>
+<intertext>We can evaluate the right-hand limit by simply plugging in <m>x=0</m>:</intertext><mrow>
+&amp;=\dfrac{3}{2}\lim_{x\rightarrow 0}\underbrace{\dfrac{x^2+2x}{\sin x}}_
+{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to 0}}
+</mrow><mrow>
+&amp;= \dfrac{3}{2}\lim_{x\rightarrow 0}\dfrac{2x+2}{\cos x}
+</mrow><mrow>
+&amp;=\frac{3}{2}\left(\frac{2}{1}\right)=3</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1996D</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow1}\dfrac{\log(x^3)}{x^2-1}</m>.
+</p></statement>
+<answer><p> <m>\frac{3}{2}</m>
+</p></answer>
+<solution><p>
+<me>
+\lim_{x\rightarrow1}\frac{\log(x^3)}{x^2-1}
+=\lim_{x\rightarrow1}\underbrace{\frac{3\log(x)}{x^2-1}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+=\lim_{x\rightarrow1}\frac{3/x}{2x}
+=\frac{3}{2}
+</me>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1996D</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow 0}\dfrac{e^{-1/x^2}}{x^4}</m>.
+</p></statement>
+<hint><p> Try manipulating the function to get it into a nicer form
+</p></hint>
+<answer><p> 0
+</p></answer>
+<solution><p>
+<ul>
+<li> Solution 1.
+<me>
+\lim_{x\rightarrow 0}\frac{e^{-1/x^2}}{x^4}
+=\lim_{x\rightarrow 0}\underbrace{\frac{\frac{1}{x^4}}{e^{1/x^2}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+=\lim_{x\rightarrow 0}\frac{\frac{-4}{x^5}}{\frac{-2}{x^3}e^{1/x^2}}
+=\lim_{x\rightarrow 0}\underbrace{\frac{\frac{2}{x^2}}{e^{1/x^2}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+=\lim_{x\rightarrow 0}\frac{\frac{-4}{x^3}}{\frac{-2}{x^3}e^{1/x^2}}
+=\lim_{x\rightarrow 0}\frac{2}{e^{1/x^2}}
+={0}
+</me>
+since, as <m>x\rightarrow 0</m>, the exponent <m>\frac{1}{x^2}\rightarrow\infty</m>
+so that <m>e^{1/x^2}\rightarrow\infty</m> and <m>e^{-1/x^2}\rightarrow 0</m>.
+</li>
+<li> Solution 2.
+<me>
+\lim_{x\rightarrow 0}\frac{e^{-1/x^2}}{x^4}
+=\lim_{t={1\over x^2}\rightarrow \infty}\frac{e^{-t}}{t^{-2}}
+=\lim_{t\rightarrow \infty}\underbrace{\frac{t^2}{e^{t}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+=\lim_{t\rightarrow \infty}\underbrace{\frac{2t}{e^{t}}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}
+=\lim_{t\rightarrow \infty}\frac{2}{e^{t}}
+={0}
+</me>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1998H</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow 0}
+\dfrac{xe^x}{\tan (3x)}</m>.
+</p></statement>
+<answer><p> <m>\frac{1}{3}</m>
+</p></answer>
+<solution><p> <me>
+\lim_{x\rightarrow 0}\underbrace{\frac{xe^x}{\tan (3x)}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+= \lim_{x\rightarrow 0}\frac{e^x+xe^x}{3\sec^2 (3x)}
+=\frac{1}{3}
+</me>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Evaluate <m>\lim\limits_{x \to 0}\sqrt[x^2]{\sin^2 x}</m>.
+</p></statement>
+<hint><p> <m>\lim\limits_{x \to 0}\sqrt[x^2]{\sin^2 x}=(\sin^2 x)^{\frac{1}{x^2}}</m>; what form is this?
+</p></hint>
+<answer><p> 0
+</p></answer>
+<solution><p> <m>\ds\lim_{x \to 0} \sin^2 x = 0</m>, and <m>\ds\lim_{x \to 0}\frac{1}{x^2}=\infty</m>, so we have the form <m>0^\infty</m>. (Note that <m>\sin^2 x</m> is positive, so our root is defined.) This is not an indeterminate form: <m>\lim\limits_{x \to 0}\sqrt[x^2]{\sin^2 x}=0</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Evaluate <m>\lim\limits_{x \to 0}\sqrt[x^2]{\cos x}</m>.
+</p></statement>
+<hint><p> <m>\lim\limits_{x \to 0}\sqrt[x^2]{\cos x} = \ds\lim_{x \to 0}(\cos x)^{\frac{1}{x^2}}</m>
+</p></hint>
+<answer><p> <m>\frac{1}{\sqrt{e}}</m>
+</p></answer>
+<solution><p> <m>\ds\lim_{x \to 0} \cos x =1</m> and <m>\ds\lim_{x \to 0}\frac{1}{x^2}=\infty</m>, so <m>\ds\lim_{x \to 0}(\cos x)^{\frac{1}{x^2}}</m> has the indeterminate form <m>1^\infty</m>. We want to use l'Hôpital, but we need to get our function into a fractional indeterminate form. So, we'll use a logarithm.
+<md>
+<mrow>
+y:&amp;=(\cos x)^{\frac{1}{x^2}}
+</mrow><mrow>
+\log y &amp;= \log \left((\cos x)^{\frac{1}{x^2}}\right)=\frac{1}{x^2}\log(\cos x)=\frac{\log \cos x}{x^2}
+</mrow><mrow>
+\lim_{x \to 0}\log y &amp;=\lim_{x \to 0}\underbrace{\frac{\log \cos x}{x^2}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to 0}}
+	=
+	\lim_{x \to 0} \frac{\frac{-\sin x}{\cos x}}{2x}=
+	\lim_{x \to 0} \underbrace{\frac{-\tan x}{2x}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to 0}}
+	=
+	\lim_{x \to 0}\frac{-\sec^2x}{2}
+</mrow><mrow>
+	&amp;=\lim_{x \to 0}\frac{-1}{2\cos^2 x}=-\frac{1}{2}
+</mrow><mrow>
+\mbox{Therefore, } \lim_{x \to 0} y &amp;=\lim_{x \to 0}e^{\log y}=e^{-1/2}=\frac{1}{\sqrt{e}}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Evaluate <m>\ds\lim_{x \to 0^+} e^{x \log x}</m>.
+</p></statement>
+<hint><p> logarithms
+</p></hint>
+<answer><p> 1
+</p></answer>
+<solution><p>
+<ul>
+<li> Solution 1
+<md>
+<mrow>
+y:&amp;= e^{x \log x} = (e^x)^{\log x}
+</mrow><mrow>
+\lim_{x \to 0^+} y &amp;=\lim_{x \to 0^+} (e^x)^{\log x}
+</mrow>
+<intertext>This has the form <m>1^{-\infty} = \frac{1}{1^\infty}</m>, and <m>1^{\infty}</m> is an indeterminate form. We want to use l'Hôpital, but we need to get a different indeterminate form. So, we'll use logarithms. </intertext><mrow>
+\lim_{x \to 0^+} \log y &amp;=\lim_{x \to 0 ^+} \log\left((e^x)^{\log x} \right)
+=\lim_{x \to 0 ^+} \log x \log\left(e^x \right)=\lim_{x \to 0 ^+} (\log x)\cdot x
+</mrow>
+<intertext>This has the indeterminate form <m>0 \cdot \infty</m>, so we need one last adjustment before we can use l'Hôpital's Rule.</intertext><mrow>
+&amp;=\lim_{x \to 0 ^+} \underbrace{\frac{\log x}{\frac{1}{x}}}_{\atp
+	{\mathrm{num} \to -\infty}
+	{\mathrm{den} \to \infty}}
+=\lim_{x \to 0 ^+}\frac{\frac{1}{x}}{\frac{-1}{x^2}}
+=\lim_{x \to 0 ^+}-x=0
+</mrow>
+<intertext>Now, we can figure out what happens to our original function, <m>y</m>:</intertext><mrow>
+\lim_{x \to 0^+} y &amp;=\lim_{x \to 0^+} e^{\log y} = e^0=1
+</mrow>
+</md>
+</li>
+<li> Solution 2
+<md>
+<mrow>
+y:&amp;=e^{x\log x}=\left(e^{\log x}\right)^x=x^x
+</mrow><mrow>
+\lim_{x \to 0^+} y &amp;=\lim_{x \to 0^+}x^x
+</mrow>
+<intertext>We have the indeterminate form <m>0^0</m>. We want to use l'Hôpital, but we need a different indeterminate form. So, we'll use logarithms.</intertext><mrow>
+\lim_{x \to 0^+}\log y &amp;=\lim_{x \to 0^+}\log(x^x)=\lim_{x \to 0^+}x\log x
+</mrow>
+<intertext>Now we have the indeterminate form <m>0 \cdot \infty</m>, so we need one last adjustment before we can use l'Hôpital's Rule.</intertext><mrow>
+\lim_{x \to 0^+} y &amp;=\lim_{x \to 0^+}\underbrace{\frac{\log x}{\frac{1}{x}}}_{\atp
+	{\mathrm{num}\to 0}
+	{\mathrm{den} \to -\infty}}
+=\lim_{x \to 0^+}\frac{\frac{1}{x}}{\frac{-1}{x^2}}
+=\lim_{x \to 0^+}-x=0
+</mrow>
+<intertext>Now, we can figure out what happens to our original function, <m>y</m>:</intertext><mrow>
+\lim_{x \to 0^+} y &amp;=\lim_{x \to 0^+} e^{\log y} = e^0=1
+</mrow>
+</md>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>Evaluate
+<m>\ds\lim_{x \rightarrow 0} \left[-\log(x^2)\right]^x</m>.
+</p></statement>
+<hint><p> Introduce yet another logarithm.
+</p></hint>
+<answer><p> 1
+</p></answer>
+<solution><p>
+First, note that the function exists near 0: <m>x^2</m> is positive, so <m>\log(x^2)</m> exists; near 0, <m>\log x^2</m> is negative, so <m>-\log(x^2)</m> is positive, so <m>\left[-\log(x^2)\right]^x</m> exists even when <m>x</m> is negative.
+</p>
+
+<p>Since <m>\ds\lim_{x \rightarrow 0} -\log(x^2)=\infty</m> and <m>\ds\lim_{x \rightarrow 0}x=0</m>, we have the indeterminate form <m>\infty^0</m>. We need l'Hôpital, but we need to manipulate our function into an appropriate form. We do this using logarithms.
+<md>
+<mrow>
+y:&amp;=\left[-\log(x^2)\right]^x
+</mrow><mrow>
+\log y &amp;= \log \left( \left[-\log(x^2)\right]^x\right)=
+\underbrace{x}_{\to 0}\cdot\underbrace{\log\left(\underbrace{-\log(x^2)}_{\to\infty} \right)}_{\to\infty}=\frac{\log\left(-\log(x^2)\right)}{\frac{1}{x}}
+</mrow><mrow>
+\lim_{x \to 0}\log y &amp;=\lim_{x \to 0} \underbrace{\frac{\log\left(-\log(x^2)\right)}{\frac{1}{x}}}_{\atp
+	{\mathrm{num}\to \infty}
+	{\mathrm{den}\to \pm\infty}}
+=\lim_{x \to 0} \frac{\frac{-\frac{2}{x}}{-\log(x^2)}}{\frac{-1}{x^2}}
+=\lim_{x \to 0} \underbrace{\frac{-2x}{\log(x^2)}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to-\infty}}=0
+</mrow>
+<intertext>Now, we're ready to figure out our original limit.</intertext><mrow>
+\lim_{x\to 0} y &amp;= \lim_{x \to 0} e^{\log y}=e^0=1
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2009H</fromexam></title>
+<statement><p>
+ Find <m>c</m> so that <m>\lim\limits_{x\rightarrow 0}
+\dfrac{1+cx-\cos x}{ e^{x^2}-1}</m> exists.
+</p></statement>
+<hint><p> If the denominator tends to zero, and the limit exists, what must be the limit of the numerator?
+</p></hint>
+<answer><p> <m>c=0</m>
+</p></answer>
+<solution><p>
+Both the numerator and denominator converge to <m>0</m> as
+<m>x\rightarrow 0</m>. So, by l'Hôpital,
+<me>
+\lim_{x\rightarrow 0}\underbrace{\frac{1+cx-\cos x}{ e^{x^2}-1}}_{\atp
+	{\mathrm{num}\to 0}{\mathrm{den}\to 0}}
+=\lim_{x\rightarrow 0}\frac{c+\sin x}{ 2xe^{x^2}}
+</me>
+The new denominator still converges to <m>0</m> as <m>x\rightarrow 0</m>. For
+the limit to exist, the same must be true for the new numerator. This  tells us that if <m>c \neq 0</m>, the limit does not exist. We should check whether the limit exists when <m>c=0</m>.
+Using l'Hôpital:
+<me>
+\lim_{x \to 0}\underbrace{\frac{\sin x}{2xe^{x^2}}}_{\atp
+	{\mathrm{num}\to 0}{\mathrm{den}\to 0}}=\lim_{x \to 0}\frac{\cos x}{e^{x^2}(4x^2+2)}=\frac{1}{1(0+2)}=\frac{1}{2}.</me>
+</p>
+
+<p>	So, the limit exists when <m>c=0</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2010H</fromexam></title>
+<statement><p>
+Evaluate <m>\lim\limits_{x\rightarrow 0}\dfrac{e^{k\sin(x^2)}-(1+2x^2)}{x^4}</m>,
+where <m>k</m> is a constant.
+</p></statement>
+<hint><p>
+Start with one application of l'Hôpital's Rule. After that, you need to consider three distinct cases: <m>k \gt 2</m>, <m>k \lt 2</m>, and <m>k=2</m>.
+</p></hint>
+<answer><p>
+<me>\lim\limits_{x\rightarrow 0}\dfrac{e^{k\sin(x^2)}-(1+2x^2)}{x^4}=\left\{\begin{array}{rl}
+-\infty&amp;k \lt 2\\
+2&amp;k=2\\
+\infty&amp;k \gt 2
+\end{array}\right.</me>
+</p></answer>
+<solution><p>
+The first thing we notice is, regardless of <m>k</m>, when we plug in <m>x=0</m> both numerator and denominator become zero. Let's use this fact, and apply l'Hôpital's Rule.
+<md>
+<mrow>
+\lim\limits_{x\rightarrow 0}\underbrace{\dfrac{e^{k\sin(x^2)}-(1+2x^2)}{x^4}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+&amp;=\lim_{x\rightarrow 0}\dfrac{2kx\cos(x^2)e^{k\sin(x^2)}-4x}{4x^3}
+</mrow><mrow>
+&amp;=\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}
+</mrow>
+<intertext>When we plug in <m>x=0</m>, the denominator becomes 0, and the numerator becomes <m>2k-4</m>. So, we'll need some cases, because the behaviour of the limit depends on <m>k</m>.</intertext><mrow>
+</mrow>
+<intertext>For <m>k=2</m>:</intertext><mrow>
+\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}&amp;=
+\lim_{x\rightarrow 0}\underbrace{\dfrac{4\cos(x^2)e^{2\sin(x^2)}-4}{4x^2}}_{\atp
+	{\mathrm{num}\to0}
+	{\mathrm{den}\to0}}
+</mrow><mrow>
+&amp;= \lim_{x\rightarrow 0}\dfrac{-8x\sin(x^2)e^{2\sin(x^2)}
+ +16x\cos^2(x^2)e^{2\sin(x^2)}}{8x}\cr
+&amp;= \lim_{x\rightarrow 0}\big[-\sin(x^2)e^{2\sin(x^2)}
+ +2\cos^2(x^2)e^{2\sin(x^2)}\big]\cr
+&amp;=2
+</mrow>
+<intertext>For <m>k \gt 2</m>, the numerator goes to <m>2k-4</m>, which is a  positive constant, while the denominator goes to <m>0</m> from the right, so:</intertext><mrow>
+\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}&amp;=
+\infty
+</mrow>
+<intertext>For <m>k \lt 2</m>, the numerator goes to <m>2k-4</m>, which is a  negative constant, while the denominator goes to <m>0</m> from the right, so:</intertext><mrow>
+\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}&amp;=
+-\infty
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+Suppose an algorithm, given an input with with <m>n</m> variables, will terminate in at most <m>S(n)=5n^4-13n^3-4n+\log (n)</m> steps. A researcher writes that the algorithm will terminate in <em>roughly</em> at most <m>A(n)=5n^4</m> steps. Show that the percentage error involved in using <m>A(n)</m> instead of <m>S(n)</m> tends to zero as <m>n</m> gets very large. What happens to the absolute error?
+</p>
+
+<p>
+Remark: this is a very common kind of approximation. When people deal with functions that give very large numbers, often they don't care about the <em>exact</em> large number--they only want a ballpark. So, a complicated function might be replaced by an easier function that doesn't give a large relative error. If you would like to know more about the ways people describe functions that give very large numbers, you can read about <q>Big O Notation</q> in Section 3.6.3 of the CLP101 notes.
+</p></statement>
+<hint><p> Percentage error: <m>100\left|\frac{\mbox{exact}-\mbox{approx}}{\mbox{exact}}\right|</m>. Absolute error: <m>|\mbox{exact}-\mbox{approx}|</m>. (We'll see these definitions again in <xref ref="def_APPrelError"/>.)
+</p></hint>
+<answer><p>
+<ul>
+<li><p> We want to find the limit as <m>n</m> goes to infinity of the percentage error,
+<m>\ds\lim_{n \rightarrow \infty} 100\frac{|S(n)-A(n)|}{|S(n)|}</m>. Since <m>A(n)</m> is a nicer function than <m>S(n)</m>, let's simplify: <m>\ds\lim_{n \rightarrow \infty} 100\frac{|S(n)-A(n)|}{|S(n)|} = 100\left|1-\ds\lim_{n \to \infty}\frac{A(n)}{S(n)}\right|</m>.
+</p>
+
+<p>We  figure out this limit the natural way:
+<md>
+<mrow>
+100\left|1-\ds\lim_{n \to \infty}\frac{A(n)}{S(n)}\right|&amp;=
+100\left|1-\ds\lim_{n \rightarrow \infty}\underbrace{\frac{5n^4}{5n^4-13n^3-4n+\log (n)}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}\right|
+</mrow><mrow>
+&amp;=
+100\left|1-\ds\lim_{n \rightarrow \infty}\frac{20n^3}{20n^3-39n^2-4+\frac{1}{n}}\right|
+</mrow><mrow>
+&amp;=
+100\left|1-\ds\lim_{n \rightarrow \infty}\frac{n^3}{n^3}\cdot\frac{20}{20-\frac{39}{n}-\frac{4}{n^3}+\frac{1}{n^4}}\right|
+</mrow><mrow>
+&amp;=100|1-1|=0
+</mrow>
+</md>
+So, as <m>n</m> gets larger and larger, the relative error in the approximation gets closer and closer to 0.</p>
+</li>
+<li> Now, let's look at the absolute error.
+<md>
+<mrow>
+\lim_{n \rightarrow \infty} \left| S(n)-A(n)\right|&amp;=\lim_{n \rightarrow \infty} |-13n^3-4n+\log n|=\infty
+</mrow>
+</md>
+So although the error gets small <em>relative to the giant numbers we're talking about</em>, the absolute error grows without bound.
+</li>
+</ul>
+</p></answer>
+<solution><p>
+<ul>
+<li><p> We want to find the limit as <m>n</m> goes to infinity of the percentage error,
+<m>\ds\lim_{n \rightarrow \infty} 100\frac{|S(n)-A(n)|}{|S(n)|}</m>. Since <m>A(n)</m> is a nicer function than <m>S(n)</m>, let's simplify: <m>\ds\lim_{n \rightarrow \infty} 100\frac{|S(n)-A(n)|}{|S(n)|} = 100\left|1-\ds\lim_{n \to \infty}\frac{A(n)}{S(n)}\right|</m>.
+</p>
+
+<p>We  figure out this limit the natural way:
+<md>
+<mrow>
+100\left|1-\ds\lim_{n \to \infty}\frac{A(n)}{S(n)}\right|&amp;=
+100\left|1-\ds\lim_{n \rightarrow \infty}\underbrace{\frac{5n^4}{5n^4-13n^3-4n+\log (n)}}_{\atp
+	{\mathrm{num}\to\infty}
+	{\mathrm{den}\to\infty}}\right|
+</mrow><mrow>
+&amp;=
+100\left|1-\ds\lim_{n \rightarrow \infty}\frac{20n^3}{20n^3-39n^2-4+\frac{1}{n}}\right|
+</mrow><mrow>
+&amp;=
+100\left|1-\ds\lim_{n \rightarrow \infty}\frac{n^3}{n^3}\cdot\frac{20}{20-\frac{39}{n}-\frac{4}{n^3}+\frac{1}{n^4}}\right|
+</mrow><mrow>
+&amp;=100|1-1|=0
+</mrow>
+</md>
+So, as <m>n</m> gets larger and larger, the relative error in the approximation gets closer and closer to 0.</p>
+</li>
+<li> Now, let's look at the absolute error.
+<md>
+<mrow>
+\lim_{n \rightarrow \infty} \left| S(n)-A(n)\right|&amp;=\lim_{n \rightarrow \infty} |-13n^3-4n+\log n|=\infty
+</mrow>
+</md>
+So although the error gets small <em>relative to the giant numbers we're talking about</em>, the absolute error grows without bound.
+</li>
+</ul>
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Implicit Differentiation</title>
+<subsection><title>Implicit Differentiation</title>
+
+<p>Implicit differentiation is a simple trick that is used to
+compute derivatives of functions either
+<ul>
+<li> when you don't know an explicit formula for the function, but you
+know an equation that the function obeys or
+</li>
+<li> even when you have an explicit, but complicated, formula for the
+function, and the function obeys a simple equation.
+</li>
+</ul>
+The trick is just to differentiate both sides of the equation and
+then solve for the derivative we are seeking. In fact we have already done
+this, without using the name <q>implicit differentiation</q>, when we found the
+derivative of <m>\log x</m> in the previous section. There we knew that the function
+<m>f(x)=\log x</m> satisfied the equation <m>e^{f(x)}=x</m> for all <m>x</m>. That is, the
+functions <m>e^{f(x)}</m> and <m>x</m> are in fact the same function and so have the same
+derivative. So we had
+<md>
+<mrow>
+\diff{}{x}e^{f(x)} = \diff{}{x}x = 1
+</mrow>
+</md>
+We then used the chain rule to get <m>\diff{}{x}e^{f(x)}=e^{f(x)}f'(x)</m>,
+which told us that <m>f'(x)</m> obeys the equation
+<md>
+<mrow>
+e^{f(x)}f'(x) &amp;=1 &amp; \text{and we can now solve for $f'(x)$}
+</mrow><mrow>
+f'(x) &amp;= e^{-f(x)} = e^{-\log x} = \frac{1}{x}.
+</mrow>
+</md>
+</p>
+
+<p>The typical way to get used to implicit differentiation is to play with
+problems involving tangent lines to curves. So here are a few examples
+finding the equations of tangent lines to curves. Recall, from Theorem
+<xref ref="thm_DIFFtangentLine"/>, that, in general, the tangent line to the curve
+<m>y=f(x)</m> at <m>\big(x_0,y_0\big)</m> is <m>y=f(x_0)+f'(x_0)(x-x_0)=y_0+f'(x_0)(x-x_0)</m>.
+</p>
+
+<example xml:id="eg_DIFFimpldiffD"><title>Finding a tangent line using implicit differentiation</title>
+<p>
+ Find the equation of the tangent line to <m>y=y^3+xy+x^3</m> at <m>x=1</m>.
+</p>
+
+<p>This is a very standard sounding example, but made a little complicated by the fact that
+the curve is given by a cubic equation <mdash/> which means we cannot solve directly for <m>y</m> in
+terms of <m>x</m> or vice-versa. So we really do need implicit differentiation.
+<ul>
+<li> First notice that when <m>x=1</m> the equation, <m>y=y^3+xy+x^3</m>, of the curve
+simplifies to <m>y=y^3+y+1</m> or <m>y^3=-1</m>, which we can solve
+<fn>
+This type of luck rarely happens in the <q>real world</q>. But it happens
+remarkably frequently in textbooks, problem sets and tests.</fn>
+: <m>y=-1</m>.
+So we know that the curve passes through <m>(1,-1)</m> when <m>x=1</m>.
+</li>
+<li> Now, to find the  slope of the tangent line at <m>(1,-1)</m>, pretend that our
+curve is <m>y=f(x)</m> so that <m>f(x)</m> obeys
+<md>
+<mrow>
+f(x) &amp;= f(x)^3 + x f(x) + x^3
+</mrow>
+</md>
+for all <m>x</m>. Differentiating both sides gives
+<md>
+<mrow>
+f'(x)=3f(x)^2f'(x)+f(x)+xf'(x)+3x^2
+</mrow>
+</md>
+</li>
+<li> At this point we could isolate for <m>f'(x)</m> and write it in terms of <m>f(x)</m>
+and <m>x</m>, but since we only want answers when <m>x=1</m>, let us substitute in <m>x=1</m>
+and <m>f(1)=-1</m> (since the curve passes through <m>(1,-1)</m>) and clean things up
+before doing anything else.
+</li>
+<li> Subbing in <m>x=1,\ f(1)=-1</m> gives
+<md>
+<mrow>
+f'(1)&amp;=3f'(1)-1+f'(1)+3 &amp; \text{ and so } f'(1)=-\frac{2}{3}
+</mrow>
+</md>
+</li>
+<li> The equation of the tangent line is
+<md>
+<mrow>
+y=y_0+f'(x_0)(x-x_0)=-1-\frac{2}{3}(x-1)
+=-\frac{2}{3}x-\frac{1}{3}
+</mrow>
+</md>
+</li>
+</ul>
+We can further clean up the equation of the line to write it as <m>2x+3y=-1</m>.
+</p></example>
+
+<p>In the previous example we replace <m>y</m> by <m>f(x)</m> in the middle of the
+computation. We don't actually have to do this. When we are writing out our
+solution we can remember that <m>y</m> is a function of <m>x</m>. So we can start with
+<md>
+<mrow>
+  y &amp;=y^3+xy+x^3 &amp; </mrow>
+<intertext> and differentiate remembering that <m>y\equiv
+y(x)</m></intertext><mrow>
+  y' &amp;= 3 y^2 y' + xy' + y + 3x^2
+</mrow>
+<intertext>And now substitute <m>x=1, y=-1</m> to get</intertext><mrow>
+  y'(1) &amp;= 3 \cdot y'(1) + y'(1) - 1 + 3 &amp; \text{and so}
+</mrow><mrow>
+  y'(1) &amp;= -\frac{2}{3}
+</mrow>
+</md>
+</p>
+
+<p>The next one is at the same time a bit easier (because it is a quadratic) and a
+bit harder (because we are asked for the tangent at a general point on the curve, not a
+specific one).</p>
+
+<example xml:id="eg_DIFFimpldiffA"><title>Another tangent line through implicit differentiation</title>
+<p>
+Let <m>(x_0,y_0)</m> be a point on the ellipse <m>3x^2+5y^2=7</m>. Find the equation for
+the tangent lines when <m>x=1</m> and <m>y</m> is positive. Then find an equation
+for the tangent line to the ellipse at a general point <m>(x_0,y_0)</m>.
+</p>
+
+<p>Since we are not given an specific point <m>x_0</m> we are going to have to be
+careful with the second half of this question.
+<ul>
+<li> When <m>x=1</m> the equation simplifies to
+<md>
+<mrow>
+  3 + 5y^2 &amp;= 7
+</mrow><mrow>
+  5y^2 &amp;= 4
+</mrow><mrow>
+  y &amp;= \pm \frac{2}{\sqrt{5}}.
+</mrow>
+</md>
+We are only interested in positive <m>y</m>, so our point on the curve
+is <m>(1,2/\sqrt{5})</m>.
+</li>
+<li> Now we use implicit differentiation to find <m>\diff{y}{x}</m> at
+this point. First we pretend that we have solved the curve explicitly, for some interval
+of <m>x</m>'s, as <m>y=f(x)</m>. The equation becomes
+<md>
+<mrow>
+  3x^2 + 5f(x)^2 &amp;= 7 &amp; \text{now differentiate}
+</mrow><mrow>
+  6x + 10 f(x) f'(x) &amp;= 0
+</mrow><mrow>
+  f'(x) &amp;= - \frac{3x}{5f(x)}
+</mrow>
+</md>
+</li>
+<li> When <m>x=1, y= 2/\sqrt{5}</m> this becomes
+<md>
+<mrow>
+  f'(1) &amp;= - \frac{3}{5 \cdot 2/\sqrt{5}} = - \frac{3}{2\sqrt{5}}
+</mrow>
+</md>
+So the tangent line passes through <m>(1,2/\sqrt{5})</m> and has slope <m>-
+\frac{3}{2\sqrt{5}}</m>. Hence the tangent line has equation
+<md>
+<mrow>
+  y &amp;=y_0+f'(x_0)(x-x_0)
+</mrow><mrow>
+    &amp;= \frac{2}{\sqrt{5}} - \frac{3}{2\sqrt{5}} (x-1)
+</mrow><mrow>
+  &amp;= \frac{7 - 3x}{2\sqrt{5}} &amp; \text{or equivalently}
+</mrow><mrow>
+  3x + 2\sqrt{5} y&amp;= 7
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+
+<p>Now we should go back and do the same but for a general point on the curve
+<m>(x_0,y_0)</m>:
+<ul>
+<li><p> A good first step here is to sketch the curve. Since this is an
+ellipse, it is pretty straight-forward.</p>
+<sidebyside widths="55% 35%">
+<image source="text/figs/ellipse"/>
+<image source="text/figs/ellipseB"/>
+</sidebyside>
+</li>
+<li> Notice that there are two points on the ellipse <mdash/> the extreme right
+and left points  <m>(x_0,y_0)=\pm\big(\sqrt{\frac{7}{3}},0\big)</m> <mdash/> at
+which the tangent line is vertical. In those two cases, the tangent line is
+just <m>x=x_0</m>.
+</li>
+<li><p> Since this is a quadratic for <m>y</m>, we could solve it explicitly to get
+<md>
+<mrow>
+y &amp;= \pm \sqrt{\frac{7-3x^2}{5}}
+</mrow>
+</md>
+and choose the positive or negative branch as appropriate. Then we could
+differentiate to find the slope and put things together to get the tangent line.
+</p>
+
+<p>But even in this relatively easy case, it is computationally cleaner,
+and hence less vulnerable to mechanical errors, to use implicit
+differentiation. So that's what we'll do.</p>
+</li>
+<li> Now we could again <q>pretend</q> that we have solved the equation for the
+ellipse for <m>y=f(x)</m>  near <m>(x_0,y_0)</m>, but lets not do that. Instead (as we
+did just before this example) just remember that when we differentiate <m>y</m> is
+really a function of <m>x</m>. So starting from
+<md>
+<mrow>
+  3x^2 + 5y^2 &amp;=7 &amp;\text{differentiating gives}
+</mrow><mrow>
+  6x + 5\cdot 2y \cdot y' &amp;= 0
+</mrow>
+</md>
+We can then solve this for <m>y'</m>:
+<md>
+<mrow>
+  y' &amp;= -\frac{3x}{5y}
+</mrow>
+</md>
+where <m>y'</m> and <m>y</m> are both functions of <m>x</m>.
+</li>
+<li> Hence at the point <m>(x_0,y_0)</m> we have
+<md>
+<mrow>
+  \left. y' \right|_{(x_0,y_0)} &amp;= -\frac{3x_0}{5y_0}
+</mrow>
+</md>
+This is the slope of the tangent line at <m>(x_0,y_0)</m> and so its equation is
+<md>
+<mrow>
+  y &amp;=y_0+y' \cdot (x-x_0)
+</mrow><mrow>
+  &amp;= y_0 -\frac{3x_0}{5y_0}(x-x_0)
+</mrow>
+<intertext>We can simplify this by multiplying through by <m>5y_0</m> to get</intertext><mrow>
+  5y_0 y &amp;= 5y_0^2-3x_0x +3x_0^2
+</mrow>
+<intertext>We can clean this up more by moving all the terms that contain <m>x</m>
+or <m>y</m> to the left-hand side and everything else to the right:</intertext><mrow>
+ 3x_0x+5y_0y &amp;=3x_0^2+5y_0^2
+</mrow>
+<intertext>But there is one more thing we can do, our original equation
+is <m>3x^2+5y^2=7</m> for all points on the curve, so we know that
+<m>3x_0^2+5y_0^2=7</m>. This cleans up the right-hand side.</intertext><mrow>
+ 3x_0x+5y_0y &amp;=7
+</mrow>
+</md>
+</li>
+<li> In deriving this formula for the tangent line
+at <m>(x_0,y_0)</m> we have assumed that <m>y_0\ne 0</m>. But in fact the final answer
+happens to also work when <m>y_0=0</m> (which means
+<m>x_0=\pm\sqrt{\frac{7}{3} }</m>), so that the tangent line is <m>x=x_0</m>.
+</li>
+</ul>
+We can also check that our answer for general <m>(x_0,y_0)</m> reduces to our answer
+for <m>x_0=1</m>.
+<ul>
+<li> When <m>x_0=1</m> we worked out that <m>y_0=2/\sqrt{5}</m>.
+</li>
+<li> Plugging this into our answer above gives
+<md>
+<mrow>
+  3x_0x+5y_0y &amp;=7  &amp;\text{sub in $(x_0,y_0)=(1,2/\sqrt{5})$}:
+</mrow><mrow>
+  3 x + 5 \frac{2}{\sqrt{5}} y &amp;= 7 &amp; \text{clean up a little}
+</mrow><mrow>
+  3x + 2\sqrt{5} y &amp;=7
+</mrow>
+</md>
+as required.
+</li>
+</ul>
+</p>
+
+</example>
+
+<example xml:id="eg_DIFFimpldiffE"><title>A more involved example</title>
+<p>
+At which points does the curve  <m>x^2-xy+y^2=3</m> cross the <m>x</m><ndash/>axis? Are the
+tangent lines to the curve at those points parallel?
+</p>
+
+<p>This is a 2 part question <mdash/> first the <m>x</m>-intercepts and then we need to
+examine  tangent lines.
+<ul>
+<li> Finding where the curve crosses the <m>x</m>-axis is straight forward. It
+does so when <m>y=0</m>. This means <m>x</m> satisfies
+<md>
+<mrow>
+  x^2-x\cdot 0+0^2&amp;=3 &amp; \text{ so $x = \pm\sqrt{3}$}.
+</mrow>
+</md>
+So the curve crosses the <m>x</m><ndash/>axis at two points <m>\big(\pm\sqrt{3}\,,\,0\big)</m>.
+</li>
+<li> Now we need to find the tangent lines at those points. But we don't
+actually need the lines, just their slopes. Again we can pretend that near one
+of those points the curve is <m>y=f(x)</m>. Applying <m>\diff{}{x}</m> to both sides of
+<m>x^2-xf(x)+f(x)^2=3</m> gives
+<md>
+<mrow>
+  2x-f(x)-xf'(x)+2f(x)f'(x)&amp;=0
+</mrow>
+</md>
+etc etc.
+</li>
+<li> But let us stop <q>pretending</q>. Just make sure we remember that <m>y</m> is a
+function of <m>x</m> when we differentiate:
+<md>
+<mrow>
+  x^2-xy+y^2 &amp;= 3 &amp; \text{start with the curve, and differentiate}
+</mrow><mrow>
+  2x - xy' -y + 2yy' &amp;=0 &amp;
+</mrow>
+</md>
+Now substitute in the first point, <m>x=+\sqrt{3}, y=0</m>:
+<md>
+<mrow>
+  2\sqrt{3} - \sqrt{3}y' + 0 &amp;=0
+</mrow><mrow>
+  y' &amp;= 2
+</mrow>
+</md>
+And now do the second point <m>x=-\sqrt{3}, y=0</m>:
+<md>
+<mrow>
+  -2\sqrt{3} + \sqrt{3}y' + 0 &amp;=0
+</mrow><mrow>
+  y' &amp;= 2
+</mrow>
+</md>
+Thus the slope is the same at <m>x=\sqrt{3}</m> and <m>x=-\sqrt{3}</m> and the tangent
+lines are parallel.
+</li>
+</ul>
+</p>
+<sidebyside width="50%">
+ <image source="text/figs/implicit_eg1"/>
+</sidebyside>
+
+</example>
+
+
+<p>Okay <mdash/> lets get away from curves and do something a little different.
+</p>
+
+<example xml:id="eg_DIFFimpldiffC"><title>An rough game of baseball</title>
+<p>
+You are standing at the origin. At time zero a pitcher throws a ball at
+your head
+<fn>It seems that it is not a friendly game today.</fn>.
+</p>
+<figure xml:id="fig_DIFFbaseball">
+<caption/>
+<image width="80%" source="text/figs/baseball"/>
+</figure>
+
+<p>
+The position of the (centre of the) ball at time <m>t</m> is <m>x(t)=d-vt</m>, where <m>d</m> is
+the distance from your head to the  pitcher's mound and <m>v</m> is the ball's
+velocity. Your eye sees the ball filling
+<fn>This is the <q>visual angle</q>
+or <q>angular size</q>.</fn>
+ an angle <m>2\theta(t)</m> with
+<md>
+<mrow>
+\sin\big(\theta(t)\big)=\frac{r}{d-vt}
+</mrow>
+</md>
+where <m>r</m> is the radius of the baseball. The question is <q>How fast is
+<m>\theta</m> growing at time <m>t</m>?</q> That is, what is <m>\diff{\theta}{t}</m>?
+</p>
+
+<p><ul>
+<li> We don't know (yet) how to solve this equation to find
+<m>\theta(t)</m> explicitly. So we use implicit differentiation.
+</li>
+<li> To do so we apply <m>\diff{}{t}</m> to both sides of
+our equation. This gives
+<md>
+<mrow>
+\cos\big(\theta(t)\big)\cdot\theta'(t)=\frac{rv}{(d-vt)^2}
+</mrow>
+</md>
+</li>
+<li> Then we solve for <m>\theta'(t)</m>:
+<md>
+<mrow>
+\theta'(t)=\frac{rv}{(d-vt)^2\cos\big(\theta(t)\big)}
+</mrow>
+</md>
+</li>
+<li> As is often the case, when using implicit differentiation, this answer
+is not very satisfying because it contains <m>\theta(t)</m>, for which we still
+do not have an explicit formula. However in this case we can get an
+explicit formula for <m>\cos\big(\theta(t)\big)</m>, without having an explicit
+formula for <m>\theta(t)</m>, just by looking at the right<ndash/>angled triangle
+in Figure <xref ref="fig_DIFFbaseball"/>, above.
+</li>
+<li> The hypotenuse of that triangle has length <m>d-vt</m>. By Pythagoras, the
+length of the side of the triangle adjacent of the angle <m>\theta(t)</m> is
+<m>\sqrt{(d-vt)^2-r^2}</m>. So
+<me>
+\cos\big(\theta(t)\big)=\frac{\sqrt{(d-vt)^2-r^2}}{d-vt}
+</me>
+and
+<md>
+<mrow>
+\theta'(t)=\frac{rv}{(d-vt)\sqrt{(d-vt)^2-r^2}}
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+</example>
+
+
+<p>Okay <mdash/> just one more tangent-to-the-curve example and then we'll go on to
+something different.</p>
+
+<example xml:id="eg_DIFFimpldiffB"><title>The astroid (no that is not a typo)</title>
+<p>
+Let <m>(x_0,y_0)</m> be a point on the astroid
+<fn>Here is where is the
+astroid comes from. Imagine two circles, one of radius <m>1/4</m> and
+one of radius <m>1</m>. Paint a red dot on the smaller circle. Then imagine
+the smaller circle rolling around the inside of the larger circle. The
+curve traced by the red dot is our astroid. Google <q>astroid</q> (be careful
+about the spelling) to find animations showing this.
+<me>\mbox{ }</me> <!-- a hack to get paragraph break -->
+The astroid was first discussed by Johann Bernoulli in 1691<ndash/>92. It also
+appears in the work of Leibniz.</fn>
+</p>
+
+<p><md>
+<mrow>
+x^{\frac{2}{3}}+y^{\frac{2}{3}}=1.
+</mrow>
+</md>
+Find an equation for the tangent line to the astroid at <m>(x_0,y_0)</m>.
+</p>
+
+<p><ul>
+<li> As was the case in examples above we can rewrite the equation of
+the astroid near <m>(x_0,y_0)</m> in the form <m>y=f(x)</m>, with an explicit <m>f(x)</m>, by
+solving the equation <m>x^{\frac{2}{3}}+y^{\frac{2}{3}}=1</m>. But again, it
+is computationally cleaner, and hence less vulnerable to mechanical errors, to
+use implicit differentiation. So that's what we'll do.
+</li>
+<li> First up, since <m>(x_0,y_0)</m> lies on the curve, it satisfies
+<md>
+<mrow>
+x_0^{\frac{2}{3}}+y_0^{\frac{2}{3}}=1.
+</mrow>
+</md>
+</li>
+<li> Now, no pretending that <m>y=f(x)</m>, this time <mdash/> just make sure we
+remember when we differentiate that <m>y</m> changes with <m>x</m>.
+<md>
+<mrow>
+  x^{\frac{2}{3}}+y^{\frac{2}{3}} &amp;=1
+</mrow>
+<intertext> Start with the curve, and then differentiate</intertext>
+<mrow>
+\frac{2}{3}x^{-\frac{1}{3}} + \frac{2}{3} y^{-\frac{1}{3}} y' &amp;=0
+</mrow>
+</md>
+</li>
+<li> Note the derivative of <m>x^{\frac{2}{3}}</m>, namely
+<m>\frac{2}{3}x^{-\frac{1}{3}}</m>, and the derivative of
+<m>y^{\frac{2}{3}}</m>, namely <m>\frac{2}{3} y^{-\frac{1}{3}}y'</m>,
+are defined only when <m>x\ne 0</m> and <m>y\ne 0</m>. We are interested in the case that
+<m>x=x_0</m> and <m>y=y_0</m>. So we better assume that <m>x_0\ne 0</m> and <m>y_0\ne 0</m>.
+Probably something weird happens when <m>x_0=0</m> or <m>y_0=0</m>. We'll come back to
+this shortly.
+</li>
+<li> To continue on, we set <m>x=x_0, y=y_0</m> in the equation above, and
+then solve for <m>y'</m>:
+<me>
+\frac{2}{3}x_0^{-\frac{1}{3}}
++\frac{2}{3} y_0^{-\frac{1}{3}} y'(x)=0
+\implies y'(x_0)= -\left( \frac{y_0}{x_0} \right)^{\frac{1}{3}}
+</me>
+This is the slope of the tangent line and its equation is
+<me>
+y=y_0+f'(x_0)(x-x_0) = y_0
+-\left(\frac{y_0}{x_0}\right)^{\frac{1}{3}}(x-x_0)
+</me>
+</li>
+</ul>
+</p>
+
+<p>Now let's think a little bit about what the tangent line slope of
+<m>-\root{3}\of {\frac{y_0}{x_0}}</m> tells us about the astroid.
+<ul>
+<li> First, as a preliminary observation, note that since
+<m>x_0^{\frac{2}{3}}\ge0</m> and <m>y_0^{\frac{2}{3}}\ge0</m> the equation
+<m>x_0^{\frac{2}{3}}+y_0^{\frac{2}{3}}=1</m> of the astroid forces
+<m>0\le x_0^{\frac{2}{3}},y_0^{\frac{2}{3}} \le 1</m> and
+hence <m>-1\le x_0,y_0\le 1</m>.
+</li>
+<li> For all <m>x_0,y_0 \gt 0</m> the slope <m>-\root{3}\of {\frac{y_0}{x_0}}
+ \lt 0</m>. So at all points on the astroid that are in the first quadrant,
+the tangent line has negative slope, i.e. is <q>leaning backwards</q>.
+</li>
+<li>  As <m>x_0</m> tends to zero, <m>y_0</m> tends to <m>\pm 1</m> and the
+tangent line slope tends to infinity. So at points on the astroid near
+<m>(0,\pm 1)</m>, the tangent line is almost vertical.
+</li>
+<li> As <m>y_0</m> tends to zero, <m>x_0</m> tends to <m>\pm 1</m> and the
+tangent line slope tends to zero. So at points on the astroid near
+<m>(\pm 1,0)</m>, the tangent line is almost horizontal.
+</li>
+</ul>
+Here is a figure illustrating all this.</p>
+
+<sidebyside widths="45% 45%">
+<image source="text/figs/astroid"/>
+<image source="text/figs/astroidB"/>
+</sidebyside>
+
+<p>Sure enough, as we speculated earlier, something weird does happen
+to the astroid when <m>x_0</m> or <m>y_0</m> is zero. The astroid is pointy,
+and does not have a tangent there.
+</p></example>
+
+</subsection>
+
+
+<xi:include href="../problems/prob_s2.11.xml"/>
+
+
+</section>

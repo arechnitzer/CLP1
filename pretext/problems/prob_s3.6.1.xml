@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_sketch_DIA"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose <m>f(x)</m> is a function given by
+<me>
+f(x)= \frac{g(x)}{x^2-9}</me>
+</p>
+
+<p>where <m>g(x)</m> is also a function. True or false: <m>f(x)</m> has a vertical asymptote at <m>x=-3</m>.
+</p></statement>
+<hint><p>
+What happens if <m>g(x)=x+3</m>?
+</p></hint>
+<answer><p>
+In general, false.
+</p></answer>
+<solution><p>
+In general, this is false. For example, the function <m>f(x) = \dfrac{x^2-9}{x^2-9}</m> has no vertical asymptotes, because it is equal to 1 in every point in its domain (and is undefined when <m>x=\pm3</m>).
+</p>
+
+<p>However, it is certainly <em>possible</em> that <m>f(x)</m> has a vertical asymptote at <m>x=-3</m>. For example, <m>f(x)=\dfrac{1}{x^2-9}</m> has a vertical asymptote at <m>x=-3</m>.  More generally, if <m>g(x)</m> is continuous and <m>g(-3)\ne 0</m>,
+          then <m>f(x)</m> has a vertical asympotote at <m>x=-3</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Match the functions <m>f(x)</m>, <m>g(x)</m>, <m>h(x)</m>, and <m>k(x)</m> to the curves <m>y=A(x)</m> through <m>y=D(x)</m>.</p>
+<md>
+  <mrow>
+f(x) &amp; =\sqrt{x^2+1} &amp;
+g(x) &amp;=\sqrt{x^2-1} &amp;
+h(x) &amp;=\sqrt{x^2+4} &amp;
+k(x) &amp;=\sqrt{x^2-4} &amp;
+</mrow>
+</md>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{4}
+\draw[thick, orange] plot[domain=-3:3, samples=100](\x,{sqrt(\x*\x+1)}) node[right]{$y=A(x)$};
+\foreach \x in {1,-1,2,-2}{\YExcoord{\x}{\x}}
+\foreach \x in {1,2}{\YEycoord{\x}{\x}}
+\end{tikzpicture}]]></latex-image></image>
+
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{4}
+\draw[thick, red] plot[domain=-3:3, samples=100](\x,{sqrt(\x*\x+4)}) node[right]{$y=B(x)$};
+\foreach \x in {1,-1,2,-2}{\YExcoord{\x}{\x}}
+\foreach \x in {1,2}{\YEycoord{\x}{\x}}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{4}
+\draw[thick, blue] plot[domain=-3:-1, samples=100](\x,{sqrt(\x*\x-1)});
+\draw[thick, blue] plot[domain=1:3, samples=100](\x,{sqrt(\x*\x-1)})node[right]{$y=C(x)$};
+\foreach \x in {1,-1,2,-2}{\YExcoord{\x}{\x}}
+\foreach \x in {1,2}{\YEycoord{\x}{\x}}
+\end{tikzpicture}]]></latex-image></image>
+
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{4}
+\draw[thick, green!80!black] plot[domain=-3:-2, samples=100](\x,{sqrt(\x*\x-4)});
+\draw[thick, green!80!black] plot[domain=2:3, samples=100](\x,{sqrt(\x*\x-4)}) node[right]{$y=D(x)$};
+\foreach \x in {1,-1,2,-2}{\YExcoord{\x}{\x}}
+\foreach \x in {1,2}{\YEycoord{\x}{\x}}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+Use domains and intercepts to distinguish between the functions.
+</p></hint>
+<answer><p>
+<textorange><m>f(x)=A(x)</m></textorange>
+</p>
+<p>
+<textblue><m>g(x)=C(x)</m></textblue>
+</p>
+<p>
+<textred><m>h(x)=B(x)</m></textred>
+</p>
+<p>
+<textdarkgreen><m>k(x)=D(x)</m></textdarkgreen>
+</p></answer>
+<solution><p>
+Since <m>x^2+1</m> and <m>x^2+4</m> are always positive, <m>f(x)</m> and <m>h(x)</m> are defined over all real numbers. So, <m>f(x)</m> and <m>h(x)</m> correspond to <m>A(x)</m> and <m>B(x)</m>. Which is which? <m>A(0)=1=f(0)</m> while <m>B(0)=2=h(0)</m>, so <m>\textcolor{orange}{A(x)=f(x)}</m> and
+<m>\textcolor{red}{B(x)=h(x)}</m>.
+</p>
+
+<p>That leaves <m>g(x)</m> and <m>k(x)</m> matching to <m>C(x)</m> and <m>D(x)</m>. The domain of <m>g(x)</m> is all <m>x</m> such that <m>x^2-1\ge0</m>. That is, <m>|x|\ge1</m>, like <m>C(x)</m>.
+The domain of <m>k(x)</m> is all <m>x</m> such that <m>x^2-4\ge0</m>. That is, <m>|x|\ge2</m>, like <m>D(x)</m>.
+So, <m>\textcolor{blue}{C(x)=g(x)}</m> and <m>\textcolor{green}{D(x)=k(x)}</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Below is the graph of
+<me>
+y=f(x)=\sqrt{\log^2(x+p)}</me>
+</p>
+
+<p><ol label="a">
+<li> What is <m>p</m>?
+</li>
+<li> What is <m>b</m> (marked on the graph)?
+</li>
+<li> What is the <m>x</m>-intercept of <m>f(x)</m>?
+</li>
+</ol>
+Remember <m>\log(x+p)</m> is the natural logarithm of <m>x+p</m>, <m>\log_e(x+p)</m>.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{9}{3}{1}{5}
+\draw[thick, red] plot[domain=-7.38:2, samples=200](\x,{sqrt(ln(\x+7.39)*ln(\x+7.39))});
+\draw[dashed] (-7.39,5)--(-7.39,-.2) node[below]{$b$};
+\foreach \y in {1,2,3}{\YEycoord{\y}{\y}}
+\foreach \x in {-6,...,-1}{\YExcoord{\x}{\x}}
+\foreach \x in {1,2,-8}{\YExcoord{\x}{\x}}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+To find <m>p</m>, the equation <m>f(0)=2</m> gives you two possible values of <m>p</m>. Consider the domain of <m>f(x)</m> to decide between them.
+</p></hint>
+<answer><p>
+(a) <m>p=e^2</m>
+</p>
+<p>(b) <m>b=-e^2</m>, <m>1-e^2</m>
+</p></answer>
+<solution><p>
+(a) Since <m>f(0)=2</m>, we solve
+<md>
+<mrow>
+2&amp;=\sqrt{\log^2(0+p)}
+</mrow><mrow>
+&amp;=\sqrt{\log^2 p}
+</mrow><mrow>
+&amp;=\left|\log p\right|
+</mrow><mrow>
+\log p &amp;= \pm 2
+</mrow><mrow>
+p&amp;=e^{\pm 2}
+</mrow><mrow>
+p&amp;=e^2 \mbox{ or } p=\frac{1}{e^2}
+</mrow>
+</md>
+We know that <m>p</m> is <m>e^2</m> or <m>\dfrac{1}{e^2}</m>, but we have to decide between the two. In both cases, <m>f(0)=2</m>. Let's consider the domain of <m>f(x)</m>. Since <m>\log^2(x+p)</m> is never negative, the square root does not restrict our domain. However, we can only take the logarithm of positive numbers. Therefore, the domain is
+<md>
+<mrow>
+x \mbox{ such that } &amp;x+p \gt 0
+</mrow><mrow>
+x \mbox{ such that } &amp;x \gt -p
+</mrow>
+</md>
+If <m>p=\dfrac{1}{e^2}</m>, then the domain of <m>f(x)</m> is <m>\left(-\dfrac{1}{e^2},\infty\right)</m>. In particular, since <m>-\dfrac{1}{e^2} \gt -1</m>, the domain of <m>f(x)</m> does not include <m>x=-1</m>. However, it is clear from the graph that <m>f(-1)</m> exists. So, <m>p=e^2</m>.
+</p>
+
+<p>(b) Now, we need to figure out what <m>b</m> is.
+Notice that <m>b</m> is the end of the domain of <m>f(x)</m>, which we already found to be <m>(-p,\infty)</m>. So, <m>b=-p=-e^2</m>.
+</p>
+
+<p> (As a quick check, if we take <m>e\approx 2.7</m>, then <m>-e^2=-7.29</m>, and this looks about right on the graph.)
+</p>
+
+<p> (c) The <m>x</m>-intercept is the value of <m>x</m> for which <m>f(x)=0</m>:
+ <md>
+<mrow>
+ 0&amp;=\sqrt{\log^2(x+p)}
+</mrow><mrow>
+ 0&amp;=\log(x+p)
+</mrow><mrow>
+ 1&amp;=x+p
+</mrow><mrow>
+ x&amp;=1-p=1-e^2
+ </mrow>
+</md>
+ The <m>x</m>-intercept is <m>1-e^2</m>.
+</p>
+
+<p> (As another quick check, the <m>x</m>-intercept we found is a distance of 1 from the vertical asymptote, and this looks about right on the graph.)
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Find all asymptotes of <m>f(x)=\dfrac{x(2x+1)(x-7)}{3x^3-81}</m>.
+</p></statement>
+<hint><p>
+Check for horizontal asymptotes by evaluating <m>\ds\lim_{x \to \pm \infty}f(x)</m>, and
+check for vertical asymptotes by finding any value of <m>x</m> near which <m>f(x)</m> blows up.
+</p></hint>
+<answer><p>
+ vertical asymptote at <m>x=3</m>; horizontal asymptotes <m>\ds\lim_{x \to \pm \infty}f(x)=\dfrac{2}{3}</m>
+</p></answer>
+<solution><p>
+Vertical asymptotes occur where the function blows up. In rational functions, this can only happen when the denominator goes to 0. In our case, the denominator is 0 when <m>x=3</m>, and in this case the numerator is <m>147</m>. That means that as <m>x</m> gets closer and closer to 3, the numerator gets closer and closer to 147 while the denominator gets closer and closer to 0, so <m>|f(x)|</m> grows without bound. That is, there is a vertical asymptote at <m>x=3</m>.
+</p>
+
+<p>The horizontal asymptotes are found by taking the limits as <m>x</m> goes to infinity and negative infinity. In our case, they are the same, so we condense our work.
+<md>
+<mrow>
+\lim_{x \to \pm \infty}\dfrac{x(2x+1)(x-7)}{3x^3-81}
+&amp;=\lim_{x \to \pm \infty}\dfrac{2x^3+ax^2+bx+c}{3x^3-81}
+</mrow>
+<intertext>where <m>a</m>, <m>b</m>, ad <m>c</m> are some constants. Remember, for rational functions, you can figure out the end behaviour by looking only at the terms with the highest degree--the others won't matter, so we don't bother finding them. From here, we  divide the numerator and denominator by the highest power of <m>x</m> in the denominator, <m>x^3</m>.</intertext><mrow>
+&amp;=\lim_{x \to \pm \infty}\dfrac{2x^3+ax^2+bx+c}{3x^3-81}\left(\frac{\tfrac{1}{x^3}}{\tfrac{1}{x^3}}\right)
+</mrow><mrow>
+&amp;=\lim_{x \to \pm \infty}\dfrac{2+\tfrac{a}{x}+\tfrac{b}{x^2}+\tfrac{c}{x^3}}{3-\tfrac{81}{x^3}}
+</mrow><mrow>
+&amp;=\dfrac{2+0+0+0}{3-0}=\frac{2}{3}
+</mrow>
+</md>
+So there is a horizontal asymptote of <m>y=\dfrac{2}{3}</m> both as <m>x \to \infty</m> and as <m>x \to -\infty</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find all asymptotes of <m>f(x)=10^{3x-7}</m>.
+</p></statement>
+<hint><p>
+Check for horizontal asymptotes by evaluating <m>\ds\lim_{x \to \pm \infty}f(x)</m>, and
+check for vertical asymptotes by finding any value of <m>x</m> near which <m>f(x)</m> blows up.
+</p></hint>
+<answer><p>
+horizontal asymptote <m>y=0</m> as <m>x \to -\infty</m>; no other asymptotes
+</p></answer>
+<solution><p>
+Since <m>f(x)</m> is continuous over all real numbers, it has no vertical asymptote.
+</p>
+
+<p>To find the horizontal asymptotes, we evaluate
+<m>\ds\lim_{x \to \pm \infty}f(x)</m>.
+<md>
+<mrow>
+\lim_{x \to \infty}10^{3x-7}&amp;=\underbrace{\lim_{X \to \infty}10^X}_{\mbox{let }X=3x-7}=\infty
+</mrow>
+<intertext>So, there's no horizontal asymptote as <m>x \to \infty</m>.</intertext><mrow>
+\lim_{x \to -\infty}10^{3x-7}&amp;=\underbrace{\lim_{X \to -\infty}10^{X}}_{\mbox{let }X=3x-7}
+</mrow><mrow>
+&amp;=\underbrace{\lim_{X' \to \infty}10^{-X'}}_{\mbox{let }X'=-X}
+</mrow><mrow>
+&amp;=\lim_{X' \to \infty}\frac{1}{10^{X'}}
+</mrow><mrow>
+&amp;=0
+</mrow>
+</md>
+That is, <m>y=0</m> is a horizontal asymptote as <m>x \to -\infty</m>.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

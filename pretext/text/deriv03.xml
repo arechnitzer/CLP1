@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Interpretations of the derivative</title>
+<introduction>
+
+<p>
+In the previous sections we defined the derivative as the slope of a  tangent line, using a particular limit. This allows us to compute  <q>the slope of a curve</q>
+	<fn>
+		Again <mdash/> recall that we are being a little sloppy  with this term <mdash/> we really mean <q>The slope of the tangent line to the curve</q>.
+	</fn>
+and provides us with one interpretation of the derivative. However, the main importance of  derivatives does not come from this application. Instead, (arguably) it comes from the  interpretation of the derivative as the instantaneous rate of change of a quantity.
+</p>
+</introduction>
+
+<subsection><title>Instantaneous rate of change</title>
+<p>
+In fact we have already (secretly) used a derivative to compute an instantaneous rate of  change in Section<nbsp/><xref ref="sec_velocity"/>. For your convenience we'll review that computation  here, in Example <xref ref="eg_DIFFfirstVelocity"/>, and then generalise it.
+</p>
+
+<example xml:id="eg_DIFFfirstVelocity"><title>Velocity as a derivative</title>
+<p>
+You drop a ball from a tall building. After <m>t</m> seconds the ball has fallen a distance of <m>s(t)=4.9 t^2</m> metres. What is the velocity of the ball one second after it is dropped?
+</p>
+
+<p><ul>
+<li>
+	In the time interval from <m>t=1</m> to <m>t=1+h</m> the ball travels a distance
+	<md>
+	<mrow>
+	s(1+h)-s(1)=4.9 (1+h)^2 - 4.9 (1)^2
+			   =4.9\big[2h+h^2\big]
+	</mrow>
+	</md>
+</li>
+<li>
+	So the average velocity over this time interval is
+	<md>
+	<mrow>
+	&amp;\text{average velocity from $t=1$ to $t=1+h$}
+	</mrow><mrow>
+	&amp;=\frac{\text{distance travelled from $t=1$ to $t=1+h$}}
+		   {\text{length of time from $t=1$ to $t=1+h$}}
+	</mrow><mrow>
+	&amp;=\frac{s(1+h)-s(1)}{h}
+	</mrow><mrow>
+	&amp;=\frac{4.9\big[2h+h^2\big]}{h}
+	</mrow><mrow>
+	&amp;=4.9[2+h]
+	</mrow>
+	</md>
+</li>
+<li>
+	The instantaneous velocity at time <m>t=1</m> is then defined to be the limit
+	<md>
+	<mrow>
+	&amp;\text{instantaneous velocity at time } t=1
+	</mrow><mrow>
+	&amp;\hskip0.5in=\lim_{h\rightarrow 0}
+	\big[\text{average velocity from $t=1$ to $t=1+h$}\big]
+	</mrow><mrow>
+	&amp;\hskip0.5in=\lim_{h\rightarrow 0}\frac{s(1+h)-s(1)}{h} = s'(1)
+	</mrow><mrow>
+	&amp;\hskip0.5in= \lim_{h\rightarrow 0} 4.9[2+h]
+	</mrow><mrow>
+	&amp;\hskip0.5in= 9.8\text{m/sec}
+	</mrow>
+	</md>
+</li>
+<li>
+	We conclude that the instantaneous velocity at time <m>t=1</m>, which is the instantaneous rate of change of distance per unit time at time <m>t=1</m>, is the derivative  <m>s'(1)=9.8\text{m/sec}</m>.
+</li>
+</ul>
+</p>
+
+</example>
+
+<p>
+Now suppose, more generally, that you are taking a walk and that as you walk, you are continuously measuring some quantity, like temperature,  and that the measurement at time <m>t</m> is <m>f(t)</m>. Then the
+<md>
+<mrow>
+&amp;\text{average rate of change of $f(t)$ from $t=a$ to $t=a+h$}
+</mrow><mrow>
+&amp;\hskip0.5in=\frac{\text{change in $f(t)$ from $t=a$ to $t=a+h$}}
+	   {\text{length of time from $t=a$ to $t=a+h$}}
+</mrow><mrow>
+&amp;\hskip0.5in=\frac{f(a+h)-f(a)}{h}
+</mrow>
+</md>
+so the
+<md>
+<mrow>
+&amp;\text{instantaneous rate of change of $f(t)$ at $t=a$}
+</mrow><mrow>
+&amp;\hskip0.5in=\lim_{h\rightarrow 0}
+\big[\text{average rate of change of $f(t)$ from $t=a$ to $t=a+h$}\big]
+</mrow><mrow>
+&amp;\hskip0.5in=\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}
+</mrow><mrow>
+&amp;\hskip0.5in= f'(a)
+</mrow>
+</md>
+In particular, if you are walking along the <m>x</m><ndash/>axis and your <m>x</m><ndash/>coordinate at time <m>t</m> is <m>x(t)</m>, then <m>x'(a)</m> is the instantaneous rate of change (per unit time) of your <m>x</m><ndash/>coordinate at time <m>t=a</m>, which is  your velocity at time <m>a</m>. If <m>v(t)</m> is your velocity at time <m>t</m>, then <m>v'(a)</m> is the instantaneous rate of change of your velocity at time  <m>a</m>. This is called your acceleration at time <m>a</m>.
+</p>
+
+</subsection>
+<subsection><title>Slope</title>
+
+<p>
+Suppose that <m>y=f(x)</m> is the equation of a curve in the <m>xy</m><ndash/>plane. That is, <m>f(x)</m> is the <m>y</m><ndash/>coordinate of the point on the curve whose <m>x</m><ndash/>coordinate is <m>x</m>. Then, as we have already seen,
+<md>
+<mrow>
+\big[\text{the slope of the secant through $\big(a,f(a)\big)$
+       and $\big(a+h,f(a+h)\big)$}\big]
+=\frac{f(a+h)-f(a)}{h}
+</mrow>
+</md>
+This is shown in Figure<nbsp/><xref ref="fig_tangA"/> below.</p>
+
+<figure xml:id="fig_tangA">
+  <caption/>
+  <image width="80%" source="text/figs/tangentA"/>
+</figure>
+
+<p>
+In order to create the tangent line (as we have done a few times now) we  squeeze <m>h \to 0</m>. As we do this, the secant through <m>\big(a,f(a)\big)</m>  and <m>\big(a+h,f(a+h)\big)</m> approaches
+	<fn>
+		We are of course assuming that the curve is smooth enough to have a tangent line at <m>a</m>.
+	</fn>
+the tangent line to <m>y=f(x)</m> at <m>x=a</m>. Since the secant becomes the  tangent line in this limit, the slope of the secant becomes the slope  of the tangent and
+<md>
+<mrow>
+\big[\text{the slope of the tangent line to $\;y=f(x)$ at $x=a$}\big]
+&amp;=\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}
+</mrow><mrow>
+&amp;=f'(a).
+</mrow>
+</md>
+</p>
+
+<p>
+Let us go a little further and work out a general formula for the equation  of the tangent line to <m>y=f(x)</m> at <m>x=a</m>. We know that the tangent line
+<ul>
+<li> has slope <m>f'(a)</m> and </li>
+<li> passes through the point <m>\big(a, f(a)\big)</m>. </li>
+</ul>
+</p>
+
+<p>
+There are a couple of different ways to construct the equation of the tangent line from this information. One is to observe, as in  Figure <xref ref="fig_DIFFtangentEqn"/>, that if <m>(x,y)</m> is any  other point on the tangent line then the line segment from <m>\big(a,f(a)\big)</m> to <m>(x,y)</m> is part of the tangent line and so also has slope <m>f'(a)</m>. That is,
+<md>
+<mrow>
+\frac{y- f(a)}{x-a} =\big[\text{the slope of the tangent line}\big] =f'(a)
+</mrow>
+</md>
+Cross multiplying gives us the equation of the tangent line:
+<md>
+<mrow>
+y-f(a) = f'(a)\,(x-a)\qquad\text{or}\qquad y=f(a)+f'(a)\,(x-a)
+</mrow>
+</md>
+</p>
+
+<figure xml:id="fig_DIFFtangentEqn">
+  <caption>A line segment of a tangent line</caption>
+  <image width="66%" source="text/figs/tangentB"/>
+</figure>
+
+<p>
+A second way to derive the same equation of the same tangent line is to recall that the general equation for a line, with finite  slope,  is <m>y=mx+b</m>, where <m>m</m> is the slope and <m>b</m> is the <m>y</m>-intercept.  We already know the slope <mdash/> so <m>m=f'(a)</m>. To work out <m>b</m> we use  the other piece of information <mdash/> <m>(a,f(a))</m> is on the line. So <m>(x,y)=(a,f(a))</m> must solve <m>y=f'(a)\,x+b</m>. That is,
+<md>
+<mrow>
+  f(a) &amp;= f'(a) \cdot a + b &amp; \text{and so } &amp;&amp;  b&amp;=f(a)- af'(a)
+</mrow>
+</md>
+Hence our equation is, once again,
+<md>
+<mrow>
+  y &amp;= f'(a) \cdot x + \left(f(a)-af'(a) \right)
+            &amp;&amp; \text{or, after rearranging a little,}
+</mrow><mrow>
+  y &amp;= f(a) + f'(a) \, (x-a)
+</mrow>
+</md>
+This is a very useful formula, so perhaps we should make it a theorem.
+</p>
+
+<theorem xml:id="thm_DIFFtangentLine"><title>Tangent line</title>
+<statement><p>
+ The tangent line to the curve <m>y=f(x)</m> at <m>x=a</m> is given by the equation
+<md>
+<mrow>
+  y &amp;= f(a) + f'(a) \, (x-a)
+</mrow>
+</md>
+provided the derivative <m>f'(a)</m> exists.
+</p></statement>
+</theorem>
+
+<p>
+The caveat at the end of the above theorem is necessary <mdash/> there are certainly cases in  which the derivative does not exist and so we do need to be careful.
+</p>
+
+<example xml:id="eg_DIFFtangentA"><title>A tangent line to the curve <m>y=\sqrt{x}</m></title>
+<p>
+Find the tangent line to the curve <m>y=\sqrt{x}</m> at <m>x=4</m>.
+</p>
+
+<p>
+Rather than redoing everything from scratch, we can, and for efficiency, should, use Theorem <xref ref="thm_DIFFtangentLine"/>.  To write this up properly, we must ensure that  we tell the reader  what we are doing. So something like the following:
+</p>
+
+<p>
+<ul>
+<li>
+	By Theorem <xref ref="thm_DIFFtangentLine"/>, the tangent line to the curve  <m>y=f(x)</m> at <m>x=a</m> is given by
+	<md>
+	<mrow>
+	  y &amp;= f(a) + f'(a) (x-a)
+	</mrow>
+	</md>
+	provided <m>f'(a)</m> exists.
+</li>
+<li>
+	In Example <xref ref="eg_DIFFderivXsqrt"/>, we found that, for any <m>a \gt 0</m>, the derivative of  <m>\sqrt{x}</m> at <m>x=a</m> is
+	<md>
+	<mrow>
+	  f'(a) &amp;= \frac{1}{2\sqrt{a}}
+	</mrow>
+	</md>
+</li>
+<li>
+	In the current example, <m>a=4</m> and we have
+	<md>
+	<mrow>
+	f(a)=f(4)=\sqrt{x}\big|_{x=4}=\sqrt{4}=2\qquad\text{and}\qquad
+	f'(a)=f'(4)=\frac{1}{2\sqrt{a}}\Big|_{a=4}=\frac{1}{2\sqrt{4}}=\frac{1}{4}
+	</mrow>
+	</md>
+</li>
+<li>
+	So the equation of the tangent line to <m>y=\sqrt{x}</m> at <m>x=4</m> is
+	<md>
+	<mrow>
+	y= 2+\frac{1}{4}\,\big(x-4\big)\qquad\text{or}\qquad
+	y=\frac{x}{4}+1
+	</mrow>
+	</md>
+</li>
+</ul>
+We don't have to write it up using dot-points as above; we have used them here to help  delineate each step in the process of computing the tangent line.
+</p>
+</example>
+
+</subsection>
+
+
+<xi:include href="../problems/prob_s2.3.xml"/>
+
+
+</section>

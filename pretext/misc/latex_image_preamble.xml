@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<latex-image-preamble>
+    \usepackage{tikz}
+    \usepackage{calculator}
+    \usepackage{pgfplots}
+    \pgfplotsset{width=65mm,compat=1.9, tick label style={font=\scriptsize}}
+	\usetikzlibrary{shapes, patterns, snakes}
+	\tikzstyle{vertex}=[shape=circle, minimum size=2mm, inner sep=0, fill]
+	\tikzstyle{opendot}=[shape=circle, minimum size=2mm, inner sep=0, fill=white, draw]
+
+	<!-- for long div -->
+    \usepackage{polynom}
+    %%make nice long division remainders
+	%%taken from https://tex.stackexchange.com/questions/8580/how-to-show-the-full-remainder-in-polynomial-long-division
+	\makeatletter
+	\def\pld@DivPoly@l{%
+		\ifx\pld@remainder\@empty\else
+			\pld@IfNeedsDivision\pld@remainder\pld@divisor
+			{\pld@ExtendPoly\pld@quotient\pld@factor
+			 \pld@NMultiplyPoly\pld@sub\pld@divisor\pld@factor
+			 \pld@SubtractPoly\pld@remainder\pld@sub
+			 \expandafter\pld@DivPoly@l}%
+			{\expandafter\pld@insert@remainder                       % !!!
+			 \pld@last@remainder+\relax\relax}                       % !!!
+		\fi}
+	\def\pld@insert@remainder#1+#2\relax{%                           % !!!
+		\ifx\relax#1\relax\else\pld@InsertItems\@empty\@empty{#1}\fi % !!!
+		\ifx\relax#2\relax\else\pld@insert@remainder#2\relax\fi}     % !!!
+	\def\pld@SubtractPoly@l#1+#2\@empty#3+#4\@empty{%
+		\ifx\relax#1\relax
+			\let\pld@last@remainder\@empty                           % !!!
+			\ifx\relax#3\relax \let\pld@next\@empty \else
+			  \pld@AddToPoly\pld@tempoly{#3}%
+			  \pld@if \pld@InsertItems{#3}{#3}{}\fi
+			  \def\pld@next{\pld@SubtractPoly@l\relax+\@empty#4\@empty}%
+			\fi
+		\else
+		\ifx\relax#3\relax
+			\pld@SubtractPoly@r#1+#2\@empty
+			\let\pld@next\@empty
+		\else
+			\pld@IfMonomE{#1}{#3}%
+			{\def\pld@temp{#1+#3}%
+			 \pld@CondenseMonomials\pld@true\pld@temp
+			 \ifx\pld@temp\@empty\else
+				 \pld@ExtendPoly\pld@tempoly\pld@temp
+			 \fi
+			 \pld@if \expandafter\pld@InsertItems\expandafter
+					 {\pld@temp}{#3}{#1}\fi
+			 \def\pld@next{\pld@SubtractPoly@l#2\@empty#4\@empty}}%
+			{\pld@IfMonomL{#1}{#3}%
+			 {\pld@AddToPoly\pld@tempoly{#3}%
+			  \pld@if \pld@InsertItems{#3}{#3}{}\fi
+			  \def\pld@next{\pld@SubtractPoly@l#1+#2\@empty#4\@empty}}%
+			 {\pld@AddToPoly\pld@tempoly{#1}%
+			  \pld@if \pld@InsertItems{#1}{}{#1}\fi
+			  \def\pld@next{\pld@SubtractPoly@l#2\@empty#3+#4\@empty}}%
+			}%
+		\fi \fi
+		\pld@next}
+	\def\pld@SubtractPoly@r#1+\relax+\@empty{%
+		\pld@AddToPoly\pld@tempoly{#1}%
+		\def\pld@last@remainder{#1}}                                 % !!!
+	\makeatother
+
+<!--
+%% Temporary for drafting.
+\usepackage{letltxmacro}
+\LetLtxMacro{\OldIncludegraphics}{\includegraphics}
+\renewcommand{\includegraphics}[2][]{%
+    \OldIncludegraphics[#1]{#2}\url{#2}%
+}
+-->
+</latex-image-preamble>

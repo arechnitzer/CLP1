@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_def_deriv">
+<title>Definition of the derivative</title>
+<introduction>
+
+<p>
+We now define the <q>derivative</q> explicitly, based on the limiting slope ideas of the previous section. Then we see how to compute some simple  derivatives.
+</p>
+
+<p>
+Let us now generalise what we did in the last section so as   to find <q>the slope of the curve <m>y=f(x)</m> at <m>(x_0,y_0)</m></q>  for any smooth enough
+	<fn>
+		The idea of <q>smooth enough</q> can be made  quite precise. Indeed the word <q>smooth</q> has a very precise  meaning in mathematics, which we won't cover here. For now think of  <q>smooth</q> as meaning roughly just <q>smooth</q>.
+	</fn>
+function <m>f(x)</m>.
+</p>
+
+<p>
+As before, let <m>(x_0,y_0)</m> be any point on the curve <m>y=f(x)</m>.                                                            So we must have <m>y_0=f(x_0)</m>. Now let <m>(x_1,y_1)</m> be any other point  on the same curve. So <m>y_1=f(x_1)</m> and <m>x_1\ne x_0</m>.  Think of <m>(x_1,y_1)</m> as being pretty close to <m>(x_0,y_0)</m> so that the difference
+<md>
+<mrow>
+\De x=x_1-x_0
+</mrow>
+</md>
+in <m>x</m><ndash/>coordinates is pretty small. In terms of this  <m>\De x</m> we have
+<md>
+<mrow>
+x_1=x_0+\De x\qquad\text{and}\qquad
+y_1=f\big(x_0+\De x\big)
+</mrow>
+</md>
+We can construct a secant line through <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m> just  as we did for the parabola above. It has slope
+<md>
+<mrow>
+\frac{y_1-y_0}{x_1-x_0}=\frac{f\big(x_0+\De x\big)-f(x_0)}{\De x}
+</mrow>
+</md>
+If <m>f(x)</m> is reasonably smooth
+	<fn>
+		Again the term <q>reasonably smooth</q> can be made more precise.
+	</fn>,
+then as <m>x_1</m> approaches <m>x_0</m>, i.e. as <m>\De x</m> approaches <m>0</m>,  we would expect the secant through <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m> to approach the  tangent line to the curve <m>y=f(x)</m> at <m>(x_0,y_0)</m>, just as happened in Figure  <xref ref="fig_secantToTangent"/>. And more importantly, the slope of the secant through  <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m> should approach the slope of the tangent line to the  curve  <m>y=f(x)</m> at <m>(x_0,y_0)</m>.
+</p>
+
+<p>
+Thus we would expect
+	<fn>Indeed, we don't have to expect <mdash/> it is!</fn>
+the slope of the tangent line to the curve  <m>y=f(x)</m> at <m>(x_0,y_0)</m> to be
+<md>
+<mrow>
+\lim_{\De x\rightarrow 0}\frac{f\big(x_0+\De x\big)-f(x_0)}{\De x}
+</mrow>
+</md>
+When we talk of the <q>slope of the curve</q> at a point, what we really  mean is the slope of the tangent line to the curve at that point. So  <q>the slope of the curve  <m>y=f(x)</m> at <m>(x_0,y_0)</m></q> is also the   limit
+	<fn>
+		This is of course under the assumption that  the limit exists <mdash/> we will talk more about that below.
+	</fn>
+expressed in the above equation. The derivative of <m>f(x)</m> at <m>x=x_0</m> is also defined to be this limit. Which leads
+	<fn>
+		We will rename <q><m>x_0</m></q> to <q><m>a</m></q> and <q><m>\De  x</m></q>  to <q><m>h</m></q>.
+	</fn>
+us to the most important definition in this text:
+</p>
+
+<definition xml:id="def_DIFFderiv"><title>Derivative at a point</title>
+<statement><p>
+Let <m>a\in\bbbr</m> and let <m>f(x)</m> be defined on an open interval
+	<fn>
+		Recall, from Definition<nbsp/><xref ref="def_intervals"/>, that the open interval <m>(c,d)</m> is  just the set of all real numbers obeying <m>c \lt x \lt d</m>.
+	</fn>
+that contains <m>a</m>.
+<ul>
+<li> The derivative of <m>f(x)</m> at <m>x=a</m> is denoted
+<m>f'(a)</m> and is defined by
+<md>
+<mrow>
+f'(a)=\lim_{h\rightarrow 0}\frac{f\big(a+h\big)-f(a)}{h}
+</mrow>
+</md>
+if the limit exists.
+</li>
+<li>
+	When the above limit exists, the function <m>f(x)</m> is said to be differentiable at <m>x=a</m>. When the limit does not  exist, the  function <m>f(x)</m> is said to be not differentiable at <m>x=a</m>.
+</li>
+<li>
+	We can equivalently define the derivative <m>f'(a)</m> by the limit
+	<md>
+	<mrow>
+	f'(a)=\lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}.
+	</mrow>
+	</md>
+	To see that these two definitions are the same, we set <m>x=a+h</m> and then the limit as  <m>h</m> goes to <m>0</m> is equivalent to the limit as <m>x</m> goes to <m>a</m>.
+</li>
+</ul>
+</p></statement>
+</definition>
+
+<p>
+	Lets now compute the derivatives of some very simple functions. This is our first step  towards building up a toolbox for computing derivatives of complicated functions <mdash/>  this process will very much parallel what we did in Chapter<nbsp/><xref ref="chap_limits"/> with  limits. The two simplest functions we know are <m>f(x)=c</m> and <m>g(x)=x</m>.
+</p>
+
+<example xml:id="eg_DIFFderivX0"><title>Derivative of <m>f(x)=c</m></title>
+<p>
+Let <m>a, c \in \bbbr</m> be a constants. Compute the derivative of the constant function  <m>f(x) = c</m> at <m>x=a</m>.
+</p>
+
+<p>
+We compute the desired derivative by just substituting the function of interest into the formal definition of the derivative.
+<md>
+<mrow>
+  f'(a) &amp;= \lim_{h \to 0} \frac{f(a+h) - f(a)}{h} &amp;&amp; \text{(the definition)}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} \frac{c - c}{h} &amp;&amp; \text{(substituted in the function)}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} 0 &amp;&amp;\text{(simplified things)}
+</mrow><mrow>
+  &amp;= 0
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+That was easy! What about the next most complicated function <mdash/>  arguably it's this one:
+</p>
+
+<example xml:id="eg_DIFFderivX1"><title>Derivative of <m>g(x)=x</m></title>
+<p>
+Let <m>a\in \bbbr</m> and compute the derivative of <m>g(x) = x</m> at <m>x=a</m>.
+</p>
+
+<p>
+Again, we compute the derivative of <m>g</m> by just substituting the function of interest into the formal definition of the derivative and then evaluating the resulting limit.
+<md>
+<mrow>
+  g'(a) &amp;= \lim_{h \to 0} \frac{g(a+h) - g(a)}{h}
+                  &amp;&amp; \text{(the definition)}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} \frac{(a+h) - a}{h}
+                   &amp;&amp; \text{(substituted in the function)}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} \frac{h}{h} &amp;&amp; \text{(simplified things)}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} 1 &amp;&amp; \text{(simplified a bit more)}
+</mrow><mrow>
+  &amp;= 1
+</mrow>
+</md>
+</p>
+
+</example>
+
+<p>
+That was a little harder than the first example, but still quite straight forward <mdash/>  start with the definition and apply what we know about limits.
+</p>
+
+<p>Thanks to these two examples, we have our first theorem about derivatives:</p>
+
+<theorem xml:id="thm_DIFFbasicderivs"><title>Easiest derivatives</title>
+<statement><p>
+  Let <m>a,c \in \mathbb{R}</m> and let <m>f(x) = c</m> be the constant function and
+<m>g(x) = x</m>. Then
+<md>
+<mrow>
+  f'(a) &amp;= 0
+</mrow>
+<intertext>and </intertext><mrow>
+  g'(a) &amp;= 1.
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+
+<p>
+To ratchet up the difficulty a little bit more, let us redo the example we have already  done a few times <m>f(x)=x^2</m>. To make it a little more interesting let's change the names  of the function and the variable so that it is not exactly the same as Examples<nbsp/>  <xref ref="eg_DIFFslopeA"/> and<nbsp/><xref ref="eg_DIFFslopeB"/>.
+</p>
+
+<example xml:id="eg_DIFFderivX2"><title>Derivative of <m>h(t)=t^2</m></title>
+<p>
+Compute the derivative of
+<md>
+<mrow>
+  h(t) &amp;= t^2 &amp; \text{ at } t = a
+</mrow>
+</md>
+</p>
+
+<p>
+<ul>
+<li>
+	This function isn't quite like the ones we saw earlier <mdash/>  it's  a function of <m>t</m> rather than <m>x</m>. Recall that a function is a rule  which assigns to each input value an output value. So far, we have  usually called the input value <m>x</m>. But this <q><m>x</m></q> is just a dummy variable representing a generic input value. There is nothing wrong with calling  a generic input value <m>t</m> instead. Indeed, from time to time you will  see functions that are not written as formulas involving <m>x</m>, but instead  are written as formulas in  <m>t</m> (for example representing  time <mdash/> see Section<nbsp/><xref ref="sec_velocity"/>), or <m>z</m> (for example  representing height), or other symbols.
+</li>
+<li>
+	So let us write the definition of the derivative
+	<md>
+	<mrow>
+	  f'(a) &amp;= \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}
+	</mrow>
+	</md>
+	and then translate it to the function names and variables at hand:
+	<md>
+	<mrow>
+	  h'(a) &amp;= \lim_{h \to 0} \frac{h(a+h)-h(a)}{h}
+	</mrow>
+	</md>
+</li>
+<li>
+	But there is a problem <mdash/> <q><m>h</m></q> plays two roles here <mdash/> it is both  the function name and the small quantity that is going to zero in our limit.  It is extremely dangerous to have a symbol represent two different things  in a single computation. We need to change one of them. So let's rename the small quantity that is going to zero in our limit from <q><m>h</m></q> to  <q><m>\De t</m></q>:
+	<md>
+	<mrow>
+	  h'(a) &amp;= \lim_{\De t \to 0} \frac{h(a+\De t)-h(a)}{\De t}
+	</mrow>
+	</md>
+</li>
+<li>
+	Now we are ready to begin. Substituting in what the function <m>h</m> is,
+	<md>
+	<mrow>
+	 h'(a) &amp;= \lim_{\De t \to 0} \frac{(a+\De t)^2-a^2}{\De t}
+	</mrow><mrow>
+	  &amp;= \lim_{\De t \to 0} \frac{a^2+2a\,\De t+\De t^2-a^2}{\De t}
+			   &amp;&amp; \big(\text{just squared out $(a+\De t)^2$}\big)
+	</mrow><mrow>
+	  &amp;= \lim_{\De t \to 0} \frac{2a\,\De t+\De t^2}{\De t}
+	</mrow><mrow>
+	  &amp;= \lim_{\De t \to 0} (2a +\De t)
+	</mrow><mrow>
+	  &amp;= 2a
+	</mrow>
+	</md>
+</li>
+<li>
+	You should go back check that this is what we got in Example  <xref ref="eg_DIFFslopeB"/> <mdash/> just some names have been changed.
+</li>
+</ul>
+</p>
+
+</example>
+
+</introduction>
+
+<subsection><title> An important point (and some notation)</title>
+
+<p>
+Notice here that the answer we get depends on our choice of <m>a</m> <mdash/> if we want to know  the derivative at <m>a=3</m> we can just substitute <m>a=3</m> into our answer <m>2a</m> to get the  slope is 6. If we want to know at <m>a=1</m> (like at the end of Section<nbsp/><xref ref="sec_first_lim"/>)  we substitute <m>a=1</m> and get the slope is 2. The important thing here is that we can  move from the derivative being computed at a specific point to the derivative  being a function itself <mdash/> input any value of <m>a</m> and it returns the slope of  the tangent line to the curve at the point <m>x=a</m>, <m>y=h(a)</m>. The variable <m>a</m> is a  dummy variable. We can rename <m>a</m> to anything we want, like <m>x</m>, for example. So  we can replace every <m>a</m> in
+<md>
+<mrow>
+  h'(a)&amp;=2a &amp;\text{ by $x$, giving} &amp;&amp; h'(x) &amp;=2x
+</mrow>
+</md>
+where all we have done is replaced the symbol <m>a</m> by the symbol <m>x</m>.
+</p>
+
+<p>We can do this more generally and tweak the derivative at a specific point <m>a</m> to
+obtain the derivative as a function of <m>x</m>. We replace
+<md>
+<mrow>
+  f'(a) &amp;= \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}
+</mrow>
+<intertext>with</intertext>
+<mrow>
+  f'(x) &amp;= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}
+</mrow>
+</md>
+which gives us the following definition</p>
+
+<definition xml:id="def_DIFFderivFunc"><title>Derivative as a function</title>
+<statement><p>
+Let <m>f(x)</m> be a function.
+<ul>
+<li>
+	The derivative of <m>f(x)</m> with respect to <m>x</m> is
+	<md>
+	<mrow>
+	f'(x)=\lim_{h\rightarrow 0}\frac{f\big(x+h\big)-f(x)}{h}
+	</mrow>
+	</md>
+	provided the limit exists.
+</li>
+<li>
+	If the derivative <m>f'(x)</m> exists for all <m>x \in (a,b)</m> we say that <m>f</m> is  differentiable on <m>(a,b)</m>.
+</li>
+<li>
+	Note that we will sometimes be a little sloppy with our discussions and  simply write <q><m>f</m> is differentiable</q> to mean <q><m>f</m> is differentiable on an interval we  are interested in</q> or <q><m>f</m> is differentiable everywhere</q>.
+</li>
+</ul>
+</p>
+
+</statement>
+</definition>
+
+<p>
+Notice that we are no longer thinking of tangent lines, rather this is an operation we  can do on a function. For example:
+</p>
+
+<example xml:id="eg_DIFFderivXm1"><title>The derivative of <m>f(x)=\tfrac{1}{x}</m></title>
+<p>
+Let <m>f(x) = \frac{1}{x}</m> and compute its derivative with respect to <m>x</m> <mdash/> think  carefully about where the derivative exists.
+<ul>
+<li>
+	Our first step is to write down the definition of the derivative <mdash/> at this stage, we know of no other strategy for computing derivatives.
+	<md>
+	<mrow>
+	f'(x)&amp;=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+		 &amp;&amp; \text{(the definition)}
+	</mrow>
+	</md>
+</li>
+<li>
+	And now we substitute in the function and compute the limit.
+	<md>
+	<mrow>
+	f'(x)&amp;=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+		 &amp;&amp; \text{(the definition)}
+	</mrow><mrow>
+	&amp;=\lim_{h\rightarrow 0}\frac{1}{h}\left[\frac{1}{x+h}-\frac{1}{x}\right]
+		 &amp;&amp; \text{(substituted in the function)}
+	</mrow><mrow>
+	&amp;=\lim_{h\rightarrow 0}\frac{1}{h}\ \frac{x-(x+h)}{x(x+h)}
+		 &amp;&amp; \text{(wrote over a common denominator)}
+	</mrow><mrow>
+	&amp;=\lim_{h\rightarrow 0}\frac{1}{h}\ \frac{-h}{x(x+h)}
+		 &amp;&amp; \text{(started cleanup)}
+	</mrow><mrow>
+	&amp;=\lim_{h\rightarrow 0} \frac{-1}{x(x+h)}
+	</mrow><mrow>
+	&amp;=-\frac{1}{x^2}
+	</mrow>
+	</md>
+</li>
+<li>
+	Notice that the original function <m>f(x)=\frac{1}{x}</m> was not defined at  <m>x=0</m> and  the derivative is also not defined  at <m>x=0</m>. This does happen more  generally <mdash/> if <m>f(x)</m> is not defined at a particular point <m>x=a</m>, then the derivative  will not exist at that point either.
+</li>
+</ul>
+</p>
+
+</example>
+
+<p>So we now have two slightly different ideas of derivatives:
+<ul>
+<li>
+	The derivative <m>f'(a)</m> at a specific point <m>x=a</m>, being the slope of the tangent  line to the curve at <m>x=a</m>, and
+</li>
+<li>
+	The derivative as a function, <m>f'(x)</m> as defined in  Definition<nbsp/><xref ref="def_DIFFderivFunc"/>.
+</li>
+</ul>
+Of course, if we have <m>f'(x)</m> then we can always recover the derivative at a specific  point by substituting <m>x=a</m>.
+</p>
+
+<p>
+As we noted at the beginning of the chapter, the derivative was discovered independently  by Newton and Leibniz in the late <m>17^{\rm th}</m> century. Because their discoveries were  independent, Newton and Leibniz did not have exactly the same notation. Stemming from  this, and from the many different contexts in which derivatives are used, there are quite  a few alternate notations for the derivative:
+</p>
+
+<definition xml:id="notn_higher_diff">
+<statement><p>
+The following notations are all used for <q>the derivative of <m>f(x)</m> with respect to <m>x</m></q>
+<md>
+<mrow>
+f'(x) \qquad
+\diff{f}{x} \qquad
+\diff{}{x}f(x) \qquad
+\dot{f}(x) \qquad
+Df(x) \qquad
+D_x f(x),
+</mrow>
+</md>
+while the following notations are all used for <q>the derivative of <m>f(x)</m> at <m>x=a</m></q>
+<md>
+<mrow>
+f'(a) \qquad
+\diff{f}{x}(a) \qquad
+\diff{}{x}f(x)\,\bigg|_{x=a} \qquad
+\dot{f}(a) \qquad
+Df(a) \qquad
+D_x f(a).
+</mrow>
+</md>
+</p>
+
+<p>Some things to note about these notations:
+<ul>
+<li>
+	We will generally use the first three, but you should recognise  them all. The notation <m>f'(a)</m> is due to Lagrange, while the notation  <m>\diff{f}{x}(a)</m> is due to Leibniz. They are both very useful. Neither  can be considered <q>better</q>.
+</li>
+<li>
+	Leibniz notation writes the derivative as a <q>fraction</q> <mdash/> however it  is definitely not a fraction and should not be thought of in that way. It is  just shorthand, which is read as <q>the derivative of <m>f</m> with respect to  <m>x</m></q>.
+</li>
+<li>
+	You read <m>f'(x)</m> as <q><m>f</m><ndash/>prime of <m>x</m></q>, and <m>\diff{f}{x}</m> as <q>dee<ndash/><m>f</m><ndash/>dee<ndash/><m>x</m></q>, and <m>\diff{ }{x}f(x)</m> as <q>dee-by-dee<ndash/><m>x</m> of <m>f</m></q>.
+</li>
+<li>
+	Similarly you read <m>\diff{f}{x}(a)</m> as <q>dee<ndash/><m>f</m><ndash/>dee<ndash/><m>x</m> at <m>a</m></q>, and <m>\diff{  }{x}f(x)|_{x=a}</m> as <q>dee-by-dee-<m>x</m> of <m>f</m> of <m>x</m> at <m>x</m> equals <m>a</m></q>.
+</li>
+
+<li>The notation <m>\dot f</m> is due to Newton. In physics, it is common  to use <m>\dot f(t)</m> to denote the derivative of <m>f</m> with respect to time.
+</li>
+</ul>
+</p>
+</statement>
+</definition>
+
+
+</subsection>
+
+<subsection><title>Back to computing some derivatives</title>
+
+<p>
+	At this point we could try to start working out how derivatives interact with  arithmetic and make an <q>Arithmetic of derivatives</q> theorem just like the one  we saw for limits (Theorem <xref ref="thm_arith_lim"/>). We will get there  shortly, but before that it is important that we become more comfortable with  computing derivatives using limits and then understanding what the derivative actually  means. So <mdash/> more examples.
+</p>
+
+<example xml:id="eg_DIFFderivXsqrt"><title><m>\diff{}{x}\sqrt{x}</m></title>
+<p>
+Compute the derivative, <m>f'(a)</m>, of the function <m>f(x)=\sqrt{x}</m> at the point  <m>x=a</m> for any <m>a \gt  0</m>.
+</p>
+
+<p>
+<ul>
+<li>
+	So again we start with the definition of derivative and go from there:
+	<md>
+	<mrow>
+	f'(a)
+	&amp;=\lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}
+	 =\lim_{x\rightarrow a}\frac{\sqrt{x}-\sqrt{a}}{x-a}
+	</mrow>
+	</md>
+</li>
+<li>
+	As <m>x</m> tends to <m>a</m>, the numerator and denominator both tend to zero. But <m>\tfrac{0}{0}</m> is not defined. So to get a well defined limit we need to exhibit a cancellation between the numerator and denominator <mdash/>  just as we saw in Examples<nbsp/><xref ref="eg_zero_cancel_limit"/> and<nbsp/><xref ref="eg_zero_cancel_limit_harder"/>. Now there are two equivalent ways to proceed from here, both based on a similar  <q>trick</q>.
+</li>
+<li>
+	For the first, review Example<nbsp/><xref ref="eg_zero_cancel_limit_harder"/>, which concerned taking a limit involving square-roots, and recall that  we used  <q>multiplication by the conjugate</q> there:
+	<md>
+	<mrow>
+	  \frac{\sqrt{x}-\sqrt{a}}{x-a}
+	  &amp;= \frac{\sqrt{x}-\sqrt{a}}{x-a} \times
+				  \frac{\sqrt{x}+\sqrt{a}}{\sqrt{x}+\sqrt{a}}
+	  &amp;&amp; \Big(\text{multiplication by
+			$1=\frac{\text{conjugate}}{\text{conjugate}}$}\Big)
+	</mrow><mrow>
+	  &amp;=\frac{(\sqrt{x}-\sqrt{a})(\sqrt{x}+\sqrt{a})}
+							{(x-a)(\sqrt{x}+\sqrt{a})}
+	</mrow><mrow>
+	  &amp;= \frac{x-a}{(x-a)(\sqrt{x}+\sqrt{a})}
+	  &amp;&amp; \big(\text{since $(A-B)(A+B) = A^2-B^2$)}\,\big)
+	</mrow><mrow>
+	  &amp;= \frac{1}{\sqrt{x}+\sqrt{a}}
+	</mrow>
+	</md>
+</li>
+<li>
+	Alternatively, we can arrive at  <m>\frac{\sqrt{x}-\sqrt{a}}{x-a}=\frac{1}{\sqrt{x}+\sqrt{a}}</m>  by using almost the same trick to factor the denominator. Just set <m>A=\sqrt{x}</m> and  <m>B=\sqrt{a}</m> in <m> A^2 - B^2 = (A-B)(A+B)  </m> to get
+	<md>
+	<mrow>
+	  x - a &amp;= (\sqrt{x}-\sqrt{a})(\sqrt{x}+\sqrt{a})
+	</mrow>
+	</md>
+	and then substitute this little fact into our expression
+	<md>
+	<mrow>
+	  \frac{\sqrt{x}-\sqrt{a}}{x-a}
+	  &amp;=\frac{\sqrt{x}-\sqrt{a}}{(\sqrt{x}-\sqrt{a})(\sqrt{x}+\sqrt{a})}
+	  &amp; \text{(now cancel common factors)}
+	</mrow><mrow>
+	  &amp;=\frac{1}{(\sqrt{x}+\sqrt{a})}
+	</mrow>
+	</md>
+</li>
+<li>
+	Once we know that <m>\frac{\sqrt{x}-\sqrt{a}}{x-a}=\frac{1}{\sqrt{x}+\sqrt{a}}</m>,  we  can take the limit we need:
+	<md>
+	<mrow>
+	f'(a)
+	&amp;=\lim_{x\rightarrow a}\frac{\sqrt{x}-\sqrt{a}}{x-a}
+	</mrow><mrow>
+	&amp;
+	=\lim_{x\rightarrow a}\frac{1}{\sqrt{x}+\sqrt{a}}
+	</mrow><mrow>
+	&amp;
+	=\frac{1}{2\sqrt{a}}
+	</mrow>
+	</md>
+</li>
+<li>
+<p>
+	We should think about the domain of <m>f'</m> here <mdash/> that is, for which  values of <m>a</m> is <m>f'(a)</m> defined? The original function <m>f(x)</m> was  defined for all <m>x \geq 0</m>, however the derivative <m>f'(a)=\frac{1}{2\sqrt{a}}</m> is undefined at <m>a = 0</m>.
+</p>
+
+<p>
+	If we draw a careful picture of <m>\sqrt{x}</m> around <m>x=0</m> we can see why this has  to be the case. The figure below shows three different tangent lines to the graph of <m>y=f(x)=\sqrt{x}</m>. As the point of tangency moves closer and closer to the  origin, the tangent line gets steeper and steeper.  The slope of the tangent line at <m>\big(a,\sqrt{a}\big)</m> blows up as  <m>a\to 0</m>.
+</p>
+
+<sidebyside width="66%">
+ <image source="text/figs/tangentSqrt"/>
+</sidebyside>
+</li>
+</ul>
+</p>
+
+</example>
+
+<example xml:id="eg_diff_abs"><title><m>\diff{}{x} \left\{ |x| \right\}</m></title>
+<p>
+Compute the derivative, <m>f'(a)</m>, of the function <m>f(x)=|x|</m> at the point  <m>x=a</m>.
+<ul>
+<li>
+<p>
+	We should start this example by recalling the definition of <m>|x|</m> (we  saw this back in Example<nbsp/><xref ref="eg_lim_tricky"/>):
+	<md>
+	<mrow>
+	  |x| &amp;= \begin{cases}
+		 -x &amp; \text{ if } x \lt 0\\
+		 0 &amp; \text{ if } x=0\\
+		 x &amp; \text{ if }x \gt 0.
+		 \end{cases}
+	</mrow>
+	</md>
+	It is definitely not just <q>chop off the minus sign</q>.
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/abs"/>
+</sidebyside>
+</li>
+<li>
+	This breaks our computation of the derivative into 3 cases depending on  whether <m>x</m> is positive, negative or zero.
+</li>
+<li>
+	Assume <m>x \gt 0</m>. Then
+	<md>
+	<mrow>
+	  \diff{f}{x}
+	  &amp;= \lim_{h\to0} \frac{f(x+h)-f(x)}{h}
+	</mrow><mrow>
+	  &amp;= \lim_{h\to0} \frac{|x+h|-|x|}{h}
+	</mrow><mrow>
+	</mrow>
+	<intertext>Since <m>x \gt 0</m> and we are interested in the behaviour of this function  as <m>h \to 0</m> we can assume <m>h</m> is much smaller than <m>x</m>. This means <m>x+h \gt 0</m> and  so <m>|x+h|=x+h</m>.</intertext>
+	<mrow>
+	  &amp;= \lim_{h\to0} \frac{x+h-x}{h}
+	</mrow><mrow>
+	  &amp;= \lim_{h\to0} \frac{h}{h} = 1 &amp;\text{as expected}
+	</mrow>
+	</md>
+</li>
+<li>
+	Assume <m>x \lt 0</m>. Then
+	<md>
+	<mrow>
+	  \diff{f}{x}
+	  &amp;= \lim_{h\to0} \frac{f(x+h)-f(x)}{h}
+	</mrow><mrow>
+	  &amp;= \lim_{h\to0} \frac{|x+h|-|x|}{h}
+	</mrow><mrow>
+	</mrow>
+	<intertext>Since <m>x \lt 0</m> and we are interested in the behaviour of this function  as <m>h \to 0</m> we can assume <m>h</m> is much smaller than <m>x</m>. This means <m>x+h \lt 0</m> and  so <m>|x+h|=-(x+h)</m>.</intertext>
+	<mrow>
+	  &amp;= \lim_{h\to0} \frac{-(x+h)-(-x)}{h}
+	</mrow><mrow>
+	  &amp;= \lim_{h\to0} \frac{-h}{h} = -1
+	</mrow>
+	</md>
+</li>
+<li>
+	When <m>x=0</m> we have
+	<md>
+	<mrow>
+	  f'(0)
+	  &amp;= \lim_{h\to0} \frac{f(0+h)-f(0)}{h}
+	</mrow><mrow>
+	  &amp;= \lim_{h\to0} \frac{|0+h|-|0|}{h}
+	</mrow><mrow>
+	  &amp;= \lim_{h\to0} \frac{|h|}{h}
+	</mrow>
+	</md>
+	To proceed we need to know if <m>h \gt 0</m> or <m>h \lt 0</m>, so we must use one-sided limits.  The limit from above is:
+	<md>
+	<mrow>
+	  \lim_{h \to 0^+} \frac{|h|}{h}
+	  &amp;=
+	  \lim_{h \to 0^+} \frac{h}{h} &amp;\text{since } h \gt 0, |h|=h
+	</mrow><mrow>
+	&amp;= 1
+	</mrow>
+	<intertext>Whereas, the limit from below is:</intertext>
+	<mrow>
+	  \lim_{h \to 0^-} \frac{|h|}{h} &amp;=
+	\lim_{h \to 0^-} \frac{-h}{h} &amp;\text{since } h \lt 0, |h|= -h
+	</mrow><mrow>
+	&amp;= -1
+	</mrow>
+	</md>
+	Since the one-sided limits differ, the limit as <m>h\to 0</m> does not exist. And  thus the derivative does not exist as <m>x=0</m>.
+</li>
+</ul>
+In summary:
+<md>
+<mrow>
+  \diff{}{x} |x| &amp;= \begin{cases}
+                     -1 &amp; \text{if } x \lt 0 \\
+                     DNE &amp; \text{if } x=0 \\
+                     1 &amp; \text{if } x \gt 0
+                    \end{cases}
+</mrow>
+</md>
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/diff_abs"/>
+</sidebyside>
+
+</example>
+
+</subsection>
+<subsection><title>Where is the derivative undefined?</title>
+
+<p>
+According to Definition <xref ref="def_DIFFderiv"/>, the derivative <m>f'(a)</m> exists precisely when the limit   <m>\lim\limits_{x\rightarrow a} \frac{f(x)-f(a)}{x-a}</m> exists. That limit is also the slope of the tangent line to the curve <m>y=f(x)</m> at <m>x=a</m>. That limit does not exist when the curve <m>y=f(x)</m> does not have a tangent line at <m>x=a</m> or when the curve does have a tangent line, but the tangent line has infinite slope. We have already seen some examples of this.
+<ul>
+<li>
+	In Example <xref ref="eg_DIFFderivXm1"/>, we considered the  function <m>f(x)=\frac{1}{x}</m>. This function <q>blows up</q> (i.e.  becomes infinite) at <m>x=0</m>. It does not have a tangent line at  <m>x=0</m> and its derivative does not exist at <m>x=0</m>.
+</li>
+<li>
+	In Example <xref ref="eg_diff_abs"/>, we considered the function  <m>f(x)=|x|</m>. This function does not have a tangent line at <m>x=0</m>,  because there is a sharp corner in the graph of <m>y=|x|</m> at <m>x=0</m>. (Look at the graph in Example 2.2.10.) So the derivative of <m>f(x)=|x|</m> does not exist at <m>x=0</m>.
+</li>
+</ul>
+Here are a few more examples.
+</p>
+
+<example xml:id="eg_DIFFderivHeavy"><title>Derivative at a discontinuity</title>
+<p>Visually, the function</p>
+
+<sidebyside valign="middle">
+<p><m>
+H(x) = \begin{cases}
+           0  &amp; \text{if }x \le 0 \\
+           1 &amp; \text{if }x \gt 0
+       \end{cases}
+</m></p>
+
+<image source="text/figs/heavy"/>
+</sidebyside>
+
+<p>
+does not have a tangent line at <m>(0,0)</m>. Not surprisingly, when <m>a=0</m> and <m>h</m> tends to <m>0</m> with <m>h \gt 0</m>,
+<md>
+<mrow>
+\frac{H(a+h)-H(a)}{h}
+=\frac{H(h)-H(0)}{h}
+ =\frac{1}{h}
+</mrow>
+</md>
+blows up. The same sort of computation shows that  <m>f'(a)</m> cannot possibly exist whenever the function <m>f</m> is not continuous at <m>a</m>. We will formalize, and prove, this statement  in Theorem <xref ref="thm_DIFFdiffGivesCont"/>, below.
+</p>
+</example>
+
+<example xml:id="eg_DIFFderivXthird"><title><m>\diff{}{x}x^{1/3}</m></title>
+<p>
+Visually, it looks like the function <m>f(x) = x^{1/3}</m>, sketched below, (this might be a good point to recall that cube roots of negative numbers are negative <mdash/> for example, since <m>(-1)^3=-1</m>, the cube root of <m>-1</m> is <m>-1</m>),
+</p>
+
+<sidebyside width="66%">
+  <image source="text/figs/Xthird"/>
+</sidebyside>
+
+<p>
+has the <m>y</m><ndash/>axis as its tangent line at <m>(0,0)</m>. So we would expect that <m>f'(0)</m> does not exist. Let's check. With <m>a=0</m>,
+<md>
+<mrow>
+f'(a)= \lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}
+=\lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}
+ =\lim_{h\rightarrow 0}\frac{h^{1/3}}{h}
+ =\lim_{h\rightarrow 0}\frac{1}{h^{2/3}}
+ =DNE
+</mrow>
+</md>
+as expected.
+</p>
+</example>
+
+<example xml:id="eg_DIFFderivCusp"><title><m>\diff{}{x}\sqrt{|x|}</m></title>
+<p>
+We have already considered the derivative of the function <m>\sqrt{x}</m> in Example <xref ref="eg_DIFFderivXsqrt"/>. We'll now look at the function <m>f(x) = \sqrt{|x|}</m>. Recall, from Example <xref ref="eg_diff_abs"/>, the definition of <m>|x|</m>.
+</p>
+
+<p>
+When <m>x \gt 0</m>, we have <m>|x|=x</m> and <m>f(x)</m> is identical to <m>\sqrt{x}</m>. When <m>x \lt 0</m>, we have <m>|x|=-x</m> and <m>f(x)=\sqrt{-x}</m>. So to graph <m>y=\sqrt{|x|}</m> when <m>x \lt 0</m>, you just have to graph <m>y=\sqrt{x}</m> for <m>x \gt 0</m> and then send <m>x\rightarrow -x</m> <mdash/> i.e. reflect the graph in the <m>y</m><ndash/>axis. Here is the graph.
+</p>
+
+<sidebyside width="66%">
+  <image source="text/figs/XsqrtAbs"/>
+</sidebyside>
+
+<p>
+The pointy thing at the origin is called a cusp. The graph of <m>y=f(x)</m> does not have a tangent line at <m>(0,0)</m> and, correspondingly, <m>f'(0)</m> does not exist because
+<md>
+<mrow>
+\lim_{h\rightarrow 0^+}\frac{f(h)-f(0)}{h}
+ =\lim_{h\rightarrow 0^+}\frac{\sqrt{|h|}}{h}
+ =\lim_{h\rightarrow 0^+}\frac{1}{\sqrt{h}}
+ =DNE
+</mrow>
+</md>
+</p>
+</example>
+
+<theorem xml:id="thm_DIFFdiffGivesCont">
+<statement><p>
+If the function <m>f(x)</m> is differentiable at <m>x=a</m>, then <m>f(x)</m> is also continuous at <m>x=a</m>.
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+The function <m>f(x)</m> is continuous at <m>x=a</m> if and only if the limit of
+<md>
+<mrow>
+f(a+h) - f(a) = \frac{f(a+h)-f(a)}{h}\ h
+</mrow>
+</md>
+as <m>h\rightarrow 0</m> exists and is zero. But if <m>f(x)</m> is differentiable at <m>x=a</m>, then, as <m>h\rightarrow 0</m>,  the first factor, <m> \frac{f(a+h)-f(a)}{h}</m> converges to <m>f'(a)</m>  and the second factor, <m>h</m>, converges to zero. So the product provision of our  arithmetic of limits Theorem <xref ref="thm_arith_lim"/> implies that the product <m>\frac{f(a+h)-f(a)}{h}\ h</m> converges to <m>f'(a)\cdot 0=0</m> too.
+</p>
+</proof>
+
+<p>
+Notice that while this theorem is useful as stated, it is (arguably) more often applied in its contrapositive
+	<fn>
+		If you have forgotten what the contrapositive is, then quickly reread Footnote<nbsp/><xref ref="footnote_contrapositive"/> in Section<nbsp/><xref ref="sec_lim_func"/>.
+	</fn>
+form:
+</p>
+
+<theorem><title>The contrapositive of Theorem<nbsp/><xref ref="thm_DIFFdiffGivesCont"/></title>
+<statement><p>
+If <m>f(x)</m> is not continuous at <m>x=a</m> then it is not differentiable at <m>x=a</m>.
+</p></statement>
+</theorem>
+
+<p>
+As the above examples illustrate, this statement does not tell us what happens if <m>f</m> <em>is</em> continuous at <m>x=a</m> <mdash/> we have to think!
+</p>
+
+</subsection>
+
+
+<xi:include href="../problems/prob_s2.2.xml"/>
+
+
+</section>

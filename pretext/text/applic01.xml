@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_vel_acc">
+<title>Velocity and acceleration</title>
+<subsection><title>Velocity and acceleration</title>
+
+<p>If you are moving along the <m>x</m><ndash/>axis and your position at time <m>t</m>
+is <m>x(t)</m>, then your velocity at time <m>t</m> is <m>v(t)=x'(t)</m> and your
+acceleration at time <m>t</m> is <m>a(t)=v'(t) = x''(t)</m>.
+</p>
+
+<example xml:id="eg_velaccelA"><title>Velocity as derivative of position</title>
+<p>
+Suppose that you are moving along the <m>x</m><ndash/>axis and that
+at time <m>t</m> your position is given by
+<md>
+<mrow>
+x(t)&amp;=t^3-3t+2.
+</mrow>
+</md>
+We're going to try and get a good picture of what your motion is like. We can learn quite
+a bit just by looking at the sign of the velocity <m>v(t)=x'(t)</m> at each time <m>t</m>.
+<ul>
+<li> If <m>x'(t) \gt 0</m>, then at that instant <m>x</m> is increasing, i.e. you are
+moving to the right.
+</li>
+<li> If <m>x'(t)=0</m>, then at that instant you are not
+moving at all.
+</li>
+<li> If <m>x'(t) \lt 0</m>, then at that instant <m>x</m> is decreasing, i.e. you are
+moving to the left.
+</li>
+</ul>
+From the given formula for <m>x(t)</m> it is straight forward to work out the velocity
+<md>
+<mrow>
+v(t) = x'(t) &amp;=3t^2-3=3(t^2-1)=3(t+1)(t-1)
+</mrow>
+</md>
+This is zero only when <m>t=-1</m> and when <m>t=+1</m>; at no other value
+<fn>This is because
+the equation <m>ab=0</m> is only satisfied for real numbers <m>a</m> and <m>b</m> when either <m>a=0</m> or
+<m>b=0</m> or both <m>a=b=0</m>. Hence if a polynomial is the product of two (or more) factors,
+then it is only zero when at least one of those factors is zero. There are more
+complicated mathematical environments in which you have what are called <q>zero divisors</q>
+but they are beyond the scope of this course.</fn>
+ of <m>t</m> can this polynomial be equal zero.
+Consequently in any time interval that does <em>not</em> include either <m>t=-1</m> or <m>t=+1</m>,
+<m>v(t)</m> takes only a single sign
+<fn>This is because if <m>v(t_a) \lt 0</m> and <m>v(t_b) \gt 0</m>
+then, by the intermediate value theorem, the continuous function <m>v(t)=x'(t)</m> must take
+the value <m>0</m> for some <m>t</m> between <m>t_a</m> and <m>t_b</m>.</fn>
+. So
+<ul>
+<li> For all <m>t \lt -1</m>, both <m>(t+1)</m> and <m>(t-1)</m> are negative (sub in,
+for example, <m>t=-10</m>) so the product <m>v(t)=x'(t)=3(t+1)(t-1) \gt 0</m>.
+</li>
+<li> For all <m>-1 \lt t \lt 1</m>, the factor <m>(t+1) \gt 0</m> and the factor <m>(t-1) \lt 0</m>
+(sub in, for example, <m>t=0</m>) so the product <m>v(t)=x'(t)=3(t+1)(t-1) \lt 0</m>.
+</li>
+<li> For all <m>t \gt 1</m>, both <m>(t+1)</m> and <m>(t-1)</m> are positive (sub in, for example,
+<m>t=+10</m>) so the product <m>v(t)=x'(t)=3(t+1)(t-1) \gt 0</m>.
+</li>
+</ul>
+The figure below gives a summary of the sign information we have about
+<m>t-1</m>, <m>t+1</m> and <m>x'(t)</m>.</p>
+
+<sidebyside width="90%">
+<image source="text/figs/speedD"/>
+</sidebyside>
+
+<p>It is now easy to put together a mental image of your trajectory.
+<ul>
+<li> For <m>t</m> large and negative (i.e. far in the past), <m>x(t)</m> is large
+and negative and <m>v(t)</m> is large and positive. For example
+<fn>Notice here we are
+using the fact that when <m>t</m> is very large <m>t^3</m> is much bigger than <m>t^2</m> and <m>t^1</m>.
+So we can approximate the value of the polynomial <m>x(t)</m> by the largest term <mdash/> in
+this case <m>t^3</m>. We can do similarly with <m>v(t)</m> <mdash/> the largest term is <m>3t^2</m>.</fn>
+, when
+<m>t=-10^6</m>, <m>x(t)\approx t^3=- 10^{18}</m> and <m>v(t)\approx  3t^2 = 3\cdot 10^{12}</m>.
+So you are moving quickly to the right.
+</li>
+<li> For <m>t \lt -1</m>, <m>v(t)=x'(t) \gt 0</m> so that <m>x(t)</m> is increasing and you are moving
+to the right.
+</li>
+<li> At <m>t=-1</m>, <m>v(-1)=0</m> and you have come to a halt at
+position <m>x(-1)=(-1)^3-3(-1)+2=4</m>.
+</li>
+<li> For <m>-1 \lt t \lt 1</m>, <m>v(t)=x'(t) \lt 0</m> so that <m>x(t)</m> is decreasing and you are moving
+to the left.
+</li>
+<li> At <m>t=+1</m>, <m>v(1)=0</m> and you have again come to a halt, but now at
+position <m>x(1)=1^3-3+2=0</m>.
+</li>
+<li> For <m>t \gt 1</m>, <m>v(t)=x'(t) \gt 0</m> so that <m>x(t)</m> is increasing and you are
+again moving to the right.
+</li>
+<li> For <m>t</m> large and positive (i.e. in the far future), <m>x(t)</m> is large
+and positive and <m>v(t)</m> is large and positive. For example
+<fn>We are making a
+similar rough approximation here.</fn>
+, when <m>t=10^6</m>, <m>x(t)\approx t^3= 10^{18}</m> and
+<m>v(t)\approx  3t^2 = 3\cdot 10^{12}</m>. So you are moving quickly to the right.
+</li>
+</ul>
+Here is a sketch of the graphs of <m>x(t)</m> and <m>v(t)</m>. The heavy lines in the graphs
+indicate when you are moving to the right <mdash/> that is where <m>v(t)=x'(t)</m> is positive.
+</p>
+
+<sidebyside widths="45% 45%">
+<image source="text/figs/speedB"/>
+<image source="text/figs/speedA"/>
+</sidebyside>
+
+<p>And here is a schematic picture of the whole trajectory.
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/speedC"/>
+</sidebyside>
+
+</example>
+
+<example xml:id="eg_fallingBallB"><title>Position and velocity from acceleration</title>
+<p>
+In this example we are going to figure out how far a body falling from rest will fall in
+a given time period.
+<ul>
+<li><p>We should start by defining some variables and their units. Denote
+<ul>
+<li> time in seconds by <m>t</m>,
+</li>
+<li> mass in kilograms by <m>m</m>,
+</li>
+<li> distance fallen (in metres) at time <m>t</m> by <m>s(t)</m>, velocity (in m/sec) by
+  <m>v(t)=s'(t)</m> and acceleration (in m/sec<m>^2</m>) by <m>a(t)=v'(t)=s''(t)</m>.
+</li>
+</ul>
+It makes sense to choose a coordinate system so that the body starts to fall at <m>t=0</m>.
+</p>
+</li>
+<li> We will use Newton's second law of motion
+<md>
+<mrow>
+\text{the force applied to the body at time } t = m \cdot a(t).
+</mrow>
+</md>
+together with the assumption that the only force acting on the body is gravity (in
+particular, no air resistance). Note that near the surface of the Earth,
+<md>
+<mrow>
+\text{the force due to gravity acting on a body of mass } m &amp;= m \cdot g.
+</mrow>
+</md>
+The constant <m>g</m>, called the acceleration of gravity
+<fn>It is also called the standard acceleration due to gravity or standard gravity. For those of you who prefer
+imperial units (or US customary units), it is about <m>32</m> ft/sec<m>^2</m>, <m>77165</m>
+cubits/minute<m>^2</m>, or <m>631353</m> furlongs/hour<m>^2</m>.</fn>
+, is about 9.8m/sec<m>^2</m>.
+</li>
+<li> Since the body is falling from rest, we know that its initial velocity is zero.
+That is
+<md>
+<mrow>
+  v(0) &amp;= 0.
+</mrow>
+</md>
+Newton's second law then implies that
+<md>
+<mrow>
+m\cdot a(t) &amp;= \text{force due to gravity}
+</mrow><mrow>
+  m \cdot v'(t) &amp;= m \cdot g &amp; \text{ cancel the } m
+</mrow><mrow>
+  v'(t) &amp;=g
+</mrow>
+</md>
+</li>
+<li><p> In order to find the velocity, we need to find a function of <m>t</m> whose derivative
+is constant. We are simply going to guess such a function and then we will verify that our
+guess has all of the desired properties. It's easy to guess a function whose derivative is
+the constant <m>g</m>.  Certainly <m>gt</m> has the correct derivative. So does
+<md>
+<mrow>
+    v(t) = gt + c
+</mrow>
+</md>
+for any constant <m>c</m>. One can then verify
+<fn>While it is clear that this satisfies
+the equation we want, it is less clear that it is the only function that
+works. To see this, assume that there are two functions <m>f(t)</m> and <m>h(t)</m> which both
+satisfy <m>v'(t)=g</m>. Then <m>f'(t)=h'(t) = g</m> and so <m>f'(t)-h'(t) = 0</m>. Equivalently
+<m>
+\diff{}{t}\left( f(t)-h(t) \right) = 0.
+</m>
+The only function whose derivative is zero everywhere is the constant function (see
+Section<nbsp/><xref ref="sec_mvt"/> and Theorem<nbsp/><xref ref="cor_DIFFmvtcons"/>). Thus <m>f(t)-h(t) =
+\text{constant}</m>. So all the functions that satisfy <m>v'(t)=g</m> must be of the form <m>gt +
+\text{constant}</m>.
+</fn> that <m>v'(t)=g</m>. Using the fact that <m>v(0)=0</m> we must then have <m>c=0</m> and so
+<md>
+<mrow>
+  v(t) &amp;= gt.
+</mrow>
+</md></p>
+</li>
+<li> Since velocity is the derivative of position, we know that
+<md>
+<mrow>
+  s'(t) &amp;= v(t) = g \cdot t.
+</mrow>
+</md>
+To find <m>s(t)</m> we are again going to guess and check. Its not hard to see that we can use
+<md>
+<mrow>
+  s(t) &amp;= \frac{g}{2} t^2 + c
+</mrow>
+</md>
+where again <m>c</m> is some constant. Again we can verify that this works
+simply by differentiating
+<fn>To show that any solution of <m>s'(t)=gv</m>
+must be of this form we can use the same reasoning we used to get <m>v(t) = gt +
+\text{constant}</m>.</fn>. Since we have defined <m>s(t)</m> to be the distance fallen, it follows
+that <m>s(0)=0</m> which in turn tells us that <m>c = 0</m>. Hence
+<md>
+<mrow>
+  s(t) &amp;= \frac{g}{2} t^2 &amp; \text{but $g=9.8$, so}
+</mrow><mrow>
+  &amp;= 4.9 t^2,
+</mrow>
+</md>
+which is exactly the <m>s(t)</m> used way back in Section<nbsp/><xref ref="sec_velocity"/>.
+</li>
+</ul>
+</p>
+
+</example>
+
+
+<p>Let's now do a similar but more complicated example.</p>
+
+<example xml:id="eg_braking"><title>Stopping distance of a breaking car</title>
+<p>
+A car's brakes can decelerate the car at 64000<m>\textrm{km/hr}^2</m>.
+How fast can the car be driven if it must be able to stop within a distance
+of 50m?
+</p>
+
+<p><alert>Solution</alert> Before getting started, notice that there is a small <q>trick</q> in this problem
+<mdash/> several quantities are stated but their units are different. The acceleration is
+stated in kilometres per hour<m>^2</m>, but the distance is stated in metres. Whenever we come
+across a <q>real world</q> problem
+<fn>Well <mdash/> <q>realer world</q> would perhaps be a
+betterer term.</fn>
+ we should be careful of the units used.
+</p>
+
+
+<p><ul>
+<li><p> We should first define some variables and their units. Denote
+<ul>
+<li> time (in hours) by <m>t</m>,
+</li>
+<li> the position of the car (in kilometres) at time <m>t</m> by <m>x(t)</m>, and
+</li>
+<li> the velocity (in kilometres per hour) by is <m>v(t)</m>.
+</li>
+</ul>
+  We can also choose a coordinate system such that <m>x(0)=0</m> and the car starts
+  braking at time <m>t=0</m>.
+</p>
+</li>
+<li><p> Now let us rewrite the information in the problem in terms of these variables.
+<ul>
+<li> We are told that, at maximum braking, the acceleration <m>v'(t)=x''(t)</m> of the car
+is <m>-64000</m>.
+</li>
+<li> We need to determine the maximum initial velocity <m>v(0)</m> so that the stopping
+distance is at most <m>50m = 0.05km</m> (being careful with our units). Let us call the
+stopping distance <m>x_{stop}</m> which is really <m>x(t_{stop})</m> where <m>t_{stop}</m> is the
+stopping time.
+</li>
+</ul></p>
+</li>
+<li> In order to determine <m>x_{stop}</m> we first need to determine <m>t_{stop}</m>, which we
+will do by assuming maximum breaking from a, yet to be determined, initial velocity of
+<m>v(0)=q</m> m/sec.
+</li>
+<li><p> Assuming that the car undergoes a constant acceleration at this maximum breaking
+power, we have
+<md>
+<mrow>
+  v'(t) &amp;= -64000
+</mrow>
+</md>
+This equation is very similar to the ones we had to solve in
+Example<nbsp/><xref ref="eg_fallingBallB"/> just above.
+</p>
+
+<p>As we did there
+<fn>Now is a good time to go back and have a read of that example.</fn>
+,
+we are going to just guess <m>v(t)</m>. First, we just guess one function whose derivative is
+<m>-64000</m>, namely <m>-64000 t</m>. Next we observe that, since the derivative of a constant is
+zero, any function of the form
+<md>
+<mrow>
+  v(t) = -64000\,t + c
+</mrow>
+</md>
+with constant <m>c</m>, has the correct derivative. Finally, the requirement that the initial
+velocity <m>v(0)=q</m>" forces <m>c=q</m>, so
+<md>
+<mrow>
+  v(t) = q - 64000\,t
+</mrow>
+</md></p>
+</li>
+<li> From this we can easily determine the stopping time <m>t_{stop}</m>, when the initial
+velocity is <m>q</m>, since this is just when <m>v(t) = 0</m>:
+<md>
+<mrow>
+  0 = v(t_{stop}) &amp;= q-64000 \cdot t_{stop} &amp; \text{ and so}
+</mrow><mrow>
+  t_{stop} &amp;= \frac{q}{64000}.
+</mrow>
+</md>
+</li>
+<li> Armed with the stopping time, how do we get at the stopping distance?  We need to
+find the formula satisfied by <m>x(t)</m>. Again (as per Example<nbsp/><xref ref="eg_fallingBallB"/>) we
+make use of the fact that
+<md>
+<mrow>
+x'(t) &amp;= v(t) = q - 64000t.
+</mrow>
+</md>
+So we need to guess a function <m>x(t)</m> so that <m>x'(t) = q-64000 t</m>. It is not hard to see
+that
+<md>
+<mrow>
+  x(t) &amp;= qt - 32000t^2 + \text{constant}
+</mrow>
+</md>
+works. Since we know that <m>x(0)=0</m>, this constant is just zero and
+<md>
+<mrow>
+  x(t) &amp;= qt - 32000 t^2.
+</mrow>
+</md>
+</li>
+<li> We are now ready to compute the stopping distance (in terms of the, still yet to be
+determined, initial velocity <m>q</m>):
+<md>
+<mrow>
+  x_{stop} &amp;= x(t_{stop}) = q t_{stop} - 32000 t_{stop}^2
+</mrow><mrow>
+  &amp;= \frac{q^2}{64000} - \frac{32000 q^2}{64000^2}
+</mrow><mrow>
+  &amp;= \frac{q^2}{64000} \left(1 - \frac{1}{2} \right)
+</mrow><mrow>
+  &amp;= \frac{q^2}{2 \times 64000}
+</mrow>
+</md>
+Notice that the stopping distance is a quadratic function of the initial velocity <mdash/> if
+you go twice as fast, you need four times the distance to stop.
+</li>
+<li> But we are told that the stopping distance must be less than <m>50m = 0.05km</m>. This
+means that
+<md>
+<mrow>
+  x_{stop} = \frac{q^2}{2 \times 64000} &amp;\leq \frac{5}{100}
+</mrow><mrow>
+    q^2 &amp;\leq \frac{2 \times 64000 \times 5}{100} = \frac{64000 \times 10}{100} = 6400
+</mrow>
+</md>
+Thus we must have <m>q \leq 80</m>. Hence the initial velocity can be no greater than <m>80km/h</m>.
+</li>
+</ul>
+</p>
+
+</example>
+</subsection>
+
+<xi:include href="../problems/prob_s3.1.xml" />
+
+
+</section>

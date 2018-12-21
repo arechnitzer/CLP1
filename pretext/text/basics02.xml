@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xml:id="sec_sets" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Sets</title>
+<introduction>
+
+	<p>
+	All of you will have done some basic bits of set-theory in school. Sets, intersection, unions, Venn diagrams etc etc. Set theory now appears so thoroughly throughout mathematics that it is difficult to imagine how Mathematics could have existed without it. It is really quite surprising that set theory is a much newer part of mathematics than calculus. Mathematically rigorous set  theory was really only developed in the 19th Century <mdash/> primarily by Georg Cantor
+		<fn>
+		An extremely interesting mathematician who is responsible for much of our understanding of infinity. Arguably his most famous results are that there are more real numbers than integers, and that there are an infinite number of different infinities. His work, though now considered to be extremely important, was not accepted by his peers, and he was labelled <q>a corrupter of youth</q> for teaching it. For some reason we know that he spent much of his honeymoon talking and doing mathematics with Richard Dedekind.
+		</fn>.
+	Mathematicians were using sets before then (of course), however they were doing so without defining things too rigorously and formally.
+	</p>
+
+	<p>
+	In mathematics (and elsewhere, including <q>real life</q>) we are used to dealing with collections of things. For example
+	<ul>
+	<li> a family is a collection of relatives.</li>
+	<li> hockey team is a collection of hockey players.</li>
+	<li> shopping list is a collection of items we need to buy.</li>
+	</ul>
+	</p>
+
+	<p>
+	Generally when we give mathematical definitions we try to make them very formal and rigorous so that they are as clear as possible. We need to do this so that when we come across a mathematical object we can decide with complete certainty whether or not it satisfies the definition.
+	</p>
+
+	<p>
+	Unfortunately, it is the case that giving a completely rigorous definition of <q>set</q> would take up far more of our time than we would really like
+		<fn>The interested reader is invited to google (or whichever search engine you prefer <mdash/> DuckDuckGo?) <q>Russell's paradox</q>, <q>Axiomatic set theory</q>  and <q>Zermelo-Fraenkel set theory</q> for a more complete and <em>far</em> more detailed discussion of the basics of sets and why, when you dig into them a little, they are not so basic.
+		</fn>.
+	</p>
+
+	<definition><title>A not-so-formal definition of set</title>
+	<statement><p>
+	A <q>set</q> is a collection of distinct objects. The objects are referred to as <q>elements</q> or <q>members</q> of the set.
+	</p></statement>
+	</definition>
+
+
+	<p>
+	Now <mdash/> just a moment to describe some conventions. There are many of these in mathematics. These are not firm mathematical rules, but just traditions. It makes it much easier for people reading your work to understand what you are trying to say.
+	<ul>
+	<li> Use capital letters to denote sets, <m>A,B, C, X, Y</m> etc.</li>
+	<li> Use lower case letters to denote elements of the sets <m>a,b,c,x,y</m>.</li>
+	</ul>
+	So when you are writing up homework, or just describing what you are doing, then if you stick with these conventions people reading your work (including the person marking your exams) will know <mdash/> <q>Oh <m>A</m> is that set they are talking about</q> and <q><m>a</m> is an element of that set.</q>. On the other hand, if you use any old letter or symbol it is correct, but confusing for the reader. Think of it as being a bit like spelling <mdash/> if you don't spell words correctly people can usually still understand what you mean, but it is much easier if you spell words the same way as everyone else.
+	</p>
+
+	<p>
+	We will encounter more of these conventions as we go <mdash/> another good one is
+	<ul>
+	<li> The letters <m>i,j,k,l,m,n</m> usually denote integers (like <m>1,2,3,-5,18,\dots></m>). </li>
+	<li> The letters <m>x,y,z,w</m> usually denote real numbers (like <m>1.4323, \pi, \sqrt{2}, 6.0221415\times 10^{23}, \dots</m> and so forth). </li>
+	</ul>
+	</p>
+
+	<p>
+	So now that we have defined sets, what can we do with them? There is only thing we can ask of a set
+	</p>
+	<blockquote>
+	<p>
+	<q>Is this object in the set?</q>
+	</p></blockquote>
+	<p>
+	and the set will answer
+	</p>
+	<blockquote>
+	<p>
+	<q>yes</q> or <q>no</q>
+	</p>
+	</blockquote>
+
+	<p>
+	For example, if <m>A</m> is the set of even numbers we can ask <q>Is 4 in <m>A</m>?</q> We get back the answer <q>yes</q>. We write this as
+	<md>
+	<mrow>
+	  4 \in A
+	</mrow>
+	</md>
+	While if we ask  <q>Is <m>3</m> in <m>A</m>?</q>, we get back the answer <q>no</q>. Mathematically we would write this as
+	<md>
+	<mrow>
+	  3 \notin A
+	</mrow>
+	</md>
+	So this symbol <q><m>\in</m></q> is mathematical shorthand for <q>is an element of</q>, while the same symbol with a stroke through it <q><m>\notin</m></q> is shorthand for <q>is not an element of</q>.
+	</p>
+
+	<p>
+	Notice that both of these statements, though they are written down as short strings of three symbols, are really complete sentences. That is, when we read them out we have
+	<md>
+	<mrow>
+	  \text{``$4 \in A$''}
+	  &amp;&amp;&amp; \text{is read as} &amp;&amp; \text{``Four is an element of $A$.''}
+	</mrow><mrow>
+	  \text{``$3 \notin A$''}
+	  &amp;&amp;&amp; \text{is read as} &amp;&amp;  \text{``Three is not an element of $A$.''}
+	</mrow>
+	</md>
+	The mathematical symbols like <q><m>+</m></q>, <q><m>=</m></q> and <q><m>\in</m></q> are shorthand
+	<fn>
+	Precise definitions aside, by <q>shorthand</q> we mean a collection of accepted symbols and abbreviations to allow us to write more quickly and hopefully more clearly. People have been using various systems of shorthand as long as people have been writing. Many of these are used and understood only by the individual, but if you want people to be able to understand what you have written, then you need to use shorthand that is commonly understood.
+	</fn>
+	and mathematical statements like <q><m>4+3=7</m></q> are complete sentences.
+	</p>
+
+	<p>
+	This is an important point <mdash/> mathematical writing is just like any other sort of writing. It is very easy to put a bunch of symbols or words down on the page, but if we would like it to be easy to read and understand, then we have to work a bit harder. When you write mathematics you should keep in mind that someone else should be able to read it and understand it.
+	</p>
+
+
+	<blockquote>
+	<p>
+	 <em>Easy reading is damn hard writing.</em>
+	</p>
+	<p>
+	<mdash/> Nathaniel Hawthorne, but possibly also a few others like Richard Sheridan.
+	</p>
+	</blockquote>
+
+	<p>
+	We will come across quite a few different sets when doing  mathematics. It must be completely clear from the definition how to answer the question <q>Is this object in the set or not?</q>
+	<ul>
+	<li> <q>Let <m>A</m> be the set of even integers between 1 and 13.</q> <mdash/> nice and clear. </li>
+	<li> <q>Let <m>B</m> be the set of tall people in this class room.</q> <mdash/> not clear. </li>
+	</ul>
+	More generally if there are only a small number of elements in the set we just list them all out
+	<ul>
+	<li> <q>Let <m>C = \{1,2,3\}</m>.</q></li>
+	</ul>
+	When we write out the list we put the elements inside braces <q><m>\{ \cdot \}</m></q>. Note that the order we write things in doesn't matter
+	<md>
+	<mrow>
+	  C &amp; = \{1,2,3\} = \{2,1,3\} = \{3,2,1\}
+	</mrow>
+	</md>
+	because the only thing we can ask is <q>Is this object an element of <m>C</m>?</q> We cannot ask more complex questions like <q>What is the third element of <m>C</m>?</q> <mdash/> we require more sophisticated mathematical objects to ask such questions
+		<fn>
+		The interested reader is invited to look at <q>lists</q>, <q>multisets</q>, <q>totally ordered sets</q> and <q>partially ordered sets</q> amongst many other mathematical objects that generalise the basic idea of sets.
+		</fn>.
+	Similarly, it doesn't matter how many times we write the same object in the list
+	<md>
+	<mrow>
+	  C &amp;= \{1,1,1,2,3,3,3,3,1,2,1,2,1,3\} = \{1,2,3\}
+	</mrow>
+	</md>
+	because all we ask is <q>Is <m>1 \in C</m>?</q>. Not <q>how many times is 1 in <m>C</m>?</q>.
+	</p>
+
+	<p>
+	Now <mdash/> if the set is a bit bigger then we might write something like this
+	<ul>
+	<li> <m>C = \{1,2,3,\dots,40\}</m> the set of all integers between 1 and 40 (inclusive). </li>
+	<li> <m>A = \{1,4,9,16,\dots\}</m> the set of all perfect squares
+		<fn>
+		ie integers that can be written as the square of another integer.
+		</fn>
+	</li>
+	</ul>
+	The <q><m>\dots</m></q> is again shorthand for the missing entries. You have to be careful with this as you can easily confuse the reader
+	<ul>
+	<li>
+	<m>B = \{3,5,7,\dots\}</m> <mdash/> is this all odd primes, or all odd numbers bigger than 1 or ?? What is written is not sufficient for us to have a firm idea of what the writer intended.
+	</li>
+	</ul>
+	Only use this where it is completely clear by context. A few extra words can save the reader (and yourself) a lot of confusion.
+	</p>
+	<blockquote>
+	<p>
+	<em>Always think about the reader.</em>
+	</p>
+	</blockquote>
+
+
+</introduction>
+
+</section>

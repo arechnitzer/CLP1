@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_taylor_eg"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+
+<exercise purpose="RQS">
+<statement><p>
+In the picture below, label the following:
+<me>
+f(x) \qquad f\left(x+\Delta x\right) \qquad \Delta x \qquad \Delta y  </me>
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{5}{1}{4}
+\draw[thick] plot [domain=-.25:4](\x,{\x+ 2*sin(\x r)}) node[right]{$y=f(x)$};
+\YExcoord{.5}{x}
+\YExcoord{2}{x+\Delta x}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+<m>\Delta x</m> and <m>\Delta y </m> represent changes in <m>x</m> and <m>y</m>, respectively, while <m>f(x)</m> and <m>f\left(x+\Delta x \right)</m> are the <m>y</m>-values the function takes.
+</p></hint>
+<answer>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{5}{1}{4}
+\draw[thick] plot [domain=-.25:4](\x,{\x+ 2*sin(\x r)}) node[right]{$y=f(x)$};
+\YExcoord{.5}{x}
+\YExcoord{2}{x+\Delta x}
+\draw (.5,1.46) node[vertex]{};
+\draw (2,3.82) node[vertex]{};
+\draw[dashed] (.5,.2)|-(.2,1.46);
+\draw[dashed] (2,.2)|-(.2,3.82);
+\color{red}
+\YEycoord{1.46}{f(x)}
+\YEycoord{3.82}{f\left(x+\Delta x\right)}
+\draw[decorate, decoration={brace, mirror, amplitude=8pt}] (.5,1.3) --(2,1.3) node[midway, yshift=-.5cm]{$\Delta x$};
+\draw[decorate, decoration={brace, amplitude=8pt}] (.5,1.46) --(.5,3.82) node[midway, xshift=-.75cm]{$\Delta y$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{5}{1}{4}
+\draw[thick] plot [domain=-.25:4](\x,{\x+ 2*sin(\x r)}) node[right]{$y=f(x)$};
+\YExcoord{.5}{x}
+\YExcoord{2}{x+\Delta x}
+\draw (.5,1.46) node[vertex]{};
+\draw (2,3.82) node[vertex]{};
+\draw[dashed] (.5,.2)|-(.2,1.46);
+\draw[dashed] (2,.2)|-(.2,3.82);
+\color{red}
+\YEycoord{1.46}{f(x)}
+\YEycoord{3.82}{f\left(x+\Delta x\right)}
+\draw[decorate, decoration={brace, mirror, amplitude=8pt}] (.5,1.3) --(2,1.3) node[midway, yshift=-.5cm]{$\Delta x$};
+\draw[decorate, decoration={brace, amplitude=8pt}] (.5,1.46) --(.5,3.82) node[midway, xshift=-.75cm]{$\Delta y$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+At this point in the book, every homework problem takes you about 5 minutes. Use the terms you learned in this section to answer the question: if you spend 15 minutes more, how many more homework problems will you finish?
+</p></statement>
+<hint><p>
+Let <m>f(x)</m> be the number of problems finished after <m>x</m> minutes of work.
+</p></hint>
+<answer><p>
+Let <m>f(x)</m> be the number of problems finished after <m>x</m> minutes of work.
+The question tells us that <m>5\Delta y \approx \Delta x</m>. So, if <m>\Delta x = 15</m>, <m>\Delta y \approx 3</m>. That is, in 15 minutes more, you will finish about 3 more problems.
+</p></answer>
+<solution><p>
+Let <m>f(x)</m> be the number of problems finished after <m>x</m> minutes of work.
+The question tells us that <m>5\Delta y \approx \Delta x</m>. So, if <m>\Delta x = 15</m>, <m>\Delta y \approx 3</m>. That is, in 15 minutes more, you will finish about 3 more problems.
+</p>
+
+<p>Remark: the math behind this problem is intended to be easy! Looking at symbols like <m>\Delta y</m> and <m>f\left(x+\Delta x\right)</m> can be confusing, but the basic idea is pretty simple.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Let <m>f(x)=\arctan x</m>.
+<ol label="a">
+<li> Use a linear approximation to estimate <m>f(5.1)-f(5)</m>.
+</li>
+<li> Use a quadratic approximation to estimate <m>f(5.1)-f(5)</m>.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+<m>\Delta y = f(5.1)-f(5)</m>
+</p></hint>
+<answer><p> (a) <m>\Delta y \approx \dfrac{1}{260}\approx 0.003846</m>
+</p>
+<p>
+(b) <m>\Delta  y \approx \dfrac{51}{13520}\approx 0.003772</m>
+</p></answer>
+<solution><p>
+First, let's find the first and second derivatives of <m>f</m> when <m>x=5</m>.
+<md>
+<mrow>
+f'(x)&amp;=\frac{1}{1+x^2} &amp; f'(5)&amp;=\frac{1}{26}
+</mrow><mrow>
+f''(x)&amp;=\frac{-2x}{\left(1+x^2\right)^2} &amp; f''(5)&amp;=\frac{-10}{26^2}
+</mrow>
+</md>
+<md>
+<mrow>
+</mrow>
+<intertext>The linear approximation for <m>\Delta y</m> when <m>\Delta x = \dfrac{1}{10}</m> is</intertext><mrow>
+\Delta y &amp;\approx f'(5)\Delta x = \frac{1}{26}\cdot \frac{1}{10}=\frac{1}{260} \approx 0.003846
+</mrow>
+<intertext>The quadratic approximation for <m>\Delta y</m> when <m>\Delta x = \dfrac{1}{10}</m> is</intertext><mrow>
+\Delta y &amp;\approx f'(5)\Delta x + \frac{1}{2}f''(5)\left(\Delta x\right)^2
+=
+\frac{1}{26}\cdot\frac{1}{10}+\frac{1}{2}\cdot\frac{-10}{26^2}\cdot\frac{1}{10^2}=\frac{51}{13520}\approx 0.003772
+</mrow>
+</md>
+</p>
+
+<p>Remark: <m>\Delta y = \arctan(5.1)-\arctan(5)\approx 0.003774</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+When diving off a cliff from <m>x</m> metres above the water, your speed as you hit the water is given by
+<me>
+s(x)=\sqrt{19.6x}\;\frac{\mathrm{m}}{\mathrm{sec}}</me>
+</p>
+
+<p>Your last dive was from a height of 4 metres.
+<ol label="a">
+<li> Use a linear approximation of <m>\Delta y</m>
+to estimate how much faster you will be falling when you hit the water if you jump from a height of 5 metres.
+</li>
+<li> A diver makes three jumps: the first is from <m>x</m> metres, the second from
+<m>x+\Delta x</m> metres, and the third from
+ <m>x+2\Delta x</m> metres, for some fixed positive values of <m>x</m> and <m>\Delta x</m>.
+Which is bigger: the increase in terminal speed from the first to the second jump, or the increase in terminal speed from the second to the third jump?
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Use the approximation <m>\Delta y \approx s'(4)\Delta x</m> when <m>x</m> is near 4.
+</p></hint>
+<answer><p>
+(a) <m>\Delta y \approx 1.1</m> metres per second
+</p>
+<p>
+(b) The increase from the first to the second jump is bigger.
+</p></answer>
+<solution><p>
+(a) When <m>x</m> is near 4,  the linear approximation of <m>\Delta y</m> is
+<md>
+<mrow>
+\Delta y &amp;\approx s'(4)\Delta x
+</mrow>
+<intertext>From the problem, <m>\Delta x= 5-4=1</m>. Differentiating,</intertext><mrow>
+ s'(t)&amp;=\sqrt{19.6}\cdot\frac{1}{2\sqrt{x}}=\sqrt{\frac{4.9}{x}},\mbox{ so }
+</mrow><mrow>
+s'(4)&amp;=\sqrt{\frac{4.9}{4}}
+</mrow>
+<intertext>The linear approximation gives us</intertext><mrow>
+\Delta y&amp; \approx \sqrt{\frac{4.9}{4}}(1)\approx1.1
+</mrow>
+</md>
+So moving from 4 metres to 5 metres increases the speed with which you hit the water by about 1.1 metres per second.
+</p>
+
+<p>(b) Again, we'll use the linear approximation
+<md>
+<mrow>
+\Delta y &amp;\approx s'(a)\Delta x
+</mrow><mrow>
+&amp;=\sqrt{\frac{4.9}{a}}\cdot\Delta x
+</mrow>
+</md>
+The difference in height between the first two jumps and between the last two jumps is the same, <m>\Delta x</m>. The initial height of the first jump is smaller than the initial height of the second jump. So, the value corresponding to <m>a</m> is smaller for the first jump than for the second. Therefore, <m>\Delta y </m> is larger between the first two jumps than it is between the last two jumps. So, the increase in speed from the first jump to the second is larger than the increase in speed from the second jump to the third.
+</p>
+
+<p>To put that more symbolically, the change in terminal speed between the first two jumps is
+<md>
+<mrow>
+\Delta y &amp;\approx \sqrt{\frac{4.9}{x}}\cdot\Delta x
+</mrow>
+<intertext>while the change in terminal speed between the next two jumps is</intertext><mrow>
+\Delta y &amp;\approx \sqrt{\frac{4.9}{x+\Delta x}}\cdot\Delta x
+</mrow>
+</md>
+Since <m> \sqrt{\dfrac{4.9}{x}}\cdot\Delta x \gt  \sqrt{\dfrac{4.9}{x+\Delta x}}\cdot\Delta x</m> (when <m>x</m> and <m>\Delta x</m> are positive), the change in terminal speed is greater between the first two jumps than between the next two jumps.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_lim_func">
+<title>The limit of a function</title>
+<subsection><title>The limit of a function</title>
+
+
+<p>
+Before we come to definitions, let us start with a little notation for limits.
+</p>
+
+<definition>
+<statement><p>
+We will often write
+<md>
+<mrow>
+  \lim_{x \to a} f(x) = L
+</mrow>
+</md>
+which should be read as
+</p>
+<blockquote>
+<p>
+The limit of <m>f(x)</m> as <m>x</m> approaches <m>a</m> is <m>L</m>.
+</p></blockquote>
+</statement>
+</definition>
+
+<p>
+The notation is just shorthand <mdash/> we don't want to have to write out long  sentences as we do our mathematics. Whenever you see these symbols you  should think of that sentence.
+</p>
+
+<p>
+This shorthand also has the benefit of being mathematically precise (we'll see  this later), and (almost) independent of the language in which the author is  writing. A mathematician who does not speak English can read the above formula  and understand exactly what it means.
+</p>
+
+<p>
+In mathematics, like most languages, there is usually more than one way of  writing things and we can also write the above limit as
+<md>
+<mrow>
+  f(x) \to L \mbox{ as } x \to a
+</mrow>
+</md>
+This can also be read as above, but also as
+</p>
+<blockquote>
+<p>
+  <m>f(x)</m> goes to <m>L</m> as <m>x</m> goes to <m>a</m>
+</p>
+</blockquote>
+
+<p>
+They mean exactly the same thing in mathematics, even though they might be  written, read and said a little differently.
+</p>
+
+<p>
+To arrive at the definition of limit, I want to start
+	<fn>
+		Well, we  had two limits in the previous sections, so perhaps we really want to  <q>restart</q> with a very simple example.
+	</fn>
+with a very simple example.
+</p>
+
+<example><title>A simple limit</title>
+<p>
+Consider the following function.
+<md>
+<mrow>
+ f(x) &amp;= \begin{cases}
+          2x &amp; x \lt 3
+</mrow><mrow>
+          9 &amp; x=3
+</mrow><mrow>
+          2x &amp; x \gt 3
+         \end{cases}
+</mrow>
+</md>
+This is an example of a piece-wise function
+	<fn>
+		We saw another piecewise function back in Example<nbsp/><xref ref="eg_piecewise"/>.
+	</fn>.
+That is, a function defined in several pieces, rather than as a single formula. We evaluate the
+function at a particular value of <m>x</m> on a case-by-case basis. Here is a sketch
+of it
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/piecewise1"/>
+</sidebyside>
+
+<p>
+Notice the two circles in the plot. One is open, <m>\circ</m> and the other is  closed <m>\bullet</m>.
+<ul>
+<li>
+	A filled circle has quite a precise meaning <mdash/> a filled circle at  <m>(x,y)</m> means that the function takes the value <m>f(x) = y</m>.
+</li>
+<li>
+	An open circle is a little harder <mdash/> an open circle at <m>(3,6)</m> means  that the point <m>(3,6)</m> is not on the graph of <m>y=f(x)</m>, i.e. <m>f(3) \neq 6</m>.  We should only use the open circle where it is absolutely necessary in order to  avoid confusion.
+</li>
+</ul>
+</p>
+
+<p>
+This function is quite contrived, but it is a very good example to start  working with limits more systematically. Consider what the function does close  to <m>x=3</m>. We already know what happens exactly at <m>3</m> <mdash/> <m>f(x)=9</m> <mdash/> but I  want to look at how the function behaves very close to <m>x=3</m>. That is, what  does the function do as we look at a point <m>x</m> that gets closer and closer to  <m>x=3</m>.
+</p>
+
+<p>
+If we plug in some numbers very close to <m>3</m> (but not exactly 3) into the
+function we see the following:
+</p>
+<sidebyside>
+<tabular bottom="minor" left="minor" right="minor" top="minor">
+<row>
+<cell><m>x</m> </cell><cell> 2.9 </cell><cell> 2.99 </cell><cell> 2.999 </cell><cell> <m>\circ</m> </cell><cell> 3.001 </cell><cell> 3.01 </cell><cell> 3.1</cell>
+</row><row>
+<cell><m>f(x)</m> </cell><cell> 5.8 </cell><cell> 5.98 </cell><cell> 5.998 </cell><cell> <m>\circ</m> </cell><cell> 6.002 </cell><cell> 6.02 </cell><cell> 6.2</cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>
+So as <m>x</m> moves closer and closer to 3, without being exactly 3, we see that  the function moves closer and closer to 6. We can write this as
+<md>
+<mrow>
+  \lim_{x \to 3} f(x) &amp;= 6
+</mrow>
+</md>
+That is
+</p>
+<blockquote>
+<p>
+ The limit as <m>x</m> approaches <m>3</m> of <m>f(x)</m> is <m>6</m>.
+</p>
+</blockquote>
+
+<p>
+So for <m>x</m> very close to <m>3</m>, without being exactly 3, the function is very close to <m>6</m>  <mdash/> which is a long way from the value of the function exactly at <m>3</m>, <m>f(3)=9</m>. Note  well that the behaviour of the function as <m>x</m> gets very close to 3 <em>does not</em>  depend on the value of the function <em>at</em> 3.
+</p>
+</example>
+
+<p>
+We now have enough to make an informal definition of a limit, which is actually  sufficient for most of what we will do in this text.
+</p>
+
+<definition><title>Informal definition of limit</title>
+<statement><p>
+We write
+<md>
+<mrow>
+  \lim_{x \to a} f(x) &amp;= L
+</mrow>
+</md>
+if the value of the function <m>f(x)</m> is sure to be arbitrarily close to  <m>L</m> whenever the value of <m>x</m> is close enough to <m>a</m>, without
+	<fn>
+		You may find the condition <q>without  being exactly <m>a</m></q> a little  strange, but there is a good reason for it. One very  important application of  limits, indeed the main reason we teach the topic, is in the definition of  derivatives (see Definition<nbsp/><xref ref="def_DIFFderiv"/> in the next chapter).   In that definition we need to compute the limit <m>\ds \lim_{x\rightarrow a}  \frac{f(x)-f(a)}{x-a}</m>. In this case the function whose limit is being taken, namely  <m>\frac{f(x)-f(a)}{x-a}</m>, is not defined at all at <m>x=a</m>.
+	</fn>
+being exactly <m>a</m>.
+</p></statement>
+</definition>
+
+<p>
+In order to make this definition more mathematically correct, we need to  make the idea of <q>closer and closer</q> more precise <mdash/> we do this in  Section<nbsp/><xref ref="sec_opt_formal_limit"/>. It should be emphasised that the  formal definition and the contents of that section are optional  material.
+</p>
+
+<p>
+For now, let us use the above definition to examine a more substantial  example.
+</p>
+
+<example><title><m>\ds \lim_{x \to 2} \frac{x-2}{x^2+x-6}</m></title>
+<p>
+Let <m>f(x) = \frac{x-2}{x^2+x-6}</m> and consider its limit as <m>x \to 2</m>.
+</p>
+
+<p><ul>
+<li>
+	We are really being asked
+	<md>
+	<mrow>
+		\lim_{x \to 2} \frac{x-2}{x^2+x-6} &amp;= \text{ what?}
+	  </mrow>
+	</md>
+</li>
+<li>
+	Now if we try to compute <m>f(2)</m> we get <m>0/0</m> which is  undefined. The function is not defined at that point <mdash/> this is a good example  of why we need limits.  We have to sneak up on these places where a function is  not defined (or is badly behaved).
+</li>
+<li>
+	<alert>Very important point:</alert> the fraction <m>\frac{0}{0}</m> is  <em>not</em> <m>\infty</m> and it is not <m>1</m>, it is not defined. We cannot ever divide  by zero in normal arithmetic and obtain a consistent and mathematically  sensible answer. If you learned otherwise in high-school, you should quickly unlearn it.
+</li>
+<li>
+<p>
+	Again, we can plug in some numbers close to <m>2</m> and see what we find
+</p>
+<sidebyside>
+<tabular bottom="minor" left="minor" right="minor" top="minor">
+<row>
+<cell><m>x</m> </cell><cell> 1.9 </cell><cell> 1.99 </cell><cell> 1.999 </cell><cell> <m>\circ</m> </cell><cell> 2.001 </cell><cell> 2.01 </cell><cell> 2.1 </cell>
+</row><row>
+<cell><m>f(x)</m> </cell><cell> 0.20408 </cell><cell> 0.20040 </cell><cell>0.20004</cell><cell> <m>\circ</m> </cell><cell> 0.19996 </cell><cell> 0.19960 </cell><cell> 0.19608 </cell>
+</row>
+</tabular>
+</sidebyside>
+</li>
+<li>
+	So it is reasonable to suppose that
+	<md>
+	<mrow>
+	 \lim_{x=2} \frac{x-2}{x^2+x-6} &amp;= 0.2
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+</example>
+
+
+<p>
+The previous two examples are nicely behaved in that the limits we tried to  compute actually exist. We now turn to two nastier examples
+	<fn>
+		Actually, they are good examples, but the functions in them are nastier.
+	</fn>
+in which the limits we are interested in do not exist.
+</p>
+
+<example xml:id="eg_sinpix"><title>A bad example</title>
+<p>
+Consider the following function <m>f(x) = \sin( \pi /x )</m>. Find the limit as <m>x  \to 0</m> of <m>f(x)</m>.
+</p>
+
+<p>
+We should see something interesting happening close to <m>x=0</m> because <m>f(x)</m> is  undefined there. Using your favourite graph-plotting software you can see that  the graph looks roughly like
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/lim2"/>
+</sidebyside>
+
+<p>
+How to explain this? As <m>x</m> gets closer and closer to zero, <m>\pi/x</m> becomes  larger and larger (remember what the plot of <m>y=1/x</m> looks like). So when you  take sine of that number, it oscillates faster and faster the closer you get to  zero. Since the function does not approach a single number as we bring <m>x</m>  closer and closer to zero, the limit does not exist.
+</p>
+
+<p>
+We write this as
+<md>
+<mrow>
+  \lim_{x\to 0} \sin \left(\frac{\pi}{x}\right) \text{ does not exist}
+</mrow>
+</md>
+Its not very inventive notation, however it is clear. We frequently abbreviate <q>does not exist</q> to <q>DNE</q> and rewrite the above as
+<md>
+<mrow>
+  \lim_{x\to 0} \sin \left(\frac{\pi}{x}\right) &amp;= \text{DNE}
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+In the following example, the limit we are interested in does not exist.  However the way in which things go wrong is quite different from what we just saw.
+</p>
+
+<example><title>A non-existant limit</title>
+<p>
+Consider the function
+<md>
+<mrow>
+  f(x) &amp;= \begin{cases}
+           x &amp; x \lt 2 \\
+           -1 &amp; x=2 \\
+           x+3 &amp; x \gt 2
+          \end{cases}
+</mrow>
+</md>
+<ul>
+<li>
+<p>
+	The plot of this function looks like this
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/lim1"/>
+</sidebyside>
+</li>
+
+<li>
+<p>
+	So let us plug in numbers close to <m>2</m>.
+</p>
+<sidebyside>
+	<tabular bottom="minor" left="minor" right="minor" top="minor">
+	<row>
+	<cell><m>x</m> </cell><cell> 1.9 </cell><cell> 1.99 </cell><cell> 1.999 </cell><cell> <m>\circ</m> </cell><cell> 2.001 </cell><cell> 2.01 </cell><cell> 2.1 </cell>
+	</row><row>
+	<cell><m>f(x)</m> </cell><cell> 1.9 </cell><cell> 1.99 </cell><cell> 1.999 </cell><cell> <m>\circ</m> </cell><cell> 5.001 </cell><cell> 5.01 </cell><cell> 5.1 </cell>
+	</row>
+	</tabular>
+</sidebyside>
+</li>
+<li>
+	This isn't like before. Now when we approach from below, we seem to be  getting closer to <m>2</m>, but when we approach from above we seem to be getting  closer to <m>5</m>. Since we are not approaching the same number the limit does not exist.
+	<md>
+	<mrow>
+	  \lim_{x \to 2} f(x) &amp;= \text{DNE}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+</example>
+
+<p>
+While the limit in the previous example does not exist, the example serves to  introduce the idea of <q>one-sided limits</q>. For example, we can say that
+</p>
+
+<blockquote>
+<p>
+ As <m>x</m> moves closer and closer to two <em>from below</em> the function  approaches 2.
+</p></blockquote>
+
+<p>and similarly</p>
+
+<blockquote>
+<p>
+As <m>x</m> moves closer and closer to two <em>from above</em> the function  approaches 5.
+</p></blockquote>
+
+
+<definition xml:id="def_informal_onesided_limits"><title>Informal definition of one-sided limits</title>
+<statement><p>
+We write
+<md>
+<mrow>
+\lim_{x \to a^-} f(x) &amp;= K
+</mrow>
+</md>
+when the value of <m>f(x)</m> gets closer and closer to <m>K</m> when <m>x \lt a</m> and <m>x</m> moves closer and closer to <m>a</m>. Since the <m>x</m>-values are always less than <m>a</m>, we say  that <m>x</m> approaches <m>a</m> <em>from below</em>. This is also often called the  left-hand limit since the <m>x</m>-values lie to the left of <m>a</m> on a sketch of the  graph.
+</p>
+
+<p>We similarly write
+<md>
+<mrow>
+\lim_{x \to a^+} f(x) &amp;= L
+</mrow>
+</md>
+when the value of <m>f(x)</m> gets closer and closer to <m>L</m> when <m>x \gt a</m> and <m>x</m>  moves closer and closer to <m>a</m>. For similar reasons we say that <m>x</m> approaches  <m>a</m> from above, and sometimes refer to this as the right-hand limit.
+</p></statement>
+</definition>
+
+<p>
+Note <mdash/> be careful to include the superscript <m>+</m> and <m>-</m> when writing  these limits. You might also see the following notations:
+<md>
+<mrow>
+\lim_{x \to a^+} f(x) &amp;= \lim_{x \to a+} f(x) = \lim_{x \downarrow a} f(x) =
+\lim_{x \searrow a} f(x) = L &amp; \text{right-hand limit}
+</mrow><mrow>
+\lim_{x \to a^-} f(x) &amp;= \lim_{x \to a-} f(x) = \lim_{x \uparrow a} f(x) =
+\lim_{x \nearrow a} f(x) = L &amp; \text{left-hand limit}
+</mrow>
+</md>
+but please use with the notation in Definition<nbsp/><xref ref="def_informal_onesided_limits"/> above.
+</p>
+
+<p>
+Given these two similar notions of limits, when are they the same? The following theorem tell us.
+</p>
+
+<theorem><title>Limits and one sided limits</title>
+<statement><p>
+<md>
+<mrow>
+  \lim_{x \to a} f(x) = L &amp;&amp; \mbox{ if and only if }
+  &amp;&amp; \lim_{x \to a^-} f(x) = L  \mbox{ and }
+  \lim_{x \to a^+} f(x) = L
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>
+Notice that this is really two separate statements because of the <q>if and only if</q>
+<ul>
+<li>
+	If the limit of <m>f(x)</m> as <m>x</m> approaches <m>a</m> exists and is equal to <m>L</m>,  then both the left-hand and right-hand limits exist and are equal to <m>L</m>. AND,
+</li>
+<li>
+	If the left-hand and right-hand limits as <m>x</m> approaches <m>a</m> exist and  are equal, then the limit as <m>x</m> approaches <m>a</m> exists and is equal to the  one-sided limits.
+</li>
+</ul>
+That is <mdash/> the limit of <m>f(x)</m> as <m>x</m> approaches <m>a</m> will only exist if it  doesn't matter which way we approach <m>a</m> (either from left or right) <em>AND</em>  if we get the same one-sided limits when we approach from left and right, then  the limit exists.
+</p>
+
+<p>
+We can rephrase the above by writing the contrapositive
+	<fn xml:id="footnote_contrapositive">
+    <p>
+		Given a statement of the form <q>If A then B</q> the contrapositive is <q>If not B then  not A</q>. They are logically equivalent <mdash/> if one is true then so is the  other. We must take care not to confuse the contrapositive with the converse.  Given <q>If A then B</q> then converse is <q>If B then A</q>. These are definitely not the same.
+  </p>
+    <p>
+		To see this consider the statement <q>If he is Shakespeare then he is dead.</q>  The converse is <q>If he is dead then he is Shakespeare</q> <mdash/> clearly garbage  since there are plenty of dead people who are not Shakespeare. The  contrapositive is <q>If he is not dead then he is not Shakespeare</q> <mdash/> which makes much more sense.
+  </p>
+	</fn>
+of the statements
+<ul>
+<li>
+	If either of the left-hand and right-hand limits as <m>x</m> approaches <m>a</m>  fail to exist, or if they both exist but are different, then the limit as <m>x</m> approaches <m>a</m> does not exist. AND,
+</li>
+<li>
+	If the limit as <m>x</m> approaches <m>a</m> does not exist, then the left-hand  and right-hand limits are either different or at least one of them does not  exist.
+</li>
+</ul>
+</p>
+
+<p>Here is another limit example</p>
+
+<example><title>Left- and right-handed limits</title>
+<p>
+Consider the following two functions and compute their limits and one-sided  limits as <m>x</m> approaches 1:
+</p>
+
+<sidebyside width="75%">
+<image source="text/figs/lim3"/>
+</sidebyside>
+
+<p>
+These are a little different from our previous examples, in that we do not have  formulas, only the sketch. But we can still compute the limits.
+<ul>
+<li>
+	Function on the left <mdash/> <m>f(x)</m>:
+	<md>
+	<mrow>
+	  \lim_{x \to 1^-} f(x) &amp;= 2 &amp;
+	  \lim_{x \to 1^+} f(x) &amp;= 2
+	</mrow><mrow>
+	</mrow>
+	<intertext>so by the previous theorem </intertext>
+	<mrow>
+	\lim_{x \to 1} f(x) &amp;= 2
+	</mrow>
+	</md>
+</li>
+<li>
+	Function on the right <mdash/> <m>g(t)</m>:
+	<md>
+	<mrow>
+	  \lim_{t \to 1^-} g(t) &amp;= 2
+	  &amp; \text{and } \lim_{t \to 1^+} g(t) &amp;= -2
+	</mrow>
+	<intertext>so by the previous theorem </intertext>
+	<mrow>
+	\lim_{t \to 1} g(t) &amp;= \text{DNE}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+</example>
+
+<p>
+We have seen 2 ways in which a limit does not exist <mdash/> in one case the  function oscillated wildly, and in the other there was some sort of <q>jump</q> in  the function, so that the left-hand and right-hand limits were different.
+</p>
+
+<p>
+There is a third way that we must also consider. To describe this, consider the  following four functions:
+</p>
+
+<figure xml:id="fig_inf_limits">
+<caption/>
+<image width="100%" source="text/figs/lim4"/>
+</figure>
+
+<p>
+None of these functions are defined at <m>x=a</m>, nor do the limits as <m>x</m>  approaches <m>a</m> exist. However we can say more than just <q>the limits do not  exist</q>.
+</p>
+
+<p>
+Notice that the value of function<nbsp/>1 can be made bigger and bigger as we bring  <m>x</m> closer and closer to <m>a</m>. Similarly the value of the second function can be  made arbitrarily large and negative (i.e. make it as big a negative number as we  want) by bringing <m>x</m> closer and closer to<nbsp/><m>a</m>. Based on this observation we  have the following definition.
+</p>
+
+<definition xml:id="def_lim_is_inf_informal">
+<statement><p>
+We write
+<md>
+<mrow>
+  \lim_{x \to a} f(x) = + \infty
+ </mrow>
+</md>
+when the value of the function <m>f(x)</m> becomes arbitrarily large and  positive as <m>x</m> gets closer and closer to <m>a</m>, without being exactly <m>a</m>.
+</p>
+<p>
+Similarly, we write
+<md>
+<mrow>
+  \lim_{x \to a} f(x) = - \infty
+ </mrow>
+</md>
+when the value of the function <m>f(x)</m> becomes arbitrarily large and negative as <m>x</m> gets closer and closer to <m>a</m>, without being exactly <m>a</m>.
+</p></statement>
+</definition>
+
+<p>
+A good examples of the above is
+<md>
+<mrow>
+  \lim_{x \to 0} \frac{1}{x^2} &amp;= +\infty  &amp; \lim_{x \to 0} -\frac{1}{x^2} &amp;= -\infty
+</mrow>
+</md>
+<alert>IMPORTANT POINT: </alert> Please do not think of <q><m>+\infty</m></q> and <q><m>-\infty</m></q>  in these statements as numbers. You should think of <m>\lim\limits_{x\rightarrow a} f(x) = +\infty</m> and <m>\lim\limits_{x\rightarrow a} f(x) = -\infty</m> as special cases of  <m>\lim\limits_{x\rightarrow a} f(x) = \text{DNE}</m>. The statement
+<md>
+<mrow>
+  \lim_{x \to a} f(x) = +\infty
+</mrow>
+</md>
+does not say <q>the limit of <m>f(x)</m> as <m>x</m> approaches <m>a</m> is positive infinity</q>.  It says <q>the function <m>f(x)</m> becomes arbitrarily large as <m>x</m> approaches <m>a</m></q>.  These are different statements; remember that <m>\infty</m> is not a number
+	<fn>
+		One needs to be very careful making statements about  infinity. At some point in our lives we get around to asking ourselves <q>what  is the biggest number</q>, and we realise there isn't one. That is, we can go on  counting integer after integer, for ever and not stop. Indeed the set of  integers is the first infinite thing we really encounter. It is an example of a  <em>countably infinite</em> set. The set of real-numbers is actually much bigger  and is <em>uncountably infinite</em>. In fact there are an infinite number of  different sorts of infinity! Much of the theory of infinite sets was  developed by Georg Cantor; we mentioned him back in Section<nbsp/><xref ref="sec_sets"/> and he is well  worth googling.
+	</fn>.
+</p>
+
+<p>
+Now consider functions<nbsp/>3 and<nbsp/>4 in Figure<nbsp/><xref ref="fig_inf_limits"/>. Here we can make  the value of the function as big and positive as we want (for function<nbsp/>3) or as  big and negative as we want (for function<nbsp/>4) but only when <m>x</m> approaches <m>a</m>  from one side. With this in mind we can construct similar notation and a  similar definition:
+</p>
+
+<definition xml:id="def_onesidedlim_is_inf_informal">
+<statement><p>
+We write
+<md>
+<mrow>
+  \lim_{x \to a^+} f(x) = + \infty
+ </mrow>
+</md>
+when the value of the function <m>f(x)</m> becomes arbitrarily large and  positive as <m>x</m> gets closer and closer to <m>a</m> from above (equivalently <mdash/>  from the right), without being exactly <m>a</m>.
+</p>
+
+<p>
+Similarly, we write
+<md>
+<mrow>
+  \lim_{x \to a^+} f(x) = - \infty
+ </mrow>
+</md>
+when the value of the function <m>f(x)</m> becomes arbitrarily large and  negative as <m>x</m> gets closer and closer to <m>a</m> from above (equivalently <mdash/>  from the right), without being exactly <m>a</m>.
+</p>
+
+<p>
+The notation
+<md>
+<mrow>
+  \lim_{x \to a^-} f(x) &amp;= + \infty &amp; \lim_{x \to a^-} f(x) &amp;= - \infty
+</mrow>
+</md>
+has a  similar meaning except that limits are approached from below / from  the left.
+</p></statement>
+</definition>
+
+<p>
+So for function<nbsp/>3 we have
+<md>
+<mrow>
+  \lim_{x\to a^-} f(x) &amp;= +\infty  &amp; \lim_{x\to a^+} f(x) &amp;= \text{some positive number}
+</mrow>
+</md>
+and for function<nbsp/>4
+<md>
+<mrow>
+  \lim_{x\to a^-} f(x) &amp;= \text{some positive number} &amp; \lim_{x\to a^+} f(x) &amp;= -\infty
+</mrow>
+</md>
+</p>
+
+<p>More examples:</p>
+
+<example><title><m>\ds \lim_{x \to \pi} \frac{1}{\sin(x)}</m></title>
+<p>
+Consider the function
+<md>
+<mrow>
+  g(x) &amp;= \frac{1}{\sin(x)}
+</mrow>
+</md>
+Find the one-sided limits of this function as <m>x \to \pi</m>.
+</p>
+
+<p>
+Probably the easiest way to do this is to first plot the graph of <m>\sin(x)</m> and  <m>1/x</m> and then think carefully about the one-sided limits:
+</p>
+
+<sidebyside width="75%">
+<image source="text/figs/sinx_1onx"/>
+</sidebyside>
+
+<p>
+<ul>
+<li>
+<p>
+	As <m>x \to \pi</m> from the left, <m>\sin(x)</m> is a small positive number that  is getting closer and closer to zero. That is, as <m>x \to \pi^-</m>, we have that  <m>\sin(x) \to 0</m> through positive numbers (i.e. from above). Now look at the graph  of <m>1/x</m>, and think what happens as we move <m>x \to 0^+</m>, the function is  positive and becomes larger and larger.
+</p>
+
+<p>
+	So as <m>x \to \pi</m> from the left, <m>\sin(x) \to 0</m> from above, and so <m>1/\sin(x)  \to +\infty</m>.
+</p>
+</li>
+<li>
+	By very similar reasoning, as <m>x \to \pi</m> from the right, <m>\sin(x)</m> is a  small negative number that gets closer and closer to zero. So as <m>x \to \pi</m>  from the right, <m>\sin(x) \to 0</m> through negative numbers (i.e. from below) and so  <m>1/\sin(x)</m> to <m>-\infty</m>.
+</li>
+</ul>
+Thus
+<md>
+<mrow>
+  \lim_{x \to \pi^-} \frac{1}{\sin(x)} &amp;= +\infty &amp;
+  \lim_{x \to \pi^+} \frac{1}{\sin(x)} &amp;= -\infty
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+Again, we can make Definitions<nbsp/><xref ref="def_lim_is_inf_informal"/>  and<nbsp/><xref ref="def_onesidedlim_is_inf_informal"/> into mathematically precise formal  definitions using techniques very similar to those in the optional  Section<nbsp/><xref ref="sec_opt_formal_limit"/>. This is not strictly necessary for this  course.
+</p>
+
+<p>
+Up to this point we explored limits by sketching graphs or plugging values into  a calculator. This was done to help build intuition, but it is not really the  basis of a systematic method for computing limits. We have also avoided more formal approaches
+	<fn>
+		The formal  approaches are typically referred to as <q>epsilon-delta limits</q> or  <q>epsilon-delta proofs</q> since the symbols <m>\epsilon</m> and <m>\delta</m> are  traditionally used throughout. Take a peek at Section<nbsp/><xref ref="sec_opt_formal_limit"/> to see.
+	</fn>
+since we do not have time in the course to go into  that level of detail and (arguably) we don't need that detail to achieve the  aims of the course. Thankfully we can develop a more systematic approach based  on the idea of building up complicated limits from simpler ones by examining how  limits interact with the basic operations of arithmetic.
+</p>
+
+</subsection>
+
+
+<xi:include href="../problems/prob_s1.3.xml"/>
+
+</section>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_lim_inf_formal">
+<title>(optional) <mdash/> Making infinite limits a little more formal</title>
+<introduction>
+
+<p>
+For those of you who made it through the formal <m>\epsilon-\delta</m> definition of  limits we give the formal definition of limits at infinity:</p>
+
+<definition><title>Limits at infinity <mdash/> formal</title>
+<statement><p>
+ Let <m>f</m> be a function defined on the whole real line. We say that</p>
+<blockquote>
+<p>
+  the limit as <m>x</m> approaches <m>\infty</m> of <m>f(x)</m> is <m>L</m>
+</p></blockquote>
+
+<p>or equivalently</p>
+
+<blockquote>
+<p>
+ <m>f(x)</m> converges to <m>L</m> as <m>x</m> goes to <m>\infty</m>
+</p></blockquote>
+
+<p>and write
+<md>
+<mrow>
+  \lim_{x \to \infty} f(x) &amp;= L
+</mrow>
+</md>
+if and only if for every <m>\epsilon \gt 0</m> there exists <m>M \in \mathbb{R}</m> so that  <m>|f(x)-L|  \lt  \epsilon</m> whenever <m>x \gt M</m>.
+</p>
+
+<p>
+Similarly we write
+<md>
+<mrow>
+  \lim_{x \to -\infty} f(x) &amp;= K
+</mrow>
+</md>
+if and only if for every <m>\epsilon \gt 0</m> there exists <m>N \in \mathbb{R}</m> so that  <m>|f(x)-K|  \lt  \epsilon</m> whenever <m>x \lt N</m>.
+</p>
+</statement>
+</definition>
+
+<p>
+Note that we can loosen the above requirement that <m>f</m> be defined on the whole real line  <mdash/> all we actually require is that it is defined all <m>x</m> larger than some value. It  would be sufficient to require <q>there is some <m>x_0 \in \mathbb{R}</m> so that <m>f</m> is  defined for all <m>x \gt x_0</m></q>.
+</p>
+
+<p>
+For completeness lets prove Theorem<nbsp/><xref ref="thm_basic_lim_inf"/> using this form  definition. The layout of the proof will be very similar to our proof of Theorem<nbsp/><xref ref="thm_easy_lim"/>.
+</p>
+
+<proof>
+<p><alert>Proof of Theorem<nbsp/><xref ref="thm_basic_lim_inf"/>.</alert>
+</p>
+<p>
+There are four limits to prove in total and we do each in turn. Let <m>c \in  \mathbb{R}</m>.
+<ul>
+<li>
+	Let <m>\epsilon \gt 0</m> and set <m>f(x)=c</m>. Choose <m>M=0</m>, then for any  <m>x</m> satisfying <m>x \gt M</m> (or indeed any real number <m>x</m> at all) we have  <m>|f(x)-c| = 0  \lt \epsilon</m>. Hence <m>\ds \lim_{x \to \infty} c = c</m> as required.
+</li>
+<li>
+	The proof that <m>\ds \lim_{x \to -\infty} c = c</m> is nearly identical.  Again, let <m>\epsilon \gt 0</m> and set <m>f(x)=c</m>. Choose <m>N=0</m>, then for any  <m>x</m> satisfying <m>x \lt N</m> we have <m>|f(x)-c| = 0  \lt \epsilon</m>. Hence <m>\ds \lim_{x \to  -\infty} c = c</m> as required.
+</li>
+<li>
+	Let <m>\epsilon \gt 0</m> and set <m>f(x)=x</m>. Choose <m>M = \frac{1}{\epsilon}</m>. Then  when <m>x \gt M</m> we have
+	<md>
+	<mrow>
+	  0  \lt  M &amp;  \lt  x  &amp; \text{divide through by $xM$ to get}
+	</mrow><mrow>
+	  0  \lt  \frac{1}{x} &amp;  \lt  \frac{1}{M} = \epsilon
+	</mrow>
+	</md>
+	Since <m>x \gt 0</m>, <m>\frac{1}{x} = |\frac{1}{x}| = |\frac{1}{x} - 0|  \lt   \epsilon</m> as required.
+</li>
+<li>
+	Again, the proof in the limit to <m>-\infty</m> is similar but we have to be  careful of signs. Let <m>\epsilon \gt 0</m> and set <m>f(x)=x</m>. Choose <m>N  = -\frac{1}{\epsilon}</m>. Then when <m>x \lt  N</m> we have
+	<md>
+	<mrow>
+	  0  \gt  N &amp;  \gt  x  &amp;\text{ divide through by $xN$ to get}
+	</mrow><mrow>
+	  0  \gt  \frac{1}{x} &amp; \gt  \frac{1}{N} = -\epsilon
+	</mrow>
+	</md>
+	Notice that by assumption both <m>x,N \lt 0</m>, so <m>xN \gt 0</m>. Now since <m>x \lt 0</m>,  <m>\frac{1}{x} = -|\frac{1}{x}| = |\frac{1}{x} - 0|  \lt  \epsilon</m> as  required.
+</li>
+</ul>
+This completes the proof.
+</p>
+</proof>
+
+</introduction>
+</section>

@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Give the domains of each of the following functions.
+<me>
+\mbox{(a) } f(x)=\arcsin(\cos x)\qquad
+\mbox{(b) }g(x)=\arccsc(\cos x)\qquad
+\mbox{(c) } h(x)=\sin(\arccos x)</me>
+</p>
+
+</statement>
+<hint><p>
+Remember that only certain numbers can come out of sine and cosine, but any numbers can go in.
+</p></hint>
+<answer><p>
+(a) <m>(-\infty,\infty)</m>
+</p>
+<p>
+(b) all integer multiples of <m>\pi</m>
+</p>
+<p>
+(c) <m>[-1,1]</m>
+</p></answer>
+<solution><p>
+(a) We can plug any number into the cosine function, and it will return a number in <m>[-1,1]</m>. The domain of <m>\arcsin x</m> is <m>[-1,1]</m>, so any number we plug into cosine will give us a valid number to plug into arcsine. So, the domain of <m>f(x)</m> is all real numbers.
+</p>
+
+<p>(b) We can plug any number into the cosine function, and it will return a number in <m>[-1,1]</m>. The domain of <m>\arccsc x</m> is <m>(-\infty,-1] \cup [1,\infty)</m>, so in order to have
+a valid number to plug into arccosecant, we need <m>\cos x = \pm 1</m>. That is, the domain of <m>g(x)</m> is all values <m>x=n\pi</m> for some integer <m>n</m>.
+</p>
+
+<p>(c) The domain of arccosine is <m>[-1,1]</m>. The domain of sine is all real numbers, so no matter what number arccosine spits out, we can safely plug it into sine. So, the domain of <m>h(x)</m> is <m>[-1,1]</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p> A particle starts moving at time <m>t=10</m>, and it bobs up and down, so that its height at time <m>t \geq 10</m> is given by <m>\cos t</m>. True or false: the particle has height 1 at time <m>t=\arccos(1)</m>.
+</p></statement>
+<hint><p>
+What is the range of the arccosine function?
+</p></hint>
+<answer><p> False
+</p></answer>
+<solution><p>
+False:  <m>\cos t=1</m> for infinitely many values of <m>t</m>; arccosine gives only the single value <m>t=0</m> for which <m>\cos t=1</m> and <m>0 \leq t \leq \pi</m>. The particle does not start moving until <m>t=10</m>, so <m>t=0</m> is not in the domain of the function describing its motion.
+</p>
+
+<p>The particle will have height <m>1</m> at time <m>2\pi n</m>, for any integer <m>n \geq 2</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+The curve <m>y=f(x)</m> is shown below, for some function <m>f</m>. Restrict <m>f</m> to the largest possible interval containing <m>0</m> over which it is one--to--one, and sketch the curve <m>y=f^{-1}(x)</m>.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6.5}{3}
+\draw plot[domain=-6:6, samples=100](\x,{1.5*sin(2*\x r)+cos(\x r)});
+\YEycoord{1}{1}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+A one--to--one function passes the horizontal line test. To graph the inverse of a function, reflect it across the line <m>y=x</m>.
+</p></hint>
+<answer>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3.5}{3}
+\draw[blue, ultra thick] plot[domain=-1:.73, samples=100]({1.5*sin(2*\x r)+cos(\x r)},\x) node[right]{$y=f^{-1}(x)$};
+\YExcoord{1}{1}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+First, we restrict the domain of <m>f</m> to force it to be one--to--one. There are many intervals we could choose over which <m>f</m> is one--to--one, but the question asks us to contain <m>x=0</m> and be as large as possible; this leaves us with the following restricted function:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{6.5}{3}
+\YEycoord{1}{1}
+\draw[dashed] plot[domain=-6:6, samples=100](\x,{1.5*sin(2*\x r)+cos(\x r)});
+\draw[red, ultra thick] plot[domain=-1:.73, samples=100](\x,{1.5*sin(2*\x r)+cos(\x r)});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p> The inverse of a function swaps the role of the input and output; so if the graph of <m>y=f(x)</m> contains the point <m>(a,b)</m>, then the graph of <m>Y=f^{-1}(X)</m> contains the point <m>(b,a)</m>. That is, the graph of <m>Y=f^{-1}(X)</m> is the graph of <m>y=f(x)</m> with the <m>x</m>-coordinates and <m>y</m>-coordinates swapped. (So, since <m>y=f(x)</m> crosses the <m>y</m>-axis at <m>y=1</m>, then <m>Y=f^{-1}(X)</m> crosses the <m>X</m>-axis at <m>X=1</m>.) This swapping is equivalent to reflecting the curve <m>y=f(x)</m> over the line <m>y=x</m>.
+</p>
+
+<sidebyside><image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3.5}{3}
+\YEycoord{1}{1}
+\YExcoord{1}{1}
+\draw[red, ultra thick] plot[domain=-1:.73, samples=100](\x,{1.5*sin(2*\x r)+cos(\x r)}) ;
+\draw[red] (1.25,2.75) node{$y=f(x)$};
+\draw[blue, ultra thick] plot[domain=-1:.73, samples=100]({1.5*sin(2*\x r)+cos(\x r)},\x) node[right]{$y=f^{-1}(x)$};
+\draw[dashed](-1,-1)--(3,3) node[right]{$y=x$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p> Remark: while you're getting accustomed to inverse functions, it is sometimes clearer to consider <m>y=f(x)</m> and <m>Y=f^{-1}(X)</m>: using slightly different notations for <m>x</m> (the input of <m>f</m>, hence the output of <m>f^{-1}</m>) and <m>X</m> (the input of <m>f^{-1}</m>, which comes from the output of <m>f</m>). However, the convention is to use <m>x</m> for the inputs of both functions, and <m>y</m> as the outputs of both functions, as is written on the graph above.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>a</m> be some constant. Where does the curve <m>y=ax+\cos x</m> have a horizontal tangent line?
+</p></statement>
+<hint><p>
+Your answer will depend on <m>a</m>. The arcsine function alone won't give you every value.
+</p></hint>
+<answer><p>
+<ul>
+<li> If <m>|a| \gt 1</m>, there is no point where the curve has horizontal tangent line.
+</li>
+<li> If <m>|a|=1</m>, the curve has a horizontal tangent line where
+<m>x=2\pi n + \dfrac{a\pi}{2}</m> for any integer <m>n</m>.
+</li>
+<li> If <m>|a| \lt 1</m>, the curve has a horizontal tangent line where
+<m>x=2\pi n+\arcsin(a)</m> or <m>x=(2 n +1) \pi - \arcsin (a)</m> for any integer <m>n</m>.
+</li>
+</ul>
+</p></answer>
+<solution><p>
+The tangent line is horizontal when <m>0=y'=a-\sin x</m>. That is, when <m>a=\sin x</m>.
+<ul>
+<li>
+If <m>|a| \gt 1</m>, then there is no value of <m>x</m> for which <m>a=\sin x</m>, so the curve has no horizontal tangent lines.
+</li>
+<li> If <m>|a| = 1</m>, then there are infinitely many solutions to <m>a=\sin x</m>, but only one solution in the interval <m>[-\pi,\pi]</m>: <m>x=\arcsin(a)=\arcsin(\pm1)=\pm\frac{\pi}{2}</m>. Then the values of <m>x</m> for which <m>a=\sin x</m> are <m>x=2\pi n +a \frac{\pi}{2}</m> for any integer <m>n</m>.
+</li>
+<li><p> If <m>|a| \lt 1</m>, then there are infinitely many solutions to <m>a=\sin x</m>.
+The solution in the interval <m>\left(-\frac{\pi}{2},\frac{\pi}{2}\right)</m> is given by <m>x=\arcsin(a)</m>. The other solution in the interval <m>\left(-\pi,\pi\right)</m> is given by <m>x=\pi-\arcsin(a)</m>, as shown in the unit circles below.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3.5}{3.5}
+\draw[thick] node[shape=circle, minimum size=6cm, inner sep=0, draw]{};
+\draw (.2,2)--(-.2,2) node[left]{$a$};
+\color{red}
+\draw (2.24,2) node[vertex](a){};
+\draw(0,0)--(a);
+\draw (.5,.25) node[right, rotate=20]{$\arcsin(a)$};
+\draw[thick] (.5,0) arc(0:42:.5cm);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3.5}{3.5}
+\draw[thick] node[shape=circle, minimum size=6cm, inner sep=0, draw]{};
+\draw (.2,2)--(-.2,2) node[left]{$a$};
+\color{red}
+\draw (-.5,.25) node[left, rotate=0]{$\arcsin(a)$};
+\draw[thick] (-.6,0) arc(180:138:.6cm);
+\color{blue}
+\draw (-2.24,2) node[vertex](a2){};
+\draw(0,0)--(a2);
+\draw (.25,.3) node[right, rotate=70]{$\pi-\arcsin(a)$};
+\draw[very thick] (.4,0) arc(0:138:.4cm);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>So, the values of <m>x</m> for which <m>x=\sin a</m> are <m>x=2\pi n+\arcsin(a)</m> and <m>x=2\pi n + \pi - \arcsin (a)</m> for any integer <m>n</m>.</p>
+</li>
+</ul>
+Remark: when <m>a=1</m>, then
+<me>
+2\pi n+\arcsin(a) = 2\pi n + \dfrac{\pi}{2}=2\pi n +\pi -\left(\dfrac {\pi}{2}\right)=2\pi n+\pi-\arcsin(a).</me>
+ Similarly, when <m>a=-1</m>,
+<me>
+2\pi n+\arcsin(a) = 2\pi n - \dfrac{\pi}{2}=2\pi (n-1) +\pi -\left(-\dfrac {\pi}{2}\right)
+=2\pi(n-1)+\pi-\arcsin(a).</me>
+</p>
+
+<p>So, if we try to use the descriptions in the third bullet point to describe points where the tangent line is horizontal when <m>|a|=1</m>, we get the correct points but each point is listed twice. This is why we separated the case <m>|a|=1</m> from the case <m>|a| \lt 1</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Define a function <m>f(x)=\arcsin x + \arccsc x</m>. What is the domain of <m>f(x)</m>? Where is <m>f(x)</m> differentiable?
+</p></statement>
+<hint><p>
+In order for <m>x</m> to be in the domain of <m>f</m>, you must be able to plug <m>x</m> into both arcsine and arccosecant.
+</p></hint>
+<answer><p>
+Domain: <m>x=\pm 1</m>. Not differentiable anywhere.
+</p></answer>
+<solution><p>
+The function <m>\arcsin x</m> is only defined for <m>|x| \leq 1</m>, and the function <m>\arccsc x</m> is only defined for <m>|x| \geq 1</m>, so <m>f(x)</m> has domain <m>|x|=1</m>. That is, <m>x=\pm1</m>.
+</p>
+
+<p>In order for <m>f(x)</m> to be differentiable at a point, it must exist in an open interval around that point. (See Definition<nbsp/><xref ref="def_DIFFderiv"/>.) Since our function does not exist over any open interval, <m>f(x)</m> is not differentiable anywhere.
+</p>
+
+<p>So, actually, <m>f(x)</m> is a pretty boring function, which we can entirely describe as: <m>f(-1)=-\pi</m> and <m>f(1)=\pi</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+Differentiate <m>f(x)=\arcsin\left(\dfrac{x}{3}\right)</m>. What is the domain of <m>f(x)</m>?
+</p></statement>
+<hint><p>
+For the domain of <m>f</m>, remember the domain of arcsine is <m>[-1,1]</m>.
+</p></hint>
+<answer><p>
+<m>f'(x)=\dfrac{1}{\sqrt{9-x^2}}</m>; domain of <m>f</m> is <m>[-3,3]</m>.
+</p></answer>
+<solution><p>
+Using the chain rule,
+<md>
+<mrow>
+\diff{}{x}\left\{\arcsin\left(\frac{x}{3}\right)\right\}&amp;=\frac{1}{\sqrt{1-\left(\frac{x}{3}\right)^2}}\cdot \frac{1}{3}
+</mrow><mrow>
+&amp;=\frac{1}{3\sqrt{1-\frac{x^2}{9}}}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{9-x^2}}
+</mrow>
+</md>
+</p>
+
+<p>Since the domain of arcsine is <m>[-1,1]</m>, and we are plugging in <m>\dfrac{x}{3}</m> to arcsine, the values of <m>x</m> that we can plug in are those that satisfy <m>-1 \le \dfrac{x}{3} \leq 1</m>, or <m>-3\leq x \leq 3</m>. So the domain of <m>f</m> is <m>[-3,3]</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Differentiate <m>f(t)=\dfrac{\arccos t}{t^2-1}</m>. What is the domain of <m>f(t)</m>?
+</p></statement>
+<hint><p>
+The domain of <m>\arccos(t)</m> is <m>[-1,1]</m>, but you also have to make sure you aren't dividing by zero.
+</p></hint>
+<answer><p>
+<m>f'(t)=\dfrac{-\frac{t^2-1}{\sqrt{1-t^2}}-2t\arccos t}{(t^2-1)^2}</m>, and the domain of <m>f(t)</m> is <m>(-1,1)</m>.
+</p></answer>
+<solution><p>
+Using the quotient rule,
+<md>
+<mrow>
+\diff{}{t}\left\{\dfrac{\arccos t}{t^2-1}\right\}&amp;=
+\frac{(t^2-1)\left(\frac{-1}{\sqrt{1-t^2}}\right)-(\arccos t)(2t)}{(t^2-1)^2}
+</mrow>
+</md>
+The domain of arccosine is <m>[-1,1]</m>, and since <m>t^2-1</m> is in the denominator, the domain of <m>f</m> requires <m>t^2-1 \neq 0</m>, that is, <m>t \neq \pm 1</m>. So the domain of <m>f(t)</m> is <m>(-1,1)</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Differentiate <m>f(x)=\arcsec(-x^2-2)</m>. What is the domain of <m>f(x)</m>?
+</p></statement>
+<hint><p>
+<m>\ds\diff{}{x}\left\{\arcsec x\right\} = \dfrac{1}{|x|\sqrt{x^2-1}}</m>, and the domain of <m>\arcsec x</m> is <m>|x|\ge1</m>.
+</p></hint>
+<answer><p>
+The domain of <m>f(x)</m> is all real numbers, and
+<m>f'(x)=\dfrac{-2x}{(x^2+2)\sqrt{x^4+4x^2+3}}</m>.
+</p></answer>
+<solution><p>
+The domain of <m>\arcsec x</m> is <m>|x| \geq 1</m>: that is, we can plug into arcsecant only values with absolute value greater than or equal to one. Since <m>-x^2-2 \leq -2</m>, every real value of <m>x</m> gives us an acceptable value to plug into arcsecant. So, the domain of <m>f(x)</m> is all real numbers.
+</p>
+
+<p>To differentiate, we use the chain rule. Remember <m>\ds\diff{}{x}\left\{\arcsec x\right\} = \dfrac{1}{|x|\sqrt{x^2-1}}</m>.
+<md>
+<mrow>
+\diff{}{x}\left\{\arcsec(-x^2-2)\right\}&amp;=
+\dfrac{1}{|-x^2-2|\sqrt{(-x^2-2)^2-1}}\cdot(-2x)
+</mrow><mrow>
+&amp;=\dfrac{-2x}{(x^2+2)\sqrt{x^4+4x+3}}.
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Differentiate <m>f(x)=\dfrac{1}{a}\arctan\left(\dfrac{x}{a}\right)</m>, where <m>a</m> is a nonzero constant. What is the domain of <m>f(x)</m>?
+</p></statement>
+<hint><p> The domain of <m>\arctan(x)</m> is all real numbers.
+</p></hint>
+<answer><p>
+<m>f'(x)=\dfrac{1}{a^2+x^2}</m> and the domain of <m>f(x)</m> is all real numbers.
+</p></answer>
+<solution><p>
+We use the chain rule, remembering that <m>a</m> is a constant.
+<md>
+<mrow>
+\diff{}{x}\left\{\frac{1}{a}\arctan\left(\dfrac{x}{a}\right)\right\}&amp;=
+\frac{1}{a}\cdot\frac{1}{1+\left(\frac{x}{a}\right)^2}\cdot \frac{1}{a}
+</mrow><mrow>
+&amp;=\frac{1}{a^2+x^2}
+</mrow>
+</md>
+The domain of arctangent is all real numbers, so the domain of <m>f(x)</m> is also all real numbers.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Differentiate <m>f(x)=x\arcsin x + \sqrt{1-x^2}</m>. What is the domain of <m>f(x)</m>?
+</p></statement>
+<hint><p>
+The domain of <m>\arcsin x</m> is <m>[-1,1]</m>, and the domain of <m>\sqrt{x}</m> is <m>x \geq 0</m>.
+</p></hint>
+<answer><p>
+<m>f'(x)=\arcsin x</m>, and the domain of <m>f(x)</m> is <m>[-1,1]</m>.
+</p></answer>
+<solution><p>
+We differentiate using the <textblue>product</textblue> and <textred>chain</textred> rules.
+<md>
+<mrow>
+\diff{}{x}\left\{\textcolor{blue}{x\arcsin x} + \textcolor{red}{\sqrt{1-x^2}}\right\}&amp;=
+\textcolor{blue}{\arcsin x + \frac{x}{\sqrt{1-x^2}}}+\textcolor{red}{\frac{-2x}{2\sqrt{1-x^2}}}
+</mrow><mrow>
+&amp;=\arcsin x
+</mrow>
+</md>
+The domain of <m>\arcsin x</m> is <m>[-1,1]</m>, and the domain of <m>\sqrt{1-x^2}</m> is all values of <m>x</m> so that <m>1-x^2 \geq 0</m>, so <m>x</m> in <m>[-1,1]</m>. Therefore, the domain of <m>f(x)</m> is <m>[-1,1]</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+For which values of <m>x</m> is the tangent line to <m>y=\arctan (x^2)</m> horizontal?
+</p></statement>
+<hint><p>
+This occurs only once.
+</p></hint>
+<answer><p> <m>x=0</m>
+</p></answer>
+<solution><p>
+We differentiate using the chain rule:
+<md>
+<mrow>
+\diff{}{x}\{\arctan(x^2)\}&amp;=\frac{2x}{1+x^4}
+</mrow>
+</md>
+This is zero exactly when <m>x=0</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Evaluate <m>\ds\diff{}{x}\{\arcsin x + \arccos x\}</m>.
+</p></statement>
+<hint><p>
+The answer is a very simple expression.
+</p></hint>
+<answer><p>
+<m>\ds\diff{}{x}\{\arcsin x + \arccos x\}=0</m>
+</p></answer>
+<solution><p>
+Using formulas you should memorize from this section,
+<me>
+\diff{}{x}\{\arcsin x + \arccos x\}=\frac{1}{\sqrt{1-x^2}}+\frac{-1}{\sqrt{1-x^2}}=0</me>
+</p>
+
+<p>Remark: the only functions with derivative equal to zero everywhere are constant functions, so <m>\arcsin x + \arccos x</m> should be a constant. Since <m>\sin \theta = \cos \left(\frac{\pi}{2}-\theta\right)</m>, we can set
+<md>
+<mrow>
+\sin\theta&amp;=x &amp; \cos\left(\frac{\pi}{2}-\theta\right)&amp;=x</mrow>
+<intertext>where <m>x</m> and <m>\theta</m> are the same in both expressions, and <m>-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}</m>. Then </intertext><mrow>
+\arcsin x &amp;=\theta &amp; \arccos x &amp;= \frac{\pi}{2}-\theta
+</mrow>
+</md>
+We note here that arcsine is the inverse of the sine function <em> restricted to</em> <m>\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]</m>. So, since we restricted <m>\theta</m> to this domain, <m>\sin \theta=x</m> really does imply <m>\arcsin x = \theta</m>. (For an example of why this matters, note <m>\sin(2\pi)=0</m>, but <m>\arcsin (0)=0 \neq 2\pi</m>.) Similarly, arccosine is the inverse of the cosine function restricted to <m>[0,\pi]</m>. Since <m>-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}</m>, then <m>0 \leq (\frac{\pi}{2}-\theta) \leq \pi</m>, so <m>\cos\left(\frac{\pi}{2}- \theta\right) =x</m> really does imply <m>\arccos x=\frac{\pi}{2}-\theta</m>.
+</p>
+<p>
+So,
+<me>
+\arcsin x+\arccos x =\theta+\frac{\pi}{2}-\theta =\frac{\pi}{2}</me>
+</p>
+
+<p>which means the derivative we were calculating was actually just <m>\ds\diff{}{x}\left\{\dfrac{\pi}{2}\right\}=0</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997A</fromexam></title>
+<statement><p>
+Find the derivative of  <m>y=\arcsin \!\big(\frac{1}{x}\big)</m>.
+</p></statement>
+<hint><p> chain rule
+</p></hint>
+<answer><p> <m>y'=\dfrac{-1}{x^2\sqrt{1-\frac{1}{x^2}}}</m>
+</p></answer>
+<solution><p> Using the chain rule, <me>
+y'=\frac{-{\frac{1}{ x^2}}}{\sqrt{1-\left({\frac{1}{ x}}\right)^2}}=\frac{-1}{x^2\sqrt{1-\frac{1}{x^2}}}.</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1996D</fromexam></title>
+<statement><p>
+Find the derivative of <m>y=\arctan \big(\frac{1}{x}\big)</m>.
+</p></statement>
+<answer><p> <m>y'=\dfrac{-1}{1+x^2}</m>
+</p></answer>
+<solution><p> Using the chain rule,
+<me>
+y'=\frac{-{\frac{1}{ x^2}}}{1+\left({\frac{1}{ x}}\right)^2}=\frac{-1}{x^2+1}.</me>
+</p>
+</solution>
+</exercise>
+
+<exercise><title><fromexam>1999H</fromexam></title>
+<statement><p>
+Calculate and simplify the derivative of
+<m>(1+x^2)\arctan x</m>.
+</p></statement>
+<answer><p> <m>2x\arctan x+1</m>
+</p></answer>
+<solution><p>
+Using the product rule:
+<md>
+<mrow>
+\ds\diff{}{x}\left\{(1+x^2)\arctan x\right\}
+&amp;=2x\arctan x+(1+x^2)\frac{1}{1+x^2}
+</mrow><mrow>
+&amp;=2x\arctan x+1</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Show that <m>\ds\diff{}{x}\left\{\sin\left(\arctan(x)
+\right)\right\} = (x^2+1)^{-3/2}</m>.
+</p></statement>
+<hint><p>
+You can simplify the expression before you differentiate to remove the trigonometric functions. If <m>\arctan x =\theta</m>, then fill in the sides of the triangle below using the definition of arctangent and the Pythagorean theorem:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0)-|(-6,3)--cycle;
+\draw (-1.25,.25) node{$\theta$};
+\draw (-1,0) arc(180:152:1cm);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>With the sides labeled, you can figure out <m>\sin\left(\arctan x\right)=\sin\left(\theta\right)</m>.
+</p></hint>
+<answer><p>
+Let <m>\theta = \arctan x</m>. Then <m>\theta</m> is the angle of a right triangle that gives <m>\tan \theta = x</m>. In particular, the ratio of the opposite side to the adjacent side is <m>x</m>. So, we have a  triangle that looks like this:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0)-|(-6,3)--cycle;
+\draw (-1.25,.25) node{$\theta$};
+\draw (-1,0) arc(180:152:1cm);
+\draw (-6.5,1.5) node{$x$};
+\draw (-3,-.5) node{$1$};
+\draw (-3,2.25) node{$\sqrt{x^2+1}$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p> where the length of the hypotenuse came from the Pythagorean Theorem. Now,
+<me>
+\sin\left(\arctan x\right) = \sin \theta = \frac{\mbox{opp}}{\mbox{hyp}} = \frac{x}{\sqrt{x^2+1}}</me>
+</p>
+
+<p>From here, we differentiate using the quotient rule:
+<md>
+<mrow>
+\diff{}{x}\left\{\frac{x}{\sqrt{x^2+1}}
+\right\}&amp;=
+\frac{\sqrt{x^2+1}-x\frac{2x}{2\sqrt{x^2+1}}}{x^2+1}
+</mrow><mrow>
+&amp;=\left(\frac{\sqrt{x^2+1}-\frac{x^2}{\sqrt{x^2+1}}}{x^2+1}\right)\cdot\frac{\sqrt{x^2+1}}{\sqrt{x^2+1}}
+</mrow><mrow>
+&amp;=\frac{(x^2+1)-x^2}{(x^2+1)^{3/2}}
+</mrow><mrow>
+&amp;=\frac{1}{(x^2+1)^{3/2}}=(x^2+1)^{-3/2}
+</mrow>
+</md></p></answer>
+<solution><p>
+Let <m>\theta = \arctan x</m>. Then <m>\theta</m> is the angle of a right triangle that gives <m>\tan \theta = x</m>. In particular, the ratio of the opposite side to the adjacent side is <m>x</m>. So, we have a  triangle that looks like this:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0)-|(-6,3)--cycle;
+\draw (-1.25,.25) node{$\theta$};
+\draw (-1,0) arc(180:152:1cm);
+\draw (-6.5,1.5) node{$x$};
+\draw (-3,-.5) node{$1$};
+\draw (-3,2.25) node{$\sqrt{x^2+1}$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> where the length of the hypotenuse came from the Pythagorean Theorem. Now,
+<me>
+\sin\left(\arctan x\right) = \sin \theta = \frac{\mbox{opp}}{\mbox{hyp}} = \frac{x}{\sqrt{x^2+1}}</me>
+</p>
+
+<p>From here, we differentiate using the quotient rule:
+<md>
+<mrow>
+\diff{}{x}\left\{\frac{x}{\sqrt{x^2+1}}
+\right\}&amp;=
+\frac{\sqrt{x^2+1}-x\frac{2x}{2\sqrt{x^2+1}}}{x^2+1}
+</mrow><mrow>
+&amp;=\left(\frac{\sqrt{x^2+1}-\frac{x^2}{\sqrt{x^2+1}}}{x^2+1}\right)\cdot\frac{\sqrt{x^2+1}}{\sqrt{x^2+1}}
+</mrow><mrow>
+&amp;=\frac{(x^2+1)-x^2}{(x^2+1)^{3/2}}
+</mrow><mrow>
+&amp;=\frac{1}{(x^2+1)^{3/2}}=(x^2+1)^{-3/2}
+</mrow>
+</md>
+</p>
+
+<p>Remark: another strategy is to differentiate first, using the chain rule, then draw a triangle to simplify the resulting expression
+<m>\ds\diff{}{x}\left\{\sin\left(\arctan x\right)\right\}=\dfrac{\cos(\arctan x)}{1+x^2}</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Show that <m>\ds\diff{}{x}\left\{\cot\left(\arcsin(x)
+\right)\right\} = \dfrac{-1}{x^2\sqrt{1-x^2}}</m>.
+</p></statement>
+<hint><p>
+You can simplify the expression before you differentiate to remove the trigonometric functions. If <m>\arcsin x =\theta</m>, then fill in the sides of the triangle below using the definition of arctangent and the Pythagorean theorem:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0)-|(-6,3)--cycle;
+\draw (-1.25,.25) node{$\theta$};
+\draw (-1,0) arc(180:152:1cm);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>With the sides labeled, you can figure out <m>\cot\left(\arcsin x\right)=\cot\left(\theta\right)</m>.
+</p></hint>
+<answer><p>
+Let <m>\theta = \arcsin x</m>. Then <m>\theta</m> is the angle of a right triangle that gives <m>\sin \theta = x</m>. In particular, the ratio of the opposite side to the hypotenuse is <m>x</m>. So, we have a  triangle that looks like this:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0)-|(-6,3)--cycle;
+\draw (-1.25,.25) node{$\theta$};
+\draw (-1,0) arc(180:152:1cm);
+\draw (-6.5,1.5) node{$x$};
+\draw (-3,-.5) node{$\sqrt{1-x^2}$};
+\draw (-3,2.25) node{$1$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> where the length of the adjacent side came from the Pythagorean Theorem. Now,
+<me>
+\cot\left(\arcsin x\right) = \cot \theta = \frac{\mbox{adj}}{\mbox{opp}} = \frac{\sqrt{1-x^2}}{x}</me>
+</p>
+
+<p>From here, we differentiate using the quotient rule:
+<md>
+<mrow>
+\diff{}{x}\left\{\frac{\sqrt{1-x^2}}{x}
+\right\}&amp;=
+\frac{x\frac{-2x}{2\sqrt{1-x^2}}-\sqrt{1-x^2}}{x^2}
+</mrow><mrow>
+&amp;=\frac{-x^2-(1-x^2)}{x^2\sqrt{1-x^2}}
+</mrow><mrow>
+&amp;=\frac{-1}{x^2\sqrt{1-x^2}}
+</mrow>
+</md></p></answer>
+<solution>
+<p>Let <m>\theta = \arcsin x</m>. Then <m>\theta</m> is the angle of a right triangle that gives <m>\sin \theta = x</m>. In particular, the ratio of the opposite side to the hypotenuse is <m>x</m>. So, we have a  triangle that looks like this:</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0)-|(-6,3)--cycle;
+\draw (-1.25,.25) node{$\theta$};
+\draw (-1,0) arc(180:152:1cm);
+\draw (-6.5,1.5) node{$x$};
+\draw (-3,-.5) node{$\sqrt{1-x^2}$};
+\draw (-3,2.25) node{$1$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>where the length of the adjacent side came from the Pythagorean Theorem. Now,
+<me>
+\cot\left(\arcsin x\right) = \cot \theta = \frac{\mbox{adj}}{\mbox{opp}} = \frac{\sqrt{1-x^2}}{x}</me>
+</p>
+
+<p>From here, we differentiate using the quotient rule:
+<md>
+<mrow>
+\diff{}{x}\left\{\frac{\sqrt{1-x^2}}{x}
+\right\}&amp;=
+\frac{x\frac{-2x}{2\sqrt{1-x^2}}-\sqrt{1-x^2}}{x^2}
+</mrow><mrow>
+&amp;=\frac{-x^2-(1-x^2)}{x^2\sqrt{1-x^2}}
+</mrow><mrow>
+&amp;=\frac{-1}{x^2\sqrt{1-x^2}}
+</mrow>
+</md>
+</p>
+
+<p>Remark: another strategy is to differentiate first, using the chain rule, then draw a triangle to simplify the resulting expression
+<m>\ds\diff{}{x}\left\{\cot\left(\arcsin x\right)\right\}=\frac{-\csc^2(\arcsin x)}{\sqrt{1-x^2}}</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997D</fromexam></title>
+<statement><p>
+ Determine all points on the curve <m>y=\arcsin x</m> where the
+tangent line is parallel to the line <m>y=2x+9</m>.
+</p></statement>
+<hint><p> What is the slope of the line <m>y=2x+9</m>?
+</p></hint>
+<answer><p> <m>(x,y)=\pm\big(\frac{\sqrt{3}}{2},\frac{\pi}{3}\big)</m>
+</p></answer>
+<solution><p>
+The line <m>y=2x+9</m> has slope <m>2</m>, so we must find all values
+of <m>x</m> between <m>-1</m> and <m>1</m> (<m>\arcsin  x</m> is only defined for these values
+of <m>x</m>) for which <m>\diff{}{x}\{\arcsin x\}=2</m>. Evaluating the derivative:
+<md>
+<mrow>
+y&amp;=\arcsin x
+</mrow><mrow>
+2=y'&amp;=\frac{1}{\sqrt{1-x^2}}
+</mrow><mrow>
+4&amp;=\frac{1}{1-x^2}
+</mrow><mrow>
+\frac{1}{4}&amp;=1-x^2
+</mrow><mrow>
+x^2&amp;=\frac{3}{4}
+</mrow><mrow>
+x&amp;=\pm\frac{\sqrt{3}}{2}
+</mrow><mrow>
+(x,y)&amp;=\pm\big(\frac{\sqrt{3}}{2},\frac{\pi}{3}\big)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+For which values of <m>x</m> does the function <m>f(x)=\arctan(\csc x)</m> have a horizontal tangent line?
+</p></statement>
+<hint><p>
+Differentiate using the chain rule.
+</p></hint>
+<answer><p>
+<m>x=\dfrac{(2n+1)\pi}{2}</m> for any integer <m>n</m>
+</p></answer>
+<solution><p>
+We differentiate using the chain rule:
+<md>
+<mrow>
+\diff{}{x}\{\arctan(\csc x)\}&amp;=\frac{1}{1+\csc^2x}\cdot\diff{}{x}\{\csc x\}
+</mrow><mrow>
+&amp;=\frac{-\csc x \cot x}{1+\csc^2x}
+</mrow><mrow>
+&amp;=\frac{-\frac{1}{\sin x}\cdot \frac{\cos x}{\sin x}}{1+\left(\frac{1}{\sin x}\right)^2}
+</mrow><mrow>
+&amp;=\frac{-\cos x}{\sin^2x+1}
+</mrow>
+</md>
+So if <m>f'(x)=0</m>, then <m>\cos x=0</m>, and this happens when <m>x=\dfrac{(2n+1)\pi}{2}</m> for any integer <m>n</m>. We should check that these points are in the domain of <m>f</m>. Arctangent is defined for all real numbers, so we only need to check the domain of cosecant; when <m>x=\dfrac{(2n+1)\pi}{2}</m>, then <m>\sin x=\pm1 \neq 0</m>, so <m>\csc x = \dfrac{1}{\sin x}</m> exists.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise><title><fromexam>2009H</fromexam></title>
+<statement><p>
+ Let <m>f(x) = x + \cos x</m>, and let <m>g(y) = f^{-1}(y)</m> be the inverse function.
+Determine <m>g'(y)</m>.
+</p></statement>
+<hint><p> If <m>g(y)=f^{-1}(y)</m>, then <m>f(g(y))=f\left(f^{-1}(y)\right)=y</m>. Differentiate this last equality using the chain rule.
+</p></hint>
+<answer><p>
+<m>g'(y)=\dfrac{1}{1-\sin g(y)}</m>
+</p></answer>
+<solution><p>
+Since <m>g(y)=f^{-1}(y)</m>,
+<md>
+<mrow>
+f(g(y))&amp;=f\left(f^{-1}(y)\right)=y
+</mrow>
+<intertext>Now, we can differentiate with respect to <m>y</m> using the chain rule.</intertext><mrow>
+\diff{}{y}\left\{f(g(y))\right\}&amp;=\diff{}{y}\{y\}
+</mrow><mrow>
+f'(g(y))\cdot g'(y)&amp;=1
+</mrow><mrow>
+g'(y)&amp;=\frac{1}{f'(g(y))}=\frac{1}{1-\sin g(y)}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2007H</fromexam></title>
+<statement><p>
+ <m>f(x) = 2x-\sin(x)</m> is one--to--one. Find
+<m>\big(f^{-1}\big)'(\pi-1)</m>.
+</p></statement>
+<hint><p> To simplify notation, let <m>g(y)=f^{-1}(y)</m>. Simplify and differentiate <m>g(f(x))</m>.
+</p></hint>
+<answer><p>
+<m>\dfrac{1}{2}</m>
+</p></answer>
+<solution><p>
+Write <m>g(y)=f^{-1}(y)</m>.
+Then <m>g(f(x))=x</m>, so differentiating both sides (using the chain rule), we see
+ <md>
+<mrow>
+ g'(f(x))\cdot f'(x)=1
+ </mrow>
+<intertext>What we want is <m>g'(\pi-1)</m>, so we need to figure out which value of <m>x</m> gives <m>f(x)=\pi-1</m>.  A little trial and error leads us to <m>x=\frac{\pi}{2}</m>.</intertext><mrow>
+ g'(\pi-1)\cdot f'\left(\frac{\pi}{2}\right)&amp;=1
+ </mrow>
+<intertext>Since <m>f'(x)=2-\cos(x)</m>, <m>f'\left(\frac{\pi}{2}\right)=2-0=2</m>:</intertext><mrow>
+ g'(\pi-1)\cdot 2&amp;=1
+</mrow><mrow>
+ g'(\pi-1)=\frac{1}{2}
+  </mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2006H</fromexam></title>
+<statement><p>
+<m>f(x) = e^x+x</m> is one--to--one. Find
+<m>\big(f^{-1}\big)'(e+1)</m>.
+</p></statement>
+<hint><p> To simplify notation, let <m>g(y)=f^{-1}(y)</m>. Simplify and differentiate <m>g(f(x))</m>.
+</p></hint>
+<answer><p> <m>\dfrac{1}{e+1}</m>
+</p></answer>
+<solution><p>
+Write <m>g(y)=f^{-1}(y)</m>.
+Then <m>g(f(x))=x</m>, so differentiating both sides (using the chain rule), we see
+<md>
+<mrow>
+g'(f(x))f'(x)&amp;=1
+ </mrow>
+<intertext>What we want is <m>g'(e+1)</m>, so we need to figure out which value of <m>x</m> gives <m>f(x)=e+1</m>.  A little trial and error leads us to <m>x=1</m>.</intertext><mrow>
+g'(f(1))f'(1)&amp;=1
+</mrow><mrow>
+g'(e+1)\cdot f'(1)&amp;=1
+</mrow><mrow>
+g'(e+1) &amp;= \frac{1}{f'(1)}
+</mrow>
+<intertext>It remains only to note that <m>f'(x)=e^x+1</m>, so <m>f'(1)=e+1</m></intertext><mrow>
+g'(e+1)&amp;=\frac{1}{e+1}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Differentiate <m>f(x)=[\sin x +2]^{\arcsec x}</m>. What is the domain of this function?
+</p></statement>
+<hint><p> Use logarithmic differentiation.
+</p></hint>
+<answer><p>
+<m>f'(x)=[\sin x +2]^{\arcsec x}\left(\dfrac{\log[\sin x +2]}{|x|\sqrt{x^2-1}}+ \dfrac{\arcsec x \cdot\cos x}{\sin x +2}\right)</m>. The domain of <m>f(x)</m> is <m>|x|\ge 1</m>.
+</p></answer>
+<solution><p>
+We use logarithmic differentiation, our standard method of differentiating an expression of the form <m>(\mbox{function})^{\mbox{function}}</m>.
+<md>
+<mrow>
+f(x)&amp;=[\sin x +2]^{\arcsec x}
+</mrow><mrow>
+\log(f(x))&amp;=\arcsec x \cdot \log[\sin x +2]
+</mrow><mrow>
+\frac{f'(x)}{f(x)}&amp;=\frac{1}{|x|\sqrt{x^2-1}}\log[\sin x +2]+\arcsec x \cdot \frac{\cos x}{\sin x +2}
+</mrow><mrow>
+f'(x)&amp;=[\sin x +2]^{\arcsec x}\left(\frac{\log[\sin x +2]}{|x|\sqrt{x^2-1}}+ \frac{\arcsec x \cdot\cos x}{\sin x +2}\right)
+</mrow>
+</md>
+</p>
+
+<p>The domain of <m>\arcsec x</m> is <m>|x| \geq 1</m>. For any <m>x</m>, <m>\sin x +2</m> is positive, and a positive number can be raised to any power. (Recall negative numbers cannot be raised to any power--for example, <m>(-1)^{1/2}=\sqrt{-1}</m> is not a real number.) So, the domain of <m>f(x)</m> is <m>|x| \geq 1</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose you can't remember whether the derivative of arcsine is <m>\dfrac{1}{\sqrt{1-x^2}}</m> or <m>\dfrac{1}{\sqrt{x^2-1}}</m>. Describe how the domain of arcsine suggests that one of these is wrong.
+</p></statement>
+<hint><p>
+Where are those functions defined?
+</p></hint>
+<answer><p>
+The function <m>\dfrac{1}{\sqrt{x^2-1}}</m> exists only for those values of <m>x</m> with <m>x^2-1 \gt 0</m>: that is, the domain of <m>\dfrac{1}{\sqrt{x^2-1}}</m> is <m>|x| \gt 1</m>. However, the domain of arcsine is <m>|x| \leq 1</m>. So, there is not one single value of <m>x</m> where  <m>\arcsin x</m> and <m>\dfrac{1}{\sqrt{x^2-1}}</m> are both defined.
+</p>
+
+<p>If the derivative of <m>\arcsin(x)</m> were given by <m>\dfrac{1}{\sqrt{x^2-1}}</m>, then the derivative of <m>\arcsin(x)</m> would not exist anywhere, so we would probably just write <q>derivative does not exist,</q> instead of making up a function with a mismatched domain. Also, the function <m>f(x)=\arcsin(x)</m> is a smooth curve--its derivative exists at every point strictly inside its domain. (Remember not all curves are like this: for instance, <m>g(x)=|x|</m> does not have a derivative at <m>x=0</m>, but <m>x=0</m> is strictly inside its domain.) So, it's a pretty good bet that the derivative of arcsine is <em>not</em> <m>\dfrac{1}{\sqrt{x^2-1}}</m>.
+</p></answer>
+<solution><p>
+The function <m>\dfrac{1}{\sqrt{x^2-1}}</m> exists only for those values of <m>x</m> with <m>x^2-1 \gt 0</m>: that is, the domain of <m>\dfrac{1}{\sqrt{x^2-1}}</m> is <m>|x| \gt 1</m>. However, the domain of arcsine is <m>|x| \leq 1</m>. So, there is not one single value of <m>x</m> where  <m>\arcsin x</m> and <m>\dfrac{1}{\sqrt{x^2-1}}</m> are both defined.
+</p>
+
+<p>If the derivative of <m>\arcsin(x)</m> were given by <m>\dfrac{1}{\sqrt{x^2-1}}</m>, then the derivative of <m>\arcsin(x)</m> would not exist anywhere, so we would probably just write <q>derivative does not exist,</q> instead of making up a function with a mismatched domain. Also, the function <m>f(x)=\arcsin(x)</m> is a smooth curve--its derivative exists at every point strictly inside its domain. (Remember not all curves are like this: for instance, <m>g(x)=|x|</m> does not have a derivative at <m>x=0</m>, but <m>x=0</m> is strictly inside its domain.) So, it's a pretty good bet that the derivative of arcsine is <em>not</em> <m>\dfrac{1}{\sqrt{x^2-1}}</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate <m>\displaystyle \lim_{x\to 1}\left(
+(x-1)^{-1}\left(\arctan x - \frac{\pi}{4}\right)\right).</m>
+</p></statement>
+<hint><p>
+Compare this to one of the forms given in the text for the definition of the derivative.
+</p></hint>
+<answer><p>
+<m>\dfrac{1}{2}</m>
+</p></answer>
+<solution><p>
+This limit represents the derivative computed at <m>x=1</m> of the function <m>f(x)=\arctan x</m>.
+To see this, simply use the definition of the derivative at <m>a=1</m>:
+<md>
+<mrow>
+\left.\diff{}{x}\{f(x)\}\right|_{a} &amp;= \lim_{x \to a}\frac{f(x)-f(a)}{x-a}
+</mrow><mrow>
+\left.\diff{}{x}\{\arctan x\}\right|_{1} &amp;=\lim_{x\to1} \frac{\arctan x-\arctan 1}{x-1}
+</mrow><mrow>
+&amp;=\lim_{x\to1} \frac{\arctan x-\frac{\pi}{4}}{x-1}
+</mrow><mrow>
+&amp;=\displaystyle \lim_{x\to 1}\left(
+(x-1)^{-1}\left(\arctan x - \frac{\pi}{4}\right)\right).
+</mrow>
+</md>
+Since the derivative of <m>f(x)</m> is <m>\dfrac{1}{1+x^2}</m>,  its value at <m>x=1</m> is exactly <m>\dfrac{1}{2}</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose <m>f(2x+1)=\dfrac{5x-9}{3x+7}</m>. Evaluate <m>f^{-1}(7)</m>.
+</p></statement>
+<hint><p>
+<m>f^{-1}(7)</m> is the number <m>y</m> that satisfies <m>f(y)=7</m>.
+</p></hint>
+<answer><p>
+<m>f^{-1}(7)=-\dfrac{25}{4}</m>
+</p></answer>
+<solution><p>
+First, let's interpret the given information: when the input of our function is <m>2x+1</m> for some <m>x</m>, then its output is <m>\dfrac{5x-9}{3x+7}</m>, for that same <m>x</m>. We're asked to evaluate <m>f^{-1}(7)</m>, which is the number <m>y</m> with the property that <m>f(y)=7</m>. If the output of our function is 7, that means
+<md>
+<mrow>
+7&amp;=\frac{5x-9}{3x+7}
+</mrow>
+<intertext>and so</intertext><mrow>
+7(3x+7)&amp;=5x-9
+</mrow><mrow>
+x&amp;=-\frac{29}{8}
+</mrow>
+<intertext>So, when <m>x=-\dfrac{29}{8}</m>, our equation <m>f(2x+1)=\dfrac{5x-9}{3x+7}</m> becomes:</intertext><mrow>
+f\left(2\cdot\frac{-29}{8}+1\right)&amp;=\dfrac{5\cdot\frac{-29}{8}-9}{3\cdot\frac{-29}{8}+7}
+</mrow>
+<intertext>Or, equivalently:</intertext><mrow>
+f\left(-\frac{25}{4}\right)&amp;=7
+</mrow>
+</md>
+Therefore, <m>f^{-1}(7)=-\dfrac{25}{4}</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose <m>f^{-1}(4x-1)=\dfrac{2x+3}{x+1}</m>. Evaluate <m>f(0)</m>.
+</p></statement>
+<hint><p>
+If <m>f^{-1}(y)=0</m>, that means <m>f(0)=y</m>. So, we're looking for the number that we plug into <m>f^{-1}</m> to get 0.
+</p></hint>
+<answer><p>
+<m>f(0)=-7</m>
+</p></answer>
+<solution><p>
+If <m>f^{-1}(y)=0</m>, that means <m>f(0)=y</m>. So, we want to find out what we plug into <m>f^{-1}</m> to get 0.  Since we only know <m>f^{-1}</m> in terms of a variable <m>x</m>, let's figure out what <m>x</m> gives us an output of 0:
+<md>
+<mrow>
+\frac{2x+3}{x+1}&amp;=0
+</mrow><mrow>
+2x+3&amp;=0
+</mrow><mrow>
+x&amp;=-\frac{3}{2}
+</mrow>
+<intertext>Now, the equation <m>f^{-1}(4x-1)=\dfrac{2x+3}{x+1}</m> with <m>x=\dfrac{-3}{2}</m> tells us:</intertext><mrow>
+f^{-1}\left(4\cdot\frac{-3}{2}-1\right)&amp;=\frac{2\cdot\frac{-3}{2}+3}{\frac{-3}{2}+1}
+</mrow>
+<intertext>Or, equivalently:</intertext><mrow>
+f^{-1}(-7)&amp;=0
+</mrow>
+</md>
+Therefore, <m>f(0)=-7</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose a curve is defined implicitly by
+<me>
+\arcsin(x+2y)=x^2+y^2</me>
+</p>
+
+<p>Solve for <m>y'</m> in terms of <m>x</m> and <m>y</m>.
+</p></statement>
+<hint><p>
+As usual, after you differentiate implicitly, get all the terms containing <m>y'</m> onto one side of the equation, so you can factor out <m>y'</m>.
+</p></hint>
+<answer><p>
+<m>y'=\dfrac{2x\sqrt{1-(x+2y)^2}-1}{2-2y\sqrt{1-(x+2y)^2}}</m>, or equivalently,
+<m>y'=\dfrac{2x\cos(x^2+y^2)-1}{2-2y\cos(x^2+y^2)}</m>
+</p></answer>
+<solution><p>
+<ul>
+<li> Solution 1:
+We begin by differentiating implicitly. Following the usual convention, we use <m>y'</m> to mean <m>y'(x)</m>.
+<md>
+<mrow>
+\arcsin(x+2y)&amp;=x^2+y^2 \qquad\mbox{Using the chain rule:}
+</mrow><mrow>
+\frac{1+2y'}{\sqrt{1-(x+2y)^2}}&amp;=2x+2yy'
+</mrow><mrow>
+\frac{1}{\sqrt{1-(x+2y)^2}}+\frac{2y'}{\sqrt{1-(x+2y)^2}}&amp;=2x+2yy'
+</mrow><mrow>
+\frac{2y'}{\sqrt{1-(x+2y)^2}}-2yy'&amp;=2x-\frac{1}{\sqrt{1-(x+2y)^2}}
+</mrow><mrow>
+y'\left(\frac{2}{\sqrt{1-(x+2y)^2}}-2y\right)&amp;=2x-\frac{1}{\sqrt{1-(x+2y)^2}}
+</mrow><mrow>
+y'&amp;=\frac{2x-\frac{1}{\sqrt{1-(x+2y)^2}}}{\frac{2}{\sqrt{1-(x+2y)^2}}-2y}
+\left(\frac{\sqrt{1-(x+2y)^2}}{\sqrt{1-(x+2y)^2}}\right)
+</mrow><mrow>
+y'&amp;=\frac{2x\sqrt{1-(x+2y)^2}-1}{2-2y\sqrt{1-(x+2y)^2}}
+</mrow>
+</md>
+</li>
+<li> Solution 2:
+We begin by taking the sine of both sides of the equation.
+<md>
+<mrow>
+\arcsin(x+2y)&amp;=x^2+y^2
+</mrow><mrow>
+x+2y&amp;=\sin(x^2+y^2)
+</mrow>
+<intertext>Now, we differentiate implicitly.</intertext><mrow>
+1+2y'&amp;=\cos(x^2+y^2)\cdot(2x+2yy')
+</mrow><mrow>
+1+2y'&amp;=2x\cos(x^2+y^2)+2yy'\cos(x^2+y^2)
+</mrow><mrow>
+2y'-2yy'\cos(x^2+y^2)&amp;=2x\cos(x^2+y^2)-1
+</mrow><mrow>
+y'\left(2-2y\cos(x^2+y^2)\right)&amp;=2x\cos(x^2+y^2)-1
+</mrow><mrow>
+y'&amp;=\frac{2x\cos(x^2+y^2)-1}{2-2y\cos(x^2+y^2)}
+</mrow>
+</md>
+</li>
+<li><p> We used two different methods, and got two answers that look pretty different. However, the answers ought to be equivalent. To see this, we remember that for all values of <m>x</m> and <m>y</m> that we care about (those pairs <m>(x,y)</m> in the domain of our curve), the equality
+<me>
+\arcsin(x+2y)=x^2+y^2
+</me>
+holds. Drawing a triangle:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0)--(6,0)--(6,6)--cycle;
+\draw[thick, blue] (1,0) arc(0:45:1cm) node[midway, right, rotate=22]{$x^2+y^2$};
+\draw[blue] (6,3) node[right]{$x+2y$};
+\draw[blue] (2.5,3) node[above]{$1$};
+\draw[red] (3,-.5) node{$\sqrt{1-(x+2y)^2}$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p> where the adjacent side (in red) come from the Pythagorean Theorem. Then,
+<m>\cos(x^2+y^2)=\sqrt{1-(x+2y)^2}</m>, so using our second solution:
+<md>
+<mrow>
+y'&amp;=\frac{2x\cos(x^2+y^2)-1}{2-2y\cos(x^2+y^2)}
+</mrow><mrow>
+&amp;=\frac{2x\sqrt{1-(x+2y)^2}-1}{2-2y\sqrt{1-(x+2y)^2}}
+</mrow>
+</md>
+which is exactly the answer from our first solution.</p>
+</li>
+</ul>
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

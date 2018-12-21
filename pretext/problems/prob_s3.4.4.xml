@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_sigma"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise xml:id="s3_4_4conc1">
+<statement><p>
+The 3rd degree Taylor polynomial for a function <m>f(x)</m> about <m>x=1</m> is
+<me>
+T_3(x)=x^3-5x^2+9x</me>
+ What  is <m>f''(1)</m>?
+</p></statement>
+<hint><p>
+<m>T_3''(x)</m> and <m>f''(x)</m> agree when <m>x=1</m>.
+</p></hint>
+<answer><p>
+<m>f''(1)=-4</m>
+</p></answer>
+<solution><p>
+Since <m>T_3(x)</m> is the third-degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m>:
+<ul>
+<li> <m>T_3(1)=f(1)</m>
+</li>
+<li> <m>T_3'(1)=f'(1)</m>
+</li>
+<li> <m>T_3''(1)=f''(1)</m>
+</li>
+<li> <m>T_3'''(1)=f'''(1)</m>
+</li>
+</ul>
+In particular, <m>f''(1)=T_3''(1)</m>.
+<md>
+<mrow>
+T_3'(x)&amp;=3x^2-10x+9
+</mrow><mrow>
+T_3''(x)&amp;=6x-10
+</mrow><mrow>
+T_3''(1)&amp;=6-10=-4
+</mrow>
+</md>
+So, <m>f''(1)=-4</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+The <m>n</m>th degree Taylor polynomial for <m>f(x)</m> about <m>x=5</m> is
+<me>
+T_n(x)=\sum_{k=0}^{n} \frac{2k+1}{3k-9}(x-5)^k</me>
+</p>
+
+<p>What is <m>f^{(10)}(5)</m>?
+</p></statement>
+<hint><p>
+The <m>n</m>th degree Taylor polynomial for <m>f(x)</m> about <m>x=5</m> is
+<me>
+T_n(x)=\sum_{k=0}^{n} \frac{f^{(k)}(5)}{k!}(x-5)^k</me>
+</p>
+
+<p>Match up the terms.
+</p></hint>
+<answer><p>
+<m>f^{(10)}(5)=10!</m>
+</p></answer>
+<solution><p>
+In Question<nbsp/><xref ref="s3_4_4conc1"/>, we differentiated the Taylor polynomial to find its derivative. We don't really want to differentiate this ten times, though, so let's look for another way. Unlike Question<nbsp/><xref ref="s3_4_4conc1"/>, our Taylor polynomial is given to us in a form very similar to its definition. The <m>n</m>th degree Taylor polynomial for <m>f(x)</m> about <m>x=5</m> is
+<md>
+<mrow>
+T_n(x)&amp;=\sum_{k=0}^{n} \frac{f^{(k)}(5)}{k!}(x-5)^k
+</mrow>
+<intertext>So,</intertext><mrow>
+\sum_{k=0}^{n} \frac{f^{(k)}(5)}{k!}(x-5)^k&amp;=\sum_{k=0}^{n}\frac{2k+1}{3k-9}(x-5)^k
+</mrow>
+<intertext>For any <m>k</m> from 0 to <m>n</m>,</intertext><mrow>
+\frac{f^{(k)}(5)}{k!}&amp;=\frac{2k+1}{3k-9}
+</mrow>
+<intertext>In particular, when <m>k=10</m>,</intertext><mrow>
+\frac{f^{(10)}(5)}{10!}&amp;=\frac{20+1}{30-9}=1
+</mrow><mrow>
+f^{(10)}(5)&amp;=10!
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise xml:id="s3_4_4chop1">
+<statement><p>
+The 4th-degree Maclaurin polynomial for <m>f(x)</m> is
+<me>
+T_4(x)=x^4-x^3+x^2-x+1</me>
+</p>
+
+<p>What is the third-degree Maclaurin polynomial for <m>f(x)</m>?
+</p></statement>
+<hint><p>
+The fourth-degree Maclaurin polynomial for <m>f(x)</m> is
+<md>
+<mrow>
+T_4(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3+\frac{1}{4!}f^{(4)}(0)x^4
+</mrow>
+<intertext>while the third-degree Maclaurin polynomial for <m>f(x)</m> is</intertext><mrow>
+T_3(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3</mrow>
+</md>
+</p></hint>
+<answer><p>
+<m>T_3(x)=-x^3+x^2-x+1</m>
+</p></answer>
+<solution><p>
+The fourth-degree Maclaurin polynomial for <m>f(x)</m> is
+<md>
+<mrow>
+T_4(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3+\frac{1}{4!}f^{(4)}(0)x^4
+</mrow>
+<intertext>while the third-degree Maclaurin polynomial for <m>f(x)</m> is</intertext><mrow>
+T_3(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3
+</mrow>
+<intertext>So, we simply <q>chop off</q> the part of <m>T_4(x)</m> that includes <m>x^4</m>:</intertext><mrow>
+T_3(x)&amp;=-x^3+x^2-x+1
+</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+The 4th degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m> is
+<me>
+T_4(x)=x^4+x^3-9</me>
+</p>
+
+<p>What is the third degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m>?
+</p></statement>
+<hint><p>
+The third-degree Maclaurin polynomial for <m>f(x)</m> about <m>x=1</m> is
+<me>
+T_3(x)=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3</me>
+</p>
+
+<p>How can you recover <m>f(1)</m>, <m>f'(1)</m>, <m>f''(1)</m>, and <m>f'''(1)</m> from <m>T_4(x)</m>?
+</p></hint>
+<answer><p>
+<m>T_3(x)=-7+7(x-1)+9(x-1)^2+5(x-1)^3</m>, or equivalently,
+<m>T_3(x)=5x^3-6x^2+4x-10</m>
+</p></answer>
+<solution><p>
+We saw this kind of problem in Question<nbsp/><xref ref="s3_4_4chop1"/>.
+The fourth-degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m> is
+<md>
+<mrow>
+T_4(x)&amp;=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3+\frac{1}{4!}f^{(4)}(1)(x-1)^4
+</mrow>
+<intertext>while the third-degree Maclaurin polynomial for <m>f(x)</m> about <m>x=1</m> is</intertext><mrow>
+T_3(x)&amp;=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3
+</mrow>
+</md>
+So, we <q>chopped off</q> the term of degree 4 to get <m>T_3(x)</m>. However, <em>our polynomial is not in this form</em>. It's not clear, right away, what the term <m>f^{(4)}(x-1)^4</m> is in our given <m>T_4(x)</m>. So, we will use a different method from Question<nbsp/><xref ref="s3_4_4chop1"/>.
+</p>
+
+<p>
+One option is to do some fancy factoring to get <m>T_4(x)</m> into the more standard form of a Taylor polynomial. Another option (which we will use) is to recover <m>f(1)</m>, <m>f'(1)</m>, <m>f''(1)</m>, and <m>f'''(1)</m> from <m>T_4(x)</m>.
+<md>
+<mrow>
+</mrow>
+<intertext>Recall that <m>T_4(x)</m> and <m>f(x)</m> have the same values at <m>x=1</m> (although maybe not anywhere else!), and they also have the same first, second, third, and fourth derivatives at <m>x=1</m> (but again, maybe not anywhere else, and maybe their fifth derivatives don't agree). This tells us the following:</intertext><mrow>
+T_4(x)&amp;=x^4+x^3-9&amp;&amp;\Rightarrow&amp;
+f(1)=T_4(1)&amp;=-7
+</mrow><mrow>
+T_4'(x)&amp;=4x^3+3x^2&amp;&amp;\Rightarrow&amp;
+f'(1)=T_4'(1)&amp;=7
+</mrow><mrow>
+T_4''(x)&amp;=12x^2+6x&amp;&amp;\Rightarrow&amp;
+f''(1)=T_4''(1)&amp;=18
+</mrow><mrow>
+T_4'''(x)&amp;=24x+6&amp;&amp;\Rightarrow&amp;
+f'''(1)=T_4'''(1)&amp;=30
+</mrow>
+</md>
+Now, we can write the third-degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m>:
+<md>
+<mrow>
+T_3(x)&amp;=-7+7(x-1)+\frac{1}{2}(18)(x-1)^2+\frac{1}{3!}(30)(x-1)^3
+</mrow><mrow>
+&amp;=-7+7(x-1)+9(x-1)^2+5(x-1)^3
+</mrow>
+</md>
+Remark: expanding the expression above, we get the equivalent polynomial  <m>T_3(x)=5x^3-6x^2+4x-10</m>. From this, it is clear that we can't just <q>chop off</q> the term with <m>x^4</m> to change <m>T_4(x)</m> into <m>T_3(x)</m> when the Taylor polynomial is not centred about <m>x=0</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+For any even number <m>n</m>, suppose the <m>n</m>th degree Taylor polynomial for <m>f(x)</m> about <m>x=5</m> is
+<me>
+\sum_{k=0}^{n/2} \frac{2k+1}{3k-9}(x-5)^{2k}</me>
+</p>
+
+<p>What is <m>f^{(10)}(5)</m>?
+</p></statement>
+<hint><p>
+Compare the given polynomial to the more standard form of the <m>n</m>th degree Taylor polynomial,
+<me>
+\sum_{k=0}^{n} \frac{1}{k!}f^{(k)}(5)(x-5)^{k}</me>
+</p>
+
+<p>and notice that the term you want (containing <m>f^{(10)}(5)</m>) corresponds to <m>k=10</m> in the standard form, but is <em>not</em> the term corresponding to <m>k=10</m> in the polynomial given in the question.
+</p></hint>
+<answer><p>
+<m>f^{(10)}(5)=\dfrac{11\cdot 10!}{6}</m>
+</p></answer>
+<solution><p>
+The <m>n</m>th degree Taylor polynomial for <m>f(x)</m> about <m>x=5</m> is
+<md>
+<mrow>T_n(x)&amp;=\color{red}\sum_{k=0}^{n} \frac{1}{k!}f^{(k)}(5)(x-5)^{k}
+</mrow>
+<intertext>We expand this somewhat:</intertext><mrow>
+T_n(x)&amp;=\color{red}f(5)+f'(x-5) + \cdots +
+\boxed{\frac{1}{10!}f^{(10)}(5)(x-5)^{10}}+\cdots + \frac{1}{n!}f^{(n)}(5)(x-1)^n
+</mrow>
+<intertext>So, the coefficient of <m>(x-5)^{10}</m> is <m>\dfrac{1}{10!}f^{(10)}(5)</m>. Expanding the given form of the Taylor polynomial:</intertext><mrow>
+T_n(x)&amp;=\color{blue}\sum_{k=0}^{n/2} \frac{2k+1}{3k-9}(x-5)^{2k}
+</mrow><mrow>
+&amp;=\color{blue} \underbrace{\frac{1}{-9}}_{k=0}+
+ \underbrace{\frac{3}{-6}(x-5)^2}_{k=1}+\cdots+
+  \underbrace{\boxed{\frac{11}{6}(x-5)^{10}}}_{k=5}+\cdots+
+   \underbrace{\frac{n+1}{(3/2)n-9}(x-5)^n}_{k=n/2}
+</mrow>
+<intertext>Equating the coefficients of <m>(x-5)^{10}</m> in the two expressions:</intertext><mrow>
+\color{red}\frac{1}{10!}f^{(10)}(5)&amp;=\color{blue}\frac{11}{6}
+</mrow><mrow>
+f^{(10)}(5)&amp;=\frac{11\cdot 10!}{6}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+The third-degree Taylor Polynomial for <m>f(x)=x^3\left[2\log x - \dfrac{11}{3}\right]</m> about <m>x=a</m> is
+<me>
+T_3(x)=-\frac{2}{3}\sqrt{e^3}+3ex-6\sqrt{e}x^2+x^3</me>
+</p>
+
+<p>What is <m>a</m>?
+</p></statement>
+<hint><p>
+<m>T_3'''(a)=f'''(a)</m>
+</p></hint>
+<answer><p>
+<m>a=\sqrt{e}</m>
+</p></answer>
+<solution><p>
+Since <m>T_3(x)</m> is the third-degree Taylor polynomial for <m>f(x)</m> about <m>x=a</m>, we know the following things to be true:
+<ul>
+<li> <m>f(a)=T_3(a)</m>
+</li>
+<li> <m>f'(a)=T'_3(a)</m>
+</li>
+<li> <m>f''(a)=T''_3(a)</m>
+</li>
+<li> <m>f'''(a)=T'''_3(a)</m>
+</li>
+</ul>
+But, some of these don't look super useful. For instance, if we try to use the first bullet, we get this equation:
+<me>
+a^3\left[2\log a - \frac{11}{3}\right]=-\frac{2}{3}\sqrt{e^3}+3ea-6\sqrt{e}a^2+a^3</me>
+</p>
+
+<p>Solving this would be terrible. Instead, let's think about how the equations look when we move further down the list. Since <m>T_3(x)</m> is a cubic equation, <m>T_3'''(x)</m> is a constant (and so <m>T_3'''(a)</m> does not depend on <m>a</m>). That sounds like it's probably the simplest option. Let's start differentiating. We'll need to know both <m>\textcolor{blue}{f'''(a)}</m> and <m>\textcolor{red}{T_3'''(a)}</m>.
+<md>
+<mrow>
+f(x)&amp;=x^3\left[2\log x - \frac{11}{3}\right]
+</mrow><mrow>
+f'(x)&amp;=x^3\left[\frac{2}{x}\right]+3x^2\left[2\log x - \frac{11}{3}\right]=6x^2\log x -9x^2
+</mrow><mrow>
+f''(x)&amp;=6x^2\cdot\frac{1}{x}+12x\log x - 18x=12x\log x - 12 x
+</mrow><mrow>
+f'''(x)&amp;=12x\cdot\frac{1}{x}+12\log x - 12  = 12\log x
+</mrow><mrow>
+\color{blue}f'''(a)&amp;\color{blue}=12\log a
+</mrow>
+<intertext>Now, let's move to the Taylor polynomial. Remember that <m>e</m> is a constant.</intertext><mrow>
+T_3(x)&amp;=-\frac{2}{3}\sqrt{e^3}+3ex-6\sqrt{e}x^2+x^3
+</mrow><mrow>
+T_3'(x)&amp;=3e-12\sqrt{e}x+3x^2
+</mrow><mrow>
+T_3''(x)&amp;=-12\sqrt{e}+6x
+</mrow><mrow>
+T_3'''(x)&amp;=6
+</mrow><mrow>
+\color{red}T_3'''(a)&amp;\color{red}=6
+</mrow>
+<intertext>The final bullet point gives us the equation:</intertext><mrow>
+\color{blue}f'''(a)&amp;=\color{red}T_3'''(a)
+</mrow><mrow>
+\color{blue}12\log a &amp;= \color{red}6
+</mrow><mrow>
+\log a &amp;= \frac{1}{2}
+</mrow><mrow>
+a&amp;=e^{\tfrac{1}{2}}
+</mrow>
+</md>
+So, <m>a=\sqrt{e}</m>.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

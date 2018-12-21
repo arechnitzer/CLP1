@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>What is the 180th derivative of the function <m>f(x)=e^x</m>?
+</p></statement>
+<hint><p> If you know the first derivative, this should be easy.
+</p></hint>
+<answer><p> <m>e^x</m>
+</p></answer>
+<solution><p> The derivative of <m>e^x</m> is <m>e^x</m>: taking derivatives leaves the function unchanged, even if we do it 180 times. So <m>f^{(180)}=e^x</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose <m>f(x)</m> is a differentiable function, with <m>f'(x) \gt 0</m> and <m>f''(x) \gt 0</m> for every <m>x \in (a,b)</m>. Which of the following must be true?
+<ol label="i">
+<li xml:id="s2_14pi"> <m>f(x)</m> is positive over <m>(a,b)</m>
+</li>
+<li xml:id="s2_14pii"> <m>f(x)</m> is increasing over <m>(a,b)</m>
+</li>
+<li xml:id="s2_14piii"> <m>f(x)</m> is increasing at a constant rate over <m>(a,b)</m>
+</li>
+<li xml:id="s2_14piv"> <m>f(x)</m> is increasing faster and faster over <m>(a,b)</m>
+</li>
+<li xml:id="s2_14pv"> <m>f''''(x) \gt 0</m> for some <m>x \in (a,b)</m>
+</li>
+</ol>
+</p></statement>
+<hint><p> Exactly two of the statements must be true.
+</p></hint>
+<answer><p>
+<xref ref="s2_14pii"/>, <xref ref="s2_14piv"/>
+</p></answer>
+<solution><p>
+Since <m>f'(x) \gt 0</m> over <m>(a,b)</m>, we know from Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>
+that <m>f(x)</m> is increasing over <m>(a,b)</m>, so <xref ref="s2_14pii"/> holds. Since <m>f''(x) \gt 0</m>, and <m>f''(x)</m> is the derivative of <m>f'(x)</m>, by the same reasoning we see that <m>f'(x)</m> is increasing. Since <m>f'(x)</m> is the rate at which <m>f(x)</m> is increasing, that means that the rate at which <m>f'(x)</m> is increasing is itself increasing: this is, <xref ref="s2_14piv"/> holds (and <em>not</em> <xref ref="s2_14piii"/>).
+</p>
+
+<p>There is no reason to think <xref ref="s2_14pi"/> or <xref ref="s2_14pv"/> holds, but to be thorough we will give an example showing that they do not need to be true. If <m>f(x)=x^2-10</m> and <m>(a,b)=(0,1)</m>, then <m>f'(x)=2x \gt 0</m> over <m>(0,1)</m>, and <m>f''(x)=2 \gt 0</m> everywhere, but <m>f(x) \lt 0</m> for all <m>x \in (0,1)</m>, so <xref ref="s2_14pi"/> does not hold. Also, <m>f'''(x)=0</m> everywhere, so <xref ref="s2_14pv"/> does not hold either.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>f(x)=ax^{15}</m> for some constant <m>a</m>. Which value of <m>a</m> results in <m>f^{(15)}(x)=3</m>?
+</p></statement>
+<hint><p>
+Use factorials, as in Example<nbsp/><xref ref="eg_higherOrdDerivA"/>.
+</p></hint>
+<answer><p>
+<m>\dfrac{3}{15!}</m>
+</p></answer>
+<solution><p>
+Every time we differentiate <m>f(x)</m>, the constant out front gets multiplied by an ever-decreasing constant, while the power decreases by one. As in Example<nbsp/><xref ref="eg_higherOrdDerivA"/>, <m>\ds\ddiff{{15}}{}{x}ax^{15}=a\cdot 15!</m>. So, if <m>a\cdot 15!=3</m>, then <m>a=\dfrac{3}{15!}</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Find the mistake(s) in the following work, and provide a corrected answer.</p>
+
+<blockquote>
+<p>
+Suppose <m>-14x^2+2xy+y^2=1</m>. We find <m>\ds\ddiff{2}{y}{x}</m> at the point <m>\left(1,3\right)</m>. Differentiating implicitly:
+<md>
+<mrow>
+-28x+2y+2xy'+2yy'&amp;=0
+</mrow>
+<intertext>Plugging in <m>x=1</m>, <m>y=3</m>:</intertext><mrow>
+-28+6+2y'+6y'&amp;=0
+</mrow><mrow>
+y'&amp;=\frac{11}{4}
+</mrow>
+<intertext>Differentiating:</intertext><mrow>
+y''&amp;=0
+</mrow>
+</md>
+</p></blockquote>
+</statement>
+<hint><p>
+The problem isn't with any of the algebra.
+</p></hint>
+<answer><p>
+The derivative <m>\ds\diff{y}{x}</m> is <m>\dfrac{11}{4}</m> only at the point <m>(1,3)</m>: it is not <em>constantly</em> <m>\dfrac{11}{4}</m>, so it is wrong to differentiate the constant <m>\dfrac{11}{4}</m> to find <m>\ds\ddiff{2}{y}{x}</m>. Below is a correct solution.
+<md>
+<mrow>
+-28x+2y+2xy'+2yy'&amp;=0
+</mrow>
+<intertext>Plugging in <m>x=1</m>, <m>y=3</m>:</intertext><mrow>
+-28+6+2y'+6y'&amp;=0
+</mrow><mrow>
+y'&amp;=\frac{11}{4} \quad\mbox{\textcolor{red}{ at the point $(1,3)$}}
+</mrow>
+<intertext>Differentiating <textred>the equation <m>-28x+2y+2xy'+2yy'=0</m>:</textred> </intertext>
+<mrow>
+-28+2y'+2y'+2xy''+2y'y'+2yy''&amp;=0
+</mrow><mrow>
+4y'+2(y')^2+2xy''+2yy''&amp;=28
+</mrow>
+<intertext>At the point <m>(1,3)</m>, <m>y'=\dfrac{11}{4}</m>. Plugging in:</intertext><mrow>
+4\left(\frac{11}{4}\right)+2\left(\frac{11}{4}\right)^2+2(1)y''+2(3)y''&amp;=28
+</mrow><mrow>
+y''&amp;=\frac{15}{64}
+</mrow>
+</md>
+</p></answer>
+<solution><p>
+The derivative <m>\ds\diff{y}{x}</m> is <m>\dfrac{11}{4}</m> only at the point <m>(1,3)</m>: it is not <em>constantly</em> <m>\dfrac{11}{4}</m>, so it is wrong to differentiate the constant <m>\dfrac{11}{4}</m> to find <m>\ds\ddiff{2}{y}{x}</m>. Below is a correct solution.
+<md>
+<mrow>
+-28x+2y+2xy'+2yy'&amp;=0
+</mrow>
+<intertext>Plugging in <m>x=1</m>, <m>y=3</m>:</intertext><mrow>
+-28+6+2y'+6y'&amp;=0
+</mrow><mrow>
+y'&amp;=\frac{11}{4} \quad\mbox{\textcolor{red}{ at the point $(1,3)$}}
+</mrow>
+<intertext>Differentiating <textred>the equation <m>-28x+2y+2xy'+2yy'=0</m></textred>:</intertext>
+<mrow>
+-28+2y'+2y'+2xy''+2y'y'+2yy''&amp;=0
+</mrow><mrow>
+4y'+2(y')^2+2xy''+2yy''&amp;=28
+</mrow>
+<intertext>At the point <m>(1,3)</m>, <m>y'=\dfrac{11}{4}</m>. Plugging in:</intertext><mrow>
+4\left(\frac{11}{4}\right)+2\left(\frac{11}{4}\right)^2+2(1)y''+2(3)y''&amp;=28
+</mrow><mrow>
+y''&amp;=\frac{15}{64}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+Let <m>f(x)=(\log x-1)x</m>. Evaluate <m>f''(x)</m>.
+</p></statement>
+<hint><p>
+Recall <m>\ds\diff{}{x}\log x =\ds\frac{1}{x}</m>.
+</p></hint>
+<answer><p>
+<m>f''(x)=\dfrac{1}{x}</m>
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+f(x)&amp;=x\log x -x
+</mrow><mrow>
+f'(x)&amp;=\log x +x\cdot\frac{1}{x}-1
+</mrow><mrow>
+&amp;=\log x
+</mrow><mrow>
+f''(x)&amp;=\frac{1}{x}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Evaluate <m>\ds\ddiff{2}{}{x}\{\arctan x\}</m>.
+</p></statement>
+<hint><p>
+Recall <m>\ds\diff{}{x}\{\arctan x\}=\dfrac{1}{1+x^2}=(1+x^2)^{-1}</m>.
+</p></hint>
+<answer><p>
+<m>\ds\ddiff{2}{}{x}\{\arctan x\}=\frac{-2x}{(1+x^2)^2}</m>
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+\diff{}{x}\{\arctan x\}&amp;=\frac{1}{1+x^2}
+</mrow><mrow>
+\diff{}{x}\left\{\frac{1}{1+x^2}\right\}&amp;=\diff{}{x}\left\{(1+x^2)^{-1}\right\}
+</mrow><mrow>
+&amp;=(-1)(1+x^2)^{-2}(2x)
+</mrow><mrow>&amp;=\frac{-2x}{(1+x^2)^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+The unit circle consists of all point <m>x^2+y^2=1</m>. Give an expression for <m>\ds\ddiff{2}{y}{x}</m> in terms of <m>y</m>.
+</p></statement>
+<hint><p>
+Use implicit differentiation.
+</p></hint>
+<answer><p>
+<m>\ds\ddiff{2}{y}{x}=\dfrac{-1}{y^3}</m>
+</p></answer>
+<solution><p>
+We use implicit differentiation, twice.
+<md>
+<mrow>
+2x+2yy'&amp;=0
+</mrow><mrow>
+2+(2y)y''+(2y')y'&amp;=0
+</mrow><mrow>
+y''&amp;=-\frac{(y')^2+1}{y}
+</mrow>
+<intertext>So, we need an expression for <m>y'</m>. We use the equation <m>2x+2yy'=0</m> to conclude <m>y'=-\dfrac{x}{y}</m>:</intertext><mrow>
+y''&amp;=-\frac{\left(-\frac{x}{y}\right)^2+1}{y}
+</mrow><mrow>
+&amp;=-\frac{\frac{x^2}{y^2}+1}{y}
+</mrow><mrow>
+&amp;=-\frac{x^2+y^2}{y^3}
+</mrow><mrow>
+&amp;=-\frac{1}{y^3}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose the position of a particle at time <m>t</m> is given by <m>s(t) = \dfrac{e^t}{t^2+1}</m>. Find the acceleration of the particle at time <m>t=1</m>.
+</p></statement>
+<hint><p>
+The acceleration is given by <m>s''(t)</m>.
+</p></hint>
+<answer><p>
+<m>0</m>
+</p></answer>
+<solution><p>
+The question asks for <m>s''(1)</m>. We start our differentiation using the quotient rule:
+<md>
+<mrow>
+s'(t)&amp;=\frac{e^t(t^2+1)-e^t(2t)}{(t^2+1)^2}
+</mrow><mrow>
+&amp;=\frac{e^t(t^2-2t+1)}{(t^2+1)^2}
+</mrow>
+<intertext>Using the quotient rule again,</intertext><mrow>
+s''(t)&amp;=\frac{(t^2+1)^2{\textcolor{blue}{\diff{}{t}\{e^t(t^2-2t+1)\}}}-e^t(t^2-2t+1) {\textcolor{red}{\diff{}{t}\{(t^2+1)^2\}}}}{(t^2+1)^4}
+</mrow><mrow>
+&amp;=\frac{(t^2+1)^2\cdot\left[{\textcolor{blue}{e^t(2t-2)+e^t(t^2-2t+1)}}\right]-
+e^t(t^2-2t+1) \cdot {\textcolor{red}{2(t^2+1)(2t)}}}{(t^2+1)^4}
+</mrow><mrow>
+&amp;=\frac{e^t(t^2+1)^2(t^2-1)-4te^t(t-1)^2(t^2+1)}{(t^2+1)^4}
+</mrow><mrow>
+s''(1)&amp;=0
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate <m>\ds\ddiff{3}{}{x}\{\log(5x^2-12)\}</m>.
+</p></statement>
+<hint><p>
+Remember to use the chain rule.
+</p></hint>
+<answer><p>
+<m>\ds\ddiff{3}{}{x}\{\log(5x^2-12)\}=\frac{100x(5x^2+36)}{(5x^2-12)^3}</m>
+</p></answer>
+<solution><p>
+We differentiate using the chain rule.
+<md>
+<mrow>
+\diff{}{x}\{\log(5x^2-12)\}&amp;=\frac{10x}{5x^2-12}
+</mrow>
+<intertext>Using the quotient rule:</intertext><mrow>
+\ddiff{2}{}{x}\{\log(5x^2-12)\}&amp;=\diff{}{x}\left\{\frac{10x}{5x^2-12}\right\}
+</mrow><mrow>
+&amp;=\frac{(5x^2-12)(10)-10x(10x)}{(5x^2-12)^2}
+</mrow><mrow>
+&amp;=\frac{-10(5x^2+12)}{(5x^2-12)^2}
+</mrow>
+<intertext>Using the quotient rule one last time:</intertext><mrow>
+\ddiff{3}{}{x}\{\log(5x^2-12)\}&amp;=\diff{}{x}\left\{
+\frac{-10(5x^2+12)}{(5x^2-12)^2}
+\right\}
+</mrow><mrow>
+&amp;=\frac{(5x^2-12)^2(-10)(10x)+10(5x^2+12)(2)(5x^2-12)(10x)}{(5x^2-12)^4}
+</mrow><mrow>
+&amp;=\frac{(5x^2-12)(-100x)+(200x)(5x^2+12)}{(5x^2-12)^3}
+</mrow><mrow>
+&amp;=\frac{100x(-5x^2+12+10x^2+24)}{(5x^2-12)^3}
+</mrow><mrow>
+&amp;=\frac{100x(5x^2+36)}{(5x^2-12)^3}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+The height of a particle at time <m>t</m> seconds is given by <m>h(t)=-\cos t</m>. Is the particle speeding up or slowing down at <m>t=1</m>?
+</p></statement>
+<hint><p>
+<m>h'(t)</m> gives the velocity of the particle, and <m>h''(t)</m> gives its acceleration--the rate the velocity is changing.
+</p></hint>
+<answer><p>
+speeding up
+</p></answer>
+<solution><p>
+The velocity of the particle is given by <m>h'(t)=\sin t</m>. Note <m>0 \lt 1 \lt \pi</m>, so <m>h'(1) \gt 0</m>--the particle is rising (moving in the positive direction, in this case <q>up</q>).
+The acceleration of the particle is <m>h''(t)=\cos t</m>. Since <m>0 \lt 1 \lt \frac{\pi}{2}</m>, <m>h''(t) \gt 0</m>, so <m>h'(t)</m> is increasing: the particle is moving up, and it's doing so at an increasing rate. So, the particle is speeding up.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+The height of a particle at time <m>t</m> seconds is given by <m>h(t)=t^3-t^2-5t+10</m>. Is the particle's motion getting faster or slower at <m>t=1</m>?
+</p></statement>
+<hint><p>
+<m>h'(t)</m> gives the velocity of the particle, and <m>h''(t)</m> gives its acceleration--the rate the velocity is changing. Be wary of signs--as in legends, they may be misleading.
+</p></hint>
+<answer><p>
+slower
+</p></answer>
+<solution><p>
+For this problem, remember that velocity has a sign indicating direction, while speed does not.
+</p>
+
+<p>The velocity of the particle is given by <m>h'(t)=3t^2-2t-5</m>. At <m>t=1</m>, the velocity of the particle is <m>-4</m>, so the particle is moving downwards with a speed of 4 units per second. The acceleration of the particle is <m>h''(t)=6t-2</m>, so when <m>t=1</m>, the acceleration is (positive) <m>4</m> units per second per second. That means the velocity (currently <m>-4</m> units per second) is becoming a bigger number--since the velocity is negative, a bigger number is closer to zero, so the speed of the particle is getting smaller. (For instance, a velocity of <m>-3</m> represents a slower motion than a velocity of <m>-4</m>.) So, the particle is  slowing down at <m>t=1</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose a curve is defined implicitly by
+<me>
+x^2+x+y=\sin(xy)</me>
+</p>
+
+<p>What is <m>\ds\ddiff{2}{y}{x}</m> at the point <m>(0,0)</m>?
+</p></statement>
+<hint><p>
+You don't need to solve for <m>y''</m> in general--only when <m>x=y=0</m>. To do this, you <em>also</em> need to find <m>y'</m> at the point <m>(0,0)</m>.
+</p></hint>
+<answer><p>
+<m>-4</m>
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+x^2+x+y&amp;=\sin(xy)
+</mrow>
+<intertext>We differentiate implicitly. For ease of notation, we write <m>y'</m> for <m>\ds\diff{y}{x}</m>.</intertext><mrow>
+2x+1+y'&amp;=\cos(xy)(y+xy')
+</mrow>
+<intertext>We're interested in <m>y''</m>, so we implicitly differentiate again.</intertext><mrow>
+2+y''&amp;=-\sin(xy)(y+xy')^2+\cos(xy)(2y'+xy'')
+</mrow>
+<intertext>We want to know what <m>y''</m> is when <m>x=y=0</m>. Plugging these in yields the following:</intertext><mrow>
+2+y''&amp;=2y'
+</mrow>
+<intertext>So, we need to know what <m>y'</m> is when <m>x=y=0</m>. We can get this from the equation <m>2x+1+y'=\cos(xy)(y+xy')</m>, which becomes
+<m>1+y'=0</m> when <m>x=y=0</m>. So, at the origin, <m>y'=-1</m>, and</intertext><mrow>
+2+y''&amp;=2(-1)
+</mrow><mrow>
+y''&amp;=-4
+</mrow>
+</md>
+Remark: a common mistake is to stop at the equation
+<m>2x+1+y'=\cos(xy)(y+xy')</m>, plug in <m>x=y=0</m>, find <m>y'=-1</m>, and decide <m>y''=\ds\diff{}{x}\{-1\}=0</m>. This is due to a slight sloppiness in the usual notation. When we wrote <m>y'=1</m>, what we meant is that <em>at the point</em> <m>(0,0)</m>, <m>\ds\diff{y}{x}=-1</m>. More properly written: <m>\left.\ds\diff{y}{x}\right|_{x=0, y=0}=-1</m>. This is not the same as saying <m>y'=1</m> everywhere (in which case, indeed, <m>y''</m> would be 0 everywhere).
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Which statements below are true, and which false?
+<ol label="a">
+<li> <m>\ds\ddiff{4}{}{x} \sin x = \sin x</m>
+</li>
+<li> <m>\ds\ddiff{4}{}{x} \cos x = \cos x</m>
+</li>
+<li> <m>\ds\ddiff{4}{}{x} \tan x = \tan x</m>
+</li>
+</ol>
+</p></statement>
+<hint><p>
+To show that two functions are unequal, you can show that one input results in different outputs.
+</p></hint>
+<answer><p>
+(a) true
+</p>
+<p>
+(b) true
+</p>
+<p>
+(c) false
+</p></answer>
+<solution><p>
+For (a) and (b), notice the following:
+<md>
+<mrow>
+\diff{}{x} \sin x &amp;= \cos x
+</mrow><mrow>
+\diff{}{x} \cos x &amp;= -\sin x
+</mrow><mrow>
+\diff{}{x} \{-\sin x\} &amp;= -\cos x
+</mrow><mrow>
+\diff{}{x} \{-\cos x\} &amp;= \sin x
+</mrow><mrow>
+\diff{}{x} \sin x &amp;= \cos x
+</mrow>
+<intertext>The fourth derivative is <m>\sin x</m> is <m>\sin x</m>, and the fourth derivative of <m>\cos x</m> is <m>\cos x</m>, so (a) and (b) are true.</intertext><mrow>
+\diff{}{x}\tan x &amp;=\sec^2 x
+</mrow><mrow>
+\diff{}{x}\sec^2 x &amp;=2\sec x (\sec x \tan x)=2\sec^2x\tan x
+</mrow><mrow>
+\diff{}{x}\{2\sec^2x\tan x\}&amp;=(4\sec x \cdot \sec x \tan x)\tan x+2\sec^2x\sec^2x
+</mrow><mrow>
+&amp;=4\sec^2x\tan^2x+2\sec^4x
+</mrow><mrow>
+\diff{}{x}\{4\sec^2x\tan^2x+2\sec^4x\}&amp;=(8\sec x \cdot \sec x \tan x)\tan^2x+4\sec^2x(2\tan x \cdot\sec^2x)
+</mrow><mrow>&amp;\quad+8\sec^3x\cdot\sec x \tan x
+</mrow><mrow>
+&amp;=8\sec^2x\tan^3x+16\sec^4x\tan x
+</mrow>
+</md>
+So, <m>\ds\ddiff{4}{}{x} \tan x =8\sec^2x\tan^3x+16\sec^4x\tan x</m>. It certainly seems like this is not the same as <m>\tan x</m>, but remember that sometimes trig identities can fool you: <m>\tan^2x+1=\sec^2x</m>, and so on. So, to be absolutely sure that these are not equal, we need to find a value of <m>x</m> so that the output of one is not the same as the output of the other. When <m>x=\frac{\pi}{4}</m>:
+<me>
+8\sec^2x\tan^3x+16\sec^4x\tan x = 8\left({\sqrt{2}}\right)^2(1)^3+16\left({\sqrt{2}}\right)^4(1)=80\neq 1=\tan x.</me>
+</p>
+
+<p>So, (c) is false.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+A function <m>f(x)</m> satisfies <m>f'(x) \lt 0</m> and <m>f''(x) \gt 0</m> over <m>(a,b)</m>. Which of the following curves below might represent <m>y=f(x)</m>?</p>
+
+<sbsgroup valign="middle">
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{2}
+\YExcoord{.5}{a}
+\YExcoord{2.5}{b}
+\draw[thick] plot[domain=.5:2.5](\x,{\x*\x*\x*\x/35+.5});
+\draw (1.5,-1.5) node{(i)};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{2}
+\YExcoord{.5}{a}
+\YExcoord{2.5}{b}
+\draw[thick] plot[domain=.5:2.5](3-\x,{\x*\x*\x*\x/35+.5});
+\draw (1.5,-1.5) node{(ii)};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{2}
+\YExcoord{.5}{a}
+\YExcoord{2.5}{b}
+\draw[thick] plot[domain=.5:2.5](\x,{1.5-\x*\x*\x*\x/35});
+\draw (1.5,-1.5) node{(iii)};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{2}
+\YExcoord{.5}{a}
+\YExcoord{2.5}{b}
+\draw[thick] plot[domain=.5:2.5](3-\x,{1.5-\x*\x*\x*\x/35+.5});
+\draw (1.5,-1.5) node{(iv)};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{2}
+\YExcoord{.5}{a}
+\YExcoord{2.5}{b}
+\draw[thick] plot[domain=.5:2.5](\x,{2.25-\x*.75});
+\draw (1.5,-1.5) node{(v)};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</sbsgroup>
+</statement>
+<hint><p> Only one of the curves could possibly represent <m>y=f(x)</m>.
+</p></hint>
+<answer><p> (ii)
+</p></answer>
+<solution><p>
+Since <m>f'(x) \lt 0</m>, we need a decreasing function. This only applies to (ii), (iii), and  (v). Since <m>f''(x) \gt 0</m>, that means <m>f'(x)</m> is increasing, so the <em>slope</em> of the function must be increasing. In (v), the slope is constant, so <m>f''(x)=0</m>--therefore, it's not (v).
+In (iii), the slope is decreasing, because near <m>a</m> the curve is quite flat (<m>f'(x)</m> near zero) but near <m>b</m> the curve is very steeply decreasing (<m>f'(x)</m> is a large <em>negative</em> number), so (iii) has a negative second derivative. By contrast, in (ii), the line starts out as steeply decreasing (<m>f'(x)</m> is a strongly negative number) and becomes flatter and flatter (<m>f'(x)</m> nears 0), so <m>f'(x)</m> is increasing--in other words, <m>f''(x) \gt 0</m>. So, (ii) is the only curve that has <m>f'(x) \lt 0</m> and <m>f''(x) \gt 0</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>f(x)=2^{x}</m>. What is <m>f^{(n)}(x)</m>, if <m>n</m> is a whole number?
+</p></statement>
+<hint><p>
+Remember <m>\ds\diff{}{x}\{2^x\}=2^x\log2</m>.
+</p></hint>
+<answer><p>
+<m>f^{(n)}=2^x(\log 2)^n</m>
+</p></answer>
+<solution><p>
+We differentiate a few time to find the pattern.
+<md>
+<mrow>
+\diff{}{x}\{2^x\}&amp;=2^x\log 2
+</mrow><mrow>
+\ddiff{2}{}{x}\{2^x\}&amp;=2^x\log2 \cdot \log 2 = 2^x(\log2)^2
+</mrow><mrow>
+\ddiff{3}{}{x}\{2^x\}&amp;=2^x(\log2)^2 \cdot \log 2 = 2^x(\log2)^3
+</mrow>
+<intertext>Every time we differentiate, we multiply the original function by another factor of <m>\log 2</m>. So, the <m>n</m>th derivative is given by:</intertext><mrow>
+\ddiff{n}{}{x}\{2^x\}&amp;=2^x(\log2)^n
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Let <m>f(x)=ax^3+bx^2+cx+d</m>, where <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m> are nonzero constants.
+What is the smallest integer <m>n</m> so that <m>\ds\ddiff{n}{f}{x}=0</m> for all <m>x</m>?
+</p></statement>
+<hint><p>
+Differentiate a few times until you get zero, remembering that <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m> are all constants.
+</p></hint>
+<answer><p>
+ <m>n=4</m>
+</p></answer>
+<solution><p>
+We differentiate using the power rule.
+<md>
+<mrow>
+\diff{f}{x}&amp;=3ax^2+2bx+c
+</mrow><mrow>
+\ddiff{2}{f}{x}&amp;=6ax+2b
+</mrow><mrow>
+\ddiff{3}{f}{x}&amp;=6a
+</mrow><mrow>
+\ddiff{4}{f}{x}&amp;=0
+</mrow>
+</md>
+In the above work, remember that <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m> are all constants. Since they are nonzero constants, <m>\ds\ddiff{3}{f}{x} =6a\neq 0</m>. So, the fourth derivative is the first derivative to be identically zero: <m>n=4</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1999H</fromexam></title>
+<statement><p>
+<me>
+f(x)=e^{x+x^2}\qquad \qquad \qquad h(x)=1+x+\frac{3}{2}x^2
+</me>
+<ol label="a">
+<li xml:id="s2_14ineq1"> Find the first and second derivatives of both functions
+</li>
+<li xml:id="s2_14ineq2"> Evaluate both functions and their first and second derivatives at 0.
+</li>
+<li xml:id="s2_14ineq3"> Show that for all <m>x \gt 0</m>, <m>f(x) \gt h(x)</m>.
+</li>
+</ol>
+Remark: for some applications, we only need to know that a function is <q>big enough.</q> Since <m>f(x)</m> is a difficult function to evaluate, it may be useful to know that it is bigger than <m>h(x)</m> when <m>x</m> is positive.
+</p></statement>
+<hint><p> Use a similar method to Question<nbsp/><xref ref="s2_9ineq"/>, Section<nbsp/><xref ref="sec_chain_rule"/>.
+</p></hint>
+<answer><p>
+<ul>
+<li><xref ref="s2_14ineq1"/> <m>f'(x)=(1+2x)e^{x+x^2}</m>  <m>f''(x)=(4x^2+4x+3)e^{x+x^2}</m>
+ <m>h'(x)=1+3x</m>  <m>h''(x)=3</m></li>
+<li><xref ref="s2_14ineq2"/> <m>f(0)=h(0)=1</m>;  <m>f'(0)=h'(0)=1</m>;  <m>f''(0)=h''(0)=3</m></li>
+<li><xref ref="s2_14ineq3"/> <m>f</m> and <m>h</m> <q>start at the same place</q>, since <m>f(0)=h(0)</m>. Also <m>f'(0)=h'(0)</m>, and <m>f''(x)=(4x^2+4x+3)e^{x+x^2}  \gt  3e^{x+x^2} \gt 3=h''(x)</m> when <m>x \gt 0</m>. Since <m>f'(0)=h'(0)</m>, and since <m>f'</m> grows faster than <m>h'</m> for positive <m>x</m>, we conclude <m>f'(x) \gt h'(x)</m> for all positive <m>x</m>. Now we can conclude that (since <m>f(0)=h(0)</m> and <m>f</m> grows faster than <m>h</m> when <m>x \gt 0</m>) also <m>f(x) \gt h(x)</m> for all positive <m>x</m>.
+</li>
+</ul>
+</p></answer>
+<solution><p>
+<xref ref="s2_14ineq1"/>
+Using the chain rule for <m>f(x)</m>:
+<md>
+<mrow>
+f'(x)&amp;=(1+2x)e^{x+x^2}
+</mrow><mrow>
+f''(x)&amp;=(1+2x)(1+2x)e^{x+x^2}+(2)e^{x+x^2}=(4x^2+4x+3)e^{x+x^2}
+</mrow><mrow>
+h'(x)&amp;=1+3x
+</mrow><mrow>
+h''(x)&amp;=3
+</mrow>
+</md>
+</p>
+<p>
+<ul>
+<li><xref ref="s2_14ineq2"/> <m>f(0)=h(0)=1</m>;  <m>f'(0)=h'(0)=1</m>;  <m>f''(0)=h''(0)=3</m></li>
+<li><xref ref="s2_14ineq3"/> <m>f</m> and <m>h</m> <q>start at the same place</q>, since <m>f(0)=h(0)</m>. If it were clear that <m>f'(x)</m> were greater than <m>h'(x)</m> for <m>x \gt 0</m>, then we  would know that <m>f</m> grows faster than <m>h</m>, so we could conclude that <m>f(x) \gt h(x)</m>, as desired. Unfortunately, it is not obvious whether <m>(1+2x)e^{x+x^2}</m> is always greater than <m>1+3x</m> for positive <m>x</m>. So, we look to the second derivative. <m>f'(0)=h'(0)</m>, and <m>f''(x)=(4x^2+4x+3)e^{x+x^2}  \gt  3e^{x+x^2} \gt 3=h''(x)</m> when <m>x \gt 0</m>. Since <m>f'(0)=h'(0)</m>, and since <m>f'</m> grows faster than <m>h'</m> for positive <m>x</m>, we conclude <m>f'(x) \gt h'(x)</m> for all positive <m>x</m>. Now we can conclude that (since <m>f(0)=h(0)</m> and <m>f</m> grows faster than <m>h</m> when <m>x \gt 0</m>) also <m>f(x) \gt h(x)</m> for all positive <m>x</m>.
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997D</fromexam></title>
+<statement><p>
+ The equation <m>x^3y+y^3=10x</m> defines <m>y</m> implicitly as a function
+of <m>x</m> near the point <m>(1,2)</m>.
+<ol label="a">
+<li xml:id="s2_11p2_1"> Compute <m>y'</m> at this point.
+</li>
+<li xml:id="s2_11p2_2"> It can be shown that <m>y''</m> is negative when <m>x=1</m>. Use this
+fact and your answer to <xref ref="s2_11p2_1"/> to make a sketch showing the relationship of
+the curve to its tangent line at <m>(1,2)</m>.
+</li>
+</ol>
+</p></statement>
+<hint><p> For <xref ref="s2_11p2_2"/>, you know a point where the curve and tangent line intersect, and you know what the tangent line looks like. What do the derivatives tell you about the shape of the curve?
+</p></hint>
+<answer><p>
+<ol label="a">
+<li> <m>y'(1)=\dfrac{4}{13}</m>
+</li>
+<li><sidebyside>
+<image source="problems/figs/graphE3"/>
+</sidebyside>
+</li>
+</ol>
+</p></answer>
+<solution><p>
+<ol label="a">
+<li>
+We differentiate implicitly.
+<md>
+<mrow>
+x^3y(x)+y(x)^3&amp;=10 x
+</mrow><mrow>
+3x^2y(x)+x^3y'(x)+3y(x)^2y'(x)&amp;=10
+</mrow>
+<intertext>Subbing in <m>x=1</m> and <m>y(1)=2</m> gives</intertext><mrow>
+(3)(1)( 2)+(1)y'(1)+(3)(4) y'(1)&amp;=10
+</mrow><mrow>
+13y'(1)&amp;=4
+</mrow><mrow>
+y'(1)&amp;=\frac{4}{13}
+</mrow>
+</md>
+</li>
+<li><p>
+ From part <xref ref="s2_11p2_1"/>, the slope of the curve at <m>x=1,\ y=2</m> is <m>\dfrac{4}{13}</m>,
+so the curve is increasing, but fairly slowly. The angle of the tangent
+line is <m>\tan^{-1}\left(\frac{4}{13}\right)\approx 17^\circ</m>. We are also told that <m>y''(1) \lt 0</m>.
+So the slope of the curve is decreasing as <m>x</m> passes through 1. That is, the line is more steeply increasing to the left of <m>x=1</m>, and its slope is decreasing (getting less sleep, then possibly the slope even becomes negative) as we move past <m>x=1</m>.</p>
+
+<sidebyside>
+<image source="problems/figs/graphE3"/>
+</sidebyside>
+</li>
+</ol>
+</p></solution>
+</exercise>
+
+<exercise xml:id="s2_14expprod">
+<statement><p>
+Let <m>g(x)=f(x)e^x</m>.
+In Question<nbsp/><xref ref="s2_7expprod"/>, Section<nbsp/><xref ref="sec_exp_func"/>, we learned that <m>g'(x)=[f(x)+f'(x)]e^x</m>.
+<ol label="a">
+<li xml:id="s2_14expprod1"> What is <m>g''(x)</m>?
+</li>
+<li xml:id="s2_14expprod2"> What is <m>g'''(x)</m>?
+</li>
+<li xml:id="s2_14expprod3"> Based on your answers above, guess a formula for <m>g^{(4)}(x)</m>. Check it by differentiating.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Review Pascal's Triangle.
+</p></hint>
+<answer><p>
+<ul>
+<li><xref ref="s2_14expprod1"/> <m>g''(x)=[f(x)+2f'(x)+f''(x)]e^x</m></li>
+<li><xref ref="s2_14expprod2"/>  <m>g'''(x)=[f(x)+3f'(x)+3f''(x)+f'''(x)]e^x</m></li>
+<li><xref ref="s2_14expprod3"/> <m>g^{(4)}(x)=[f(x)+4f'(x)+6f''(x)+4f'''(x)+f^{(4)}(x)]e^x</m>
+</li>
+</ul>
+</p></answer>
+<solution><p>
+<xref ref="s2_14expprod1"/> Using the product rule, <me>
+g''(x)=[f'(x)+f''(x)]e^x+[f(x)+f'(x)]e^x=[f(x)+2f'(x)+f''(x)]e^x</me>
+</p>
+
+<p><xref ref="s2_14expprod2"/>  Using the product rule and our answer from<nbsp/><xref ref="s2_14expprod1"/>,
+<md>
+<mrow>
+g'''(x)&amp;=[f'(x)+2f''(x)+f'''(x)]e^x+[f(x)+2f'(x)+f''(x)]e^x
+</mrow><mrow>
+&amp;=[f(x)+3f'(x)+3f''(x)+f'''(x)]e^x
+</mrow>
+</md>
+</p>
+
+<p><xref ref="s2_14expprod3"/> We notice that the coefficients of the derivatives of <m>f</m> correspond to the entries in the rows of Pascal's Triangle.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,3) node{1};
+\draw (-.5,2.5) node{1}; \draw (.5,2.5) node{1};
+\draw (-1,2) node{1}; \draw (1,2) node{1}; \draw (0,2) node{2};
+\draw (-1.5,1.5) node{1}; \draw (1.5,1.5) node{1}; \draw (-.5,1.5) node{3}; \draw (.5,1.5) node{3};
+\draw (-2,1) node{1}; \draw (2,1) node{1}; \draw (-1,1) node{4}; \draw (1,1) node{4}; \draw (0,1) node{6};
+\draw (0,0) node{Pascal's Triangle};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>
+<ul>
+<li> In the first derivative of <m>g</m>, the coefficients of <m>f</m> and <m>f'</m> correspond to the entries in the second row of Pascal's Triangle.
+</li>
+<li> In the second derivative of <m>g</m>, the coefficients of <m>f</m>, <m>f'</m>, and <m>f''</m> correspond to the entries in the third row of Pascal's Triangle.
+</li>
+<li> In the third derivative of <m>g</m>, the coefficients of <m>f</m>, <m>f'</m>, <m>f''</m>, and <m>f'''</m> correspond to the entries in the fourth row of Pascal's Triangle.
+</li>
+<li> We guess that, in the fourth derivative of <m>g</m>, the coefficients of <m>f</m>, <m>f'</m>, <m>f''</m>, <m>f'''</m>, and <m>f^{(4)}</m> will correspond to the entries in the fifth row of Pascal's Triangle.
+</li>
+</ul>
+That is, we guess
+<me>
+g^{(4)}(x)=[f(x)+4f'(x)+6f''(x)+4f'''(x)+f^{(4)}(x)]e^x</me>
+</p>
+
+<p>This is verified by differentiating our answer from <xref ref="s2_14expprod1"/> using the product rule:
+<md>
+<mrow>
+g'''(x)&amp;=[f(x)+3f'(x)+3f''(x)+f'''(x)]e^x
+</mrow><mrow>
+g^{(4)}(x)&amp;=[f'(x)+3f''(x)+3f'''(x)+f^{(4)}(x)]e^x+[f(x)+3f'(x)+3f''(x)+f'''(x)]e^x
+</mrow><mrow>
+&amp;=[f(x)+4f'(x)+6f''(x)+4f'''(x)+f^{(4)}(x)]e^x.
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise xml:id="s2_14rollemultipleroots">
+<statement><p>
+Suppose <m>f(x)</m> is a function whose first <m>n</m> derivatives exist over all real numbers, and <m>f^{(n)}(x)</m> has precisely <m>m</m> roots. What is the maximum number of roots that <m>f(x)</m> may have?
+</p></statement>
+<hint><p>
+Rolle's Theorem relates the roots of a function to the roots of its derivative. So, the fifth derivative tells us something about the fourth, the fourth derivative tells us something about the third, and so on.
+</p></hint>
+<answer><p>
+<m>m+n</m>
+</p></answer>
+<solution><p>
+Since <m>f(x)</m> is differentiable over all real numbers, it is also continuous over all real numbers. Similarly, <m>f'(x)</m> is differentiable over all real numbers, so it is also continuous over all real numbers, and so on for the first <m>n</m> derivatives of <m>f(x)</m>.
+</p>
+
+<p>Rolle's Theorem tells us that if <m>a</m> and <m>b</m> are distinct roots of a function <m>g</m>, then <m>g'(x)=0</m> for some <m>c</m> in <m>(a,b)</m>. That is, <m>g'</m> has a root strictly between <m>a</m> and <m>b</m>. Expanding this idea, if <m>g</m> has <m>m+1</m> distinct roots, then <m>g'</m> must have at least <m>m</m> distinct roots, as in the sketch below.
+</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick,  \lt - \gt ] (0,0)--(10,0);
+\color{blue}
+\draw (1,.2)--(1,-.2) node[below](a1){$a_1$};
+\draw (3,.2)--(3,-.2) node[below](a2){$a_2$};
+\draw (5,.2)--(5,-.2) node[below](a3){$a_3$};
+\draw (9,.2)--(9,-.2) node[below](a4){$a_{m+1}$};
+\draw (3,-3) node(b){roots of $g(x)$};
+\foreach \x in {1,2,3,4} {\draw[dashed, - \gt ] (b)--(a\x);}
+\color{red}
+\draw (2,-.2)--(2,.2) node[above](c1){$c_1$};
+\draw (4,-.2)--(4,.2) node[above](c2){$c_2$};
+\draw (8,-.2)--(8,.2) node[above](c3){$c_{m}$};
+\draw (3,3) node(c){roots of $g'(x)$};
+\foreach \x in {1,2,3} {\draw[dashed, - \gt ] (c)--(c\x);}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p> So, if <m>f^{(n)}(x)</m> has only <m>m</m> roots, then <m>f^{(n-1)}(x)</m> has at most <m>m+1</m> roots. Similarly, since <m>f^{(n-1)}(x)</m> has at most <m>m+1</m> roots, <m>f^{(n-2)}(x)</m> has at most <m>m+2</m> roots. Continuing in this way, we see <m>f(x)=f^{(n-n)}(x)</m> has at most <m>m+n</m> distinct roots.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+How many roots does the function <m>f(x)=(x+1)\log(x+1)+\sin x - x^2</m> have?
+</p></statement>
+<hint><p>
+You'll want to use Rolle's Theorem, but the first derivative won't be very tractable--use  the idea behind Question<nbsp/><xref ref="s2_14rollemultipleroots"/>.
+</p></hint>
+<answer><p>
+<m>2</m>
+</p></answer>
+<solution><p>
+<ul>
+<li> Let's begin by noticing that the domain of <m>f(x)</m> is <m>(-1,\infty)</m>.
+</li>
+<li> By inspection, <m>f(0)=0</m>, so <m>f(x)</m> has at least one root.
+</li>
+<li> If <m>x\in(-1,0)</m>, then <m>(x+1)</m> is positive, <m>\log(x+1)</m> is negative,  <m>\sin(x)</m> is negative, and <m>-x^2</m> is negative. Therefore, if <m>x \lt 0</m> is in the domain of <m>f</m>, then <m>f(x) \lt 0</m>. So, <m>f(x)</m> has no negative roots. We focus our attention on the case <m>x \gt 0</m>.
+</li>
+<li> <m>f'(x)=1-2x+\log(x+1)+\cos x</m>.  We would like to know how many positive roots <m>f'(x)</m> has, but it isn't obvious. So, let's differentiate again.
+</li>
+<li> <m>f''(x)=-2+\frac{1}{x+1}-\sin x</m>. When <m>x \gt 0</m>, <m>\frac{1}{x+1} \lt 1</m>, so <m>f''(x)  \lt -1-\sin(x) \leq 0</m>, so <m>f''(x)</m> has <em>no positive roots</em>. Since <m>f'(x)</m> is continuous and differentiable over <m>(0,\infty)</m>, and since <m>f''(x) \neq 0</m> for all <m>x \in (0, \infty)</m>, by Rolle's Theorem, <m>f'(x)</m> has at most one root in <m>[0,\infty)</m>.
+</li>
+<li> Since <m>f(x)</m> is continuous and differentiable
+over <m>[0,\infty)</m>, and <m>f'(x)</m> has at most one root in <m>(0,\infty)</m>, by Rolle's Theorem <m>f(x)</m> has at most two distinct roots in <m>[0,\infty)</m>.
+(Otherwise, <m>f(a)=f(b)=f(c)=0</m> for some values <m>0\le a \lt b \lt c</m>, so <m>f'(d)=f'(e)=0</m> for some <m>d\in(a,b)</m> and some <m>e \in (b,c)</m>, but since <m>f'(x)</m> has at most one root, this is impossible.)
+</li>
+<li><p> We know <m>f(0)=0</m>, so the remaining question is whether or not <m>f(x)</m> has a second root (which would have to be positive). As usual, we can show another root exists using the intermediate value theorem. We see that for large values of <m>x</m>, <m>f(x)</m> is negative, for example:
+<me>
+f(4)=5\log 5+\sin(4)-(4)^2  \lt   5\log(e^2) + 1 -16 =11-16 \lt 0</me>
+</p>
+
+<p>For positive values of <m>x</m> closer to zero, we hope to find a positive value of <m>f(x)</m>.
+However, it's quite difficult to get a number <m>c</m> that obviously gives <m>f(c) \gt 0</m>.
+It suffices to observe that <m>f(0)=0</m> and <m>f'(0)=2 \gt 0</m>. From the definition of the derivative, we can conclude <m>f(x) \gt 0</m> for some <m>x \gt 0</m>. (If it is not true that <m>f(x) \gt 0</m> for some <m>x \gt 0</m>, then <m>f(x)\le 0</m>
+      for all <m>x \gt 0</m>. The definition of the derivative tells us that [since <m>f'(0)</m> exists]
+ <m>f'(0)=\ds\lim_{h \to 0^+}\frac{f(h)-f(0)}{h}=\ds\lim_{h \to 0^+}\frac{f(h)}{h}</m>; the denominator is positive, so if the numerator were always less than or equal to zero, the limit would be less than or equal to zero as well. However, the derivative is positive, so <m>f(x) \gt 0</m> for some <m>x \gt 0</m>.)
+Therefore, <m>f(x)</m> has a second root, so <m>f(x)</m> has precisely two roots.
+</p>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2007H</fromexam></title>
+<statement><p>
+Let <m>f(x) = x|x|</m>.
+<ol label="a">
+<li xml:id="s2_14_2007_1"> Show that
+<m>f(x)</m> is differentiable at <m>x = 0</m>, and find <m>f'(0)</m>.
+</li>
+<li xml:id="s2_14_2007_2"> Find the second derivative of <m>f(x)</m>. Explicitly state,
+with justification, the point(s) at which <m>f''(x)</m> does not exist, if any.
+</li>
+</ol>
+</p></statement>
+<hint><p> You can re-write this function as a piecewise function, with branches <m>x \ge 0</m> and <m>x \lt 0</m>. To figure out the derivatives at <m>x = 0</m>, use
+          the definition of a derivative.
+</p></hint>
+<answer><p>
+<xref ref="s2_14_2007_1"/>
+In order to make <m>f(x)</m> a little more tractable, let's change the format. Since
+<m>|x|=\left\{\begin{array}{rl}
+x&amp;x \geq 0\\
+-x&amp;x \lt 0
+\end{array}\right.</m>, then:
+<me>
+f(x)=\left\{\begin{array}{rl}
+-x^2&amp;x \lt 0\\
+x^2&amp;x\ge 0.\end{array}
+\right. </me>
+</p>
+
+<p>Now, we turn to the definition of the derivative to figure out whether <m>f'(0)</m> exists.
+<md>
+<mrow>
+f'(0)&amp;=\lim_{h \to 0} \frac{f(0+h)-f(0)}{h}=\lim_{h \to 0}\frac{f(h)-0}{h} =\lim_{h \to 0}\frac{f(h)}{h}\qquad\mbox{if it exists.}
+</mrow>
+<intertext>Since <m>f</m> looks different to the left and right of 0, in order to evaluate this limit, we look at the corresponding one-sided limits. Note that when <m>h</m> approaches 0 from the right, <m>h \gt 0</m> so <m>f(h)=h^2</m>.
+By contrast, when <m>h</m> approaches 0 from the left, <m>h \lt 0</m> so <m>f(h)=-h^2</m>.</intertext><mrow>
+&amp; \lim_{h \to 0^+} \frac{f(h)}{h}=\lim_{h \to 0^+}\frac{h^2}{h}=\lim_{h \to 0^+}h=0
+</mrow><mrow>
+&amp; \lim_{h \to 0^-} \frac{f(h)}{h}=\lim_{h \to 0^-}\frac{-h^2}{h}=\lim_{h \to 0^-}-h=0
+</mrow>
+<intertext>Since both one-sided limits exist and are equal to 0,</intertext><mrow>
+&amp; \lim_{h \to 0} \frac{f(0+h)-f(0)}{h}=0
+</mrow>
+</md>
+and so <m>f</m> is differentiable at <m>x=0</m> and <m>f'(0)=0</m>.
+</p>
+
+<p><xref ref="s2_14_2007_2"/>
+From <xref ref="s2_14_2007_1"/>, <m>f'(0)=0</m> and
+<me>
+f(x)=\left\{\begin{array}{rl}
+-x^2&amp;x \lt 0\\
+x^2&amp;x\ge 0.\end{array}
+\right. </me>
+</p>
+
+<p>So,
+<me>
+f'(x)=\left\{\begin{array}{rl}
+-2x&amp;x \lt 0\\
+2x&amp;x\ge 0.\end{array}
+\right. </me>
+</p>
+
+<p>Then, we know the second derivative of <m>f</m> everywhere except at <m>x=0</m>:
+<me>
+f''(x)=\left\{\begin{array}{cc}
+-2&amp;x \lt 0\\
+??&amp;x=0\\
+2&amp;x \gt  0.\end{array}
+\right. </me>
+</p>
+
+<p>So, whenever <m>x \neq 0</m>, <m>f''(x)</m> exists. To investigate the differentiability of <m>f'(x)</m> when <m>x=0</m>, again we turn to the definition of a derivative. If
+<md>
+<mrow>
+&amp;\lim_{h \to 0}\frac{f'(0+h)-f'(0)}{h}
+</mrow>
+<intertext>exists, then <m>f''(0)</m> exists.</intertext><mrow>
+\lim_{h \to 0}\frac{f'(0+h)-f'(0)}{h}&amp;=\lim_{h \to 0} \frac{f'(h)-0}{h}=\lim_{h \to 0}\frac{f'(h)}{h}
+</mrow>
+<intertext>Since <m>f(h)</m> behaves differently when <m>h</m> is greater than or less than zero, we look at the one-sided limits.</intertext><mrow>
+\lim_{h \to 0^+}\frac{f'(h)}{h}&amp;=\lim_{h \to 0^+}\frac{2h}{h}=2
+</mrow><mrow>
+\lim_{h \to 0^-}\frac{f'(h)}{h}&amp;=\lim_{h \to 0^-}\frac{-2h}{h}=-2
+</mrow>
+<intertext>Since the one-sided limits do not agree,</intertext><mrow>
+\lim_{h \to 0}\frac{f'(0+h)-f'(0)}{h}&amp;=DNE
+</mrow>
+</md>
+So, <m>f''(0)</m> does not exist. Now we have a complete picture of <m>f''(x)</m>:
+<me>
+f''(x)=\left\{\begin{array}{ll}
+-2&amp;x \lt 0\\
+DNE&amp;x=0\\
+2&amp;x \gt 0.
+\end{array}\right.
+</me>
+</p>
+</answer>
+<solution><p>
+<xref ref="s2_14_2007_1"/>
+In order to make <m>f(x)</m> a little more tractable, let's change the format. Since
+<m>|x|=\left\{\begin{array}{rl}
+x&amp;x \geq 0\\
+-x&amp;x \lt 0
+\end{array}\right.</m>, then:
+<me>
+f(x)=\left\{\begin{array}{rl}
+-x^2&amp;x \lt 0\\
+x^2&amp;x\ge 0.\end{array}
+\right. </me>
+</p>
+
+<p>Now, we turn to the definition of the derivative to figure out whether <m>f'(0)</m> exists.
+<md>
+<mrow>
+f'(0)&amp;=\lim_{h \to 0} \frac{f(0+h)-f(0)}{h}=\lim_{h \to 0}\frac{f(h)-0}{h} =\lim_{h \to 0}\frac{f(h)}{h}\qquad\mbox{if it exists.}
+</mrow>
+<intertext>Since <m>f</m> looks different to the left and right of 0, in order to evaluate this limit, we look at the corresponding one-sided limits. Note that when <m>h</m> approaches 0 from the right, <m>h \gt 0</m> so <m>f(h)=h^2</m>.
+By contrast, when <m>h</m> approaches 0 from the left, <m>h \lt 0</m> so <m>f(h)=-h^2</m>.</intertext><mrow>
+&amp;\;\; \lim_{h \to 0^+} \frac{f(h)}{h}=\lim_{h \to 0^+}\frac{h^2}{h}=\lim_{h \to 0^+}h=0
+</mrow><mrow>
+&amp;\;\; \lim_{h \to 0^-} \frac{f(h)}{h}=\lim_{h \to 0^-}\frac{-h^2}{h}=\lim_{h \to 0^-}-h=0
+</mrow>
+<intertext>Since both one-sided limits exist and are equal to 0,</intertext><mrow>
+&amp;\;\; \lim_{h \to 0} \frac{f(0+h)-f(0)}{h}=0
+</mrow>
+</md>
+and so <m>f</m> is differentiable at <m>x=0</m> and <m>f'(0)=0</m>.
+</p>
+
+<p><xref ref="s2_14_2007_2"/>
+From <xref ref="s2_14_2007_1"/>, <m>f'(0)=0</m> and
+<me>
+f(x)=\left\{\begin{array}{rl}
+-x^2&amp;x \lt 0\\
+x^2&amp;x\ge 0.\end{array}
+\right. </me>
+</p>
+
+<p>So,
+<me>
+f'(x)=\left\{\begin{array}{rl}
+-2x&amp;x \lt 0\\
+2x&amp;x\ge 0.\end{array}
+\right. </me>
+</p>
+
+<p>Then, we know the second derivative of <m>f</m> everywhere except at <m>x=0</m>:
+<me>
+f''(x)=\left\{\begin{array}{cc}
+-2&amp;x \lt 0\\
+??&amp;x=0\\
+2&amp;x \gt  0.\end{array}
+\right. </me>
+</p>
+
+<p>So, whenever <m>x \neq 0</m>, <m>f''(x)</m> exists. To investigate the differentiability of <m>f'(x)</m> when <m>x=0</m>, again we turn to the definition of a derivative. If
+<md>
+<mrow>
+&amp;\lim_{h \to 0}\frac{f'(0+h)-f'(0)}{h}
+</mrow>
+<intertext>exists, then <m>f''(0)</m> exists.</intertext><mrow>
+\lim_{h \to 0}\frac{f'(0+h)-f'(0)}{h}&amp;=\lim_{h \to 0} \frac{f'(h)-0}{h}=\lim_{h \to 0}\frac{f'(h)}{h}
+</mrow>
+<intertext>Since <m>f(h)</m> behaves differently when <m>h</m> is greater than or less than zero, we look at the one-sided limits.</intertext><mrow>
+\lim_{h \to 0^+}\frac{f'(h)}{h}&amp;=\lim_{h \to 0^+}\frac{2h}{h}=2
+</mrow><mrow>
+\lim_{h \to 0^-}\frac{f'(h)}{h}&amp;=\lim_{h \to 0^-}\frac{-2h}{h}=-2
+</mrow>
+<intertext>Since the one-sided limits do not agree,</intertext><mrow>
+\lim_{h \to 0}\frac{f'(0+h)-f'(0)}{h}&amp;=DNE
+</mrow>
+</md>
+So, <m>f''(0)</m> does not exist. Now we have a complete picture of <m>f''(x)</m>:
+<me>
+f''(x)=\left\{\begin{array}{ll}
+-2&amp;x \lt 0\\
+DNE&amp;x=0\\
+2&amp;x \gt 0.
+\end{array}\right.
+</me>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+</exercises>

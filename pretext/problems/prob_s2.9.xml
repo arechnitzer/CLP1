@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose the amount of kelp in a harbour depends on the number of urchins. Urchins eat kelp: when there are more urchins, there is less kelp, and when there are fewer urchins, there is more kelp. Suppose further that the number of urchins in the harbour depends on the number of otters, who find urchins extremely tasty: the more otters there are, the fewer urchins there are.
+</p>
+
+<p>Let <m>O</m>, <m>U</m>, and <m>K</m> be the populations of otters, urchins, and kelp, respectively.
+<ol label="a">
+<li xml:id="s2_9otter1"> Is <m>\diff{K}{U}</m> positive or negative?
+</li>
+<li xml:id="s2_9otter2"> Is <m>\diff{U}{O}</m> positive or negative?
+</li>
+<li xml:id="s2_9otter3"> Is <m>\diff{K}{O}</m> positive or negative?
+</li>
+</ol>
+Remark: An urchin barren is an area where unchecked sea urchin grazing has decimated the kelp population, which in turn causes the other species that shelter in the kelp forests to leave. Introducing otters to urchin barrens is one intervention to increase biodiversity. A short video with a more complex view of otters and urchins in Canadian waters is available on YouTube: <url href="https://youtu.be/ASJ82wyHisE" />
+</p></statement>
+<hint><p>
+For  parts<nbsp/><xref ref="s2_9otter1"/> and <xref ref="s2_9otter2"/>, remember the definition of a derivative: <me>
+\ds\diff{K}{U}=\ds\lim_{h \rightarrow 0}\dfrac{K(U+h)-K(U)}{h}.</me>
+ When <m>h</m> is positive, <m>U+h</m> is an increased urchin population; what is the sign of <m>K(U+h)-K(U)</m>?
+</p>
+
+<p>For part<nbsp/><xref ref="s2_9otter3"/>, use the chain rule!
+</p></hint>
+<answer><p>
+<xref ref="s2_9otter1"/> <m>\diff{K}{U}</m> is negative
+</p>
+<p>
+<xref ref="s2_9otter2"/> <m>\diff{U}{O}</m> is negative
+</p>
+<p>
+<xref ref="s2_9otter3"/> <m>\diff{K}{O}</m> is positive
+</p></answer>
+<solution><p>
+<xref ref="s2_9otter1"/>
+More urchins means less kelp, and fewer urchins means more kelp. This means kelp and urchins are negatively correlated, so <m>\diff{K}{U} \lt 0</m>.
+</p>
+
+<p>If you aren't sure why that is, we give a more detailed explanation here, using the definition of the derivative.
+When <m>h</m> is a positive number, <m>U+h</m> is greater than <m>U</m>, so <m>K(U+h)</m> is less than <m>U</m>, hence <m>K(U+h)-K(U) \lt 0</m>.
+ Therefore:
+<me>
+\ds\lim_{h \rightarrow 0^+}\dfrac{K(U+h)-K(U)}{h} = \dfrac{\mbox{negative}}{\mbox{positive}} \lt 0.</me>
+</p>
+
+<p>Similarly, when <m>h</m> is negative, <m>U+h</m> is less than <m>U</m>, so <m>K(U+h)-K(U) \gt 0</m>, and
+<me>
+\ds\lim_{h \rightarrow 0^-}\dfrac{K(U+h)-K(U)}{h}= \dfrac{\mbox{positive}}{\mbox{negative}} \lt 0.</me>
+</p>
+
+<p>Therefore:
+<me>
+\ds\diff{K}{U}=\ds\lim_{h \rightarrow 0}\dfrac{K(U+h)-K(U)}{h} \lt 0.</me>
+</p>
+
+<p><xref ref="s2_9otter2"/> More otters means fewer urchins, and fewer otters means more urchins. So, otters and urchins are negatively correlated: <m>\diff{U}{O} \lt 0</m>.
+</p>
+
+<p><xref ref="s2_9otter3"/> Using the chain rule, <m>\diff{K}{O} = \diff{K}{U}\cdot\diff{U}{O}</m>. Parts <xref ref="s2_9otter1"/> and <xref ref="s2_9otter2"/> tell us both these derivatives are negative, so their product is positive: <m>\diff{K}{O} \gt 0</m>.
+</p>
+
+<p>We can also see that <m>\diff{K}{O} \gt 0</m> by thinking about the relationships as described. When the otter population increases, the urchin population decreases, so the kelp population increases. That means when the otter population increases, the kelp population also increases, so kelp and otters are positively correlated. The chain rule is a formal version of this kind of reasoning.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose <m>A, B, C, D</m> and <m>E</m> are functions describing an interrelated system, with the following signs: <m>\diff{A}{B} \gt 0</m>, <m>\diff{B}{C} \gt 0</m>, <m>\diff{C}{D} \lt 0</m>, and <m>\diff{D}{E} \gt 0</m>. Is <m>\diff{A}{E}</m> positive or negative?
+</p></statement>
+<hint><p>
+Remember that Leibniz notation suggests fractional cancellation.
+</p></hint>
+<answer><p>
+negative
+</p></answer>
+<solution><p>
+<me>
+\diff{A}{E}=\diff{A}{B}\cdot\diff{B}{C}\cdot\diff{C}{D}\cdot\diff{D}{E} \lt 0</me>
+</p>
+
+<p>since we multiply three positive quantities and one negative.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Evaluate the derivative of <m>f(x)=\cos(5x+3)</m>.
+</p></statement>
+<hint><p>
+If <m>g(x)=\cos x</m> and <m>h(x)=5x+3</m>, then <m>f(x)=g(h(x))</m>. So we apply the chain rule, with <q>outside</q> function <m>\cos x</m> and <q>inside</q> function <m>5x+3</m>.
+</p></hint>
+<answer><p>
+<m>-5\sin(5x+3)</m>
+</p></answer>
+<solution><p>
+Applying the chain rule:
+<md>
+<mrow>
+\diff{}{x}\{\cos(5x+3)\}&amp;=-\sin(\textcolor{red}{5x+3})\cdot\diff{}{x}\{\textcolor{red}{5x+3}\}
+</mrow><mrow>
+&amp;=-\sin(5x+3)\cdot 5
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate the derivative of <m>f(x)=\left({x^2+2}\right)^5</m>.
+</p></statement>
+<hint><p>
+You can expand this into a polynomial, but it's easier to use the chain rule. If <m>g(x)=x^5</m>, and <m>h(x)=x^2+2</m>, then <m>f(x)=g(h(x))</m>.
+</p></hint>
+<answer><p>
+<m>10x(x^2+2)^4</m>
+</p></answer>
+<solution><p>
+Using the chain rule,
+<md>
+<mrow>
+f'(x)&amp;=\diff{}{x}\left\{\left({x^2+2}\right)^5\right\}
+</mrow><mrow>
+&amp;=5\left(\textcolor{red}{x^2+2}\right)^4\cdot\diff{}{x}\{\textcolor{red}{x^2+2}\}
+</mrow><mrow>
+&amp;=5(x^2+2)^4 \cdot 2x
+</mrow><mrow>
+&amp;=10x(x^2+2)^4
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Evaluate the derivative of <m>T(k)=\left({4k^4+2k^2+1}\right)^{17}</m>.
+</p></statement>
+<hint><p>
+You can expand this into a polynomial, but it's easier to use the chain rule. If <m>g(k)=k^{17}</m>, and <m>h(k)=4k^4+2k^2+1</m>, then <m>T(k)=g(h(k))</m>.
+</p></hint>
+<answer><p>
+<m>17(4k^4+2k^2+1)^{16}\cdot(16k^3+4k)</m>
+</p></answer>
+<solution><p>
+Using the chain rule,
+<md>
+<mrow>
+T'(k)&amp;=\diff{}{k}\left\{\left({4k^4+2k^2+1}\right)^{17}\right\}
+</mrow><mrow>
+&amp;=17(\textcolor{red}{4k^4+2k^2+1})^{16}\cdot\diff{}{k}\{\textcolor{red}{4k^4+2k^2+1}\}
+</mrow><mrow>
+&amp;=17(4k^4+2k^2+1)^{16}\cdot(16k^3+4k)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Evaluate the derivative of <m>f(x)=\sqrt{\dfrac{x^2+1}{x^2-1}}</m>.
+</p></statement>
+<hint><p>
+If we define <m>g(x)=\sqrt{x}</m> and <m>h(x)=\dfrac{x^2+1}{x^2-1}</m>, then <m>f(x)=g(h(x))</m>.
+To differentiate the square root function:
+<m>\ds\diff{}{x}\{\sqrt{x}\}=\ds\diff{}{x}\left\{x^{1/2}\right\}=\dfrac{1}{2}x^{-1/2}=\dfrac{1}{2\sqrt{x}}</m>.
+</p></hint>
+<answer><p>
+<m>\frac{-2x}{({x^2-1})\sqrt{x^4-1}}</m>
+</p></answer>
+<solution><p>
+Using the chain rule:
+<md>
+<mrow>
+\diff{}{x}\left\{\sqrt{\frac{x^2+1}{x^2-1}}\right\}&amp;=\frac{1}{2\sqrt{\textcolor{red}{\frac{x^2+1}{x^2-1}}}}\cdot \diff{}{x}\left\{\textcolor{red}{\frac{x^2+1}{x^2-1}}\right\}
+</mrow><mrow>
+&amp;=\frac{1}{2}\sqrt{\frac{x^2-1}{x^2+1}}\cdot\diff{}{x}\left\{\frac{x^2+1}{x^2-1}\right\}
+</mrow>
+<intertext>And now, the quotient rule:</intertext><mrow>
+&amp;=\frac{1}{2}\sqrt{\frac{x^2-1}{x^2+1}}\cdot\left(\frac{(x^2-1)(2x)-(x^2+1)2x}{(x^2-1)^2}\right)
+</mrow><mrow>
+&amp;=\frac{1}{2}\sqrt{\frac{x^2-1}{x^2+1}}\cdot\left(\frac{-4x}{(x^2-1)^2}\right)
+</mrow><mrow>
+&amp;=\sqrt{\frac{x^2-1}{x^2+1}}\cdot\left(\frac{-2x}{(x^2-1)^2}\right)
+</mrow><mrow>
+&amp;=\frac{-2x}{({x^2-1})\sqrt{x^4-1}}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Evaluate the derivative of <m>f(x)=e^{\cos(x^2)}</m>.
+</p></statement>
+<hint><p>
+You'll need to use the chain rule twice.
+</p></hint>
+<answer><p>
+<m>-e^{\cos(x^2)}\cdot \sin(x^2)\cdot 2x</m>
+</p></answer>
+<solution><p>
+If we let <m>g(x)=e^x</m> and <m>h(x)=\cos(x^2)</m>, then <m>f(x)=g(h(x))</m>, so <m>f'(x)=g'(h(x))\cdot h'(x)</m>.
+<md>
+<mrow>
+f'(x)&amp;=e^{\textcolor{red}{\cos(x^2)}}\cdot \diff{}{x}\{\textcolor{red}{\cos(x^2)}\}
+</mrow>
+<intertext>In order to evaluate <m>\diff{}{x}\{{\cos(x^2)}\}</m>, we'll need the chain rule <em>again</em>.</intertext><mrow>
+&amp;=e^{\cos(x^2)}\cdot [-\sin(\textcolor{orange}{x^2})]\cdot\diff{}{x}\{\textcolor{orange}{x^2}\}
+</mrow><mrow>
+&amp;=-e^{\cos(x^2)}\cdot \sin(x^2)\cdot 2x
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2006H</fromexam></title>
+<statement><p>
+ Evaluate <m>f'(2)</m> if <m>f(x) = g\big(x/h(x)\big)</m>,
+<m>h(2) = 2</m>, <m>h'(2) = 3</m>, <m>g'(1) = 4</m>.
+</p></statement>
+<hint><p>
+Use the chain rule.
+</p></hint>
+<answer><p>
+<m>-4</m>
+</p></answer>
+<solution><p>
+We use the chain rule, followed by the quotient rule:
+<md>
+<mrow>
+f'(x) &amp;=g'\left(\textcolor{red}{\frac{x}{h(x)}}\right)\cdot\diff{}{x}\left\{\textcolor{red}{\frac{x}{h(x)}}
+\right\}
+</mrow><mrow>&amp;= g'\left(\frac{x}{h(x)}\right)\cdot\frac{h(x)-xh'(x)}{h(x)^2}
+</mrow>
+<intertext>When <m>x=2</m>:</intertext><mrow>
+f'(2) &amp;=  g'\left(\frac{2}{h(2)}\right)\frac{h(2)-2h'(2)}{h(2)^2}
+</mrow><mrow>
+&amp;= 4\frac{2-2\times3}{2^2}
+=-4
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2006D</fromexam></title>
+<statement><p>
+ Find the derivative of <m>e^{x\cos(x)}</m>.
+</p></statement>
+<hint><p>
+Use the chain rule.
+</p></hint>
+<answer><p>
+<m>[\cos x -x\sin x]e^{x\cos(x)}</m>
+</p></answer>
+<solution><p>
+Using the chain rule, followed by the product rule:
+<md>
+<mrow>
+\diff{}{x}\left\{e^{x\cos(x)}\right\}&amp;=e^{\textcolor{red}{x\cos x}}\diff{}{x}\left\{
+\textcolor{red}{x\cos x}\right\}
+</mrow><mrow>&amp;=[\cos x -x\sin x]e^{x\cos(x)}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2009H</fromexam></title>
+<statement><p>
+Evaluate <m>f'(x)</m> if <m>f(x) = e^{x^2+\cos x}</m>.
+</p></statement>
+<hint><p>
+Use the chain rule.
+</p></hint>
+<answer><p>
+<m>[2x-\sin x]e^{x^2+\cos(x)}</m>
+</p></answer>
+<solution><p>
+Using the chain rule:
+<md>
+<mrow>
+\diff{}{x}\left\{e^{x^2+\cos(x)}\right\}&amp;=e^{\textcolor{red}{x^2+\cos x}}\diff{}{x}\left\{
+\textcolor{red}{x^2+\cos x}\right\}
+</mrow><mrow>&amp;=[2x-\sin x]e^{x^2+\cos(x)}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2009H</fromexam></title>
+<statement><p>
+Evaluate <m>f'(x)</m> if <m>f(x) = \sqrt{\dfrac{x-1}{x+2}}</m>.
+</p></statement>
+<hint><p>
+Use the chain rule.
+</p></hint>
+<answer><p>
+<m>\frac{3}{2\sqrt{x-1}\sqrt{x+2}^3}</m>
+</p></answer>
+<solution><p>
+Using the chain rule, followed by the quotient rule:
+<md>
+<mrow>
+\diff{}{x}\left\{ \sqrt{\dfrac{x-1}{x+2}}\right\}&amp;=\frac{1}{2\sqrt{\textcolor{red}{\dfrac{x-1}{x+2}}}}\diff{}{x}\left\{
+\textcolor{red}{\dfrac{x-1}{x+2}}\right\}
+</mrow><mrow>&amp;=\frac{\sqrt{x+2}}{2\sqrt{x-1}}\cdot \frac{(x+2)-(x-1)}{(x+2)^2}
+</mrow><mrow>
+&amp;=\frac{3}{2\sqrt{x-1}\sqrt{x+2}^3}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2010H</fromexam></title>
+<statement><p>
+Differentiate the function
+<me>
+f(x)=\frac{1}{x^2}+\sqrt{x^2-1}</me>
+and give the domain where the derivative exists.
+</p></statement>
+<hint><p>
+Recall <m>\dfrac{1}{x^2}=x^{-2}</m> and <m>\sqrt{x^2-1}=(x^2-1)^{1/2}</m>.
+</p></hint>
+<answer><p>
+ <m>f'(x)= -\dfrac{2}{x^3}+\dfrac{x}{\sqrt{x^2-1}}</m> is defined
+for <m>x</m> in <m>(-\infty,1) \cup (1,\infty)</m>.
+</p></answer>
+<solution><p>
+First, we manipulate our function to make it easier to differentiate:
+<md>
+<mrow>
+f(x)&amp;=x^{-2}+(x^2-1)^{1/2}
+</mrow>
+<intertext>Now, we can use the power rule to differentiate <m>\dfrac{1}{x^2}</m>. This will be easier than differentiating <m>\dfrac{1}{x^2}</m> using quotient rule, but if you prefer, quotient rule will also work.</intertext><mrow>
+f'(x)&amp;=-2x^{-3}+\frac{1}{2}(\textcolor{red}{x^2-1})^{-1/2}\cdot\diff{}{x}\{\textcolor{red}{x^2-1}\}
+</mrow><mrow>
+&amp;=-2x^{-3}+\frac{1}{2}({x^2-1})^{-1/2}(2x)
+</mrow><mrow>
+&amp;=\frac{-2}{x^3}+\frac{x}{\sqrt{x^2-1}}
+</mrow>
+</md>
+The function <m>f(x)</m> is only defined when <m>x \neq 0</m> and when <m>x^2-1 \geq 0</m>. That is, when <m>x</m> is in <m>(-\infty,-1] \cup [1,\infty)</m>. We have an added restriction on the domain of <m>f'(x)</m>: <m>x^2-1</m> must not be zero. So, the domain of <m>f'(x)</m> is <m>(-\infty,-1)\cup(1,\infty)</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1998H</fromexam></title>
+<statement><p>
+Evaluate the derivative of
+<m>f(x)=\dfrac{\sin 5x}{1+x^2}</m>
+</p></statement>
+<answer><p> <m> f'(x)=\dfrac{(1+x^2)(5\cos 5x)-(\sin 5x)(2x)}{{(1+x^2)}^2}</m>
+</p></answer>
+<solution><p> We use the quotient rule, noting that <m>\ds\diff{}{x}\{\sin 5x\}=5\cos 5x</m>:
+<md>
+<mrow>
+f'(x)&amp;=\frac{(1+x^2)(5\cos 5x)-(\sin 5x)(2x)}{{(1+x^2)}^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate the derivative of <m>f(x)=\sec(e^{2x+7})</m>.
+</p></statement>
+<hint><p>
+If we let <m>g(x)=\sec x</m> and <m>{h(x)}=e^{2x+7}</m>, then <m>f(x)=g(h(x))</m>, so by the chain rule,
+<m>f'(x)=g'(h(x))\cdot h'(x)</m>. However, in order to evaluate <m>h'(x)</m>, we'll need to use the chain rule <em>again</em>.
+</p></hint>
+<answer><p>
+<m>2e^{2x+7}\sec(e^{2x+7})\tan(e^{2x+7}) </m>
+</p></answer>
+<solution><p>
+If we let <m>g(x)=\sec x</m> and <m>h(x)=e^{2x+7}</m>, then <m>f(x)=g(h(x))</m>, so by the chain rule,
+<m>f'(x)=g'(h(x))\cdot h'(x)</m>. Since <m>g'(x)=\sec x \tan x</m>:
+<md>
+<mrow>
+f'(x)&amp;=g'(h(x))\cdot h'(x)
+</mrow><mrow>
+&amp;=\sec(h(x))\tan(h(x)) \cdot h'(x)
+</mrow><mrow>
+&amp;=\sec(e^{2x+7})\tan(e^{2x+7}) \cdot \diff{}{x}\left\{e^{2x+7}\right\}
+</mrow>
+<intertext>Here, we need the chain rule again:</intertext><mrow>
+&amp;=\sec(e^{2x+7})\tan(e^{2x+7}) \cdot \left[e^{\textcolor{red}{2x+7}}\cdot \diff{}{x}\{\textcolor{red}{2x+7}\}\right]
+</mrow><mrow>
+&amp;=\sec(e^{2x+7})\tan(e^{2x+7}) \cdot \left[e^{2x+7}\cdot2\right]
+</mrow><mrow>
+&amp;=2e^{2x+7}\sec(e^{2x+7})\tan(e^{2x+7})
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the tangent line to the curve <m>y=\left(\tan^2 x +1\right)\left(\cos^2 x\right)</m> at the point <m>x=\dfrac{\pi}{4}</m>.
+</p></statement>
+<hint><p>
+What trig identity can you use to simplify the first factor in the equation?
+</p></hint>
+<answer><p> <m>y=1</m>
+</p></answer>
+<solution><p>
+It is possible to start in on this problem with the product rule and then the chain rule, but it's easier if we simplify first. Since <m>\tan^2x+1=\sec^2 x=\frac{1}{\cos^2x}</m>, we see <me>
+f(x)=\frac{\cos^2 x}{\cos^2 x}=1</me>
+ for all values of <m>x</m> for which <m>\cos x</m> is nonzero. That is, <m>f(x)=1</m> for every <m>x</m> that is not an integer multiple of <m>\pi/2</m> (and <m>f(x)</m> is not defined when <m>x</m> is an integer multiple of <m>\pi/2</m>). Therefore, <m>f'(x)=0</m> for every <m>x</m> on which <m>f</m> exists, and in particular <m>f'(\pi/4)=0</m>. Also, <m>f(\pi/4)=1</m>, so the tangent line to <m>f</m> at <m>x=\pi/4</m> is the line with slope 0, passing through the point <m>(\pi/4,1)</m>:
+<me>
+y=1</me>
+</p>
+</solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+The position of a particle at time <m>t</m> is given by <m>s(t)=e^{t^3-7t^2+8t}</m>. For which values of <m>t</m> is the velocity of the particle zero?
+</p></statement>
+<hint><p>
+Velocity is the derivative of position with respect to time. In this case, the velocity of the particle is given by <m>s'(t)</m>.
+</p></hint>
+<answer><p>
+<m>t=\frac{2}{3}</m> and <m>t=4</m>
+</p></answer>
+<solution><p>
+Velocity is the derivative of position with respect to time. So, the velocity of the particle is given by <m>s'(t)</m>. We need to find <m>s'(t)</m>, and determine when it is zero.
+</p>
+
+<p>To differentiate, we us the chain rule.
+<md>
+<mrow>
+s'(t)&amp;=e^{\textcolor{red}{t^3-7t^2+8t}}\cdot\diff{}{t}\{\textcolor{red}{t^3-7t^2+8t}\}
+</mrow><mrow>
+&amp;=e^{{t^3-7t^2+8t}}\cdot(3t^2-14t+8)
+</mrow>
+<intertext>To determine where this function is zero, we factor:</intertext><mrow>
+&amp;=e^{{t^3-7t^2+8t}}\cdot(3t-2)(t-4)
+</mrow>
+</md>
+So, the velocity is zero when <m>e^{{t^3-7t^2+8t}}=0</m>, when <m>3t-2=0</m>, and when <m>t-4=0</m>. Since <m>e^{{t^3-7t^2+8t}}</m> is <em>never</em> zero, this tells us that the velocity is zero precisely when <m>t=\frac{2}{3}</m> or <m>t=4</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+What is the slope of the tangent line to the curve <m>y=\tan\left(e^{x^2}\right)</m> at the point <m>x=1</m>?
+</p></statement>
+<hint><p>
+The slope of the tangent line is the derivative. You'll need to use the chain rule twice.
+</p></hint>
+<answer><p>
+<m>2e\sec^2(e)</m>
+</p></answer>
+<solution><p>
+The slope of the tangent line is the derivative. If we let <m>f(x)=\tan x</m> and <m>g(x)=e^{x^2}</m>, then <m>f(g(x))=\tan(e^{x^2})</m>, so <m>y'=f'(g(x)) \cdot g'(x)</m>:
+<md>
+<mrow>
+y'&amp;=\sec^2(\textcolor{red}{e^{x^2}})\cdot\diff{}{x}\{\textcolor{red}{e^{x^2}}\}
+</mrow>
+<intertext>We find ourselves once more in need of the chain rule:</intertext><mrow>
+&amp;=\sec^2({e^{x^2}})\cdot{e^{\textcolor{red}{x^2}}}\diff{}{x}\{\textcolor{red}{x^2}\}
+</mrow><mrow>
+&amp;=\sec^2(e^{x^2})\cdot e^{x^2}\cdot 2x
+</mrow>
+<intertext>Finally, we evaluate this derivative at the point <m>x=1</m>:</intertext><mrow>
+y'(1)&amp;=\sec^2(e)\cdot e \cdot 2
+</mrow><mrow>
+&amp;=2e\sec^2e
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1997A</fromexam></title>
+<statement><p>
+Differentiate <m>y=e^{4x}\tan x</m>. You do not need to simplify your answer.
+</p></statement>
+<hint><p> Start with the product rule, then use the chain rule to differentiate <m>e^{4x}</m>.
+</p></hint>
+<answer><p>
+<m>y'=4e^{4x}\tan x+e^{4x}\sec^2 x</m>
+</p></answer>
+<solution><p> Using the Product rule,
+<md>
+<mrow>
+y'&amp;=\diff{}{x}\{e^{4x}\}\tan x+e^{4x}\sec^2 x
+</mrow>
+<intertext>and the chain rule:</intertext><mrow>
+&amp;=e^{\textcolor{red}{4x}}\cdot\diff{}{x}\{\textcolor{red}{4x}\}\cdot\tan x+e^{4x}\sec^2 x
+</mrow><mrow>
+&amp;=4e^{4x}\tan x+e^{4x}\sec^2 x
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997D</fromexam></title>
+<statement><p>Evaluate the derivative of the following function at <m>x=1</m>:
+<m>f(x)=\dfrac{x^3}{1+e^{3x}}</m>.
+</p></statement>
+<hint><p> Start with the quotient rule; you'll need the chain rule only to differentiate <m>e^{3x}</m>.
+</p></hint>
+<answer><p> <m>\dfrac{3}{{(1+e^{3})}^2}</m>
+</p></answer>
+<solution><p>
+Using the quotient rule,
+<md>
+<mrow>
+f'(x)&amp;=\frac{(3x^2)(1+e^{3x})-(x^3)\cdot\diff{}{x}\{1+e^{3x}\}}{{(1+e^{3x})}^2}
+</mrow>
+<intertext>Now, the chain rule:</intertext><mrow>
+&amp;=\frac{(3x^2)(1+e^{3x})-(x^3)(3e^{3x})}{{(1+e^{3x})}^2}
+</mrow>
+<intertext>So, when <m>x=1</m>:</intertext><mrow>
+f'(1)&amp;=\frac{3(1+e^{3})-3e^{3}}{{(1+e^{3})}^2}=\frac{3}{{(1+e^{3})}^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Differentiate <m>e^{\sin^2(x)}</m>.
+</p></statement>
+<hint><p> More than one chain rule needed here.
+</p></hint>
+<answer><p> <m>2 \sin(x) \cdot \cos(x) \cdot e^{\sin^2(x)}</m>
+</p></answer>
+<solution><p>
+This requires us to apply the chain rule twice.
+<md>
+<mrow>
+  \diff{}{x} \left\{ e^{\sin^2(x)} \right\}
+  &amp;= e^{\sin^2(x)} \cdot \diff{}{x} \left\{ \sin^2(x)\right\}
+</mrow><mrow>
+  &amp;= e^{\sin^2(x)} (2\sin(x)) \cdot \diff{}{x} \sin(x)
+</mrow><mrow>
+  &amp;= e^{\sin^2(x)} (2\sin(x)) \cdot \cos(x)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Compute the derivative of <m>y=\sin\left(e^{5x}\right)</m>
+</p></statement>
+<hint><p> More than one chain rule application is needed here.
+</p></hint>
+<answer><p> <m>\cos\left(e^{5x}\right)\cdot e^{5x}\cdot 5</m>
+</p></answer>
+<solution><p> This requires us to apply the chain rule twice.
+<md>
+<mrow>
+  \diff{}{x} \left\{\sin(e^{5x}) \right\}
+  &amp;= {\cos\left(\textcolor{red}{e^{5x}}\right)} \cdot \diff{}{x} \left\{ \textcolor{red}{e^{5x}}\right\}
+</mrow><mrow>
+  &amp;= \cos(e^{5x}) (e^{\textcolor{orange}{5x}}) \cdot \diff{}{x}\{\textcolor{orange}{5x}\}
+</mrow><mrow>
+  &amp;= \cos(e^{5x}) (e^{5x}) \cdot5
+ </mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2007H</fromexam></title>
+<statement><p>
+Find the derivative of <m>e^{\cos(x^2)}</m>.
+</p></statement>
+<hint><p>
+More than one chain rule application is needed here.
+</p></hint>
+<answer><p>
+<m>-e^{\cos(x^2)}\cdot \sin(x^2) \cdot 2x</m>
+</p></answer>
+<solution><p>
+We'll use the chain rule twice.
+<md>
+<mrow>
+\diff{}{x}\left\{e^{\cos(x^2)}\right\}&amp;=
+e^{\textcolor{red}{\cos(x^2)}}\cdot\diff{}{x}\{\textcolor{red}{\cos(x^2)}\}
+</mrow><mrow>
+&amp;=e^{\cos(x^2)} \cdot(-\sin(\textcolor{orange}{x^2}))\cdot \diff{}{x}\{\textcolor{orange}{x^2}\}
+</mrow><mrow>
+&amp;=-e^{\cos(x^2)}\cdot \sin(x^2) \cdot 2x
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1997A</fromexam></title>
+<statement><p>
+Compute the derivative of <m>y=\cos\big(x^2+\sqrt{x^2+1}\big)</m>
+</p></statement>
+<hint><p> More than one chain rule application is needed here.
+</p></hint>
+<answer><p> <m>y'=-\sin\big(x^2+\sqrt{x^2+1}\big)\left(2x+\dfrac{x}{\sqrt{x^2+1}}\right)</m>
+</p></answer>
+<solution><p>
+We start with the chain rule:
+<md>
+<mrow>
+y'&amp;=-\sin\big(\textcolor{red}{x^2+\sqrt{x^2+1}}\big)\cdot\diff{}{x}\left\{\textcolor{red}{x^2+\sqrt{x^2+1}}\right\}
+</mrow><mrow>
+&amp;=-\sin\big(x^2+\sqrt{x^2+1}\big)\cdot\left(2x+\diff{}{x}\left\{\sqrt{x^2+1}\right\}\right)
+</mrow>
+<intertext>and find ourselves in need of chain rule a second time:</intertext><mrow>
+&amp;=-\sin\big(x^2+\sqrt{x^2+1}\big)\cdot\left(2x+\dfrac{1}{2\sqrt{\textcolor{red}{x^2+1}}}\cdot\diff{}{x}\left\{\textcolor{red}{x^2+1}\right\}\right)
+</mrow><mrow>
+&amp;=-\sin\big(x^2+\sqrt{x^2+1}\big)\cdot\left(2x+\dfrac{2x}{2\sqrt{x^2+1}}\right)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1996D</fromexam></title>
+<statement><p>
+Evaluate the derivative.
+<me>
+y=(1+x^2)\cos^2 x</me>
+</p>
+
+</statement>
+<hint><p> What rule do you need, besides chain? Also, remember that <m>\cos^2x = [\cos x]^2</m>.
+</p></hint>
+<answer><p> <m>y'=2x\cos^2x-2(1+x^2) \sin x\cos x</m>
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+y&amp;=(1+x^2)\cos^2 x
+</mrow>
+<intertext>Using the product rule,</intertext><mrow>
+y'&amp;=(2x)\cos^2 x + (1+x^2)\diff{}{x}\{\cos^2 x\}
+</mrow>
+<intertext>Here, we'll need to use the chain rule. Remember <m>\cos^2 x = [\cos x]^2</m>.</intertext><mrow>
+&amp;=2x\cos^2x+(1+x^2) 2\textcolor{red}{\cos x} \cdot \diff{}{x}\{\textcolor{red}{\cos x}\}
+</mrow><mrow>
+&amp;=2x\cos^2x+(1+x^2) 2\cos x \cdot (-\sin x)
+</mrow><mrow>
+&amp;=2x\cos^2x-2(1+x^2) \sin x\cos x
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1996D</fromexam></title>
+<statement><p>
+Evaluate the derivative.
+<me>
+y=\frac{e^{3x}}{1+x^2}</me>
+</p>
+
+</statement>
+<answer><p> <m>y'=\dfrac{e^{3x}(3x^2-2x+3)}{(1+x^2)^2}</m>
+</p></answer>
+<solution><p>
+{We use the quotient rule, noting by the chain rule that <m>\diff{}{x}\{e^{3x}\}=3e^{3x}</m>:}
+<md>
+<mrow>
+y'&amp;=\frac{(1+x^2)\cdot3e^{3x}-e^{3x}(2x)}{(1+x^2)^2}
+</mrow><mrow>
+&amp;=\frac{e^{3x}(3x^2-2x+3)}{(1+x^2)^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1999H</fromexam></title>
+<statement><p>
+Find <m>g'(2)</m> if <m>g(x)=x^3h(x^2)</m>, where <m>h(4)=2</m> and <m>h'(4)=-2</m>.
+</p></statement>
+<answer><p> <m>-40</m>
+</p></answer>
+<solution><p>
+By the chain rule,
+<md>
+<mrow>
+\diff{}{x}\left\{h\left(x^2\right)\right\}&amp;=h'(x^2)\cdot 2x
+</mrow>
+</md>
+ Using the product rules and the result above,
+<md>
+<mrow>
+g'(x)&amp;=3x^2h(x^2)+x^3h'(x^2)2x
+</mrow>
+<intertext>Plugging in <m>x=2</m>:</intertext><mrow>
+g'(2)&amp;=3(2^2)h(2^2)+2^3h'(2^2)2\times 2\cr
+&amp;=12h(4)+32h'(4)=12\times 2-32\times 2\cr
+&amp;=-40
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>1999H</fromexam></title>
+<statement><p>
+At what points <m>(x,y)</m> does the curve <m>y=xe^{-(x^2-1)/2}</m> have a
+horizontal tangent?
+</p></statement>
+<hint><p> The product of two functions is zero exactly when at least one of the functions is zero.
+</p></hint>
+<answer><p> <m>(1,1)</m> and <m>(-1,-1)</m>.
+</p></answer>
+<solution><p>
+Let <m>f(x)=xe^{-(x^2-1)/2}=xe^{(1-x^2)/2}</m>. Then, using the product rule,
+<md>
+<mrow>
+f'(x)&amp;=e^{(1-x^2)/2}+x\cdot\diff{}{x}\left\{e^{(1-x^2)/2}\right\}
+</mrow>
+<intertext>Here, we need the chain rule:</intertext>
+<mrow>
+&amp;=e^{(1-x^2)/2}+x\cdot e^{\textcolor{red}{(1-x^2)/2}}\diff{}{x}\left\{\textcolor{red}{\frac{1}{2}(1-x^2)}\right\}
+</mrow><mrow>
+&amp;=e^{(1-x^2)/2}+x\cdot e^{{(1-x^2)/2}}\cdot (-x)
+</mrow><mrow>
+&amp;=(1-x^2)e^{(1-x^2)/2}
+</mrow>
+</md>
+</p>
+
+<p>There is no power of <m>e</m> that is equal to zero; so if the product above is zero, it must be that <m>1-x^2=0</m>. This happens for <m>x=\pm 1</m>. On the curve, when <m>x=1</m>, <m>y=1</m>, and
+when <m>x=-1</m>, <m>y=-1</m>. So the points are <m>(1,1)</m> and <m>(-1,-1)</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+A particle starts moving at time <m>t=1</m>, and its position thereafter  is given by
+<me>
+s(t)=\sin\left(\frac{1}{t}\right).</me>
+</p>
+
+<p> When is the particle moving in the negative direction?
+</p></statement>
+<hint><p>
+If <m>t \ge 1</m>, then <m>0 \lt \frac{1}{t} \leq 1</m>.
+</p></hint>
+<answer><p>
+Always
+</p></answer>
+<solution><p>
+The question asks when <m>s'(t)</m> is negative. So, we start by differentiating. Using the chain rule:
+<md>
+<mrow>
+s'(t)&amp;=\cos\left(\textcolor{red}{\frac{1}{t}}\right)\cdot\diff{}{t}\left\{\textcolor{red}{\frac{1}{t}}\right\}
+</mrow><mrow>
+&amp;=\cos\left({\frac{1}{t}}\right)\cdot\frac{-1}{t^2}
+</mrow>
+</md>
+When <m>t\ge1</m>, <m>\frac{1}{t}</m> is between 0 and 1. Since <m>\cos \theta</m> is positive for <m>0 \leq \theta  \lt  \pi/2</m>, and <m>\pi/2  \gt 1</m>, we see that <m>\cos\left(\frac{1}{t}\right)</m> is positive for the entire domain of <m>s(t)</m>. Also, <m>\frac{-1}{t^2}</m> is negative for the entire domain of the function. We conclude that <m>s'(t)</m> is negative for the entire domain of <m>s(t)</m>, so the particle is <em>always</em> moving in the negative direction.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Compute the derivative of <m>f(x)=\dfrac{e^{x}}{\cos^3 (5x-7)}</m>.
+</p></statement>
+<hint><p>
+The notation <m>\cos^3(5x-7)</m> means <m>\left[\cos(5x-7)\right]^3</m>. So, if <m>g(x)=x^3</m> and <m>h(x)=\cos(5x-7)</m>, then <m>g(h(x))=\left[\cos(5x+7)\right]^3=\cos^3(5x+7)</m>.
+</p></hint>
+<answer><p>
+<m>e^x\sec^3(5x-7)(1+15\tan(5x-7))</m>
+</p></answer>
+<solution><p>
+We present two solutions: one where we dive right in and use the quotient rule, and another where we simplify first and use the product rule.
+<ul>
+<li> Solution 1: We begin with the quotient rule:
+<md>
+<mrow>
+f'(x) &amp;= \frac{\cos^3(5x-7)\diff{}{x}\{e^x\}-e^x\diff{}{x}\{\cos^3(5x-7)\}}{\cos^6(5x-7)}
+</mrow><mrow>
+&amp;= \frac{\cos^3(5x-7)e^x-e^x\diff{}{x}\{\cos^3(5x-7)\}}{\cos^6(5x-7)}
+</mrow>
+<intertext>Now, we use the chain rule. Since <m>\cos^3(5x-7)=[\cos(5x-7)]^3</m>, our <q>outside</q> function is <m>g(x)=x^3</m>, and our <q>inside</q> function is <m>h(x)=\cos(5x-1)</m>.</intertext><mrow>
+&amp;= \frac{\cos^3(5x-7)e^x-e^x\cdot3\textcolor{red}{\cos}^2\textcolor{red}{(5x-7)} \cdot \diff{}{x}\{\textcolor{red}{\cos(5x-7)}\}}{\cos^6(5x-7)}
+</mrow>
+<intertext>We need the chain rule again!</intertext><mrow>
+&amp;= \frac{\cos^3(5x-7)e^x-e^x\cdot3{\cos}^2{(5x-7)} \cdot[{-\sin(\textcolor{red}{5x-7})\cdot \diff{}{x}\{\textcolor{red}{5x-7}\}}]}{\cos^6(5x-7)}
+</mrow><mrow>
+&amp;= \frac{\cos^3(5x-7)e^x-e^x\cdot3{\cos}^2{(5x-7)} \cdot[{-\sin({5x-7})\cdot5}]}{\cos^6(5x-7)}
+</mrow>
+<intertext>We finish by simplifying:</intertext><mrow>
+&amp;= \frac{e^x\cos^2(5x-7)\left(\cos(5x-7)+15\sin(5x-7)\right)}{\cos^6(5x-7)}
+</mrow><mrow>
+&amp;=e^x \frac{\cos(5x-7)+15\sin(5x-7)}{\cos^4(5x-7)}
+</mrow><mrow>
+&amp;=e^x(\sec^3(5x-7)+15\tan(5x-7)\sec^3(5x-7))
+</mrow><mrow>
+&amp;=e^x\sec^3(5x-7)(1+15\tan(5x-7))
+</mrow>
+</md>
+</li>
+<li> Solution 2: We simplify to avoid the quotient rule:
+<md>
+<mrow>
+f(x)&amp;=\dfrac{e^{x}}{\cos^3 (5x-7)}
+</mrow><mrow>
+&amp;=e^x\sec^3(5x-7)
+</mrow>
+<intertext>Now we use the product rule to differentiate:</intertext><mrow>
+f'(x)&amp;=e^x\sec^3(5x-7)+e^x\diff{}{x}\{\sec^3(5x-7)\}
+</mrow>
+<intertext>Here, we'll need the chain rule. Since <m>\sec^3(5x-7)=[\sec (5x-7)]^3</m>, our <q>outside</q> function is <m>g(x)=x^3</m> and our <q>inside</q> function is <m>h(x)=\sec(5x-7)</m>, so that
+<m>g(h(x))=[\sec(5x-7)]^3=\sec^3(5x-7)</m>.</intertext><mrow>
+&amp;=e^x\sec^3(5x-7)+e^x\cdot3\;\textcolor{red}{\sec}^2\textcolor{red}{(5x-7)} \cdot \diff{}{x}\{\textcolor{red}{\sec(5x-7)}\}
+</mrow>
+<intertext>We need the chain rule again! Recall <m>\diff{}{x}\{\sec x\}=\sec x \tan x</m>.</intertext>
+<mrow>
+&amp;=e^x\sec^3(5x-7)+e^x\cdot3\;{\sec}^2{(5x-7)} \cdot {\sec(\textcolor{orange}{5x-7})\tan(\textcolor{orange}{5x-7})\cdot\diff{}{x}\{\textcolor{orange}{5x-7}\}}
+</mrow><mrow>
+&amp;=e^x\sec^3(5x-7)+e^x\cdot3\;{\sec}^2{(5x-7)} \cdot {\sec({5x-7})\tan({5x-7})\cdot 5}
+</mrow>
+<intertext>We finish by simplifying:</intertext><mrow>
+&amp;=e^x\sec^3(5x-7)(1+15\tan({5x-7}))
+</mrow>
+</md>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2011H</fromexam></title>
+<statement><p>
+Evaluate <m>\ds\diff{}{x}\left\{x e^{2x} \cos 4x\right\}</m>.
+</p></statement>
+<hint><p>
+In Example<nbsp/><xref ref="eg_DIFFsimpleToolsA"/>, we generalized the product rule to three factors:
+<me>
+\diff{}{x}\{f(x)g(x)h(x)\}=f'(x)g(x)h(x)+f(x)g'(x)h(x)+f(x)g(x)h'(x)
+</me>
+This isn't strictly necessary, but it will simplify your computations.
+</p></hint>
+<answer><p>
+<m>e^{2x} \cos 4x + 2x e^{2x} \cos 4x -4 x e^{2x} \sin 4x</m>
+</p></answer>
+<solution><p>
+<ul>
+<li><p> Solution 1:
+In Example<nbsp/><xref ref="eg_DIFFsimpleToolsA"/>, we generalized the product rule to three factors:
+<me>
+\diff{}{x}\{f(x)g(x)h(x)\}=f'(x)g(x)h(x)+f(x)g'(x)h(x)+f(x)g(x)h'(x)</me>
+</p>
+
+<p>Using this rule:
+<md>
+<mrow>
+\diff{}{x}\left\{(x) \left(e^{2x}\right)( \cos 4x)\right\}&amp;=\diff{}{x}\{x\}\cdot e^{2x} \cos 4x
++
+x\cdot\diff{}{x}\left\{e^{2x}\right\}\cdot\cos 4x
++
+xe^{2x}\cdot\diff{}{x}\{\cos 4x\}
+</mrow><mrow>
+&amp;=e^{2x}\cos4x+x\left(2e^{2x}\right)\cos4x+
+xe^{2x}(-4\sin 4x)
+</mrow><mrow>
+&amp;=e^{2x}\cos4x+2xe^{2x}\cos4x-4xe^{2x}\sin 4x
+</mrow>
+</md></p>
+</li>
+<li><p> Solution 2: We can use the product rule twice. In the first step, we split the function <m>x e^{2x} \cos 4x</m> into the product of two functions.
+<md>
+<mrow>
+\diff{}{x}\left\{\left(x e^{2x}\right) (\cos 4x)\right\}&amp;=
+\diff{}{x}\left\{xe^{2x}\right\}\cdot\cos4x
++
+xe^{2x}\cdot\diff{}{x}\left\{ \cos 4x\right\}
+</mrow><mrow>
+&amp;=
+\left(
+\diff{}{x}\left\{x\right\}\cdot e^{2x}+
+x\cdot\diff{}{x}\left\{e^{2x}\right\}
+\right)\cdot\cos4x
++
+xe^{2x}\cdot\diff{}{x}\left\{ \cos 4x\right\}
+</mrow><mrow>
+&amp;=
+\left(
+e^{2x}+
+x\left(2e^{2x}\right)
+\right)\cdot\cos4x
++
+xe^{2x}(-4\sin 4x)
+</mrow><mrow>
+&amp;=e^{2x}\cos4x+2xe^{2x}\cos4x-4xe^{2x}\sin4x
+</mrow>
+</md></p>
+</li>
+</ul>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p> A particle moves along the Cartesian plane from time <m>t=-\pi/2</m> to time <m>t=\pi/2</m>. The <m>x</m>-coordinate of the particle at time <m>t</m> is given by <m>x=\cos t</m>, and the <m>y</m>-coordinate is given by <m>y=\sin t</m>, so the particle traces a curve in the plane. When does the tangent line to that curve have slope <m>-1</m>?
+</p></statement>
+<hint><p>
+           At time <m>t</m>, the particle is at the point <m>\big(x(t),y(t)\big)</m>,
+           with <m>x(t)=\cos t</m> and <m>y(t)=\sin t</m>.
+           Over time, the particle traces out a curve; let's call that curve <m>y=f(x)</m>.
+           Then <m>y(t) = f\big(x(t)\big)</m>, so
+           the slope of the curve at the point <m>\big(x(t),y(t)\big)</m>
+           is <m>f'\big(x(t)\big)</m>. You are to determine the values of <m>t</m>
+           for which <m>f'\big(x(t)\big)=-1</m>.
+</p></hint>
+<answer><p>
+<m>t=\dfrac{\pi}{4}</m>
+</p></answer>
+<solution><p>
+At time <m>t</m>, the particle is at the point <m>\big(x(t),y(t)\big)</m>,
+           with <m>x(t)=\cos t</m> and <m>y(t)=\sin t</m>.
+           Over time, the particle traces out a curve; let's call that curve <m>y=f(x)</m>.
+           Then <m>y(t) = f\big(x(t)\big)</m>, so
+           the slope of the curve at the point <m>\big(x(t),y(t)\big)</m>
+           is <m>f'\big(x(t)\big)</m>. You are to determine the values of <m>t</m>
+           for which <m>f'\big(x(t)\big)=-1</m>.
+</p>
+
+<p>           By the chain rule
+           <md>
+<mrow>
+               y'(t) = f'\big(x(t)\big) \cdot x'(t)
+           </mrow>
+</md>
+           Substituting in <m>x(t)=\cos t</m> and <m>y(t)=\sin t</m> gives
+           <md>
+<mrow>
+               \cos t = f'\big(x(t)\big) \cdot \big(-\sin t\big)
+           </mrow>
+</md>
+           so that
+           <md>
+<mrow>
+              f'\big(x(t)\big)  = -\frac{\cos t}{\sin t}
+           </mrow>
+</md>
+           is <m>-1</m> precisely when <m>\sin t = \cos t</m>. This happens whenever
+           <m>t = \frac{\pi}{4}</m>.
+</p>
+
+<p>           Remark: the path traced by the particle is a semicircle. You can
+           think about the point on the unit circle with angle t, or you
+           can notice that <m>x^2 + y^2 = \sin^2t + \cos^2t = 1</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s2_9ineq"><title><fromexam>test</fromexam></title>
+<statement><p>
+Show that, for all <m>x \gt 0</m>, <m>e^{x+x^2} \gt 1+x</m>.
+</p></statement>
+<hint><p>  Set <m>f(x) = e^{x+x^2}</m> and <m>g(x)=1+x</m>. Compare <m>f(0)</m> and <m>g(0)</m>,
+         and compare <m>f'(x)</m> and <m>g'(x)</m>.
+</p></hint>
+<answer><p> Let <m>f(x)=e^{x+x^2}</m> and <m>g(x)=1+x</m>. Then <m>f(0)=g(0)=1</m>.
+</p>
+
+<p><m>f'(x)=(1+2x)e^{x+x^2}</m> and <m>g'(x)=1</m>. When <m>x \gt 0</m>,
+<me>
+f'(x)=(1+2x)e^{x+x^2} \gt 1\cdot e^{x+x^2}=e^{x+x^2} \gt e^{0+0^2}=1=g'(x).</me>
+ Since <m>f(0)=g(0)</m>, and <m>f'(x) \gt g'(x)</m> for all <m>x \gt 0</m>, that means <m>f</m> and <m>g</m> start at the same place, but <m>f</m> always grows faster. Therefore, <m>f(x) \gt g(x)</m> for all <m>x \gt 0</m>.
+</p></answer>
+<solution><p> Let <m>f(x)=e^{x+x^2}</m> and <m>g(x)=1+x</m>. Then <m>f(0)=g(0)=1</m>.
+</p>
+
+<p><m>f'(x)=(1+2x)e^{x+x^2}</m> and <m>g'(x)=1</m>. When <m>x \gt 0</m>,
+<me>
+f'(x)=(1+2x)e^{x+x^2} \gt 1\cdot e^{x+x^2}=e^{x+x^2} \gt e^{0+0^2}=1=g'(x).</me>
+ Since <m>f(0)=g(0)</m>, and <m>f'(x) \gt g'(x)</m> for all <m>x \gt 0</m>, that means <m>f</m> and <m>g</m> start at the same place, but <m>f</m> always grows faster. Therefore, <m>f(x) \gt g(x)</m> for all <m>x \gt 0</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+We know that <m>\sin (2x) = 2\sin x \cos x</m>. What other trig identity can you derive from this, using differentiation?
+</p></statement>
+<hint><p>
+If <m>\sin 2x</m> and <m>2\sin x \cos x</m> are the same, then they also have the same derivatives.
+</p></hint>
+<answer><p>
+<m>\cos(2x)=\cos^2x-\sin^2x</m>
+</p></answer>
+<solution><p>
+Since <m>\sin 2x</m> and <m>2\sin x \cos x</m> are the same function, they have the same derivative.
+<md>
+<mrow>
+\sin 2x &amp;= 2\sin x \cos x
+</mrow><mrow>
+\Rightarrow \diff{}{x}\{\sin 2x\}&amp;=\diff{}{x}\{2\sin x \cos x\}
+</mrow><mrow>
+2\cos 2x &amp;=2[\cos^2x-\sin^2x]
+</mrow><mrow>
+\cos 2x &amp;=\cos^2x-\sin^2 x
+</mrow>
+</md>
+We conclude <m>\cos 2x =\cos^2x-\sin^2 x</m>, which is another common trig identity.
+</p>
+
+<p>Remark: if we differentiate both sides of this equation, we get the original identity back.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate the derivative of <m>f(x)=\sqrt[3]{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}</m>. You do not have to simplify your answer.
+</p></statement>
+<hint><p>
+This is a long, nasty problem, but it doesn't use anything you haven't seen before. Be methodical, and break the question into as many parts as you have to. At the end, be proud of yourself for your problem-solving abilities and tenaciousness!
+</p></hint>
+<answer><p>
+<md>
+<mrow> f'(x)&amp;=
+\frac{1}{3}\left(
+\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
+\right)^{\frac{2}{3}}\cdot
+</mrow><mrow>
+&amp;\left(\frac{ \sqrt{x^3-9}\tan x  {(-2x)e^{\csc x^2}\csc(x^2)\cot(x^2)}-e^{\csc x^2}{\left(\frac{3x^2\tan x}{2\sqrt{{x^3-9}}}+\sqrt{x^3-9}\sec^2 x\right)}}{(\tan^2 x)(x^3-9) }\right)
+</mrow>
+</md>
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+f(x)&amp;=\sqrt[3]{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}
+</mrow><mrow>
+&amp;=\left({\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right)^{\frac{1}{3}}
+</mrow>
+<intertext>To begin the differentiation, we can choose our <q>outside</q> function to be <m>g(x)=x^{\frac{1}{3}}</m>, and our <q>inside</q> function to be <m>h(x)=\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }</m>. Then <m>f(x)=g(h(x))</m>, so <m>f'(x)=g'(h(x))\cdot h'(x)=\frac{1}{3}(h(x))^{-\frac{2}{3}}h'(x)</m>:</intertext><mrow>
+f'(x)&amp;=\frac{1}{3}\left(\textcolor{red}{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right)^{\frac{-2}{3}}\cdot\diff{}{x}\left\{\textcolor{red}{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right\}
+</mrow><mrow>
+&amp;=\frac{1}{3}
+\left(
+\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
+\right)^{\frac{2}{3}}
+\cdot
+\diff{}{x}\left\{\textcolor{red}{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right\}
+</mrow>
+<intertext>This leads us to use the quotient rule:</intertext><mrow>
+&amp;=\frac{1}{3}\left(
+\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
+\right)^{\frac{2}{3}}
+\left(\frac{ \sqrt{x^3-9}\tan x  \diff{}{x}\left\{e^{\csc x^2}\right\}-e^{\csc x^2}\diff{}{x}\left\{\sqrt{x^3-9}\tan x  \right\}}{(\tan^2 x)(x^3-9) }\right)
+</mrow>
+<intertext>Let's figure out those two derivatives on their own, then plug them in. Using the chain rule twice:</intertext><mrow>
+\diff{}{x}\left\{e^{\csc x^2}\right\}&amp;=e^{\textcolor{red}{\csc x^2}}\diff{}{x}\left\{\textcolor{red}{\csc x^2}\right\}=e^{\csc x^2}\cdot (-\csc(\textcolor{orange}{x^2})\cot(\textcolor{orange}{x^2}))\cdot\diff{}{x}\{\textcolor{orange}{x^2}\}
+</mrow><mrow>&amp;=-2xe^{\csc x^2}\csc(x^2)\cot(x^2)
+</mrow>
+<intertext>For the other derivative, we start with the product rule, then chain:</intertext><mrow>
+\diff{}{x}\left\{ \sqrt{x^3-9} \tan x \right\}&amp;=
+ \diff{}{x}\left\{\sqrt{x^3-9}\right\}\cdot\tan x+\sqrt{x^3-9}\sec^2 x
+</mrow><mrow>
+ &amp;=\frac{1}{2\sqrt{\textcolor{red}{x^3-9}}}\diff{}{x}\left\{\textcolor{red}{x^3-9}\right\}\cdot \tan x+\sqrt{x^3-9}\sec^2 x
+</mrow><mrow>
+ &amp;=\frac{3x^2 \tan x}{2\sqrt{{x^3-9}}}+\sqrt{x^3-9}\sec^2 x
+ </mrow>
+<intertext>Now, we plug these into our equation for <m>f'(x)</m>:</intertext><mrow>
+ f'(x)&amp;=\frac{1}{3}\left(
+\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
+\right)^{\frac{2}{3}}
+\left(\frac{ \sqrt{x^3-9}\tan x  \textcolor{blue}{\diff{}{x}\left\{e^{\csc x^2}\right\}}-e^{\csc x^2}\textcolor{blue}{\diff{}{x}\left\{\sqrt{x^3-9}\tan x  \right\}}}{(\tan^2 x)(x^3-9) }\right)
+</mrow><mrow>
+&amp;=\frac{1}{3}\left(
+\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
+\right)^{\frac{2}{3}}\cdot
+</mrow><mrow>
+&amp;\left(\frac{ \sqrt{x^3-9}\tan x  \textcolor{blue}{(-2x)e^{\csc x^2}\csc(x^2)\cot(x^2)}-e^{\csc x^2}\textcolor{blue}{\left(\frac{3x^2\tan x}{2\sqrt{{x^3-9}}}+\sqrt{x^3-9}\sec^2 x\right)}}{(\tan^2 x)(x^3-9) }\right)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose a particle is moving in the Cartesian plane over time. For any real number <m>t \geq 0</m>, the coordinate of the particle at time <m>t</m> is given by <m>(\sin t, \cos^2 t)</m>.
+<ol label="a">
+<li xml:id="s2_9_parametricwiggle1"> Sketch a graph of the curve traced by the particle in the plane by plotting points, and describe how the particle moves along it over time.
+</li>
+<li xml:id="s2_9_parametricwiggle2"> What is the slope of the curve traced by the particle at time <m>t=\dfrac{10\pi}{3}</m>?
+</li>
+</ol>
+</p></statement>
+<hint><p> To sketch the curve, you can start by plotting points. Alternately, consider <m>x^2+y</m>.
+</p></hint>
+<answer><p>
+<xref ref="s2_9_parametricwiggle1"/>
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3.5}{3.5}{.5}{4.5}
+\draw[thick] plot[smooth, scale=3, domain=-1:1] (\x,{1-\x*\x});
+\foreach \Point in {(-3,0), (-2.1,1.5), (0,3), (2.1,1.5), (3,0)}
+	{\draw \Point node[vertex]{};}
+\draw (3,0) node[vertex, label=below:{$\atp{(1,0)}{t=\pi/2}$}]{};
+\draw (-3,0) node[vertex, label=below:{$\atp{(-1,0)}{t=3\pi/2}$}]{};
+\draw (0,3) node[vertex, label=above right:{$\atp{(0,1)}{t=0, \pi,2\pi}$}]{};
+\draw (-2.1,1.5) node[vertex, label=left:{$\atp{\left(-\frac{1}{\sqrt{2}},\frac{1}{2}\right)}{t= 5\pi/4,7\pi/4}$}]{};
+\draw (2.1,1.5) node[vertex, label=right:{$\atp{\left(\frac{1}{\sqrt{2}},\frac{1}{2}\right)}{t= \pi/4,3\pi/4}$}]{};\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>The particle traces the curve <m>y=1-x^2</m> restricted to domain <m>[-1,1]</m>. At <m>t=0</m>, the particle is at the top of the curve, <m>(1,0)</m>. Then it moves to the right, and goes back and forth along the curve, repeating its path every <m>2\pi</m> units of time.
+</p>
+
+<p><xref ref="s2_9_parametricwiggle2"/> <m>\sqrt{3}</m>
+</p></answer>
+
+<solution>
+<p><xref ref="s2_9_parametricwiggle1"/>
+The table below gives us a number of points on our graph, and the times they occur.
+</p>
+
+<sidebyside><tabular  bottom="minor" right="minor" left="minor" top="minor">
+<row>
+<cell><m>t</m></cell><cell><m>(\sin t,\cos^2 t)</m></cell>
+</row><row>
+<cell>
+<m>0</m></cell><cell><m>(0,1)</m></cell>
+</row><row>
+<cell>
+<m>\pi/4</m></cell><cell><m>(\frac{1}{\sqrt{2}},\frac{1}{2})</m></cell>
+</row><row>
+<cell>
+<m>\pi/2</m></cell><cell><m>(1,0)</m></cell>
+</row><row>
+<cell>
+<m>3\pi/4</m></cell><cell><m>(\frac{1}{\sqrt{2}},\frac{1}{2})</m></cell>
+</row><row>
+<cell>
+<m>\pi</m></cell><cell><m>(0,1)</m></cell>
+</row><row>
+<cell>
+<m>5\pi/4</m></cell><cell><m>(-\frac{1}{\sqrt{2}},\frac{1}{2})</m></cell>
+</row><row>
+<cell>
+<m>3\pi/2</m></cell><cell><m>(-1,0)</m></cell>
+</row><row>
+<cell>
+<m>7\pi/4</m></cell><cell><m>(-\frac{1}{\sqrt{2}},\frac{1}{2})</m></cell>
+</row><row>
+<cell>
+<m>2\pi</m></cell><cell><m>(0,1)</m>
+</cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>These points will repeat with a period of <m>2\pi</m>. With this information, we have a pretty good idea of the particle's motion:
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3.5}{3.5}{.5}{4.5}
+\draw[thick] plot[scale=3, domain=-1:1] (\x,{1-\x*\x});
+\foreach \Point in {(-3,0), (-2.1,1.5), (0,3), (2.1,1.5), (3,0)}
+	{\draw \Point node[vertex]{};}
+\draw (3,0) node[vertex, label=below:{$\atp{(1,0)}{t=\pi/2}$}]{};
+\draw (-3,0) node[vertex, label=below:{$\atp{(-1,0)}{t=3\pi/2}$}]{};
+\draw (0,3) node[vertex, label=above right:{$\atp{(0,1)}{t=0, \pi,2\pi}$}]{};
+\draw (-2.1,1.5) node[vertex, label=left:{$\atp{\left(-\frac{1}{\sqrt{2}},\frac{1}{2}\right)}{t= 5\pi/4,7\pi/4}$}]{};
+\draw (2.1,1.5) node[vertex, label=right:{$\atp{\left(\frac{1}{\sqrt{2}},\frac{1}{2}\right)}{t= \pi/4,3\pi/4}$}]{};\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>The particle traces out an arc, pointing down. It starts at <m>t=0</m> at the top part of the graph at <m>(1,0)</m>, then is moves to the right until it hits <m>(1,0)</m> at time <m>t=\pi/2</m>. From there it reverses direction and moves along the curve to the left, hitting the top at time <m>t=\pi</m> and reaching <m>(-1,0)</m> at time <m>t=3\pi/2</m>. Then it returns to the top at <m>t=2\pi</m> and starts again.
+</p>
+
+<p>So, it starts at the top of the curve, then moves back for forth along the length of the curve. If goes right first, and repeats its cycle every <m>2\pi</m> units of time.
+</p>
+
+<p><xref ref="s2_9_parametricwiggle2"/>
+Let <m>y=f(x)</m> be the curve the particle traces in the <m>xy</m>-plane.  Since <m>x</m> is a function of <m>t</m>, <m>y(t)=f(x(t))</m>. What we want to find is <m>\ds\diff{f}{x}</m> when <m>t=\left(\dfrac{10\pi}{3}\right)</m>. Since <m>\ds\diff{f}{x}</m> is a function of <m>x</m>, we note that when <m>t=\left(\dfrac{10\pi}{3}\right)</m>, <m>x=\sin\left(\dfrac{10\pi}{3}\right)=\sin\left(\dfrac{4\pi}{3}\right)=-\dfrac{\sqrt{3}}{2}</m>.  So, the quantity we want to find (the slope of the tangent line to the curve <m>y=f(x)</m> traced by the particle at the time <m>t=\left(\dfrac{10\pi}{3}\right)</m> is given by
+<m>\ds\diff{f}{x}\left(-\dfrac{\sqrt{3}}{2}\right)</m>.
+</p>
+
+<p>Using the chain rule:
+<md>
+<mrow>
+y(t)&amp;=f(x(t))
+</mrow><mrow>
+\diff{y}{t}=\diff{}{t}\left\{f(x(t))\right\}&amp;=\diff{f}{x}\cdot\diff{x}{t}
+</mrow><mrow>
+\mbox{so, }\qquad\diff{f}{x}&amp;=\diff{y}{t}\div \diff{x}{t}
+</mrow>
+<intertext>Using <m>y(t)=\cos^2 t</m> and <m>x(t)=\sin t</m>:</intertext><mrow>
+\diff{f}{x}&amp;=\left(-2\cos t \sin t \right)\div\left( \cos t \right)=-2\sin t=-2x
+</mrow>
+<intertext>So, when <m>t=\dfrac{10\pi}{3}</m> and <m>x=-\dfrac{\sqrt{3}}{2},</m></intertext><mrow>
+\diff{f}{x}\left(\dfrac{-\sqrt{3}}{2}\right)&amp;=-2\cdot\frac{-\sqrt{3}}{2}=\sqrt{3}.
+</mrow>
+</md>
+</p>
+
+<p>Remark: The standard way to write this problem is to omit the notation <m>f(x)</m>, and let the variable <m>y</m> stand for two functions. When <m>t</m> is the variable, <m>y(t)=\cos^2t</m> gives the <m>y</m>-coordinate of the particle at time <m>t</m>. When <m>x</m> is the variable, <m>y(x)</m> gives the <m>y</m>-coordinate of the particle given its position along the <m>x</m>-axis. This is an abuse of notation, because if we write <m>y(1)</m>, it is not clear whether we are referring to the <m>y</m>-coordinate of the particle when <m>t=1</m> (in this case, <m>y=\cos^2 (1) \approx 0.3</m>), or the <m>y</m>-coordinate of the particle when <m>x=1</m> (in this case, looking at our table of values, <m>y=0</m>). Although this notation is not strictly <q>correct,</q> it is very commonly used. So, you might see a solution that looks like this:</p>
+
+<blockquote>
+<p>
+The slope of the curve is <m>\ds\diff{y}{x}</m>. To find <m>\ds\diff{y}{x}</m>, we use the chain rule:
+<md>
+<mrow>
+\diff{y}{t}&amp;=\diff{y}{x}\cdot\diff{x}{t}
+</mrow><mrow>
+\diff{}{t}\left\{\cos^2 t\right\}&amp;=\diff{y}{x}\cdot\diff{}{t}\{\sin t\}
+</mrow><mrow>
+-2\cos t \sin t &amp;= \diff{y}{x} \cdot \cos t
+</mrow><mrow>
+\diff{y}{x}&amp;=-2\sin t
+</mrow>
+<intertext>So, when <m>t=\dfrac{10\pi}{3}</m>,</intertext><mrow>
+\diff{y}{x}&amp;=-2\sin\left(\frac{10\pi}{3}\right)=-2\left(-\frac{\sqrt{3}}{2}\right)=\sqrt{3}.
+</mrow>
+</md>
+</p></blockquote>
+
+<p>In this case, it is up to the reader to understand when <m>y</m> is used as a function of <m>t</m>, and when it is used as a function of <m>x</m>. This notation  (using <m>y</m> to be two functions, <m>y(t)</m> and <m>y(x)</m>) is actually the accepted standard, so you should be able to understand it.
+</p>
+</solution>
+</exercise></exercisegroup>
+
+</exercises>

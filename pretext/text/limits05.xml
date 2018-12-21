@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Limits at infinity</title>
+<subsection><title>Limits at infinity</title>
+
+<p>
+Up until this point we have discussed what happens to a function as we move its input <m>x</m>  closer and closer to a particular point <m>a</m>. For a great many applications of  limits we need to understand what happens to a function when its input becomes  extremely large <mdash/> for example what happens to a population at a time far in  the future.
+</p>
+
+<p>
+The definition of a limit at infinity has a similar flavour to the definition of limits at  finite points that we saw above, but the details are a little different. We also  need to distinguish between positive and negative infinity. As <m>x</m> becomes  very large and positive it moves off towards <m>+\infty</m> but when it becomes very  large and negative it moves off towards <m>-\infty</m>.
+</p>
+
+<p>
+Again we give an informal definition; the full formal definition can be found  in (the optional) Section<nbsp/><xref ref="sec_lim_inf_formal"/> near the end of this chapter.
+</p>
+
+<definition><title>Limits at infinity <mdash/> informal</title>
+<statement><p>
+We write
+<md>
+<mrow>
+\lim_{x \to \infty} f(x) &amp;= L
+</mrow>
+</md>
+when the value of the function <m>f(x)</m> gets closer and closer to <m>L</m> as we make  <m>x</m> larger and larger and positive.
+</p>
+
+<p>
+Similarly we write
+<md>
+<mrow>
+\lim_{x \to -\infty} f(x) &amp;= L
+</mrow>
+</md>
+when the value of the function <m>f(x)</m> gets closer and closer to <m>L</m> as we make  <m>x</m> larger and larger and negative.
+</p>
+</statement>
+</definition>
+
+
+<example><title>Limits to <m>+\infty</m> and <m>-\infty</m></title>
+<p>Consider the two functions depicted below</p>
+
+<sidebyside width="80%">
+<image source="text/figs/lim7"/>
+</sidebyside>
+
+<p>
+The dotted horizontal lines indicate the behaviour as <m>x</m> becomes very large.  The function on the left has limits as <m>x \to \infty</m> and as <m>x \to -\infty</m>  since  the function <q>settles down</q> to a particular value. On the other hand,  the function  on the right does not have a limit as <m>x \to -\infty</m> since the  function just keeps getting bigger and bigger.
+</p>
+</example>
+
+<p>
+Just as was the case for limits as <m>x \to a</m> we will start with two very simple  building blocks and build other limits from those.
+</p>
+
+<theorem xml:id="thm_basic_lim_inf">
+<statement><p>
+Let <m>c \in \mathbb{R}</m> then the following limits hold
+<md>
+<mrow>
+  \lim_{x \to \infty} c &amp;= c &amp; \lim_{x \to -\infty} c &amp;= c
+</mrow><mrow>
+  \lim_{x \to \infty} \frac{1}{x} &amp;= 0 &amp; \lim_{x \to -\infty} \frac{1}{x} &amp;= 0
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>Again, these limits interact nicely with standard arithmetic:</p>
+
+<theorem><title>Arithmetic of limits at infinity</title>
+<statement><p>
+Let <m>f(x), g(x)</m> be two functions for which the limits
+<md>
+<mrow>
+  \lim_{x \to \infty} f(x)&amp;=F &amp; \lim_{x \to \infty} g(x) &amp;=G
+</mrow>
+</md>
+exist. Then the following limits hold
+<md>
+<mrow>
+  \lim_{x \to \infty} f(x) \pm g(x) &amp;= F \pm G
+</mrow><mrow>
+  \lim_{x \to \infty} f(x) g(x) &amp;= F  G
+</mrow><mrow>
+  \lim_{x \to \infty} \frac{f(x)}{ g(x) } &amp;= \frac{F}{G} &amp; \text{provided } G \neq 0
+</mrow>
+<intertext>and for rational numbers <m>r</m></intertext>
+<mrow>
+  \lim_{x \to \infty} f(x)^r &amp;= F^r &amp; \text{provided $f(x)^r$ is defined for all $x$}
+</mrow>
+</md>
+The analogous results hold for limits to <m>-\infty</m>.
+</p></statement>
+</theorem>
+
+<p>
+Note that, as was the case in Theorem<nbsp/><xref ref="thm_lim_powers"/>, we need a little extra care with powers of functions. We must avoid taking square roots of negative numbers, or  indeed any even root of a negative number
+	<fn>
+		To be more precise, there is no real  number <m>x</m> so that <m>x^\text{even power}</m> is a negative number. Hence we cannot take the  even-root of a negative number and express it as a real number. This is precisely  what complex numbers allow us to do, but alas there is not space in the course for us to  explore them.
+	</fn>.
+</p>
+
+<p>
+Hence we have for all rational <m>r \gt 0</m>
+<md>
+<mrow>
+  \lim_{x \to \infty} \frac{1}{x^r} &amp;= 0
+</mrow>
+</md>
+but we have to be careful with
+<md>
+<mrow>
+  \lim_{x \to -\infty} \frac{1}{x^r} &amp;= 0
+</mrow>
+</md>
+This is only true if the denominator of <m>r</m> is not an even  number
+	<fn>
+		where we write <m>r = \frac{p}{q}</m> with <m>p,q</m> integers with no  common factors. For example,  <m>r = \frac{6}{14}</m> should be written as <m>r =  \frac{3}{7}</m> when considering this rule.
+	</fn>.
+</p>
+
+<p>
+For example
+<ul>
+<li>
+	<m>\ds \lim_{x \to \infty} \frac{1}{x^{1/2}} = 0</m>, but <m>\ds \lim_{x \to  -\infty} \frac{1}{x^{1/2}}</m> does not exist, because <m>x^{1/2}</m> is not defined for  <m>x \lt 0</m>.
+</li>
+<li>
+	On the other hand, <m>x^{4/3}</m> is defined for negative values of <m>x</m>  and <m>\ds \lim_{x \to -\infty} \frac{1}{x^{4/3}} = 0</m>.
+</li>
+</ul>
+</p>
+
+<p>
+Our first application of limits at infinity will be to examine the behaviour of  a rational function for very large <m>x</m>. To do this we use a <q>trick</q>.
+</p>
+
+<example><title><m>\ds \lim_{x \to \infty} \frac{x^2-3x+4}{3x^2+8x+1}</m></title>
+<p>
+Compute the following limit:
+<md>
+<mrow>
+\lim_{x \to \infty} \frac{x^2-3x+4}{3x^2+8x+1}
+</mrow>
+</md>
+As <m>x</m> becomes very  large, it is the <m>x^2</m> term that will dominate in both the  numerator and denominator and the other bits become irrelevant. That is,  for very large <m>x</m>, <m>x^2</m> is much much larger than <m>x</m> or any constant. So we  pull out these dominant parts
+<md>
+<mrow>
+  \frac{x^2-3x+4}{3x^2+8x+1}
+  &amp;= \frac{x^2 \left(1-\frac{3}{x}+\frac{4}{x^2}\right)}
+  {x^2 \left(3+\frac{8}{x}+\frac{1}{x^2} \right)}
+</mrow><mrow>
+  &amp;= \frac{1-\frac{3}{x}+\frac{4}{x^2}}
+  {3+\frac{8}{x}+\frac{1}{x^2}} &amp; \text{ remove the common factors}
+</mrow>
+</md>
+<md>
+<mrow>
+  \lim_{x \to \infty} \frac{x^2-3x+4}{3x^2+8x+1}
+  &amp;= \lim_{x \to \infty} \frac{1-\frac{3}{x}+\frac{4}{x^2}}
+  {3+\frac{8}{x}+\frac{1}{x^2}}
+</mrow><mrow>
+  &amp;= \frac{\ds \lim_{x \to \infty}\left(1-\frac{3}{x}+\frac{4}{x^2}\right)}
+{\ds \lim_{x \to \infty}\left(3+\frac{8}{x}+\frac{1}{x^2} \right)}
+&amp; \text{arithmetic of limits}
+</mrow><mrow>
+  &amp;= \frac{\ds \lim_{x \to \infty} 1
+  - \lim_{x \to \infty} \frac{3}{x} + \lim_{x \to \infty} \frac{4}{x^2}}
+{\ds \lim_{x \to \infty} 3
+ + \lim_{x \to \infty} \frac{8}{x}+ \lim_{x \to \infty} \frac{1}{x^2} }
+&amp; \text{more arithmetic of limits}
+</mrow><mrow>
+  &amp;= \frac{1+0+0}{3+0+0}  = \frac{1}{3}
+</mrow>
+</md>
+</p></example>
+
+<p>The following one gets a little harder</p>
+
+<example xml:id="eg_lim_tricky"><title>Be careful of limits involving roots</title>
+<p>
+Find the limit as <m>x \to \infty</m> of <m>\frac{\sqrt{4x^2+1}}{5x-1}</m>
+</p>
+
+<p>
+We use the same trick <mdash/> try to work out what is the biggest term in the  numerator and denominator and pull it to one side.
+<ul>
+<li> The denominator is dominated by <m>5x</m>. </li>
+<li>
+	The biggest contribution to the numerator comes from the <m>4x^2</m> inside  the square-root. When we pull <m>x^2</m> outside the square-root it becomes <m>x</m>,  so the numerator is dominated by <m>x \cdot \sqrt{4} = 2x</m>
+</li>
+<li>
+	To see this more explicitly rewrite the numerator
+	<md>
+	<mrow>
+	  \sqrt{4x^2+1} &amp;= \sqrt{x^2 (4+1/x^2)} = \sqrt{x^2} \sqrt{4+1/x^2} =
+	x\sqrt{4+1/x^2}.
+	</mrow>
+	</md>
+</li>
+<li>
+	Thus the limit as <m>x \to \infty</m> is
+	<md>
+	<mrow>
+	 \lim_{x \to \infty} \frac{\sqrt{4x^2+1}}{5x-1}
+	 &amp;= \lim_{x \to \infty} \frac{x \sqrt{4+1/x^2}}{x(5-1/x)}
+	</mrow><mrow>
+	 &amp;= \lim_{x \to \infty} \frac{\sqrt{4+1/x^2}}{5-1/x}
+	</mrow><mrow>
+	 &amp; = \frac{2}{5}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+</example>
+
+<p>
+Now let us also think about the limit of the same function,                  <m>\frac{\sqrt{4x^2+1}}{5x-1}</m>, as <m>x \rightarrow -\infty</m>. There is something a  subtle going on because of the square-root. First consider the  function
+	<fn>
+		Just to change things up lets use <m>t</m> and <m>h(t)</m> instead of  the ubiquitous <m>x</m> and <m>f(x)</m>.
+	</fn>
+</p>
+
+<p>
+<md>
+<mrow>
+  h(t) &amp;= \sqrt{t^2}
+</mrow>
+</md>
+Evaluating this at <m>t=7</m> gives
+<md>
+<mrow>
+  h(7) &amp;= \sqrt{ 7^2 } = \sqrt{49} = 7
+</mrow>
+</md>
+We'll get much the same thing for any <m>t \geq 0</m>. For any <m>t \ge 0</m>, <m>h(t)=\sqrt{t^2}</m>  returns exactly <m>t</m>. However now consider the function at <m>t=-3</m>
+<md>
+<mrow>
+  h(-3) &amp;= \sqrt{ (-3)^2 } = \sqrt{9} = 3 = - (-3)
+</mrow>
+</md>
+that is the function is returning <m>-1</m> times the input.
+</p>
+
+<p>
+This is because when we defined <m>\sqrt{\text{ }}</m>, we defined it to be the  <em>positive</em> square-root. i.e. the function <m>\sqrt{t}</m> can never return a  negative number. So being more careful
+<md>
+<mrow>
+  h(t) &amp;= \sqrt{t^2} = | t |
+</mrow>
+</md>
+Where the <m>|t|</m> is the absolute value of <m>t</m>. You are perhaps used to thinking  of absolute value as <q>remove the minus sign</q>, but this is not quite correct.  Let's sketch the function
+</p>
+
+<sidebyside width="40%">
+<image source="text/figs/abs"/>
+</sidebyside>
+
+<p>
+It is a piecewise function defined by
+<md>
+<mrow>
+  |x| &amp;= \begin{cases} x &amp; x \geq 0 \\ -x &amp; x  \lt  0 \end{cases}
+</mrow>
+</md>
+Hence our function <m>h(t)</m> is really
+<md>
+<mrow>
+  h(t) &amp;= \sqrt{t^2} =
+	  \begin{cases}
+          t &amp; t \geq 0 \\
+	  -t &amp; t  \lt  0
+         \end{cases}
+</mrow>
+</md>
+So that when we evaluate <m>h(-7)</m> it is
+<md>
+<mrow>
+  h(-7) &amp;= \sqrt{ (-7)^2 } = \sqrt{49} = 7 = -(-7)
+</mrow>
+</md>
+We are now ready to examine the limit as <m>x \to -\infty</m> in our previous  example. Mostly it is copy and paste from above.
+</p>
+
+<example xml:id="eg_lim_tricky_part2"><title>Be careful of limits involving roots <mdash/> continued</title>
+<p>
+Find the limit as <m>x \to -\infty</m> of <m>\frac{\sqrt{4x^2+1}}{5x-1}</m>
+</p>
+
+<p>
+We use the same trick <mdash/> try to work out what is the biggest term in the  numerator and denominator and pull it to one side. Since we are taking the  limit as <m>x \to -\infty</m> we should think of <m>x</m> as a large negative number.
+<ul>
+<li> The denominator is dominated by <m>5x</m>. </li>
+<li>
+	The biggest contribution to the numerator comes from the <m>4x^2</m> inside  the square-root. When we pull the <m>x^2</m> outside a square-root it becomes <m>|x| =  -x</m> (since we are taking the limit as <m>x \to -\infty</m>), so the numerator is  dominated by <m>-x\cdot\sqrt{4} = -2x</m>
+</li>
+<li>
+	To see this more explicitly rewrite the numerator
+	<md>
+	<mrow>
+	  \sqrt{4x^2+1} &amp;= \sqrt{x^2 (4+1/x^2)}  = \sqrt{x^2} \sqrt{4+1/x^2}
+	</mrow><mrow>
+	  &amp;= |x|\sqrt{4+1/x^2} &amp; \text{ and since $x \lt 0$ we have}
+	</mrow><mrow>
+	  &amp; = -x\sqrt{4+1/x^2}
+	</mrow>
+	</md>
+</li>
+<li>
+	Thus the limit as <m>x \to -\infty</m> is
+	<md>
+	<mrow>
+	 \lim_{x \to -\infty} \frac{\sqrt{4x^2+1}}{5x-1}
+	 &amp;= \lim_{x \to -\infty} \frac{-x \sqrt{4+1/x^2}}{x(5-1/x)}
+	</mrow><mrow>
+	 &amp;= \lim_{x \to -\infty} \frac{-\sqrt{4+1/x^2}}{5-1/x}
+	</mrow><mrow>
+	 &amp; = -\frac{2}{5}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p></example>
+
+<p>
+So the limit as <m>x \to -\infty</m> is almost the same but we gain a minus sign.  This <alert>is definitely not</alert> the case in general <mdash/> you have to think about each  example separately.
+</p>
+
+<p>
+Here is a sketch of the function in question.</p>
+
+<sidebyside width="40%">
+<image source="text/figs/neg_inf_lim"/>
+</sidebyside>
+
+<example><title>Do not try to add and subtract infinity</title>
+<p>
+Compute the following limit:
+<md>
+<mrow>
+  \lim_{x \to \infty} \left( x^{7/5}-x \right)
+</mrow>
+</md>
+In this case we cannot use the arithmetic of limits to write this as
+<md>
+<mrow>
+  \lim_{x \to \infty} \left( x^{7/5}-x \right)
+  &amp;= \left( \lim_{x \to \infty} x^{7/5}\right)
+  - \left( \lim_{x \to \infty} x \right)
+</mrow><mrow>
+  &amp;= \infty -\infty
+</mrow>
+</md>
+because the limits do not exist. We can only use the limit laws when the limits  exist. So we should go back and think some more.
+</p>
+
+<p>
+When <m>x</m> is very large, <m>x^{7/5} = x\cdot x^{2/5}</m> will be much larger than <m>x</m>, so the  <m>x^{7/5}</m> term will dominate the <m>x</m> term. So factor out <m>x^{7/5}</m> and rewrite it as
+<md>
+<mrow>
+  x^{7/5}-x &amp;= x^{7/5} \left(1 - \frac{1}{x^{2/5}} \right)
+</mrow>
+</md>
+Consider what happens to each of the factors as <m>x \to \infty</m>
+<ul>
+<li>
+	For large <m>x</m>, <m>x^{7/5} \gt x</m> (this is actually true for any <m>x \gt 1</m>).  In the limit as <m>x \to +\infty</m>, <m>x</m> becomes arbitrarily large and  positive, and <m>x^{7/5}</m> must be bigger still, so it follows that
+	<md>
+	<mrow>
+	  \lim_{x \to \infty} x^{7/5} &amp;= + \infty.
+	</mrow>
+	</md>
+</li>
+<li>
+	On the other hand, <m>(1-x^{-2/5})</m> becomes closer and closer to <m>1</m> <mdash/>  we can use the arithmetic of limits to write this as
+	<md>
+	<mrow>
+	  \lim_{x \to \infty} (1-x^{-2/5}) &amp;= \lim_{x \to \infty} 1 - \lim_{x \to
+	\infty} x^{-2/5} = 1-0 = 1
+	</mrow>
+	</md>
+</li>
+</ul>
+So the product of these two factors will be come larger and larger (and  positive) as <m>x</m> moves off to infinity. Hence we have
+<md>
+<mrow>
+  \lim_{x \to \infty} x^{7/5} \left(1 - 1/x^{2/5} \right) &amp;= + \infty
+</mrow>
+</md>
+</p></example>
+
+<p>
+But remember <m>+\infty</m> and <m>-\infty</m> are not numbers; the last equation in the example is shorthand for <q>the function becomes arbitrarily large</q>.
+</p>
+
+<p>
+In the previous section we saw that finite limits and arithmetic interact very nicely  (see Theorems<nbsp/><xref ref="thm_arith_lim"/> and<nbsp/><xref ref="thm_lim_powers"/>). This enabled us to compute  the limits of more complicated function in terms of simpler ones. When limits of  functions go to plus or minus infinity we are quite a bit more restricted in what we can  deduce. The next theorem states some results concerning the sum, difference, ratio and  product of infinite limits <mdash/> unfortunately in many cases we cannot make general  statements and the results will depend on the details of the problem at hand.
+</p>
+
+<theorem xml:id="thm_arith_inf_lim"><title>Arithmetic of infinite limits</title>
+<statement><p>
+Let <m>a,c,H \in \mathbb{R}</m> and let <m>f,g,h</m> be functions defined in  an interval around <m>a</m> (but they need not be defined at <m>x=a</m>), so that
+<md>
+<mrow>
+  \lim_{x \to a} f(x) &amp;= +\infty &amp;
+  \lim_{x \to a} g(x) &amp;= +\infty &amp;
+  \lim_{x \to a} h(x) &amp;= H
+</mrow>
+</md>
+<ul>
+<li> <m>\ds \lim_{x \to a} ( f(x) + g(x) ) = +\infty</m> </li>
+<li> <m>\ds \lim_{x \to a} ( f(x) + h(x) ) = +\infty</m> </li>
+<li> <m>\ds \lim_{x \to a} ( f(x) - g(x) )</m> undetermined </li>
+<li> <m>\ds \lim_{x \to a} ( f(x) - h(x) ) = +\infty</m> </li>
+<li>
+	<m>\ds \lim_{x \to a} c f(x) =
+	\begin{cases}
+	 +\infty &amp; c \gt 0 \\
+	0 &amp; c=0 \\
+	-\infty &amp; c \lt 0
+	\end{cases}
+	</m>
+</li>
+<li> <m>\ds \lim_{x \to a} ( f(x) \cdot g(x) ) = +\infty</m>. </li>
+<li>
+	<m>\ds \lim_{x \to a} f(x) h(x) =
+	\begin{cases}
+	 +\infty &amp; H \gt 0 \\
+	-\infty &amp; H \lt 0\\
+	\text{undetermined} &amp; H=0
+	\end{cases}
+	</m>
+</li>
+<li> <m>\ds \lim_{x \to a} \frac{f(x)}{g(x)}</m> undetermined </li>
+<li>
+	<m>\ds \lim_{x \to a} \frac{f(x)}{h(x)} =
+	\begin{cases}
+	+\infty &amp; H \gt 0 \\
+	-\infty &amp; H \lt 0\\
+	\text{undetermined} &amp; H=0
+	\end{cases}</m>
+</li>
+<li> <m>\ds \lim_{x \to a} \frac{h(x)}{f(x)} = 0</m> </li>
+</ul>
+</p></statement>
+</theorem>
+
+<p>
+Note that by <q>undetermined</q> we mean that the limit may or may not exist, but  cannot be determined from the information given in the theorem. See  Example<nbsp/><xref ref="eg_lim_rat"/> for an example of what we mean by  <q>undetermined</q>. Additionally consider the following example.
+</p>
+
+<example><title>Be careful with the arithmetic of infinite limits</title>
+<p>
+Consider the following 3 functions:
+<md>
+<mrow>
+f(x)&amp;=x^{-2} &amp; g(x)&amp;=2x^{-2} &amp;h(x)&amp;=x^{-2}-1.
+</mrow>
+<intertext>Their limits as <m>x \to 0</m> are:</intertext>
+<mrow>
+\lim_{x\to0} f(x) &amp;= +\infty &amp;
+\lim_{x\to0} g(x) &amp;= +\infty &amp;
+\lim_{x\to0} h(x) &amp;= +\infty.
+</mrow>
+</md>
+Say we want to compute the limit of the difference of two of the above functions as <m>x  \to 0</m>. Then the previous theorem cannot help us. This is not because it is too weak,  rather it is because the difference of two infinite limits can be, either plus infinity,  minus infinity or some finite number depending on the details of the problem. For example,
+<md>
+<mrow>
+  \lim_{x\to0} \left( f(x)-g(x) \right) &amp;= \lim_{x\to0} -x^{-2} = -\infty
+</mrow><mrow>
+  \lim_{x\to0} \left( f(x)-h(x) \right) &amp;= \lim_{x\to0} 1 = 1
+</mrow><mrow>
+  \lim_{x\to0} \left( g(x)-h(x) \right) &amp;= \lim_{x\to0} x^{-2}+1 = +\infty
+</mrow>
+</md>
+</p>
+
+</example>
+
+</subsection>
+<xi:include href="../problems/prob_s1.5.xml"/>
+
+
+</section>

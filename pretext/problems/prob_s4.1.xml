@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises>
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+Let <m>f(x)</m> be  a function with derivative <m>f'(x)</m>. What is the most general antiderivative of <m>f'(x)</m>?
+</p></statement>
+<hint><p>
+The function <m>f(x)</m> is an antiderivative of <m>f'(x)</m>, but it is not the most general one.
+</p></hint>
+<answer><p>
+<m>F(x)=f(x)+C</m>
+</p></answer>
+<solution><p>
+An antiderivative of <m>f'(x)</m> is a function whose derivative is <m>f'(x)</m>. Our original function <m>f(x)</m> has this property, so <m>f(x)</m> is <em>an</em> antiderivative of <m>f'(x)</m>, but it's not the most general. We can add a constant to <m>f(x)</m> without affecting its derivative. The most general antiderivative of <m>f'(x)</m> is <m>f(x)+C</m>, where <m>C</m> is any constant.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+On the graph below, the black curve is <m>y=f(x)</m>. Which of the coloured curves is an antiderivative of <m>f(x)</m>?</p>
+
+<sidebyside width="80%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{8}{6}{6}{6}
+\draw[ultra thick] plot[domain=-3.67:2.62, samples=100](2*\x,{3*cos(2*\x r)-3*sin(\x r)}) node[below right]{$f(x)$};
+\draw[thick, red] plot[domain=-3.67:2.62, samples=100](2*\x,{3*cos(\x r)+1.5*sin(2*\x r)+1}) node[right]{$C(x)$};
+\draw[thick, blue] plot[domain=-3.67:2.62, samples=100](2*\x,{3*cos(\x r)+sin(2*\x r)-1}) node[right]{$A(x)$};
+\draw[thick, orange] plot[domain=-3.67:2.62, samples=100](2*\x,{1.5*cos(2*\x r)-1.5*sin(\x r)-2}) node[right]{$B(x)$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+When <m>f(x)</m> is positive, its antiderivative <m>F(x)</m> is increasing. When <m>f(x)</m> is negative, its antiderivative <m>F(x)</m> is decreasing. When <m>f(x)=0</m>, <m>F(x)</m> has a horizontal tangent line.
+</p></hint>
+<answer><p>
+<textred><m>C(x)</m></textred>
+</p></answer>
+<solution><p>
+Notice <m>f(x)</m> is nonnegative for an interval covering the left part of the graph, and negative on the right part of the graph. That means its antiderivative is increasing for the left interval, then decreasing for the right interval. This applies to <m>A(x)</m> and <m>C(x)</m>, but not <m>B(x)</m>.
+</p>
+
+<p>There are only three points where <m>A(x)</m> has a horizontal tangent line: at its global maximum and the endpoints of the interval shown. By contrast, <m>C(x)</m> has a horizontal tangent line in four places: at its global maximum,  at its inflection point, and at the endpoints of the interval shown. Since <m>f(x)=0</m> four times (and these line up with the horizontal portions of <m>C(x)</m>) we conclude  <m>C(x)</m> is the antiderivative of <m>f(x)</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+
+<introduction><p>In Questions<nbsp/><xref ref="s4_1antifirst"/> through <xref ref="s4_1antilast"/>, you are asked to find the antiderivative of a function. Phrased like this, we mean the <em>most general</em> antiderivative. These will all include some added constant. The table after Example<nbsp/><xref ref="eg_antidiff_poly"/>
+might be of help.</p></introduction>
+
+<exercise xml:id="s4_1antifirst" purpose="RQS">
+<statement><p>
+Find the  antiderivative of
+<m>f(x)=3x^2+5x^4+10x-9</m>.
+</p></statement>
+<hint><p>
+For any constant <m>n \neq -1</m>, an antiderivative of <m>x^n</m> is <m>\frac{1}{n+1}x^{n+1}</m>.
+</p></hint>
+<answer><p>
+<m>F(x)=x^3+x^5+5x^2-9x+C</m>
+</p></answer>
+<solution><p>
+For any constant <m>n \neq -1</m>, an antiderivative of <m>x^n</m> is <m>\frac{1}{n+1}x^{n+1}</m>.
+<md>
+<mrow>
+F'(x)&amp;=3x^2+5x^4+10x-9
+</mrow><mrow>
+F(x)&amp;=3\left(\frac{1}{3}\right)x^3+5\left(\frac{1}{5}\right)x^5+10\left(\frac{1}{2}\right)x^2-9\left(\frac{1}{1}\right)x^1+C
+</mrow><mrow>
+&amp;=x^3+x^5+5x^2-9x+C
+</mrow>
+</md>
+</p>
+
+<p>Remark: we can always check by differentiating:
+<md>
+<mrow>
+F'(x)&amp;=\diff{}{x}\left\{x^3+x^5+5x^2-9x+C\right\}
+</mrow><mrow>
+&amp;=3x^2+5x^4+10x-9
+</mrow><mrow>
+&amp;=f(x)
+</mrow>
+</md>
+so  <m>F(x)</m> is indeed an antiderivative of <m>f(x)</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the  antiderivative of
+<m>f(x)=\dfrac{3}{5}x^7-18x^4+x</m>.
+</p></statement>
+<hint><p>
+For any constant <m>n \neq -1</m>, an antiderivative of <m>x^n</m> is <m>\frac{1}{n+1}x^{n+1}</m>.
+</p></hint>
+<answer><p>
+<m>F(x)=\dfrac{3}{40}x^8-\dfrac{18}{5}x^5+\dfrac{1}{2}x^2+C</m>
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+F'(x)&amp;=\frac{3}{5}x^7-18x^4+x
+</mrow><mrow>
+F(x)&amp;=\left(\frac{3}{5}\right)\left(\frac{1}{8}\right)x^8-18\left(\frac{1}{5}\right)x^5+\frac{1}{2}x^2+C
+</mrow><mrow>
+&amp;=\frac{3}{40}x^8-\frac{18}{5}x^5+\frac{1}{2}x^2+C
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Find the antiderivative of
+<m>f(x)=4\sqrt[3]{x}-\dfrac{9}{2x^{2.7}}</m>.
+</p></statement>
+<hint><p>
+For any constant <m>n\neq -1</m>, an antiderivative of <m>x^n</m> is <m>\frac{1}{n+1}x^{n+1}</m>. The constant <m>n</m> does not have to be an integer.
+</p></hint>
+<answer><p>
+<m>F(x)=3x^{\tfrac{4}{3}}+\dfrac{45}{17x^{1.7}}+C</m>
+</p></answer>
+<solution><p>
+For any constant <m>n\ne 1</m>, an antiderivative of <m>x^n</m> is <m>\frac{1}{n+1}x^{n+1}</m>. The constant <m>n</m> does not have to be an integer.
+<md>
+<mrow>
+F'(x)&amp;=4\sqrt[3]{x}-\frac{9}{2x^{2.7}}
+</mrow><mrow>
+&amp;=4 x^{\tfrac{1}{3}}-\frac{9}{2}x^{-2.7}
+</mrow><mrow>
+F(x)&amp;=4\left(\frac{1}{\frac{1}{3}+1}\right)x^{\left(\tfrac{1}{3}+1\right)}-\left(\frac{9}{2}\right)\left(\frac{1}{-2.7+1}\right)x^{(-2.7+1)}+C
+</mrow><mrow>
+&amp;=4\left(\frac{3}{4}\right)x^{\tfrac{4}{3}}-\left(\frac{9}{2}\right)\left(\frac{10}{-17}\right)x^{-1.7}+C
+</mrow><mrow>
+&amp;=3x^{\tfrac{4}{3}}+\frac{45}{17x^{1.7}}+C
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the  antiderivative of
+<m>f(x)=\dfrac{1}{7\sqrt{x}}</m>.
+</p></statement>
+<hint><p>
+What is the derivative of <m>\sqrt{x}</m>?
+</p></hint>
+<answer><p>
+<m>F(x)=\dfrac{2}{7}\sqrt{x}+C</m>
+</p></answer>
+<solution><p>
+<ul>
+<li> Solution 1:
+We can re-write <m>f(x)</m> to make it a power of <m>x</m>.
+<md>
+<mrow>
+F'(x)&amp;=\frac{1}{7}x^{-\tfrac{1}{2}}
+</mrow><mrow>
+F(x)&amp;=\left(\frac{1}{7}\right)\left(\frac{1}{-\frac{1}{2}+1}\right)x^{\left(-\tfrac{1}{2}+1\right)}+C
+</mrow><mrow>
+&amp;=\left(\frac{1}{7}\right)(2)x^{\tfrac{1}{2}}+C
+</mrow><mrow>
+&amp;=\frac{2}{7}\sqrt{x}+C
+</mrow>
+</md>
+</li>
+<li> Solution 2:
+We notice that <m>\dfrac{1}{7\sqrt{x}}</m> looks a lot like <m>\dfrac{1}{2\sqrt{x}}</m>, which is the derivative of <m>\sqrt{x}</m>. So:
+<md>
+<mrow>
+\diff{}{x}\left\{\sqrt{x}\right\}&amp;=\frac{1}{2\sqrt{x}}
+</mrow><mrow>
+\diff{}{x}\left\{\frac{2}{7}\sqrt{x}\right\}&amp;=\left(\frac{2}{7}\right)\frac{1}{2\sqrt{x}}=f(x)
+</mrow>
+</md>
+So, an antiderivative of <m>f(x)</m> is <m>\dfrac{2}{7}\sqrt{x}</m>. Then the most general antiderivative is <m>F(x)=\dfrac{2}{7}\sqrt{x}+C</m>.
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the antiderivative of
+<m>f(x)=e^{5x+11}</m>.
+</p></statement>
+<hint><p>
+The derivative of <m>e^{5x+11}</m> is close to, but not exactly the same as, <m>f(x)</m>.
+Don't be afraid to just make a guess. But be sure
+          to check by differentiating your guess. If the derivative
+          isn't what you want, you will often still learn enough
+          to be able to then guess the correct antiderivative.
+</p></hint>
+<answer><p>
+<m>F(x)=\dfrac{1}{5}e^{5x+11}+C</m>
+</p></answer>
+<solution><p>
+We recall <m>\ds\diff{}{x}e^x=e^x</m>. That is, <m>e^x</m> is its own antiderivative.
+ So, a first guess for the antiderivative of <m>f(x)</m> might be itself.
+ <md>
+<mrow>
+ \diff{}{x}\left\{e^{5x+11}\right\}&amp;=5e^{5x+11}
+ </mrow>
+<intertext>This isn't exactly right, so we modify it by multiplying by a constant.</intertext><mrow>
+ \diff{}{x}\left\{\frac{1}{5}e^{5x+11}\right\}&amp;=e^{5x+11}
+  </mrow>
+</md>
+  This tells us that <m>\dfrac{1}{5}e^{5x+11}</m> is an antiderivative of <m>e^{5x+11}</m>. Therefore, the most general antiderivative of <m>e^{5x+11}</m> is <m>F(x)=\dfrac{1}{5}e^{5x+11}+C</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Find the antiderivative of
+<m>f(x)=3\sin(5x)+7\cos(13x)</m>.
+</p></statement>
+<hint><p>
+From the table in the text, an antiderivative of <m>\sin x</m> is <m>-\cos x</m>, and an antiderivative of <m>\cos x</m> is <m>\sin x</m>.
+</p></hint>
+<answer><p>
+<m>F(x)=-\dfrac{3}{5}\cos(5x)+\dfrac{7}{13}\sin(13x)+C</m>
+</p></answer>
+<solution><p>
+We know the derivatives of sine and cosine. We'll work from there to build a function whose derivative is <m>f(x)</m>. We'll start by finding an antiderivative of <m>7\cos(13x)</m>.
+<md>
+<mrow>
+\diff{}{x}\{\sin x\}&amp;=\cos x
+</mrow><mrow>
+\diff{}{x}\{\sin(13x)\}&amp;=13\cos(13x)
+</mrow><mrow>
+\diff{}{x}\left\{\frac{1}{13}\sin(13x)\right\}&amp;=\frac{13}{13}\cos(13x)=\cos(13x)
+</mrow><mrow>
+\diff{}{x}\left\{\frac{7}{13}\sin(13x)\right\}&amp;=7\cos(13x)
+</mrow>
+<intertext>So, an antiderivative of <m>7\cos(13x)</m> is <m>\dfrac{7}{13}\sin(13x)</m>.</intertext><mrow>
+\diff{}{x}\{\cos x\}&amp;=-\sin x
+</mrow><mrow>
+\diff{}{x}\{-\cos x\}&amp;=\sin x
+</mrow><mrow>
+\diff{}{x}\{-\cos (5x)\}&amp;=5\sin (5x)
+</mrow><mrow>
+\diff{}{x}\left\{-\frac{3}{5}\cos (5x)\right\}&amp;=\left(\frac{3}{5}\right)5\sin (5x)=3\sin(5x)
+</mrow>
+</md>
+So, an antiderivative of <m>3\sin(5x)</m> is <m>-\dfrac{3}{5}\cos(5x)</m>.
+</p>
+
+<p>The most general antiderivative of <m>3\sin(5x)+7\cos(13x)</m> is
+<me>F(x)=-\dfrac{3}{5}\cos(5x)+\dfrac{7}{13}\sin(13x)+C</me>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the antiderivative of
+<m>f(x)=\sec^2(x+1)</m>.
+</p></statement>
+<hint><p>
+What is the derivative of tangent?
+</p></hint>
+<answer><p>
+<m>F(x)=\tan(x+1)+C</m>
+</p></answer>
+<solution><p>
+We know the derivative of <m>\tan x</m> is <m>\sec^2 x</m>. Modifying this slightly, we see (using the chain rule)
+<md>
+<mrow>
+\diff{}{x}\left\{\tan(x+1)\right\}&amp;=\sec^2(x+1)\cdot\diff{}{x}\{x+1\}
+</mrow><mrow>
+&amp;=\sec^2(x+1)
+</mrow>
+</md>
+So, <m>\tan(x+1)</m> is an antiderivative of <m>\sec^2(x+1)</m>. Therefore, the most general antiderivative of <m>\sec^2(x+1)</m> is
+<m>F(x)=\tan(x+1)+C</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Find the antiderivative of
+<m>f(x)=\dfrac{1}{x+2}</m>.
+</p></statement>
+<hint><p>
+What is an antiderivative of <m>\dfrac{1}{x}</m>?
+</p></hint>
+<answer><p>
+<m>F(x)=\log|x+2|+C</m>
+</p></answer>
+<solution><p>
+We note that <m>f(x)</m> looks similar to <m>\dfrac{1}{x}</m>.
+<md>
+<mrow>
+\diff{}{x}\left\{\log|x|\right\}&amp;=\frac{1}{x}
+</mrow><mrow>
+\diff{}{x}\left\{\log|x+2|\right\}&amp;=\frac{1}{x+2}
+</mrow>
+</md>
+The most general antiderivative of <m>f(x)</m> is <m>F(x)=\log|x+2|+C</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s4_1arcsin1">
+<statement><p>
+Find the antiderivative of
+<m>f(x)=\dfrac{7}{\sqrt{3-3x^2}}</m>.
+</p></statement>
+<hint><p>
+<m>\dfrac{7}{\sqrt{3-3x^2}}=\dfrac{7}{\sqrt{3}}\left(\dfrac{1}{\sqrt{1-x^2}}\right)</m>
+</p></hint>
+<answer><p>
+<m>F(x)=\dfrac{7}{\sqrt{3}}\arcsin(x)+C</m>
+</p></answer>
+<solution><p>
+Our function <m>f(x)</m> bears some resemblance to the derivative of arcsine, <m>\dfrac{1}{\sqrt{1-x^2}}</m>:
+<md>
+<mrow>
+f(x)=\dfrac{7}{\sqrt{3-3x^2}}&amp;=\dfrac{7}{\sqrt{3}}\left(\dfrac{1}{\sqrt{1-x^2}}\right)
+</mrow><mrow>
+\diff{}{x}\left\{\frac{7}{\sqrt{3}}\arcsin(x)\right\}&amp;=\frac{7}{\sqrt{3}}\left(\frac{1}{\sqrt{1-x^2}}\right)=f(x)
+</mrow>
+</md>
+So, the most general antiderivative of <m>f(x)</m> is
+<m>F(x)=\dfrac{7}{\sqrt{3}}\arcsin(x)+C</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s4_1antilast" purpose="RQS">
+<statement><p>
+Find the antiderivative of
+<m>f(x)=\dfrac{1}{1+25x^2}</m>
+</p></statement>
+<hint><p>
+How is this similar to the derivative of the arctangent function?
+</p></hint>
+<answer><p>
+<m>F(x)=\dfrac{1}{5}\arctan(5x)+C</m>
+</p></answer>
+<solution><p>
+We notice that <m>f(x)</m> looks similar to the derivative of the arctangent function, <m>\dfrac{1}{1+x^2}</m>.
+<md>
+<mrow>
+f(x)=\frac{1}{1+25x^2}&amp;=\frac{1}{1+(5x)^2}
+</mrow>
+<intertext>This gives us a first guess for our antiderivative: perhaps <m>\arctan(5x)</m> will work. We test it by differentiating, making sure we don't forget the chain rule.</intertext><mrow>
+\diff{}{x}\left\{\arctan(\textcolor{red}{5x})\right\}&amp;=\frac{1}{1+\left(\textcolor{red}{5x}\right)^2}\cdot\textcolor{red}{5}
+</mrow>
+<intertext>We're close to <m>f(x)</m>, but we've multiplied by 5. That's easy to take care of: we can divide our guess by 5.</intertext><mrow>
+\diff{}{x}\left\{\frac{1}{5}\arctan(\textcolor{red}{5x})\right\}&amp;=
+\frac{1}{5}\left(\frac{1}{1+\left(\textcolor{red}{5x}\right)^2}\right)\cdot\textcolor{red}{5}
+</mrow><mrow>
+&amp;=\frac{1}{1+25x^2}=f(x)
+</mrow>
+</md>
+So, the most general antiderivative of <m>f(x)</m> is <m>F(x)=\dfrac{1}{5}\arctan(5x)+C</m>.
+</p></solution>
+</exercise>
+
+<introduction><p>In Questions<nbsp/><xref ref="s4_1initfirst"/> through <xref ref="s4_1initlast"/>, you are asked to find a specific antiderivative of a function. In this case, you should be able to solve for the entire function--no unknown constants floating about.</p></introduction>
+
+<exercise xml:id="s4_1initfirst" purpose="RQS">
+<statement><p>
+Find the function <m>f(x)</m> with <m>f'(x)=3x^2-9x+4</m> and <m>f(1)=10</m>.
+</p></statement>
+<hint><p>
+First, find the antiderivative of <m>f'(x)</m>. Your answer will have an unknown <m>+C</m> in it. Figure out which value of <m>C</m> gives <m>f(1)=10</m>.
+</p></hint>
+<answer><p>
+<m>f(x)=x^3-\dfrac{9}{2}x^2+4x+\dfrac{19}{2}</m>
+</p></answer>
+<solution><p>
+First, let's find the antiderivative of <m>f'(x)</m>. It's a polynomial, so we can use the observation from the text that an antiderivative of <m>x^n</m>, for any constant <m>n\ne 1</m>, is
+<m>\frac{1}{n+1}x^{n+1}</m>. Remember that the most general antiderivative will have an added constant.
+<md>
+<mrow>
+f(x)&amp;=\frac{3}{3}x^3-\frac{9}{2}x^2+4x+C
+</mrow><mrow>
+&amp;=x^3-\frac{9}{2}x^2+4x+C
+</mrow>
+<intertext>Use the fact that <m>f(1)=10</m> to solve for <m>C</m>.</intertext><mrow>
+10&amp;=1-\frac{9}{2}+4+C
+</mrow><mrow>
+C&amp;=\frac{19}{2}
+</mrow>
+<intertext>All together,</intertext><mrow>
+f(x)&amp;=x^3-\frac{9}{2}x^2+4x+\frac{19}{2}.
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Find the function <m>f(x)</m> with <m>f'(x)=\cos(2x)</m> and <m>f(\pi)=\pi</m>.
+</p></statement>
+<hint><p>
+Remember that one antiderivative of <m>\cos x</m> is  <m>\sin x</m> (not <nbsp/><nbsp/><m>-\sin x</m>).
+</p></hint>
+<answer><p>
+<m>f(x)=\dfrac{1}{2}\sin(2x)+\pi</m>
+</p></answer>
+<solution><p>
+First, let's find the antiderivative of <m>f'(x)</m>. We know that one antiderivative of <m>\cos(x)</m> is <m>\sin x</m>. We might guess that an antiderivative of <m>\cos(2x)</m> is <m>\sin(2x)</m>. Check by differentiating:
+<md>
+<mrow>
+\diff{}{x}\left\{\sin(2x)\right\}&amp;=2\cos(2x)
+</mrow>
+<intertext>This is close to <m>f'(x)</m>, but we need to divide by 2.</intertext><mrow>
+\diff{}{x}\left\{\frac{1}{2}\sin(2x)\right\}&amp;=\cos(2x)
+</mrow>
+<intertext>So, <m>f(x)=\dfrac{1}{2}\sin(2x)+C</m> for some constant <m>C</m>. We can find <m>C</m> using the given information <m>f(\pi)=\pi</m>.</intertext><mrow>
+\pi=f(\pi)&amp;=\frac{1}{2}\sin(2\pi)+C
+</mrow><mrow>
+\pi&amp;=C
+</mrow>
+</md>
+Therefore, <m>f(x)=\dfrac{1}{2}\sin(2x)+\pi</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the function <m>f(x)</m> with <m>f'(x)=\dfrac{1}{x}</m> and <m>f(-1)=0</m>.
+</p></statement>
+<hint><p>
+An antiderivative of <m>\dfrac{1}{x}</m> is <m>\log(x)+C</m>, but this is not the most general antiderivative.
+</p></hint>
+<answer><p>
+<m>f(x)=\log|x|</m>
+</p></answer>
+<solution><p>
+Looking at the table in the notes, we see the antiderivative of <m>\dfrac{1}{x}</m> is <m>f(x)=\log|x|+C</m>. The given information <m>f(-1)=0</m> lets us find <m>C</m>:
+<md>
+<mrow>
+0=f(-1)&amp;=\log|-1|+C
+</mrow><mrow>
+0&amp;=\log(1)+C
+</mrow><mrow>
+0&amp;=C
+</mrow>
+</md>
+So, <m>f(x)=\log|x|</m>.
+</p>
+
+<p>Remark: it is true that <m>\log x</m> is an antiderivative of <m>\dfrac{1}{x}</m>, since the derivative of <m>\log x</m> is <m>\dfrac{1}{x}</m>. However, <m>\log x</m> is only defined for positive values of <m>x</m>. Since the given information tells you that <m>f(x)</m> is defined when <m>x=-1</m>, you need to use a more general antiderivative of <m>\dfrac{1}{x}</m>: <m>\log|x|+C</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s4_1initlast">
+<statement><p>
+Find the function <m>f(x)</m> with <m>f'(x)=\dfrac{1}{\sqrt{1-x^2}}+1</m> and <m>f(1)=-\dfrac{\pi}{2}</m>.
+</p></statement>
+<hint><p>
+What is the derivative of the arcsine function?
+</p></hint>
+<answer><p>
+<m>f(x)=\arcsin x+x - \pi-1</m>
+</p></answer>
+<solution><p>
+An antiderivative of  <m>1</m> is <m>x</m>, and an antiderivative of <m>\dfrac{1}{\sqrt{1-x^2}}</m> is <m>\arcsin(x)</m>. So, <m>f(x)=\arcsin x + x +C</m>. The given information lets us find <m>C</m>.
+<md>
+<mrow>
+-\frac{\pi}{2}=f(1)&amp;=\arcsin(1)+1+C
+</mrow><mrow>
+-\frac{\pi}{2}&amp;=\frac{\pi}{2}+1+C
+</mrow><mrow>
+C&amp;=-\pi-1
+</mrow>
+</md>
+So, <m>f(x)=\arcsin x+x - \pi-1</m>.
+</p></solution>
+</exercise>
+
+<introduction><p>In Questions<nbsp/><xref ref="s4_1applyfirst"/> through <xref ref="s4_1applylast"/>, we will explore some simple situations where antiderivatives might arise.</p></introduction>
+
+<exercise xml:id="s4_1applyfirst" purpose="RQS">
+<statement><p>
+Suppose a population of bacteria at time <m>t</m> (measured in hours) is growing at a rate of <m>100e^{2t}</m> individuals per hour. Starting at time <m>t=0</m>, how long will it take the initial colony to increase by 300 individuals?
+</p></statement>
+<hint><p>
+If <m>P(t)</m> is the population at time <m>t</m>, then the information given in the problem is
+<m>P'(t)=100e^{2t}</m>.
+</p></hint>
+<answer><p>
+It takes <m>\frac{1}{2}\log 7</m> hours (about 58 minutes) for the initial colony to increase by 300 individuals.
+</p></answer>
+<solution><p>
+If <m>P(t)</m> is the population at time <m>t</m>, then the information given in the problem is
+<m>P'(t)=100e^{2t}</m>. Antidifferentiating, we see <m>P(t)=50e^{2t}+C</m>, where <m>C</m> is some constant. We want to know for what value of <m>t</m> we get <m>P(t)=P(0)+300</m>.
+<md>
+<mrow>
+P(t)&amp;=P(0)+300
+</mrow><mrow>
+50e^{2t}+C&amp;=50e^{0}+C+300
+</mrow><mrow>
+50e^{2t}&amp;=350
+</mrow><mrow>
+e^{2t}&amp;=7
+</mrow><mrow>
+2t&amp;=\log(7 )
+</mrow><mrow>
+t&amp;=\frac{1}{2}\log(7)
+</mrow>
+</md>
+It takes <m>\frac{1}{2}\log 7</m> hours (about 58 minutes) for the initial colony to increase by 300 individuals.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Your bank account at time <m>t</m> (measured in years) is growing at a rate of
+<me>
+1500e^{\tfrac{t}{50}}
+</me>
+dollars per year. How much money is in your account at time <m>t</m>?
+</p></statement>
+<hint><p>
+You can't know exactly--there will be a constant involved.
+</p></hint>
+<answer><p>
+At time <m>t</m>, the amount of money in your bank account is <m>75000e^{\tfrac{t}{50}}+C</m> dollars, for some constant <m>C</m>.
+</p></answer>
+<solution><p>
+If <m>A(t)</m> is the amount of money in your account at time <m>t</m>, then the given information is
+<md>
+<mrow>
+A'(t)&amp;=1500e^{\tfrac{t}{50}}
+</mrow>
+<intertext>Antidifferentiating,</intertext><mrow>
+A(t)&amp;=75000e^{\tfrac{t}{50}}+C
+</mrow>
+</md>
+for some constant <m>C</m>.
+</p>
+<p>
+That is, at time <m>t</m>, the amount of money in your bank account is <m>75000e^{\tfrac{t}{50}}+C</m> dollars, for some constant <m>C</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s4_1applylast">
+<statement><p>
+At time <m>t</m> during a particular day, <m>0 \leq t \leq 24</m>, your house consumes energy at a rate of <me>
+0.5\sin\left(\frac{\pi}{24}t\right)+0.25</me>
+ kW. (Your consumption was smallest in the middle of the night, and peaked at noon.) How much energy did your house consume in that day?
+</p></statement>
+<hint><p>
+If <m>P(t)</m> is the amount of power in kW-hours the house has used since time <m>t=0</m>, where <m>t</m> is measured in hours, then the information given is that <m>P'(t)=0.5\sin\left(\dfrac{\pi}{24}t\right)+0.25</m> kW.
+</p></hint>
+<answer><p>
+<m>\dfrac{24}{\pi}+6\approx13.6</m> kWh
+</p></answer>
+<solution><p>
+Let <m>P(t)</m> be the amount of power your house has used since time <m>t=0</m>. If <m>t</m> is measured in hours, and <m>P(t)</m> in kWh (kilowatt-hours), then <m>P'(t)</m> is the rate at which your house is consuming power, in kW. So, the given information is that
+<md>
+<mrow>
+P'(t)&amp;=0.5\sin\left(\dfrac{\pi}{24}t\right)+0.25
+</mrow>
+<intertext>Antidifferentiating,</intertext><mrow>
+P(t)&amp;=-\frac{12}{\pi}\cos\left(\frac{\pi}{24}t\right)+0.25t+C
+</mrow>
+<intertext>Since <m>P(0)</m> is the amount of energy consumed after 0 hours, <m>P(0)=0</m>, so</intertext><mrow>
+0=P(0)&amp;=-\frac{12}{\pi}+C
+</mrow><mrow>
+C&amp;=\frac{12}{\pi}
+</mrow><mrow>
+P(t)&amp;=\frac{12}{\pi}\left[1-\cos\left(\frac{\pi}{24}t\right)\right]+0.25t
+</mrow>
+<intertext>After 24 hours, your energy consumed is</intertext><mrow>
+P(24)&amp;=\frac{12}{\pi}\left[1-\cos\left(\pi\right)\right]+0.25(24)
+</mrow><mrow>
+&amp;=\frac{24}{\pi}+6\approx13.6\; \mathrm{kWh}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise><title><fromexam>1999H</fromexam></title>
+<statement><p>
+Let <m>f(x)=2\sin^{-1}\sqrt{x}</m> and <m>g(x)=\sin^{-1}(2x-1)</m>.
+Find the derivative of <m>f(x)-g(x)</m> and simplify your answer. What does
+the answer imply about the relation between <m>f(x)</m> and <m>g(x)</m>?
+</p></statement>
+<hint><p>
+The derivatives should match. Remember <m>\sin^{-1}</m> is another way of writing arcsine.
+</p></hint>
+<answer><p>
+<m>f'(x)=g'(x)=\dfrac{1}{\sqrt{x-x^2}}</m>; <m>f</m> and <m>g</m> differ only by a constant.
+</p></answer>
+<solution><p>
+We differentiate <m>f(x)</m> and <m>g(x)</m> using the chain rule. Recall <m>\ds\diff{}{x}\left\{\arcsin(x)\right\}=\dfrac{1}{\sqrt{1-x^2}}</m>.
+<md>
+<mrow>
+f'(x)&amp;=\frac{2}{\sqrt{1-\textcolor{red}{\sqrt{x}}^2}}\cdot\diff{}{x}\textcolor{red}{\sqrt{x}}
+</mrow><mrow>
+&amp;=\frac{2}{\sqrt{1-x}}\cdot\frac{1}{2\sqrt{x}}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{x-x^2}}\cr
+g'(x)&amp;=\frac{1}{\sqrt{1-\textcolor{red}{(2x-1)}^2}}\cdot\diff{}{x}\{\textcolor{red}{2x-1}\}
+</mrow><mrow>
+&amp;=\frac{2}{\sqrt{1-4x^2+4x-1}}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{x-x^2}}\cr
+</mrow>
+</md>
+So, the derivative of <m>f(x)-g(x)</m> is <m>0</m>, which implies that
+<m>f(x)</m> and <m>g(x)</m> differ by a constant--perhaps a surprising result!
+</p>
+
+<p>Remark: we don't need calculus to show that <m>f(x)</m> and <m>g(x)</m> only differ by a constant. Define
+<m>\theta=\sin^{-1}\sqrt{x}</m>, so that <m>\sin\theta=\sqrt{x}</m> and <m>f(x) = 2\theta</m> , and then
+<me>
+\sin \left[f(x)-\frac{\pi}{2}\right]=-\cos f(x) =-\cos 2\theta=-[1-2\sin^2\theta]
+=2\sin^2\theta -1=2x-1
+</me>
+Our goal is to take the arcsine of the first and last expressions and conclude <m>f(x)-\dfrac{\pi}{2}=\arcsin(2x-1)=g(x)</m>. However, before we can say <m>\arcsin\left(\sin\left[f(x)-\dfrac{\pi}{2}\right]\right)=f(x)-\dfrac{\pi}{2}</m>, we have to check that <m>-\dfrac{\pi}{2} \leq f(x)-\dfrac{\pi}{2}\leq\dfrac{\pi}{2}</m>. That is, we need to show that <m>0 \leq f(x) \leq \pi</m>.
+</p>
+
+<p> As  <m>0\le\theta\le\frac{\pi}{2}</m>
+(since <m>\sin^{-1}</m> always takes values between
+<m>-\frac{\pi}{2}</m> and <m>\frac{\pi}{2}</m> and since <m>\sqrt{x}\ge 0</m>),
+we have that <m>0\le f(x)=2\theta\le \pi</m>. So,
+<me>
+f(x)-\dfrac{\pi}{2}=\arcsin\left(\sin\left[f(x)-\dfrac{\pi}{2}\right]\right)=\arcsin(2x+1)=g(x).</me>
+</p>
+</solution>
+</exercise>
+
+<introduction><p>For Questions<nbsp/><xref ref="s4_1rulesfirst"/> through <xref ref="s4_1ruleslast"/>, you are again asked to find the  antiderivatives of certain functions. In general, finding antiderivatives can be extremely difficult--indeed, it will form the main topic of next semester's calculus course. However, you can work out the antiderivatives of the functions below using what you've learned so far about derivatives.</p></introduction>
+
+<exercise xml:id="s4_1rulesfirst">
+<statement><p>
+Find the  antiderivative of <m>f(x)=2\cos(2x)\cos(3x)-3\sin(2x)\sin(3x)</m>.
+</p></statement>
+<hint><p>
+Think about the product rule.
+</p></hint>
+<answer><p>
+<m>F(x)=\sin(2x)\cos(3x)+C</m>
+</p></answer>
+<solution><p>
+The derivative of <m>\sin(2x)</m> (which occurs in the second term) is <m>2\cos(2x)</m> (which occurs in the first term). Similarly, the derivative of <m>\cos(3x)</m> (which occurs in the first term) is <m>-3\sin(3x)</m> (which occurs in the second term). So, <m>f(x)</m> seems to have come from the product rule.
+<me>
+\diff{}{x}\{\sin(2x)\cos(3x)\}=2\cos(2x)\cos(3x)-3\sin(2x)\sin(3x)</me>
+</p>
+
+<p>Then the antiderivative of <m>f(x)</m> is <m>F(x)=\sin(2x)\cos(3x)+C</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the  antiderivative of <m>f(x)=\dfrac{(x^2+1)e^x-e^x(2x)}{(x^2+1)^2}</m>.
+</p></statement>
+<hint><p>
+Think about the quotient rule for derivatives.
+</p></hint>
+<answer><p>
+<m>F(x)=\dfrac{e^x}{x^2+1}+C</m>
+</p></answer>
+<solution><p>
+The function <m>f(x)</m> looks like perhaps it came from the quotient rule. Recall
+<md>
+<mrow>
+\diff{}{x}\left\{\frac{\textcolor{red}{u(x)}}{\textcolor{blue}{v(x)}}\right\}&amp;=
+\frac{\textcolor{blue}{v(x)}\textcolor{red}{u'(x)}-\textcolor{red}{u(x)}\textcolor{blue}{v'(x)}}{(\textcolor{blue}{v(x)})^2}
+</mrow>
+<intertext>Then, since the denominator of <m>f(x)</m> is <m>(x^2+1)^2</m>, we might guess <m>v(x)=(x^2+1)</m>. That leaves <m>u(x)=e^x</m>.</intertext><mrow>
+\diff{}{x}\left\{\frac{e^x}{x^2+1}\right\}&amp;=\frac{(x^2+1)e^x-e^x(2x)}{(x^2+1)^2}=f(x)
+</mrow>
+</md>
+So, the antiderivative of <m>f(x)</m> is <m>F(x)=\dfrac{e^x}{x^2+1}+C</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s4_1chain" purpose="RQS">
+<statement><p>
+Find the antiderivative of
+<m>f(x)=3x^2e^{x^3}</m>.
+</p></statement>
+<hint><p>
+Notice that the derivative of <m>x^3</m>  is <m>3x^2</m>.
+</p></hint>
+<answer><p>
+<m>F(x)=e^{x^3}+C</m>
+</p></answer>
+<solution><p>
+We know that <m>e^x</m> is its own antiderivative. The derivative of <m>e^{g(x)}</m>, for some function <m>g(x)</m>, is <m>g'(x)e^{g(x)}</m>. Since <m>3x^2</m> is the derivative of <m>x^3</m>, <m>f(x)</m> fits this pattern. We guess
+the antiderivative of <m>f(x)</m> is <m>F(x)=e^{x^3}+C</m>.
+</p>
+
+<p>We check by differentiating.
+<md>
+<mrow>
+\diff{}{x}\left\{e^{x^3}+C\right\}&amp;=3x^2e^{x^3}=f(x)
+</mrow>
+</md>
+</p>
+
+<p>Indeed, the antiderivative of <m>f(x)</m> is <m>F(x)=e^{x^3}+C</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the  antiderivative of
+<m>f(x)=5x\sin(x^2)</m>.
+</p></statement>
+<hint><p>
+Think about the chain rule for derivatives. You might need to multiply your first guess by a constant.
+</p></hint>
+<answer><p>
+<m>F(x)=-\dfrac{5}{2}\cos(x^2)+C</m>
+</p></answer>
+<solution><p>
+We know the antiderivative of <m>\sin x</m> is <m>-\cos x </m>. Since  <m>\sin(x^2)</m> appears in our function, let's investigate the derivative of <m>-\cos(x^2)</m>.
+<md>
+<mrow>
+\diff{}{x}\left\{-\cos\left(x^2\right)\right\}&amp;=\sin\left(x^2\right)\cdot2x
+</mrow>
+<intertext>This differs from <m>f(x)</m> only by a constant multiple.</intertext><mrow>
+\diff{}{x}\left\{-\frac{5}{2}\cos\left(x^2\right)\right\}&amp;=\frac{5}{2}\sin\left(x^2\right)\cdot2x=5x\sin(x^2)=f(x)
+</mrow>
+</md>
+So, the antiderivative of <m>f(x)</m> is <m>F(x)=-\dfrac{5}{2}\cos\left(x^2\right)+C</m>
+</p>
+
+<p>Remark: as in Question<nbsp/><xref ref="s4_1chain"/>,  our function <m>f(x)</m> involved some function <m>g(x)</m> as well as <m>g'(x)</m>. This pattern is the basis of an important method of antidifferentiation, called the Substitution Rule.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the  antiderivative of
+<m>f(x)=e^{\log x}</m>.
+</p></statement>
+<hint><p>
+Simplify.
+</p></hint>
+<answer><p>
+<m>F(x)=\dfrac{1}{2}x^2+C</m>.
+</p></answer>
+<solution><p>
+For any <m>x</m> in the domain of <m>\log (x)</m>, <m>e^{\log x}=x</m>. So, <m>f(x)=x</m> for every <m>x</m> in its domain. Then its antiderivative is <m>F(x)=\dfrac{1}{2}x^2+C</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s4_1ruleslast" purpose="RQS">
+<statement><p>
+Find the antiderivative of
+<m>f(x)=\dfrac{7}{\sqrt{3-x^2}}</m>.
+</p></statement>
+<hint><p>
+This problem is similar to Question<nbsp/><xref ref="s4_1arcsin1"/>, but you'll have to do some harder factoring. Try getting <m>f(x)</m> into the form <m>a\left(\dfrac{1}{\sqrt{1-(bx)^2}}\right)</m> for some constants <m>a</m> and <m>b</m>.
+</p></hint>
+<answer><p>
+<m>F(x)=7\arcsin\left(\dfrac{x}{\sqrt{3}}\right)+C</m>
+</p></answer>
+<solution><p>
+As in  Question<nbsp/><xref ref="s4_1arcsin1"/>, we notice that our function is similar to <m>\dfrac{1}{\sqrt{1-x^2}}</m>, but in this case it doesn't factor quite as nicely.
+<md>
+<mrow>
+f(x)=\frac{7}{\sqrt{3-x^2}}&amp;=\frac{7}{\sqrt{3(1-\frac{x^2}{3})}}
+</mrow><mrow>&amp;=\frac{7}{\sqrt{3}}\left(\frac{1}{\sqrt{1-\frac{x^2}{3}}}\right)
+</mrow>
+<intertext>What we really want under that square root, instead of <m>\dfrac{x^2}{3}</m>, is simply  <m>x^2</m>. We can get close: we can get <em>something</em> squared.</intertext><mrow>
+f(x)&amp;=\frac{7}{\sqrt{3}}\left(\frac{1}{\sqrt{1-\left(\frac{x}{\sqrt{3}}\right)^2}}\right)
+</mrow>
+<intertext>Now, the thing that's squared isn't <m>x</m>, it's <m>\dfrac{x}{\sqrt{3}}</m>. This gives us a first guess for an antiderivative: perhaps <m>F(x)=\dfrac{7}{\sqrt{3}}\arcsin\left(\dfrac{x}{\sqrt{3}}\right)</m> will work. Let's try it! Remember to use the chain rule when you differentiate.</intertext><mrow>
+\diff{}{x}\left\{\frac{7}{\sqrt{3}}\arcsin\left(\textcolor{red}{\frac{x}{\sqrt{3}}}\right)\right\}&amp;=
+\frac{7}{\sqrt{3}}\left(\frac{1}{\sqrt{1-\left(\textcolor{red}{\frac{x}{\sqrt{3}}}\right)^2}}\right)\cdot\textcolor{red}{\frac{1}{\sqrt{3}}}
+</mrow>
+<intertext>We're very close! We're only off by a constant, and those are easy to fix. We're dividing by <m>\sqrt{3}</m> when we differentiate, so let's multiply our function by <m>\sqrt{3}</m>.</intertext><mrow>
+\diff{}{x}\left\{7\arcsin\left(\textcolor{red}{\frac{x}{\sqrt{3}}}\right)\right\}&amp;=
+7\left(\frac{1}{\sqrt{1-\left(\textcolor{red}{\frac{x}{\sqrt{3}}}\right)^2}}\right)\cdot\textcolor{red}{\frac{1}{\sqrt{3}}}
+</mrow><mrow>
+&amp;=\frac{7}{\sqrt{3}\sqrt{1-\left(\frac{x}{\sqrt{3}}\right)^2}}
+</mrow><mrow>
+&amp;=\frac{7}{\sqrt{3-x^2}}=f(x)
+</mrow>
+</md>
+Therefore, the most general antiderivative of <m>f(x)</m> is
+<m>F(x)=7\arcsin\left(\dfrac{x}{\sqrt{3}}\right)+C</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Imagine forming a solid by revolving the parabola <m>y=x^2+1</m> around the <m>x</m>-axis, as in the picture below.</p>
+<sidebyside width="80%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[- \gt , red] (-4,.25) arc(40:340:.15 cm and .5 cm);
+\draw[thick] (-3,0) node[shape=ellipse, minimum width=1cm, minimum height=4cm, draw, fill=gray!20]{};
+\draw[thick] (3,2) arc(90:-90:.5cm and 2cm);
+\draw[red, thick] plot[domain=-1:1](3*\x,{\x*\x+1}) node[above]{$y=x^2+1$};
+\draw[thick] plot[domain=-1:1](3*\x,{-\x*\x-1});
+\draw [help lines, - \gt ] (0,-1)-- (0,-3);
+\draw [help lines, - \gt ] (0,1)-- (0,3)node[above]{$y$};
+\draw[help lines, - \gt ] (-3,0)--(-5,0);
+\draw[help lines, - \gt ] (3.5,0)--(5,0) node[right]{$x$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Use the method of Example<nbsp/><xref ref="eg_vol_cone"/>
+to find the volume of such an object if the segment of the parabola that we rotate runs from <m>x=-H</m> to <m>x=H</m>.
+</p></statement>
+<hint><p>
+Following Example<nbsp/><xref ref="eg_vol_cone"/>
+let <m>V(H)</m> be the volume of the solid formed by rotating the segment of the parabola from <m>x=-H</m> to <m>x=H</m>. The plan is to evaluate
+<me>V'(H) = \ds\lim\limits_{h\rightarrow H}\frac{V(H)-V(h)}{H-h}</me>
+and then antidifferentiate <m>V'(H)</m> to find <m>V(H)</m>. Since you don't know <m>V(H)-V(h)</m> (yet), first find upper and lower bounds on it when <m>h \lt H</m>. These bounds can be the volumes of two cylinders, one with radius <m>H</m> (and what height?) and the other with radius <m>h</m>.
+</p></hint>
+<answer><p>
+<m>V(H)=2\pi\left(\dfrac{1}{5}H^5+\dfrac{2}{3}H^3+H\right)</m>
+</p></answer>
+<solution><p>
+Following Example<nbsp/><xref ref="eg_vol_cone"/>,
+let <m>V(H)</m> be the volume of the solid formed by rotating the segment of the parabola from <m>x=-H</m> to <m>x=H</m>. <textred>
+ Our plan is to evaluate
+              <m>V'(H) = \ds\lim\limits_{h\rightarrow H}\frac{V(H)-V(h)}{H-h}</m>
+            and then antidifferentiate <m>V'(H)</m> to find <m>V(H)</m>. Since
+            we don't know <m>V(H)-V(h)</m> (yet) we first find upper and lower
+            bounds on it when <m>h \lt H</m>.
+</textred>
+</p>
+
+<p>For a constant <m>h \lt H</m>, <m>V(H)-V(h)</m> is the volume of the solid inside the larger object (with length <m>2H</m>) and outside the smaller object (with length <m>2h</m>, shown below in blue). There are two regions inside the larger object and outside the smaller.</p>
+
+<sidebyside width="80%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[thick] (-3,0) node[shape=ellipse, minimum width=1cm, minimum height=4cm, draw, fill=gray!20]{};
+\draw[thick] (3,2) arc(90:-90:.5cm and 2cm);
+\draw[thick] plot[domain=-1:1](3*\x,{\x*\x+1});
+\draw[thick] plot[domain=-1:1](3*\x,{-\x*\x-1});
+\draw [help lines, - \gt ] (0,-1)-- (0,-2.5);
+\draw [help lines, - \gt ] (0,1)-- (0,3)node[above]{$y$};
+\draw[help lines, - \gt ] (-3,0)--(-5,0);
+\draw[help lines, - \gt ] (3.5,0)--(5,0) node[right]{$x$};
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}] (0,-4)--(3,-4);
+\draw (1.5,-4.75) node{$H$};
+\color{blue}
+\draw[ decorate, decoration={brace, amplitude=10pt, mirror}] (0,-3)--(2,-3);
+\draw (1,-3.75) node{$h$};
+\filldraw[draw=blue, bottom color=blue!50!black, top color=cyan] (2,13/9) arc(90:-90:.33cm and 1.44 cm) .. controls (.33 , -.85) and (-.33,-.85).. (-2,-13/9) arc(-90:90:.33cm and 1.44 cm) .. controls (-.33 , .85) and (.33,.85).. (2,13/9);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>One of the regions inside the larger object and outside the smaller (blue) object looks like this:</p>
+
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (0,0) node[shape=ellipse, fill=gray!10, draw, minimum width=1cm, minimum height=3cm]{};
+\draw (2,2) arc(90:-90:.67cm and 2cm);
+\draw[dashed] (2,2) arc(90:270:.67cm and 2cm);
+\draw plot[domain=0:3](\x,{\x*\x/8+1.5}) node[right]{$y=x^2+1$};
+\draw plot[domain=0:2](\x,{-\x*\x/8-1.5});
+\draw[decorate, decoration={brace, mirror, amplitude=10pt}] (0,-2.5)--(2,-2.5);
+\draw (1,-3.25) node{$H-h$};
+\draw[help lines,  \lt -] (-2,0)--(0,0);
+\draw[help lines, - \gt ] (2.67,0)--(4,0) node[right]{$x$};
+\draw[help lines, loosely dashed] (0,0)--(2.67,0);
+\YExcoord{0}{h}
+\color{gray}\YExcoord{2}{H}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Remember we formed this solid by rotating the curve <m>y=x^2+1</m> about the <m>x</m>-axis. So, the cross-section of this solid is a circle, and the radius of the circle when we are <m>x</m> units from the origin is <m>x^2+1</m>. So, the largest radius of the little shape shown above, which occurs at the right end, is <m>H^2+1</m>, and the smallest radius (at the left end) is <m>h^2+1</m>.
+</p>
+
+<p>The volume of the shape shown above is less than a cylinder of radius <m>H^2+1</m> and height <m>H-h</m>, and it is more than the volume of a cylinder of radius <m>h^2+1</m> and height <m>H-h</m>. So, the volume of the shape shown above is between <m>(H-h)\pi(h^2+1)^2</m> and <m>(H-h)\pi(H^2+1)^2</m> cubic units.
+</p>
+
+<p>Recall that the volume inside the object of length <m>2H</m> and outside the object of length <m>2h</m> consists of <em>two</em> copies of the shape shown above. Therefore:
+<md>
+<mrow>
+2(H-h)\pi(h^2+1)^2 &amp;&amp; \lt &amp;&amp;V(H)-V(h)&amp;&amp; \lt &amp;&amp;2(H-h)\pi(H^2+1)^2
+</mrow>
+<intertext><textred>Now that we have upper and lower bounds for <m>V(H)-V(h)</m>, we can find <m>V'(H)</m>.</textred></intertext>
+<mrow>
+\frac{2(H-h)\pi(h^2+1)^2}{H-h} &amp;&amp; \lt &amp;&amp;\frac{V(H)-V(h)}{H-h}&amp;&amp; \lt &amp;&amp;\frac{2(H-h)\pi(H^2+1)^2}{H-h}
+</mrow><mrow>
+2\pi(h^2+1)^2 &amp;&amp; \lt &amp;&amp;\frac{V(H)-V(h)}{H-h}&amp;&amp; \lt &amp;&amp;2\pi(H^2+1)^2
+</mrow><mrow>
+\lim_{h \to H}2\pi(h^2+1)^2 &amp;&amp;\le&amp;&amp;\lim_{h \to H}\frac{V(H)-V(h)}{H-h}&amp;&amp;\le&amp;&amp;\lim_{h \to H}2\pi(H^2+1)^2
+</mrow>
+</md>
+Since the limits on both ends are simply <m>2\pi(H^2+1)^2</m>, by the Squeeze Theorem,
+<me>
+V'(H)=\lim_{h \to H}\frac{V(H)-V(h)}{H-h}=2\pi(H^2+1)^2</me>
+</p>
+
+<p><textred>Now that we know <m>V'(H)</m>, we antidifferentiate to find <m>V(H)</m>.</textred>
+<md>
+<mrow>
+V'(H)&amp;=2\pi(H^4+2H^2+1)
+</mrow><mrow>
+V(H)&amp;=2\pi\left(\frac{1}{5}H^5+\frac{2}{3}H^3+H\right)+C
+</mrow>
+<intertext>When <m>H=0</m>, there is no solid, so <m>V(0)=0</m>. Therefore,</intertext><mrow>
+V(H)&amp;=2\pi\left(\frac{1}{5}H^5+\frac{2}{3}H^3+H\right).
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+</exercisegroup>
+
+</exercises>

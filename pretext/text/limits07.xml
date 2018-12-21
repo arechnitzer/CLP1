@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_opt_formal_limit">
+<title>(optional) <mdash/> Making the informal a little more formal</title>
+<introduction>
+
+<p>
+As we noted above, the definition of limits that we have been working with was  quite informal and not mathematically rigorous. In this (optional) section we  will work to understand the rigorous definition of limits.
+</p>
+
+<p>
+Here is the formal definition <mdash/> we will work through it all very slowly and  carefully afterwards, so do not panic.
+</p>
+
+<definition>
+<statement><p>
+Let <m>a \in \mathbb{R}</m> and let <m>f(x)</m> be a function defined everywhere in a  neighbourhood of <m>a</m>, except possibly at <m>a</m>. We say that
+</p>
+
+<blockquote>
+<p>
+ the limit as <m>x</m> approaches <m>a</m> of <m>f(x)</m> is <m>L</m>
+</p></blockquote>
+
+<p> or equivalently</p>
+
+<blockquote>
+<p>
+ as <m>x</m> approaches <m>a</m>, <m>f(x)</m> approaches <m>L</m>
+</p></blockquote>
+
+<p>
+and write
+<md>
+<mrow>
+  \lim_{x \to a} f(x) &amp;= L
+</mrow>
+</md>
+if and only if for every <m>\epsilon  \gt 0</m> there exists <m>\delta \gt 0</m> so that
+<md>
+<mrow>
+|f(x) - L|  \lt \epsilon &amp; \text{ whenever } 0 \lt |x-a|  \lt  \delta
+</mrow>
+</md>
+Note that an equivalent way of writing this very last statement is
+<md>
+<mrow>
+  \text{if } 0 \lt |x-a|  \lt  \delta \text{ then } |f(x) - L|  \lt \epsilon.
+</mrow>
+</md>
+</p></statement>
+</definition>
+
+<p>This is quite a lot to take in, so let us break it down into pieces.</p>
+
+<definition><title>The typical 3 pieces of a definition</title>
+<statement><p>
+Usually a definition can be broken down into three pieces.
+<ul>
+<li> Scene setting <mdash/> define symbols and any restrictions on the objects that we are talking about. </li>
+<li> Naming <mdash/> state the name and any notation for the property or object  that the definition is about.</li>
+<li>
+	Properties and restrictions <mdash/> this is the heart of the definition  where we explain to the reader what it is that the object (in our case a  function) has to do in order to satisfy the definition.
+</li>
+</ul>
+</p></statement>
+</definition>
+
+<p>
+Let us go back to the definition and look at each of these pieces in turn.
+<ul>
+<li>
+	<p>Setting things up <mdash/> The first sentence of the definition is really  just setting up the picture. It is telling us what the definition is about and  sorting out a few technical details.
+	<ul>
+	<li> <alert>Let <m>a \in \mathbb{R}</m></alert> <mdash/> This simply tells us that the symbol  <q><m>a</m></q> is a real number
+		<fn>
+		The symbol <q><m>\in</m></q> is read as <q>is an element of</q> <mdash/> it is definitely not the same as <m>e</m> or <m>\epsilon</m> or <m>\varepsilon</m>. If you do not recognise <q><m>\mathbb{R}</m></q> or understand the difference between <m>\mathbb{R}</m> and <m>R</m>, then please go back and read Chapter<nbsp/><xref ref="chap_basics"/> carefully.
+		</fn>.
+	</li>
+	<li>
+		<alert>Let <m>f(x)</m> be a function</alert> <mdash/> This is just setting the scene so  that we understand all of the terms and symbols.
+	</li>
+	<li>
+		<alert>defined everywhere in a neighbourhood of <m>a</m>, except possibly at  <m>a</m></alert> <mdash/> This is just a technical requirement; we need our function to be  defined in a little region
+		<fn>
+			The term <q>neighbourhood of <m>a</m></q> means a  small open interval around <m>a</m> <mdash/> for example <m>(a-0.01, a+0.01)</m>. Typically  we don't really care how big this little interval is.
+		</fn>
+		around <m>a</m>. The  function doesn't have to be defined everywhere, but it must be defined for all  <m>x</m>-values a little less than <m>a</m> and a little more than <m>a</m>. The definition  does not care about what the function does outside this little window, nor does  it care what happens exactly at <m>a</m>.
+	</li>
+	</ul>
+	</p>
+</li>
+<li>
+	Names, phrases and notation <mdash/> The next part of the definition is simply  naming the property we are discussing and tells us how to write it down. i.e. we  are talking about <q>limits</q> and we write them down using the symbols  indicated.
+</li>
+<li>
+	<p>The heart of things <mdash/> we explain this at length below, but for now we  will give a quick explanation. <alert>Work on these two points. They are hard.</alert>
+	<ul>
+	<li>
+		<alert>for all <m>\epsilon \gt 0</m> there exists <m>\delta  \gt 0</m></alert> <mdash/> It is  important we read this in order. It means that we can pick any positive number  <m>\epsilon</m> we want and there will always be another positive number <m>\delta</m>  that is going to make what ever follows be true.
+	</li>
+	<li>
+		<alert>if <m>0 \lt |x-a| \lt \delta</m> then <m>|f(x)-L| \lt \epsilon</m></alert> <mdash/> From the  previous point we have our two numbers <mdash/> any <m>\epsilon  \gt 0</m> then based on that  choice of <m>\epsilon</m> we have a positive number <m>\delta</m>. The current statement  says that whenever we have chosen <m>x</m> so that it is very close to <m>a</m>, then  <m>f(x)</m> has to be very close to <m>L</m>. How close it <q>very close</q>? Well  <m>0 \lt |x-a| \lt \delta</m> means that <m>x</m> has to be within a distance <m>\delta</m> of <m>a</m>  (but not exactly <m>a</m>) and similarly <m>|f(x)-L| \lt \epsilon</m> means that <m>f(x)</m> has  to  be within a distance <m>\epsilon</m> of <m>L</m>.
+	</li>
+	</ul>
+	</p>
+</li>
+</ul>
+That is the definition broken up into pieces which hopefully now make more  sense, but what does it actually <em>mean</em>? Consider a function we saw earlier
+<md>
+<mrow>
+ f(x) &amp;= \begin{cases}
+          2x &amp; x\neq3
+</mrow><mrow>
+          9 &amp; x=3
+         \end{cases}
+</mrow>
+</md>
+and sketch it again:
+</p>
+
+<sidebyside width="100%">
+<image source="text/figs/epsdelt1"/>
+</sidebyside>
+
+<p>
+We know (from our earlier work) that <m>\lim_{x \to 3} f(x) = 6</m>, so zoom in  around <m>(x,y)=(3,6)</m>. To make this look more like our definition, we have <m>a=3</m>  and <m>L=6</m>.
+<ul>
+<li>
+	Pick some small number <m>\epsilon \gt 0</m> and highlight the horizontal strip  of all points <m>(x,y)</m> for which <m>|y-L| \lt \epsilon</m>. This means all the  <m>y</m>-values have to satisfy <m>L-\epsilon  \lt  y  \lt  L+\epsilon</m>.
+</li>
+<li>
+	You can see that the graph of the function passes through this strip for  some <m>x</m>-values close to <m>a</m>. What we need to be able to do is to pick a  vertical strip of <m>x</m>-values around <m>a</m> so that the function lies inside the  horizontal strip.
+</li>
+<li>
+	That is, we must find a small number <m>\delta \gt 0</m> so that for any <m>x</m>-value  inside the vertical strip <m>a-\delta  \lt  x  \lt  a+\delta</m>, <em>except exactly at  <m>x=a</m></em>, the value of the function lies inside the horizontal strip, namely  <m>L-\epsilon  \lt  y=f(x)  \lt  L+\epsilon</m>.
+</li>
+<li>
+	We see (pictorially) that we can do this. If we were to choose a  smaller value of <m>\epsilon</m> making the horizontal strip narrower, it is clear  that we can choose the vertical strip to be narrower. Indeed, it  doesn't matter how small we make the horizontal strip, we will always be able  to construct the second vertical strip.
+</li>
+</ul>
+</p>
+
+<p>
+The above is a pictorial argument, but we can quite easily make it into a  mathematical one. We want to show the limit is <m>6</m>. That means for any  <m>\epsilon</m> we need to find a <m>\delta</m> so that when
+<md>
+<mrow>
+  3-\delta  \lt  x  \lt  3+\delta \text{ with $x \neq 3$} &amp;&amp; \text{we have } &amp;&amp;
+6-\epsilon  \lt  f(x)  \lt  6+\epsilon
+</mrow>
+</md>
+Now we note that when <m>x \neq 3</m>, we have <m>f(x)=2x</m> and so
+<md>
+<mrow>
+  6-\epsilon  \lt  f(x)  \lt  6+\epsilon &amp;&amp; \text{implies that} &amp;&amp;
+  6-\epsilon  \lt  2x  \lt  6+\epsilon
+</mrow>
+<intertext>this nearly specifies a range of <m>x</m> values, we just need to divide  by <m>2</m></intertext>
+<mrow>
+  3-\epsilon/2  \lt  x  \lt  3+\epsilon/2
+</mrow>
+<intertext>Hence if we choose <m>\delta = \epsilon/2</m> then we get the desired  inequality</intertext>
+<mrow>
+  3-\delta  \lt  x  \lt  3+\delta
+</mrow>
+</md>
+i.e. <mdash/> no matter what <m>\epsilon \gt 0</m> is chosen, if we put <m>\delta=\epsilon/2</m>  then when <m>3-\delta \lt x \lt 3+\delta</m> with <m>x \neq 3</m> we will have <m>6-\epsilon  \lt  f(x)  \lt  6+\epsilon</m>. This is exactly what we need to satisfy the definition of  <q>limit</q> above.
+</p>
+
+<p>
+The above work gives us the argument we need, but it still need to be written  up properly. We do this below.
+</p>
+
+<example><title>Formal limit of a simple function</title>
+<p>
+Find the limit as <m>x \to 3</m> of the following function
+<md>
+<mrow>
+ f(x) &amp;= \begin{cases}
+          2x &amp; x\neq 3
+</mrow><mrow>
+          9 &amp; x=3
+         \end{cases}
+</mrow>
+</md>
+</p>
+
+<proof>
+<p>
+ We will show that the limit is equal to <m>6</m>. Let <m>\epsilon  \gt 0</m> and <m>\delta =
+\epsilon/2</m>. It remains to show that <m>|f(x)-6|  \lt \epsilon</m> whenever
+<m>|x-3| \lt \delta</m>.
+</p>
+
+<p>So assume that <m>|x-3| \lt \delta</m>, and so
+<md>
+<mrow>
+  3-\delta  \lt  x  \lt  3+\delta &amp;&amp; \text{multiply both sides by 2}
+</mrow><mrow>
+  6-2\delta  \lt  2x  \lt  6+2\delta
+</mrow>
+<intertext>Recall that <m>f(x)=2x</m> and that since <m>\delta=\epsilon/2</m></intertext><mrow>
+  6-\epsilon  \lt  f(x)  \lt  6+\epsilon.
+</mrow>
+</md>
+We can conclude that <m>|f(x)-6|  \lt \epsilon</m> as required.
+</p>
+</proof>
+</example>
+
+<p>
+Because of the <m>\epsilon</m> and <m>\delta</m> in the definition of limits, we need to  have <m>\epsilon</m> and <m>\delta</m> in the proof. While <m>\epsilon</m> and <m>\delta</m> are  just symbols playing particular roles, and could be replaced with other symbols,  this style of proof is usually called <m>\epsilon</m><ndash/><m>\delta</m> proof.
+</p>
+
+<p>
+In the above example everything works, but it can be very instructive to see  what happens in an example that doesn't work.
+</p>
+
+<example><title>Formal limit where limit does not exist</title>
+<p>
+Look again at the function
+<md>
+<mrow>
+  f(x) &amp;= \begin{cases}
+           x &amp; x \lt 2
+</mrow><mrow>
+           -1 &amp; x=2
+</mrow><mrow>
+           x+3 &amp; x \gt 2
+          \end{cases}
+</mrow>
+</md>
+and let us see why, according to the definition of the limit, that <m>\ds \lim_{x
+\to 2} f(x) \neq 2</m>. Again, start by sketching a picture and zooming in around
+<m>(x,y) = (2,2)</m>:</p>
+
+<sidebyside width="100%">
+<image source="text/figs/epsdelt2"/>
+</sidebyside>
+
+<p>
+Try to proceed through the same steps as before:
+<ul>
+<li>
+	Pick some small number <m>\epsilon \gt 0</m> and highlight a horizontal  strip that  contains all <m>y</m>-values with <m>|y-L| \lt \epsilon</m>. This means all  the <m>y</m>-values have to satisfy <m>L-\epsilon  \lt  y  \lt  L+\epsilon</m>.
+</li>
+<li>
+	You can see that the graph of the function passes through this strip for  some <m>x</m>-values close to <m>a</m>. To the left of <m>a</m>, we can always find some  <m>x</m>-values that make the function sit inside the horizontal-<m>\epsilon</m>-strip.  However, unlike the previous example, there is a problem to the right of <m>a</m>.  Even for <m>x</m>-values just a little larger than <m>a</m>, the value of <m>f(x)</m> lies  well  outside the horizontal-<m>\epsilon</m>-strip.
+</li>
+<li>
+	So given this choice of <m>\epsilon</m>, we can find a <m>\delta \gt 0</m> so that for  <m>x</m> inside the vertical strip <m>a-\delta  \lt  x  \lt  a</m>, the value of the function sits  inside the horizontal-<m>\epsilon</m>-strip.
+</li>
+<li>
+	Unfortunately, there is no way to choose a <m>\delta \gt 0</m> so that for <m>x</m>  inside the vertical strip <m>a \lt x \lt a+\delta</m> (with <m>x \neq a</m>) the value of the  function sits inside the horizontal-<m>epsilon</m>-strip.
+</li>
+<li>
+	So it is impossible to choose <m>\delta</m> so that for <m>x</m> inside the  vertical strip <m>a-\delta  \lt  x  \lt  a+\delta</m> the value of the function sits inside  the horizontal strip <m>L-\epsilon  \lt  y=f(x)  \lt  L+\epsilon</m>.
+</li>
+<li> Thus the limit of <m>f(x)</m> as <m>x \to 2</m> is not <m>2</m>.</li>
+</ul>
+</p></example>
+
+
+<p>
+Doing things formally with <m>\epsilon</m>'s and <m>\delta</m>'s is quite painful for  general functions. It is far better to make use of the arithmetic of limits  (Theorem<nbsp/><xref ref="thm_arith_lim"/>) and some basic building blocks (like those in  Theorem<nbsp/><xref ref="thm_easy_lim"/>). Thankfully for most of the problems we deal with in  calculus (at this level at least) can be approached in exactly this way.
+</p>
+
+<p>
+This does leave the problem of proving the arithmetic of limits and the limits  of the basic building blocks. The proof of the Theorem<nbsp/><xref ref="thm_arith_lim"/> is  quite involved and we leave it to the very end of this Chapter. Before we do  that we will prove Theorem<nbsp/><xref ref="thm_easy_lim"/> by a formal <m>\epsilon</m><ndash/><m>\delta</m>  proof. Then in the next section we will look at the formal definition of limits  at infinity and prove Theorem<nbsp/><xref ref="thm_basic_lim_inf"/>. The proof of the  Theorem<nbsp/><xref ref="thm_arith_inf_lim"/>, the arithmetic of infinite limits, is very  similar to that of Theorem<nbsp/><xref ref="thm_arith_lim"/> and so we do not give it.
+</p>
+
+<p>
+So let us now prove Theorem<nbsp/><xref ref="thm_easy_lim"/> in which we stated two simple  limits:
+<md>
+<mrow>
+  \lim_{x \to a} c &amp;= c &amp; \text{ and } &amp;&amp; \lim_{x \to a} x &amp;= a.
+</mrow>
+</md>
+Here is the formal <m>\epsilon</m><ndash/><m>\delta</m> proof:</p>
+
+<proof>
+<p><alert>Proof of Theorem<nbsp/><xref ref="thm_easy_lim"/></alert></p>
+
+<p>
+Since there are two limits to prove, we do each in turn. Let <m>a,c</m> be real  numbers.
+<ul>
+<li>
+	Let <m>\epsilon \gt 0</m> and set <m>f(x)=c</m>. Choose <m>\delta=1</m>, then for any  <m>x</m> satisfying <m>|x-a| \lt \delta</m> (or indeed any real number <m>x</m> at all) we have  <m>|f(x)-c| = 0  \lt \epsilon</m>. Hence <m>\ds \lim_{x \to a} c = c</m> as required.
+</li>
+<li>
+	Let <m>\epsilon \gt 0</m> and set <m>f(x)=x</m>. Choose <m>\delta=\epsilon</m>, then for  any <m>x</m> satisfying <m>|x-a| \lt \delta</m> we have
+	<md>
+	<mrow>
+	  a-\delta  \lt  x  \lt  a+\delta &amp; \text{ but $f(x) = x$ and $\delta=\epsilon$}
+	</mrow><mrow>
+	  a-\epsilon  \lt  f(x)  \lt  a+\epsilon
+	</mrow>
+	</md>
+	Thus we have <m>|f(x)-a| \lt \epsilon</m>. Hence <m>\ds \lim_{x \to a} x = a</m> as required.
+</li>
+</ul>
+This completes the proof.
+</p></proof>
+
+</introduction>
+</section>

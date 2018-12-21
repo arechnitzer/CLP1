@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_higher_diff">
+<title>Higher order derivatives</title>
+<subsection><title>Higher order derivatives</title>
+<p>The operation of differentiation takes as input one function,
+<m>f(x)</m>, and produces as output another function, <m>f'(x)</m>. Now <m>f'(x)</m> is
+once again a function. So we can differentiate it again, assuming that
+it is differentiable, to create a third function, called the second
+derivative of <m>f</m>. And we can differentiate the second derivative again
+to create a fourth function, called the third derivative of <m>f</m>.
+And so on.</p>
+
+<definition xml:id="not_higherOrdDeriv">
+<statement><p>
+<ul>
+<li> <m>f''(x)</m> and <m>f^{(2)}(x)</m>  and <m>\ddiff{2}{f}{x}(x)</m> all mean
+<m>\diff{}{x}\big(\diff{}{x}f(x)\big)</m>
+</li>
+<li> <m>f'''(x)</m> and <m>f^{(3)}(x)</m>  and <m>\ddiff{3}{f}{x}(x)</m> all mean
+<m>\diff{}{x}\big(\diff{}{x}\big(\diff{}{x}f(x)\big)\big)</m>
+</li>
+<li> <m>f^{(4)}(x)</m>  and <m>\ddiff{4}{f}{x}(x)</m> both mean
+<m>\diff{}{x}\big(\diff{}{x}\big(\diff{}{x}\big(\diff{}{x}f(x)\big)\big)\big)</m>
+</li>
+<li> and so on.
+</li>
+</ul>
+</p></statement>
+</definition>
+
+<p>Here is a simple example. Then we'll think a little about the significance
+of second order derivatives. Then we'll do a more a computationally complex
+example.
+</p>
+
+<example xml:id="eg_higherOrdDerivA"><title>Derivatives of <m>x^n</m></title>
+<p>
+Let <m>n</m> be a natural number and let <m>f(x)= x^n</m>. Then
+<md>
+<mrow>
+\diff{}{x}x^n&amp;=nx^{n-1}
+</mrow><mrow>
+\ddiff{2}{}{x}x^n&amp;=\diff{}{x}\big(nx^{n-1}\big)=n(n-1)x^{n-2}
+</mrow><mrow>
+\ddiff{3}{}{x}x^n&amp;=\diff{}{x}\big(n(n-1)x^{n-2}\big)=n(n-1)(n-2)x^{n-3}
+</mrow>
+</md>
+Each time we differentiate, we bring down the exponent, which is exactly
+one smaller than the previous exponent brought down, and we reduce the
+exponent by one. By the time we have differentiated <m>n-1</m> times,
+the exponent has decreased to <m>n-(n-1)=1</m> and we have brought down the
+factors <m>n(n-1)(n-2)\cdots 2</m>. So
+<md>
+<mrow>
+\ddiff{{n-1}}{}{x}x^n&amp;=n(n-1)(n-2)\cdots 2x
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\ddiff{n}{}{x}x^n&amp;=n(n-1)(n-2)\cdots 1
+</mrow>
+</md>
+The product of the first <m>n</m> natural numbers, <m>1\cdot 2\cdot 3\cdot \cdots
+\cdot n,</m> is called <q><m>n</m> factorial</q> and is denoted <m>n!</m>. So we can also
+write
+<md>
+<mrow>
+\ddiff{n}{}{x}x^n&amp;=n!
+</mrow>
+</md>
+If <m>m \gt n</m>, then
+<md>
+<mrow>
+\ddiff{m}{}{x}x^n&amp;=0
+</mrow>
+</md>
+</p></example>
+
+<example><title>Position, velocity and acceleration</title>
+<p>
+Recall that the derivative <m>v'(a)</m> is the (instantaneous) rate of
+change of the function <m>v(t)</m> at <m>t=a</m>. Suppose that you are walking on
+the <m>x</m><ndash/>axis and that <m>x(t)</m> is your <m>x</m><ndash/>coordinate at time <m>t</m>.
+Also suppose, for simplicity, that you are moving from left to right.
+Then <m>v(t)=x'(t)</m> is your velocity at time <m>t</m> and <m>v'(a)=x''(a)</m> is the
+rate at which your velocity is changing at time <m>t=a</m>. It is called your
+acceleration. In particular, if <m>x''(a) \gt 0</m>, then your velocity is increasing,
+i.e. you are speeding up, at time <m>a</m>. If <m>x''(a) \lt 0</m>, then your velocity
+is decreasing, i.e. you are slowing down, at time <m>a</m>. That's one
+interpretation of the second derivative.
+</p></example>
+
+
+<example xml:id="eg_higherOrdDerivC"><title><xref ref="eg_DIFFimpldiffD"/> continued</title>
+<p>
+Find <m>y''</m> if <m>y=y^3+xy+x^3</m>.
+</p>
+
+<p><alert>Solution</alert> This problem concerns some function <m>y(x)</m> that is not
+given to us explicitly. All that we are told is that <m>y(x)</m> satisfies
+<men xml:id="eq_hoDerivBa">
+y(x)=y(x)^3+xy(x)+x^3
+</men>
+for all <m>x</m>. We are asked to find <m>y''(x)</m>. We cannot solve this
+equation to get an explicit formula for <m>y(x)</m>.  So we use implicit
+differentiation, as we did in Example <xref ref="eg_DIFFimpldiffD"/>. That is, we apply
+<m>\diff{}{x}</m> to both sides of <xref ref="eq_hoDerivBa"/>. This gives
+<men xml:id="eq_hoDerivBb">
+y'(x)=3y(x)^2\,y'(x)+y(x)+x\,y'(x)+3x^2
+</men>
+which we can solve for <m>y'(x)</m>, by moving all <m>y'(x)</m>'s to the left hand
+side, giving
+<me>
+ \big[1-x-3y(x)^2\big]y'(x) = y(x)+3x^2
+</me>
+and then dividing across.
+<men xml:id="eq_hoDerivBc">
+y'(x) = \frac{y(x)+3x^2}{1-x-3y(x)^2}
+</men>
+To get <m>y''(x)</m>, we have two options.
+</p>
+
+<p><em>Method 1.</em>  Apply <m>\diff{}{x}</m> to both sides of
+<xref ref="eq_hoDerivBb"/>.
+This gives
+<me>
+y''(x)=3y(x)^2\,y''(x)+6y(x)\,y'(x)^2+2y'(x)+x\,y''(x)+6x
+</me>
+We can now solve for <m>y''(x)</m>, giving
+<men xml:id="eq_hoDerivBd">
+y''(x) = \frac{6x+2y'(x)+6y(x)y'(x)^2}{1-x-3y(x)^2}
+</men>
+Then we can substitute in <xref ref="eq_hoDerivBc"/>, giving
+<md>
+<mrow>
+y''(x) &amp;= 2\frac{3x+ \frac{y(x)+3x^2}{1-x-3y(x)^2}
+              +3y(x) \big(\frac{y(x)+3x^2}{1-x-3y(x)^2}\big)^2}
+         {1-x-3y(x)^2}
+</mrow><mrow>
+&amp;= 2\frac{3x{[1-x-3y(x)^2]}^2+ [y(x)+3x^2][1-x-3y(x)^2]
+              +3y(x) {[y(x)+3x^2]}^2}{{[1-x-3y(x)^2]}^3}
+</mrow>
+</md>
+</p>
+
+<p><em>Method 2.</em>  Alternatively, we can also differentiate
+<xref ref="eq_hoDerivBc"/>.
+<md>
+<mrow>
+y''(x) &amp;= \frac{[y'(x)+6x][1-x-3y(x)^2]-
+           [y(x)+3x^2][-1-6y(x)y'(x)]}{{[1-x-3y(x)^2]}^2}
+</mrow><mrow>[0.05in]
+&amp;= \frac{[\frac{y(x)+3x^2}{1-x-3y(x)^2}+6x][1-x-3y(x)^2]-
+           [y(x)+3x^2][-1-6y(x)\frac{y(x)+3x^2}{1-x-3y(x)^2}]}
+                                       {{[1-x-3y(x)^2]}^2}
+</mrow><mrow>[0.05in]
+&amp;= \frac{2[y(x)+3x^2][1-x-3y(x)^2]+6x{[1-x-3y(x)^2]}^2
+           +6y(x){[y(x)+3x^2]}^2}
+                                       {{[1-x-3y(x)^2]}^3}
+</mrow>
+</md>
+</p>
+
+<p><em>Remark 1.</em> We have now computed <m>y''(x)</m> <mdash/> sort of.
+The answer is in terms of <m>y(x)</m>, which we don't know. Since we cannot
+get an explicit formula for <m>y(x)</m>, there's not a great deal that we can do,
+in general.
+</p>
+
+<p><em>Remark 2.</em> Even though we cannot solve
+<m>y=y^3+xy+x^3</m> explicitly for <m>y(x)</m>, for general <m>x</m>, it is sometimes
+possible to solve equations like this for some special values of <m>x</m>.
+In fact, we saw in Example <xref ref="eg_DIFFimpldiffD"/> that when <m>x=1</m>,
+the given equation reduces to <m>y(1)=y(1)^3+1\cdot y(1)+1^3</m>, or <m>y(1)^3=-1</m>,
+which we can solve to get <m>y(1)=-1</m>. Substituting into <xref ref="eq_hoDerivBb"/>,
+as we did in  Example <xref ref="eg_DIFFimpldiffD"/> gives
+<me>
+y'(1) = \frac{-1+3}{1-1-3(-1)^2} = -\frac{2}{3}
+</me>
+and substituting into <xref ref="eq_hoDerivBd"/> gives
+<me>
+y''(1) = \frac{6+2\big(-\frac{2}{3}\big)+6(-1)\big(-\frac{2}{3}\big)^2}
+                             {1-1-3(-1)^2}
+   =\frac{6-\frac{4}{3}-\frac{8}{3}}{-3}
+   = -\frac{2}{3}
+</me>
+(It's a fluke that, in this example, <m>y'(1)</m> and <m>y''(1)</m> happen to be equal.)
+So we now know that, even though we can't solve <m>y=y^3+xy+x^3</m> explicitly for
+<m>y(x)</m>, the graph of the solution passes through <m>(1,-1)</m> and has slope
+<m>-\frac{2}{3}</m> (i.e. is sloping downwards by between <m>30^\circ</m> and <m>45^\circ</m>)
+there and, furthermore, the slope of the graph decreases as <m>x</m>
+increases through <m>x=1</m>.
+</p>
+
+<sidebyside width="50%">
+ <image source="text/figs/concaveDown"/>
+ </sidebyside>
+
+<p>Here is a sketch of the part of the graph very near <m>(1, -1)</m>. The tangent line to the
+graph at <m>(1, -1)</m> is also shown. Note that the tangent line is sloping down to the right,
+as we expect, and that the graph lies below the tangent line near <m>(1,-1)</m>. That's because
+the slope <m>f'(x)</m> is decreasing (becoming more negative) as <m>x</m> passes through <m>1</m>.
+</p>
+</example>
+
+
+<warning xml:id="warning_dropx">
+<p>
+Many people will suppress the <m>(x)</m> in <m>y(x)</m> when doing
+computations like those in Example <xref ref="eg_higherOrdDerivC"/>.
+This gives shorter, easier to read formulae, like
+<m>y'=\frac{y+3x^2}{1-x-3y^2}</m>. If you do this, you must never forget
+that <m>y</m> is a function of <m>x</m> and is <em>not</em> a constant. If you do forget,
+you'll make the very serious error of saying that <m>\diff{y}{x}=0</m>,
+which is false.
+</p>
+</warning>
+
+</subsection>
+
+<xi:include href="../problems/prob_s2.14.xml"/>
+
+</section>

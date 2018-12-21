@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xml:id="sec_parsing" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Parsing formulas</title>
+<introduction>
+
+<p>
+Consider the formula
+<md>
+<mrow>
+  f(x) &amp;= \frac{1+x}{1+2x-x^2}
+</mrow>
+</md>
+This is an example of a simple rational function <mdash/> that is, the ratio of two polynomials. When we start to examine these functions later in the text, it is important that we are able to understand how to evaluate such functions at different values of <m>x</m>. For example
+<md>
+<mrow>
+  f(5) &amp;= \frac{1+5}{1+10-25} = \frac{6}{-14} = -\frac{3}{7}
+</mrow>
+</md>
+More important, however, is that we understand how we decompose this function into simpler pieces. Since much of your calculus course will involve creating and  studying complicated functions by building them up from simple pieces, it is important  that you really understand this point.
+</p>
+
+<p>
+Now to get there we will take a small excursion into what are called  parse-trees. You already implicitly use these when you evaluate the function at  a particular value of <m>x</m>, but our aim here is to formalise this  process a little more.
+</p>
+
+<p>
+We can express the steps used to evaluate the above formula as a tree-like  diagram
+	<fn>
+		Such trees appear in many areas of mathematics and computer science. The  reason for the name is that they look rather like trees <mdash/> starting from their base they  grow and branch out towards their many leaves. For some reason, which remains mysterious, they are usually drawn upside down.
+	</fn>.
+	We can decompose this formula as the following tree-like diagram
+</p>
+
+<figure xml:id="fig_tree_rational">
+  <caption> A parse tree of the function <m>\frac{1+x}{1+2x-x^2}</m>.</caption>
+  <image width="80%" source="text/figs/tree1"/>
+</figure>
+
+<p>
+Let us explain the pieces here.
+<ul>
+<li>
+	The picture consists of boxes and arrows which are called <q>nodes</q> and <q>edges</q> respectively.
+</li>
+<li>
+	There are two types of boxes, those containing numbers and the variable <m>x</m>, and those containing arithmetic operations <q><m>+</m></q>,<q><m>-</m></q>, <q><m>\times</m></q> and <q><m>/</m></q>.
+</li>
+<li>
+	<p>
+	If we wish to represent the formula <m>3+5</m>, then we can draw this as the following cherry-like configuration
+	</p>
+	<sidebyside width="30%">
+	  <image source="text/figs/cherry1"/>
+	</sidebyside>
+	<p>
+	which tells us to take the numbers <q><m>3</m></q> and <q><m>5</m></q> and add them together to get <m>8</m>.
+	</p>
+
+	<sidebyside  valign="middle" widths="30% 20% 30%">
+	<image source="text/figs/cherry1"/>
+	<p>evaluates to</p>
+	<image source="text/figs/cherry1a"/>
+	</sidebyside>
+</li>
+<li>
+	By stringing such little <q>cherries</q> together we can describe more complicated formulas. For example, if we compute <q><m>(3+5)\times 2</m></q>, we first compute <q><m>(3+5)</m></q> and then multiply the result by 2. The corresponding diagrams are
+</li>
+</ul>
+</p>
+
+<sidebyside valign="middle" widths="18% 18% 18% 18% 18%">
+ <image source="text/figs/cherry2"/>
+ <p> evaluates to</p>
+  <image source="text/figs/cherry2a"/>
+ <p> evaluates to</p>
+  <image source="text/figs/cherry2b"/>
+</sidebyside>
+
+
+<p>
+The tree we drew in Figure<nbsp/><xref ref="fig_tree_rational"/> above representing our formula has <m>x</m>  in some of the boxes, and so when we want to compute the function at a particular value of <m>x</m> <mdash/> say at <m>x=5</m> <mdash/> then we replace those <q><m>x</m></q>s in the tree by that value and then compute back up the tree. See the example below
+</p>
+
+<sbsgroup widths="10% 35% 10% 35%">
+<sidebyside>
+<p> Start </p>
+<image source="text/figs/tree1b"/>
+<p> <m>\mapsto</m> </p>
+<image source="text/figs/tree1b2"/>
+</sidebyside>
+<sidebyside>
+<p> <m>\mapsto</m> </p>
+<image source="text/figs/tree1b3"/>
+<p> <m>\mapsto</m> </p>
+<image source="text/figs/tree1b4"/>
+</sidebyside>
+<sidebyside>
+<p> <m>\mapsto</m> </p>
+<image source="text/figs/tree1b5"/>
+<p></p>
+<p> and we are done. </p>
+</sidebyside>
+</sbsgroup>
+
+
+
+<p>
+This is not the only parse tree associated with the formula for <m>f(x)</m>; we could also decompose it as
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/tree1a"/>
+</sidebyside>
+
+<p>
+We are able to do this because when we compute the denominator <m>1+2x-x^2</m>, we
+can compute it as
+<md>
+<mrow>
+  1+2x-x^2 &amp;= \text{ either } (1+2x)-x^2 \text{ or } = 1 + (2x-x^2).
+</mrow>
+</md>
+Both
+	<fn>
+		We could also use, for example, <m>1+2x-x^2 = (1-x^2)+2x</m>.
+	</fn>
+are correct because addition is <q>associative</q>. Namely
+<md>
+<mrow>
+  a+b+c &amp;= (a+b)+c = a+(b+c).
+</mrow>
+</md>
+Multiplication is also associative:
+<md>
+<mrow>
+  a \times b \times c &amp;= (a \times b) \times c = a \times (b \times c).
+</mrow>
+</md>
+</p>
+
+<example><title>parsing a formula</title>
+<p>
+Consider the formula
+<md>
+<mrow>
+  g(t) &amp;= \left(\frac{t+\pi}{t-\pi} \right) \cdot \sin\left( \frac{t+\pi}{2} \right).
+</mrow>
+</md>
+This introduces a new idea <mdash/> we have to evaluate <m>\frac{t+\pi}{2}</m> and then compute the sine of that number. The corresponding tree can be written as
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/tree2"/>
+</sidebyside>
+
+<p>
+If we want to evaluate this at <m>t = \pi/2</m> then we get the following<ellipsis/>
+</p>
+
+<sbsgroup widths="10% 40% 5% 40%">
+<sidebyside>
+<p>Start</p>
+<image source="text/figs/tree2a"/>
+<p><m>\mapsto</m></p>
+<image source="text/figs/tree2b"/>
+</sidebyside>
+<sidebyside>
+<p><m>\mapsto</m></p>
+<image source="text/figs/tree2c"/>
+<p><m>\mapsto</m></p>
+<image source="text/figs/tree2d"/>
+</sidebyside>
+<sidebyside>
+<p><m>\mapsto</m></p>
+<image source="text/figs/tree2e"/>
+<p></p>
+<p>and we are done.</p>
+</sidebyside>
+</sbsgroup>
+
+</example>
+
+
+<p>
+It is highly unlikely that you will ever need to explicitly construct such a  tree for any problem in the remainder of the text. The main point of  introducing these objects and working through a few examples is to realise that  all the functions that we will examine are constructed from simpler pieces. In  particular we have constructed all the above examples from simple <q>building  blocks</q>
+<ul>
+<li> constants <mdash/> fixed numbers like <m>1, \pi</m> and so forth </li>
+<li> variables <mdash/> usually <m>x</m> or <m>t</m>, but sometimes other symbols </li>
+<li> standard functions <mdash/> like trigonometric functions (sine, cosine and  tangent), exponentials and logarithms. </li>
+</ul>
+These simple building blocks are combined using arithmetic
+<ul>
+<li> addition and subtraction <mdash/> <m>a + b</m> and <m>a-b</m> </li>
+<li> multiplication and division <mdash/> <m>a \cdot b</m> and <m>\frac{a}{b}</m> </li>
+<li> raising to a power <mdash/> <m>a^n</m> </li>
+<li>
+	composition <mdash/> given two functions <m>f(x)</m> and <m>g(x)</m> we form a  new function <m>f(g(x))</m> by evaluating <m>y=g(x)</m> and then evaluating <m>f(y) =  f(g(x))</m>.
+</li>
+</ul>
+During the rest of the course when we learn how to compute limits and  derivatives, our computations require us to understand the way we construct  functions as we have just described.
+</p>
+
+<p>
+That is, in order to compute the derivative
+	<fn>
+		We get to this in Chapter<nbsp/><xref ref="chap_deriv"/> <mdash/> don't worry about exactly what it is just now.
+	</fn>
+of a function we  have to see how to construct the function from these building blocks (i.e. the  constants, variables and standard functions) using arithmetic operations. We  will then construct the derivative by following these same steps. There will be  simple rules for finding the derivatives of the simpler pieces and then rules  for putting them together following the arithmetic used to construct the function.
+</p>
+</introduction>
+</section>

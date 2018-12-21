@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p> Spot and correct the error(s) in the following calculation.
+<md>
+<mrow>
+f(x)&amp;=\frac{2x}{x+1}
+</mrow><mrow>
+f'(x)&amp;=\frac{2(x+1)+2x}{(x+1)^2}
+</mrow><mrow>
+&amp;=\frac{2(x+1)}{(x+1)^2}
+</mrow><mrow>
+&amp;=\frac{2}{x+1}
+</mrow>
+</md>
+</p></statement>
+<hint><p>  Check signs
+</p></hint>
+<answer><p>   In the quotient rule, there is a minus, not a plus. Also, <m>2(x+1)+2x</m> is not the same as <m>2(x+1)</m>.
+</p>
+
+<p> The correct version is:
+<md>
+<mrow>
+f(x)&amp;=\frac{2x}{x+1}
+</mrow><mrow>
+f'(x)&amp;=\frac{2(x+1)\textcolor{red}{-}2x}{(x+1)^2}
+</mrow><mrow>
+&amp;=\frac{2}{(x+1)^2}
+</mrow>
+</md>
+</p></answer>
+<solution><p>  In the quotient rule, there is a minus, not a plus. Also, <m>2(x+1)+2x</m> is not the same as <m>2(x+1)</m>.
+</p>
+
+<p> The correct version is:
+<md>
+<mrow>
+f(x)&amp;=\frac{2x}{x+1}
+</mrow><mrow>
+f'(x)&amp;=\frac{2(x+1)\textcolor{red}{-}2x}{(x+1)^2}
+</mrow><mrow>
+&amp;=\frac{2}{(x+1)^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p> Differentiate
+<m>f(x)=\frac{2}{3}x^6+5x^4+12x^2+9</m> and factor the result.
+</p></statement>
+<hint><p> First, factor an <m>x</m> out of the derivative. What's left over looks like a quadratic equation, if you take <m>x^2</m> to be your variable, instead of <m>x</m>.
+</p></hint>
+<answer><p> <m>4x(x^2+2)(x^2+3)</m>
+</p></answer>
+<solution><p>
+<m>f(x)=\frac{2}{3}x^6+5x^4+12x^2+9</m> is a polynomial:
+<md>
+<mrow>
+f'(x)&amp;=4x^5+20x^3+24x
+</mrow><mrow>&amp;
+=4x(x^4+5x^2+6)
+</mrow><mrow>&amp; = 4x((x^2)^2+5(x^2)+6)
+</mrow><mrow>
+&amp;=4x(x^2+2)(x^2+3)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p> Differentiate <m>s(t)=3t^4+5t^3-\frac{1}{t}</m>.
+</p></statement>
+<hint><p>
+<m>\frac{1}{t}=t^{-1}</m>
+</p></hint>
+<answer><p> <m>12t^3+15t^2+\frac{1}{t^2}</m>
+</p></answer>
+<solution><p>  We can rewrite slightly to make every term into a power of <m>t</m>:
+<md>
+<mrow>
+s(t)&amp;=3t^4+5t^3-t^{-1}
+</mrow><mrow>
+s'(t)&amp;=4\cdot 3t^{3}+3\cdot 5t^2-(-1)\cdot t^{-2}
+</mrow><mrow>
+&amp;=12t^3+15t^2+\frac{1}{t^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p> Differentiate <m>x(y) = \left(2y+\frac{1}{y}\right)\cdot y^3</m>.
+</p></statement>
+<hint><p> First simplify. Don't be confused by the role reversal of <m>x</m> and <m>y</m>: <m>x</m> is just
+        the name of the function <m>\big(2y+\tfrac{1}{y}\big)\cdot y^3</m>, which
+        is a function of the variable <m>y</m>. You are to differentiate with
+        respect to <m>y</m>.
+</p></hint>
+<answer><p> <m>x'(y)=8y^3+2y</m>
+</p></answer>
+<solution><p> We could use the product rule here, but it's easier to simplify first. Don't be confused by the role reversal of <m>x</m> and <m>y</m>: <m>x</m> is the name of the function, and <m>y</m> is the variable.
+<md>
+<mrow>
+x(y) &amp;= \left(2y+\frac{1}{y}\right)\cdot y^3
+</mrow><mrow>
+&amp;=2y^4+y^2
+</mrow><mrow>
+x'(y)&amp;=8y^3+2y
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p> Differentiate <m>T(x) = \dfrac{\sqrt{x}+1}{x^2+3}</m>.
+</p></statement>
+<hint><p> <m>\sqrt{x}=x^{1/2}</m>
+</p></hint>
+<answer><p> <m>T'(x)=\dfrac{(x^2+3)\left(\frac{1}{2\sqrt{x}}\right)-(\sqrt{x}+1)(2x)}{(x^2+3)^2}</m>
+</p></answer>
+<solution><p>
+We've already seen that <m>\diff{}{x}\{\sqrt{x}\}=\frac{1}{2\sqrt{x}}</m>, but if you forget this formula it is easy to figure out: <m>\sqrt{x}=x^{1/2}</m>, so <m>\diff{}{x}\{\sqrt{x}\}=\frac{1}{2}x^{-1/2}=\frac{1}{2\sqrt{x}}</m>.
+</p>
+
+<p>Using the quotient rule:
+<md>
+<mrow>
+T(x) &amp;= \dfrac{\sqrt{x}+1}{x^2+3}
+</mrow><mrow>
+T'(x)&amp;=\frac{(x^2+3)\left(\frac{1}{2\sqrt{x}}\right)-(\sqrt{x}+1)(2x)}{(x^2+3)^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Compute the derivative of <m>\left(\dfrac{7x+2}{x^2+3}\right)</m>.
+</p></statement>
+<answer><p>
+<m>\dfrac{21-4x-7x^2}{(x^2+3)^2}</m>
+</p></answer>
+<solution><p>
+We use quotient rule:
+<md>
+<mrow>
+\frac{(x^2+3)\cdot 7 - 2x\cdot (7x+2)}{(x^2+3)^2}=\frac{21 - 4x - 7x^2}{(x^2+3)^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p> What is <m>f'(0)</m>, when <m>f(x)=(3x^3+4x^2+x+1)(2x+5)</m>?
+</p></statement>
+<hint><p> You don't need to multiply through.
+</p></hint>
+<answer><p> 7
+</p></answer>
+<solution><p> Instead of multiplying to get our usual form of this polynomial, we can use the quotient rule. If <m>f_1(x)=3x^3+4x^2+x+1</m> and <m>f_2(x)=2x+5</m>, then
+<m>f_1'(x)=9x^2+8x+1</m> and <m>f_2'(x)=2</m>. Then
+<md>
+<mrow>
+f'(0)&amp;=f_1'(0)f_2(0)+f_1(0)f_2'(0)
+</mrow><mrow>
+&amp;=(1)(5)+(1)(2)=7</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p> Differentiate <m>f(x)=\dfrac{3x^3+1}{x^2+5x}</m>.
+</p></statement>
+<hint><p> You can use the quotient rule.
+</p></hint>
+<answer><p> <m>\dfrac{3x^4+30x^3-2x-5}{(x^2+5x)^2}
+</m>
+</p></answer>
+<solution><p> Using the quotient rule,
+<me>
+f'(x) = \frac{(x^2+5x)(9x^2)-(3x^3+1)(2x+5)}{(x^2+5x)^2}
+= \frac{3x^4+30x^3-2x-5}{(x^2+5x)^2}
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Compute the derivative of <m>\left(\dfrac{3x^2+5}{2-x}\right)</m>
+</p></statement>
+<answer><p> <m>\dfrac{-3x^2+12x+5}{(2-x)^2}</m>
+</p></answer>
+<solution><p>
+We use quotient rule:
+<md>
+<mrow>
+\frac{(2-x)(6x)-(3x^2+5)(-1)}{(2-x)^2}=\frac{-3x^2+12x+5}{(x-2)^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Compute the derivative of <m>\left(\dfrac{2-x^2}{3x^2+5}\right)</m>.
+</p></statement>
+<answer><p> <m>\dfrac{-22x}{(3x^2+5)^2}</m>
+</p></answer>
+<solution><p>
+We use quotient rule:
+<md>
+<mrow>
+\frac{(3x^2+5)(-2x) - (2-x^2)(6x)}{(3x^2+5)^2}=\frac{-22x}{(3x^2+5)^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+ Compute the derivative of <m>\left(\dfrac{2x^3+1}{x+2}\right)</m>.
+</p></statement>
+<answer><p>
+<m>\dfrac{4x^3+12x^2-1}{(x+2)^2}</m>
+</p></answer>
+<solution><p>
+We use quotient rule:
+<md>
+<mrow>
+\frac{6x^2\cdot (x+2)-(2x^3+1)\cdot 1}{(x+2)^2}=\frac{4x^3+12x^2-1}{(x+2)^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+For what values of <m>x</m> does the derivative of
+<m>\dfrac{\sqrt{x}}{1-x^2}</m> exist? Explain your answer.
+</p></statement>
+<hint><p> There are two pieces of the given function that could cause problems.
+</p></hint>
+<answer><p>
+The derivative of the function is
+<md>
+<mrow>
+ \frac{(1-x^2)\cdot\frac{1}{2\sqrt{x}} - \sqrt{x} \cdot (-2x)}{(1-x^2)^2}
+  &amp;= \frac{(1-x^2) - 2x \cdot (-2x)}{2\sqrt{x}(1-x^2)^2}
+</mrow>
+</md>
+The derivative is undefined if either <m>x \lt 0</m> or <m>x = 0,\pm 1</m> (since the square-root is
+undefined for <m>x \lt 0</m> and the denominator is zero when <m>x=0,1,-1</m>. Putting this together
+<mdash/> the derivative exists for <m>x \gt 0, x\neq 1</m>.
+</p></answer>
+<solution><p>
+The derivative of the function is
+<md>
+<mrow>
+ \frac{(1-x^2)\cdot\frac{1}{2\sqrt{x}} - \sqrt{x} \cdot (-2x)}{(1-x^2)^2}
+  &amp;= \frac{(1-x^2) - 2x \cdot (-2x)}{2\sqrt{x}(1-x^2)^2}
+</mrow>
+</md>
+The derivative is undefined if either <m>x \lt 0</m> or <m>x = 0,\pm 1</m> (since the square-root is
+undefined for <m>x \lt 0</m> and the denominator is zero when <m>x=0,1,-1</m>. Putting this together
+<mdash/> the derivative exists for <m>x \gt 0, x\neq 1</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p> Differentiate <m>f(x)=\left(3\sqrt[5]{x}+15\sqrt[3]{x}+8\right)\left(3x^2+8x-5\right)</m>.
+</p></statement>
+<hint><p> <m>\sqrt[3]{x}=x^{1/3}</m>
+</p></hint>
+<answer><p> <m>\left(\frac{3}{5}{x}^{\frac{-4}{5}}+5{x}^{\frac{-2}{3}}\right)\left(3x^2+8x-5\right)+
+\left(3\sqrt[5]{x}+15\sqrt[3]{x}+8\right)\left(6x+8\right)</m>
+</p></answer>
+<solution><p> Using the product rule seems faster than expanding.
+<md>
+<mrow>
+f'(x)&amp;=\diff{}{x}\left\{3\sqrt[5]{x}+15\sqrt[3]{x}+8\right\}\left(3x^2+8x-5\right)+
+\left(3\sqrt[5]{x}+15\sqrt[3]{x}+8\right)\diff{}{x}\left\{3x^2+8x-5\right\}
+</mrow><mrow>
+&amp;=\diff{}{x}\left\{3{x}^{\frac{1}{5}}+15{x}^{\frac{1}{3}}+8\right\}\left(3x^2+8x-5\right)+
+\left(3\sqrt[5]{x}+15\sqrt[3]{x}+8\right)\diff{}{x}\left\{3x^2+8x-5\right\}
+</mrow><mrow>
+&amp;=\left(\frac{3}{5}{x}^{\frac{-4}{5}}+5{x}^{\frac{-2}{3}}\right)\left(3x^2+8x-5\right)+
+\left(3\sqrt[5]{x}+15\sqrt[3]{x}+8\right)\left(6x+8\right)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p> Differentiate <m>f(x)=\dfrac{(x^2+5x+1)(\sqrt{x}+\sqrt[3]{x})}{x}</m>.
+</p></statement>
+<hint><p> Simplify first
+</p></hint>
+<answer><p> <m>f'(x)=(2x+5)(x^{-1/2}+x^{-2/3})+(x^2+5x+1)\left(\frac{-1}{2}x^{-3/2}-\frac{2}{3}x^{-5/3}\right)</m>
+</p></answer>
+<solution><p> To avoid the quotient rule, we can divide through the denominator:
+<md>
+<mrow>
+f(x)&amp;=\dfrac{(x^2+5x+1)(\sqrt{x}+\sqrt[3]{x})}{x}
+=(x^2+5x+1)\dfrac{(\sqrt{x}+\sqrt[3]{x})}{x}
+</mrow><mrow>
+&amp;=(x^2+5x+1)(x^{-1/2}+x^{-2/3})
+</mrow>
+<intertext>Now, product rule:</intertext><mrow>
+f'(x)&amp;=(2x+5)(x^{-1/2}+x^{-2/3})+(x^2+5x+1)\left(\frac{-1}{2}x^{-3/2}-\frac{2}{3}x^{-5/3}\right)
+</mrow>
+</md>
+(If you simplified differently, or used the quotient rule, you probably came up with a different-looking answer. There is only one derivative, though, so all correct answers will look the same after sufficient algebraic manipulation.)
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p> Find all <m>x</m>-values where <m>f(x)=\dfrac{1}{\frac{1}{5}x^5+x^4-\frac{5}{3}x^3}</m> has a horizontal tangent line.
+</p></statement>
+<answer><p> <m>x=-5</m> and <m>x=1</m>
+</p></answer>
+<solution><p>
+The question asks us to find where <m>f'(x)=0</m> and <m>f(x)</m> exists. We can use the formula for the derivative of a reciprocal, Corollary<nbsp/><xref ref="cor_diff_recip"/>:
+<md>
+<mrow>
+f'(x) &amp;= \frac{-\diff{}{x}\left\{\frac{1}{5}x^5+x^4-\frac{5}{3}x^3\right\}}{\left(\frac{1}{5}x^5+x^4-\frac{5}{3}x^3\right)^2}
+</mrow><mrow>
+&amp;=\frac{-\left(x^4+4x^3-{5}x^2\right)}{\left(\frac{1}{5}x^5+x^4-\frac{5}{3}x^3\right)^2}
+</mrow><mrow>
+&amp;=\frac{-x^2\left(x^2+4x-{5}\right)}{\left(\frac{1}{5}x^5+x^4-\frac{5}{3}x^3\right)^2}
+</mrow><mrow>
+&amp;=\frac{-x^2(x+5)(x-1)}{\left(\frac{1}{5}x^5+x^4-\frac{5}{3}x^3\right)^2}
+</mrow>
+</md>
+So our candidates for <m>x</m>-values where <m>f'(x)=0</m> are <m>x=0</m>, <m>x=-5</m>, and <m>x=1</m>. However, we need to check that <m>f</m> exists at these places:  <m>f(0)</m> is undefined (and  <m>f'(0)</m> doesn't exist). So <m>f'(x)=0</m> only when <m>x=-5</m> and <m>x=1</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise><title><fromexam>2007H</fromexam></title>
+<statement><p>
+ Find an equation of a line that is tangent to both of the
+curves <m>y = x^2</m> and <m>y = x^2 - 2x + 2</m> (at different points).
+</p></statement>
+<hint><p>
+Let <m>m</m> be the slope of such a tangent line, and let <m>P_1</m> and <m>P_2</m> be the points where the tangent line is tangent to the two curves, respectively. There are three equations <m>m</m> fulfils: it has the same slope as the curves at the given points, and it is the slope of the line passing through the points <m>P_1</m> and <m>P_2</m>.
+</p></hint>
+<answer><p>
+ <m>y=x-\dfrac{1}{4}</m>
+</p></answer>
+<solution><p>
+Denote by <m>m</m> the slope of the common tangent, by <m>(x_1,y_1)</m>
+the point of tangency with <m>y=x^2</m>, and by <m>(x_2,y_2)</m> the point of tangency
+with <m>y=x^2-2x+2</m>. Then we must have
+<me>
+y_1=x_1^2\qquad
+y_2=x_2^2-2x_2+2\qquad
+m=2x_1=2x_2-2=\frac{y_2-y_1}{x_2-x_1}
+</me>
+From the <q><m>m</m></q> equations we get <m>x_1=\frac{m}{2}</m>, <m>x_2=\frac{m}{2}+1</m>
+and
+<md>
+<mrow>
+m&amp;=\frac{y_2-y_1}{x_2-x_1}
+</mrow><mrow>
+&amp;=y_2-y_1
+</mrow><mrow>
+&amp;=x_2^2-2x_2+2-x_1^2
+</mrow><mrow>&amp; =(x_2-x_1)(x_2+x_1)-2(x_2-1)
+</mrow><mrow>
+&amp;=\left(\frac{m}{2}+1-\frac{m}{2}\right)\left(\frac{m}{2}+1+\frac{m}{2}\right)
+-2\left(\frac{m}{2}+1-1\right)
+</mrow><mrow> &amp;=(1)(m+1)-2\frac{m}{2}
+</mrow><mrow>
+ &amp;=1
+</mrow><mrow>
+\mbox{So,}\;\;\;m&amp;=1,\qquad
+x_1=\half,\qquad
+y_1=\frac{1}{4},\qquad
+x_2=\frac{3}{2},\qquad
+y_2=\frac{9}{4}-3+2=\frac{5}{4}
+</mrow>
+</md>
+An equation of the common tangent is <m>y=x-\frac{1}{4}</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p> [1998H]
+Find all lines that are tangent to both of the curves <m>y=x^2</m>
+and <m>y=-x^2+2x-5</m>. Illustrate your answer with a sketch.
+</p></statement>
+<hint><p> A line has equation <m>y=mx+b</m>, for some constants <m>m</m> and <m>b</m>.
+ What has to be true for <m>y=mb+x</m> to be tangent to the first curve at the point <m>x=\alpha</m>, and to the second at the point <m>x=\beta</m>?
+</p></hint>
+<answer>
+<sidebyside>
+<image source="problems/figs/graphE3c"/>
+</sidebyside>
+
+<p><m>y=4x-4</m> and <m>y=-2x-1</m></p>
+</answer>
+<solution><p>
+The line <m>y=mx+b</m> is tangent to <m>y=x^2</m> at <m>x=\alpha</m> if
+<me>
+2\alpha=m\hbox{ and }\alpha^2=m\alpha+b
+\iff m=2\alpha\hbox{ and }b=-\alpha^2
+</me>
+The same line <m>y=mx+b</m> is tangent to <m>y=-x^2+2x-5</m> at <m>x=\beta</m> if
+<md>
+<mrow>
+-2\beta+2=m&amp;\hbox{ and }-\beta^2+2\beta-5=m\beta+b
+</mrow><mrow>
+\iff m=2-2\beta&amp;\hbox{ and }b=-\beta^2+2\beta-5-(2-2\beta)\beta=\beta^2-5
+</mrow>
+</md>
+For the line to be simultaneously tangent to the two parabolas we need
+<me>
+m=2\alpha=2-2\beta\hbox{ and }b=-\alpha^2=\beta^2-5
+</me>
+Substituting <m>\alpha=1-\beta</m> into <m>-\alpha^2=\beta^2-5</m> gives <m>-(1-\beta)^2=\beta^2-5</m>
+or <m>2\beta^2-2\beta-4=0</m> or <m>\beta=-1,2</m>. The corresponding values of the other
+parameters are <m>\alpha=2,-1</m>, <m>m=4,-2</m> and <m>b=-4,-1</m>. The two lines are
+{<m>y=4x-4</m> and <m>y=-2x-1</m>}.</p>
+
+<sidebyside>
+<image source="problems/figs/graphE3c"/>
+</sidebyside>
+</solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+ Evaluate <m>\displaystyle \lim_{x\to 2015}\left(
+\dfrac{\cos(x)-\cos(2015)}{x-2015}\right).</m>
+</p></statement>
+<hint><p>
+Compare this to one of the forms given in the text for the definition of the derivative.
+</p></hint>
+<answer><p>
+{<m>-\sin(2015)</m>}
+</p></answer>
+<solution><p>
+This limit represents the derivative computed at <m>x=2015</m> of the function
+<m>f(x)=\cos(x)</m>. To see this, simply use the definition of the derivative at <m>a=2015</m> with <m>f(x)=\cos x</m>:
+<md>
+<mrow>
+\left.\diff{}{x}\{f(x)\}\right|_{a} &amp;= \lim_{x \to a}\frac{f(x)-f(a)}{x-a}
+</mrow><mrow>
+\left.\diff{}{x}\{\cos x\}\right|_{2015} &amp;= \lim_{x\to2015}\frac{\cos(x)-\cos(2015)}{x-2015}
+</mrow>
+</md>
+Since the derivative of <m>f(x)</m> is <m>-\sin(x)</m>, its value at
+<m>x=2015</m> is exactly <m>-\sin(2015)</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Evaluate <m>\displaystyle \lim_{x\to \pi/3}\left(
+\dfrac{\cos(x)-1/2}{x-\pi/3}\right).</m>
+</p></statement>
+<hint><p>
+Compare this to one of the forms given in the text for the definition of the derivative.
+</p></hint>
+<answer><p>
+{<m>-\sqrt{3}/2</m>}
+</p></answer>
+<solution><p>
+This limit represents the derivative computed at <m>x=\pi/3</m> of the function
+<m>f(x)=\cos x</m>. To see this, simply use the definition of the derivative at <m>a=\pi/3</m> with <m>f(x)=\cos x</m>:
+<md>
+<mrow>
+\left.\diff{}{x}\{f(x)\}\right|_{a} &amp;= \lim_{x \to a}\frac{f(x)-f(a)}{x-a}
+</mrow><mrow>
+\left.\diff{}{x}\{\cos x\}\right|_{\pi/3} &amp;= \lim_{x\to\pi/3}\frac{\cos(x)-\cos(\pi/3)}{x-\pi/3}
+</mrow><mrow>
+&amp;=\lim_{x\to\pi/3} \frac{\cos(x)-1/2}{x-\pi/3}
+</mrow>
+</md>
+Since the derivative of <m>f(x)</m> is <m>-\sin x</m>, then its
+value at <m>x=\pi/3</m> is exactly <m>-\sin(\pi/3)=-\sqrt{3}/2</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Evaluate <m>\displaystyle \lim_{x\to \pi}\left(\dfrac{\sin(x)}{x-\pi}\right).</m>
+</p></statement>
+<hint><p>
+Compare this to one of the forms given in the text for the definition of the derivative.
+</p></hint>
+<answer><p> <m>-1</m>
+</p></answer>
+<solution><p>
+    This limit represents the derivative computed at <m>x=\pi</m> of the function <m>f(x)=\sin(x)</m>.
+    To see this, simply use the definition of the derivative at <m>a=\pi</m> with <m>f(x)=\sin x</m>:
+<md>
+<mrow>
+\left.\diff{}{x}\{f(x)\}\right|_{a} &amp;= \lim_{x \to a}\frac{f(x)-f(a)}{x-a}
+</mrow><mrow>
+\left.\diff{}{x}\{\sin x\}\right|_{\pi} &amp;=\lim_{x\to\pi} \frac{\sin(x)-\sin(\pi)}{x-\pi}
+</mrow><mrow>
+ &amp;=\lim_{x\to\pi} \frac{\sin(x)}{x-\pi}
+</mrow>
+</md>
+    Since the derivative of <m>f(x)</m> is <m>\cos(x)</m>, then its value at <m>x=\pi</m> is exactly
+     <m>\cos(\pi)=-1</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Evaluate <m>\displaystyle \lim_{x\to 2}\left(
+\dfrac{x^{2015}-2^{2015}}{x-2}\right).</m>
+</p></statement>
+<hint><p>
+Compare this to one of the forms given in the text for the definition of the derivative.
+</p></hint>
+<answer><p>
+{<m>2015\cdot 2^{2014}</m>}
+</p></answer>
+<solution><p>
+This limit represents the derivative computed at <m>x=2</m> of the function <m>f(x)=x^{2015}</m>.
+To see this, simply use the definition of the derivative at <m>a=2</m> with <m>f(x)=x^{2015}</m>:
+<md>
+<mrow>
+\left.\diff{}{x}\{f(x)\}\right|_{a} &amp;= \lim_{x \to a}\frac{f(x)-f(a)}{x-a}
+</mrow><mrow>
+\left.\diff{}{x}\{x^{2015}\}\right|_{2} &amp;=\lim_{x\to2} \frac{x^{2015}-2^{2015}}{x-2}
+</mrow>
+</md>
+Since the derivative of <m>f(x)</m> is <m>2015\cdot x^{2014}</m>, then its value at <m>x=2</m> is exactly <m>2015\cdot 2^{2014}</m>.
+</p></solution>
+
+</exercise>
+</exercisegroup>
+
+</exercises>

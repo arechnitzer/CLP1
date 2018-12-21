@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose a particular caribou has a top speed of 70 kph, and in one year it migrates 5000 km. What do you know about the amount of time the caribou spent travelling during its migration?
+</p></statement>
+<hint><p>
+How long would it take the caribou to travel 5000 km, travelling at its top speed?
+</p></hint>
+<answer><p>
+The caribou spent <em>at least</em> about 71 and a half hours travelling during its migration (probably much more) in one year.
+</p></answer>
+<solution><p>
+We know the top speed of the caribou, so we can use this to give the <em>minimum</em> possible number of hours the caribou spent travelling during its migration. If the caribou travels at 70kph, it will take <m>(5000 \mathrm{km})\left(\dfrac{1 \mathrm{hr}}{70 \mathrm{km}}\right) \approx 71.4 \mathrm{hrs}</m> to travel 5000 kilometres. Probably the caribou wasn't sprinting the whole time, so probably it took it longer than that, but we can only say for sure that the caribou spent <em>at least</em> about 71.4 hours migrating.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose a migrating sandhill crane flew 240 kilometres in one day. What does the mean value theorem tell you about its speed during that day?
+</p></statement>
+<hint><p>
+Let <m>f(x)</m> be the position of the crane, where <m>x</m> is the hour of the day.
+</p></hint>
+<answer><p>
+At some point during the day, the crane was travelling at exactly 10 kph.
+</p></answer>
+<solution><p>
+If <m>f(x)</m> is the position of the crane at time <m>x</m>, measured in hours, then (if we let <m>x=0</m> be the beginning of the day) we know that <m>f(24)-f(0)=240</m>. Since <m>f(x)</m> is the position of the bird, <m>f(x)</m> is continuous and differentiable. So, the MVT says there is a <m>c</m> in <m>(0,24)</m> such that <m>f'(x)=\dfrac{f(24)-f(0)}{24-0}=\dfrac{240}{24}=10</m>. That is, at some point <m>c</m> during the day, the speed of the crane was exactly 10 kph.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Below is the graph of <m>y=f(x)</m>, where <m>x</m> is continuous on <m>[a,b]</m> and differentiable on <m>(a,b)</m>. Mark on the graph the approximate location of a value <m>c</m> guaranteed by the mean value theorem.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{12}{3.5}{3.5}
+\draw plot[domain=2:10, samples=100](\x,{(6/(cosh(\x-3))-3});
+\draw (2,0.89) node[vertex]{};
+\draw (10,-3) node[vertex]{};
+\draw (2,.2)--(2,-.2) node[below]{$a$};
+\draw (10,.2)--(10,-.2) node[below]{$b$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+For an example, look at Figure<nbsp/><xref ref="fig_rolle_to_mvt"/>.
+</p></hint>
+<answer><p>One possible answer:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{12}{3.5}{3.5}
+\draw plot[domain=2:10, samples=100](\x,{(6/(cosh(\x-3))-3});
+\draw (2,0.89) node[vertex](a){};
+\draw (10,-3) node[vertex](b){};
+\draw (2,.2)--(2,-.2) node[below]{$a$};
+\draw (10,.2)--(10,-.2) node[below]{$b$};
+\draw[blue, dashed] (a)--(b);
+\draw[red] (3.1,2.95) node[vertex](c1){};
+\draw[red, dashed] plot[domain=1:6](\x,{-0.49*\x+4.5});
+\draw[red, thick] (3.1,.2)--(3.1,-.2) node[below]{$c$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Another possible answer:</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{12}{3.5}{3.5}
+\draw plot[domain=2:10, samples=100](\x,{(6/(cosh(\x-3))-3});
+\draw (2,0.89) node[vertex](a){};
+\draw (10,-3) node[vertex](b){};
+\draw (2,.2)--(2,-.2) node[below]{$a$};
+\draw (10,.2)--(10,-.2) node[below]{$b$};
+\draw[blue, dashed] (a)--(b);
+\draw[red, dashed] plot[domain=4:9](\x,{-0.49*\x+.5});
+\draw[red] (6.2,-2.55) node[vertex](c2){};
+\draw[red] (6.2,.2)--(6.2,-.2) node[below]{$c$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+The MVT guarantees there is some point <m>c</m> strictly between <m>a</m> and <m>b</m> where the tangent line to <m>f(x)</m> at <m>x=c</m> has the same slope as the secant line of <m>f(x)</m> from <m>x=a</m> to <m>x=b</m>. So, let's start by drawing in the secant line.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{12}{3.5}{3.5}
+\draw plot[domain=2:10, samples=100](\x,{(6/(cosh(\x-3))-3});
+\draw (2,0.89) node[vertex](a){};
+\draw (10,-3) node[vertex](b){};
+\draw (2,.2)--(2,-.2) node[below]{$a$};
+\draw (10,.2)--(10,-.2) node[below]{$b$};
+\draw[blue, dashed] (a)--(b);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>What we're looking for is a point on the curve where the tangent line is parallel to this secant line. In fact, there are two.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{12}{3.5}{3.5}
+\draw plot[domain=2:10, samples=100](\x,{(6/(cosh(\x-3))-3});
+\draw (2,0.89) node[vertex](a){};
+\draw (10,-3) node[vertex](b){};
+\draw (2,.2)--(2,-.2) node[below]{$a$};
+\draw (10,.2)--(10,-.2) node[below]{$b$};
+\draw[blue, dashed] (a)--(b);
+\draw[red] (3.1,2.95) node[vertex](c1){};
+\draw[red, dashed] plot[domain=1:6](\x,{-0.49*\x+4.5});
+\draw[red, dashed] plot[domain=4:9](\x,{-0.49*\x+.5});
+\draw[red] (6.2,-2.55) node[vertex](c2){};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>So, either of the two values  <m>c_1</m> and <m>c_2</m> marked below can serve as the point guaranteed by the MVT:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{12}{3.5}{3.5}
+\draw plot[domain=2:10, samples=100](\x,{(6/(cosh(\x-3))-3});
+\draw (2,0.89) node[vertex](a){};
+\draw (10,-3) node[vertex](b){};
+\draw (2,.2)--(2,-.2) node[below]{$a$};
+\draw (10,.2)--(10,-.2) node[below]{$b$};
+\draw[blue, dashed] (a)--(b);
+\draw[red] (3.1,2.95) node[vertex](c1){};
+\draw[red, dashed] plot[domain=1:6](\x,{-0.49*\x+4.5});
+\draw[red, dashed] plot[domain=4:9](\x,{-0.49*\x+.5});
+\draw[red] (6.2,-2.55) node[vertex](c2){};
+\draw[red] (3.1,.2)--(3.1,-.2) node[below]{$c_1$};
+\draw[red] (6.2,.2)--(6.2,-.2) node[below]{$c_2$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Give a function <m>f(x)</m> with the properties that:
+<ul>
+<li> <m>f(x)</m> is differentiable on the open interval <m>0 \lt x \lt 10</m>
+</li>
+<li> <m>f(0)=0</m>, <m>f(10)=10</m>
+</li>
+</ul>
+but for all <m>c \in (0,10)</m>, <m>f'(c)=0</m>.
+</p></statement>
+<hint><p>
+How does this question differ from the statement of the mean value theorem?
+</p></hint>
+<answer><p>
+One possible answer: <m>f(x) = \left\{\begin{array}{lr}
+0&amp;x \neq 10\\
+10&amp;x=10
+\end{array}\right.</m>
+</p>
+
+<p>Another answer:
+<m>f(x) = \left\{\begin{array}{lr}
+10&amp;x \neq 0\\
+0&amp;x=0
+\end{array}\right.</m>
+</p>
+
+<p>Yet another answer:
+<m>f(x) = \left\{\begin{array}{ll}
+5&amp;x \neq 0, 10\\
+10&amp;x= 10\\
+0&amp;x=0
+\end{array}\right.</m>
+</p></answer>
+<solution><p>
+Since <m>f(x)</m> is differentiable for all <m>x \in (0,10)</m>, then <m>f(x)</m> is also continuous for all <m>x \in (0,10)</m>. If <m>f(x)</m> were continuous on the closed interval <m>[0,10]</m>, then the MVT would guarantee <m>f'(x)=\dfrac{f(10)-f(0)}{10-0}=1</m> for some <m>c \in (0,10)</m>; however, this is not the case. So, it must be that <m>f(x)</m> is continuous for all <m>x \in (0,10)</m>, but not for all <m>x \in [0,10]</m>.
+</p>
+
+<p>Since <m>f'(c)=0</m> for <m>c \in (0,10)</m>, that means <m>f</m> is constant on that interval. So, <m>f(x)</m> is a function like this:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{5}{1}{5}
+\draw node[vertex]{};
+\draw (5,5) node[vertex]{};
+\draw (0,3) node[opendot]{}--(5,3) node[opendot]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>where the height of the constant function can be anything.
+</p>
+
+<p>So, one possible answer is <m>f(x) = \left\{\begin{array}{lr}
+0&amp;x \neq 10\\
+10&amp;x=10
+\end{array}\right.</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+For each of the parts below, sketch a function <m>f(x)</m> (different in each part) that is continuous and differentiable over all real numbers, with <m>f(1)=f(2)=0</m>, and with
+the listed property, or explain why no such function exists.
+<ol label="a">
+<li> <m>f'(c)=0</m> for <em>no</em> point <m>c \in (1,2)</m>
+</li>
+<li> <m>f'(c)=0</m> for <em>exactly one</em> point <m>c \in (1,2)</m>
+</li>
+<li> <m>f'(c)=0</m> for <em>exactly five</em> points <m>c \in (1,2)</m>
+</li>
+<li> <m>f'(c)=0</m> for <em>infinitely many</em> points <m>c \in (1,2)</m>
+</li>
+</ol>
+</p></statement>
+<hint><p></p></hint>
+<answer><p>
+(a) No such function is possible: Rolle's Theorem guarantees <m>f'(c)=1</m> for at least one point <m>c \in (1,2)</m>.
+</p>
+
+<p>For the other functions, examples are below, but many answers are possible.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{2}
+\draw (.5,0) node[vertex, label=below:1]{};
+\draw (2.5,0) node[vertex, label=below:2]{};
+\draw[thick] plot[domain=.5:2.5](\x,{-.5*(4*\x*\x-12*\x+5)});
+\draw (-1,3) node{(b)};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{4}{1}{2}
+\draw (.62,0) node[vertex, label=below:1]{};
+\draw (3.76,0) node[vertex, label=below:2]{};
+\draw[thick] plot[domain=.62:3.76, samples=100](\x,{-sin(\x*5 r)});
+\draw (-1,3) node{(c)};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{2}
+\draw (.5,0) node[vertex, label=below:1]{};
+\draw (2.5,0) node[vertex, label=below:2]{};
+\draw[ultra thick] (.5,0)--(2.5,0);
+\draw (-1,3) node{(d)};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+(a) No such function is possible: Rolle's Theorem guarantees <m>f'(c)=1</m> for at least one point <m>c \in (1,2)</m>.
+</p>
+
+<p>For the other functions, examples are below, but many answers are possible.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{2}
+\draw (.5,0) node[vertex, label=below:1]{};
+\draw (2.5,0) node[vertex, label=below:2]{};
+\draw[thick] plot[domain=.5:2.5](\x,{-.5*(4*\x*\x-12*\x+5)});
+\draw (-1,3) node{(b)};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{4}{1}{2}
+\draw (.62,0) node[vertex, label=below:1]{};
+\draw (3.76,0) node[vertex, label=below:2]{};
+\draw[thick] plot[domain=.62:3.76, samples=100](\x,{-sin(\x*5 r)});
+\draw (-1,3) node{(c)};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{1}{3}{1}{2}
+\draw (.5,0) node[vertex, label=below:1]{};
+\draw (2.5,0) node[vertex, label=below:2]{};
+\draw[ultra thick] (.5,0)--(2.5,0);
+\draw (-1,3) node{(d)};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose you want to show that a point exists where the function <m>f(x)=\sqrt{|x|}</m> has a tangent line with slope <m>\frac{1}{13}</m>. Find the mistake(s) in the following work, and give a correct proof.</p>
+
+<blockquote>
+<p>
+The function <m>f(x)</m> is continuous and differentiable over all real numbers, so the mean value theorem applies. <m>f(-4)=2</m> and <m>f(9)=3</m>, so by the mean value theorem, there exists some <m>c \in (-4,9)</m> such that
+<m>f'(x) = \dfrac{3-2}{9-(-4)}=\dfrac{1}{13}</m>.
+</p></blockquote>
+</statement>
+<hint><p>
+Where is <m>f(x)</m> differentiable?
+</p></hint>
+<answer><p>
+The function <m>f(x)</m> is continuous over all real numbers, but it is only differentiable when <m>x \neq 0</m>. So, if we want to apply the MVT, our interval must consist of only positive numbers or only negative numbers: the interval <m>(-4,13)</m> is not valid.
+</p>
+
+<p>It is possible to use the mean value theorem to prove what we want: if <m>a=1</m> and <m>b=144</m>, then <m>f(x)</m> is differentiable over the interval <m>(1,144)</m> (since 0 is not contained in that interval), and <m>f(x)</m> is continuous everywhere, so by the mean value theorem there exists some point <m>c</m> where <m>f'(x)=\dfrac{\sqrt{|144|}-\sqrt{|1|}}{144-1}=\dfrac{11}{143}=\dfrac{1}{13}</m>.
+</p>
+
+<p>That being said, an easier way to prove that a point exists is to simply find it--without using the MVT. When <m>x \gt 0</m>, <m>f(x)=\sqrt{x}</m>, so <m>f'(x)=\dfrac{1}{2\sqrt {x}}</m>. Then <m>f'\left(\dfrac{169}{4}\right)=\dfrac{1}{13}</m>.
+</p></answer>
+<solution><p>
+The function <m>f(x)</m> is continuous over all real numbers, but it is only differentiable when <m>x \neq 0</m>. So, if we want to apply the MVT, our interval must consist of only positive numbers or only negative numbers: the interval <m>(-4,13)</m> is not valid.
+</p>
+
+<p>It is possible to use the mean value theorem to prove what we want: if <m>a=1</m> and <m>b=144</m>, then <m>f(x)</m> is differentiable over the interval <m>(1,144)</m> (since 0 is not contained in that interval), and <m>f(x)</m> is continuous everywhere, so by the mean value theorem there exists some point <m>c</m> where <m>f'(x)=\dfrac{\sqrt{|144|}-\sqrt{|1|}}{144-1}=\dfrac{11}{143}=\dfrac{1}{13}</m>.
+</p>
+
+<p>That being said, an easier way to prove that a point exists is to simply find it--without using the MVT. When <m>x \gt 0</m>, <m>f(x)=\sqrt{x}</m>, so <m>f'(x)=\dfrac{1}{2\sqrt {x}}</m>. Then <m>f'\left(\dfrac{169}{4}\right)=\dfrac{1}{13}</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement><p> Let <m>f(x)=x^2-2\pi x+ \cos(x)-1</m>. Show that there exists a real number <m>c</m> such that <m>f'(c)=0</m>.
+</p></statement>
+<hint><p> To use Rolle's Theorem, you will want two values where the function is zero. If you're stuck finding one of them, think about when <m>x^2-2\pi x</m> is equal to zero.
+</p></hint>
+<answer><p> We note that <m>f(0)=f(2\pi)=0</m>. Then using the Mean Value Theorem (note that the function is differentiable for all real numbers), we conclude that there exists <m>c</m> in <m>(0,2\pi)</m> such that
+<me>f'(c)=\frac{f(2\pi)- f(0)}{2\pi - 0} = 0.</me>
+</p></answer>
+<solution><p> We note that <m>f(0)=f(2\pi)=0</m>. Then using the Mean Value Theorem (note that the function is differentiable for all real numbers), we conclude that there exists <m>c</m> in <m>(0,2\pi)</m> such that
+<me>f'(c)=\frac{f(2\pi)- f(0)}{2\pi - 0} = 0.</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Let <m>f(x)=e^x + (1-e)x^2 - 1</m>. Show that there exists a real number <m>c</m> such that <m>f'(c)=0</m>.
+</p></statement>
+<answer><p>
+We note that <m>f(0)=f(1)=0</m>. Then using the Mean Value Theorem (note that the function is differentiable for all real numbers), we get that there exists <m>c\in (0,1)</m> such that
+<me>f'(c)=\frac{f(1)- f(0)}{1 - 0} = 0.</me>
+</p></answer>
+<solution><p>
+We note that <m>f(0)=f(1)=0</m>. Then using the Mean Value Theorem (note that the function is differentiable for all real numbers), we get that there exists <m>c\in (0,1)</m> such that
+<me>f'(c)=\frac{f(1)- f(0)}{1 - 0} = 0.</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Let <m>f(x)=\sqrt{3 + \sin(x)} + (x - \pi)^2</m>. Show that there exists a real number <m>c</m> such that <m>f'(c)=0</m>.
+</p></statement>
+<answer><p>
+We note that <m>f(0)=f(2\pi)=\sqrt{3} + \pi^2</m>. Then using the Mean Value Theorem (note that
+the function is differentiable for all real numbers since <m>3+\sin x \gt 0</m>), we get that
+there exists <m>c\in (0,2\pi)</m> such that
+<me>f'(c)=\frac{f(2\pi)- f(0)}{2\pi - 0} = 0.</me>
+</p></answer>
+<solution><p>
+We note that <m>f(0)=f(2\pi)=\sqrt{3} + \pi^2</m>. Then using the Mean Value Theorem (note that
+the function is differentiable for all real numbers since <m>3+\sin x \gt 0</m>), we get that
+there exists <m>c\in (0,2\pi)</m> such that
+<me>f'(c)=\frac{f(2\pi)- f(0)}{2\pi - 0} = 0.</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Let <m>f(x)=x\cos(x) - x\sin(x)</m>. Show that there exists a real number <m>c</m> such
+that <m>f'(c)=0</m>.
+</p></statement>
+<answer><p>
+We note that <m>f(0)=0</m> and <m>f(\pi/4)=0</m>. Then using the Mean Value Theorem (note that the
+function is differentiable for all real numbers), we get that there exists <m>c\in
+(0,\pi/4)</m> such that
+<me>f'(c)=\frac{f(\pi/4)- f(0)}{\pi/4 - 0} = 0.</me>
+</p></answer>
+<solution><p>
+We note that <m>f(0)=0</m> and <m>f(\pi/4)=0</m>. Then using the Mean Value Theorem (note that the
+function is differentiable for all real numbers), we get that there exists <m>c\in
+(0,\pi/4)</m> such that
+<me>f'(c)=\frac{f(\pi/4)- f(0)}{\pi/4 - 0} = 0.</me>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+How many roots does the function <m>f(x)=3x-\sin x</m> have?
+</p></statement>
+<hint><p>
+To show that there are exactly <m>n</m> roots, you need to not only show that <m>n</m> exist, but also that there are <em>not more</em> than <m>n</m>.
+</p></hint>
+<answer><p> <m>1</m>
+</p></answer>
+<solution><p>
+By inspection, we see <m>x=0</m> is a root of <m>f(x)</m>. The question now is whether there could possibly be other roots. Since <m>f(x)</m> is differentiable over all real numbers, if there is another root <m>a</m>, then by Rolle's Theorem, <m>f'(c)=0</m> for some <m>c</m> strictly between <m>0</m> and <m>a</m>. However, <m>f'(x)=3-\cos x</m> is never zero. So, there is no second root: <m>f(x)</m> has precisely one root.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+How many roots does the function <m>f(x)=\dfrac{(4x+1)^4}{16}+x</m> have?
+</p></statement>
+<hint><p>
+To show that there are exactly <m>n</m> roots, you need to not only show that <m>n</m> exist, but also that there are <em>not more</em> than <m>n</m>.
+If you can't explicitly find the root(s), you can use the intermediate value theorem to show they exist.
+</p></hint>
+<answer><p>
+<m>2</m>
+</p></answer>
+<solution><p>
+The function <m>f(x)</m> is continuous and differentiable over all real numbers.
+If <m>a</m> and <m>b</m> are distinct roots of <m>f(x)</m>, then <m>f'(c)=0</m> for some <m>c</m> strictly between <m>a</m> and <m>b</m> (Rolle's Theorem). So, let's think about <m>f'(x)</m>.
+<me>
+f'(x)=(4x+1)^3+1</me>
+</p>
+
+<p>This is simple enough that we can find its zero explicitly:
+<me>
+(4x+1)^3 +1= 0
+\quad \Leftrightarrow \quad
+(4x+1)^3 = -1
+\quad \Leftrightarrow \quad
+4x+1 = -1
+\quad \Leftrightarrow \quad
+4x=-2
+</me>
+</p>
+
+<p>Hence <m>f'(c)=0</m> only when <m>c=\dfrac{-1}{2}</m>. That the derivative only has a single zero is very
+useful. It means (via Rolle's theorem) that if <m>f(x)</m> has distinct roots <m>a</m> and <m>b</m> with <m>a \lt b</m>,
+then we must have <m>a  \lt  \dfrac{-1}{2}  \lt  b</m>.  This also means that <m>f(x)</m> cannot have 3 distinct
+roots <m>a,b</m> and (say) <m>q</m> with <m>a \lt b \lt q</m>, because then Rolle's theorem would imply that <m>f'(x)</m> would
+have two zeros <mdash/> one between <m>a</m> and <m>b</m> and another between <m>b</m> and <m>q</m>.
+</p>
+
+<p>We've learned that <m>f(x)</m> has at most two roots, and we've learned something about where those roots can exist, if there are indeed two of them. But that means <m>f(x)</m> could have 0, 1, or 2 roots.
+</p>
+
+<p>It's not easy to find a root of <m>f(x)</m> by inspection. But we can  get a good enough picture of the graph of <m>y=f(x)</m> to tell exactly how many roots there are, just by exploiting the following properties  of <m>f(x)</m> and <m>f'(x)</m>.
+<ul>
+<li> As <m>x</m> tends to <m>\pm \infty</m>, <m>f(x)</m> tends to <m>+\infty</m>.
+</li>
+<li> The derivative <m>f'(x)=(4x+1)^3+1</m> is negative for <m>x \lt -\frac{1}{2}</m>
+and is positive for <m>x \gt -\frac{1}{2}</m>. That is, <m>f(x)</m> is decreasing
+for <m>x \lt -\frac{1}{2}</m> and increasing for  <m>x \gt -\frac{1}{2}</m>.
+</li>
+<li> <m>f\left(-\frac{1}{2}\right)=\frac{1}{16}-\frac{1}{2} \lt 0</m>.
+</li>
+</ul>
+This means the function must look something like the graph below:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{2}{1}{2}
+\draw[thick] plot[domain=-2:1](\x,{(\x+0.5)*(\x+0.5)*(\x+0.5)*(\x+0.5)*0.5-0.5});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>except we are unsure of the locations of the <m>x</m>-intercepts. At present we only know that one is to the left of <m>x=1/2</m> and one is to the right.
+</p>
+
+<p>Note what happens to <m>f(x)</m> as <m>x</m> increases from strongly negative values to strongly positive
+values.
+<ul>
+<li> When <m>x</m> is large and negative, <m>f(x) \gt 0</m>.
+</li>
+<li> As <m>x</m> increases, <m>f(x)</m> decreases continuously until
+<m>x=-\frac{1}{2}</m>, where <m>f(x) \lt 0</m>.
+ In particular, since <m>f(-1)=\frac{65}{16} \gt 0</m> and
+         <m>f\big(-\frac{1}{2}\big) \lt 0</m>  and <m>f(x)</m> is continuous,
+         the intermediate value theorem guarantees that <m>f(x)</m>
+         takes the value zero for some <m>x</m> between <m>-\frac{1}{2}</m>
+         and <m>-1</m>.
+More descriptively put, as <m>x</m> increases from
+hugely negative numbers to <m>-\frac{1}{2}</m>, <m>f(x)</m> passes  through zero exactly once.
+</li>
+<li> As <m>x</m> increases beyond  <m>-\frac{1}{2}</m>, <m>f(x)</m> increases
+continuously, starting negative and becoming very large and positive
+when <m>x</m> becomes large and positive.
+ In particular, since <m>f(0)=\frac{1}{16} \gt 0</m> and
+         <m>f\big(-\frac{1}{2}\big) \lt 0</m>  and <m>f(x)</m> is continuous,
+         the intermediate value theorem guarantees that <m>f(x)</m>
+         takes the value zero for some <m>x</m> between <m>-\frac{1}{2}</m>
+         and <m>0</m>.
+So, as <m>x</m> increases from
+<m>-\frac{1}{2}</m> to near <m>+\infty</m>, <m>f(x)</m>  again passes through
+zero exactly once.
+</li>
+</ul>
+So <m>f(x)</m> must have exactly two roots, one with <m>x \lt -\frac{1}{2}</m>
+and one with <m>x \gt -\frac{1}{2}</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+How many roots does the function <m>f(x)=x^3+\sin\left(x^5\right)</m> have?
+</p></statement>
+<hint><p>
+If <m>f(x)=0</m>, then <m>|x^3|=\left|\sin\left(x^5\right)\right| \leq 1</m>. When <m>|x| \lt 1</m>, is <m>\cos(x^5)</m> positive or negative?
+</p></hint>
+<answer><p>
+<m>1</m>
+</p></answer>
+<solution><p>
+<ul>
+<li> We can see by inspection that <m>f(0)=0</m>, so there is at least one root.
+</li>
+<li> To hunt for other roots, notice than when <m>f(x)=0</m>, <m>x^3=\sin\left(x^5\right)</m>, and since the sine function only takes on values in <m>[-1,1]</m>, this means <m>-1 \leq x^3 \leq 1</m>. That is, all roots of <m>f(x)</m> are in the interval <m>[-1,1]</m>. (An equivalent way to see this is to notice that for all <m>x  \gt 1</m>, <m>f(x) \gt 0</m>, and for all <m>x \lt 1</m>, <m>f(x) \lt 0</m>.)
+</li>
+<li> If there is a root <m>a \neq 0</m>, then by Rolle's Theorem (since <m>f(x)</m> is continuous and differentiable for all real numbers) <m>f'(c)=0</m> for some <m>c</m> strictly between 0 and <m>a</m>. In particular, since we already know any roots <m>a</m> will be between <m>-1</m> and <m>1</m>, if <m>f(x)</m> has two roots then <m>f'(c)=0</m> for some <m>c \in (-1,0) \cup (0,1)</m>.
+</li>
+<li>
+<me>
+f'(x)=3x^2+5x^4\cos\left(x^5\right)=x^2\left(3+5x^2\cos\left(x^5\right)\right)</me>
+So, if <m>f'(x)=0</m>, then <m>x=0</m> or <m>\left(3+5x^2\cos\left(x^5\right)\right)=0</m>. If <m>x \in (-1,0) \cup (0,1)</m>, then <m>|x| \lt 1</m> and so <m>|x^5| \lt 1 \lt \frac{\pi}{2}</m>, so <m>\cos\left(x^5\right) \gt 0</m>. Then <m>3+5x^2\cos\left(x^5\right)  \gt  3</m>, so <m>f'(x) \neq 0</m>. That is, there is no <m>c \in (-1,0) \cup (0,1)</m> with <m>f'(c)=0</m>. Therefore, following our last  bullet point, <m>f(x)</m> has only one root.
+</li>
+</ul>
+Note here that <m>f'(x)</m> has many zeroes--infinitely many, in fact. However, <m>x=0</m> is the only root of <m>f'(x)</m> in the interval <m>(-1,1)</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+How many positive-valued solutions does the equation <m>e^x=4\cos(2x)</m> have?
+</p></statement>
+<hint><p>
+Let <m>f(x)=e^x-4\cos(2x)</m>, and use Rolle's Theorem. What is the interval where <m>f(x)</m> can have a positive root?
+</p></hint>
+<answer><p>
+<m>1</m>
+</p></answer>
+<solution>
+<p>We are to find the number of positive solutions to the equation
+          <m>e^x = 4\cos(2x)</m>.  The figure below contains the graphs
+          of <m>y=e^x</m> and <m>y= 4\cos(2x)</m>. The solutions to
+          <m>e^x =  4\cos(2x)</m> are precisely the <m>x</m>'s where
+          <m>y=e^x</m> and <m>y= 4\cos(2x)</m> cross.
+</p>
+
+<sidebyside>
+<image source="problems/figs/graphExpCos"/>
+</sidebyside>
+
+<p> It sure looks like there is exactly one crossing with <m>x\ge 0</m>
+         and that one crossing is somewhere between <m>x=0</m> and <m>x=1</m>. Indeed
+         since <m>\big[e^x- 4\cos(2x)\big]_{x=0} = -3 \lt 0</m> and
+               <m>\big[e^x- 4\cos(2x)\big]_{x=1}  \gt  e  \gt  0</m> and
+         <m>f(x)=e^x- 4\cos(2x)</m> is continuous, the intermediate value
+         theorem guarantees that there is at least one root with
+         <m>0 \lt x \lt 1</m>.
+</p>
+
+<p>         We still have to show that there is no second root <mdash/> even if our
+         graphs are not accurate.
+</p>
+
+<p>Recall that the range of the cosine function is <m>[-1,1]</m>. If <m>e^x=4\cos(2x)</m>, then <m>e^x \leq 4</m>, so <m>x \leq \log(4)\approx 1.39</m>. So, we only need to search for roots of <m>f(x)</m> on the interval <m>(0,1.4)</m>: we are guaranteed there are no roots elsewhere. Over this interval,
+<m>2x \in (0,2.8)</m>, so <m>\sin(2x) \gt 0</m>, and thus <m>f'(x)=e^x+8\sin(2 x) \gt 0</m>. Since <m>f'(x)</m> has no roots in <m>(0,1.4)</m>, we conclude by Rolle's Theorem that <m>f(x)</m> has at most one root in <m>(0,1.4)</m> (and so at most one positive root total). Since we've already found that a root of <m>f(x)</m> exists in <m>(0,1)</m>, we conclude
+ <m>e^x=4\cos(2x)</m> has precisely one positive-valued solution.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>1997H</fromexam></title>
+<statement><p>
+Let <m>f(x)=3x^5-10x^3+15x+a</m>, where <m>a</m> is some constant.
+<ol label="a">
+<li xml:id="s2_131997_1">  Prove that, regardless of the value <m>a</m>, <m>f'(x) \gt 0</m>
+for all <m>x</m> in <m>(-1,1)</m>.
+</li>
+<li xml:id="s2_131997_2"> Prove that, regardless of the value <m>a</m>, <m>f(x)=3x^5-10x^3+15x+a</m>
+has at most one root in <m>[-1,1]</m>.
+</li>
+</ol>
+</p></statement>
+<hint><p> For <xref ref="s2_131997_2"/>,  what does Rolle's Theorem tell you has to happen in order for <m>f(x)</m> to have <em>more than</em> one root in <m>[-1,1]</m>?
+</p></hint>
+<answer><p>
+<xref ref="s2_131997_1"/> <me>
+f'(x)=15x^4-30x^2+15=15\big(x^4-2x^2+1\big)=15\big(x^2-1\big)^2\ge 0
+</me>
+The derivative is nonnegative everywhere. The only values of <m>x</m> for which <m>f'(x)=0</m> are <m>1</m> and <m>-1</m>, so <m>f'(x) \gt 0</m> for every <m>x</m> in <m>(-1,1)</m>.
+</p>
+
+<p><xref ref="s2_131997_2"/> If <m>f(x)</m> has two roots <m>a</m> and <m>b</m> in <m>[-1,1]</m>, then by Rolle's Theorem, <m>f'(c)=0</m> for some <m>x</m> strictly between <m>a</m> and <m>b</m>. But since <m>a</m> and <m>b</m> are in <m>[-1,1]</m>, and <m>c</m> is between <m>a</m> and <m>b</m>, that means <m>c</m> is in <m>(-1,1)</m>; however, we know for every <m>c</m> in <m>(-1,1)</m>, <m>f'(c) \gt 0</m>, so this can't happen. Therefore, <m>f(x)</m> <em>does not</em> have two roots <m>a</m> and <m>b</m> in <m>[-1,1]</m>. This means <m>f(x)</m> has at most one root in <m>[-1,1]</m>.
+</p>
+</answer>
+<solution><p>
+<xref ref="s2_131997_1"/> <me>
+f'(x)=15x^4-30x^2+15=15\big(x^4-2x^2+1\big)=15\big(x^2-1\big)^2\ge 0
+</me>
+The derivative is nonnegative everywhere. The only values of <m>x</m> for which <m>f'(x)=0</m> are <m>1</m> and <m>-1</m>, so <m>f'(x) \gt 0</m> for every <m>x</m> in <m>(-1,1)</m>.
+</p>
+
+<p><xref ref="s2_131997_2"/> If <m>f(x)</m> has two roots <m>a</m> and <m>b</m> in <m>[-1,1]</m>, then by Rolle's Theorem, <m>f'(c)=0</m> for some <m>x</m> strictly between <m>a</m> and <m>b</m>. But since <m>a</m> and <m>b</m> are in <m>[-1,1]</m>, and <m>c</m> is between <m>a</m> and <m>b</m>, that means <m>c</m> is in <m>(-1,1)</m>; however, we know for every <m>c</m> in <m>(-1,1)</m>, <m>f'(c) \gt 0</m>, so this can't happen. Therefore, <m>f(x)</m> <em>does not</em> have two roots <m>a</m> and <m>b</m> in <m>[-1,1]</m>. This means <m>f(x)</m> has at most one root in <m>[-1,1]</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2009H</fromexam></title>
+<statement><p>
+Find the point promised by the Mean Value Theorem for the function
+<m>e^x</m> on the interval <m>[0, T]</m>.
+</p></statement>
+<hint><p>
+Since <m>f(x)=e^x</m> is a continuous and differentiable function, the MVT promises that there exists some number <m>c</m> such that <me>
+f'(c)=\frac{f(T)-f(0)}{T}.</me>
+</p>
+
+<p>Find that <m>c</m>, in terms of <m>T</m>.
+</p></hint>
+<answer><p>
+<m>\log\left(\dfrac{e^T-1}{T}\right)</m>
+</p></answer>
+<solution><p>
+Write <m>f(x)=e^x</m>. Since <m>f(x)</m> is continuous and differentiable, the Mean Value Theorem asserts that
+there exists some <m>c</m> between <m>0</m> and <m>T</m> such that
+<md>
+<mrow>
+f'(c)&amp;=\frac{f(T)-f(0)}{T-0}
+</mrow>
+<intertext>The problem asks us to find this value of <m>c</m>. Solving:</intertext><mrow>
+ e^c&amp;=\frac{e^T-e^0}{T}
+</mrow><mrow>
+e^c&amp;=\frac{e^T-1}{T}
+</mrow><mrow>
+ c&amp;=\log\left(\frac{e^T-1}{T}\right)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Use  Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>
+and Theorem<nbsp/><xref ref="thm_DIFFinvtrigderiv"/>
+ to show that <m>\arcsec x=C-\arccsc x</m> for some constant <m>C</m>; then find <m>C</m>.
+</p></statement>
+<hint><p>
+Let <m>f(x)=\arcsec x + \arccsc c -C</m>.
+What is <m>f'(x)</m>?
+</p></hint>
+<answer><p>
+The domains of <m>\arcsec x</m> and <m>C-\arcsec x</m> are the same: <m>|x| \geq 1</m>.
+Define <m>f(x)=\arcsec x + \arccsc x</m>, and note the domain of <m>f(x)</m> is also <m>|x| \geq 1</m>.
+Using Theorem<nbsp/><xref ref="thm_DIFFinvtrigderiv"/>,
+<me>
+f'(x)=\diff{}{x}\arcsec x+\diff{}{x} \arccsc
+ = \dfrac{1}{|x|\sqrt{x^2-1}}+\dfrac{-1}{|x|\sqrt{x^2-1}}=0.</me>
+</p>
+
+<p>By Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>, this means <m>f(x)</m> is constant.
+That is, <m>f(x)=C</m> for some constant <m>C</m>, so <m>C=\arcsec x + \arccsc x</m>, hence
+<me>
+\arcsec x = C-\arccsc x</me>
+</p>
+
+<p>for all <m>|x| \geq 1</m>.
+</p>
+
+<p><m>C=\dfrac{\pi}{2}</m>
+</p></answer>
+<solution><p>
+The domains of <m>\arcsec x</m> and <m>C-\arccsc x</m> are the same: <m>|x| \geq 1</m>.
+Define <m>f(x)=\arcsec x + \arccsc x</m>, and note the domain of <m>f(x)</m> is also <m>|x| \geq 1</m>.
+Using Theorem<nbsp/><xref ref="thm_DIFFinvtrigderiv"/>,
+<me>
+f'(x)=\diff{}{x}\arcsec x+\diff{}{x} \arccsc
+ = \dfrac{1}{|x|\sqrt{x^2-1}}+\dfrac{-1}{|x|\sqrt{x^2-1}}=0.</me>
+</p>
+
+<p>By Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>, this means <m>f(x)</m> is constant.
+That is, <m>f(x)=C</m> for some constant <m>C</m>, so <m>C=\arcsec x + \arccsc x</m>, hence
+<me>
+\arcsec x = C-\arccsc x</me>
+</p>
+
+<p>for all <m>|x| \geq 1</m>.
+</p>
+
+<p>In order to find <m>C</m>, we can use any value of <m>x</m> where we know cosecant and arcsecant. For instance, <m>x=1</m>: <m>\arcsec(1)=\arccos\left(\frac{1}{1}\right)=0</m>,
+and <m>\arccsc(1)=\arcsin\left(\frac{1}{1}\right)=\frac{\pi}{2}</m>. So,
+<me>
+C=\arcsec(1)+\arccsc(1)=\frac{\pi}{2}</me>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise><title><fromexam>2009H</fromexam></title>
+<statement><p>
+ Suppose <m>f(0) = 0</m> and
+<m>f'(x) = \dfrac{1}{1 + e^{-f(x)}}</m> . Prove that <m>f(100)  \lt  100</m>.
+</p>
+
+<p>Remark: an equation  relating a function to its own derivative is called a differential equation. We'll see some very basic differential equations in Section<nbsp/><xref ref="sec_ExpGthDecay"/>.
+</p></statement>
+<hint><p>
+Show that <m>f</m> is differentiable by showing that <m>f'(x)</m> exists for every <m>x</m>. Then, the Mean Value Theorem applies. What is the largest <m>f'(x)</m> can be, for any <m>x</m>? If <m>f(100) \lt 100</m>, what does the MVT tell you must be true of <m>f'(c)</m> for some <m>c</m>?
+</p></hint>
+<answer><p>
+Since <m>e^{-f(x)}</m> is always positive (regardless of the value of <m>f(x)</m>),
+<me>
+f'(x)=\dfrac{1}{1+e^{-f(x)}} \lt \dfrac{1}{1+0}=1</me>
+ for every <m>x</m>.
+</p>
+
+<p>Since  <m>f'(x)</m> exists for every <m>x</m>, we see that <m>f</m> is differentiable, so the Mean Value Theorem applies. If <m>f(100)</m> is greater than or equal to 100, then by the Mean Value Theorem,
+ there would have
+to be some <m>c</m> between <m>0</m> and <m>100</m> such that
+<me>
+f'(c) = \frac{f(100)-f(0)}{100}\geq\frac{100}{100}= 1
+</me>
+</p>
+
+<p>Since <m>f'(x) \leq 1</m> for every <m>x</m>, there is <em>no</em> value of <m>c</m> as described.
+Therefore, it is not possible that  <m>f(100) \geq 100</m>. So, <m>f(100) \lt 100</m>.
+</p></answer>
+<solution><p>
+Since <m>e^{-f(x)}</m> is always positive (regardless of the value of <m>f(x)</m>),
+<me>
+f'(x)=\dfrac{1}{1+e^{-f(x)}} \lt \dfrac{1}{1+0}=1</me>
+ for every <m>x</m>.
+</p>
+
+<p>Since  <m>f'(x)</m> exists for every <m>x</m>, we see that <m>f</m> is differentiable, so the Mean Value Theorem applies. If <m>f(100)</m> is greater than or equal to 100, then by the Mean Value Theorem,
+ there would have
+to be some <m>c</m> between <m>0</m> and <m>100</m> such that
+<me>
+f'(c) = \frac{f(100)-f(0)}{100}\geq\frac{100}{100}= 1
+</me>
+</p>
+
+<p>Since <m>f'(x)  \lt  1</m> for every <m>x</m>, there is <em>no</em> value of <m>c</m> as described.
+Therefore, it is not possible that  <m>f(100) \geq 100</m>. So, <m>f(100) \lt 100</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Let <m>f(x)=2x+\sin x</m>. What is the largest interval containing <m>x=0</m> over which  <m>f(x)</m> is one--to--one?  What are the domain and range of <m>f^{-1}(x)</m>?
+</p></statement>
+<hint><p>
+In order for <m>f^{-1}(x)</m> to be defined over an interval, <m>f(x)</m> must be one--to--one over that interval.
+</p></hint>
+<answer><p>
+Domain of <m>f^{-1}(x)</m>: <m>(-\infty,\infty)</m>
+Interval where <m>f</m> is one--to--one, and range of <m>f^{-1}(x)</m>: <m>(-\infty,\infty)</m>
+</p></answer>
+<solution><p>
+If <m>2x+\sin x</m> is one--to--one over an interval, it never takes the same value for two distinct numbers in that interval. By Rolle's Theorem, if <m>f(a)=f(b)</m> for distinct <m>a</m> and <m>b</m>, then
+<m>f'(c)=0</m> for some <m>c</m> between <m>a</m> and <m>b</m>. However, <m>f'(x)=2+\cos x</m>, which is never zero. In fact, <m>f'(x)\ge 1</m> for all <m>x</m>, so <m>f(x)</m> is strictly increasing over its entire domain. Therefore, our function <m>f</m> <em>never</em> takes the same value twice, so it is one--to--one over all the real numbers, <m>(-\infty,\infty)</m>.
+</p>
+
+<p>When we define the inverse function <m>f^{-1}(x)</m>, the domain of <m>f</m> is the range of <m>f^{-1}</m>, and vice-versa. In general, we might have to <em>restrict</em> the domain of <m>f</m> (and hence the range of <m>f^{-1}</m>) to an interval where <m>f</m> is one--to--one, but in our case, this isn't necessary. So, the range of <m>f^{-1}</m> is <m>(-\infty,\infty)</m> and the domain of <m>f^{-1}</m> is the range of <m>f</m>: <m>(-\infty,\infty)</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>f(x)=\dfrac{x}{2}+\sin x</m>. What is the largest interval containing <m>x=0</m> over which  <m>f(x)</m> is one--to--one?  What are the domain and range of <m>f^{-1}(x)</m>, if we restrict <m>f</m> to this interval?
+</p></statement>
+<hint><p>
+In order for <m>f^{-1}(x)</m> to be defined over an interval, <m>f(x)</m> must be one--to--one over that interval.
+</p></hint>
+<answer><p>
+One--to--one interval, and range of <m>f^{-1}</m>: <m>\left[-\frac{2\pi}{3},\frac{2\pi}{3}\right]</m>
+Domain of <m>f^{-1}</m>: <m>\left[-\left(\frac{\pi}{3}+\frac{\sqrt{3}}{2}\right),\left(\frac{\pi}{3}+\frac{\sqrt{3}}{2}\right)\right]</m>
+</p></answer>
+<solution><p>
+If <m>f(x)=\dfrac{x}{2}+\sin x</m> is one--to--one over an interval, it never takes the same value for two distinct numbers in that interval. By Rolle's Theorem, if <m>f(a)=f(b)</m> for distinct <m>a</m> and <m>b</m>, then
+<m>f'(c)=0</m> for some <m>c</m> between <m>a</m> and <m>b</m>. Since <m>f'(x)=\frac{1}{2}+\cos x</m>,
+<m>f'(x)=0</m> when <m>x=2n\pi\pm\frac{2\pi}{3}</m> for some integer <m>n</m>. So, in particular, if  <m>a</m> and <m>b</m> are distinct numbers in the interval <m>\left[-\frac{2\pi}{3},\frac{2\pi}{3}\right]</m>, then for every <m>c</m> strictly between <m>a</m> and <m>b</m>, <m>f'(c) \neq 0</m>, so by Rolle's Theorem <m>f(a) \neq f(b)</m>. Therefore <m>f(x)</m> is one--to--one on the interval <m>\left[-\frac{2\pi}{3},\frac{2\pi}{3}\right]</m>.
+</p>
+
+<p>We should also show that the interval <m>\left[-\frac{2\pi}{3},\frac{2\pi}{3}\right]</m> cannot be extended to a larger interval over which <m>f(x)</m> is still one--to--one.
+Consider the derivative <m>f'(x) = \frac{1}{2}+\cos x</m>.
+           For all <m>-\frac{2\pi}{3}  \lt  x  \lt  \frac{2\pi}{3}</m>, we have
+           <m>\cos x  \gt  -\frac{1}{2}</m> (sketch the graph of <m>\cos x</m>
+           yourself) so that <m>f'(x) \gt 0</m> and <m>f(x)</m> is
+           increasing. But at <m>x=\frac{2\pi}{3}</m>, <m>f'(x)=0</m>, and then
+           for <m>x</m> a bit bigger than  <m>\frac{2\pi}{3}</m> we have
+           <m>\cos x  \lt  -\frac{1}{2}</m> so that <m>f'(x) \lt 0</m> and <m>f(x)</m> is
+           decreasing. So the graph <q>reverses direction</q>, and <m>f(x)</m>
+           repeats values. (See the graph of <m>y=f(x)</m> below.) The
+           same is true for <m>x</m> a little smaller than <m>-\frac{2\pi}{3}.</m>
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3.5}{3.5}
+\draw plot[domain=-3.2:3.2](\x,{\x/2+sin(\x r)}) node[right]{$y=f(x)=\dfrac{x}{2}+\sin x$};
+\draw (2.1,.2)--(2.1,-.2) node[below]{$\frac{2\pi}{3}$};
+\draw (-2.1,.2)--(-2.1,-.2) node[below]{$-\frac{2\pi}{3}$};
+\draw (2.1,1.9) node[vertex]{};
+\draw (-2.1,-1.9) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>When we define the inverse function <m>f^{-1}(x)</m>, first we restrict <m>f</m> to <m>\left[-\frac{2\pi}{3},\frac{2\pi}{3}\right]</m>. Then the range of <m>f^{-1}</m> is also <m>\left[-\frac{2\pi}{3},\frac{2\pi}{3}\right]</m>.  The domain of <m>f^{-1}</m> is the range of <m>f</m> over this interval, so
+<m>\left[-\left(\frac{\pi}{3}+\frac{\sqrt{3}}{2}\right),\left(\frac{\pi}{3}+\frac{\sqrt{3}}{2}\right)\right]</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose <m>f(x)</m> and <m>g(x)</m> are functions that are continuous over the interval <m>[a,b]</m> and differentiable over the interval <m>(a,b)</m>. Suppose further that <m>f(a)  \lt  g(a)</m> and <m>g(b) \lt  f(b)</m>. Show that there exists some <m>c \in [a,b]</m> with <m>f'(c) \gt g'(c)</m>.
+</p></statement>
+<hint><p>
+Let <m>h(x)=f(x)-g(x)</m>. What does the Mean Value Theorem tell you about the derivative of <m>h</m>?
+</p></hint>
+<answer><p>
+Define <m>h(x)=f(x)-g(x)</m>, and notice <m>h(a)=f(a)-g(a) \lt 0</m> and <m>h(b)=f(b)-g(b) \gt 0</m>. Since <m>h</m> is the difference of two functions that are continuous over <m>[a,b]</m> and differentiable over <m>(a,b)</m>, also <m>h</m> is continuous over <m>[a,b]</m> and differentiable over <m>(a,b)</m>. So, by the Mean Value Theorem, there exists some <m>c \in (a,b)</m> with
+<me>
+h'(c)=\frac{h(b)-h(a)}{b-a}</me>
+</p>
+
+<p>Since <m>(a,b)</m> is an interval, <m>b \gt a</m>, so the denominator of the above expression is positive; since <m>h(b) \gt 0 \gt h(a)</m>, also the numerator of the above expression is positive. So, <m>h'(c) \gt 0</m> for some <m>c \in (a,b)</m>. Since <m>h'(c)=f'(c)-g'(c)</m>, we conclude <m>f'(c) \gt g'(c)</m> for some <m>c \in (a,b)</m>.
+</p></answer>
+<solution><p>
+Define <m>h(x)=f(x)-g(x)</m>, and notice <m>h(a)=f(a)-g(a) \lt 0</m> and <m>h(b)=f(b)-g(b) \gt 0</m>. Since <m>h</m> is the difference of two functions that are continuous over <m>[a,b]</m> and differentiable over <m>(a,b)</m>, also <m>h</m> is continuous over <m>[a,b]</m> and differentiable over <m>(a,b)</m>. So, by the Mean Value Theorem, there exists some <m>c \in (a,b)</m> with
+<me>
+h'(c)=\frac{h(b)-h(a)}{b-a}</me>
+</p>
+
+<p>Since <m>(a,b)</m> is an interval, <m>b \gt a</m>, so the denominator of the above expression is positive; since <m>h(b) \gt 0 \gt h(a)</m>, also the numerator of the above expression is positive. So, <m>h'(c) \gt 0</m> for some <m>c \in (a,b)</m>. Since <m>h'(c)=f'(c)-g'(c)</m>, we conclude <m>f'(c) \gt g'(c)</m> for some <m>c \in (a,b)</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose <m>f(x)</m> is a function that is differentiable over all real numbers, and <m>f'(x)</m> has precisely two roots. What is the maximum number of distinct roots that <m>f(x)</m> may have?
+</p></statement>
+<hint><p>
+Rolle's Theorem relates the roots of a function to the roots of its derivative.
+</p></hint>
+<answer><p>
+<m>3</m>
+</p></answer>
+<solution><p>
+Since <m>f(x)</m> is differentiable over all real numbers, it is also continuous over all real numbers. We claim that <m>f(x)</m> cannot have four or more distinct roots. For every two distinct roots <m>a \lt b</m>, Rolle's Theorem tells us there is a <m>c \in (a,b)</m> such that <m>f'(c)=0</m>: that is, <m>c</m> is a root of <m>f'</m>. Since <m>f'</m> has only two distinct roots, <m>f</m> can have at most three distinct roots.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick,  \lt - \gt ] (0,0)--(6,0);
+\color{blue}
+\draw (1,.2)--(1,-.2) node[below](a1){$a_1$};
+\draw (3,.2)--(3,-.2) node[below](a2){$a_2$};
+\draw (5,.2)--(5,-.2) node[below](a3){$a_3$};
+\draw (3,-3) node(b){roots of $f(x)$};
+\foreach \x in {1,2,3} {\draw[dashed, - \gt ] (b)--(a\x);}
+\color{red}
+\draw (2,-.2)--(2,.2) node[above](c1){$c_1$};
+\draw (4,-.2)--(4,.2) node[above](c2){$c_2$};
+\draw (3,3) node(c){roots of $f'(x)$};
+\foreach \x in {1,2} {\draw[dashed, - \gt ] (c)--(c\x);}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+How many roots does <m>f(x)=\sin x + x^2 + 5x +1</m> have?
+</p></statement>
+<hint><p>
+To show that there are exactly <m>n</m> distinct roots, you need to not only show that <m>n</m> exist, but also that there are <em>not more</em> than <m>n</m>.
+</p></hint>
+<answer><p> <m>2</m>
+</p></answer>
+<solution><p>
+We are asked to find the number of solutions to the equation
+          <m>x^2+5x+1 = -\sin x</m>.  The figure below contains the graphs
+          of <m>y=x^2+5x+1</m> and <m>y=-\sin x</m>. The solutions to
+          <m>x^2+5x+1 = -\sin x</m> are precisely the <m>x</m>'s where
+          <m>y=x^2+5x+1</m> and <m>y=-\sin x</m> cross.
+</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{7}{2}{5}{3}
+\draw plot[domain=-5.25:.3](\x,{\x*\x+5*\x+1}) node[right]{$y=x^2+5x+1$};
+\draw[line width=4pt, blue] plot[domain=-5:-4.56](\x,{\x*\x+5*\x+1});
+\draw[line width=4pt, blue] plot[domain=-0.44:0](\x,{\x*\x+5*\x+1});
+\draw[ dashed] (-6,1)--(.5,1) node[right]{$y=1$};
+\draw[ dashed] (-6,-1)--(.5,-1) node[right]{$y=-1$};
+\draw[thick, red] plot[domain=-6.5:.5](\x,{-sin \x r}) node[right]{$y=-\sin x$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>From the figure, it sure looks like there are two crossings.
+         Since the function <m>-\sin x</m> has range <m>[-1,1]</m>,
+         if the two functions cross, then also <m>-1 \leq x^2+5x+1\leq 1 </m>.
+         This portion of the quadratic function is highlighted in blue in the figure.
+         The <m>x</m> coordinates of the end points
+         of the blue arcs are found by solving <m>x^2+5x+1 = \pm1</m>,
+         i.e. <m>x=0</m>, <m>-5</m>, and (using the quadratic equation)
+         <m>x= \frac{-5\pm\sqrt{17}}{2}</m>.
+</p>
+
+<p>         We are now in a position
+         to exploit the intuition that we have built using the above
+         figure to write a concise argument showing that <m>f(x)</m> has exactly
+         two roots.
+         Remember that, in general, if we want to show that a function has <m>n</m> roots, we need to show that there exist <m>n</m> distinct roots somewhere, and that there do not exist <m>n+1</m> distinct roots. This argument is given below, in blue text.
+<textblue>
+<ul>
+<li> <m>f(x)</m> is continuous over all real numbers
+</li>
+<li> <m>f(x)=0</m> only when <m>-\sin x=x^2+5x+1</m>, which only happens when <m>|x^2+5x+1| \leq 1</m>. Thus, <m>f(x)</m> only has roots in the intervals
+<m>\left[-5,\frac{-5-\sqrt{17}}{2}\right]</m> and <m>\left[\frac{-5+\sqrt{17}}{2},0\right]</m>.
+</li>
+<li>  <m>f(-5)=\sin(-5)+1  \gt  0</m>, and <m>f\left(\frac{-5-\sqrt{17}}{2}\right)=\sin\left(\frac{-5-\sqrt{17}}{2}\right)-1  \lt 0</m>. So, by the IVT, <m>f(c)=0</m> for some
+<m>c \in \left(-5,\frac{-5-\sqrt{17}}{2}\right)</m>.
+</li>
+<li> <m>f(0)=1 \gt 0</m>, and <m>f\left(\frac{-5+\sqrt{17}}{2}\right)=\sin\left(\frac{-5+\sqrt{17}}{2}\right)-1 \lt 0</m>. So, by the IVT, <m>f(c)=0</m> for some
+<m>c \in \left(\frac{-5+\sqrt{17}}{2},0\right)</m>.
+</li>
+<li> <m>f'(x)=\cos x + 2x + 5</m>. If <m>f'(x)=0</m>, then <m>2x+5=-\cos x</m>, so <m>|2x+5| \leq 1</m>. So, the only interval that can contain roots of <m>f'(x)</m> is <m>[-3,-2]</m>.
+</li>
+<li><p> Suppose <m>f(x)</m> has more than two roots. Then it has two roots in the interval
+<m>\left[-5,\frac{-5-\sqrt{17}}{2}\right]</m> OR it has two roots in the interval
+<m>\left[\frac{-5+\sqrt{17}}{2},0\right]</m>. Since <m>f(x)</m> is differentiable for all real numbers,  Rolle's Theorem tells us that <m>f'(x)</m> has a root in <m>\left(-5,\frac{-5-\sqrt{17}}{2}\right)</m> or in <m>\left(\frac{-5+\sqrt{17}}{2},0\right)</m>. However, since all roots of <m>f'(x)</m> are in the interval <m>[-3,-2]</m>, and this interval shares no points with <m>\left(-5,\frac{-5-\sqrt{17}}{2}\right)</m> or <m>\left(\frac{-5+\sqrt{17}}{2},0\right)</m>, this cannot be the case. Therefore <m>f(x)</m> does not have more than two roots.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[ultra thick,  \lt - \gt ] (-12,0)--(2,0);
+\color{blue}
+\draw (-10,.2)--(-10,-.2) node[below]{$-5$};
+\draw (-9,.2)--(-9,-.2) node[below]{$\frac{-5-\sqrt{17}}{2}$};
+\draw[line width=4pt] (-10,0)--(-9,0);
+\draw (-1,.2)--(-1,-.2) node[below]{$\frac{-5+\sqrt{17}}{2}$};
+\draw (0,.2)--(0,-.2) node[below]{$0$};
+\draw[line width=4pt] (-1,0)--(0,0);
+\draw (-5,-3) node(c){roots of $f(x)$};
+\draw [dashed, - \gt ] (c)--(-9.5,-1);
+\draw [dashed, - \gt ] (c)--(-.5,-1);
+\color{red}
+\draw (-6,-.2)--(-6,.2) node[above]{$-3$};
+\draw (-4,-.2)--(-4,.2) node[above]{$-2$};
+\draw[line width=4pt] (-6,0)--(-4,0);
+\draw (-5,3) node(d){roots of $f'(x)$};
+\draw [dashed, - \gt ] (d)--(-5,1);
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</li>
+<li> Since <m>f(x)</m> has at least two roots, and not more than two roots, <m>f(x)</m> has exactly two roots.
+</li>
+</ul>
+</textblue>
+
+
+</p>
+
+</solution>
+</exercise></exercisegroup>
+
+</exercises>

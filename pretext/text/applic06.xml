@@ -1,0 +1,1545 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_curve_sketch">
+<title>Sketching graphs</title>
+<introduction>
+<p>
+One of the most obvious applications of derivatives is to help us understand the shape of
+the graph of a function. In this section we will use our accumulated knowledge of
+derivatives to identify the most important qualitative features of graphs <m>y=f(x)</m>. The
+goal of this section is to higlight features of the graph <m>y=f(x)</m> that are easily
+<ul>
+<li> determined from <m>f(x)</m> itself, and
+</li>
+<li> deduced from <m>f'(x)</m>, and
+</li>
+<li> read from <m>f''(x)</m>.
+</li>
+</ul>
+We will then use the ideas to sketch several examples.
+</p>
+</introduction>
+
+<subsection xml:id="ssec_sketch_DIA">
+<title>Domain, intercepts and asymptotes</title>
+<p>Given a function <m>f(x)</m>, there are several important features that we can determine from
+that expression before examining its derivatives.
+</p>
+
+<p><ul>
+<li> The domain of the function <mdash/> take note of values where <m>f</m> does not exist. If
+the function is rational, look for where the denominator is zero. Similarly be careful
+to look for roots of negative numbers or other possible sources of discontinuities.
+</li>
+<li> Intercepts <mdash/> examine where the function crosses the <m>x</m>-axis and the <m>y</m>-axis
+by solving <m>f(x)=0</m> and computing <m>f(0)</m>.
+</li>
+<li> Vertical asymptotes <mdash/> look for values of <m>x</m> at which <m>f(x)</m> blows up. If <m>f(x)</m>
+approaches either <m>+\infty</m> or <m>-\infty</m> as <m>x</m> approaches <m>a</m> (or possibly as <m>x</m>
+approaches <m>a</m> from one side) then <m>x=a</m> is a vertical asymptote to <m>y=f(x)</m>. When <m>f(x)</m>
+is a rational function (written so that common factors are cancelled), then <m>y=f(x)</m> has
+vertical asymptotes at the zeroes of the denominator.
+</li>
+<li> Horizontal asymptotes <mdash/> examine the limits of <m>f(x)</m> as <m>x\to+\infty</m> and
+<m>x\to-\infty</m>. Often <m>f(x)</m> will tend to <m>+\infty</m> or to <m>-\infty</m> or to a finite limit
+<m>L</m>. If, for example, <m>\lim\limits_{x\rightarrow+\infty}f(x)=L</m>, then <m>y=L</m>
+is a horizontal asymptote to <m>y=f(x)</m> as <m>x\rightarrow\infty</m>.
+</li>
+</ul>
+</p>
+
+<example><title>Domain, intercepts and asymptotes of <m>\frac{x+1}{(x+3)(x-2)}</m></title>
+<p>
+ Consider the function
+<md>
+<mrow>
+  f(x) &amp;= \frac{x+1}{(x+3)(x-2)}
+</mrow>
+</md>
+<ul>
+<li> We see that it is defined on all real numbers except <m>x=-3,+2</m>.
+</li>
+<li> Since <m>f(0)=-1/6</m> and <m>f(x)=0</m> only when <m>x=-1</m>, the graph has <m>y</m>-intercept
+<m>(0,-1/6)</m> and <m>x</m>-intercept <m>(-1,0)</m>.
+</li>
+<li> Since the function is rational and its denominator is zero at <m>x=-3,+2</m> it will
+have vertical asymptotes at <m>x=-3,+2</m>. To determine the shape around those
+asymptotes we need to examine the limits
+<md>
+<mrow>
+  \lim_{x\to -3} f(x) &amp;&amp; \lim_{x\to2} f(x)
+</mrow>
+</md>
+Notice that when <m>x</m> is close to <m>-3</m>, the factors <m>(x+1)</m> and <m>(x-2)</m> are both negative,
+so the sign of <m>f(x) = \frac{x+1}{x-2} \cdot \frac{1}{x+3}</m> is the same as the sign of
+<m>x+3</m>. Hence
+<md>
+<mrow>
+  \lim_{x\to -3^+} f(x) &amp;= +\infty &amp;
+  \lim_{x\to -3^-} f(x) &amp;= -\infty
+</mrow>
+</md>
+A similar analysis when <m>x</m> is near <m>2</m> gives
+<md>
+<mrow>
+  \lim_{x\to 2^+} f(x) &amp;= +\infty &amp;
+  \lim_{x\to 2^-} f(x) &amp;= -\infty
+</mrow>
+</md>
+</li>
+<li> Finally since the numerator has degree 1 and the denominator has degree 2, we see
+that as <m>x \to \pm \infty</m>, <m>f(x) \to 0</m>. So <m>y=0</m> is a horizontal asymptote.
+</li>
+<li><p> Since we know the behaviour around the asymptotes and we know the locations of the
+intercepts (as shown in the left graph below), we can then join up the pieces
+and smooth them out to get the a good sketch of this function (below right).</p>
+
+<sidebyside width="100%">
+ <image source="text/figs/sketch0"/>
+</sidebyside>
+
+</li>
+</ul>
+</p>
+
+</example>
+</subsection>
+
+<subsection  xml:id="ssec_sketch_FD">
+<title>First derivative <mdash/> increasing or decreasing</title>
+<p>Now we move on to the first derivative, <m>f'(x)</m>. This is a good time to revisit the
+mean-value theorem (Theorem<nbsp/><xref ref="thm_DIFFmvt"/>) and some of its consequences
+(Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>). In particular, let us assume that <m>f(x)</m> is continuous
+on an interval <m>[A,B]</m> and differentiable on <m>(A,B)</m>. Then
+<ul>
+<li><p> if <m>f'(x) \gt 0</m> for all <m>A \lt x \lt B</m>, then <m>f(x)</m> is increasing on <m>(A,B)</m></p>
+  <p><mdash/> that is, for all <m>A \lt a \lt b \lt B</m>, <m>f(a) \lt  f(b)</m>.</p>
+</li>
+<li><p> if <m>f'(x) \lt 0</m> for all <m>A \lt x \lt B</m>, then <m>f(x)</m> is decreasing on <m>(A,B)</m></p>
+  <p><mdash/> that is, for all <m>A \lt a \lt b \lt B</m>, <m>f(a)  \gt  f(b)</m>.</p>
+</li>
+</ul>
+Thus the sign of the derivative indicates to us whether the function is increasing or
+decreasing. Further, as we discussed in Section<nbsp/><xref ref="ssec_maxmin"/>, we should also examine
+points at which the derivative is zero <mdash/> critical points <mdash/> and where the derivative
+does not exist <mdash/> singular points. These points may indicate a local maximum or minimum.
+</p>
+
+<p>After studying the function <m>f(x)</m> as described above, we should compute its derivative
+<m>f'(x)</m>.
+<ul>
+<li> Critical points <mdash/> determine where <m>f'(x)=0</m>. At a critical point, <m>f</m> has a
+horizontal tangent.
+</li>
+<li> Singular points <mdash/> determine where <m>f'(x)</m> is not defined.  If <m>f'(x)</m>
+approaches <m>\pm\infty</m> as <m>x</m> approaches a singular point <m>a</m>, then <m>f</m> has a
+vertical tangent there when <m>f</m> approaches a finite value as <m>x</m> approaches <m>a</m>
+(or possibly approaches <m>a</m> from one side) and a vertical asymptote when <m>f(x)</m>
+approaches <m>\pm\infty</m> as <m>x</m> approaches <m>a</m> (or possibly approaches <m>a</m> from
+one side).
+</li>
+<li> Increasing and decreasing <mdash/> where is the derivative positive and where is it
+negative. Notice that in order for the derivative to change sign, it must either pass
+through zero (a critical point) or have a singular point. Thus neighbouring regions of
+increase and decrease will be separated by critical and singular points.
+</li>
+</ul>
+</p>
+
+<example xml:id="eg_sketch_simple_poly"><title>A simple polynomial</title>
+<p>
+Consider the function
+<md>
+<mrow>
+  f(x) &amp;= x^4-6x^3
+</mrow>
+</md>
+</p>
+
+<p><ul>
+<li><p> Before we move on to derivatives, let us first examine the function itself as we
+did above.
+<ul>
+<li> As <m>f(x)</m> is a polynomial its domain is all real numbers.
+</li>
+<li> Its <m>y</m>-intercept is at <m>(0,0)</m>. We find its <m>x</m>-intercepts by factoring
+<md>
+<mrow>
+  f(x) &amp;=x^4-6x^3 = x^3(x-6)
+</mrow>
+</md>
+So it crosses the <m>x</m>-axis at <m>x=0,6</m>.
+</li>
+<li> Again, since the function is a polynomial it does not have any vertical
+asymptotes. And since
+<md>
+<mrow>
+  \lim_{x \to \pm \infty} f(x) &amp;=
+  \lim_{x \to \pm \infty} x^4(1-6/x) = +\infty
+</mrow>
+</md>
+it does not have horizontal asymptotes <mdash/> it blows up to <m>+\infty</m> as <m>x</m> goes to
+<m>\pm\infty</m>.
+</li>
+<li><p>We can also determine where the function is positive or negative since we
+know it is continuous everywhere and zero at <m>x=0,6</m>. Thus we must examine the intervals
+<md>
+<mrow>
+  (-\infty,0)&amp;&amp; (0,6) &amp;&amp; (6,\infty)
+</mrow>
+</md>
+When <m>x \lt 0</m>, <m>x^3 \lt 0</m> and <m>x-6 \lt 0</m> so <m>f(x) = x^3(x-6) = (\text{negative})(\text{negative})
+ \gt  0</m>. Similarly when <m>x \gt 6</m>, <m>x^3 \gt 0, x-6 \gt 0</m> we must have <m>f(x) \gt 0</m>. Finally when <m>0 \lt x \lt 6</m>,
+<m>x^3 \gt 0</m> but <m>x-6 \lt 0</m> so <m>f(x) \lt 0</m>. Thus</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell>interval </cell><cell> <m>(-\infty,0)</m> </cell><cell> 0 </cell><cell> <m>(0,6)</m> </cell><cell> 6 </cell><cell> <m>(6,\infty)</m></cell>
+</row><row>
+<cell><m>f(x)</m> </cell><cell> positive </cell><cell> 0 </cell><cell> negative </cell><cell> 0 </cell><cell> positive </cell>
+</row>
+</tabular>
+</sidebyside>
+</li>
+<li> Based on this information we can already construct a rough sketch.
+</li>
+</ul>
+</p>
+<sidebyside width="50%">
+ <image source="text/figs/sketch1"/>
+</sidebyside>
+
+</li>
+<li> Now we compute its derivative
+<md>
+<mrow>
+  f'(x) &amp;= 4x^3-18x^2 = 2x^2(2x-9)
+</mrow>
+</md>
+</li>
+<li><p> Since the function is a polynomial, it does not have any singular points, but it
+does have two critical points at <m>x=0, 9/2</m>. These two critical points split the real
+line into 3 open intervals
+<md>
+<mrow>
+  (-\infty, 0) &amp;&amp; (0,9/2) &amp;&amp; (9/2,\infty)
+</mrow>
+</md>
+We need to determine the sign of the derivative in each intervals.
+<ul>
+<li> When <m>x \lt 0</m>, <m>x^2 \gt 0</m> but <m>(2x-9) \lt 0</m>, so <m>f'(x) \lt 0</m> and the function is decreasing.
+</li>
+<li> When <m>0 \lt x \lt 9/2</m>, <m>x^2 \gt 0</m> but <m>(2x-9) \lt 0</m>, so <m>f'(x) \lt 0</m> and the function is
+still decreasing.
+</li>
+<li> When <m>x \gt 9/2</m>, <m>x^2 \gt 0</m> and <m>(2x-9) \gt 0</m>, so <m>f'(x) \gt 0</m> and the function is increasing.
+</li>
+</ul>
+We can then summarise this in the following table</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell>interval </cell><cell> <m>(-\infty,0)</m> </cell><cell> 0 </cell><cell> <m>(0,9/2)</m> </cell><cell>
+9/2 </cell><cell> <m>(9/2,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m> </cell><cell> negative </cell><cell> 0 </cell><cell>
+negative </cell><cell> 0 </cell><cell> positive </cell>
+</row><row>
+<cell></cell><cell> decreasing </cell><cell> <line>horizontal</line><line> tangent</line>
+</cell><cell> decreasing </cell><cell> minimum </cell><cell> increasing
+</cell>
+</row></tabular>
+</sidebyside>
+
+<p>Since the derivative changes sign from negative to positive at the critical point
+<m>x=9/2</m>, this point is a minimum. Its <m>y</m>-value is
+<md>
+<mrow>
+  y&amp;=f(9/2) = \frac{9^3}{2^3}\left(\frac{9}{2} - 6\right)
+</mrow><mrow>
+  &amp;= \frac{3^6}{2^3} \cdot \left(\frac{-3}{2} \right) = -\frac{3^7}{2^4}
+</mrow>
+</md>
+</p>
+
+<p>On the other hand, at <m>x=0</m> the derivative
+does not change sign; while this point has a horizontal tangent line it is not a minimum
+or maximum.
+</p>
+</li>
+<li><p> Putting this information together we arrive at a quite reasonable sketch.</p>
+
+<sidebyside width="75%">
+ <image source="text/figs/sketch2"/>
+ </sidebyside>
+
+ <p>To improve upon this further we will examine the second derivative.</p>
+</li>
+</ul>
+</p>
+</example>
+
+</subsection>
+
+<subsection xml:id="ssec_sketch_SD">
+<title>Second derivative <mdash/> concavity</title>
+
+
+<p>The second derivative <m>f''(x)</m> tells us the rate at which the derivative changes. Perhaps
+the easiest way to understand how to interpret the sign of the second derivative is to
+think about what it implies about the slope of the tangent line to the graph of the
+function. Consider the following sketches of <m>y=1+x^2</m> and <m>y=-1-x^2</m>.</p>
+
+<sidebyside width="80%">
+ <image source="text/figs/sketch3"/>
+</sidebyside>
+
+<p><ul>
+<li> In the case of <m>y = f(x) = 1+x^2</m> , <m>f''(x) = 2  \gt  0</m>. Notice that this means the
+slope, <m>f'(x)</m>, of the line tangent to the graph at <m>x</m> increases as <m>x</m> increases.
+Looking at the figure on the left above, we see that the graph always lies above the
+tangent lines.
+</li>
+<li> For <m>y = f(x) = -1-x^2</m> , <m>f''(x) = -2  \lt  0</m>. The slope, <m>f'(x)</m>, of the line
+tangent to the graph at <m>x</m> decreases as <m>x</m> increases. Looking at the figure on the right
+above, we see that the graph always lies below the tangent lines.
+</li>
+</ul>
+Similarly consider the following sketches of <m>y=x^{-1/2}</m> and <m>y=\sqrt{4-x}</m>:</p>
+
+<sidebyside width="80%">
+ <image source="text/figs/sketch4"/>
+</sidebyside>
+
+<p>Both of their derivatives, <m>-\frac{1}{2}x^{-3/2}</m> and <m>-\frac{1}{2}(4-x)^{-1/2}</m>, are
+negative, so they are decreasing functions. Examining second derivatives shows some
+differences.
+<ul>
+<li> For the first function, <m>y''(x) = \frac{3}{4}x^{-5/2} \gt 0</m>, so the slopes of tangent
+lines are increasing with <m>x</m> and the graph lies above its tangent lines.
+</li>
+<li> However, the second function has <m>y''(x) = -\frac{1}{4}(4-x)^{-3/2} \lt 0</m> so the
+slopes of the tangent lines are decreasing with <m>x</m> and the graph lies below its tangent
+lines.
+</li>
+</ul>
+</p>
+
+<p>More generally</p>
+
+<definition>
+<statement><p>
+Let <m>f(x)</m> be a continuous function on the interval <m>[a,b]</m> and suppose its first and
+second derivatives exist on that interval.
+<ul>
+<li><p> If <m>f''(x) \gt 0</m> for all <m>a \lt x \lt b</m>, then the graph of <m>f</m> lies above its tangent lines for <m>a \lt x \lt b</m> and it is said to be concave up.</p>
+
+<sidebyside width="50%">
+<image source="text/figs/convexUpBB"/>
+</sidebyside>
+</li>
+<li><p> If <m>f''(x) \lt 0</m> for all <m>a \lt x \lt b</m>, then the graph of <m>f</m> lies below its tangent lines for <m>a \lt x \lt b</m> and it is said to be concave down.</p>
+
+<sidebyside width="50%">
+<image source="text/figs/convexDownBB"/>
+</sidebyside>
+</li>
+<li><p> If <m>f''(c)=0</m> for some <m>a \lt c \lt b</m>, and the concavity of <m>f</m> changes across <m>x=c</m>, then  we call <m>(c,f(c))</m> an inflection point. </p>
+
+<sidebyside width="66%">
+<image source="text/figs/inflection"/>
+</sidebyside>
+</li>
+</ul>
+</p></statement>
+</definition>
+
+<p>Note that one might also see the terms
+<ul>
+<li> <q>convex</q> or <q>convex up</q> used in place of <q>concave up</q>, and
+</li>
+<li> <q>concave</q> or <q>convex down</q> used to mean <q>concave down</q>.
+</li>
+</ul>
+To avoid confusion we recommend the reader stick with the terms <q>concave up</q> and
+<q>concave down</q>.
+</p>
+
+<p>Let's now continue Example<nbsp/><xref ref="eg_sketch_simple_poly"/> by discussing the
+concavity of the curve.</p>
+
+<example><title>Continuation of <xref ref="eg_sketch_simple_poly"/></title>
+<p>
+Consider again the function
+<md>
+<mrow>
+  f(x) &amp;= x^4-6x^3
+</mrow>
+</md>
+<ul>
+<li> Its first derivative is <m>f'(x)=4x^3-18x^2</m>, so
+<md>
+<mrow>
+  f''(x) &amp;= 12x^2 - 36x = 12x(x-3)
+</mrow>
+</md>
+</li>
+<li><p> Thus the second derivative is zero (and potentially changes sign) at <m>x=0,3</m>. Thus
+we should consider the sign of the second derivative on the following intervals
+<md>
+<mrow>
+  (-\infty,0) &amp;&amp; (0,3) &amp;&amp; (3,\infty)
+</mrow>
+</md>
+A little algebra gives us</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell>interval </cell><cell> <m>(-\infty,0)</m> </cell><cell> 0 </cell><cell> <m>(0,3)</m> </cell><cell> 3 </cell><cell> <m>(3,\infty)</m></cell>
+</row><row>
+<cell><m>f''(x)</m> </cell><cell> positive </cell><cell> 0 </cell><cell> negative </cell><cell> 0 </cell><cell> positive </cell>
+</row><row>
+<cell>concavity </cell><cell> up </cell><cell> inflection </cell><cell> down </cell><cell> inflection </cell><cell> up
+</cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>
+Since the concavity changes at both <m>x=0</m> and <m>x=3</m>, the following are inflection points
+<md>
+<mrow>
+  (0,0) &amp;&amp; (3,3^4-6\times3^3)=(3,-3^4)
+</mrow>
+</md></p>
+</li>
+<li> Putting this together with the information we obtained earlier gives us the
+following sketch
+</li>
+</ul>
+</p>
+
+<sidebyside width="80%">
+ <image source="text/figs/sketch5"/>
+</sidebyside>
+
+</example>
+
+</subsection>
+
+<subsection xml:id="ssec_sketch_SYM">
+<title>Symmetries</title>
+<p>Before we proceed to some examples, we should examine some simple symmetries possessed by
+some functions. We'll look at three symmetries <mdash/> evenness, oddness and periodicity.
+If a function possesses one of these symmetries then it can be exploited to reduce the
+amount of work required to sketch the graph of the function.
+</p>
+
+<p>Let us start with even and odd functions.</p>
+
+<definition xml:id="def_APPeven">
+<statement><p>
+A function <m>f(x)</m> is said to be even if <m>f(-x)=f(x)</m> for all <m>x</m>.
+</p></statement>
+</definition>
+
+<definition xml:id="def_APPodd">
+<statement><p>
+A function <m>f(x)</m> is said to be odd if <m>f(-x)=-f(x)</m> for all <m>x</m>.
+</p></statement>
+</definition>
+
+<example><title>An even function and an odd funtion</title>
+<p>
+  Let <m>f(x) = x^2</m> and <m>g(x)=x^3</m>. Then
+<md>
+<mrow>
+  f(-x) &amp;= (-x)^2 = x^2 = f(x)
+</mrow><mrow>
+  g(-x) &amp;= (-x)^3 = -x^3 = -g(x)
+</mrow>
+</md>
+Hence <m>f(x)</m> is even and <m>g(x)</m> is odd.
+</p>
+
+<p>Notice any polynomial involving only even powers of <m>x</m> will be even
+<md>
+<mrow>
+  f(x) &amp;= 7x^6+2x^4-3x^2+5 &amp; \text{remember that} 5=5x^0
+</mrow><mrow>
+  f(-x) &amp;= 7(-x)^6+2(-x)^4-3(-x)^2+5
+</mrow><mrow>
+  &amp;= 7x^6+2x^4-3x^2+5  = f(x)
+</mrow>
+</md>
+Similarly any polynomial involving only odd powers of <m>x</m> will be odd
+<md>
+<mrow>
+  g(x) &amp;= 2x^5-8x^3-3x
+</mrow><mrow>
+  g(-x) &amp;= 2(-x)^5-8(-x)^3-3(-x)
+</mrow><mrow>
+  &amp;= -2x^5+8x^3+3x  = -g(x)
+</mrow>
+</md>
+</p>
+</example>
+
+<p>Not all even and odd functions are polynomials. For example
+<md>
+<mrow>
+  |x| &amp;&amp; \cos x &amp;&amp; \text{ and } (e^x + e^{-x})
+</mrow>
+</md>
+are all even, while
+<md>
+<mrow>
+  \sin x &amp;&amp; \tan x &amp;&amp; \text{ and } (e^x-e^{-x})
+</mrow>
+</md>
+are all odd. Indeed, given any function <m>f(x)</m>, the function
+<md>
+<mrow>
+  g(x) &amp;= f(x)+f(-x) &amp; \text{ will be even, and}
+</mrow><mrow>
+  h(x) &amp;= f(x)-f(-x) &amp; \text{ will be odd.}
+</mrow>
+</md>
+</p>
+
+<p>Now let us see how we can make use of these symmetries to make graph sketching easier. Let
+<m>f(x)</m> be an even function. Then
+<md>
+<mrow>
+\text{the point } (x_0,y_0)\text{ lies on the graph of }y=f(x)
+</mrow>
+</md>
+if and only if <m>y_0= f(x_0) = f(-x_0)</m> which is the case if and only if
+<md>
+<mrow>
+\text{the point }(-x_0,y_0)\text{ lies on the graph of }y=f(x).
+</mrow>
+</md>
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/evenPt"/>
+</sidebyside>
+
+<p>Notice that the points <m>(x_0,y_0)</m> and <m>(-x_0,y_0)</m> are just reflections of
+each other across the <m>y</m>-axis. Consequently, to draw the graph <m>y=f(x)</m>, it suffices to
+draw the part of the graph with <m>x\ge 0</m> and then reflect it in the <m>y</m><ndash/>axis.
+Here is an example. The part with <m>x\ge 0</m> is on the left and the full graph is on the
+right.</p>
+
+<sidebyside widths="40% 50%">
+<image source="text/figs/evenRt"/>
+<image source="text/figs/evenFull"/>
+</sidebyside>
+
+
+<p>Very similarly, when <m>f(x)</m> is an odd function then
+<md>
+<mrow>
+(x_0,y_0)\text{ lies on the graph of }y=f(x)
+</mrow>
+</md>
+if and only if
+<md>
+<mrow>
+(-x_0,-y_0)\text{ lies on the graph of }y=f(x)
+</mrow>
+</md>
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/oddPt"/>
+</sidebyside>
+
+<p> Now the symmetry is a little harder to interpret pictorially. To get from <m>(x_0,y_0)</m> to
+<m>(-x_0,-y_0)</m> one can first reflect <m>(x_0,y_0)</m> in the <m>y</m><ndash/>axis to get to <m>(-x_0,y_0)</m>
+and then reflect the result in the <m>x</m><ndash/>axis to get to <m>(-x_0,-y_0)</m>. Consequently, to draw the graph <m>y=f(x)</m>, it suffices to draw the part of the graph with <m>x\ge 0</m> and then reflect it first in the <m>y</m><ndash/>axis and then in the <m>x</m><ndash/>axis.
+Here is an example. First, here is the part of the graph with <m>x\ge 0</m>.
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/oddRt"/>
+</sidebyside>
+
+<p>Next, as an intermediate step (usually done in our heads rather than on
+paper), we add in the reflection in the <m>y</m><ndash/>axis.</p>
+
+<sidebyside width="50%">
+<image source="text/figs/oddInt"/>
+</sidebyside>
+
+<p>Finally to get the full graph, we reflect the dashed line in the <m>x</m><ndash/>axis</p>
+
+<sidebyside width="50%">
+<image source="text/figs/oddFullInt"/>
+</sidebyside>
+
+<p>and then remove the dashed line.</p>
+
+<sidebyside width="50%">
+<image source="text/figs/oddFull"/>
+</sidebyside>
+
+<p>Let's do a more substantial example of an even function</p>
+
+<example><title>An even rational function</title>
+<p>
+ Consider the function
+<md>
+<mrow>
+  g(x) &amp;= \frac{x^2-9}{x^2+3}
+</mrow>
+</md>
+<ul>
+<li> The function is even since
+<md>
+<mrow>
+  g(-x) &amp;= \frac{(-x)^2-9}{(-x)^2+3} = \frac{x^2-9}{x^2+3} = g(x)
+</mrow>
+</md>
+  Thus it suffices to study the function for <m>x\geq0</m> because we can then use the even
+symmetry to understand what happens for <m>x \lt 0</m>.
+</li>
+<li> The function is defined on all real numbers since its denominator <m>x^2+3</m> is never
+zero. Hence it has no vertical asymptotes.
+</li>
+<li> The <m>y</m>-intercept is <m>g(0) = \frac{-9}{3} = -3</m>. And <m>x</m>-intercepts are given by
+the solution of <m>x^2-9=0</m>, namely <m>x=\pm 3</m>. Note that we only need to establish <m>x=3</m> as
+an intercept. Then since <m>g</m> is even, we know that <m>x=-3</m> is also an intercept.
+</li>
+<li> To find the horizontal asymptotes we compute the limit as <m>x\to+\infty</m>
+<md>
+<mrow>
+  \lim_{x\to \infty} g(x)
+  &amp;= \lim_{x\to \infty} \frac{x^2-9}{x^2+3}
+</mrow><mrow>
+  &amp;= \lim_{x\to \infty} \frac{x^2(1-9/x^2)}{x^2(1+3/x^2)}
+</mrow><mrow>
+  &amp;= \lim_{x\to \infty} \frac{1-9/x^2}{1+3/x^2} = 1
+</mrow>
+</md>
+Thus <m>y=1</m> is a horizontal asymptote. Indeed, this is also the asymptote as <m>x\to-\infty</m>
+since by the even symmetry
+<md>
+<mrow>
+  \lim_{x\to -\infty} g(x)
+  &amp;=\lim_{x\to \infty} g(-x)
+  = \lim_{x\to \infty} g(x).
+</mrow>
+</md>
+</li>
+<li><p> We can already produce a quite reasonable sketch just by putting in the horizontal
+asymptote and the intercepts and drawing a smooth curve between them.</p>
+
+<sidebyside width="66%">
+ <image source="text/figs/sketch6"/>
+ </sidebyside>
+
+<p> Note that we have drawn the function as never crossing the asymptote <m>y=1</m>, however we
+have not yet proved that.  We could by trying to solve <m>g(x)=1</m>.
+<md>
+<mrow>
+  \frac{x^2-9}{x^2+3} &amp;= 1
+</mrow><mrow>
+  x^2-9 &amp;= x^2+3
+</mrow><mrow>
+  -9=3 &amp; \text{ so no solutions.}
+</mrow>
+</md>
+Alternatively we could analyse the first derivative to see how the function approaches
+the asymptote.</p>
+</li>
+<li> Now we turn to the first derivative:
+<md>
+<mrow>
+  g'(x) &amp;= \frac{(x^2+3)(2x) - (x^2-9)(2x)}{(x^2+3)^2}
+</mrow><mrow>
+  &amp;= \frac{24x}{(x^2+3)^2}
+</mrow>
+</md>
+There are no singular points since the denominator is nowhere zero. The only critical
+point is at <m>x=0</m>. Thus we must find the sign of <m>g'(x)</m> on the intervals
+<md>
+<mrow>
+  (-\infty,0) &amp;&amp; (0,\infty)
+</mrow>
+</md>
+</li>
+<li> When <m>x \gt 0</m>, <m>24x \gt 0</m> and <m>(x^2+3) \gt 0</m>, so <m>g'(x) \gt 0</m> and the function is increasing.
+By even symmetry we know that when <m>x \lt 0</m> the function must be decreasing. Hence the
+critical point <m>x=0</m> is a local minimum of the function.
+</li>
+<li> Notice that since the function is increasing for <m>x \gt 0</m> and the function must
+approach the horizontal asymptote <m>y=1</m> from below. Thus the sketch above is quite
+accurate.
+</li>
+<li> Now consider the second derivative:
+<md>
+<mrow>
+  g''(x) &amp;= \diff{}{x} \frac{24x}{(x^2+3)^2}
+</mrow><mrow>
+  &amp;= \frac{(x^2+3)^2 \cdot 24 - 24x\cdot 2 (x^2+3)\cdot2x}{(x^2+3)^4}
+  </mrow>
+  <intertext> cancel a factor of <m>(x^2+3)</m></intertext>
+<mrow>
+  &amp;= \frac{(x^2+3) \cdot 24 - 96x^2}{(x^2+3)^3}
+</mrow><mrow>
+  &amp;= \frac{72(1-x^2)}{(x^2+3)^3}
+</mrow>
+</md>
+</li>
+<li> It is clear that <m>g''(x) = 0</m> when <m>x=\pm 1</m>. Note that, again, we can infer
+the zero at <m>x=-1</m> from the zero at <m>x=1</m> by the even symmetry.  Thus we need to examine
+the sign of <m>g''(x)</m> the intervals
+<md>
+<mrow>
+  (-\infty,-1)&amp;&amp;(-1,1)&amp;&amp;(1,\infty)
+</mrow>
+</md>
+</li>
+<li> When <m>|x| \lt 1</m> we have <m>(1-x^2) \gt 0</m> so that <m>g''(x) \gt 0</m> and the function is
+concave up. When <m>|x| \gt 1</m> we have <m>(1-x^2) \lt 0</m> so that <m>g''(x) \lt 0</m> and the function is
+concave down. Thus the points <m>x=\pm 1</m> are inflection points. Their coordinates are
+<m>(\pm1, g(\pm1)) =(\pm 1,-2)</m>.
+</li>
+<li><p> Putting this together gives the following sketch:</p>
+
+<sidebyside width="80%">
+ <image source="text/figs/sketch7"/>
+</sidebyside>
+</li>
+</ul>
+</p>
+</example>
+
+
+<p>Another symmetry we should consider is periodicity.</p>
+
+<definition xml:id="def_APPperiodic">
+<statement><p>
+A function <m>f(x)</m> is said to be periodic, with period <m>P  \gt  0</m>, if
+<m>f(x+P)=f(x)</m> for all <m>x</m>.
+</p></statement>
+</definition>
+
+<p>Note that if <m>f(x+P)=f(x)</m> for all <m>x</m>, then replacing <m>x</m> by <m>x+P</m>,
+we have
+<md>
+<mrow>
+f(x+2P)=f(x+P+P)=f(x+P)=f(x).
+</mrow>
+</md>
+More generally <m>f(x+kP)=f(x)</m> for all integers <m>k</m>. Thus if <m>f</m> has period <m>P</m>,
+then it also has period <m>nP</m> for all natural numbers <m>n</m>. The smallest period
+is called the fundamental period.
+</p>
+
+<example xml:id="eg_APPperiodic"><title><m>\sin x</m> is periodic</title>
+<p>
+The classic example of a periodic function is <m>f(x)=\sin x</m>, which has
+period <m>2\pi</m> since <m>f(x+2\pi)=\sin(x+2\pi)=\sin x=f(x)</m>.
+</p>
+</example>
+
+<p>If <m>f(x)</m> has period <m>P</m> then
+<md>
+<mrow>
+(x_0,y_0)\text{ lies on the graph of }y=f(x)
+</mrow>
+<intertext>if and only if <m>y_0=f(x_0)=f(x_0+P)</m> which is the case if and only
+if</intertext><mrow>
+(x_0+P,y_0)\text{ lies on the graph of }y=f(x)
+</mrow>
+</md>
+and, more generally,
+<md>
+<mrow>
+(x_0,y_0)\text{ lies on the graph of }y=f(x)
+</mrow>
+<intertext>if and only if</intertext><mrow>
+(x_0+nP,y_0)\text{ lies on the graph of }y=f(x)
+</mrow>
+</md>
+for all integers <m>n</m>.
+</p>
+
+<p>Note that the point <m>(x_0+P,y_0)</m> can be obtained by translating <m>(x_0,y_0)</m>
+horizontally by <m>P</m>. Similarly the point <m>(x_0+nP,y_0)</m> can be found by repeatedly
+translating <m>(x_0,y_0)</m> horizontally by <m>P</m>.</p>
+
+<sidebyside width="80%">
+<image source="text/figs/periodicPt"/>
+</sidebyside>
+
+<p>Consequently, to draw the graph <m>y=f(x)</m>, it suffices to draw one period
+of the graph, say the part with <m>0\le x\le P</m>, and then translate it repeatedly. Here is
+an example. Here is a sketch of one period</p>
+
+<sidebyside width="80%">
+<image source="text/figs/periodicInt"/>
+</sidebyside>
+<p> and here is the full sketch.</p>
+
+<sidebyside width="80%">
+<image source="text/figs/periodicFull"/>
+</sidebyside>
+
+
+</subsection>
+
+<subsection>
+<title>A checklist for sketching</title>
+<introduction>
+<p>Above we have described how we can use our accumulated knowledge of derivatives
+to quickly identify the most important qualitative features of
+graphs <m>y=f(x)</m>. Here we give the reader a quick checklist of things to examine
+in order to produce an accurate sketch based on properties that are easily read
+off from <m>f(x)</m>, <m>f'(x)</m> and <m>f''(x)</m>.
+</p>
+</introduction>
+<subsubsection><title>A sketching checklist</title>
+<p>
+<ol label="1">
+<li><p>Features of <m>y = f(x)</m> that are read off of <m>f(x)</m>:
+<ul>
+<li> First check where <m>f(x)</m> is defined. Then
+</li>
+<li> y=f(x) is plotted only for <m>x</m>'s in the domain of <m>f(x)</m>, i.e. where
+<m>f(x)</m> is defined.
+</li>
+<li> <m>y = f(x)</m> has vertical asymptotes at the points where <m>f(x)</m> blows up to
+<m>\pm\infty</m>.
+</li>
+<li> Next determine whether the function is even, odd, or periodic.
+</li>
+<li> <m>y=f(x)</m> is first plotted for <m>x\ge 0</m> if the function is even or odd. The
+rest of the sketch is then created by reflections.
+</li>
+<li> <m>y=f(x)</m> is first plotted for a single period if the function is periodic.
+The rest of the sketch is then created by translations.
+</li>
+<li> Next compute <m>f(0)</m>, <m>\lim_{x\rightarrow\infty} f(x)</m> and
+<m>\lim_{x\rightarrow-\infty} f(x)</m> and look for solutions to <m>f(x)=0</m> that you
+can easily find. Then
+</li>
+<li> <m>y = f(x)</m> has <m>y</m><ndash/>intercept <m>\big(0, f(0)\big)</m>.
+</li>
+<li> <m>y = f(x)</m> has <m>x</m><ndash/>intercept <m>(a,0)</m> whenever <m>f(a)=0</m>
+</li>
+<li> <m>y = f(x)</m> has horizontal asymptote <m>y=Y</m> if <m>\lim_{x\rightarrow\infty}
+f(x)=L</m> or <m>\lim_{x\rightarrow-\infty} f(x)=L</m>.
+</li>
+</ul>
+</p>
+</li>
+<li><p> Features of <m>y=f(x)</m> that are read off of <m>f'(x)</m>:
+<ul>
+<li> Compute <m>f'(x)</m> and determine its critical points and singular points, then
+</li>
+<li> <m>y=f(x)</m> has a horizontal tangent at the points where <m>f'(x)=0</m>.
+</li>
+<li> <m>y=f(x)</m> is increasing at points where <m>f'(x) \gt 0</m>.
+</li>
+<li> <m>y=f(x)</m> is decreasing at points where <m>f'(x) \lt 0</m>.
+</li>
+<li> <m>y=f(x)</m> has vertical tangents or vertical asymptotes at the points
+where <m>f'(x)=\pm\infty</m>.
+</li>
+</ul></p>
+</li>
+<li><p> Features of <m>y=f(x)</m> that are read off of <m>f''(x)</m>:
+<ul>
+<li> Compute <m>f''(x)</m> and determine where <m>f''(x)=0</m> or does not exist, then
+</li>
+<li> <m>y=f(x)</m> is concave up at points where <m>f''(x) \gt 0</m>.
+</li>
+<li> <m>y=f(x)</m> is concave down at points where <m>f''(x) \lt 0</m>.
+</li>
+<li> <m>y=f(x)</m> may or may not have inflection points where <m>f''(x)=0</m>.
+</li>
+</ul></p>
+</li>
+</ol>
+</p>
+</subsubsection>
+</subsection>
+
+<subsection  xml:id="ssec_sketch_SE">
+<title>Sketching examples</title>
+
+<example xml:id="APPsketchA"><title>Sketch <m>f(x)=x^3-3x+1</m></title>
+
+<p><ol label="1">
+<li><p> Reading from <m>f(x)</m>:
+<ul>
+<li> The function is a polynomial so it is defined everywhere.
+</li>
+<li> Since <m>f(-x) = -x^3+3x+1 \neq \pm f(x)</m>, it is not even or odd. Nor is it periodic.
+</li>
+<li> The <m>y</m>-intercept is <m>y=1</m>. The <m>x</m>-intercepts are not easily computed since it is
+a cubic polynomial that does not factor nicely
+<fn>With the aid of a computer we
+can find the <m>x</m>-intercepts numerically: <m>x\approx -1.879385242, 0.3472963553</m>, and
+<m>1.532088886</m>. If you are interested in more details then try googling
+<q>Newton's method</q> or <q>root finding</q>.</fn>
+. So for this example we don't worry
+about finding them.
+</li>
+<li> Since it is a polynomial it has no vertical asymptotes.
+</li>
+<li> For very large <m>x</m>, both positive and negative,
+the <m>x^3</m> term in <m>f(x)</m> dominates the other two terms so that
+<md>
+<mrow>
+f(x)\rightarrow\begin{cases}+\infty &amp;\text{as }x\rightarrow+\infty
+</mrow><mrow>
+                            -\infty &amp;\text{as }x\rightarrow-\infty
+                \end{cases}
+</mrow>
+</md>
+and there are no horizontal asymptotes.
+</li>
+</ul></p>
+</li>
+<li><p> We now compute the derivative:
+<md>
+<mrow>
+f'(x) &amp;= 3x^2-3 = 3(x^2-1)=3(x+1)(x-1)
+</mrow>
+</md>
+<ul>
+<li> The critical points (where <m>f'(x)=0</m>) are at <m>x=\pm 1</m>. Further since the
+derivative is a polynomial it is defined everywhere and there are no singular points.
+The critical points split the real line into the intervals <m>(-\infty,-1),(-1,1)</m>
+and <m>(1,\infty)</m>.
+</li>
+<li> When <m>x \lt -1</m>, both factors <m>(x+1),(x-1) \lt 0</m> so <m>f'(x) \gt 0</m>.
+</li>
+<li> Similarly when <m>x \gt 1</m>, both factors <m>(x+1),(x-1) \gt 0</m> so <m>f'(x) \gt 0</m>.
+</li>
+<li> When <m>-1 \lt x \lt 1</m>, <m>(x-1) \lt 0</m> but <m>(x+1) \gt 0</m> so <m>f'(x) \lt 0</m>.
+</li>
+<li><p> Summarising all this</p>
+
+<sidebyside>
+<tabular top="minor" bottom="minor" left="minor" right="minor">
+<row>
+<cell></cell><cell> <m>(-\infty,-1)</m> </cell><cell> -1 </cell><cell> (-1,1) </cell><cell> 1 </cell><cell> <m>(1,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell> positive  </cell><cell> 0 </cell><cell> negative </cell><cell> 0 </cell><cell> positive </cell>
+</row><row>
+<cell></cell><cell> increasing </cell><cell> maximum </cell><cell> decreasing </cell><cell> minimum </cell><cell> increasing </cell>
+</row></tabular>
+</sidebyside>
+
+<p>So <m>(-1,f(-1))=(-1,3)</m> is a local maximum and <m>(1,f(1))=(1,-1)</m> is a local
+minimum.</p>
+</li>
+</ul></p>
+</li>
+<li><p> Compute the second derivative:
+<md>
+<mrow>
+f''(x) = 6x
+</mrow>
+</md>
+<ul>
+<li> The second derivative is zero when <m>x=0</m>, and the problem is quite easy to
+analyse. Clearly, <m>f''(x) \lt 0</m> when <m>x \lt 0</m> and <m>f''(x) \gt 0</m> when <m>x \gt 0</m>.
+</li>
+<li> Thus <m>f</m> is concave down for <m>x \lt 0</m>, concave up for <m>x \gt 0</m> and has an inflection
+point at <m>x=0</m>.
+</li>
+</ul></p>
+</li>
+</ol>
+Putting this all together gives:</p>
+
+<sidebyside width="80%">
+<image source="text/figs/j_sketch1"/>
+</sidebyside>
+
+</example>
+
+
+<example xml:id="APPsketchB"><title>Sketch <m>f(x)=x^4-4x^3</m></title>
+<p>
+<ol label="1">
+<li><p> Reading from <m>f(x)</m>:
+<ul>
+<li> The function is a polynomial so it is defined everywhere.
+</li>
+<li> Since <m>f(-x) = x^4+4x^3 \neq \pm f(x)</m>, it is not even or odd. Nor is it periodic.
+</li>
+<li> The <m>y</m>-intercept is <m>y=f(0)=0</m>, while the <m>x</m>-intercepts are given by the solution
+of
+<md>
+<mrow>
+  f(x)=x^4-4x^3 &amp;= 0
+</mrow><mrow>
+  x^3(x-4)&amp;=0
+</mrow>
+</md>
+Hence the <m>x</m>-intercepts are <m>0,4</m>.
+</li>
+<li> Since <m>f</m> is a polynomial it does not have any vertical asymptotes.
+</li>
+<li> For very large <m>x</m>, both positive and negative, the <m>x^4</m> term in <m>f(x)</m> dominates
+the other term so that
+<md>
+<mrow>
+f(x)\rightarrow\begin{cases}+\infty &amp;\text{as }x\rightarrow+\infty
+</mrow><mrow>
+                            +\infty &amp;\text{as }x\rightarrow-\infty
+                \end{cases}
+</mrow>
+</md>
+and the function has no horizontal asymptotes.
+</li>
+</ul></p>
+</li>
+<li><p> Now compute the derivative <m>f'(x)</m>:
+<md>
+<mrow>
+f'(x) = 4x^3-12x^2 = 4(x-3)x^2
+</mrow>
+</md>
+<ul>
+<li> The critical points are at <m>x=0,3</m>. Since the function is a polynomial there are
+no singular points. The critical points split the real line into the intervals
+<m>(-\infty,0)</m>, <m>(0,3)</m> and <m>(3,\infty)</m>.
+</li>
+<li> When <m>x \lt 0</m>, <m>x^2 \gt 0</m> and <m>x-3 \lt 0</m>, so <m>f'(x)  \lt  0</m>.
+</li>
+<li> When <m>0 \lt x \lt 3</m>, <m>x^2 \gt 0</m> and <m>x-3 \lt 0</m>, so <m>f'(x)  \lt  0</m>.
+</li>
+<li> When <m>3 \lt x</m>, <m>x^2 \gt 0</m> and <m>x-3 \gt 0</m>, so <m>f'(x)  \gt  0</m>.
+</li>
+<li><p> Summarising all this</p>
+<sidebyside>
+<tabular top="minor" bottom="minor" left="minor" right="minor">
+<row>
+<cell></cell><cell> <m>(-\infty,0)</m> </cell><cell> 0 </cell><cell> (0,3) </cell><cell> 3 </cell><cell> <m>(3,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell> negative </cell><cell> 0 </cell><cell> negative </cell><cell> 0 </cell><cell> positive </cell>
+</row><row>
+<cell></cell><cell> decreasing </cell><cell> <line>horizontal</line><line>tangent</line> </cell><cell> decreasing </cell><cell>
+minimum </cell><cell> increasing </cell>
+</row></tabular>
+</sidebyside>
+
+<p>So the point <m>(3,f(3))=(3,-27)</m> is a local minimum. The point <m>(0,f(0))=(0,0)</m>
+is neither a minimum nor a maximum, even though <m>f'(0)=0</m>.</p>
+</li>
+</ul></p>
+</li>
+<li><p> Now examine <m>f''(x)</m>:
+<md>
+<mrow>
+f''(x) = 12x^2-24x=12x(x-2)
+</mrow>
+</md>
+<ul>
+<li> So <m>f''(x)=0</m> when <m>x=0,2</m>. This splits the real line into the intervals
+<m>(-\infty,0),(0,2)</m> and <m>(2,\infty)</m>.
+</li>
+<li> When <m>x \lt 0</m>, <m>x-2 \lt 0</m> and so <m>f''(x) \gt 0</m>.
+</li>
+<li> When <m>0 \lt x \lt 2</m>, <m>x \gt 0</m> and <m>x-2 \lt 0</m> and so <m>f''(x) \lt 0</m>.
+</li>
+<li> When <m>2 \lt x</m>, <m>x \gt 0</m> and <m>x-2 \gt 0</m> and so <m>f''(x) \gt 0</m>.
+</li>
+<li> Thus the function is convex up for <m>x \lt 0</m>, then convex down for <m>0 \lt x \lt 2</m>, and finally
+convex up again for <m>x \gt 2</m>. Hence <m>(0,f(0))=(0,0)</m> and <m>(2,f(2))=(2,-16)</m> are inflection
+points.
+</li>
+</ul></p>
+</li>
+</ol>
+Putting all this information together gives us the following sketch.</p>
+
+<sidebyside width="100%">
+<image source="text/figs/j_sketch2"/>
+</sidebyside>
+
+</example>
+
+
+
+<example><title><m>f(x) = x^3 - 6x^2 + 9x - 54</m></title>
+<p>
+<ol label="1">
+<li><p> Reading from <m>f(x)</m>:
+<ul>
+<li> The function is a polynomial so it is defined everywhere.
+</li>
+<li> Since <m>f(-x) = -x^3-6x^2-9x-54 \neq \pm f(x)</m>, it is not even or
+odd. Nor is it periodic.
+</li>
+<li> The <m>y</m>-intercept is <m>y=f(0)=-54</m>, while the <m>x</m>-intercepts are given by
+the solution of
+<md>
+<mrow>
+  f(x)=x^3-6x^2+9x-54 &amp;= 0
+</mrow><mrow>
+  x^2(x-6) + 9(x-6) &amp;=0
+</mrow><mrow>
+  (x^2+9)(x-6) &amp;= 0
+</mrow>
+</md>
+Hence the only <m>x</m>-intercept is <m>6</m>.
+</li>
+<li> Since <m>f</m> is a polynomial it does not have any vertical asymptotes.
+</li>
+<li> For very large <m>x</m>, both positive and negative, the <m>x^3</m> term in <m>f(x)</m>
+dominates the other term so that
+<md>
+<mrow>
+f(x)\rightarrow\begin{cases}+\infty &amp;\text{as }x\rightarrow+\infty
+</mrow><mrow>
+                            -\infty &amp;\text{as }x\rightarrow-\infty
+                \end{cases}
+</mrow>
+</md>
+and the function has no horizontal asymptotes.
+</li>
+</ul></p>
+</li>
+<li><p> Now compute the derivative <m>f'(x)</m>:
+<md>
+<mrow>
+f'(x) &amp;= 3x^2-12x+9
+</mrow><mrow>
+  &amp;= 3(x^2-4x+3) = 3(x-3)(x-1)
+</mrow>
+</md>
+<ul>
+<li> The critical points are at <m>x=1,3</m>. Since the function is a polynomial
+there are no singular points. The critical points split the real line into the
+intervals
+<m>(-\infty,1)</m>, <m>(1,3)</m> and <m>(3,\infty)</m>.
+</li>
+<li> When <m>x \lt 1</m>, <m>(x-1) \lt 0</m> and <m>(x-3) \lt 0</m>, so <m>f'(x)  \gt  0</m>.
+</li>
+<li> When <m>1 \lt x \lt 3</m>, <m>(x-1) \gt 0</m> and <m>(x-3) \lt 0</m>, so <m>f'(x)  \lt  0</m>.
+</li>
+<li> When <m>3 \lt x</m>, <m>(x-1) \gt 0</m> and <m>(x-3) \gt 0</m>, so <m>f'(x)  \gt  0</m>.
+</li>
+<li><p> Summarising all this</p>
+
+<sidebyside>
+<tabular top="minor" bottom="minor" left="minor" right="minor">
+<row>
+<cell></cell><cell> <m>(-\infty,1)</m> </cell><cell> 1 </cell><cell> (1,3) </cell><cell> 3 </cell><cell> <m>(3,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell> positive </cell><cell> 0 </cell><cell> negative </cell><cell> 0 </cell><cell> positive </cell>
+</row><row>
+<cell></cell><cell> increasing </cell><cell> maximum </cell><cell> decreasing </cell><cell> minimum </cell><cell> increasing </cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p> So the point <m>(1,f(1))=(1,-50)</m> is a local maximum. The point
+<m>(3,f(3))=(3,-54)</m> is a local minimum.</p>
+</li>
+</ul></p>
+</li>
+<li><p> Now examine <m>f''(x)</m>:
+<md>
+<mrow>
+f''(x) = 6x-12
+</mrow>
+</md>
+<ul>
+<li> So <m>f''(x)=0</m> when <m>x=2</m>. This splits the real line into the intervals
+<m>(-\infty,2)</m> and <m>(2,\infty)</m>.
+</li>
+<li> When <m>x \lt 2</m>,  <m>f''(x) \lt 0</m>.
+</li>
+<li> When <m>x \gt 2</m>, <m>f''(x) \gt 0</m>.
+</li>
+<li> Thus the function is convex down for <m>x \lt 2</m>, then convex up for <m>x \gt 2</m>.
+Hence <m>(2,f(2))=(2,-52)</m> is an inflection point.
+</li>
+</ul></p>
+</li>
+</ol>
+Putting all this information together gives us the following sketch.</p>
+
+<sidebyside width="66%">
+<image source="text/figs/j_sketch4"/>
+</sidebyside>
+
+<p> and if we zoom in around the interesting points (minimum, maximum and
+inflection point), we have</p>
+
+<sidebyside width="75%">
+<image source="text/figs/j_sketch4b"/>
+</sidebyside>
+
+
+</example>
+
+<p>An example of sketching a simple rational function.</p>
+<example><title><m>f(x) = \dfrac{x}{x^2-4}</m></title>
+<p>
+<ol label="1">
+<li><p> Reading from <m>f(x)</m>:
+<ul>
+<li> The function is rational so it is defined except where its denominator
+is zero <mdash/> namely at <m>x=\pm2</m>.
+</li>
+<li> Since <m>f(-x) = \dfrac{-x}{x^2-4} = - f(x)</m>, it is odd. Indeed this means
+that we only need to examine what happens to the function for <m>x \geq 0</m> and we
+can then infer what happens for <m>x\leq 0</m> using <m>f(-x) = -f(x)</m>. In
+practice we will sketch the graph for <m>x\geq0</m> and then infer the rest
+from this symmetry.
+</li>
+<li> The <m>y</m>-intercept is <m>y=f(0)=0</m>, while the <m>x</m>-intercepts are given by
+the solution of <m>f(x)=0</m>. So the only <m>x</m>-intercept is <m>0</m>.
+</li>
+<li> Since <m>f</m> is rational, it may have vertical asymptotes where its
+denominator is zero <mdash/> at <m>x=\pm 2</m>. Since the function is odd, we only have
+to analyse the asymptote at <m>x=2</m> and we can then infer what happens at <m>x=-2</m>
+by symmetry.
+<md>
+<mrow>
+  \lim_{x\to 2^+} f(x)
+  &amp;= \lim_{x\to 2^+} \frac{x}{(x-2)(x+2)} = + \infty
+</mrow><mrow>
+  \lim_{x\to 2^-} f(x) &amp;=
+  \lim_{x\to 2^-} \frac{x}{(x-2)(x+2)} = - \infty
+</mrow>
+</md>
+</li>
+<li> We now check for horizonal asymptotes:
+<md>
+<mrow>
+\lim_{x\to +\infty} f(x)
+&amp;= \lim_{x\to +\infty} \frac{x}{x^2-4}
+</mrow><mrow>
+&amp;= \lim_{x\to +\infty} \frac{1}{x-4/x} = 0
+</mrow>
+</md>
+</li>
+</ul></p>
+</li>
+<li><p> Now compute the derivative <m>f'(x)</m>:
+<md>
+<mrow>
+f'(x)
+&amp;= \frac{(x^2-4)\cdot 1 - x\cdot 2x}{(x^2-4)^2}
+</mrow><mrow>
+&amp;= \frac{-(x^2+4)}{(x^2-4)^2}
+</mrow>
+</md>
+<ul>
+<li> Hence there are no critical points. There are singular points
+where the denominator is zero, namley <m>x=\pm2</m>. Before we proceed, notice that
+the numerator is always negative and the denominator is always positive. Hence
+<m>f'(x) \lt 0</m> except at <m>x=\pm 2</m> where it is undefined.
+</li>
+<li> The function is decreasing except at <m>x=\pm 2</m>.
+</li>
+<li> We already know that at <m>x = 2</m> we have a vertical asymptote and that
+<m>f'(x) \lt 0</m> for all <m>x</m>. So
+<md>
+<mrow>
+	\lim_{x\rightarrow 2} f'(x) = -\infty
+</mrow>
+</md>
+</li>
+<li><p> Summarising all this</p>
+
+<sidebyside>
+<tabular top="minor" bottom="minor" left="minor" right="minor">
+<row>
+<cell></cell><cell> [0,2) </cell><cell> 2 </cell><cell> <m>(2,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell> negative </cell><cell> DNE </cell><cell> negative </cell>
+</row><row>
+<cell></cell><cell> decreasing </cell><cell><line>vertical</line><line>asymptote</line></cell><cell> decreasing</cell>
+ </row>
+</tabular>
+</sidebyside>
+
+<p> Remember <mdash/> we will draw the graph for <m>x\geq 0</m> and then use the odd symmetry
+to infer the graph for <m>x  \lt  0</m>.</p>
+</li>
+</ul></p>
+</li>
+<li><p> Now examine <m>f''(x)</m>:
+<md>
+<mrow>
+f''(x)
+&amp;=- \frac{(x^2-4)^2\cdot(2x) - (x^2+4)\cdot2\cdot 2x\cdot(x^2-4)}{(x^2-4)^4}
+</mrow><mrow>
+&amp;=- \frac{(x^2-4)\cdot(2x) - (x^2+4)\cdot4x}{(x^2-4)^3}
+</mrow><mrow>
+&amp;=- \frac{2x^3-8x  - 4x^3-16x}{(x^2-4)^3}
+</mrow><mrow>
+&amp;= \frac{2x(x^2+12)}{(x^2-4)^3}
+</mrow>
+</md>
+<ul>
+<li> So <m>f''(x)=0</m> when <m>x=0</m> and does not exist when <m>x=\pm 2</m>. This splits
+the real line into the intervals <m>(-\infty,-2), (-2,0), (0,2)</m> and
+<m>(2,\infty)</m>. However we only need to consider <m>x \geq 0</m> (because of the odd
+symmetry).
+</li>
+<li> When <m>0 \lt x \lt 2</m>, <m>x \gt 0, (x^2+12) \gt 0</m> and <m>(x^2-4) \lt 0</m> so  <m>f''(x) \lt 0</m>.
+</li>
+<li> When <m>x \gt 2</m>, <m>x \gt 0, (x^2+12) \gt 0</m> and <m>(x^2-4) \gt 0</m> so <m>f''(x) \gt 0</m>.
+</li>
+</ul></p>
+</li>
+</ol>
+Putting all this information together gives the following sketch for <m>x \geq 0</m>:</p>
+
+<sidebyside width="33%">
+<image source="text/figs/j_sketch5b"/>
+</sidebyside>
+
+<p> We can then draw in the graph for <m>x \lt  0</m> using <m>f(-x) = -f(x)</m>:</p>
+<sidebyside width="75%">
+<image source="text/figs/j_sketch5"/>
+</sidebyside>
+
+<p>Notice that this means that the concavity changes at <m>x=0</m>, so the point
+<m>(0,f(0))=(0,0)</m> is a point of inflection (as indicated).
+</p>
+</example>
+
+
+<p>This final example is more substantial since the function has singular points
+(points where the derivative is undefined). The analysis is more involved.</p>
+
+<example xml:id="APPsketchC"><title><m>f(x)=\root{3}\of{\frac{x^2}{(x-6)^2}} </m></title>
+<p>
+<ol label="1">
+<li><p> Reading from <m>f(x)</m>:
+<ul>
+<li> First notice that we can rewrite
+<md>
+<mrow>
+  f(x) &amp;= \root{3}\of{\frac{x^2}{(x-6)^2}}
+  = \root{3}\of{\frac{x^2}{x^2\cdot(1-6/x)^2}}
+  = \root{3}\of{\frac{1}{(1-6/x)^2}}
+</mrow>
+</md>
+</li>
+<li> The function is the cube root of a rational function. The rational
+function is defined except at <m>x=6</m>, so the domain of <m>f</m> is all reals except
+<m>x=6</m>.
+</li>
+<li> Clearly the function is not periodic, and examining
+<md>
+<mrow>
+  f(-x) &amp;= \root{3}\of{\frac{ 1}{(1-6/(-x))^2}}
+</mrow><mrow>
+  &amp;= \root{3}\of{\frac{1}{(1+6/x)^2}} \neq \pm f(x)
+</mrow>
+</md>
+shows the function is neither even nor odd.
+</li>
+<li> To compute horizonal asymptotes we examine the limit of the portion of
+the function inside the cube-root
+<md>
+<mrow>
+\lim_{x\rightarrow\pm\infty} \frac{1}{(1-\frac{6}{x})^2}
+=1
+</mrow>
+</md>
+This means we have
+<md>
+<mrow>
+\lim_{x\rightarrow\pm\infty} f(x)=1
+</mrow>
+</md>
+That is, the line <m>y=1</m> will be a horizontal asymptote to the graph <m>y=f(x)</m>
+both for <m>x\rightarrow+\infty</m> and for <m>x\rightarrow-\infty</m>.
+</li>
+<li> Our function <m>f(x)\rightarrow+\infty</m> as <m>x\rightarrow 6</m>, because of
+the <m>(1-6/x)^2</m> in its denominator. So <m>y=f(x)</m> has <m>x=6</m> as a vertical
+asymptote.
+</li>
+</ul></p>
+</li>
+<li><p> Now compute <m>f'(x)</m>. Since we rewrote
+<md>
+<mrow>
+f(x) &amp;= \root{3}\of{\frac{1}{(1-6/x)^2}}
+=\left(1-\frac{6}{x}\right)^{-\frac{2}{3}}
+</mrow>
+</md>
+we can use the chain rule
+<md>
+<mrow>
+f'(x) =
+-\frac{2}{3}{\left(1-\frac{6}{x}\right)}^{-\frac{5}{3}}\frac{6}{x^2}
+</mrow><mrow>
+=-4 {\left(\frac{x-6}{x}\right)}^{-\frac{5}{3}}\frac{1}{x^2}
+</mrow><mrow>
+=-4 {\left(\frac{1}{x-6}\right)}^{\frac{5}{3}}\frac{1}{x^{\frac{1}{3}}}
+</mrow>
+</md>
+<ul>
+<li> Notice that the derivative is nowhere equal to zero, so the function has
+no critical points. However there are two places the derivative is
+undefined. The terms
+<md>
+<mrow>
+  \left(\frac{1}{x-6}\right)^{\frac{5}{3}} &amp;&amp; \frac{1}{x^{\frac{1}{3}}}
+</mrow>
+</md>
+are undefined at <m>x=6,0</m> respectively. Hence <m>x=0,6</m> are singular points. These
+split the real line into the intervals <m>(-\infty,0), (0,6)</m> and <m>(6,\infty)</m>.
+</li>
+<li> When <m>x \lt 0</m>, <m>(x-6) \lt 0</m>, we have that <m>(x-6)^{-\frac53} \lt 0</m> and
+<m>x^{-\frac13} \lt 0</m> and so <m>f'(x)=-4 \cdot
+(\text{negative})\cdot(\text{negative})  \lt  0 </m>.
+</li>
+<li> When <m>0 \lt x \lt 6</m>, <m>(x-6) \lt 0</m>, we have that <m>(x-6)^{-\frac53} \lt 0</m> and
+<m>x^{-\frac13} \gt 0</m> and so <m>f'(x) \gt 0</m>.
+</li>
+<li> When <m>x \gt 6</m>, <m>(x-6) \gt 0</m>, we have that <m>(x-6)^{-\frac53} \gt 0</m> and
+<m>x^{-\frac13} \gt 0</m> and so <m>f'(x) \lt 0</m>.
+</li>
+<li> We should also examine the behaviour of the derivative as <m>x \to 0</m> and
+<m>x\to 6</m>.
+<md>
+<mrow>
+  \lim_{x \to 0^-} f'(x)
+  &amp;= -4
+  \left( \lim_{x \to 0^-} (x-6)^{-\frac53} \right)
+  \left( \lim_{x \to 0^-} x^{-\frac13} \right)
+  = -\infty
+</mrow><mrow>
+  \lim_{x \to 0^+} f'(x)
+  &amp;= -4
+  \left( \lim_{x \to 0^+} (x-6)^{-\frac53} \right)
+  \left( \lim_{x \to 0^+} x^{-\frac13} \right)
+  = +\infty
+</mrow><mrow>
+  \lim_{x \to 6^-} f'(x)
+  &amp;= -4
+  \left( \lim_{x \to 6^-} (x-6)^{-\frac53} \right)
+  \left( \lim_{x \to 6^-} x^{-\frac13} \right)
+  = +\infty
+</mrow><mrow>
+  \lim_{x \to 6^+} f'(x)
+  &amp;= -4
+  \left( \lim_{x \to 6^+} (x-6)^{-\frac53} \right)
+  \left( \lim_{x \to 6^+} x^{-\frac13} \right)
+  = -\infty
+</mrow>
+</md>
+We already know that <m>x=6</m> is a vertical asymptote of the function, so it is
+not surprising that the lines tangent to the graph become vertical as we
+approach 6. The behavior around <m>x=0</m> is less standard, since the lines tangent
+to the graph become vertical, but <m>x=0</m> is not a vertical asymptote of the
+function. Indeed the function takes a finite value <m>y=f(0)=0</m>.
+</li>
+<li><p> Summarising all this</p>
+
+<sidebyside>
+<tabular top="minor" bottom="minor" left="minor" right="minor">
+<row>
+<cell></cell><cell> <m>(-\infty,0)</m> </cell><cell> 0 </cell><cell> (0,6) </cell><cell> 6 </cell><cell> <m>(6,\infty)</m></cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell> negative </cell><cell> DNE </cell><cell> positive </cell><cell> DNE </cell><cell> negative </cell>
+</row><row>
+<cell></cell><cell> decreasing </cell><cell><line>vertical</line><line>tangents</line></cell><cell>
+increasing </cell><cell> <line>vertical</line><line>asymptote</line> </cell><cell> decreasing</cell>
+</row>
+</tabular>
+</sidebyside>
+</li>
+</ul></p>
+</li>
+<li><p> Now look at <m>f''(x)</m>:
+<md>
+<mrow>
+f''(x)&amp;=-4\diff{}{x}
+    \left[{\left(\frac{1}{x-6}\right)}^{\frac{5}{3}}
+           \frac{1}{x^{\frac{1}{3}}} \right]
+=-4 \left[-\frac{5}{3}{\left(\frac{1}{x-6}\right)}^{\frac{8}{3}}
+           \frac{1}{x^{\frac{1}{3}}}
+         -\frac{1}{3} {\left(\frac{1}{x-6}\right)}^{\frac{5}{3}}
+           \frac{1}{x^{\frac{4}{3}}}\right]
+</mrow><mrow>[0.1in]
+&amp;=\frac{4}{3} {\left(\frac{1}{x-6}\right)}^{\frac{8}{3}}
+            \frac{1}{x^{\frac{4}{3}}}\ \left[5x +(x-6)\right]
+</mrow><mrow>[0.1in]
+&amp;=8 {\left(\frac{1}{x-6}\right)}^{\frac{8}{3}}
+            \frac{1}{x^{\frac{4}{3}}}\ \left[x-1\right]
+</mrow>
+</md>
+Oof!
+<ul>
+<li><p> Both of the factors
+         <m>{\Big(\frac{1}{x-6}\Big)}^{\frac{8}{3}}
+          ={\Big(\frac{1}{\root{3}\of{x-6}}\Big)}^8</m> and
+            <m>\frac{1}{x^{\frac{4}{3}}}
+             =\Big(\frac{1}{\root{3}\of{x}}\Big)^4</m> are even powers
+and so are positive (though possibly infinite). So the sign of <m>f''(x)</m>
+is the same as the sign of the factor <m>x-1</m>. Thus</p>
+
+<sidebyside>
+<tabular top="minor" bottom="minor" left="minor" right="minor">
+<row>
+<cell></cell><cell> <m>(-\infty,1)</m> </cell><cell> 1 </cell><cell> <m>(1,\infty)</m></cell>
+</row><row>
+<cell><m>f''(x)</m>  </cell><cell> negative </cell><cell> 0 </cell><cell> positive  </cell>
+</row><row>
+<cell></cell><cell> concave down </cell><cell> <line>inflection</line><line> point</line> </cell><cell>
+concave up </cell>
+</row>
+</tabular>
+</sidebyside>
+
+</li>
+</ul></p>
+</li>
+</ol>
+</p>
+
+<p>Here is a sketch of the graph <m>y=f(x)</m>.</p>
+
+<sidebyside width="80%">
+<image source="text/figs/j_sketch3"/>
+</sidebyside>
+
+<p> It is hard to see the inflection point at <m>x=1</m>,
+<m>y=f(1)=\frac{1}{ \root{3}\of{25} }</m>
+in the above sketch. So here is a blow up of the part of the sketch
+around <m>x=1</m>.
+</p>
+
+<sidebyside width="66%">
+<image source="text/figs/j_sketch3b"/>
+</sidebyside>
+<p> And if we zoom in even more we have</p>
+
+<sidebyside width="66%">
+<image source="text/figs/j_sketch3c"/>
+</sidebyside>
+
+
+</example>
+
+</subsection>
+
+<xi:include href="../problems/prob_s3.6.xml" />
+
+</section>

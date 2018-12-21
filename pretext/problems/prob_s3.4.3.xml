@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_second_approx"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+The quadratic approximation of a function <m>f(x)</m> about <m>x=3</m> is
+<me>
+f(x) \approx -x^2+6x </me>
+</p>
+
+<p>What are the values of
+<m>f(3)</m>, <m>f'(3)</m>, <m>f''(3)</m>, and <m>f'''(3)</m>?
+</p></statement>
+<hint><p>
+If <m>Q(x)</m> is the quadratic approximation of <m>f</m> about <m>3</m>, then
+<m>Q(3)=f(3)</m>, <m>Q'(3)=f'(3)</m>, and <m>Q''(3)=f''(3)</m>.
+</p></hint>
+<answer><p>
+<m>f(3)=9</m>, <m>f'(3)=0</m>, <m>f''(3)=-2</m>; there is not enough information to know <m>f'''(3)</m>.
+</p></answer>
+<solution><p>
+If <m>Q(x)</m> is the quadratic approximation of <m>f</m> about <m>3</m>, then
+<m>Q(3)=f(3)</m>, <m>Q'(3)=f'(3)</m>, and <m>Q''(3)=f''(3)</m>.
+There is no guarantee that <m>f(x)</m> and <m>Q(x)</m> share the same third derivative, though, so we do not have enough information to know <m>f'''(3)</m>.
+<md>
+<mrow>
+f(3)&amp;=-3^2+6(3)=9
+</mrow><mrow>
+f'(3)&amp;=\left.\diff{}{x}\left\{-x^2+6x\right\}\right|_{x=3}=\left.-2x+6\right|_{x=3}=0
+</mrow><mrow>
+f''(3)&amp;=\left.\ddiff{2}{}{x}\left\{-x^2+6x\right\}\right|_{x=3}=
+\left.\diff{}{x}\left\{-2x+6\right\}\right|_{x=3}=-2
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Give a quadratic approximation of <m>f(x)=2x+5</m> about <m>x=a</m>.
+</p></statement>
+<hint><p>
+It is a very good approximation.
+</p></hint>
+<answer><p>
+ <m>f(x) \approx 2x+5</m>
+</p></answer>
+<solution><p>
+The quadratic approximation of <m>f(x)</m> about <m>x=a</m> is
+<md>
+<mrow>
+f(x) &amp;\approx f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2
+</mrow>
+<intertext>We subsitute <m>f(a)=2a+5</m>, <m>f'(a)=2</m>, and <m>f''(a)=0</m>:</intertext><mrow>
+f(x) &amp;\approx (2a+5)+2(x-a)=2x+5
+</mrow>
+</md>
+So, our approximation is <m>f(x) \approx 2x+5</m>.
+</p>
+
+<p>Remark: Our approximation is exact for every value of <m>x</m>. This will always happen with a quadratic approximation of a function that is quadratic, linear, or constant.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Use a quadratic approximation to estimate <m>\log(0.93)</m>.
+</p></statement>
+<hint><p>
+Approximate <m>f(x)=\log x</m>.
+</p></hint>
+<answer><p>
+<m>\log(0.93) \approx -0.07245</m>
+</p></answer>
+<solution><p>
+We approximate the function <m>f(x)=\log x</m> about the point <m>x=1</m>. We choose 1 because it is close to <m>0.93</m>, and we can evaluate <m>f(x)</m> and its first two derivatives at <m>x=1</m>.
+<md>
+<mrow>
+f(1)&amp;=0
+</mrow><mrow>
+f'(x)&amp;=\frac{1}{x}\qquad \Rightarrow \qquad f'(1)=1
+</mrow><mrow>
+f''(x)&amp;=\frac{-1}{x^2} \qquad \Rightarrow \qquad f''(1)=-1
+</mrow>
+<intertext>So,</intertext><mrow>
+f(x) &amp;\approx f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2
+</mrow><mrow>
+&amp;=0+(x-1)-\frac{1}{2}(x-1)^2
+</mrow>
+<intertext>When <m>x=0.93</m>:</intertext><mrow>
+f(0.93) &amp;\approx (0.93-1)-\frac{1}{2}(0.93-1)^2=-0.07-\frac{1}{2}(0.0049)=-0.07245
+</mrow>
+</md>
+</p>
+
+<p>We estimate <m>\log(0.93) \approx -0.07245</m>.
+</p>
+
+<p>Remark: a calculator approximates <m>\log(0.93) \approx -0.07257</m>. We're pretty close.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Use a quadratic approximation to estimate <m>\cos\left(\dfrac{1}{15}\right)</m>.
+</p></statement>
+<hint><p>
+You'll probably want to centre your approximation about <m>x=0</m>.
+</p></hint>
+<answer><p>
+<m>\cos\left(\dfrac{1}{15}\right )\approx \dfrac{449}{450}</m>
+</p></answer>
+<solution><p>
+We approximate the function <m>f(x)=\cos x</m>.
+We can easily evaluate <m>\cos x</m> and <m>\sin x</m> (<m>\sin x</m> will appear in the first derivative) at <m>x=0</m>, and 0 is quite close to <m>\dfrac{1}{15}</m>, so we centre our approximation about <m>x=0</m>.
+<md>
+<mrow>
+f(0)&amp;=1
+</mrow><mrow>
+f'(x)&amp;=-\sin x
+</mrow><mrow>
+f'(0)&amp;=-\sin(0)=0
+</mrow><mrow>
+f''(x)&amp;=-\cos x
+</mrow><mrow>
+f''(0)&amp;=-\cos(0)=-1
+</mrow>
+<intertext>Using the quadratic approximation <m>f(x) \approx f(0)+f'(0)(x-0)+\frac{1}{2}f''(0)(x-0)^2</m>:</intertext><mrow>
+f(x)&amp;\approx 1 -\frac{1}{2}x^2
+</mrow><mrow>
+f\left(\frac{1}{15}\right)&amp;\approx 1-\frac{1}{2\cdot 15^2}=\frac{449}{450}
+</mrow>
+</md>
+We approximate <m>\cos\left(\dfrac{1}{15}\right)\approx\dfrac{449}{450} </m>.
+</p>
+
+<p>Remark: <m>\dfrac{449}{450}= 0.99\overline{77}</m>, while a calculator gives
+<m>\cos\left(\frac{1}{15}\right )\approx 0.9977786</m>. Our approximation has an error of about <m>0.000001</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Calculate the quadratic approximation of <m>f(x)=e^{2x}</m> about <m>x=0</m>.
+</p></statement>
+<hint><p>
+The quadratic approximation of a function <m>f(x)</m> about <m>x=a</m> is
+<me>
+f(x) \approx f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2</me>
+</p></hint>
+<answer><p>
+<m>e^{2x}\approx 1+2x+2x^2</m>
+</p></answer>
+<solution><p>
+The quadratic approximation of a function <m>f(x)</m> about <m>x=a</m> is
+<md>
+<mrow>f(x) &amp;\approx f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2
+</mrow>
+<intertext>We compute derivatives.</intertext><mrow>
+f(0)&amp;=e^0=1
+</mrow><mrow>
+f'(x)&amp;=2e^{2x}
+</mrow><mrow>
+f'(0)&amp;=2e^0=2
+</mrow><mrow>
+f''(x)&amp;=4e^{2x}
+</mrow><mrow>
+f''(0)&amp;=4e^0=4
+</mrow>
+<intertext>Substituting:</intertext><mrow>
+f(x) &amp;\approx 1+2(x-0)+\frac{4}{2}(x-0)^2
+</mrow><mrow>f(x) &amp;\approx 1+2x+2x^2
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Use a quadratic approximation to estimate <m>5^{\tfrac{4}{3}}</m>.
+</p></statement>
+<hint><p>
+One way to go about this is to approximate the function
+     <m>f(x) = 5 \cdot x^{1/3}</m> , because then
+     <m>5^{4/3} = 5 \cdot 5^{1/3} =f(5)</m>.
+</p></hint>
+<answer><p>
+One approximation: <m>e^{\tfrac{4}{3}}\approx\dfrac{275}{32}</m>
+</p></answer>
+<solution><p>
+There are a few functions we could choose to approximate. For example:
+<ul>
+<li> <m>f(x)=x^{4/3}</m>. In this case, we would probably choose to approximate <m>f(x)</m> about <m>x=8</m> (since 8 is a cube, <m>8^{4/3}=2^4=16</m> is something we can evaluate) or <m>x=1</m>.
+</li>
+<li> <m>f(x)=5^{x}</m>. We can easily figure out <m>f(x)</m> when <m>x</m> is a whole number, so we would want to centre our approximation around some whole number <m>x=a</m>, but then
+<m>f'(a)=5^a\log(5)</m> gives us a problem: without a calculator, it's hard to know what <m>\log(5)</m> is.
+</li>
+<li> Since <m>5^{4/3}=5\sqrt[3]{5}</m>, we can use <m>f(x)=5\sqrt[3]{x}</m>. As in the first bullet, we would centre about <m>x=8</m>, or <m>x=1</m>.
+</li>
+</ul>
+There isn't much difference between the first and third bullets. We'll go with <m>f(x)=5\sqrt[3]{x}</m>, centred about <m>x=8</m>.
+<md>
+<mrow>
+f(x)&amp;=5x^{\frac{1}{3}}&amp;&amp;\Rightarrow&amp;
+f(8)&amp;=5\cdot 2 = 10
+</mrow><mrow>
+f'(x)&amp;=\frac{5}{3}x^{-\frac{2}{3}}&amp;&amp;\Rightarrow&amp;
+f'(8)&amp;=\frac{5}{3}\left(2^{-2}\right)=\frac{5}{12}
+</mrow><mrow>
+f''(x)&amp;=\frac{5}{3}\left(-\frac{2}{3}\right)x^{-\frac{5}{3}}=-\frac{10}{9}x^{-\frac{5}{3}}&amp;&amp;\Rightarrow&amp;
+f''(8)&amp;=-\frac{10}{9}\left(2^{-5}\right)=-\frac{5}{144}
+</mrow>
+<intertext>Using the quadratic approximation <m>f(x) \approx f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2</m>:</intertext><mrow>
+f(x)&amp;\approx 10+\frac{5}{12}(x-8)-\frac{5}{288}(x-8)^2
+</mrow><mrow>
+f(5)&amp;\approx 10+\frac{5}{12}(-3)-\frac{5}{288}(9)=\frac{275}{32}
+</mrow>
+</md>
+We estimate <m>5^{4/3}\approx\dfrac{275}{32}</m>
+</p>
+
+<p>Remark: <m>\dfrac{275}{32} = 8.59375</m>, and
+a calculator gives <m>5^{4/3}\approx 8.5499</m>. Although 5 and 8 are somewhat far apart, our estimate is only off by about <m>0.04</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate the expressions below.
+<ol label="a">
+<li xml:id="s4_3_4sigma1"> <m>\ds\sum_{n=5}^{30} 1</m>
+</li>
+<li xml:id="s4_3_4sigma2"> <m>\ds\sum_{n=1}^{3} \left[ 2(n+3)-n^2 \right]</m>
+</li>
+<li xml:id="s4_3_4sigma3"> <m>\ds\sum_{n=1}^{10} \left[\frac{1}{n}-\frac{1}{n+1}\right]</m>
+</li>
+<li xml:id="s4_3_4sigma4"> <m>\ds\sum_{n=1}^{4}\frac{5\cdot 2^n}{4^{n+1}} </m>
+</li>
+</ol>
+</p></statement>
+<hint><p>
+For <xref ref="s4_3_4sigma3"/>, look for cancellations.
+</p></hint>
+<answer><p> <xref ref="s4_3_4sigma1"/> <m>26</m>
+</p>
+<p>
+<xref ref="s4_3_4sigma2"/> <m>16</m>
+</p>
+<p>
+<xref ref="s4_3_4sigma3"/> <m>\dfrac{10}{11}</m>
+</p>
+<p>
+<xref ref="s4_3_4sigma4"/> <m>\dfrac{75}{64}</m>
+</p></answer>
+<solution><p>
+<ul>
+<li><p>[<xref ref="s4_3_4sigma1"/>]
+For every value of <m>n</m>, the term being added is simply the constant <m>1</m>. So, <m>\ds\sum_{n=5}^{30} 1 = 1+1+\cdots+1</m>. The trick is figuring out how many 1s are added. Our index <m>n</m> takes on all integers from 5 to 30, <em>including</em> 5 and 30, which is 26 numbers. So, <m>\ds\sum_{n=5}^{30}=26</m>.
+</p>
+
+<p>If you're having a hard time seeing why the sum is 26, instead of 25, think of it this way: there are thirty numbers in the collection <m>\{1,2,3,4,5,6,\ldots,29,30\}</m>. If we remove the first four, we get <m>30-4=26</m> numbers in the collection <m>\{5,6,\ldots,30\}</m>.
+</p>
+</li>
+<li><p>[<xref ref="s4_3_4sigma2"/>]
+<md>
+<mrow>
+\sum_{n=1}^3\left[2(n+3)-n^2\right]&amp;=
+\underbrace{2(1+3)-1^2}_{n=1}+
+\underbrace{2(2+3)-2^2}_{n=2}+
+\underbrace{2(3+3)-3^2}_{n=3}
+</mrow><mrow>
+&amp;=8-1+10-4+12-9=16
+</mrow>
+</md>
+</p>
+</li>
+<li><p>[<xref ref="s4_3_4sigma3"/>]
+<md>
+<mrow>
+\ds\sum_{n=1}^{10} \left[\frac{1}{n}-\frac{1}{n+1}\right]&amp;=
+\underbrace{\frac{1}{1}-\frac{1}{1+1}}_{n=1}+
+\underbrace{\frac{1}{2}-\frac{1}{2+1}}_{n=2}+
+\underbrace{\frac{1}{3}-\frac{1}{3+1}}_{n=3}+
+\underbrace{\frac{1}{4}-\frac{1}{4+1}}_{n=4}+
+\underbrace{\frac{1}{5}-\frac{1}{5+1}}_{n=5}
+</mrow><mrow>
+&amp;+
+\underbrace{\frac{1}{6}-\frac{1}{6+1}}_{n=6}+
+\underbrace{\frac{1}{7}-\frac{1}{7+1}}_{n=7}+
+\underbrace{\frac{1}{8}-\frac{1}{8+1}}_{n=8}+
+\underbrace{\frac{1}{9}-\frac{1}{9+1}}_{n=9}+
+\underbrace{\frac{1}{10}-\frac{1}{10+1}}_{n=10}
+</mrow>
+<intertext>Most of these cancel!</intertext><mrow>
+&amp;=\frac{1}{1}\underbrace{-\frac{1}{2}+\frac{1}{2}}_0
+\underbrace{-\frac{1}{3}+\frac{1}{3}}_0
+\underbrace{-\frac{1}{4}+\frac{1}{4}}_0
+\underbrace{-\frac{1}{5}+\frac{1}{5}}_0
+\underbrace{-\frac{1}{6}+\frac{1}{6}}_0
+</mrow><mrow>
+&amp;\underbrace{-\frac{1}{7}+\frac{1}{7}}_0
+\underbrace{-\frac{1}{8}+\frac{1}{8}}_0
+\underbrace{-\frac{1}{9}+\frac{1}{9}}_0
+\underbrace{-\frac{1}{10}+\frac{1}{10}}_0
+-\frac{1}{11}
+</mrow><mrow>
+&amp;=1-\frac{1}{11}=\frac{10}{11}
+</mrow>
+</md>
+</p>
+</li>
+<li><p>[<xref ref="s4_3_4sigma4"/>]
+<md>
+<mrow>
+\ds\sum_{n=1}^{4}\frac{5\cdot 2^n}{4^{n+1}} &amp;=
+5\sum_{n=1}^{4}\frac{2^n}{4\cdot 4^n}=\frac{5}{4}\sum_{n=1}^4\frac{2^n}{4^n}
+=\frac{5}{4}\sum_{n=1}^4\frac{1}{2^n}
+</mrow><mrow>
+&amp;=\frac{5}{4}\left(
+\underbrace{\frac{1}{2}}_{n=1}+
+\underbrace{\frac{1}{4}}_{n=2}+
+\underbrace{\frac{1}{8}}_{n=3}+
+\underbrace{\frac{1}{16}}_{n=4}
+\right)=\frac{75}{64}
+</mrow>
+</md>
+</p>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Write the following in sigma notation:
+<ol label="a">
+<li> <m>1+2+3+4+5</m>
+</li>
+<li> <m>2+4+6+8</m>
+</li>
+<li> <m>3+5+7+9+11</m>
+</li>
+<li> <m>9+16+25+36+49</m>
+</li>
+<li> <m>9+4+16+5+25+6+36+7+49+8</m>
+</li>
+<li> <m>8+15+24+35+48</m>
+</li>
+<li> <m>3-6+9-12+15-18</m>
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Compare (c) to (b).
+</p>
+<p>Compare (e) and (f) to (d).
+</p>
+<p>
+To get an alternating sign, consider  powers of <m>(-1)</m>.
+</p></hint>
+<answer><p>
+For each of these, there are many solutions. We provide some below.
+<ol label="a">
+<li> <m>1+2+3+4+5 = \ds\sum_{n=1}^5n</m>
+</li>
+<li> <m>2+4+6+8=\ds\sum_{n=1}^42n</m>
+</li>
+<li> <m>3+5+7+9+11=\ds\sum_{n=1}^{5}(2n+1)</m>
+</li>
+<li> <m>9+16+25+36+49=\ds\sum_{n=3}^7 n^2</m>
+</li>
+<li> <m>9+4+16+5+25+6+36+7+49+8=\ds\sum_{n=3}^7 (n^2+n+1)</m>
+</li>
+<li> <m>8+15+24+35+48= \ds\sum_{n=3}^7 (n^2-1)</m>
+</li>
+<li> <m>3-6+9-12+15-18=\ds\sum_{n=1}^6 (-1)^{n+1}3n</m>
+</li>
+</ol>
+</p></answer>
+<solution><p>
+For each of these, there are many solutions. We provide some below.
+<ol label="a">
+<li> <m>1+2+3+4+5 = \ds\sum_{n=1}^5n</m>
+</li>
+<li> <m>2+4+6+8=\ds\sum_{n=1}^4 2n</m>
+</li>
+<li> <m>3+5+7+9+11=\ds\sum_{n=1}^{5}(2n+1)</m>
+</li>
+<li> <m>9+16+25+36+49=\ds\sum_{n=3}^7 n^2</m>
+</li>
+<li> <m>9+4+16+5+25+6+36+7+49+8=\ds\sum_{n=3}^7 (n^2+n+1)</m>
+</li>
+<li> <m>8+15+24+35+48= \ds\sum_{n=3}^7 (n^2-1)</m>
+</li>
+<li><p> <m>3-6+9-12+15-18=\ds\sum_{n=1}^6 (-1)^{n+1}3n</m></p>
+<p> Remark: if we had written <m>(-1)^n</m> instead of <m>(-1)^{n+1}</m>, with everything else the same, the signs would have been reversed.</p>
+</li>
+</ol>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Use a quadratic approximation of <m>f(x)=2\arcsin x</m> about <m>x=0</m> to approximate <m>f(1)</m>. What number are you approximating?
+</p></statement>
+<hint><p>
+You can evaluate <m>f(1)</m> exactly. Recall <m>\ds\diff{}{x}\arcsin x = \dfrac{1}{\sqrt{1-x^2}}</m>.
+</p></hint>
+<answer><p>
+<m>f(1) \approx 2</m>, <m>f(1)=\pi</m>
+</p></answer>
+<solution><p>
+Let's start by taking the first two derivative of <m>f(x)</m>.
+<md>
+<mrow>
+f(x)&amp;=2\arcsin x&amp;&amp;\Rightarrow&amp;
+f(0)&amp;=2(0)=0
+</mrow><mrow>
+f'(x)&amp;=\frac{2}{\sqrt{1-x^2}}&amp;&amp;\Rightarrow&amp;
+f'(0)&amp;=\frac{2}{1}=2
+</mrow><mrow>
+f''(x)&amp;=\diff{}{x}\left\{2(1-x^2)^{-\tfrac{1}{2}}\right\}
+</mrow><mrow>
+&amp;=2\left(-\tfrac{1}{2}\right)(1-x^2)^{-\tfrac{3}{2}}(-2x) \qquad\mbox{(chain rule)}
+</mrow><mrow>
+&amp;=\frac{2x}{\left(\sqrt{1-x^2}\right)^3}&amp;&amp;\Rightarrow&amp;
+f''(0)&amp;=0
+</mrow>
+<intertext>Now, we can find the quadratic approximation about <m>x=0</m>.</intertext><mrow>
+f(x)&amp;\approx f(0)+f'(0)x+\frac{1}{2}f''(0)x^2
+</mrow><mrow>
+&amp;=2x
+</mrow><mrow>
+f(1)&amp; \approx 2
+</mrow>
+</md>
+Our quadratic approximation gives <m>2\arcsin(1) \approx 2</m>. However, <m>2\arcsin(1)</m> is exactly equal to <m>2\left(\dfrac{\pi}{2}\right)=\pi</m>. We've just made the rather unfortunate approximation <m>\pi \approx 2</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Use a quadratic approximation of <m>e^x</m> to estimate <m>e</m> as a decimal.
+</p></statement>
+<hint><p>
+Let <m>f(x)=e^x</m>, and use the quadratic approximation of <m>f(x)</m> about <m>x=0</m> (given in your text, or you can reproduce it) to approximate <m>f(1)</m>.
+</p></hint>
+<answer><p>
+<m>e\approx 2.5</m>
+</p></answer>
+<solution><p>
+From the text, the quadratic approximation of <m>e^x</m> about <m>x=0</m> is
+<me>
+e^x \approx 1+x+\frac{1}{2}x^2</me>
+</p>
+
+<p>So,
+<me>
+e=e^1 \approx 1+1+\frac{1}{2}=2.5</me>
+</p>
+
+<p>We estimate <m>e \approx 2.5</m>.
+</p>
+
+<p>Remark: actually, <m>e \approx 2.718</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Group the expressions below into collections of equivalent expressions.
+<ol label="a">
+<li xml:id="s3_4_3equiv1"> <m>\ds\sum_{n=1}^{10} 2n</m>
+</li>
+<li xml:id="s3_4_3equiv5"> <m>\ds\sum_{n=1}^{10} 2^n</m>
+</li>
+<li xml:id="s3_4_3equiv7">  <m>\ds\sum_{n=1}^{10} n^2</m>
+</li>
+<li xml:id="s3_4_3equiv2"> <m>2\ds\sum_{n=1}^{10} n</m>
+</li>
+<li xml:id="s3_4_3equiv3"> <m>2\ds\sum_{n=2}^{11} (n-1)</m>
+</li>
+<li xml:id="s3_4_3equiv10"> <m>\ds\sum_{n=5}^{14} (n-4)^2</m>
+</li>
+<li xml:id="s3_4_3equiv6"> <m>\dfrac{1}{4}\ds\sum_{n=1}^{10}\left( \frac{4^{n+1}}{2^n}\right)</m>
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Be wary of indices: for example <m>\ds\sum_{n=1}^3 n = \ds\sum_{n=5}^7 (n-4)</m>.
+</p></hint>
+<answer><p> [<xref ref="s3_4_3equiv1"/>=<xref ref="s3_4_3equiv2"/>=
+<xref ref="s3_4_3equiv3"/>], and
+[<xref ref="s3_4_3equiv5"/>=<xref ref="s3_4_3equiv6"/>], and
+[<xref ref="s3_4_3equiv7"/>=<xref ref="s3_4_3equiv10"/>]
+</p></answer>
+<solution><p>
+<ul>
+<li><p> First, we'll show that <xref ref="s3_4_3equiv1"/>,<xref ref="s3_4_3equiv2"/>, <xref ref="s3_4_3equiv3"/> are equivalent:
+<md>
+<mrow>
+<xref ref="s3_4_3equiv2"/>&amp;=2\sum_{n=1}^{10} n = 2(1+2+\cdots+10)=
+2(1)+2(2)+\cdots +2(10)=\sum_{n=1}^{10} 2n = <xref ref="s3_4_3equiv1"/>
+</mrow>
+<intertext>So <xref ref="s3_4_3equiv1"/> and <xref ref="s3_4_3equiv2"/> are equivalent.</intertext>
+<mrow>
+<xref ref="s3_4_3equiv3"/>&amp;=2\ds\sum_{n=2}^{11} (n-1)=2(1+2+\cdots + 10) = <xref ref="s3_4_3equiv2"/>
+</mrow>
+</md>
+So <xref ref="s3_4_3equiv3"/> and <xref ref="s3_4_3equiv2"/> are equivalent.
+</p>
+</li>
+<li><p>Second, we'll show that <xref ref="s3_4_3equiv5"/> and <xref ref="s3_4_3equiv6"/> are equivalent.
+<md>
+<mrow>
+<xref ref="s3_4_3equiv6"/>&amp;=\dfrac{1}{4}\ds\sum_{n=1}^{10}\left( \frac{4^{n+1}}{2^n}\right)
+=\frac{1}{4}\sum_{n=1}^{10}\left(\frac{4\cdot4^n}{2^n}\right)
+=\frac{4}{4}\sum_{n=1}^{10}\left(\frac{4^n}{2^n}\right)
+=\sum_{n=1}^{10}\left(\frac{4}{2}\right)^n
+=\sum_{n=1}^{10} 2^n=<xref ref="s3_4_3equiv5"/>&amp;
+</mrow>
+</md>
+</p></li>
+<li><p>
+Third, we'll show that <xref ref="s3_4_3equiv7"/> and <xref ref="s3_4_3equiv10"/> are equivalent.
+<md>
+<mrow>
+<xref ref="s3_4_3equiv10"/>  =\ds\sum_{n=5}^{14} (n-4)^2
+=1^2+2^2+\cdots + 10^2
+  =\ds\sum_{n=1}^{10} n^2=<xref ref="s3_4_3equiv7"/>
+</mrow>
+</md>
+</p>
+</li>
+<li><p> Now, we have three groups, where each group consists of equivalent expressions. To be quite thorough, we should show that no two of these groups contain expressions that are secretly equivalent. They would be hard to evaluate, but we can bound them and show that no two expressions in two separate groups could possibly be equivalent.
+Notice that
+<md>
+<mrow>
+\color{red}\sum_{n=1}^{10} 2^n &amp;=2^1+2^2+\cdots + 2^{10}  \gt  2^{10}=1024
+</mrow><mrow>
+\color{green} \sum_{n=1}^{10} n^2 &amp; \lt \sum_{n=1}^{10} 10^2 = 10(100)=1000
+</mrow><mrow>
+\color{green} \sum_{n=1}^{10} n^2 &amp;=1^2+2^2+\cdots 8^2+9^2+10^2  \gt  8^2+9^2+10^2=245
+</mrow><mrow>
+\color{blue}\sum_{n=1}^{10} 2n &amp; \lt \sum_{n=1}^{10}20 = 200
+</mrow>
+</md>
+The expressions in the blue group add to less than 200, but the expressions in the green group add to more than 245, and the expressions in the red group add to more than 1024, so the blue groups expressions can't possibly simplify to the same number as the red and green group expressions.
+</p>
+
+<p>The expressions in the green group add to less than 1000. Since the expressions in the red group add to more than 1024, the expressions in the green and red groups can't possibly simplify to the same numbers.</p>
+</li>
+</ul>
+We group our expressions in to collections of equivalent expressions as follows:
+[<xref ref="s3_4_3equiv1"/>=<xref ref="s3_4_3equiv2"/>=<xref ref="s3_4_3equiv3"/>]
+and
+[<xref ref="s3_4_3equiv5"/>=<xref ref="s3_4_3equiv6"/>],
+and
+[<xref ref="s3_4_3equiv7"/>=<xref ref="s3_4_3equiv10"/>].
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

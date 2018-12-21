@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_carbon"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+Which of the following is a differential equation for an unknown function <m>y</m> of <m>x</m>?
+<me>
+\mbox{(a) } y=\diff{y}{x}
+\qquad\mbox{(b) } \diff{y}{x}=3\left[y-5\right]
+\qquad\mbox{(c) } y=3\left[y-\diff{x}{x}\right]
+\qquad\mbox{(d) } e^x=e^y+1
+\qquad\mbox{(e) } y=10e^x</me>
+</p>
+
+</statement>
+<hint><p>
+Review the definition of a differential equation at the beginning of this section.
+</p></hint>
+<answer><p> (a), (b)
+</p></answer>
+<solution><p>
+In the beginning of this section, the text says <q>A differential equation is an equation for an unknown function that involves the derivative
+of the unknown function.</q> Our unknown function is <m>y</m>, so a differential equation is an equation that relates <m>y</m> and <m>\ds\diff{y}{x}</m>. This applies to (a) and (b), but not (c), (d), or (e).
+</p>
+
+<p>Note that <m>\ds\diff{x}{x}=1</m>: this is the derivative of <m>x</m> with respect to <m>x</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Which of the following functions <m>Q(t)</m> satisfy the differential equation <m>Q(t)=5\ds\diff{Q}{t}</m>?
+<me>
+\mbox{(a) } Q(t)=0\qquad
+\mbox{(b) } Q(t)=5e^t\qquad
+\mbox{(c) } Q(t)=e^{5t}\qquad
+\mbox{(d) } Q(t)=e^{t/5}\qquad
+\mbox{(e) } Q(t)=e^{t/5}+1</me>
+</p>
+
+</statement>
+<hint><p>
+You can test whether a given function solves a differential equation
+      by substituting the function into the equation.
+</p></hint>
+<answer><p> (a), (d)
+</p></answer>
+<solution><p>
+Theorem<nbsp/><xref ref="thm_growthDEsoln"/> tells us that a function is a solution to the differential equation <m>\ds\diff{Q}{t}=kQ(t)</m> if and only if the function has the form <m>Q(t)=Ce^{kt}</m> for some constant <m>C</m>. In our case, we want <m>Q(t)=5\ds\diff{Q}{t}</m>, so <m>\ds\diff{Q}{t}=\dfrac{1}{5}Q(t)</m>. So, the theorem tells us that the solutions are the functions of the form <m>Q(t)=Ce^{t/5}</m>. This applies to (a) (with <m>C=0</m>) and (d) (with <m>C=1</m>), but none of the other functions.
+</p>
+
+<p>We don't actually need a theorem to answer this question, though: we can just test every option.
+<ul>
+<li>[(a)] <m>\ds\diff{Q}{t}=0</m>, so <m>Q(t)=0=5\cdot 0 = 5\ds\diff{Q}{t}</m>, so (a) is a solution.
+</li>
+<li>[(b)] <m>\ds\diff{Q}{t}=5e^t=Q(t)</m>, so <m>Q(t)=\ds\diff{Q}{t} \neq 5 \ds\diff{Q}{t}</m>, so (b) is not a solution.
+</li>
+<li>[(c)] <m>\ds\diff{Q}{t}=5e^{5t}=5Q(t)</m>, so <m>Q(t)=\dfrac{1}{5}\ds\diff{Q}{t}\neq5\ds\diff{Q}{t}</m>, so (c) is not a solution.
+</li>
+<li>[(d)] <m>\ds\diff{Q}{t}=\frac{1}{5}e^{t/5}=\frac{1}{5}Q(t)</m>, so
+<m>Q(t)=5\ds\diff{Q}{t}</m>, so (d) is a solution.
+</li>
+<li>[(e)] <m>\ds\diff{Q}{t}=\frac{1}{5}e^{t/5}=\frac{1}{5}\left(Q(t)-1\right)</m>, so
+<m>Q(t)=5\ds\diff{Q}{t}+1</m>, so (e) is not a solution.
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Suppose a sample starts out with <m>C</m> grams of a radioactive isotope, and the amount of
+the radioactive isotope left in the sample at time <m>t</m> is given by
+<me>
+Q(t)=Ce^{-kt}</me>
+</p>
+
+<p>for some positive constant <m>k</m>. When will <m>Q(t)=0</m>?
+</p></statement>
+<hint><p>
+Solve <m>0=Ce^{-kt}</m> for <m>t</m>.
+</p></hint>
+<answer><p>
+If <m>C=0</m>, then there was none to start out with, and <m>Q(t)=0</m> for all values of <m>t</m>.
+</p>
+<p>
+If <m>C \neq 0</m>, then <m>Q(t)</m> will never be 0 (but as <m>t</m> gets bigger and bigger, <m>Q(t)</m> gets closer and closer to 0).
+</p></answer>
+<solution><p>
+What we're asked to find is when
+<md>
+<mrow>
+Q(t)&amp;=0
+</mrow>
+<intertext>That is,</intertext><mrow>
+Ce^{-kt}&amp;=0
+</mrow>
+</md>
+If <m>C=0</m>, then this is the case for all <m>t</m>. There was no isotope to begin with, and there will continue not being any undecayed isotope forever.
+</p>
+
+<p>If <m>C \gt 0</m>, then since <m>e^{-kt} \gt 0</m>, also <m>Q(t) \gt 0</m>: so <m>Q(t)</m> is never 0 for any value of <m>t</m>.
+(But as <m>t</m> gets bigger and bigger, <m>Q(t)</m> gets closer and closer to 0.)
+</p>
+
+<p>Remark: The last result is somewhat disturbing: surely at some point the last atom has decayed. The differential equation we use is a model that assumes <m>Q</m> runs continuously. This is a good approximation only
+      when there is a very large number of atoms. In practice, that is
+      almost always the case.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+Consider a function of the form <m>f(x) = A e^{kx}</m> where <m>A</m> and <m>k</m> are constants.
+If <m>f(0)=5</m> and <m>f(7)=\pi</m>, find the constants <m>A</m> and <m>k</m>.
+</p></statement>
+<hint><p> No calculus here--just a review of the algebra of exponentials.
+</p></hint>
+<answer><p>  <m>A=5</m>, <m>k = \dfrac{1}{7} \cdot \log\left(\pi/5\right)</m>
+</p></answer>
+<solution><p>
+The two pieces of information give us
+<md>
+<mrow>
+  f(0) &amp;= A = 5 &amp; f(7) &amp;= A e^{7k}=\pi
+</mrow>
+</md>
+Thus we know that <m>A=5</m> and so <m>\pi = f(7) = 5e^{7k}</m>. Hence
+<md>
+<mrow>
+  e^{7k} &amp;= \frac{\pi}{5}
+</mrow><mrow>
+  7k &amp;= \log(\pi/5)
+</mrow><mrow>
+  k &amp;= \frac{1}{7} \cdot \log(\pi/5).
+</mrow>
+</md>
+where we use <m>\log</m> to mean natural logarithm, <m>\log_e</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2007H</fromexam></title>
+<statement><p>
+ Find the function <m>y(t)</m> if <m>\ds\diff{y}{t} +3y = 0</m>, <m>y(1) = 2</m>.
+</p></statement>
+<hint><p>
+Use Theorem<nbsp/><xref ref="thm_growthDEsoln"/>.
+</p></hint>
+<answer><p>
+<m>y(t)=2e^{-3(t-1)}</m>, or equivalently, <m>y(t)=2e^3e^{-3t}</m>
+</p></answer>
+<solution><p>
+In Theorem<nbsp/><xref ref="thm_growthDEsoln"/>, we saw that if <m>y</m> is a function of <m>t</m>, and
+<m>\ds\diff{y}{t}=-ky</m>, then
+<m>y=Ce^{-kt}</m> for some constant <m>C</m>.
+</p>
+
+<p>Our equation <m>y</m> satisfies <m>\ds\diff{y}{t}=-3y</m>, so the theorem tells us <m>y=Ce^{-3t}</m> for some constant <m>C</m>.
+</p>
+
+<p>We are also told that <m>y(1)=2</m>. So, <m>2=Ce^{-3 \times 1}</m> tells us <m>C=2e^3</m>. Then:
+<me>
+y=2e^{3}\cdot e^{-3t}=2e^{-3(t-1)}.</me>
+</p>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A sample of bone belongs to an animal that died 10,000 years ago. If the bone contained
+5 <m>\mu</m>g of Carbon-14 when the animal died, how much Carbon-14 do you expect it to have now?
+</p></statement>
+<hint><p>
+From the text, we see the half-life of Carbon-14 is 5730 years. A microgram (<m>\mu</m>g) is one-millionth of a gram, but you don't need to know that to solve this problem.
+</p></hint>
+<answer><p>
+<m>5\cdot 2^{-\tfrac{10000}{5730}}\approx 1.5\;\mu g</m>
+</p></answer>
+<solution><p>
+The amount of Carbon-14 in the sample <m>t</m> years after the animal died will be
+<me>
+Q(t)=5e^{-kt}</me>
+</p>
+
+<p>for some constant <m>k</m> (where 5 is the amount of Carbon-14 in the sample at time <m>t=0</m>). So, the answer we're looking for is <m>Q(10000)</m>. We need to replace <m>k</m> with an actual number to evaluate <m>Q(10000)</m>, and the key to doing this is the half-life. The text tells us that the half-life of Carbon-14 is 5730 years, so we know:
+<md>
+<mrow>
+Q(5730)&amp;=\frac{5}{2}
+</mrow><mrow>
+5e^{-k\cdot5730}&amp;=\frac{5}{2}
+</mrow><mrow>
+\left(e^{-k}\right)^{5730}&amp;=\frac{1}{2}
+</mrow><mrow>
+e^{-k}&amp;=\sqrt[5730]{\frac{1}{2}}=2^{-\tfrac{1}{5730}}
+</mrow>
+<intertext>So:</intertext><mrow>
+Q(t)&amp;=5\left(e^{-k}\right)^t
+</mrow><mrow>
+&amp;=5\cdot2^{-\tfrac{t}{5730}}
+</mrow>
+<intertext>Now, we can evaluate:</intertext><mrow>
+Q(10000)&amp;=5\cdot 2^{-\tfrac{10000}{5730}}\approx 1.5\;\mu g
+</mrow>
+</md>
+Remark: after <m>2(5730)=11,460</m> years, the sample will have been sitting for two half-lives, so its remaining Carbon-14 will be a quarter of its original amount, or <m>1.25</m> <m>\mu</m>g. It makes sense that at 10,000 years, the sample will contain slightly more Carbon-14 than at 11,460 years. Indeed, 1.5 is slightly larger than 1.25, so our answer seems plausible.
+</p>
+
+<p>It's a good habit to look for ways to quickly check whether your answer seems plausible, since a small algebra error can easily turn into a big error in your solution.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+A sample containing one gram of Radium-226 was stored in a lab 100 years ago; now the sample only contains 0.9576 grams of Radium-226. What is the half-life of Radium-226?
+</p></statement>
+<hint><p>
+The quantity of Radium-226 in the sample at time <m>t</m> will be <m>Q(t)=Ce^{-kt}</m> for some positive constants <m>C</m> and <m>k</m>. You can use the given information to find <m>C</m> and <m>e^{-k}</m>.
+</p>
+
+<p>In the following work, remember we use <m>\log</m> to mean natural logarithm, <m>\log_e</m>.
+</p></hint>
+<answer><p>
+Radium-226 has a half life of about 1600 years.
+</p></answer>
+<solution><p>
+Let 100 years ago be the time <m>t=0</m>. Then if <m>Q(t)</m> is the amount of Radium-226 in the sample, <m>Q(0)=1</m>, and
+<md>
+<mrow>
+Q(t)&amp;=e^{-kt}
+</mrow>
+<intertext>for some positive constant <m>k</m>. When <m>t=100</m>, the amount of Radium-226 left is 0.9576 grams, so</intertext><mrow>
+0.9576=Q(100)&amp;=e^{-k\cdot 100}=\left(e^{-k}\right)^{100}
+</mrow><mrow>
+e^{-k}&amp;=0.9576^{\tfrac{1}{100}}</mrow>
+<intertext>This tells us</intertext><mrow>
+Q(t)&amp;=0.9576^{\tfrac{t}{100}}
+</mrow>
+<intertext>So, if half the original amount of Radium-226 is left,</intertext><mrow>
+\frac{1}{2}&amp;=0.9576^{\tfrac{t}{100}}
+</mrow><mrow>
+\log\left(\frac{1}{2}\right)&amp;=\log\left(0.9576^{\tfrac{t}{100}}\right)
+</mrow><mrow>
+-\log 2&amp;=\frac{t}{100}\log(0.9576)
+</mrow><mrow>
+t&amp;=-100\frac{\log 2}{\log 0.9576}\approx 1600
+</mrow>
+</md>
+So, the half life of Radium-226 is about 1600 years.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>2006H</fromexam></title>
+<statement><p>
+The mass of a sample of Polonium--210, initially 6 grams,
+decreases at a rate proportional to the mass. After one year, 1 gram remains.
+What is the half--life (the time it takes for the sample to decay to half
+its original mass)?
+</p></statement>
+<hint><p>
+The fact that the mass of the sample decreases at a rate proportional to its mass tells us that, if <m>Q(t)</m> is the mass of Polonium-201, the following differential equation holds:
+<me>
+\diff{Q}{t}=-kQ(t)
+</me>
+</p>
+
+<p>where <m>k</m> is some positive constant. Compare this to Theorem<nbsp/><xref ref="thm_growthDEsoln"/>.
+</p></hint>
+<answer><p> <m>\dfrac{\log 2}{\log 6}=\log_6(2)</m> years, which is about 139 days
+</p></answer>
+<solution><p>
+Let <m>Q(t)</m> denote the mass at time <m>t</m>.
+Then <m>\ds\diff{Q}{t}</m> is the rate at which the mass is changing. Since the rate the mass is decreasing is proportional to the mass remaining, we know <m>\ds\diff{Q}{t}=-kQ(t)</m>, where <m>k</m> is a positive constant. (Remark: since <m>Q</m> is decreasing, <m>\ds\diff{Q}{t}</m> is negative. Since we cannot have a negative mass, if we choose <m>k</m> to be positive, then <m>k</m> and <m>Q</m> are both positive--this is why we added the negative sign.)
+</p>
+
+<p>The information given in the question is:
+<me>
+Q(0)=6\qquad
+\diff{Q}{t}=-kQ(t)\qquad
+Q(1)=1
+</me>
+for some constant <m>k \gt 0</m>.
+By Theorem<nbsp/><xref ref="thm_growthDEsoln"/>, we know <me>
+Q(t)=Ce^{-kt}</me>
+ for some constant <m>C</m>.
+Since <m>Q(0)=Ce^{0}=C</m>, the given information tells us <m>6=C</m>. (This is the initial mass of our sample.) So, <m>Q(t)=6e^{-kt}</m>. To get the full picture of the behaviour of <m>Q</m>, we should find <m>k</m>. We do this using the given information <m>Q(1)=1</m>:
+<md>
+<mrow>
+1&amp;=Q(1)=6e^{-k(1)}
+</mrow><mrow>
+6^{-1}=\frac{1}{6}&amp;=e^{-k}
+</mrow>
+<intertext>So, all together,</intertext><mrow>
+Q(t)&amp;=6\left(e^{-k}\right)^t=6\cdot \left(6^{-1}\right)^t=6^{1-t}
+</mrow>
+</md>
+</p>
+
+<p>The question asks us to determine the time <m>t_{h}</m> which obeys
+<m>Q(t_{h})=\dfrac{6}{2}=3</m>. Now that we know the equation for <m>Q(t)</m>, we simply solve:
+<md>
+<mrow>
+Q(t)&amp;=6^{1-t}
+</mrow><mrow>
+3=Q(t_h)&amp;=6^{1-t_{h}}
+</mrow><mrow>
+\log 3 &amp;=\log\left(6^{1-t_h}\right)=(1-t_h)\log 6
+</mrow><mrow>
+\frac{\log 3}{\log 6}&amp;=1-t_h
+</mrow><mrow>
+t_h&amp;=1-\frac{\log 3}{\log 6}=\frac{\log 6-\log 3}{\log 6}=\frac{\log 2}{\log 6}
+</mrow>
+</md>
+The half-life of Polonium-210 is <m>\dfrac{\log 2}{\log 6}</m> years, or about 141 days.
+</p>
+
+<p>Remark:  The actual half-life of Polonium-210 is closer to 138 days. The numbers in the question are made to work out nicely, at the expense of some accuracy.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Radium-221 has a half-life of 30 seconds. How long does it take for only 0.01<percent /> of an original sample to be left?
+</p></statement>
+<hint><p>
+The amount of Radium-221 in a sample at time <m>t</m> will be <m>Q(t)=Ce^{-kt}</m> for some positive constants <m>C</m> and <m>k</m>. You can leave <m>C</m> as a variable--it's the original amount in the sample, which isn't specified. What you want to find is the value of <m>t</m> such that <m>Q(t)=0.0001Q(0)=0.0001C</m>.
+</p></hint>
+<answer><p>
+<m>120\cdot\dfrac{\log 10}{\log 2}</m> seconds, or about six and a half minutes.
+</p></answer>
+<solution><p>
+The amount of Radium-221 in a sample will be
+<md>
+<mrow>
+Q(t)&amp;=Ce^{-kt}
+</mrow>
+<intertext>where <m>C</m> is the amount in the sample at time <m>t=0</m>, and <m>k</m> is some positive constant. We know the half-life of the isotope, so we can find <m>e^{-k}</m>:</intertext><mrow>
+\frac{C}{2}=Q(30)&amp;=Ce^{-k\cdot 30}
+</mrow><mrow>
+\frac{1}{2}&amp;=\left(e^{-k}\right)^{30}
+</mrow><mrow>
+2^{-\tfrac{1}{30}}&amp;=e^{-k}
+</mrow>
+<intertext>So,</intertext><mrow>
+Q(t)&amp;=C\left(e^{-k}\right)^t=C\cdot2^{-\tfrac{t}{30}}
+</mrow>
+<intertext>When only 0.01<percent /> of the original sample is left, <m>Q(t)=0.0001C</m>:</intertext><mrow>
+0.0001C=Q(t)&amp;=C\cdot 2^{-\tfrac{t}{30}}
+</mrow><mrow>
+0.0001&amp;=2^{-\tfrac{t}{30}}
+</mrow><mrow>
+\log(0.0001)&amp;=\log\left(2^{-\tfrac{t}{30}}\right)
+</mrow><mrow>
+\log\left(10^{-4}\right)&amp;=-\frac{t}{30}\log2
+</mrow><mrow>
+-4\log 10&amp;=-\frac{t}{30}\log2
+</mrow><mrow>
+t&amp;=120\cdot\frac{\log10}{\log2}\approx 398.6
+</mrow>
+</md>
+It takes about 398.6 seconds (that is, roughly 6 and a half minutes) for all but <m>0.01</m><percent /> of the sample to decay.
+</p>
+
+<p>Remark: we can do another reality check here. The half-life is 30 seconds. 6 and a half minutes represents 13 half-lives. So, the sample is halved 13 times: <m>\left(\tfrac{1}{2}\right)^{13}\approx 0.00012=0.012\%</m>. So these 13 half-lives should reduce the sample to about 0.01<percent /> of its original amount, as desired.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+Polonium-210 has a half life of 138 days. What percentage of a sample of Polonium-210 decays in a day?
+</p></statement>
+<hint><p>
+You don't need to know the original amount of Polonium-210 in order to answer this question: you can leave it as some constant <m>C</m>, or you can call it 100<percent />.
+</p></hint>
+<answer><p>
+About <m>0.5\%</m> of the sample decays in a day. The exact amount is
+<m>\left[100\left(1-2^{-\tfrac{1}{138}}\right)\right] \%</m>.
+</p></answer>
+<solution><p>
+We know that the amount of Polonium-210 in a sample after <m>t</m> days is given by
+<md>
+<mrow>
+Q(t)&amp;=Ce^{-kt}
+</mrow>
+<intertext>where <m>C</m> is the original amount of the sample, and <m>k</m> is some positive constant.</intertext><mrow>
+</mrow>
+<intertext>The question asks us what percentage of the sample decays in a day. Since <m>t</m> is measured in days, the amount that decays in a day is <m>Q(t)-Q(t+1)</m>. The percentage of <m>Q(t)</m> that this represents is <m>100\dfrac{Q(t)-Q(t+1)}{Q(t)}</m>. (For example, if there were two grams at time <m>t</m>, and one gram at time <m>t+1</m>, then <m>100\dfrac{2-1}{1}=50</m>: 50<percent /> of the sample decayed in a day.) </intertext><mrow>
+</mrow>
+<intertext>In order to simplify, we should figure out a better expression for <m>Q(t)</m>. As usual, we make use of the half-life.</intertext><mrow>
+Q(138)&amp;=\frac{C}{2}
+</mrow><mrow>
+Ce^{-k\cdot138}&amp;=\frac{C}{2}
+</mrow><mrow>
+\left(e^{-k}\right)^{138}&amp;=\frac{1}{2}=2^{-1}
+</mrow><mrow>
+e^{-k}&amp;=2^{-\tfrac{1}{138}}
+</mrow>
+<intertext>Now, we have a better formula for <m>Q(t)</m>:</intertext><mrow>
+Q(t)&amp;=C\left(e^{-k}\right)^t
+</mrow><mrow>
+Q(t)&amp;=C\cdot2^{-\tfrac{t}{138}}
+</mrow>
+<intertext>Finally, we can evaluate what percentage of the sample decays in a day.</intertext><mrow>
+100\frac{Q(t)-Q(t+1)}{Q(t)}&amp;=100\frac{C\cdot2^{-\tfrac{t}{138}}-C\cdot2^{-\tfrac{t+1}{138}}}{C\cdot2^{-\tfrac{t}{138}}}\left(\frac{\frac{1}{C}}{\frac{1}{C}}\right)
+</mrow><mrow>
+&amp;=100\frac{2^{-\tfrac{t}{138}}-2^{-\tfrac{t+1}{138}}}{2^{-\tfrac{t}{138}}}
+</mrow><mrow>
+&amp;=100\left(2^{-\tfrac{t}{138}}-2^{-\tfrac{t+1}{138}}\right)2^{\tfrac{t}{138}}
+</mrow><mrow>
+&amp;=100\left(1-2^{-\tfrac{1}{138}}\right)\approx 0.5
+</mrow>
+</md>
+About 0.5<percent /> of the sample decays in a day.
+</p>
+
+<p>Remark: when we say that half a percent of the sample decays in a day, we don't mean half a percent of the <em>original</em> sample. If a day starts out with, say, 1 microgram, then what decays in the next 24 hours is about half a percent of that 1 microgram, regardless of what the <q>original</q> sample (at some time <m>t=0</m>) held.
+</p>
+
+<p>In particular, since the sample is getting smaller and smaller, that half of a percent that decays every day represents fewer and fewer actual atoms decaying. That's why we can't say that half of the sample (50<percent />) will decay after about 100 days, even though 0.5<percent /> decays every day and <m>100\times 0.5 = 50</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A sample of ore is found to contain <m>7.2 \pm 0.3\;\mu</m>g of Uranium-232, the half-life of which is between 68.8 and 70 years. How much Uranium-232 will remain undecayed in the sample in 10 years?
+</p></statement>
+<hint><p>
+Try to find the most possible and least possible remaining Uranium-232, given the bounds in the problem.
+</p></hint>
+<answer><p>
+After ten years, the sample contains between 6.2 and 6.8 <m>\mu</m>g of Uranium-232.
+</p></answer>
+<solution><p>
+The amount of Uranium-232 in the sample of ore at time <m>t</m> will be
+<md>
+<mrow>
+Q(t)&amp;=Q(0)e^{-kt}
+</mrow>
+<intertext>where <m>6.9 \leq Q(0) \leq 7.5</m>. We don't exactly know <m>Q(0)</m>, and we don't exactly know the half-life, so we also won't exactly know <m>Q(10)</m>: we can only say that is it between two numbers. Our strategy is to find the highest and lowest possible values of <m>Q(10)</m>, given the information in the problem. In order for the most possible Uranium-232 to be in the sample after 10 years, we should start with the most and have the longest half-life (since this represents the slowest decay). So, we take <m>Q(0)=7.5</m> and <m>Q(70)=\frac{1}{2}(7.5)</m>.</intertext><mrow>
+Q(t)&amp;=7.5e^{-kt}
+</mrow><mrow>
+\frac{1}{2}(7.5)=Q(70)&amp;=7.5e^{-k(70)}
+</mrow><mrow>
+\frac{1}{2}&amp;=\left(e^{-k}\right)^{70}
+</mrow><mrow>
+2^{-\tfrac{1}{70}}&amp;=e^{-k}
+</mrow>
+<intertext>So, in this secenario,</intertext><mrow>
+Q(t)&amp;=7.5\cdot 2^{-\tfrac{t}{70}}
+</mrow>
+<intertext>After ten years,</intertext><mrow>
+Q(10)&amp;=7.5\cdot 2^{-\tfrac{10}{70}}\approx 6.79
+</mrow>
+<intertext>So after ten years, the sample contains <em>at most</em> 6.8 <m>\mu</m>g. Now, let's think about the least possible amount of Uranium-232 that could be left after 10 years. We should start with as little as possible, so take <m>Q(0)=6.9</m>, and the sample should decay quickly, so take the half-life to be 68.8 years.</intertext><mrow>
+Q(t)&amp;=6.9e^{-kt}
+</mrow><mrow>
+\frac{1}{2}6.9=Q(68.8)&amp;=6.9e^{-k(68.8)}
+</mrow><mrow>
+\frac{1}{2}&amp;=\left(e^{-k}\right)^{68.8}
+</mrow><mrow>
+2^{-\tfrac{1}{68.8}}&amp;=e^{-k}
+</mrow>
+<intertext>In this scenario,</intertext><mrow>
+Q(t)&amp;=6.9\cdot 2^{-\tfrac{t}{68.8}}
+</mrow>
+<intertext>After ten years,</intertext><mrow>
+Q(10)&amp;=6.9\cdot 2^{-\tfrac{10}{68.8}}\approx 6.24
+</mrow>
+</md>
+So after ten years, the sample contains <em>at least</em> 6.2 <m>\mu</m>g.
+</p>
+<p>
+After ten years, the sample contains between 6.2 and 6.8 <m>\mu</m>g of Uranium-232.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

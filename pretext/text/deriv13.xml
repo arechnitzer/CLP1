@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_mvt">
+<title>The Mean Value Theorem</title>
+<introduction>
+
+<p>Consider the following situation. Two towns are separated by a 120km long stretch of road.
+The police in town <m>A</m> observe a car leaving at 1pm. Their colleagues in town <m>B</m> see the
+car arriving at 2pm. After a quick phone call between the two police stations, the driver
+is issued a fine for going <m>120km/h</m> at some time between 1pm and 2pm. It is intuitively
+obvious
+<fn>Unfortunately there are many obvious things that are decidedly false <mdash/>
+for example <q>There are more rational numbers than integers.</q> or <q>Viking helmets had
+horns on them</q>.</fn>
+ that, because his average velocity was <m>120km/h</m>, the driver
+must have been going at least <m>120km/h</m> at some point. From a knowledge of the
+average velocity of the car, we are able to deduce something about an
+instantaneous velocity
+<fn>
+Recall that speed and velocity are not the same. Velocity specifies the direction of motion as well as the rate of
+change. Objects moving along a straight line have velocities that are positive
+or negative numbers indicating  which direction the object is moving along the
+line. Speed, on the other hand, is the distance travelled per unit time and is
+always a non-negative number <mdash/> it is the absolute value of velocity.
+</fn>
+.
+</p>
+
+<p>Let us turn this around a little bit. Consider the premise of a 90s action
+film
+<fn>The sequel won a Raspberry award for <q>Worst remake or sequel</q>.</fn>
+ <mdash/> a
+bus must travel at a velocity of no less than <m>80km/h</m>. Being a bus, it is unable to go
+faster than, say, <m>120km/h</m>. The film runs for about 2 hours, and lets assume that there
+is about thirty minutes of non-action <mdash/> so the bus' velocity is constrained between
+<m>80</m> and <m>120km/h</m> for a total of <m>1.5</m> hours.
+</p>
+
+<p>It is again obvious that the bus must have travelled between <m>80 \times 1.5 = 120</m> and
+<m>120\times 1.5 = 180km</m> during the film. This time, from a knowledge of the instantaneous
+rate of change of position <mdash/> the derivative <mdash/> throughout a 90 minute time
+interval, we are able to say something about the net change of position during the 90
+minutes.
+</p>
+
+<p>In both of these scenarios we are making use of a piece of mathematics called the Mean
+Value Theorem. It says that, under appropriate hypotheses, the average rate of change
+<m>\frac{f(b)-f(a)}{b-a}</m> of a function over an interval is achieved exactly by the
+instantaneous rate of change <m>f'(c)</m> of the function at some
+<fn>There must be at
+least one such point <mdash/> there could be more than one <mdash/> but there cannot be zero.</fn>
+</p>
+
+<p>(unknown) point <m>a\le c\le b</m>. We shall get to a precise statement in
+Theorem<nbsp/><xref ref="thm_DIFFmvt"/>. We start working up to it by first considering the special case
+in which <m>f(a)=f(b)</m>.
+</p>
+</introduction>
+<subsection>
+<title>Rolle's theorem</title>
+
+<theorem xml:id="thm_DIFFrolle"><title>Rolle's theorem</title>
+<statement><p>
+Let <m>a</m> and <m>b</m> be real numbers with <m>a \lt b</m>. And let <m>f</m> be a function so that
+<ul>
+<li> <m>f(x)</m> is continuous on the closed interval <m>a\le x\le b</m>,
+</li>
+<li> <m>f(x)</m> is differentiable on the open interval <m>a \lt x \lt b</m>, and
+</li>
+<li> <m>f(a)=f(b)</m>
+</li>
+</ul>
+then there is a <m>c</m> strictly between <m>a</m> and <m>b</m>, i.e. obeying <m>a \lt c \lt b</m>, such that
+<md>
+<mrow>
+f'(c)=0.
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>Again, like the two scenarios above, this theorem says something intuitively obvious.
+Consider <mdash/> if you throw a ball straight up into the air and then catch it, at some time
+in between the throw and the catch it must be stationary. Translating this into
+mathematical statements, let <m>s(t)</m> be the height of the ball above the ground in metres,
+and let <m>t</m> be time from the moment the ball is thrown in seconds. Then we have
+<md>
+<mrow>
+  s(0) &amp;= 1 &amp; \text{we release the ball at about hip-height}
+</mrow><mrow>
+  s(4) &amp;= 1 &amp; \text{we catch the ball $4s$ later at hip-height}
+</mrow>
+</md>
+Then we know there is some time in between <mdash/> say at <m>t=c</m> <mdash/> when the ball is
+stationary (in this case when the ball is at the top of its trajectory). ie
+<md>
+<mrow>
+  v(c) = s'(c) &amp;= 0.
+</mrow>
+</md>
+Rolle's theorem guarantees that for any differentiable function that starts and ends at
+the same value, there will always be at least one point between the start and finish
+where the derivative is zero.</p>
+
+<sidebyside width="90%">
+<image source="text/figs/rolle"/>
+</sidebyside>
+
+<p>There can, of course, also be multiple points at which the derivative is zero <mdash/> but
+there must always be at least one. Notice, however, the theorem
+<fn>Notice this is
+very similar to the intermediate value theorem (see Theorem<nbsp/><xref ref="thm_ivt"/>)</fn>
+</p>
+
+<p>does not tell us the value of <m>c</m>, just that such a <m>c</m> must exist.
+</p>
+
+<example><title>A simple application of Rolle's theorem</title>
+<p>
+We can use Rolle's theorem to show that the function
+<md>
+<mrow>
+  f(x) &amp;= \sin(x)-\cos(x)
+</mrow>
+</md>
+has a point <m>c</m> between <m>0</m> and <m>\frac{3\pi}{2}</m> so that <m>f'(c)=0</m>.
+</p>
+
+<p>To apply Rolle's theorem we first have to show the function satisfies the conditions of
+the theorem on the interval <m>[0,\frac{3\pi}{2}]</m>.
+<ul>
+<li> Since <m>f</m> is the sum of sine and cosine it is continuous on the interval and also
+differentiable on the interval.
+</li>
+<li> Further, since
+<md>
+<mrow>
+  f(0) &amp;= \sin 0 - \cos 0 = 0-1 = -1
+</mrow><mrow>
+  f\left(\frac{3\pi}{2}\right) &amp;= \sin\frac{3\pi}{2} - \cos\frac{3\pi}{2} = -1-0 = -1
+</mrow>
+</md>
+  we can now apply Rolle's theorem.
+</li>
+<li> Rolle's theorem implies that there must be a point <m>c \in (0,3\pi/2)</m> so that
+<m>f'(c) =0</m>.
+</li>
+</ul>
+While Rolle's theorem doesn't tell us the value of <m>c</m>, this example is sufficiently
+simple that we can find it directly.
+<md>
+<mrow>
+  f'(x) &amp;= \cos x + \sin x
+</mrow><mrow>
+  f'(c) &amp;= \cos c + \sin c  =  0 &amp; \text{rearrange}
+</mrow><mrow>
+  \sin c&amp;= - \cos c &amp; \text{and divide by $\cos c$}
+</mrow><mrow>
+  \tan c &amp;= -1
+</mrow>
+</md>
+Hence <m>c = \frac{3\pi}{4}</m>. We have sketched the function and the relevant points below.</p>
+
+<sidebyside width="50%">
+<image source="text/figs/rolle_sketch"/>
+</sidebyside>
+</example>
+
+<p>A more substantial application of Rolle's theorem (in conjunction with the intermediate
+value theorem <mdash/> Theorem<nbsp/><xref ref="thm_ivt"/>) is to show that a function does not have
+multiple zeros in an interval:</p>
+
+<example><title>Showing an equation has exactly 1 solution</title>
+<p>
+Show that the equation <m>2x-1=\sin(x)</m> has exactly 1 solution.
+<ul>
+<li><p> Start with a rough sketch of each side of the equation</p>
+
+<sidebyside width="75%">
+<image source="text/figs/rolle_sketch2"/>
+</sidebyside>
+
+<p> This seems like it should be true.</p>
+</li>
+<li> Notice that the problem we are trying to solve is equivalent to showing
+that the function
+<md>
+<mrow>
+  f(x) &amp;= 2x-1-\sin(x)
+</mrow>
+</md>
+has only a single zero.
+</li>
+<li> Since <m>f(x)</m> is the sum of a polynomial and a sine function, it is continuous and
+differentiable everywhere. Thus we can apply both the IVT and Rolle's theorem.
+</li>
+<li> Notice that <m>f(0)=-1</m> and <m>f(2) = 4-1-\sin(2) = 3-\sin(2) \geq 2</m>, since <m>-1\leq
+\sin(2) \leq 1</m>. Thus by the IVT we know there is at least one number <m>c</m> between <m>0</m> and
+<m>2</m> so that <m>f(c)=0</m>.
+</li>
+<li> But our job is only half done <mdash/> this shows that there is at least one zero, but
+it does not tell us there is no more than one. We have more work to do, and Rolle's
+theorem is the tool we need.
+</li>
+<li><p> Consider what would happen if <m>f(x)</m> is zero in 2 places <mdash/> that is, there are
+numbers <m>a,b</m> so that <m>f(a)=f(b)=0</m>.
+<ul>
+<li> Since <m>f(x)</m> is differentiable everywhere and <m>f(a)=f(b)=0</m>, we can apply Rolle's
+theorem.
+</li>
+<li> Hence we know there is a point <m>c</m> between <m>a</m> and <m>b</m> so that <m>f'(c)=0</m>.
+</li>
+<li> But let us examine <m>f'(x)</m>:
+<md>
+<mrow>
+  f'(x) &amp;= 2- \cos x
+</mrow>
+</md>
+Since <m>-1\leq \cos x \leq 1</m>, we must have that <m>f'(x) \geq 1</m>.
+</li>
+<li> But this contradicts Rolle's theorem which tells us there must be a point at which
+the derivative is zero.
+</li>
+</ul>
+Thus the function cannot be zero at two different places <mdash/> otherwise we'd have a
+contradiction.</p>
+</li>
+</ul>
+We can actually nail down the value of <m>c</m> using the bisection approach we used in
+example<nbsp/><xref ref="eg_bisection"/>. If we do this carefully we find that <m>c \approx
+0.887862\dots</m>
+</p>
+
+</example>
+
+</subsection>
+<subsection><title>Back to the MVT</title>
+<p>Rolle's theorem can be generalised in a straight-forward way; given a differentiable
+function <m>f(x)</m> we can still say something about <m>\diff{f}{x}</m>, even if <m>f(a) \neq f(b)</m>. Consider the following sketch:</p>
+
+<figure xml:id="fig_rolle_to_mvt">
+ <caption/>
+ <image width="75%" source="text/figs/rolle_to_mvt"/>
+</figure>
+
+<p>All we have done is tilt the picture so that <m>f(a)  \lt  f (b)</m>. Now we can no longer
+guarantee that there will be a point on the graph where the tangent line is horizontal,
+but there will be a point where the tangent line is parallel to the secant joining <m>(a,
+f(a))</m> to <m>(b, f(b))</m>.
+</p>
+
+<p>To state this in terms of our first scenario back at the beginning of this section,
+suppose that you are driving along the <m>x</m><ndash/>axis. At time <m>t=a</m> you are at <m>x=f(a)</m> and at
+time <m>t=b</m> you are at <m>x=f(b)</m>. For simplicity, let's suppose that <m>b \gt a</m> and <m>f(b)\ge
+f(a)</m>, just like in the above sketch.  Then during the time interval in question you
+travelled a net distance of <m>f(b)-f(a)</m>. It took you <m>b-a</m> units
+of time to travel that distance, so your average velocity was
+<m>\frac{f(b)-f(a)}{b-a}</m>. You may very well have been going faster than
+ <m>\frac{f(b)-f(a)}{b-a}</m> part of the time and slower than
+<m>\frac{f(b)-f(a)}{b-a}</m> part of the time. But it is reasonable to guess
+that at some time between <m>t=a</m> and <m>t=b</m> your instantaneous velocity was
+exactly <m>\frac{f(b)-f(a)}{b-a}</m>. The mean value theorem says that, under
+reasonable assumptions about <m>f</m>, this is indeed the case.</p>
+
+<theorem xml:id="thm_DIFFmvt"><title>The mean value theorem</title>
+<statement><p>
+Let <m>a</m> and <m>b</m> be real numbers with <m>a \lt b</m>. And let <m>f(x)</m> be a function so that
+<ul>
+<li> <m>f(x)</m> is continuous on the closed interval <m>a \leq x \leq b</m>, and
+</li>
+<li> <m>f(x)</m> is differentiable on the open interval <m>a  \lt  x  \lt  b</m>
+</li>
+</ul>
+then there is a <m>c \in (a,b)</m>, such that
+<md>
+<mrow>
+f'(c)&amp;=\frac{f(b)-f(a)}{b-a}
+</mrow>
+<intertext>which we can also express as</intertext><mrow>
+  f(b)&amp;=f(a)+f'(c)(b-a).
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+
+<p>Let us start to explore the mean value theorem <mdash/> which is very frequently known as the
+MVT. A simple example to start:</p>
+
+<example><title>Apply MVT to a polynomial</title>
+<p>
+Consider the polynomial <m>f(x)=3x^2-4x+2</m> on <m>[-1,1]</m>.
+<ul>
+<li> Since <m>f</m> is a polynomial it is continuous on the interval and also differentiable
+on the interval. Hence we can apply the MVT.
+</li>
+<li> The MVT tells us that there is a point <m>c \in (-1,1)</m> so that
+<md>
+<mrow>
+  f'(c) &amp;= \frac{f(1)-f(-1)}{1-(-1)} = \frac{1-9}{2} =-4
+</mrow>
+</md>
+</li>
+</ul>
+This example is sufficiently simple that we can find the point <m>c</m> and the corresponding
+tangent line:
+<ul>
+<li> The derivative is
+<md>
+<mrow>
+  f'(x) &amp;= 6x-4
+</mrow>
+</md>
+</li>
+<li> So we need to solve <m>f'(c)=-4</m>:
+<md>
+<mrow>
+  6c-4 &amp;= -4
+</mrow>
+</md>
+which tells us that <m>c=0</m>.
+</li>
+<li> The tangent line has slope <m>-4</m> and passes through <m>(0,f(0))=(0,2)</m>, and so is
+given by
+<md>
+<mrow>
+  y &amp;= -4x+2
+</mrow>
+</md>
+</li>
+<li> The secant line joining <m>(-1,f(-1))=(-1,9)</m> to <m>(1,f(1))=(1,1)</m> is just
+<md>
+<mrow>
+  y &amp;= 5-4x
+</mrow>
+</md>
+</li>
+<li><p> Here is a sketch of the curve and the two lines:</p>
+
+<sidebyside width="66%">
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=7cm,
+  legend style={
+    cells={anchor=east},
+    legend pos=outer north east,
+  },
+  axis x line=center, axis y line=center,
+  xmax=1.2,xmin=-1.2, xtick={-1,-0.5,0.5,1},
+  ymin=-1, ymax=10,
+  ytick={0,3,6,9},
+  yticklabels={0,3,6,9}
+  ]
+\addplot[black,domain=-1.1:1.1,samples=100] {3*x*x-4*x+2}; \addlegendentry{$3x^2-4x+2$}
+\addplot[blue,domain=-1.1:1.1,samples=100] {5-4*x};  \addlegendentry{$5-4x$}
+\addplot[red,domain=-1.1:1.1,samples=100] {2-4*x};  \addlegendentry{$2-4x$}
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</li>
+</ul>
+</p>
+</example>
+
+<example><title>MVT, speed and distance</title>
+<p>
+We can return to our initial car-motivated examples. Say you are driving along a straight
+road in a car that can go at most <m>80km/h</m>. How far can you go in 2 hours? <mdash/> the answer
+is easy, but we can also solve this using MVT.
+<ul>
+<li> Let <m>s(t)</m> be the position of the car in <m>km</m> at time <m>t</m> measured in hours.
+</li>
+<li> Then <m>s(0)=0</m> and <m>s(2)=q</m>, where <m>q</m> is the quantity that we need to bound.
+</li>
+<li> We are told that <m>| s'(t) | \leq 80</m>, or equivalently
+<md>
+<mrow>
+-80 \leq s'(t) \leq 80
+</mrow>
+</md>
+</li>
+<li> By the MVT there is some <m>c</m> between 0 and 2 so that
+<md>
+<mrow>
+  s'(c) &amp;= \frac{q-0}{2} = \frac{q}{2}
+</mrow>
+</md>
+</li>
+<li> Now since <m>-80 \leq s'(c) \leq 80</m> we must have <m>-80 \leq q/2 \leq 80</m> and hence
+<m>-160 \leq q=s(2) \leq 160</m>.
+</li>
+</ul>
+</p></example>
+
+<p> More generally if we have some information about the derivative, then we can use the
+MVT to leverage this information to tell us something about the function.</p>
+
+<example><title>Using MVT to bound a function</title>
+<p>
+Let <m>f(x)</m> be a differentiable function so that
+<md>
+<mrow>
+  f(1)&amp;=10 &amp;\text{ and }&amp;&amp; -1 \leq f'(x) \leq 2 \text{ everywhere}
+</mrow>
+</md>
+Obtain upper and lower bounds on <m>f(5)</m>.
+</p>
+
+<p>Okay <mdash/> what do we do?
+<ul>
+<li> Since differentiable we can use the MVT.
+</li>
+<li> Say <m>f(5)=q</m>, then the MVT tells us that there is some <m>c</m> between <m>1</m> and <m>5</m> such
+  that
+<md>
+<mrow>
+ f'(c) &amp;=\frac{q-10}{5-1} = \frac{q-10}{4}
+</mrow>
+</md>
+</li>
+<li> But we know that <m>-1 \leq f'(c) \leq 2</m>, so
+<md>
+<mrow>
+-1 &amp;\leq f'(c) \leq 2
+</mrow><mrow>
+-1 &amp; \leq \frac{q-10}{4} \leq 2
+</mrow><mrow>
+  -4 &amp; \leq q-10 \leq 8
+</mrow><mrow>
+  6 \leq q \leq 18
+</mrow>
+</md>
+</li>
+<li> Thus we must have <m>6 \leq f(5) \leq 18</m>.
+</li>
+</ul>
+</p></example>
+
+</subsection>
+<subsection><title>(optional) <mdash/> Why is the MVT true</title>
+<p>
+We won't give a real proof for this theorem, but we'll look at a picture
+which shows why it is true. Here is the picture. It contains a sketch of
+the graph of <m>f(x)</m>, with <m>x</m> running from <m>a</m> to <m>b</m>, as well as
+a line segment which is the secant of the graph from the point
+<m>\big(a\,,f(a)\big)</m> to the point <m>\big(b\,,f(b)\big)</m>. The slope of
+the secant is exactly <m>\frac{f(b)-f(a)}{b-a}</m>.</p>
+
+<sidebyside width="60%">
+<image source="text/figs/mvtc"/>
+</sidebyside>
+
+<p> Remember that we are looking for a point, <m>\big(c\,,f(c)\big)</m>, on the
+graph of <m>f(x)</m> with the property that <m>f'(c)=\frac{f(b)-f(a)}{b-a}</m>,
+i.e. with the property that the slope of the tangent line at
+<m>\big(c\,,f(c)\big)</m> is the same as the slope of the secant.
+So imagine that you start moving the secant upward, carefully keeping
+the moved line segment parallel to the secant. So the slope of the
+moved line segment is always exactly  <m>\frac{f(b)-f(a)}{b-a}</m>.
+When we first start moving the line segment it is not tangent to the curve <mdash/>
+it crosses the curve. This is illustrated in the figure by the second line
+segment from the bottom.
+If we move the line segment too far it does not touch the curve at all.
+This is illustrated in the figure by the top segment. But if we stop
+moving the line segment just before it stops intersecting the curve at
+all, we get exactly the tangent line to the curve at the point on the curve
+that is farthest from the secant. This tangent line has exactly the desired
+slope. This is illustrated in the figure by the third line
+segment from the bottom.
+</p>
+</subsection>
+
+<subsection xml:id="warning_mvt">
+<title>Be careful with hypotheses</title>
+<p>
+The mean value theorem has hypotheses <mdash/> <m>f(x)</m> has to be continuous
+for <m>a\le x\le b</m> and has to be differentiable for <m>a \lt x \lt b</m>.
+If either hypothesis is violated, the conclusion of the mean value theorem
+can fail. That is, the curve <m>y=f(x)</m> need not have a
+tangent line at some <m>x=c</m> between <m>a</m> and <m>b</m> whose slope, <m>f'(c)</m>,
+is the same as the slope, <m>\frac{f(b)-f(a)}{b-a}</m>, of the secant joining
+the points <m>\big(a\,,f(a)\big)</m> and <m>\big(b\,,f(b)\big)</m> on the
+curve. If <m>f'(x)</m> fails to exist for even a single value of <m>x</m> between
+<m>a</m> and <m>b</m>, all bets are off. The following two examples illustrate this.
+</p>
+
+<example xml:id="eg_mvtd"><title>MVT doesn't work here</title>
+<p> For the first <q>bad</q> example, <m>a=0</m>, <m>b=2</m> and</p>
+
+<sidebyside valign="middle">
+<p><m>
+f(x) = \begin{cases}
+           0  &amp; \text{if }x \le 1 \\
+           1 &amp; \text{if }x \gt 1
+       \end{cases}
+</m></p>
+<image source="text/figs/mvtd"/>
+</sidebyside>
+
+<p>For this example, <m>f'(x)=0</m> at every <m>x</m> where it is defined. That is,
+at every <m>x\ne 1</m>. But the slope of the secant joining
+<m>\big(a\,,f(a)\big)=(0,0)</m> and <m>\big(b\,,f(b)\big)=(2,1)</m>
+is <m>\frac{1}{2}</m>.
+</p></example>
+
+<example xml:id="eg_mvte"><title>MVT doesn't work here either</title>
+<p>For the second <q>bad</q>  example, <m>a=-1</m>, <m>b=1</m> and <m>f(x)=|x|</m>.
+For this function</p>
+
+<sidebyside valign="middle">
+<p><m>
+f'(x) = \begin{cases}
+           -1  &amp; \text{if }x  \lt  0  \\
+            \text{undefined} &amp; \text{if }x=0 \\
+           1 &amp; \text{if }x \gt 0
+       \end{cases}
+</m></p>
+<image source="text/figs/mvte"/>
+</sidebyside>
+
+<p>For this example, <m>f'(x)=\pm 1</m> at every <m>x</m> where it is defined. That is,
+at every <m>x\ne 0</m>. But the slope of the secant joining
+<m>\big(a\,,f(a)\big)=(-1,1)</m> and <m>\big(b\,,f(b)\big)=(1,1)</m>
+is <m>0</m>.
+</p></example>
+
+<example xml:id="eg_mvtf"><title>MVT does work on this one</title>
+<p>
+Here is one <q>good</q> example, where the hypotheses of the mean value theorem
+are satisfied. Let <m>f(x)=x^2</m>. Then <m>f'(x)=2x</m>. For any <m>a \lt b</m>,
+<md>
+<mrow>
+\frac{f(b)-f(a)}{b-a}=\frac{b^2-a^2}{b-a}=b+a
+</mrow>
+</md>
+So <m>f'(c)=2c</m> is exactly <m>\frac{f(b)-f(a)}{b-a}</m> when <m>c=\frac{a+b}{2}</m>,
+which, in this example, happens to be exactly half way between <m>x=a</m> and
+<m>x=b</m>.</p>
+
+<sidebyside width="75%">
+<image source="text/figs/mvtf"/>
+</sidebyside>
+
+</example>
+
+<p>A simple consequence of the mean value theorem is that if you know the
+sign of <m>f'(c)</m> for all <m>c</m>'s between <m>a</m> and <m>b</m>, with <m>b \gt a</m>, then
+<m>f(b)-f(a) = f'(c) (b-a)</m> must have the same sign.</p>
+
+<corollary xml:id="cor_DIFFmvtcons"><title>Consequences of the mean value theorem</title>
+<statement><p>
+Let <m>A</m> and <m>B</m> be real numbers with <m>A \lt B</m>.
+Let function <m>f(x)</m> be defined and continuous on
+the closed interval <m>A\le x\le B</m> and be differentiable on the
+open interval <m>A \lt x \lt B</m>.
+<ol label="a">
+<li><p> If <m>f'(c)=0</m> for all <m>A \lt c \lt B</m>, then <m>f(b)=f(a)</m> for all
+<m>A\le a \lt b\le B</m>.</p>
+<p><mdash/> That is, <m>f(x)</m> is constant on <m>A\le x\le B</m>.</p>
+</li>
+<li><p> If <m>f'(c)\ge 0</m> for all <m>A \lt c \lt B</m>, then <m>f(b)\ge f(a)</m> for all
+<m>A\le a\le b\le B</m>.</p>
+<p>
+<mdash/> That is, <m>f(x)</m> is increasing on <m>A\le x\le B</m>.</p>
+</li>
+<li><p> If <m>f'(c)\le 0</m> for all <m>A \lt c \lt B</m>, then <m>f(b)\le f(a)</m> for all
+<m>A\le a \le b\le B</m>.</p>
+<p><mdash/> That is, <m>f(x)</m> is decreasing on <m>A\le x\le B</m>.</p>
+</li>
+</ol>
+</p>
+
+</statement>
+</corollary>
+
+<p> It is not hard to see why the above is true:
+<ul>
+<li> Say <m>f'(x)=0</m> at every point in the interval <m>[A,B]</m>. Now pick any <m>a,b \in [A,B]</m>
+with <m>a \lt b</m>. Then the MVT tells us that there is <m>c \in (a,b)</m> so that
+<md>
+<mrow>
+  f'(c) &amp;= \frac{f(b)-f(a)}{b-a}
+</mrow>
+</md>
+If <m>f(b) \neq f(a)</m> then we must have that <m>f'(c) \neq 0</m> <mdash/> contradicting what we are
+told about <m>f'(x)</m>. Thus we must have that <m>f(b)=f(a)</m>.
+</li>
+<li> Similarly, say <m>f'(x) \geq 0</m> at every point in the interval <m>[A,B]</m>. Now pick any
+<m>a,b \in [A,B]</m>  with <m>a \lt b</m>. Then the MVT tells us that there is <m>c \in (a,b)</m> so that
+<md>
+<mrow>
+  f'(c) &amp;= \frac{f(b)-f(a)}{b-a}
+</mrow>
+</md>
+Since <m>b \gt a</m>, the denominator is positive. Now if <m>f(b)  \lt  f(a)</m> the numerator would be
+negative, making the right-hand side negative, and contradicting what we are told about
+<m>f'(x)</m>. Hence we must have <m>f(b) \gt f(a)</m>.
+</li>
+</ul>
+</p>
+
+<p>A nice corollary of the above corollary is the following:</p>
+
+<corollary xml:id="cor_equal_diff">
+<statement><p>
+If <m>f'(x) = g'(x)</m> for all <m>x</m> in the open interval <m>(a,b)</m>, then <m>f-g</m> is a constant on
+<m>(a,b)</m>. That is <m>f(x)=g(x)+c</m>, where <m>c</m> is some constant.
+</p></statement>
+</corollary>
+
+<p>We can prove this by setting <m>h(x)=f(x)-g(x)</m>. Then <m>h'(x)=0</m> and so the previous
+corollary tells us that <m>h(x)</m> is constant.
+</p>
+
+<example><title>Summing <m>\arcsin</m> and <m>\arccos</m></title>
+<p>
+Using this corollary we can prove results like the following:
+<md>
+<mrow>
+  \arcsin x + \arccos x &amp;= \frac{\pi}{2} &amp; \mbox{for all } -1  \lt  x  \lt  1
+</mrow>
+</md>
+How does this work? Let <m>f(x) = \arcsin x + \arccos x</m>. Then
+<md>
+<mrow>
+  f'(x) &amp;= \frac{1}{\sqrt{1-x^2}} + \frac{-1}{\sqrt{1-x^2}} = 0
+</mrow>
+</md>
+Thus <m>f</m> must be a constant. To find out which constant, we can just check its value at a
+convenient point, like <m>x=0</m>.
+<md>
+<mrow>
+  \arcsin(0) + \arccos(0) &amp;= \pi/2 + 0 = \pi/2
+</mrow>
+</md>
+Since the function is constant, this must be the value.
+</p></example>
+
+
+</subsection>
+
+
+<xi:include href="../problems/prob_s2.13.xml"/>
+
+</section>

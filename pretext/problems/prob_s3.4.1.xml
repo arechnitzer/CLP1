@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_const_approx"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>
+The graph below shows three curves. The black curve is <m>y=f(x)</m>, the red curve is <m>y=g(x)=1+2\sin(1+x)</m>, and the blue curve is <m>y=h(x)=0.7</m>. If you want to estimate <m>f(0)</m>, what might cause you to use <m>g(0)</m>? What might cause you to use <m>h(0)</m>?</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{4}{4}
+\draw[ultra thick, black] plot[domain=-4:4, samples=100](\x,{3*sin(2*\x r)+cos(\x r)}) node[right]{$y=f(x)$};
+\draw[very thick, red] plot[domain=-2:2, samples=100](\x,{1+2*sin(1+\x r)}) node[right]{$y=g(x)$};
+\draw[very thick, blue] plot[domain=-4:4, samples=100](\x,{.7}) node[right]{$y=h(x)$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+An approximation should be something you can actually figure out--otherwise it's no use.
+</p></hint>
+<answer><p>
+Since <m>f(0)</m> is  closer to <m>g(0)</m> than it is to <m>h(0)</m>, you would probably want to estimate <m>f(0) \approx g(0)=1+2\sin (1)</m> if you had the means to efficiently figure out what <m>\sin(1)</m> is, and if you were concerned with accuracy. If you had a calculator, you could use this estimation. Also, later in this chapter we will learn methods of approximating <m>\sin (1)</m> that do not require a calculator, but they do require time.
+</p>
+
+<p>Without a calculator, or without a lot of time, using <m>f(0)\approx h(0)=0.7</m> probably makes the most sense. It isn't as accurate as <m>f(0) \approx g(0)</m>, but you get an estimate very quickly, without worrying about figuring out what <m>\sin(1)</m> is.
+</p></answer>
+<solution><p>
+Since <m>f(0)</m> is  closer to <m>g(0)</m> than it is to <m>h(0)</m>, you would probably want to estimate <m>f(0) \approx g(0)=1+2\sin (1)</m> if you had the means to efficiently figure out what <m>\sin(1)</m> is, and if you were concerned with accuracy. If you had a calculator, you could use this estimation. Also, later in this chapter we will learn methods of approximating <m>\sin (1)</m> that do not require a calculator, but they do require time.
+</p>
+
+<p>Without a calculator, or without a lot of time, using <m>f(0)\approx h(0)=0.7</m> probably makes the most sense. It isn't as accurate as <m>f(0) \approx g(0)</m>, but you get an estimate very quickly, without worrying about figuring out what <m>\sin(1)</m> is.
+</p>
+
+<p>Remark: when you're approximating something in real life, there probably won't be an obvious <q>correct</q> way to do it. There's usually a trade-off between accuracy and ease.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+
+<introduction><p>
+In this and following sections, we will ask you to approximate the value of several constants, such as <m>\log(0.93)</m>. A valid question to consider is why we would ask for approximations of these constants that take lots of time, and are less accurate than what you get from a calculator. </p>
+
+<p>One answer to this question is historical: people were approximating logarithms before they had calculators, and these are some of the ways they did that. Pretend you're on a desert island without any of your usual devices and that you want to make a number of quick and dirty approximate evaluations.</p>
+
+<p>Another reason to make these approximations is technical: how does the <em>calculator</em> get such a good approximation of <m>\log(0.93)</m>? The techniques you will learn later on in this chapter give very accurate formulas for approximating functions like <m>\log x</m> and <m>\sin x</m>, which are sometimes used in calculators. </p>
+
+<p>A third reason to make simple approximations of expressions that a calculator could evaluate is to provide a reality check. If you have a ballpark guess for your answer, and your calculator gives you something wildly different, you know to double-check that you typed everything in correctly.</p></introduction>
+
+
+<introduction><p>For now, questions like
+Question<nbsp/><xref ref="s3_4_1startapprox"/> through
+Question<nbsp/><xref ref="s3_4_1endapprox"/> are simply for you to practice the fundamental ideas we're learning.</p></introduction>
+
+<exercise xml:id="s3_4_1startapprox">
+<statement><p>
+Use a constant approximation to estimate the value of <m>\log(x)</m> when <m>x=0.93</m>. Sketch the curve <m>y=f(x)</m> and your constant approximation.
+</p>
+
+<p>(Remember we use <m>\log x</m> to mean the natural logarithm of <m>x</m>, <m>\log_e x</m>.)
+</p></statement>
+<hint><p>
+You'll need some constant <m>a</m> to approximation <m>\log(0.93) \approx \log(a)</m>.
+This <m>a</m> should have two properties: it should be close to 0.93, and you should be able to easily evaluate <m>\log(a)</m>.
+</p></hint>
+<answer><p>
+<m>\log(0.93)\approx \log(1)=0</m></p>
+<sidebyside>
+ <image><latex-image><![CDATA[\begin{tikzpicture}
+ \YEaaxis{1.5}{3.5}{1}{2}
+ \draw[thick] plot[domain=0.25:3](\x,{ln \x}) node[right]{$y=f(x)$};
+ \draw[thick, red] (-1,0)--(2,0) node[below right]{$y=0$};
+ \draw[dashed] (.9,-.3)--(.9,.75) node[above]{0.93};
+ \YExcoord{1}{1}
+ \end{tikzpicture}]]></latex-image></image>
+ </sidebyside>
+ </answer>
+<solution><p>
+ 0.93 is pretty close to 1, and we know <m>\log(1)=0</m>, so we estimate
+ <m>\log(0.93) \approx \log(1)=0</m>.</p>
+ <sidebyside>
+ <image><latex-image><![CDATA[\begin{tikzpicture}
+ \YEaaxis{1.5}{3.5}{1}{2}
+ \draw[thick] plot[domain=0.25:3](\x,{ln \x}) node[right]{$y=f(x)$};
+ \draw[thick, red] (-1,0)--(2,0) node[below right]{$y=0$};
+ \draw[dashed] (.9,-.3)--(.9,.75) node[above]{0.93};
+ \YExcoord{1}{1};
+ \end{tikzpicture}]]></latex-image></image>
+ </sidebyside>
+</solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Use a constant approximation to estimate
+<m>\arcsin(0.1)</m>.
+</p></statement>
+<hint><p>
+You'll need some constant <m>a</m> to approximate <m>\arcsin(0.1) \approx \arcsin(a)</m>.
+This <m>a</m> should have two properties: it should be close to 0.1, and you should be able to easily evaluate <m>\arcsin(a)</m>.
+</p></hint>
+<answer><p>
+<m>\arcsin(0.1) \approx 0</m>
+</p></answer>
+<solution><p>
+We don't know <m>\arcsin(0.1)</m>,
+but 0.1 is reasonably close to 0, and
+<m>\arcsin(0)=0</m>. So, we estimate
+<m>\arcsin(0.1) \approx0</m>.
+</p></solution>
+</exercise>
+
+<exercise xml:id="s3_4_1endapprox">
+<statement><p>
+Use a constant approximation to estimate <m>\sqrt{3}\tan(1)</m>.
+</p></statement>
+<hint><p>
+You'll need some constant <m>a</m> to approximate <m>\sqrt{3}\tan(1) \approx \sqrt{3}\tan(a)</m>.
+This <m>a</m> should have two properties: it should be close to 1, and you should be able to easily evaluate <m>\sqrt{3}\tan(a)</m>.
+</p></hint>
+<answer><p>
+<m>\sqrt{3}\tan(1) \approx 3</m>
+</p></answer>
+<solution><p>
+We don't know <m>\tan(1)</m>, but we do know <m>\tan\left(\dfrac{\pi}{3}\right)=\sqrt{3}</m>.
+Since <m>\dfrac{\pi}{3}\approx 1.047</m> is pretty close to 1, we estimate
+<m>\sqrt{3}\tan(1) \approx \sqrt{3}\tan\left(\dfrac{\pi}{3}\right)=\left(\sqrt{3}\right)^2=3.</m>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise xml:id="s3_4_1quickapprox" purpose="RQS">
+<statement><p>
+Use a constant approximation to estimate the value of <m>10.1^3</m>. Your estimation should be something you can calculate in your head.
+</p></statement>
+<hint><p>
+We could figure out <m>10.1^3</m> exactly, if we wanted, with pen and paper. Since we're asking for an approximation, we aren't after perfect accuracy. Rather, we're after ease of calculation.
+</p></hint>
+<answer><p>
+<m>10.1^3 \approx 10^3=1000</m>
+</p></answer>
+<solution><p>
+Since <m>10.1</m> is pretty close to <m>10</m>, we estimate <m>10.1^3 \approx 10^3=1000</m>.
+</p>
+
+<p>Remark: these kinds of approximations are very useful when you are doing computations. It's easy to make a mistake in your work, and having in mind that <m>10.1^3</m> should be <em>about</em> a thousand is a good way to check that whatever answer you have makes sense.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

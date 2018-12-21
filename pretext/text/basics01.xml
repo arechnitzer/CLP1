@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Numbers</title>
+<introduction>
+	<p>
+	Before we do anything else, it is very important that we agree on the definitions and names of some important collections of numbers.
+	</p>
+
+	<p>
+	<ul>
+		<li><p>
+		Natural numbers <mdash/> These are the <q>whole numbers</q> 1,2,3,<ellipsis/> that we learn first at about the same time as we learn the alphabet. We will denote this collection of numbers by the symbol <q><m>\mathbb{N}</m></q>. The symbol <m>\mathbb{N}</m> is written in a type of bold-face font that we call <q>black-board bold</q> (and is definitely <em>not</em> the same symbol as <m>N</m>). You should become used to writing a few letters in this way since it is typically used to denote collections of important numbers.  Unfortunately there is often some confusion as to whether or not zero should be included
+			<fn>
+			This lack of agreement comes from some debate over how <q>natural</q> zero is <mdash/> <q>how can nothing be something?</q> It was certainly not used by the ancient Greeks who really first looked at proof and number. If you are a mathematician then generally <m>0</m> is not a natural number. If you are a computer scientist then <m>0</m> generally is.
+			</fn>.
+		In this text the natural numbers does not include zero.
+		</p>
+
+		<p>
+		Notice that the set of natural numbers is <em>closed</em> under addition and multiplication. This means that if you take any two natural numbers and add them you get another natural number. Similarly if you take any two natural numbers and multiply them you get another natural number. However the set is not closed under subtraction or division; we need negative numbers and fractions to make collections of numbers closed under subtraction and division.
+		</p>
+
+		<p>Two important subsets of natural numbers are:
+		<ul>
+			<li>
+			Prime numbers <mdash/> a natural number is prime when the only natural numbers that divide it exactly are 1 and itself. Equivalently it cannot be written as the product of two natural numbers neither of which are 1. Note that 1 is not a prime number
+				<fn>If you let 1 be a prime number then you have to treat <m>1\times2\times 3</m> and <m>2\times 3</m> as different factorisations of the number 6. This causes headaches for mathematicians, so they don't let 1 be prime.
+				</fn>.
+			</li>
+			<li>
+			Composite numbers <mdash/> a natural number is a composite number when it is not prime.
+			</li>
+		</ul>
+		</p>
+
+		<p>
+		Hence the number <m>7</m> is prime, but <m>6 = 3\times 2</m> is composite.
+		</p>
+		</li>
+		<li>
+		<p>
+		Integers <mdash/> all positive and negative numbers together with the number zero. We denote the collection of all integers by the symbol <q><m>\mathbb{Z}</m></q>. Again, note that this is not the same symbol as <q><m>Z</m></q>, and we must write it in the same black-board bold font. The <m>\mathbb{Z}</m> stands for the German <em>Zahlen</em> meaning numbers
+			<fn>Some schools (and even some provinces!!) may use <q><m>I</m></q> for integers, but this is extremely non-standard and they really should use correct notation.
+			</fn>.
+		Note that <m>\mathbb{Z}</m> is closed under addition, subtraction and multiplication, but not division.
+		</p>
+
+		<p>
+		Two important subsets of integers are:
+		<ul>
+		<li>
+		Even numbers <mdash/> an integer is even if it is exactly divisible by <m>2</m>, or equivalently if it can be written as the product of 2 and another integer. This means that <m>-14, 6</m> and <m>0</m> are all even.
+		</li>
+		<li>
+		Odd numbers <mdash/> an integer is odd when it is not even. Equivalently it can be written as <m>2k+1</m> where <m>k</m> is another integer. Thus <m>11 = 2\times 5+1</m> and <m>-7 = 2\times(-4)+1</m> are both odd.
+		</li>
+		</ul>
+		</p>
+		</li>
+
+		<li>
+		<p>
+		Rational numbers <mdash/> this is all numbers that can be written as the ratio of two integers. That is, any rational number <m>r</m> can be written as <m>p/q</m> where <m>p,q</m> are integers. We denote this collection by <m>\mathbb{Q}</m> standing for <em>quoziente</em> which is Italian for quotient or ratio. Now we finally have a set of numbers which is closed under addition, subtraction, multiplication and division (of course you still need to be careful not to divide by zero).
+		</p>
+		</li>
+
+		<li>
+		<p>
+		Real numbers <mdash/> generally we think of these numbers as numbers that can be written as decimal expansions and we denote it by <m>\mathbb{R}</m>. It is beyond the  scope of this text to go into the details of how to give a precise definition of real numbers, and the notion that a real number can be written as a decimal expansion will be sufficient.
+		</p>
+
+		<p>It took mathematicians quite a long time to realise that there were numbers that could not be written as ratios of integers
+			<fn>The existence of such numbers caused mathematicians (particularly the ancient Greeks) all sorts of philosophical problems. They thought that the natural numbers were somehow fundamental and beautiful and <q>natural</q>. The rational numbers you can get very easily by taking <q>ratios</q> <mdash/> a process that is still somehow quite sensible. There were quite influential philosophers (in Greece at least) called Pythagoreans (disciples of Pythagoras originally) who saw numbers as almost mystical objects explaining all the phenomena in the universe, including beauty <mdash/> famously they found fractions in musical notes etc and <q>numbers constitute the entire heavens</q>. They believed that everything could be explained by whole numbers and their ratios. But soon after Pythagoras' theorem was discovered, so were numbers that are not rational. The first proof of the existence of irrational numbers is sometimes attributed to Hippasus in around 400BCE (not really known). It seems that his philosopher <q>friends</q> were not very happy about this and essentially exiled him. Some accounts suggest that he was drowned by them.
+			</fn>.
+		The first numbers that were shown to be not-rational are square-roots of prime numbers, like <m>\sqrt{2}</m>. Other well known examples are <m>\pi</m> and <m>e</m>. Usually the fact that some numbers cannot be represented as ratios of integers is harmless because those numbers can be approximated by rational numbers to any desired precision.
+		</p>
+
+		<p>
+		The reason that we can approximate real numbers in this way is the surprising fact that between any two real numbers, one can always find a rational number. So if we are interested in a particular real number we can always find a rational number that is extremely close. Mathematicians refer to this property by saying that <m>\mathbb{Q}</m> is <em>dense</em> in <m>\mathbb{R}</m>.
+		</p>
+		</li>
+		</ul>
+		So to summarise
+		</p>
+
+		<definition><title>Sets of numbers</title>
+		<statement>
+		<p>
+		This is not really a definition, but you should know these symbols
+		<ul>
+		<li> <m>\mathbb{N} = </m> the natural numbers,
+		</li>
+		<li> <m>\mathbb{Z} = </m> the integers,
+		</li>
+		<li> <m>\mathbb{Q} = </m> the rationals, and
+		</li>
+		<li> <m>\mathbb{R} = </m> the reals.
+		</li>
+		</ul>
+		</p>
+		</statement>
+		</definition>
+</introduction>
+<subsubsection><title>More on real numbers</title>
+	<p>
+	In the preceding paragraphs we have talked about the decimal expansions of real numbers and there is just one more point that we wish to touch on. The decimal expansions of rational numbers are always <em>periodic</em>, that is the expansion eventually starts to repeat itself. For example
+	<md>
+	<mrow>
+	\frac{2}{15} &amp;= 0.133333333\dots
+	</mrow><mrow>
+	\frac{5}{17} &amp;= 0.\underline{
+		2941176470588235}2941176470588235\underline{2941176470588235}294117647058823\dots
+	</mrow>
+	</md>
+	where we have underlined some of the last example to make the period clearer. On the other hand, irrational numbers, such as <m>\sqrt{2}</m> and <m>\pi</m>, have expansions that never repeat.
+	</p>
+
+	<p>
+	If we want to think of real numbers as their decimal expansions, then we need those expansions to be unique. That is, we don't want to be able to write down two different expansions, each giving the same real number. Unfortunately there are an infinite set of numbers that do not have unique expansions. Consider the number 1. We usually just write <q>1</q>, but as a decimal expansion it is
+	<md>
+	<mrow>
+	1.00000000000\dots
+	</mrow>
+	</md>
+	that is, a single 1 followed by an infinite string of 0's. Now consider the following number
+	<md>
+	<mrow>
+	  0.99999999999\dots
+	</mrow>
+	</md>
+	This second decimal expansions actually represents the same number <mdash/> the number <m>1</m>. Let's prove this. First call the real number this represents <m>q</m>, then
+	<md>
+	<mrow>
+	q &amp;=0.99999999999\dots
+	</mrow>
+	</md>
+	Let's use a little trick to get rid of the long string of trailing 9's. Consider <m>10q</m>:
+	<md>
+	<mrow>
+	  q &amp;=0.99999999999\dots
+	</mrow><mrow>
+	  10q &amp;=9.99999999999\dots
+	</mrow>
+	</md>
+	If we now subtract one from the other we get
+	<md>
+	<mrow>
+	  9q &amp;= 9.0000000000\dots
+	</mrow>
+	</md>
+	and so we are left with <m>q=1.0000000\dots</m>. So both expansions represent the same real number.
+	</p>
+
+	<p>
+	Thankfully this sort of thing only happens with rational numbers of a particular form <mdash/> those whose denominators are products of 2s and 5s. For example
+	<md>
+	<mrow>
+	  \frac{3}{25} &amp;= 1.200000\dots = 1.19999999\dots
+	</mrow><mrow>
+	  -\frac{7}{32} &amp;= -0.2187500000\dots = -0.2187499999\dots
+	</mrow><mrow>
+	  \frac{9}{20} &amp;= 0.45000000\dots = 0.4499999\dots
+	</mrow>
+	</md>
+	We can formalise this result in the following theorem (which we haven't proved in general, but it's beyond the scope of the text to do so):
+	</p>
+
+	<theorem>
+	<statement><p>
+	Let <m>x</m> be a real number. Then <m>x</m> must fall into one of the following two categories,
+	<ul>
+	<li> <m>x</m> has a unique decimal expansion, or</li>
+	<li> <m>x</m> is a rational number of the form <m>\frac{a}{2^k 5^\ell}</m> where <m>a\in \mathbb{Z}</m> and <m>k,l</m> are non-negative integers.</li>
+	</ul>
+	In the second case, <m>x</m> has exactly two expansions, one that ends in an infinite string of 9's and the other ending in an infinite string of 0's.
+	</p></statement>
+	</theorem>
+
+	<p>
+	When we do have a choice of two expansions, it is usual to avoid the one that ends in an infinite string of 9's and write the other instead (omitting the infinite trailing string of 0's).
+	</p>
+</subsubsection>
+</section>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_proof_arith_lim">
+<title>(optional) <mdash/> Proving the arithmetic of limits</title>
+<introduction>
+
+
+<p>
+Perhaps the most useful theorem of this chapter is Theorem<nbsp/><xref ref="thm_arith_lim"/>  which shows how limits interact with arithmetic. In this (optional) section we will prove both the arithmetic of limits Theorem<nbsp/><xref ref="thm_arith_lim"/> and the Squeeze Theorem<nbsp/><xref ref="thm_squeeze"/>. Before we get to the proofs it  is very helpful to prove three technical lemmas that we'll need. The first is a very general result about absolute values of numbers:
+</p>
+
+<lemma><title>The triangle inequality</title>
+<statement><p>
+ For any <m>x,y \in \mathbb{R}</m>
+<md>
+<mrow>
+  |x+y| &amp; \leq |x| + |y|
+</mrow>
+</md>
+</p></statement>
+</lemma>
+<proof>
+<p>
+Notice that for any real number <m>x</m>, we always have <m>-x,x\le|x|</m> and either <m>|x|=x</m>  or <m>|x|=-x</m>. So now let  <m>x,y \in \mathbb{R}</m>. Then we must have either
+<md>
+<mrow>
+  |x+y|&amp;= x+y &amp;&amp;\le |x|+|y|
+</mrow>
+<intertext>or</intertext><mrow>
+  |x+y|&amp;= -x-y &amp;&amp;\le |x|+|y|
+</mrow>
+</md>
+In both cases we end up with <m>|x+y| \le |x| + |y|</m>.
+</p></proof>
+
+<p>
+The second lemma is more specialised. It proves that if we have a function  <m>f(x) \to F</m> as <m>x \to a</m> then there must be a small window around <m>x=a</m> where  the function <m>f(x)</m> must only take values not far from <m>F</m>. In particular it tells  us that <m>|f(x)|</m> cannot be bigger than <m>|F|+1</m> when <m>x</m> is very close to <m>a</m>.
+</p>
+
+<lemma xml:id="lem_fx_F1">
+<statement><p>
+Let <m>a \in \mathbb{R}</m> and let <m>f</m> be a function so that <m>\ds \lim_{x \to  a} f(x) =F</m>. Then there exists a <m>\delta  \gt 0</m> so that if <m>|x-a| \lt \delta</m>  then we also have <m>|f(x)| \leq |F|+1</m>.
+</p></statement>
+</lemma>
+
+<p>
+The proof is mostly just manipulating the <m>\epsilon</m><ndash/><m>\delta</m> definition of  a limit with <m>\epsilon=1</m>.</p>
+<proof>
+<p>
+Let <m>\epsilon = 1</m>. Then since <m>f(x) \to F</m> as <m>x \to a</m>, there exists  <m>\delta \gt 0</m> so that when <m>|x-a| \lt \delta</m>, we also have <m>|f(x)-F| \leq  \epsilon=1</m>. So now assume <m>|x-a| \lt \delta</m>. Then
+<md>
+<mrow>
+  -\epsilon &amp;\leq f(x) - F \leq \epsilon &amp; \text{rearrange a little}
+</mrow><mrow>
+  -\epsilon+F &amp;\leq f(x) \leq \epsilon+F
+</mrow>
+<intertext>Now <m>\epsilon+F \leq \epsilon+|F|</m> and <m>-\epsilon+F \geq  -\epsilon-|F|</m>, so</intertext>
+<mrow>
+  -\epsilon-|F| &amp;\leq f(x) \leq \epsilon+|F|
+</mrow>
+</md>
+Hence we have <m>|f(x)| \leq \epsilon+|F| = |F|+1</m>.
+</p></proof>
+
+<p>
+Finally our third technical lemma gives us a bound in the other direction; it  tells us that when <m>x</m> is close to <m>a</m>, the value of <m>|f(x)|</m> cannot be much  smaller than <m>|F|</m>.</p>
+
+<lemma xml:id="lem_fx_F2">
+<statement><p>
+Let <m>a \in \mathbb{R}</m> and <m>F\ne0</m> and let <m>f</m> be a function so that <m>\ds \lim_{x \to a}  f(x) = F</m>. Then there exists <m>\delta \gt 0</m> so that when <m>|x-a| \lt \delta</m>, we have  <m>|f(x)| \gt  \frac{|F|}{2}</m>.
+</p></statement>
+<proof>
+<p>
+ Set <m>\epsilon = \frac{|F|}{2} \gt 0</m>. Since <m>f(x) \to F</m>, we know there exists  a <m>\delta \gt 0</m> so that when <m>|x-a| \lt \delta</m> we have <m>|f(x)-F| \lt \epsilon</m>. So now  assume <m>|x-a| \lt \delta</m> so that <m>|f(x)-F| \lt \epsilon = \frac{|F|}{2}</m>.  Then
+<md>
+<mrow>
+  |F| &amp;= |F-f(x)+f(x)| &amp; \text{sneaky trick}
+</mrow><mrow>
+  &amp; \leq |f(x) - F| + |f(x)| &amp; \text{ but $|f(x)-F| \lt \epsilon$}
+</mrow><mrow>
+  &amp;  \lt  \epsilon + |f(x)|
+</mrow>
+</md>
+Hence <m>|f(x)| \gt |F|-\epsilon= \frac{|F|}{2}</m> as required.
+</p></proof>
+</lemma>
+
+<p>
+Now we are in a position to prove Theorem<nbsp/><xref ref="thm_arith_lim"/>. The proof has  more steps than the previous <m>\epsilon-\delta</m> proofs we have  seen. This is mostly because we do not have specific functions <m>f(x)</m> and  <m>g(x)</m> and instead must play with them in the abstract <mdash/> and make good use of the  formal definition of limits.
+</p>
+
+<p>
+We will break the proof into three pieces. The minimum that is required is to  prove that
+<md>
+<mrow>
+  \lim_{x \to a} ( f(x) + g(x) ) &amp;= F+G
+</mrow><mrow>
+  \lim_{x \to a} f(x) \cdot g(x) &amp;= F\cdot G
+</mrow><mrow>
+  \lim_{x \to a} \frac{1}{g(x)} &amp;= \frac{1}{G}\quad\text{if } G\ne 0.
+</mrow>
+</md>
+From these three we can prove that
+<md>
+<mrow>
+  \lim_{x \to a} f(x) \cdot c &amp;= F\cdot c
+</mrow><mrow>
+  \lim_{x \to a} ( f(x) - g(x) ) &amp;= F-G
+</mrow><mrow>
+  \lim_{x \to a} \frac{f(x)}{g(x)} &amp;= \frac{F}{G}\quad\text{if } G\ne 0.
+</mrow>
+</md>
+The first follows by setting <m>g(x) = c</m> and using <m>\lim f(x) \cdot  g(x)</m>. The second follows by setting <m>c=-1</m>, putting <m>h(x) = (-1)\cdot g(x)</m>  and then applying both <m>\lim f(x) \cdot g(x)</m> and <m>\lim f(x)+g(x)</m>. The third  follows by setting <m>h(x) = \frac{1}{g(x)}</m> and then using <m>\lim f(x) \cdot h(x)</m>.
+</p>
+
+<p>
+Starting with addition, in order to satisfy the definition of limit, we are  going to have to show that
+<md>
+<mrow>
+  |( f(x) + g(x) )-(F+G) | &amp;\text{ is small}
+</mrow>
+</md>
+when we know that <m>|f(x)-F|, |g(x)-G|</m> are small. To do this we use the  triangle inequality above showing that
+<md>
+<mrow>
+  |( f(x) + g(x) )-(F+G) | &amp;=
+  |(f(x)-F) + (g(x)-G) | \leq |f(x)-F| + |g(x)-G|
+</mrow>
+</md>
+This is the key technical piece of the proof. So if we want the LHS of the  above to be size <m>\epsilon</m>, we need to make sure that each term on the RHS is  of size <m>\frac{\epsilon}{2}</m>. The rest of the proof is setting up facts  based on the definition of limits and then rearranging facts to reach the  conclusion.
+</p>
+
+<proof>
+<p><alert>Proof of Theorem<nbsp/><xref ref="thm_arith_lim"/> <mdash/> limit of a sum.</alert></p>
+
+<p>
+Let <m>a \in \mathbb{R}</m> and assume that
+<md>
+<mrow>
+  \lim_{x \to a} f(x) &amp;= F &amp; \text{ and } &amp;&amp;
+  \lim_{x \to a} g(x) &amp;= G.
+</mrow>
+</md>
+We wish to show that
+<md>
+<mrow>
+\lim_{x \to a} f(x)+g(x) &amp;= F+G.
+</mrow>
+</md>
+</p>
+
+<p>
+Let <m>\epsilon \gt 0</m> <mdash/> we have to find a <m>\delta \gt 0</m> so that when  <m>|x-a| \lt \delta</m> we have <m>|(f(x)+g(x))-(F+G)| \lt \epsilon</m>.
+</p>
+
+<p
+>Let <m>\epsilon \gt 0</m> and set <m>\epsilon_1 = \epsilon_2 = \frac{\epsilon}{2}</m>. By the definition of limits, because <m>f(x) \to F</m> there exists some   <m>\delta_1  \gt 0</m> so that whenever <m>|x-a| \lt \delta_1</m>, we also  have <m>|f(x)-F| \lt \epsilon_1</m>. Similarly there exists <m>\delta_2 \gt 0</m> so that if  <m>|x-a| \lt \delta_2</m>, then we must have <m>|g(x)-G| \lt \epsilon_2</m>. So now choose  <m>\delta = \min\{ \delta_1, \delta_2 \}</m> and assume <m>|x-a| \lt \delta</m>. Then we must  have that <m>|x-a| \lt \delta_1, \delta_2</m> and so we also have
+<md>
+<mrow>
+  |f(x)-F|&amp; \lt \epsilon_1 &amp; |g(x)-G|&amp;  \lt  \epsilon_2
+</mrow>
+</md>
+</p>
+
+<p>
+Now consider <m>|(f(x)+g(x))-(F+G)|</m> and rearrange the terms:
+<md>
+<mrow>
+  |(f(x)+g(x))-(F+G)| &amp;= |(f(x)-F)+(g(x)-G)|
+</mrow>
+<intertext>now apply triangle inequality</intertext>
+<mrow>
+  &amp;\leq |f(x)-F| + |g(x)-G| &amp; \text{ use facts from above}
+</mrow><mrow>
+  &amp;  \lt  \epsilon_1 + \epsilon_2
+</mrow><mrow>
+  &amp;= \epsilon.
+</mrow>
+</md>
+</p>
+
+<p>
+Hence we have shown that for any <m>\epsilon \gt 0</m> there exists some <m>\delta \gt 0</m> so  that when <m>|x-a| \lt \delta</m> we also have <m>|(f(x)+g(x))-(F+G)| \lt \epsilon</m>. Which  is exactly the formal definition of the limit we needed to prove.
+</p>
+</proof>
+
+
+<p>
+Let us do similarly for the limit of a product. Some of the details of the  proof are very similar, but there is a little technical trick in the middle to  make it work. In particular we need to show that
+<md>
+<mrow>
+  |f(x) \cdot g(x) - F\cdot G| &amp; \text{ is small}
+</mrow>
+</md>
+when we know that <m>|f(x)-F|</m> and <m>|g(x)-G|</m> are both small. Notice that
+<md>
+<mrow>
+  f(x) \cdot g(x) - F\cdot G
+  &amp;= f(x) \cdot g(x) - F\cdot G + \underbrace{ f(x)\cdot G - f(x) \cdot G
+}_{=0}
+</mrow><mrow>
+  &amp;= f(x)\cdot g(x)- f(x) \cdot G + f(x) \cdot G - F\cdot G
+</mrow><mrow>
+  &amp;= f(x)\cdot( g(x)-G) + (f(x)-F)\cdot G
+</mrow>
+</md>
+So if we know <m>|f(x)-F|</m> is small and <m>|g(x)-G|</m> is small then we are done <mdash/>  except that we also need to know that <m>f(x)</m> doesn't become really large near <m>a</m> <mdash/> this is exactly why we needed to prove Lemma<nbsp/><xref ref="lem_fx_F1"/>.
+</p>
+
+<p>
+As was the case in the previous proof, we want the LHS to be of size at most <m>\epsilon</m>, so we want, for example,  the two terms on the RHS to be of size at most  <m>\frac{\epsilon}{2}</m>. This means
+<ul>
+<li> we need <m>|G|\cdot|f(x)-F|</m> to be of size at most <m>\frac{\epsilon}{2}</m>, and</li>
+<li>
+	we need <m>|g(x)-G|</m> to be of size at most <m>\frac{\epsilon}{2(|F|+1)}</m>  since we know that <m>|f(x)| \leq |F|+1</m> when <m>x</m> is close to <m>a</m>.
+</li>
+</ul>
+</p>
+
+<p>Armed with these tricks we turn to the proofs.</p>
+
+<proof>
+<p><alert>Proof of Theorem<nbsp/><xref ref="thm_arith_lim"/> <mdash/> limit of a product.</alert></p>
+
+<p>
+Let <m>a \in \mathbb{R}</m> and assume that
+<md>
+<mrow>
+  \lim_{x \to a} f(x) &amp;= F &amp; \text{ and } &amp;&amp;
+  \lim_{x \to a} g(x) &amp;= G.
+</mrow>
+</md>
+We wish to show that
+<md>
+<mrow>
+\lim_{x \to a} f(x)\cdot g(x) &amp;= F\cdot G.
+</mrow>
+</md>
+</p>
+
+<p>
+Let <m>\epsilon \gt 0</m>. Set <m>\epsilon_1 = \frac{\epsilon}{2(|G|+1)}</m> (the extra <m>+1</m> in the denominator is just there to make sure that <m>\epsilon_1</m> is well<ndash/>defined even if <m>G=0</m>),  and <m>\epsilon_2 = \frac{\epsilon}{2(|F|+1)}</m>. From this we establish the  existence of <m>\delta_1,  \delta_2, \delta_3</m> which we need below.
+<ul>
+<li>
+	By assumption <m>f(x) \to F</m> so there exists <m>\delta_1 \gt 0</m> so that whenever  <m>|x-a| \lt \delta_1</m>, we also have <m>|f(x)-F| \lt \epsilon_1</m>.
+</li>
+<li>
+	Similarly because <m>g(x) \to G</m>, there exists <m>\delta_2 \gt 0</m>  so that whenever <m>|x-a| \lt \delta_2</m>, we also have  <m>|g(x)-G| \lt \epsilon_2</m>.
+</li>
+<li>
+	By Lemma<nbsp/><xref ref="lem_fx_F1"/> there exists <m>\delta_3 \gt 0</m> so that whenever  <m>|x-a| \lt \delta_3</m>, we also have <m>|f(x)| \leq |F|+1</m>.
+</li>
+</ul>
+</p>
+
+<p>
+Let <m>\delta = \min\{\delta_1, \delta_2, \delta_3 \}</m>, assume <m>|x-a| \lt \delta</m>   and consider <m>|f(x) \cdot g(x) - F\cdot G|</m>. Rearrange the terms as we did  above:
+<md>
+<mrow>
+ | f(x) \cdot g(x) - F\cdot G |
+  &amp;= |f(x)\cdot( g(x)-G) + (f(x)-F)\cdot G |
+</mrow><mrow>
+  &amp; \leq |f(x)| \cdot |g(x)-G| + |G| \cdot |f(x)-F|
+</mrow>
+</md>
+By our three dot-points above we know that <m>|f(x)-F| \lt \epsilon_1</m> and  <m>|g(x)-G| \lt \epsilon_2</m> and <m>|f(x)| \leq |F|+1</m>, so we have
+<md>
+<mrow>
+ | f(x) \cdot g(x) - F\cdot G |  &amp; \lt  |f(x)| \cdot \epsilon_2 + |G| \cdot \epsilon_1
+</mrow>
+<intertext> sub in <m>\epsilon_1,\epsilon_2</m> and bound on <m>f(x)</m></intertext>
+<mrow>
+  &amp; \lt  (|F|+1) \cdot \frac{\epsilon}{2(|F|+1)} + |G|\cdot\frac{\epsilon}{2(|G|+1)}
+</mrow><mrow>
+  &amp;\leq  \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+</mrow>
+</md>
+</p>
+
+<p>
+Thus we have shown that for any <m>\epsilon \gt 0</m> there exists <m>\delta \gt 0</m> so that  when <m>|x-a| \lt \delta</m> we also have <m>|f(x)\cdot g(x)-F\cdot G| \lt \epsilon</m>. Hence  <m>f(x)\cdot g(x) \to F\cdot G</m>.
+</p>
+</proof>
+
+<p>
+Finally we can prove the limit of a reciprocal. Notice that
+<md>
+<mrow>
+  \frac{1}{g(x)} - \frac{1}{G} &amp;= \frac{G-g(x)}{g(x) \cdot G}
+</mrow>
+</md>
+We need to show the LHS is of size at most <m>\epsilon</m> when <m>x</m> is close enough to <m>a</m>, so if <m>G-g(x)</m> is small we are done <mdash/> except if <m>g(x)</m> or <m>G</m> are close to zero. By assumption  (go back and read Theorem<nbsp/><xref ref="thm_arith_lim"/>) we have <m>G \neq 0</m>, and we know from Lemma<nbsp/><xref ref="lem_fx_F2"/> that <m>|g(x)|</m> cannot be smaller than <m>\frac{|G|}{2}</m>. Together these imply that the denominator on the RHS cannot be zero and indeed must be  of magnitude at least <m>\frac{|G|^2}{2}</m>. Thus we need <m>|G-g(x)|</m> to be of size at most <m>\epsilon \cdot \frac{|G|^2}{2}</m>.
+</p>
+
+<proof>
+<p><alert>Proof of Theorem<nbsp/><xref ref="thm_arith_lim"/> <mdash/> limit of a reciprocal.</alert></p>
+
+<p>
+Let <m>\epsilon \gt 0</m> and set <m>\epsilon_1 = \epsilon|G|^2 \cdot \frac{1}{2}</m>. We  now use this and Lemma<nbsp/><xref ref="lem_fx_F2"/> to establish the existence of <m>\delta_1,  \delta_2</m>.
+<ul>
+<li>
+	Since <m>g(x) \to G</m> we know that there exists <m>\delta_1 \gt 0</m> so that when  <m>|x-a| \lt \delta_1</m> we also have <m>|g(x)-G| \lt \epsilon_1</m>.
+</li>
+<li>
+	By Lemma<nbsp/><xref ref="lem_fx_F2"/> there exists <m>\delta_2</m> so that when  <m>|x-a| \lt \delta_2</m> we also have <m>|g(x)| \gt \frac{|G|}{2}</m>. Equivalently, when <m>|x-a| \lt \delta_2</m> we also have <m>\left|\frac{G}{2g(x)}\right| \lt 1</m>.
+</li>
+</ul>
+</p>
+
+<p>
+Set <m>\delta = \min\{\delta_1,\delta_2\}</m> and assume <m>|x-a| \lt \delta</m>. Then
+<md>
+<mrow>
+  \left| \frac{1}{g(x)} - \frac{1}{G} \right| &amp;= \left| \frac{G - g(x)}{g(x) \cdot G} \right|
+</mrow><mrow>
+  &amp;= |g(x) - G| \cdot \frac{1}{|G|\cdot |g(x)|} &amp; \text{ by assumption}
+</mrow><mrow>
+  &amp;  \lt  \frac{\epsilon_1}{|G| \cdot |g(x)|} &amp; \text{ sub in $\epsilon_1$}
+</mrow><mrow>
+  &amp; = \epsilon \cdot \frac{|G|}{2  |g(x)|} &amp; \text{ since $\left|\frac{G}{2g(x)}\right| \lt 1$}
+</mrow><mrow>
+  &amp;  \lt  \epsilon
+</mrow>
+</md>
+Thus we have shown that for any <m>\epsilon \gt 0</m> there exists <m>\delta \gt 0</m> so that  when <m>|x-a| \lt \delta</m> we also have <m>|\frac{1}{g(x)} -  \frac{1}{G}| \lt \epsilon</m>. Hence <m>\frac{1}{g(x)} \to \frac{1}{G}</m>.
+</p>
+</proof>
+
+<p> We can also now prove the Squeeze / sandwich / pinch theorem.
+</p>
+<proof>
+<p><alert>Proof of Theorem<nbsp/><xref ref="thm_squeeze"/> <mdash/> Squeeze / sandwich / pinch.</alert></p>
+
+<p>
+In the squeeze theorem, we are given three functions <m>f(x)</m>, <m>g(x)</m> and <m>h(x)</m> and are told that
+<md>
+<mrow>
+    f(x) \leq g(x) \leq h(x) \quad\text{and}\quad \lim_{x \to a} f(x) &amp;= \lim_{x \to a} h(x) = L
+</mrow>
+</md>
+and we must conclude from this that <m>\lim\limits_{x \to a} g(x) = L</m> too. That is, we are given some fixed, but unspecified, <m>\epsilon \gt 0</m> and it is up to us to find a <m>\delta \gt 0</m> with the property that  <m>\left| g(x) - L \right| \lt \epsilon</m> whenever <m>|x-a| \lt \delta</m>. Now because we have been told that <m>f</m> and <m>h</m> both converge to <m>L</m>, there exist <m>\delta_1 \gt 0</m> and  <m>\delta_2 \gt 0</m> such that
+<ul>
+<li>
+	<m>\left| f(x) - L \right| \lt \epsilon</m>,  i.e. <m>L-\epsilon \lt f(x) \lt L+\epsilon</m>,   whenever <m>|x-a| \lt \delta_1</m>, and
+</li>
+<li>
+	<m>\left| h(x) - L \right| \lt \epsilon</m>,   i.e. <m>L-\epsilon \lt h(x) \lt L+\epsilon</m>,   whenever <m>|x-a| \lt \delta_2</m>
+</li>
+</ul>
+So set <m>\delta = \min\{\delta_1,\delta_2\}</m> and assume <m>|x-a| \lt \delta</m>. Then both <m>L-\epsilon \lt f(x) \lt L+\epsilon</m> and <m>L-\epsilon \lt h(x) \lt L+\epsilon</m> so that
+<md>
+<mrow>
+L-\epsilon \lt f(x) &amp;\le g(x) \le h(x)  \lt  L+\epsilon &amp; \text{which implies that}
+</mrow><mrow>
+L-\epsilon \lt  &amp; g(x)  \lt  L+\epsilon &amp; \text{which in turn gives us}
+</mrow><mrow>
+&amp;\left| g(x) - L \right| \lt \epsilon
+</mrow>
+</md>
+as desired.
+</p>
+</proof>
+
+</introduction>
+</section>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_proof_arith_deriv">
+<title>Proofs of the arithmetic of derivatives</title>
+<introduction>
+
+<p>
+The theorems of the previous section are not too difficult to prove from the  definition of the derivative (which we know) and the arithmetic of  limits (which we also know). In this section we show how to construct  these rules.
+</p>
+
+<p>
+Throughout this section we will use our two functions <m>f(x)</m> and <m>g(x)</m>. Since the  theorems we are going to prove all express derivatives of linear combinations, products  and quotients in terms of <m>f,g</m> and their derivatives, it is helpful to recall the  definitions of the derivatives of <m>f</m> and <m>g</m>:
+<md>
+<mrow>
+f'(x) &amp;=\lim_{h\to0} \frac{f(x+h)-f(x)}{h} &amp;\text{and}&amp;&amp;
+g'(x) &amp;=\lim_{h\to0} \frac{g(x+h)-g(x)}{h}.
+</mrow>
+</md>
+Our proofs, roughly speaking, involve doing algebraic manipulations to uncover the  expressions that look like the above.
+</p>
+
+</introduction>
+<subsection><title>Proof of the linearity of differentiation (Theorem <xref ref="thm_DIFFlinearity"/>)</title>
+<p>
+Recall that in Theorem <xref ref="thm_DIFFlinearity"/> we defined  <m>S(x)=\alpha\,f(x)+\beta\,g(x)</m>, where <m>\alpha,\beta\in\bbbr</m>  are constants. We wish to compute <m>S'(x)</m>, so we start with the definition:
+<md>
+<mrow>
+  S'(x) &amp;= \lim_{h \to 0} \frac{S(x+h)-S(x)}{h}
+</mrow>
+</md>
+Let us concentrate on the numerator of the expression inside the limit and then come  back to the full limit in a moment. Substitute in the definition of <m>S(x)</m>:
+<md>
+<mrow>
+  S(x+h)-S(x) &amp;=
+  \big[ \alpha f(x+h) + \beta g(x+h) \big] -
+  \big[ \alpha f(x) + \beta g(x) \big]  &amp;\text{collect terms}
+</mrow><mrow>
+&amp;=\alpha\big[f(x+h)-f(x)]+\beta\big[g(x+h)-g(x)\big]
+</mrow>
+</md>
+Now it is easy to see the structures we need <mdash/> namely, we almost have the expressions  for the derivatives <m>f'(x)</m> and <m>g'(x)</m>. Indeed, all we need to do is divide by <m>h</m> and  take the limit. So lets finish things off.
+<md>
+<mrow>
+  S'(x) &amp;= \lim_{h \to 0} \frac{S(x+h)-S(x)}{h} &amp; \text{from above}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} \frac{\alpha\big[f(x+h)-f(x)]+\beta\big[g(x+h)-g(x)\big] }{h}
+</mrow><mrow>
+  &amp;= \lim_{h \to 0} \left[ \alpha\frac{f(x+h)-f(x)}{h} + \beta\frac{g(x+h)-g(x)}{h}
+\right] &amp;\text{limit laws}
+</mrow><mrow>
+  &amp;= \alpha\lim_{h \to 0} \frac{f(x+h)-f(x)}{h} + \beta\lim_{h\to0}\frac{g(x+h)-g(x)}{h}
+</mrow><mrow>
+  &amp;=\alpha f'(x) + \beta g'(x)
+</mrow>
+</md>
+as required.
+</p>
+
+</subsection>
+<subsection><title>Proof of the product rule (Theorem <xref ref="thm_DIFFprodRule"/>)</title>
+
+<p>
+After the warm-up above, we will just jump straight in. Let <m>P(x)=f(x)\, g(x)</m>, the  product of our two functions. The derivative of the product is given by
+<md>
+<mrow>
+  P'(x) &amp;= \lim_{h \to 0} \frac{P(x+h)-P(x)}{h}
+</mrow>
+</md>
+Again we will focus on the numerator inside the limit and massage it into the form we  need. To simplify these manipulations, define
+<md>
+<mrow>
+F(h) &amp;= \frac{f(x+h)-f(x)}{h} &amp; \text{ and } &amp;&amp;
+G(h) &amp;= \frac{g(x+h)-g(x)}{h}.
+</mrow>
+<intertext>Then we can write</intertext><mrow>
+  f(x+h)&amp;= f(x)+hF(h) &amp;\text{and} &amp;&amp; g(x+h)&amp;=g(x)+hG(h).
+</mrow>
+<intertext>We can also write</intertext><mrow>
+  f'(x) &amp;= \lim_{h\to0} F(h) &amp; \text{and}&amp;&amp;
+  g'(x) &amp;= \lim_{h\to0} G(h).
+</mrow>
+</md>
+So back to that numerator:
+<md>
+<mrow>
+P(x+h)-P(x)
+&amp;=f(x+h)\cdot g(x+h)-f(x) \cdot g(x) &amp; \text{substitute}
+</mrow><mrow>
+&amp;=[f(x)+ hF(h)]\ [g(x)+hG(h)]-f(x) \cdot g(x) &amp; \text{expand}
+</mrow><mrow>
+&amp;=f(x)g(x) + f(x)\cdot hG(h) + hF(h)\cdot g(x) + h^2 F(h)\cdot G(h) -f(x) \cdot
+g(x)
+</mrow><mrow>
+&amp;= f(x) \cdot hG(h) + hF(h) \cdot g(x) + h^2F(h) \cdot G(h).
+</mrow>
+</md>
+Armed with this we return to the definition of the derivative:
+<md>
+<mrow>
+P'(x)
+&amp;=\lim_{h\to 0}\frac{P(x+h)-P(x)}{h}
+</mrow><mrow>
+&amp;= \lim_{h\to 0} \frac{f(x) \cdot hG(h) + hF(h) \cdot g(x) + h^2 F(h) \cdot
+G(h) }{h}
+</mrow><mrow>
+&amp;= \left(\lim_{h\to 0} \frac{f(x) \cdot h G(h)}{h}\right)
+ + \left(\lim_{h\to 0} \frac{h F(h) \cdot g(x)}{h}\right)
+ + \left(\lim_{h\to 0} \frac{h^2 F(h) \cdot G(h) }{h}\right)
+</mrow><mrow>
+&amp;= \left(\lim_{h\to 0} f(x) \cdot G(h)\right)
+ + \left(\lim_{h\to 0} F(h) \cdot g(x)\right)
+ + \left(\lim_{h\to 0} h  F(h) \cdot G(h)\right)
+</mrow>
+<intertext>Now since <m>f(x)</m> and <m>g(x)</m> do not change as we send <m>h</m> to zero, we can pull  them outside. We can also write the third term as the product of 3 limits:</intertext>
+<mrow>
+&amp;= \left(f(x) \lim_{h\to 0} G(h)\right)
+ + \left(g(x) \lim_{h\to 0} F(h)\right)
+ + \left(\lim_{h\to 0} h\right)  \cdot \left(\lim_{h\to0} F(h)\right) \cdot
+\left(\lim_{h\to0} G(h)\right)
+</mrow><mrow>
+&amp;= f(x) \cdot g'(x) + g(x)\cdot f'(x) + 0 \cdot f'(x) \cdot g'(x)
+</mrow><mrow>
+&amp;= f(x) \cdot g'(x) + g(x) \cdot f'(x).
+</mrow>
+</md>
+And so we recover the product rule.
+</p>
+</subsection>
+
+<subsection><title>(optional) <mdash/> Proof of the quotient rule (Theorem <xref ref="thm_DIFFquotRule"/>)</title>
+<p>
+This one is relatively messy, so we have made it optional. Let us start by writing the  quotient of our two functions as <m>Q(x) = f(x) / g(x)</m>, and we assume that <m>g(x) \neq 0</m>.  As before, we start our manipulations from the definition of the derivative
+<md>
+<mrow>
+Q'(x)
+&amp;=\lim_{h\to 0}\frac{Q(x+h)-Q(x)}{h} &amp;&amp; \text{(now substitute in $Q$)}
+</mrow><mrow>
+&amp; =\lim_{h\to 0}\frac{1}{h}
+           \left[\frac{f(x+h)}{g(x+h)}-\frac{f(x)}{g(x)}\right] &amp;&amp;
+\text{(and then form a common denominator)}
+</mrow><mrow>
+&amp;=\lim_{h\to 0}
+    \frac{ f(x+h)\cdot g(x) - f(x)\cdot g(x+h) }
+                            {h \cdot g(x+h)\cdot g(x)}
+</mrow>
+</md>
+We make use of the same <m>F, G</m> that we used in the proof of the product rule. We use  them to rewrite <m>f(x+h)</m> as <m>f(x) + hF(h)</m> and <m>g(x+h)</m> as <m>g(x+h)=g(x)+hG(h)</m>.  First  concentrate on the numerator of the above expression:
+<md>
+<mrow>
+f(x+h)\cdot g(x) - f(x)\cdot g(x+h)
+&amp;=[f(x)+hF(h)]\cdot g(x) - f(x)\cdot [g(x)+hG(h)]
+</mrow><mrow>
+&amp;=f(x)\cdot g(x) + h g(x) \cdot F(h)  -f(x)\cdot g(x) - h f(x) \cdot G(h)
+</mrow><mrow>
+&amp;= h g(x) \cdot F(h)  - h f(x) \cdot G(h)
+</mrow>
+</md>
+So dividing this by the denominator, and cancelling the common factor  of <m>h</m>, gives
+<md>
+<mrow>
+\frac{Q(x+h)-Q(x)}{h}
+  &amp;= \frac{F(h) \cdot g(x) - f(x)\cdot G(h)}{g(x+h)\cdot g(x)}
+</mrow>
+</md>
+To arrive at <m>Q'(x)</m> we take the limit of the above as <m>h \to 0</m>; since it  is the limit of a ratio with a non-zero denominator, the result is a ratio  of limits:
+<md>
+<mrow>
+Q'(x)
+&amp;=\lim_{h\to 0}
+\frac{F(h) \cdot g(x) - f(x)\cdot G(h)}{g(x+h)\cdot g(x)}
+</mrow><mrow>
+&amp;=
+\frac{\ds \lim_{h\to 0} \left[ F(h) \cdot g(x) - f(x)\cdot G(h)\right]}
+{\ds \lim_{h \to 0} \left[ g(x+h)\cdot g(x)\right]}
+</mrow>
+</md>
+Processing the denominator gives
+<md>
+<mrow>
+\lim_{h \to 0} \left[ g(x+h)\cdot g(x)\right]
+&amp;= g(x) \cdot \lim_{h\to0}g(x+h) &amp; \text{since $g(x)$ doesn't change with $h$}
+</mrow><mrow>
+&amp;= g(x)^2
+</mrow>
+</md>
+While the numerator is
+<md>
+<mrow>
+\lim_{h\to 0} \left[ F(h) \cdot g(x) - f(x)\cdot G(h)\right]
+&amp;= \lim_{h\to0} F(h)\cdot g(x) - \lim_{h\to 0} f(x)\cdot G(h)
+</mrow>
+<intertext>Now because <m>f(x),g(x)</m> do not change with <m>h</m> we can factor them  out.</intertext>
+<mrow>
+&amp;= g(x) \lim_{h\to0} F(h) - f(x) \lim_{h\to 0} G(h)
+</mrow><mrow>
+&amp;= g(x) f'(x) - f(x) g'(x)
+</mrow>
+</md>
+Putting these pieces back together finally gives
+<md>
+<mrow>
+Q(x) &amp;= \frac{g(x) f'(x) - f(x) g'(x)}{g(x)^2}.
+</mrow>
+</md>
+And we arrive at the quotient rule. Note that we have assumed that the  derivatives <m>f'(x), g'(x)</m> exist and that <m>g(x) \neq 0</m>.
+</p>
+</subsection>
+
+<!--
+<subsection><title>Exercises</title>
+<exercises>
+<introduction>There are no exercises for this section of the text.</introduction>
+</exercises>
+</subsection>
+-->
+
+</section>

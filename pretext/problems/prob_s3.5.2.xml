@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_find_maxmin"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+Sketch a function <m>f(x)</m> such that:
+<ul>
+<li> <m>f(x)</m> is defined over all real numbers
+</li>
+<li> <m>f(x)</m> has a global max but no global min.
+</li>
+</ul>
+</p></statement>
+<hint><p>
+One way to avoid a global minimum is to have <m>\ds\lim_{x \to \infty}f(x)=-\infty</m>. Since <m>f(x)</m> keeps getting lower and lower, there is no one value that is the lowest.
+</p></hint>
+<answer><p>Two examples are given below, but many are possible.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{2}{4}{1}
+\draw plot[domain=-1.75:1.75](\x,{-\x*\x}) node[right]{$y=f(x)$};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{2}
+\draw plot[domain=-2.75:-.1, samples=100](\x,{-sqrt(abs(\x))}) ;
+\draw plot[domain=.1:2.75, samples=100](\x,{-sqrt(abs(\x))}) node[right]{$y=f(x)$};
+\draw plot[domain=-.1:.1, samples=100](\x,{-sqrt(abs(\x))}) ;
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>Two examples are given below, but many are possible.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{2}{4}{1}
+\draw plot[domain=-1.75:1.75](\x,{-\x*\x}) node[right]{$y=-x^2$};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{2}
+\draw plot[domain=-2.75:-.1, samples=100](\x,{-sqrt(abs(\x))}) ;
+\draw plot[domain=.1:2.75, samples=100](\x,{-sqrt(abs(\x))}) node[right]{$y=-\sqrt{|x|}$};
+\draw plot[domain=-.1:.1, samples=100](\x,{-sqrt(abs(\x))}) ;
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>If <m>f(x)=-x^2</m> or <m>f(x)=-\sqrt{|x|}</m>, then <m>f(x)</m> has a global maximum at <m>x=0</m>. Since <m>f(x)</m> keeps getting more and more strongly negative as <m>x</m> gets farther and farther from 0, <m>f(x)</m> has no global minimum.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+Sketch a function <m>f(x)</m> such that:
+<ul>
+<li> <m>f(x)</m> is defined over all real numbers
+</li>
+<li> <m>f(x)</m> is always positive
+</li>
+<li> <m>f(x)</m> has no global max and no global min.
+</li>
+</ul>
+</p></statement>
+<hint><p>
+Try allowing the function to approach the <m>x</m>-axis without ever touching it.
+</p></hint>
+<answer><p>Two examples are given below, but many are possible.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{2}{1}{4}
+\draw plot[domain=-1.75:2](\x,{exp(\x)/2}) node[right]{$y=e^x$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{6}{6}{1}{4}
+\draw plot[domain=-1.4:1.4]({tan(\x r)},\x+2) node[right]{$y=\arctan x+2$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>Two examples are given below, but many are possible.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{2}{2}{1}{4}
+\draw plot[domain=-1.75:2](\x,{exp(\x)/2}) node[right]{$y=e^x$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> If <m>f(x)=e^x</m>, then <m>f(x)  \gt  0</m> for all <m>x</m>. As we move left along the <m>x</m>-axis, <m>f(x)</m> gets smaller and smaller, approaching 0 but never reaching it. Since <m>f(x)</m> gets smaller and smaller as we move left, there is no global minimum. Likewise, <m>f(x)</m> increases more and more as we move right, so there is no maximum.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{6}{6}{1}{4}
+\draw plot[domain=-1.4:1.4]({tan(\x r)},\x+2) node[right]{$y=\arctan x+2$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>If <m>f(x)=\arctan(x)+2</m>, then <m>f(x)  \gt \left(-\frac{\pi}{2}\right)+2 \gt 0</m> for all <m>x</m>.
+</p>
+
+<p>As we move left along the <m>x</m>-axis, <m>f(x)</m> gets smaller and smaller, approaching <m>\left(-\frac{\pi}{2}+2\right)</m> but never reaching it. Since <m>f(x)</m> gets smaller and smaller as we move left, there is no global minimum.
+</p>
+
+<p> Likewise, as we move right along the <m>x</m>-axis,
+<m>f(x)</m> gets bigger and bigger, approaching <m>\left(\frac{\pi}{2}+2\right)</m> but never reaching it. Since <m>f(x)</m> gets bigger and bigger as we move right, there is no global maximum.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Sketch a function <m>f(x)</m> such that:
+<ul>
+<li> <m>f(x)</m> is defined over all real numbers
+</li>
+<li> <m>f(x)</m> has a global minimum at <m>x=5</m>
+</li>
+<li> <m>f(x)</m> has a global minimum at <m>x=-5</m>, too.
+</li>
+</ul>
+</p></statement>
+<hint><p>
+Since the global minimum value occurs at <m>x=5</m> and <m>x=-5</m>, it must be true that <m>f(5)=f(-5)</m>.
+</p></hint>
+<answer><p>One possible answer:</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{4}{2}{5}
+\draw plot[domain=-3.5:3.5, samples=100](\x,{(\x*\x-9)*(\x*\x+9)*\x*\x/200}) node[right]{$y=f(x)$};
+\YExcoord{-2.3}{-5}
+\YExcoord{2.3}{5}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+Since <m>f(5)</m> is a global minimum, <m>f(5) \leq f(x)</m> for all <m>x</m>, and so in particular <m>f(5) \leq f(-5)</m>.
+</p>
+<p>
+Similarly, <m>f(-5) \leq f(x)</m> for all <m>x</m>, so in particular <m>f(-5) \leq f(5)</m>.
+</p>
+<p>
+Since <m>f(-5) \leq f(5)</m> AND <m>f(5) \leq f(-5)</m>, it must be true that <m>f(-5)=f(5)</m>.
+</p>
+
+<p>A sketch of one such graph is below.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{4}{2}{5}
+\draw plot[domain=-3.5:3.5, samples=100](\x,{(\x*\x-9)*(\x*\x+9)*\x*\x/200}) node[right]{$y=f(x)$};
+\YExcoord{-2.3}{-5}
+\YExcoord{2.3}{5}
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+</exercise>
+</exercisegroup>
+
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+<m>f(x)=x^2+6x-10</m>.
+Find all global extrema on the interval <m>[-5,5]</m>
+</p></statement>
+<hint><p>
+Global extrema will either occur at critical points in the interval <m>(-5,5)</m> or at the endpoints <m>x=5,\,x=-5</m>.
+</p></hint>
+<answer><p>
+The global maximum is 45 at <m>x=5</m> and the global minimum is <m>-19</m> at <m>x=-3</m>.
+</p></answer>
+<solution><p>
+Global extrema will occur at critical or singular points in the interval <m>(-5,5)</m> or at the endpoints <m>x=5,\,x=-5</m>.
+</p>
+
+<p><m>f'(x)=2x+6</m>. Since this is defined for all real numbers, there are no singular points. The only time <m>f'(x)=0</m> is when <m>x=-3</m>. This is inside the interval <m>[-5,5]</m>. So, our points to check are <m>x=-3,\,x=-5,</m> and <m>x=5</m>.
+</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell><m>c</m> </cell><cell> <m>-3</m> </cell><cell>  <m>-5</m> </cell><cell>  <m>5</m> </cell>
+</row><row>
+<cell>type </cell><cell> critical point </cell><cell> endpoint </cell><cell> endpoint  </cell>
+</row><row>
+<cell><m>f(c)</m> </cell><cell> <m>-19</m> </cell><cell> <m>-15</m> </cell><cell> <m>45</m></cell>
+</row></tabular>
+</sidebyside>
+
+<p>The global maximum is 45 at <m>x=5</m> and the global minimum is <m>-19</m> at <m>x=-3</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+<m>f(x)=\dfrac{2}{3}x^3-2x^2-30x+7</m>.
+Find all global extrema on the interval <m>[-4,0]</m>.
+</p></statement>
+<hint><p>
+You only need to consider critical points that are in the interval <m>(-4,0).</m>
+</p></hint>
+<answer><p>
+The global maximum over the interval is <m>61</m> at <m>x=-3</m>, and the global minimum is <m>7</m> at <m>x=0</m>.
+</p></answer>
+<solution><p>
+Global extrema will occur at the endpoints of the interval, <m>x=-4</m> and <m>x=0</m>, or at singular or critical points inside the interval. Since <m>f(x)</m> is a polynomial, it is differentiable everywhere, so there are no singular points. To find the critical points, we set the derivative equal to zero.
+<md>
+<mrow>
+f'(x)&amp;=2x^2-4x-30
+</mrow><mrow>
+0&amp;=2x^2-4x-30
+&amp;=(2x-10)(x+3)
+</mrow><mrow>
+x&amp;=5,\,-3
+</mrow>
+</md>
+The only critical point inside the interval is <m>x=-3</m>.
+</p>
+
+<sidebyside>
+<tabular>
+<row>
+<cell><m>c</m> </cell><cell> <m>-3</m> </cell><cell>  <m>-4</m> </cell><cell>  <m>0</m> </cell>
+</row><row>
+<cell> type </cell><cell> critical point </cell><cell> endpoint </cell><cell> endpoint  </cell>
+</row><row>
+<cell><m>f(c)</m> </cell><cell> <m>61</m> </cell><cell> <m>\frac{157}{3}=52+\frac{1}{3}</m> </cell><cell> <m>7</m></cell>
+</row></tabular>
+</sidebyside>
+
+<p> The global maximum over the interval is <m>61</m> at <m>x=-3</m>, and the global minimum is <m>7</m> at <m>x=0</m>.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

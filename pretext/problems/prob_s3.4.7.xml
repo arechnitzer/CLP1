@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises><title>Exercises for <sect/><nbsp/><xref ref="ssec_est_change"/> </title>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+Let <m>f(x)=7x^2-3x+4</m>.
+Suppose we measure <m>x</m> to be <m>x_0 = 2</m>
+        but that the real value of <m>x</m> is <m>x_0+\Delta x</m>. Suppose further that
+        the error in our measurement is <m>\Delta x = 1</m>.
+Let <m>\Delta y</m> be the change in <m>f(x)</m> corresponding to a change of <m>\Delta x </m> in <m>x_0</m>. That is,
+<m>\Delta y = f\left(x_0+\Delta x\right)-f(x_0)</m>.
+</p>
+
+<p>True or false: <m>\Delta y = f'(2)(1)=25</m>
+</p></statement>
+<hint><p>
+Is the linear approximation exact, or approximate?
+</p></hint>
+<answer><p> False.
+</p></answer>
+<solution><p>
+False. The linear approximation is an <em>approximation</em>. It tells us
+<me>
+\Delta  y \approx  f'(x_0)\Delta x=f'(2)(1)=25</me>
+</p>
+
+<p>However, from our definition of <m>\Delta y</m>,
+<me>
+\Delta y = f(x_0+\Delta x)-f(x_0)=f(2+1)-f(2)=58-26=32</me>
+</p>
+
+<p>Remark: this is to emphasize that the calculations in this subsection are <em>estimations</em> of error bounds, rather than actual error bounds. All we can say is that we <em>estimate</em> the error will be no more than some number--we don't guarantee it.
+</p>
+
+<p>In the next subsection, we will introduce an error bound that is guaranteed to be accurate. It is usually harder to calculate than the estimations in this section.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose the exact amount you are supposed to tip is <dollar />5.83, but you approximate and tip <dollar />6. What is the absolute error in your tip? What is the percent error in your tip?
+</p></statement>
+<hint><p>
+When an exact value <m>Q_0</m> is measured as <m>Q_0+\Delta Q</m>,
+Definition<nbsp/><xref ref="def_APPrelError"/>
+</p>
+
+<p>gives us the absolute error as <m>|\Delta Q|</m>, and the percentage error as <m>100\dfrac{|\Delta Q|}{Q_0}</m>.
+</p></hint>
+<answer><p>
+Absolute error: 0.17; percentage error: 2.92%
+</p></answer>
+<solution><p>
+When an exact value <m>Q_0</m> is measured as <m>Q_0+\Delta Q</m>,
+Definition<nbsp/><xref ref="def_APPrelError"/>
+</p>
+
+<p>gives us the absolute error as <m>|\Delta Q|</m>, and the percentage error as <m>100\dfrac{|\Delta Q|}{Q_0}</m>.
+</p>
+
+<p>In our situation, <m>Q_0=5.83</m> and <m>Q_0+\Delta Q = 6</m>, so <m>\Delta Q = 0.17</m>. So, the absolute error is <m>0.17</m>, and the percentage error is
+<me>
+100\frac{0.17}{5.83}\approx 2.92 \%</me>
+</p>
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose <m>f(x)=3x^2-5</m>. If you measure <m>x</m> to be <m>10</m>, but its actual value is <m>11</m>, estimate the resulting error in <m>f(x)</m> using the linear approximation, and then the quadratic approximation.
+</p></statement>
+<hint><p>
+Let <m>\Delta y</m> is the change in <m>f(x)</m> associated to a change in <m>x</m> from <m>a</m> to <m>a+\Delta x</m>. The linear approximation tells us
+<me>
+\Delta y \approx f'(a)\Delta x</me>
+</p>
+
+<p>while the quadratic approximation tells us
+<me>
+\Delta y \approx f'(a)\Delta x+\frac{1}{2}f''(a)\left(\Delta x\right)^2</me>
+</p>
+</hint>
+<answer><p>
+The linear approximates estimates the error in <m>f(x)</m> to be about 60, while
+the quadratic approximates estimates the error in <m>f(x)</m> to be about 63.
+</p></answer>
+<solution><p>
+Since <m>f'(x)=6x</m>, when <m>x=10</m>, <m>f'(10)=60</m>. If <m>\Delta y=f(11)-f(10)</m>, and <m>\Delta x = 11-10</m>, then the linear approximation tells us
+<me>
+\Delta y \approx 60\Delta x = 60</me>
+</p>
+
+<p>So, the linear approximates estimates the error in <m>f(x)</m> to be about 60.
+</p>
+
+<p>Since <m>f''(x)=6</m>, the quadratic approximation
+(using <m>f'(10)=60</m>, <m>f''(10)=6</m>, and <m>\Delta x = 1</m>) tells us
+<me>
+\Delta y \approx f'(10)\Delta x+\frac{1}{2}f''(1)\left(\Delta x\right)^2= 60\cdot 1 +\frac{1}{2}(6)(1)^2=
+63</me>
+</p>
+
+<p>So, the quadratic approximates estimates the error in <m>f(x)</m> to be about 63. (Indeed, the exact value of <m>f(11)-f(10)</m> is 63. It is not   a fluke that our estimated error, using a quadratic approximation, is exactly the same as our actual error. It is a consequence of the fact that <m>f(x)</m> is a quadratic
+         function.)
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+A circular pen is being built on a farm. The pen must contain <m>A_0</m> square metres, with an error of no more than 2%. Estimate the largest percentage error allowable on the radius.
+</p></statement>
+<hint><p>
+The exact area desired is <m>A_0</m>. Let the corresponding exact radius desired be <m>r_0</m>. The linear approximation tells us <m>\Delta A \approx A'(r_0) \Delta r</m>. Use this relationship, and what you know about the error allowable in <m>A</m>, to find the error allowable in <m>r</m>.
+</p></hint>
+<answer><p>
+1%
+</p></answer>
+<solution><p>
+Let <m>A</m> be the area of a pen of radius <m>r</m>. Then
+<md>
+<mrow>
+A(r)&amp;=\pi r^2
+</mrow>
+<intertext>Differentiating with respect to <m>r</m>,</intertext><mrow>
+A'(r)&amp;=2\pi r
+</mrow>
+<intertext>The exact area desired is <m>A_0</m>. Let the corresponding exact radius desired be <m>r_0</m>.</intertext><mrow>
+</mrow>
+<intertext>Using the linear approximation formula, where <m>\Delta A</m> is the change in <m>A</m> corresponding to a change in <m>r</m> of <m>\Delta r</m>,</intertext><mrow>
+\Delta A &amp;\approx A'(r_0)\Delta r = 2\pi r_0 \Delta r
+</mrow><mrow>
+\Delta r &amp;\approx \dfrac{\Delta A}{2\pi r_0}
+</mrow>
+<intertext>What we're interested in is the percent error <m>r</m> can have. The percent error is:</intertext><mrow>
+100\frac{\Delta r}{r_0}&amp;\approx100\frac{\Delta A}{2\pi r_0\cdot r_0}
+</mrow><mrow>
+&amp;=100\frac{\Delta A}{2(\pi r_0^2)}
+</mrow><mrow>
+&amp;=100\frac{\Delta A}{2\cdot A_0}
+</mrow><mrow>
+&amp;=\left( 100\frac{\Delta A}{A_0}\right)\frac{1}{2}
+</mrow><mrow>
+&amp;\leq\left( 2\right)\frac{1}{2}=1
+</mrow>
+</md>
+(To get the last line, we used the given information that the percent error in the area, <m>100\dfrac{\Delta A}{A_0}</m>, must be less than 2%.)
+</p>
+
+<p>We conclude the error in <m>r</m> cannot be more than 1%.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A circle with radius 3 has a sector cut out of it. It's a smallish sector, no more than a quarter of the circle. You want to find out the area of the sector.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw[fill=gray!10] (2.1,-2.1)-- (0,0)--(2.1,2.1) arc(45:-45:3cm);
+\draw (2.1,2.1) arc(45:315:3cm);
+\draw (.5,-.5) arc(-45:45:.7cm) ;
+\draw[dashed] (2.1,-2.1)--(2.1,2.1) node[right, midway]{$d$};
+\draw (1,0) node{$\theta$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>
+<ol label="a">
+<li>
+Suppose the angle of the sector is <m>\theta</m>. What is the area of the sector?
+</li>
+<li> Unfortunately, you don't have a protractor, only a ruler. So, you measure the chord made by the sector (marked <m>d</m> in the diagram above). What is <m>\theta</m> in terms of <m>d</m>?
+</li>
+<li> Suppose you measured <m>d=0.7</m>, but actually <m>d=0.68</m>. Estimate the absolute error in your calculation of the area removed.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+For part (b), cut the triangle (with angle <m>\theta</m> and side <m>d</m>) into two right triangles.
+</p></hint>
+<answer><p>
+(a) <m>\dfrac{9}{2}\theta</m>
+</p>
+<p>
+(b) <m>\theta = 2\arcsin\left(\dfrac{d}{6}\right)</m>
+</p>
+<p>
+(c) <m>\dfrac{9}{\sqrt{36-0.68^2}}\cdot0.02\approx 0.03</m>
+</p></answer>
+<solution><p>
+(a) The area removed represents a proportion of <m>\dfrac{\theta}{2\pi}</m> of the entire circle, whose area is <m>\pi(3^2)=9\pi</m>. So, the area of the sector removed is
+<me>
+\dfrac{\theta}{2\pi} \cdot9\pi = \dfrac{9}{2}\theta</me>
+</p>
+
+<p>(b) To find <m>\theta</m> from <m>d</m>, we cut our triangle (with angle <m>\theta</m> opposite side of length <m>d</m>) into two equivalent right triangles, as shown below.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (2.1,-2.1)-- (0,0)--(2.1,2.1) ;
+\draw[thick, double] (.5,-.5) arc(-45:45:.7cm) ;
+\draw (2.1,-2.1)--(2.1,2.1) node[right, midway]{$d$};
+\draw (1,0) node{$\theta$};
+\draw (1,1) node[above]{$3$};
+\draw[ultra thick, red, - \gt ] (3,0)--(5,0);
+\draw (8.1,-2.1)-- (6,0)--(8.1,2.1) ;
+\draw (8.1,-2.1)--(8.1,2.1);
+\draw (7,1) node[above]{$3$};
+\draw[dashed] (6,0)--(8.1,0);
+\draw[decorate, decoration={brace, amplitude=10pt, mirror}] (8.25,0)--(8.25,2.1) node[midway, xshift=.75cm]{$\dfrac{d}{2}$};
+\draw[thick, double] (6.7,0) arc(0:45:.7cm);
+\draw (6.95,.4) node{$\frac{\theta}{2}$} ;
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p> Using the information that the radius of the circle (also the hypotenuse of the right triangle) is 3,
+<md>
+<mrow>
+\sin\left(\frac{\theta}{2}\right)&amp;=\frac{\frac{d}{2}}{3}=\frac{d}{6}
+</mrow>
+<intertext>Since the question tells us the sector is no more than a quarter of the circle, we know <m>0 \leq \theta \leq \dfrac{\pi}{2}</m>, so <m>0 \leq \dfrac{\theta}{2} \leq \dfrac{\pi}{4}</m>. This puts <m>\dfrac{\theta}{2}</m> well within the range of arcsine.</intertext><mrow>
+\theta&amp;=2\arcsin\left(\frac{d}{6}\right)
+</mrow>
+</md>
+</p>
+
+<p>(c) First, let's
+get an expression for the area of the sector in terms of <m>d</m>.
+<md>
+<mrow>
+A&amp;=\frac{9}{2}\theta = \frac{9}{2}\left(2\arcsin\left(\frac{d}{6}\right)\right)
+</mrow><mrow>
+&amp;=9\arcsin\left(\frac{d}{6}\right)
+</mrow>
+<intertext>Differentiating,</intertext><mrow>
+A'(d)&amp;=\frac{9}{\sqrt{1-\left(\frac{d}{6}\right)^2}}\cdot\frac{1}{6}
+</mrow><mrow>
+&amp;=\frac{9}{\sqrt{36-d^2}}
+</mrow>
+<intertext>Let <m>\Delta A</m> is the error in <m>A</m> corresponding to an error of <m>\Delta d</m> in <m>d</m>.
+Since we measured <m>d</m> to be 0.7 instead of <m>0.68</m>, in the linear approximation we take <m>\Delta d = 0.02</m> and <m>d_0=0.68</m>.</intertext><mrow>
+\Delta A &amp;\approx A'(d_0)\cdot\Delta d
+</mrow><mrow>
+&amp;=A'\left(0.68\right)\cdot 0.02
+</mrow><mrow>
+&amp;=\frac{9}{\sqrt{36-0.68^2}}\cdot0.02
+</mrow><mrow>
+&amp;\approx 0.03
+</mrow>
+</md>
+So, the error in <m>A</m> is about 0.03.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A conical tank, standing on its pointy end, has height 2 metres and radius 0.5 metres.
+Estimate change in volume of the water in the tank associated to a change in the height of the water from 50 cm to 45 cm.</p>
+
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw(0,3) node[shape=ellipse, minimum height=1.25cm, minimum width=3cm, draw]{};
+\draw (1.5,3)--(0,-1)--(-1.5,3);
+\draw (0,3)--(1.5,3) node[above, midway]{$0.5$};
+\draw[decorate, decoration={brace, amplitude=10pt}] (-2,-1)--(-2,3) node[midway, xshift=-.75cm]{2};
+ \draw[fill=blue!20] (-.375,0) arc
+  (180:360:.375cm and .1875cm)--(0,-1)--cycle;
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p>
+The volume of a cone of height <m>h</m> and radius <m>r</m> is
+        <m>\frac{1}{3}\pi r^2 h</m>.
+</p></hint>
+<answer><p>
+We estimate the volume decreased by about <m>0.00078</m> cubic metres, or about
+780 cubic centimetres.
+</p></answer>
+<solution><p>
+Suppose we have an equation <m>V(h)</m> that gives the volume of water in the tank as a function of its height.
+</p>
+<p>
+Let <m>h_0=0.5</m> metres, <m>\Delta h = -0.05</m>, and <m>\Delta V  = V(h_0+\Delta h)-V(h_0)=V(0.45)-V(0.5)</m>. Then, by the linear approximation,
+<me>
+\Delta V \approx V'(0.5)\cdot \Delta h = -0.05V'(0.5)</me>
+</p>
+
+<p><textcolorred>In order to solve the problem, we will find an equation <m>V(h)</m> giving the volume of water in terms of the height, then find <m>V'(0.5)</m>,  and finally approximate that the change in the volume of the water is <m>\Delta V \approx -0.05V'(0.5)</m>.</textcolorred>
+</p>
+
+<p>The water in the tank forms a cone. The volume of a cone of height <m>h</m> and radius <m>r</m> is
+<me>
+V=\frac{1}{3}\pi r^2 h</me>
+</p>
+
+<p>We need to get rid of the variable <m>r</m>. We can do this using similar triangles. The diagram below shows the side view of the tank and the water.</p>
+<sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\draw (-1.5,3)--(0,-1)--(1.5,3)--cycle;
+\draw (0,3.5) node{1};
+\draw[fill=blue!10] (-.375,0)--(0,-1)--(.375,0)--cycle;
+\draw[blue] (0,.5) node{$2r$};
+\draw[decorate, decoration={brace, amplitude=10pt}] (-2,-1)--(-2,3) node[midway, xshift=-.75cm]{2};
+\draw[blue,decorate, decoration={brace, amplitude=6pt, mirror}] (1,-1)--(1,0) node[midway, xshift=.75cm]{$h$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>The side view of the tank forms a triangle that is similar to the triangle formed by the side view of the water, so
+<md>
+<mrow>
+\frac{1}{2}&amp;=\frac{2r}{h}
+</mrow><mrow>
+r&amp;=\frac{h}{4}
+</mrow>
+<intertext>Using this, we find our equation for the volume of the water in terms of <m>h</m>.</intertext><mrow>
+V(h)&amp;=\frac{1}{3}\pi r^2 h = \frac{1}{3}\left(\frac{h}{4}\right)^2h=\frac{h^3}{48}
+</mrow>
+<intertext>Differentiating,</intertext><mrow>
+V'(h)&amp;=\frac{h^2}{16}
+</mrow><mrow>
+V'(0.5)&amp;=\frac{0.25}{16}=\frac{1}{64}
+</mrow>
+<intertext>Finally, using the approximation <m>\Delta V \approx -0.05V'(0.5)</m>,</intertext><mrow>
+\Delta V &amp;\approx \frac{-0.05}{64}=-\frac{1}{1280}\approx -0.00078\;\mathrm{m}^3
+</mrow>
+</md>
+We estimate the volume decreased by about <m>0.00078</m> cubic metres, or about
+780 cubic centimetres.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise>
+<statement><p>
+A sample begins with precisely 1 <m>\mu</m>g of a radioactive isotope, and after 3 years is measured to have 0.9 <m>\mu</m>g remaining. If this measurement is correct to within 0.05 <m>\mu</m>g, estimate the corresponding accuracy of the half-life calculated using it.
+</p></statement>
+<hint><p>
+Remember that the amount of the isotope present at time <m>t</m> is <m>Q(t)=Q(0)e^{-kt}</m> for some constant <m>k</m>. The measured quantity after 3 years will allow you to replace <m>k</m> in the equation, then solving <m>Q(t)=\frac{1}{2}Q(0)</m> for <m>t</m> will give you the half-life of the isotope.
+</p></hint>
+<answer><p> Correct to within about 10.4 years (or about 53%)
+</p></answer>
+<solution><p>
+Let <m>q</m> be the measured amount of the isotope remaining after 3 years. Let <m>h(q)</m> be the half-life of the isotope that we calculate using <m>q</m>.
+We measured <m>q=0.9</m>, but we want to know what the change in <m>h</m> is if <m>q</m> moves by 0.05. So, let <m>\Delta q= \pm 0.05</m>, and let <m>\Delta h</m> be the corresponding change in <m>h</m>.
+The linear approximation tells us
+<md>
+<mrow>\Delta h&amp; \approx h'(0.9)\Delta q
+</mrow>
+<intertext>So,</intertext><mrow>
+\left|\Delta h\right|&amp;\approx\left| h'(0.9)\right|\left|\Delta q\right|= h'(0.9)\cdot 0.05
+</mrow>
+</md>
+<textred>This suggests a plan for solving the problem. We will find the equation <m>h(q)</m> giving the calculated half-life of the isotope based on the measurement <m>q</m>. Then, we will find <m>h'(0.9)</m>. Finally, the equation <m>\left|\Delta h\right|=h'(0.9)\cdot0.05</m> will tell us the change in <m>h</m> that corresponds with a change of 0.05 in our measurement.</textred>
+</p>
+
+<p>Let us find the half-life of the isotope, if after three years <m>q</m> <m>\mu</m>g is remaining. The amount of the isotope present after <m>t</m> years is given by
+<md>
+<mrow>
+Q(t)&amp;=Q(0)e^{-kt}
+</mrow>
+<intertext>for some constant <m>k</m>. Let's take <m>t=0</m> to be the time when precisely one <m>\mu</m>g was present. Then</intertext><mrow>
+Q(t)&amp;=e^{-kt}
+</mrow>
+<intertext>After three years, <m>q</m> is the amount of the isotope remaining, so</intertext><mrow>
+q&amp;=e^{-k\cdot 3}
+</mrow><mrow>
+q^{\frac{1}{3}}&amp;=e^{-k}
+</mrow><mrow>
+Q(t)&amp;=\left(e^{-k}\right)^t=q^{\frac{t}{3}}
+</mrow>
+<intertext>The half-life is the value of <m>t</m> for which <m>Q(t)=\frac{1}{2}Q(0)=\frac{1}{2}</m>.</intertext><mrow>
+\frac{1}{2}&amp;=Q(t)=q^{\frac{t}{3}}
+</mrow><mrow>
+\log\left(\frac{1}{2}\right)&amp;=\log\left(q^{\frac{t}{3}}\right)
+</mrow><mrow>
+-\log 2 &amp;=\frac{t}{3}\log q
+</mrow><mrow>
+t&amp;=\frac{-3\log 2}{\log q}
+</mrow>
+</md>
+So, we calculate the half-life to be <m>\dfrac{-3\log 2}{\log q}</m>. This gives us our first goal: a function <m>h(q)</m> that tells us the calculated half-life of the element.
+<md>
+<mrow>h(q)&amp;=\dfrac{-3\log2}{\log q}
+</mrow>
+<intertext>Following our plan, we find <m>h'(0.9)</m>.</intertext><mrow>
+h'(q)&amp;=\diff{}{q}\left\{\dfrac{-3\log2}{\log q}\right\}
+</mrow><mrow>
+&amp;=-3\log 2\cdot\diff{}{q}\left\{\left(\log q\right)^{-1}\right\}
+</mrow><mrow>
+&amp;=-3\log 2\cdot(-1)\left(\log q\right)^{-2}\cdot\frac{1}{q}
+</mrow><mrow>
+&amp;=\frac{3\log 2}{q\log^2q}
+</mrow><mrow>
+h'(0.9)&amp;=\frac{3\log2}{0.9\log^2(0.9)}\approx 208
+</mrow>
+<intertext>Finally, as outlined in our plan, </intertext><mrow>
+\left|\Delta h\right|&amp;=h'(0.9)\cdot0.05
+</mrow><mrow>
+&amp;=\frac{3\log2}{18\log^2(0.9)}\approx 10.4
+</mrow>
+</md>
+If our measurement changes by <m>\pm 0.05</m> <m>\mu</m>g, then we estimate our calculated half-life changes by about <m>\pm</m>10.4 years. Since our measurement is accurate to within <m>0.05</m> <m>\mu</m>g, that means we estimate
+our calculated half-life to be accurate to within about 10.4 years.
+</p>
+
+<p>Remark: since <m>h(0.9)=\dfrac{-3\log 2}{\log 0.9} \approx 19.7</m>, an absolute error of 10.4 years corresponds to a percentage error of <m>100\dfrac{10.4}{19.7}\approx 53\%</m>. The question did not specify absolute or percentage error. Since both make sense, you can use either one.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_invTrig">
+<title>Inverse Trigonometric Functions</title>
+<introduction>
+<p>One very useful application of implicit differentiation is to find the
+derivatives of inverse functions. We have already used this approach to find
+the derivative of the inverse of the exponential function <mdash/> the
+logarithm.
+</p>
+
+<p>We are now going to consider the problem of finding the derivatives of the
+inverses of trigonometric functions. Now is a very good time to go back
+and reread Section<nbsp/><xref ref="sec_inverse_functions"/> on inverse functions <mdash/>
+especially Definition<nbsp/><xref ref="def_inv_func"/>. Most importantly, given a function <m>f(x)</m>, its
+inverse function <m>f^{-1}(x)</m> only exists, with domain <m>D</m>, when <m>f(x)</m> passes the
+<q>horizontal line test</q>, which says that for each <m>Y</m> in <m>D</m> the horizontal line <m>y=Y</m>
+intersects the graph <m>y=f(x)</m> exactly once. (That is, <m>f(x)</m>  is a one-to-one function.)
+</p>
+
+<p>Let us start by playing with the sine function and determine how to restrict
+the domain of <m>\sin x</m> so that its inverse function exists.</p>
+
+<example xml:id="eg_INVstilllesslucky"><title>The inverse of <m>\sin x</m></title>
+<p>
+Let <m>y=f(x)=\sin(x)</m>. We would like to find the inverse function which takes
+<m>y</m> and returns to us a unique <m>x</m>-value so that <m>\sin(x)=y</m>. </p>
+
+<sidebyside width="75%">
+<image source="text/figs/sinInv"/>
+</sidebyside>
+
+<p>
+<ul>
+<li> For each real number <m>Y</m>, the number of <m>x</m>-values that obey
+<m>\sin(x)=Y</m>, is exactly the number of times the horizontal straight line
+<m>y=Y</m> intersects the graph of <m>\sin(x)</m>.
+</li>
+<li> When <m>-1\le Y\le 1</m>, the horizontal line intersects the graph infinitely many
+times. This is illustrated in the figure above by the line <m>y=0.3</m>.
+</li>
+<li> On the other hand, when <m>Y \lt -1</m> or <m>Y \gt 1</m>, the line <m>y=Y</m> never
+intersects the graph of <m>\sin(x)</m>. This is illustrated in the figure above by
+the line <m>y=-1.2</m>.
+</li>
+</ul>
+This is exactly the horizontal line test and it shows that the sine function is
+not one-to-one.
+</p>
+
+<p>Now consider the function
+<md>
+<mrow>
+  y &amp;= \sin(x) &amp; \text{with domain } -\frac{\pi}{2} \leq x \leq \frac{\pi}{2}
+</mrow>
+</md>
+This function has the same formula but the domain has been restricted so that, as we'll
+now show, the horizontal line test is satisfied.</p>
+
+<sidebyside width="75%">
+<image source="text/figs/sinInvB"/>
+</sidebyside>
+
+<p> As we saw above when <m>|Y| \gt 1</m> no <m>x</m> obeys <m>\sin(x)=Y</m> and, for each <m>-1\le Y\le 1</m>,
+the line <m>y=Y</m> (illustrated in the figure above with <m>y=0.3</m>) crosses the
+curve <m>y=\sin(x)</m> infinitely many times, so that there are infinitely
+many <m>x</m>'s that obey <m>f(x)=\sin x=Y</m>. However exactly one of those crossings
+(the dot in the figure) has <m>-\frac{\pi}{2}\le x \le\frac{\pi}{2}</m>.
+</p>
+
+<p>That is, for each <m>-1\le Y \le 1</m>, there is exactly one <m>x</m>, call it <m>X</m>, that obeys both
+<md>
+<mrow>
+      \sin X &amp;= Y &amp;\text{and} &amp;&amp; -\frac{\pi}{2}\le X \le \frac{\pi}{2}
+</mrow>
+</md>
+That unique value, <m>X</m>, is typically denoted <m>\arcsin(Y)</m>. That is
+<md>
+<mrow>
+  \sin( \arcsin(Y) ) &amp;= Y &amp; \text{and} &amp;&amp; -\frac{\pi}{2}\le \arcsin(Y) \le\frac{\pi}{2}
+</mrow>
+</md>
+Renaming <m>Y\rightarrow x</m>, the inverse function <m>\arcsin(x)</m> is
+defined for all <m>-1 \le x \le 1</m> and is determined by the
+equation</p>
+
+<fact xml:id="eq_DIFFarcsin">
+<statement><p>
+<me>
+\sin\big(\arcsin(x)\big)=x\qquad\text{and}\qquad
+        -\frac{\pi}{2}\le \arcsin(x)\le\frac{\pi}{2}.
+</me></p>
+</statement>
+</fact>
+
+<p> Note that many texts will use <m>\sin^{-1}(x)</m> to denote arcsine, however we will use
+<m>\arcsin(x)</m> since we feel that it is clearer
+<fn>The main reason being that people frequently confuse <m>\sin^{-1}
+(x)</m> with <m>(\sin(x))^{-1} = \frac{1}{\sin x}</m>. We feel that
+prepending the prefix <q>arc</q> less likely to lead to such confusion. The notations
+<m>\textrm{asin}(x)</m> and <m>\textrm{Arcsin}(x)</m> are also used.</fn>; the reader should recognise
+both.
+</p>
+
+</example>
+
+<example xml:id="eg_DIFFinvsin"><title>More on the inverse of <m>\sin x</m></title>
+<p>
+Since
+<me>
+\sin\frac{\pi}{2}=1\qquad\sin\frac{\pi}{6}=\frac{1}{2}
+</me>
+and <m>-\frac{\pi}{2}\le \frac{\pi}{6},\frac{\pi}{2}\le \frac{\pi}{2}</m>,
+we have
+<me>
+\arcsin 1=  \frac{\pi}{2}\qquad \arcsin \frac{1}{2}=  \frac{\pi}{6}
+</me>
+Even though
+<me>
+\sin(2\pi)=0
+</me>
+it is <alert>not</alert> true that <m>\arcsin 0 =2\pi</m>, and it is <alert>not</alert>
+true that <m>\arcsin\big(\sin(2\pi)\big) =2\pi</m>, because <m>2\pi</m> is not
+between <m>-\frac{\pi}{2}</m> and <m>\frac{\pi}{2}</m>. More generally
+<md>
+<mrow>
+\arcsin\big(\sin(x)\big) &amp;=\text{ the unique angle } \theta \text{ between }
+-\frac{\pi}{2} \text{ and } \frac{\pi}{2} \text{ obeying } \sin \theta =\sin x
+</mrow><mrow>
+&amp;= x\quad\text{if and only if $-\frac{\pi}{2}\le x\le \frac{\pi}{2}$}
+</mrow>
+</md>
+So, for example, <m>\arcsin\big(\sin\big(\frac{11\pi}{16}\big)\big)</m>
+cannot be <m>\frac{11\pi}{16}</m> because <m>\frac{11\pi}{16}</m> is
+bigger than <m>\frac{\pi}{2}</m>. So how do we find the correct answer?
+Start by sketching the graph of <m>\sin(x)</m>.</p>
+
+<sidebyside width="75%">
+<image source="text/figs/sinInvEg"/>
+</sidebyside>
+
+<p> It looks like the graph of <m>\sin x</m> is symmetric about <m>x=\frac{\pi}{2}</m>.
+The mathematical way to say that <q>the graph of <m>\sin x</m> is symmetric about
+<m>x=\frac{\pi}{2}</m></q> is <q><m>\sin(\frac{\pi}{2}-\theta)=
+\sin(\frac{\pi}{2}+\theta)</m></q> for all <m>\theta</m>. That is indeed true
+<fn>Indeed
+both are equal to <m>\cos \theta</m>. You can see this by playing with the trig identities in
+Appendix<nbsp/><xref ref="sec_trig_add"/>.</fn>
+.
+</p>
+
+<p>Now <m>\frac{11\pi}{16}=\frac{\pi}{2} +\frac{3\pi}{16}</m> so
+<me>
+\sin\Big(\frac{11\pi}{16}\Big)
+=\sin\Big(\frac{\pi}{2}+\frac{3\pi}{16}\Big)
+=\sin\Big(\frac{\pi}{2}-\frac{3\pi}{16}\Big)
+=\sin\Big(\frac{5\pi}{16}\Big)
+</me>
+and, since <m>\frac{5\pi}{16}</m> is indeed between <m>-\frac{\pi}{2}</m> and
+<m>\frac{\pi}{2}</m>,
+<me>
+\arcsin\Big(\sin\Big(\frac{11\pi}{16}\Big)\Big)
+=\frac{5\pi}{16}\qquad\Big(\text{and not $\frac{11\pi}{16}$}\Big).
+</me>
+</p>
+
+</example>
+
+</introduction>
+
+<subsection>
+<title>Derivatives of inverse trig functions</title>
+<p>Now that we have explored the arcsine function we are ready to find its derivative.
+Lets call
+<md>
+<mrow>
+  \arcsin(x) &amp;= \theta(x),
+</mrow>
+</md>
+so that the derivative we are seeking is <m>\diff{\theta}{x}</m>. The above equation is (after
+taking sine of both sides) equivalent to
+<md>
+<mrow>
+  \sin(\theta) &amp;= x
+</mrow>
+</md>
+Now differentiate this using implicit differentiation (we just have to remember
+that <m>\theta</m> varies with <m>x</m> and use the chain rule carefully):
+<md>
+<mrow>
+  \cos(\theta) \cdot \diff{\theta}{x} &amp;= 1
+</mrow><mrow>
+  \diff{\theta}{x} &amp;= \frac{1}{\cos(\theta)} &amp; \text{substitute $\theta = \arcsin x$}
+</mrow><mrow>
+  \diff{}{x} \arcsin x &amp;= \frac{1}{\cos(\arcsin x)}
+</mrow>
+</md>
+This doesn't look too bad, but it's not really very satisfying because the right hand
+side is expressed in terms of <m>\arcsin(x)</m> and we do not have an explicit formula for
+<m>\arcsin(x)</m>.
+</p>
+
+<p>However even without an explicit formula for <m>\arcsin(x)</m>, it is a simple matter to get an
+explicit formula for <m>\cos\big(\arcsin(x)\big)</m>, which is all we need. Just draw a
+right<ndash/>angled triangle with one angle being <m>\arcsin(x)</m>. This is done in the figure
+below
+<fn>The figure is drawn for the case that
+<m>0\le\arcsin(x)\le\frac{\pi}{2}</m>.
+Virtually the same argument works for the case
+<m>-\frac{\pi}{2}\le\arcsin(x)\le 0</m></fn>.</p>
+
+<sidebyside width="33%">
+<image source="text/figs/triangleAsin"/>
+</sidebyside>
+
+<p> Since <m>\sin(\theta)=x</m> (see <xref ref="eq_DIFFarcsin"/>),
+we have made the side opposite the angle <m>\theta</m> of length <m>x</m> and the
+hypotenuse of length <m>1</m>. Then, by Pythagoras, the side adjacent to <m>\theta</m>
+has length <m>\sqrt{1-x^2}</m> and so
+<md>
+<mrow>
+\cos\big(\arcsin(x)\big)=\cos(\theta)=\sqrt{1-x^2}
+</mrow>
+</md>
+which in turn gives us the answer we need:
+<md>
+<mrow>
+\diff{}{x} \arcsin(x) =\frac{1}{\sqrt{1-x^2}}
+</mrow>
+</md>
+</p>
+
+<p>The definitions for <m>\arccos</m> and <m>\arctan</m> are developed in the same way. Here are the
+graphs that are used.</p>
+
+<sidebyside widths="48% 48%">
+<image source="text/figs/cosInvB"/>
+<image source="text/figs/tanInvB"/>
+</sidebyside>
+
+<p> The definitions for the remaining three inverse trigonometric functions
+may also be developed in the same way. But it's a little easier to use
+<md>
+<mrow>
+\csc x=\frac{1}{\sin x} \qquad
+\sec x=\frac{1}{\cos x} \qquad
+\cot x=\frac{1}{\tan x}
+</mrow>
+</md>
+</p>
+
+<definition xml:id="def_DIFFinvtrig">
+<statement><p>
+<m>\arcsin x</m> is defined for <m>|x|\le 1</m>. It is the unique number obeying
+<md>
+<mrow>
+\sin\big(\arcsin(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+        -\frac{\pi}{2}\le &amp;\arcsin(x)\le\frac{\pi}{2}
+</mrow>
+<intertext>
+    <m>\arccos x</m> is defined for <m>|x|\le 1</m>. It is the unique number obeying
+         </intertext><mrow>
+\cos\big(\arccos(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+        0\le &amp;\arccos(x)\le\pi
+</mrow>
+<intertext>
+    <m>\arctan x</m> is defined for all <m>x\in\bbbr</m>. It is the unique number obeying
+         </intertext><mrow>
+\tan\big(\arctan(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+        -\frac{\pi}{2} \lt  &amp;\arctan(x) \lt \frac{\pi}{2}
+</mrow>
+<intertext>
+    <m>\arccsc x=\arcsin\frac{1}{x}</m> is defined for <m>|x|\ge 1</m>. It is the
+unique number obeying</intertext><mrow>
+\csc\big(\arccsc(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+        -\frac{\pi}{2}\le &amp;\arccsc(x)\le\frac{\pi}{2}
+</mrow>
+<intertext>
+    <m>\arcsec x=\arccos\frac{1}{x}</m> is defined for <m>|x|\ge 1</m>. It is the
+unique number obeying</intertext><mrow>
+\sec\big(\arcsec(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+        0\le &amp;\arcsec(x)\le\pi
+</mrow>
+<intertext>
+    <m>\arccot x=\arctan\frac{1}{x}</m> is defined for all <m>0\ne x\in\bbbr</m>. It
+is the unique number obeying</intertext><mrow>
+\cot\big(\arccot(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+        -\frac{\pi}{2} \lt  &amp;\arccot(x)  \lt \frac{\pi}{2}
+</mrow>
+</md>
+</p></statement>
+</definition>
+
+<example><title>The derivative of <m>\arccos x</m></title>
+<p>
+To find the derivative of <m>\arccos</m> we can follow the same steps:
+<ul>
+<li> Write <m>\arccos(x) =\theta(x)</m> so that <m>\cos\theta = x</m> and the desired
+derivative is <m>\diff{\theta}{x}</m>.
+</li>
+<li> Differentiate implicitly, remembering that <m>\theta</m> is a function of <m>x</m>:
+  <md>
+<mrow>
+  -\sin\theta \diff{\theta}{x} &amp;= 1
+</mrow><mrow>
+  \diff{\theta}{x} &amp;= -\frac{1}{\sin\theta}
+</mrow><mrow>
+  \diff{}{x}\arccos x &amp;= -\frac{1}{\sin(\arccos x)}.
+</mrow>
+</md>
+</li>
+<li><p> To simplify this expression, again draw the relevant triangle</p>
+
+<sidebyside width="40%">
+<image source="text/figs/triangleAcos"/>
+</sidebyside>
+
+<p> from which we see
+<md>
+<mrow>
+\sin(\arccos x) = \sin\theta &amp;= \sqrt{1-x^2}.
+</mrow>
+</md></p>
+</li>
+<li> Thus
+<md>
+<mrow>
+  \diff{}{x}\arccos x &amp;= -\frac{1}{\sqrt{1-x^2}}.
+</mrow>
+</md>
+</li>
+</ul>
+</p></example>
+
+<example><title>The derivative of <m>\arctan x</m></title>
+<p>
+Very similar steps give the derivative of <m>\arctan x</m>:
+<ul>
+<li> Start with <m>\theta = \arctan x</m>, so <m>\tan \theta = x</m>.
+</li>
+<li> Differentiate implicitly:
+  <md>
+<mrow>
+  \sec^2 \theta \diff{\theta}{x} &amp;= 1
+</mrow><mrow>
+  \diff{\theta}{x} &amp;= \frac{1}{\sec^2 \theta} = \cos^2 \theta
+</mrow><mrow>
+  \diff{}{x}\arctan x &amp;= \cos^2(\arctan x).
+</mrow>
+</md>
+</li>
+<li><p> To simplify this expression, we draw the relevant triangle</p>
+
+<sidebyside width="40%">
+<image source="text/figs/triangleAtan"/>
+</sidebyside>
+
+<p> from which we see
+<md>
+<mrow>
+\cos^2(\arctan x) = \cos^2\theta = \frac{1}{1+x^2}
+</mrow>
+</md></p>
+</li>
+<li> Thus
+<md>
+<mrow>
+  \diff{}{x}\arctan x &amp;= \frac{1}{1+x^2}.
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+</example>
+
+
+<example><title>The derivative of <m>\arccsc x</m></title>
+<p>
+ To find the derivative of <m>\arccsc</m> we can use its definition and the chain rule.
+<md>
+<mrow>
+  \theta &amp;= \arccsc x &amp; \text{take cosecant of both sides}
+</mrow><mrow>
+\csc \theta &amp;= x &amp; \text{but $\csc \theta = \frac{1}{\sin\theta}$, so flip both sides}
+</mrow><mrow>
+\sin \theta &amp;= \frac{1}{x} &amp; \text{now take arcsine of both sides}
+</mrow><mrow>
+  \theta &amp;= \arcsin\left(\frac{1}{x}\right)
+</mrow>
+</md>
+Now just differentiate:
+<md>
+<mrow>
+  \diff{\theta}{x} &amp;= \diff{}{x} \arcsin\left(\frac{1}{x}\right) &amp; \text{chain rule
+carefully}
+</mrow><mrow>
+  &amp;= \frac{1}{\sqrt{1-x^{-2}}} \cdot \frac{-1}{x^2}
+</mrow>
+<intertext>To simplify further we will factor <m>x^{-2}</m> out of the square root. We need to
+be a little careful doing that. Take another look at examples<nbsp/><xref ref="eg_lim_tricky"/>
+and<nbsp/><xref ref="eg_lim_tricky_part2"/> and the discussion between them before proceeding.</intertext><mrow>
+  &amp;= \frac{1}{\sqrt{x^{-2}(x^2-1)}} \cdot \frac{-1}{x^2}
+</mrow><mrow>
+  &amp;= \frac{1}{|x^{-1}|\cdot \sqrt{x^2-1}} \cdot \frac{-1}{x^2} &amp; \text{note that $x^2 \cdot |x^{-1}| = |x|$.}
+</mrow><mrow>
+  &amp;= - \frac{1}{|x|\sqrt{x^2-1}}
+</mrow>
+</md>
+</p>
+</example>
+
+<p> In the same way we can find the derivatives of the remaining two inverse trig functions.
+We just use their definitions, some derivatives we already know and the chain rule.
+<md>
+<mrow>
+\diff{}{x} \arcsec(x) &amp;= \diff{}{x} \arccos\Big(\frac{1}{x}\Big)
+&amp;&amp;=-\frac{1}{\sqrt{1-\frac{1}{x^2}}}\cdot\Big(-\frac{1}{x^2}\Big)
+&amp;&amp;=\frac{1}{|x|\sqrt{x^2-1}}
+</mrow><mrow>
+\diff{}{x} \arccot(x) &amp;= \diff{}{x} \arctan\Big(\frac{1}{x}\Big)
+&amp;&amp;=\frac{1}{1+\frac{1}{x^2}}\cdot\Big(-\frac{1}{x^2}\Big)
+&amp;&amp;=-\frac{1}{1+x^2}
+</mrow>
+</md>
+By way of summary, we have</p>
+
+<theorem xml:id="thm_DIFFinvtrigderiv">
+<statement><p>
+The derivatives of the inverse trigonometric functions are
+<md>
+<mrow>
+\diff{}{x} \arcsin(x) &amp;= \frac{1}{\sqrt{1-x^2}} &amp;
+\diff{}{x} \arccsc(x) &amp;= -\frac{1}{|x|\sqrt{x^2-1}}
+</mrow><mrow>
+\diff{}{x} \arccos(x) &amp;= -\frac{1}{\sqrt{1-x^2}} &amp;
+\diff{}{x} \arcsec(x) &amp;= \frac{1}{|x|\sqrt{x^2-1}}
+</mrow><mrow>
+\diff{}{x} \arctan(x) &amp;= \frac{1}{1+x^2} &amp;
+\diff{}{x} \arccot(x) &amp;= -\frac{1}{1+x^2}
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+</subsection>
+
+
+<xi:include href="../problems/prob_s2.12.xml"/>
+
+
+</section>

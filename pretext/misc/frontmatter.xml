@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<frontmatter xml:id="index" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<titlepage>
+		<author>
+			<personname>Joel Feldman</personname>
+			<department>Department of Mathematics</department>
+			<institution>University of British Columbia</institution>
+			<email>feldman@math.ubc.ca</email>
+		</author>
+
+		<author>
+			<personname>Andrew Rechnitzer</personname>
+			<department>Department of Mathematics</department>
+			<institution>University of British Columbia</institution>
+			<email>andrewr@math.ubc.ca</email>
+		</author>
+
+		<author>
+			<personname>Elyse Yeager</personname>
+			<department>Department of Mathematics</department>
+			<institution>University of British Columbia</institution>
+			<email>elyse@math.ubc.ca</email>
+		</author>
+		<date>
+			<today />
+		</date>
+	</titlepage>
+
+	<colophon>
+		<credit>
+        <role>Cover Design</role>
+				<entity>Nick Loewen <mdash/> licensed under the <url href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0 License</url>.</entity>
+    </credit>
+
+		<edition>CLP-1 Differential Calculus: December 2018</edition>
+
+		<website>
+			<name>
+				<c>CLP-1</c>
+			</name>
+			<address>http://www.math.ubc.ca/~CLP/</address>
+		</website>
+
+		<copyright>
+			<year>2015 <ndash/> 2018</year>
+			<holder>Joel Feldman, Andrew Rechnitzer, Elyse Yeager</holder>
+			<minilicense>CC-BY-NC-SA 4.0 License</minilicense>
+			<shortlicense>
+				This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You can view a copy of the license <url href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</url>.
+
+					<image source = "misc/by-nc-sa" width="25%"/>
+			</shortlicense>
+		</copyright>
+
+		<credit>
+			<role>Source files</role>
+			<entity>
+				A link to the source files for this document can be found at the <url href="http://www.math.ubc.ca/~CLP/">CLP textbook website</url>. The sources are licensed under the <url href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0 License</url>.
+		</entity>
+		</credit>
+
+	</colophon>
+	<preface>
+		<p>
+		This text is a merger of the CLP Differential Calculus textbook and problembook. It is, at the time that we write this, still a work in progress; some bits and pieces around the edges still need polish. Consequently we recommend to the student that they still consult text webpage for links to the errata <mdash/> especially if they think there might be a typo or error. We also request that you send us an email at <url href="mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext"> <c>clp@ugrad.math.ubc.ca</c></url>
+		</p>
+
+		<p>
+		Additionally, if you are not a student at UBC and using these texts please send us an email <mdash/> we'd love to hear from you.
+		</p>
+
+		<attribution>
+			<line>
+				Joel Feldman, Andrew Rechnitzer and Elyse Yeager
+			</line>
+		</attribution>
+	</preface>
+	<dedication>
+	<p>
+	<em>To our students.</em>
+	</p>
+	<p>
+	<em>And to the many generations of scholars who have freely shared all this knowledge with us.</em>
+	</p>
+	</dedication>
+
+	<acknowledgement>
+		<p>
+		Elyse would like to thank her husband Seçkin Demirbaş for his endless patience, tireless support, and insightful feedback.
+		</p>
+
+		<p>
+		Andrew would like to thank Zoe for her patience and support while he hacked and also Locke for his insightful subediting. He should also thank the various coauthors for not being too impatient while other manuscripts were neglected.
+		</p>
+
+		<p>
+		Joel would like to thank way too many people to name for their support and encouragement over many years.
+		</p>
+
+		<p>
+			Thanks to
+			<ul>
+			  <li>
+			    <p>
+						Rob Beezer and David Farmer for their help converting this book from <latex/> to this online <pretext/> format.
+			    </p>
+			  </li>
+				<li>
+				  <p>
+						Nick Loewen for designing the cover art, help with figures, colours, spelling and many discussions.
+				  </p>
+				</li>
+				<li>
+				  <p>
+						The many people who have collaborated over the last couple of decades making exams and tests for first year calculus courses at UBC Mathematics. A great many of the exercises in the text come from questions in those tests and exams.
+				  </p>
+				</li>
+			</ul>
+		</p>
+
+		<p>
+		  Finally, we'd like to thank those students who reported typos and errors they found in the text. Many of these students did so through our <q>bug bounty</q> program which was supported by the
+			<url href="https://www.math.ubc.ca/">Department of Mathematics</url>, <url href="https://skylight.science.ubc.ca/">Skylight</url> and the <url href="http://loafecafe.com/">Loafe Cafe</url> all at UBC. Additionally, thanks to our bounty-wrangler, Ching Wong, who ran the program. Their help translates directly into a better text.
+			<ul>
+			  <li>
+			    <p>
+						Avinash Ahilesan,
+						Jordan Bourak,
+						Ella Chan,
+						Carlo Corrales,
+						Angelina Ge,
+						Brandon Kozmen
+						Mika Lu,
+						Salwa Malhas,
+					 	Shawna Naderi,
+						Charles Richards,
+						Auritro Roy,
+						Spock Sin,
+						John Turkson,
+				 		David Wang,
+						Christopher Yousofi,
+						and anonymous <m>\times 2</m>.
+			    </p>
+			  </li>
+			</ul>
+		</p>
+
+
+
+
+	</acknowledgement>
+
+	<preface>
+		<title>Using the exercises in this book</title>
+		<p>
+		Each problem in this book is split into four parts: Question, Hint, Answer, and Solution. As you are working problems, resist the temptation to prematurely peek at the hint or to click through to the answers and solutions in the appendix! It's important to allow yourself to struggle for a time with the material. Even professional mathematicians don't always know right away how to solve a problem. The art is in gathering your thoughts and figuring out a strategy to use what you know to find out what you don't.
+		</p>
+
+		<p>
+		If you find yourself at a real impasse, go ahead and look at the linked hint. Think about it for a while, and don't be afraid to read back in the notes to look for a key idea that will help you proceed. If you still can't solve the problem, well, we included the Solutions section for a reason! As you're reading the solutions, try hard to understand why we took the steps we did, instead of memorizing step-by-step how to solve that one particular problem.
+		</p>
+
+		<p>
+		If you struggled with a question quite a lot, it's probably a good idea to return to it in a few days. That might have been enough time for you to internalize the necessary ideas, and you might find it easily conquerable. Pat yourself on the back <mdash/> sometimes math makes you feel good! If you're still having troubles, read over the solution again, with an emphasis on understanding why each step makes sense.
+		</p>
+
+		<p>
+		One of the reasons so many students are required to study calculus is the hope that it will improve their problem-solving skills. In this class, you will learn lots of concepts, and be asked to apply them in a variety of situations. Often, this will involve answering one really big problem by breaking it up into manageable chunks, solving those chunks, then putting the pieces back together. When you see a particularly long question, remain calm and look for a way to break it into pieces you can handle.
+		</p>
+
+		<ul>
+			<li><p><alert>Working with Friends:</alert></p>
+			<p>
+			Study buddies are fantastic! If you don't already have friends in your class, you can ask your neighbours in lecture to form a group. Often, a question that you might bang your head against for an hour can be easily cleared up by a friend who sees what you've missed. Regular study times make sure you don't procrastinate too much, and friends help you maintain a positive attitude when you might otherwise succumb to frustration. Struggle in mathematics is desirable, but suffering is not.
+			</p>
+
+			<p>
+			When working in a group, make sure you try out problems on your own before coming together to discuss with others. Learning is a process, and getting answers to questions that you haven't considered on your own can rob you of the practice you need to master skills and concepts, and the tenacity you need to develop to become a competent problem-solver.
+			</p>
+			</li>
+
+
+			<li><p><alert>Types of Questions:</alert></p>
+			<p>
+			Questions outlined by a blue box make up the <q>RQS</q> make up the <em>representative question set</em>. This set of questions is intended to cover the most essential ideas in each section. These questions are usually highly typical of what you'd see on an exam, although some of them are atypical but carry an important moral. If you find yourself unconfident with the idea behind one of these, it's probably a good idea to practice similar questions.
+			</p>
+			<p>
+			This representative question set is our suggestion for a minimal selection of questions to work on.  You are highly encouraged to work on more.
+			</p>
+
+			<p>In addition to original problems, this book contains problems pulled from quizzes and exams given at UBC for Math 100 and 180 (first-semester calculus) and Math 120 (honours first-semester calculus). These problems are marked by <q>(*)</q>. The authors would like to acknowledge the contributions of the many people who collaborated to produce these exams over the years.
+			</p>
+
+			<p>
+			Finally, the questions are organized into three types:
+			<alert>Stage<nbsp/>1</alert>,
+			<alert>Stage<nbsp/>2</alert> and
+			<alert>Stage<nbsp/>3</alert>.
+			</p>
+
+			<p>
+			<ul>
+			<li>
+				<p><conceptual/></p>
+			<p>
+			The first category is meant to test and improve your understanding of basic underlying concepts. These often do not involve much calculation. They range in difficulty from very basic reviews of definitions to questions that require you to be thoughtful about the concepts covered in the section.
+			</p>
+			</li>
+			<li><p><procedural/></p>
+			<p>
+			Questions in this category are for practicing skills. It's not enough to understand the philosophical grounding of an idea: you have to be able to apply it in appropriate situations. This takes practice!
+			</p>
+			</li>
+			<li><p><application/></p>
+			<p>
+			The last questions in each section go a little farther than <q><alert><procedural/></alert></q>. Often they will combine more than one idea, incorporate review material, or ask you to apply your understanding of a concept to a new situation.
+			</p>
+			</li>
+			</ul>
+			</p>
+
+			<p>
+			In exams, as in life, you will encounter questions of varying difficulty. A good skill to practice is recognizing the level of difficulty a problem poses. Exams will have some easy questions, some standard questions, and some harder questions.
+			</p>
+		</li>
+	</ul>
+	</preface>
+
+	<preface>
+		<title>Feedback about the text</title>
+		<p>
+		This combined edition of the CLP differential calculus text is still undergoing testing and changes. Because of this we request that if you find a problem or error in the text then:
+		<ol>
+		<li>Please check the errata list that can be found at the text webpage.</li>
+		<li>Is the problem in the online version or the PDF version or both?</li>
+		<li>Note the URL of the online version and the page number in the PDF</li>
+		<li>
+			<p>Send an email to
+			<url href="mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext"> <c>clp@ugrad.math.ubc.ca</c></url>.
+			Please be sure to include
+			<ul>
+			<li>a description of the error</li>
+			<li>the URL of the page, if found in the online edition</li>
+			<li>and if the problem also exists in the PDF, then the page number in the PDF and the compile date on the front page of PDF.</li>
+			</ul>
+			</p>
+		</li>
+		</ol>
+		</p>
+
+	</preface>
+</frontmatter>

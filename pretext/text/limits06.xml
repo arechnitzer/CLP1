@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Continuity</title>
+<subsection><title>Continuity</title>
+
+<p>
+We have seen that computing the limits some functions <mdash/> polynomials and  rational functions <mdash/> is very easy because
+<md>
+<mrow>
+  \lim_{x \to a} f(x) &amp;= f(a).
+</mrow>
+</md>
+That is, the the limit as <m>x</m> approaches <m>a</m> is just <m>f(a)</m>. Roughly speaking,  the reason we can compute the limit this way is that these functions do not  have any abrupt jumps near <m>a</m>.
+</p>
+
+<p>
+Many other functions have this property, <m>\sin(x)</m> for example. A function  with this property is called <q>continuous</q> and there is a precise mathematical definition  for it. If you do not recall interval notation, then now is a good time to take a quick  look back at Definition<nbsp/><xref ref="def_intervals"/>.
+</p>
+
+<definition>
+<statement><p>
+A function <m>f(x)</m> is continuous at <m>a</m> if
+<md>
+<mrow>
+	\lim_{x \to a} f(x) &amp;= f(a)
+</mrow>
+</md>
+If a function is not continuous at <m>a</m> then it is said to be discontinuous at<nbsp/><m>a</m>.
+</p>
+
+<p>
+When we write that <m>f</m> is continuous without specifying a point, then typically  this means that <m>f</m> is continuous at <m>a</m> for all <m>a \in \mathbb{R}</m>.
+</p>
+
+<p>
+When we write that <m>f(x)</m> is continuous on the open interval <m>(a,b)</m> then the function is  continuous at every point <m>c</m> satisfying <m>a \lt c \lt b</m>.
+</p></statement>
+</definition>
+
+<p>
+So if a function is continuous at <m>x=a</m> we immediately know that
+<ul>
+<li> <m>f(a)</m> exists </li>
+<li> <m>\ds \lim_{x \to a^-}</m> exists and is equal to <m>f(a)</m>, and </li>
+<li> <m>\ds \lim_{x \to a^+}</m> exists and is equal to <m>f(a)</m>. </li>
+</ul>
+</p>
+</subsection>
+
+<subsection><title>Quick aside <mdash/> one-sided continuity</title>
+
+<p>
+Notice in the above definition of continuity on an interval <m>(a,b)</m> we have carefully  avoided saying anything about whether or not the function is continuous at the endpoints  of the interval <mdash/> i.e. is <m>f(x)</m> continuous at <m>x=a</m> or <m>x=b</m>. This is because talking  of
+continuity at the endpoints of an interval can be a little delicate.
+</p>
+
+<p>
+In many situations we will be given a function <m>f(x)</m> defined on a closed interval  <m>[a,b]</m>. For example, we might have:
+<md>
+<mrow>
+  f(x) &amp;= \frac{x+1}{x+2} &amp; \text{for } x \in [0,1].
+</mrow>
+</md>
+For any <m>0 \leq x \leq 1</m> we know the value of <m>f(x)</m>. However for <m>x \lt 0</m> or <m>x \gt 1</m> we  know nothing about the function <mdash/> indeed it has not been defined.
+</p>
+
+<p>
+So now, consider what it means for <m>f(x)</m> to be continuous at <m>x=0</m>. We need to have
+<md>
+<mrow>
+  \lim_{x\to 0} f(x) &amp;= f(0),
+</mrow>
+</md>
+however this implies that the one-sided limits
+<md>
+<mrow>
+  \lim_{x\to 0^+} f(x) &amp;= f(0) &amp; \text{and}&amp;&amp; \lim_{x\to 0^-} f(x) &amp;= f(0)
+</mrow>
+</md>
+Now the first of these one-sided limits involves examining the behaviour of <m>f(x)</m> for  <m>x \gt 0</m>. Since this involves looking at points for which <m>f(x)</m> is defined, this is  something we can do. On the other hand the second one-sided limit requires us to  understand the behaviour of <m>f(x)</m> for <m>x \lt 0</m>. This we cannot do because the function  hasn't been defined for <m>x \lt 0</m>.
+</p>
+
+<p>
+One way around this problem is to generalise the idea of continuity to one-sided  continuity, just as we generalised limits to get one-sided limits.
+</p>
+
+<definition>
+<statement><p>
+  A function <m>f(x)</m> is continuous from the right at <m>a</m> if
+  <md>
+<mrow>
+    \lim_{x\to a^+} f(x) &amp;= f(a).
+  </mrow>
+</md>
+  Similarly a function <m>f(x)</m> is continuous from the left at <m>a</m> if
+  <md>
+<mrow>
+    \lim_{x\to a^-} f(x) &amp;= f(a)
+  </mrow>
+</md>
+</p></statement>
+</definition>
+
+<p>
+Using the definition of one-sided continuity we can now define what it means for a  function to be continuous on a closed interval.
+</p>
+
+<definition>
+<statement><p>
+ A function <m>f(x)</m> is continuous on the closed interval <m>[a,b]</m> when
+<ul>
+<li> <m>f(x)</m> is continuous on <m>(a,b)</m>,
+</li>
+<li> <m>f(x)</m> is continuous from the right at <m>a</m>, and
+</li>
+<li> <m>f(x)</m> is continuous from the left at <m>b</m>.
+</li>
+</ul>
+Note that the last two condition are equivalent to
+<md>
+<mrow>
+   \lim_{x\to a^+} f(x) &amp;= f(a) &amp; \text{ and }&amp;&amp;  \lim_{x\to b^-} f(x) &amp;= f(b).
+</mrow>
+</md>
+</p></statement>
+</definition>
+
+</subsection>
+
+<subsection><title>Back to the main text</title>
+
+<p>
+We already know from our work above that polynomials are continuous, and that  rational functions are continuous at all points in their domains <mdash/> i.e. where  their denominators are non-zero. As we did for  limits, we will see that continuity interacts <q>nicely</q> with arithmetic. This  will allow us to construct complicated continuous functions from simpler  continuous building blocks (like polynomials).
+</p>
+
+<p>But first, a few examples<ellipsis/></p>
+
+<example><title>Simple continuous and discontinuous functions</title>
+<p>Consider the functions drawn below</p>
+
+<sidebyside width="90%">
+<image source="text/figs/lim6"/>
+</sidebyside>
+
+<p>
+These are
+<md>
+<mrow>
+f(x) &amp;= \begin{cases} x&amp;x \lt 1  </mrow><mrow> x+2 &amp; x\geq 1 \end{cases}
+&amp;
+g(x) &amp;= \begin{cases} 1/x^2&amp; x\neq0  </mrow><mrow> 0 &amp; x=0\end{cases}
+&amp;
+h(x) &amp;= \begin{cases}\frac{x^3-x^2}{x-1} &amp; x\neq 1 </mrow><mrow> 0 &amp; x=1 \end{cases}
+</mrow>
+</md>
+Determine where they are continuous and discontinuous:
+<ul>
+<li>
+<p>
+	When <m>x \lt 1</m> then <m>f(x)</m> is a straight line (and so a polynomial) and so it is  continuous at every point <m>x \lt 1</m>. Similarly when <m>x \gt 1</m> the function is a  straight line and so it is continuous at every point <m>x \gt 1</m>. The only point which  might be a discontinuity is at <m>x=1</m>. We see that the one sided limits are  different. Hence the limit at <m>x=1</m> does not exist and so the function is  discontinuous at <m>x=1</m>.
+</p>
+
+<p>
+	But note that that <m>f(x)</m> is continuous from one side <mdash/> which?
+</p>
+</li>
+<li>
+	The middle case is much like the previous one. When <m>x \neq 0</m> the <m>g(x)</m>  is a rational function and so is continuous everywhere on its domain (which is  all reals except <m>x=0</m>). Thus the only point where <m>g(x)</m> might be discontinuous is at  <m>x=0</m>. We see that neither of the one-sided limits exist at <m>x=0</m>, so the limit  does not exist at <m>x=0</m>. Hence the function is discontinuous at <m>x=0</m>.
+</li>
+<li>
+<p>
+	We have seen the function <m>h(x)</m> before. By the same reasoning as  above, we know it is continuous except at <m>x=1</m> which we must check separately.
+</p>
+
+<p>
+	By definition of <m>h(x)</m>, <m>h(1) = 0</m>. We must compare this to the limit as <m>x  \to 1</m>. We did this before.
+	<md>
+	<mrow>
+		\frac{x^3-x^2}{x-1} &amp;= \frac{x^2(x-1)}{x-1} = x^2
+	</mrow>
+	</md>
+	So <m>\lim \frac{x^3-x^2}{x-1} = \lim x^2 = 1\neq h(1)</m>. Hence <m>h</m>  is discontinuous at <m>x=1</m>.
+</p>
+</li>
+</ul>
+</p>
+</example>
+
+<p>
+This example illustrates different sorts of discontinuities:
+<ul>
+<li>
+	The function <m>f(x)</m> has a <q>jump discontinuity</q> because the function  <q>jumps</q> from one finite value on the left to another value on the right.
+</li>
+<li>
+	The second function, <m>g(x)</m>, has an <q>infinite discontinuity</q> since  <m>\lim f(x) =+\infty</m>.
+</li>
+<li>
+	The third function, <m>h(x)</m>, has a <q>removable discontinuity</q> because we  could make the function continuous at that point by redefining the function at  that point. i.e. setting <m>h(1)=1</m>. That is
+	<md>
+	<mrow>
+	  \text{new function }h(x) &amp;= \begin{cases}
+		\frac{x^3-x^2}{x-1} &amp; x\neq 1
+	</mrow><mrow>
+		1 &amp; x=1
+		\end{cases}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+
+<p>
+Showing a function is continuous can be a pain, but just as the limit laws help  us compute complicated limits in terms of simpler limits, we can use them to  show that complicated functions are continuous by breaking them into simpler  pieces.
+</p>
+
+<theorem xml:id="thm_arith_cont"><title>Arithmetic of continuity</title>
+<statement><p>
+Let <m>a,c \in \mathbb{R}</m> and let <m>f(x)</m> and <m>g(x)</m> be functions that are  continuous at <m>a</m>. Then the following functions are also continuous at <m>x=a</m>:
+<ul>
+<li> <m>f(x) + g(x)</m> and <m>f(x) - g(x)</m>, </li>
+<li> <m>c f(x)</m> and <m>f(x) g(x)</m>, and </li>
+<li> <m>\frac{f(x)}{g(x)}</m> provided <m>g(a) \neq 0</m>. </li>
+</ul>
+</p></statement>
+</theorem>
+
+<p>
+Above we stated that polynomials and rational functions are  continuous (being careful about domains of rational functions <mdash/>  we must avoid the denominators being zero) without making it a formal  statement. This is easily fixed<ellipsis/>
+</p>
+
+<lemma>
+<statement><p>
+ Let <m>c \in \mathbb{R}</m>. The functions
+<md>
+<mrow>
+  f(x) &amp;= x &amp; g(x) &amp;= c
+</mrow>
+</md>
+are continuous everywhere on the real line
+</p></statement>
+</lemma>
+
+<p>
+This isn't quite the result we wanted (that's a couple of lines below) but it  is a small result that we can combine with the arithmetic of limits to get the  result we want. Such small helpful results are called <q>lemmas</q> and they will  arise more as we go along.
+</p>
+
+<p>
+Now since we can obtain any polynomial and any rational function by carefully  adding, subtracting, multiplying and dividing the functions <m>f(x)=x</m> and  <m>g(x)=c</m>, the above lemma combines with the <q>arithmetic of continuity</q>  theorem to give us the result we want:
+</p>
+
+<theorem><title>Continuity of polynomials and rational functions</title>
+<statement><p>
+Every polynomial is continuous everywhere. Similarly every rational  function is continuous except where its denominator is zero (i.e. on all its  domain).
+</p></statement>
+</theorem>
+
+<p>With some more work this result can be extended to wider families of functions:</p>
+
+<theorem>
+<statement><p>
+The following functions are continuous everywhere in their domains
+<ul>
+<li> polynomials, rational functions </li>
+<li> roots and powers </li>
+<li> trig functions and their inverses </li>
+<li> exponential and the logarithm </li>
+</ul>
+</p></statement>
+</theorem>
+<p>
+We haven't encountered inverse trigonometric functions, nor exponential  functions or logarithms, but we will see them in the next chapter. For the  moment, just file the information away.
+</p>
+
+<p>
+Using a combination of the above results you can show that many complicated  functions are continuous except at a few points (usually where a denominator is  equal to zero).
+</p>
+
+<example><title>Continuity of <m>\frac{\sin(x)}{2+\cos(x)}</m></title>
+<p>
+Where is the function <m>f(x) = \frac{\sin(x)}{2+\cos(x)}</m> continuous?
+</p>
+
+<p>
+We just break things down into pieces and then put them back together keeping  track of where things might go wrong.
+<ul>
+<li>
+	The function is a ratio of two pieces <mdash/> so check if the numerator is  continuous, the denominator is continuous, and if the denominator might be zero.
+</li>
+<li>
+	The numerator is <m>\sin(x)</m> which is <q>continuous on its domain</q>  according to one of the above theorems. Its domain is all real  numbers
+	<fn>
+		Remember that <m>\sin</m> and <m>\cos</m> are defined on all real numbers, so  <m>\tan(x) = \sin(x)/\cos(x)</m> is continuous everywhere except where <m>\cos(x)=0</m>. This  happens when <m>x = \frac{\pi}{2}+n\pi</m> for any integer <m>n</m>. If you cannot remember where  <m>\tan(x)</m> <q>blows up</q> or <m>\sin(x)=0</m> or <m>\cos(x)=0</m> then you should definitely revise  trigonometric functions. Come to think of it <mdash/> just revise them anyway.
+	</fn>,
+	so it is  continuous everywhere. No problems here.
+</li>
+<li>
+	The denominator is the sum of <m>2</m> and <m>\cos(x)</m>. Since <m>2</m> is a constant  it is continuous everywhere. Similarly (we just checked things for the  previous point) we know that <m>\cos(x)</m> is continuous everywhere. Hence the  denominator is continuous.
+</li>
+<li>
+	So we just need to check if the denominator is zero. One of the facts  that we should know
+	<fn>
+		If you do not know this fact then you should  revise trigonometric functions. See the previous footnote.
+	</fn>
+	is that
+	<md>
+	<mrow>
+	  -1 \leq \cos(x) \leq 1
+	</mrow>
+	<intertext>and so by adding 2 we get</intertext>
+	<mrow>
+	  1 \leq 2+\cos(x) \leq 3
+	</mrow>
+	</md>
+	Thus no matter what value of <m>x</m>, <m>2+\cos(x) \geq 1</m> and so cannot be zero.
+</li>
+<li>
+	So the numerator is continuous, the denominator is continuous and  nowhere zero, so the function is continuous everywhere.
+</li>
+</ul>
+</p>
+
+<p>
+If the function were changed to <m>\ds \frac{\sin(x)}{x^2-5x+6}</m> much of the same  reasoning can be used. Being a little terse we could answer with:
+<ul>
+<li> Numerator and denominator are continuous. </li>
+<li> Since <m>x^2-5x+6=(x-2)(x-3)</m> the denominator is zero when <m>x=2,3</m>. </li>
+<li>
+	So the function is continuous everywhere except possibly  at <m>x=2,3</m>. In order to verify that the function really is discontinuous at  those points, it suffices to verify that the numerator is non-zero at <m>x=2,3</m>.  Indeed we know that <m>\sin(x)</m> is zero only when <m>x = n\pi</m> (for any integer  <m>n</m>). Hence <m>\sin(2),\sin(3) \neq 0</m>. Thus the numerator is non-zero, while the  denominator is zero and hence <m>x=2,3</m> really are points of discontinuity.
+</li>
+</ul>
+Note that this example raises a subtle point about checking continuity when  numerator and denominator are <em>simultaneously</em> zero. There are quite a  few possible outcomes in this case and we need more sophisticated tools to  adequately analyse the behaviour of functions near such points. We will return  to this question later in the text after we have developed Taylor expansions (see  Section<nbsp/><xref ref="sec_DIFFTaylor"/>).
+</p>
+</example>
+
+<p>
+So we know what happens when we add subtract multiply and divide, what about  when we compose functions? Well - limits and compositions work nicely when  things are continuous.
+</p>
+
+<theorem xml:id="thm_comp_cont"><title>Compositions and continuity</title>
+<statement><p>
+If <m>f</m> is continuous at <m>b</m> and <m>\ds \lim_{x \to a} g(x) = b</m> then  <m>\ds \lim_{x\to a} f(g(x)) = f(b)</m>. ie
+<md>
+<mrow>
+   \lim_{x \to a} f\left( g(x) \right) &amp;= f\left( \lim_{x \to a} g(x) \right)
+  </mrow>
+</md>
+Hence if <m>g</m> is continuous at <m>a</m> and <m>f</m> is continuous at <m>g(a)</m> then the  composite function <m>(f \circ g)(x) = f(g(x))</m> is continuous at <m>a</m>.
+</p></statement>
+</theorem>
+<p>So when we compose two continuous functions we get a new continuous function.</p>
+
+<p>We can put this to use</p>
+<example><title>Continuity of composed functions</title>
+<p>
+Where are the following functions continuous?
+<md>
+<mrow>
+  f(x) &amp;= \sin\left( x^2 +\cos(x) \right)
+</mrow><mrow>
+  g(x) &amp;= \sqrt{\sin(x)}
+</mrow>
+</md>
+</p>
+<p>
+Our first step should be to break the functions down into pieces and study  them. When we put them back together we should be careful of dividing by zero,  or falling outside the domain.
+<ul>
+<li> The function <m>f(x)</m> is the composition of <m>\sin(x)</m> with <m>x^2+\cos(x)</m>. </li>
+<li> These pieces, <m>\sin(x), x^2, \cos(x)</m> are continuous everywhere. </li>
+<li> So the sum <m>x^2+\cos(x)</m> is continuous everywhere </li>
+<li> And hence the composition of <m>\sin(x)</m> and <m>x^2+\cos(x)</m> is continuous  everywhere. </li>
+</ul>
+The second function is a little trickier.
+<ul>
+<li> The function <m>g(x)</m> is the composition of <m>\sqrt{x}</m> with <m>\sin(x)</m>. </li>
+<li> <m>\sqrt{x}</m> is continuous on its domain <m>x \geq 0</m>. </li>
+<li> <m>\sin(x)</m> is continuous everywhere, but it is negative in many places. </li>
+<li>
+	In order for <m>g(x)</m> to be defined and continuous we must restrict <m>x</m> so that  <m>\sin(x) \geq 0</m>.
+</li>
+<li>
+<p>Recall the graph of <m>\sin(x)</m>:</p>
+
+<sidebyside width="66%">
+<image source="text/figs/sinx"/>
+</sidebyside>
+
+<p>
+	Hence <m>\sin(x)\geq 0</m> when <m>x\in[0,\pi]</m> or <m>x\in [2\pi,3\pi]</m> or <m>x\in[-2\pi,-\pi]</m>  or<ellipsis/>. To be more precise <m>\sin(x)</m> is positive when <m>x \in [2n\pi,(2n+1)\pi]</m> for any  integer <m>n</m>.
+</p>
+</li>
+<li> Hence <m>g(x)</m> is continuous when <m>x \in [2n\pi,(2n+1)\pi]</m> for any  integer <m>n</m>. </li>
+</ul>
+</p>
+</example>
+
+<p>
+Continuous functions are very nice (mathematically speaking). Functions  from the <q>real world</q> tend to be continuous (though not always). The key  aspect that  makes them nice is the fact that they don't jump about.
+</p>
+
+<p>
+The absence of such jumps leads to the following theorem which, while it can be  quite confusing on first glance, actually says something very natural <mdash/>  obvious even. It says, roughly speaking, that, as you draw the graph <m>y=f(x)</m> starting at  <m>x=a</m> and ending at <m>x=b</m>, <m>y</m> changes continuously from <m>y=f(a)</m> to <m>y=f(b)</m>, with no  jumps, and consequently <m>y</m> must take every value between <m>f(a)</m> and <m>f(b)</m> at least once.  We'll start by just giving the precise statement and then we'll explain it in detail.
+</p>
+
+<theorem xml:id="thm_ivt"><title>Intermediate value theorem (IVT)</title>
+<statement><p>
+Let <m>a \lt b</m> and let <m>f</m> be a function that is continuous at all points <m>a\leq x  \leq b</m>. If <m>Y</m> is any number between <m>f(a)</m> and <m>f(b)</m> then there exists some  number <m>c \in [a,b]</m> so that <m>f(c) = Y</m>.
+</p></statement>
+</theorem>
+
+<p>
+Like the <m>\epsilon-\delta</m> definition of limits
+	<fn>
+		The interested student is  invited to take a look at the optional Section<nbsp/><xref ref="sec_opt_formal_limit"/>
+	</fn>,
+we should  break this  theorem down into pieces. Before we do that, keep the following pictures in mind.
+</p>
+
+<sidebyside widht="100%">
+<image source="text/figs/IVT"/>
+</sidebyside>
+
+<p>
+Now the break-down
+<ul>
+<li>
+	<alert>Let <m>a \lt b</m> and let <m>f</m> be a function that is continuous at all  points <m>a\leq x \leq b</m>.</alert> <mdash/> This is setting the scene. We have <m>a,b</m> with  <m>a \lt b</m> (we can safely assume these to be real numbers). Our function must  be continuous at all points between <m>a</m> and <m>b</m>.
+</li>
+<li>
+	<alert>if <m>Y</m> is any number between <m>f(a)</m> and <m>f(b)</m></alert> <mdash/> Now we need  another number <m>Y</m> and the only restriction on it is that it lies between  <m>f(a)</m> and <m>f(b)</m>. That is, if <m>f(a)\leq f(b)</m> then <m>f(a) \leq Y \leq f(b)</m>. Or  if <m>f(a) \geq f(b)</m> then <m>f(a) \geq Y \geq f(b)</m>. So notice that <m>Y</m> could be  equal to <m>f(a)</m> or <m>f(b)</m> <mdash/> if we wanted to avoid that possibility, then we  would normally explicitly say <m>Y \neq f(a), f(b)</m> or we would write that <m>Y</m>  is <em>strictly</em> between <m>f(a)</m> and <m>f(b)</m>.
+</li>
+<li>
+	<alert>there exists some number <m>c \in [a,b]</m> so that <m>f(c) = Y</m></alert> <mdash/> so  if we satisfy all of the above conditions, then there has to be some real  number <m>c</m> lying between <m>a</m> and <m>b</m> so that when we evaluate <m>f(c)</m> it is <m>Y</m>.
+</li>
+</ul>
+So that breaks down the proof statement by statement, but what does it actually  mean?
+<ul>
+<li>
+	Draw any continuous function you like between <m>a</m> and <m>b</m> <mdash/> it must be continuous.
+</li>
+<li>
+	The function takes the value <m>f(a)</m> at <m>x=a</m> and <m>f(b)</m> at <m>x=b</m> <mdash/> see  the left-hand figure above.
+</li>
+<li>
+	Now we can pick any <m>Y</m> that lies between <m>f(a)</m> and <m>f(b)</m> <mdash/> see the  middle figure above. The IVT
+	<fn>
+		Often with big important useful theorems  like this one, writing out the full name again and again becomes tedious, so we  abbreviate it. Such abbreviations are okay provided the reader knows this is  what you are doing, so the first time you use an abbreviation you should let  the reader know. Much like we are doing here in this footnote.
+	</fn>
+	tells us that  there must be some <m>x</m>-value that when plugged into the function gives us <m>Y</m>.  That is, there is some <m>c</m> between <m>a</m> and <m>b</m> so that <m>f(c) = Y</m>. We can also interpret  this graphically; the IVT tells us that the horizontal straight line <m>y=Y</m> must intersect  the graph <m>y=f(x)</m> at some point <m>(c,Y)</m> with <m>a\le c\le b</m>.
+</li>
+<li>
+	Notice that the IVT does not tell us how many such <m>c</m>-values there are,  just that there is at least one of them. See the right-hand figure above. For  that particular choice of <m>Y</m> there are three different <m>c</m> values so that  <m>f(c_1) = f(c_2) = f(c_3) = Y</m>.
+</li>
+</ul>
+This theorem says that if <m>f(x)</m> is a continuous function on all of the  interval <m>a \leq x \leq b</m> then as <m>x</m> moves from <m>a</m> to <m>b</m>, <m>f(x)</m> takes every value between <m>f(a)</m> and <m>f(b)</m> at least once. To put this slightly  differently, if <m>f</m> were to avoid a value between <m>f(a)</m> and <m>f(b)</m> then <m>f</m>  cannot be continuous on <m>[a,b]</m>.
+</p>
+
+<p>
+It is not hard to convince yourself that the continuity of <m>f</m> is crucial to  the IVT. Without it one can quickly construct examples of functions that  contradict the theorem. See the figure below for a few non-continuous examples:
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/IVT2"/>
+</sidebyside>
+
+<p>
+In the left-hand example we see that a discontinuous function can <q>jump</q> over  the <m>Y</m>-value we have chosen, so there is no <m>x</m>-value that makes <m>f(x)=Y</m>. The  right-hand example demonstrates why we need to be be careful with the ends of  the interval. In particular, a function must be continuous over the whole  interval <m>[a,b]</m> <em>including</em> the end-points of the interval. If we only  required the function to be continuous on <m>(a,b)</m> (so strictly between <m>a</m> and  <m>b</m>) then the function could <q>jump</q> over the <m>Y</m>-value at <m>a</m> or <m>b</m>.
+</p>
+
+<p>If you are still confused then here is a <q>real-world</q> example</p>
+
+<example><title>The IVT in the <q>real world</q></title>
+<p>
+You are climbing the Grouse-grind
+	<fn>If you don't know it then google it.</fn>
+with a friend <mdash/> call him Bob. Bob was eager and started at 9am. Bob,  while very eager, is also very clumsy; he sprained his ankle somewhere  along the path and has stopped moving at 9:21am and is just sitting
+ 	<fn>Hopefully he remembered to carry something warm.</fn>
+enjoying the  view. You get there late and start climbing at 10am and being quite fit you get to the  top at 11am. The IVT implies that at some time between 10am and 11am you  meet up with Bob.
+</p>
+
+<p>
+You can translate this situation into the form of the IVT as follows. Let <m>t</m>  be time and let <m>a = </m> 10am and <m>b=</m> 11am. Let <m>g(t)</m> be your distance along the trail. Hence
+	<fn>Its amazing what facts you can find on wikipedia.</fn>
+<m>g(a) = 0</m> and  <m>g(b) = 2.9km</m>. Since you are a mortal, your position along the trail is a  continuous function <mdash/> no helicopters or teleportation or<ellipsis/> We have no idea  where Bob is sitting, except that he is somewhere between <m>g(a)</m> and  <m>g(b)</m>, call this point <m>Y</m>. The IVT guarantees that there is some time <m>c</m>  between <m>a</m> and <m>b</m> (so between 10am and 11am) with <m>g(c) = Y</m> (and your  position will be the same as Bob's).
+</p>
+</example>
+
+<p>
+Aside from finding Bob sitting by the side of the trail, one of the most  important applications of the IVT is determining where a function is zero. For  quadratics we know (or should know) that
+<md>
+<mrow>
+  ax^2+bx+c &amp;= 0 &amp; \text{ when } x &amp;= \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+</mrow>
+</md>
+While the Babylonians could (mostly, but not quite) do the above, the corresponding  formula for solving a cubic is uglier and that for a quartic is uglier still. One of  the most famous results in mathematics demonstrates that no such  formula exists for quintics or higher degree polynomials
+	<fn>
+		The similar  (but uglier) formula for solving cubics took until the 15th century and the  work of del<nbsp/>Ferro and Cardano (and Cardano's student Ferrari). A similar (but  even uglier) formula for quartics was also found by Ferrari. The extremely  famous  Abel-Ruffini Theorem (nearly by Ruffini in the late 18th century and  completely by Abel in early 19th century) demonstrates  that a similar formula  for the zeros of a quintic does not exist. Note that the theorem does  <em>not</em> say that quintics do not have zeros; rather it says that the zeros  cannot in general be expressed using a finite combination of addition,  multiplication, division, powers and roots. The interested student should also  look up Évariste Galois and his contributions to this area.
+	</fn>.
+</p>
+
+<p>
+So even for polynomials we cannot, in general, write down explicit  formulae for their zeros and have to make do with numerical approximations <mdash/>  i.e. write down the root as a decimal expansion to whatever precision we desire.  For more complicated functions we have no choice <mdash/> there is no reason that the  zeros should be expressible as nice neat little formulas. At the same time,  finding the zeros of a function:
+<md>
+<mrow>
+  f(x) &amp;= 0
+</mrow>
+</md>
+or solving equations of the form
+	<fn>
+		In fact both of these are the same because we  can write <m>f(x)=g(x)-h(x)</m> and then the zeros of <m>f(x)</m> are exactly when <m>g(x)=h(x)</m>.
+	</fn>
+<md>
+<mrow>
+  g(x) &amp;= h(x)
+</mrow>
+</md>
+can be a crucial step in many mathematical proofs and applications.
+</p>
+
+<p>
+For this reason there is a considerable body of mathematics which focuses just  on finding the zeros of functions. The IVT provides a very simple way to  <q>locate</q> the zeros of a function. In particular, if we know a continuous  function is  negative at a point <m>x=a</m> and positive at another point <m>x=b</m>, then  there must (by the IVT) be a point <m>x=c</m> between <m>a</m> and <m>b</m> where <m>f(c)=0</m>.
+</p>
+
+<sidebyside width="100%">
+<image source="text/figs/IVT3"/>
+</sidebyside>
+
+<p>
+Consider the leftmost of the above figures. It depicts a continuous function  that is negative at <m>x=a</m> and positive at <m>x=b</m>. So choose <m>Y=0</m> and apply the  IVT <mdash/> there must be some <m>c</m> with <m>a \leq c \leq b</m> so that <m>f(c) = Y = 0</m>.  While this doesn't tell us <m>c</m> exactly, it does give us bounds on the possible positions  of at least one zero <mdash/> there must be at least one c obeying <m>a \le c \le b</m>.
+</p>
+
+<p>
+See middle figure. To get better bounds we could test a point half-way between  <m>a</m> and <m>b</m>. So set <m>a' = \frac{a+b}{2}</m>. In this example we see that <m>f(a')</m>  is  negative. Applying the IVT again tells us there is some <m>c</m> between <m>a'</m> and  <m>b</m>  so that <m>f(c) = 0</m>. Again <mdash/> we don't have <m>c</m> exactly, but we have halved the  range of values it could take.
+</p>
+
+<p>
+Look at the rightmost figure and do it again <mdash/> test the point half-way between  <m>a'</m> and <m>b</m>. In this example we see that <m>f(b')</m> is positive. Applying the IVT  tells us that there is some <m>c</m> between <m>a'</m> and <m>b'</m> so that <m>f(c) = 0</m>. This  new range is a quarter of the length of the original. If we keep doing this  process the range will halve each time until we know that the zero is inside  some tiny range of possible values. This process is called the bisection method.
+</p>
+
+<p>Consider the following zero-finding example</p>
+
+<example><title>Show that <m>f(x)=x-1+\sin(\pi x/2)</m> has a zero</title>
+<p>
+Show that the function <m>f(x) = x-1+\sin(\pi x/2)</m> has a zero  in <m>0 \leq x \leq 1</m>.
+</p>
+
+<p>
+This question has been set up nicely to lead us towards using the IVT;  we are  already given a nice interval on which to look. In general we might have to  test a few points and experiment a bit with a calculator before we can  start narrowing down a range.
+</p>
+
+<p>
+Let us start by testing the endpoints of the interval we are given
+<md>
+<mrow>
+  f(0) &amp;= 0 - 1 + \sin(0) = -1  \lt  0
+</mrow><mrow>
+  f(1) &amp;= 1-1+\sin(\pi/2) = 1  \gt  0
+</mrow>
+</md>
+So we know a point where <m>f</m> is positive and one where it is negative. So by  the IVT there is a point in between where it is zero.
+</p>
+
+<p>
+<em>BUT</em> in order to apply the IVT we have to show that the function is  continuous, and we cannot simply write
+</p>
+<blockquote>
+<p>
+ it is continuous
+</p></blockquote>
+<p>
+We need to explain to the reader <em>why</em> it is continuous. That is <mdash/> we  have to prove it.
+</p>
+
+<p>
+So to write up our answer we can put something like the following <mdash/>  keeping in mind we need to tell the reader what we are doing so they can follow along easily.
+<ul>
+<li> We will use the IVT to prove that there is a zero in <m>[0,1]</m>. </li>
+<li>
+<p>
+	First we must show that the function is continuous.
+	<ul>
+	<li> Since <m>x-1</m> is a polynomial it is continuous everywhere. </li>
+	<li> The function <m>\sin(\pi x/2)</m> is a trigonometric function and is also  continuous everywhere. </li>
+	<li> The sum of two continuous functions is also continuous, so <m>f(x)</m> is  continuous everywhere. </li>
+	</ul>
+</p>
+</li>
+<li>
+	Let <m>a=0, b=1</m>, then
+	<md>
+	<mrow>
+	  f(0) &amp;= 0 - 1 + \sin(0) = -1  \lt  0
+	</mrow><mrow>
+	  f(1) &amp;= 1-1+\sin(\pi/2) = 1  \gt  0
+	</mrow>
+	</md>
+</li>
+<li>
+	The function is negative at <m>x=0</m> and positive at <m>x=1</m>. Since the  function is continuous we know there is a point <m>c \in [0,1]</m> so that <m>f(c) =  0</m>.
+</li>
+</ul>
+Notice that though we have not used full sentences in our explanation here, we  are still using words. Your mathematics, unless it is very straight-forward  computation, should contain words as well as symbols.
+</p>
+
+<p>The zero of this function is actually located at about <m>x=0.4053883559</m>.</p>
+
+</example>
+
+
+<p>
+The bisection method is really just the idea that we can keep repeating the above  reasoning (with a calculator handy). Each iteration will tell us the location of the zero  more precisely. The following example illustrates this.
+</p>
+
+<example xml:id="eg_bisection"><title>Using the bisection method</title>
+<p>
+Use the bisection method to find a zero of
+<md>
+<mrow>
+  f(x) &amp;= x-1+\sin(\pi x/2)
+</mrow>
+</md>
+that lies between <m>0</m> and <m>1</m>.
+</p>
+
+<p>
+So we start with the two points we worked out above:
+<ul>
+<li>
+	<m>a=0, b=1</m> and
+	<md>
+	<mrow>
+	  f(0) &amp;= -1
+	</mrow><mrow>
+	  f(1) &amp;= 1
+	</mrow>
+	</md>
+</li>
+<li>
+	Test the point in the middle <m>x = \frac{0+1}{2} = 0.5</m>
+	<md>
+	<mrow>
+	  f(0.5) &amp;= 0.2071067813  \gt  0
+	</mrow>
+	</md>
+</li>
+<li>
+	So our new interval will be <m>[0,0.5]</m> since the function is negative at  <m>x=0</m> and positive at <m>x=0.5</m>
+</li>
+</ul>
+Repeat
+<ul>
+<li> <m>a=0, b=0.5</m> where <m>f(0) \lt 0</m> and <m>f(0.5) \gt 0</m>. </li>
+<li>
+	Test the point in the middle <m>x = \frac{0+0.5}{2} = 0.25</m>
+	<md>
+	<mrow>
+	  f(0.25) &amp;= -0.3673165675  \lt  0
+	</mrow>
+	</md>
+</li>
+<li>
+	So our new interval will be <m>[0.25,0.5]</m> since the function is negative  at <m>x=0.25</m> and positive at <m>x=0.5</m>
+</li>
+</ul>
+Repeat
+<ul>
+<li> <m>a=0.25, b=0.5</m> where <m>f(0.25) \lt 0</m> and <m>f(0.5) \gt 0</m>. </li>
+<li>
+	Test the point in the middle <m>x = \frac{0.25+0.5}{2} = 0.375</m>
+	<md>
+	<mrow>
+	  f(0.375) &amp;= -0.0694297669  \lt  0
+	</mrow>
+	</md>
+</li>
+<li>
+	So our new interval will be <m>[0.375,0.5]</m> since the function is negative  at <m>x=0.375</m> and positive at <m>x=0.5</m>
+</li>
+</ul>
+Below is an illustration of what we have observed so far together with a plot of the  actual function.
+</p>
+
+<sidebyside width="90%">
+ <image source="text/figs/ivt_eg"/>
+</sidebyside>
+
+<p>
+And one final iteration:
+<ul>
+<li> <m>a=0.375, b=0.5</m> where <m>f(0.375) \lt 0</m> and <m>f(0.5) \gt 0</m>. </li>
+<li>
+	Test the point in the middle <m>x = \frac{0.375+0.5}{2} = 0.4375</m>
+	<md>
+	<mrow>
+	  f(0.4375) &amp;= 0.0718932843 \gt 0
+	</mrow>
+	</md>
+</li>
+<li>
+	So our new interval will be <m>[0.375,0.4375]</m> since the function is  negative at <m>x=0.375</m> and positive at <m>x=0.4375</m>
+</li>
+</ul>
+So without much work we know the location of a zero inside a range of length  <m>0.0625 = 2^{-4}</m>. Each iteration will halve the length of the range and we  keep going until we reach the precision we need, though it is much easier to  program a computer to do it.
+</p>
+</example>
+
+</subsection>
+
+<xi:include href="../problems/prob_s1.6.xml"/>
+</section>

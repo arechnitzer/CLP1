@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="app_highschool">
+
+<title>High school material</title>
+<introduction>
+<p>
+This chapter is really split into two parts.
+<ul>
+<li>
+	Sections<nbsp/><xref ref="sec_simtri"/> to<nbsp/><xref ref="sec_logs"/> we expect you to understand and know.
+</li>
+<li>
+	The very last section, Section<nbsp/><xref ref="sec_must_deriv"/>, contains results that we don't  expect you to memorise, but that we think you should be able to quickly derive from other  results you know.
+</li>
+</ul>
+</p>
+</introduction>
+
+<section xml:id="sec_simtri">
+<title>Similar triangles</title>
+<sidebyside width="75%">
+<image source="text/figs/similar"/>
+</sidebyside>
+<p>
+Two triangles <m>T_1,T_2</m> are similar when
+<ul>
+<li>
+	(AAA <mdash/> angle angle angle) The angles of <m>T_1</m> are the same as the  angles of <m>T_2</m>.
+</li>
+<li>
+	(SSS <mdash/> side side side) The ratios of the side lengths are the same.  That is
+	<md>
+	<mrow>
+	  \frac{A}{a} &amp;= \frac{B}{b} = \frac{C}{c}
+	</mrow>
+	</md>
+</li>
+<li>
+	(SAS <mdash/> side angle side) Two sides have lengths in the same ratio and  the angle between them is the same. For example
+	<md>
+	<mrow>
+	  \frac{A}{a} &amp;= \frac{C}{c} \text{ and angle $\beta$ is same}
+	</mrow>
+	</md>
+</li>
+</ul>
+</p>
+</section>
+
+<section><title>Pythagoras</title>
+<p>
+For a right-angled triangle the length of the hypotenuse is related to the lengths of the other two sides by
+</p>
+<sidebyside width="50%">
+  <image source="text/figs/right_triangle"/>
+</sidebyside>
+<p>
+<me>
+(\text{adjacent})^2+(\text{opposite})^2 = (\text{hypotenuse})^2
+</me>
+</p>
+</section>
+
+<section>
+<title>Trigonometry <mdash/> definitions</title>
+<sidebyside width="50%">
+<image source="text/figs/right_triangle"/>
+</sidebyside>
+<p>
+<me>
+\begin{array}{rlcrl}
+<![CDATA[
+\sin\theta &= \dfrac{\text{opposite}}{\text{hypotenuse}} & \qquad & \csc \theta &= \dfrac{1}{\sin\theta} \\
+\cos\theta &= \dfrac{\text{adjacent}}{\text{hypotenuse}} & \qquad & \sec \theta &= \dfrac{1}{\cos\theta} \\
+\tan\theta &= \dfrac{\text{opposite}}{\text{adjacent}} & \qquad & \cot \theta &= \dfrac{1}{\tan\theta}
+ ]]>
+\end{array}
+</me>
+</p>
+</section>
+
+<section xml:id="app_rad_arc_sec"><title>Radians, arcs and sectors</title>
+<sidebyside width="75%">
+<image source="text/figs/radian"/>
+</sidebyside>
+<p>
+For a circle of radius <m>r</m> and angle of <m>\theta</m> radians:
+<ul>
+<li> Arc length <m>L(\theta) = r \theta</m>. </li>
+<li> Area of sector <m>A(\theta) = \frac{\theta}{2} r^2</m>. </li>
+</ul>
+</p>
+</section>
+
+<section xml:id="app_sec_trig_graphs">
+<title>Trigonometry <mdash/> graphs</title>
+
+<sbsgroup widths="32% 32% 32%" valign="middle">
+<sidebyside>
+<p><me>\sin \theta</me></p> <p><me>\cos \theta</me></p> <p><me>\tan \theta</me></p>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=1.1,ymin=-1.1, ytick={-1,1},
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=100] {sin(deg(x))};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=1.1,ymin=-1.1, ytick={-1,1},
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=100] {cos(deg(x))};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=4.1,ymin=-4.1, ymajorticks=false,
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=100] {tan(deg(x))};
+\addplot[line width=1pt,red] coordinates {(-1.570796327,4.15) (-1.570796327,-4.15)};
+\addplot[line width=1pt,red] coordinates {(1.570796327,4.15) (1.570796327,-4.15)};
+\addplot[line width=1pt,red] coordinates {(4.71238898,4.15) (4.71238898,-4.15)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</sbsgroup>
+
+</section>
+
+<section>
+<title>Trigonometry <mdash/> special triangles</title>
+<sidebyside width="66%">
+<image source="text/figs/special_triangles"/>
+</sidebyside>
+
+<p>
+From the above pair of special triangles we have
+<md>
+<mrow>
+  \sin \frac{\pi}{4} &amp;= \frac{1}{\sqrt{2}} &amp;  \sin \frac{\pi}{6} &amp;= \frac{1}{2} &amp; \sin \frac{\pi}{3} &amp;= \frac{\sqrt{3}}{2}
+</mrow><mrow>
+  \cos \frac{\pi}{4} &amp;= \frac{1}{\sqrt{2}} &amp;  \cos \frac{\pi}{6} &amp;= \frac{\sqrt{3}}{2} &amp; \cos \frac{\pi}{3} &amp;= \frac{1}{2}
+</mrow><mrow>
+  \tan \frac{\pi}{4} &amp;= 1 &amp;  \tan \frac{\pi}{6} &amp;= \frac{1}{\sqrt{3}} &amp; \tan
+\frac{\pi}{3} &amp;= \sqrt{3}
+</mrow>
+</md>
+</p>
+
+</section>
+<section>
+<title>Trigonometry <mdash/> simple identities</title>
+<p>
+<ul>
+<li> Periodicity
+<md>
+<mrow>
+  \sin(\theta+2\pi) &amp;= \sin(\theta) &amp;
+  \cos(\theta+2\pi) &amp;= \cos(\theta)
+</mrow>
+</md>
+</li>
+<li> Reflection
+<md>
+<mrow>
+  \sin(-\theta)&amp;=-\sin(\theta) &amp; \cos(-\theta) &amp;=\cos(\theta) </mrow>
+</md>
+</li>
+<li> Reflection around <m>\pi/4</m>
+<md>
+<mrow>
+\sin\left(\tfrac{\pi}{2}-\theta\right)&amp;=\cos\theta &amp;
+\cos\left(\tfrac{\pi}{2}-\theta\right)&amp;=\sin\theta
+</mrow>
+</md>
+</li>
+<li> Reflection around <m>\pi/2</m>
+<md>
+<mrow>
+\sin\left(\pi-\theta\right)&amp;=\sin\theta &amp;
+\cos\left(\pi-\theta\right)&amp;=-\cos\theta
+</mrow>
+</md>
+</li>
+<li> Rotation by <m>\pi</m>
+<md>
+<mrow>
+\sin\left(\theta+\pi\right)&amp;=-\sin\theta &amp;
+\cos\left(\theta+\pi\right)&amp;=-\cos\theta
+</mrow>
+</md>
+</li>
+<li> Pythagoras
+<md>
+<mrow>
+\sin^2\theta + \cos^2 \theta &amp;=1
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+</section>
+
+
+<section xml:id="sec_trig_add">
+<title>Trigonometry <mdash/> add and subtract angles</title>
+<p>
+<ul>
+<li> Sine
+<md>
+<mrow>
+  \sin(\alpha \pm \beta) &amp;= \sin(\alpha)\cos(\beta) \pm \cos(\alpha)\sin(\beta)
+  </mrow>
+</md>
+</li>
+<li> Cosine
+<md>
+<mrow>
+  \cos(\alpha \pm \beta) &amp;= \cos(\alpha)\cos(\beta) \mp \sin(\alpha)\sin(\beta)
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+</section>
+
+<section xml:id="sec_inv_trig">
+<title>Inverse trigonometric functions</title>
+<shorttitle>Inverse trig functions</shorttitle>
+<p>
+	In order to construct inverse trigonometric functions we first have to restrict their domains so as to make them one-to-one (or injective). We do this as shown below
+</p>
+<sbsgroup widths="32% 32% 32%">
+<sidebyside>
+<p><me>\sin x</me> </p><p> <me>\cos x</me> </p><p> <me>\tan x</me></p>
+</sidebyside>
+<sidebyside>
+<p>Domain: <m>-\frac{\pi}{2} \leq \arcsin x \leq \frac{\pi}{2}</m></p>
+<p>Domain: <m>0 \leq \arccos x \leq \pi</m></p>
+<p>Domain: <m>-\frac{\pi}{2}  \lt  \arctan x  \lt  \frac{\pi}{2}</m></p>
+</sidebyside>
+<sidebyside>
+<p>Range: <m>-1 \leq x \leq 1</m></p>
+<p>Range: <m>-1 \leq x \leq 1</m></p>
+<p>Range: all real numbers</p>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[
+	\begin{tikzpicture}
+	\begin{axis}[
+	  legend pos = north west,
+	  axis x line=center, axis y line=center,
+	  ymax=1.1,ymin=-1.1, ytick={-1,1},
+	  xmin=-2, xmax=2,
+	  xtick={-1.570796327,1.570796327},
+	  xticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
+	  ]
+	\addplot[blue,domain=-0.5*pi:0.5*pi,samples=100] {sin(deg(x))};
+	% \legend{$\sin \theta$}
+	\end{axis}
+	\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+	\begin{tikzpicture}
+	\begin{axis}[
+	  axis x line=center, axis y line=center,
+	  ymax=1.1,ymin=-1.1, ytick={-1,1},
+	  xmin=-0.3,xmax=3.4,
+	  xtick={0,1.570796327,3.141592654},
+	  xticklabels={0,$\frac{\pi}{2}$, $\pi$}
+	  ]
+	\addplot[blue,domain=0:pi,samples=100] {cos(deg(x))};
+	% \legend{$\cos \theta$}
+	\end{axis}
+	\end{tikzpicture}
+]]></latex-image></image>
+\begin{tikzpicture}
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center,
+  ymax=4.1,ymin=-4.1, ymajorticks=false,
+  xmin=-2,xmax=2,
+  xtick={-1.570796327,1.570796327},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$}
+  ]
+\addplot[blue,domain=-0.49*pi:0.49*pi,samples=100] {tan(deg(x))};
+% \legend{$\tan \theta$}
+
+\addplot[line width=1pt,red] coordinates {(-1.570796327,4.15) (-1.570796327,-4.15)};
+\addplot[line width=1pt,red] coordinates {(1.570796327,4.15) (1.570796327,-4.15)};
+\end{axis}
+\end{tikzpicture}
+<image><latex-image><![CDATA[
+]]></latex-image></image>
+</sidebyside>
+</sbsgroup>
+
+
+<sbsgroup widths="32% 32% 32%">
+<sidebyside>
+<p><me>\arcsin x</me> </p><p> <me>\arccos x</me> </p><p> <me>\arctan x</me></p>
+</sidebyside>
+<sidebyside>
+<p>Domain: <m>-1 \leq x \leq 1</m></p>
+<p>Domain: <m>-1 \leq x \leq 1</m></p>
+<p>Domain: all real numbers</p>
+</sidebyside>
+<sidebyside>
+<p>Range: <m>-\frac{\pi}{2} \leq \arcsin x \leq \frac{\pi}{2}</m></p>
+<p>Range: <m>0 \leq \arccos x \leq \pi</m></p>
+<p>Range: <m>-\frac{\pi}{2}  \lt  \arctan x  \lt  \frac{\pi}{2}</m></p>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center,
+  xmax=1.1,xmin=-1.1, xtick={-1,1},
+  ymin=-2, ymax=2,
+  ytick={-1.570796327,1.570796327},
+  yticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
+  ]
+\addplot[blue,domain=-1:1,samples=100] {asin(x)/180*pi};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  xmax=1.1,xmin=-1.1, xtick={-1,1},
+  ymin=-0.3,ymax=3.4,
+  ytick={0,1.570796327,3.141592654},
+  yticklabels={0,$\frac{\pi}{2}$, $\pi$}
+  ]
+ \addplot[blue,domain=-1:1,samples=100] {acos(x)/180*pi};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center,
+  xmax=4.3,xmin=-4.3, xmajorticks=false,
+  ymin=-2,ymax=2,
+  ytick={-1.570796327,1.570796327},
+  yticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
+  ]
+\addplot[blue,domain=-4:4,samples=100] {atan(x)/180*pi};
+\addplot[line width=1pt,red] coordinates {(4.15,-1.570796327) (-4.15,-1.570796327)};
+\addplot[line width=1pt,red] coordinates {(4.15,1.570796327) (-4.15,1.570796327)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</sbsgroup>
+<p>
+Since these functions are inverses of each other we have
+<md>
+<mrow>
+  \arcsin(\sin \theta) &amp;= \theta &amp; -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}
+</mrow><mrow>
+  \arccos(\cos \theta) &amp;= \theta &amp; 0 \leq \theta \leq \pi
+</mrow><mrow>
+  \arctan(\tan \theta) &amp;= \theta &amp; -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}
+</mrow>
+</md>
+and also
+<md>
+<mrow>
+  \sin(\arcsin x) &amp;= x &amp; -1 \leq x \leq 1
+</mrow><mrow>
+  \cos(\arccos x) &amp;= x &amp; -1 \leq x \leq 1
+</mrow><mrow>
+  \tan(\arctan x) &amp;= x &amp; \text{any real } x
+</mrow>
+</md>
+</p>
+
+</section>
+
+<section xml:id="app_sec_areas">
+<title>Areas</title>
+<sidebyside width="100%">
+<image source="text/figs/area2d"/>
+</sidebyside>
+
+<p>
+<ul>
+<li> Area of a rectangle
+<md>
+<mrow>
+  A &amp;= b h
+</mrow>
+</md>
+</li>
+<li> Area of a triangle
+<md>
+<mrow>
+  A &amp;= \frac{1}{2} b h = \frac{1}{2} ab \sin \theta
+</mrow>
+</md>
+</li>
+<li> Area of a circle
+<md>
+<mrow>
+  A &amp;= \pi r^2
+</mrow>
+</md>
+</li>
+<li> Area of an ellipse
+<md>
+<mrow>
+  A &amp;= \pi ab
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+
+</section>
+<section xml:id="sec_volumes">
+<title>Volumes</title>
+<sidebyside width="100%">
+<image source="text/figs/vol3d"/>
+</sidebyside>
+
+<p>
+<ul>
+<li> Volume of a rectangular prism
+<md>
+<mrow>
+  V &amp;= l w h
+</mrow>
+</md>
+</li>
+<li> Volume of a cylinder
+<md>
+<mrow>
+  V &amp;= \pi r^2 h
+</mrow>
+</md>
+</li>
+<li> Volume of a cone
+<md>
+<mrow>
+  V &amp;= \frac{1}{3} \pi r^2 h
+</mrow>
+</md>
+</li>
+<li> Volume of a sphere
+<md>
+<mrow>
+  V &amp;= \frac{4}{3} \pi r^3
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+
+</section>
+
+
+<section xml:id="sec_powers">
+<title>Powers</title>
+<p>
+In the following, <m>x</m> and <m>y</m> are arbitrary real numbers, and <m>q</m> is an arbitrary constant that is strictly bigger than zero.
+<ul>
+<li> <m>q^0=1</m>
+</li>
+<li> <m>q^{x+y}=q^xq^y</m>,
+         <m>q^{x-y}=\frac{q^x}{q^y}</m>
+</li>
+<li> <m>q^{-x}=\frac{1}{q^x}</m>
+</li>
+<li> <m>\big(q^x\big)^y=q^{xy}</m>
+</li>
+<li>  <m>\lim\limits_{x\rightarrow\infty}q^x=\infty</m>,
+           <m>\lim\limits_{x\rightarrow-\infty}q^x=0</m> if <m>q \gt 1</m>
+</li>
+<li> <m>\lim\limits_{x\rightarrow\infty}q^x=0</m>,
+           <m>\lim\limits_{x\rightarrow-\infty}q^x=\infty</m> if <m>0 \lt q \lt 1</m>
+</li>
+<li><p>
+The graph of <m>2^x</m> is given below. The graph of  <m>q^x</m>, for any <m>q \gt 1</m>, is similar.
+</p>
+
+<sidebyside width="50%">
+<image source="text/figs/expGraph2"/>
+</sidebyside>
+</li>
+</ul>
+</p>
+</section>
+
+<section xml:id="sec_logs">
+<title>Logarithms</title>
+<p>
+In the following, <m>x</m> and <m>y</m> are arbitrary real numbers that  are strictly bigger than 0, and <m>p</m> and <m>q</m> are arbitrary constants that are strictly bigger than one.
+</p>
+
+<p><ul>
+<li>   <m>q^{\log_q x}=x, \qquad \log_q \big(q^x\big)=x</m>
+</li>
+<li>   <m>\log_q x=\frac{\log_p x}{\log_p q}</m>
+</li>
+<li>  <m>\log_q 1=0, \qquad \log_q q=1</m>
+</li>
+<li> <m>\log_q(xy)=\log_q x+\log_q y</m>
+</li>
+<li> <m>\log_q\big(\frac{x}{y}\big)=\log_q x-\log_q y</m>
+</li>
+<li> <m>\log_q\big(\frac{1}{y}\big)=-\log_q y</m>,
+</li>
+<li> <m>\log_q(x^y)=y\log_q x</m>
+</li>
+<li> <m>\lim\limits_{x\rightarrow\infty}\log_q x=\infty, \qquad \lim\limits_{x\rightarrow0}\log_q x=-\infty</m>
+</li>
+<li><p>
+The graph of <m>\log_{10} x</m> is given below. The graph of  <m>\log_q x</m>, for any <m>q \gt 1</m>, is similar.</p>
+<sidebyside width="50%">
+<image source="text/figs/logGraph10"/>
+</sidebyside>
+</li>
+</ul>
+</p>
+
+</section>
+
+<section xml:id="sec_must_deriv">
+	<title>Highschool material you should be able to derive</title>
+	<shorttitle>You should be able to derive</shorttitle>
+<p>
+<ul>
+<li> Graphs of <m>\csc\theta, \sec \theta</m> and <m>\cot \theta</m>:
+</li>
+</ul>
+</p>
+<sbsgroup widths="32% 32% 32%">
+<sidebyside>
+<p><me>\csc \theta</me> </p><p> <me>\sec \theta</me> </p><p> <me>\cot \theta</me> </p>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=4.1,ymin=-4.1,ytick={-1,1},
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=200] {cosec(deg(x))};
+\addplot[line width=1pt,red] coordinates {(-3.141592654,4.15) (-3.141592654,-4.15)};
+\addplot[line width=1pt,red] coordinates {(0,3.7) (0,-3.7)};
+\addplot[line width=1pt,red] coordinates {(3.141592654,4.15) (3.141592654,-4.15)};
+\addplot[line width=1pt,red] coordinates {(6.283185307,4.15) (6.283185307,-4.15)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=4.1,ymin=-4.1, ytick={-1,1},
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=100] {sec(deg(x))};
+\addplot[line width=1pt,red] coordinates {(-1.570796327,4.15) (-1.570796327,-4.15)};
+\addplot[line width=1pt,red] coordinates {(1.570796327,4.15) (1.570796327,-4.15)};
+\addplot[line width=1pt,red] coordinates {(4.71238898,4.15) (4.71238898,-4.15)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  ymax=4.1,ymin=-4.1, ymajorticks=false,
+  xtick={-3.141592654,-1.570796327,1.570796327,3.141592654,4.71238898,6.283185307},
+  xticklabels={$-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$,$2\pi$}
+  ]
+\addplot[blue,domain=-1.1*pi:2.1*pi,samples=400] {cot(deg(x))};
+\addplot[line width=1pt,red] coordinates {(-3.14,4.15) (-3.14,-4.15)};
+\addplot[line width=1pt,red] coordinates {(0,4) (0,-4)};
+\addplot[line width=1pt,red] coordinates {(3.14,4.15) (3.14,-4.15)};
+\addplot[line width=1pt,red] coordinates {(6.3,4.15) (6.3,-4.15)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</sbsgroup>
+<p>
+<ul>
+<li> More Pythagoras
+<md>
+<mrow>
+\sin^2\theta + \cos^2 \theta &amp;=1 &amp; \xmapsto{\text{divide by $\cos^2\theta$}}&amp;&amp;
+\tan^2\theta + 1  &amp;= \sec^2\theta
+</mrow><mrow>
+\sin^2\theta + \cos^2 \theta &amp;=1 &amp; \xmapsto{\text{divide by $\sin^2\theta$}}&amp;&amp;
+1 + \cot^2 \theta &amp;=\csc^2\theta
+</mrow>
+</md>
+</li>
+<li> Sine <mdash/> double angle (set <m>\beta =\alpha</m> in sine angle addition formula)
+<md>
+<mrow>
+  \sin(2\alpha) &amp;= 2\sin(\alpha)\cos(\alpha)
+</mrow>
+</md>
+</li>
+<li> Cosine <mdash/> double angle (set <m>\beta =\alpha</m> in cosine angle addition formula)
+<md>
+<mrow>
+  \cos(2\alpha) &amp;= \cos^2(\alpha) - \sin^2(\alpha)
+</mrow><mrow>
+  &amp;= 2\cos^2(\alpha) - 1  &amp; \text{(use $\sin^2(\alpha)= 1-\cos^2(\alpha)$)}
+</mrow><mrow>
+  &amp;= 1 - 2\sin^2(\alpha) &amp; \text{(use $\cos^2(\alpha)= 1-\sin^2(\alpha)$)}
+</mrow>
+</md>
+</li>
+<li> Composition of trigonometric and inverse trigonometric functions:
+<md>
+<mrow>
+  \cos( \arcsin x) &amp;= \sqrt{1-x^2} &amp;
+  \sec( \arctan x) &amp;= \sqrt{1+x^2}
+</mrow>
+</md>
+and similar expressions.
+</li>
+</ul>
+</p>
+</section>
+</appendix>

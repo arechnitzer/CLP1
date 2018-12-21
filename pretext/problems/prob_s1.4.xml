@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<exercises>
+
+<exercisegroup><title><conceptual/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>Suppose <m>\displaystyle\lim_{x \rightarrow a} f(x)=0</m> and
+<m>\displaystyle\lim_{x \rightarrow a} g(x)=0</m>. Which of the following limits can you compute, given this information?
+<ol label="a">
+<li xml:id="s1_4right1"> <m>\displaystyle\lim_{x \rightarrow a} \frac{f(x)}{2}</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow a} \frac{2}{f(x)}</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow a} \frac{f(x)}{g(x)}</m>
+</li>
+<li xml:id="s1_4right2"> <m>\displaystyle\lim_{x \rightarrow a} f(x)g(x)</m>
+</li>
+</ol>
+</p></statement>
+<answer><p>
+(<xref ref="s1_4right1"/>) and (<xref ref="s1_4right2"/>)
+</p></answer>
+<solution><p>
+Zeroes cause a problem when they show up in the denominator, so we can only compute
+(<xref ref="s1_4right1"/>) and (<xref ref="s1_4right2"/>). (Both these limits are zero.) Be careful: there is no such rule as <q>zero divided by zero is one,</q> or <q>zero divided by zero is zero.</q>
+</p></solution>
+</exercise>
+<exercise xml:id="s1_4zeroes1" purpose="RQS">
+<statement><p>
+Give two functions <m>f(x)</m> and <m>g(x)</m> that satisfy <m>\displaystyle\lim_{x \rightarrow 3}f(x)=\displaystyle\lim_{x \rightarrow 3}g(x)=0</m> and <m>\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=10</m>.
+</p></statement>
+<hint><p> Try to make two functions with factors that will cancel.
+</p></hint>
+<answer><p>
+There are many possible answers; one is <m>f(x)=10(x-3)</m>, <m>g(x)=x-3</m>.
+</p></answer>
+<solution><p>
+The statement <m>\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=10</m> tells us that, as <m>x</m> gets very close to 3, <m>f(x)</m> is 10 times as large as <m>g(x)</m>. We notice that if <m>f(x)=10g(x)</m>, then <m>\dfrac{f(x)}{g(x)}=10</m>, so <m>\displaystyle\lim_{x \rightarrow} \dfrac{f(x)}{g(x)}=10</m> wherever <m>f</m> and <m>g</m> exist. So it's enough to find a function <m>g(x)</m> that has limit 0 at 3. Such a function is (for example) <m>g(x)=x-3</m>. So, we take <m>f(x)=10(x-3)</m> and <m>g(x)=x-3</m>. It is easy now to check that <m>\displaystyle\lim_{x \rightarrow 3}f(x)=\displaystyle\lim_{x \rightarrow 3}g(x)=0</m> and <m>\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=\ds\lim_{x \to 3}\frac{10(x-3)}{x-3}=\ds\lim_{x \to 3}10=10</m>.
+</p></solution>
+</exercise>
+<exercise xml:id="s1_4zeroes2" purpose="RQS">
+<statement><p>
+Give two functions <m>f(x)</m> and <m>g(x)</m> that satisfy <m>\displaystyle\lim_{x \rightarrow 3}f(x)=\displaystyle\lim_{x \rightarrow 3}g(x)=0</m> and <m>\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=0</m>.
+</p></statement>
+<hint><p> Try to make <m>g(x)</m>  cancel out.
+</p></hint>
+<answer><p> There are many possible answers; one is
+<m>f(x)=(x-3)^2</m> and <m>g(x)=x-3</m>. Another is <m>f(x)=0</m> and <m>g(x)=x-3</m>.
+</p></answer>
+<solution><p>
+<ul>
+<li> As we saw in Question<nbsp/><xref ref="s1_4zeroes1"/>, <m>x-3</m> is a function with limit 0 at <m>x=3</m>.  So one way of thinking about this question is to try choosing <m>f(x)</m> so that  <m>\frac{f(x)}{g(x)}=g(x)=x-3</m> too, which leads us to the solution <m>f(x)=(x-3)^2</m> and <m>g(x)=x-3</m>. This is one of many, many possible answers.
+</li>
+<li> Another way of thinking about this problem is that <m>f(x)</m> should go to 0 <q>more strongly</q> than <m>g(x)</m> when <m>x</m> approaches <m>3</m>. One way of a function going to 0 really strongly is to make that function identically zero. So we can set <m>f(x)=0</m> and <m>g(x)=x-3</m>. Now <m>\dfrac{f(x)}{g(x)}</m> is equal to 0 whenever <m>x \neq 3</m>, and is undefined at <m>x=3</m>. Since the limit as <m>x</m> goes to three does not take into account the value of the function at 3, we have <m>\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=0</m>.
+</li>
+</ul>
+There are many more possible answers.
+</p></solution>
+</exercise>
+<exercise xml:id="s1_4zeroes3">
+<statement><p>
+Give two functions <m>f(x)</m> and <m>g(x)</m> that satisfy <m>\displaystyle\lim_{x \rightarrow 3}f(x)=\displaystyle\lim_{x \rightarrow 3}g(x)=0</m> and <m>\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=\infty</m>.
+</p></statement>
+<answer><p>There are many possible answers; one is
+<m>f(x)=x-3</m>, <m>g(x)=(x-3)^3</m>.
+</p></answer>
+<solution><p> One way to start this problem is to remember <m>\displaystyle \lim_{x \rightarrow 0} \dfrac{1}{x^2}=\infty</m>. (Using <m>\dfrac{1}{x^2}</m> as opposed to <m>\dfrac{1}{x}</m> is important, since <m>\displaystyle\lim_{x \rightarrow 0}\dfrac{1}{x}</m> does not exist.) Then by <q>shifting</q> by three, we find <m>\displaystyle \lim_{x \rightarrow 3} \dfrac{1}{(x-3)^2}=\infty</m>. So it is enough to arrange that <m>\dfrac{f(x)}{g(x)}=\dfrac{1}{(x-3)^2}</m>. We can achieve this with <m>f(x)=x-3</m> and <m>g(x)=(x-3)^3</m>, and maintain <m>\displaystyle\lim_{x \rightarrow 3}f(x)=\displaystyle\lim_{x \rightarrow 3}g(x)=0</m>. Again, this is one of many possible solutions.
+</p></solution>
+</exercise>
+<exercise>
+<statement><p>Suppose <m>\displaystyle\lim_{x \rightarrow a}f(x)=\displaystyle\lim_{x \rightarrow a}g(x)=0</m>. What are the possible values of
+<m>\displaystyle\lim_{x \rightarrow a}\dfrac{f(x)}{g(x)}</m>?
+</p></statement>
+<hint><p> See Questions<nbsp/><xref ref="s1_4zeroes1"/>, <xref ref="s1_4zeroes2"/>, and <xref ref="s1_4zeroes3"/>.
+</p></hint>
+<answer><p> Any real number; positive infinity; negative infinity; does not exist.
+</p></answer>
+<solution>
+<p>
+Any real number; positive infinity; negative infinity; does not exist.
+</p>
+
+<p>This is an important thing to remember: often, people see limits that look like <m>\dfrac{0}{0}</m> and think that the limit must be 1, or 0, or infinite. In fact, this limit could be anything--it depends on the relationship between <m>f</m> and <m>g</m>.
+</p>
+
+<p>Questions<nbsp/><xref ref="s1_4zeroes1"/> and <xref ref="s1_4zeroes2"/> show us examples where the limit is 10 and 0; they can easily be modified to make the limit any real number.
+</p>
+
+<p>Question<nbsp/><xref ref="s1_4zeroes3"/> show us  an example where the limit is <m>\infty</m>; it can easily be modified to make the limit <m>-\infty</m> or DNE.
+</p>
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><procedural/></title>
+<introduction><p>
+  For Questions<nbsp/><xref ref="s1_4firstlimit"/> through <xref ref="s1_4lastlimit"/>, evaluate the given limits.
+</p></introduction>
+
+<exercise xml:id="s1_4firstlimit">
+<statement><p>
+<m>\displaystyle\lim_{t \rightarrow 10} \dfrac{2(t-10)^2}{t}</m>
+</p></statement>
+<hint><p> Find the limit of the numerator and denominator separately.
+</p></hint>
+<answer><p> 0
+</p></answer>
+<solution><p>
+Since we're not trying to divide by 0, or multiply by infinity:<m>\displaystyle\lim_{t \rightarrow 10} \dfrac{2(t-10)^2}{t}
+=
+\dfrac{2\cdot0}{10}=0</m>
+</p></solution>
+</exercise>
+<exercise>
+<statement><p><m>\displaystyle\lim_{y \rightarrow 0} \dfrac{(y+1)(y+2)(y+3)}{\cos y}</m>
+</p></statement>
+<hint><p> Break it up into smaller pieces, evaluate the limits of the pieces.
+</p></hint>
+<answer><p> 6
+</p></answer>
+<solution><p> Since we're not doing anything dodgy like putting 0 in the denominator,
+ <m>\displaystyle\lim_{y \rightarrow 0} \dfrac{(y+1)(y+2)(y+3)}{\cos y}
+=\dfrac{(0+1)(0+2)(0+3)}{\cos 0}=\dfrac{6}{1}=6</m>.
+</p></solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 3} \left(\dfrac{4x-2}{x+2}\right)^4</m>
+</p></statement>
+<hint><p> First find the limit of the <q>inside</q> function, <m>\dfrac{4x-2}{x+2}</m>.
+</p></hint>
+<answer><p> 16
+</p></answer>
+<solution><p> Since the limits of the numerator and denominator exist, and since the limit of the denominator is nonzero:
+<m>\displaystyle\lim_{x \rightarrow 3} \left(\dfrac{4x-2}{x+2}\right)^4 =
+\left(\dfrac{4(3)-2}{3+2}\right)^4=16
+</m>
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+ <m>\ds \lim_{t\to -3} \left(\frac{1-t}{\cos(t)}\right)</m>
+</p></statement>
+<answer><p>
+<m>4/\cos(3)</m>
+</p></answer>
+<solution><p>
+ <md>
+<mrow>
+  \lim_{t\to -3} \left(\frac{1-t}{\cos(t)}\right)
+  &amp;= \frac{\ds\lim_{t\to -3} (1-t)}{\ds\lim_{t\to-3}\cos(t)}
+  = 4/\cos(-3) = 4/\cos(3)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement><p>
+<m>\ds \lim_{h \to 0} \frac{(2+h)^2-4}{2h}</m>
+</p></statement>
+<hint><p>
+Expand, then simplify.
+</p></hint>
+<answer><p>
+<m>2</m>
+</p></answer>
+<solution><p>
+If try naively then we get <m>0/0</m>, so we expand and then simplify:
+<md>
+<mrow>
+  \frac{(2+h)^2-4}{2h} &amp;= \frac{h^2+4h+4-4}{2h} = \frac{h}{2}+2
+</mrow>
+</md>
+Hence the limit is <m>\ds \lim_{h \to 0} \left(\frac{h}{2}+2\right) = 2</m>.
+</p></solution>
+</exercise>
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+ <m>\ds \lim_{t\to -2} \left(\frac{t-5}{t+4}\right)</m>
+</p></statement>
+<answer><p>
+<m>-7/2</m>
+</p></answer>
+<solution><p>
+ <md>
+<mrow>
+  \lim_{t\to -2} \left(\frac{t-5}{t+4}\right)
+  &amp;= \frac{\lim_{t\to -2} (t-5)}{\lim_{t\to-2}(t+4)}
+  = -7/2.
+</mrow>
+</md>
+</p></solution>
+</exercise>
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+  <m>\ds \lim_{x\to 1} \sqrt{5x^3 + 4}</m>
+</p></statement>
+<answer><p>
+3
+</p></answer>
+<solution><p>
+    <me>
+
+        \lim_{t\to 1} \sqrt{5x^3 + 4} =
+        \sqrt{\lim_{t\to 1}\bigl(5x^3 + 4\bigr)} =
+        \sqrt{5\lim_{t\to 1}(x^3) + 4} =
+        \sqrt{9} =
+        3.
+    </me>
+
+</p></solution>
+</exercise>
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+<m>\displaystyle\lim_{t\rightarrow -1} \left(\frac{t-2}{t+3}\right)</m>
+</p></statement>
+<answer><p> <m>-\frac{3}{2}</m>
+</p></answer>
+<solution><p>
+<me>
+  \lim_{t\rightarrow -1} \left(\frac{t-2}{t+3}\right)
+  = \frac{\displaystyle\lim_{t\rightarrow -1} (t-2)}{\displaystyle\lim_{t\rightarrow-1}(t+3)}
+  = -3/2.
+</me>
+</p></solution>
+</exercise>
+<exercise><title><fromexam>2012H</fromexam></title>
+<statement>
+<p>
+<m>\lim\limits_{x\rightarrow 1}\dfrac{\log(1+x)-x}{x^2}</m> (where <m>\log x</m> denotes the logarithm base <m>e</m> of <m>x</m>)
+</p></statement>
+<hint><p> Try the simplest method first.
+</p></hint>
+<answer><p>
+<m>\log(2)-1</m>
+</p></answer>
+<solution><p>
+We simply plug in <m>x=1</m>:
+<m>\lim\limits_{x\rightarrow 1}\left[\dfrac{\log(1+x)-x}{x^2}\right]=\log(2)-1</m>.
+</p></solution>
+</exercise>
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+<m>\displaystyle\lim_{x\rightarrow 2} \left(\frac{x-2}{x^2-4}\right)</m>
+</p></statement>
+<hint><p> Factor the denominator.
+</p></hint>
+<answer><p> <m>\frac{1}{4}</m>
+</p></answer>
+<solution><p>
+If we try naively then we get <m>0/0</m>, so we simplify first:
+<md>
+<mrow>
+  \frac{x-2}{x^2-4} &amp;= \frac{x-2}{(x-2)(x+2)} = \frac{1}{x+2}
+</mrow>
+</md>
+Hence the limit is <m>\displaystyle \lim_{x\rightarrow2} \frac{1}{x+2} = 1/4</m>.</p></solution>
+</exercise>
+<exercise purpose="RQS"><title><fromexam>2006H</fromexam></title>
+<statement>
+<p>
+ <m>\ds\lim\limits_{x\rightarrow 4}\dfrac{x^2-4x}{x^2-16}</m>
+</p></statement>
+<hint><p> Factor the numerator and the denominator.
+</p></hint>
+<answer><p>
+<m>\dfrac{1}{2}</m>
+</p></answer>
+<solution><p>
+If we try to plug in <m>x=4</m>, we find the denominator is zero. So to get a better idea of what's happening, we factor the numerator and denominator:
+<md>
+<mrow>
+\lim\limits_{x\rightarrow 4}\frac{x^2-4x}{x^2-16}
+		&amp;=\lim\limits_{x\rightarrow 4}\frac{x(x-4)}{(x+4)(x-4)}
+</mrow><mrow>
+                 &amp;=\lim\limits_{x\rightarrow 4}\frac{x}{x+4}
+</mrow><mrow>
+                 &amp;=\frac{4}{8}=\frac{1}{2}
+                 </mrow>
+</md>
+</p></solution>
+</exercise>
+<exercise><title><fromexam>2007H</fromexam></title>
+<statement>
+<p>
+<m>\lim\limits_{x\rightarrow 2}\dfrac{x^2+x-6}{x-2}</m>
+</p></statement>
+<hint><p> Factor the numerator.
+</p></hint>
+<answer><p>
+<m>5</m>
+</p></answer>
+<solution><p>
+If we try to plug in <m>x=2</m>, we find the denominator is zero. So to get a better idea of what's happening, we factor the numerator:
+<md>
+<mrow>
+\lim\limits_{x\rightarrow 2}\frac{x^2+x-6}{x-2}&amp;=
+\lim\limits_{x\rightarrow 2}\frac{(x+3)(x-2)}{x-2}
+</mrow><mrow>&amp;=
+\lim\limits_{x\rightarrow 2}(x+3)=5
+</mrow>
+</md>
+</p></solution>
+</exercise>
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+<m>\ds \lim_{x \to -3} \frac{x^2-9}{x+3}</m>
+</p></statement>
+<hint><p>
+Simplify first by factoring the numerator.
+</p></hint>
+<answer><p>
+<m>-6</m>
+</p></answer>
+<solution><p>
+If we try naively then we get <m>0/0</m>, so we simplify first:
+<md>
+<mrow>
+  \frac{x^2-9}{x+3} &amp;= \frac{(x-3)(x+3)}{(x+3)} = x-3
+</mrow>
+</md>
+Hence the limit is <m>\ds \lim_{x\to-3} (x-3) = -6</m>.
+</p></solution>
+</exercise>
+<exercise>
+<statement><p>
+<m>\displaystyle\lim_{t \rightarrow 2} \frac{1}{2}t^4-3t^3+t</m>
+</p></statement>
+<hint><p> The function is a polynomial.
+</p></hint>
+<answer><p> <m>-14</m>
+</p></answer>
+<solution><p> To calculate the limit of a polynomial, we simply evaluate the polynomial:
+<m>\displaystyle\lim_{t \rightarrow 2} \frac{1}{2}t^4-3t^3+t
+=
+\frac{1}{2}\cdot2^4-3\cdot 2^3+2 = -14</m>
+</p></solution>
+</exercise>
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+    <m>\ds \lim_{x\to -1} \frac{\sqrt{x^2+8}-3}{x+1}</m>.
+</p></statement>
+<hint><p>
+Multiply both the numerator and the denominator by the
+        conjugate of the numerator,  <m>\sqrt{x^2+8}+3</m>.
+</p></hint>
+<answer><p>
+<m>-\frac{1}{3}</m>
+</p></answer>
+<solution><p>
+ <md>
+<mrow>
+  \frac{\sqrt{x^2+8}-3}{x+1}
+  &amp;= \frac{\sqrt{x^2+8}-3}{x+1}
+  \cdot \frac{\sqrt{x^2+8}+3}{\sqrt{x^2+8}+3}
+</mrow><mrow>
+  &amp;= \frac{(x^2+8)-3^2}{(x+1)(\sqrt{x^2+8}+3)}
+</mrow><mrow>
+  &amp;= \frac{x^2-1}{(x+1)(\sqrt{x^2+8}+3)}
+</mrow><mrow>
+  &amp;= \frac{(x-1)(x+1)}{(x+1)(\sqrt{x^2+8}+3)}
+</mrow><mrow>
+  &amp;= \frac{(x-1)}{\sqrt{x^2+8}+3}
+</mrow><mrow>
+  \lim_{x\to -1} \frac{\sqrt{x^2+8}-3}{x+1}
+  &amp;=\lim_{x\to-1} \frac{(x-1)}{\sqrt{x^2+8}+3}
+</mrow><mrow>
+  &amp;= \frac{-2}{\sqrt{9}+3 }
+</mrow><mrow>
+  &amp;= -\frac{2}{6} = -\frac{1}{3}.
+</mrow>
+</md>
+</p></solution>
+</exercise>
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+ <m>\ds \lim_{x\to 2} \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}</m>.
+</p></statement>
+<hint><p>
+Multiply both the numerator and the denominator by the
+        conjugate of the numerator, <m>\sqrt{x+7}+\sqrt{11-x}</m>.
+        </p></hint>
+<answer><p>
+<m>\frac{1}{6} </m>
+</p></answer>
+<solution><p>
+If we try to do the limit naively we get <m>0/0</m>. Hence we must simplify.
+ <md>
+<mrow>
+\frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+  &amp;= \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+  \cdot \left(\frac{\sqrt{x+7}+\sqrt{11-x}}{\sqrt{x+7}+\sqrt{11-x}}\right)
+</mrow><mrow>
+  &amp;= \frac{(x+7)-(11-x)}{(2x-4)(\sqrt{x+7}+\sqrt{11-x})}
+</mrow><mrow>
+  &amp;= \frac{2x-4}{(2x-4)(\sqrt{x+7}+\sqrt{11-x})}
+</mrow><mrow>
+  &amp;= \frac{1}{\sqrt{x+7}+\sqrt{11-x}}
+</mrow><mrow>
+\mbox{So, }\lim_{x\to2} \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+  &amp;=\lim_{x\to2} \frac{1}{\sqrt{x+7}+\sqrt{11-x}}
+</mrow><mrow>
+  &amp;= \frac{1}{\sqrt{9}+\sqrt{9} }
+</mrow><mrow>
+  &amp;= \frac{1}{6}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+<m>\displaystyle \lim_{x\rightarrow 1} \frac{\sqrt{x+2}-\sqrt{4-x}}{x-1}</m>
+</p></statement>
+<hint><p>
+Multiply both the numerator and the denominator by the
+        conjugate of the numerator, <m>\sqrt{x+2}+\sqrt{4-x}</m>.
+</p></hint>
+<answer><p> <m>\frac{1}{\sqrt{3}}</m>
+</p></answer>
+<solution><p>
+If we try to do the limit naively we get <m>0/0</m>. Hence we must simplify.
+<md>
+<mrow>
+\frac{\sqrt{x+2}-\sqrt{4-x}}{x-1}
+  &amp;= \frac{\sqrt{x+2}-\sqrt{4-x}}{x-1}
+  \cdot \frac{\sqrt{x+2}+\sqrt{4-x}}{\sqrt{x+2}+\sqrt{4-x}}
+</mrow><mrow>
+  &amp;= \frac{(x+2)-(4-x)}{(x-1)(\sqrt{x+2}+\sqrt{4-x})}
+</mrow><mrow>
+  &amp;= \frac{2x-2}{(x-1)(\sqrt{x+2}+\sqrt{4-x})}
+</mrow><mrow>
+  &amp;= \frac{2}{\sqrt{x+2}+\sqrt{4-x}}
+</mrow>
+</md>
+So the limit is
+<md>
+<mrow>
+\lim_{x\to1} \frac{\sqrt{x+2}-\sqrt{4-x}}{x-1}
+  &amp;=\lim_{x\to1} \frac{2}{\sqrt{x+2}+\sqrt{4-x}}
+</mrow><mrow>
+  &amp;= \frac{2}{\sqrt{3}+\sqrt{3} }
+</mrow><mrow>
+  &amp;= \frac{1}{\sqrt{3}}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+<exercise><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+<m>\ds \lim_{x\to 3} \frac{\sqrt{x-2}-\sqrt{4-x}}{x-3}</m>.
+</p></statement>
+<hint><p>
+Multiply both the numerator and the denominator by the
+        conjugate of the numerator, <m> \sqrt{x-2}+\sqrt{4-x}</m>.
+</p></hint>
+<answer><p> 1
+</p></answer>
+<solution><p>
+If we try to do the limit naively we get <m>0/0</m>. Hence we must simplify.
+ <md>
+<mrow>
+\frac{\sqrt{x-2}-\sqrt{4-x}}{x-3}
+  &amp;= \frac{\sqrt{x-2}-\sqrt{4-x}}{x-3}
+  \cdot \frac{\sqrt{x-2}+\sqrt{4-x}}{\sqrt{x-2}+\sqrt{4-x}}
+</mrow><mrow>
+  &amp;= \frac{(x-2)-(4-x)}{(x-3)(\sqrt{x-2}+\sqrt{4-x})}
+</mrow><mrow>
+  &amp;= \frac{2x-6}{(x-3)(\sqrt{x-2}+\sqrt{4-x})}
+</mrow><mrow>
+  &amp;= \frac{2}{\sqrt{x-2}+\sqrt{4-x}}
+</mrow><mrow>
+  \mbox{So, }
+\lim_{x\to 3} \frac{\sqrt{x-2}-\sqrt{4-x}}{x-3}
+  &amp;=\lim_{x\to 3} \frac{2}{\sqrt{x-2}+\sqrt{4-x}}
+</mrow><mrow>
+  &amp;= \frac{2}{1+1 }
+</mrow><mrow>
+  &amp;= 1.
+</mrow>
+</md>
+</p></solution>
+</exercise>
+<exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
+<statement>
+<p>
+<m>\ds \lim_{t\to 1} \frac{3t-3}{2 - \sqrt{5-t}}</m>.
+</p></statement>
+<hint><p>
+Multiply both the numerator and the denominator by the
+        conjugate of the denominator,  <m>2+\sqrt{5-t}</m>.
+</p></hint>
+<answer><p>
+12
+</p></answer>
+<solution><p>
+Here we get <m>0/0</m> if we try the naive approach. Hence we must simplify.
+ <md>
+<mrow>
+\frac{3t-3}{2 - \sqrt{5-t}}
+  &amp;= \frac{3t-3}{2 - \sqrt{5-t}} \times \frac{2 + \sqrt{5-t}}{2 + \sqrt{5-t}}
+</mrow><mrow>
+  &amp;= \left(2 + \sqrt{5-t}\right)\,\frac{3t-3}{2^2 - (5 - t)}
+</mrow><mrow>
+  &amp;=  \left(2 + \sqrt{5-t}\right)\,\frac{3t-3}{t-1}
+</mrow><mrow>
+  &amp;=  \left(2 + \sqrt{5-t}\right)\,\frac{3(t-1)}{t-1}
+</mrow>
+<intertext>So there is a cancelation.
+Hence the limit is</intertext><mrow>
+\lim_{t\to1}\frac{3t-3}{2 - \sqrt{5-t}}
+  &amp;=\lim_{t\to1} \left(2 + \sqrt{5-t}\right) \cdot 3
+</mrow><mrow>
+  &amp;= 12
+</mrow>
+</md>
+</p></solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 0}-x^2\cos\left(\frac{3}{x}\right)</m>
+</p></statement>
+<hint><p>
+Consider the factors <m>x^2</m> and <m>\cos\left(\frac{3}{x}\right)</m>
+        separately. Review the squeeze theorem.
+</p></hint>
+<answer><p> 0
+</p></answer>
+<solution>
+<p>
+This is a classic example of the Squeeze Theorem. It is tempting to try to use arithmetic of limits: <m>\displaystyle\lim_{x \rightarrow 0} -x^2=0</m>, and <m>\displaystyle\lim_{x \rightarrow 0}\cos\left(\frac{3}{x}\right)=something</m>, and zero times something is 0. However, this is invalid reasoning, because we can only use arithmetic of limits when those limits exist, and <m>\displaystyle\lim_{x \rightarrow 0}\cos\left(\frac{3}{x}\right)</m> does not exist. So, we need the Squeeze Theorem.
+</p>
+
+<p>Since <m>-1 \leq \cos\left(\frac{3}{x}\right) \leq 1</m>, we can bound our function of interest from above and below (being careful of the sign!):
+<me>
+-x^2({\textcolor{red}{1}})\leq -x^2{\textcolor{red}{\cos\left(\frac{3}{x}\right)}} \leq -x^2({\textcolor{red}{-1}})</me>
+
+So our function of interest is between <m>-x^2</m> and <m>x^2</m>. Since <m>\displaystyle\lim_{x \rightarrow 0} -x^2=\displaystyle\lim_{x \rightarrow 0} x^2=0</m>, by the Squeeze Theorem, also <m>\displaystyle\lim_{x \rightarrow 0}-x^2\cos\left(\frac{3}{x}\right)=0</m>.
+</p>
+
+<p>Advice about writing these up: whenever we use the Squeeze Theorem, we need to explicitly write that two things are true: that the function we're interested is bounded above and below by two other functions, and that both of those functions have the same limit. Then we can conclude (and we need to write this down as well!) that our original function also shares that limit.
+</p>
+</solution>
+</exercise>
+<exercise>
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 0}\dfrac{x^4\sin\left(\frac{1}{x}\right)+5x^2\cos\left(\frac{1}{x}\right)+2}{(x-2)^2}</m>
+</p></statement>
+<hint><p> Look for a reason to ignore the trig. Review the squeeze theorem.
+</p></hint>
+<answer><p> <m>\frac{1}{2}</m>
+</p></answer>
+<solution>
+<p>
+Recall that sine and cosine, no matter what (real-number) input we feed them, spit out numbers between <m>-1</m> and <m>1</m>. So we can bound our horrible numerator, rather than trying to deal with it directly.
+<me>
+x^4({\textcolor{red}{-1}})+5x^2({\textcolor{red}{-1}})+2
+\leq
+x^4{\textcolor{red}{\sin\left(\frac{1}{x}\right)}}+5x^2{\textcolor{red}{\cos\left(\frac{1}{x}\right)}}+2 \leq
+x^4({\textcolor{red}{1}})+5x^2({\textcolor{red}{1}})+2
+</me>
+</p>
+
+<p>Further, notice that our bounded functions tend to the same value as <m>x</m> goes to <m>0</m>:
+<me>
+\displaystyle\lim_{x \rightarrow 0} x^4{(-1)}+5x^2{(-1)}+2=
+\displaystyle\lim_{x \rightarrow 0} x^4+5x^2+2=2.
+</me>
+So, by the Squeeze Theorem, also
+<me>
+\displaystyle\lim_{x \rightarrow 0}{x^4\sin\left(\frac{1}{x}\right)+5x^2\cos\left(\frac{1}{x}\right)+2}=2.
+</me>
+Now, we evaluate our original limit:
+<me>
+\displaystyle\lim_{x \rightarrow 0}\dfrac{x^4\sin\left(\frac{1}{x}\right)+5x^2\cos\left(\frac{1}{x}\right)+2}{(x-2)^2}=\frac{2}{(-2)^2}=\frac{1}{2}.
+</me>
+</p>
+</solution>
+</exercise>
+<exercise><title><fromexam>2012H</fromexam></title>
+<statement>
+<p>
+<m>\lim\limits_{x\rightarrow 0}x\sin^2\left(\dfrac{1}{x}\right)</m>
+</p></statement>
+<hint><p>
+As in the previous questions, we want to use the Squeeze Theorem. If <m>x \lt 0</m>, then
+<m>-x</m> is positive, so
+<m>x \lt -x</m>. Use this fact when you bound your expressions.
+</p></hint>
+<answer><p>
+0
+</p></answer>
+<solution>
+<p>
+<m>\ds\lim_{x\to0}\sin^2\left(\dfrac{1}{x}\right)=DNE</m>,
+so we think about using the Squeeze Theorem. We'll need to bound the expression
+<m>x\sin^2\left(\dfrac{1}{x}\right)</m>, but the bounding is a little delicate.
+For any non-zero value we plug in for <m>x</m>, <m>\sin^2\left(\dfrac{1}{x}\right)</m> is a number in the interval <m>[0,1]</m>. If <m>a</m> is a number in the interval <m>[0,1]</m>, then:
+<md>
+<mrow>
+0 \lt &amp;xa \lt x &amp; &amp;\mbox{ when $x$ is positive}
+</mrow><mrow>
+x \lt &amp;xa \lt 0 &amp; &amp;\mbox{ when $x$ is negative}
+</mrow>
+</md>
+ We'll show you two ways to use this information to create bound that will allow you to apply the Squeeze Theorem.
+</p>
+
+<p>
+<ul>
+<li><p> Solution 1:
+We will evaluate separately the limit from the right and from the left.
+</p>
+
+<p>When <m>x \gt 0</m>,
+<me>
+0 \leq x\sin^2\left(\dfrac{1}{x}\right) \leq x</me>
+
+because <m>0 \leq \sin^2\left(\dfrac{1}{x}\right) \leq 1</m>. Since
+<me>
+\ds\lim_{x \to 0^+} 0 = 0 \qquad\mbox{and}\qquad \ds\lim_{x \to 0^+}x=0</me>
+
+then by the Squeeze Theorem, also
+<me>
+\ds\lim_{x \to 0^+} x\sin^2\left(\dfrac{1}{x}\right)=0 .</me>
+
+</p>
+
+<p>Similarly,
+When <m>x \lt 0</m>,
+<me>
+x \leq x\sin^2\left(\dfrac{1}{x}\right) \leq 0
+</me>
+because <m>0 \leq \sin^2\left(\dfrac{1}{x}\right) \leq 1</m>. Since
+<me>
+\ds\lim_{x \to 0^-} x = 0 \qquad\mbox{and}\qquad \ds\lim_{x \to 0^-}0=0
+</me>
+then by the Squeeze Theorem, also
+<me>\ds\lim_{x \to 0^-} x\sin^2\left(\dfrac{1}{x}\right)=0. </me>
+</p>
+
+<p>Since the one-sided limits are both equal to zero,
+<me>\ds\lim_{x\to0}x\sin^2\left(\frac{1}{x}\right)=0.</me>
+</p>
+
+<p>Remark: this is a perfectly fine proof, but it seems to repeat itself. Since the cases <m>x \lt 0</m> and <m>x \gt 0</m> are so similar, we would like to take care of them together. This can be done as shown below.
+</p>
+</li>
+<li><p> Solution 2: If <m>x\neq 0</m>, then <m>0\leq\sin^2\left(\dfrac{1}{x}\right)\leq1</m>, so
+<me>-|x| \leq x\sin^2\left(\frac{1}{x}\right)\leq|x|.</me>
+
+Since <me>\ds\lim_{x \to 0}-|x|=0\qquad\mbox{and}\qquad\lim_{x\to0}|x|=0</me>
+
+then by the Squeeze Theorem, also
+<me>\lim_{x \to 0} x\sin^2\left(\frac{1}{x}\right)=0.</me>
+</p>
+</li>
+</ul>
+</p>
+</solution>
+</exercise>
+<exercise>
+<statement><p>
+<m>\displaystyle\lim_{w \rightarrow 5} \dfrac{2w^2-50}{(w-5)(w-1)}</m>
+</p></statement>
+<hint><p> Factor the numerator.
+</p></hint>
+<answer><p> 5 </p></answer>
+<solution><p> When we plug <m>w=5</m> in to the numerator and denominator, we find that each becomes zero. Since we can't divide by zero, we have to dig a little deeper. When a polynomial has a root, that also means it has a factor: we can factor <m>(w-5)</m> out of the top. That lets us cancel:
+<me>\displaystyle\lim_{w \rightarrow 5} \dfrac{2w^2-50}{(w-5)(w-1)}
+=\displaystyle\lim_{w \rightarrow 5} \dfrac{2(w-5)(w+5)}{(w-5)(w-1)}
+=\displaystyle\lim_{w \rightarrow 5} \dfrac{2(w+5)}{(w-1)}.
+</me>
+</p>
+
+<p>Note that the function <m>\dfrac{2w^2-50}{(w-5)(w-1)} </m> is NOT defined at <m>w=5</m>, while the function <m>\dfrac{2(w+5)}{(w-1)}</m> IS defined at <m>w=5</m>; so strictly speaking, these two functions are not equal. However, for every value of <m>w</m> that is not 5, the functions are the same, so their <em>limits</em> are equal. Furthermore, the limit of the second function is quite easy to calculate, since we've eliminated the zero in the denominator:
+<m>\displaystyle\lim_{w \rightarrow 5} \dfrac{2(w+5)}{(w-1)}
+=\dfrac{2(5+5)}{5-1}=5.
+</m>
+</p>
+
+<p>So <m>\displaystyle\lim_{w \rightarrow 5} \dfrac{2w^2-50}{(w-5)(w-1)}=\displaystyle\lim_{w \rightarrow 5} \dfrac{2(w+5)}{(w-1)}=5</m>.
+</p>
+</solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+<m>\displaystyle\lim_{r \rightarrow -5} \dfrac{r}{r^2+10r+25}</m>
+</p></statement>
+<hint><p> Factor the denominator; pay attention to signs.
+</p></hint>
+<answer><p> <m>-\infty</m>
+</p></answer>
+<solution><p>
+When we plug in <m>r=-5</m> to the denominator, we find that it becomes 0, so we need to dig deeper. The numerator is not zero, so cancelling is out. Notice that the denominator is factorable: <m>r^2+10r+25 = (r+5)^2</m>. As <m>r</m> approaches <m>-5</m> from either side, the denominator gets very close to zero, but stays positive. The numerator gets very close to <m>-5</m>. So, as <m>r</m> gets closer to <m>-5</m>, we have something close to <m>-5</m> divided by a very small, positive number. Since the denominator is small, the fraction will have a large magnitude; since the numerator is negative and the denominator is positive, the fraction will be negative. So,
+<m>\displaystyle\lim_{r \rightarrow -5} \dfrac{r}{r^2+10r+25}=-\infty</m>
+</p></solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow -1}\sqrt{\dfrac{x^3+x^2+x+1}{3x+3}}</m>
+</p></statement>
+<hint><p> First find the limit of the <q>inside</q> function.
+</p></hint>
+<answer><p> <m>\sqrt{\dfrac{2}{3}}</m>
+</p></answer>
+<solution><p>
+First, we find <m>\displaystyle\lim_{x \rightarrow -1}\dfrac{x^3+x^2+x+1}{3x+3}</m>. When we plug in <m>x=-1</m> to the top and the bottom, both become zero. In a polynomial, where there is a root, there is a factor, so this tells us we can factor out <m>(x+1)</m> from both the top and the bottom. It's pretty easy to see how to do this in the bottom. For the top, if you're having a hard time, one factoring method (of many) to try is long division of polynomials; another is to factor out <m>(x+1)</m> from the first two terms and the last two terms. (Long division is covered in Appendix A.14 of CLP-II Integral Calculus.)
+</p>
+<p><md>
+<mrow>
+\displaystyle\lim_{x \rightarrow -1}\dfrac{x^3+x^2+x+1}{3x+3}&amp;=
+\displaystyle\lim_{x \rightarrow -1}\dfrac{x^2(x+1)+(x+1)}{3x+3}
+=\displaystyle\lim_{x \rightarrow -1}\dfrac{(x+1)(x^2+1)}{3(x+1)}
+</mrow><mrow>
+&amp;=
+\displaystyle\lim_{x \rightarrow -1}\dfrac{x^2+1}{3}=\frac{(-1)^2+1}{3}=\frac{2}{3}.
+</mrow>
+</md>
+</p>
+
+<p>One thing to note here is that the function <m>\dfrac{x^3+x^2+x+1}{3x+3}</m> is not defined at  <m>x=-1</m> (because we can't divide by zero). So we replaced it with the function
+<m>\dfrac{x^2+1}{3}</m>, which IS defined at <m>x=-1</m>. These functions only differ at <m>x=-1</m>; they are the same at every other point. That is why we can use the second function to find the limit of the first function.
+</p>
+
+<p>Now we're ready to find the actual limit asked in the problem:
+<me>\displaystyle\lim_{x \rightarrow -1}\sqrt{\dfrac{x^3+x^2+x+1}{3x+3}}=
+\sqrt{\dfrac{2}{3}}.</me>
+</p>
+</solution>
+</exercise>
+<exercise>
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 0} \dfrac{x^2+2x+1}{3x^5-5x^3}</m>
+</p></statement>
+<hint><p> Factor; pay attention to signs.
+</p></hint>
+<answer><p> DNE
+</p></answer>
+<solution>
+<p>
+When we plug <m>x=0</m> into the denominator, we get 0, which means we need to look harder. The numerator is not zero, so we won't be able to cancel our problems away. Let's factor to make things clearer.
+</p>
+
+<p><me>\dfrac{x^2+2x+1}{3x^5-5x^3} =
+\dfrac{(x+1)^2}{x^3(3x^2-5)}</me>
+
+</p>
+
+<p>As <m>x</m> gets close to 0, the numerator is close to 1; the term <m>(3x^2-5)</m> is negative; and the sign of <m>x^3</m> depends on the direction we're approaching 0 from. Since we're  dividing a numerator that is very close to 1 by something that's getting very close to 0, the magnitude of the fraction is getting bigger and bigger without bound. Since the sign of the fraction flips depending on whether we are using numbers slightly bigger than 0, or slightly smaller than 0, that means the one-sided limits are <m>\infty</m> and <m>-\infty</m>, respectively.
+(In particular, <m>\displaystyle\lim_{x \rightarrow 0^-}\dfrac{x^2+2x+1}{3x^5-5x^3}=\infty
+</m> and <m>\displaystyle\lim_{x \rightarrow 0^+}\dfrac{x^2+2x+1}{3x^5-5x^3}=-\infty
+</m>.) Since the one-sided limits don't agree, the limit does not exist.
+</p>
+</solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+<m>\displaystyle\lim_{t \rightarrow 7} \dfrac{t^2x^2+2tx+1}{t^2-14t+49}</m>, where <m>x</m> is a positive constant
+</p></statement>
+<hint><p> Look for perfect squares
+</p></hint>
+<answer><p> <m>\infty</m>
+</p></answer>
+<solution><p>
+As usual, we first try plugging in <m>t=7</m>, but the denominator is 0, so we need to think harder. The top and bottom are both squares, so let's go ahead and factor:
+<m>\dfrac{t^2x^2+2tx+1}{t^2-14t+49}=\dfrac{(tx+1)^2}{(t-7)^2}</m>.
+Since <m>x</m> is positive, the numerator is nonzero. Also, the numerator is positive near <m>t=7</m>. So, we have something positive and nonzero on the top, and we divide it by the bottom, which is positive and getting closer and closer to zero. The quotient is always positive near <m>t=7</m>, and it is growing in magnitude without bound, so
+<m>\displaystyle\lim_{t \rightarrow 7} \dfrac{t^2x^2+2tx+1}{t^2-14t+49}=\infty</m>.
+</p>
+
+<p>Remark: there is an important reason we specified that <m>x</m> must be a <em>positive</em> constant. Suppose <m>x</m> were <m>-\frac{1}{7}</m> (which is negative
+           and so was not allowed in the question posed). In this case, we would have
+           <md>
+<mrow>
+             \ds\lim_{t\rightarrow 7} \frac{t^2x^2+2tx+1}{t^2-14t+49}
+                &amp;= \ds\lim_{t\rightarrow 7} \frac{(tx+1)^2}{(t-7)^2}
+</mrow><mrow>
+                &amp;= \ds\lim_{t\rightarrow 7} \frac{(-t/7+1)^2}{(t-7)^2}
+</mrow><mrow>
+                &amp;= \ds\lim_{t\rightarrow 7} \frac{(-1/7)^2(t-7)^2}{(t-7)^2}
+</mrow><mrow>
+                &amp;= \ds\lim_{t\rightarrow 7} (-1/7)^2
+</mrow><mrow>
+                &amp;= \dfrac{1}{49}
+</mrow><mrow>
+                &amp;\neq \infty
+           </mrow>
+</md>
+</p>
+</solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>
+<m>\displaystyle\lim_{d \rightarrow 0} x^5-32x+15</m>, where <m>x</m> is a constant
+</p></statement>
+<hint><p> Think about what effect changing <m>d</m> has on the function <m>x^5-32x+15</m>.
+</p></hint>
+<answer><p> <m> x^5-32x+15</m>
+</p></answer>
+<solution><p> The function whose limit we are taking does not depend on <m>d</m>. Since <m>x</m> is a constant, <m> x^5-32x+15</m> is also a constant--it's just some number, that doesn't change, regardless of what <m>d</m> does. So
+<m>\displaystyle\lim_{d \rightarrow 0} x^5-32x+15=x^5-32x+15</m>.
+</p></solution>
+</exercise>
+<exercise>
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 1} (x-1)^2\sin\left[\left(\dfrac{x^2-3x+2}{x^2-2x+1}\right)^2+15\right]</m>
+</p></statement>
+<hint><p> There's an easy way.
+</p></hint>
+<answer><p> <m>0</m>
+</p></answer>
+<solution><p> There's a lot going on inside that sine function... and we don't have to care about any of it. No matter what horrible thing we put inside a sine function, the sine function will spit out a number between <m>-1</m> and <m>1</m>. So that means we can bound our horrible function like this:
+<me>(x-1)^2\cdot({\textcolor{red}{-1}}) \leq (x-1)^2{\textcolor{red}{\sin\left[\left(\dfrac{x^2-3x+2}{x^2-2x+1}\right)^2+15\right]}}
+\leq(x-1)^2\cdot({\textcolor{red}{1}})
+</me>
+Since <m>\displaystyle\lim_{x \rightarrow 1}(x-1)^2\cdot(-1) = \displaystyle\lim_{x\rightarrow1}(x-1)^2\cdot(1)=0</m>, the Squeeze Theorem tells us that
+<me>\displaystyle\lim_{x \rightarrow 1} (x-1)^2\sin\left[\left(\dfrac{x^2-3x+2}{x^2-2x+1}\right)^2+15\right]=0</me>
+ as well.
+</p></solution>
+</exercise>
+<exercise><title><fromexam>2006H</fromexam></title>
+<statement>
+<p>
+ Evaluate
+<m> \ds
+\lim_{x\rightarrow 0} x^{1/101} \sin\big(x^{-100}\big)
+</m>
+or explain why this limit does not exist.
+</p></statement>
+<hint><p>
+What can you do to safely ignore the sine function?
+</p></hint>
+<answer><p>
+<m>0</m>
+</p></answer>
+<solution><p>
+Since <m>-1 \leq \sin x \leq 1</m> for all values of <m>x</m>,
+<md>
+<mrow>
+{-1}&amp;\leq  \sin\big(x^{-100}\big)\leq 1
+</mrow><mrow>
+( \textcolor{red}{-1} )x^{1/101} \amp
+  \leq x^{1/101}\textcolor{red}{\sin\big(x^{-100}\big)}
+   \leq(\textcolor{red}{1})x^{1/101}
+   ~~~\mbox{when $x >0$, and }
+</mrow>
+<mrow>
+( \textcolor{red}{1})x^{1/101}  \amp
+    \leq x^{1/101}\textcolor{red}{\sin\big(x^{-100}\big)}
+     \leq (\textcolor{red}{-1})x^{1/101}
+     ~~~\mbox{when $x  \lt 0$. Also, }
+</mrow><mrow>
+\lim_{x \to 0}x^{1/101}&amp;=\lim_{x \to 0}-x^{1/101}=0
+~~~\mbox{So, by the Squeeze Theorem,}
+</mrow><mrow>
+\lim_{x \to 0^-}x^{1/101} \sin\big(x^{-100}\big)&amp;=0=\lim_{x \to 0^+}x^{1/101} \sin\big(x^{-100}\big)~~~\mbox{and so}
+</mrow><mrow>
+0&amp;=\lim_{x\rightarrow 0} x^{1/101} \sin\big(x^{-100}\big).
+</mrow>
+</md>
+</p>
+
+<p>Remark: there is a  technical point here. When <m>x</m> is a positive number, <m>-x</m> is negative, so <m>(-1)x \lt x</m>. But, when <m>x</m> is negative, <m>-x</m> is positive, so <m>(-1)x \gt x</m>. This is why we take the one-sided limits of our function, and apply the Squeeze Theorem to them separately. It <em>is not true</em> to say that, for instance, <m>(-1)x^{1/101} \leq  x^{1/101} \sin\big(x^{-100}\big)</m> when <m>x</m> is near zero, because this does not hold when <m>x</m> is less than zero.</p>
+</solution>
+</exercise>
+
+<exercise><title><fromexam>1999H</fromexam></title>
+<statement>
+<p>
+<m>\lim\limits_{x\rightarrow2}\dfrac{x^2-4}{x^2-2x}</m>
+</p></statement>
+<hint><p> Factor
+</p></hint>
+<answer><p> 2
+</p></answer>
+<solution><p>
+<me>
+\lim_{x\rightarrow2}\frac{x^2-4}{x^2-2x}
+=\lim_{x\rightarrow2}\frac{(x-2)(x+2)}{x(x-2)}
+=\lim_{x\rightarrow2}\frac{x+2}{x}
+={2}
+</me>
+</p></solution>
+</exercise>
+<!-- <exercise xml:id="s1_4lastlimit"> changed when extra problems added.-->
+<exercise>
+<statement><p>
+<m>\displaystyle\lim_{x \rightarrow 5} \dfrac{(x-5)^2}{x+5}</m>
+</p></statement>
+<hint><p> If you're looking at the hints for this one, it's probably easier than you think.
+</p></hint>
+<answer><p> 0
+</p></answer>
+<solution><p>When we plug in <m>x=5</m> to the top and the bottom, both limits exist, and the bottom is nonzero. So
+<m>\displaystyle\lim_{x \rightarrow 5} \dfrac{(x-5)^2}{x+5}=
+\dfrac{0}{10}=0</m>.
+</p></solution>
+</exercise>
+
+<!-- extra problems added dec 2018 -->
+
+<exercise>
+<statement><p>
+Evaluate <m>\ds\lim_{t \to \frac{1}{2}}\dfrac{\frac{1}{3t^2}+\frac{1}{t^2-1}}{2t-1}</m> .
+</p></statement>
+<hint><p>
+You'll want to simplify this, since <m>t=\frac{1}{2}</m> is not in the domain of the function. One way to start your simplification is to add the fractions in the numerator by finding a common denominator.
+</p></hint>
+<answer><p> <m>-\dfrac{32}{9}</m>
+</p></answer>
+<solution><p>
+Since we can't plug in <m>t=\frac{1}{2}</m>, we'll simplify. One way to start is to add the fractions in the numerator. We'll need a common demoninator, such as <m>3t^2(t^2-1)</m>.
+<md>
+<mrow>
+\lim_{t \to \frac{1}{2}}\dfrac{\frac{1}{3t^2}+\frac{1}{t^2-1}}{2t-1}&amp;=
+\lim_{t \to \frac{1}{2}}\dfrac{\frac{t^2-1}{3t^2(t^2-1)}+\frac{3t^2}{3t^2(t^2-1)}}{2t-1}
+</mrow><mrow>
+&amp;=\lim_{t \to \frac{1}{2}}\frac{\frac{4t^2-1}{3t^2(t^2-1)}}{2t-1}
+</mrow><mrow>
+&amp;=\lim_{t \to \frac{1}{2}}\frac{4t^2-1}{3t^2(t^2-1)(2t-1)}
+</mrow><mrow>
+&amp;=\lim_{t \to \frac{1}{2}}\frac{(2t+1)(2t-1)}{3t^2(t^2-1)(2t-1)}
+</mrow><mrow>
+&amp;=\lim_{t \to \frac{1}{2}}\frac{2t+1}{3t^2(t^2-1)}
+</mrow>
+<intertext>Since we cancelled out the term that was causing the numerator and denominator to be zero when <m>t=\frac{1}{2}</m>, now <m>t=\frac{1}{2}</m> is in the domain of our function, so we simply plug it in:
+</intertext><mrow>
+&amp;=\frac{1+1}{\frac{3}{4}\left(\frac{1}{4}-1\right)}
+</mrow><mrow>
+&amp;=\frac{2}{\frac{3}{4}\left(-\frac{3}{4}\right)}
+</mrow><mrow>
+&amp;=-\frac{32}{9}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise xml:id="s1_4absval">
+<statement><p>
+Evaluate <m>\ds\lim_{x \to 0}\left( 3+\dfrac{|x|}{x}\right) </m>.
+</p></statement>
+<hint><p>
+If you're not sure how <m>\dfrac{|x|}{x}</m> behaves, try plugging in a few values of <m>x</m>, like <m>x=\pm 1</m> and <m>x=\pm 2</m>.
+</p></hint>
+<answer><p>
+DNE
+</p></answer>
+<solution><p>
+We recall that
+<md>
+<mrow>
+|x|&amp;=\left\{\begin{array}{rcl}
+x&amp;,&amp;x \ge 0
+</mrow><mrow>
+-x&amp;,&amp;x \lt 0
+\end{array}\right.
+</mrow>
+<intertext>
+So, </intertext><mrow>
+\frac{|x|}{x} &amp;= \left\{\begin{array}{rcl}
+\frac{x}{x}&amp;,&amp;x  \gt  0
+</mrow><mrow>
+\frac{-x}{x}&amp;,&amp;x \lt 0
+\end{array}\right.
+</mrow><mrow>
+&amp;= \left\{\begin{array}{rcl}
+1&amp;,&amp;x  \gt  0
+</mrow><mrow>
+-1&amp;,&amp;x \lt 0
+\end{array}\right.
+</mrow>
+<intertext>Therefore,</intertext><mrow>
+3+\frac{|x|}{x}&amp;=\left\{\begin{array}{rcl}
+4&amp;,&amp;x  \gt  0
+</mrow><mrow>
+2&amp;,&amp;x \lt 0
+\end{array}\right.
+</mrow>
+</md>
+Since our function gives a value of 4 when <m>x</m> is to the right of zero, and a value of 2 when <m>x</m> is to the left of zero, <m>\ds\lim_{x \to 0} \left(3+\dfrac{|x|}{x}\right)</m> does not exist.
+</p>
+
+<p>To further clarify the situation, the graph of <m>y=f(x)</m> is sketched below:
+</p><sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{3}{3}{1}{3};
+\draw[thick] (-3,1)--(0,1) node[opendot]{};
+\draw (0,2) node[opendot]{} --(3,2);
+\draw (0,2) node[left]{4};
+\draw (0,1) node[right]{2};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate <m>\ds\lim_{d \to -4}\dfrac{|3d+12|}{d+4}</m>
+</p></statement>
+<hint><p>
+Look to Question<nbsp/><xref ref="s1_4absval"/> to see how a function of the form <m>\dfrac{|X|}{X}</m> behaves.
+</p></hint>
+<answer><p>
+DNE
+</p></answer>
+<solution><p>
+If we factor out 3 from the numerator, our function becomes <m>3\dfrac{|d+4|}{d+4}</m>. We recall that
+<md>
+<mrow>
+|X|&amp;=\left\{\begin{array}{rcl}
+X&amp;,&amp;X \ge 0
+</mrow><mrow>
+-X&amp;,&amp;X \lt 0
+\end{array}\right.
+</mrow>
+<intertext>
+So, with <m>X=d+4</m>, </intertext><mrow>
+3\frac{|d+4|}{d+4} &amp;= \left\{\begin{array}{lcl}
+3\frac{d+4}{d+4}&amp;,&amp;d+4  \gt  0
+</mrow><mrow>&amp;\\
+3\frac{-(d+4)}{d+4}&amp;,&amp;d+4 \lt 0
+\end{array}\right.
+</mrow><mrow>
+&amp;= \left\{\begin{array}{rcl}
+3&amp;,&amp;d  \gt  -4
+</mrow><mrow>
+-3&amp;,&amp;d \lt -4
+\end{array}\right.
+</mrow>
+</md>
+Since our function gives a value of 3 when <m>d \gt -4</m>, and a value of <m>-3</m> when <m>d \lt -4</m>,  <m>\ds\lim_{d \to -4} \dfrac{|3d+12|}{d+4}</m> does not exist.
+</p>
+
+<p>To further clarify the situation, the graph of <m>y=f(x)</m> is sketched below:
+</p><sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaaxis{4}{3}{2}{2};
+\draw[thick] (-4,-1.5)--(-2,-1.5) node[opendot]{};
+\draw (-2,1.5) node[opendot]{} --(2,1.5);
+\YEycoord{-1.5}{-3};
+\YExcoord{-2}{-4};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside></solution>
+</exercise>
+
+<exercise xml:id="s1_4lastlimit">
+<statement><p>
+Evaluate <m>\ds\lim_{x \to 0}\dfrac{5x-9}{|x|+2}</m>.
+</p></statement>
+<hint><p>
+Is anything weird happening to this function at <m>x=0</m>?
+</p></hint>
+<answer><p> <m>-\dfrac{9}{2}</m>
+</p></answer>
+<solution><p>
+Note that <m>x=0</m> is in the domain of our function, and nothing <q>weird</q> is happening there: we aren't dividing by zero, or taking the square root of a negative number, or joining two pieces of a piecewise-defined function. So, as <m>x</m> gets extremely close to zero, <m>\dfrac{5x-9}{|x|+2}</m> is getting extremely close to <m>\dfrac{0-9}{0+2}=\dfrac{-9}{2}</m>.
+</p>
+
+<p>That is, <m>\ds\lim_{x \to 0}\dfrac{5x-9}{|x|+2}=-\dfrac{9}{2}</m>.
+</p></solution>
+</exercise>
+
+<!-- end of extra problems -->
+
+<exercise>
+<statement><p>Suppose <m>\displaystyle\lim_{x \rightarrow -1} f(x)=-1</m>. Evaluate
+<m>\displaystyle\lim_{x \rightarrow -1} \dfrac{xf(x)+3}{2f(x)+1}</m>.
+</p></statement>
+<hint><p> Use the limit laws.
+</p></hint>
+<answer><p> <m>-4</m>
+</p></answer>
+<solution><p> Since we aren't dividing by zero, and all these limits exist:
+<me>\displaystyle\lim_{x \rightarrow -1} \dfrac{xf(x)+3}{2f(x)+1}=
+\dfrac{(-1)(-1)+3}{2(-1)+1} = -4.</me>
+
+</p></solution>
+</exercise>
+<exercise purpose="RQS"><title><fromexam>2007H</fromexam></title>
+<statement>
+<p>
+Find the value of the constant <m>a</m> for which
+<m>\lim\limits_{x\rightarrow -2}\dfrac{x^2+ax+3}{x^2+x-2}</m> exists.
+</p></statement>
+<hint><p>
+The denominator goes to zero; what must the numerator go to?
+</p></hint>
+<answer><p>  <m>a=\dfrac{7}{2}</m>
+</p></answer>
+<solution><p>
+ As <m>x\rightarrow-2</m>, the denominator goes to 0,
+and the numerator goes to <m>-2a+7</m>. For the ratio to have a
+limit, the numerator must also converge to <m>0</m>, so we need <m>a=\dfrac{7}{2}</m>.
+Then,
+<md>
+<mrow>
+\lim_{x \to -2}\frac{x^2+ax+3}{x^2+x-2}&amp;=\lim_{x \to -2}\frac{x^2+\frac{7}{2}x+3}{(x+2)(x-1)}
+</mrow><mrow>
+&amp;=\lim_{x \to -2}\frac{(x+2)(x+\frac{3}{2})}{(x+2)(x-1)}
+</mrow><mrow>
+&amp;=\lim_{x \to -2}\frac{x+\frac{3}{2}}{x-1}
+</mrow><mrow>
+&amp;=\frac{1}{6}
+</mrow>
+</md>
+so the limit exists when <m>a=\dfrac{7}{2}</m>.
+</p></solution>
+</exercise>
+<exercise purpose="RQS">
+<statement><p>Suppose <m>f(x)=2x</m> and <m>g(x)=\frac{1}{x}</m>. Evaluate the following limits.<ol label="a">
+<li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} g(x)</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)g(x)</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)}{g(x)}</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 2} [f(x)+g(x)]</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)+1}{g(x+1)}</m>
+</li>
+</ol>
+</p></statement>
+<answer><p>
+<ol label="a">
+<li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)=0</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} g(x)=</m> DNE
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)g(x)=2</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)}{g(x)}=0</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 2} f(x)+g(x)=\dfrac{9}{2}</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)+1}{g(x+1)}=1</m>
+</li>
+</ol>
+</p></answer>
+<solution><p>
+<ol label="a">
+<li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)=0</m>: as <m>x</m> approaches 0, so does <m>2x</m>.
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} g(x)=</m> DNE: the left and right limits do not agree, so the limit does not exist. In particular: <m>\displaystyle\lim_{x \rightarrow 0^-} g(x)=-\infty</m> and <m>\displaystyle\lim_{x \rightarrow 0^-} g(x)=\infty</m>.
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)g(x)=\displaystyle\lim_{x \rightarrow 0} 2x\cdot\dfrac{1}{x}=\displaystyle\lim_{x \rightarrow 0} 2=2</m>.
+Remark:  although the limit of <m>g(x)</m> does not exist here, the limit of <m>f(x)g(x)</m> does.
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)}{g(x)}=\displaystyle\lim_{x \rightarrow 0} \dfrac{2x}{\frac{1}{x}}=\displaystyle\lim_{x \rightarrow 0} 2x^2=0</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 2} f(x)+g(x)=\displaystyle\lim_{x \rightarrow 2} 2x+\dfrac{1}{x}=4+\frac{1}{2}=\dfrac{9}{2}</m>
+</li>
+<li> <m>\displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)+1}{g(x+1)}=
+\displaystyle\lim_{x \rightarrow 0} \dfrac{2x+1}{\frac{1}{x+1}}=\dfrac{1}{1}=
+1</m>
+</li>
+</ol>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><title><application/></title>
+<introduction></introduction>
+
+<exercise purpose="RQS">
+<statement><p>The curve <m>y=f(x)</m> is shown in the graph below. Sketch the graph of <m>y=\dfrac{1}{f(x)}</m>.</p>
+
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw[thick] (-3,-3)--(-1,3)--(0,3)--(2,0)--(3,1) node[above] {$y=f(x)$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</statement>
+<hint><p> Try plotting points. If you can't divide by <m>f(x)</m>, take a limit.
+</p></hint>
+<answer>
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw (-3,-1/3) node[vertex]{};
+\draw[thick] (-1,1/3)--
+ (0,1/3) cos (1,2/3);
+\draw (3,1) node[vertex]{};
+\draw[dashed] (-2,-3)--(-2,3) (2,-3)--(2,3);
+\draw[thick] plot[domain=-19/11:-1]({\x},{1/(\x+2)-2/3});
+\draw[thick] plot[domain=-3:-25/11]({\x},{1/(\x+2)+2/3});
+\draw[thick] plot[domain=1:1.7]({\x},{-1/(\x-2)-1/3});
+\draw[thick] plot[domain=7/3:3]({\x},{1/(\x-2)});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Pictures may vary somewhat; the important points are the values of the function at integer values of <m>x</m>, and the vertical asymptotes.
+</p></answer>
+<solution><p>
+We can begin by plotting the points that are easy to read off the diagram.
+<me>
+\begin{array}{c|c|c}
+x&amp;f(x)&amp;\frac{1}{f(x)}\\
+\hline
+-3&amp;-3&amp;\frac{-1}{3}\\
+-2&amp;0&amp;UND\\
+-1&amp;3&amp;\frac{1}{3}\\
+0&amp;3&amp;\frac{1}{3}\\
+1&amp;\frac{3}{2}&amp;\frac{2}{3}\\
+2&amp;0&amp;UND\\
+3&amp;1&amp;1
+\end{array}
+</me>
+
+Note that <m>\frac{1}{f(x)}</m> is undefined when <m>f(x) = 0</m>.
+        So <m>\frac{1}{f(x)}</m> is undefined at <m>x=-2</m> and <m>x=2</m>.
+        We shall look more closely at the behaviour of <m>\frac{1}{f(x)}</m>
+        for <m>x</m> near <m>\pm 2</m> shortly.
+</p>
+
+<p>        Plotting the above points, we get the following picture:</p>
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw (-3,-1/3) node[vertex]{};
+\draw (-1,1/3) node[vertex]{};
+\draw (0,1/3) node[vertex]{};
+\draw (1,2/3) node[vertex]{};
+\draw (3,1) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+<p>Since <m>f(x)</m> is constant when <m>x</m> is between -1 and 0, then also <m>\frac{1}{f(x)}</m> is constant between -1 and 0, so we update our picture:
+</p>
+
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw (-3,-1/3) node[vertex]{};
+\draw (-1,1/3) node[vertex]{}--
+ (0,1/3) node[vertex]{};
+\draw (1,2/3) node[vertex]{};
+\draw (3,1) node[vertex]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>The big question that remains is the behaviour of <m>\frac{1}{f(x)}</m> when <m>x</m> is near -2 and 2. We can answer this question with limits. As <m>x</m> approaches <m>-2</m> from the <em>left</em>, <m>f(x)</m> gets closer to zero, and is negative. So <m>\frac{1}{f(x)}</m> will be negative, and will increase in magnitude without bound; that is, <m>\displaystyle\lim_{x \rightarrow -2^-}\dfrac{1}{f(x)}=-\infty</m>. Similarly, as
+<m>x</m> approaches <m>-2</m> from the <em>right</em>, <m>f(x)</m> gets closer to zero, and is positive. So <m>\frac{1}{f(x)}</m> will be positive, and will increase in magnitude without bound; that is, <m>\displaystyle\lim_{x \rightarrow -2^-}\dfrac{1}{f(x)}=\infty</m>. We add this behaviour to our graph:
+</p>
+
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw (-3,-1/3) node[vertex]{};
+\draw[thick] (-1,1/3)--
+ (0,1/3) node[vertex]{};
+\draw (1,2/3) node[vertex]{};
+\draw (3,1) node[vertex]{};
+\draw[dashed] (-2,-3)--(-2,3);
+\draw[thick] plot[domain=-19/11:-1]({\x},{1/(\x+2)-2/3});
+\draw[thick] plot[domain=-3:-25/11]({\x},{1/(\x+2)+2/3});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Now, we consider the behaviour at <m>x=2</m>. Since <m>f(x)</m> gets closer and closer to 0 AND is positive as <m>x</m> approaches 2, we conclude <m>\displaystyle\lim_{x \rightarrow 2} \frac{1}{f(x)}=\infty</m>. Adding to our picture:
+</p>
+
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw (-3,-1/3) node[vertex]{};
+\draw[thick] (-1,1/3)--
+ (0,1/3) node[vertex]{};
+\draw (1,2/3) node[vertex]{};
+\draw (3,1) node[vertex]{};
+\draw[dashed] (-2,-3)--(-2,3) (2,-3)--(2,3);
+\draw[thick] plot[domain=-19/11:-1]({\x},{1/(\x+2)-2/3});
+\draw[thick] plot[domain=-3:-25/11]({\x},{1/(\x+2)+2/3});
+\draw[thick] plot[domain=1:1.7]({\x},{-1/(\x-2)-1/3});
+\draw[thick] plot[domain=7/3:3]({\x},{1/(\x-2)});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Now the only remaining blank space is between <m>x=0</m> and <m>x=1</m>. Since <m>f(x)</m> is a smooth curve that stays away from 0, we can draw some kind of smooth curve here, and call it good enough. (Later on we'll go into more details about drawing graphs. The purpose of this exercise was to utilize what we've learned about limits.)
+</p>
+
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw (-3,-1/3) node[vertex]{};
+\draw[thick] (-1,1/3)--
+ (0,1/3) cos (1,2/3);
+\draw (3,1) node[vertex]{};
+\draw[dashed] (-2,-3)--(-2,3) (2,-3)--(2,3);
+\draw[thick] plot[domain=-19/11:-1]({\x},{1/(\x+2)-2/3});
+\draw[thick] plot[domain=-3:-25/11]({\x},{1/(\x+2)+2/3});
+\draw[thick] plot[domain=1:1.7]({\x},{-1/(\x-2)-1/3});
+\draw[thick] plot[domain=7/3:3]({\x},{1/(\x-2)});
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</solution>
+
+</exercise>
+<exercise>
+<statement><p>
+The graphs of functions <m>f(x)</m> and <m>g(x)</m> are shown in the graphs below. Use these to sketch the graph of <m>\dfrac{f(x)}{g(x)}</m>.</p>
+
+<sidebyside widths="45% 45%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw[thick] (-3,-3)--(-1,3)--(0,3)--(2,0)--(3,1) node[above] {$y=f(x)$};
+\end{tikzpicture}]]></latex-image></image>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw[thick] (-3,-1.5)--(-1,1.5)--(0,1.5)--(2,0)--(3,.5) node[above] {$y=g(x)$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+</statement>
+<hint><p>
+There is a close relationship between <m>f</m> and <m>g</m>.  Fill in the following table:
+</p>
+<sidebyside>
+<tabular>
+<row>
+<cell><m>x</m></cell><cell><m>f(x)</m></cell><cell><m>g(x)</m></cell><cell><m>\dfrac{f(x)}{g(x)}</m></cell>
+</row><row>
+<cell><m>-3</m></cell><cell><nbsp/></cell><cell><nbsp/></cell><cell><nbsp/></cell>
+</row><row>
+<cell><m>-2</m></cell><cell><nbsp/></cell><cell><nbsp/></cell><cell><nbsp/></cell>
+</row><row>
+<cell><m>-1</m></cell><cell><nbsp/></cell><cell><nbsp/></cell><cell><nbsp/></cell>
+</row><row>
+<cell><m>-0</m></cell><cell><nbsp/></cell><cell><nbsp/></cell><cell><nbsp/></cell>
+</row><row>
+<cell><m>1</m></cell><cell><nbsp/></cell><cell><nbsp/></cell><cell><nbsp/></cell>
+</row><row>
+<cell><m>2</m></cell><cell><nbsp/></cell><cell><nbsp/></cell><cell><nbsp/></cell>
+</row><row>
+<cell><m>3</m></cell><cell><nbsp/></cell><cell><nbsp/></cell><cell><nbsp/></cell>
+</row>
+</tabular>
+</sidebyside>
+</hint>
+<answer>
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw[thick] (-3,2)--(3,2) node[above] {$y=\dfrac{f(x)}{g(x)}$};
+\draw (-2,2) node[opendot]{};
+\draw (2,2) node[opendot]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+</answer>
+<solution><p>
+We can start by examining points.</p>
+
+<sidebyside>
+<tabular top="minor" left="minor" right="minor" bottom="minor">
+<row>
+<cell><m>x</m></cell><cell><m>f(x)</m></cell><cell><m>g(x)</m></cell><cell><m>\dfrac{f(x)}{g(x)}</m></cell>
+</row><row>
+<cell><m>-3</m></cell><cell><m>-3</m></cell><cell><m>-1.5</m></cell><cell><m>2</m></cell>
+</row><row>
+<cell><m>-2</m></cell><cell><m>0</m></cell><cell><m>0</m></cell><cell>UND</cell>
+</row><row>
+<cell><m>-1</m></cell><cell><m>3</m></cell><cell><m>1.5</m></cell><cell><m>2</m></cell>
+</row><row>
+<cell><m>-0</m></cell><cell><m>3</m></cell><cell><m>1.5</m></cell><cell><m>2</m></cell>
+</row><row>
+<cell><m>1</m></cell><cell><m>1.5</m></cell><cell><m>.75</m></cell><cell><m>2</m></cell>
+</row><row>
+<cell><m>2</m></cell><cell><m>0</m></cell><cell><m>0</m></cell><cell>UND</cell>
+</row><row>
+<cell><m>3</m></cell><cell><m>1</m></cell><cell><m>.5</m></cell><cell><m>2</m></cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>We cannot divide by zero, so <m>\dfrac{f(x)}{g(x)}</m> is not defined when <m>x=\pm2</m>. But for every other value of <m>x</m> that we plotted, <m>f(x)</m> is twice as large as <m>g(x)</m>, <m>\dfrac{f(x)}{g(x)}=2</m>. With this in mind, we see that the graph of <m>f(x)</m> is exactly the graph of <m>2g(x)</m>.
+</p>
+
+<p>This gives us the graph below.</p>
+<sidebyside width="66%">
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thin, gray, dotted] (-3,-3) grid (3,3);
+\draw (1,.2)--(1,-.2) node[below]{1};
+\draw (.2,1)--(-.2,1) node[left]{1};
+\draw[thick] (-3,2)--(3,2) node[above] {$y=\dfrac{f(x)}{g(x)}$};
+\draw (-2,2) node[opendot]{};
+\draw (2,2) node[opendot]{};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside>
+
+<p>Remark:  <m>f(2)=g(2)=0</m>, so <m>\dfrac{f(2)}{g(2)}</m> does not exist, but <m>\displaystyle\lim_{x \rightarrow 2}\dfrac{f(x)}{g(x)}=2</m>. Although we are trying to <q>divide by zero</q> at <m>x=\pm 2</m>, it would be a mistake here to interpret this as a vertical asymptote.
+</p></solution>
+</exercise>
+<exercise>
+<statement><p>Suppose the position of a white ball, at time <m>t</m>, is given by <m>s(t)</m>, and the position of a red ball is given by <m>2s(t)</m>. Using the definition from Section<nbsp/><xref ref="sec_velocity"/>
+ of the velocity of a particle, and the limit laws from this section, answer the following question: if the white ball has velocity 5 at time <m>t=1</m>, what is the velocity of the red ball?
+</p></statement>
+<hint><p> Velocity of white ball when <m>t=1</m> is <m>\displaystyle\lim_{h \rightarrow 0}\dfrac{s(1+h)-s(1)}{h}</m>.
+</p></hint>
+<answer><p> 10
+</p></answer>
+<solution><p> Velocity of white ball when <m>t=1</m> is <m>\displaystyle\lim_{h \rightarrow 0}\dfrac{s(1+h)-s(1)}{h}</m>, so the given information tells us <m>\displaystyle\lim_{h \rightarrow 0}\dfrac{s(1+h)-s(1)}{h}=5</m>. Then the velocity of the red ball when <m>t=1</m> is
+<m>\displaystyle\lim_{h \rightarrow 0}\dfrac{2s(1+h)-2s(1)}{h}=
+\displaystyle\lim_{h \rightarrow 0}2\cdot\dfrac{s(1+h)-s(1)}{h}=2\cdot 5 = 10</m>.
+</p></solution>
+</exercise>
+
+<exercise purpose="RQS">
+<statement><p>Let <m>f(x) = \frac{1}{x}</m> and <m>g(x) = \frac{-1}{x}</m>.
+<ol label="a">
+<li xml:id="s1_4sum1"> Evaluate <m>\displaystyle\lim_{x \rightarrow 0} f(x)</m> and
+<m>\displaystyle\lim_{x \rightarrow 0} g(x)</m>.
+</li>
+<li xml:id="s1_4sum2"> Evaluate <m>\displaystyle\lim_{x \rightarrow 0} [f(x)+g(x)]</m>
+</li>
+<li xml:id="s1_4sum3"> Is it always true that <m>\displaystyle\lim_{x \rightarrow a} [f(x)+g(x)]=
+\displaystyle\lim_{x \rightarrow a} f(x)+\displaystyle\lim_{x \rightarrow a} g(x)</m>?
+</li>
+</ol>
+</p></statement>
+<answer><p>
+<xref ref="s1_4sum1"/> DNE , DNE
+</p>
+<p>
+<xref ref="s1_4sum2"/> 0
+</p>
+<p>
+<xref ref="s1_4sum3"/> No: it is only true when both <m>\displaystyle\lim_{x \rightarrow a} f(x)</m> and <m>\displaystyle\lim_{x \rightarrow a} g(x)</m> exist.
+</p></answer>
+<solution><p>
+<xref ref="s1_4sum1"/> Neither limit exists. When <m>x</m> gets close to 0, these limits go to positive infinity from one side, and negative infinity from the other.</p>
+
+<p><xref ref="s1_4sum2"/> <m>\displaystyle\lim_{x \rightarrow 0} [f(x)+g(x)]=
+\displaystyle\lim_{x \rightarrow 0} \left[\frac{1}{x}-\frac{1}{x}\right]=
+\displaystyle\lim_{x \rightarrow 0} 0=0</m>.</p>
+<p><xref ref="s1_4sum3"/> No: this is an example of a time when the two individual functions have limits that don't exist, but the limit of their sum does exist.
+This <q>sum rule</q> is only true when both <m>\displaystyle\lim_{x \rightarrow a} f(x)</m> and <m>\displaystyle\lim_{x \rightarrow a} g(x)</m> exist.
+</p></solution>
+</exercise>
+
+</exercisegroup>
+
+</exercises>
