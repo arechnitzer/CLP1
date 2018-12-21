@@ -33,4 +33,8 @@
 * Run the following command
 `xsltproc --xinclude ../xsl/makeit-html.xsl ../clp_1_dc.xml`
 * This will take a few minutes to run and produce a large number of html files.
-* Upload the entire directory (including `RQS.css`) to the required site.
+* We still need to build all the tikz figures. To do so we run the pretext helper script `mbx`
+* First, in the site directory, first create an `images` subdirectory.
+* Then run `../script/mbx -v -c latex-image -f svg -d ./images ../clp_1_dc.xml`
+* This will take some time since there are many images to compile.
+* Now the html is ready and you can the entire `site` directory.
