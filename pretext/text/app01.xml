@@ -297,23 +297,23 @@ From the above pair of special triangles we have
 	\end{axis}
 	\end{tikzpicture}
 ]]></latex-image></image>
-\begin{tikzpicture}
-\begin{axis}[
-  legend pos = north west,
-  axis x line=center, axis y line=center,
-  ymax=4.1,ymin=-4.1, ymajorticks=false,
-  xmin=-2,xmax=2,
-  xtick={-1.570796327,1.570796327},
-  xticklabels={$-\pi$, $-\frac{\pi}{2}$}
-  ]
-\addplot[blue,domain=-0.49*pi:0.49*pi,samples=100] {tan(deg(x))};
-% \legend{$\tan \theta$}
-
-\addplot[line width=1pt,red] coordinates {(-1.570796327,4.15) (-1.570796327,-4.15)};
-\addplot[line width=1pt,red] coordinates {(1.570796327,4.15) (1.570796327,-4.15)};
-\end{axis}
-\end{tikzpicture}
 <image><latex-image><![CDATA[
+	\begin{tikzpicture}
+	\begin{axis}[
+	  legend pos = north west,
+	  axis x line=center, axis y line=center,
+	  ymax=4.1,ymin=-4.1, ymajorticks=false,
+	  xmin=-2,xmax=2,
+	  xtick={-1.570796327,1.570796327},
+	  xticklabels={$-\pi$, $-\frac{\pi}{2}$}
+	  ]
+	\addplot[blue,domain=-0.49*pi:0.49*pi,samples=100] {tan(deg(x))};
+	% \legend{$\tan \theta$}
+
+	\addplot[line width=1pt,red] coordinates {(-1.570796327,4.15) (-1.570796327,-4.15)};
+	\addplot[line width=1pt,red] coordinates {(1.570796327,4.15) (1.570796327,-4.15)};
+	\end{axis}
+	\end{tikzpicture}
 ]]></latex-image></image>
 </sidebyside>
 </sbsgroup>
