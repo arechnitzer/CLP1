@@ -27,8 +27,10 @@
 * Compile this with `pdflatex clp_1_dc.tex`
 * This will also take a few minutes to run and you'll have to run it a few times to get all the internal references right.
 
-<!-- ### Compiling to HTML
-* Move into the directory containing `clp_1_dc.xml`
-* Create a directory called `site` and  move into it.
+### Compiling to HTML
+* Move into the directory called `site` which contains a single file `RQS.css`
+* We will build the website in this directory, which should then be uploaded to its final hosting location.
 * Run the following command
-`xsltproc --xinclude ./xsl/makeit-html.xsl clp_1_dc.xml` -->
+`xsltproc --xinclude ../xsl/makeit-html.xsl ../clp_1_dc.xml`
+* This will take a few minutes to run and produce a large number of html files.
+* Upload the entire directory (including `RQS.css`) to the required site.
