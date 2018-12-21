@@ -49,90 +49,6 @@ License. You can view a copy of the license at \\
 \item Links to the source files can be found at the \href{http://www.math.ubc.ca/~CLP/index.html}{text webpage}
 \end{itemize}
 
-\begin{comment}
-\newpage
-\section*{Issues to be sorted}
-\begin{itemize}
-\item Painful --- check punctuation of all equations.
-\item run a spell checker. We using ise or ize? factorise vs factorize. metre vs
-meter. centre vs center? --- have run it through a spell checker.. Lets use
-British - so centre, metre, factorise.
-
-\item Should units be in mathrm or normal text or maths or ?
-
-\item Unbelievably important --- replace equation environment by align?
-
-\item Problem with 2 footnotes in Def0.3.6. First has wrong hyperref while
-second jumps correctly. Simple fix = turn of hyperrefs to footnotes.
-
-\item Should we define ``neighbourhood'' somewhere? We can then update a few
-definitions and theorems. The only problem with this is that we never actually
-specify the precise neighbourhood in theorems --- just that there is one. Will
-this confuse students? Can we do this in a way that wont confuse anyone? Or is
-it better to just leave it be.
-
-\item Put in some ``asymptotes'' --- vertical ones around limits that blow up to
-infinity, and horizontal ones around limits at infinity.
-
-\item How early can we move the MVT? Can we move it to.... before exponentials
-and trig?
-
-\item Try to add a real (optional) proof or Rolle (at end of mvt section) ---
-we can try. Ruffly --- leave as a ``fact'' that a continuous function on a
-closed bounded interval reaches its max and min (with refs to how this is
-actually proved and that it is false on the rationals). Then the rest is doable.
-Also how Rolle proves MVT.
-
-\item Blurb on radiactive decay at start of app. $\checkmark$
-
-\item Add more items to list at start of applications?
-
-\item Do we care that Example~\ref{eg:velaccelA} is kinda using MVT? or is this obvious.
-I think we don't care \checkmark
-
-\item Population models. Make logistic stuff into an optional section (with
-some indication that we are really introducing DEs and that to solve them
-properly we need integrals (next term!). Then have simple malthus model as the
-start of this chaptah (as JF has done) with  some blurb about when malthus is a
-decent model (ie when pop is small compared to size of system). \checkmark
-
-\item Should function be differentiable at critical point? or is it anywhere the
-derivative could change sign? $\sqrt{|x|}$ for example? We should make critical point =
-point where derivative is zero. Singular point = point where derivative does not exist.
-Students should understand both and we need to update our max/min hunting to reflect the
-change.
-
-\item Add a few more simple optimisation word problems (eg --- crossing a
-river, or a pool --- run or swim. Building a cube with fixed surface area.)
-
-\item Have put in a quick ``summation notation'' stuff from Joel's notes. This might need
-to be bulked out a little and should we use it more in the rest of the taylor section?
- See Section 2 (starting on page 5) of
-\url{http://www.math.ubc.ca/~feldman/m101/intDef.pdf} \checkmark
-
-\item Where do we first define factorial? We redefine it several times.
-
-\item Do we need blurb around definition~\ref{def:APPrelError}
-
-\item For taylor error in linear approx - we need the MVT. But in the course
-(2015) we do MVT afterwards (due to stewart legacy). So in the current text
-write something like ``If you have not seen the MVT then just accept this is
-the error. If you have seen MVT --- this is exactly MVT and here is why.'' Fix
-this in later version of things.
-
-\item Fix extra long headers that overlap with other bits of headers (eg AppB3) \checkmark
-
-\item Look at compile log and fix referencing errors - a few are multiply
-defined and there are undefined refs too. Hopefully nothing too serious.
-
-\item Put some simple antiderivatives stuff in.
-
-\item Consider making root finding an optional section. We have the raw notes.
-\item Consider adding material to section 0.6 (or elsewhere)
-    concerning graphing inverse functions.
-\end{itemize}
-\end{comment}
-
 \frontmatter
 
 
@@ -142,11 +58,11 @@ defined and there are undefined refs too. Hopefully nothing too serious.
 
 \setcounter{chapter}{-1}
 \input{clp_basic_notes}
-% \input{clp_limits_notes}
-% \input{clp_differentiation_notes}
-% \input{clp_applications_notes}
+\input{clp_limits_notes}
+\input{clp_differentiation_notes}
+\input{clp_applications_notes}
 %
-% \appendix
-% \input{clp_highschool}
+\appendix
+\input{clp_highschool}
 
 \end{document}
