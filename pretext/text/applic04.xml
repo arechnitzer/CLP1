@@ -1990,7 +1990,7 @@ where <m>0 \lt c \lt 1</m>.
 That is
 <md>
 <mrow>
-  \frac{5e}{6} < T_2(1) = \frac{5}{2}
+  \frac{5e}{6} \lt T_2(1) = \frac{5}{2}
 </mrow>
 </md>
 So <m>e \lt 3</m> as required.
