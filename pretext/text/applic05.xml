@@ -1096,11 +1096,11 @@ we know that <m>x^2-2x+5 \geq 4</m>. Thus the function has no singular points an
 critical point occurs at <m>x=1</m>. The corresponding function value is then
 <md>
 <mrow>
-  \ell(1) &amp;=10 \sqrt{1-2+5} = 10 \sqrt{4} = 20.
+  \ell(1) &amp;=\sqrt{10} \sqrt{1-2+5} = 2 \sqrt{10}.
 </mrow>
 </md>
 </li>
-<li> Thus the minimum value of the distance is <m>\ell=20</m> and occurs at <m>x=1</m>.
+<li> Thus the minimum value of the distance is <m>\ell=2\sqrt{10}</m> and occurs at <m>x=1</m>.
 </li>
 </ul>
 </p>

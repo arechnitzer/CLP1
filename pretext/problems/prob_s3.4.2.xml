@@ -271,7 +271,7 @@ We estimate <m>10.1^3 \approx 1030</m>. If we calculate <m>10.1^3</m> exactly (w
 
 <exercise>
 <statement><p>
-Imagine <m>f(x)</m> is some function, and you want to estimate <m>f(b)</m>. To do this, you chose a value <m>a</m> and take an approximation (linear or constant) of <m>f(x)</m> about <m>a</m>. Give an example of a function <m>f(x)</m>, and values <m>a</m> and <m>b</m>, where the constant approximation gives a more accurate estimation of <m>f(b)</m> than the linear approximation.
+Imagine <m>f(x)</m> is some function, and you want to estimate <m>f(b)</m>. To do this, you choose a value <m>a</m> and take an approximation (linear or constant) of <m>f(x)</m> about <m>a</m>. Give an example of a function <m>f(x)</m>, and values <m>a</m> and <m>b</m>, where the constant approximation gives a more accurate estimation of <m>f(b)</m> than the linear approximation.
 </p></statement>
 <hint><p>
 One possible choice of <m>f(x)</m> is <m>f(x)=\sin x</m>.

@@ -998,7 +998,9 @@ For part <xref ref="s3_4_8e"/>, after you plug in the appropriate values to Equa
 (a) <m>T_4(x)=\sum_{n=0}^4\frac{x^n}{n!}</m>
 </p><p>
 (b) <m>T_4(1)=\frac{65}{24}</m>
-</p></answer>
+</p>
+<p>(c) See the solution.</p>
+</answer>
 <solution>
   <p> <xref ref="s3_4_8Tx"/> For every whole number <m>n</m>, the <m>n</m>th derivative of <m>e^x</m> is <m>e^x</m>. So:
 <me>

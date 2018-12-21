@@ -244,7 +244,7 @@ f^{(10)}(5)&amp;=\frac{11\cdot 10!}{6}
 
 <exercise purpose="RQS">
 <statement><p>
-The third-degree Taylor Polynomial for <m>f(x)=x^3\left[2\log x - \dfrac{11}{3}\right]</m> about <m>x=a</m> is
+The third-degree Taylor polynomial for <m>f(x)=x^3\left[2\log x - \dfrac{11}{3}\right]</m> about <m>x=a</m> is
 <me>
 T_3(x)=-\frac{2}{3}\sqrt{e^3}+3ex-6\sqrt{e}x^2+x^3</me>
 </p>

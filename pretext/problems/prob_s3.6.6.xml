@@ -708,7 +708,7 @@ The function is continuous at <m>x=0</m>, but its derivative is not.
 <answer><p>
 <xref ref="s3_6_2006_a"/>
 One branch of the function,
-the exponential function <m>e^x</m>, is continuous everywhere. So <m>f(x)</m> is continuous for <m>x \lt 0</m>. When <m>x \geq 0</m>, <m>f(x)=\dfrac{x^2+3}{3(x+1)}</m>, which is continuous whenever <m>x \neq 1</m> (so it's continuous for all <m>x  \gt 0</m>). So, <m>f(x)</m> is continuous for <m>x \gt 0</m>. To see that <m>f(x)</m> is continuous at <m>x=0</m>, we see:
+the exponential function <m>e^x</m>, is continuous everywhere. So <m>f(x)</m> is continuous for <m>x \lt 0</m>. When <m>x \geq 0</m>, <m>f(x)=\dfrac{x^2+3}{3(x+1)}</m>, which is continuous whenever <m>x \neq -1</m> (so it's continuous for all <m>x  \gt 0</m>). So, <m>f(x)</m> is continuous for <m>x \gt 0</m>. To see that <m>f(x)</m> is continuous at <m>x=0</m>, we see:
 <md>
 <mrow>
 \lim_{x\rightarrow0-}f(x)=\lim_{x\rightarrow0-}e^x&amp;=1
