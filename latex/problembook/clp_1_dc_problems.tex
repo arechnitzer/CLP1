@@ -1,0 +1,228 @@
+\documentclass[12pt,letterpaper]{book}
+
+\usepackage{parskip}
+
+\usepackage{clp_notes_header}
+\graphicspath{{./figures/}}
+\usepackage{qhas}
+
+\usepackage{xr}
+\externaldocument{../textbook/clp_1_dc_text}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\textsc{\LARGE
+CLP-I Differential Calculus\\[2ex]
+Questions
+}\\[2ex]
+
+\vspace{5ex}
+\hrule
+\vspace{5ex}
+
+\begin{tabular}{lcccr}
+&& \large Elyse \textsc{Yeager} \\[3ex]
+ Joel \textsc{Feldman}
+&\quad & &\quad&
+Andrew \textsc{Rechnitzer}
+\end{tabular}
+
+\end{center}
+\vspace{2ex}
+\hrule
+
+\vfill
+\textsc{This document was typeset on \today.}
+\end{titlepage}
+
+\subsection*{Legal stuff}
+\begin{itemize}
+ \item Copyright \copyright\ 2016, 2017, 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+
+\item This work is licensed under the
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License. You can view a copy of the license at \\
+\url{http://creativecommons.org/licenses/by-nc-sa/4.0/}.
+\begin{center}
+ \includegraphics{by-nc-sa.pdf}
+\end{center}
+
+
+\item Links to the source files can be found at the \href{http://www.math.ubc.ca/~CLP/index.html}{text webpage}
+\end{itemize}
+
+
+\frontmatter
+
+\chapter{How to use this book}
+\input{howtouse}
+
+\addtocontents{toc}{\protect\hypertarget{toc}{}}
+\tableofcontents
+
+\mainmatter
+
+
+\part{The questions}
+
+%%%%%%%%%%%%%%%%%%%%%
+\chapter{Limits}
+\section{Drawing Tangents and a First Limit}
+\input{100_problems/prob_s1.1}
+\section{Another Limit and Computing Velocity}
+\input{100_problems/prob_s1.2}
+\section{The Limit of a Function}
+\input{100_problems/prob_s1.3}
+\section{Calculating Limits with Limit Laws}
+\input{100_problems/prob_s1.4}
+\section{Limits at Infinity}
+\input{100_problems/prob_s1.5}
+\section{Continuity}
+\input{100_problems/prob_s1.6}
+
+%%%%%%%%%%%%%%%%%%%%%
+\chapter{Derivatives}
+\section{Revisiting tangent lines}
+\input{100_problems/prob_s2.1}
+\section{Definition of the derivative}
+\input{100_problems/prob_s2.2}
+\section{Interpretations of the derivative}
+\input{100_problems/prob_s2.3}
+\section{Arithmetic of derivatives - a differentiation toolbox}
+\input{100_problems/prob_s2.4}
+%
+\section{Proofs of the arithmetic of derivatives} \blankheader{ex:s2.5}
+%
+\section{Using the arithmetic of derivatives - examples}
+\input{100_problems/prob_s2.6}
+\section{Derivatives of Exponential Functions}
+\input{100_problems/prob_s2.7}
+\section{Derivatives of trigonometric functions}
+\input{100_problems/prob_s2.8}
+\section{One more tool - the chain rule}
+\input{100_problems/prob_s2.9}
+\section{The natural logarithm}
+\input{100_problems/prob_s2.10}
+\section{Implicit Differentiation}
+\input{100_problems/prob_s2.11}
+\section{Inverse Trigonometric Functions}
+\input{100_problems/prob_s2.12}
+\section{The Mean Value Theorem}
+\input{100_problems/prob_s2.13}
+\section{Higher Order Derivatives}
+\input{100_problems/prob_s2.14}
+
+
+\chapter{Applications of derivatives}
+\section{Velocity and acceleration}
+\input{100_problems/prob_s3.1}
+\section{Related Rates}
+\input{100_problems/prob_s3.2}
+\section{Exponential Growth and Decay}
+\subsection{Carbon Dating}
+\input{100_problems/prob_s3.3.1}
+\subsection{Newton's Law of Cooling}
+\input{100_problems/prob_s3.3.2}
+\subsection{Population Growth}
+\input{100_problems/prob_s3.3.3}
+\subsection{Further problems}
+\input{100_problems/prob_s3.3}
+%%%%%
+\section{Taylor polynomials}
+\subsection{Zeroeth Approximation}
+\input{100_problems/prob_s3.4.1}
+\subsection{First Approximation}
+\input{100_problems/prob_s3.4.2}
+\subsection{Second Approximation}
+\input{100_problems/prob_s3.4.3}
+\subsection{Still Better Approximations}
+\input{100_problems/prob_s3.4.4}
+\subsection{Some Examples}
+\input{100_problems/prob_s3.4.5}
+\subsection{Estimating Changes and $\Delta x$, $\Delta y$ notation}
+\input{100_problems/prob_s3.4.6}
+\subsection{Further Examples}
+\input{100_problems/prob_s3.4.7}
+\subsection{The error in Taylor polynomial approximation}
+\input{100_problems/prob_s3.4.8}
+\subsection{Further problems}
+\input{100_problems/prob_s3.4}
+%%%%%
+\section{Optimization}
+\subsection{Local and global maxima and minima}
+\input{100_problems/prob_s3.5.1}
+\subsection{Finding global maxima and minima}
+\input{100_problems/prob_s3.5.2}
+\subsection{Max/min examples}
+\input{100_problems/prob_s3.5.3}
+%%%%%
+\section{Sketching Graphs}
+\subsection{Domain, intercepts and asymptotes}
+\input{100_problems/prob_s3.6.1}
+\subsection{First derivative - increasing or decreasing}
+\input{100_problems/prob_s3.6.2}
+\subsection{Second derivative - concavity}
+\input{100_problems/prob_s3.6.3}
+\subsection{Symmetries}
+\input{100_problems/prob_s3.6.4}
+%
+\subsection{A checklist for sketching} \blankheader{ex:s3.6.5}
+%
+\subsection{Sketching examples}
+\input{100_problems/prob_s3.6.6}
+%%%%%
+\section{L'H\^opital's Rule and indeterminate forms}
+\input{100_problems/prob_s3.7}
+
+\chapter{Towards Integral Calculus}
+\section{Introduction to antiderivatives}
+\input{100_problems/prob_s4.1}
+
+% \begin{comment}
+\chapter{Extra problems}
+The problems included below will be worked into the main body of the text at the end of term. We have not done so yet because we wish to preserve the question numbering in the chapters above.
+
+\setcounter{section}{1}\setcounter{subsection}{3}
+\subsection{Calculating Limits with Limit Laws}
+\input{100_problems/extra/s1.4extra}
+\subsection{Limits at Infinity}
+\input{100_problems/extra/s1.5extra}
+\subsection{Continuity}
+\input{100_problems/extra/s1.6extra}
+
+\setcounter{section}{2}\setcounter{subsection}{7}
+\subsection{Derivatives of trigonometric functions}
+\input{100_problems/extra/s2.8extra}
+
+\setcounter{section}{3}\setcounter{subsection}{3}
+\subsection{Taylor polynomials}
+\subsubsection{3.4.8 --- The error in a Taylor polynomial approximation}
+\input{100_problems/extra/s3.4.8extra}
+
+% \end{comment}
+
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\closeoutputstream{thehints}
+\closeoutputstream{theanswers}
+\closeoutputstream{thesolutions}
+
+\newpage
+\part{Hints to problems}
+\input{hints.foo}
+
+\newpage
+\part{Answers to problems}
+\input{answers.foo}
+
+\newpage
+\part{Solutions to problems}
+\input{solutions.foo}
+
+\end{document}

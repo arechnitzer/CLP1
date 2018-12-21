@@ -1,0 +1,170 @@
+%%%%%%%%%%%%%%%%%%%%%%%%
+%Counters we'll need for references and question numbering.
+%Need a global counter for nice hyperlink references
+%Need a subsection-by-subsection counter for correct question numbering
+
+\newcounter{GlobalQCounter}
+\newcounter{QCounter}
+
+% The global counter is of the form section.subsection.question
+\numberwithin{GlobalQCounter}{subsection}
+
+% While the local counter is just the question number in each subsection. The following code resets it each subsection.
+\makeatletter
+\@addtoreset{QCounter}{subsection}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% We use output streams to write chunks of tex to different files so that they can be loaded when needed.
+% So when we use the hint environment it copies the tex to hint.foo
+% When we later input hint.foo we get that tex back
+
+\usepackage{newfile}
+
+\newoutputstream{thehints}
+\newoutputstream{theanswers}
+\newoutputstream{thesolutions}
+
+\openoutputfile{hints.foo}{thehints} %hints get written to this file.
+\openoutputfile{answers.foo}{theanswers} %anwers get written to this file.
+\openoutputfile{solutions.foo}{thesolutions} %solutions get written to this file.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% This allows us to make environments nicely. In particular it gives the command \BODY which allows us to muck around with the body of the .tex in the environment.
+% This is very handy when you need to write it out to a file - which we do with writeverbatim (from the newfile package}
+\usepackage{environ}
+
+\usepackage{etoolbox} %use this so we can have optional things in the question statement.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NewEnviron{question}[1][]{
+  \refstepcounter{GlobalQCounter}%
+  \refstepcounter{QCounter}%
+  \label{q:\theGlobalQCounter}% Label question using the global counter, so it can be hyperref'ed later.
+  \flushleft Q[\theQCounter]\ifstrempty{#1}{}{($\ast$)}:{}
+  \BODY}{}
+
+\NewEnviron{Mquestion}[1][]{
+  \refstepcounter{GlobalQCounter}%
+  \refstepcounter{QCounter}%
+  \label{q:\theGlobalQCounter}% Label question using the global counter, so it can be hyperref'ed later.
+%   \begin{tcolorbox}[colframe=_deepskyblue, colback=blue!5, title={Q[\theQCounter]\ifstrempty{#1}{}{(\textit{#1})}:}]
+  \begin{tcolorbox}[left=1.5ex, grow to left by=4ex, leftrule=2ex, width=\linewidth+6.8ex, colframe=_deepskyblue!75, colback=_deepskyblue!3]
+%   \flushbottom Q[\theQCounter]\ifstrempty{#1}{}{(\textit{#1})}:\\
+  \flushleft Q[\theQCounter]\ifstrempty{#1}{}{($\ast$)}:{}
+  \BODY%
+  \end{tcolorbox}%
+  }{}
+  
+
+\newenvironment{hint}%
+{\addtostream{thehints}{\noexpand\flushleft \hyperref[q:\theGlobalQCounter]{H-\theQCounter:} } %This links to the original question 
+\writeverbatim{thehints}} %This writes the tex in the environment verbatim to the file hints.foo.
+{\endwriteverbatim}
+
+\newenvironment{answer}%
+{\addtostream{theanswers}{\noexpand\flushleft \hyperref[q:\theGlobalQCounter]{A-\theQCounter:} }
+\writeverbatim{theanswers}}{\endwriteverbatim}
+
+\newenvironment{solution}%
+{\addtostream{thesolutions}{\vspace*{2ex}
+%Added vpsace to make sure there is space between solutions
+\noexpand\flushleft\hyperref[q:\theGlobalQCounter]{S-\theQCounter:} }
+\writeverbatim{thesolutions}}{\endwriteverbatim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% At the start of each subsection of questions use this header to put a horizontal line and give the questions a label for referencing from the hints etc.
+
+% \newcommand{\nicerule}{\raisebox{-0.5ex}{$\blacktriangleright\!$}\hrulefill\raisebox{-0.5ex}{$\;\diamond\;$}\hrulefill\raisebox{-0.5ex}{$\!\blacktriangleleft$}}
+\newcommand{\nicerule}{
+\begin{tikzpicture}
+\draw[ diamond-diamond, thick] 
+(0,0)--(\textwidth,0);
+% \node[draw=black, fill=white, rounded corners, right=10pt] at (0.5,0) 
+\end{tikzpicture}
+}
+
+
+\newcommand{\questionheader}[1]{
+\label{#1}
+{\large\textbf{Exercises} }\\
+Jump to \hyperref[h #1]{\textsc{hints}}, \hyperref[a #1]{\textsc{answers}}, \hyperref[s #1]{\textsc{solutions}} or \hyperlink{toc}{\textsc{table of contents}}.
+%
+\addtostream{thehints}{
+
+\noexpand\nicerule\\[2ex]%
+{\large\textbf{Hints for Exercises~\ref{#1}}.}%
+\noexpand\phantomsection\noexpand\label{h #1} --- Jump to \noexpand\hyperlink{toc}{\textsc{table of contents}}.
+\noexpand\addcontentsline{toc}{section}{\protect\ref*{#1} \hspace{2ex} \nameref*{#1}}%
+}%%% use \@refstar here so that it doesnt make a link to the original section 
+%
+\addtostream{theanswers}{
+
+\noexpand\nicerule\\[2ex]%
+{\large\textbf{Answers to Exercises~\ref{#1}}}%
+\noexpand\phantomsection\noexpand\label{a #1} --- Jump to \noexpand\hyperlink{toc}{\textsc{table of contents}}
+\noexpand\addcontentsline{toc}{section}{\protect\ref*{#1} \hspace{2ex} \nameref*{#1}}%
+}%
+%
+\addtostream{thesolutions}{
+
+\noexpand\nicerule\\[2ex]%
+{\large\textbf{Solutions to Exercises~\ref{#1}}}%
+\noexpand\phantomsection\noexpand\label{s #1} --- Jump to \noexpand\hyperlink{toc}{\textsc{table of contents}}%
+\noexpand\addcontentsline{toc}{section}{\protect\ref*{#1} \hspace{2ex} \nameref*{#1}}%
+}
+}
+
+
+%%%%%%%%%%%%%
+
+\newcommand{\blankheader}[1]{
+\label{#1}
+{\large\textbf{No exercises for Section~\ref{#1}} }\\
+Jump to \hyperlink{toc}{\textsc{table of contents}}.
+%
+\addtostream{thehints}{
+
+\noexpand\nicerule\\[2ex]%
+{\large\textbf{No exercises for Section~\ref{#1}}.}%
+\noexpand\phantomsection\noexpand\label{h #1} --- Jump to \noexpand\hyperlink{toc}{\textsc{table of contents}}
+\noexpand\addcontentsline{toc}{section}{\protect\ref*{#1} \hspace{2ex} \nameref*{#1}}%
+}%
+%
+\addtostream{theanswers}{
+
+\noexpand\nicerule\\[2ex]%
+{\large\textbf{No exercises for Section~\ref{#1}}.}%
+\noexpand\phantomsection\noexpand\label{a #1} --- Jump to \noexpand\hyperlink{toc}{\textsc{table of contents}}
+\noexpand\addcontentsline{toc}{section}{\protect\ref*{#1} \hspace{2ex} \nameref*{#1}}%
+}%
+%
+\addtostream{thesolutions}{
+
+\noexpand\nicerule\\[2ex]%
+{\large\textbf{No exercises for Section~\ref{#1}}.}%
+\noexpand\phantomsection\noexpand\label{s #1} --- Jump to \noexpand\hyperlink{toc}{\textsc{table of contents}}%
+\noexpand\addcontentsline{toc}{section}{\protect\ref*{#1} \hspace{2ex} \nameref*{#1}}%
+}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% messing with footnotes again - more
+\makeatletter
+\renewcommand\@makefntext[1]{\leftskip=2em\hskip-2em \@thefnmark 
+\neghphantom{\@thefnmark}\hskip2em #1}
+\makeatother
+
+\usetikzlibrary{arrows}
+\renewcommand{\footnoterule}{
+\noindent\vspace*{-0ex}\hspace{-1ex}\begin{tikzpicture}[scale=0.95]
+\draw[*-*,thick,rounded corners] (0,0) -- (1.0\textwidth,0);
+\end{tikzpicture}\vspace*{2ex}
+}
+
+\renewcommand{\thempfootnote}{\fnsymbol{mpfootnote}} 
+%% this is so that footnotes inside minipages etc appear as symbols instead of letters or numbers
