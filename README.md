@@ -18,7 +18,7 @@ In this repository we give two sets of source files - latex and pretext.
 * Some extra files for styling and handling problem sets
 * Compile into PDFs using pdflatex
 
-### Pretext sources
+### Pretext sources - coming soon
 * See the pretext directory
 * Single directory for the textbook with exercises included.
 * Sources written in (reasonably) standard [pretext](https://pretextbook.org/)
