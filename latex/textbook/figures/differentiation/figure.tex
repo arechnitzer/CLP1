@@ -1,0 +1,73 @@
+% To create a .eps file, use the command
+%      dvips -E -o file.eps figure
+% Use gv file.eps to check the bounding box.
+% Then to convert the .eps file to a .pdf file while
+% preserving the bounding box, use
+%         ps2pdf -dEPSCrop file.eps
+
+\documentclass[12pt]{article}
+
+\usepackage{../clp_header}
+
+\thispagestyle{empty}
+\input figMac
+\def\figdir{}
+
+\begin{document}
+\null\vskip1in
+%\centerline{\figput{slopeA}\qquad\qquad\figput{slopeB}\qquad\quad}
+%\centerline{\figput{slopeC}}
+%\centerline{\figput{tangentA}}
+%\[
+%\hskip-1.3in
+%y= f(x_0)+f'(x_0)\,\big(x-x_0\big)\qquad\qquad
+%\figplace{tangentB}{0 in}{-1 in}
+%\]
+%\centerline{\figplace{sinDeriv}{0 in}{0 in}}
+%\centerline{\figplace{sinDeriv2}{0 in}{0 in}}
+%\centerline{\figplace{sinDeriv5}{0 in}{0 in}\qquad
+%\figplace{sinDeriv4}{0 in}{0 in}
+%\qquad\figplace{sinDeriv3}{0 in}{0 in}}
+%\centerline{\figput{sinDeriv6}}
+%\centerline{\figput{CofA2}}
+%\centerline{\figput{expGraph}}
+%\centerline{\figput{slopeD}}
+%\centerline{\figput{tangentSqrt}}
+%\centerline{\figput{tangentB}}
+%\centerline{\figput{sinDerivL}}
+%\centerline{\figput{sinDerivR}}
+%\centerline{\figput{sinDeriv6L}}
+%\centerline{\figput{sinDeriv6R}}
+%\centerline{\figput{sinDeriv6RR}}
+%\centerline{\figput{ellipse}}
+%\centerline{\figput{ellipseB}}
+%\centerline{\figput{astroidB}}
+%\centerline{\figput{baseball}}
+%\centerline{\figput{bisection}}
+%\centerline{\figput{speedA}\figput{speedB}}
+%\centerline{\figput{speedA}}
+%\centerline{\figput{expInv}}
+%\centerline{\figput{sinInv}}
+%\centerline{\figput{fInvA}}
+%\centerline{\figput{fInvD}}
+%\centerline{\figput{sinInvB}}
+%\centerline{\figput{cosInvB}}
+%\centerline{\figput{tanInvB}}
+%\centerline{\figput{triangleAsin}}
+%\centerline{\figput{triangleAtan}}
+%\centerline{\figput{approx3}}
+%\centerline{\figput{triangle45}}
+%\centerline{\figput{approx4c}}
+%\centerline{\figput{lampShadowM}}
+\centerline{\figput{approx4bb}}
+%\centerline{\figput{sinInvEg}}
+%\centerline{\figput{mvtc}}
+%\centerline{\figput{mvtd}}
+%\centerline{\figput{mvte}}
+%\centerline{\figput{mvtf}}
+%\centerline{\figput{concaveUpDown}}
+%\centerline{\figput{concaveDown}}
+
+
+
+\end{document}
