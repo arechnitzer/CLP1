@@ -1,0 +1,292 @@
+\usepackage{chngcntr}
+
+\definecolor{_deepskyblue}{HTML}{007090}
+\definecolor{_deepgreen}{HTML}{006070}
+\definecolor{_darkred}{HTML}{600000}
+
+
+
+\RequirePackage{xkeyval}
+\RequirePackage{tikz}
+
+\define@key{boxedtheorem}{titlecolor}{\def\titlecolor{#1}}
+\define@key{boxedtheorem}{titlebackground}{\def\titlebackground{#1}}
+\define@key{boxedtheorem}{background}{\def\background{#1}}
+\define@key{boxedtheorem}{titleboxcolor}{\def\titleboxcolor{#1}}
+\define@key{boxedtheorem}{boxcolor}{\def\boxcolor{#1}}
+\define@key{boxedtheorem}{thcounter}{\def\thcounter{#1}}
+\define@key{boxedtheorem}{size}{\def\size{#1}}
+%% ADR
+\define@key{boxedtheorem}{boxcornersize}{\def\boxcornersize{#1}}
+\define@key{boxedtheorem}{titlecornersize}{\def\titlecornersize{#1}}
+%%
+\presetkeys{boxedtheorem}{titlecolor = black, titlebackground = white, background = 
+white,%
+                         titleboxcolor = black, boxcolor = black, 
+			boxcornersize=10pt, titlecornersize=5pt,
+			thcounter=, size = .9\textwidth}{}
+
+\newcommand{\couleurs}[1][]{%
+    \setkeys{boxedtheorem}{#1}
+}
+
+
+%Commande générique pour faire un joli encadré
+%%ADR WAS HERE
+\usepackage{footnote}
+
+\tikzset{adrbox/.style 2 args={append after command={
+   \pgfextra
+    \draw[sharp corners, fill=#2, very thick]% 
+    (\tikzlastnode.west)% 
+    [rounded corners=0pt] |- (\tikzlastnode.north)% 
+    [rounded corners=10pt] -| (\tikzlastnode.east)% 
+    [rounded corners=10pt] |- (\tikzlastnode.south)% 
+    [rounded corners=10pt] -| (\tikzlastnode.west)%
+    [draw=#1]
+    ;
+   \endpgfextra}}}
+
+
+\newsavebox{\boiboite}
+\newcommand{\titre}{Titre}
+\newenvironment{boite}[2][]%
+    {%
+    \savenotes
+    \renewcommand{\titre}{#2}
+    \setkeys{boxedtheorem}{#1}
+    \begin{lrbox}{\boiboite}%
+     \begin{minipage}[!h]{\size}
+    }%
+    {%
+     \end{minipage}
+    \end{lrbox}
+    \begin{center}
+    \begin{tikzpicture}
+    \node[adrbox={\boxcolor,\background}, 
+%       draw=\boxcolor, very thick,
+      inner sep=10pt, inner ysep=20pt
+    ](b) {\usebox{\boiboite}};
+
+    \node[draw=\titleboxcolor, rounded corners=\titlecornersize, fill=\titlebackground, 
+    text= \titlecolor, right=10pt] at (b.north west) {\titre};
+    \end{tikzpicture}
+    \end{center}
+\spewnotes
+    }
+
+\newcommand{\newboxedtheorem}[4][]{%
+    \couleurs[#1]
+    \@ifnotempty{#4}{%
+      \@ifundefined{the#4}{\@ifundefined{\thcounter}{\newcounter{#4}}{%
+      \newcounter{#4}[\thcounter ] } } { }%
+    }
+    \newenvironment{#2}[1][]{%
+    \@ifnotempty{#4}{\refstepcounter{#4}}
+    \begin{boite}[#1]{\textbf{#3\@ifnotempty{#4}{ \csname 
+the#4\endcsname}}\@ifnotempty{##1}{
+    (##1)}\textbf{.}}
+    }%
+    {%
+    \end{boite}
+    }
+}
+
+
+
+
+
+
+\newboxedtheorem[boxcolor=_deepskyblue, titlebackground=orange!15,
+    titlecolor = black, boxcornersize=0pt, titlecornersize=0pt,
+    titleboxcolor = orange, background=blue!5,]{theorem}{Theorem}{theorem}
+
+\newboxedtheorem[boxcolor=_deepgreen, background=_deepgreen!5, 
+    titlebackground=_deepgreen!70,
+    titleboxcolor = black]{defn}{Definition}{theorem}
+
+\newboxedtheorem[boxcolor=red, background=red!5, 
+    titlebackground=_darkred!70,
+    titleboxcolor = black]{wrongdefn}{Incorrect definition}{theorem}
+
+\newboxedtheorem[boxcolor=red, titlebackground=red!5,
+    titlecolor = black, boxcornersize=0pt, titlecornersize=0pt,
+    titleboxcolor = red, size=\textwidth]{fig}{Figure}{fig}
+
+%% JF - added smaller boxed figure
+%%            Notation box
+%%            Corollary box
+
+\newboxedtheorem[boxcolor=red, titlebackground=red!5,
+    titlecolor = black, boxcornersize=0pt, titlecornersize=0pt,
+    titleboxcolor = red, size=0.8\textwidth]{sfig}{Figure}{fig}
+
+\newboxedtheorem[boxcolor=_deepgreen, %background=_deepgreen!5, 
+   % titlebackground=_deepgreen!70,
+    titleboxcolor = black]{notn}{Notation}{theorem}
+
+\newboxedtheorem[boxcolor=_deepskyblue, titlebackground=orange!15,
+    titlecolor = black, boxcornersize=0pt, titlecornersize=0pt,
+    titleboxcolor = orange, background=blue!5]{cor}{Corollary}{theorem}
+
+%% JF
+%% played with this to get the numbering of figures, theorems.
+  \counterwithin{theorem}{section}
+  \counterwithin{fig}{section}
+  \numberwithin{equation}{section}
+
+%% ADR - added this to have nicely boxed lemmas
+\newboxedtheorem[boxcolor=_deepgreen, %background=_deepgreen!5, 
+   % titlebackground=_deepgreen!70,
+    titleboxcolor = black]{lemma}{Lemma}{theorem}
+
+%% ADR - added this to have nicely boxed warning.
+\newboxedtheorem[boxcolor=red, 
+    titleboxcolor = red]{warning}{Warning}{theorem}
+
+
+\newtheorem{axiom}[theorem]{Axiom}
+% \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{result}[theorem]{Result}
+
+\theoremstyle{definition}
+% \newtheorem{warning}[theorem]{Warning}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{exercise}{Exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% JF Modified example environment to use the theorem counter
+%%%%%%%%%%%%%%
+%%% example environment
+%\newcounter{eg}
+\newenvironment{eg}[1][]{%
+\refstepcounter{theorem}%
+\vspace{1ex}\par\noindent\nopagebreak[4]%
+\hspace{-0.05\textwidth}\begin{tikzpicture}[scale=1.1]
+\draw[ <->, very thick,rounded corners] 
+(0,-0.5)--(0,0)--(\textwidth,0)--(\textwidth,-0.5);
+\node[draw=black, fill=white, rounded corners, right=10pt] at (0.5,0) 
+{Example \thetheorem\ \ifx\empty#1\else$\left(\text{#1}\right)$\fi}; 
+%%ADR hacked so that brackets around equations were right size.
+\end{tikzpicture}\\[-1ex]
+}
+{
+\vspace{-1ex}%
+\par\noindent%
+\hspace{-0.05\textwidth}\begin{tikzpicture}[scale=1.1]
+\draw[ <->, very thick,rounded corners] 
+(0,0.5)--(0,0)--(\textwidth,0)--(\textwidth,0.5);
+\node[draw=black, fill=white, rounded corners, right=10pt] at (12.5,0) 
+{Example \thetheorem };
+\end{tikzpicture}
+}
+
+%%%%%%%%%%%%%%
+%%% fig environment for inside examples
+\newsavebox{\efigbox}
+\newenvironment{efig}
+{\begin{lrbox}{\efigbox}\begin{minipage}{0.8\textwidth}}
+{\end{minipage}\end{lrbox}%
+\begin{center}%
+\begin{tikzpicture}%
+\node[adrbox={ {gray}, white},inner sep=2ex](box){\usebox{\efigbox}};
+\end{tikzpicture}%
+\end{center}}
+
+
+% JF wider version of efig
+%%% fig environment for inside examples
+\newsavebox{\wfigbox}
+\newenvironment{wfig}
+{\begin{lrbox}{\wfigbox}\begin{minipage}{\textwidth}}
+{\end{minipage}\end{lrbox}%
+\begin{center}%
+\begin{tikzpicture}%
+\node[adrbox={ {gray}, white},inner sep=2ex](box){\usebox{\wfigbox}};
+\end{tikzpicture}%
+\end{center}}
+
+% ADR liked this and made a narrower version too
+%%% fig environment for inside examples
+\newsavebox{\nfigbox}
+\newenvironment{nfig}
+{\begin{lrbox}{\nfigbox}\begin{minipage}{0.6\textwidth}}
+{\end{minipage}\end{lrbox}%
+\begin{center}%
+\begin{tikzpicture}%
+\node[adrbox={ {gray}, white},inner sep=2ex](box){\usebox{\nfigbox}};
+\end{tikzpicture}%
+\end{center}}
+
+%%%%%%%%%%%%%%
+%%% env for important equations
+
+\tikzset{eqnbox/.style 2 args={append after command={
+   \pgfextra
+    \draw[sharp corners, fill=#2, very thick]% 
+    (\tikzlastnode.west)% 
+    [rounded corners=0pt] |- (\tikzlastnode.north)% 
+    [rounded corners=5pt] -| (\tikzlastnode.east)% 
+    [rounded corners=5pt] |- (\tikzlastnode.south)% 
+    [rounded corners=5pt] -| (\tikzlastnode.west)%
+    [draw=#1]
+    ;
+   \endpgfextra}}}
+
+
+
+\newenvironment{adrboite}[2][]%
+    {%
+    \savenotes
+    \renewcommand{\titre}{#2}
+    \setkeys{boxedtheorem}{#1}
+    \begin{lrbox}{\boiboite}%
+     \begin{minipage}[!h]{\size}
+    }%
+    {%
+     \end{minipage}
+    \end{lrbox}
+    \begin{center}
+    \begin{tikzpicture}
+    \node[eqnbox={\boxcolor,\background}, 
+      inner sep=10pt, %inner ysep=5pt
+    ](b) {\usebox{\boiboite}};
+
+    \node[draw=\titleboxcolor, rounded corners=\titlecornersize, fill=\titlebackground, 
+    text= \titlecolor, left=10pt] at (b.north east) {\titre};
+    \end{tikzpicture}
+    \end{center}
+\spewnotes
+    }
+
+\newcommand{\newboxedeqn}[4][]{%
+    \couleurs[#1]
+    \@ifnotempty{#4}{%
+      \@ifundefined{the#4}{\@ifundefined{\thcounter}{\newcounter{#4}}{%
+      \newcounter{#4}[\thcounter ] } } { }%
+    }
+    \newenvironment{#2}[1][]{%
+    \@ifnotempty{#4}{\refstepcounter{#4}}
+    \begin{adrboite}[#1]{\textbf{#3\@ifnotempty{#4}{ \csname 
+the#4\endcsname}}\@ifnotempty{##1}{
+    (##1)}\textbf{.}}
+    }%
+    {%
+    \end{adrboite}
+    }
+}
+
+
+
+
+\newboxedeqn[boxcolor=_deepskyblue, titlebackground=orange!15,
+    titlecolor = black, boxcornersize=0pt, titlecornersize=0pt,
+    titleboxcolor = orange, background=blue!5]{impeqn}{Equation}{theorem}
+% \counterwithin{impeqn}{section}
+

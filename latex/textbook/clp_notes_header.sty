@@ -1,0 +1,167 @@
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amsfonts, amssymb, mathtools, mathabx}
+\usepackage{mathrsfs}
+\usepackage[letterpaper,left=2.5cm,right=2.5cm,top=2cm,bottom=2cm]{geometry }
+\usepackage{nicefrac}
+\usepackage{enumerate}
+\usepackage{array}
+\usepackage{comment}
+
+\usepackage{cancel}
+
+\usepackage{palatino, mathpazo}
+
+\usepackage{datetime}
+%%%%%%%%%%%%%%%%
+%% Note - hyperref is loaded last, else it causes issues.
+
+%%%%%%%%%%%%%%%%
+%% Messing with headers and footers
+%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ \textsc{#1}}{}}
+
+\lhead{\leftmark} \chead{} \rhead{\rightmark}
+\lfoot{} \cfoot{\thepage} \rfoot{}
+
+
+
+%%%%%%%% fixing long section titles.
+%% from 
+% http://tex.stackexchange.com/questions/241286/toc-and-header-versions-of-section
+% -titles-titlesec-interferes-with-fancyhdr
+% 
+%second = short title for headers, first = long title for in text + toc.
+\newcommand{\longsection}[2]
+     {\let\orisectionmark\sectionmark
+     \renewcommand\sectionmark[1]{}%
+     \section[{#1}]{{#1}\orisectionmark{{#2}}}
+     \orisectionmark{{#2}}
+     \let\sectionmark\orisectionmark}
+%%%%%% 
+% Fix footnotes to lie on one page
+\interfootnotelinepenalty=10000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macros
+\usepackage{clp_macros}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some useful colours
+\usepackage{xcolor}
+\definecolor{_deepskyblue}{HTML}{007090}
+\definecolor{_deepgreen}{HTML}{006070}
+\definecolor{_darkred}{HTML}{600000}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Boxes and theorems 
+\usepackage{clp_boxes_theorems}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% For function plotting.
+\usepackage{pgfplots}
+\pgfplotsset{width=65mm,compat=1.9, tick label style={font=\scriptsize}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% messing with footnotes
+\newcommand{\neghphantom}[1]{\begingroup\sbox0{#1}\hspace*{-\wd0}\endgroup}
+\makeatletter
+\renewcommand\@makefntext[1]{\leftskip=2em\hskip-2em \@thefnmark 
+\neghphantom{\@thefnmark}\hskip2em #1}
+\makeatother
+
+\usetikzlibrary{arrows}
+\renewcommand{\footnoterule}{
+\noindent\hspace{-2ex}\begin{tikzpicture}[scale=1.05]
+\draw[*-*,thick,rounded corners] (0,0) -- (1.0\textwidth,0) -- (1.0\textwidth,-0.5);
+\end{tikzpicture}\vspace{-1.5ex}
+}
+
+%%%%%%%
+%% messing with chapter and section
+\usepackage[explicit]{titlesec}
+%%%%%%%% fixing bug in titlesec rendering sections - see
+% https://bugs.launchpad.net/ubuntu/+source/texlive-extra/+bug/1574052
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+%%%%
+\tikzset{weird fill/.style={append after command={
+   \pgfextra
+        \draw[sharp corners, fill=#1]% 
+    (\tikzlastnode.west)% 
+    [rounded corners=0pt] |- (\tikzlastnode.north)% 
+    [rounded corners=5pt] -| (\tikzlastnode.east)% 
+    [rounded corners=0pt] |- (\tikzlastnode.south)% 
+    [rounded corners=5pt] -| (\tikzlastnode.west)%
+    ;
+   \endpgfextra}}}
+
+\titleformat{name=\chapter}
+{\normalfont}
+{}
+{8pt}
+{
+\begin{center}\begin{tikzpicture}
+\draw node[
+    inner sep=10pt, inner ysep=20pt, very thick,
+    weird fill=_deepgreen, text=white, minimum width={0.9\textwidth},
+    text width={0.9\textwidth}, align=center
+  ](b) {\scshape\huge\filcenter #1};
+\node[right=10pt, rounded corners=0pt, draw, fill=white] at (b.north west) 
+{\chaptertitlename\ \thechapter};
+\end{tikzpicture}\end{center}
+}
+
+\titleformat{name=\chapter,numberless}
+{\normalfont}
+{}
+{8pt}
+{
+\begin{center}\begin{tikzpicture}
+\draw node[
+    inner sep=10pt, inner ysep=20pt, very thick,
+    weird fill=_deepgreen, text=white, minimum width={0.9\textwidth},
+    text width={0.9\textwidth}, align=center
+  ](b) {\scshape\huge\filcenter #1};
+\end{tikzpicture}\end{center}
+}
+
+
+%
+\titleformat{\section}
+{\titlerule
+\vspace{.8ex}%
+\Large\bfseries}
+{\llap{\thesection}}{0.0em}{ $\blacktriangleup$ #1}
+%
+\titleformat{\subsection}{\large\bfseries}
+{\llap{\thesubsection}}{0.0em}{ $\blacktriangleright\!\blacktriangleright$ #1}
+
+\titleformat{\subsubsection}{\bfseries}{\llap{\thesubsubsection}}{0.0em}{
+$\blacktriangleright\!\blacktriangleright\!\blacktriangleright$ #1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% always load hyperref last
+\usepackage[colorlinks=true]{hyperref} 
+\makeatletter
+\Hy@AtBeginDocument{%
+  \def\@pdfborder{0 0 1}% Overrides border definition set with colorlinks=true
+  \def\@pdfborderstyle{/S/U/W 1}% Overrides border style set withcolorlinks=true
+		    % Hyperlink border style will be underlineof width1pt
+}
+\makeatother
+\hypersetup{linkcolor=blue!50!black}
+
+

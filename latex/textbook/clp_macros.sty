@@ -1,0 +1,71 @@
+\renewcommand{\neg}{ {\sim} }
+\newcommand{\limp}{ {\;\Rightarrow\;} }
+\newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+\newcommand{\liff}{ {\;\Leftrightarrow\;} }
+\newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+\newcommand{\st}{ {\mbox{ s.t. }} }
+\newcommand{\es}{ {\varnothing}}
+\newcommand{\ds}{ \displaystyle }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+
+\newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+\newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+\newcommand{\bbbn}{\mathbb{N}}
+\newcommand{\bbbr}{\mathbb{R}}
+\newcommand{\bbbp}{\mathbb{P}}
+\newcommand{\De}{\Delta}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\veps}{\varepsilon}
+\newcommand{\half}{\tfrac{1}{2}}
+\newcommand{\ts}{ \textstyle }
+\newcommand{\diff}[2]{ \frac{\mathrm{d}\hfil#1\hfil}{\mathrm{d}#2}}
+\newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}\hfil#1\hfil}{\mathrm{d}{#2}^2}}
+\newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+\newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+\newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+\newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+\newcommand{\erf}{\mathop{\mathrm{erf}}}
+\newcommand{\smsum}{\mathop{{\ts \sum}}}
+\newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+%        ISSUES
+%
+%\def\showissues{y}  %%%    choose this line to include "issue" internal remarks
+\def\showissues{n}  %%%   choose this line to exclude "issue" internal remarks
+\edef\Raum{ }
+\newcount\issuesD
+\newcount\issuesND
+\long\def\issue#1{\if\showissues y \global\advance\issuesD by 1%
+%                {\bf [ISSUE[}
+%                 #1
+%                {\bf ]END ISSUE] }
+%                {\noindent\bf ??? #1 ??? }
+                {\marginpar{\scriptsize #1}}
+                 \else \global\advance\issuesND by 1\fi}
+\def\printIssueCount{
+     \immediate\write16{\Raum\Raum\number\issuesD\Raum Issues displayed.}
+     \immediate\write16{\Raum\Raum\number\issuesND\Raum Issues not displayed.}}
+
+
+%
+%        INTERNAL REMARKS
+%
+% \def\showintremarks{y}  %%%    choose this line to include internal remarks
+\def\showintremarks{n}  %%%   choose this line to exclude internal remarks
+\long\def\intremark#1{
+   \if\showintremarks y
+      \immediate\write16{\Raum\Raum Internal remark displayed on page \thepage.}
+      \removelastskip\vskip.1in\hrule\penalty500\vskip.05in
+      \noindent\textbf{Internal Remark}\vskip.01in\penalty500
+                      #1
+                      %\hfill\break{\bf End Internal Remark}
+      \vskip.05in\penalty500\hrule\vskip.1in\penalty-500
+   \fi}
+
+
+
