@@ -67,7 +67,7 @@ To get started, we'll try to guess <m>C(a)</m>, for a few values of <m>a</m>, by
 Let <m>a =1</m> then <m>C(1) = \ds \lim_{h \to 0} \frac{1^h-1}{h} = 0</m>. This is not  surprising  since <m>1^x=1</m> is constant, and so its derivative must be zero everywhere. Let <m>a  =2</m>  then <m>C(2) = \ds \lim_{h \to 0} \frac{2^h-1}{h}</m>. Setting <m>h</m> to smaller and  smaller numbers gives
 </p>
 
-<sidebyside>
+<p>
 <tabular bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>h</m> </cell><cell> 0.1 </cell><cell> 0.01 </cell><cell> 0.001 </cell><cell> 0.0001 </cell><cell> 0.00001 </cell><cell> 0.000001 </cell><cell> 0.0000001 </cell>
@@ -76,10 +76,10 @@ Let <m>a =1</m> then <m>C(1) = \ds \lim_{h \to 0} \frac{1^h-1}{h} = 0</m>. This 
              0.6931 </cell><cell> 0.6931 </cell><cell> 0.6931 </cell>
 </row>
 </tabular>
-</sidebyside>
+</p>
 <p>Similarly when <m>a=3</m> we get</p>
 
-<sidebyside>
+<p>
 <tabular bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>h</m> </cell><cell> 0.1 </cell><cell> 0.01 </cell><cell> 0.001 </cell><cell> 0.0001 </cell><cell> 0.00001 </cell><cell> 0.000001 </cell><cell> 0.0000001 </cell>
@@ -88,10 +88,10 @@ Let <m>a =1</m> then <m>C(1) = \ds \lim_{h \to 0} \frac{1^h-1}{h} = 0</m>. This 
              1.0986 </cell><cell> 1.0986 </cell><cell> 1.0986 </cell>
 </row>
 </tabular>
-</sidebyside>
+</p>
 <p>and <m>a=10</m></p>
 
-<sidebyside>
+<p>
 <tabular bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>h</m> </cell><cell> 0.1 </cell><cell> 0.01 </cell><cell> 0.001 </cell><cell> 0.0001 </cell><cell> 0.00001 </cell><cell> 0.000001 </cell><cell> 0.0000001 </cell>
@@ -100,7 +100,7 @@ Let <m>a =1</m> then <m>C(1) = \ds \lim_{h \to 0} \frac{1^h-1}{h} = 0</m>. This 
              2.3026 </cell><cell> 2.3026 </cell><cell> 2.3026 </cell>
 </row>
 </tabular>
-</sidebyside>
+</p>
 
 <p>
 From this example it appears that <m>C(a)</m> increases as we increase <m>a</m>,  and that <m>C(a) = 1</m> for some value of <m>a</m> between <m>2</m> and <m>3</m>.

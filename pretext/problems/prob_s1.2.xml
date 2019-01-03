@@ -129,12 +129,14 @@ Velocity is distance over time.
 v(a)=\lim_{h \rightarrow 0}\frac{s(a+h)-s(a)}{h}
 </me>
 So, in our case:
-<me>
-  v(1)=\lim_{h \rightarrow 0}\frac{s(1+h)-s(1)}{h} =
-\lim_{h \rightarrow 0}\frac{[3(1+h)^2+5]-[3(1)^2+5]}{h} =
-\lim_{h \rightarrow 0}\frac{6h+3h^2}{h}=
-\lim_{h \rightarrow 0}6+3h = 6
-</me>
+<md>
+  <mrow> v(1)\amp =\lim_{h \rightarrow 0}\frac{s(1+h)-s(1)}{h} =
+\lim_{h \rightarrow 0}\frac{[3(1+h)^2+5]-[3(1)^2+5]}{h}
+  </mrow>
+  <mrow> \amp= \lim_{h \rightarrow 0}\frac{6h+3h^2}{h}=
+  \lim_{h \rightarrow 0}6+3h = 6
+  </mrow>
+</md>
 So the velocity when <m>t=1</m> is 6 units per second.
 </li>
 </ol>

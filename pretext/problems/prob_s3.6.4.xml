@@ -71,14 +71,6 @@ The function is not even, because it is not mirrored across the <m>y</m>-axis.
 
 <sidebyside>
 <image><latex-image><![CDATA[\begin{tikzpicture}
-\draw (0,1) node{};
-\draw (0,-3) node{};
-\draw[ultra thick, - \gt ] (0,0)--(0,-2);
-\end{tikzpicture}]]></latex-image></image>
-</sidebyside>
-
-<sidebyside>
-<image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{6}{4}
 \draw plot[samples=100,domain=0:12](\x/2,{2*sin(\x r)+sin(2*\x r)}) node[right]{$y=f(x)$};
 \draw[loosely dashed, gray] plot[samples=100,domain=-12:0](\x/2,{-2*sin(\x r)-sin(2*\x r)});

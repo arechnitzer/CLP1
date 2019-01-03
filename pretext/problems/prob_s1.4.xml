@@ -663,7 +663,9 @@ then by the Squeeze Theorem, also
 <li><p> Solution 2: If <m>x\neq 0</m>, then <m>0\leq\sin^2\left(\dfrac{1}{x}\right)\leq1</m>, so
 <me>-|x| \leq x\sin^2\left(\frac{1}{x}\right)\leq|x|.</me>
 
-Since <me>\ds\lim_{x \to 0}-|x|=0\qquad\mbox{and}\qquad\lim_{x\to0}|x|=0</me>
+Since <me>\ds\lim_{x \to 0}-|x|=0</me>
+and
+<me>\lim_{x\to0}|x|=0</me>
 
 then by the Squeeze Theorem, also
 <me>\lim_{x \to 0} x\sin^2\left(\frac{1}{x}\right)=0.</me>

@@ -10,27 +10,25 @@
 In this section we illustrate the computation of derivatives using the arithmetic of  derivatives <mdash/> Theorems<nbsp/><xref ref="thm_DIFFlinearity"/>,<nbsp/><xref ref="thm_DIFFprodRule"/>  and<nbsp/><xref ref="thm_DIFFquotRule"/>. To make it clear which rules we are using during the examples we will note which theorem we are using:
 </p>
 
-<sidebyside>
-<tabular>
+<table>
+<tabular bottom="minor" right="minor" left="minor" top="minor">
 <row>
-<cell><m>\bullet \lin</m> to stand for <q>linearity</q> </cell>
+<cell><m>\lin</m> to stand for <q>linearity</q> </cell>
 <cell><m>\diff{}{x}\{\alpha\,f(x)+\beta\,g(x)\} = \alpha\,f'(x)+\beta\,g'(x)</m>
 </cell><cell>Theorem<nbsp/><xref ref="thm_DIFFlinearity"/>
 </cell>
 </row><row>
 <cell>
-<m>\bullet \text{PR}</m> to stand for <q>product rule</q></cell>
+<m>\text{PR}</m> to stand for <q>product rule</q></cell>
 <cell><m>\diff{}{x}\{f(x)\,g(x)\}=f'(x)\,g(x)+f(x)\,g'(x)</m>
 </cell><cell>Theorem<nbsp/><xref ref="thm_DIFFprodRule"/></cell>
 </row><row>
-<cell><m>\bullet \quot</m> to stand for <q>quotient rule</q></cell>
+<cell><m>\quot</m> to stand for <q>quotient rule</q></cell>
 <cell><m>\diff{}{x}\Big\{\frac{f(x)}{g(x)}\Big\}= \frac{f'(x)\,g(x)-f(x)\,g'(x)}{g(x)^2}</m>
 </cell><cell>Theorem<nbsp/><xref ref="thm_DIFFquotRule"/></cell>
 </row>
 </tabular>
-</sidebyside>
-
-
+</table>
 
 <p>We'll start with a really easy example.</p>
 
@@ -132,15 +130,15 @@ This problem looks nasty. But it isn't so hard if we just  build it up a bit at 
 	<mrow>
 	f_5(x)&amp;=3x+1 &amp;\text{ so } \diff{}{x} f_5(x) &amp;= 3\diff{}{x} x +\diff{}{x} 1
 		=3\cdot 1+0 = 3 &amp; \text{LIN}
-	</mrow><mrow>[0.1in]
+	</mrow><mrow>
 	f_4(x)&amp;=\frac{1}{f_5(x)}
 	   &amp;\text{ so } \diff{}{x} f_4(x)&amp;=-\frac{f'_5(x)}{f_5(x)^2}=-\frac{3}{(3x+1)^2}
 						&amp; \text{QR}
-	</mrow><mrow>[0.1in]
+	</mrow><mrow>
 	f_2(x)&amp;=2f_3(x)+f_4(x) &amp;\text{ so }
 		\diff{}{x} f_2(x) &amp;= 2f'_3(x)+ f'_4(x)=2-\frac{3}{(3x+1)^2}
 						&amp; \text{LIN}
-	</mrow><mrow>[0.1in]
+	</mrow><mrow>
 	f(x)&amp;=\frac{f_1(x)}{f_2(x)}&amp;\text{ so }
 		 \diff{}{x} f(x)&amp;=\frac{f'_1(x)f_2(x)-f_1(x)f'_2(x)}{f_2(x)^2}
 						&amp; \text{QR}
@@ -169,9 +167,9 @@ This problem looks nasty. But it isn't so hard if we just  build it up a bit at 
 	f'(x)&amp;=\frac{\frac{1}{3x+1}+\frac{3x}{(3x+1)^2}}
 						   {\big[2x+\frac{1}{3x+1}\big]^2}
 	\ \frac{(3x+1)^2}{(3x+1)^2}
-	</mrow><mrow>[0.1in]
+	</mrow><mrow>
 	&amp;=\frac{(3x+1)+3x}{\big[2x(3x+1)+1\big]^2}
-	</mrow><mrow>[0.1in]
+	</mrow><mrow>
 	&amp;=\frac{6x+1}{[6x^2+2x+1]^2}.
 	</mrow>
 	</md>
@@ -479,9 +477,9 @@ p x^{p-1} &amp;=q\cdot x^{(pq-p)/q} \diff{}{x}\big\{x^{p/q}\big\}
 <intertext>and, rearranging things,</intertext><mrow>
 \diff{}{x}\big\{x^{p/q}\big\}
    &amp; =\frac{p}{q} x^{p-1-(pq-p)/q}
-</mrow><mrow>[0.05in]
+</mrow><mrow>
    &amp; =\frac{p}{q} x^{(pq-q-pq+p)/q}
-</mrow><mrow>[0.05in]
+</mrow><mrow>
    &amp; =\frac{p}{q} x^{\frac{p}{q}-1}
 </mrow>
 </md>
@@ -597,10 +595,10 @@ f(x)=\frac{(\sqrt{x}-1)(2-x)(1-x^2)}{\sqrt{x}(3+2x)}
 	+f_1f_2f'_3\frac{1}{f_4}\frac{1}{f_5}
 	-f_1f_2f_3\frac{f'_4}{f^2_4}\frac{1}{f_5}
 	-f_1f_2f_3\frac{1}{f_4}\frac{f'_5}{f^2_5}
-	</mrow><mrow>[0.1in]
+	</mrow><mrow>
 	&amp;=\Big[\frac{f'_1}{f_1}+\frac{f'_2}{f_2}+\frac{f'_3}{f_3}-\frac{f'_4}{f_4}
 	-\frac{f'_5}{f_5}\Big]f_1f_2f_3\frac{1}{f_4}\frac{1}{f_5}
-	</mrow><mrow>[5mm]
+	</mrow><mrow>
 	&amp;=\bigg[\frac{1}{2\sqrt{x}(\sqrt{x}-1)}
 		   -\frac{1}{2-x}-\frac{2x}{1-x^2}-\frac{1}{2x}
 	-\frac{2}{3+2x}\bigg]\frac{(\sqrt{x}-1)(2-x)(1-x^2)}{\sqrt{x}(3+2x)}

@@ -343,7 +343,7 @@ Denominator next:
 </mrow><mrow>
   &amp;= \left( \lim_{x \to 2} x \right)\cdot \left( \lim_{x \to 2} x \right)
   + 5 \cdot \left( \lim_{x \to 2} x \right) - 6
-  &amp; \text{product of limits and limit of constant}
+  &amp; \begin{array}{r}\text{prod. of limits, and} \\ \text{limit of constant} \end{array}
 </mrow><mrow>
   &amp;= 2 \cdot 2 + 5 \cdot 2 - 6
   &amp; \text{limits of $x$}

@@ -10,12 +10,17 @@
 <exercise>
 <statement><p>
 Which of the following is a differential equation for an unknown function <m>y</m> of <m>x</m>?
-<me>
-\mbox{(a) } y=\diff{y}{x}
+<md>
+  <mrow>
+\amp \mbox{(a) } y=\diff{y}{x}
 \qquad\mbox{(b) } \diff{y}{x}=3\left[y-5\right]
 \qquad\mbox{(c) } y=3\left[y-\diff{x}{x}\right]
-\qquad\mbox{(d) } e^x=e^y+1
-\qquad\mbox{(e) } y=10e^x</me>
+</mrow>
+<mrow>
+\amp \mbox{(d) } e^x=e^y+1
+\qquad\mbox{(e) } y=10e^x
+</mrow>
+</md>
 </p>
 
 </statement>
@@ -36,12 +41,17 @@ of the unknown function.</q> Our unknown function is <m>y</m>, so a differential
 <exercise purpose="RQS">
 <statement><p>
 Which of the following functions <m>Q(t)</m> satisfy the differential equation <m>Q(t)=5\ds\diff{Q}{t}</m>?
-<me>
-\mbox{(a) } Q(t)=0\qquad
+<md>
+  <mrow>
+\amp \mbox{(a) } Q(t)=0\qquad
 \mbox{(b) } Q(t)=5e^t\qquad
-\mbox{(c) } Q(t)=e^{5t}\qquad
-\mbox{(d) } Q(t)=e^{t/5}\qquad
-\mbox{(e) } Q(t)=e^{t/5}+1</me>
+\mbox{(c) } Q(t)=e^{5t}
+</mrow>
+<mrow>
+\amp \mbox{(d) } Q(t)=e^{t/5}\qquad
+\mbox{(e) } Q(t)=e^{t/5}+1
+</mrow>
+</md>
 </p>
 
 </statement>

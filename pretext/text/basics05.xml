@@ -160,7 +160,7 @@ This introduces a new idea <mdash/> we have to evaluate <m>\frac{t+\pi}{2}</m> a
 If we want to evaluate this at <m>t = \pi/2</m> then we get the following<ellipsis/>
 </p>
 
-<sbsgroup widths="10% 40% 5% 40%">
+<sbsgroup widths="5% 35% 5% 35%">
 <sidebyside>
 <p>Start</p>
 <image source="text/figs/tree2a"/>

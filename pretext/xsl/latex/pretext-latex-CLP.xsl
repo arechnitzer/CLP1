@@ -136,7 +136,7 @@ along with PreTeXt.  If not, see <http://www.gnu.org/licenses/>.
 <!-- if we are committed to making it universally available to be used               -->
 <!-- like this by style writers.                                                     -->
 <xsl:template match="proof" mode="tcb-style">
-    <xsl:text>boxrule=0.25pt, colframe=gray, enhanced jigsaw, breakable, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\qquad}, after upper={\begin{flushright}\(\square\)\end{flushright}}&#xa;</xsl:text>
+    <xsl:text>boxrule=0.25pt, colframe=white, enhanced jigsaw, breakable, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\qquad}, after upper={\begin{flushright}\(\square\)\end{flushright}}&#xa;</xsl:text>
 </xsl:template>
 
 
@@ -215,9 +215,10 @@ along with PreTeXt.  If not, see <http://www.gnu.org/licenses/>.
       enlarge top initially by=2ex,
       enlarge bottom finally by=2ex,
       colback=white, colframe=black, colbacktitle=white, coltitle=black,
-      oversize, enhanced, breakable,
+      enhanced, breakable,
       attach boxed title to top left={xshift=7mm, yshift*=-\tcboxedtitleheight/2},
       frame hidden,
+      oversize,
       overlay unbroken={
         \draw[thick, stealth-, rounded corners] ([yshift=-3ex]interior.north west)--(interior.north west)--(title);
         \draw[thick, -stealth, rounded corners] (title)--(interior.north east)--([yshift=-3ex]interior.north east);
@@ -228,9 +229,9 @@ along with PreTeXt.  If not, see <http://www.gnu.org/licenses/>.
         \draw[thick, -stealth, rounded corners] (title)--(interior.north east)--([yshift=-3ex]interior.north east);
         },
       overlay middle={},
-      extras last={boxsep=1ex,},
+      extras last={boxsep=1ex, },
       overlay last ={
-        \tikzset{overlay=false};
+        \tikzset{overlay=true, xshift=0ex};
         \node[draw, thick, rectangle, rounded corners] (repeatTitle) at ([xshift=-12ex]interior.south east) {Example~\thetcbcounter};
         \draw[thick, stealth-, rounded corners] ([yshift=3ex]interior.south west)--(interior.south west)--(repeatTitle);
         \draw[thick,-stealth,rounded corners] (repeatTitle)--(interior.south east)--([yshift=3ex]interior.south east);

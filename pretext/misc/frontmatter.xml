@@ -98,7 +98,7 @@
 		</p>
 
 		<p>
-		Joel would like to thank way too many people to name for their support and encouragement over many years.
+		Joel would like to thank a range of people for their support and encouragement over many years.
 		</p>
 
 		<p>
@@ -124,7 +124,7 @@
 
 		<p>
 		  Finally, we'd like to thank those students who reported typos and errors they found in the text. Many of these students did so through our <q>bug bounty</q> program which was supported by the
-			<url href="https://www.math.ubc.ca/">Department of Mathematics</url>, <url href="https://skylight.science.ubc.ca/">Skylight</url> and the <url href="http://loafecafe.com/">Loafe Cafe</url> all at UBC. Additionally, thanks to our bounty-wrangler, Ching Wong, who ran the program. Their help translates directly into a better text.
+			<url href="https://www.math.ubc.ca/">Department of Mathematics</url> and <url href="https://skylight.science.ubc.ca/">Skylight</url>.
 			<ul>
 			  <li>
 			    <p>
@@ -147,6 +147,7 @@
 			    </p>
 			  </li>
 			</ul>
+			 Additionally, thanks to our bounty-wrangler, Ching Wong, who ran the program, and the <url href="http://loafecafe.com/">Loafe Cafe</url> for help with the bounty for the bugs. Their help translates directly into a better text.
 		</p>
 
 

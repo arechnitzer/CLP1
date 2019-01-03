@@ -181,7 +181,7 @@ Now to check we should differentiate and hopefully we get back to where we start
 <p>
 In your next calculus course you will develop a lot of machinery to help you find antiderivatives. At this stage about all that we can do is continue the sort of thing we have done. Think about the derivatives we know and  work backwards. So, for example, we can take a list of derivatives </p>
 
-<sidebyside>
+<table>
 <tabular bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>F(x)</m> </cell><cell>   <m>1</m> </cell><cell>  <m>x^n</m> </cell><cell> <m>\sin x</m> </cell><cell> <m>\cos x</m>
@@ -196,9 +196,9 @@ In your next calculus course you will develop a lot of machinery to help you fin
            </cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 <p>and flip it upside down to give the tables of antiderivatives.</p>
-<sidebyside>
+<table>
 <tabular bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell> <m>f(x)=\diff{}{x}F(x)</m> </cell><cell> <m>0</m> </cell><cell> <m>nx^{n-1}</m> </cell><cell> <m>\cos x</m>
@@ -211,9 +211,9 @@ In your next calculus course you will develop a lot of machinery to help you fin
            </cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 
-<sidebyside>
+<table>
 <tabular bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell> <m>f(x)=\diff{}{x}F(x)</m>
@@ -225,11 +225,11 @@ In your next calculus course you will develop a lot of machinery to help you fin
            </cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 <p>
 Here <m>c</m> is just a constant <mdash/> any constant. But we can do  a little more; clean up <m>x^n</m> by dividing by <m>n</m> and then replacing <m>n</m> by <m>n+1</m>. Similarly we can tweak <m>\sin x</m> by multiplying by <m>-1</m>:
 </p>
-<sidebyside>
+<table>
 <tabular bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>f(x)=\diff{}{x}F(x)</m> </cell><cell> <m>0</m> </cell><cell> <m>x^{n}</m> </cell><cell> <m>\cos x</m>
@@ -243,8 +243,8 @@ Here <m>c</m> is just a constant <mdash/> any constant. But we can do  a little 
            </cell>
 </row>
 </tabular>
-</sidebyside>
-<sidebyside>
+</table>
+<table>
 <tabular bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>f(x)=\diff{}{x}F(x)</m>
@@ -256,7 +256,7 @@ Here <m>c</m> is just a constant <mdash/> any constant. But we can do  a little 
            </cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 
 <p>Here are a couple more examples.</p>
 <example><title>Antiderivatives of <m>\sin x, \cos 2x</m> and <m>\frac{1}{1+4x^2}</m></title>

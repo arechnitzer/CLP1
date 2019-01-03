@@ -192,7 +192,7 @@ Let <m>f(x) = \frac{x-2}{x^2+x-6}</m> and consider its limit as <m>x \to 2</m>.
 <p>
 	Again, we can plug in some numbers close to <m>2</m> and see what we find
 </p>
-<sidebyside>
+<p>
 <tabular bottom="minor" left="minor" right="minor" top="minor">
 <row>
 <cell><m>x</m> </cell><cell> 1.9 </cell><cell> 1.99 </cell><cell> 1.999 </cell><cell> <m>\circ</m> </cell><cell> 2.001 </cell><cell> 2.01 </cell><cell> 2.1 </cell>
@@ -200,7 +200,7 @@ Let <m>f(x) = \frac{x-2}{x^2+x-6}</m> and consider its limit as <m>x \to 2</m>.
 <cell><m>f(x)</m> </cell><cell> 0.20408 </cell><cell> 0.20040 </cell><cell>0.20004</cell><cell> <m>\circ</m> </cell><cell> 0.19996 </cell><cell> 0.19960 </cell><cell> 0.19608 </cell>
 </row>
 </tabular>
-</sidebyside>
+</p>
 </li>
 <li>
 	So it is reasonable to suppose that
@@ -287,15 +287,15 @@ Consider the function
 <p>
 	So let us plug in numbers close to <m>2</m>.
 </p>
-<sidebyside>
+<p>
 	<tabular bottom="minor" left="minor" right="minor" top="minor">
 	<row>
 	<cell><m>x</m> </cell><cell> 1.9 </cell><cell> 1.99 </cell><cell> 1.999 </cell><cell> <m>\circ</m> </cell><cell> 2.001 </cell><cell> 2.01 </cell><cell> 2.1 </cell>
 	</row><row>
 	<cell><m>f(x)</m> </cell><cell> 1.9 </cell><cell> 1.99 </cell><cell> 1.999 </cell><cell> <m>\circ</m> </cell><cell> 5.001 </cell><cell> 5.01 </cell><cell> 5.1 </cell>
 	</row>
-	</tabular>
-</sidebyside>
+</tabular>
+</p>
 </li>
 <li>
 	This isn't like before. Now when we approach from below, we seem to be  getting closer to <m>2</m>, but when we approach from above we seem to be getting  closer to <m>5</m>. Since we are not approaching the same number the limit does not exist.

@@ -12,19 +12,22 @@
 <statement><p>
 Which of the following functions <m>T(t)</m> satisfy the differential equation
 <m>\ds\diff{T}{t}=5\left[T-20\right]</m>?
-<me>
-\mbox{(a) }
+<md>
+  <mrow>
+\amp \mbox{(a) }
 T(t)=20
 \qquad
 \mbox{(b) }
  T(t)=20e^{5t}-20
-\qquad
-\mbox{(c) }
+</mrow>
+<mrow>
+\amp \mbox{(c) }
  T(t)=e^{5t}+20
 \qquad
 \mbox{(d) }
  T(t)=20e^{5t}+20
-</me>
+</mrow>
+</md>
 </p>
 
 </statement>

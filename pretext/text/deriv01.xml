@@ -125,7 +125,7 @@ In this example, let us fix <m>(x_0,y_0)</m> to be the point <m>(2,4)</m> on the
 	The following table gives the slope, <m>\tfrac{y_1-y_0}{x_1-x_0}</m>, of the secant line  through <m>(x_0,y_0)=(2,4)</m> and <m>(x_1,y_1)</m>, for various different choices of  <m>(x_1,y_1=x_1^2)</m>.
 </p>
 
-<sidebyside>
+<p>
 <tabular top="minor" left="minor" right="minor" bottom="minor">
 <row>
 <cell><m>x_1</m> </cell><cell><m>1</m> </cell><cell> <m>1.5</m> </cell><cell> <m>1.9</m> </cell><cell> <m>1.99</m> </cell><cell> <m>1.999</m> </cell><cell> <m>\circ</m> </cell><cell> <m>2.001</m> </cell><cell> <m>2.01</m>  </cell><cell> <m>2.1</m> </cell><cell> <m>2.5</m> </cell><cell> <m>3</m> </cell>
@@ -136,7 +136,7 @@ In this example, let us fix <m>(x_0,y_0)</m> to be the point <m>(2,4)</m> on the
 <cell><m>\tfrac{y_1-y_0}{x_1-x_0}=\tfrac{y_1-4}{x_1-2}\!</m> </cell><cell>  <m>3</m> </cell><cell> <m>3.5</m> </cell><cell> <m>3.9</m> </cell><cell> <m>3.99</m> </cell><cell> <m>3.999</m> </cell><cell> <m>\circ</m> </cell><cell> <m>4.001</m> </cell><cell> <m>4.01</m>  </cell><cell> <m>4.1</m> </cell><cell> <m>4.5</m> </cell><cell> <m>5</m> </cell>
 </row>
 </tabular>
-</sidebyside>
+</p>
 
 </li>
 <li>

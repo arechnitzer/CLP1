@@ -75,13 +75,13 @@ Match each function graphed below to its <em>derivative</em> from the list. (For
 <hint><p>
 For each of the graphs, consider where the derivative is positive, negative, and zero.
 </p></hint>
-<answer><p>
-<m>\textcolor{green}{A'(x)=l(x)} \qquad \textcolor{blue}{B'(x)=p(x)}
-\qquad
-\textcolor{red}{C'(x)=n(x)}
-\qquad
-\textcolor{orange}{D'(x)=o(x)}\qquad \textcolor{purple}{E'(x)=m(x)}</m>
-</p></answer>
+<answer>
+  <p><m>\textcolor{green}{A'(x)=l(x)}</m></p>
+<p><m>\textcolor{blue}{B'(x)=p(x)}</m></p>
+<p><m>\textcolor{red}{C'(x)=n(x)}</m></p>
+<p><m>\textcolor{orange}{D'(x)=o(x)}</m></p>
+<p><m>\textcolor{purple}{E'(x)=m(x)}</m></p>
+</answer>
 <solution><p>
 Functions <m>A(x)</m> and <m>B(x)</m> share something in common that sets them apart from the others: they have a horizontal tangent line only once. In particular, <m>A'(-2) \neq 0</m> and <m>B'(2) \neq 0</m>. The only listed functions that do not have two distinct roots are <m>l(x)</m> and <m>p(x)</m>. Since <m>l(-2) \neq 0</m> and <m>p(2) \neq 0</m>, we conclude
 <me>

@@ -10,12 +10,15 @@
 <exercise purpose="RQS">
 <statement><p>
 Match the curves in the graph to the following functions:
-<me>
- (a)\;\; y=\left(\frac{1}{2}\right)^x
- \qquad (b)\;\; y=1^x
- \qquad (c)\;\; y=2^x
- \qquad (d)\;\; y=2^{-x}
- \qquad (e)\;\; y=3^x  </me>
+<md>
+  <mrow> \amp (a)\;\; y=\left(\frac{1}{2}\right)^x
+  \qquad (b)\;\; y=1^x
+  \qquad (c)\;\; y=2^x
+   </mrow>
+  <mrow>\amp (d)\;\; y=2^{-x}
+  \qquad (e)\;\; y=3^x
+  </mrow>
+</md>
 </p>
 
 <sidebyside>
@@ -46,14 +49,16 @@ Match the curves in the graph to the following functions:
 <exercise purpose="RQS">
 <statement><p>
 The graph below shows an exponential function <m>f(x)=a^x</m>  and its derivative <m>f'(x)</m>. Choose all the options that describe the  constant <m>a</m>.
-<me>
-(a)\;\; a \lt 0
-\qquad(b)\;\;a \gt 0
-\qquad\qquad(c)\;\;a \lt 1
-\qquad(d)\;\;a \gt 1
-\qquad\qquad(e)\;\; a \lt e
-\qquad(f)\;\; a \gt e
-</me>
+<md>
+  <mrow> \amp (a)\;\; a \lt 0
+  \qquad(b)\;\;a \gt 0
+  \qquad(c)\;\;a \lt 1
+</mrow>
+  <mrow> \amp (d)\;\;a \gt 1
+  \qquad(e)\;\; a \lt e
+  \qquad(f)\;\; a \gt e
+  </mrow>
+</md>
 </p>
 
 <sidebyside>
@@ -308,12 +313,16 @@ Using the product rule,
 <exercise purpose="RQS">
 <statement><p>
 Which of the following functions describe a straight line?
-<me>
-(a)\;\;y=e^{3\log x}+1
+<md>
+<mrow>
+\amp (a)\;\;y=e^{3\log x}+1
 \qquad (b)\;\; 2y+5=e^{3+\log x}
-\qquad (c)\;\; y=e^{2x}+4
+</mrow>
+<mrow>
+\amp (c)\;\; y=e^{2x}+4
 \qquad (d)\;\; y=e^{\log x}3^e+\log 2
-</me>
+</mrow>
+</md>
 </p>
 
 </statement>

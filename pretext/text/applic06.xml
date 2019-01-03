@@ -1477,10 +1477,10 @@ f''(x)&amp;=-4\diff{}{x}
            \frac{1}{x^{\frac{1}{3}}}
          -\frac{1}{3} {\left(\frac{1}{x-6}\right)}^{\frac{5}{3}}
            \frac{1}{x^{\frac{4}{3}}}\right]
-</mrow><mrow>[0.1in]
+</mrow><mrow>
 &amp;=\frac{4}{3} {\left(\frac{1}{x-6}\right)}^{\frac{8}{3}}
             \frac{1}{x^{\frac{4}{3}}}\ \left[5x +(x-6)\right]
-</mrow><mrow>[0.1in]
+</mrow><mrow>
 &amp;=8 {\left(\frac{1}{x-6}\right)}^{\frac{8}{3}}
             \frac{1}{x^{\frac{4}{3}}}\ \left[x-1\right]
 </mrow>

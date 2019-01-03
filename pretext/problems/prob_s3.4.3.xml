@@ -505,18 +505,21 @@ Group the expressions below into collections of equivalent expressions.
 <hint><p>
 Be wary of indices: for example <m>\ds\sum_{n=1}^3 n = \ds\sum_{n=5}^7 (n-4)</m>.
 </p></hint>
-<answer><p> [<xref ref="s3_4_3equiv1"/>=<xref ref="s3_4_3equiv2"/>=
-<xref ref="s3_4_3equiv3"/>], and
-[<xref ref="s3_4_3equiv5"/>=<xref ref="s3_4_3equiv6"/>], and
-[<xref ref="s3_4_3equiv7"/>=<xref ref="s3_4_3equiv10"/>]
-</p></answer>
+<answer>
+  <p>[<xref ref="s3_4_3equiv1"/>=<xref ref="s3_4_3equiv2"/>=<xref ref="s3_4_3equiv3"/>], </p>
+<p>[<xref ref="s3_4_3equiv5"/>=<xref ref="s3_4_3equiv6"/>], and</p>
+<p>[<xref ref="s3_4_3equiv7"/>=<xref ref="s3_4_3equiv10"/>]</p>
+</answer>
 <solution><p>
 <ul>
 <li><p> First, we'll show that <xref ref="s3_4_3equiv1"/>,<xref ref="s3_4_3equiv2"/>, <xref ref="s3_4_3equiv3"/> are equivalent:
 <md>
 <mrow>
 <xref ref="s3_4_3equiv2"/>&amp;=2\sum_{n=1}^{10} n = 2(1+2+\cdots+10)=
-2(1)+2(2)+\cdots +2(10)=\sum_{n=1}^{10} 2n = <xref ref="s3_4_3equiv1"/>
+2(1)+2(2)+\cdots +2(10)
+</mrow>
+<mrow>
+  \amp =\sum_{n=1}^{10} 2n = <xref ref="s3_4_3equiv1"/>
 </mrow>
 <intertext>So <xref ref="s3_4_3equiv1"/> and <xref ref="s3_4_3equiv2"/> are equivalent.</intertext>
 <mrow>
@@ -532,6 +535,9 @@ So <xref ref="s3_4_3equiv3"/> and <xref ref="s3_4_3equiv2"/> are equivalent.
 <xref ref="s3_4_3equiv6"/>&amp;=\dfrac{1}{4}\ds\sum_{n=1}^{10}\left( \frac{4^{n+1}}{2^n}\right)
 =\frac{1}{4}\sum_{n=1}^{10}\left(\frac{4\cdot4^n}{2^n}\right)
 =\frac{4}{4}\sum_{n=1}^{10}\left(\frac{4^n}{2^n}\right)
+</mrow>
+<mrow>
+  \amp
 =\sum_{n=1}^{10}\left(\frac{4}{2}\right)^n
 =\sum_{n=1}^{10} 2^n=<xref ref="s3_4_3equiv5"/>&amp;
 </mrow>

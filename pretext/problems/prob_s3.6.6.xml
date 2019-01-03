@@ -67,7 +67,7 @@ f'(x)=\sqrt{3-x}-\frac{x}{2\sqrt{3-x}}
 <p>For every <m>x</m> in the domain of <m>f'(x)</m>, the denominator is positive, so the sign of <m>f'(x)</m> depends only on the numerator.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m>  </cell><cell> <m>(-\infty,2)</m> </cell><cell><m>2</m> </cell><cell> <m>(2,3)</m> </cell><cell> <m>3</m> </cell>
@@ -77,7 +77,8 @@ f'(x)=\sqrt{3-x}-\frac{x}{2\sqrt{3-x}}
 <cell><m>f(x)</m> </cell><cell> increasing </cell><cell> maximum </cell><cell> decreasing </cell><cell> endpoint </cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
+
 <p>So, <m>f</m> is increasing for <m>x \lt 2</m>, has a local (in fact global) maximum at <m>x=2</m>,
 and is decreasing for <m>2 \lt x \lt 3</m>.
 </p>
@@ -199,7 +200,7 @@ f'(x)=-\frac{1}{x^2}+\frac{8}{x^5}=\frac{8-x^3}{x^5}</me>
 <p>The derivative is undefined at <m>x=0</m>, as is the function.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m>  </cell><cell> <m>(-\infty,0)</m> </cell><cell><m>0</m> </cell><cell> <m>(0,2)</m> </cell><cell> <m>2</m></cell><cell><m>(2,\infty)</m> </cell>
@@ -209,7 +210,7 @@ f'(x)=-\frac{1}{x^2}+\frac{8}{x^5}=\frac{8-x^3}{x^5}</me>
 <cell><m>f(x)</m> </cell><cell> decreasing </cell><cell> vertical asymptote </cell><cell> increasing </cell><cell>local max </cell><cell> decreasing</cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 
 <p>Since the function changes from increasing to decreasing at <m>x=2</m>, the only local maximum is at <m>x=2</m>.
 </p>
@@ -355,7 +356,7 @@ x=0 \qquad &amp;\mbox{or} \qquad x=-\sqrt[3]{4}\approx-1.6
 The denominator of <m>f'(x)</m> is never negative, so the sign of <m>f'(x)</m> is the same as the sign of its numerator, <m>x^3(4+x^3)</m>.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m>  </cell><cell> <m>(-\infty,-\sqrt[3]{4})</m> </cell><cell><m>-\sqrt[3]{4}</m> </cell><cell> <m>(-\sqrt[3]{4},-1)</m> </cell><cell> <m>-1</m> </cell><cell><m>(-1,0)</m>
@@ -366,7 +367,7 @@ The denominator of <m>f'(x)</m> is never negative, so the sign of <m>f'(x)</m> i
 <cell><m>f(x)</m> </cell><cell> increasing </cell><cell> l. max</cell><cell>decreasing</cell><cell>VA </cell><cell>decreasing</cell><cell>l. min</cell><cell>increasing</cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 <p>Now, we have enough information to make a skeleton of our graph.</p>
 
 <sidebyside>
@@ -395,7 +396,7 @@ The denominator of <m>f'(x)</m> is never negative, so the sign of <m>f'(x)</m> i
 That is, at <m>x=\root 3\of 2\approx 1.3</m> and <m>x=0</m>.  Notice that the sign of <m>f''(x)</m> does not change at <m>x=0</m>, so <m>x=0</m> is not an inflection point.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m>  </cell><cell> <m>(-\infty,-1)</m> </cell><cell><m>-1</m> </cell><cell> <m>(-1,0)</m> </cell><cell> <m>0</m> </cell><cell><m>(0,\sqrt[3]{2})</m>
@@ -406,7 +407,7 @@ That is, at <m>x=\root 3\of 2\approx 1.3</m> and <m>x=0</m>.  Notice that the si
 <cell><m>f(x)</m> </cell><cell> concave down </cell><cell> VA</cell><cell>concave up</cell><cell></cell><cell>concave up</cell><cell>IP</cell><cell>concave down</cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 <p>Now we can refine our skeleton by adding concavity.</p>
 
 <sidebyside>
@@ -554,7 +555,7 @@ x=0\qquad&amp;\mbox{or}\qquad x=\pm\sqrt{3}\approx\pm 1.7
 <p>Notice the sign of <m>f'(x)</m> is the same as the sign of <m>3-x^2</m>.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m>  </cell><cell> <m>(-\infty,-\sqrt{3})</m> </cell><cell><m>-\sqrt{3}</m></cell><cell><m>(-\sqrt 3,-1)</m></cell><cell><m>-1</m></cell>
@@ -564,9 +565,9 @@ x=0\qquad&amp;\mbox{or}\qquad x=\pm\sqrt{3}\approx\pm 1.7
 <cell><m>f(x)</m> </cell><cell> decreasing</cell><cell>local min</cell><cell>increasing</cell><cell>VA</cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m>  </cell><cell> <m>(-1,0)</m> </cell><cell><m>0</m></cell><cell><m>(0,\sqrt 3)</m></cell><cell><m>\sqrt{3}</m></cell><cell><m>(\sqrt{3},\infty)</m></cell>
@@ -575,7 +576,7 @@ x=0\qquad&amp;\mbox{or}\qquad x=\pm\sqrt{3}\approx\pm 1.7
 </row><row>
 <cell><m>f(x)</m> </cell><cell>increasing </cell><cell> </cell><cell> increasing </cell><cell> local max </cell><cell> decreasing </cell>
 </row></tabular>
-</sidebyside>
+</table>
 
 <p>Now we have enough information to sketch a skeleton of <m>f(x)</m>.
 </p>
@@ -618,7 +619,7 @@ f''(x)=\frac{2x(3+x^2)}{(1-x^2)^3}</me>
 <p>The second derivative is zero when <m>x=0</m>, and is undefined when <m>x=\pm 1</m>.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m>  </cell><cell> <m>(-\infty,-1)</m> </cell><cell><m>(-1,0)</m></cell><cell>0</cell><cell><m>(0,1)</m></cell><cell><m>(1,\infty)</m></cell>
@@ -627,7 +628,7 @@ f''(x)=\frac{2x(3+x^2)}{(1-x^2)^3}</me>
 </row><row>
 <cell><m>f(x)</m> </cell><cell> concave up</cell><cell>concave down</cell><cell>inflection point</cell><cell>concave up</cell><cell>concave down</cell>
 </row></tabular>
-</sidebyside>
+</table>
 
 <p>Now, we can refine our skeleton.</p>
 
@@ -809,7 +810,7 @@ DNE&amp;x=0
 <p>i.
 The only singular point is <m>x=0</m>, and the only critical point is <m>x=1</m>. (When you're reading off the expression for <m>f'(x)</m>, remember that the bottom line only applies when <m>x \gt 0</m>.)</p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>(-\infty,0)</m></cell><cell><m>0</m></cell><cell><m>(0,1)</m></cell><cell>1</cell><cell><m>(1,\infty)</m></cell>
@@ -819,7 +820,7 @@ The only singular point is <m>x=0</m>, and the only critical point is <m>x=1</m>
 <cell><m>f(x)</m></cell><cell>increasing</cell><cell>local max</cell><cell>decreasing</cell><cell>local min</cell><cell>increasing</cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 
 <p> The coordinates of the local maximum are <m>(0,1)</m>
 and the coordinates of the local minimum are <m>\left(1,\frac{2}{3}\right)</m>.
@@ -914,7 +915,7 @@ In the problem statement, we are told:
  <m>x=\frac{1}{2},\ -1</m>.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>(-\infty,-1)</m></cell><cell><m>-1</m></cell><cell><m>(-1,\frac{1}{2})</m></cell><cell><m>\frac{1}{2}</m></cell><cell><m>(\frac{1}{2},\infty)</m></cell>
@@ -923,7 +924,7 @@ In the problem statement, we are told:
 </row><row>
 <cell><m>f(x)</m></cell><cell>decreasing</cell><cell>local min</cell><cell>increasing</cell><cell>local max</cell><cell>decreasing</cell>
 </row></tabular>
-</sidebyside>
+</table>
 
 <p>At these critical points, <m>f\big(\frac{1}{2}\big)=2e^{-1/4} \gt 0</m> and <m>f(-1)=-e^{-1} \lt 0</m>.
 </p>
@@ -1033,7 +1034,7 @@ solid dots are extrema.</p>
 <p>Since <m>e^{-x^2/2}</m> is always positive, the sign of <m>f'(x)</m> is the same as the sign of <m>1-x^2</m>. <m>f(x)</m> has no singular points and its only critical points are <m>x=\pm 1</m>. At these critical points, <m>f(-1)=-\dfrac{1}{\sqrt{e}}</m> and <m>f(1)=\dfrac{1}{\sqrt{e}}</m>.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>(-\infty,-1)</m></cell><cell><m>-1</m></cell><cell><m>(-1,1)</m></cell><cell><m>1</m></cell><cell><m>(1,\infty)</m></cell>
@@ -1042,7 +1043,7 @@ solid dots are extrema.</p>
 </row><row>
 <cell><m>f(x)</m></cell><cell>decreasing</cell><cell>local min</cell><cell>increasing</cell><cell>local max</cell><cell>decreasing</cell>
 </row></tabular>
-</sidebyside>
+</table>
 
 <p> This, together with the observations that <m>f(x) \lt 0</m> for <m>x \lt 0</m>,
           <m>f(0)=0</m> and <m>f(x) \gt 0</m> for <m>x \gt 0</m> (in fact <m>f</m> is an odd function),
@@ -1065,7 +1066,7 @@ solid dots are extrema.</p>
 <p>We can factor <m>f''(x) = (x^3-3x)e^{-x^2/2}=x(x+\sqrt{3})(x-\sqrt{3})e^{-x^2/2}</m>. Since <m>e^{-x^2/2}</m> is always positive, the sign of <m>f''(x)</m> is the same as the sign of <m>x(x+\sqrt{3})(x-\sqrt{3})</m>.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>(-\infty,-\sqrt{3})</m></cell><cell><m>-\sqrt{3}</m></cell><cell><m>(-\sqrt{3},0)</m>
@@ -1076,7 +1077,7 @@ solid dots are extrema.</p>
 </row><row>
 <cell><m>f(x)</m></cell><cell>concave down</cell><cell>IP</cell><cell>concave up</cell><cell>IP</cell><cell>concave down</cell><cell>IP</cell><cell>concave up</cell>
 </row></tabular>
-</sidebyside>
+</table>
 
 <p> <xref ref="s3_62009_3"/> We've already seen that <m>f(x)</m> has a local min at <m>x=-1</m> and a local max at <m>x=1</m>.
 </p>
@@ -1174,7 +1175,7 @@ For instance, <m>f(x)</m> has critical points at <m>x=\dfrac{2\pi}{3}</m>, <m>x=
 
 <p>From  the  unit circle, or the graph of <m>y=1+2\cos x</m>, we see:</p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>\left(-\frac{2\pi}{3},\frac{2\pi}{3}\right)</m></cell><cell><m>\frac{2\pi}{3}</m></cell><cell><m>\left(\frac{2\pi}{3},\frac{4\pi}{3}\right)</m>
@@ -1185,7 +1186,7 @@ For instance, <m>f(x)</m> has critical points at <m>x=\dfrac{2\pi}{3}</m>, <m>x=
 </row><row>
 <cell><m>f(x)</m></cell><cell>increasing</cell><cell>l. max </cell><cell> decreasing </cell><cell> l. min</cell><cell>increasing</cell><cell>l. max </cell><cell> decreasing</cell>
 </row></tabular>
-</sidebyside>
+</table>
 
 <p> We have enough information to sketch a skeleton of the curve <m>y=f(x)</m>. We use the pattern above for the graph to the right of the <m>y</m>-axis, and use odd symmetry for the graph to the left of the <m>y</m>-axis.</p>
 
@@ -1222,7 +1223,7 @@ f''(x)=-2\sin x</me>
 
 <p>So, <m>f''(x)</m> exists everywhere, and is zero for <m>x=\pi+\pi n</m> for every integer <m>n</m>.</p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>\left(0,\pi\right)</m></cell><cell><m>\pi</m></cell><cell><m>\left(\pi,2\pi\right)</m>
@@ -1233,7 +1234,7 @@ f''(x)=-2\sin x</me>
 </row><row>
 <cell><m>f(x)</m></cell><cell>concave down </cell><cell> IP </cell><cell> concave up </cell><cell> IP </cell><cell> concave down </cell><cell> IP </cell><cell> concave up</cell>
 </row></tabular>
-</sidebyside>
+</table>
 
 <p>Using these values, and the odd symmetry of <m>f(x)</m>, we can refine our skeleton. The closed dots are local extrema, and the open dots are inflection points occurring at every integer multiple of <m>\pi</m>.</p>
 
@@ -1328,7 +1329,7 @@ The graph has the following features.
 and when <m>\sin x =-\dfrac{1}{2}</m>, i.e. <m>x=-\dfrac{\pi}{6}, -\dfrac{5\pi}{6}</m>.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>(-\pi,-\frac{5\pi}{6})</m></cell><cell><m>\left(-\frac{5\pi}{6},-\frac{\pi}{2}\right)</m></cell><cell>
@@ -1341,7 +1342,7 @@ and when <m>\sin x =-\dfrac{1}{2}</m>, i.e. <m>x=-\dfrac{\pi}{6}, -\dfrac{5\pi}{
 </row><row>
 <cell><m>f(x)</m></cell><cell>decreasing</cell><cell>increasing</cell><cell>decreasing</cell><cell>increasing</cell><cell>decreasing</cell>
 </row></tabular>
-</sidebyside>
+</table>
 
 <p> This tells us local maxima occur at <m>x=\pm\dfrac{\pi}{2}</m> and local minima occur at
 <m>x=-\dfrac{5\pi}{6}</m> and <m>x=-\dfrac{\pi}{6}</m>.
@@ -1349,7 +1350,7 @@ and when <m>\sin x =-\dfrac{1}{2}</m>, i.e. <m>x=-\dfrac{\pi}{6}, -\dfrac{5\pi}{
 
 <p>Here is a table giving the value of <m>f</m> at each of its critical
 points.</p>
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell>
@@ -1380,7 +1381,7 @@ points.</p>
 <cell><m>6</m></cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 
 
 <p>From here, we can graph a skeleton of of <m>f(x)</m>:</p>
@@ -1586,7 +1587,7 @@ f'(x)=\dfrac{-(x+2)}{3x^{5/3}(x+1)^{2/3}}</me>
 <p>There is a singular point at <m>x=-1</m> and a critical point at <m>x=-2</m>, in addition to a discontinuity at <m>x=0</m>. Note that <m>(x+1)^{2/3}=\left(\sqrt[3]{x+1}\right)^2</m>, which is never negative. Note also that <m>\ds\lim_{x \to -1}f'(x)=\infty</m>, so <m>f(x)</m> has a vertical tangent line at <m>x=-1</m>.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>(-\infty,-2)</m></cell><cell><m>-2</m></cell><cell><m>(-2,-1)</m></cell><cell><m>-1</m></cell><cell><m>(-1,0)</m></cell><cell>0</cell><cell><m>(0,\infty)</m>
@@ -1597,7 +1598,7 @@ f'(x)=\dfrac{-(x+2)}{3x^{5/3}(x+1)^{2/3}}</me>
 <cell><m>f(x)</m></cell><cell>decreasing</cell><cell>l. min</cell><cell>increasing</cell><cell>vertical</cell><cell>increasing</cell><cell>VA</cell><cell>decreasing</cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 
 <p>This gives us enough information to sketch a skeleton of the curve.</p>
 
@@ -1621,7 +1622,7 @@ f''(x)=\dfrac{4x^2+16x+10}{9x^{8/3}(x+1)^{5/3}}</me>
 <p>We still have a discontinuity at <m>x=0</m>, and <m>f''(x)</m> does not exist at <m>x=-1</m>. The second derivative is zero when <m>4x^2+16x+10=0</m>. Using the quadratic formula, we find this occurs when <m>x=-2\pm\sqrt{1.5} \approx -0.8,-3.2</m>. Note <m>x^{8/3}=\left(\sqrt[3]{x}\right)^8</m> is never negative.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>\left(-\infty,-2-\sqrt{1.5}\right)</m></cell><cell><m>-2-\sqrt{1.5}</m></cell><cell><m>(-2-\sqrt{1.5},-1)</m></cell><cell>
@@ -1632,10 +1633,10 @@ f''(x)=\dfrac{4x^2+16x+10}{9x^{8/3}(x+1)^{5/3}}</me>
 </row><row>
 <cell><m>f(x)</m></cell><cell>concave down</cell><cell>IP</cell><cell>concave up</cell><cell>IP</cell>
 </row></tabular>
-</sidebyside>
+</table>
 
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>(-1,-2+\sqrt{1.5})</m></cell><cell><m>-2+\sqrt{1.5}</m></cell><cell><m>(-2+\sqrt{1.5},0)</m>
@@ -1646,7 +1647,7 @@ f''(x)=\dfrac{4x^2+16x+10}{9x^{8/3}(x+1)^{5/3}}</me>
 <cell><m>f(x)</m></cell><cell>concave down</cell><cell>IP</cell><cell>concave up</cell><cell>concave up</cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 
 <p>Now, we can refine our skeleton. The closed dot is the local minimum, and the open dots are inflection points.</p>
 <sidebyside>
@@ -1778,7 +1779,7 @@ f'(x)=Kx(2-x)e^{-x}</me>
 
 <p>The critical points of <m>f(x)</m> are <m>x=0</m> and <m>x=2</m>, and there are no singular points. Recall <m>e^{-x}</m> is always positive, and <m>K</m> is a positive constant.</p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>(-\infty,0)</m></cell><cell>0</cell><cell><m>(0,2)</m></cell><cell>2</cell><cell><m>(2,\infty)</m></cell>
@@ -1788,7 +1789,7 @@ f'(x)=Kx(2-x)e^{-x}</me>
 <cell><m>f(x)</m></cell><cell> decreasing </cell><cell> local min </cell><cell> increasing </cell><cell> local max </cell><cell> decreasing</cell>
 </row>
 </tabular>
-</sidebyside>
+</table>
 
 <p>So, <m>f(0)=0</m> is a local minimum, and <m>f(2)=2</m> is a local maximum.
 </p>
@@ -1830,7 +1831,7 @@ where the last line can be found using the quadratic equation. So,
 <m>f''(x)=0</m>  for <m>x=2\pm\sqrt{2}</m>, and <m>f''(x)</m> exists everywhere.
 </p>
 
-<sidebyside>
+<table>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m></cell><cell><m>(-\infty,2-\sqrt{2})</m></cell><cell><m>2-\sqrt{2}</m></cell><cell><m>(2-\sqrt{2},2+\sqrt{2})</m></cell><cell><m>2+\sqrt 2</m></cell><cell><m>(2+\sqrt 2,\infty)</m></cell>
@@ -1839,7 +1840,7 @@ where the last line can be found using the quadratic equation. So,
 </row><row>
 <cell><m>f(x)</m></cell><cell> concave up </cell><cell> IP </cell><cell> concave down </cell><cell> IP </cell><cell> concave up</cell>
 </row></tabular>
-</sidebyside>
+</table>
 <p>Now, we can add concavity to our sketch. </p>
 
 <sidebyside>

@@ -620,7 +620,7 @@ In summary:
 <subsection><title>Where is the derivative undefined?</title>
 
 <p>
-According to Definition <xref ref="def_DIFFderiv"/>, the derivative <m>f'(a)</m> exists precisely when the limit   <m>\lim\limits_{x\rightarrow a} \frac{f(x)-f(a)}{x-a}</m> exists. That limit is also the slope of the tangent line to the curve <m>y=f(x)</m> at <m>x=a</m>. That limit does not exist when the curve <m>y=f(x)</m> does not have a tangent line at <m>x=a</m> or when the curve does have a tangent line, but the tangent line has infinite slope. We have already seen some examples of this.
+According to Definition <xref ref="def_DIFFderiv"/>, the derivative <m>f'(a)</m> exists precisely when the limit   <m>\lim\limits_{x\rightarrow a} \dfrac{f(x)-f(a)}{x-a}</m> exists. That limit is also the slope of the tangent line to the curve <m>y=f(x)</m> at <m>x=a</m>. That limit does not exist when the curve <m>y=f(x)</m> does not have a tangent line at <m>x=a</m> or when the curve does have a tangent line, but the tangent line has infinite slope. We have already seen some examples of this.
 <ul>
 <li>
 	In Example <xref ref="eg_DIFFderivXm1"/>, we considered the  function <m>f(x)=\frac{1}{x}</m>. This function <q>blows up</q> (i.e.  becomes infinite) at <m>x=0</m>. It does not have a tangent line at  <m>x=0</m> and its derivative does not exist at <m>x=0</m>.

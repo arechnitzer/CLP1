@@ -5,7 +5,6 @@
 <!-- use clp style files  -->
 <xsl:import href="latex/pretext-latex-CLP.xsl" />
 
-
 <!-- set font size and page geometry  -->
 <xsl:param name="latex.font.size" select="'12pt'" />
 <xsl:param name="latex.geometry" select="'letterpaper,left=3cm,right=3cm,top=2.5cm,bottom=2cm'"/>

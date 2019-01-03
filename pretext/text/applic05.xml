@@ -976,8 +976,9 @@ maximised when <m>x = x_- = \frac{5 - \sqrt{7}}{2}</m>.
 </li>
 <li> Notice that since <m>0  \lt  x_-  \lt 3</m> we know that the other lengths are positive, so our
 answer makes sense. Further, the question only asks for the length <m>x</m> and not the
-resulting volume so we have answered the question.
+resulting volume.
 </li>
+<li>Because of this we have answered the question.</li>
 </ul>
 </p>
 </example>

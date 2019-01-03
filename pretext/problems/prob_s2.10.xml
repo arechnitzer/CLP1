@@ -86,8 +86,14 @@ that gives <m>A(t)=2000</m>:
 <exercise purpose="RQS">
 <statement><p>
 Which of the following expressions, if any, is equivalent to <m>\log\left(\cos^2 x\right)</m>?
-<me>
-(\mbox{a})\quad 2\log(\cos x) \qquad (\mbox{b})\quad 2\log|\cos x | \qquad (\mbox{c})\quad \log^2(\cos x) \qquad (\mbox{d})\quad \log(\cos x^2))</me>
+<md>
+<mrow>
+(\mbox{a})\quad 2\log(\cos x) \qquad (\mbox{b})\quad 2\log|\cos x |
+</mrow>
+<mrow>
+  (\mbox{c})\quad \log^2(\cos x) \qquad (\mbox{d})\quad \log(\cos x^2))
+</mrow>
+</md>
 </p>
 
 </statement>

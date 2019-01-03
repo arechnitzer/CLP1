@@ -153,11 +153,11 @@ y''(x) &amp;= 2\frac{3x+ \frac{y(x)+3x^2}{1-x-3y(x)^2}
 <mrow>
 y''(x) &amp;= \frac{[y'(x)+6x][1-x-3y(x)^2]-
            [y(x)+3x^2][-1-6y(x)y'(x)]}{{[1-x-3y(x)^2]}^2}
-</mrow><mrow>[0.05in]
+</mrow><mrow>
 &amp;= \frac{[\frac{y(x)+3x^2}{1-x-3y(x)^2}+6x][1-x-3y(x)^2]-
            [y(x)+3x^2][-1-6y(x)\frac{y(x)+3x^2}{1-x-3y(x)^2}]}
                                        {{[1-x-3y(x)^2]}^2}
-</mrow><mrow>[0.05in]
+</mrow><mrow>
 &amp;= \frac{2[y(x)+3x^2][1-x-3y(x)^2]+6x{[1-x-3y(x)^2]}^2
            +6y(x){[y(x)+3x^2]}^2}
                                        {{[1-x-3y(x)^2]}^3}

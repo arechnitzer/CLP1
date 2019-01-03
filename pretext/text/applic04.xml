@@ -842,10 +842,10 @@ Substituting this into equation<nbsp/><xref ref="eq_taylorPoly"/> gives
 <md>
 <mrow>
   T_5(x)&amp;= 0 + 1\cdot (x-1)
-  + \frac{1}{2} \cdot (-1) \cdot (x-1)^2
-  + \frac{1}{6} \cdot 2 \cdot (x-1)^3
-  + \frac{1}{24} \cdot (-6) \cdot (x-1)^4
-  + \frac{1}{120} \cdot 24 \cdot (x-1)^5
+  + \frac{(-1)}{2} \cdot  (x-1)^2
+  + \frac{(2)}{6} \cdot  (x-1)^3
+  + \frac{(-6)}{24} \cdot  (x-1)^4
+  + \frac{(24)}{120} \cdot  (x-1)^5
 </mrow><mrow>
   &amp;= (x-1) - \frac{1}{2}(x-1)^2 + \frac{1}{3}(x-1)^3 - \frac{1}{4}(x-1)^4 +
 \frac{1}{5}(x-1)^5
