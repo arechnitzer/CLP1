@@ -14,7 +14,7 @@ expect you to memorise, but that we think you should be able to quickly derive f
 results you know.
 \end{itemize}
 
-\section{Similar triangles}\label{sec simtri}
+\section{Similar Triangles}\label{sec simtri}
 \begin{center}
  \includegraphics[height=35mm]{similar}
 \end{center}
@@ -43,7 +43,7 @@ For a right-angled triangle the length of the hypotenuse is related to the lengt
 $(\text{adjacent})^2+(\text{opposite})^2 = (\text{hypotenuse})^2$
 \end{tabular}
 \end{center}
-\section{Trigonometry --- definitions}
+\section{Trigonometry --- Definitions}
 \begin{center}
 \begin{tabular}{m{6cm}cm{8cm}}
   \includegraphics[height=4cm]{right_triangle} & \qquad&
@@ -56,7 +56,7 @@ $
 $
 \end{tabular}
 \end{center}
-\section{Radians, arcs and sectors}\label{app rad arc sec}
+\section{Radians, Arcs and Sectors}\label{app rad arc sec}
 \begin{center}
  \includegraphics[height=4cm]{radian}
 \end{center}
@@ -67,7 +67,7 @@ For a circle of radius $r$ and angle of $\theta$ radians:
 \end{itemize}
 
 
-\section{Trigonometry --- graphs}\label{app sec trig graphs}
+\section{Trigonometry --- Graphs}\label{app sec trig graphs}
 \begin{center}
 \begin{tabular}{ccc}
 $\sin \theta$ & $\cos \theta$ & $\tan \theta$
@@ -111,7 +111,7 @@ $\sin \theta$ & $\cos \theta$ & $\tan \theta$
 \end{tabular}
 \end{center}
 
-\section{Trigonometry --- special triangles}
+\section{Trigonometry --- Special Triangles}
 \begin{center}
   \includegraphics[height=4cm]{special_triangles}
 \end{center}
@@ -123,7 +123,7 @@ From the above pair of special triangles we have
 \frac{\pi}{3} &= \sqrt{3}
 \end{align*}
 
-\section{Trigonometry --- simple identities}
+\section{Trigonometry --- Simple Identities}
 \begin{itemize}
  \item Periodicity
 \begin{align*}
@@ -158,7 +158,7 @@ From the above pair of special triangles we have
 
 \end{itemize}
 
-\section{Trigonometry --- add and subtract angles}\label{sec trig add}
+\section{Trigonometry --- Add and Subtract Angles}\label{sec trig add}
 \begin{itemize}
  \item Sine
 \begin{align*}
@@ -171,11 +171,11 @@ From the above pair of special triangles we have
 
 \end{itemize}
 
-\section{Inverse trigonometric functions}\label{sec inv trig}
+\section{Inverse Trigonometric Functions}\label{sec inv trig}
 Some of you may not have studied inverse trigonometric functions in highschool, however
 we still expect you to know them by the end of the course.
 \begin{center}
-\renewcommand{\arraystretch}{2}
+\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{|c|c|c|}
 \hline
 $\arcsin x$ & $\arccos x$ & $\arctan x$\\
@@ -187,47 +187,50 @@ Range: $-\frac{\pi}{2} \leq \arcsin x \leq \frac{\pi}{2}$&
 Range: $0 \leq \arccos x \leq \pi$&
 Range: $-\frac{\pi}{2} < \arctan x < \frac{\pi}{2}$\\
 \hline
-\begin{tikzpicture}
+\begin{tikzpicture} 
 \begin{axis}[
   legend pos = north west,
-  axis x line=center, axis y line=center,
+  axis x line=center, axis y line=center, 
   xmax=1.1,xmin=-1.1, xtick={-1,1},
   ymin=-2, ymax=2,
   ytick={-1.570796327,1.570796327},
-  yticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
+  yticklabels={$-\nicefrac{\pi}{2}$, $\nicefrac{\pi}{2}$}
   ]
-\addplot[blue,domain=-1:1,samples=100] {asin(x)/180*pi};
+\addplot[blue, line width=1pt, domain=-1:1,samples=100] {asin(x)/180*pi}; 
 % \legend{$\arcsin \theta$}
 \end{axis}
 \end{tikzpicture}
 &
-\begin{tikzpicture}
+\begin{tikzpicture} 
+\useasboundingbox (0,0) rectangle (5,4.2);
 \begin{axis}[
-  axis x line=center, axis y line=center,
+  axis x line=center, axis y line=center, 
   xmax=1.1,xmin=-1.1, xtick={-1,1},
   ymin=-0.3,ymax=3.4,
   ytick={0,1.570796327,3.141592654},
-  yticklabels={0,$\frac{\pi}{2}$, $\pi$}
+  yticklabels={0,$\nicefrac{\pi}{2}$, $\pi$}
   ]
- \addplot[blue,domain=-1:1,samples=100] {acos(x)/180*pi};
+ \addplot[blue, line width=1pt, domain=-1:1,samples=100] {acos(x)/180*pi}; 
 % \legend{$\cos \theta$}
 \end{axis}
 \end{tikzpicture}
 &
-\begin{tikzpicture}
+\begin{tikzpicture} 
 \begin{axis}[
   legend pos = north west,
-  axis x line=center, axis y line=center,
+  axis x line=center, axis y line=center, 
   xmax=4.3,xmin=-4.3, xmajorticks=false,
   ymin=-2,ymax=2,
   ytick={-1.570796327,1.570796327},
   yticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
   ]
-\addplot[blue,domain=-4:4,samples=100] {atan(x)/180*pi};
+\addplot[blue, line width=1pt, domain=-4.3:4.3,samples=100] {atan(x)/180*pi}; 
 % \legend{$\tan \theta$}
 
-\addplot[line width=1pt,red] coordinates {(4.15,-1.570796327) (-4.15,-1.570796327)};
-\addplot[line width=1pt,red] coordinates {(4.15,1.570796327) (-4.15,1.570796327)};
+\addplot[line width=1pt,red] coordinates {(4.3,-1.570796327) (-0.3,-1.570796327)};
+\addplot[line width=1pt,red] coordinates {(-1.4,-1.570796327) (-4.3,-1.570796327)};
+\addplot[line width=1pt,red] coordinates {(4.3,1.570796327) (-0.3,1.570796327)};
+\addplot[line width=1pt,red] coordinates {(-0.9,1.570796327) (-4.3,1.570796327)};
 \end{axis}
 \end{tikzpicture}
 \\ \hline
@@ -238,13 +241,106 @@ Since these functions are inverses of each other we have
 \begin{align*}
   \arcsin(\sin \theta) &= \theta & -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2} \\
   \arccos(\cos \theta) &= \theta & 0 \leq \theta \leq \pi \\
-  \arctan(\tan \theta) &= \theta & -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}
+  \arctan(\tan \theta) &= \theta & -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}	
 \end{align*}
 and also
 \begin{align*}
   \sin(\arcsin x) &= x & -1 \leq x \leq 1 \\
   \cos(\arccos x) &= x & -1 \leq x \leq 1 \\
   \tan(\arctan x) &= x & \text{any real $x$}
+\end{align*}
+%The compositions of trignometric and inverse trigonometric functions are
+%\begin{align*}
+%  \sin( \arcsin x ) &= x & 
+%  \sin( \arccos x ) &= \sqrt{1-x^2} & 
+%  \sin( \arctan x ) &= \frac{x}{\sqrt{1+x^2}} \\ 
+%%
+%  \cos( \arcsin x ) &= \sqrt{1-x^2} & 
+%  \cos( \arccos x ) &= x &
+%  \cos( \arctan x ) &= \frac{1}{\sqrt{1+x^2}} \\ 
+%%
+%  \tan( \arcsin x ) &= \frac{x}{\sqrt{1-x^2}} & 
+%  \tan( \arccos x ) &= \frac{\sqrt{1-x^2}}{x} &
+%  \tan( \arctan x ) &= x 
+%\end{align*}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|}
+\hline
+$\arccsc x$ & $\arcsec x$ & $\arccot x$\\
+\hline
+Domain: $|x|\ge 1$&
+Domain: $|x|\ge 1$&
+Domain: all real numbers\\
+Range: $-\frac{\pi}{2} \leq \arccsc x \leq \frac{\pi}{2}$&
+Range: $0 \leq \arcsec x \leq \pi$&
+Range: $0 < \arccot x < \pi$\\[-0.1in]
+       $\arccsc x \ne 0$ &
+       $\arcsec x \ne \frac{\pi}{2}$ &
+        \\
+\hline
+\begin{tikzpicture} 
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center, 
+  xmax=4.3,xmin=-4.3, xtick={-1,1},
+  ymin=-2, ymax=2,
+  ytick={-1.570796327,1.570796327},
+  yticklabels={$-\frac{\pi}{2}\!\!\!$, $\frac{\pi}{2}$}
+  ]
+\addplot[blue, line width=1pt, domain=1:4.3,samples=50] {asin(1/x)/180*pi}; 
+\addplot[blue, line width=1pt, domain=-4.3:-1,samples=50] {asin(1/x)/180*pi}; 
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture} 
+\useasboundingbox (0,0) rectangle (5,4.2);
+\begin{axis}[
+  axis x line=center, axis y line=center, 
+  xmax=4.3,xmin=-4.3, xtick={-1,1},
+  ymin=-0.3,ymax=3.4,
+  ytick={0,1.570796327,3.141592654},
+  yticklabels={0,$\frac{\pi}{2}$, $\pi$}
+  ]
+ \addplot[blue, line width=1pt, domain=1:4.3,samples=100] {acos(1/x)/180*pi}; 
+ \addplot[blue, line width=1pt, domain=-4.3:-1,samples=100] {acos(1/x)/180*pi}; 
+% \legend{$\cos \theta$}
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture} 
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center, 
+  xmax=4.3,xmin=-4.3, xmajorticks=false,
+  ymin=-0.3,ymax=3.4,
+  ytick={0,1.570796327,3.141592654},
+  yticklabels={0,$\frac{\pi}{2}$, $\pi$}
+  ]
+\addplot[blue, line width=1pt, domain=-4.3:-0.01,samples=100] {atan(1/x)/180*pi + pi}; 
+\addplot[blue, line width=1pt, domain=0.01:4.3,samples=100] {atan(1/x)/180*pi}; 
+% \legend{$\tan \theta$}
+
+\addplot[line width=1pt,red] coordinates {(4.3,3.141592654) (-0.3,3.141592654)};
+\addplot[line width=1pt,red] coordinates {(-0.9,3.141592654) (-4.3,3.141592654)};
+\end{axis}
+\end{tikzpicture}
+\\ \hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+Again
+\begin{align*}
+  \arccsc(\csc \theta) &= \theta & -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2},\ \theta\ne 0 \\
+  \arcsec(\sec \theta) &= \theta & 0 \leq \theta \leq \pi,\ \theta\ne \frac{\pi}{2} \\
+  \arccot(\cot \theta) &= \theta & 0 < \theta < \pi	
+\end{align*}
+and 
+\begin{align*}
+  \csc(\arccsc x) &= x & |x|\ge 1 \\
+  \sec(\arcsec x) &= x & |x|\ge 1 \\
+  \cot(\arccot x) &= x & \text{any real $x$}
 \end{align*}
 
 \section{Areas}\label{app sec areas}
@@ -350,7 +446,7 @@ for any $q>1$, is similar.
 
 
 
-\longsection{Highschool material you should be able to derive}{You should be
+\longsection{Highschool Material You Should be Able to Derive}{You should be
 able to derive}
 \label{sec must deriv}
 \begin{itemize}
@@ -444,8 +540,8 @@ and similar expressions.
 \end{itemize}
 
 \chapter{Origin of Trig, Area and Volume Formulas}
-\section{Theorems about triangles}
-\subsection{Thales' theorem}
+\section{Theorems about Triangles}
+\subsection{Thales' Theorem}
 We want to get at right-angled triangles. A classic construction for this is to
 draw a triangle inside a circle, so that all three corners lie on the circle
 and the longest side forms the diameter of the circle. See the figure below in
@@ -488,7 +584,7 @@ We start with a right-angled triangle with sides labeled $a,b$ and $c$. Then we 
 
 
 \section{Trigonometry}
-\subsection{Angles --- radians vs degrees}\label{ssec rad deg}
+\subsection{Angles --- Radians vs Degrees}\label{ssec rad deg}
 For mathematics, and especially in calculus, it is much better to measure angles in units
 called radians rather than degrees. By definition, an arc of length $\theta$ on a circle
 of radius one subtends an angle of $\theta$ radians at the centre of the
@@ -518,7 +614,7 @@ fraction $\nicefrac{\theta}{2\pi}$ of a whole circle, we have
   A(\theta) &= \pi r^2 \cdot \frac{\theta}{2\pi} = \frac{\theta}{2} r^2
 \end{align*}
 
-\subsection{Trig function definitions}
+\subsection{Trig Function Definitions}
 The trigonometric functions are defined as ratios of the lengths of the sides of a
 right-angle triangle as shown in the left of the diagram below . These ratios depend only
 on the angle~$\theta$.
@@ -688,7 +784,7 @@ The second can then be obtained by dividing this by $\cos^2\theta$ and the third
 dividing by $\sin^2\theta$.
 
 
-\subsection{Important triangles}
+\subsection{Important Triangles}
 Computing sine and cosine is non-trivial for general angles --- we need Taylor series (or
 similar tools) to do this. However there are some special angles (usually small
 integer fractions of $\pi$) for which we can use a little geometry to help. Consider the
@@ -728,7 +824,7 @@ values
 
 
 
-\subsection{Some more simple identities}
+\subsection{Some More Simple Identities}
 Consider the figure below
 \begin{center}
  \includegraphics[height=55mm]{trig_defn4}
@@ -773,7 +869,7 @@ This implies that
 From which we can get the rules for the other four trigonometric functions.
 
 
-\subsection{Identities --- adding angles}
+\subsection{Identities --- Adding Angles}
 We wish to explain the origins of the identity
 \begin{align*}
   \sin(\alpha+\beta) &= \sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta).
@@ -845,7 +941,7 @@ The formulas for tangent are a bit more work, but
   \tan(\alpha - \beta) &=  \frac{\tan(\alpha) - \tan(\beta)}{1 + \tan(\alpha)\tan(\beta) }
 \end{align*}
 
-\subsection{Identities --- double-angle formulas}
+\subsection{Identities --- Double-angle Formulas}
 If we set $\beta=\alpha$ in the angle-addition formulas we get
 \begin{align*}
   \sin(2\alpha) &= 2\sin(\alpha)\cos(\alpha) \\
@@ -857,8 +953,8 @@ If we set $\beta=\alpha$ in the angle-addition formulas we get
 $\tan(\alpha)$}
 \end{align*}
 
-\subsection{Identities --- extras}
-\subsubsection{Sums to products}
+\subsection{Identities --- Extras}
+\subsubsection{Sums to Products}
 Consider the identities
 \begin{align*}
 \sin(\alpha+\beta) &= \sin(\alpha)\cos(\beta) + \cos(\alpha) \sin(\beta) &
@@ -881,7 +977,7 @@ This transforms a sum into a product. Similarly:
 \end{align*}
 
 
-\subsubsection{Products to sums}
+\subsubsection{Products to Sums}
 Again consider the identities
 \begin{align*}
 \sin(\alpha+\beta) &= \sin(\alpha)\cos(\beta) + \cos(\alpha) \sin(\beta) &
@@ -913,7 +1009,7 @@ Hence
 \cos(\alpha)\cos(\beta)&= \frac{\cos(\alpha-\beta) + \cos(\alpha+\beta)}{2}
 \end{align*}
 
-\longsection{Inverse trigonometric functions}{Inverse trig functions}
+\longsection{Inverse Trigonometric Functions}{Inverse Trig Functions}
 In order to construct inverse trigonometric functions we first have to
 restrict their domains so as to make them one-to-one (or injective). We do this as shown
 below
@@ -1131,7 +1227,7 @@ Completing the 9 possibilities gives:
 % \end{comment}
 
 \section{Geometry}
-\subsection{Cosine law or Law of cosines}\label{app cosine law}
+\subsection{Cosine Law or Law of Cosines}\label{app cosine law}
 The cosine law says that, if a triangle has sides of length $a$, $b$ and $c$ and
 the angle opposite the side of length $c$ is $\gamma$, then
 \begin{align*}
@@ -1160,7 +1256,7 @@ Now combining these:
 \end{align*}
 as required.
 
-\subsection{Sine law or Law of sines}
+\subsection{Sine Law or Law of Sines}
 The sine law says that, if a triangle has sides of length $a, b$ and $c$ and
 the angles opposite those sides are $\alpha$, $\beta$ and $\gamma$, then
 \begin{align*}
@@ -1183,7 +1279,7 @@ Dividing these expressions by $abc$ gives
 \end{align*}
 as required.
 
-\subsection{Where does the formula for the area of a circle come from?}
+\subsection{Where Does the Formula for the Area of a Circle Come From?}
 Typically when we come across $\pi$ for the first time it is as the ratio of the
 circumference of a circle to its diameter
 \begin{align*}
@@ -1360,7 +1456,7 @@ shown that
 Thus we cannot have $T>A$. The only possibility that remains is that $T=A$.
 
 
-\subsection{Where do these volume formulas come from?}\label{apendix volume}
+\subsection{Where Do These Volume Formulas Come From?}\label{apendix volume}
 We can establish the volumes of cones and spheres from the formula for the volume of a
 cylinder and a little work with limits and some careful summations. We first need a few
 facts.
