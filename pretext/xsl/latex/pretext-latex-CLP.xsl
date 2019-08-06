@@ -42,8 +42,8 @@ along with PreTeXt.  If not, see <http://www.gnu.org/licenses/>.
 <xsl:template name="style-default-colours">
   <xsl:text>\definecolor{colour1}{HTML}{006070}</xsl:text>
   <xsl:text>\definecolor{colour2}{HTML}{007090}</xsl:text>
-  <xsl:text>\definecolor{colour3}{HTML}{ff8822}</xsl:text>
-  <xsl:text>\definecolor{colour4}{HTML}{ff55aa}</xsl:text>
+  <xsl:text>\definecolor{colour3}{HTML}{FF8822}</xsl:text>
+  <xsl:text>\definecolor{colour4}{HTML}{FF55aa}</xsl:text>
 </xsl:template>
 
 <!-- ################### -->
