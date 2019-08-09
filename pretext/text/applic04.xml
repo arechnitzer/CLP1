@@ -1021,7 +1021,7 @@ terms in the Taylor polynomials for <m>\sin x</m> are bounded by
 <mrow>
 |x|&amp;\le 1 &amp;
 \tfrac{1}{3!}|x|^3&amp;\le\tfrac{1}{6} &amp;
-\tfrac{1}{5!}|x|^3&amp;\le\tfrac{1}{120}\approx 0.0083
+\tfrac{1}{5!}|x|^5&amp;\le\tfrac{1}{120}\approx 0.0083
 </mrow><mrow>
 \tfrac{1}{7!}|x|^7&amp;\le\tfrac{1}{7!}\approx 0.0002 &amp;
 \tfrac{1}{9!}|x|^9&amp;\le\tfrac{1}{9!}\approx 0.000003 &amp;
