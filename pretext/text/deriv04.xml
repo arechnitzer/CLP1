@@ -3,8 +3,8 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Arithmetic of derivatives - a differentiation toolbox</title>
-<subsection><title>Arithmetic of derivatives - a differentiation toolbox</title>
+<title>Arithmetic of Derivatives - a Differentiation Toolbox</title>
+<subsection><title>Arithmetic of Derivatives - a Differentiation Toolbox</title>
 
 <p>
 So far, we have evaluated derivatives only by applying  Definition <xref ref="def_DIFFderiv"/> to the function at hand and then computing the  required limits directly. It is quite obvious that as the function being  differentiated becomes even a little complicated, this procedure quickly becomes  extremely unwieldy. It is many orders of magnitude more efficient to have  access to

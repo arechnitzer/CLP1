@@ -3,8 +3,8 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xml:id="sec_DIFFTaylor" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Approximating functions near a specified point <mdash/> Taylor polynomials</title>
-<shorttitle>Taylor polynomials</shorttitle>
+<title>Approximating Functions Near a Specified Point <mdash/> Taylor Polynomials</title>
+<shorttitle>Taylor Polynomials</shorttitle>
 <introduction>
 
 <p>Suppose that you are interested in the values of some function <m>f(x)</m> for
@@ -89,7 +89,7 @@ ever improving approximations, and our starting point is the very simplest.
 
 </introduction>
 <subsection xml:id="ssec_const_approx">
-<title>Zeroth approximation <mdash/> the constant approximation</title>
+<title>Zeroth Approximation <mdash/> the Constant Approximation</title>
 
 <p>The simplest functions are those that are constants. And our
 zeroth
@@ -169,7 +169,7 @@ Note that <m>e^{0.1} = 1.105170918\dots</m>, so even this approximation isn't to
 </subsection>
 
 <subsection xml:id="ssec_first_approx">
-<title>First approximation <mdash/> the linear approximation</title>
+<title>First Approximation <mdash/> the Linear Approximation</title>
 
 <p>Our first <fn>Recall that we started counting from zero.</fn>
  approximation improves on our zeroth approximation by allowing the approximating
@@ -306,7 +306,7 @@ Notice that the true value is <m>\sqrt{4.1} = 2.024845673\dots</m>.
 </subsection>
 
 <subsection xml:id="ssec_second_approx">
-<title>Second approximation <mdash/> the quadratic approximation</title>
+<title>Second Approximation <mdash/> the Quadratic Approximation</title>
 
 <p>We next develop a still better approximation by now allowing the
 approximating function be to a quadratic function of <m>x</m>. That is,
@@ -449,7 +449,7 @@ discussion easier.
 </subsection>
 
 <subsection xml:id="ssec_sigma">
-<title>Whirlwind tour of summation notation</title>
+<title>Whirlwind Tour of Summation Notation</title>
 
 <p>In the remainder of this section we will frequently need to write sums involving a
 large number of terms. Writing out the summands explicitly can become quite
@@ -551,7 +551,7 @@ book <q>Bendable learnings: the wisdom of modern management</q> by Don Watson.</
 
 
 <subsection xml:id="ssec_taylor_poly">
-<title>Still better approximations <mdash/> Taylor polynomials</title>
+<title>Still Better Approximations <mdash/> Taylor Polynomials</title>
 
 <p>We can use the same strategy to generate still better approximations by
 polynomials
@@ -757,7 +757,7 @@ again from scratch.
 </subsection>
 
 <subsection xml:id="ssec_taylor_eg">
-<title>Some examples</title>
+<title>Some Examples</title>
 
 <p>Let us return to our running example of <m>e^x</m>:</p>
 <example xml:id="eg_taylor_e_to_the_x"><title>Taylor approximations of <m>e^x</m></title>
@@ -1037,7 +1037,7 @@ bounds on our Taylor polynomial approximations.
 </subsection>
 
 <subsection xml:id="ssec_est_change">
-<title>Estimating change and <m>\De x</m>, <m>\De y</m> notation</title>
+<title>Estimating Change and <m>\De x</m>, <m>\De y</m> Notation</title>
 
 <p>Suppose that we have two variables <m>x</m> and <m>y</m> that are related by <m>y=f(x)</m>, for some
 function <m>f</m>. One of the most important applications of calculus is to help us understand
@@ -1145,7 +1145,7 @@ which simplifies to</p>
 
 
 <subsection xml:id="ssec_taylor_more">
-<title>Further examples</title>
+<title>Further Examples</title>
 <p>In this subsection we give further examples of computation and use of Taylor
 approximations.
 </p>
@@ -1547,7 +1547,7 @@ The percentage error is then approximately
 </subsection>
 
 <subsection xml:id="ssec_taylor_error">
-<title>The error in the Taylor polynomial approximations</title>
+<title>The Error in the Taylor Polynomial Approximations</title>
 
 
 <p>Any time you make an approximation, it is desirable to have some idea
@@ -2155,7 +2155,7 @@ Hence a measurement error of <m>0.38^\circ</m> or less is acceptable.
 </subsection>
 
 <subsection xml:id="subsec_GMVT" >
-<title>(optional) <mdash/> Derivation of the error formulae</title>
+<title>(Optional) <mdash/> Derivation of the Error Formulae</title>
 
 <p>In this section we will derive the formula for the error that we gave in
 equation<nbsp/><xref ref="eq_taylorErrorN"/> <mdash/> namely

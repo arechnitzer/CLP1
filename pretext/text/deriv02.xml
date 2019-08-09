@@ -3,7 +3,7 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_def_deriv">
-<title>Definition of the derivative</title>
+<title>Definition of the Derivative</title>
 <introduction>
 
 <p>
@@ -243,7 +243,7 @@ Compute the derivative of
 
 </introduction>
 
-<subsection><title> An important point (and some notation)</title>
+<subsection><title> An Important Point (and Some Notation)</title>
 
 <p>
 Notice here that the answer we get depends on our choice of <m>a</m> <mdash/> if we want to know  the derivative at <m>a=3</m> we can just substitute <m>a=3</m> into our answer <m>2a</m> to get the  slope is 6. If we want to know at <m>a=1</m> (like at the end of Section<nbsp/><xref ref="sec_first_lim"/>)  we substitute <m>a=1</m> and get the slope is 2. The important thing here is that we can  move from the derivative being computed at a specific point to the derivative  being a function itself <mdash/> input any value of <m>a</m> and it returns the slope of  the tangent line to the curve at the point <m>x=a</m>, <m>y=h(a)</m>. The variable <m>a</m> is a  dummy variable. We can rename <m>a</m> to anything we want, like <m>x</m>, for example. So  we can replace every <m>a</m> in
@@ -407,7 +407,7 @@ D_x f(a).
 
 </subsection>
 
-<subsection><title>Back to computing some derivatives</title>
+<subsection><title>Back to Computing Some Derivatives</title>
 
 <p>
 	At this point we could try to start working out how derivatives interact with  arithmetic and make an <q>Arithmetic of derivatives</q> theorem just like the one  we saw for limits (Theorem <xref ref="thm_arith_lim"/>). We will get there  shortly, but before that it is important that we become more comfortable with  computing derivatives using limits and then understanding what the derivative actually  means. So <mdash/> more examples.
@@ -617,7 +617,7 @@ In summary:
 </example>
 
 </subsection>
-<subsection><title>Where is the derivative undefined?</title>
+<subsection><title>Where is the Derivative Undefined?</title>
 
 <p>
 According to Definition <xref ref="def_DIFFderiv"/>, the derivative <m>f'(a)</m> exists precisely when the limit   <m>\lim\limits_{x\rightarrow a} \frac{f(x)-f(a)}{x-a}</m> exists. That limit is also the slope of the tangent line to the curve <m>y=f(x)</m> at <m>x=a</m>. That limit does not exist when the curve <m>y=f(x)</m> does not have a tangent line at <m>x=a</m> or when the curve does have a tangent line, but the tangent line has infinite slope. We have already seen some examples of this.

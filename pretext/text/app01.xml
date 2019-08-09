@@ -20,7 +20,7 @@ This chapter is really split into two parts.
 </introduction>
 
 <section xml:id="sec_simtri">
-<title>Similar triangles</title>
+<title>Similar Triangles</title>
 <sidebyside width="75%">
 <image source="text/figs/similar"/>
 </sidebyside>
@@ -65,7 +65,7 @@ For a right-angled triangle the length of the hypotenuse is related to the lengt
 </section>
 
 <section>
-<title>Trigonometry <mdash/> definitions</title>
+<title>Trigonometry <mdash/> Definitions</title>
 <sidebyside width="50%">
 <image source="text/figs/right_triangle"/>
 </sidebyside>
@@ -82,7 +82,7 @@ For a right-angled triangle the length of the hypotenuse is related to the lengt
 </p>
 </section>
 
-<section xml:id="app_rad_arc_sec"><title>Radians, arcs and sectors</title>
+<section xml:id="app_rad_arc_sec"><title>Radians, Arcs and Sectors</title>
 <sidebyside width="75%">
 <image source="text/figs/radian"/>
 </sidebyside>
@@ -96,7 +96,7 @@ For a circle of radius <m>r</m> and angle of <m>\theta</m> radians:
 </section>
 
 <section xml:id="app_sec_trig_graphs">
-<title>Trigonometry <mdash/> graphs</title>
+<title>Trigonometry <mdash/> Graphs</title>
 
 <sbsgroup widths="32% 32% 32%" valign="middle">
 <sidebyside>
@@ -150,7 +150,7 @@ For a circle of radius <m>r</m> and angle of <m>\theta</m> radians:
 </section>
 
 <section>
-<title>Trigonometry <mdash/> special triangles</title>
+<title>Trigonometry <mdash/> Special Triangles</title>
 <sidebyside width="66%">
 <image source="text/figs/special_triangles"/>
 </sidebyside>
@@ -171,7 +171,7 @@ From the above pair of special triangles we have
 
 </section>
 <section>
-<title>Trigonometry <mdash/> simple identities</title>
+<title>Trigonometry <mdash/> Simple Identities</title>
 <p>
 <ul>
 <li> Periodicity
@@ -225,7 +225,7 @@ From the above pair of special triangles we have
 
 
 <section xml:id="sec_trig_add">
-<title>Trigonometry <mdash/> add and subtract angles</title>
+<title>Trigonometry <mdash/> Add and Subtract Angles</title>
 <p>
 <ul>
 <li> Sine
@@ -247,8 +247,8 @@ From the above pair of special triangles we have
 </section>
 
 <section xml:id="sec_inv_trig">
-<title>Inverse trigonometric functions</title>
-<shorttitle>Inverse trig functions</shorttitle>
+<title>Inverse Trigonometric Functions</title>
+<shorttitle>Inverse Trig Functions</shorttitle>
 <p>
 	In order to construct inverse trigonometric functions we first have to restrict their domains so as to make them one-to-one (or injective). We do this as shown below
 </p>
@@ -555,8 +555,8 @@ The graph of <m>\log_{10} x</m> is given below. The graph of  <m>\log_q x</m>, f
 </section>
 
 <section xml:id="sec_must_deriv">
-	<title>Highschool material you should be able to derive</title>
-	<shorttitle>You should be able to derive</shorttitle>
+	<title>Highschool Material You Should be Able to Derive</title>
+	<shorttitle>You Should be Able to Derive</shorttitle>
 <p>
 <ul>
 <li> Graphs of <m>\csc\theta, \sec \theta</m> and <m>\cot \theta</m>:

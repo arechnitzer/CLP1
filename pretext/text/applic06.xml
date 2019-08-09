@@ -3,7 +3,7 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_curve_sketch">
-<title>Sketching graphs</title>
+<title>Sketching Graphs</title>
 <introduction>
 <p>
 One of the most obvious applications of derivatives is to help us understand the shape of
@@ -23,7 +23,7 @@ We will then use the ideas to sketch several examples.
 </introduction>
 
 <subsection xml:id="ssec_sketch_DIA">
-<title>Domain, intercepts and asymptotes</title>
+<title>Domain, Intercepts and Asymptotes</title>
 <p>Given a function <m>f(x)</m>, there are several important features that we can determine from
 that expression before examining its derivatives.
 </p>
@@ -108,7 +108,7 @@ and smooth them out to get the a good sketch of this function (below right).</p>
 </subsection>
 
 <subsection  xml:id="ssec_sketch_FD">
-<title>First derivative <mdash/> increasing or decreasing</title>
+<title>First Derivative <mdash/> Increasing or Decreasing</title>
 <p>Now we move on to the first derivative, <m>f'(x)</m>. This is a good time to revisit the
 mean-value theorem (Theorem<nbsp/><xref ref="thm_DIFFmvt"/>) and some of its consequences
 (Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>). In particular, let us assume that <m>f(x)</m> is continuous
@@ -286,7 +286,7 @@ or maximum.
 </subsection>
 
 <subsection xml:id="ssec_sketch_SD">
-<title>Second derivative <mdash/> concavity</title>
+<title>Second Derivative <mdash/> Concavity</title>
 
 
 <p>The second derivative <m>f''(x)</m> tells us the rate at which the derivative changes. Perhaps
@@ -798,7 +798,7 @@ an example. Here is a sketch of one period</p>
 </subsection>
 
 <subsection>
-<title>A checklist for sketching</title>
+<title>A Checklist for Sketching</title>
 <introduction>
 <p>Above we have described how we can use our accumulated knowledge of derivatives
 to quickly identify the most important qualitative features of
@@ -807,7 +807,7 @@ in order to produce an accurate sketch based on properties that are easily read
 off from <m>f(x)</m>, <m>f'(x)</m> and <m>f''(x)</m>.
 </p>
 </introduction>
-<subsubsection><title>A sketching checklist</title>
+<subsubsection><title>A Sketching Checklist</title>
 <p>
 <ol label="1">
 <li><p>Features of <m>y = f(x)</m> that are read off of <m>f(x)</m>:
@@ -875,7 +875,7 @@ where <m>f'(x)=\pm\infty</m>.
 </subsection>
 
 <subsection  xml:id="ssec_sketch_SE">
-<title>Sketching examples</title>
+<title>Sketching Examples</title>
 
 <example xml:id="APPsketchA"><title>Sketch <m>f(x)=x^3-3x+1</m></title>
 
