@@ -387,7 +387,7 @@ Since the limit of the numerator is non-zero, while the limit of the  denominato
 It is <alert>IMPORTANT TO NOTE</alert> that it is not correct to write
 <md>
 <mrow>
-\lim_{x \to 2} \frac{2x-3}{x^2+5x-6}
+\lim_{x \to 1} \frac{2x-3}{x^2+5x-6}
   &amp;= \frac{-1}{0} = DNE
 </mrow>
 </md>
