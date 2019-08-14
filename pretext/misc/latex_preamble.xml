@@ -7,4 +7,5 @@
 	<package>mathrsfs</package>
 	<package>cancel</package>
 	<package>palatino</package>
+	<package>nicefrac</package>
 </latex-preamble>
