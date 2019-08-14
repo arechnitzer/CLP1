@@ -276,7 +276,7 @@ Some of you may not have studied inverse trigonometric functions in highschool, 
   xmax=1.1,xmin=-1.1, xtick={-1,1},
   ymin=-2, ymax=2,
   ytick={-1.570796327,1.570796327},
-  yticklabels={$-\nicefrac{\pi}{2}$, $\nicefrac{\pi}{2}$}
+  yticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
   ]
 \addplot[blue, line width=1pt, domain=-1:1,samples=100] {asin(x)/180*pi};
 \end{axis}
@@ -290,7 +290,7 @@ Some of you may not have studied inverse trigonometric functions in highschool, 
   xmax=1.1,xmin=-1.1, xtick={-1,1},
   ymin=-0.3,ymax=3.4,
   ytick={0,1.570796327,3.141592654},
-  yticklabels={0,$\nicefrac{\pi}{2}$, $\pi$}
+  yticklabels={0,$\frac{\pi}{2}$, $\pi$}
   ]
  \addplot[blue,domain=-1:1,samples=100] {acos(x)/180*pi};
 \end{axis}
