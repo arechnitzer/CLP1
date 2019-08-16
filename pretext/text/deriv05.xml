@@ -129,7 +129,7 @@ And so we recover the product rule.
 </p>
 </subsection>
 
-<subsection><title>(optional) <mdash/> Proof of the Quotient Rule (Theorem <xref ref="thm_DIFFquotRule"/>)</title>
+<subsection><title>(Optional) <mdash/> Proof of the Quotient Rule (Theorem <xref ref="thm_DIFFquotRule"/>)</title>
 <p>
 This one is relatively messy, so we have made it optional. Let us start by writing the  quotient of our two functions as <m>Q(x) = f(x) / g(x)</m>, and we assume that <m>g(x) \neq 0</m>.  As before, we start our manipulations from the definition of the derivative
 <md>
