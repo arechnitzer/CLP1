@@ -147,6 +147,9 @@ Since we're not trying to divide by 0, or multiply by infinity:<m>\displaystyle\
 <p>
  <m>\ds \lim_{t\to -3} \left(\frac{1-t}{\cos(t)}\right)</m>
 </p></statement>
+<hint><p>
+Is <m>\cos(-3)</m> zero?
+</p></hint>
 <answer><p>
 <m>4/\cos(3)</m>
 </p></answer>

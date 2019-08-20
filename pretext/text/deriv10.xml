@@ -3,7 +3,7 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_diff_logs">
-<title>The natural logarithm</title>
+<title>The Natural Logarithm</title>
 <introduction>
 <p>
 The chain rule opens the way to understanding derivatives of more complicated
@@ -324,7 +324,7 @@ Example<nbsp/><xref ref="eg_log_est"/>)
 </subsection>
 
 <subsection>
-<title>Logarithmic differentiation</title>
+<title>Logarithmic Differentiation</title>
 
 <p>I want to go back to some previous slightly messy examples
 (Examples<nbsp/><xref ref="eg_DIFFsimpleToolsA"/>  and<nbsp/><xref ref="eg_DIFFsimpleToolsNB"/>) and now show you how they can be done more easily.

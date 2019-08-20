@@ -3,7 +3,7 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_diff_trig">
-<title>Derivatives of trigonometric functions</title>
+<title>Derivatives of Trigonometric Functions</title>
 <introduction>
 
 <p>We are now going to compute the derivatives of the various trigonometric
@@ -42,7 +42,7 @@ function is measured in radians.
 </p>
 </introduction>
 
-<subsection><title>These proofs are optional, the results are not.</title>
+<subsection><title>These Proofs are Optional, the Results are Not.</title>
 <p>
 While we expect you to read and follow these proofs, we do not expect you to be able to
 reproduce them. You will be required to know the results, in particular
@@ -297,7 +297,7 @@ forgotten. You should also recall that <m>\sin^2\theta + \cos^2\theta =
 .
 </p>
 </introduction>
-<subsubsection><title>Method 1 <mdash/> multiply by the <q>conjugate</q></title>
+<subsubsection><title>Method 1 <mdash/> Multiply by the <q>Conjugate</q></title>
 <p>
 Start by multiplying the expression inside the limit by 1, written as
 <m>\ds \frac{\cos h + 1}{\cos h +1}</m>:
@@ -333,7 +333,7 @@ Now we can take the limit as <m>h \to 0</m> via Lemma<nbsp/><xref ref="lem_sinho
 </p>
 </subsubsection>
 
-<subsubsection><title>Method 2 <mdash/> via the double angle formula</title>
+<subsubsection><title>Method 2 <mdash/> via the Double Angle Formula</title>
 <p>
 The other way involves the double angle formula
 <fn>I hope you looked this up in in Appendix<nbsp/><xref ref="sec_must_deriv"/>. Nag.</fn>,
@@ -413,7 +413,7 @@ cosine.
 </conclusion>
 </subsection>
 <subsection><title>Step 3: <m>\diff{}{x} \{ \sin x \}</m> and <m>\diff{}{x} \{ \cos x\}</m>
-for general <m>x</m></title>
+for General <m>x</m></title>
 
 <p>To proceed to the general derivatives of <m>\sin x</m> and <m>\cos x</m>
 we are going to use the above
@@ -502,7 +502,7 @@ derivatives of the other trig functions.
 </p>
 
 </subsection>
-<subsection><title>Step 4: the remaining trigonometric functions</title>
+<subsection><title>Step 4: the Remaining Trigonometric Functions</title>
 
 <p>It is now an easy matter to get the derivatives of the remaining
 trigonometric functions using basic trig identities and the

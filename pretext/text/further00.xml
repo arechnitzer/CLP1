@@ -4,15 +4,15 @@
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Towards integral calculus</title>
+<title>Towards Integral Calculus</title>
 <introduction>
 <p>
 We have now come to the final topic of the course <mdash/> antiderivatives. This is only a  short section since it is really just to give a taste of the next calculus subject:  integral calculus.
 </p>
 </introduction>
 <section xml:id="sec_antidiff">
-<title>Introduction to antiderivatives</title>
-<subsection><title>Introduction to antiderivatives</title>
+<title>Introduction to Antiderivatives</title>
+<subsection><title>Introduction to Antiderivatives</title>
 <p>
 So far in the course we have learned how to determine the rate of change (i.e. the  derivative) of a given function. That is
 <md>

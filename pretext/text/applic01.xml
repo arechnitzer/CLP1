@@ -3,8 +3,8 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_vel_acc">
-<title>Velocity and acceleration</title>
-<subsection><title>Velocity and acceleration</title>
+<title>Velocity and Acceleration</title>
+<subsection><title>Velocity and Acceleration</title>
 
 <p>If you are moving along the <m>x</m><ndash/>axis and your position at time <m>t</m>
 is <m>x(t)</m>, then your velocity at time <m>t</m> is <m>v(t)=x'(t)</m> and your

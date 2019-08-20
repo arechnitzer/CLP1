@@ -16,7 +16,7 @@ this thing is we need some machinery; in particular we need to define what we
 mean by ``tangent'' and ``limit''. We'll get back to defining the derivative in
 Chapter~2.
 
-\section{Drawing tangents and a first limit}\label{sec first lim}
+\section{Drawing Tangents and a First Limit}\label{sec first lim}
 Our motivation for developing ``limit'' --- being the title and subject of this
 chapter --- is going to be two related problems of drawing tangent lines and
 computing velocity.
@@ -243,8 +243,8 @@ This is our first limit! Notice that we can see this a little more clearly with 
 bit of algebra:
 \begin{align*}
 \frac{(1+h)^2-1}{h} &= \frac{(1+2h+h^2)-1}{h} \\
-  &= \frac{2h+h^2}{h}
-  & (2+h)
+  &= \frac{2h+h^2}{h} \\
+  &= 2+h
 \intertext{So it is not unreasonable to expect that}
 \lim_{h \to 0} \frac{(1+h)^2-1}{h} &= \lim_{h \to 0} (2+h) = 2.
 \end{align*}
@@ -269,7 +269,7 @@ is $y=2x+c$.
 \end{itemize}
 So our tangent line is $y=2x-1$.
 
-\section{Another limit and computing velocity} \label{sec velocity}
+\section{Another Limit and Computing Velocity} \label{sec velocity}
 Computing tangent lines is all very well, but what does this have to do with
 applications or the ``Real World''? Well - at least initially our use of limits
 (and indeed of calculus) is going to be a little removed from real world
@@ -457,7 +457,7 @@ While we have solved the problem stated at the start of this section, it is
 clear that if we wish to solve similar problems that we will need to
 understand limits in a more general and systematic way.
 
-\section{The limit of a function}
+\section{The Limit of a Function}
 \label{sec lim func}
 
 Before we come to definitions, let us start with a little notation for limits.
@@ -1024,7 +1024,7 @@ aims of the course. Thankfully we can develop a more systematic approach based
 on the idea of building up complicated limits from simpler ones by examining how
 limits interact with the basic operations of arithmetic.
 
-\section{Calculating limits with limit laws}
+\section{Calculating Limits with Limit Laws}
 Think back to the functions you know and the sorts of things you have  been
 asked to draw, factor and so on. Then they are all constructed from simple
 pieces, such as
@@ -1344,7 +1344,7 @@ denominator is zero, the limit of the ratio does not exist.
 \end{eg}
 It is \textbf{IMPORTANT TO NOTE} that it is not correct to write
 \begin{align*}
-\lim_{x \to 2} \frac{2x-3}{x^2+5x-6}
+\lim_{x \to 1} \frac{2x-3}{x^2+5x-6}
   &= \frac{-1}{0} = DNE
 \end{align*}
 Because we can only write
@@ -1807,7 +1807,7 @@ In this argument our choice of $10^{-6}$ was arbitrary, so we can really replace
 Hence we know that we can force $g(x)$ as close to $L$ as we like, by bringing $x$ sufficiently close to $a$. We give
 a more formal and rigorous version of this argument at the end of Section~\ref{sec proof arith lim}.
 
-\section{Limits at infinity}
+\section{Limits at Infinity}
 Up until this point we have discussed what happens to a function as we move its input $x$
 closer and closer to a particular point $a$. For a great many applications of
 limits we need to understand what happens to a function when its input becomes
@@ -2225,7 +2225,7 @@ So if a function is continuous at $x=a$ we immediately know that
  \item $\ds \lim_{x \to a^+}$ exists and is equal to $f(a)$.
 \end{itemize}
 
-\subsection*{Quick aside --- one-sided continuity}
+\subsection*{Quick Aside --- One-sided Continuity}
 Notice in the above definition of continuity on an interval $(a,b)$ we have carefully
 avoided saying anything about whether or not the function is continuous at the endpoints
 of the interval --- i.e. is $f(x)$ continuous at $x=a$ or $x=b$. This is because talking
@@ -2283,7 +2283,7 @@ Note that the last two condition are equivalent to
 \end{align*}
 \end{defn}
 
-\subsection*{Back to the main text}
+\subsection*{Back to the Main Text}
 
 
 We already know from our work above that polynomials are continuous, and that
@@ -2838,7 +2838,7 @@ keep going until we reach the precision we need, though it is much easier to
 program a computer to do it.
 \end{eg}
 
-\section{(optional) --- Making the informal a little more formal}
+\section{(Optional) --- Making the Informal a Little More Formal}
 \label{sec opt formal limit}
 As we noted above, the definition of limits that we have been working with was
 quite informal and not mathematically rigorous. In this (optional) section we
@@ -3113,7 +3113,7 @@ This completes the proof.
 \end{proof}
 
 
-\section{(optional) --- Making infinite limits a little more formal}
+\section{(Optional) --- Making Infinite Limits a Little More Formal}
 \label{sec lim inf formal}
 For those of you who made it through the formal $\epsilon-\delta$ definition of
 limits we give the formal definition of limits at infinity:
@@ -3186,7 +3186,7 @@ This completes the proof.
 
 \end{proof}
 
-\section{(optional) --- Proving the arithmetic of limits}\label{sec proof arith lim}
+\section{(Optional) --- Proving the Arithmetic of Limits}\label{sec proof arith lim}
 
 
 Perhaps the most useful theorem of this chapter is Theorem~\ref{thm arith lim}

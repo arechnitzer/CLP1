@@ -3,8 +3,8 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>L'Hôpital's Rule and indeterminate forms</title>
-<subsection><title>L'Hôpital's Rule and indeterminate forms</title>
+<title>L'Hôpital's Rule and Indeterminate Forms</title>
+<subsection><title>L'Hôpital's Rule and Indeterminate Forms</title>
 <introduction>
 <p>Let us return to limits (Chapter<nbsp/><xref ref="chap_limits"/>) and see how we can use derivatives to
 simplify certain families of limits called indeterminate forms. We know, from
@@ -189,7 +189,7 @@ limits in the numerator and denominator exist, because they are just <m>f'(a)</m
 </proof>
 
 </introduction>
-<subsubsection><title>Optional <mdash/> proof of part (b) of l'Hôpital's rule</title>
+<subsubsection><title>Optional <mdash/> Proof of Part (b) of l'Hôpital's Rule</title>
 <p>
 To prove part (b) we must work around the possibility that <m>f'(a)</m> and <m>g'(a)</m> do not
 exist or that <m>f'(x)</m> and <m>g'(x)</m> are not continuous at <m>x=a</m>. To do this, we make use of
@@ -243,7 +243,7 @@ as required.
 </subsection>
 
 <subsection>
-<title>Standard examples</title>
+<title>Standard Examples</title>
 
 <p>Here are some simple examples using L'Hôpital's rule.</p>
 
@@ -934,7 +934,7 @@ which appeared in Example<nbsp/><xref ref="eg_lim_tricky"/>.
 </p></example>
 
 </subsubsection>
-<subsubsection><title>Optional <mdash/> proof of l'Hôpital's rule for <m>\frac\infty\infty</m></title>
+<subsubsection><title>Optional <mdash/> Proof of l'Hôpital's Rule for <m>\frac\infty\infty</m></title>
 <p>
 We can justify this generalisation of l'Hôpital's rule with some careful manipulations.
 Since the derivatives <m>f',g'</m> exist in some interval around <m>a</m>, we know that <m>f,g</m> are

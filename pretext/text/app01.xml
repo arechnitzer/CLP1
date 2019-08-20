@@ -4,7 +4,7 @@
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <appendix xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="app_highschool">
 
-<title>High school material</title>
+<title>High School Material</title>
 <introduction>
 <p>
 This chapter is really split into two parts.
@@ -20,7 +20,7 @@ This chapter is really split into two parts.
 </introduction>
 
 <section xml:id="sec_simtri">
-<title>Similar triangles</title>
+<title>Similar Triangles</title>
 <sidebyside width="75%">
 <image source="text/figs/similar"/>
 </sidebyside>
@@ -65,7 +65,7 @@ For a right-angled triangle the length of the hypotenuse is related to the lengt
 </section>
 
 <section>
-<title>Trigonometry <mdash/> definitions</title>
+<title>Trigonometry <mdash/> Definitions</title>
 <sidebyside width="50%">
 <image source="text/figs/right_triangle"/>
 </sidebyside>
@@ -82,7 +82,7 @@ For a right-angled triangle the length of the hypotenuse is related to the lengt
 </p>
 </section>
 
-<section xml:id="app_rad_arc_sec"><title>Radians, arcs and sectors</title>
+<section xml:id="app_rad_arc_sec"><title>Radians, Arcs and Sectors</title>
 <sidebyside width="75%">
 <image source="text/figs/radian"/>
 </sidebyside>
@@ -96,7 +96,7 @@ For a circle of radius <m>r</m> and angle of <m>\theta</m> radians:
 </section>
 
 <section xml:id="app_sec_trig_graphs">
-<title>Trigonometry <mdash/> graphs</title>
+<title>Trigonometry <mdash/> Graphs</title>
 
 <sbsgroup widths="32% 32% 32%" valign="middle">
 <sidebyside>
@@ -150,7 +150,7 @@ For a circle of radius <m>r</m> and angle of <m>\theta</m> radians:
 </section>
 
 <section>
-<title>Trigonometry <mdash/> special triangles</title>
+<title>Trigonometry <mdash/> Special Triangles</title>
 <sidebyside width="66%">
 <image source="text/figs/special_triangles"/>
 </sidebyside>
@@ -171,7 +171,7 @@ From the above pair of special triangles we have
 
 </section>
 <section>
-<title>Trigonometry <mdash/> simple identities</title>
+<title>Trigonometry <mdash/> Simple Identities</title>
 <p>
 <ul>
 <li> Periodicity
@@ -225,7 +225,7 @@ From the above pair of special triangles we have
 
 
 <section xml:id="sec_trig_add">
-<title>Trigonometry <mdash/> add and subtract angles</title>
+<title>Trigonometry <mdash/> Add and Subtract Angles</title>
 <p>
 <ul>
 <li> Sine
@@ -247,77 +247,11 @@ From the above pair of special triangles we have
 </section>
 
 <section xml:id="sec_inv_trig">
-<title>Inverse trigonometric functions</title>
-<shorttitle>Inverse trig functions</shorttitle>
+<title>Inverse Trigonometric Functions</title>
+<shorttitle>Inverse Trig Functions</shorttitle>
 <p>
-	In order to construct inverse trigonometric functions we first have to restrict their domains so as to make them one-to-one (or injective). We do this as shown below
+Some of you may not have studied inverse trigonometric functions in highschool, however  we still expect you to know them by the end of the course.
 </p>
-<sbsgroup widths="32% 32% 32%">
-<sidebyside>
-<p><me>\sin x</me> </p><p> <me>\cos x</me> </p><p> <me>\tan x</me></p>
-</sidebyside>
-<sidebyside>
-<p>Domain: <m>-\frac{\pi}{2} \leq \arcsin x \leq \frac{\pi}{2}</m></p>
-<p>Domain: <m>0 \leq \arccos x \leq \pi</m></p>
-<p>Domain: <m>-\frac{\pi}{2}  \lt  \arctan x  \lt  \frac{\pi}{2}</m></p>
-</sidebyside>
-<sidebyside>
-<p>Range: <m>-1 \leq x \leq 1</m></p>
-<p>Range: <m>-1 \leq x \leq 1</m></p>
-<p>Range: all real numbers</p>
-</sidebyside>
-<sidebyside>
-<image><latex-image><![CDATA[
-	\begin{tikzpicture}
-	\begin{axis}[
-	  legend pos = north west,
-	  axis x line=center, axis y line=center,
-	  ymax=1.1,ymin=-1.1, ytick={-1,1},
-	  xmin=-2, xmax=2,
-	  xtick={-1.570796327,1.570796327},
-	  xticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
-	  ]
-	\addplot[blue,domain=-0.5*pi:0.5*pi,samples=100] {sin(deg(x))};
-	% \legend{$\sin \theta$}
-	\end{axis}
-	\end{tikzpicture}
-]]></latex-image></image>
-
-<image><latex-image><![CDATA[
-	\begin{tikzpicture}
-	\begin{axis}[
-	  axis x line=center, axis y line=center,
-	  ymax=1.1,ymin=-1.1, ytick={-1,1},
-	  xmin=-0.3,xmax=3.4,
-	  xtick={0,1.570796327,3.141592654},
-	  xticklabels={0,$\frac{\pi}{2}$, $\pi$}
-	  ]
-	\addplot[blue,domain=0:pi,samples=100] {cos(deg(x))};
-	% \legend{$\cos \theta$}
-	\end{axis}
-	\end{tikzpicture}
-]]></latex-image></image>
-<image><latex-image><![CDATA[
-	\begin{tikzpicture}
-	\begin{axis}[
-	  legend pos = north west,
-	  axis x line=center, axis y line=center,
-	  ymax=4.1,ymin=-4.1, ymajorticks=false,
-	  xmin=-2,xmax=2,
-	  xtick={-1.570796327,1.570796327},
-	  xticklabels={$-\pi$, $-\frac{\pi}{2}$}
-	  ]
-	\addplot[blue,domain=-0.49*pi:0.49*pi,samples=100] {tan(deg(x))};
-	% \legend{$\tan \theta$}
-
-	\addplot[line width=1pt,red] coordinates {(-1.570796327,4.15) (-1.570796327,-4.15)};
-	\addplot[line width=1pt,red] coordinates {(1.570796327,4.15) (1.570796327,-4.15)};
-	\end{axis}
-	\end{tikzpicture}
-]]></latex-image></image>
-</sidebyside>
-</sbsgroup>
-
 
 <sbsgroup widths="32% 32% 32%">
 <sidebyside>
@@ -344,7 +278,7 @@ From the above pair of special triangles we have
   ytick={-1.570796327,1.570796327},
   yticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
   ]
-\addplot[blue,domain=-1:1,samples=100] {asin(x)/180*pi};
+\addplot[blue, line width=1pt, domain=-1:1,samples=100] {asin(x)/180*pi};
 \end{axis}
 \end{tikzpicture}
 ]]></latex-image></image>
@@ -373,9 +307,12 @@ From the above pair of special triangles we have
   ytick={-1.570796327,1.570796327},
   yticklabels={$-\frac{\pi}{2}$, $\frac{\pi}{2}$}
   ]
-\addplot[blue,domain=-4:4,samples=100] {atan(x)/180*pi};
-\addplot[line width=1pt,red] coordinates {(4.15,-1.570796327) (-4.15,-1.570796327)};
-\addplot[line width=1pt,red] coordinates {(4.15,1.570796327) (-4.15,1.570796327)};
+\addplot[blue, line width=1pt, domain=-4.3:4.3,samples=100] {atan(x)/180*pi};
+
+\addplot[line width=1pt,red] coordinates {(4.3,-1.570796327) (-0.3,-1.570796327)};
+\addplot[line width=1pt,red] coordinates {(-1.4,-1.570796327) (-4.3,-1.570796327)};
+\addplot[line width=1pt,red] coordinates {(4.3,1.570796327) (-0.3,1.570796327)};
+\addplot[line width=1pt,red] coordinates {(-0.9,1.570796327) (-4.3,1.570796327)};
 \end{axis}
 \end{tikzpicture}
 ]]></latex-image></image>
@@ -404,6 +341,111 @@ and also
 </md>
 </p>
 
+
+
+<sbsgroup widths="32% 32% 32%">
+<sidebyside>
+<p><me>\arccsc x</me></p>
+<p><me>\arcsec x</me></p>
+<p><me>\arccot x</me></p>
+</sidebyside>
+<sidebyside>
+<p>Domain: <m>|x|\ge 1</m></p>
+<p>Domain: <m>|x|\ge 1</m></p>
+<p>Domain: all real numbers</p>
+</sidebyside>
+<sidebyside>
+<p>Range: <m>-\frac{\pi}{2} \leq \arccsc x \leq \frac{\pi}{2}</m></p>
+<p>Range: <m>0 \leq \arcsec x \leq \pi</m></p>
+<p>Range: <m>0 \lt \arccot x \lt \pi</m></p>
+</sidebyside>
+<sidebyside>
+<p><me>\arccsc x \ne 0</me></p>
+<p><me>\arcsec x \ne \frac{\pi}{2}</me></p>
+<p></p>
+</sidebyside>
+<sidebyside>
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center,
+  xmax=4.3,xmin=-4.3, xtick={-1,1},
+  ymin=-2, ymax=2,
+  ytick={-1.570796327,1.570796327},
+  yticklabels={$-\frac{\pi}{2}\!\!\!$, $\frac{\pi}{2}$}
+  ]
+\addplot[blue, line width=1pt, domain=1:4.3,samples=50] {asin(1/x)/180*pi};
+\addplot[blue, line width=1pt, domain=-4.3:-1,samples=50] {asin(1/x)/180*pi};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\useasboundingbox (0,0) rectangle (5,4.2);
+\begin{axis}[
+  axis x line=center, axis y line=center,
+  xmax=4.3,xmin=-4.3, xtick={-1,1},
+  ymin=-0.3,ymax=3.4,
+  ytick={0,1.570796327,3.141592654},
+  yticklabels={0,$\frac{\pi}{2}$, $\pi$}
+  ]
+ \addplot[blue, line width=1pt, domain=1:4.3,samples=100] {acos(1/x)/180*pi};
+ \addplot[blue, line width=1pt, domain=-4.3:-1,samples=100] {acos(1/x)/180*pi};
+% \legend{$\cos \theta$}
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+
+<image><latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  legend pos = north west,
+  axis x line=center, axis y line=center,
+  xmax=4.3,xmin=-4.3, xmajorticks=false,
+  ymin=-0.3,ymax=3.4,
+  ytick={0,1.570796327,3.141592654},
+  yticklabels={0,$\frac{\pi}{2}$, $\pi$}
+  ]
+\addplot[blue, line width=1pt, domain=-4.3:-0.01,samples=100] {atan(1/x)/180*pi + pi};
+\addplot[blue, line width=1pt, domain=0.01:4.3,samples=100] {atan(1/x)/180*pi};
+% \legend{$\tan \theta$}
+
+\addplot[line width=1pt,red] coordinates {(4.3,3.141592654) (-0.3,3.141592654)};
+\addplot[line width=1pt,red] coordinates {(-0.9,3.141592654) (-4.3,3.141592654)};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image></image>
+</sidebyside>
+</sbsgroup>
+
+<p>
+Again
+<md>
+<mrow>
+  \arccsc(\csc \theta) &amp;= \theta &amp; -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2},\ \theta\ne 0
+</mrow>
+<mrow>
+  \arcsec(\sec \theta) &amp; = \theta &amp; 0 \leq \theta \leq \pi,\ \theta\ne \frac{\pi}{2}
+</mrow>
+<mrow>
+  \arccot(\cot \theta) &amp; = \theta &amp; 0 \lt \theta \lt \pi
+</mrow>
+</md>
+and
+<md>
+	<mrow>
+  \csc(\arccsc x) &amp;= x &amp; |x|\ge 1
+</mrow>
+<mrow>
+  \sec(\arcsec x) &amp;= x &amp; |x|\ge 1
+</mrow>
+<mrow>
+  \cot(\arccot x) &amp;= x &amp; \text{any real } x
+</mrow>
+</md>
+</p>
 </section>
 
 <section xml:id="app_sec_areas">
@@ -555,8 +597,8 @@ The graph of <m>\log_{10} x</m> is given below. The graph of  <m>\log_q x</m>, f
 </section>
 
 <section xml:id="sec_must_deriv">
-	<title>Highschool material you should be able to derive</title>
-	<shorttitle>You should be able to derive</shorttitle>
+	<title>Highschool Material You Should be Able to Derive</title>
+	<shorttitle>You Should be Able to Derive</shorttitle>
 <p>
 <ul>
 <li> Graphs of <m>\csc\theta, \sec \theta</m> and <m>\cot \theta</m>:

@@ -59,7 +59,7 @@ in which <m>f(a)=f(b)</m>.
 </p>
 </introduction>
 <subsection>
-<title>Rolle's theorem</title>
+<title>Rolle's Theorem</title>
 
 <theorem xml:id="thm_DIFFrolle"><title>Rolle's theorem</title>
 <statement><p>
@@ -441,7 +441,7 @@ Obtain upper and lower bounds on <m>f(5)</m>.
 </p></example>
 
 </subsection>
-<subsection><title>(optional) <mdash/> Why is the MVT true</title>
+<subsection><title>(Optional) <mdash/> Why is the MVT True</title>
 <p>
 We won't give a real proof for this theorem, but we'll look at a picture
 which shows why it is true. Here is the picture. It contains a sketch of
@@ -475,7 +475,7 @@ segment from the bottom.
 </subsection>
 
 <subsection xml:id="warning_mvt">
-<title>Be careful with hypotheses</title>
+<title>Be Careful with Hypotheses</title>
 <p>
 The mean value theorem has hypotheses <mdash/> <m>f(x)</m> has to be continuous
 for <m>a\le x\le b</m> and has to be differentiable for <m>a \lt x \lt b</m>.
