@@ -92,7 +92,7 @@ maximum and minimum values.
 </introduction>
 
 <subsection xml:id="ssec_maxmin">
-<title>Local and global maxima and minima</title>
+<title>Local and Global Maxima and Minima</title>
 
 <p>We start by asking:</p>
 <blockquote>
@@ -515,7 +515,7 @@ singular points when we look for maxima and minima.
 
 </subsection>
 <subsection xml:id="ssec_find_maxmin">
-<title>Finding global maxima and minima</title>
+<title>Finding Global Maxima and Minima</title>
 <p>
 We now have a technique for finding local maxima and minima <mdash/> just look
 for values of <m>x</m> for which either <m>f'(x)=0</m> or <m>f'(x)</m> does not exist.
@@ -725,7 +725,7 @@ taken at <m>x=1</m>, while the global minimum value of <m>f(x)</m> is <m>0</m>, 
 </subsection>
 
 <subsection xml:id="sec_opt_eg">
-<title>Max/min examples</title>
+<title>Max/Min Examples</title>
 <p>
 As noted at the beginning of this section, the problem of finding maxima and minima is
 a very important application of differential calculus in the real world. We now turn to a

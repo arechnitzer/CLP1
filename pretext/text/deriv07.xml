@@ -112,13 +112,13 @@ We can learn a lot more about <m>C(a)</m>, and, in particular, confirm the  gues
 </p>
 </introduction>
 
-<subsection><title>Whirlwind review of logarithms</title>
+<subsection><title>Whirlwind Review of Logarithms</title>
 <introduction>
 <p>
 Before you read much further into this little review on logarithms,  you should first go back and take a look at the review of inverse  functions in Section<nbsp/><xref ref="sec_inverse_functions"/>.
 </p>
 </introduction>
-<subsubsection><title>Logarithmic functions</title>
+<subsubsection><title>Logarithmic Functions</title>
 <p>
 We are about to define the <q>logarithm with base <m>q</m></q>. In principle, <m>q</m> is allowed to be any strictly positive real number, except <m>q=1</m>. However we shall restrict our attention to <m>q \gt 1</m>, because, in practice, the only <m>q</m>'s that are ever used are <m>e</m> (a number that we shall define in the next few pages),  <m>10</m> and, if you are a computer scientist, <m>2</m>. So, fix any <m>q \gt 1</m> (if you like, pretend that <m>q=10</m>). The function <m>f(x)=q^x</m>
 <ul>
@@ -227,7 +227,7 @@ How did we get this? Well, let's start with a number <m>x</m> and suppose that w
 </p>
 </conclusion>
 </subsection>
-<subsection><title>Back to that limit</title>
+<subsection><title>Back to that Limit</title>
 <p>
 Recall that we are trying to choose <m>a</m> so that
 <md>

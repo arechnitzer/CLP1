@@ -3,7 +3,7 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Other important sets</title>
+<title>Other Important Sets</title>
 <introduction>
 
 <p>
@@ -167,7 +167,7 @@ These unbounded intervals do not include <q><m>\infty</m></q>, so that end of th
 </definition>
 </introduction>
 
-<subsection><title>More on sets</title>
+<subsection><title>More on Sets</title>
 <p>
 So we now know how to say that one set is contained within another. We will now define some other operations on sets. Let us also start to be a bit more precise with our definitions and set them out carefully as we get deeper into the text.
 </p>

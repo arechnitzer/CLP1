@@ -337,7 +337,7 @@ We simplify the functions to get a better idea of what's going on.
 <m>y'=\diff{}{x}\{e^{2x} +4\}=\diff{}{x}\{e^{2x}\}=\diff{}{x}\left\{(e^x)^2\right\}=2e^xe^x=2e^{2x}</m>. Since the derivative isn't constant, the function isn't a line.
 </p>
 
-<p>(<m>d</m>): <m>y=e^{\log x}3^e+\log 2=xe^3+\log 2</m>. Since <m>e^3</m> and <m>\log 2</m> are constants, this is a line.
+<p>(<m>d</m>): <m>y=e^{\log x}3^e+\log 2=3^e x+\log 2</m>. Since <m>e^3</m> and <m>\log 2</m> are constants, this is a line.
 </p></solution>
 </exercise>
 

@@ -3,7 +3,7 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_chain_rule">
-<title>One more tool  <ndash/> the chain rule</title>
+<title>One More Tool  <ndash/> the Chain Rule</title>
 <introduction>
 
 <p>We have built up most of the tools that we need to express derivatives of
@@ -60,7 +60,7 @@ chain rule does.
 </introduction>
 
 <subsection>
-<title>Statement of the chain rule</title>
+<title>Statement of the Chain Rule</title>
 
 <theorem xml:id="thm_DIFFchainRuleV1"><title>The chain rule  <mdash/> version 1</title>
 <statement><p>
@@ -319,7 +319,7 @@ are in fact the same.
 </subsection>
 
 <subsection>
-<title>(optional) <mdash/> Derivation of the chain rule</title>
+<title>(Optional) <mdash/> Derivation of the Chain Rule</title>
 
 <p>First, let's review what our goal is. We have been given a function
 <m>g(x)</m>, that is differentiable at some point <m>x=a</m>, and another function

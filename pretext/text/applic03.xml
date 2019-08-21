@@ -3,8 +3,8 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xml:id="sec_ExpGthDecay"  xmlns:xi="http://www.w3.org/2001/XInclude">
-<title title-simple="ARGH">Exponential growth and decay <mdash/> a first look at differential equations</title>
-<shorttitle>Exponential growth and decay</shorttitle>
+<title title-simple="ARGH">Exponential Growth and Decay <mdash/> a First Look at Differential Equations</title>
+<shorttitle>Exponential Growth and Decay</shorttitle>
 <introduction>
 <p>
 A differential equation is an equation for an unknown function  that involves the derivative of the unknown function. For example, Newton's law of cooling says:
@@ -29,7 +29,7 @@ Differential equations play a central role in modelling a huge number of  differ
 </p>
 </introduction>
 <subsection xml:id="ssec_carbon">
-<title>Carbon dating</title>
+<title>Carbon Dating</title>
 <p>
 Scientists can determine the age of objects containing organic material by a  method called <em>carbon dating</em> or <em>radiocarbon dating</em>
 	<fn>
@@ -347,7 +347,7 @@ While this example is entirely fictitious, one really can use this approach to  
 
 </subsection>
 <subsection xml:id="sec_newtonCooling">
-<title>Newton's law of cooling</title>
+<title>Newton's Law of Cooling</title>
 
 <p>
 Recall Newton's law of cooling from the start of this section:
@@ -694,7 +694,7 @@ A slightly tricky example <mdash/> we need to determine the ambient temperature 
 </subsection>
 
 <subsection xml:id="ssec_pop">
-<title>Population growth</title>
+<title>Population Growth</title>
 <introduction>
 
 <p>
@@ -823,7 +823,7 @@ In 1927 the population of the world was about 2 billion. In 1974 it was about 4 
 </p></example>
 </introduction>
 
-<subsubsection><title>(optional) <mdash/> Logistic population growth</title>
+<subsubsection><title>(Optional) <mdash/> Logistic Population Growth</title>
 <p>
 Logistic growth adds one more wrinkle to the simple population model. It assumes that the population only has access to limited resources. As the size of the population grows the amount of food available to each member decreases. This in turn causes the net birth rate <m>b</m> to decrease. In the logistic growth model <m>b=b_0\left(1-\tfrac{P}{K}\right)</m>, where <m>K</m> is called the carrying capacity of the environment,  so that
 <md>

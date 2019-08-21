@@ -50,7 +50,7 @@ So if a function is continuous at <m>x=a</m> we immediately know that
 </p>
 </subsection>
 
-<subsection><title>Quick aside <mdash/> one-sided continuity</title>
+<subsection><title>Quick Aside <mdash/> One-sided Continuity</title>
 
 <p>
 Notice in the above definition of continuity on an interval <m>(a,b)</m> we have carefully  avoided saying anything about whether or not the function is continuous at the endpoints  of the interval <mdash/> i.e. is <m>f(x)</m> continuous at <m>x=a</m> or <m>x=b</m>. This is because talking  of
@@ -130,7 +130,7 @@ Note that the last two condition are equivalent to
 
 </subsection>
 
-<subsection><title>Back to the main text</title>
+<subsection><title>Back to the Main Text</title>
 
 <p>
 We already know from our work above that polynomials are continuous, and that  rational functions are continuous at all points in their domains <mdash/> i.e. where  their denominators are non-zero. As we did for  limits, we will see that continuity interacts <q>nicely</q> with arithmetic. This  will allow us to construct complicated continuous functions from simpler  continuous building blocks (like polynomials).

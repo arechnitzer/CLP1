@@ -3,8 +3,8 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Limits at infinity</title>
-<subsection><title>Limits at infinity</title>
+<title>Limits at Infinity</title>
+<subsection><title>Limits at Infinity</title>
 
 <p>
 Up until this point we have discussed what happens to a function as we move its input <m>x</m>  closer and closer to a particular point <m>a</m>. For a great many applications of  limits we need to understand what happens to a function when its input becomes  extremely large <mdash/> for example what happens to a population at a time far in  the future.

@@ -3,7 +3,7 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_proof_arith_deriv">
-<title>Proofs of the arithmetic of derivatives</title>
+<title>Proofs of the Arithmetic of Derivatives</title>
 <introduction>
 
 <p>
@@ -22,7 +22,7 @@ Our proofs, roughly speaking, involve doing algebraic manipulations to uncover t
 </p>
 
 </introduction>
-<subsection><title>Proof of the linearity of differentiation (Theorem <xref ref="thm_DIFFlinearity"/>)</title>
+<subsection><title>Proof of the Linearity of Differentiation (Theorem <xref ref="thm_DIFFlinearity"/>)</title>
 <p>
 Recall that in Theorem <xref ref="thm_DIFFlinearity"/> we defined  <m>S(x)=\alpha\,f(x)+\beta\,g(x)</m>, where <m>\alpha,\beta\in\bbbr</m>  are constants. We wish to compute <m>S'(x)</m>, so we start with the definition:
 <md>
@@ -59,7 +59,7 @@ as required.
 </p>
 
 </subsection>
-<subsection><title>Proof of the product rule (Theorem <xref ref="thm_DIFFprodRule"/>)</title>
+<subsection><title>Proof of the Product Rule (Theorem <xref ref="thm_DIFFprodRule"/>)</title>
 
 <p>
 After the warm-up above, we will just jump straight in. Let <m>P(x)=f(x)\, g(x)</m>, the  product of our two functions. The derivative of the product is given by
@@ -129,7 +129,7 @@ And so we recover the product rule.
 </p>
 </subsection>
 
-<subsection><title>(optional) <mdash/> Proof of the quotient rule (Theorem <xref ref="thm_DIFFquotRule"/>)</title>
+<subsection><title>(Optional) <mdash/> Proof of the Quotient Rule (Theorem <xref ref="thm_DIFFquotRule"/>)</title>
 <p>
 This one is relatively messy, so we have made it optional. Let us start by writing the  quotient of our two functions as <m>Q(x) = f(x) / g(x)</m>, and we assume that <m>g(x) \neq 0</m>.  As before, we start our manipulations from the definition of the derivative
 <md>
