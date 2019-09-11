@@ -182,7 +182,7 @@ Determine where they are continuous and discontinuous:
 		\frac{x^3-x^2}{x-1} &amp;= \frac{x^2(x-1)}{x-1} = x^2
 	</mrow>
 	</md>
-	So <m>\lim \frac{x^3-x^2}{x-1} = \lim x^2 = 1\neq h(1)</m>. Hence <m>h</m>  is discontinuous at <m>x=1</m>.
+	So <m>\lim_{x  \to 1} \frac{x^3-x^2}{x-1} = \lim_{x  \to 1} x^2 = 1\neq h(1)</m>. Hence <m>h</m>  is discontinuous at <m>x=1</m>.
 </p>
 </li>
 </ul>
