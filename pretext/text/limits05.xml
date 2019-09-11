@@ -222,7 +222,7 @@ We use the same trick <mdash/> try to work out what is the biggest term in the  
 </example>
 
 <p>
-Now let us also think about the limit of the same function,                  <m>\frac{\sqrt{4x^2+1}}{5x-1}</m>, as <m>x \rightarrow -\infty</m>. There is something a  subtle going on because of the square-root. First consider the  function
+Now let us also think about the limit of the same function,                  <m>\frac{\sqrt{4x^2+1}}{5x-1}</m>, as <m>x \rightarrow -\infty</m>. There is something subtle going on because of the square-root. First consider the  function
 	<fn>
 		Just to change things up lets use <m>t</m> and <m>h(t)</m> instead of  the ubiquitous <m>x</m> and <m>f(x)</m>.
 	</fn>
