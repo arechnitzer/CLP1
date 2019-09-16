@@ -412,7 +412,7 @@ Obtain upper and lower bounds on <m>f(5)</m>.
 
 <p>Okay <mdash/> what do we do?
 <ul>
-<li> Since differentiable we can use the MVT.
+<li> Since <m>f(x)</m> is differentiable we can use the MVT.
 </li>
 <li> Say <m>f(5)=q</m>, then the MVT tells us that there is some <m>c</m> between <m>1</m> and <m>5</m> such
   that
