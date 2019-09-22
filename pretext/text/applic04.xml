@@ -78,7 +78,7 @@ that
  </li>
  <li>is a good approximation to <m>f(x)</m> for <m>x</m> values close to <m>a</m>.</li>
  </ul>
-Futher, we would like to understand how good our approximation actually is.
+Further, we would like to understand how good our approximation actually is.
 Namely we need to be able to estimate the error <m>|f(x)-F(x)|</m>.
 </p>
 
@@ -616,7 +616,7 @@ look up the Gamma function.</fn>
     n! &amp;= n \times (n-1) \times \cdots \times 3 \times 2 \times 1
   </mrow>
 </md>
-  Futher, we use the convention that
+  Further, we use the convention that
   <md>
 <mrow>
   0! &amp;= 1
@@ -1645,7 +1645,7 @@ $a$ and $x$}
 </p></statement>
 </fact>
 
-<p>Notice that the MVT doesnt tell us the value of <m>c</m>, however we do know that it lies
+<p>Notice that the MVT doesn't tell us the value of <m>c</m>, however we do know that it lies
 strictly between <m>x</m> and <m>a</m>. So if we can get a good bound on <m>f'(c)</m> on this interval then we can get a good bound on the error.
 </p>
 

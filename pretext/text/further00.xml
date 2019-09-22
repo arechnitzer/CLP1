@@ -20,7 +20,7 @@ So far in the course we have learned how to determine the rate of change (i.e. t
   \text{given a function } f(x) \text{ find } \diff{f}{x}.
 </mrow>
 </md>
-Along the way we devloped an understanding of limits, which allowed us to define  instantaneous rates of change <mdash/> the derivative. We then went on to develop a number of  applications of derivatives to modelling and approximation. In this last section we want  to just introduce the idea of antiderivatives. That is
+Along the way we developed an understanding of limits, which allowed us to define  instantaneous rates of change <mdash/> the derivative. We then went on to develop a number of  applications of derivatives to modelling and approximation. In this last section we want  to just introduce the idea of antiderivatives. That is
 <md>
 <mrow>
   \text{given a derivative } \diff{f}{x} \text{ find the original function } f(x).
@@ -35,7 +35,7 @@ For example <mdash/> say we know that
   \diff{f}{x} &amp;= x^2
 </mrow>
 </md>
-and we want to find <m>f(x)</m>. From our previous experience differentiating we know  that derivatives of polynomials are again polynomials. So we guess that our  unkown function <m>f(x)</m> is a polynomial. Further we know that when we  differentiate <m>x^n</m> we get <m>n x^{n-1}</m> <mdash/> multiply by the exponent and reduce  the exponent by 1. So to end up with a derivative of <m>x^2</m> we need to have  differentiated an <m>x^3</m>. But <m>\diff{}{x} x^3 = 3x^2</m>, so we need to divide both  sides by 3 to get the answer we want. That is
+and we want to find <m>f(x)</m>. From our previous experience differentiating we know  that derivatives of polynomials are again polynomials. So we guess that our  unknown function <m>f(x)</m> is a polynomial. Further we know that when we  differentiate <m>x^n</m> we get <m>n x^{n-1}</m> <mdash/> multiply by the exponent and reduce  the exponent by 1. So to end up with a derivative of <m>x^2</m> we need to have  differentiated an <m>x^3</m>. But <m>\diff{}{x} x^3 = 3x^2</m>, so we need to divide both  sides by 3 to get the answer we want. That is
 <md>
 <mrow>
   \diff{}{x} \left(\frac{1}{3}x^3 \right) &amp;= x^2
@@ -487,7 +487,7 @@ Of course if we knew the formula for the volume of a cone, then we could compute
   \pi Y^2 (x-X) &amp; \leq V(x)-V(X) \leq \pi y^2 (x-X)
 </mrow>
 </md>
-since the volume of a cyliner is just the area of its base times its height. Now massage  this expression a little
+since the volume of a cylinder is just the area of its base times its height. Now massage  this expression a little
 <md>
 <mrow>
   \pi Y^2 &amp; \leq \frac{V(x)-V(X)}{x-X} \leq \pi y^2

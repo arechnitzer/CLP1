@@ -530,7 +530,7 @@ finite interval
 <fn>The hypotheses that <m>f(x)</m> be continuous
 and that the interval be finite and closed are all essential.
 We suggest that you find three functions <m>f_1(x)</m>, <m>f_2(x)</m> and
-<m>f_3(x)</m> with <m>f_1</m> defined but not continous on <m>0\le x\le 1</m>,
+<m>f_3(x)</m> with <m>f_1</m> defined but not continuous on <m>0\le x\le 1</m>,
 <m>f_2</m> defined and continuous on <m>-\infty \lt x \lt \infty</m>, and <m>f_3</m> defined
 and continuous on <m>0 \lt x \lt 1</m>, and with none of <m>f_1</m>, <m>f_2</m> and <m>f_3</m>
 attaining either a global maximum or a global minimum.</fn>
@@ -1108,7 +1108,7 @@ critical point occurs at <m>x=1</m>. The corresponding function value is then
 <li> This answer makes sense <mdash/> the distance is not negative.
 </li>
 <li><p> The question asks for the point that minimises the distance, not that minimum
-distance. Hence the answer is <m>x=1, y=6-3 = 3</m>. ie</p>
+distance. Hence the answer is <m>x=1, y=6-3 = 3</m>. I.e.</p>
 
 <blockquote>
 <p>
@@ -1227,7 +1227,7 @@ two triangles. Each triangle has height <m>h</m> and base <m>15 \cos \theta</m>.
 </md>
 where <m>0 \leq \theta \leq \pi</m>.
 </li>
-<li> Now we use Corollay<nbsp/><xref ref="cor_find_maxmin"/>. The ends of the interval give
+<li> Now we use Corollary<nbsp/><xref ref="cor_find_maxmin"/>. The ends of the interval give
 <md>
 <mrow>
   A(0) &amp;= 225 \sin 0 (1 + \cos 0) = 0

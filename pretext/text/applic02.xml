@@ -188,7 +188,7 @@ ground at time <m>t</m>. Measure time in seconds, but both distances in meters.
 but we need to determine <m>y</m> before we can go further. Thankfully we know that
 <m>x^2+y^2=25</m> and <m>x=3</m>, so <m>y^2=25-9=16</m> and
 <fn>Since the ladder
-isn't burried in the ground, we can discard the solution <m>y=-4</m>.</fn>
+isn't buried in the ground, we can discard the solution <m>y=-4</m>.</fn>
  so <m>y=4</m>.
 </li>
 <li> So finally putting everything together

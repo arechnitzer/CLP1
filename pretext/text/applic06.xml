@@ -9,7 +9,7 @@
 One of the most obvious applications of derivatives is to help us understand the shape of
 the graph of a function. In this section we will use our accumulated knowledge of
 derivatives to identify the most important qualitative features of graphs <m>y=f(x)</m>. The
-goal of this section is to higlight features of the graph <m>y=f(x)</m> that are easily
+goal of this section is to highlight features of the graph <m>y=f(x)</m> that are easily
 <ul>
 <li> determined from <m>f(x)</m> itself, and
 </li>
@@ -1222,7 +1222,7 @@ by symmetry.
 </mrow>
 </md>
 </li>
-<li> We now check for horizonal asymptotes:
+<li> We now check for horizontal asymptotes:
 <md>
 <mrow>
 \lim_{x\to +\infty} f(x)
@@ -1245,7 +1245,7 @@ f'(x)
 </md>
 <ul>
 <li> Hence there are no critical points. There are singular points
-where the denominator is zero, namley <m>x=\pm2</m>. Before we proceed, notice that
+where the denominator is zero, namely <m>x=\pm2</m>. Before we proceed, notice that
 the numerator is always negative and the denominator is always positive. Hence
 <m>f'(x) \lt 0</m> except at <m>x=\pm 2</m> where it is undefined.
 </li>
@@ -1352,7 +1352,7 @@ function is defined except at <m>x=6</m>, so the domain of <m>f</m> is all reals
 </md>
 shows the function is neither even nor odd.
 </li>
-<li> To compute horizonal asymptotes we examine the limit of the portion of
+<li> To compute horizontal asymptotes we examine the limit of the portion of
 the function inside the cube-root
 <md>
 <mrow>

@@ -77,7 +77,7 @@ and if <m>f</m> takes <m>a \in A</m> as an input and returns <m>b\in B</m> then 
 <li>
 	The function is only allowed to return one result for each input
 	<fn>
-		You may have learnt this in the context of plotting functions on the Cartesian plane, as <q>the vertical line test</q>. If the graph intersects a vertical line twice, then the same <m>x</m>-value will give two <m>y</m>-values and so the graph does not represent a function.
+		You may have learned this in the context of plotting functions on the Cartesian plane, as <q>the vertical line test</q>. If the graph intersects a vertical line twice, then the same <m>x</m>-value will give two <m>y</m>-values and so the graph does not represent a function.
 	</fn>.
 	So if we find that <m>f(a)=b_1</m> and <m>f(a)=b_2</m> then the only way that <m>f</m> can be a function is if <m>b_1</m> is exactly the same as <m>b_2</m>.
 </li>

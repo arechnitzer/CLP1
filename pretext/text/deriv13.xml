@@ -94,7 +94,7 @@ and let <m>t</m> be time from the moment the ball is thrown in seconds. Then we 
 </mrow>
 </md>
 Then we know there is some time in between <mdash/> say at <m>t=c</m> <mdash/> when the ball is
-stationary (in this case when the ball is at the top of its trajectory). ie
+stationary (in this case when the ball is at the top of its trajectory). I.e.
 <md>
 <mrow>
   v(c) = s'(c) &amp;= 0.

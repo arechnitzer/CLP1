@@ -53,7 +53,7 @@ finding the equations of tangent lines to curves. Recall, from Theorem
 
 <p>This is a very standard sounding example, but made a little complicated by the fact that
 the curve is given by a cubic equation <mdash/> which means we cannot solve directly for <m>y</m> in
-terms of <m>x</m> or vice-versa. So we really do need implicit differentiation.
+terms of <m>x</m> or vice versa. So we really do need implicit differentiation.
 <ul>
 <li> First notice that when <m>x=1</m> the equation, <m>y=y^3+xy+x^3</m>, of the curve
 simplifies to <m>y=y^3+y+1</m> or <m>y^3=-1</m>, which we can solve
