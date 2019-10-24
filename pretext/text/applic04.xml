@@ -280,7 +280,7 @@ which is our original problem and more!
 </li>
 <li> We could try <m>a=0</m> <mdash/> then <m>f(0)=0</m> and <m>f'(0) = DNE</m>.
 </li>
-<li> Setting <m>a=1</m> gives us <m>f(0)=1</m> and <m>f'(0)=\frac{1}{2}</m>. This would work, but we
+<li> Setting <m>a=1</m> gives us <m>f(1)=1</m> and <m>f'(1)=\frac{1}{2}</m>. This would work, but we
 can get a better approximation by choosing <m>a</m> is closer to <m>4.1</m>.
 </li>
 <li> Indeed we can set <m>a</m> to be the square of any rational number and we'll get a
