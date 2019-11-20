@@ -645,7 +645,7 @@ the derivative:
 </mrow><mrow>
   &amp;= \frac{10}{3} x^{2/3} + 2 x^{-1/3}
 </mrow><mrow>
-  &amp;= \frac{10 x + 6}{x^{1/3}}
+  &amp;= \frac{10 x + 6}{3 x^{1/3}}
 </mrow>
 </md>
 </li>
@@ -661,7 +661,7 @@ point is at <m>x=0</m>. The corresponding function value is
 <li> To find the critical points we need to solve <m>f'(x) = 0</m>:
 <md>
 <mrow>
-  0 &amp;= \frac{10 x + 6}{x^{1/3}}
+  0 &amp;= \frac{10 x + 6}{3 x^{1/3}}
 </mrow>
 </md>
 Hence we must have <m>10x=-6</m> or <m>x=-3/5</m>. The corresponding function value is
