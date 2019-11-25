@@ -218,7 +218,7 @@ the listed property, or explain why no such function exists.
 </p></statement>
 <hint><p></p></hint>
 <answer><p>
-(a) No such function is possible: Rolle's Theorem guarantees <m>f'(c)=1</m> for at least one point <m>c \in (1,2)</m>.
+(a) No such function is possible: Rolle's Theorem guarantees <m>f'(c)=0</m> for at least one point <m>c \in (1,2)</m>.
 </p>
 
 <p>For the other functions, examples are below, but many answers are possible.</p>
@@ -251,7 +251,7 @@ the listed property, or explain why no such function exists.
 </sidebyside>
 </answer>
 <solution><p>
-(a) No such function is possible: Rolle's Theorem guarantees <m>f'(c)=1</m> for at least one point <m>c \in (1,2)</m>.
+(a) No such function is possible: Rolle's Theorem guarantees <m>f'(c)=0</m> for at least one point <m>c \in (1,2)</m>.
 </p>
 
 <p>For the other functions, examples are below, but many answers are possible.</p>
