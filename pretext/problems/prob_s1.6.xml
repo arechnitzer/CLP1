@@ -637,10 +637,10 @@ Show that there exists at least one real number <m>c</m> such that
 <m>\dfrac{1}{(\cos\pi c)^2} = c+\dfrac{3}{2}</m>.
 </p></statement>
 <hint><p>
-Consider the function <m>f(x)=1/\cos^2(\pi x)-c-\frac{3}{2}</m>, paying attention to where it is continuous.
+Consider the function <m>f(x)=1/\cos^2(\pi x)-x-\frac{3}{2}</m>, paying attention to where it is continuous.
 </p></hint>
 <answer><p>
-We let <m>f(x)=\dfrac{1}{\cos^2(\pi x)}-c-\dfrac{3}{2}</m>. Then <m>f(x)</m> is a continuous function on the
+We let <m>f(x)=\dfrac{1}{\cos^2(\pi x)}-x-\dfrac{3}{2}</m>. Then <m>f(x)</m> is a continuous function on the
 interval <m>(-1/2, 1/2)</m> since <m>\cos x</m> is continuous everywhere and non-zero on that
 interval.
 </p>
@@ -671,7 +671,7 @@ f(1/4) &amp;= \frac{1}{(\cos \pi/4)^2} - \frac{1}{4} - \frac{3}{2}
 </md>
 </p></answer>
 <solution><p>
-We let <m>f(x)=\dfrac{1}{\cos^2(\pi x)}-c-\dfrac{3}{2}</m>. Then <m>f(x)</m> is a continuous function on the
+We let <m>f(x)=\dfrac{1}{\cos^2(\pi x)}-x-\dfrac{3}{2}</m>. Then <m>f(x)</m> is a continuous function on the
 interval <m>(-1/2, 1/2)</m> since <m>\cos x</m> is continuous everywhere and non-zero on that
 interval.
 </p>
