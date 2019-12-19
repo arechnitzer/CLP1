@@ -1527,7 +1527,18 @@ f(x) &amp;=\begin{cases}
 </p>
 <p> 
 <xref ref="s1_4q49_3"/> Since the limits from the left and right do not agree, <m>\displaystyle\lim_{x \rightarrow 0} f(x)=</m>DNE.
-</p></solution>
+</p><sidebyside>
+<image><latex-image><![CDATA[\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[thick] plot[domain=-3:0, yscale=.25](\x,{\x*\x-3});
+\draw[thick] plot[domain=0:3, yscale=.25](\x,{\x*\x+3});
+\draw (0,0) node[vertex]{};
+\draw (0,-.75) node[opendot]{};
+\draw (0,.75) node[opendot]{};
+\draw (0,.75) node[left]{$3$};
+\draw (0,-.75) node[right]{$-3$};
+\end{tikzpicture}]]></latex-image></image>
+</sidebyside></solution>
 </exercise>
 
 
