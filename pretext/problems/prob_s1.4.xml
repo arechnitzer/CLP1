@@ -1486,6 +1486,121 @@ This <q>sum rule</q> is only true when both <m>\displaystyle\lim_{x \rightarrow 
 </p></solution>
 </exercise>
 
+<exercise>
+<statement><p>Suppose
+<md>
+<mrow>
+f(x) &amp;=\begin{cases}
+  x^2+3 &amp; \text{ if }  x\gt 0
+</mrow><mrow>
+  0 &amp; \text{ if } x =  0
+</mrow><mrow>
+  x^2-3 &amp; \text{ if } x \lt  0
+\end{cases}
+</mrow>
+</md>
+<ol label="a">
+<li xml:id="s1_4q49_1"> Evaluate <m>\displaystyle\lim_{x \rightarrow 0^-} f(x)</m>.
+</li>
+<li xml:id="s1_4q49_2"> Evaluate <m>\displaystyle\lim_{x \rightarrow 0^+} f(x)</m>.
+</li>
+<li xml:id="s1_4q49_3"> Evaluate <m>\displaystyle\lim_{x \rightarrow 0} f(x)</m>.
+</li>
+</ol>
+</p></statement>
+<hint><p> When you're evaluating <m>\displaystyle\lim_{x \rightarrow 0^-} f(x)</m>, you're only considering values of <m>x</m> that are <em>less than</em> <m>0</m>.
+</p></hint>
+<answer><p>
+<xref ref="s1_4q49_1"/> <m>\displaystyle\lim_{x \rightarrow 0^-} f(x)=-3</m>
+</p>
+<p>
+<xref ref="s1_4q49_2"/> <m>\displaystyle\lim_{x \rightarrow 0^+} f(x)=3</m>
+</p>
+<p>
+<xref ref="s1_4q49_3"/> <m>\displaystyle\lim_{x \rightarrow 0} f(x)=</m>DNE
+</p></answer>
+<solution><p> 
+<xref ref="s1_4q49_1"/> When we evaluate the limit from the left, we only consider values of <m>x</m> that are less than zero. For these values of <m>x</m>, our function is <m>x^2-3</m>. So, <m>\displaystyle\lim_{x \rightarrow 0^-} f(x)=\lim_{x \rightarrow 0^-}  (x^2-3)=-3</m>.
+</p>
+<p> 
+<xref ref="s1_4q49_2"/> When we evaluate the limit from the right, we only consider values of <m>x</m> that are greater than zero. For these values of <m>x</m>, our function is <m>x^2+3</m>. So, <m>\displaystyle\lim_{x \rightarrow 0^+} f(x)=\lim_{x \rightarrow 0^+}  (x^2+3)=3</m>.
+</p>
+<p> 
+<xref ref="s1_4q49_3"/> Since the limits from the left and right do not agree, <m>\displaystyle\lim_{x \rightarrow 0} f(x)=</m>DNE.
+</p></solution>
+</exercise>
+
+
+<exercise>
+<statement><p>Suppose
+<md>
+<mrow>
+f(x) &amp;=\begin{cases}
+  {\displaystyle\frac{x^2+8x+16}{x^2+30x-4}} &amp; \text{ if }  x\gt -4
+</mrow><mrow>
+  x^3+8x^2+16x &amp; \text{ if } x \le  -4
+\end{cases}
+</mrow>
+</md>
+<ol label="a">
+<li xml:id="s1_4q50_1"> Evaluate <m>\displaystyle\lim_{x \rightarrow -4^-} f(x)</m>.
+</li>
+<li xml:id="s1_4q50_2"> Evaluate <m>\displaystyle\lim_{x \rightarrow -4^+} f(x)</m>.
+</li>
+<li xml:id="s1_4q50_3"> Evaluate <m>\displaystyle\lim_{x \rightarrow -4} f(x)</m>.
+</li>
+</ol>
+</p></statement>
+<hint><p> 
+When you're considering <m>\displaystyle\lim_{x \rightarrow -4^-} f(x)</m>, you're only considering values of <m>x</m> that are <em>less than</em> <m>-4</m>. When you're considering <m>\displaystyle\lim_{x \rightarrow -4^+} f(x)</m>, think about the domain of the rational function in the top line.
+</p></hint>
+<answer><p>
+<xref ref="s1_4q50_1"/> <m>\displaystyle\lim_{x \rightarrow -4^-} f(x)=0</m>
+</p>
+<p>
+<xref ref="s1_4q50_2"/> <m>\displaystyle\lim_{x \rightarrow -4^+} f(x)=0</m>
+</p>
+<p>
+<xref ref="s1_4q50_3"/> <m>\displaystyle\lim_{x \rightarrow -4} f(x)=0</m>
+</p></answer>
+<solution> 
+<p> 
+<xref ref="s1_4q50_1"/> When we evaluate  <m>\displaystyle\lim_{x \rightarrow -4^-} f(x)</m>, we only consider values of <m>x</m> that are less than <m>-4</m>. For these values, <m>f(x)=x^3+8x^2+16x</m>. So, 
+<md>
+<mrow>
+\displaystyle\lim_{x \rightarrow 4^-} f(x)=\lim_{x \rightarrow -4^-}  (x^3+8x^2+16x)=(-4)^3+8(-4)^2+16(-4)=0
+</mrow></md>
+Note that, because <m>x^3+8x^2+16x</m> is a polynomial, we can evaluate the limit by directly substituting in <m>x=-4</m>.
+</p>
+<p>
+<xref ref="s1_4q50_2"/> When we evaluate  <m>\displaystyle\lim_{x \rightarrow -4^+} f(x)</m>, we only consider values of <m>x</m> that are greater than <m>-4</m>. For these values, 
+<md>
+<mrow>
+f(x)=\frac{x^2+8x+16}{x^2+30x-4}
+</mrow>
+</md> 
+So
+<md>
+<mrow>
+\displaystyle\lim_{x \rightarrow -4^+} f(x)=\lim_{x \rightarrow -4^+}  \frac{x^2+8x+16}{x^2+30x-4}
+</mrow></md>
+This is a rational function, and <m>x=-4</m> is in its domain (we aren't doing anything suspect, like dividing by <m>0</m>), so again we can directly substitute <m>x=-4</m> to evaluate the limit:
+<md>
+<mrow>
+\displaystyle\lim_{x \rightarrow -4^+} f(x)=  \frac{(-4)^2+8(-4)+16}{(-4)^2+30(-4)-4}
+=\frac{0}{-108}=0
+</mrow></md>
+</p>
+<p> 
+<xref ref="s1_4q50_3"/> Since <m>\displaystyle\lim_{x \rightarrow -4^-} f(x)
+=\lim_{x \rightarrow -4^+} f(x)=0</m>, we conclude that <m>\displaystyle\lim_{x \rightarrow -4} f(x)=0</m>
+</p></solution>
+</exercise>
+
+
+
+
+
 </exercisegroup>
 
 </exercises>
