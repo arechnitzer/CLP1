@@ -36,7 +36,7 @@
 				<entity>Nick Loewen <mdash/> licensed under the <url href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0 License</url>.</entity>
     </credit>
 
-		<edition>CLP-1 Differential Calculus: December 2018</edition>
+		<edition>CLP-1 Differential Calculus: December 2019</edition>
 
 		<website>
 			<name>
@@ -46,13 +46,13 @@
 		</website>
 
 		<copyright>
-			<year>2015 <ndash/> 2018</year>
+			<year>2015 <ndash/> 2020</year>
 			<holder>Joel Feldman, Andrew Rechnitzer, Elyse Yeager</holder>
 			<minilicense>CC-BY-NC-SA 4.0 License</minilicense>
 			<shortlicense>
 				This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You can view a copy of the license <url href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</url>.
 
-					<image source = "misc/by-nc-sa" width="25%"/>
+					<image source = "text/figs/by-nc-sa" width="25%"/>
 			</shortlicense>
 		</copyright>
 
@@ -123,30 +123,9 @@
 		</p>
 
 		<p>
-		  Finally, we'd like to thank those students who reported typos and errors they found in the text. Many of these students did so through our <q>bug bounty</q> program which was supported by the
-			<url href="https://www.math.ubc.ca/">Department of Mathematics</url>, <url href="https://skylight.science.ubc.ca/">Skylight</url> and the <url href="http://loafecafe.com/">Loafe Cafe</url> all at UBC. Additionally, thanks to our bounty-wrangler, Ching Wong, who ran the program. Their help translates directly into a better text.
-			<ul>
-			  <li>
-			    <p>
-						Avinash Ahilesan,
-						Jordan Bourak,
-						Ella Chan,
-						Carlo Corrales,
-						Angelina Ge,
-						Brandon Kozmen
-						Mika Lu,
-						Salwa Malhas,
-					 	Shawna Naderi,
-						Charles Richards,
-						Auritro Roy,
-						Spock Sin,
-						John Turkson,
-				 		David Wang,
-						Christopher Yousofi,
-						and anonymous <m>\times 2</m>.
-			    </p>
-			  </li>
-			</ul>
+		  Finally, we'd like to thank those students who reported typos and errors they found in the text.
+			Many of these students did so through our <q>bug bounty</q> program which was supported by the
+			<url href="https://www.math.ubc.ca/">Department of Mathematics</url>, <url href="https://skylight.science.ubc.ca/">Skylight</url> and the <url href="http://loafecafe.com/">Loafe Cafe</url> all at UBC.
 		</p>
 
 
