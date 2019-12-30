@@ -212,9 +212,7 @@ the graph below at the point <m>x=5</m>.
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 
-<p>Remark: later, you'll learn about the Mean Value Theorem, which guarantees that for differentiable graphs (we'll define this later),
-             you can always find a secant line with the same slope as the tangent line.
-</p></statement>
+</statement>
 <hint><p> There are many possible values for <m>Q</m> and <m>R</m>.
 </p></hint>
 <answer><p> There is only one tangent line to <m>f(x)</m> at <m>P</m> (shown in blue), but there are infinitely many choices of <m>Q</m> and <m>R</m> (one possibility shown in red).
