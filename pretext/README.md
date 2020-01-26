@@ -37,5 +37,5 @@
 * In the site directory, first create an `images` subdirectory.
 * Then run `../script/mbx -v -c latex-image -f svg -d ./images ../clp_1_dc.xml`  - this needs `pdf2svg` installed
 * This will take some time since there are many images to compile.
-* Finally - copy the non-tikz figures into place by copying the `text/figs/*.svg` directory to `site/text/figs` and the `problems/figs/*.svg` directory to `site/problems/figs`.
+* Finally - copy the non-tikz figures into place by copying the `text/figs/*.svg` directory to `site/text/figs` and copying the `problems/figs/*.svg` directory to `site/problems/figs`and copying `misc/by-nc-sa.svg`  to `text/figs/by-nc-sa.svg`.
 * Now the html is ready and you can upload the entire `site` directory to the webserver of your choice.
