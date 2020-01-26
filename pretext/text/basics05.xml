@@ -36,7 +36,7 @@ We can express the steps used to evaluate the above formula as a tree-like  diag
 
 <figure xml:id="fig_tree_rational">
   <caption> A parse tree of the function <m>\frac{1+x}{1+2x-x^2}</m>.</caption>
-  <image width="80%" source="text/figs/tree1"/>
+  <image width="50%" source="text/figs/tree1"/>
 </figure>
 
 <p>
@@ -52,14 +52,14 @@ Let us explain the pieces here.
 	<p>
 	If we wish to represent the formula <m>3+5</m>, then we can draw this as the following cherry-like configuration
 	</p>
-	<sidebyside width="30%">
+	<sidebyside width="15%">
 	  <image source="text/figs/cherry1"/>
 	</sidebyside>
 	<p>
 	which tells us to take the numbers <q><m>3</m></q> and <q><m>5</m></q> and add them together to get <m>8</m>.
 	</p>
 
-	<sidebyside  valign="middle" widths="30% 20% 30%">
+	<sidebyside  valign="middle" widths="15% 20% 15%">
 	<image source="text/figs/cherry1"/>
 	<p>evaluates to</p>
 	<image source="text/figs/cherry1a"/>
@@ -111,7 +111,7 @@ The tree we drew in Figure<nbsp/><xref ref="fig_tree_rational"/> above represent
 This is not the only parse tree associated with the formula for <m>f(x)</m>; we could also decompose it as
 </p>
 
-<sidebyside width="80%">
+<sidebyside width="60%">
 <image source="text/figs/tree1a"/>
 </sidebyside>
 
@@ -152,7 +152,7 @@ Consider the formula
 This introduces a new idea <mdash/> we have to evaluate <m>\frac{t+\pi}{2}</m> and then compute the sine of that number. The corresponding tree can be written as
 </p>
 
-<sidebyside width="80%">
+<sidebyside width="50%">
 <image source="text/figs/tree2"/>
 </sidebyside>
 

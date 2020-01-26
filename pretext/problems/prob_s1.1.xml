@@ -29,7 +29,7 @@
 </sidebyside>
 </statement>
 <answer>
-<sidebyside width="75%">
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{5}{1}{3}
 \draw[thick] plot[domain=-1:5, samples=100](\x,{(3*\x-10)*(\x+1)*(\x-2)/30}) node[right]{$y=f(x)$};
@@ -43,7 +43,7 @@
 </sidebyside>
 </answer>
 <solution>
-<sidebyside width="75%">
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{5}{1}{3}
 \draw[thick] plot[domain=-1:5, samples=100](\x,{(3*\x-10)*(\x+1)*(\x-2)/30}) node[right]{$y=f(x)$};
