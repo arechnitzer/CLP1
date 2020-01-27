@@ -133,7 +133,7 @@ In this example, let us fix <m>(x_0,y_0)</m> to be the point <m>(2,4)</m> on the
 <row>
 <cell><m>y_1=x_1^2</m> </cell><cell>  <m>1</m> </cell><cell> <m>2.25</m> </cell><cell> <m>3.61</m> </cell><cell> <m>3.9601</m> </cell><cell> <m>3.9960</m> </cell><cell> <m>\circ</m> </cell><cell> <m>4.0040</m> </cell><cell> <m>4.0401</m>  </cell><cell> <m>4.41</m> </cell><cell> <m>6.25</m> </cell><cell> <m>9</m> </cell> </row>
 <row>
-<cell><m>\tfrac{y_1-y_0}{x_1-x_0}=\tfrac{y_1-4}{x_1-2}\!</m> </cell><cell>  <m>3</m> </cell><cell> <m>3.5</m> </cell><cell> <m>3.9</m> </cell><cell> <m>3.99</m> </cell><cell> <m>3.999</m> </cell><cell> <m>\circ</m> </cell><cell> <m>4.001</m> </cell><cell> <m>4.01</m>  </cell><cell> <m>4.1</m> </cell><cell> <m>4.5</m> </cell><cell> <m>5</m> </cell>
+<cell><m>\tfrac{y_1-y_0}{x_1-x_0}</m> </cell><cell>  <m>3</m> </cell><cell> <m>3.5</m> </cell><cell> <m>3.9</m> </cell><cell> <m>3.99</m> </cell><cell> <m>3.999</m> </cell><cell> <m>\circ</m> </cell><cell> <m>4.001</m> </cell><cell> <m>4.01</m>  </cell><cell> <m>4.1</m> </cell><cell> <m>4.5</m> </cell><cell> <m>5</m> </cell>
 </row>
 </tabular>
 </sidebyside>
