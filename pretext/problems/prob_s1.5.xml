@@ -173,22 +173,24 @@ We have two terms, each getting extremely large. It's unclear at first what happ
 <m>\sqrt{x^2+5x}+\sqrt{x^2-x}</m>.
 <md>
 <mrow>
-\lim_{x\rightarrow \infty}\left[\sqrt{x^2+5x}-\sqrt{x^2-x}\right]
-&amp;=\lim_{x\rightarrow \infty}\left[\dfrac{(\sqrt{x^2+5x}-\sqrt{x^2-x})(\sqrt{x^2+5x}+\sqrt{x^2-x})}{\sqrt{x^2+5x}+\sqrt{x^2-x}}\right]
+\amp\lim_{x\rightarrow \infty}\left[\sqrt{x^2+5x}-\sqrt{x^2-x}\right]
 </mrow><mrow>
-&amp;= \lim_{x\rightarrow \infty}\dfrac{(x^2+5x)-(x^2-x)}
+\amp\hskip0.25in
+=\lim_{x\rightarrow \infty}\left[\dfrac{(\sqrt{x^2+5x}-\sqrt{x^2-x})(\sqrt{x^2+5x}+\sqrt{x^2-x})}{\sqrt{x^2+5x}+\sqrt{x^2-x}}\right]
+</mrow><mrow>
+&amp;\hskip0.25in= \lim_{x\rightarrow \infty}\dfrac{(x^2+5x)-(x^2-x)}
                                      {\sqrt{x^2+5x}+\sqrt{x^2-x}}
 </mrow><mrow>
-&amp; = \lim_{x\rightarrow \infty}\dfrac{6x}{\sqrt{x^2+5x}+\sqrt{x^2-x}}
+&amp;\hskip0.25in = \lim_{x\rightarrow \infty}\dfrac{6x}{\sqrt{x^2+5x}+\sqrt{x^2-x}}
 </mrow>
 <intertext>Now we divide the numerator and denominator by <m>x</m>. In the case of the denominator, since <m>x \gt 0</m>, <m>x=\sqrt{x^2}</m>.</intertext><mrow>
-&amp;= \lim_{x\rightarrow \infty}\dfrac{6(x)}{\sqrt{x^2}\sqrt{1+\frac{5}{x}}+\sqrt{x^2}\sqrt{1-\frac{1}{x}}}
+&amp;\hskip0.25in= \lim_{x\rightarrow \infty}\dfrac{6(x)}{\sqrt{x^2}\sqrt{1+\frac{5}{x}}+\sqrt{x^2}\sqrt{1-\frac{1}{x}}}
 </mrow><mrow>
-&amp;= \lim_{x\rightarrow \infty}\dfrac{6(x)}{(x)\sqrt{1+\frac{5}{x}}+(x)\sqrt{1-\frac{1}{x}}}
+&amp;\hskip0.25in= \lim_{x\rightarrow \infty}\dfrac{6(x)}{(x)\sqrt{1+\frac{5}{x}}+(x)\sqrt{1-\frac{1}{x}}}
 </mrow><mrow>
-&amp; = \lim_{x\rightarrow \infty}\dfrac{6}{\sqrt{1+\frac{5}{x}}+\sqrt{1-\frac{1}{x}}}
+&amp; \hskip0.25in= \lim_{x\rightarrow \infty}\dfrac{6}{\sqrt{1+\frac{5}{x}}+\sqrt{1-\frac{1}{x}}}
 </mrow><mrow>
- &amp;=\frac{6}{\sqrt{1+0}+\sqrt{1-0}}= 3
+ &amp;\hskip0.25in=\frac{6}{\sqrt{1+0}+\sqrt{1-0}}= 3
 </mrow>
 </md>
 </p></solution>
@@ -271,11 +273,12 @@ The conjugate of <m>(\sqrt{x^2+x}-x)</m> is <m>(\sqrt{x^2+x}+x)</m>.
 &amp;=\lim_{x\rightarrow\infty}
 \frac{\big(\sqrt{x^2+x}-x\big)\big(\sqrt{x^2+x}+x\big)}
      {\sqrt{x^2+x}+x}
-=\lim_{x \to \infty}\frac{(x^2+x)-x^2}{\sqrt{x^2+x}+x}
+</mrow><mrow>
+\amp=\lim_{x \to \infty}\frac{(x^2+x)-x^2}{\sqrt{x^2+x}+x}
+=\lim_{x\rightarrow\infty}
+\frac{x}{\sqrt{x^2+x}+x}
 </mrow><mrow>
 &amp;=\lim_{x\rightarrow\infty}
-\frac{x}{\sqrt{x^2+x}+x}
-=\lim_{x\rightarrow\infty}
 \frac{1}{\sqrt{1+\frac{1}{x}}+1}
 =\frac{1}{2}
 </mrow>
@@ -627,12 +630,16 @@ When <m>a</m> approaches 0 from the right, the numerator approaches negative inf
 &amp;\lim_{a \to 0^+} \frac{1}{a}=+\infty
 </mrow><mrow>
 \mbox{Also,}&amp; \lim_{a \to 0^+} a^2=0
+</mrow>
+</md>
+So, using Theorem<nbsp/><xref ref="thm_arith_inf_lim"/>,
+<md>
+<mrow>
+&amp; \lim_{a \to 0^+} a^2-\frac{1}{a}=-\infty
 </mrow><mrow>
-\mbox{So, using Theorem<nbsp/><xref ref="thm_arith_inf_lim"/>,}&amp; \lim_{a \to 0^+} a^2-\frac{1}{a}=-\infty
+\text{Furthermore,}&amp;\lim_{a \to 0^+}a-1=-1
 </mrow><mrow>
-\mbox{Furthermore,}&amp;\lim_{a \to 0^+}a-1=-1
-</mrow><mrow>
-\mbox{So, using our theorem,}&amp;\lim_{a \to 0^+}\frac{a^2-\frac{1}{a}}{a-1}=\infty
+\text{So, using our theorem,}&amp;\lim_{a \to 0^+}\frac{a^2-\frac{1}{a}}{a-1}=\infty
 </mrow>
 </md>
 </p>

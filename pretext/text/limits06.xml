@@ -141,7 +141,7 @@ We already know from our work above that polynomials are continuous, and that  r
 <example><title>Simple continuous and discontinuous functions</title>
 <p>Consider the functions drawn below</p>
 
-<sidebyside width="90%">
+<sidebyside width="80%">
 <image source="text/figs/lim6"/>
 </sidebyside>
 
@@ -150,9 +150,9 @@ These are
 <md>
 <mrow>
 f(x) &amp;= \begin{cases} x&amp;x \lt 1  </mrow><mrow> x+2 &amp; x\geq 1 \end{cases}
-&amp;
+</mrow><mrow>
 g(x) &amp;= \begin{cases} 1/x^2&amp; x\neq0  </mrow><mrow> 0 &amp; x=0\end{cases}
-&amp;
+</mrow><mrow>
 h(x) &amp;= \begin{cases}\frac{x^3-x^2}{x-1} &amp; x\neq 1 </mrow><mrow> 0 &amp; x=1 \end{cases}
 </mrow>
 </md>
@@ -462,7 +462,7 @@ This theorem says that if <m>f(x)</m> is a continuous function on all of the  in
 It is not hard to convince yourself that the continuity of <m>f</m> is crucial to  the IVT. Without it one can quickly construct examples of functions that  contradict the theorem. See the figure below for a few non-continuous examples:
 </p>
 
-<sidebyside width="80%">
+<sidebyside width="90%">
 <image source="text/figs/IVT2"/>
 </sidebyside>
 

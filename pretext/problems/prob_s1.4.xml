@@ -403,22 +403,17 @@ Multiply both the numerator and the denominator by the
 If we try to do the limit naively we get <m>0/0</m>. Hence we must simplify.
  <md>
 <mrow>
-\amp\frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
-</mrow><mrow>
-  &amp;\hskip0.5in= \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+\frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+  &amp;= \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
   \cdot \left(\frac{\sqrt{x+7}+\sqrt{11-x}}{\sqrt{x+7}+\sqrt{11-x}}\right)
 </mrow><mrow>
-  &amp;\hskip0.5in= \frac{(x+7)-(11-x)}{(2x-4)(\sqrt{x+7}+\sqrt{11-x})}
+  &amp;= \frac{(x+7)-(11-x)}{(2x-4)(\sqrt{x+7}+\sqrt{11-x})}
 </mrow><mrow>
-  &amp;\hskip0.5in= \frac{2x-4}{(2x-4)(\sqrt{x+7}+\sqrt{11-x})}
+  &amp;= \frac{2x-4}{(2x-4)(\sqrt{x+7}+\sqrt{11-x})}
 </mrow><mrow>
-  &amp;\hskip0.5in= \frac{1}{\sqrt{x+7}+\sqrt{11-x}}
-</mrow>
-</md>
-So
-<md>
-<mrow>
-\lim_{x\to2} \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+  &amp;= \frac{1}{\sqrt{x+7}+\sqrt{11-x}}
+</mrow><mrow>
+\mbox{So, }\lim_{x\to2} \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
   &amp;=\lim_{x\to2} \frac{1}{\sqrt{x+7}+\sqrt{11-x}}
 </mrow><mrow>
   &amp;= \frac{1}{\sqrt{9}+\sqrt{9} }
@@ -575,16 +570,12 @@ So our function of interest is between <m>-x^2</m> and <m>x^2</m>. Since <m>\dis
 <solution>
 <p>
 Recall that sine and cosine, no matter what (real-number) input we feed them, spit out numbers between <m>-1</m> and <m>1</m>. So we can bound our horrible numerator, rather than trying to deal with it directly.
-<md>
-<mrow>
+<me>
 x^4({\textcolor{red}{-1}})+5x^2({\textcolor{red}{-1}})+2
-\amp\leq
-x^4{\textcolor{red}{\sin\left(\frac{1}{x}\right)}}+5x^2{\textcolor{red}{\cos\left(\frac{1}{x}\right)}}+2 
-</mrow><mrow>
-\amp\leq
+\leq
+x^4{\textcolor{red}{\sin\left(\frac{1}{x}\right)}}+5x^2{\textcolor{red}{\cos\left(\frac{1}{x}\right)}}+2 \leq
 x^4({\textcolor{red}{1}})+5x^2({\textcolor{red}{1}})+2
-</mrow>
-</md>
+</me>
 </p>
 
 <p>Further, notice that our bounded functions tend to the same value as <m>x</m> goes to <m>0</m>:
@@ -735,13 +726,12 @@ First, we find <m>\displaystyle\lim_{x \rightarrow -1}\dfrac{x^3+x^2+x+1}{3x+3}<
 </p>
 <p><md>
 <mrow>
-\displaystyle\lim_{x \rightarrow -1}\dfrac{x^3+x^2+x+1}{3x+3}
-&amp;=\displaystyle\lim_{x \rightarrow -1}\dfrac{x^2(x+1)+(x+1)}{3x+3}
+\displaystyle\lim_{x \rightarrow -1}\dfrac{x^3+x^2+x+1}{3x+3}&amp;=
+\displaystyle\lim_{x \rightarrow -1}\dfrac{x^2(x+1)+(x+1)}{3x+3}
+=\displaystyle\lim_{x \rightarrow -1}\dfrac{(x+1)(x^2+1)}{3(x+1)}
 </mrow><mrow>
-\amp=\displaystyle\lim_{x \rightarrow -1}\dfrac{(x+1)(x^2+1)}{3(x+1)}
-=\displaystyle\lim_{x \rightarrow -1}\dfrac{x^2+1}{3}
-</mrow><mrow>
-&amp;=\frac{(-1)^2+1}{3}=\frac{2}{3}.
+&amp;=
+\displaystyle\lim_{x \rightarrow -1}\dfrac{x^2+1}{3}=\frac{(-1)^2+1}{3}=\frac{2}{3}.
 </mrow>
 </md>
 </p>
@@ -876,18 +866,11 @@ Since <m>-1 \leq \sin x \leq 1</m> for all values of <m>x</m>,
 ( \textcolor{red}{1})x^{1/101}  \amp
     \leq x^{1/101}\textcolor{red}{\sin\big(x^{-100}\big)}
      \leq (\textcolor{red}{-1})x^{1/101}
-     ~~~\mbox{when $x  \lt 0$.}
-</mrow>
-</md>
-Also
-<md>
-<mrow>
+     ~~~\mbox{when $x  \lt 0$. Also, }
+</mrow><mrow>
 \lim_{x \to 0}x^{1/101}&amp;=\lim_{x \to 0}-x^{1/101}=0
-</mrow>
-</md>
-So, by the Squeeze Theorem,
-<md>
-<mrow>
+~~~\mbox{So, by the Squeeze Theorem,}
+</mrow><mrow>
 \lim_{x \to 0^-}x^{1/101} \sin\big(x^{-100}\big)&amp;=0=\lim_{x \to 0^+}x^{1/101} \sin\big(x^{-100}\big)~~~\mbox{and so}
 </mrow><mrow>
 0&amp;=\lim_{x\rightarrow 0} x^{1/101} \sin\big(x^{-100}\big).
@@ -1016,7 +999,7 @@ Since our function gives a value of 4 when <m>x</m> is to the right of zero, and
 </p>
 
 <p>To further clarify the situation, the graph of <m>y=f(x)</m> is sketched below:
-</p><sidebyside width="50">
+</p><sidebyside>
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{3}{3}{1}{3};
 \draw[thick] (-3,1)--(0,1) node[opendot]{};
@@ -1066,7 +1049,7 @@ Since our function gives a value of 3 when <m>d \gt -4</m>, and a value of <m>-3
 </p>
 
 <p>To further clarify the situation, the graph of <m>y=f(x)</m> is sketched below:
-</p><sidebyside width="50%">
+</p><sidebyside>
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{3}{2}{2};
 \draw[thick] (-4,-1.5)--(-2,-1.5) node[opendot]{};
@@ -1256,7 +1239,7 @@ Note that <m>\frac{1}{f(x)}</m> is undefined when <m>f(x) = 0</m>.
 </p>
 
 <p>        Plotting the above points, we get the following picture:</p>
-<sidebyside width="50%">
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thin, gray, dotted] (-3,-3) grid (3,3);
@@ -1272,7 +1255,7 @@ Note that <m>\frac{1}{f(x)}</m> is undefined when <m>f(x) = 0</m>.
 <p>Since <m>f(x)</m> is constant when <m>x</m> is between -1 and 0, then also <m>\frac{1}{f(x)}</m> is constant between -1 and 0, so we update our picture:
 </p>
 
-<sidebyside width="50%">
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thin, gray, dotted] (-3,-3) grid (3,3);
@@ -1290,7 +1273,7 @@ Note that <m>\frac{1}{f(x)}</m> is undefined when <m>f(x) = 0</m>.
 <m>x</m> approaches <m>-2</m> from the <em>right</em>, <m>f(x)</m> gets closer to zero, and is positive. So <m>\frac{1}{f(x)}</m> will be positive, and will increase in magnitude without bound; that is, <m>\displaystyle\lim_{x \rightarrow -2^-}\dfrac{1}{f(x)}=\infty</m>. We add this behaviour to our graph:
 </p>
 
-<sidebyside width="50%">
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thin, gray, dotted] (-3,-3) grid (3,3);
@@ -1310,7 +1293,7 @@ Note that <m>\frac{1}{f(x)}</m> is undefined when <m>f(x) = 0</m>.
 <p>Now, we consider the behaviour at <m>x=2</m>. Since <m>f(x)</m> gets closer and closer to 0 AND is positive as <m>x</m> approaches 2, we conclude <m>\displaystyle\lim_{x \rightarrow 2} \frac{1}{f(x)}=\infty</m>. Adding to our picture:
 </p>
 
-<sidebyside width="50%">
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thin, gray, dotted] (-3,-3) grid (3,3);
@@ -1332,7 +1315,7 @@ Note that <m>\frac{1}{f(x)}</m> is undefined when <m>f(x) = 0</m>.
 <p>Now the only remaining blank space is between <m>x=0</m> and <m>x=1</m>. Since <m>f(x)</m> is a smooth curve that stays away from 0, we can draw some kind of smooth curve here, and call it good enough. (Later on we'll go into more details about drawing graphs. The purpose of this exercise was to utilize what we've learned about limits.)
 </p>
 
-<sidebyside width="50%">
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thin, gray, dotted] (-3,-3) grid (3,3);
@@ -1400,7 +1383,7 @@ There is a close relationship between <m>f</m> and <m>g</m>.  Fill in the follow
 </sidebyside>
 </hint>
 <answer>
-<sidebyside width="50%">
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thin, gray, dotted] (-3,-3) grid (3,3);
@@ -1441,7 +1424,7 @@ We can start by examining points.</p>
 </p>
 
 <p>This gives us the graph below.</p>
-<sidebyside width="50%">
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thin, gray, dotted] (-3,-3) grid (3,3);
@@ -1544,7 +1527,7 @@ f(x) &amp;=\begin{cases}
 </p>
 <p> 
 <xref ref="s1_4q49_3"/> Since the limits from the left and right do not agree, <m>\displaystyle\lim_{x \rightarrow 0} f(x)=</m>DNE.
-</p><sidebyside width="50%">
+</p><sidebyside>
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thick] plot[domain=-3:0, yscale=.25](\x,{\x*\x-3});

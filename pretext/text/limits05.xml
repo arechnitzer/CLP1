@@ -307,7 +307,7 @@ We use the same trick <mdash/> try to work out what is the biggest term in the  
 	<mrow>
 	  \sqrt{4x^2+1} &amp;= \sqrt{x^2 (4+1/x^2)}  = \sqrt{x^2} \sqrt{4+1/x^2}
 	</mrow><mrow>
-	  &amp;= |x|\sqrt{4+1/x^2} &amp; \text{ and since $x \lt 0$ we have}
+	  &amp;= |x|\sqrt{4+1/x^2} \qquad \text{ and since $x \lt 0$ we have}
 	</mrow><mrow>
 	  &amp; = -x\sqrt{4+1/x^2}
 	</mrow>
