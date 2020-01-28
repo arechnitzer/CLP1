@@ -58,7 +58,16 @@ Think about units.
 </p></statement>
 <answer><p> Calories per gram.
 </p></answer>
-<solution><p> <m>C'(w)=\displaystyle\lim_{h \rightarrow 0} \dfrac{C(w+h)-C(w)}{h} \approx \dfrac{C(w+1)-C(w)}{1}=C(w+1)-C(w)</m>, which is the number of calories in <m>C(w+1)</m> grams minus the number of calories in <m>C(w)</m> grams. This is the number of calories per gram.
+<solution><p> 
+<md>
+<mrow>
+C'(w)\amp=\lim_{h \rightarrow 0} \dfrac{C(w+h)-C(w)}{h} 
+\approx \dfrac{C(w+1)-C(w)}{1}
+</mrow><mrow>
+\amp=C(w+1)-C(w)
+</mrow>
+</md>
+which is the number of calories in <m>C(w+1)</m> grams minus the number of calories in <m>C(w)</m> grams. This is the number of calories per gram.
 </p></solution>
 </exercise>
 
@@ -91,8 +100,13 @@ The rate of change in this case will be the relationship between the heat added 
 <answer><p> Number of bacteria added per degree. That is: the number of extra bacteria (possibly negative) that will exist in the population by raising the temperature by one degree.
 </p></answer>
 <solution><p> As usual, it is instructive to think about the definition of the derivative:
-<me>
-P'(T) = \displaystyle\lim_{h \rightarrow 0}\dfrac{P(T+h)=P(T)}{h} \approx \dfrac{P(T+1)-P(t)}{1} = P(T+1)-P(T).</me>
+<md>
+<mrow>
+P'(T) \amp= \lim_{h \rightarrow 0}\dfrac{P(T+h)=P(T)}{h} \approx \dfrac{P(T+1)-P(t)}{1} 
+</mrow><mrow>
+\amp= P(T+1)-P(T)
+</mrow>
+</md>
  This is the difference in population between two hypothetical populations, raised one degree in temperature apart. So, it is the number of extra individuals that exist in the hotter experiment (with the understanding that this number could be negative, as one would expect in conditions that are hotter than the bacteria prefer). So <m>P'(T)</m> is the number of bacteria added to the colony per degree.
 </p></solution>
 </exercise>
