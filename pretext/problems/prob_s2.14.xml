@@ -98,7 +98,7 @@ The derivative <m>\ds\diff{y}{x}</m> is <m>\dfrac{11}{4}</m> only at the point <
 <intertext>Plugging in <m>x=1</m>, <m>y=3</m>:</intertext><mrow>
 -28+6+2y'+6y'&amp;=0
 </mrow><mrow>
-y'&amp;=\frac{11}{4} \quad\mbox{\textcolor{red}{ at the point $(1,3)$}}
+y'&amp;=\frac{11}{4} \quad\text{at the point $(1,3)$}
 </mrow>
 <intertext>Differentiating <textred>the equation <m>-28x+2y+2xy'+2yy'=0</m>:</textred> </intertext>
 <mrow>
@@ -243,14 +243,21 @@ s'(t)&amp;=\frac{e^t(t^2+1)-e^t(2t)}{(t^2+1)^2}
 </mrow><mrow>
 &amp;=\frac{e^t(t^2-2t+1)}{(t^2+1)^2}
 </mrow>
-<intertext>Using the quotient rule again,</intertext><mrow>
-s''(t)&amp;=\frac{(t^2+1)^2{\textcolor{blue}{\diff{}{t}\{e^t(t^2-2t+1)\}}}-e^t(t^2-2t+1) {\textcolor{red}{\diff{}{t}\{(t^2+1)^2\}}}}{(t^2+1)^4}
+</md>
+Using the quotient rule again,
+<md>
+<mrow>
+\amp s''(t)=\frac{(t^2+1)^2{\textcolor{blue}{\diff{}{t}\{e^t(t^2-2t+1)\}}}-e^t(t^2-2t+1) {\textcolor{red}{\diff{}{t}\{(t^2+1)^2\}}}}{(t^2+1)^4}
 </mrow><mrow>
-&amp;=\frac{(t^2+1)^2\cdot\left[{\textcolor{blue}{e^t(2t-2)+e^t(t^2-2t+1)}}\right]-
-e^t(t^2-2t+1) \cdot {\textcolor{red}{2(t^2+1)(2t)}}}{(t^2+1)^4}
+&amp;=\frac{(t^2\!+\!1)^2\cdot\left[{\textcolor{blue}{e^t(2t\!-\!2)+e^t(t^2\!-\!2\!+\!1)}}\right]-
+e^t(t^2\!-\!2t\!+\!1) \cdot {\textcolor{red}{2(t^2\!+\!1)(2t)}}}{(t^2\!+\!1)^4}
 </mrow><mrow>
 &amp;=\frac{e^t(t^2+1)^2(t^2-1)-4te^t(t-1)^2(t^2+1)}{(t^2+1)^4}
-</mrow><mrow>
+</mrow>
+</md>
+so that
+<md>
+<mrow>
 s''(1)&amp;=0
 </mrow>
 </md>
@@ -280,18 +287,21 @@ We differentiate using the chain rule.
 </mrow><mrow>
 &amp;=\frac{-10(5x^2+12)}{(5x^2-12)^2}
 </mrow>
-<intertext>Using the quotient rule one last time:</intertext><mrow>
-\ddiff{3}{}{x}\{\log(5x^2-12)\}&amp;=\diff{}{x}\left\{
+</md>
+Using the quotient rule one last time:
+<md>
+<mrow>
+\amp\ddiff{3}{}{x}\{\log(5x^2-12)\}=\diff{}{x}\left\{
 \frac{-10(5x^2+12)}{(5x^2-12)^2}
 \right\}
 </mrow><mrow>
-&amp;=\frac{(5x^2-12)^2(-10)(10x)+10(5x^2+12)(2)(5x^2-12)(10x)}{(5x^2-12)^4}
+&amp;\hskip0.25in=\frac{(5x^2-12)^2(-10)(10x)+10(5x^2+12)(2)(5x^2-12)(10x)}{(5x^2-12)^4}
 </mrow><mrow>
-&amp;=\frac{(5x^2-12)(-100x)+(200x)(5x^2+12)}{(5x^2-12)^3}
+&amp;\hskip0.25in=\frac{(5x^2-12)(-100x)+(200x)(5x^2+12)}{(5x^2-12)^3}
 </mrow><mrow>
-&amp;=\frac{100x(-5x^2+12+10x^2+24)}{(5x^2-12)^3}
+&amp;\hskip0.25in=\frac{100x(-5x^2+12+10x^2+24)}{(5x^2-12)^3}
 </mrow><mrow>
-&amp;=\frac{100x(5x^2+36)}{(5x^2-12)^3}
+&amp;\hskip0.25in=\frac{100x(5x^2+36)}{(5x^2-12)^3}
 </mrow>
 </md>
 </p></solution>
@@ -418,16 +428,27 @@ For (a) and (b), notice the following:
 \diff{}{x}\{2\sec^2x\tan x\}&amp;=(4\sec x \cdot \sec x \tan x)\tan x+2\sec^2x\sec^2x
 </mrow><mrow>
 &amp;=4\sec^2x\tan^2x+2\sec^4x
+</mrow>
+</md>
+and
+<md><mrow>
+\amp\diff{}{x}\{4\sec^2x\tan^2x+2\sec^4x\}
 </mrow><mrow>
-\diff{}{x}\{4\sec^2x\tan^2x+2\sec^4x\}&amp;=(8\sec x \cdot \sec x \tan x)\tan^2x+4\sec^2x(2\tan x \cdot\sec^2x)
-</mrow><mrow>&amp;\quad+8\sec^3x\cdot\sec x \tan x
+\amp\hskip0.5in=(8\sec x \cdot \sec x \tan x)\tan^2x+4\sec^2x(2\tan x \cdot\sec^2x)
 </mrow><mrow>
-&amp;=8\sec^2x\tan^3x+16\sec^4x\tan x
+&amp;\hskip2in+8\sec^3x\cdot\sec x \tan x
+</mrow><mrow>
+&amp;\hskip0.5in=8\sec^2x\tan^3x+16\sec^4x\tan x
 </mrow>
 </md>
 So, <m>\ds\ddiff{4}{}{x} \tan x =8\sec^2x\tan^3x+16\sec^4x\tan x</m>. It certainly seems like this is not the same as <m>\tan x</m>, but remember that sometimes trig identities can fool you: <m>\tan^2x+1=\sec^2x</m>, and so on. So, to be absolutely sure that these are not equal, we need to find a value of <m>x</m> so that the output of one is not the same as the output of the other. When <m>x=\frac{\pi}{4}</m>:
-<me>
-8\sec^2x\tan^3x+16\sec^4x\tan x = 8\left({\sqrt{2}}\right)^2(1)^3+16\left({\sqrt{2}}\right)^4(1)=80\neq 1=\tan x.</me>
+<md>
+<mrow>
+8\sec^2x\tan^3x+16\sec^4x\tan x \amp= 8\left({\sqrt{2}}\right)^2(1)^3+16\left({\sqrt{2}}\right)^4(1)
+</mrow><mrow>
+\amp=80\neq 1=\tan x
+</mrow>
+</md>
 </p>
 
 <p>So, (c) is false.
@@ -466,7 +487,7 @@ A function <m>f(x)</m> satisfies <m>f'(x) \lt 0</m> and <m>f''(x) \gt 0</m> over
 \draw (1.5,-1.5) node{(iii)};
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
-<sidebyside>
+<sidebyside widths="33% 33%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{3}{1}{2}
 \YExcoord{.5}{a}
@@ -618,7 +639,7 @@ the curve to its tangent line at <m>(1,2)</m>.
 <ol label="a">
 <li> <m>y'(1)=\dfrac{4}{13}</m>
 </li>
-<li><sidebyside>
+<li><sidebyside width="40%">
 <image source="problems/figs/graphE3"/>
 </sidebyside>
 </li>
@@ -647,9 +668,9 @@ y'(1)&amp;=\frac{4}{13}
  From part <xref ref="s2_11p2_1"/>, the slope of the curve at <m>x=1,\ y=2</m> is <m>\dfrac{4}{13}</m>,
 so the curve is increasing, but fairly slowly. The angle of the tangent
 line is <m>\tan^{-1}\left(\frac{4}{13}\right)\approx 17^\circ</m>. We are also told that <m>y''(1) \lt 0</m>.
-So the slope of the curve is decreasing as <m>x</m> passes through 1. That is, the line is more steeply increasing to the left of <m>x=1</m>, and its slope is decreasing (getting less sleep, then possibly the slope even becomes negative) as we move past <m>x=1</m>.</p>
+So the slope of the curve is decreasing as <m>x</m> passes through 1. That is, the line is more steeply increasing to the left of <m>x=1</m>, and its slope is decreasing (getting less steep, then possibly the slope even becomes negative) as we move past <m>x=1</m>.</p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="problems/figs/graphE3"/>
 </sidebyside>
 </li>
@@ -682,8 +703,14 @@ Review Pascal's Triangle.
 </ul>
 </p></answer>
 <solution><p>
-<xref ref="s2_14expprod1"/> Using the product rule, <me>
-g''(x)=[f'(x)+f''(x)]e^x+[f(x)+f'(x)]e^x=[f(x)+2f'(x)+f''(x)]e^x</me>
+<xref ref="s2_14expprod1"/> Using the product rule,
+<md>
+<mrow>
+g''(x)\amp=[f'(x)+f''(x)]e^x+[f(x)+f'(x)]e^x
+</mrow><mrow>
+\amp=[f(x)+2f'(x)+f''(x)]e^x
+</mrow>
+</md>
 </p>
 
 <p><xref ref="s2_14expprod2"/>  Using the product rule and our answer from<nbsp/><xref ref="s2_14expprod1"/>,
@@ -697,7 +724,7 @@ g'''(x)&amp;=[f'(x)+2f''(x)+f'''(x)]e^x+[f(x)+2f'(x)+f''(x)]e^x
 </p>
 
 <p><xref ref="s2_14expprod3"/> We notice that the coefficients of the derivatives of <m>f</m> correspond to the entries in the rows of Pascal's Triangle.</p>
-<sidebyside>
+<sidebyside width="37%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,3) node{1};
 \draw (-.5,2.5) node{1}; \draw (.5,2.5) node{1};
@@ -729,7 +756,9 @@ g^{(4)}(x)=[f(x)+4f'(x)+6f''(x)+4f'''(x)+f^{(4)}(x)]e^x</me>
 <mrow>
 g'''(x)&amp;=[f(x)+3f'(x)+3f''(x)+f'''(x)]e^x
 </mrow><mrow>
-g^{(4)}(x)&amp;=[f'(x)+3f''(x)+3f'''(x)+f^{(4)}(x)]e^x+[f(x)+3f'(x)+3f''(x)+f'''(x)]e^x
+g^{(4)}(x)&amp;=[f'(x)+3f''(x)+3f'''(x)+f^{(4)}(x)]e^x
+</mrow><mrow>
+\amp\hskip2in+[f(x)+3f'(x)+3f''(x)+f'''(x)]e^x
 </mrow><mrow>
 &amp;=[f(x)+4f'(x)+6f''(x)+4f'''(x)+f^{(4)}(x)]e^x.
 </mrow>
@@ -753,7 +782,7 @@ Since <m>f(x)</m> is differentiable over all real numbers, it is also continuous
 
 <p>Rolle's Theorem tells us that if <m>a</m> and <m>b</m> are distinct roots of a function <m>g</m>, then <m>g'(x)=0</m> for some <m>c</m> in <m>(a,b)</m>. That is, <m>g'</m> has a root strictly between <m>a</m> and <m>b</m>. Expanding this idea, if <m>g</m> has <m>m+1</m> distinct roots, then <m>g'</m> must have at least <m>m</m> distinct roots, as in the sketch below.
 </p>
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick,  \lt - \gt ] (0,0)--(10,0);
 \color{blue}

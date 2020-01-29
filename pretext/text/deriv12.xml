@@ -211,7 +211,7 @@ below
 Virtually the same argument works for the case
 <m>-\frac{\pi}{2}\le\arcsin(x)\le 0</m></fn>.</p>
 
-<sidebyside width="33%">
+<sidebyside width="25%">
 <image source="text/figs/triangleAsin"/>
 </sidebyside>
 
@@ -363,7 +363,7 @@ Very similar steps give the derivative of <m>\arctan x</m>:
 </li>
 <li><p> To simplify this expression, we draw the relevant triangle</p>
 
-<sidebyside width="40%">
+<sidebyside width="30%">
 <image source="text/figs/triangleAtan"/>
 </sidebyside>
 
@@ -399,7 +399,7 @@ An almost identical computation gives the derivative of <m>\arccot x</m>:
 </md>
 from the triangle
 
-<sidebyside width="40%">
+<sidebyside width="30%">
 <image source="text/figs/triangleAcot"/>
 </sidebyside>
 

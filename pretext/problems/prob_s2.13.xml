@@ -183,7 +183,7 @@ Since <m>f(x)</m> is differentiable for all <m>x \in (0,10)</m>, then <m>f(x)</m
 
 <p>Since <m>f'(c)=0</m> for <m>c \in (0,10)</m>, that means <m>f</m> is constant on that interval. So, <m>f(x)</m> is a function like this:</p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{5}{1}{5}
 \draw node[vertex]{};
@@ -216,13 +216,12 @@ the listed property, or explain why no such function exists.
 </li>
 </ol>
 </p></statement>
-<hint><p></p></hint>
 <answer><p>
 (a) No such function is possible: Rolle's Theorem guarantees <m>f'(c)=0</m> for at least one point <m>c \in (1,2)</m>.
 </p>
 
 <p>For the other functions, examples are below, but many answers are possible.</p>
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{3}{1}{2}
 \draw (.5,0) node[vertex, label=below:1]{};
@@ -231,7 +230,7 @@ the listed property, or explain why no such function exists.
 \draw (-1,3) node{(b)};
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{4}{1}{2}
 \draw (.62,0) node[vertex, label=below:1]{};
@@ -240,7 +239,7 @@ the listed property, or explain why no such function exists.
 \draw (-1,3) node{(c)};
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{3}{1}{2}
 \draw (.5,0) node[vertex, label=below:1]{};
@@ -256,7 +255,7 @@ the listed property, or explain why no such function exists.
 
 <p>For the other functions, examples are below, but many answers are possible.</p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{3}{1}{2}
 \draw (.5,0) node[vertex, label=below:1]{};
@@ -265,7 +264,7 @@ the listed property, or explain why no such function exists.
 \draw (-1,3) node{(b)};
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{4}{1}{2}
 \draw (.62,0) node[vertex, label=below:1]{};
@@ -274,7 +273,7 @@ the listed property, or explain why no such function exists.
 \draw (-1,3) node{(c)};
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{3}{1}{2}
 \draw (.5,0) node[vertex, label=below:1]{};
@@ -420,15 +419,18 @@ f'(x)=(4x+1)^3+1</me>
 </p>
 
 <p>This is simple enough that we can find its zero explicitly:
-<me>
+<md>
+<mrow>
 (4x+1)^3 +1= 0
-\quad \Leftrightarrow \quad
+\quad \amp\Leftrightarrow \quad
 (4x+1)^3 = -1
 \quad \Leftrightarrow \quad
 4x+1 = -1
-\quad \Leftrightarrow \quad
+</mrow><mrow>
+\quad \amp\Leftrightarrow \quad
 4x=-2
-</me>
+</mrow>
+</md>
 </p>
 
 <p>Hence <m>f'(c)=0</m> only when <m>c=\dfrac{-1}{2}</m>. That the derivative only has a single zero is very
@@ -454,7 +456,7 @@ for <m>x \lt -\frac{1}{2}</m> and increasing for  <m>x \gt -\frac{1}{2}</m>.
 </ul>
 This means the function must look something like the graph below:</p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{3}{2}{1}{2}
 \draw[thick] plot[domain=-2:1](\x,{(\x+0.5)*(\x+0.5)*(\x+0.5)*(\x+0.5)*0.5-0.5});
@@ -542,7 +544,7 @@ Let <m>f(x)=e^x-4\cos(2x)</m>, and use Rolle's Theorem. What is the interval whe
           <m>y=e^x</m> and <m>y= 4\cos(2x)</m> cross.
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image source="problems/figs/graphExpCos"/>
 </sidebyside>
 
@@ -644,24 +646,10 @@ Let <m>f(x)=\arcsec x + \arccsc c -C</m>.
 What is <m>f'(x)</m>?
 </p></hint>
 <answer><p>
-The domains of <m>\arcsec x</m> and <m>C-\arcsec x</m> are the same: <m>|x| \geq 1</m>.
-Define <m>f(x)=\arcsec x + \arccsc x</m>, and note the domain of <m>f(x)</m> is also <m>|x| \geq 1</m>.
-Using Theorem<nbsp/><xref ref="thm_DIFFinvtrigderiv"/>,
-<me>
-f'(x)=\diff{}{x}\arcsec x+\diff{}{x} \arccsc
- = \dfrac{1}{|x|\sqrt{x^2-1}}+\dfrac{-1}{|x|\sqrt{x^2-1}}=0.</me>
+See the solution for the argument that <m>\arcsec x=C-\arccsc x</m> for some constant <m>C</m>.
 </p>
 
-<p>By Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>, this means <m>f(x)</m> is constant.
-That is, <m>f(x)=C</m> for some constant <m>C</m>, so <m>C=\arcsec x + \arccsc x</m>, hence
-<me>
-\arcsec x = C-\arccsc x</me>
-</p>
-
-<p>for all <m>|x| \geq 1</m>.
-</p>
-
-<p><m>C=\dfrac{\pi}{2}</m>
+<p>The constant <m>C=\dfrac{\pi}{2}</m>.
 </p></answer>
 <solution><p>
 The domains of <m>\arcsec x</m> and <m>C-\arccsc x</m> are the same: <m>|x| \geq 1</m>.
@@ -791,7 +779,7 @@ Consider the derivative <m>f'(x) = \frac{1}{2}+\cos x</m>.
            same is true for <m>x</m> a little smaller than <m>-\frac{2\pi}{3}.</m>
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3.5}{3.5}
 \draw plot[domain=-3.2:3.2](\x,{\x/2+sin(\x r)}) node[right]{$y=f(x)=\dfrac{x}{2}+\sin x$};
@@ -846,7 +834,7 @@ Rolle's Theorem relates the roots of a function to the roots of its derivative.
 Since <m>f(x)</m> is differentiable over all real numbers, it is also continuous over all real numbers. We claim that <m>f(x)</m> cannot have four or more distinct roots. For every two distinct roots <m>a \lt b</m>, Rolle's Theorem tells us there is a <m>c \in (a,b)</m> such that <m>f'(c)=0</m>: that is, <m>c</m> is a root of <m>f'</m>. Since <m>f'</m> has only two distinct roots, <m>f</m> can have at most three distinct roots.
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick,  \lt - \gt ] (0,0)--(6,0);
 \color{blue}
@@ -882,7 +870,7 @@ We are asked to find the number of solutions to the equation
           <m>y=x^2+5x+1</m> and <m>y=-\sin x</m> cross.
 </p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{7}{2}{5}{3}
 \draw plot[domain=-5.25:.3](\x,{\x*\x+5*\x+1}) node[right]{$y=x^2+5x+1$};
