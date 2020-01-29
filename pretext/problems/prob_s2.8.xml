@@ -149,7 +149,7 @@ There are infinitely many values. You need to describe them all.
 <solution><p>
 <m>f'(x)=\cos x - \sin x</m>, so <m>f'(x)=0</m> precisely when <m>\sin x = \cos x</m>. This happens at <m>\pi/4</m>, but it also happens at <m>5\pi/4</m>. By looking at the unit circle, it is clear that <m>\sin x = \cos x</m> whenever <m>x = \frac{\pi}{4}+\pi n</m> for some integer <m>n</m>.</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{2.75}{2.75}
 \draw[thick] node[shape=circle, minimum size=4cm, draw, inner sep=0]{};
@@ -178,7 +178,9 @@ Simplify first.
 <li> Solution 2: Using the formula for the derivative of a squared function,
 <md>
 <mrow>
-f'(x)=2\sin x \cos x + 2\cos x(- \sin x)=2\sin x \cos x - 2 \sin x \cos x =0.
+f'(x)\amp=2\sin x \cos x + 2\cos x(- \sin x)
+</mrow><mrow>
+\amp=2\sin x \cos x - 2 \sin x \cos x =0.
 </mrow>
 </md>
 </li>
@@ -241,7 +243,10 @@ Quotient rule
 We use the quotient rule.
 <md>
 <mrow>
-f'(x)&amp;=\dfrac{(\cos x + \tan x)(2\cos x + 3 \sec^2 x)-(2\sin x+3\tan x)(-\sin x + \sec^2 x)}{(\cos x + \tan x)^2}
+\amp f'(x)
+</mrow><mrow>
+&amp;=\dfrac{(\cos x\!+\!\tan x)(2\cos x\!+\!3 \sec^2 x)\!-\!
+(2\sin x\!+\!3\tan x)(-\sin x\!+\!\sec^2 x)}{(\cos x + \tan x)^2}
 </mrow><mrow>
 &amp;=\frac{2\cos^2x+3\cos x \sec^2 x + 2 \cos x \tan x + 3 \tan x \sec^2 x}{(\cos x + \tan x)^2}
 </mrow><mrow>
@@ -378,10 +383,13 @@ The only spot to worry about is when <m>x=0</m>. For <m>f(x)</m> to be different
 	<p>
 	In order for <m>f</m> to be differentiable at <m>x=0</m>, it must also
 	be continuous at <m>x=0</m>. This forces
-	<me>
-	\lim_{x\to 0^-}f(x) =  \lim_{x\to 0^+}f(x) =f(0)\qquad\text{or}\qquad
-	\lim_{x\to 0^-}\cos(x) =  \lim_{x\to 0^+}(ax+b) =1
-	</me>
+	<md>
+        <mrow>
+	\amp\lim_{x\to 0^-}f(x) =  \lim_{x\to 0^+}f(x) =f(0)
+        </mrow><mrow>\text{or}\qquad
+	\amp\lim_{x\to 0^-}\cos(x) =  \lim_{x\to 0^+}(ax+b) =1
+	</mrow>
+        </md>
 	or <m>b=1</m>.
   </p>
 	<p>
@@ -528,19 +536,24 @@ and
 \ds\lim_{h\to 0^-}\dfrac{f(h)-f(0)}{h}=\ds\lim_{h\to 0^-}\dfrac{(ah+2)-2}{h}=\left.\ds\diff{}{x}\left\{ax+2\right\}\right|_{x=0}=a.</me>
 </p>
 
-<p>Similarly, when <m>h \to 0^+</m>, then <m>h \gt 0</m>, so <m>f(h)=\dfrac{6\cos h}{1+\sin h + \cos h}</m> <nbsp/><nbsp/>and <md>
+<p>Similarly, when <m>h \to 0^+</m>, then <m>h \gt 0</m>, so <m>f(h)=\dfrac{6\cos h}{1+\sin h + \cos h}</m> <nbsp/><nbsp/>and 
+<md>
 <mrow>
-\ds\lim_{h \rightarrow 0^+} \dfrac{f(h)-f(0)}{h} &amp;= \left.\ds\diff{}{x}\left\{\dfrac{6\cos x}{2+\sin x + \cos x}\right\}\right|_{x=0}
+\amp\ds\lim_{h \rightarrow 0^+} \dfrac{f(h)-f(0)}{h} = \left.\ds\diff{}{x}\left\{\dfrac{6\cos x}{2+\sin x + \cos x}\right\}\right|_{x=0}
 </mrow><mrow>
-&amp;=\left.\frac{-6\sin x(2+\sin x+\cos x)-6\cos x(\cos x-\sin x)}{(2+\sin x+\cos x)^2}\right|_{x=0}.</mrow>
+&amp;\hskip0.5in=\left.\frac{-6\sin x(2+\sin x+\cos x)-6\cos x(\cos x-\sin x)}{(2+\sin x+\cos x)^2}\right|_{x=0}.</mrow>
 </md>
 </p>
 
 <p>Since the limits from the left and right must be equal, this forces
-<me>
-a=\frac{-6\sin 0(2+\sin 0+\cos 0)-6\cos 0(\cos 0-\sin 0)}{(2+\sin 0+\cos 0)^2}
-=\frac{-6}{(2+1)^2}\implies\boxed{a=-\frac{2}{3}}
-</me>
+<md>
+<mrow>
+\amp a=\frac{-6\sin 0(2+\sin 0+\cos 0)-6\cos 0(\cos 0-\sin 0)}{(2+\sin 0+\cos 0)^2}
+=\frac{-6}{(2+1)^2}
+</mrow><mrow>
+\amp\implies\boxed{a=-\frac{2}{3}}
+</mrow>
+</md>
 </p></solution>
 </exercise>
 
@@ -608,7 +621,7 @@ The function is differentiable whenever <m>\sin(x)\ne 0</m> since the derivative
 </mrow>
 </md>
 which is well-defined unless <m>\sin x = 0</m>. This happens when <m>x</m> is an integer multiple
-of <m>\pi</m>. So, the function is differentiable for all real values <m>x</m> except <m>x=n\pi,</m>, where <m>n</m> is any integer.
+of <m>\pi</m>. So, the function is differentiable for all real values <m>x</m> except <m>x=n\pi</m>, where <m>n</m> is any integer.
 </p></answer>
 <solution><p>
 The function is differentiable whenever <m>\sin(x)\ne 0</m> since the derivative equals
@@ -618,7 +631,7 @@ The function is differentiable whenever <m>\sin(x)\ne 0</m> since the derivative
 </mrow>
 </md>
 which is well-defined unless <m>\sin x = 0</m>. This happens when <m>x</m> is an integer multiple
-of <m>\pi</m>. So, the function is differentiable for all real values <m>x</m> except <m>x=n\pi,</m>, where <m>n</m> is any integer.
+of <m>\pi</m>. So, the function is differentiable for all real values <m>x</m> except <m>x=n\pi</m>, where <m>n</m> is any integer.
 </p></solution>
 </exercise>
 
@@ -676,7 +689,7 @@ For which values of <m>x</m> does the function <m>f(x)=e^x\sin x</m> have a hori
 <solution><p>
 We are asked to solve <m>f'(x)=0</m>. That is, <m>e^x[\sin x +  \cos x]=0</m>. Since <m>e^x</m> is always positive, that means we need to find all points where <m>\sin x + \cos x =0</m>. That is, we need to find all values of <m>x</m> where <m>\sin x = - \cos x</m>. Looking at the unit circle, we see this happens whenever <m>x = \frac{3\pi}{4}+n\pi</m> for any integer <m>n</m>.</p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{2.75}{2.75}
 \draw[thick] node[shape=circle, minimum size=4cm, draw, inner sep=0]{};
@@ -734,7 +747,7 @@ f'(0)&amp;=\lim_{h \to 0}\frac{f(0+h)-f(0)}{h}\qquad\mbox{ if it exists}
 </mrow>
 </md>
 As <m>h</m> approaches 0, both the numerator and the denominator approach 0. So, to evaluate the limit, we need to do more work. The key insight we can use is a result that was shown in the text while evaluating the derivative of sine. When <m>h</m> is close to 0, <m>\cos h \leq \frac{\sin h}{h} \leq 1</m>. We use this to bound our limit, and then apply the squeeze theorem.
-<md>
+<md alignment="alignat">
 <mrow>
 &amp;\cos h&amp;&amp;\leq&amp;&amp;\frac{\sin h}{h}&amp;&amp;\leq&amp;&amp;1
 </mrow><mrow>
@@ -822,10 +835,13 @@ x&amp;x\ge 0
 <mrow>
 \lim_{t \to 0}\frac{\sin t}{t}&amp;=\lim_{t \to 0}\frac{\sin (t+0)-\sin (0)}{t}=\left.\diff{}{x}\{\sin x\}\right|_{t=0}=\cos 0=1
 </mrow>
-<intertext>At any rate, since we know <m>\ds\lim_{t \to 0} \dfrac{\sin t}{t}=1</m>, then:</intertext>
+</md>
+At any rate, since we know <m>\ds\lim_{t \to 0} \dfrac{\sin t}{t}=1</m>, then:
+<md>
 <mrow>
-\lim_{t \to 0^+} \frac{h(t+0)-h(0)}{t}&amp;=\lim_{t \to 0^+}\frac{\sin t}{t}=1\qquad
-\lim_{t \to 0^-} \frac{h(t+0)-h(0)}{t}=\lim_{t \to 0^-}\frac{-\sin t}{t}=-1
+\lim_{t \to 0^+} \frac{h(t+0)-h(0)}{t}&amp;=\lim_{t \to 0^+}\frac{\sin t}{t}=1
+</mrow><mrow>
+\lim_{t \to 0^-} \frac{h(t+0)-h(0)}{t}\amp=\lim_{t \to 0^-}\frac{-\sin t}{t}=-1
 </mrow>
 <intertext>So, since the one-sided limits disagree,</intertext><mrow>
 \lim_{t \to 0} \frac{h(t+0)-h(0)}{t}&amp;=DNE

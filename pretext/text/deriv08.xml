@@ -436,15 +436,15 @@ derivative:
 <mrow>
 \diff{}{x}\sin x
 &amp;=\lim_{h\rightarrow 0}\frac{\sin (x+h)-\sin x}{h}
-</mrow><mrow>[0.05in]
+</mrow><mrow>
 &amp;=\lim_{h\rightarrow 0}\frac{\sin x\cos h +\cos x\sin h-\sin x}{h}
-</mrow><mrow>[0.05in]
+</mrow><mrow>
 &amp;=\lim_{h\rightarrow 0}\bigg[\sin x\frac{\cos h-1}{h}
                             +\cos x\frac{\sin h-0}{h}\bigg]
-</mrow><mrow>[0.05in]
+</mrow><mrow>
 &amp;=\sin x\ \lim_{h\rightarrow 0}\frac{\cos h-1}{h}
   \ +\ \cos x\ \lim_{h\rightarrow 0}\frac{\sin h-0}{h}
-</mrow><mrow>[0.05in]
+</mrow><mrow>
 &amp;=\sin x\ \underbrace{\bigg[\diff{}{x}\cos x\bigg]_{x=0}}_{=0}
   \ +\ \cos x\ \underbrace{\bigg[\diff{}{x}\sin x\bigg]_{x=0}}_{=1}
 </mrow><mrow>
@@ -456,15 +456,15 @@ The computation of the derivative of <m>\cos x</m> is very similar.
 <mrow>
 \diff{}{x}\cos x
 &amp;=\lim_{h\rightarrow 0}\frac{\cos (x+h)-\cos x}{h}
-</mrow><mrow>[0.05in]
+</mrow><mrow>
 &amp;=\lim_{h\rightarrow 0}\frac{\cos x\cos h -\sin x\sin h-\cos x}{h}
-</mrow><mrow>[0.05in]
+</mrow><mrow>
 &amp;=\lim_{h\rightarrow 0}\bigg[\cos x\frac{\cos h-1}{h}
                             -\sin x\frac{\sin h-0}{h}\bigg]
-</mrow><mrow>[0.05in]
+</mrow><mrow>
 &amp;=\cos x\ \lim_{h\rightarrow 0}\frac{\cos h-1}{h}
   \ -\ \sin x\ \lim_{h\rightarrow 0}\frac{\sin h-0}{h}
-</mrow><mrow>[0.05in]
+</mrow><mrow>
 &amp;=\cos x\ \underbrace{\bigg[\diff{}{x}\cos x\bigg]_{x=0}}_{=0}
   \ -\ \sin x\ \underbrace{\bigg[\diff{}{x}\sin x\bigg]_{x=0}}_{=1}
 </mrow><mrow>
@@ -519,7 +519,7 @@ quick look at the appropriate appendix.</fn>
 </mrow>
 </md>
 So, by the quotient rule,
-<md>
+<md alignment="alignat">
 <mrow>
 \diff{}{x}\tan x
 &amp;=\diff{}{x}\,\frac{\sin x}{\cos x} &amp;
