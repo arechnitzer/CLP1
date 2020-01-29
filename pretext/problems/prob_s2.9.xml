@@ -665,7 +665,7 @@ y=\frac{e^{3x}}{1+x^2}</me>
 <answer><p> <m>y'=\dfrac{e^{3x}(3x^2-2x+3)}{(1+x^2)^2}</m>
 </p></answer>
 <solution><p>
-{We use the quotient rule, noting by the chain rule that <m>\diff{}{x}\{e^{3x}\}=3e^{3x}</m>:}
+We use the quotient rule, noting by the chain rule that <m>\diff{}{x}\{e^{3x}\}=3e^{3x}</m>:
 <md>
 <mrow>
 y'&amp;=\frac{(1+x^2)\cdot3e^{3x}-e^{3x}(2x)}{(1+x^2)^2}
@@ -786,7 +786,7 @@ f'(x) &amp;= \frac{\cos^3(5x-7)\diff{}{x}\{e^x\}-e^x\diff{}{x}\{\cos^3(5x-7)\}}{
 &amp;= \frac{\cos^3(5x-7)e^x-e^x\cdot3\textcolor{red}{\cos}^2\textcolor{red}{(5x-7)} \cdot \diff{}{x}\{\textcolor{red}{\cos(5x-7)}\}}{\cos^6(5x-7)}
 </mrow>
 <intertext>We need the chain rule again!</intertext><mrow>
-&amp;= \frac{\cos^3(5x-7)e^x-e^x\cdot3{\cos}^2{(5x-7)} \cdot[{-\sin(\textcolor{red}{5x-7})\cdot \diff{}{x}\{\textcolor{red}{5x-7}\}}]}{\cos^6(5x-7)}
+&amp;= \frac{\cos^3(5x\!-\!7)e^x\!-\!e^x\cdot3{\cos}^2{(5x\!-\!7)} \cdot[{-\sin(\textcolor{red}{5x\!-\!7})\cdot \diff{}{x}\{\textcolor{red}{5x\!-\!7}\}}]}{\cos^6(5x-7)}
 </mrow><mrow>
 &amp;= \frac{\cos^3(5x-7)e^x-e^x\cdot3{\cos}^2{(5x-7)} \cdot[{-\sin({5x-7})\cdot5}]}{\cos^6(5x-7)}
 </mrow>
@@ -817,9 +817,12 @@ f'(x)&amp;=e^x\sec^3(5x-7)+e^x\diff{}{x}\{\sec^3(5x-7)\}
 </mrow>
 <intertext>We need the chain rule again! Recall <m>\diff{}{x}\{\sec x\}=\sec x \tan x</m>.</intertext>
 <mrow>
-&amp;=e^x\sec^3(5x-7)+e^x\cdot3\;{\sec}^2{(5x-7)} \cdot {\sec(\textcolor{orange}{5x-7})\tan(\textcolor{orange}{5x-7})\cdot\diff{}{x}\{\textcolor{orange}{5x-7}\}}
+&amp;=e^x\sec^3(5x-7)
+</mrow><mrow>\amp\hskip0.2in+e^x\cdot3\;{\sec}^2{(5x\!-\!7)} \cdot {\sec(\textcolor{orange}{5x\!-\!7})\tan(\textcolor{orange}{5x\!-\!7})\cdot\diff{}{x}\{\textcolor{orange}{5x\!-\!7}\}}
 </mrow><mrow>
-&amp;=e^x\sec^3(5x-7)+e^x\cdot3\;{\sec}^2{(5x-7)} \cdot {\sec({5x-7})\tan({5x-7})\cdot 5}
+&amp;=e^x\sec^3(5x\!-\!7)
+</mrow><mrow>
+\amp\hskip0.2in+e^x\cdot3\;{\sec}^2{(5x\!-\!7)} \cdot {\sec({5x\!-\!7})\tan({5x\!-\!7})\cdot 5}
 </mrow>
 <intertext>We finish by simplifying:</intertext><mrow>
 &amp;=e^x\sec^3(5x-7)(1+15\tan({5x-7}))
@@ -836,9 +839,14 @@ Evaluate <m>\ds\diff{}{x}\left\{x e^{2x} \cos 4x\right\}</m>.
 </p></statement>
 <hint><p>
 In Example<nbsp/><xref ref="eg_DIFFsimpleToolsA"/>, we generalized the product rule to three factors:
-<me>
-\diff{}{x}\{f(x)g(x)h(x)\}=f'(x)g(x)h(x)+f(x)g'(x)h(x)+f(x)g(x)h'(x)
-</me>
+<md>
+<mrow>
+\diff{}{x}\{f(x)g(x)h(x)\}
+\amp=f'(x)g(x)h(x)+f(x)g'(x)h(x)
+</mrow><mrow>
+\amp\hskip1in+f(x)g(x)h'(x)
+</mrow>
+</md>
 This isn't strictly necessary, but it will simplify your computations.
 </p></hint>
 <answer><p>
@@ -848,17 +856,24 @@ This isn't strictly necessary, but it will simplify your computations.
 <ul>
 <li><p> Solution 1:
 In Example<nbsp/><xref ref="eg_DIFFsimpleToolsA"/>, we generalized the product rule to three factors:
-<me>
-\diff{}{x}\{f(x)g(x)h(x)\}=f'(x)g(x)h(x)+f(x)g'(x)h(x)+f(x)g(x)h'(x)</me>
+<md>
+<mrow>
+\diff{}{x}\{f(x)g(x)h(x)\}\amp=f'(x)g(x)h(x)+f(x)g'(x)h(x)
+</mrow><mrow>
+\amp\hskip1in+f(x)g(x)h'(x)
+</mrow>
+</md>
 </p>
 
 <p>Using this rule:
 <md>
 <mrow>
-\diff{}{x}\left\{(x) \left(e^{2x}\right)( \cos 4x)\right\}&amp;=\diff{}{x}\{x\}\cdot e^{2x} \cos 4x
-+
+\amp\diff{}{x}\left\{(x) \left(e^{2x}\right)( \cos 4x)\right\}
+</mrow><mrow>
+&amp;=\diff{}{x}\{x\}\cdot e^{2x} \cos 4x
+\!+\!
 x\cdot\diff{}{x}\left\{e^{2x}\right\}\cdot\cos 4x
-+
+\!+\!
 xe^{2x}\cdot\diff{}{x}\{\cos 4x\}
 </mrow><mrow>
 &amp;=e^{2x}\cos4x+x\left(2e^{2x}\right)\cos4x+
@@ -871,7 +886,9 @@ xe^{2x}(-4\sin 4x)
 <li><p> Solution 2: We can use the product rule twice. In the first step, we split the function <m>x e^{2x} \cos 4x</m> into the product of two functions.
 <md>
 <mrow>
-\diff{}{x}\left\{\left(x e^{2x}\right) (\cos 4x)\right\}&amp;=
+\amp\diff{}{x}\left\{\left(x e^{2x}\right) (\cos 4x)\right\}
+</mrow><mrow>
+&amp;=
 \diff{}{x}\left\{xe^{2x}\right\}\cdot\cos4x
 +
 xe^{2x}\cdot\diff{}{x}\left\{ \cos 4x\right\}
@@ -1026,7 +1043,9 @@ This is a long, nasty problem, but it doesn't use anything you haven't seen befo
 \dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
 \right)^{\frac{2}{3}}\cdot
 </mrow><mrow>
-&amp;\left(\frac{ \sqrt{x^3-9}\tan x  {(-2x)e^{\csc x^2}\csc(x^2)\cot(x^2)}-e^{\csc x^2}{\left(\frac{3x^2\tan x}{2\sqrt{{x^3-9}}}+\sqrt{x^3-9}\sec^2 x\right)}}{(\tan^2 x)(x^3-9) }\right)
+&amp;\hskip0.3in\frac{e^{\csc x^2}  \Big( -2x\sqrt{x^3\!-\!9}\tan x\frac{\cos(x^2)}{\sin^2(x^2)}
+           -\frac{3x^2\tan x}{2\sqrt{x^3-9}}-\sqrt{x^3\!-\!9}\sec^2 x\Big)}
+          {(\tan^2 x)(x^3-9) }
 </mrow>
 </md>
 </p></answer>
@@ -1037,7 +1056,12 @@ f(x)&amp;=\sqrt[3]{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}
 </mrow><mrow>
 &amp;=\left({\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right)^{\frac{1}{3}}
 </mrow>
-<intertext>To begin the differentiation, we can choose our <q>outside</q> function to be <m>g(x)=x^{\frac{1}{3}}</m>, and our <q>inside</q> function to be <m>h(x)=\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }</m>. Then <m>f(x)=g(h(x))</m>, so <m>f'(x)=g'(h(x))\cdot h'(x)=\frac{1}{3}(h(x))^{-\frac{2}{3}}h'(x)</m>:</intertext><mrow>
+</md>
+To begin the differentiation, we can choose our <q>outside</q> function to be 
+<m>g(x)=x^{\frac{1}{3}}</m>, and our <q>inside</q> function to be 
+<m>h(x)=\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }</m>. Then <m>f(x)=g(h(x))</m>, 
+so <m>f'(x)=g'(h(x))\cdot h'(x)=\frac{1}{3}(h(x))^{-\frac{2}{3}}h'(x)</m>:
+<md><mrow>
 f'(x)&amp;=\frac{1}{3}\left(\textcolor{red}{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right)^{\frac{-2}{3}}\cdot\diff{}{x}\left\{\textcolor{red}{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right\}
 </mrow><mrow>
 &amp;=\frac{1}{3}
@@ -1047,35 +1071,56 @@ f'(x)&amp;=\frac{1}{3}\left(\textcolor{red}{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \
 \cdot
 \diff{}{x}\left\{\textcolor{red}{\dfrac{e^{\csc x^2}}{ \sqrt{x^3-9} \tan x }}\right\}
 </mrow>
-<intertext>This leads us to use the quotient rule:</intertext><mrow>
+</md>
+This leads us to use the quotient rule:
+<md>
+<mrow>
 &amp;=\frac{1}{3}\left(
 \dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
 \right)^{\frac{2}{3}}
-\left(\frac{ \sqrt{x^3-9}\tan x  \diff{}{x}\left\{e^{\csc x^2}\right\}-e^{\csc x^2}\diff{}{x}\left\{\sqrt{x^3-9}\tan x  \right\}}{(\tan^2 x)(x^3-9) }\right)
+</mrow><mrow>
+\amp\hskip0.25in\left(\frac{ \sqrt{x^3-9}\tan x  \diff{}{x}\left\{e^{\csc x^2}\right\}-e^{\csc x^2}\diff{}{x}\left\{\sqrt{x^3-9}\tan x  \right\}}{(\tan^2 x)(x^3-9) }\right)
 </mrow>
-<intertext>Let's figure out those two derivatives on their own, then plug them in. Using the chain rule twice:</intertext><mrow>
-\diff{}{x}\left\{e^{\csc x^2}\right\}&amp;=e^{\textcolor{red}{\csc x^2}}\diff{}{x}\left\{\textcolor{red}{\csc x^2}\right\}=e^{\csc x^2}\cdot (-\csc(\textcolor{orange}{x^2})\cot(\textcolor{orange}{x^2}))\cdot\diff{}{x}\{\textcolor{orange}{x^2}\}
-</mrow><mrow>&amp;=-2xe^{\csc x^2}\csc(x^2)\cot(x^2)
+</md>
+Let's figure out those two derivatives on their own, then plug them in. Using the chain rule twice:
+<md>
+<mrow>
+\diff{}{x}\left\{e^{\csc x^2}\right\}&amp;=e^{\textcolor{red}{\csc x^2}}\diff{}{x}\left\{\textcolor{red}{\csc x^2}\right\}
+</mrow><mrow>
+\amp=e^{\csc x^2}\cdot (-\csc(\textcolor{orange}{x^2})\cot(\textcolor{orange}{x^2}))\cdot\diff{}{x}\{\textcolor{orange}{x^2}\}
+</mrow><mrow>
+&amp;=
+-2xe^{\csc x^2}\frac{\cos(x^2)}{\sin^2(x^2)}
 </mrow>
-<intertext>For the other derivative, we start with the product rule, then chain:</intertext><mrow>
+</md>
+For the other derivative, we start with the product rule, then chain:
+<md>
+<mrow>
 \diff{}{x}\left\{ \sqrt{x^3-9} \tan x \right\}&amp;=
  \diff{}{x}\left\{\sqrt{x^3-9}\right\}\cdot\tan x+\sqrt{x^3-9}\sec^2 x
 </mrow><mrow>
- &amp;=\frac{1}{2\sqrt{\textcolor{red}{x^3-9}}}\diff{}{x}\left\{\textcolor{red}{x^3-9}\right\}\cdot \tan x+\sqrt{x^3-9}\sec^2 x
+ &amp;=\frac{1}{2\sqrt{\textcolor{red}{x^3\!-\!9}}}
+             \diff{}{x}\left\{\textcolor{red}{x^3\!-\!9}\right\}\cdot \tan x
+             +\sqrt{x^3\!-\!9}\sec^2 x
 </mrow><mrow>
  &amp;=\frac{3x^2 \tan x}{2\sqrt{{x^3-9}}}+\sqrt{x^3-9}\sec^2 x
  </mrow>
-<intertext>Now, we plug these into our equation for <m>f'(x)</m>:</intertext><mrow>
- f'(x)&amp;=\frac{1}{3}\left(
-\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
-\right)^{\frac{2}{3}}
-\left(\frac{ \sqrt{x^3-9}\tan x  \textcolor{blue}{\diff{}{x}\left\{e^{\csc x^2}\right\}}-e^{\csc x^2}\textcolor{blue}{\diff{}{x}\left\{\sqrt{x^3-9}\tan x  \right\}}}{(\tan^2 x)(x^3-9) }\right)
+</md>
+Now, we plug these into our equation for <m>f'(x)</m>:
+<md>
+<mrow>
+ f'(x)&amp;=\frac{1}{3}\left(\dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}\right)^{\frac{2}{3}}
+</mrow><mrow>
+\amp\hskip0.25in\left(\frac{ \sqrt{x^3-9}\tan x  \textcolor{blue}{\diff{}{x}\left\{e^{\csc x^2}\right\}}-e^{\csc x^2}\textcolor{blue}{\diff{}{x}\left\{\sqrt{x^3-9}\tan x  \right\}}}{(\tan^2 x)(x^3-9) }\right)
 </mrow><mrow>
 &amp;=\frac{1}{3}\left(
 \dfrac{ \sqrt{x^3-9} \tan x }{e^{\csc x^2}}
 \right)^{\frac{2}{3}}\cdot
 </mrow><mrow>
-&amp;\left(\frac{ \sqrt{x^3-9}\tan x  \textcolor{blue}{(-2x)e^{\csc x^2}\csc(x^2)\cot(x^2)}-e^{\csc x^2}\textcolor{blue}{\left(\frac{3x^2\tan x}{2\sqrt{{x^3-9}}}+\sqrt{x^3-9}\sec^2 x\right)}}{(\tan^2 x)(x^3-9) }\right)
+&amp;\hskip0.25in
+   \frac{e^{\csc x^2}  \Big( -2x\sqrt{x^3\!-\!9}\tan x\frac{\cos(x^2)}{\sin^2(x^2)}
+           -\frac{3x^2\tan x}{2\sqrt{x^3-9}}-\sqrt{x^3\!-\!9}\sec^2 x\Big)}
+          {(\tan^2 x)(x^3-9) }
 </mrow>
 </md>
 </p></solution>
@@ -1097,7 +1142,7 @@ Suppose a particle is moving in the Cartesian plane over time. For any real numb
 <xref ref="s2_9_parametricwiggle1"/>
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{3.5}{3.5}{.5}{4.5}
 \draw[thick] plot[smooth, scale=3, domain=-1:1] (\x,{1-\x*\x});
@@ -1159,7 +1204,7 @@ The table below gives us a number of points on our graph, and the times they occ
 <p>These points will repeat with a period of <m>2\pi</m>. With this information, we have a pretty good idea of the particle's motion:
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{3.5}{3.5}{.5}{4.5}
 \draw[thick] plot[scale=3, domain=-1:1] (\x,{1-\x*\x});

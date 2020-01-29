@@ -36,7 +36,7 @@ Let your position at time <m>t</m> be <m>x(t)</m>. The temperature of the air
 at position <m>x</m> is <m>f(x)</m>. What instantaneous rate of change of
 temperature do you feel at time<nbsp/><m>t</m>?</p>
 
-<sidebyside width="66%">
+<sidebyside width="50%">
 <image source="text/figs/campfire2"/>
 </sidebyside>
 
@@ -602,8 +602,8 @@ we can use the product rule to recover the quotient rule.
 Once we know this, a quick application of the product rule will give us the quotient rule.
 <md>
 <mrow>
-\diff{}{x} \left\{ \frac{f(x)}{g(x)} \right\}
-&amp;= \diff{}{x} \left\{ f(x) \cdot \frac{1}{g(x)}  \right\} &amp; \text{use PR}
+\amp\diff{}{x} \left\{ \frac{f(x)}{g(x)} \right\}
+= \diff{}{x} \left\{ f(x) \cdot \frac{1}{g(x)}  \right\} &amp; \text{use PR}
 </mrow><mrow>
 &amp;= f'(x)\cdot \frac{1}{g(x)}  + f(x) \cdot \diff{}{x} \left\{\frac{1}{g(x)}\right\} &amp;
 \text{use the result from above}
@@ -702,8 +702,9 @@ is the same as multiplying <m>{(4+x^2)}^{-3}</m> by <m>-\frac{6x}{4+x^2}</m>.
 Using these sneaky tricks we can write our solution quite neatly:
 <md>
 <mrow>
-\diff{}{x}\cos\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)
-=-\sin\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)\
+\amp\diff{}{x}\cos\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)
+</mrow><mrow>
+\amp=-\sin\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)\
 \frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\
 \bigg\{\frac{5}{x}+\frac{3x^5}{3+x^6}-\frac{6x}{4+x^2}\bigg\}
 </mrow>

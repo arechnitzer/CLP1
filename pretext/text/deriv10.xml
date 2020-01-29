@@ -227,10 +227,10 @@ probably a good moment to go back and look at Example<nbsp/><xref ref="eg_diff_a
 <li> If <m>x \lt 0</m> then <m>|x|= -x =-1\cdot x</m> and so
 <md>
 <mrow>
-  g'(x) &amp;= \diff{}{x} \log(-1 \cdot x) = \frac{1}{x} &amp;\text{by the previous
-example}
+  g'(x) &amp;= \diff{}{x} \log(-1 \cdot x) = \frac{1}{x} 
 </mrow>
 </md>
+by the previous example.
 </li>
 <li> Since <m>\log 0</m> is undefined, <m>g'(0)</m> does not exist.
 </li>
@@ -389,24 +389,30 @@ So we take the logarithm of <m>|f(x)|</m> and expand.
 <mrow>
 \log |f(x)| &amp; = \log \frac{|\sqrt{x}-1|\,|2-x|\,|1-x^2|}{\sqrt{x}|3+2x|}
 </mrow><mrow>
-  &amp; = \log|\sqrt{x}-1| + \log|2-x| + \log|1-x^2| -
-\underbrace{\log(\sqrt{x})}_{=\frac{1}{2}\log x} - \log|3+2x|
+  &amp; = \log|\sqrt{x}\!-\!1| + \log|2\!-\!x| + \log|1\!-\!x^2| -
+\underbrace{\log(\sqrt{x})}_{=\frac{1}{2}\log x} - \log|3\!+\!2x|
 </mrow>
-<intertext>Now we can essentially just differentiate term-by-term:</intertext>
+</md>
+Now we can essentially just differentiate term-by-term:
+<md>
 <mrow>
-\diff{}{x}\log |f(x)| &amp;= \diff{}{x} \left(
-  \log|\sqrt{x}-1| + \log|2-x| + \log|1-x^2| - \frac{1}{2}\log|x| - \log|3+2x|
- \right)
+\diff{}{x}\log |f(x)| &amp;= \diff{}{x} \Big(
+  \log|\sqrt{x}-1| + \log|2-x| + \log|1-x^2| 
+</mrow><mrow>
+\amp\hskip2in- \frac{1}{2}\log|x| - \log|3+2x|
+ \Big)
 </mrow><mrow>
 \frac{f'(x)}{f(x)} &amp;= \frac{1/(2\sqrt{x})}{\sqrt{x}-1}
   + \frac{-1}{2-x} + \frac{-2x}{1-x^2} - \frac{1}{2x} - \frac{2}{3+2x}
 </mrow><mrow>
-f'(x) &amp;= f(x) \cdot \left( \frac{1}{2 \sqrt{x} (\sqrt{x}-1)}
-  - \frac{1}{2-x} - \frac{2x}{1-x^2} - \frac{1}{2x} - \frac{2}{3+2x}
+f'(x) &amp;= f(x) \cdot \left( \frac{1}{2 \sqrt{x} (\sqrt{x}\!-\!1)}
+  - \frac{1}{2\!-\!x} - \frac{2x}{1\!-\!x^2} - \frac{1}{2x} - \frac{2}{3\!+\!2x}
 \right)
 </mrow><mrow>
   &amp;= \frac{(\sqrt{x}-1)(2-x)(1-x^2)}{\sqrt{x}(3+2x)}
-  \cdot \left( \frac{1}{2 \sqrt{x} (\sqrt{x}-1)}
+  \cdot 
+</mrow><mrow>
+\amp\hskip0.5in\left( \frac{1}{2 \sqrt{x} (\sqrt{x}-1)}
   - \frac{1}{2-x} - \frac{2x}{1-x^2} - \frac{1}{2x} - \frac{2}{3+2x}
 \right)
 </mrow>
