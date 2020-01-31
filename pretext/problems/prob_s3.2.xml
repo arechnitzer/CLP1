@@ -163,10 +163,9 @@ F'&amp;=\frac{P'Q-PQ'}{Q^2}
 </mrow><mrow>
 &amp;=0.15\frac{P}{Q}
 </mrow><mrow>
-&amp;=0.15 F\qquad
-\implies
+&amp;=0.15 F
 </mrow><mrow>
- F'&amp;=0.15F</mrow>
+\implies\qquad F'&amp;=0.15F</mrow>
 </md>
 </p>
 
@@ -300,7 +299,7 @@ the ships changing?
 <answer><p> increasing at <m>7</m> mph
 </p></answer>
 <solution>
-<sidebyside>
+<sidebyside width="33%">
 <image source="problems/figs/ship"/>
 </sidebyside>
 <p>If <m>x(t),\ y(t)</m> and <m>z(t)</m> are the distances shown, at time
@@ -427,7 +426,7 @@ For Questions <xref ref="s3_2trianglesfirst"/> through
 <exercise xml:id="s3_2trianglesfirst" purpose="RQS">
 <statement><p>
 A watering trough has a cross section shaped like an isosceles trapezoid. The trough is 2 metres long, 50 cm high, 1 metre wide at the top, and 60 cm wide at the bottom.</p>
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}]
 \draw[fill=black!10] (0,0)--(3,0)--(4,2.5)--(-1,2.5)--cycle;
 \draw[fill=black!15] (4,2.5)--(7,3.5)--(6,1)--(3,0);
@@ -452,7 +451,7 @@ If a  trapezoid has height <m>h</m> and (parallel) bases <m>b_1</m> and <m>b_2</
 What we're given is <m>\ds\diff{V}{t}</m> (where <m>V</m> is volume of water in the trough, and <m>t</m> is time), and what we are asked for is <m>\ds\diff{h}{t}</m> (where <m>h</m> is the height of the water). So, we need an equation relating <m>V</m> and <m>h</m>. First, let's get everything in the same units: centimetres.
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[fill=black!10] (0,0)--(3,0)--(4,2.5)--(-1,2.5)--cycle;
 \draw[fill=black!15] (4,2.5)--(7,3.5)--(6,1)--(3,0);
@@ -481,7 +480,7 @@ V=100h(60+w)\;\text{cm}^3.</me>
 
 <p>We need a formula for <m>w</m> in terms of <m>h</m>.
 If we draw lines straight up from the bottom corners of the trapezoid, we break it into rectangles and triangles.</p>
-<sidebyside>
+<sidebyside width="45%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0)--(3,0)--(4,2.5)--(-1,2.5)--cycle;
 \draw[ \lt - \gt , dashed] (0,-.5)--(3,-.5) node[midway, shape=rectangle, fill=white, inner sep=0]{$60$ };\draw[ \lt - \gt , dashed] (-1.5,0)--(-1.5,2.5) node[midway, left]{$50$ };
@@ -661,7 +660,7 @@ You, the rocket, and the rocket's original position form a right triangle.
 Let <m>\theta</m> be the angle of your head, where <m>\theta=0</m>  means you are looking straight ahead, and <m>\theta=\dfrac{\pi}{2}</m> means you are looking straight up.
 We are interested in <m>\ds\diff{\theta}{t}</m>, but we only have information about <m>h</m>. So, a reasonable plan is to find an equation relating <m>h</m> and <m>\theta</m>, and differentiate with respect to time.
 </p>
-<sidebyside>
+<sidebyside width="45%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (1.5,0)--(0,0)--(1,1);
 \draw (1,0) arc(0:45:1cm);
@@ -687,7 +686,7 @@ We are interested in <m>\ds\diff{\theta}{t}</m>, but we only have information ab
 </md>
 We know <m>\tan\theta= \frac{h}{2}</m>. We draw a right triangle with angle <m>\theta</m> (filling in the sides using SOH<nbsp/>CAH<nbsp/>TOA and the Pythagorean theorem) to figure out <m>\cos\theta</m>:</p>
 
-<sidebyside>
+<sidebyside width="33%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0)--(4,0)--(4,3)--cycle;
 \draw (.75,.2) node{$\theta$};
@@ -753,7 +752,7 @@ from the point on the track nearest the camera. Let <m>z(t)</m> be the distance
 from the camera to the train at time <m>t</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image source="problems/figs/train2"/>
 </sidebyside>
 <p> Then <m>\textcolor{red}{x'(t)=2}</m> and at the time
@@ -804,7 +803,7 @@ moves across the ground. How fast is the shadow moving one second after
 the ball is dropped?
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[red, dashed] (0,3)--(6,0);
 \draw[red] (0,3)--(2,3) node[midway, above]{10};
@@ -824,7 +823,7 @@ the ball is dropped?
 <solution><p>
 In the diagram, there are two right triangles: one formed by the light, the ball, and the ball's original position, and one formed by the ball, the tip of its shadow, and the ball's eventual position on the ground. The two angles marked below have the same measure, <m>\alpha</m>. (Whenever two straignt lines cross, the opposite angles formed have the same measure.)
 </p>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[red, dashed] (0,3)--(6,0);
 \draw[red] (0,3)--(2,3) node[midway, above]{10};
@@ -859,7 +858,7 @@ left at <m>200</m> m/sec.}
 <statement><p>
 A clock has a minute hand that is 10 cm long, and an hour hand that is 5 cm long.
 Let <m>D</m> be the distance between the tips of the two hands. How fast is <m>D</m> decreasing at 4:00?</p>
-<sidebyside>
+<sidebyside width="33%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick] node[shape=circle, minimum size=5cm, draw]{};
 \draw node[vertex]{};
@@ -881,7 +880,7 @@ Let <m>\theta</m> be the angle between the two hands. Using the Law of Cosines, 
 </p></answer>
 <solution><p>
 Let <m>\theta</m> be the angle between the two hands.</p>
-<sidebyside>
+<sidebyside width="33%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick] node[shape=circle, minimum size=5cm, draw]{};
 \draw node[vertex]{};
@@ -942,7 +941,7 @@ Find the rate of change of the area of the annulus
 (i.e. the points inside the circle of radius <m>R</m> but outside the circle
 of radius <m>r</m>) if <m>R = 3 \;\mathrm{cm}</m>, <m>r = 1\;\mathrm{cm}</m>, <m>\ds\diff{R}{t} = 2\;\frac{\mathrm{cm}}{\mathrm{s}}</m>, and <m>\ds\diff{r}{t} = 7\;\frac{\mathrm{cm}}{\mathrm{s}}</m>.</p>
 
-<sidebyside>
+<sidebyside width="33%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[thick] node[shape=circle, draw, minimum size=5cm, inner sep=0, fill=gray!20]{};
 \draw[thick] node[shape=circle, draw, minimum size=2cm, inner sep=0, fill=white]{};
@@ -1009,7 +1008,7 @@ V=\frac{4}{3}\pi R^3 - \frac{4}{3}\pi r^3</me>
 <statement><p>
 You attach two sticks together at their ends, and stick the other ends in the mud. One stick is 150 cm long, and the other is 200 cm.</p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick, brown!50] (-3,0)--(5,0);
 \draw[ultra thick] (-3,0)--(0,2)node[midway, above, rotate=31]{150 cm};
@@ -1038,7 +1037,7 @@ A&amp;=\frac{1}{2}bh</mrow>
 We are given <m>\diff{h}{t}</m> and <m>h</m>, but those <m>b</m>'s are a mystery. We need to relate them to <m>h</m>. We can do this by breaking our triangle into  two right triangles and using the Pythagorean Theorem:
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick, brown!50] (-3,0)--(5,0);
 \draw[ultra thick] (-3,0)--(0,2)node[midway, above, rotate=31]{150 cm};
@@ -1091,7 +1090,7 @@ The circular lid of a salt shaker has radius 8. There is a cut-out to allow the 
 If the uncovered area of the cut-out is <m>A</m> cm<m>^2</m>, then the salt flows out at <m>\frac{1}{5}A</m> cm<m>^3</m> per second.
 </p>
 
-<sidebyside>
+<sidebyside widths="30% 33%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw node[shape=circle, minimum size=4cm, fill=orange!20,draw]{};
 \draw[fill=white] (.5,0)--(1.5,0) arc(0:90:1.5cm)--(0,.5) arc(90:0:.5cm);
@@ -1113,7 +1112,7 @@ If the uncovered area of the cut-out is <m>A</m> cm<m>^2</m>, then the salt flow
 <p> Recall: an annulus is the set of points inside one circle and outside another,  like a flat doughnut (see Question<nbsp/><xref ref="s3_2annulus"/>).
 </p>
 
-<sidebyside>
+<sidebyside widths="25% 25%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0) node[shape=circle, minimum size=3cm, draw, fill=gray!20]{};
 \draw (0,0) node[shape=circle, minimum size=1cm, draw, fill=white]{};
@@ -1150,7 +1149,7 @@ S=\frac{1}{5}A</me>
 We are given information about how quickly the door is rotating. If we let <m>\theta</m> be the angle made by the leading edge of the door and the far edge of the cut-out (shown below), then <m>\ds\diff{\theta}{t}=-\dfrac{\pi}{6}</m> radians per second. (Since the door is covering more and more of the cut-out, <m>\theta</m> is getting smaller, so <m>\ds\diff{\theta}{t}</m> is negative.)
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw node[shape=circle, minimum size=4cm, fill=orange!20,draw]{};
 \draw[fill=white] (.5,0)--(1.5,0) arc(0:90:1.5cm)--(0,.5) arc(90:0:.5cm);
@@ -1196,7 +1195,7 @@ A cylindrical sewer pipe with radius 1 metre has a vertical rectangular door tha
 <p>The door slides over the pipe, moving vertically at a rate of 1 centimetre per second. How fast is the flow of water changing when the door covers the top 25 centimetres of the pipe?
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (-3,0) arc(180:360:3cm);
 \draw[fill=gray!50] (-4,0) rectangle (4,4);
@@ -1303,7 +1302,7 @@ That is, the flow is decreasing at a rate of <m>\dfrac{\sqrt{7}}{1000}\;\dfrac{\
 <statement><p>
 A martini glass is shaped like a cone, with top diameter 10 cm and side length 10 cm.</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0) node[ellipse, minimum width=6cm,draw]{};
 \draw (-3,0)--(0,-5.2)--(3,0);
@@ -1331,7 +1330,7 @@ We are given the rate of change of the volume of liquid, and are asked for the r
 <p>The volume <m>V</m> of a cone with height <m>h</m> and radius <m>r</m> is <m>\frac{1}{3}\pi r^2h</m>. Since we know <m>\ds\diff{V}{t}</m>, and want to know <m>\ds\diff{h}{t}</m>, we need to find a way to deal with the unwanted variable <m>r</m>. We can find <m>r</m> in terms of <m>h</m> by using similar triangles. Viewed from the side, the conical glass is an equilateral triangle, as is the water in it. Using the Pythagorean Theorem, the cone has height <m>5\sqrt{3}</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \color{blue}
 \draw[fill=blue!20] (0,-5.2)--(1,-3.47)--(-1,-3.47)--cycle;
@@ -1377,7 +1376,7 @@ V&amp;=\frac{1}{3}\pi r^2h
 <exercise purpose="RQS">
 <statement><p>
 A floating buoy is anchored to the bottom of a river. As the river flows, the buoy is pulled in the direction of flow until its 2-metre rope is taught. A sensor at the anchor reads the angle <m>\theta</m> between the rope and the riverbed, as shown in the diagram below. This data is used to measure the depth <m>D</m> of water in the river, which depends on time.</p>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[line width=2pt] (-3,0)--(5,0);
 \draw (0,0) node[shape=circle, fill, minimum size=2mm]{};
@@ -1403,15 +1402,15 @@ A floating buoy is anchored to the bottom of a river. As the river flows, the bu
 If you were to install the buoy, how would you choose the length of rope? For which values of <m>\theta</m> do <m>\sin\theta</m> and <m>\cos\theta</m> have different signs? How would those values of <m>\theta</m> look on the diagram?
 </p></hint>
 <answer><p>
-<ul>
-<li>(a) <m>\ds\diff{D}{t}=\dfrac{1}{2\sqrt{2}}</m> metres per hour </li>
-<li>(b) The river is higher than 2 metres.</li>
-<li>(c) The river's flow has reversed direction. (This can happen near an ocean at high tide.)</li>
-</ul>
+<ol label="a">
+<li> <m>\ds\diff{D}{t}=\dfrac{1}{2\sqrt{2}}</m> metres per hour </li>
+<li> The river is higher than 2 metres.</li>
+<li> The river's flow has reversed direction. (This can happen near an ocean at high tide.)</li>
+</ol>
 </p></answer>
 <solution><p>
 As is so often the case, we use a right triangle in this problem to relate the quantities.</p>
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[line width=2pt] (-3,0)--(5,0);
 \draw (0,0) node[shape=circle, fill, minimum size=2mm]{};
@@ -1441,7 +1440,7 @@ D&amp;=2\sin\theta</mrow>
 
 <p>Setting aside part (b) for a moment, let's think about (c). If <m>\ds\diff{\theta}{t}</m>
 and <m>\ds\diff{D}{t}</m> have different signs, then because <m>\ds\diff{D}{t}=2\cos\theta\cdot\ds\diff{\theta}{t}</m>, that means <m>\cos\theta \lt 0</m>. We have to have a nonnegative depth, so <m>D \gt 0</m> and <m>D=2\sin\theta</m> implies <m>\sin \theta  \gt 0</m>. If <m>\sin\theta\ge0</m> and <m>\cos \theta \lt 0</m>, then <m>\theta\in(\pi/2,\pi]</m>. On the diagram, that looks like this:</p>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[line width=2pt] (-5,0)--(5,0);
 \draw (0,0) node[shape=circle, fill, minimum size=2mm]{};
@@ -1465,7 +1464,7 @@ and <m>\ds\diff{D}{t}</m> have different signs, then because <m>\ds\diff{D}{t}=2
 <statement><p>
 A point is moving in the <m>xy</m>-plane along the quadrilateral shown below.
 </p>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4.25}{3.25}
 \draw[dotted, gray] (-4,-3) grid (4,3);
@@ -1501,7 +1500,7 @@ The point is moving at <m>\dfrac{\sqrt{5}}{2}</m> units per second.
 Since we know <m>\ds\diff{\theta}{t}</m>, a reasonable plan is to find an equation relating <m>\theta</m> and <m>x</m>, and then differentiate implicitly with respect to <m>t</m>. To do this, let's return to our diagram.
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4.25}{3.25}
 \draw[ultra thick] (-2,3)--(-4,-2)--(3,-2)--(2,1)--cycle;
@@ -1521,7 +1520,7 @@ Since we know <m>\ds\diff{\theta}{t}</m>, a reasonable plan is to find an equati
 <p>Now, we have to take care of a subtle point. The diagram we drew only makes sense for the point when it is at a position a little to the <em>right</em> of <m>(0,-2)</m>. So, right now, we've only made a set-up that will find the derivative <em>from the right</em>. But, with a little more thought, we see that even when <m>x</m> is negative (that is, when the point is a little to the <em>left</em> of <m>(0,-2)</m>), our equation holds if we are careful about how we define <m>\theta</m>. Let <m>\theta</m> be  the angle between the line connecting the point and the origin, and the <m>y</m>-axis, where <m>\theta</m> is <em>negative</em> when the point is to the left of the <m>y</m>-axis.
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4.25}{3.25}
 \draw[ultra thick] (-2,3)--(-4,-2)--(3,-2)--(2,1)--cycle;
@@ -1711,7 +1710,10 @@ The water will spill out at a rate of <m>-\ds\diff{V}{t}</m> cubic centimetres p
 <intertext>Since <m>\ds\diff{a}{t}=1</m>:</intertext><mrow>
 0&amp;=3\left(1+\diff{b}{t}\right)+\frac{\left(1+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
 </mrow>
-<intertext>At this point, we could plug in the values we know for <m>a</m> and <m>b</m> at the moment when <m>a=2b</m>. However, the algebra goes a little smoother if we start by plugging in <m>a=2b</m>:</intertext><mrow>
+</md>
+At this point, we could plug in the values we know for <m>a</m> and <m>b</m> at the moment when <m>a=2b</m>. However, the algebra goes a little smoother if we start by plugging in <m>a=2b</m>:
+<md>
+<mrow>
 0&amp;=3\left(1+\diff{b}{t}\right)+\frac{\left(1+3\diff{b}{t}\right)(7b)+(5b)\left(3+\diff{b}{t}\right)}{2\sqrt{(5b)(7b)}}
 </mrow><mrow>
 0&amp;=3\left(1+\diff{b}{t}\right)+\frac{b\left(7+21\diff{b}{t}+15+5\diff{b}{t}\right)}{2b\sqrt{35}}
@@ -1722,12 +1724,19 @@ The water will spill out at a rate of <m>-\ds\diff{V}{t}</m> cubic centimetres p
 </mrow><mrow>
 -3-\frac{11}{\sqrt{35}}&amp;=\left(3+\frac{13}{\sqrt{35}}\right)\diff{b}{t}
 </mrow><mrow>
-\color{red}\diff{b}{t}&amp;=\frac{-3-\frac{11}{\sqrt{35}}}{3+\frac{13}{\sqrt{35}}}=\color{red}\frac{-3\sqrt{35}-11}{3\sqrt{35}+13}
+\diff{b}{t}&amp;=\frac{-3-\frac{11}{\sqrt{35}}}{3+\frac{13}{\sqrt{35}}}
+=\frac{-3\sqrt{35}-11}{3\sqrt{35}+13}
 </mrow>
-<intertext>Now, we can calculate <m>\ds\diff{V}{t}</m> at the moment when <m>a=2b</m>. We already found</intertext><mrow>
+</md>
+Now, we can calculate <m>\ds\diff{V}{t}</m> at the moment when <m>a=2b</m>. We already found
+<md>
+<mrow>
 \diff{V}{t}&amp;=20\pi\left(\diff{a}{t}b+a\diff{b}{t}\right)
 </mrow>
-<intertext>So, plugging in the values of <m>a</m>, <m>b</m>, <m>\ds\diff{a}{t}</m>, and <m>\ds\diff{b}{t}</m> at the moment when <m>a=2b</m>: </intertext><mrow>
+</md>
+So, plugging in the values of <m>a</m>, <m>b</m>, <m>\ds\diff{a}{t}</m>, and <m>\ds\diff{b}{t}</m> at the moment when <m>a=2b</m>: 
+<md>
+<mrow>
 \diff{V}{t}&amp;=20\pi\left((1)\left(\frac{10}{9+\sqrt{35}}\right)+\left(\frac{20}{9+\sqrt{35}}\right)\left(\frac{-3\sqrt{35}-11}{3\sqrt{35}+13}\right)\right)
 </mrow><mrow>
 &amp;=\frac{200\pi}{9+\sqrt{35}}\left(1-2\left(\frac{3\sqrt{35}+11}{3\sqrt{35}+13}\right)\right)
