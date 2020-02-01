@@ -15,7 +15,7 @@ In the picture below, label the following:
 f(x) \qquad f\left(x+\Delta x\right) \qquad \Delta x \qquad \Delta y  </me>
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{5}{1}{4}
 \draw[thick] plot [domain=-.25:4](\x,{\x+ 2*sin(\x r)}) node[right]{$y=f(x)$};
@@ -28,7 +28,7 @@ f(x) \qquad f\left(x+\Delta x\right) \qquad \Delta x \qquad \Delta y  </me>
 <m>\Delta x</m> and <m>\Delta y </m> represent changes in <m>x</m> and <m>y</m>, respectively, while <m>f(x)</m> and <m>f\left(x+\Delta x \right)</m> are the <m>y</m>-values the function takes.
 </p></hint>
 <answer>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{5}{1}{4}
 \draw[thick] plot [domain=-.25:4](\x,{\x+ 2*sin(\x r)}) node[right]{$y=f(x)$};
@@ -47,7 +47,7 @@ f(x) \qquad f\left(x+\Delta x\right) \qquad \Delta x \qquad \Delta y  </me>
 </sidebyside>
 </answer>
 <solution>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{5}{1}{4}
 \draw[thick] plot [domain=-.25:4](\x,{\x+ 2*sin(\x r)}) node[right]{$y=f(x)$};
@@ -124,10 +124,15 @@ f''(x)&amp;=\frac{-2x}{\left(1+x^2\right)^2} &amp; f''(5)&amp;=\frac{-10}{26^2}
 <intertext>The linear approximation for <m>\Delta y</m> when <m>\Delta x = \dfrac{1}{10}</m> is</intertext><mrow>
 \Delta y &amp;\approx f'(5)\Delta x = \frac{1}{26}\cdot \frac{1}{10}=\frac{1}{260} \approx 0.003846
 </mrow>
-<intertext>The quadratic approximation for <m>\Delta y</m> when <m>\Delta x = \dfrac{1}{10}</m> is</intertext><mrow>
+</md>
+The quadratic approximation for <m>\Delta y</m> when <m>\Delta x = \dfrac{1}{10}</m> is
+<md>
+<mrow>
 \Delta y &amp;\approx f'(5)\Delta x + \frac{1}{2}f''(5)\left(\Delta x\right)^2
 =
-\frac{1}{26}\cdot\frac{1}{10}+\frac{1}{2}\cdot\frac{-10}{26^2}\cdot\frac{1}{10^2}=\frac{51}{13520}\approx 0.003772
+\frac{1}{26}\cdot\frac{1}{10}+\frac{1}{2}\cdot\frac{-10}{26^2}\cdot\frac{1}{10^2}
+</mrow><mrow>
+\amp=\frac{51}{13520}\approx 0.003772
 </mrow>
 </md>
 </p>

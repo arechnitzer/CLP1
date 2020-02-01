@@ -27,14 +27,15 @@ T_{16}(x)&amp;=1\textcolor{blue}{+}x
 \textcolor{red}{-}\frac{1}{7!}x^7
 \textcolor{blue}{+}\frac{1}{8!}x^8
 \textcolor{blue}{+}\frac{1}{9!}x^9
-\textcolor{red}{-}\frac{1}{10!}x^{10}
-\textcolor{red}{-}\frac{1}{11!}x^{11}
 </mrow><mrow>
-&amp;\qquad\textcolor{blue}{+}\frac{1}{12!}x^{12}
+\amp\qquad\textcolor{red}{-}\frac{1}{10!}x^{10}
+\textcolor{red}{-}\frac{1}{11!}x^{11}
+\textcolor{blue}{+}\frac{1}{12!}x^{12}
 \textcolor{blue}{+}\frac{1}{13!}x^{13}
 \textcolor{red}{-}\frac{1}{14!}x^{14}
 \textcolor{red}{-}\frac{1}{15!}x^{15}
-\textcolor{blue}{+}\frac{1}{16!}x^{16}
+</mrow><mrow>
+&amp;\qquad\textcolor{blue}{+}\frac{1}{16!}x^{16}
 </mrow>
 </md>
 </p></answer>
@@ -65,14 +66,15 @@ T_{16}(x)&amp;=1\textcolor{blue}{+}x
 \textcolor{red}{-}\frac{1}{7!}x^7
 \textcolor{blue}{+}\frac{1}{8!}x^8
 \textcolor{blue}{+}\frac{1}{9!}x^9
-\textcolor{red}{-}\frac{1}{10!}x^{10}
-\textcolor{red}{-}\frac{1}{11!}x^{11}
 </mrow><mrow>
-&amp;\qquad\textcolor{blue}{+}\frac{1}{12!}x^{12}
+\amp\qquad\textcolor{red}{-}\frac{1}{10!}x^{10}
+\textcolor{red}{-}\frac{1}{11!}x^{11}
+\textcolor{blue}{+}\frac{1}{12!}x^{12}
 \textcolor{blue}{+}\frac{1}{13!}x^{13}
 \textcolor{red}{-}\frac{1}{14!}x^{14}
 \textcolor{red}{-}\frac{1}{15!}x^{15}
-\textcolor{blue}{+}\frac{1}{16!}x^{16}
+</mrow><mrow>
+&amp;\qquad\textcolor{blue}{+}\frac{1}{16!}x^{16}
 </mrow>
 </md>
 </p></solution>
@@ -109,7 +111,9 @@ T_{100}(t)&amp;=4.9(25)+5+(9.8(5)-1)(t-5)+\frac{1}{2}9.8(t-5)^2
 </mrow><mrow>
 &amp;=4.9(25)+5+(9.8(5)-1)(t-5)+4.9(t^2-10t+25)
 </mrow><mrow>
-&amp;=[4.9(25)+5+(9.8(5)-1)(-5)+4.9(25)]+[9.8(5)-1-4.9(10)]t+4.9t^2
+&amp;=[4.9(25)+5+(9.8(5)-1)(-5)+4.9(25)]
+</mrow><mrow>
+\amp\hskip1in+[9.8(5)-1-4.9(10)]t+4.9t^2
 </mrow><mrow>
 &amp;=10-t+4.9t^2=s(t)
 </mrow>
@@ -166,8 +170,13 @@ Find the 6th degree Taylor polynomial of <m>f(x)=x^2\log x+2x^2+5</m> about <m>x
 Just keep differentiating--it gets easier!
 </p></hint>
 <answer><p>
-<m>T_6(x)=7+5(x-1)+\frac{7}{2}(x-1)^2+\frac{1}{3}(x-1)^3-\frac{1}{12}(x-1)^4+\frac{1}{30}(x-1)^5-\frac{1}{60}(x-1)^6
-</m>
+<md>
+<mrow>
+T_6(x)\amp=7+5(x-1)+\frac{7}{2}(x-1)^2+\frac{1}{3}(x-1)^3-\frac{1}{12}(x-1)^4
+</mrow><mrow>
+\amp\qquad+\frac{1}{30}(x-1)^5-\frac{1}{60}(x-1)^6
+</mrow>
+</md>
 </p></answer>
 <solution><p>
 We need to know the first six derivatives of <m>f(x)</m> at <m>x=1</m>. Let's get started.
@@ -209,7 +218,9 @@ T_6(x)&amp;=\textcolor{red}{f(1)}+\textcolor{red}{f'(1)}(x-1)+\frac{1}{2}\textco
 +\frac{1}{5!}(\textcolor{red}{4})(x-1)^5
 +\frac{1}{6!}(\textcolor{red}{-12})(x-1)^6
 </mrow><mrow>
-&amp;=7+5(x-1)+\frac{7}{2}(x-1)^2+\frac{1}{3}(x-1)^3-\frac{1}{12}(x-1)^4+\frac{1}{30}(x-1)^5-\frac{1}{60}(x-1)^6
+&amp;=7+5(x-1)+\frac{7}{2}(x-1)^2+\frac{1}{3}(x-1)^3-\frac{1}{12}(x-1)^4
+</mrow><mrow>
+\amp\quad+\frac{1}{30}(x-1)^5-\frac{1}{60}(x-1)^6
 </mrow>
 </md>
 </p></solution>
@@ -276,34 +287,46 @@ You'll need to differentiate <m>x^x</m>. This is accomplished using logarithmic 
 We'll need to know the first three derivatives of <m>x^x</m> at <m>x=1</m>. This is a good review of logarithmic differentiation, covered in Section<nbsp/><xref ref="sec_diff_logs"/>.
 <md>
 <mrow>
-f(x)&amp;=x^x&amp;
-\color{red}f(1)&amp;\color{red}=1
+f(x)&amp;=x^x
+</mrow><mrow>
+\amp\implies
+\color{red}f(1)\color{red}=1
 </mrow><mrow>
 \log(f(x))&amp;=\log\left(x^x\right)=x\log x
 </mrow><mrow>
 \diff{}{x}\left\{\log(f(x))\right\}&amp;=\diff{}{x}\left\{x\log x\right\}
 </mrow><mrow>
 \frac{f'(x)}{f(x)}&amp;=x\cdot\frac{1}{x}+\log x=1+\log x
+</mrow>
+</md>
+So
+<md>
+<mrow>
+f'(x)&amp;=x^x\left[1+\log x\right] 
 </mrow><mrow>
-f'(x)&amp;=x^x\left[1+\log x\right] &amp;
-\color{red}f'(1)&amp;\color{red}=1
+\amp\implies \color{red}f'(1)\color{red}=1
 </mrow><mrow>
 f''(x)&amp;=\diff{}{x}\left\{x^x\right\}[1+\log x] + x^x \diff{}{x}\left\{1+\log x\right\}
 </mrow><mrow>
 &amp;=\left(x^x\left[1+\log x\right]\right)\left[1+\log x\right]+x^x\cdot\frac{1}{x}
 </mrow><mrow>
-&amp;=x^x\left((1+\log x)^2+\frac{1}{x}\right)&amp;
-\color{red}f''(1)&amp;\color{red}=2
+&amp;=x^x\left((1+\log x)^2+\frac{1}{x}\right)
+</mrow><mrow>
+\amp\implies\color{red}f''(1)\color{red}=2
 </mrow><mrow>
 f'''(x)&amp;=\diff{}{x}\left\{x^x\right\}\left((1+\log x)^2+\frac{1}{x}\right)+x^x\diff{}{x}\left\{(1+\log x)^2+\frac{1}{x}\right\}
 </mrow><mrow>
 &amp;=x^x\left[1+\log x\right]\left(\left(1+\log x\right)^2+\frac{1}{x}\right)+x^x
 \left[\frac{2}{x}(1+\log x)-\frac{1}{x^2}\right]
 </mrow><mrow>
-&amp;=x^x\left(\left(1+\log x\right)^3+\frac{3}{x}\left(1+\log x\right)-\frac{1}{x^2}\right)&amp;
-\color{red}f'''(1)&amp;\color{red}=3
+&amp;=x^x\left(\left(1+\log x\right)^3+\frac{3}{x}\left(1+\log x\right)-\frac{1}{x^2}\right)
+</mrow><mrow>
+\amp\implies\color{red}f'''(1)\color{red}=3
 </mrow>
-<intertext>Now, we can plug in:</intertext><mrow>
+</md>
+Now, we can plug in:
+<md>
+<mrow>
 T_3(x)&amp;=\textcolor{red}{f(1)}+\textcolor{red}{f'(1)}(x-1)+\frac{1}{2}\textcolor{red}{f''(1)}(x-1)^2+\frac{1}{3!}\textcolor{red}{f'''(1)}(x-1)^3
 </mrow><mrow>
 &amp;=\textcolor{red}{1}+\textcolor{red}{1}(x-1)+\frac{1}{2}(\textcolor{red}{2})(x-1)^2+\frac{1}{6}(\textcolor{red}{3})(x-1)^3
@@ -329,36 +352,49 @@ We note that <m>6\arctan\left(\dfrac{1}{\sqrt3}\right)=6\left(\dfrac{\pi}{6}\rig
 Then <m>\pi=f\left(\dfrac{1}{\sqrt{3}}\right) \approx T_5\left(\dfrac{1}{\sqrt{3}}\right)</m>. Let's begin by finding the first five derivatives of <m>f(x)=6\arctan x</m>.
 <md>
 <mrow>
-f(x)&amp;=6\arctan x&amp;f(0)&amp;=0
+f(x)&amp;=6\arctan x
 </mrow><mrow>
-f'(x)&amp;=6\left(\frac{1}{1+x^2}\right)&amp;f'(0)&amp;=6
+\amp\implies f(0)=0
 </mrow><mrow>
-f''(x)&amp;=6\left(\frac{0-2x}{(1+x^2)^2}\right)=-12\left(\frac{x}{(1+x^2)^2}\right)&amp;f''(0)&amp;=0
+f'(x)&amp;=6\left(\frac{1}{1+x^2}\right)
+</mrow><mrow>
+\amp\implies f'(0)=6
+</mrow><mrow>
+f''(x)&amp;=6\left(\frac{0-2x}{(1+x^2)^2}\right)=-12\left(\frac{x}{(1+x^2)^2}\right)
+</mrow><mrow>
+\amp\implies f''(0)=0
 </mrow><mrow>
 f'''(x)&amp;=-12\left(\frac{(1+x^2)^2-x\cdot 2(1+x^2)(2x)}{(1+x^2)^4}\right)
 </mrow><mrow>
 &amp;=-12\left(\frac{(1+x^2)-4x^2}{(1+x^2)^3}\right)
 </mrow><mrow>
-&amp;=-12\left(\frac{1-3x^2}{(1+x^2)^3}\right)&amp;f'''(0)&amp;=-12
+&amp;=-12\left(\frac{1-3x^2}{(1+x^2)^3}\right)
+</mrow><mrow>
+\amp\implies f'''(0)=-12
 </mrow><mrow>
 f^{(4)}(x)&amp;=-12\left(\frac{(1+x^2)^3(-6x)-(1-3x^2)\cdot3(1+x^2)^2(2x)}{(1+x^2)^6}\right)
 </mrow><mrow>
 &amp;=-12\left(\frac{-6x(1+x^2)-6x(1-3x^2)}{(1+x^2)^4}\right)
 </mrow><mrow>
-&amp;=144\left(\frac{x-x^3}{(1+x^2)^4}\right)&amp;f^{(4)}(0)&amp;=0
+&amp;=144\left(\frac{x-x^3}{(1+x^2)^4}\right)
+</mrow><mrow>
+\amp\implies f^{(4)}(0)=0
 </mrow><mrow>
 f^{(5)}(x)&amp;=144\left(\frac{(1+x^2)^4(1-3x^2)-(x-x^3)\cdot4(1+x^2)^3(2x)}{(1+x^2)^{8}}\right)
 </mrow><mrow>
 &amp;=144\left(\frac{(1+x^2)(1-3x^2)-8x(x-x^3)}{(1+x^2)^{5}}\right)
 </mrow><mrow>
-&amp;=144\frac{5x^4-10x^2+1}{(1+x^2)^5}&amp;f^{(5)}(0)&amp;=144
+&amp;=144\frac{5x^4-10x^2+1}{(1+x^2)^5}
+</mrow><mrow>
+\amp\implies f^{(5)}(0)=144
 </mrow>
 </md>
 We now use these values to compute the 5th-degree Maclaurin polynomial for <m>f(x)</m>.
 <md>
 <mrow>
 T_5(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3+\frac{1}{4!}f^{(4)}(0)x^4
-+\frac{1}{5!}f^{(5)}(0)x^5
+</mrow><mrow>
+\amp\hskip2in+\frac{1}{5!}f^{(5)}(0)x^5
 </mrow><mrow>
 &amp;=6x-\frac{12}{6}x^3+\frac{144}{120}x^5
 </mrow><mrow>

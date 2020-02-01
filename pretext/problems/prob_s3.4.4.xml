@@ -156,7 +156,9 @@ We saw this kind of problem in Question<nbsp/><xref ref="s3_4_4chop1"/>.
 The fourth-degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m> is
 <md>
 <mrow>
-T_4(x)&amp;=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3+\frac{1}{4!}f^{(4)}(1)(x-1)^4
+T_4(x)&amp;=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3
+</mrow><mrow>
+\amp\hskip2in+\frac{1}{4!}f^{(4)}(1)(x-1)^4
 </mrow>
 <intertext>while the third-degree Maclaurin polynomial for <m>f(x)</m> about <m>x=1</m> is</intertext><mrow>
 T_3(x)&amp;=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3
@@ -221,20 +223,31 @@ The <m>n</m>th degree Taylor polynomial for <m>f(x)</m> about <m>x=5</m> is
 <md>
 <mrow>T_n(x)&amp;=\color{red}\sum_{k=0}^{n} \frac{1}{k!}f^{(k)}(5)(x-5)^{k}
 </mrow>
-<intertext>We expand this somewhat:</intertext><mrow>
-T_n(x)&amp;=\color{red}f(5)+f'(x-5) + \cdots +
-\boxed{\frac{1}{10!}f^{(10)}(5)(x-5)^{10}}+\cdots + \frac{1}{n!}f^{(n)}(5)(x-1)^n
+</md>
+We expand this somewhat:
+<md>
+<mrow>
+T_n(x)&amp;=\color{red}{f(5)+f'(x-5) + \cdots +
+\boxed{\frac{1}{10!}f^{(10)}(5)(x-5)^{10}}+\cdots }
+</mrow><mrow>\amp\hskip2in\color{red}{+ \frac{1}{n!}f^{(n)}(5)(x-1)^n}
 </mrow>
-<intertext>So, the coefficient of <m>(x-5)^{10}</m> is <m>\dfrac{1}{10!}f^{(10)}(5)</m>. Expanding the given form of the Taylor polynomial:</intertext><mrow>
-T_n(x)&amp;=\color{blue}\sum_{k=0}^{n/2} \frac{2k+1}{3k-9}(x-5)^{2k}
+</md>
+So, the coefficient of <m>(x-5)^{10}</m> is <m>\dfrac{1}{10!}f^{(10)}(5)</m>. Expanding the given form of the Taylor polynomial:
+<md>
+<mrow>
+T_n(x)&amp;=\color{blue}{\sum_{k=0}^{n/2} \frac{2k+1}{3k-9}(x-5)^{2k}}
 </mrow><mrow>
-&amp;=\color{blue} \underbrace{\frac{1}{-9}}_{k=0}+
+&amp;=\color{blue} {\underbrace{\frac{1}{-9}}_{k=0}+
  \underbrace{\frac{3}{-6}(x-5)^2}_{k=1}+\cdots+
-  \underbrace{\boxed{\frac{11}{6}(x-5)^{10}}}_{k=5}+\cdots+
-   \underbrace{\frac{n+1}{(3/2)n-9}(x-5)^n}_{k=n/2}
+  \underbrace{\boxed{\frac{11}{6}(x-5)^{10}}}_{k=5}+\cdots}
+</mrow><mrow>
+\amp\hskip2in  \color{blue}{+ \underbrace{ \frac{n+1}{(3/2)n-9}(x-5)^n }_{k=n/2}}
 </mrow>
-<intertext>Equating the coefficients of <m>(x-5)^{10}</m> in the two expressions:</intertext><mrow>
-\color{red}\frac{1}{10!}f^{(10)}(5)&amp;=\color{blue}\frac{11}{6}
+</md>
+Equating the coefficients of <m>(x-5)^{10}</m> in the two expressions:
+<md>
+<mrow>
+\color{red}{\frac{1}{10!}f^{(10)}(5)}&amp;=\color{blue}{\frac{11}{6}}
 </mrow><mrow>
 f^{(10)}(5)&amp;=\frac{11\cdot 10!}{6}
 </mrow>
@@ -285,7 +298,7 @@ f''(x)&amp;=6x^2\cdot\frac{1}{x}+12x\log x - 18x=12x\log x - 12 x
 </mrow><mrow>
 f'''(x)&amp;=12x\cdot\frac{1}{x}+12\log x - 12  = 12\log x
 </mrow><mrow>
-\color{blue}f'''(a)&amp;\color{blue}=12\log a
+\color{blue}{f'''(a)}&amp;\color{blue}{=12\log a}
 </mrow>
 <intertext>Now, let's move to the Taylor polynomial. Remember that <m>e</m> is a constant.</intertext><mrow>
 T_3(x)&amp;=-\frac{2}{3}\sqrt{e^3}+3ex-6\sqrt{e}x^2+x^3
@@ -296,12 +309,12 @@ T_3''(x)&amp;=-12\sqrt{e}+6x
 </mrow><mrow>
 T_3'''(x)&amp;=6
 </mrow><mrow>
-\color{red}T_3'''(a)&amp;\color{red}=6
+\color{red}{T_3'''(a)}&amp;\color{red}{=6}
 </mrow>
 <intertext>The final bullet point gives us the equation:</intertext><mrow>
-\color{blue}f'''(a)&amp;=\color{red}T_3'''(a)
+\color{blue}{f'''(a)}&amp;=\color{red}{T_3'''(a)}
 </mrow><mrow>
-\color{blue}12\log a &amp;= \color{red}6
+\color{blue}{12\log a} &amp;= \color{red}{6}
 </mrow><mrow>
 \log a &amp;= \frac{1}{2}
 </mrow><mrow>
