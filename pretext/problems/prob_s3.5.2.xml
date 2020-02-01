@@ -21,7 +21,7 @@ Sketch a function <m>f(x)</m> such that:
 One way to avoid a global minimum is to have <m>\ds\lim_{x \to \infty}f(x)=-\infty</m>. Since <m>f(x)</m> keeps getting lower and lower, there is no one value that is the lowest.
 </p></hint>
 <answer><p>Two examples are given below, but many are possible.</p>
-<sidebyside>
+<sidebyside widths="40% 50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{2}{2}{4}{1}
 \draw plot[domain=-1.75:1.75](\x,{-\x*\x}) node[right]{$y=f(x)$};
@@ -35,7 +35,7 @@ One way to avoid a global minimum is to have <m>\ds\lim_{x \to \infty}f(x)=-\inf
 </sidebyside>
 </answer>
 <solution><p>Two examples are given below, but many are possible.</p>
-<sidebyside>
+<sidebyside widths="40% 50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{2}{2}{4}{1}
 \draw plot[domain=-1.75:1.75](\x,{-\x*\x}) node[right]{$y=-x^2$};
@@ -68,7 +68,7 @@ Try allowing the function to approach the <m>x</m>-axis without ever touching it
 </p></hint>
 <answer><p>Two examples are given below, but many are possible.</p>
 
-<sidebyside>
+<sidebyside  width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{2}{2}{1}{4}
 \draw plot[domain=-1.75:2](\x,{exp(\x)/2}) node[right]{$y=e^x$};
@@ -82,7 +82,7 @@ Try allowing the function to approach the <m>x</m>-axis without ever touching it
 </sidebyside>
 </answer>
 <solution><p>Two examples are given below, but many are possible.</p>
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{2}{2}{1}{4}
 \draw plot[domain=-1.75:2](\x,{exp(\x)/2}) node[right]{$y=e^x$};
@@ -125,7 +125,7 @@ Since the global minimum value occurs at <m>x=5</m> and <m>x=-5</m>, it must be 
 </p></hint>
 <answer><p>One possible answer:</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{4}{2}{5}
 \draw plot[domain=-3.5:3.5, samples=100](\x,{(\x*\x-9)*(\x*\x+9)*\x*\x/200}) node[right]{$y=f(x)$};
@@ -145,7 +145,7 @@ Since <m>f(-5) \leq f(5)</m> AND <m>f(5) \leq f(-5)</m>, it must be true that <m
 </p>
 
 <p>A sketch of one such graph is below.</p>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{4}{2}{5}
 \draw plot[domain=-3.5:3.5, samples=100](\x,{(\x*\x-9)*(\x*\x+9)*\x*\x/200}) node[right]{$y=f(x)$};
@@ -180,7 +180,7 @@ Global extrema will occur at critical or singular points in the interval <m>(-5,
 </p>
 
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>c</m> </cell><cell> <m>-3</m> </cell><cell>  <m>-5</m> </cell><cell>  <m>5</m> </cell>
 </row><row>
@@ -221,7 +221,7 @@ The only critical point inside the interval is <m>x=-3</m>.
 </p>
 
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>c</m> </cell><cell> <m>-3</m> </cell><cell>  <m>-4</m> </cell><cell>  <m>0</m> </cell>
 </row><row>

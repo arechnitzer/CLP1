@@ -11,7 +11,7 @@
 <statement><p>
 Identify every critical point and every singular point of <m>f(x)</m> shown on the graph below.
  Which correspond to local extrema? </p>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{4}{1}{4}
 \draw[thick] plot[domain=-2.5:2](\x,{\x*\x*\x/4+2});
@@ -24,7 +24,7 @@ Identify every critical point and every singular point of <m>f(x)</m> shown on t
 Estimate <m>f'(0)</m>.
 </p></hint>
 <answer>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{4}{1}{4}
 \draw[thick] plot[domain=-2.5:2](\x,{\x*\x*\x/4+2});
@@ -39,7 +39,7 @@ Estimate <m>f'(0)</m>.
 <p> There is a critical point at <m>x=0</m>. The <m>x</m>-value of the red dot is a singular point, and a local maximum occurs there.
 </p></answer>
 <solution>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{4}{1}{4}
 \draw[thick] plot[domain=-2.5:2](\x,{\x*\x*\x/4+2});
@@ -64,7 +64,7 @@ Identify every critical point and every singular point of <m>f(x)</m>
 on the graph below. Which correspond to local extrema? Which correspond to global extrema over the interval shown?
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
 \YEaaxis{5}{5}{3}{8}
 \draw[thick] plot[domain=-5:1](\x,{-(\x*1.1+5)*(\x-2)*(\x-2)/8+4});
@@ -80,7 +80,7 @@ on the graph below. Which correspond to local extrema? Which correspond to globa
 If the graph is discontinuous at a point, it is not differentiable at that point.
 </p></hint>
 <answer>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
 \YEaaxis{5}{5}{3}{8}
 \draw[thick] plot[domain=-5:1](\x,{-(\x*1.1+5)*(\x-2)*(\x-2)/8+4});
@@ -99,7 +99,7 @@ If the graph is discontinuous at a point, it is not differentiable at that point
 <p>The <m>x</m>-coordinate corresponding to the blue dot (let's call it <m>a</m>) is a critical point, and <m>f(x)</m> has a local and global minimum at <m>x=a</m>. The <m>x</m>-coordinate corresponding to the discontinuity (let's call it <m>b</m>) is a singular point, but there is no a global or local extremum at <m>x=b</m>.
 </p></answer>
 <solution>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
 \YEaaxis{5}{5}{3}{8}
 \draw[thick] plot[domain=-5:1](\x,{-(\x*1.1+5)*(\x-2)*(\x-2)/8+4});
@@ -140,7 +140,7 @@ Draw a graph <m>y=f(x)</m> where a <m>f(2)</m> is a local maximum, but it is not
 Try making a little bump at <m>x=2</m>, the letting the function get quite large somewhere else.
 </p></hint>
 <answer><p>One possible answer is shown below.</p>
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1.5}{3}{3}{3}
 \draw[thick] plot[domain=-1:2.5](\x,{-\x*\x*(\x-2)});
@@ -149,7 +149,7 @@ Try making a little bump at <m>x=2</m>, the letting the function get quite large
 </sidebyside>
 </answer>
 <solution><p>One possible answer is shown below.</p>
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1.5}{3}{3}{3}
 \draw[thick] plot[domain=-1:2.5](\x,{-\x*\x*(\x-2)});
@@ -158,7 +158,7 @@ Try making a little bump at <m>x=2</m>, the letting the function get quite large
 </sidebyside>
 <p> For every <m>x</m> in the red interval shown below, <m>f(2) \geq f(x)</m>, so <m>f(2)</m> is a local maximum. However, the point marked with a blue dot shows that <m>f(x) \gt f(2)</m> for some <m>x</m>, so <m>f(2)</m> is not a global maximum.</p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[dotted, fill=red!20] (1,-.5) rectangle (1.75,1.5);
 \YEaaxis{1.5}{3}{3}{3}
@@ -360,7 +360,7 @@ If there is some interval around <m>x=2</m> where nothing is bigger than <m>f(2)
 </p>
 
 <p>For the second curve, the function's value at <m>x=2</m> (that is, the <m>y</m>-value of the solid dot) is higher than everything to the left, but lower than values immediately to the right. (On the graph reproduced below, <m>f(x)</m> is higher than everything in the red section, and lower than everything in the blue section.) So, it is neither a local max nor a local min.</p>
-<sidebyside>
+<sidebyside width="25%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[dotted, fill=red!20] (-.5,-1) rectangle (1,2.5);
 \draw[dotted, fill=blue!20](1,2.5) rectangle (1.5,-1);
@@ -377,7 +377,7 @@ If there is some interval around <m>x=2</m> where nothing is bigger than <m>f(2)
 </p>
 
 <p>In the final curve, <m>f(2)</m> (remember--this is the <m>y</m>-value of the solid dot) is higher than everything immediately to the left or right of it (for instance, over the interval marked in red below), so it is a local maximum.</p>
-<sidebyside>
+<sidebyside width="25%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[dotted, fill=red!20] (.5,-1) rectangle (1.5,2.5);
 \draw[dashed, red] (.5,1)--(1.5,1);
@@ -402,7 +402,7 @@ if <m>x=2</m> not a critical point, then it must be a singular point. Remember t
 </p></hint>
 <answer><p>
 There are many possible answers. Every answer must have <m>x=2</m> as a singular point strictly inside the domain of <m>f(x)</m>. Two possibilities are shown below.</p>
-<sidebyside>
+<sidebyside widths="40% 40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{2}{2}
 \YExcoord{1}{2}
@@ -420,7 +420,7 @@ There are many possible answers. Every answer must have <m>x=2</m> as a singular
 </answer>
 <solution><p>
 By Theorem<nbsp/><xref ref="thm_APPlocalMaxMin"/>, if <m>x=2</m> not a critical point, then it must be a singular point. That is, <m>f(x)</m> is not differentiable at <m>x=2</m>. Also, remember that endpoints are not local extrema. Two possibilities are shown below, but there are infinitely many possible answers.</p>
-<sidebyside>
+<sidebyside widths="40% 40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{2}{2}
 \YExcoord{1}{2}
