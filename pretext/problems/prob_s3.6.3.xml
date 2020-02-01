@@ -276,7 +276,7 @@ In other words, if <m>y \gt x</m> then <m>g(y) \gt g(x)</m>.
 
 <p>Suppose <m>f'(c)=0</m>. Since
 <m>f'(x)</m> is a strictly increasing function, <m>f'(x) \lt 0</m> for all <m>x \lt c</m> and <m>f'(x) \gt 0</m> for all <m>x \gt c</m>.</p>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
 \YExcoord{0}{c}
@@ -292,7 +292,7 @@ In other words, if <m>y \gt x</m> then <m>g(y) \gt g(x)</m>.
 So <m>f(x) \gt f(c)</m> for all <m>x\neq c</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
 \YExcoord{0}{c}
@@ -345,7 +345,7 @@ In other words, if <m>y \gt x</m> then <m>g(y) \gt g(x)</m>.
 <p>Suppose <m>f'(c)=0</m>. Since
 <m>f'(x)</m> is a strictly increasing function, <m>f'(x) \lt 0</m> for all <m>x \lt c</m> and <m>f'(x) \gt 0</m> for all <m>x \gt c</m>.</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
 \YExcoord{0}{c}
@@ -361,7 +361,7 @@ In other words, if <m>y \gt x</m> then <m>g(y) \gt g(x)</m>.
 So <m>f(x) \gt f(c)</m> for all <m>x \lt c</m> and <m>f(x) \gt f(c)</m> for all <m>x \gt c</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
 \YExcoord{0}{c}
@@ -451,7 +451,7 @@ If <m>x=3</m> is an inflection point, then the concavity of <m>f(x)</m> changes 
 </ul>
 Remark: we are leaving unknown whether <m>a \lt 3 \lt b</m> or <m>b \lt 3 \lt a</m>. Since we don't know whether <m>f(x)</m> changes from concave up to concave down, or from concave down to concave up, by remaining vague we cover both cases.</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
 \YExcoord{0}{3}
@@ -467,7 +467,7 @@ Remark: we are leaving unknown whether <m>a \lt 3 \lt b</m> or <m>b \lt 3 \lt a<
 
 <p>OR</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ultra thick,  \lt - \gt ] (-4,0)--(4,0);
 \YExcoord{0}{3}
