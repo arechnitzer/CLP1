@@ -12,19 +12,21 @@
 <statement><p>
 Which of the following functions <m>T(t)</m> satisfy the differential equation
 <m>\ds\diff{T}{t}=5\left[T-20\right]</m>?
-<me>
-\mbox{(a) }
+<md>
+<mrow>
+\amp\mbox{(a) }
 T(t)=20
-\qquad
-\mbox{(b) }
+\amp
+\amp\mbox{(b) }
  T(t)=20e^{5t}-20
-\qquad
+\amp
 \mbox{(c) }
  T(t)=e^{5t}+20
-\qquad
-\mbox{(d) }
+</mrow><mrow>
+\amp\mbox{(d) }
  T(t)=20e^{5t}+20
-</me>
+</mrow>
+</md>
 </p>
 
 </statement>
@@ -42,17 +44,17 @@ T(t)=[T(0)-20]e^{5t}+20</me>
 </p>
 
 <p>Instead of using the corollary, we can also just check each function for ourselves.
-<ul>
-<li>[(a)] <m>\ds\diff{T}{t}=0=5\cdot0=5[T(t)-20]</m>, so (a) gives a solution to the differential equation.
+<ol  label="a">
+<li> <m>\ds\diff{T}{t}=0=5\cdot0=5[T(t)-20]</m>, so (a) gives a solution to the differential equation.
 </li>
-<li>[(b)] <m>\ds\diff{T}{t}=5[20e^{5t}]=5[T+20] \neq 5[T-20]</m>, so (b) does not give a solution to the differential equation.
+<li> <m>\ds\diff{T}{t}=5[20e^{5t}]=5[T+20] \neq 5[T-20]</m>, so (b) does not give a solution to the differential equation.
 </li>
-<li>[(c)] <m>\ds\diff{T}{t}=5[e^{5t}]=5[T-20]</m>, so (c) gives a solution to the differential equation.
+<li> <m>\ds\diff{T}{t}=5[e^{5t}]=5[T-20]</m>, so (c) gives a solution to the differential equation.
 </li>
-<li>[(d)] <m>\ds\diff{T}{t}=5[20e^{5t}]=5[T-20]</m>,
+<li> <m>\ds\diff{T}{t}=5[20e^{5t}]=5[T-20]</m>,
 so (d) gives a solution to the differential equation.
 </li>
-</ul>
+</ol>
 </p></solution>
 </exercise>
 

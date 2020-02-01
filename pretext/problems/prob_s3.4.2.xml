@@ -50,7 +50,7 @@ The linear approximation is <m>L(x)=3x-9</m>. Since we're approximating at <m>x=
 <exercise purpose="RQS">
 <statement><p>
 The curve <m>y=f(x)</m> is shown below. Sketch the linear approximation of <m>f(x)</m> about <m>x=2</m>.</p>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4}{2.5}
 \draw[ultra thick] plot[domain=-3.75:-.1, samples=20](\x,{sqrt(abs(\x))});
@@ -64,7 +64,7 @@ The curve <m>y=f(x)</m> is shown below. Sketch the linear approximation of <m>f(
 The graph of the linear approximation is a line, passing through <m>(2,f(2))</m>, with slope <m>f'(2)</m>.
 </p></hint>
 <answer>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4}{2.5}
 \draw[ultra thick] plot[domain=-3.75:-.1, samples=20](\x,{sqrt(abs(\x))});
@@ -79,7 +79,7 @@ The graph of the linear approximation is a line, passing through <m>(2,f(2))</m>
 <solution><p>
 The linear approximation is a line, passing through <m>(2,f(2))</m>, with slope <m>f'(2)</m>.
 That is, the linear approximation to <m>f(x)</m> about <m>x=2</m> is the tangent line to <m>f(x)</m> at <m>x=2</m>. It is shown below in red.</p>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4}{2.5}
 \draw[ultra thick] plot[domain=-3.75:-.1, samples=20](\x,{sqrt(abs(\x))});
@@ -124,7 +124,7 @@ Use a linear approximation to estimate <m>\log(x)</m> when <m>x=0.93</m>. Sketch
 You'll need to centre your approximation about some <m>x=a</m>, which should have two properties: you can easily compute <m>\log(a)</m>, and <m>a</m> is close to <m>0.93</m>.
 </p></hint>
 <answer><p><m>\log(0.93) \approx -0.07</m></p>
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
  \YEaaxis{1.5}{3.5}{1}{2}
  \draw[thick] plot[domain=0.25:3](\x,{ln \x}) node[right]{$y=f(x)$};
@@ -153,7 +153,7 @@ f(0.93) &amp;\approx 0.93-1=-0.07
 </mrow>
 </md></p>
 
-<sidebyside>
+<sidebyside width="50%">
  <image><latex-image><![CDATA[\begin{tikzpicture}
  \YEaaxis{1.5}{3.5}{1}{2}
  \draw[thick] plot[domain=0.25:3](\x,{ln \x}) node[right]{$y=f(x)$};
@@ -289,7 +289,7 @@ f(x)=\sin x \qquad a=0 \qquad b=\pi </me>
 </me>
 which is not exactly the correct value.</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{2}{5}{1.5}{4.5}
 \YExcoord{3.14}{\pi};
@@ -328,15 +328,27 @@ L'(a)&amp;= f'(a)=\dfrac{1}{1+a^2}
 </mrow><mrow>
 a&amp;=\pm\sqrt{3}
 </mrow>
-<intertext>We've narrowed down <m>a</m> to <m>\sqrt{3}</m> or <m>-\sqrt{3}</m>.
-Recall the linear approximation of <m>f(x)</m> about <m>x=a</m> is <m>f(a)+f'(a)(x-a),</m> so its constant term is <m>f(a)-af'(a)=\arctan(a)-\dfrac{a}{1+a^2}</m>. We compute this for <m>a=\sqrt{3}</m> and <m>a=-\sqrt{3}</m>.</intertext><mrow>
-a=\sqrt{3}: &amp; \arctan\left(a\right)-\frac{a}{1+a^2}
-=\arctan\left(\sqrt{3}\right)-\frac{\sqrt{3}}{1+\left(\sqrt{3}\right)^2}=\frac{\pi}{3}-\frac{\sqrt{3}}{4}=\frac{4\pi-\sqrt{27}}{12}
+</md>
+We've narrowed down <m>a</m> to <m>\sqrt{3}</m> or <m>-\sqrt{3}</m>.
+Recall the linear approximation of <m>f(x)</m> about <m>x=a</m> is <m>f(a)+f'(a)(x-a),</m> so its constant term is <m>f(a)-af'(a)=\arctan(a)-\dfrac{a}{1+a^2}</m>. We compute this for <m>a=\sqrt{3}</m> and <m>a=-\sqrt{3}</m>.
+<md>
+<mrow>
+a=\sqrt{3}: &amp;\amp
+ \arctan\left(a\right)-\frac{a}{1+a^2}
+\amp=\arctan\left(\sqrt{3}\right)-\frac{\sqrt{3}}{1+\left(\sqrt{3}\right)^2}
 </mrow><mrow>
-a=-\sqrt{3}: &amp; \arctan\left(a\right)-\frac{a}{1+a^2}
-=\arctan\left(-\sqrt{3}\right)-\frac{-\sqrt{3}}{1+\left(-\sqrt{3}\right)^2}=-\frac{\pi}{3}+\frac{\sqrt{3}}{4}=\frac{-4\pi+\sqrt{27}}{12}
+\amp \amp \amp =\frac{\pi}{3}-\frac{\sqrt{3}}{4}=\frac{4\pi-\sqrt{27}}{12}
+</mrow><mrow>
+a=-\sqrt{3}: &amp;\amp
+ \arctan\left(a\right)-\frac{a}{1+a^2}
+\amp=\arctan\left(-\sqrt{3}\right)-\frac{-\sqrt{3}}{1+\left(-\sqrt{3}\right)^2}
+</mrow><mrow>
+\amp\amp\amp=-\frac{\pi}{3}+\frac{\sqrt{3}}{4}=\frac{-4\pi+\sqrt{27}}{12}
 </mrow>
-<intertext>So, when <m>a=\sqrt{3}</m>,</intertext><mrow>
+</md>
+So, when <m>a=\sqrt{3}</m>,
+<md>
+<mrow>
 L(x)&amp;=\frac{1}{4}x+\frac{4\pi-\sqrt{27}}{12}
 </mrow>
 </md>
