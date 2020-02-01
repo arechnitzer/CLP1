@@ -483,7 +483,7 @@ enjoying the  view. You get there late and start climbing at 10am and being quit
 
 <p>
 You can translate this situation into the form of the IVT as follows. Let <m>t</m>  be time and let <m>a = </m> 10am and <m>b=</m> 11am. Let <m>g(t)</m> be your distance along the trail. Hence
-	<fn>Its amazing what facts you can find on Wikipedia.</fn>
+	<fn>It's amazing what facts you can find on Wikipedia.</fn>
 <m>g(a) = 0</m> and  <m>g(b) = 2.9km</m>. Since you are a mortal, your position along the trail is a  continuous function <mdash/> no helicopters or teleportation or<ellipsis/> We have no idea  where Bob is sitting, except that he is somewhere between <m>g(a)</m> and  <m>g(b)</m>, call this point <m>Y</m>. The IVT guarantees that there is some time <m>c</m>  between <m>a</m> and <m>b</m> (so between 10am and 11am) with <m>g(c) = Y</m> (and your  position will be the same as Bob's).
 </p>
 </example>

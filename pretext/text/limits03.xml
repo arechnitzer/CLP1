@@ -247,7 +247,7 @@ We write this as
   \lim_{x\to 0} \sin \left(\frac{\pi}{x}\right) \text{ does not exist}
 </mrow>
 </md>
-Its not very inventive notation, however it is clear. We frequently abbreviate <q>does not exist</q> to <q>DNE</q> and rewrite the above as
+It's not very inventive notation, however it is clear. We frequently abbreviate <q>does not exist</q> to <q>DNE</q> and rewrite the above as
 <md>
 <mrow>
   \lim_{x\to 0} \sin \left(\frac{\pi}{x}\right) &amp;= \text{DNE}
