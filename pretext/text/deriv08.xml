@@ -336,7 +336,7 @@ Now we can take the limit as <m>h \to 0</m> via Lemma<nbsp/><xref ref="lem_sinho
 <subsubsection><title>Method 2 <mdash/> via the Double Angle Formula</title>
 <p>
 The other way involves the double angle formula
-<fn>I hope you looked this up in in Appendix<nbsp/><xref ref="sec_must_deriv"/>. Nag.</fn>,
+<fn>We hope you looked this up in in Appendix<nbsp/><xref ref="sec_must_deriv"/>. Nag.</fn>,
 <md>
 <mrow>
   \cos 2\theta = 1 - 2 \sin^2(\theta) \qquad\text{or}\qquad
@@ -495,7 +495,30 @@ errors.</fn>
  in the derivative of <m>\cos x</m>.
 </p>
 
-<p>Note that if <m>x</m> is measured in degrees then the above work is wrong. There
+<remark xml:id="rem_deriv_cos_prime"><title>Optional <mdash/>  Another derivation of <m>\diff{}{x}\cos x =-\sin x</m></title>
+<p>
+We remark that, once one knows that <m>\diff{}{x}\sin x =\cos x</m>, it is easy to use it and the trig identity <m>\cos(x) = \sin\big(\frac{\pi}{2}-x\big)</m> to derive <m>\diff{}{x}\cos x =-\sin x</m>. Here is how<fn>We thank Serban Raianu for suggesting that we include this.</fn>. 
+<md>
+<mrow>
+\diff{}{x}\cos x
+\amp=\lim_{h\rightarrow 0}\frac{\cos (x+h)-\cos x}{h} 
+=\lim_{h\rightarrow 0}\frac{\sin\big(\frac{\pi}{2}-x-h)
+        -\sin\big(\frac{\pi}{2}- x\big)}{h} 
+</mrow><mrow>
+\amp=-\lim_{h'\rightarrow 0}\frac{\sin\big(x'+h')-\sin(x')}{h'} 
+\qquad\text{with }x'=\tfrac{\pi}{2}-x,\ h'=-h
+</mrow><mrow>
+\amp=-\diff{}{x'}\sin x'\Big|_{x'=\tfrac{\pi}{2}-x}
+=-\cos\big(\tfrac{\pi}{2}- x\big)
+</mrow><mrow>
+\amp=-\sin x
+</mrow>
+</md>  
+</p>
+</remark>
+
+<p>Note that if <m>x</m> is measured in degrees, then the formulas of 
+Lemma<nbsp/><xref ref="lem_DIFFsincos"/> are  wrong. There
 are similar formulas, but we need the chain rule to build them <mdash/> that is the
 subject of the next section. But first we should find the
 derivatives of the other trig functions.

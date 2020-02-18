@@ -2725,7 +2725,7 @@ Now we can take the limit as $h \to 0$ via Lemma~\ref{lem sinhoverh}.
 \end{align*}
 
 \subsubsection{ Method 2 --- via the Double Angle Formula}
-The other way involves the double angle formula\footnote{I hope you looked this up
+The other way involves the double angle formula\footnote{We hope you looked this up
 in in Appendix~\ref{sec must deriv}. Nag.},
 \begin{align*}
   \cos 2\theta = 1 - 2 \sin^2(\theta) \qquad\text{or}\qquad
@@ -2831,7 +2831,30 @@ to $\sin x$ and $\cos x$ just exchanges $\sin x$ and $\cos x$, except for
 the minus sign\footnote{There is a bad pun somewhere in here about sine errors and sign
 errors.} in the derivative of $\cos x$.
 
-Note that if $x$ is measured in degrees then the above work is wrong. There
+\begin{remark}[Optional --- Another derivation of $\diff{}{x}\cos x =-\sin x$]
+\label{rem deriv cos prime}
+
+We remark that, once one knows that $\diff{}{x}\sin x =\cos x$, it is easy to use it and the trig identity $\cos(x) = \sin\big(\frac{\pi}{2}-x\big)$ to derive $\diff{}{x}\cos x =-\sin x$. Here is how\footnote{We thank Serban Raianu for suggesting that we include this.}. 
+\begin{align*}
+\diff{}{x}\cos x
+&=\lim_{h\rightarrow 0}\frac{\cos (x+h)-\cos x}{h} 
+=\lim_{h\rightarrow 0}\frac{\sin\big(\frac{\pi}{2}-x-h)
+        -\sin\big(\frac{\pi}{2}- x\big)}{h} 
+\\
+&=-\lim_{h'\rightarrow 0}\frac{\sin\big(x'+h')-\sin(x')}{h'} 
+\qquad\text{with }x'=\tfrac{\pi}{2}-x,\ h'=-h
+\\
+&=-\diff{}{x'}\sin x'\Big|_{x'=\tfrac{\pi}{2}-x}
+=-\cos\big(\tfrac{\pi}{2}- x\big)
+\\
+&=-\sin x
+\end{align*}  
+
+
+\end{remark}
+
+Note that, if $x$ is measured in degrees, then the formulas of 
+Lemma \ref{lem DIFFsincos} are wrong. There
 are similar formulas, but we need the chain rule to build them --- that is the
 subject of the next section. But first we should find the
 derivatives of the other trig functions.
@@ -3223,14 +3246,39 @@ We now have
   &= \lim_{h \to 0}
     \underbrace{\frac{f\big(b + H\big)-f(b)}{H}}_{= \tf(H) } \cdot
     \underbrace{\frac{H}{h}}_{ = \tg(h)}
-& \text{remember that $H= h \tg(h)$} \\
+& \text{if $H= h \tg(h)\ne 0$} \\
   &= \lim_{h \to 0}\big( \tf(H) \cdot \tg(h) \big) \\
   &= \lim_{h \to 0} \tf(H) \cdot \lim_{h \to 0} \tg(h)  & \text{since $H\to0$
 as $h\to 0$}\\
   &= \lim_{H \to 0} \tf(H) \cdot \lim_{h \to 0} \tg(h)
   &= f'(b) \cdot g'(a)
 \end{align*}
-This is exactly the RHS of the product rule.
+This is exactly the RHS of the chain rule. It is possible to have $H=0$ in the 
+second line above. But that possibility is easy to deal with:
+\begin{itemize} \itemsep1pt \parskip0pt \parsep0pt
+\item
+If $g'(a)\ne 0$, then, since $\lim_{h \to 0} \tg(h) = g'(a)$, 
+$H= h \tg(h)$ cannot be $0$ for small nonzero $h$. Technically, there is an
+$h_0>0$ such that $H= h \tg(h)\ne 0$ for all $0<|h|<h_0$. In taking the limit
+$h\to 0$, above, we need only consider $0<|h|<h_0$ and so, in this case, 
+the above computation is completely correct. 
+\item 
+If $g'(a)=0$, the above computation is still fine provided we exclude all $h$'s 
+for which $H= h \tg(h)\ne 0$. When $g'(a)=0$, the right hand side, $f'\big(g(a)\big) \cdot g'(a)$, of the chain rule is $0$. 
+So the above computation gives  
+\begin{equation*}
+\lim_{\genfrac{}{}{0pt}{}{h \to 0}{\tg(h)\ne 0}} \frac{f\big(b + H\big)-f(b)}{h}
+=f'\big(g(a)\big) \cdot g'(a) = 0
+\end{equation*} 
+On the other hand, when $H=0$, we have $f\big(b + H\big)-f(b)=0$. So
+\begin{equation*}
+\lim_{\genfrac{}{}{0pt}{}{h \to 0}{\tg(h) = 0}} \frac{f\big(b + H\big)-f(b)}{h}
+=0
+\end{equation*}
+too. That's all we need.
+\end{itemize}
+
+
 
 %
 % \intremark{  INTERNAL REMARK - memory aid
@@ -3727,7 +3775,7 @@ Example~\ref{eg log est})
 \end{align*}
 
 \subsection*{Logarithmic Differentiation}
-I want to go back to some previous slightly messy examples
+We want to go back to some previous slightly messy examples
 (Examples~\ref{eg:DIFFsimpleToolsA}  and~\ref{eg:DIFFsimpleToolsNB}) and now
 show you how they can be done more easily.
 \begin{eg}
