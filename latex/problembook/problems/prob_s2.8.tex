@@ -591,17 +591,19 @@ f'(0)&=\lim_{h \to 0}\frac{f(0+h)-f(0)}{h}\qquad\mbox{ if it exists}\\
 &=\lim_{h \to 0} \frac{\frac{\sin h}{h}-1}{h}
 \end{align*}
 As $h$ approaches 0, both the numerator and the denominator approach 0. So, to evaluate the limit, we need to do more work. The key insight we can use is a result that was shown in the text while evaluating the derivative of sine. When $h$ is close to 0, $\cos h \leq \frac{\sin h}{h} \leq 1$. We use this to bound our limit, and then apply the squeeze theorem.
-\begin{align*}
+\begin{alignat*}{5}
 &\cos h&&\leq&&\frac{\sin h}{h}&&\leq&&1\\
-\mbox{So, }\qquad&\frac{\cos h-1}{h}&&\leq&&\frac{\frac{\sin h}{h}-1}{h}&&\leq&&\frac{1-1}{h}=0
-\end{align*}
-We evaluate the limits of the bounds. For the lower bound, notice its similarity to the definition of the derivative.
+\mbox{So, }\qquad&\cos h-1&&\leq&&\frac{\sin h}{h}-1&&\leq&& 1-1=0
+\end{alignat*}
+and $\frac{1}{h}\left(\frac{\sin h}{h}-1\right)$ is between $0$ and
+$\frac{\cos h-1}{h}$.
+We can evaluate the limit of $\frac{\cos h-1}{h}$,\ by noticing its similarity to the definition of the derivative.
 \begin{align*}
 \lim_{h \to 0}\frac{\cos h-1}{h}&=\lim_{h \to 0}\frac{\cos(0+h)-\cos(0)}{h}\\
-&=\diff{}{x}\left.\left\{\cos x \right\}\right|_{x=0}=0\\
-\lim_{h \to 0}0&=0
+&=\diff{}{x}\left.\left\{\cos x \right\}\right|_{x=0}=0
 \end{align*}
-So, by the Squeeze Theorem, $f'(0)=\ds\lim_{h \to 0}\frac{\frac{\sin h}{h}-1}{h}=0$.
+So, by the Squeeze Theorem, $f'(0)
+        =\ds\lim_{h \to 0}\frac{\frac{\sin h}{h}-1}{h}=0$.
 \end{solution}
 
 %%%

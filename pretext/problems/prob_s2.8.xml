@@ -751,17 +751,17 @@ As <m>h</m> approaches 0, both the numerator and the denominator approach 0. So,
 <mrow>
 &amp;\cos h&amp;&amp;\leq&amp;&amp;\frac{\sin h}{h}&amp;&amp;\leq&amp;&amp;1
 </mrow><mrow>
-\mbox{So, }\qquad&amp;\frac{\cos h-1}{h}&amp;&amp;\leq&amp;&amp;\frac{\frac{\sin h}{h}-1}{h}&amp;&amp;\leq&amp;&amp;\frac{1-1}{h}=0
+\mbox{So, }\qquad&amp;\cos h-1&amp;
+      &amp;\leq&amp;&amp;\frac{\sin h}{h}-1&amp;
+      &amp;\leq&amp;&amp;1-1=0
 </mrow>
 </md>
-We evaluate the limits of the bounds. For the lower bound, notice its similarity to the definition of the derivative.
+and <m>\frac{1}{h}\left(\frac{\sin h}{h}-1\right)</m> is between <m>0</m> and <m> \frac{\cos h - 1}{h}</m>. We can evaluate the limit of <m> \frac{\cos h - 1}{h}</m>  by noticing its similarity to the definition of the derivative.
 <md>
 <mrow>
 \lim_{h \to 0}\frac{\cos h-1}{h}&amp;=\lim_{h \to 0}\frac{\cos(0+h)-\cos(0)}{h}
 </mrow><mrow>
 &amp;=\diff{}{x}\left.\left\{\cos x \right\}\right|_{x=0}=0
-</mrow><mrow>
-\lim_{h \to 0}0&amp;=0
 </mrow>
 </md>
 So, by the Squeeze Theorem, <m>f'(0)=\ds\lim_{h \to 0}\frac{\frac{\sin h}{h}-1}{h}=0</m>.
