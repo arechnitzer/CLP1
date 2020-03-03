@@ -212,19 +212,24 @@ Remember that <m>\sqrt{\ }</m> is defined to be the <em>positive</em> square roo
 <m>-\frac{3}{4}</m>
 </p></answer>
 <solution><p>
-The two terms in the denominator grow at order <m>x</m>--that is, their largest power is <m>x</m>.  For <m>x \lt 0</m>, we must remember <m>\sqrt{x^2}=|x|=-x</m>, so
-<me>
-\sqrt{4x^2+x} = \sqrt{x^2}\sqrt{4+\frac{1}{x}} = -x \sqrt{4+\frac{1}{x}}.
-</me>
-We conclude that
-<me>
-\frac{3x}{\sqrt{4x^2+x}-2x} =  \frac{3}{-\sqrt{4+1/x}-2}.
-</me>
-Since <m>1/x\to 0</m> as <m>x\to -\infty</m>, we conclude that
-<me>
-\lim_{x\to -\infty} \frac{3x}{\sqrt{4x^2+x}-2x} =
-      \frac{3}{-\sqrt{4+0}-2} = -\frac{3}{4}
-</me>
+Note that for large negative <m>x</m>, the first term in the denominator 
+<m>\sqrt{4x^2+x}\approx\sqrt{4x^2}=|2x|=-2x</m> <em>not</em> <m>+2x</m>. A good way to
+avoid incorrectly computing <m>\sqrt{x^2}</m> when <m>x</m> is negative is to define
+<m>y=-x</m> and express everything in terms of <m>y</m>. That's what we'll do.
+<md>
+<mrow>
+\lim_{x\to -\infty} \frac{3x}{\sqrt{4x^2+x}-2x}
+\amp=\lim_{y\to +\infty} \frac{-3y}{\sqrt{4y^2-y}+2y} 
+</mrow><mrow>
+\amp=\lim_{y\to +\infty} \frac{-3y}{y\sqrt{4-\frac{1}{y}}+2y} 
+</mrow><mrow>
+\amp=\lim_{y\to +\infty} \frac{-3}{\sqrt{4-\frac{1}{y}}+2} 
+</mrow><mrow>
+\amp=\frac{-3}{\sqrt{4-0}+2} \quad\text{since }1/y\to 0\text{ as }y\to +\infty
+</mrow><mrow>
+\amp= -\frac{3}{4}
+</mrow>
+</md>
 </p></solution>
 </exercise>
 
@@ -242,8 +247,8 @@ Factor out the highest power of the denominator.
 The highest power of <m>x</m> in the denominator is <m>x^2</m>, so we divide the numerator and denominator by <m>x^2</m>:
 <md>
 <mrow>
-\lim\limits_{x\rightarrow -\infty}\frac{1-x-x^2}{2x^2-7}&amp;=
-\lim\limits_{x\rightarrow -\infty}\frac{1/x^2-1/x-1}{2-7/x^2}
+\lim\limits_{x\rightarrow -\infty}\frac{1-x-x^2}{2x^2-7}
+&amp;=\lim\limits_{x\rightarrow -\infty}\frac{1/x^2-1/x-1}{2-7/x^2}
 </mrow><mrow>
 &amp;=\frac{0-0-1}{2-0}=-\frac{1}{2}
 </mrow>
