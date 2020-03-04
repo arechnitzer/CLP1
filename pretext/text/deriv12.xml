@@ -251,8 +251,9 @@ graphs that are used.</p>
 may also be developed in the same way<fn>In fact, there are two different widely used definitions of <m>\arcsec x</m>. Under our definition, below, <m>\theta=\arcsec x</m> takes values in 
  <m>0\le\theta\le\pi</m>. Some people, perfectly legitimately, define <m>\theta=\arcsec x</m> to
  take values in the union of <m>0\le \theta\lt\frac{\pi}{2}</m> and <m>\pi\le\theta\lt\frac{3\pi}{2}</m>.
- Our definition has the advantage of simplicity. The other definition eliminates absolute values in some computations. Similarly there are two different widely used definitions of <m>\arccsc x</m>.</fn><fn>One could also define 
-<m>\arccot(x)=\arctan(1/x)</m>. We have chosen not to do so, because the definition we have chosen is both continuous and standard.</fn>. But it's a little easier to use
+ Our definition is sometimes called the <q>trigonometry friendly</q> definition.
+The definition itself has the advantage of simplicity. The other definition is sometimes called the <q>calculus friendly</q> definition. It eliminates some absolute values and hence simplifies some computations. Similarly there are two different widely used definitions of <m>\arccsc x</m>.</fn><fn>One could also define 
+<m>\arccot(x)=\arctan(1/x)</m> with <m>\arccot(0)=\frac{\pi}{2}</m>. We have chosen not to do so, because the definition we have chosen is both continuous and standard.</fn>. But it's a little easier to use
 <md>
 <mrow>
 \csc x=\frac{1}{\sin x} \qquad
@@ -277,22 +278,31 @@ may also be developed in the same way<fn>In fact, there are two different widely
 </mrow>
 <intertext>
     <m>\arctan x</m> is defined for all <m>x\in\bbbr</m>. It is the unique number obeying
-         </intertext><mrow>
+</intertext>
+<mrow>
 \tan\big(\arctan(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
         -\frac{\pi}{2} \lt  &amp;\arctan(x) \lt \frac{\pi}{2}
 </mrow>
 <intertext>
     <m>\arccsc x=\arcsin\frac{1}{x}</m> is defined for <m>|x|\ge 1</m>. It is the
-unique number obeying</intertext><mrow>
+unique number obeying
+</intertext>
+<mrow>
 \csc\big(\arccsc(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
         -\frac{\pi}{2}\le &amp;\arccsc(x)\le\frac{\pi}{2}
 </mrow>
+<intertext>
+<m>\ \ \ \ \ \ \ \ </m>Because <m>\csc(0)</m> is undefined, <m>\arccsc(x)</m> never takes the value <m>0</m>.
+</intertext>
 <intertext>
     <m>\arcsec x=\arccos\frac{1}{x}</m> is defined for <m>|x|\ge 1</m>. It is the
 unique number obeying</intertext><mrow>
 \sec\big(\arcsec(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
         0\le &amp;\arcsec(x)\le\pi
 </mrow>
+<intertext>
+<m>\ \ \ \ \ \ \ \ </m>Because <m>\sec(\pi/2)</m> is undefined, <m>\arcsec(x)</m> never takes the value <m>\pi/2</m>.
+</intertext>
 <intertext>
     <m>\arccot x</m> is defined for all <m>x\in\bbbr</m>. It
 is the unique number obeying</intertext><mrow>
