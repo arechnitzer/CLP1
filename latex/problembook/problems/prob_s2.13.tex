@@ -570,41 +570,51 @@ e^c&=\frac{e^T-1}{T}\\
 
 \begin{question}
 Use  Corollary~\ref*{cor:DIFFmvtcons} %2.3.11
-and Theorem~\ref*{thm:DIFFinvtrigderiv}
- to show that $\arcsec x=C-\arccsc x$ for some constant $C$; then find $C$.
+and Theorem~\ref*{thm:DIFFinvtrigderiv} %2.12.7
+in the CLP-1 text to show that $\arcsec x=C-\arccsc x$ for some constant $C$. Find $C$.
 \end{question}
 \begin{hint}
 Let $f(x)=\arcsec x + \arccsc c -C$. %What is the relationship between $\ds\diff{}{x}\arcsec x$ and $\ds\diff{}{x}\{C-\arccsc x\}$?
 What is $f'(x)$?
 \end{hint}
 \begin{answer}
-The domains of $\arcsec x$ and $C-\arcsec x$ are the same: $|x| \geq 1$.
-Define $f(x)=\arcsec x + \arccsc x$, and note the domain of $f(x)$ is also $|x| \geq 1$.
-Using Theorem~\ref*{thm:DIFFinvtrigderiv},
-\[f'(x)=\diff{}{x}\arcsec x+\diff{}{x} \arccsc
- = \dfrac{1}{|x|\sqrt{x^2-1}}+\dfrac{-1}{|x|\sqrt{x^2-1}}=0.\]
-By Corollary~\ref*{cor:DIFFmvtcons}, this means $f(x)$ is constant.
-That is, $f(x)=C$ for some constant $C$, so $C=\arcsec x + \arccsc x$, hence
-\[\arcsec x = C-\arccsc x\]
-for all $|x| \geq 1$.
-\medskip
-
-$C=\dfrac{\pi}{2}$
+$C=\frac{\pi}{2}$. See the solution for the justification.
 \end{answer}
 \begin{solution}
-The domains of $\arcsec x$ and $C-\arccsc x$ are the same: $|x| \geq 1$.
-Define $f(x)=\arcsec x + \arccsc x$, and note the domain of $f(x)$ is also $|x| \geq 1$.
-Using Theorem~\ref*{thm:DIFFinvtrigderiv},
-\[f'(x)=\diff{}{x}\arcsec x+\diff{}{x} \arccsc
- = \dfrac{1}{|x|\sqrt{x^2-1}}+\dfrac{-1}{|x|\sqrt{x^2-1}}=0.\]
-By Corollary~\ref*{cor:DIFFmvtcons}, this means $f(x)$ is constant.
-That is, $f(x)=C$ for some constant $C$, so $C=\arcsec x + \arccsc x$, hence
-\[\arcsec x = C-\arccsc x\]
-for all $|x| \geq 1$.
+The domains of $\arcsec x$ and $C-\arcsec x$ are the same: $|x| \geq 1$.
+Define $f(x)=\arcsec x + \arccsc x$, and note that the domain of $f(x)$ is also $|x| \geq 1$.
+Using Theorem~\ref*{thm:DIFFinvtrigderiv} in the CLP-1 text,
+\begin{equation*}
+f'(x)=\diff{}{x}\arcsec x+\diff{}{x} \arccsc x
+ = \dfrac{1}{|x|\sqrt{x^2-1}}+\dfrac{-1}{|x|\sqrt{x^2-1}}=0
+\end{equation*}
+By Corollary~\ref*{cor:DIFFmvtcons} in the CLP-1 text, this means that $f(x)$ 
+is constant on any interval in $|x|\ge 1$. So $f(x)$ is a constant, call it $C_+$, on $x\ge 1$, and $f(x)$ is also a constant, call it $C_-$, on $x\le -1$.
 
-In order to find $C$, we can use any value of $x$ where we know cosecant and arcsecant. For instance, $x=1$: $\arcsec(1)=\arccos\left(\frac{1}{1}\right)=0$,
-and $\arccsc(1)=\arcsin\left(\frac{1}{1}\right)=\frac{\pi}{2}$. So,
-\[C=\arcsec(1)+\arccsc(1)=\frac{\pi}{2}\]
+In order to find $C_+$, we find $f(1)$, because we know angles for which the secant and cosecant are $x=1$.
+\begin{alignat*}{7}
+\cos(0)&=1                    &&\implies &\sec(0)&=\tfrac{1}{1}=1 
+                              &&\implies &&\arcsec(1)=0
+\\
+\sin\big(\tfrac{\pi}{2}\big)&=1 
+                &&\implies &\csc\big(\tfrac{\pi}{2}\big)&=\tfrac{1}{1}=1 
+                &&\implies &&\arccsc(1)=\tfrac{\pi}{2}
+\\
+        &  && & &  && \implies &&C_+=\arcsec(1)+\arccsc(1)=\tfrac{\pi}{2}
+\end{alignat*}
+In order to find $C_-$, we find $f(-1)$, because we know angles for which the secant and cosecant are $x=-1$.
+\begin{alignat*}{7}
+\cos(\pi)&=-1                    &&\implies &\sec(\pi)&=\tfrac{1}{-1}=-1 
+                              &&\implies &&\arcsec(-1)=\pi
+\\
+\sin\big(-\tfrac{\pi}{2}\big)&=-1 
+                &&\implies &\csc\big(-\tfrac{\pi}{2}\big)&=\tfrac{1}{-1}=-1 
+                &&\implies &&\arccsc(-1)=-\tfrac{\pi}{2}
+\\
+        &  && & &  && \implies &&C_-=\arcsec(-1)+\arccsc(-1)=\tfrac{\pi}{2}
+\end{alignat*}
+So $f(x)=\arcsec x + \arccsc x=\frac{\pi}{2}$ for all $|x|\ge 1$
+and $\arcsec x = \frac{\pi}{2}- \arccsc x$ for all $|x|\ge 1$.
 \end{solution}
 
 

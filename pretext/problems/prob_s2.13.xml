@@ -660,19 +660,42 @@ f'(x)=\diff{}{x}\arcsec x+\diff{}{x} \arccsc
  = \dfrac{1}{|x|\sqrt{x^2-1}}+\dfrac{-1}{|x|\sqrt{x^2-1}}=0.</me>
 </p>
 
-<p>By Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>, this means <m>f(x)</m> is constant.
-That is, <m>f(x)=C</m> for some constant <m>C</m>, so <m>C=\arcsec x + \arccsc x</m>, hence
-<me>
-\arcsec x = C-\arccsc x</me>
+<p>By Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>, this means that <m>f(x)</m> 
+is constant on any interval in <m>|x|\ge 1</m>. So <m>f(x)</m> is a constant, call it <m>C_+</m>, on <m>x\ge 1</m>, and <m>f(x)</m> is also a constant, call it <m>C_-</m>, on <m>x\le -1</m>.
 </p>
 
-<p>for all <m>|x| \geq 1</m>.
-</p>
-
-<p>In order to find <m>C</m>, we can use any value of <m>x</m> where we know cosecant and arcsecant. For instance, <m>x=1</m>: <m>\arcsec(1)=\arccos\left(\frac{1}{1}\right)=0</m>,
-and <m>\arccsc(1)=\arcsin\left(\frac{1}{1}\right)=\frac{\pi}{2}</m>. So,
+<p>In order to find <m>C_+</m>, we find <m>f(1)</m>, because we know angles for which the secant and cosecant are <m>x=1</m>.
+<md alignment="alignat">
+<mrow>
+\cos(0)\amp=1               \amp\amp\implies \amp\sec(0)\amp=\tfrac{1}{1}=1 
+                            \amp\amp\implies \amp\amp\arcsec(1)=0
+</mrow><mrow>
+\sin\big(\tfrac{\pi}{2}\big)\amp=1 
+                \amp\amp\implies \amp\csc\big(\tfrac{\pi}{2}\big)\amp=\tfrac{1}{1}=1 
+                \amp\amp\implies \amp\amp\arccsc(1)=\tfrac{\pi}{2}
+</mrow>
+</md>
+So
 <me>
-C=\arcsec(1)+\arccsc(1)=\frac{\pi}{2}</me>
+        C_+=\arcsec(1)+\arccsc(1)=\tfrac{\pi}{2}
+</me>
+In order to find <m>C_-</m>, we find <m>f(-1)</m>, because we know angles for which the secant and cosecant are <m>x=-1</m>.
+<md alignment="alignat">
+<mrow>
+\cos(\pi)\amp=-1              \amp\amp\implies \amp\sec(\pi)\amp=\tfrac{1}{-1}=-1 
+                              \amp\amp\implies \amp\amp\arcsec(-1)=\pi
+</mrow><mrow>
+\sin\big(-\tfrac{\pi}{2}\big)\amp=-1 
+                \amp\amp\implies \amp\csc\big(-\tfrac{\pi}{2}\big)\amp=\tfrac{1}{-1}=-1 
+                \amp\amp\implies \amp\amp\arccsc(-1)=-\tfrac{\pi}{2}
+</mrow>
+</md>
+So
+<me>
+        C_-=\arcsec(-1)+\arccsc(-1)=\tfrac{\pi}{2}
+</me>
+This shows that  <m>f(x)=\arcsec x + \arccsc x=\frac{\pi}{2}</m> for all <m>|x|\ge 1</m>
+and <m>\arcsec x = \frac{\pi}{2}- \arccsc x</m> for all <m>|x|\ge 1</m>.
 </p></solution>
 </exercise>
 </exercisegroup>
