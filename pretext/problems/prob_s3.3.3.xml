@@ -110,7 +110,7 @@ P(t)&amp;=1000\cdot 2^t
 t&amp;=\frac{\log(3)}{\log(2)}\approx 1.6
 </mrow>
 </md>
-The population triples in about 1.6 hours.
+The population triples in about 1.6 hours. Note that the tripling time depends only on the constant <m>b</m>. In particular, it does not depend on the initial condition <m>P(0)</m>.
 </p></solution>
 </exercise>
 
