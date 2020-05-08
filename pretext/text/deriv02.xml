@@ -437,7 +437,8 @@ Compute the derivative, <m>f'(a)</m>, of the function <m>f(x)=\sqrt{x}</m> at th
 	For the first, review Example<nbsp/><xref ref="eg_zero_cancel_limit_harder"/>, which concerned taking a limit involving square-roots, and recall that  we used  <q>multiplication by the conjugate</q> there:
 	<md>
 	<mrow>
-	  \frac{\sqrt{x}-\sqrt{a}}{x-a}
+	  \amp\frac{\sqrt{x}-\sqrt{a}}{x-a}
+          </mrow><mrow>
 	  &amp;= \frac{\sqrt{x}-\sqrt{a}}{x-a} \times
 				  \frac{\sqrt{x}+\sqrt{a}}{\sqrt{x}+\sqrt{a}}
 	  &amp;&amp; \Big(\text{multiplication by
@@ -495,7 +496,7 @@ Compute the derivative, <m>f'(a)</m>, of the function <m>f(x)=\sqrt{x}</m> at th
 	If we draw a careful picture of <m>\sqrt{x}</m> around <m>x=0</m> we can see why this has  to be the case. The figure below shows three different tangent lines to the graph of <m>y=f(x)=\sqrt{x}</m>. As the point of tangency moves closer and closer to the  origin, the tangent line gets steeper and steeper.  The slope of the tangent line at <m>\big(a,\sqrt{a}\big)</m> blows up as  <m>a\to 0</m>.
 </p>
 
-<sidebyside width="66%">
+<sidebyside width="60%">
  <image source="text/figs/tangentSqrt"/>
 </sidebyside>
 </li>
@@ -523,7 +524,7 @@ Compute the derivative, <m>f'(a)</m>, of the function <m>f(x)=|x|</m> at the poi
 	It is definitely not just <q>chop off the minus sign</q>.
 </p>
 
-<sidebyside width="50%">
+<sidebyside width="40%">
 <image source="text/figs/abs"/>
 </sidebyside>
 </li>
@@ -610,7 +611,7 @@ In summary:
 </md>
 </p>
 
-<sidebyside width="50%">
+<sidebyside width="33%">
 <image source="text/figs/diff_abs"/>
 </sidebyside>
 
@@ -635,7 +636,7 @@ Here are a few more examples.
 <example xml:id="eg_DIFFderivHeavy"><title>Derivative at a discontinuity</title>
 <p>Visually, the function</p>
 
-<sidebyside valign="middle">
+<sidebyside valign="middle" widths="50% 30%">
 <p><m>
 H(x) = \begin{cases}
            0  &amp; \text{if }x \le 0 \\
@@ -664,7 +665,7 @@ blows up. The same sort of computation shows that  <m>f'(a)</m> cannot possibly 
 Visually, it looks like the function <m>f(x) = x^{1/3}</m>, sketched below, (this might be a good point to recall that cube roots of negative numbers are negative <mdash/> for example, since <m>(-1)^3=-1</m>, the cube root of <m>-1</m> is <m>-1</m>),
 </p>
 
-<sidebyside width="66%">
+<sidebyside width="40%">
   <image source="text/figs/Xthird"/>
 </sidebyside>
 
@@ -672,10 +673,11 @@ Visually, it looks like the function <m>f(x) = x^{1/3}</m>, sketched below, (thi
 has the <m>y</m><ndash/>axis as its tangent line at <m>(0,0)</m>. So we would expect that <m>f'(0)</m> does not exist. Let's check. With <m>a=0</m>,
 <md>
 <mrow>
-f'(a)= \lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}
+f'(a)\amp= \lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}
 =\lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}
  =\lim_{h\rightarrow 0}\frac{h^{1/3}}{h}
- =\lim_{h\rightarrow 0}\frac{1}{h^{2/3}}
+</mrow><mrow>
+\amp=\lim_{h\rightarrow 0}\frac{1}{h^{2/3}}
  =DNE
 </mrow>
 </md>
@@ -692,7 +694,7 @@ We have already considered the derivative of the function <m>\sqrt{x}</m> in Exa
 When <m>x \gt 0</m>, we have <m>|x|=x</m> and <m>f(x)</m> is identical to <m>\sqrt{x}</m>. When <m>x \lt 0</m>, we have <m>|x|=-x</m> and <m>f(x)=\sqrt{-x}</m>. So to graph <m>y=\sqrt{|x|}</m> when <m>x \lt 0</m>, you just have to graph <m>y=\sqrt{x}</m> for <m>x \gt 0</m> and then send <m>x\rightarrow -x</m> <mdash/> i.e. reflect the graph in the <m>y</m><ndash/>axis. Here is the graph.
 </p>
 
-<sidebyside width="66%">
+<sidebyside width="40%">
   <image source="text/figs/XsqrtAbs"/>
 </sidebyside>
 

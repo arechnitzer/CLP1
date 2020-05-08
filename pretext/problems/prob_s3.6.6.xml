@@ -44,7 +44,7 @@ You'll find the intervals of increase and decrease. These will give you a basic 
 <p>
 <xref ref="s3_62007_4"/> <m>(3,0)</m>
 </p>
-<sidebyside>
+<sidebyside widths="10% 70%">
 <p><xref ref="s3_62007_6"/></p>
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{3}{6.4}{3}{3}
@@ -83,7 +83,7 @@ and is decreasing for <m>2 \lt x \lt 3</m>.
 </p>
 
 <p>Remark: this shows us the basic skeleton of the graph. It consists of a single hump.</p>
-<sidebyside>
+<sidebyside width="70%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[ \lt - \gt , help lines] (-4,0)--(4,0) node[right]{$x$};
 \foreach\x in {2,3}{\YExcoord{\x}{\x}}
@@ -118,7 +118,7 @@ down everywhere.
 To sketch the curve <m>y=f(x)</m>, we already know its intervals of increase and decrease, and its concavity. We also note its intercepts are <m>(0,0)</m> and <m>(3,0)</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{3}{6.4}{3}{3}
 \draw plot[domain=-1.5:3, samples=100](2*\x,{\x*sqrt(3-\x)});
@@ -155,7 +155,7 @@ The local maximum is also a global maximum.
 <answer><p>
 The open dot is the inflection point, and the closed dot is the local and global maximum.</p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{5}{5}{4}{1}
 \draw[thick, red] plot[domain=-5:-1.15](\x,{2*(\x*\x*\x-2)/(\x*\x*\x*\x)});
@@ -215,7 +215,7 @@ f'(x)=-\frac{1}{x^2}+\frac{8}{x^5}=\frac{8-x^3}{x^5}</me>
 </p>
 
 <p>At this point, we get a rough sketch of <m>f(x)</m>.</p>
-<sidebyside>
+<sidebyside width="90%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{5}{5}{4}{1}
 \draw[thick] (-4.5,-.25)--(-1,-.5)--(-.5,-4);
@@ -253,7 +253,7 @@ So the curve is concave up for <m>x \gt \root 3\of 20</m> and concave down for
 </p>
 
 <p>We can add concavity to our skeleton sketched above, and label our intercept and inflection point (the open dot).</p>
-<sidebyside>
+<sidebyside width="85%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{5}{5}{4}{1}
 \draw[thick, red] plot[domain=-5:-1.15](\x,{2*(\x*\x*\x-2)/(\x*\x*\x*\x)});
@@ -733,7 +733,7 @@ Hence <m>f(x)</m> is continuous at <m>x=0</m>, so <m>f(x)</m> is continuous ever
 <p><xref ref="s3_6_2006_c"/>
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{3}{3}{.5}{2}
 \draw[thick] plot[domain=-3:0](\x,{exp(\x)});
@@ -788,7 +788,8 @@ DNE&amp;x=0
  \diff{}{x}\left\{\frac{x^2+2x-3}{3(x+1)^2}
  \right\}
 </mrow><mrow>
- &amp;=\frac{3(x+1)^2(2x+2)-(x^2+2x-3)(6)(x+1)}{9(x+1)^4}\left(\frac{\div3(x+1)}{\div3(x+1)}\right)
+ &amp;=\frac{3(x+1)^2(2x+2)-(x^2+2x-3)(6)(x+1)}{9(x+1)^4}
+</mrow><mrow>\amp\hskip3in\left(\frac{\div3(x+1)}{\div3(x+1)}\right)
 </mrow><mrow>
  &amp;=\frac{(x+1)(2x+2)-2(x^2+2x-3)}{3(x+1)^3}
 </mrow><mrow>
@@ -847,7 +848,7 @@ Since <m>f(x)</m> is continuous everywhere, there are no vertical asymptotes.
 <p><xref ref="s3_6_2006_c"/>
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{3}{3}{.5}{2}
 \draw[thick] plot[domain=-3:0](\x,{exp(\x)});
@@ -890,7 +891,7 @@ the inflection points, indicate on the graph their approximate location.
 Since you aren't asked to find the intervals of concavity exactly, sketch the intervals of increase and decrease, and turn them into a smooth curve. You might not get exactly the intervals of concavity that are given in the solution, but there should be the same number of intervals as the solution, and they should have the same positions relative to the local extrema.
 </p></hint>
 <answer>
-<sidebyside>
+<sidebyside width="75%">
 <image source="problems/figs/graphE12"/>
 </sidebyside>
 </answer>
@@ -930,7 +931,7 @@ In the problem statement, we are told:
 
 <p>From here, we can sketch a skeleton of the graph.</p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4.25}{4.25}{1}{3}
 \YExcoord{-2}{-1}
@@ -954,7 +955,7 @@ In the problem statement, we are told:
 <p>We are told that we don't have to actually solve for the inflection points. We just need to know enough to get a basic idea. So, we'll turn the skeleton of the graph into smooth curve.
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image source="problems/figs/graphE12"/>
 </sidebyside>
 
@@ -1177,13 +1178,14 @@ For instance, <m>f(x)</m> has critical points at <m>x=\dfrac{2\pi}{3}</m>, <m>x=
 <sidebyside>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
-<cell><m>x</m></cell><cell><m>\left(-\frac{2\pi}{3},\frac{2\pi}{3}\right)</m></cell><cell><m>\frac{2\pi}{3}</m></cell><cell><m>\left(\frac{2\pi}{3},\frac{4\pi}{3}\right)</m>
+<cell><m>x</m></cell><cell><m>\!\left(-\frac{2\pi}{3},\frac{2\pi}{3}\right)\!</m>
+</cell><cell><m>\frac{2\pi}{3}</m></cell><cell><m>\left(\frac{2\pi}{3},\frac{4\pi}{3}\right)</m>
 </cell><cell><m>\frac{4\pi}{3}</m></cell><cell><m>\left(\frac{4\pi}{3},\frac{8\pi}{3}\right)</m>
 </cell><cell><m>\frac{8\pi}{3}</m></cell><cell><m>\left(\frac{8\pi}{3},\frac{10\pi}{3}\right)</m></cell>
 </row><row>
 <cell><m>f'(x)</m></cell><cell>positive</cell><cell>0</cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>0</cell><cell>negative</cell>
 </row><row>
-<cell><m>f(x)</m></cell><cell>increasing</cell><cell>l. max </cell><cell> decreasing </cell><cell> l. min</cell><cell>increasing</cell><cell>l. max </cell><cell> decreasing</cell>
+<cell><m>f(x)</m></cell><cell>increasing<m>\!</m></cell><cell>l. max </cell><cell> decreasing </cell><cell> l. min</cell><cell>increasing</cell><cell>l. max </cell><cell> decreasing</cell>
 </row></tabular>
 </sidebyside>
 
@@ -1227,11 +1229,11 @@ f''(x)=-2\sin x</me>
 <row>
 <cell><m>x</m></cell><cell><m>\left(0,\pi\right)</m></cell><cell><m>\pi</m></cell><cell><m>\left(\pi,2\pi\right)</m>
 </cell><cell><m>2\pi</m></cell><cell><m>\left(2\pi,3\pi\right)</m>
-</cell><cell><m>3\pi</m></cell><cell><m>\left(3\pi,4\pi\right)</m></cell>
+</cell><cell><m>3\pi\!</m></cell><cell><m>\left(3\pi,4\pi\right)</m></cell>
 </row><row>
 <cell><m>f''(x)</m></cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>0</cell><cell>negative</cell><cell>0</cell><cell>positive</cell>
 </row><row>
-<cell><m>f(x)</m></cell><cell>concave down </cell><cell> IP </cell><cell> concave up </cell><cell> IP </cell><cell> concave down </cell><cell> IP </cell><cell> concave up</cell>
+<cell><m>f(x)</m></cell><cell>concave down </cell><cell> IP </cell><cell> concave up </cell><cell> IP<m>\!</m> </cell><cell> concave down </cell><cell> IP </cell><cell> concave up</cell>
 </row></tabular>
 </sidebyside>
 
@@ -1278,7 +1280,7 @@ The period of this function is <m>2\pi</m>. So, it's enough to graph the curve <
 Below is the graph <m>y=f(x)</m> over the interval <m>[-\pi,\pi]</m>. The sketch of the curve over a larger domain is simply a repetition of this figure.
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{4}{3.5}{6.5}
 \draw plot[domain=-3.14:3.14, samples=100](\x,{4*sin (\x r)-2*cos(2*\x r)});
@@ -1312,9 +1314,12 @@ Below is the graph <m>y=f(x)</m> over the interval <m>[-\pi,\pi]</m>. The sketch
 We first compute the derivatives <m>f'(x)</m> and <m>f''(x)</m>.
 <md>
 <mrow>
-f'(x) &amp;= 4\cos x + 4\sin 2x= 4\cos x + 8\sin x\cos x=4\cos x(1+2\sin x) \cr
+f'(x) &amp;= 4\cos x + 4\sin 2x= 4\cos x + 8\sin x\cos x
+</mrow><mrow>\amp=4\cos x(1+2\sin x) 
+</mrow><mrow>
 f''(x) &amp;= -4\sin x + 8\cos 2x= -4\sin x + 8-16\sin^2x
-=-4(4\sin^2x+\sin x-2)
+</mrow><mrow>
+\amp=-4(4\sin^2x+\sin x-2)
 </mrow>
 </md>
 The graph has the following features.
@@ -1385,7 +1390,7 @@ points.</p>
 
 <p>From here, we can graph a skeleton of of <m>f(x)</m>:</p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{4}{3.5}{6.5}
 \draw[- \gt , thick] (-3.14,-2)--(-2.62,-3);
@@ -1501,7 +1506,7 @@ also gives <m>f''(x)=0</m>.
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside width="70%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{4}{3.5}{6.5}
 \draw plot[domain=-3.14:3.14, samples=100](\x,{4*sin (\x r)-2*cos(2*\x r)});
@@ -1601,7 +1606,7 @@ f'(x)=\dfrac{-(x+2)}{3x^{5/3}(x+1)^{2/3}}</me>
 
 <p>This gives us enough information to sketch a skeleton of the curve.</p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{6}{2}{1.7}{2.2}
 \foreach \x in {-2,-1}{\YExcoord{2*\x}{\x}}
@@ -1720,7 +1725,7 @@ Use <m>\displaystyle\lim_{x \rightarrow - \infty}f'(x)</m> to determine <m>\disp
 
 <p>Open dots indicate inflection points, and closed dots indicate local extrema.</p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=1.2]
 \YEaaxis{1}{6.2}{.25}{4}
 \draw[thick] plot[domain=-.72:6, samples=100](\x,{3.7*\x*\x*exp(-\x)});
@@ -1754,7 +1759,7 @@ The parts of the question are just scaffolding to lead you through sketching the
 That is, as <m>x</m> becomes a hugely negative number, <m>f'(x)</m> also becomes a hugely negative number. As we move left along the <m>x</m>-axis, <m>f(x)</m> is decreasing with a steeper and steeper slope, as in the sketch below. That means
 <m>\ds\lim_{x \to -\infty}f(x)=\infty</m>.</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{6}{1}{1}{8}
 \draw[thick] (-1,1)--(-2,2) (-2.5,2.5)--(-3.5,4.5) (-3.75,5)--(-4.5,8);
@@ -1796,7 +1801,7 @@ f'(x)=Kx(2-x)e^{-x}</me>
 <p>Looking ahead to part <xref ref="s3_6K4"/>, we have a skeleton of the curve.
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{5.2}{.75}{4}
 \draw[thick] (-4,4)--(0,0)--(2,2)--(4,.5)--(5,.25);
@@ -1842,7 +1847,7 @@ where the last line can be found using the quadratic equation. So,
 </sidebyside>
 <p>Now, we can add concavity to our sketch. </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=1.2]
 \YEaaxis{1}{6.2}{.25}{4}
 \draw[thick] plot[domain=-.72:6, samples=100](\x,{3.7*\x*\x*exp(-\x)});
@@ -1893,7 +1898,7 @@ Be careful of the fact that <m>f(x)</m> is only defined in this problem for <m>x
 </p></hint>
 <answer>
 <p><xref ref="s3_62010exp1"/></p>
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{2}{6}{1}{6}
 \draw[thick] plot[domain=0:5.5, samples=100](\x,{exp(-\x)}) node[above]{$y=f(x)$};
@@ -1908,7 +1913,7 @@ There are no inflection points or extrema, except the endpoint <m>(0,1)</m>.
 
 <p><xref ref="s3_62010exp4"/></p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{2}{6}{2}{6}
 \draw[thick, blue] plot[domain=0:5.5, samples=100]({exp(-\x)},\x) ;
@@ -1944,7 +1949,7 @@ local extrema; and as <m>x\rightarrow+\infty</m>, <m>y=f(x)\rightarrow 0</m>.
 <p>There are no inflection points or extrema, except the endpoint <m>(0,1)</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{2}{6}{1}{6}
 \draw[thick, red] plot[domain=0:5.5, samples=100](\x,{exp(-\x)}) node[above]{$y=f(x)$};
@@ -1990,7 +1995,7 @@ construct the graph of <m>g</m> by reflecting the curve <m>y = f(x)</m> over the
 line <m>y = x</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{2}{6}{2}{6}
 \draw[thick, dashed, red] plot[domain=0:5.5, samples=100](\x,{exp(-\x)}) node[above]{$y=f(x)$};
@@ -2043,12 +2048,9 @@ depend on the value of <m>k</m>.)
 </li>
 </ol>
 </p></statement>
-<hint><p>
-
-</p></hint>
 <answer><p>
 (a)</p>
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4}{4}
 \draw[thick] plot[domain=-1.3:1.3, yscale=1.5, xscale=3, samples=100](\x,{\x*\x*\x*\x*\x-\x});
@@ -2134,7 +2136,7 @@ Thus
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4}{4}
 \draw[thick] plot[domain=-1.3:1.3, yscale=1.5, xscale=3, samples=100](\x,{\x*\x*\x*\x*\x-\x});
@@ -2245,16 +2247,17 @@ unique <m>y\in[0,\infty)</m> that obeys <m>\cosh(y)=x</m>.
 <solution>
 <p> (a)
  You might not be familiar with hyperbolic sine and cosine, but you don't need to be. We can graph them using  the same methods as the other curves in this section. The derivatives are given to us:
- <me>
-\diff{}{x}\{\sinh x\}=\cosh x =\frac{e^x+e^{-x}}{2}\qquad\diff{}{x}\{\cosh x\}=\sinh x = \frac{e^x-e^{-x}}{2}
-</me>
-</p>
-
-<p>
-<me>
-\left(\diff{}{x}\right)^2\{\sinh x\}=\sinh x =\frac{e^x-e^{-x}}{2}\qquad
- \left(\diff{}{x}\right)^2\{\cosh x\}=\cosh x = \frac{e^x+e^{-x}}{2}
- </me>
+ <md>
+<mrow>
+\diff{}{x}\{\sinh x\}\amp=\cosh x =\frac{e^x+e^{-x}}{2}
+</mrow><mrow>
+\diff{}{x}\{\cosh x\}\amp=\sinh x = \frac{e^x-e^{-x}}{2}
+</mrow><mrow>
+\left(\diff{}{x}\right)^2\{\sinh x\}\amp=\sinh x =\frac{e^x-e^{-x}}{2}
+</mrow><mrow>
+ \left(\diff{}{x}\right)^2\{\cosh x\}\amp=\cosh x = \frac{e^x+e^{-x}}{2}
+</mrow>
+</md>
 </p>
 
 <p>  Observe that:
@@ -2280,7 +2283,15 @@ and
 </li>
 <li><p> <m>\cosh(x)</m> is even, since <me>\cosh(-x)=\dfrac{e^{-x}+e^{-(-x)}}{2}=\dfrac{e^{-x}+e^x}{2}=\cosh (x)</me>
 and
-<m>\sinh (x)</m> is odd, since <me>\sinh(-x)=\dfrac{e^{-x}-e^{-(-x)}}{2}=\dfrac{e^{-x}-e^x}{2}=\dfrac{-\left(e^x-e^{-x}\right)}{2}=-\sinh(x)</me>
+<m>\sinh (x)</m> is odd, since 
+<md>
+<mrow>
+\sinh(-x)\amp=\dfrac{e^{-x}-e^{-(-x)}}{2}=\dfrac{e^{-x}-e^x}{2}
+=\dfrac{-\left(e^x-e^{-x}\right)}{2}
+</mrow><mrow>
+\amp=-\sinh(x)
+</mrow>
+</md>
 </p></li>
 </ul>
 </p>

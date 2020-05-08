@@ -125,7 +125,7 @@ magnitude is <m>-1</m>.
 <p>Now back to thinking about what happens around a maximum. Suppose that the maximum value
 of <m>f(x)</m> is <m>f(c)</m>, then for all <q>nearby</q> points, the function should be smaller. </p>
 
-<sidebyside width="66%">
+<sidebyside width="50%">
  <image source="text/figs/loc_max"/>
 </sidebyside>
 
@@ -206,7 +206,7 @@ not when <m>c</m> is either of the endpoints <m>a</m> and <m>b</m>.
 </ul>
 Consider the function below
 </p>
-<sidebyside width="66%">
+<sidebyside width="50%">
 <image source="text/figs/maxmin"/>
 </sidebyside>
 <p>
@@ -250,7 +250,7 @@ extrema.
 </definition>
 
 <p>Consider again the function we showed in the figure above</p>
-<sidebyside width="66%">
+<sidebyside width="50%">
  <image source="text/figs/maxmin2"/>
  </sidebyside>
 <p>It has 2 local maxima and 2 local minima. The global maximum occurs at the middle green
@@ -697,7 +697,7 @@ Since <m>0 \lt 9/25 \lt 1</m>, we know that <m>0  \lt  \left( \frac{9}{25} \righ
 <li><p> We summarise our work in this table</p>
 
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>c</m> </cell><cell> <m>-\frac{3}{5}</m> </cell><cell>  <m>0</m> </cell><cell>  <m>-1</m> </cell><cell> <m>1</m> </cell>
 </row><row>
@@ -1140,7 +1140,7 @@ The resulting algebra is a bit easier and we don't have to hunt for singular poi
 <ul>
 <li><p> After reading the problem carefully we can draw a picture</p>
 
-<sidebyside width="50%">
+<sidebyside width="40%">
 <image source="text/figs/hyperbolaMaxMin"/>
 </sidebyside>
 </li>
@@ -1241,7 +1241,7 @@ The derivative is
   A'(\theta) &amp;= 225 \cos\theta \cdot (1+\cos\theta) + 225 \sin\theta \cdot(-\sin\theta)
 </mrow><mrow>
   &amp;= 225 \left[ \cos \theta + \cos^2\theta - \sin^2\theta \right]
-  &amp;\text {recall }\sin^2\theta = 1 - \cos^2\theta
+  \qquad\text {recall }\sin^2\theta = 1 - \cos^2\theta
 </mrow><mrow>
   &amp;= 225 \left[ \cos\theta +2\cos^2\theta -1 \right]
 </mrow>
@@ -1341,7 +1341,7 @@ corresponding squared-distance is
 <li><p> To summarise (and giving distances and coordinates of points):</p>
 
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m> </cell><cell>  <m>(x,y)</m> </cell><cell>  <m>\ell</m></cell>
 </row><row>
@@ -1494,7 +1494,7 @@ engine called an aeolipile.</fn>
 <p>Consider the figure below which shows the trajectory of a ray of light as it
 passes through two different mediums (say air and water).</p>
 
-<sidebyside width="66%">
+<sidebyside width="50%">
 <image source="text/figs/snell"/>
 </sidebyside>
 
@@ -1678,7 +1678,8 @@ So a critical point occurs when
 </mrow><mrow>
   x^2 (p+h-p) &amp;= p(p+h)^2 - p^2 (p+h) &amp; \text{clean up}
 </mrow><mrow>
-  h x^2 &amp;= p(p+h)(p+h-p) = ph(p+h) &amp; \text{cancel common factors}
+  h x^2 &amp;= p(p+h)(p+h-p) = ph(p+h) 
+</mrow><mrow>\amp\hskip1in \text{cancel common factors}
 </mrow><mrow>
   x^2 &amp;= p(p+h)
 </mrow><mrow>

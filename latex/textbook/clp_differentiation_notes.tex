@@ -2725,7 +2725,7 @@ Now we can take the limit as $h \to 0$ via Lemma~\ref{lem sinhoverh}.
 \end{align*}
 
 \subsubsection{ Method 2 --- via the Double Angle Formula}
-The other way involves the double angle formula\footnote{I hope you looked this up
+The other way involves the double angle formula\footnote{We hope you looked this up
 in in Appendix~\ref{sec must deriv}. Nag.},
 \begin{align*}
   \cos 2\theta = 1 - 2 \sin^2(\theta) \qquad\text{or}\qquad
@@ -2831,7 +2831,30 @@ to $\sin x$ and $\cos x$ just exchanges $\sin x$ and $\cos x$, except for
 the minus sign\footnote{There is a bad pun somewhere in here about sine errors and sign
 errors.} in the derivative of $\cos x$.
 
-Note that if $x$ is measured in degrees then the above work is wrong. There
+\begin{remark}[Optional --- Another derivation of $\diff{}{x}\cos x =-\sin x$]
+\label{rem deriv cos prime}
+
+We remark that, once one knows that $\diff{}{x}\sin x =\cos x$, it is easy to use it and the trig identity $\cos(x) = \sin\big(\frac{\pi}{2}-x\big)$ to derive $\diff{}{x}\cos x =-\sin x$. Here is how\footnote{We thank Serban Raianu for suggesting that we include this.}. 
+\begin{align*}
+\diff{}{x}\cos x
+&=\lim_{h\rightarrow 0}\frac{\cos (x+h)-\cos x}{h} 
+=\lim_{h\rightarrow 0}\frac{\sin\big(\frac{\pi}{2}-x-h)
+        -\sin\big(\frac{\pi}{2}- x\big)}{h} 
+\\
+&=-\lim_{h'\rightarrow 0}\frac{\sin\big(x'+h')-\sin(x')}{h'} 
+\qquad\text{with }x'=\tfrac{\pi}{2}-x,\ h'=-h
+\\
+&=-\diff{}{x'}\sin x'\Big|_{x'=\tfrac{\pi}{2}-x}
+=-\cos\big(\tfrac{\pi}{2}- x\big)
+\\
+&=-\sin x
+\end{align*}  
+
+
+\end{remark}
+
+Note that, if $x$ is measured in degrees, then the formulas of 
+Lemma \ref{lem DIFFsincos} are wrong. There
 are similar formulas, but we need the chain rule to build them --- that is the
 subject of the next section. But first we should find the
 derivatives of the other trig functions.
@@ -3223,14 +3246,39 @@ We now have
   &= \lim_{h \to 0}
     \underbrace{\frac{f\big(b + H\big)-f(b)}{H}}_{= \tf(H) } \cdot
     \underbrace{\frac{H}{h}}_{ = \tg(h)}
-& \text{remember that $H= h \tg(h)$} \\
+& \text{if $H= h \tg(h)\ne 0$} \\
   &= \lim_{h \to 0}\big( \tf(H) \cdot \tg(h) \big) \\
   &= \lim_{h \to 0} \tf(H) \cdot \lim_{h \to 0} \tg(h)  & \text{since $H\to0$
 as $h\to 0$}\\
   &= \lim_{H \to 0} \tf(H) \cdot \lim_{h \to 0} \tg(h)
   &= f'(b) \cdot g'(a)
 \end{align*}
-This is exactly the RHS of the product rule.
+This is exactly the RHS of the chain rule. It is possible to have $H=0$ in the 
+second line above. But that possibility is easy to deal with:
+\begin{itemize} \itemsep1pt \parskip0pt \parsep0pt
+\item
+If $g'(a)\ne 0$, then, since $\lim_{h \to 0} \tg(h) = g'(a)$, 
+$H= h \tg(h)$ cannot be $0$ for small nonzero $h$. Technically, there is an
+$h_0>0$ such that $H= h \tg(h)\ne 0$ for all $0<|h|<h_0$. In taking the limit
+$h\to 0$, above, we need only consider $0<|h|<h_0$ and so, in this case, 
+the above computation is completely correct. 
+\item 
+If $g'(a)=0$, the above computation is still fine provided we exclude all $h$'s 
+for which $H= h \tg(h)\ne 0$. When $g'(a)=0$, the right hand side, $f'\big(g(a)\big) \cdot g'(a)$, of the chain rule is $0$. 
+So the above computation gives  
+\begin{equation*}
+\lim_{\genfrac{}{}{0pt}{}{h \to 0}{\tg(h)\ne 0}} \frac{f\big(b + H\big)-f(b)}{h}
+=f'\big(g(a)\big) \cdot g'(a) = 0
+\end{equation*} 
+On the other hand, when $H=0$, we have $f\big(b + H\big)-f(b)=0$. So
+\begin{equation*}
+\lim_{\genfrac{}{}{0pt}{}{h \to 0}{\tg(h) = 0}} \frac{f\big(b + H\big)-f(b)}{h}
+=0
+\end{equation*}
+too. That's all we need.
+\end{itemize}
+
+
 
 %
 % \intremark{  INTERNAL REMARK - memory aid
@@ -3727,7 +3775,7 @@ Example~\ref{eg log est})
 \end{align*}
 
 \subsection*{Logarithmic Differentiation}
-I want to go back to some previous slightly messy examples
+We want to go back to some previous slightly messy examples
 (Examples~\ref{eg:DIFFsimpleToolsA}  and~\ref{eg:DIFFsimpleToolsNB}) and now
 show you how they can be done more easily.
 \begin{eg}
@@ -4615,8 +4663,9 @@ may also be developed in the same way\footnote{In fact, there are two
 different widely used definitions of $\arcsec x$. Under our definition, below, $\theta=\arcsec x$ takes values in $0\le\theta\le\pi$. Some people, 
 perfectly legitimately, define $\theta=\arcsec x$ to
 take values in the union of $0\le \theta<\frac{\pi}{2}$ and $\pi\le\theta<\frac{3\pi}{2}$.
-Our definition has the advantage of simplicity. The other definition eliminates absolute values in some computations. Similarly there are two different widely used definitions of $\arccsc x$.}\footnote{One could also define 
-$\arccot(x)=\arctan(1/x)$. We have chosen not to do so, because the definition we have chosen is both continuous and standard.}. But it's a little easier to use
+Our definition is sometimes called the ``trigonometry friendly'' definition.
+The definition itself has the advantage of simplicity. The other definition is sometimes called the ``calculus friendly'' definition. It eliminates some absolute values and hence simplifies some computations. Similarly, there are two different widely used definitions of $\arccsc x$.}\footnote{One could also define 
+$\arccot(x)=\arctan(1/x)$ with $\arccot(0)=\frac{\pi}{2}$. We have chosen not to do so, because the definition we have chosen is both continuous and standard.}. But it's a little easier to use
 \begin{align*}
 \csc x=\frac{1}{\sin x} \qquad
 \sec x=\frac{1}{\cos x} 
@@ -4643,12 +4692,14 @@ unique number obeying
          }
 \csc\big(\arccsc(x)\big)&=x &&\text{and}&
         -\frac{\pi}{2}\le &\arccsc(x)\le\frac{\pi}{2}
+\intertext{\ \ \ \ \ \ \ \ Because $\csc(0)$ is undefined, $\arccsc(x)$ never takes the value $0$.}
 \intertext{
     $\arcsec x=\arccos\frac{1}{x}$ is defined for $|x|\ge 1$. It is the
 unique number obeying
          }
 \sec\big(\arcsec(x)\big)&=x &&\text{and}&
         0\le &\arcsec(x)\le\pi
+\intertext{\ \ \ \ \ \ \ \  Because $\sec(\pi/2)$ is undefined, $\arcsec(x)$ never takes the value $\pi/2$.}
 \intertext{
     $\arccot x$ is defined for all $x\in\bbbr$. It
 is the unique number obeying
@@ -5353,16 +5404,18 @@ Find $y''$ if $y=y^3+xy+x^3$.
 
 \soln This problem concerns some function $y(x)$ that is not
 given to us explicitly. All that we are told is that $y(x)$ satisfies
-\begin{equation}\label{eq:hoDerivBa}
+\begin{equation}
 y(x)=y(x)^3+xy(x)+x^3
+\tag{E1}
 \end{equation}
 for all $x$. We are asked to find $y''(x)$. We cannot solve this
 equation to get an explicit formula for $y(x)$.  So we use implicit
 differentiation, as we did in Example \ref{eg:DIFFimpldiffD}. That is, we apply
-$\diff{}{x}$ to both sides of \eqref{eq:hoDerivBa}. This gives
-\begin{equation}\label{eq:hoDerivBb}
+$\diff{}{x}$ to both sides of (E1). This gives
+\begin{equation}
 y'(x)=3y(x)^2\,y'(x)+y(x)+x\,y'(x)+3x^2
 %\implies \big[1-x-3y(x)^2\big]y'(x) = y(x)+3x^2
+\tag{E2}
 \end{equation}
 which we can solve for $y'(x)$, by moving all $y'(x)$'s to the left hand
 side, giving
@@ -5370,22 +5423,22 @@ side, giving
  \big[1-x-3y(x)^2\big]y'(x) = y(x)+3x^2
 \end{equation*}
 and then dividing across.
-\begin{equation}\label{eq:hoDerivBc}
+\begin{equation}
 y'(x) = \frac{y(x)+3x^2}{1-x-3y(x)^2}
-\end{equation}
+\tag{E3}\end{equation}
 To get $y''(x)$, we have two options.
 
-\noindent\emph{Method 1.}\ \ \  Apply $\diff{}{x}$ to both sides of
-\eqref{eq:hoDerivBb}.
+\noindent\emph{Method 1.}\ \ \  Apply $\diff{}{x}$ to both sides of (E2).
 This gives
 \begin{equation*}
 y''(x)=3y(x)^2\,y''(x)+6y(x)\,y'(x)^2+2y'(x)+x\,y''(x)+6x
 \end{equation*}
 We can now solve for $y''(x)$, giving
-\begin{equation}\label{eq:hoDerivBd}
+\begin{equation}
 y''(x) = \frac{6x+2y'(x)+6y(x)y'(x)^2}{1-x-3y(x)^2}
+\tag{E4}
 \end{equation}
-Then we can substitute in \eqref{eq:hoDerivBc}, giving
+Then we can substitute in (E3), giving
 \begin{align*}
 y''(x) &= 2\frac{3x+ \frac{y(x)+3x^2}{1-x-3y(x)^2}
               +3y(x) \big(\frac{y(x)+3x^2}{1-x-3y(x)^2}\big)^2}
@@ -5394,8 +5447,7 @@ y''(x) &= 2\frac{3x+ \frac{y(x)+3x^2}{1-x-3y(x)^2}
               +3y(x) {[y(x)+3x^2]}^2}{{[1-x-3y(x)^2]}^3}
 \end{align*}
 
-\noindent\emph{Method 2.}\ \ \  Alternatively, we can also differentiate
-\eqref{eq:hoDerivBc}.
+\noindent\emph{Method 2.}\ \ \  Alternatively, we can also differentiate (E3).
 \begin{align*}
 y''(x) &= \frac{[y'(x)+6x][1-x-3y(x)^2]-
            [y(x)+3x^2][-1-6y(x)y'(x)]}{{[1-x-3y(x)^2]}^2} \\[0.05in]
@@ -5417,12 +5469,12 @@ $y=y^3+xy+x^3$ explicitly for $y(x)$, for general $x$, it is sometimes
 possible to solve equations like this for some special values of $x$.
 In fact, we saw in Example \ref{eg:DIFFimpldiffD} that when $x=1$,
 the given equation reduces to $y(1)=y(1)^3+1\cdot y(1)+1^3$, or $y(1)^3=-1$,
-which we can solve to get $y(1)=-1$. Substituting into \eqref{eq:hoDerivBb},
+which we can solve to get $y(1)=-1$. Substituting into (E2),
 as we did in  Example \ref{eg:DIFFimpldiffD} gives
 \begin{equation*}
 y'(1) = \frac{-1+3}{1-1-3(-1)^2} = -\frac{2}{3}
 \end{equation*}
-and substituting into \eqref{eq:hoDerivBd} gives
+and substituting into (E4) gives
 \begin{equation*}
 y''(1) = \frac{6+2\big(-\frac{2}{3}\big)+6(-1)\big(-\frac{2}{3}\big)^2}
                              {1-1-3(-1)^2}

@@ -19,7 +19,7 @@ The function <m>f(x)</m> is shown. Select all options below that describe its de
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{5}{3}
 \draw[thick] plot[domain=-4:4](\x,{\x/5*3}) node[below right]{$y=f(x)$};
@@ -46,7 +46,7 @@ The function <m>f(x)</m> is shown. Select all options below that describe its de
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{5}{3}
 \draw[thick] plot[smooth] coordinates{(-4,3) (-3,2.75) (-2,2) (-1,1.75) (0,1)};
@@ -77,7 +77,7 @@ The function <m>f(x)</m> is shown. Select all options below that describe its de
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside  width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{5}{3}
 \draw[thick] plot[domain=-4:4](\x,{\x*\x/25*9-3}) node[below right]{$y=f(x)$};
@@ -121,7 +121,7 @@ exists.
 <exercise purpose="RQS">
 <statement><p>For which values of <m>x</m> does <m>f'(x)</m> not exist?</p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{5.2}{3.2}
 \draw[thin, gray, dotted] (-5,-3) grid (5,3);
@@ -143,7 +143,7 @@ exists.
 
 <p><m>f'(3)</m> also does not exist.  One way to see this is to notice that the function is discontinuous here. More viscerally, note that <m>f(3)=1</m>, so as we take secant lines with one endpoint <m>(3,1)</m>, and the other endpoint just to the right of <m>x=3</m>, we get slopes that are more and more strongly negative, as shown in the picture below. If we take the limit of the slopes of these secant lines as <m>x</m> goes to <m>3</m> from the right, we get <m>-\infty</m>. (This certainly doesn't match the slope from the left, which is <m>-\frac{1}{4}</m>.)</p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.5]
 \YEaxis{5.2}{3.2}
 \draw[thin, gray, dotted] (-5,-3) grid (5,3);
@@ -208,7 +208,7 @@ where <m>f'(x)=1</m> whenever <m>x \neq 0</m>  (so in particular, <m>\ds\lim_{x 
 <p>There are two ways to see that <m>f'(0)</m> does not exist. One is to notice that <m>f</m> is not continuous at <m>x=0</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thick] plot[domain=-3:0](\x,\x);
@@ -357,7 +357,7 @@ In particular, the limit exists, so the derivative exists (and is equal to zero)
 <statement><p>Use the definition of the derivative to compute the derivative
 of the function <m>f(x)=\frac{2}{x+1}</m>.
 </p></statement>
-<hint><p> You might have to add fractions
+<hint><p> You might have to add fractions.
 </p></hint>
 <answer><p> <m>\dfrac{-2}{(x+1)^2}</m>
 </p></answer>
@@ -368,10 +368,14 @@ We set up the definition of the derivative.
 f'(x)&amp;=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
 =\lim_{h\rightarrow 0}\frac{1}{h}\Big(\frac{2}{x+h+1}
 -\frac{2}{x+1}\Big)
-=\lim_{h\rightarrow 0}\frac{2}{h}\ \frac{(x+1)-(x+h+1)}{(x+h+1)(x+1)}\cr
+</mrow><mrow>
+\amp=\lim_{h\rightarrow 0}\frac{2}{h}\ \frac{(x+1)-(x+h+1)}{(x+h+1)(x+1)}
+</mrow><mrow>
 &amp;=\lim_{h\rightarrow 0}\frac{2}{h}\ \frac{-h}{(x+h+1)(x+1)}
-=\lim_{h\rightarrow 0}\frac{-2}{(x+h+1)(x+1)}
-=\frac{-2}{(x+1)^2}
+</mrow><mrow>
+\amp=\lim_{h\rightarrow 0}\frac{-2}{(x+h+1)(x+1)}
+</mrow><mrow>
+\amp=\frac{-2}{(x+1)^2}
 </mrow>
 </md>
 </p></solution>
@@ -382,7 +386,7 @@ f'(x)&amp;=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
 Use the definition of the derivative to compute the derivative
 of the function <m>f(x)=\frac{1}{x^2+3}</m>.
 </p></statement>
-<answer><p> {<m>\dfrac{-2x}{[x^2+3]^2}</m>}
+<answer><p> <m>\dfrac{-2x}{[x^2+3]^2}</m>
 </p></answer>
 <solution><p>
 <md>
@@ -390,10 +394,14 @@ of the function <m>f(x)=\frac{1}{x^2+3}</m>.
 f'(x)&amp;=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
 =\lim_{h\rightarrow 0}\frac{1}{h}\Big(\frac{1}{(x+h)^2+3}
 -\frac{1}{x^2+3}\Big)
-=\lim_{h\rightarrow 0}\frac{1}{h}\frac{x^2-(x+h)^2}{[(x+h)^2+3][x^2+3]}\cr
+</mrow><mrow>
+\amp=\lim_{h\rightarrow 0}\frac{1}{h}\frac{x^2-(x+h)^2}{[(x+h)^2+3][x^2+3]}
+</mrow><mrow>
 &amp;=\lim_{h\rightarrow 0}\frac{1}{h}\frac{-2xh-h^2}{[(x+h)^2+3][x^2+3]}
-=\lim_{h\rightarrow 0}\frac{-2x-h}{[(x+h)^2+3][x^2+3]}
-=\boxed{\frac{-2x}{[x^2+3]^2}}
+</mrow><mrow>
+\amp=\lim_{h\rightarrow 0}\frac{-2x-h}{[(x+h)^2+3][x^2+3]}
+</mrow><mrow>
+\amp=\frac{-2x}{[x^2+3]^2}
 </mrow>
 </md>
 </p></solution>
@@ -426,7 +434,7 @@ So, the slope of the tangent line is 1.
 Compute the derivative of <m>f(x)=\frac{1}{x^2}</m> directly
 from the definition.
 </p></statement>
-<hint><p> add fractions
+<hint><p> Add fractions.
 </p></hint>
 <answer><p> <m>f'(x)=-\dfrac{2}{x^3}</m>
 </p></answer>
@@ -436,9 +444,12 @@ from the definition.
 f'(x)&amp;=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
 =\lim_{h\rightarrow 0}\frac{\frac{1}{(x+h)^2}-\frac{1}{x^2}}{h}
 =\lim_{h\rightarrow 0}\frac{x^2-(x+h)^2}{(x+h)^2x^2h}
-=\lim_{h\rightarrow 0}\frac{-2xh-h^2}{(x+h)^2x^2h}\cr
-&amp;=\lim_{h\rightarrow 0}\frac{-2x-h}{(x+h)^2x^2}=\frac{-2x}{x^4}
-=-\frac{2}{x^3}
+</mrow><mrow>
+\amp=\lim_{h\rightarrow 0}\frac{-2xh-h^2}{(x+h)^2x^2h}
+=\lim_{h\rightarrow 0}\frac{-2x-h}{(x+h)^2x^2}
+=\frac{-2x}{x^4}
+</mrow><mrow>
+\amp=-\frac{2}{x^3}
 </mrow>
 </md>
 </p></solution>
@@ -504,19 +515,19 @@ After you plug in <m>f(x)</m> to the definition of a derivative, you'll want to 
 We plug in <m>f(x)</m> to the definition of a derivative. To evaluate the limit, we multiply and divide by the conjugate of the numerator, then simplify.
 <md>
 <mrow>
-f'(x)=\lim\limits_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
-&amp;=\lim\limits_{h\rightarrow 0}\frac{\sqrt{1+x+h}-\sqrt{1+x}}{h}
+\amp f'(x)=\lim\limits_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+=\lim\limits_{h\rightarrow 0}\frac{\sqrt{1+x+h}-\sqrt{1+x}}{h}
 </mrow><mrow>
-&amp;=\lim\limits_{h\rightarrow 0}\frac{\sqrt{1+x+h}-\sqrt{1+x}}{h}
+&amp;\hskip0.5in=\lim\limits_{h\rightarrow 0}\frac{\sqrt{1+x+h}-\sqrt{1+x}}{h}
 \left(\frac{\sqrt{1+x+h}+\sqrt{1+x}}{\sqrt{1+x+h}+\sqrt{1+x}}\right)
 </mrow><mrow>
-&amp;=\lim\limits_{h\rightarrow 0}\frac{(1+x+h)-(1+x)}{h(\sqrt{1+x+h}+\sqrt{1+x})}
+&amp;\hskip0.5in=\lim\limits_{h\rightarrow 0}\frac{(1+x+h)-(1+x)}{h(\sqrt{1+x+h}+\sqrt{1+x})}
 </mrow><mrow>
-&amp;=\lim\limits_{h\rightarrow 0}\frac{h}{h(\sqrt{1+x+h}+\sqrt{1+x})}
+&amp;\hskip0.5in=\lim\limits_{h\rightarrow 0}\frac{h}{h(\sqrt{1+x+h}+\sqrt{1+x})}
 </mrow><mrow>
-&amp;=\lim\limits_{h\rightarrow 0}\frac{1}{\sqrt{1+x+h}+\sqrt{1+x}}
+&amp;\hskip0.5in=\lim\limits_{h\rightarrow 0}\frac{1}{\sqrt{1+x+h}+\sqrt{1+x}}
 </mrow><mrow>
-&amp;=\frac{1}{\sqrt{1+x+0}+\sqrt{1+x}}=\frac{1}{2\sqrt{1+x}}
+&amp;\hskip0.5in=\frac{1}{\sqrt{1+x+0}+\sqrt{1+x}}=\frac{1}{2\sqrt{1+x}}
 </mrow>
 </md>
 </p>
@@ -588,8 +599,15 @@ The function is differentiable at <m>x=0</m> if the following limit:
 0} \frac{f(x)}{x}</me>
 exists (note that we used the fact that <m>f(0)=0</m> as per the definition of the
 first branch which includes the point <m>x=0</m>). We start by computing the left limit. For this computation, recall that if <m>x \lt 0</m> then <m>\sqrt{x^2}=|x|=-x</m>.
-<me>\lim_{x\to 0^-}\frac{f(x)}{x}=\lim_{x\to 0^-}\frac{\sqrt{x^2+x^4}}{x}=\lim_{x\to
-0^-} \frac{\sqrt{x^2}\sqrt{1+x^2}}{x}=\lim_{x \rightarrow 0}\frac{-x\sqrt{1+x^2}}{x}=-1</me>
+<md>
+<mrow>
+\lim_{x\to 0^-}\frac{f(x)}{x}\amp
+=\lim_{x\to 0^-}\frac{\sqrt{x^2+x^4}}{x}
+=\lim_{x\to 0^-} \frac{\sqrt{x^2}\sqrt{1+x^2}}{x}
+</mrow><mrow>
+\amp=\lim_{x \rightarrow 0}\frac{-x\sqrt{1+x^2}}{x}=-1
+</mrow>
+</md>
 Now, from the right:
 <me>\lim_{x\to 0^+}\frac{x\cos x}{x}=\lim_{x\to
 0^+}\cos x = 1.</me>
@@ -735,7 +753,15 @@ The function is differentiable at <m>x=1</m> if the following limit:
 <me>\lim_{x\to 1}\frac{f(x)-f(1)}{x-1} = \lim_{x\to 1}\frac{f(x)-0}{x-1}=\lim_{x\to 1}
 \frac{f(x)}{x-1}</me>
 exists (note that we used the fact that <m>f(1)=0</m> as per the definition of the first branch which includes the point <m>x=0</m>). We compute left and right limits; so
-<me>\lim_{x\to 1^-}\frac{f(x)}{x-1}=\lim_{x\to 1^-}\frac{4x^2-8x+4}{x-1}=\lim_{x\rightarrow 1^-}\frac{4(x-1)^2}{x-1} =\lim_{x\to 1^-} 4(x-1)=0</me>
+<md>
+<mrow>
+\lim_{x\to 1^-}\frac{f(x)}{x-1}
+\amp=\lim_{x\to 1^-}\frac{4x^2-8x+4}{x-1}
+=\lim_{x\rightarrow 1^-}\frac{4(x-1)^2}{x-1} 
+</mrow><mrow>
+\amp=\lim_{x\to 1^-} 4(x-1)=0
+</mrow>
+</md>
 and
 <me>\lim_{x\to 1^+}\frac{(x-1)^2\sin\left(\frac{1}{x-1}\right)}{x-1}=\lim_{x\to 1^+}(x-1)\cdot \sin\left(\frac{1}{x-1}\right).</me>
 This last limit equals <m>0</m> by the Squeeze Theorem since
@@ -776,7 +802,7 @@ Sketch a function <m>f(x)</m> with <m>f'(0)=-1</m> that takes the following valu
 </p></hint>
 <answer><p> Many answers are possible; here is one.</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4.2}{4.2}
 \foreach \x in {1,1/2,1/4,1/8,0}{
@@ -791,7 +817,7 @@ Sketch a function <m>f(x)</m> with <m>f'(0)=-1</m> that takes the following valu
 </answer>
 <solution><p>Many answers are possible; here is one.</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4.2}{4.2}
 \foreach \x in {1,1/2,1/4,1/8,0}{

@@ -885,7 +885,7 @@ Thus if <m>P(t)</m> is some function that obeys  <m>\diff{P}{t}(t)=\big(6000-3P(
 </md>
 as illustrated in the figure</p>
 
-<sidebyside width="66%">
+<sidebyside width="50%">
 <image source="text/figs/pop1"/>
 </sidebyside>
 
@@ -910,7 +910,7 @@ as illustrated in the figure</p>
 These curves are sketched in the figure below. We conclude that for any initial population size <m>P(0)</m>, except <m>P(0)=0</m>, the population size approaches <m>2000</m> as <m>t\rightarrow\infty</m>.
 </p>
 
-<sidebyside width="50%">
+<sidebyside width="40%">
 <image source="text/figs/pop2"/>
 </sidebyside>
 

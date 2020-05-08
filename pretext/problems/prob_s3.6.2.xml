@@ -31,7 +31,7 @@ Match each function graphed below to its <em>derivative</em> from the list. (For
 <m>p(x)=(x+2)^4</m>
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.9]
 \YEaaxis{3}{4}{3}{3}
 \draw[thick, green!80!black] plot[domain=-1.5:4, samples=100](\x,{(\x-2)*(\x-2)*(\x-2)*(\x-2)*(\x-2)/100+2}) node[above right]{$y=A(x)$};
@@ -39,7 +39,7 @@ Match each function graphed below to its <em>derivative</em> from the list. (For
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 
-<sidebyside>
+<sidebyside width="60%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.9]
 \YEaaxis{4}{3}{3}{3}
 \draw[thick, blue] plot[domain=-4:1.5, samples=100](\x,{(\x+2)*(\x+2)*(\x+2)*(\x+2)*(\x+2)/100-2}) node[above right]{$y=B(x)$};
@@ -47,7 +47,7 @@ Match each function graphed below to its <em>derivative</em> from the list. (For
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{3}{3}{3}{3}
 \draw[thick, red] plot[domain=-3:3, samples=100](\x,{(-.8*\x*\x*\x*\x*\x+16/3*\x*\x*\x+(\x*\x-4*\x+4)*(\x*\x+4*\x+4)*\x)/10}) node[right]{$y=C(x)$};
@@ -55,7 +55,7 @@ Match each function graphed below to its <em>derivative</em> from the list. (For
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
 \YEaaxis{3.5}{3}{3}{3}
 \draw[thick, orange] plot[domain=-4:3.1, samples=100](\x,{1/75*(\x-3)*(\x+2)*(\x+2)*(\x+2)*(\x+2)+1}) node[above right]{$y=D(x)$};
@@ -63,7 +63,7 @@ Match each function graphed below to its <em>derivative</em> from the list. (For
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=0.8]
 \YEaaxis{3}{4}{3}{3}
 \draw[thick, purple] plot[domain=-2.6:3.75, samples=100](\x,{1/900*(\x-2)*(\x-2)*(\x-2)*(\x-2)*(\x-2)*(5*\x+14)+1.5}) node[above right]{$y=E(x)$};
@@ -76,11 +76,16 @@ Match each function graphed below to its <em>derivative</em> from the list. (For
 For each of the graphs, consider where the derivative is positive, negative, and zero.
 </p></hint>
 <answer><p>
-<m>\textcolor{green}{A'(x)=l(x)} \qquad \textcolor{blue}{B'(x)=p(x)}
-\qquad
-\textcolor{red}{C'(x)=n(x)}
-\qquad
-\textcolor{orange}{D'(x)=o(x)}\qquad \textcolor{purple}{E'(x)=m(x)}</m>
+<md>
+<mrow>
+\amp\textcolor{green}{A'(x)=l(x)} \amp 
+\amp\textcolor{blue}{B'(x)=p(x)} \amp
+\amp\textcolor{red}{C'(x)=n(x)}
+</mrow><mrow>
+\amp\textcolor{orange}{D'(x)=o(x)}\amp\
+\amp\textcolor{purple}{E'(x)=m(x)}
+</mrow>
+</md>
 </p></answer>
 <solution><p>
 Functions <m>A(x)</m> and <m>B(x)</m> share something in common that sets them apart from the others: they have a horizontal tangent line only once. In particular, <m>A'(-2) \neq 0</m> and <m>B'(2) \neq 0</m>. The only listed functions that do not have two distinct roots are <m>l(x)</m> and <m>p(x)</m>. Since <m>l(-2) \neq 0</m> and <m>p(2) \neq 0</m>, we conclude

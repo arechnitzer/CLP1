@@ -51,9 +51,7 @@ Value Theorem. It says that, under appropriate hypotheses, the average rate of c
 instantaneous rate of change <m>f'(c)</m> of the function at some
 <fn>There must be at
 least one such point <mdash/> there could be more than one <mdash/> but there cannot be zero.</fn>
-</p>
-
-<p>(unknown) point <m>a\le c\le b</m>. We shall get to a precise statement in
+(unknown) point <m>a\le c\le b</m>. We shall get to a precise statement in
 Theorem<nbsp/><xref ref="thm_DIFFmvt"/>. We start working up to it by first considering the special case
 in which <m>f(a)=f(b)</m>.
 </p>
@@ -163,7 +161,7 @@ simple that we can find it directly.
 </md>
 Hence <m>c = \frac{3\pi}{4}</m>. We have sketched the function and the relevant points below.</p>
 
-<sidebyside width="50%">
+<sidebyside width="40%">
 <image source="text/figs/rolle_sketch"/>
 </sidebyside>
 </example>
@@ -339,7 +337,7 @@ given by
 </li>
 <li><p> Here is a sketch of the curve and the two lines:</p>
 
-<sidebyside width="66%">
+<sidebyside width="75%">
 <image><latex-image><![CDATA[
 \begin{tikzpicture}
 \begin{axis}[
@@ -541,7 +539,7 @@ So <m>f'(c)=2c</m> is exactly <m>\frac{f(b)-f(a)}{b-a}</m> when <m>c=\frac{a+b}{
 which, in this example, happens to be exactly half way between <m>x=a</m> and
 <m>x=b</m>.</p>
 
-<sidebyside width="75%">
+<sidebyside width="50%">
 <image source="text/figs/mvtf"/>
 </sidebyside>
 

@@ -77,9 +77,16 @@ From Example<nbsp/><xref ref="eg_hopitalL"/>, we know that <m>\ds\lim_{x \to 0} 
 <li><xref ref="s3_7conc1"/> <m>\ds\lim_{x \to \infty} f(x)=\ds\lim_{x \to \infty } \left(1+\frac{1}{x}\right)=1</m></li>
 <li><xref ref="s3_7conc2"/> <m>\ds\lim_{x \to \infty} g(x)=\ds\lim_{x \to \infty} x\log 5=\infty</m></li>
 <li> <xref ref="s3_7conc3"/> Let us name <m>\dfrac{1}{x}=X</m>. Then as <m>x \to \infty</m>, <m>X \to 0^+</m>, so:
- <m>\ds\lim_{x \to \infty} [f(x)]^{g(x)}=\ds\lim_{x \to \infty} \left[1+\frac{1}{x}\right]^{x\log 5}=\lim_{x \to \infty} \left[1+\frac{1}{x}\right]^{\frac{\log 5}{\frac{1}{x}}}=
-\lim_{X \to 0^+} \left[1+X\right]^{\frac{\log 5}{X}}=e^{\log 5}=5
-</m>,
+ <md>
+ <mrow>
+\lim_{x \to \infty} [f(x)]^{g(x)}
+\amp=\lim_{x \to \infty} \left[1+\frac{1}{x}\right]^{x\log 5}
+=\lim_{x \to \infty} \left[1+\frac{1}{x}\right]^{\frac{\log 5}{\frac{1}{x}}}
+</mrow><mrow>
+\amp=\lim_{X \to 0^+} \left[1+X\right]^{\frac{\log 5}{X}}
+=e^{\log 5}=5
+</mrow>
+</md>,
 where in the penultimate step, we used  the result of Example<nbsp/><xref ref="eg_hopitalL"/>.
 </li>
 </ul>
@@ -153,14 +160,22 @@ We rearrange the expression to a more natural form:
 	{\mathrm{num}\to\infty}
 	{\mathrm{den}\to\infty}}
 </mrow>
-<intertext>If we plug in <m>x=0</m>, both numerator and denominator go to infinity. So, we can apply l'Hôpital's Rule. In fact, we end up applying it twice.</intertext><mrow>
+</md>
+If we plug in <m>x=0</m>, both numerator and denominator go to infinity. So, we can apply l'Hôpital's Rule. In fact, we end up applying it twice.
+<md>
+<mrow>
+\lim_{x\rightarrow\infty}(\log x)^2e^{-x}
 &amp;=\lim_{x\rightarrow\infty}\underbrace{\dfrac{2\log x}{xe^{x}}}_{\atp
 	{\mathrm{num}\to\infty}
 	{\mathrm{den}\to\infty}}
 </mrow><mrow>
 &amp;=\lim_{x\rightarrow\infty}\dfrac{2/x}{xe^{x}+e^x}
 </mrow>
-<intertext>The numerator gets smaller and smaller while the denominator gets larger and larger, so:</intertext><mrow>
+</md>
+The numerator gets smaller and smaller while the denominator gets larger and larger, so:
+<md>
+<mrow>
+\lim_{x\rightarrow\infty}(\log x)^2e^{-x}
 &amp;={0}
 </mrow>
 </md>
@@ -212,7 +227,8 @@ Evaluate <m>\lim\limits_{x\rightarrow 0}\dfrac{x-x\cos x}{x-\sin x}</m>.
 &amp;= \lim_{x\rightarrow 0}\underbrace{\frac{1-\cos x+x\sin x}{1-\cos x}}_{\atp
 	{\mathrm{num}\to0}
 	{\mathrm{den}\to0}}
-= \lim_{x\rightarrow 0}\underbrace{\frac{\sin x+\sin x+x\cos x}{\sin x}}_{\atp
+</mrow><mrow>
+\amp= \lim_{x\rightarrow 0}\underbrace{\frac{\sin x+\sin x+x\cos x}{\sin x}}_{\atp
 	{\mathrm{num}\to0}
 	{\mathrm{den}\to0}}
 </mrow><mrow>
@@ -353,13 +369,15 @@ If we plug <m>x=0</m> into the denominator, we get 1. However, the numerator is 
 <m>\ds\lim_{x \to \infty}\sqrt{2x^2+1}-\sqrt{x^2+x}</m> has the indeterminate form <m>\infty - \infty</m>. To get a better idea of what's going on, let's rationalize.
 <md>
 <mrow>
-\lim_{x \to \infty}\sqrt{2x^2+1}-\sqrt{x^2+x}&amp;=
+\amp\lim_{x \to \infty}\sqrt{2x^2+1}-\sqrt{x^2+x}
+</mrow><mrow>&amp;\hskip0.5in=
 \lim_{x \to \infty}\left(\sqrt{2x^2+1}-\sqrt{x^2+x}\right)\left(
 \frac{\sqrt{2x^2+1}+\sqrt{x^2+x}}{\sqrt{2x^2+1}+\sqrt{x^2+x}}\right)
 </mrow><mrow>
-&amp;=\lim_{x \to \infty}
-\frac{(2x^2+1)-(x^2+x)}{\sqrt{2x^2+1}+\sqrt{x^2+x}}=
-\lim_{x \to \infty}
+&amp;\hskip0.5in=\lim_{x \to \infty}
+\frac{(2x^2+1)-(x^2+x)}{\sqrt{2x^2+1}+\sqrt{x^2+x}}
+</mrow><mrow>
+\amp\hskip0.5in=\lim_{x \to \infty}
 \frac{x^2-x+1}{\sqrt{2x^2+1}+\sqrt{x^2+x}}
 </mrow>
 <intertext>Here, we have the indeterminate form <m>\frac{\infty}{\infty}</m>, so l'Hôpital's Rule applies. However, if we try to use it here, we quickly get a huge mess. Instead, remember how we dealt with these kinds of limits in the past: factor out the highest power of the denominator, which is <m>x</m>.</intertext><mrow>
@@ -396,12 +414,22 @@ If we plug in <m>x=0</m>, both numerator and denominator become zero. So, we hav
 \lim_{x\rightarrow 0}\underbrace{\dfrac{\sin(x^3+3x^2)}{\sin^2x}}_{\atp
 	{\mathrm{num}\to0}
 	{\mathrm{den}\to 0}}
-&amp;= \lim_{x\rightarrow 0}\dfrac{(3x^2+6x)\cos(x^3+3x^2)}{2\sin x\cos x}	</mrow>
-<intertext>If we plug in <m>x=0</m>, still we find that both the numerator and the denominator go to zero. We could jump in with another iteration of l'Hôpital's Rule. However, the derivatives would be a little messy, so we use limit laws and break up the fraction into the product of two fractions. If both limits exist:</intertext><mrow>
-\lim_{x\rightarrow 0}\dfrac{(3x^2+6x)\cos(x^3+3x^2)}{2\sin x\cos x}&amp;=\left(\lim_{x\rightarrow 0}\dfrac{x^2+2x}{\sin x}\right)\cdot
+&amp;= \lim_{x\rightarrow 0}\dfrac{(3x^2+6x)\cos(x^3+3x^2)}{2\sin x\cos x}	
+</mrow>
+</md>
+If we plug in <m>x=0</m>, still we find that both the numerator and the denominator go to zero. We could jump in with another iteration of l'Hôpital's Rule. However, the derivatives would be a little messy, so we use limit laws and break up the fraction into the product of two fractions. If both limits exist:
+<md>
+<mrow>
+\amp\lim_{x\rightarrow 0}\dfrac{(3x^2+6x)\cos(x^3+3x^2)}{2\sin x\cos x}
+</mrow><mrow>
+&amp;\hskip1in=\left(\lim_{x\rightarrow 0}\dfrac{x^2+2x}{\sin x}\right)\cdot
 \left(\lim_{x\rightarrow 0}\dfrac{3\cos(x^3+3x^2)}{2\cos x}\right)
 </mrow>
-<intertext>We can evaluate the right-hand limit by simply plugging in <m>x=0</m>:</intertext><mrow>
+</md>
+We can evaluate the right-hand limit by simply plugging in <m>x=0</m>:
+<md>
+<mrow>
+\lim_{x\rightarrow 0}\dfrac{(3x^2+6x)\cos(x^3+3x^2)}{2\sin x\cos x}
 &amp;=\dfrac{3}{2}\lim_{x\rightarrow 0}\underbrace{\dfrac{x^2+2x}{\sin x}}_
 {\atp
 	{\mathrm{num}\to0}
@@ -443,19 +471,22 @@ Evaluate <m>\lim\limits_{x\rightarrow 0}\dfrac{e^{-1/x^2}}{x^4}</m>.
 <solution><p>
 <ul>
 <li> Solution 1.
-<me>
+<md>
+<mrow>
 \lim_{x\rightarrow 0}\frac{e^{-1/x^2}}{x^4}
-=\lim_{x\rightarrow 0}\underbrace{\frac{\frac{1}{x^4}}{e^{1/x^2}}}_{\atp
+\amp=\lim_{x\rightarrow 0}\underbrace{\frac{\frac{1}{x^4}}{e^{1/x^2}}}_{\atp
 	{\mathrm{num}\to\infty}
 	{\mathrm{den}\to\infty}}
 =\lim_{x\rightarrow 0}\frac{\frac{-4}{x^5}}{\frac{-2}{x^3}e^{1/x^2}}
 =\lim_{x\rightarrow 0}\underbrace{\frac{\frac{2}{x^2}}{e^{1/x^2}}}_{\atp
 	{\mathrm{num}\to\infty}
 	{\mathrm{den}\to\infty}}
-=\lim_{x\rightarrow 0}\frac{\frac{-4}{x^3}}{\frac{-2}{x^3}e^{1/x^2}}
+</mrow><mrow>
+\amp=\lim_{x\rightarrow 0}\frac{\frac{-4}{x^3}}{\frac{-2}{x^3}e^{1/x^2}}
 =\lim_{x\rightarrow 0}\frac{2}{e^{1/x^2}}
-={0}
-</me>
+=0
+</mrow>
+</md>
 since, as <m>x\rightarrow 0</m>, the exponent <m>\frac{1}{x^2}\rightarrow\infty</m>
 so that <m>e^{1/x^2}\rightarrow\infty</m> and <m>e^{-1/x^2}\rightarrow 0</m>.
 </li>
@@ -529,10 +560,10 @@ y:&amp;=(\cos x)^{\frac{1}{x^2}}
 	\lim_{x \to 0} \underbrace{\frac{-\tan x}{2x}}_{\atp
 	{\mathrm{num}\to0}
 	{\mathrm{den}\to 0}}
-	=
+        </mrow><mrow>
+	\amp=
 	\lim_{x \to 0}\frac{-\sec^2x}{2}
-</mrow><mrow>
-	&amp;=\lim_{x \to 0}\frac{-1}{2\cos^2 x}=-\frac{1}{2}
+	=\lim_{x \to 0}\frac{-1}{2\cos^2 x}=-\frac{1}{2}
 </mrow><mrow>
 \mbox{Therefore, } \lim_{x \to 0} y &amp;=\lim_{x \to 0}e^{\log y}=e^{-1/2}=\frac{1}{\sqrt{e}}
 </mrow>
@@ -557,18 +588,30 @@ y:&amp;= e^{x \log x} = (e^x)^{\log x}
 </mrow><mrow>
 \lim_{x \to 0^+} y &amp;=\lim_{x \to 0^+} (e^x)^{\log x}
 </mrow>
-<intertext>This has the form <m>1^{-\infty} = \frac{1}{1^\infty}</m>, and <m>1^{\infty}</m> is an indeterminate form. We want to use l'Hôpital, but we need to get a different indeterminate form. So, we'll use logarithms. </intertext><mrow>
+</md>
+This has the form <m>1^{-\infty} = \frac{1}{1^\infty}</m>, and <m>1^{\infty}</m> is an indeterminate form. We want to use l'Hôpital, but we need to get a different indeterminate form. So, we'll use logarithms. 
+<md>
+<mrow>
 \lim_{x \to 0^+} \log y &amp;=\lim_{x \to 0 ^+} \log\left((e^x)^{\log x} \right)
-=\lim_{x \to 0 ^+} \log x \log\left(e^x \right)=\lim_{x \to 0 ^+} (\log x)\cdot x
+=\lim_{x \to 0 ^+} \log x \log\left(e^x \right)
+</mrow><mrow>
+\amp=\lim_{x \to 0 ^+} (\log x)\cdot x
 </mrow>
-<intertext>This has the indeterminate form <m>0 \cdot \infty</m>, so we need one last adjustment before we can use l'Hôpital's Rule.</intertext><mrow>
+</md>
+This has the indeterminate form <m>0 \cdot \infty</m>, so we need one last adjustment before we can use l'Hôpital's Rule.
+<md>
+<mrow>
+\lim_{x \to 0 ^+} (\log x)\cdot x
 &amp;=\lim_{x \to 0 ^+} \underbrace{\frac{\log x}{\frac{1}{x}}}_{\atp
 	{\mathrm{num} \to -\infty}
 	{\mathrm{den} \to \infty}}
 =\lim_{x \to 0 ^+}\frac{\frac{1}{x}}{\frac{-1}{x^2}}
 =\lim_{x \to 0 ^+}-x=0
 </mrow>
-<intertext>Now, we can figure out what happens to our original function, <m>y</m>:</intertext><mrow>
+</md>
+Now, we can figure out what happens to our original function, <m>y</m>:
+<md>
+<mrow>
 \lim_{x \to 0^+} y &amp;=\lim_{x \to 0^+} e^{\log y} = e^0=1
 </mrow>
 </md>
@@ -617,7 +660,9 @@ First, note that the function exists near 0: <m>x^2</m> is positive, so <m>\log(
 y:&amp;=\left[-\log(x^2)\right]^x
 </mrow><mrow>
 \log y &amp;= \log \left( \left[-\log(x^2)\right]^x\right)=
-\underbrace{x}_{\to 0}\cdot\underbrace{\log\left(\underbrace{-\log(x^2)}_{\to\infty} \right)}_{\to\infty}=\frac{\log\left(-\log(x^2)\right)}{\frac{1}{x}}
+\underbrace{x}_{\to 0}\cdot\underbrace{\log\left(\underbrace{-\log(x^2)}_{\to\infty} \right)}_{\to\infty}
+</mrow><mrow>
+\amp=\frac{\log\left(-\log(x^2)\right)}{\frac{1}{x}}
 </mrow><mrow>
 \lim_{x \to 0}\log y &amp;=\lim_{x \to 0} \underbrace{\frac{\log\left(-\log(x^2)\right)}{\frac{1}{x}}}_{\atp
 	{\mathrm{num}\to \infty}
@@ -689,25 +734,35 @@ The first thing we notice is, regardless of <m>k</m>, when we plug in <m>x=0</m>
 </mrow><mrow>
 &amp;=\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}
 </mrow>
-<intertext>When we plug in <m>x=0</m>, the denominator becomes 0, and the numerator becomes <m>2k-4</m>. So, we'll need some cases, because the behaviour of the limit depends on <m>k</m>.</intertext><mrow>
-</mrow>
-<intertext>For <m>k=2</m>:</intertext><mrow>
-\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}&amp;=
-\lim_{x\rightarrow 0}\underbrace{\dfrac{4\cos(x^2)e^{2\sin(x^2)}-4}{4x^2}}_{\atp
+</md>
+When we plug in <m>x=0</m>, the denominator becomes 0, and the numerator becomes <m>2k-4</m>. So, we'll need some cases, because the behaviour of the limit depends on <m>k</m>.
+</p>
+<p>
+For <m>k=2</m>:
+<md>
+<mrow>
+\amp\lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}
+=\lim_{x\rightarrow 0}\underbrace{\dfrac{4\cos(x^2)e^{2\sin(x^2)}-4}{4x^2}}_{\atp
 	{\mathrm{num}\to0}
 	{\mathrm{den}\to0}}
 </mrow><mrow>
-&amp;= \lim_{x\rightarrow 0}\dfrac{-8x\sin(x^2)e^{2\sin(x^2)}
+&amp;\hskip1in= \lim_{x\rightarrow 0}\dfrac{-8x\sin(x^2)e^{2\sin(x^2)}
  +16x\cos^2(x^2)e^{2\sin(x^2)}}{8x}\cr
-&amp;= \lim_{x\rightarrow 0}\big[-\sin(x^2)e^{2\sin(x^2)}
+&amp;\hskip1in= \lim_{x\rightarrow 0}\big[-\sin(x^2)e^{2\sin(x^2)}
  +2\cos^2(x^2)e^{2\sin(x^2)}\big]\cr
-&amp;=2
+&amp;\hskip1in=2
 </mrow>
-<intertext>For <m>k \gt 2</m>, the numerator goes to <m>2k-4</m>, which is a  positive constant, while the denominator goes to <m>0</m> from the right, so:</intertext><mrow>
+</md>
+For <m>k \gt 2</m>, the numerator goes to <m>2k-4</m>, which is a  positive constant, while the denominator goes to <m>0</m> from the right, so:
+<md>
+<mrow>
 \lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}&amp;=
 \infty
 </mrow>
-<intertext>For <m>k \lt 2</m>, the numerator goes to <m>2k-4</m>, which is a  negative constant, while the denominator goes to <m>0</m> from the right, so:</intertext><mrow>
+</md>
+For <m>k \lt 2</m>, the numerator goes to <m>2k-4</m>, which is a  negative constant, while the denominator goes to <m>0</m> from the right, so:
+<md>
+<mrow>
 \lim_{x\rightarrow 0}\dfrac{2k\cos(x^2)e^{k\sin(x^2)}-4}{4x^2}&amp;=
 -\infty
 </mrow>
@@ -725,7 +780,7 @@ Suppose an algorithm, given an input with with <m>n</m> variables, will terminat
 </p>
 
 <p>
-Remark: this is a very common kind of approximation. When people deal with functions that give very large numbers, often they don't care about the <em>exact</em> large number--they only want a ballpark. So, a complicated function might be replaced by an easier function that doesn't give a large relative error. If you would like to know more about the ways people describe functions that give very large numbers, you can read about <q>Big O Notation</q> in Section 3.6.3 of the CLP101 notes.
+Remark: this is a very common kind of approximation. When people deal with functions that give very large numbers, often they don't care about the <em>exact</em> large number--they only want a ballpark. So, a complicated function might be replaced by an easier function that doesn't give a large relative error. If you would like to know more about the ways people describe functions that give very large numbers, you can read about <q>Big O Notation</q> in Section 3.6.3 of the CLP2 textbook.
 </p></statement>
 <hint><p> Percentage error: <m>100\left|\frac{\mbox{exact}-\mbox{approx}}{\mbox{exact}}\right|</m>. Absolute error: <m>|\mbox{exact}-\mbox{approx}|</m>. (We'll see these definitions again in <xref ref="def_APPrelError"/>.)
 </p></hint>

@@ -1183,7 +1183,7 @@ Remark:  although the limit of <m>g(x)</m> does not exist here, the limit of <m>
 <exercise purpose="RQS">
 <statement><p>The curve <m>y=f(x)</m> is shown in the graph below. Sketch the graph of <m>y=\dfrac{1}{f(x)}</m>.</p>
 
-<sidebyside width="66%">
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thin, gray, dotted] (-3,-3) grid (3,3);
@@ -1196,7 +1196,7 @@ Remark:  although the limit of <m>g(x)</m> does not exist here, the limit of <m>
 <hint><p> Try plotting points. If you can't divide by <m>f(x)</m>, take a limit.
 </p></hint>
 <answer>
-<sidebyside width="66%">
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thin, gray, dotted] (-3,-3) grid (3,3);

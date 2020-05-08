@@ -21,7 +21,7 @@ Given the function shown below, evaluate the following:
 </ol>
 </p>
 
-<sidebyside  width="66%">
+<sidebyside  width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[thick] (-3,-1) cos (-2,1) sin (-1,-1) cos (0,0) sin (1.5,2)--(3,2) node[above right]{$y=f(x)$};

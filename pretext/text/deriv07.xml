@@ -135,7 +135,7 @@ We are about to define the <q>logarithm with base <m>q</m></q>. In principle, <m
 Consequently, for any <m>0 \lt Y \lt \infty</m>, the horizontal straight line <m>y=Y</m> crosses the graph of <m>y=f(x)=q^x</m> at exactly one point, as illustrated in the figure below.
 </p>
 
-<sidebyside width="66%">
+<sidebyside width="50%">
   <image source="text/figs/expGraphB"/>
 </sidebyside>
 
@@ -259,7 +259,7 @@ Below is a sketch of <m>C(a)</m> against <m>a</m>.</p>
 
 <figure xml:id="fig_CofA2">
 <caption/>
-<image width="75%" source="text/figs/CofA2"/>
+<image width="85%" source="text/figs/CofA2"/>
 </figure>
 
 <p>
@@ -363,9 +363,10 @@ properties<ellipsis/>
 Now consider again the problem of differentiating <m>a^x</m>. We saw above that
 <md>
 <mrow>
-  \diff{}{x} a^x &amp;= C(a) \cdot a^x &amp; \text{ and }
-  C(a) &amp;= C(10) \cdot \log_{10} a &amp; \text{ which gives }
-  \diff{}{x} a^x &amp;= C(10)\cdot \log_{10} a \cdot a^x
+  \diff{}{x} a^x &amp;= C(a) \cdot a^x \qquad\text{ and }\qquad
+  C(a) = C(10) \cdot \log_{10} a 
+   </mrow><mrow> \amp\text{ which gives }
+  \diff{}{x} a^x = C(10)\cdot \log_{10} a \cdot a^x
 </mrow>
 </md>
 We can eliminate the <m>C(10)</m> term with a little care. Since we know that <m>\diff{}{x} e^x  = e^x</m>, we have <m>C(e)=1</m>. This allows us to express

@@ -131,7 +131,7 @@ Whenever you approximate a polynomial with a Taylor polynomial of greater or equ
 You and your friend both want to approximate <m>\sin(33)</m>. Your friend uses the first-degree Maclaurin polynomial for <m>f(x)=\sin x</m>, while you use the zeroth-degree (constant) Maclaurin polynomial for <m>f(x)=\sin x</m>. Who has a better approximation, you or your friend?
 </p></statement>
 <hint><p>
-Draw a picture--it should be clear how the two approximations behave.
+Draw a picture <mdash/> it should be clear how the two approximations behave.
 </p></hint>
 <answer><p>
 You do, you clever goose!
@@ -152,7 +152,7 @@ f(x)&amp;\approx f(0)+f'(0)x
 </mrow>
 </md>
 Since <m>-1 \leq \sin(33)\leq 1</m>, the constant approximation is better. (But both are a little silly.)</p>
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1}{10}{2}{6}
 \draw[thick] plot[domain=-.5:9, samples=200](\x,{1.5*sin(4*\x r) });
@@ -522,13 +522,15 @@ Since <m>|c| \lt 1</m>, also <m>|c\cos\left(\frac{1}{c}\right)|  \lt |\cos\left(
 <li> Therefore,
 <md>
 <mrow>
-|f(0.01)-T_n(0.01)|=&amp;\,\dfrac{1}{2}\left(\dfrac{100-\pi}{100\pi}\right)^2\cdot\frac{1}{c^4}\cdot
+\amp|f(0.01)-T_n(0.01)|
+</mrow><mrow>
+\amp\hskip0.5in =\,\dfrac{1}{2}\left(\dfrac{100-\pi}{100\pi}\right)^2\cdot\frac{1}{c^4}\cdot
 \left|2c\cos\left(\frac{1}{c}\right)-\sin\left(\frac{1}{c}\right)\right|
 </mrow><mrow>
- \lt
-&amp;\,\dfrac{1}{2}\left(\dfrac{100-\pi}{100\pi}\right)^2\cdot100^4\cdot3
+\amp\hskip0.5in 
+\lt\,\dfrac{1}{2}\left(\dfrac{100-\pi}{100\pi}\right)^2\cdot100^4\cdot3
 </mrow><mrow>
-=&amp;\,\frac{3\cdot 100^2}{2}\left(\frac{100}{\pi}-1\right)^2
+\amp\hskip0.5in=\,\frac{3\cdot 100^2}{2}\left(\frac{100}{\pi}-1\right)^2
 </mrow>
 </md>
 </li>
@@ -830,22 +832,27 @@ It's a tricky thing to figure out which <m>n</m> makes this true. Let's make a t
 <p>
 <me>
 \begin{array}{c|c|c|c}
-n &amp; \dfrac{(n+1)!}{1000\cdot 13^{n+1}}
-&amp;
-\left|f^{(n+1)}(c)\right|
-&amp;
-\textup{Is }\left|f^{(n+1)}(c)\right| \lt \dfrac{ (n+1)!}{1000\cdot13^{n+1}}\textup{?}
+n &amp; \dfrac{(n+1)!}{1000\cdot 13^{n+1}}&amp;\left|f^{(n+1)}(c)\right|
+                     &amp;\dfrac{ (n+1)!}{1000\cdot13^{n+1}}
 \\
 \;\;&amp;\;\;&amp;\;\;\\
 \hline
 \;\;&amp;\;\;&amp;\;\;\\
-0&amp;\dfrac{1}{1000\cdot 13}&amp;|f'(c)|=\dfrac{1}{7c^{6/7}} \lt \dfrac{1}{7\cdot 3^6}&amp;
-\\\;\;&amp;\;\;&amp;\;\;\\
+0&amp;\dfrac{1}{1000\cdot 13}&amp;|f'(c)|=\dfrac{1}{7c^{6/7}} \lt \dfrac{1}{7\cdot 3^6}
+                  &amp; \dfrac{1}{1000\cdot13^1}
+\\
+\;\;&amp;\;\;&amp;\;\;\\
 \hline
 \;\;&amp;\;\;&amp;\;\;\\
-1&amp;\dfrac{2}{1000\cdot 13^2}&amp;|f''(c)|=\dfrac{6}{7^2\cdot c^{\tfrac{13}{7}}} \lt \dfrac{6}{7^2\cdot 3^{13}}&amp;\textup{Yes!}
+1&amp;\dfrac{2}{1000\cdot 13^2}&amp;|f''(c)|=\dfrac{6}{7^2\cdot c^{\tfrac{13}{7}}} \lt \dfrac{6}{7^2\cdot 3^{13}}&amp; \dfrac{ (2)!}{1000\cdot13^{2}}
 \end{array}
 </me>
+Since 
+<me>
+\frac{7^2\cdot 3^{13}}{3}= 26,040,609>169,000=1000\cdot 13^2
+</me> 
+we have <m>\left|f^{(n+1)}(c)\right| \lt \frac{ (n+1)!}{1000\cdot13^{n+1}}</m> 
+when <m>n=1</m>.
 </p>
 
 <p>That is: if we use the first-degree Taylor polynomial, then for some <m>c</m> between <m>2187</m> and <m>2200</m>,

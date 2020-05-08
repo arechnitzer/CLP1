@@ -431,7 +431,7 @@ Therefore, <m>f(x)=\dfrac{1}{2}\sin(2x)+\pi</m>.
 Find the function <m>f(x)</m> with <m>f'(x)=\dfrac{1}{x}</m> and <m>f(-1)=0</m>.
 </p></statement>
 <hint><p>
-An antiderivative of <m>\dfrac{1}{x}</m> is <m>\log(x)+C</m>, but this is not the most general antiderivative.
+An antiderivative of <m>\dfrac{1}{x}</m> is <m>\log(x)+C</m>, but only for <m>x\gt 0</m>.
 </p></hint>
 <answer><p>
 <m>f(x)=\log|x|</m>
@@ -523,7 +523,7 @@ Your bank account at time <m>t</m> (measured in years) is growing at a rate of
 dollars per year. How much money is in your account at time <m>t</m>?
 </p></statement>
 <hint><p>
-You can't know exactly--there will be a constant involved.
+You can't know exactly <mdash/>there will be a constant involved.
 </p></hint>
 <answer><p>
 At time <m>t</m>, the amount of money in your bank account is <m>75000e^{\tfrac{t}{50}}+C</m> dollars, for some constant <m>C</m>.
@@ -620,10 +620,13 @@ So, the derivative of <m>f(x)-g(x)</m> is <m>0</m>, which implies that
 
 <p>Remark: we don't need calculus to show that <m>f(x)</m> and <m>g(x)</m> only differ by a constant. Define
 <m>\theta=\sin^{-1}\sqrt{x}</m>, so that <m>\sin\theta=\sqrt{x}</m> and <m>f(x) = 2\theta</m> , and then
-<me>
-\sin \left[f(x)-\frac{\pi}{2}\right]=-\cos f(x) =-\cos 2\theta=-[1-2\sin^2\theta]
-=2\sin^2\theta -1=2x-1
-</me>
+<md>
+<mrow>
+\sin \left[f(x)-\frac{\pi}{2}\right]\amp=-\cos f(x) =-\cos 2\theta=-[1-2\sin^2\theta]
+</mrow><mrow>
+\amp=2\sin^2\theta -1=2x-1
+</mrow>
+</md>
 Our goal is to take the arcsine of the first and last expressions and conclude <m>f(x)-\dfrac{\pi}{2}=\arcsin(2x-1)=g(x)</m>. However, before we can say <m>\arcsin\left(\sin\left[f(x)-\dfrac{\pi}{2}\right]\right)=f(x)-\dfrac{\pi}{2}</m>, we have to check that <m>-\dfrac{\pi}{2} \leq f(x)-\dfrac{\pi}{2}\leq\dfrac{\pi}{2}</m>. That is, we need to show that <m>0 \leq f(x) \leq \pi</m>.
 </p>
 
@@ -858,7 +861,7 @@ let <m>V(H)</m> be the volume of the solid formed by rotating the segment of the
 
 <p>One of the regions inside the larger object and outside the smaller (blue) object looks like this:</p>
 
-<sidebyside width="66%">
+<sidebyside width="60%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0) node[shape=ellipse, fill=gray!10, draw, minimum width=1cm, minimum height=3cm]{};
 \draw (2,2) arc(90:-90:.67cm and 2cm);
@@ -884,15 +887,17 @@ let <m>V(H)</m> be the volume of the solid formed by rotating the segment of the
 <p>Recall that the volume inside the object of length <m>2H</m> and outside the object of length <m>2h</m> consists of <em>two</em> copies of the shape shown above. Therefore:
 <md>
 <mrow>
-2(H-h)\pi(h^2+1)^2 &amp;&amp; \lt &amp;&amp;V(H)-V(h)&amp;&amp; \lt &amp;&amp;2(H-h)\pi(H^2+1)^2
+2(H-h)\pi(h^2+1)^2 \lt V(H)-V(h)  \lt 2(H-h)\pi(H^2+1)^2
 </mrow>
-<intertext><textred>Now that we have upper and lower bounds for <m>V(H)-V(h)</m>, we can find <m>V'(H)</m>.</textred></intertext>
+</md>
+<textred>Now that we have upper and lower bounds for <m>V(H)-V(h)</m>, we can find <m>V'(H)</m>.</textred>
+<md alignment="alignat">
 <mrow>
-\frac{2(H-h)\pi(h^2+1)^2}{H-h} &amp;&amp; \lt &amp;&amp;\frac{V(H)-V(h)}{H-h}&amp;&amp; \lt &amp;&amp;\frac{2(H-h)\pi(H^2+1)^2}{H-h}
+\frac{2(H-h)\pi(h^2+1)^2}{H-h} &amp;&amp; \lt &amp;&amp;\frac{V(H)-V(h)}{H-h}&amp;&amp; \lt &amp;\frac{2(H-h)\pi(H^2+1)^2}{H-h}
 </mrow><mrow>
-2\pi(h^2+1)^2 &amp;&amp; \lt &amp;&amp;\frac{V(H)-V(h)}{H-h}&amp;&amp; \lt &amp;&amp;2\pi(H^2+1)^2
+2\pi(h^2+1)^2 &amp;&amp; \lt &amp;&amp;\frac{V(H)-V(h)}{H-h}\ \ \ &amp;&amp; \lt &amp; 2\pi(H^2+1)^2
 </mrow><mrow>
-\lim_{h \to H}2\pi(h^2+1)^2 &amp;&amp;\le&amp;&amp;\lim_{h \to H}\frac{V(H)-V(h)}{H-h}&amp;&amp;\le&amp;&amp;\lim_{h \to H}2\pi(H^2+1)^2
+\lim_{h \to H}2\pi(h^2+1)^2 &amp;&amp;\le&amp;&amp;\lim_{h \to H}\frac{V(H)-V(h)}{H-h}\ \ \ &amp;&amp;\le&amp;\lim_{h \to H}2\pi(H^2+1)^2
 </mrow>
 </md>
 Since the limits on both ends are simply <m>2\pi(H^2+1)^2</m>, by the Squeeze Theorem,

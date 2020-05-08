@@ -12,7 +12,7 @@
 <statement><p>
 The graph below shows three curves. The black curve is <m>y=f(x)</m>, the red curve is <m>y=g(x)=1+2\sin(1+x)</m>, and the blue curve is <m>y=h(x)=0.7</m>. If you want to estimate <m>f(0)</m>, what might cause you to use <m>g(0)</m>? What might cause you to use <m>h(0)</m>?</p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4}{4}
 \draw[ultra thick, black] plot[domain=-4:4, samples=100](\x,{3*sin(2*\x r)+cos(\x r)}) node[right]{$y=f(x)$};
@@ -71,7 +71,7 @@ This <m>a</m> should have two properties: it should be close to 0.93, and you sh
 </p></hint>
 <answer><p>
 <m>\log(0.93)\approx \log(1)=0</m></p>
-<sidebyside>
+<sidebyside width="45%">
  <image><latex-image><![CDATA[\begin{tikzpicture}
  \YEaaxis{1.5}{3.5}{1}{2}
  \draw[thick] plot[domain=0.25:3](\x,{ln \x}) node[right]{$y=f(x)$};
@@ -84,7 +84,7 @@ This <m>a</m> should have two properties: it should be close to 0.93, and you sh
 <solution><p>
  0.93 is pretty close to 1, and we know <m>\log(1)=0</m>, so we estimate
  <m>\log(0.93) \approx \log(1)=0</m>.</p>
- <sidebyside>
+ <sidebyside width="45%">
  <image><latex-image><![CDATA[\begin{tikzpicture}
  \YEaaxis{1.5}{3.5}{1}{2}
  \draw[thick] plot[domain=0.25:3](\x,{ln \x}) node[right]{$y=f(x)$};

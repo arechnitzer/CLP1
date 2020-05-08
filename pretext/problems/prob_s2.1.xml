@@ -13,7 +13,7 @@
 If we choose a point <m>Q</m> on the graph to the <em>right</em> of the <m>y</m>-axis, is the slope of the secant line through <m>P</m> and <m>Q</m> positive or negative?
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{5}{5}{1}{4}
 \draw[thick] plot[domain=-5:-.25] (\x+.25,{-3/(\x-.6)});
@@ -40,7 +40,7 @@ If <m>Q</m> is to the right of the <m>y</m> axis, the line through <m>Q</m> and 
 </ol>
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{4}{3}
 \draw[thick] plot[domain=-3.5:3.5](\x,{(\x+4)*(\x+4)/10-2.5});
@@ -71,7 +71,7 @@ If <m>Q</m> is to the right of the <m>y</m> axis, the line through <m>Q</m> and 
 <statement><p> Group the functions below into collections whose secant lines from <m>x=-2</m> to <m>x=2</m> all have the same slopes.
 </p>
 
-<sidebyside>
+<sidebyside widths="30% 30% 30%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{2.25}{1.5}
 \draw[thin, gray, dotted] (-2,-1.5) grid (2,1.5);
@@ -98,7 +98,9 @@ If <m>Q</m> is to the right of the <m>y</m> axis, the line through <m>Q</m> and 
 \draw[thick] (-2,-1)--(0,1)--(1,-1.25)--(2,0);
 \draw (0,-2) node{(c)};
 \end{tikzpicture}]]></latex-image></image>
+</sidebyside>
 
+<sidebyside widths="30% 30% 30%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{2.25}{1.5}
 \draw[thin, gray, dotted] (-2,-1.5) grid (2,1.5);
@@ -150,7 +152,7 @@ Give your best approximation of the slope of the tangent line to
 the graph below at the point <m>x=5</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}[scale=1.25]
 \YEaaxis{1.1}{6.1}{2.1}{4.1}
 \draw[densely dotted] (-1,-2) grid (6,4);
@@ -179,7 +181,7 @@ the graph below at the point <m>x=5</m>.
 <p>Another way to try to figure out the tangent line is by carefully drawing it in with a ruler. This is shown here in blue:
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{1.1}{6.1}{2.1}{4.1}
 \draw[densely dotted] (-1,-2) grid (6,4);
@@ -203,7 +205,7 @@ the graph below at the point <m>x=5</m>.
 <statement><p>On the graph below, sketch the tangent line to <m>y=f(x)</m> at <m>P</m>. Then, find two points <m>Q</m> and <m>R</m>  on the graph so that the secant line through <m>Q</m> and <m>R</m> has the same slope as the tangent line at <m>P</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{5}{3}
 \draw[thick] plot[domain=0:4.5](\x,{\x*\x/4-2}) node[below right]{$y=f(x)$};
@@ -212,15 +214,13 @@ the graph below at the point <m>x=5</m>.
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 
-<p>Remark: later, you'll learn about the Mean Value Theorem, which guarantees that for differentiable graphs (we'll define this later),
-             you can always find a secant line with the same slope as the tangent line.
-</p></statement>
+</statement>
 <hint><p> There are many possible values for <m>Q</m> and <m>R</m>.
 </p></hint>
 <answer><p> There is only one tangent line to <m>f(x)</m> at <m>P</m> (shown in blue), but there are infinitely many choices of <m>Q</m> and <m>R</m> (one possibility shown in red).
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{5}{3}
 \draw[thick] plot[domain=0:4.5](\x,{\x*\x/4-2}) node[below right]{$y=f(x)$};
@@ -237,7 +237,7 @@ the graph below at the point <m>x=5</m>.
 One easy way to sketch the secant line on paper is to draw any line parallel to the tangent line, and choose two intercepts with <m>y=f(x)</m>.</p>
 
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{5}{3}
 \draw[thick] plot[domain=0:4.5](\x,{\x*\x/4-2}) node[below right]{$y=f(x)$};
@@ -255,7 +255,7 @@ One easy way to sketch the secant line on paper is to draw any line parallel to 
 <exercise purpose="RQS">
 <statement><p>Mark the points where the curve shown below has a tangent line with slope <m>0</m>.</p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{5}{3}
 \draw[thick] plot[domain=2:4.5](\x,{-(\x-3)*(\x-3)/2-1/2}) node[below right]{$y=f(x)$};
@@ -270,7 +270,7 @@ One easy way to sketch the secant line on paper is to draw any line parallel to 
 <hint><p> A line with slope <m>0</m> is horizontal.
 </p></hint>
 <answer>
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{5}{3}
 \draw[thick] plot[domain=2:4.5](\x,{-(\x-3)*(\x-3)/2-1/2}) node[below right]{$y=f(x)$};
@@ -285,7 +285,7 @@ One easy way to sketch the secant line on paper is to draw any line parallel to 
 <solution><p>
 Any place the graph looks flat (if you imagine zooming in) is where the tangent line has slope 0. This occurs three times.</p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{5}{3}
 \draw[thick] plot[domain=2:4.5](\x,{-(\x-3)*(\x-3)/2-1/2}) node[below right]{$y=f(x)$};

@@ -213,7 +213,7 @@ Section<nbsp/><xref ref="sec_mvt"/> and Theorem<nbsp/><xref ref="cor_DIFFmvtcons
   s'(t) &amp;= v(t) = g \cdot t.
 </mrow>
 </md>
-To find <m>s(t)</m> we are again going to guess and check. Its not hard to see that we can use
+To find <m>s(t)</m> we are again going to guess and check. It's not hard to see that we can use
 <md>
 <mrow>
   s(t) &amp;= \frac{g}{2} t^2 + c

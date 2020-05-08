@@ -133,6 +133,7 @@ by <m>h</m> and time (in seconds) by <m>t</m>. Then trigonometry tells us
   &amp;= 200 \cdot 0.05 \cdot \left( \sqrt{2} \right)^2
 </mrow><mrow>
   &amp;= 200 \cdot \frac{5}{100} \cdot 2
+</mrow><mrow>
   &amp;= 20 m/s
 </mrow>
 </md>
@@ -199,7 +200,7 @@ isn't buried in the ground, we can discard the solution <m>y=-4</m>.</fn>
   \diff{y}{t} &amp;= - \frac{3}{4} m/s.
 </mrow>
 </md>
-Thus the top of the ladder is sliding towards the floor at a rate of <m>3/4 m/s</m>.
+Thus the top of the ladder is sliding towards the floor at a rate of <m>\frac{3}{4} m/s</m>.
 </li>
 </ul>
 </p>
@@ -407,7 +408,7 @@ Consider a cylindrical fuel tank of radius <m>r</m> and length <m>L</m> (in some
 that is lying on its side. Suppose that fuel is being pumped into the tank at
 a rate <m>q</m>. At what rate is the fuel level rising? </p>
 
-<sidebyside width="40%">
+<sidebyside width="25%">
 <image source="text/figs/fuel1"/>
 </sidebyside>
 
@@ -422,7 +423,7 @@ this problem <mdash/> so we do not need to state the units of our variables.
 <li><p> Again <mdash/> draw a picture. Here is an end view of the tank; the shaded part of the
 circle  is filled with fuel.</p>
 
-<sidebyside width="40%">
+<sidebyside width="30%">
 <image source="text/figs/fuel2"/>
 </sidebyside>
 
@@ -452,37 +453,43 @@ do not depend on time.
 <p> The volume of fuel is <m>L</m> times the cross<ndash/>sectional area filled by
 the fuel. That is,</p>
 
-<sidebyside valign="middle" widths="15% 25% 20%">
+<sidebyside valign="middle" widths="25% 5% 20% 20% 25%">
+<p></p>
 <p><m>V = </m></p>
 <p><m>L \times</m> Area of </p>
 <image source="text/figs/fuel3"/>
+<p></p>
 </sidebyside>
 
 <p>While we do not have a canned formula for the area of a chord of a circle
 like this, it is easy to express the area of the chord in terms of two areas that we can
 compute.</p>
 
-<sbsgroup valign="middle" widths="10% 25% 15% 17% 15% 0%">
+<sbsgroup valign="middle" widths="7% 5% 22% 20% 18% 20% 0% 7%">
 <sidebyside>
+<p></p>
 <p><m>V</m></p>
 <p><m>= L\times\text{Area of}</m></p>
 <image source="text/figs/fuel3"/>
 <p></p>
 <p></p>
 <p></p>
+<p></p>
 </sidebyside>
 <sidebyside>
+<p></p>
 <p></p>
 <p><m>= L\times\bigg[ \text{Area of}</m></p>
 <image source="text/figs/fuel4"/>
 <p>- Area of</p>
 <image source="text/figs/fuel5"/>
 <p><m>\bigg]</m></p>
+<p></p>
 </sidebyside>
 </sbsgroup>
 </li>
 <li><p> The piece of pie</p>
-<sidebyside width="33%">
+<sidebyside width="18%">
 <image source="text/figs/fuel4"/>
 </sidebyside>
 <p>is the fraction <m>\tfrac{2\theta}{2\pi}</m> of the full
@@ -491,7 +498,7 @@ circle, so its area is <m>\tfrac{2\theta}{2\pi}\pi r^2=\theta r^2</m>.
 </li>
 <li><p> The triangle</p>
 
-<sidebyside width="33%">
+<sidebyside width="18%">
 <image source="text/figs/fuel5"/>
 </sidebyside>
 <p>has height <m>r\cos\theta</m> and base <m>2r\sin\theta</m>
@@ -561,7 +568,7 @@ formulas
 <m>\theta</m> it is more natural to write it in terms of <m>h</m> (since the initial problem is
 stated in terms of <m>h</m>). From the triangle</p>
 
-<sidebyside width="33%">
+<sidebyside width="18%">
 <image source="text/figs/fuel6"/>
 </sidebyside>
 

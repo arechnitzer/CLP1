@@ -217,7 +217,7 @@ Section~\ref{sec mvt} and Theorem~\ref{cor:DIFFmvtcons}). Thus $f(t)-h(t) =
 \begin{align*}
   s'(t) &= v(t) = g \cdot t.
 \end{align*}
-To find $s(t)$ we are again going to guess and check. Its not hard to see that we can use
+To find $s(t)$ we are again going to guess and check. It's not hard to see that we can use
 \begin{align*}
   s(t) &= \frac{g}{2} t^2 + c
 \end{align*}
@@ -8539,13 +8539,14 @@ In this example, we evaluate the $\infty-\infty$ indeterminate form
 We convert it into a $\frac{0}{0}$ indeterminate form simply
 by putting the two fractions, $\frac{1}{x}$ and $\frac{1}{\log(1+x)}$
 over a common denominator.
-\begin{equation}\label{eq:hopitalKKa}
+\begin{equation}
 \lim_{x\rightarrow 0}\Big(
                 \underbrace{\frac{1}{x}}_{\rightarrow \pm\infty}
               - \underbrace{\frac{1}{\log(1+x)}}_{\rightarrow\pm\infty}\Big)
 =\lim_{x\rightarrow 0}\underbrace{\frac{\log(1+x)-x}{x\log(1+x)}}_{\atp
         {\mathrm{num}\rightarrow 0}
         {\mathrm{den}\rightarrow 0}}
+\tag{E1}
 \end{equation}
 Now we apply L'H\^opital's rule, and simplify
 \begin{align}
@@ -8556,10 +8557,10 @@ Now we apply L'H\^opital's rule, and simplify
 =\lim_{x\rightarrow 0}\frac{1-(1+x)} {(1+x)\log(1+x)+x}\notag\\
 &=-\lim_{x\rightarrow 0}\underbrace{\frac{x} {(1+x)\log(1+x)+x}}_{\atp
         {\mathrm{num}\rightarrow 0}
-        {\mathrm{den}\rightarrow 1\times 0+0=0}} \label{eq:hopitalKKb}
+        {\mathrm{den}\rightarrow 1\times 0+0=0}} \tag{E2}
 \end{align}
 Then we apply  L'H\^opital's rule a second time
-\begin{equation}\label{eq:hopitalKKc}
+\begin{equation}
 -\lim_{x\rightarrow 0}\underbrace{\frac{x} {(1+x)\log(1+x)+x}}_{\atp
         {\mathrm{num}\rightarrow 0}
         {\mathrm{den}\rightarrow 1\times 0+0=0}}
@@ -8567,9 +8568,9 @@ Then we apply  L'H\^opital's rule a second time
         {\mathrm{num}\rightarrow 1}
         {\mathrm{den}\rightarrow 0+1+1=2}}
 =-\frac{1}{2}
+\tag{E3}
 \end{equation}
-Combining \eqref{eq:hopitalKKa}, \eqref{eq:hopitalKKb} and
-\eqref{eq:hopitalKKc} gives our final answer
+Combining (E1), (E2) and (E3) gives our final answer
 \begin{align*}
 \lim_{x\rightarrow 0}\Big(\frac{1}{x} - \frac{1}{\log(1+x)}\Big)
 =-\frac{1}{2}

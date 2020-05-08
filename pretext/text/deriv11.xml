@@ -354,7 +354,7 @@ lines are parallel.
 <p>Okay <mdash/> lets get away from curves and do something a little different.
 </p>
 
-<example xml:id="eg_DIFFimpldiffC"><title>An rough game of baseball</title>
+<example xml:id="eg_DIFFimpldiffC"><title>A rough game of baseball</title>
 <p>
 You are standing at the origin. At time zero a pitcher throws a ball at
 your head
@@ -437,7 +437,8 @@ one of radius <m>1</m>. Paint a red dot on the smaller circle. Then imagine
 the smaller circle rolling around the inside of the larger circle. The
 curve traced by the red dot is our astroid. Google <q>astroid</q> (be careful
 about the spelling) to find animations showing this.
-<me>\mbox{ }</me> <!-- a hack to get paragraph break -->
+</fn>
+<fn>
 The astroid was first discussed by Johann Bernoulli in 1691<ndash/>92. It also
 appears in the work of Leibniz.</fn>
 </p>

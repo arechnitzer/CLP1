@@ -121,7 +121,7 @@ This is shown in Figure<nbsp/><xref ref="fig_tangA"/> below.</p>
 
 <figure xml:id="fig_tangA">
   <caption/>
-  <image width="80%" source="text/figs/tangentA"/>
+  <image width="66%" source="text/figs/tangentA"/>
 </figure>
 
 <p>
@@ -165,7 +165,7 @@ y-f(a) = f'(a)\,(x-a)\qquad\text{or}\qquad y=f(a)+f'(a)\,(x-a)
 
 <figure xml:id="fig_DIFFtangentEqn">
   <caption>A line segment of a tangent line</caption>
-  <image width="66%" source="text/figs/tangentB"/>
+  <image width="50%" source="text/figs/tangentB"/>
 </figure>
 
 <p>
@@ -235,8 +235,10 @@ Rather than redoing everything from scratch, we can, and for efficiency, should,
 	In the current example, <m>a=4</m> and we have
 	<md>
 	<mrow>
-	f(a)=f(4)=\sqrt{x}\big|_{x=4}=\sqrt{4}=2\qquad\text{and}\qquad
-	f'(a)=f'(4)=\frac{1}{2\sqrt{a}}\Big|_{a=4}=\frac{1}{2\sqrt{4}}=\frac{1}{4}
+	f(a)\amp=f(4)=\sqrt{x}\big|_{x=4}=\sqrt{4}=2
+        </mrow><mrow>
+\text{and}\qquad
+	f'(a)\amp=f'(4)=\frac{1}{2\sqrt{a}}\Big|_{a=4}=\frac{1}{2\sqrt{4}}=\frac{1}{4}
 	</mrow>
 	</md>
 </li>

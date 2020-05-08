@@ -42,9 +42,10 @@ Match the functions <m>f(x)</m>, <m>g(x)</m>, <m>h(x)</m>, and <m>k(x)</m> to th
 <md>
   <mrow>
 f(x) &amp; =\sqrt{x^2+1} &amp;
-g(x) &amp;=\sqrt{x^2-1} &amp;
+g(x) &amp;=\sqrt{x^2-1} 
+</mrow><mrow>
 h(x) &amp;=\sqrt{x^2+4} &amp;
-k(x) &amp;=\sqrt{x^2-4} &amp;
+k(x) &amp;=\sqrt{x^2-4} 
 </mrow>
 </md>
 
@@ -126,7 +127,7 @@ y=f(x)=\sqrt{\log^2(x+p)}</me>
 Remember <m>\log(x+p)</m> is the natural logarithm of <m>x+p</m>, <m>\log_e(x+p)</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="80%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{9}{3}{1}{5}
 \draw[thick, red] plot[domain=-7.38:2, samples=200](\x,{sqrt(ln(\x+7.39)*ln(\x+7.39))});

@@ -121,7 +121,7 @@ This sequence of operations can be represented pictorially as the tree shown in 
 
 <figure xml:id="fig_parse_me">
  <caption/>
- <image width="80%" source="text/figs/tree3"/>
+ <image width="50%" source="text/figs/tree3"/>
 </figure >
 
 <p>
@@ -339,11 +339,12 @@ Denominator next:
   \lim_{x \to 2} x^2+5x-6
   &amp;= \left( \lim_{x \to 2} x^2 \right) + \left( \lim_{x \to 2} 5x \right)
   - \left( \lim_{x \to 2} 6 \right)
-  &amp; \text{sum of limits}
+  &amp; \!\!\!\!\!\!\text{sum of limits}
 </mrow><mrow>
   &amp;= \left( \lim_{x \to 2} x \right)\cdot \left( \lim_{x \to 2} x \right)
   + 5 \cdot \left( \lim_{x \to 2} x \right) - 6
-  &amp; \text{product of limits and limit of constant}
+</mrow><mrow>
+  &amp;\hskip1.0in \text{product of limits and limit of constant}
 </mrow><mrow>
   &amp;= 2 \cdot 2 + 5 \cdot 2 - 6
   &amp; \text{limits of $x$}
@@ -736,7 +737,7 @@ We can simplify the denominator <m>\sqrt{1+x}-1</m> a  lot, and in particular el
 </mrow><mrow>
     &amp;=\frac{x \left( \sqrt{1+x}+1\right)}
   {\left(\sqrt{1+x}\right)^2 - 1\cdot 1}
-  &amp; \text{since $(a-b)(a+b)=a^2-b^2$}
+  &amp;\!\!\!\!\!\!\! \text{since $(a\!-\!b)(a\!+\!b)=a^2\!-\!b^2$}
 </mrow><mrow>
     &amp;=\frac{x \left( \sqrt{1+x}+1\right)}
   {1+x - 1}
@@ -829,7 +830,7 @@ does not exist. Now we did see the function <m>\sin(\pi/x)</m> before (in  Examp
 However, we do see that the function naturally decomposes into the product of  two pieces <mdash/> the functions <m>x^2</m> and <m>\sin(\pi/x)</m>. We have sketched the two  functions  in the figure on the left below.
 </p>
 
-<sidebyside width="90%">
+<sidebyside width="100%">
 <image source="text/figs/squeeze1"/>
 </sidebyside>
 

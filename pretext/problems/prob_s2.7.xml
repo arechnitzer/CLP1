@@ -10,15 +10,19 @@
 <exercise purpose="RQS">
 <statement><p>
 Match the curves in the graph to the following functions:
-<me>
- (a)\;\; y=\left(\frac{1}{2}\right)^x
- \qquad (b)\;\; y=1^x
- \qquad (c)\;\; y=2^x
- \qquad (d)\;\; y=2^{-x}
- \qquad (e)\;\; y=3^x  </me>
+<md>
+<mrow>
+ \amp (a)\;\; y=\left(\frac{1}{2}\right)^x \amp
+ \amp (b)\;\; y=1^x \amp
+ \amp (c)\;\; y=2^x
+ </mrow><mrow>
+ \amp (d)\;\; y=2^{-x} \amp
+ \amp (e)\;\; y=3^x  
+</mrow>
+</md>
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{5}{5}{1}{5}
 \draw[thick] plot[domain=-5:5](\x,1)node[right]{D};
@@ -46,17 +50,20 @@ Match the curves in the graph to the following functions:
 <exercise purpose="RQS">
 <statement><p>
 The graph below shows an exponential function <m>f(x)=a^x</m>  and its derivative <m>f'(x)</m>. Choose all the options that describe the  constant <m>a</m>.
-<me>
-(a)\;\; a \lt 0
-\qquad(b)\;\;a \gt 0
-\qquad\qquad(c)\;\;a \lt 1
-\qquad(d)\;\;a \gt 1
-\qquad\qquad(e)\;\; a \lt e
-\qquad(f)\;\; a \gt e
-</me>
+<md>
+<mrow>
+\amp (a)\;\; a \lt 0\amp
+\amp (b)\;\;a \gt 0\amp
+\amp (c)\;\;a \lt 1
+</mrow><mrow>
+\amp (d)\;\;a \gt 1\amp
+\amp (e)\;\; a \lt e\amp
+\amp(f)\;\; a \gt e
+</mrow>
+</md>
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{5}{5}{1}{5}
 \draw[thick, blue] plot[domain=-5:3.97](\x,{exp(\x*0.405)})node[above]{$y=f(x)$};
@@ -64,7 +71,6 @@ The graph below shows an exponential function <m>f(x)=a^x</m>  and its derivativ
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 </statement>
-<hint><p></p></hint>
 <answer><p> <m>(b),\;\;(d),\;\;(e)</m>
 </p></answer>
 <solution><p>
@@ -243,8 +249,13 @@ Product rule will work nicely here. Alternately, review the result of Question<n
 </p></answer>
 <solution><p>
 Using the product rule,
-<me>
-f'(x)=(e^x)(e^x-1)+(e^x+1)(e^x)=e^x(e^x-1+e^x+1)=2(e^x)^2=2e^{2x}</me>
+<md>
+<mrow>
+f'(x)\amp=(e^x)(e^x-1)+(e^x+1)(e^x)=e^x(e^x-1+e^x+1)=2(e^x)^2
+</mrow><mrow>
+\amp=2e^{2x}
+</mrow>
+</md>
 </p>
 
 <p>Alternate solution: using Question<nbsp/><xref ref="s2_7e2x"/>:
@@ -308,17 +319,20 @@ Using the product rule,
 <exercise purpose="RQS">
 <statement><p>
 Which of the following functions describe a straight line?
-<me>
-(a)\;\;y=e^{3\log x}+1
-\qquad (b)\;\; 2y+5=e^{3+\log x}
-\qquad (c)\;\; y=e^{2x}+4
-\qquad (d)\;\; y=e^{\log x}3^e+\log 2
-</me>
+<md>
+<mrow>
+\amp (a)\;\;y=e^{3\log x}+1\amp
+\amp (b)\;\; 2y+5=e^{3+\log x}\amp
+\amp(c)\;\; y=e^{2x}+4
+</mrow><mrow>
+\amp(d)\;\; y=e^{\log x}3^e+\log 2
+</mrow>
+</md>
 </p>
 
 </statement>
 <hint><p>
-Simplify
+Simplify.
 </p></hint>
 <answer><p>
 (b) and (d)

@@ -10,12 +10,16 @@
 <exercise>
 <statement><p>
 Which of the following is a differential equation for an unknown function <m>y</m> of <m>x</m>?
-<me>
-\mbox{(a) } y=\diff{y}{x}
-\qquad\mbox{(b) } \diff{y}{x}=3\left[y-5\right]
-\qquad\mbox{(c) } y=3\left[y-\diff{x}{x}\right]
-\qquad\mbox{(d) } e^x=e^y+1
-\qquad\mbox{(e) } y=10e^x</me>
+<md>
+<mrow>
+\amp\mbox{(a) } y=\diff{y}{x} \amp
+\amp\mbox{(b) } \diff{y}{x}=3\left[y-5\right] \amp
+\amp\mbox{(c) } y=3\left[y-\diff{x}{x}\right]
+</mrow><mrow>
+\amp\mbox{(d) } e^x=e^y+1 \amp
+\amp\mbox{(e) } y=10e^x
+</mrow>
+</md>
 </p>
 
 </statement>
@@ -36,12 +40,16 @@ of the unknown function.</q> Our unknown function is <m>y</m>, so a differential
 <exercise purpose="RQS">
 <statement><p>
 Which of the following functions <m>Q(t)</m> satisfy the differential equation <m>Q(t)=5\ds\diff{Q}{t}</m>?
-<me>
-\mbox{(a) } Q(t)=0\qquad
-\mbox{(b) } Q(t)=5e^t\qquad
-\mbox{(c) } Q(t)=e^{5t}\qquad
-\mbox{(d) } Q(t)=e^{t/5}\qquad
-\mbox{(e) } Q(t)=e^{t/5}+1</me>
+<md>
+<mrow>
+\amp\mbox{(a) } Q(t)=0\amp
+\amp\mbox{(b) } Q(t)=5e^t\amp
+\amp\mbox{(c) } Q(t)=e^{5t}
+</mrow><mrow>
+\amp\mbox{(d) } Q(t)=e^{t/5}\amp
+\amp\mbox{(e) } Q(t)=e^{t/5}+1
+</mrow>
+</md>
 </p>
 
 </statement>
@@ -56,20 +64,20 @@ Theorem<nbsp/><xref ref="thm_growthDEsoln"/> tells us that a function is a solut
 </p>
 
 <p>We don't actually need a theorem to answer this question, though: we can just test every option.
-<ul>
-<li>[(a)] <m>\ds\diff{Q}{t}=0</m>, so <m>Q(t)=0=5\cdot 0 = 5\ds\diff{Q}{t}</m>, so (a) is a solution.
+<ol label="a">
+<li> <m>\ds\diff{Q}{t}=0</m>, so <m>Q(t)=0=5\cdot 0 = 5\ds\diff{Q}{t}</m>, so (a) is a solution.
 </li>
-<li>[(b)] <m>\ds\diff{Q}{t}=5e^t=Q(t)</m>, so <m>Q(t)=\ds\diff{Q}{t} \neq 5 \ds\diff{Q}{t}</m>, so (b) is not a solution.
+<li> <m>\ds\diff{Q}{t}=5e^t=Q(t)</m>, so <m>Q(t)=\ds\diff{Q}{t} \neq 5 \ds\diff{Q}{t}</m>, so (b) is not a solution.
 </li>
-<li>[(c)] <m>\ds\diff{Q}{t}=5e^{5t}=5Q(t)</m>, so <m>Q(t)=\dfrac{1}{5}\ds\diff{Q}{t}\neq5\ds\diff{Q}{t}</m>, so (c) is not a solution.
+<li> <m>\ds\diff{Q}{t}=5e^{5t}=5Q(t)</m>, so <m>Q(t)=\dfrac{1}{5}\ds\diff{Q}{t}\neq5\ds\diff{Q}{t}</m>, so (c) is not a solution.
 </li>
-<li>[(d)] <m>\ds\diff{Q}{t}=\frac{1}{5}e^{t/5}=\frac{1}{5}Q(t)</m>, so
+<li> <m>\ds\diff{Q}{t}=\frac{1}{5}e^{t/5}=\frac{1}{5}Q(t)</m>, so
 <m>Q(t)=5\ds\diff{Q}{t}</m>, so (d) is a solution.
 </li>
-<li>[(e)] <m>\ds\diff{Q}{t}=\frac{1}{5}e^{t/5}=\frac{1}{5}\left(Q(t)-1\right)</m>, so
+<li> <m>\ds\diff{Q}{t}=\frac{1}{5}e^{t/5}=\frac{1}{5}\left(Q(t)-1\right)</m>, so
 <m>Q(t)=5\ds\diff{Q}{t}+1</m>, so (e) is not a solution.
 </li>
-</ul>
+</ol>
 </p></solution>
 </exercise>
 
@@ -395,11 +403,16 @@ We know that the amount of Polonium-210 in a sample after <m>t</m> days is given
 <mrow>
 Q(t)&amp;=Ce^{-kt}
 </mrow>
-<intertext>where <m>C</m> is the original amount of the sample, and <m>k</m> is some positive constant.</intertext><mrow>
-</mrow>
-<intertext>The question asks us what percentage of the sample decays in a day. Since <m>t</m> is measured in days, the amount that decays in a day is <m>Q(t)-Q(t+1)</m>. The percentage of <m>Q(t)</m> that this represents is <m>100\dfrac{Q(t)-Q(t+1)}{Q(t)}</m>. (For example, if there were two grams at time <m>t</m>, and one gram at time <m>t+1</m>, then <m>100\dfrac{2-1}{1}=50</m>: 50<percent /> of the sample decayed in a day.) </intertext><mrow>
-</mrow>
-<intertext>In order to simplify, we should figure out a better expression for <m>Q(t)</m>. As usual, we make use of the half-life.</intertext><mrow>
+</md>
+where <m>C</m> is the original amount of the sample, and <m>k</m> is some positive constant.
+</p>
+<p>
+The question asks us what percentage of the sample decays in a day. Since <m>t</m> is measured in days, the amount that decays in a day is <m>Q(t)-Q(t+1)</m>. The percentage of <m>Q(t)</m> that this represents is <m>100\dfrac{Q(t)-Q(t+1)}{Q(t)}</m>. (For example, if there were two grams at time <m>t</m>, and one gram at time <m>t+1</m>, then <m>100\dfrac{2-1}{1}=50</m>: 50<percent /> of the sample decayed in a day.) 
+</p>
+<p>
+In order to simplify, we should figure out a better expression for <m>Q(t)</m>. As usual, we make use of the half-life.
+<md>
+<mrow>
 Q(138)&amp;=\frac{C}{2}
 </mrow><mrow>
 Ce^{-k\cdot138}&amp;=\frac{C}{2}

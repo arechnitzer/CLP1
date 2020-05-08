@@ -11,10 +11,14 @@
 <exercise purpose="RQS">
 <statement><p>
 Give the domains of each of the following functions.
-<me>
-\mbox{(a) } f(x)=\arcsin(\cos x)\qquad
-\mbox{(b) }g(x)=\arccsc(\cos x)\qquad
-\mbox{(c) } h(x)=\sin(\arccos x)</me>
+<md>
+<mrow>
+\mbox{(a) } f(x)\amp=\arcsin(\cos x) \amp
+\mbox{(b) } g(x)\amp=\arccsc(\cos x)
+</mrow><mrow>
+\mbox{(c) } h(x)\amp=\sin(\arccos x)
+</mrow>
+</md>
 </p>
 
 </statement>
@@ -71,10 +75,10 @@ The curve <m>y=f(x)</m> is shown below, for some function <m>f</m>. Restrict <m>
 </sidebyside>
 </statement>
 <hint><p>
-A one--to--one function passes the horizontal line test. To graph the inverse of a function, reflect it across the line <m>y=x</m>.
+A one-to-one function passes the horizontal line test. To graph the inverse of a function, reflect it across the line <m>y=x</m>.
 </p></hint>
 <answer>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3.5}{3}
 \draw[blue, ultra thick] plot[domain=-1:.73, samples=100]({1.5*sin(2*\x r)+cos(\x r)},\x) node[right]{$y=f^{-1}(x)$};
@@ -142,7 +146,7 @@ If <m>|a| \gt 1</m>, then there is no value of <m>x</m> for which <m>a=\sin x</m
 <li><p> If <m>|a| \lt 1</m>, then there are infinitely many solutions to <m>a=\sin x</m>.
 The solution in the interval <m>\left(-\frac{\pi}{2},\frac{\pi}{2}\right)</m> is given by <m>x=\arcsin(a)</m>. The other solution in the interval <m>\left(-\pi,\pi\right)</m> is given by <m>x=\pi-\arcsin(a)</m>, as shown in the unit circles below.</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3.5}{3.5}
 \draw[thick] node[shape=circle, minimum size=6cm, inner sep=0, draw]{};
@@ -154,7 +158,7 @@ The solution in the interval <m>\left(-\frac{\pi}{2},\frac{\pi}{2}\right)</m> is
 \draw[thick] (.5,0) arc(0:42:.5cm);
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3.5}{3.5}
 \draw[thick] node[shape=circle, minimum size=6cm, inner sep=0, draw]{};
@@ -177,9 +181,14 @@ Remark: when <m>a=1</m>, then
 <me>
 2\pi n+\arcsin(a) = 2\pi n + \dfrac{\pi}{2}=2\pi n +\pi -\left(\dfrac {\pi}{2}\right)=2\pi n+\pi-\arcsin(a).</me>
  Similarly, when <m>a=-1</m>,
-<me>
-2\pi n+\arcsin(a) = 2\pi n - \dfrac{\pi}{2}=2\pi (n-1) +\pi -\left(-\dfrac {\pi}{2}\right)
-=2\pi(n-1)+\pi-\arcsin(a).</me>
+<md>
+<mrow>
+2\pi n+\arcsin(a) \amp= 2\pi n - \dfrac{\pi}{2}
+=2\pi (n-1) +\pi -\left(-\dfrac {\pi}{2}\right)
+</mrow><mrow>
+\amp=2\pi(n-1)+\pi-\arcsin(a)
+</mrow>
+</md>
 </p>
 
 <p>So, if we try to use the descriptions in the third bullet point to describe points where the tangent line is horizontal when <m>|a|=1</m>, we get the correct points but each point is listed twice. This is why we separated the case <m>|a|=1</m> from the case <m>|a| \lt 1</m>.
@@ -443,7 +452,7 @@ Show that <m>\ds\diff{}{x}\left\{\sin\left(\arctan(x)
 <hint><p>
 You can simplify the expression before you differentiate to remove the trigonometric functions. If <m>\arctan x =\theta</m>, then fill in the sides of the triangle below using the definition of arctangent and the Pythagorean theorem:</p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0)-|(-6,3)--cycle;
 \draw (-1.25,.25) node{$\theta$};
@@ -456,7 +465,7 @@ You can simplify the expression before you differentiate to remove the trigonome
 <answer><p>
 Let <m>\theta = \arctan x</m>. Then <m>\theta</m> is the angle of a right triangle that gives <m>\tan \theta = x</m>. In particular, the ratio of the opposite side to the adjacent side is <m>x</m>. So, we have a  triangle that looks like this:</p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0)-|(-6,3)--cycle;
 \draw (-1.25,.25) node{$\theta$};
@@ -489,7 +498,7 @@ Let <m>\theta = \arctan x</m>. Then <m>\theta</m> is the angle of a right triang
 <solution><p>
 Let <m>\theta = \arctan x</m>. Then <m>\theta</m> is the angle of a right triangle that gives <m>\tan \theta = x</m>. In particular, the ratio of the opposite side to the adjacent side is <m>x</m>. So, we have a  triangle that looks like this:</p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0)-|(-6,3)--cycle;
 \draw (-1.25,.25) node{$\theta$};
@@ -533,7 +542,7 @@ Show that <m>\ds\diff{}{x}\left\{\cot\left(\arcsin(x)
 <hint><p>
 You can simplify the expression before you differentiate to remove the trigonometric functions. If <m>\arcsin x =\theta</m>, then fill in the sides of the triangle below using the definition of arctangent and the Pythagorean theorem:</p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0)-|(-6,3)--cycle;
 \draw (-1.25,.25) node{$\theta$};
@@ -546,7 +555,7 @@ You can simplify the expression before you differentiate to remove the trigonome
 <answer><p>
 Let <m>\theta = \arcsin x</m>. Then <m>\theta</m> is the angle of a right triangle that gives <m>\sin \theta = x</m>. In particular, the ratio of the opposite side to the hypotenuse is <m>x</m>. So, we have a  triangle that looks like this:</p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0)-|(-6,3)--cycle;
 \draw (-1.25,.25) node{$\theta$};
@@ -575,7 +584,7 @@ Let <m>\theta = \arcsin x</m>. Then <m>\theta</m> is the angle of a right triang
 </md></p></answer>
 <solution>
 <p>Let <m>\theta = \arcsin x</m>. Then <m>\theta</m> is the angle of a right triangle that gives <m>\sin \theta = x</m>. In particular, the ratio of the opposite side to the hypotenuse is <m>x</m>. So, we have a  triangle that looks like this:</p>
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0)-|(-6,3)--cycle;
 \draw (-1.25,.25) node{$\theta$};
@@ -920,11 +929,15 @@ As usual, after you differentiate implicitly, get all the terms containing <m>y'
 <solution><p>
 <ul>
 <li> Solution 1:
-We begin by differentiating implicitly. Following the usual convention, we use <m>y'</m> to mean <m>y'(x)</m>.
+We begin by differentiating implicitly. Following the usual convention, we use <m>y'</m> to mean <m>y'(x)</m>. We start with
 <md>
 <mrow>
-\arcsin(x+2y)&amp;=x^2+y^2 \qquad\mbox{Using the chain rule:}
-</mrow><mrow>
+\arcsin(x+2y)&amp;=x^2+y^2 
+</mrow>
+</md>
+Using the chain rule,
+<md>
+<mrow>
 \frac{1+2y'}{\sqrt{1-(x+2y)^2}}&amp;=2x+2yy'
 </mrow><mrow>
 \frac{1}{\sqrt{1-(x+2y)^2}}+\frac{2y'}{\sqrt{1-(x+2y)^2}}&amp;=2x+2yy'
@@ -932,7 +945,11 @@ We begin by differentiating implicitly. Following the usual convention, we use <
 \frac{2y'}{\sqrt{1-(x+2y)^2}}-2yy'&amp;=2x-\frac{1}{\sqrt{1-(x+2y)^2}}
 </mrow><mrow>
 y'\left(\frac{2}{\sqrt{1-(x+2y)^2}}-2y\right)&amp;=2x-\frac{1}{\sqrt{1-(x+2y)^2}}
-</mrow><mrow>
+</mrow>
+</md>
+Finally, solving for <m>y'</m> gives
+<md>
+<mrow>
 y'&amp;=\frac{2x-\frac{1}{\sqrt{1-(x+2y)^2}}}{\frac{2}{\sqrt{1-(x+2y)^2}}-2y}
 \left(\frac{\sqrt{1-(x+2y)^2}}{\sqrt{1-(x+2y)^2}}\right)
 </mrow><mrow>
@@ -967,7 +984,7 @@ y'&amp;=\frac{2x\cos(x^2+y^2)-1}{2-2y\cos(x^2+y^2)}
 </me>
 holds. Drawing a triangle:</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0)--(6,0)--(6,6)--cycle;
 \draw[thick, blue] (1,0) arc(0:45:1cm) node[midway, right, rotate=22]{$x^2+y^2$};

@@ -37,7 +37,7 @@ rather to a person who performed calculations.</fn>
 following sketch of <m>\sin(x)</m> for <m>x</m> around <m>0</m>.
 </p>
 
-<sidebyside width="66%">
+<sidebyside width="50%">
 <image><latex-image><![CDATA[
 \begin{tikzpicture}
   \begin{axis}[
@@ -338,7 +338,7 @@ C &amp;=\half f''(a) &amp; \text{substitute}
 </mrow><mrow>
 B &amp;= f'(a) - 2Ca = f'(a)-af''(a) &amp; \text{substitute again}
 </mrow><mrow>
-A &amp;= f(a)-Ba-Ca^2 = f(a)-a[f'(a)-af''(a)]-\half f''(a)a^2
+A &amp;= f(a)-Ba-Ca^2 = f(a)-a[f'(a)-af''(a)]-\half f''(a)a^2\hskip-0.5in
 </mrow>
 </md>
 Then put things back together to build up <m>F(x)</m>:
@@ -372,7 +372,7 @@ f(x)\approx f(a)+f'(a)(x-a)+\half f''(a)(x-a)^2
 
 <p> Here is a figure showing the graphs of a typical <m>f(x)</m> and approximating function <m>F(x)</m>.</p>
 
-<sidebyside width="80%">
+<sidebyside width="95%">
 <image source="text/figs/approx3"/>
 </sidebyside>
 
@@ -638,7 +638,7 @@ look up the Gamma function.</fn>
 </definition>
 
 <p>Now consider <m>T_n(x)</m> and its derivatives:
-<md>
+<md alignment="alignat">
 <mrow>
   T_n(x) &amp;=&amp; c_0 &amp;+ c_1(x-a) &amp; + c_2 (x-a)^2 &amp; + c_3(x-a)^3 &amp;+ \cdots+ &amp; c_n (x-a)^n
 </mrow><mrow>
@@ -701,8 +701,9 @@ Putting this all together we have</p>
  <md>
 <mrow>
   f(x) \approx T_n(x)
-  &amp;= f(a) + f'(a) (x-a) + \frac{1}{2} f''(a) \cdot(x-a)^2 + \cdots + \frac{1}{n!}
-f^{(n)}(a) \cdot (x-a)^n
+  &amp;= f(a) + f'(a) (x-a) + \frac{1}{2} f''(a) \cdot(x-a)^2 + \cdots 
+  </mrow><mrow>
+           \amp\hskip2in+ \frac{1}{n!}f^{(n)}(a) \cdot (x-a)^n
 </mrow><mrow>
   &amp;= \sum_{k=0}^n \frac{1}{k!} f^{(k)}(a) \cdot (x-a)^k
  </mrow>
@@ -844,7 +845,8 @@ Substituting this into equation<nbsp/><xref ref="eq_taylorPoly"/> gives
   T_5(x)&amp;= 0 + 1\cdot (x-1)
   + \frac{1}{2} \cdot (-1) \cdot (x-1)^2
   + \frac{1}{6} \cdot 2 \cdot (x-1)^3
-  + \frac{1}{24} \cdot (-6) \cdot (x-1)^4
+  </mrow><mrow>
+  \amp\hskip0.5in+ \frac{1}{24} \cdot (-6) \cdot (x-1)^4
   + \frac{1}{120} \cdot 24 \cdot (x-1)^5
 </mrow><mrow>
   &amp;= (x-1) - \frac{1}{2}(x-1)^2 + \frac{1}{3}(x-1)^3 - \frac{1}{4}(x-1)^4 +
@@ -933,9 +935,11 @@ angles are measured in radians.
 
 <p>Below we plot <m>\cos x</m> against its first few Maclaurin polynomial
 approximations:</p>
-<sidebyside widths="25% 25% 25% 25%">
+<sidebyside widths="40% 40%">
 <image source="text/figs/approx1d"/>
   <image source="text/figs/approx2d"/>
+</sidebyside>
+<sidebyside widths="40% 40%">
 <image source="text/figs/approx3d"/>
   <image source="text/figs/approx4d"/>
 </sidebyside>
@@ -991,9 +995,11 @@ angles are measured in radians.
 
 <p>Below we plot <m>\sin x</m> against its first few Maclaurin polynomial approximations.</p>
 
-<sidebyside widths="25% 25% 25% 25%">
+<sidebyside widths="40% 40%">
 <image source="text/figs/approx1c"/>
   <image source="text/figs/approx2c"/>
+</sidebyside>
+<sidebyside widths="40% 40%">
 <image source="text/figs/approx3c"/>
   <image source="text/figs/approx4c"/>
 </sidebyside>
@@ -1017,14 +1023,14 @@ derive the Taylor polynomials are valid only when <m>x</m> is in radians. The
 restriction <m>-1 \leq x \leq 1</m> radians translates to angles bounded by
 <m>\tfrac{180}{\pi}\approx 57^\circ</m>.</fn>, then the magnitudes of the successive
 terms in the Taylor polynomials for <m>\sin x</m> are bounded by
-<md>
+<md alignment="alignat">
 <mrow>
 |x|&amp;\le 1 &amp;
 \tfrac{1}{3!}|x|^3&amp;\le\tfrac{1}{6} &amp;
 \tfrac{1}{5!}|x|^5&amp;\le\tfrac{1}{120}\approx 0.0083
 </mrow><mrow>
-\tfrac{1}{7!}|x|^7&amp;\le\tfrac{1}{7!}\approx 0.0002 &amp;
-\tfrac{1}{9!}|x|^9&amp;\le\tfrac{1}{9!}\approx 0.000003 &amp;
+\tfrac{1}{7!}|x|^7&amp;\le\tfrac{1}{7!}\approx 0.0002\quad &amp;
+\tfrac{1}{9!}|x|^9&amp;\le\tfrac{1}{9!}\approx 0.000003\quad &amp;
 \tfrac{1}{11!}|x|^{11}&amp;\le\tfrac{1}{11!}\approx 0.000000025
 </mrow>
 </md>
@@ -1172,7 +1178,7 @@ that the closer <m>x</m> is to <m>a</m>, the better various approximations will 
 <li><p> Now we need to compute <m>f</m> and its first two derivatives at <m>x=a</m>. It is a good
 time to recall the special <m>1:1:\sqrt{2}</m> triangle</p>
 
-<sidebyside width="33%">
+<sidebyside width="20%">
  <image source="text/figs/triangle45"/>
  </sidebyside>
 
@@ -1191,17 +1197,20 @@ time to recall the special <m>1:1:\sqrt{2}</m> triangle</p>
 </li>
 <li> As <m>x-a=46\tfrac{\pi}{180}-45\tfrac{\pi}{180}=\tfrac{\pi}{180}</m> radians, the
 three approximations are
-<md>
+<md alignment="alignat">
 <mrow>
-f(x)&amp;\approx f(a) &amp;
-    &amp;&amp;&amp;=1
+f(x)&amp;\approx f(a) 
+    </mrow><mrow>
+    \amp=1
 </mrow><mrow>
 f(x)&amp;\approx f(a)+f'(a)(x-a) &amp;
-    &amp;=1+2\tfrac{\pi}{180} &amp;
+    &amp;=1+2\tfrac{\pi}{180} 
+    </mrow><mrow>
     &amp;=1.034907
 </mrow><mrow>
-f(x)&amp;\approx f(a)+f'(a)(x-a)+\half f''(a)(x-a)^2&amp;
-    &amp;=1+2\tfrac{\pi}{180}+\half 4\big(\tfrac{\pi}{180}\big)^2 &amp;
+f(x)&amp;\approx f(a)+f'(a)(x\!-\!a)+\half f''(a)(x\!-\!a)^2&amp;
+    &amp;=1+2\tfrac{\pi}{180}+\half 4\big(\tfrac{\pi}{180}\big)^2
+    </mrow><mrow>
     &amp; =1.035516
 </mrow>
 </md>
@@ -1609,7 +1618,7 @@ Indeed, this equation is important in the discussion that follows, so we'll high
 <p>The coefficient <m>\dfrac{f(x)-f(a)}{x-a}</m> of <m>(x-a)</m> is the average slope
 of <m>f(t)</m> as <m>t</m> moves from <m>t=a</m> to <m>t=x</m>. We can picture this as the slope of the secant joining the points <m>(a,f(a))</m> and <m>(x,f(x))</m> in the sketch below.</p>
 
-<sidebyside width="66%">
+<sidebyside width="50%">
 <image source="text/figs/approx4bb"/>
 </sidebyside>
 
@@ -1765,8 +1774,8 @@ between <m>a</m> and <m>x</m>.
 <md>
 <mrow>
 f(x)=&amp;
-\underbrace{f(a)+f'(a)\cdot(x-a)+\cdots+\frac{1}{n!}f^{(n)}(a)\cdot(x-a)^n}_{= T_n(x)}
-+\frac{1}{(n+1)!}f^{(n+1)}(c)\cdot (x-a)^{n+1}
+\underbrace{f(a)\!+\!f'(a)\cdot(x\!-\!a)\!+\cdots+\!\frac{1}{n!}f^{(n)}(a)\cdot(x\!-\!a)^n}_{= T_n(x)}
+\!+\!\frac{1}{(n\!+\!1)!}f^{(n+1)}(c)\cdot (x\!-\!a)^{n+1}
 </mrow>
 </md>
 for some <m>c</m> strictly between <m>a</m> and <m>x</m>. Again, rewriting this in terms of <m>T_n(x)</m>
@@ -1777,7 +1786,7 @@ gives</p>
 <md>
 <mrow>
   f(x) - T_n(x) &amp;= \frac{1}{(n+1)!}f^{(n+1)}(c)\cdot (x-a)^{n+1}
-&amp; \text{for some $c$ strictly between $a$ and $x$}
+\quad \text{for some $c$ strictly between $a$ and $x$}
 </mrow>
 </md>
 </p></statement>
@@ -1802,7 +1811,8 @@ Approximate <m>\sin 46^\circ</m> using Taylor polynomials about
 <md>
 <mrow>
 a&amp;=45^\circ=45\tfrac{\pi}{180} {\rm radians}&amp;
-x&amp;=46^\circ=46\tfrac{\pi}{180} {\rm radians}&amp;
+x&amp;=46^\circ=46\tfrac{\pi}{180} {\rm radians}
+</mrow><mrow>
 x-a&amp;=\tfrac{\pi}{180} {\rm radians}
 </mrow>
 </md>
@@ -1829,39 +1839,42 @@ f^{(3)}(a)&amp;=-\frac{1}{\sqrt{2}}
 <li>
 The constant, linear and quadratic Taylor approximations for <m>\sin(x)</m> about
 <m>\frac{\pi}{4}</m> are
-<md>
+<md alignment="alignat">
 <mrow>
   T_0(x) &amp;= f(a)
     &amp;&amp;= \frac{1}{\sqrt{2}}
 </mrow><mrow>
-  T_1(x) &amp;= T_0(x) + f'(a) \cdot(x-a)
-    &amp;&amp;= \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}}\left(x - \frac{\pi}{4} \right)
+  T_1(x) &amp;= T_0(x) + f'(a) \cdot(x\!-\!a)
+    &amp;&amp;= \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}}\left(x\! -\! \frac{\pi}{4} \right)
 </mrow><mrow>
-  T_2(x) &amp;= T_1(x) + \half f''(a) \cdot(x-a)^2
-    &amp;&amp;=  \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}}\left(x - \frac{\pi}{4} \right)
-  - \frac{1}{2\sqrt{2}}\left(x - \frac{\pi}{4} \right)^2
+  T_2(x) &amp;= T_1(x)\! +\! \half f''(a) \cdot(x\!-\!a)^2
+    &amp;&amp;=\!  \frac{1}{\sqrt{2}} \!+\! \frac{1}{\sqrt{2}}\left(x\!-\! \frac{\pi}{4} \right)
+  \!-\! \frac{1}{2\sqrt{2}}\left(x\! -\! \frac{\pi}{4} \right)^2
 </mrow>
 </md>
 </li>
 <li> So the approximations for <m>\sin 46^\circ</m> are
 <md>
 <mrow>
-\sin46^\circ &amp;\approx T_0\left(\frac{46\pi}{180}\right) = \frac{1}{\sqrt{2}} &amp;
-=0.70710678
+\sin46^\circ &amp;\approx T_0\left(\frac{46\pi}{180}\right) = \frac{1}{\sqrt{2}}
+</mrow><mrow> 
+&amp;=0.70710678
 </mrow><mrow>
 \sin46^\circ &amp;\approx T_1\left(\frac{46\pi}{180}\right)
 = \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} \left(\frac{\pi}{180}\right)
+</mrow><mrow>
 &amp;=0.71944812
 </mrow><mrow>
 \sin46^\circ&amp;\approx T_2\left(\frac{46\pi}{180}\right)
 = \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} \left(\frac{\pi}{180}\right)
 - \frac{1}{2\sqrt{2}}\left(\frac{\pi}{180}\right)^2
+</mrow><mrow>
  &amp;=0.71934042
 </mrow>
 </md>
 </li>
 <li> The errors in those approximations are (respectively)
-<md>
+<md alignment="alignat">
 <mrow>
 &amp;{\rm error\ in\ 0.70710678}&amp;
      &amp;=f'(c)(x-a)&amp;
@@ -1882,7 +1895,7 @@ In each of these three cases <m>c</m> must lie somewhere between <m>45^\circ</m>
 <li> Rather than carefully estimating <m>\sin c</m> and <m>\cos c</m> for <m>c</m> in that range, we
 make use of a simpler (but much easier bound). No matter what <m>c</m> is, we know that <m>|\sin
 c|\le 1</m> and <m>|\cos c|\le 1</m>. Hence
-<md>
+<md alignment="alignat">
 <mrow>
 &amp;\big|{\rm error\ in\ 0.70710678}\big|&amp;
    &amp;\le  \left(\frac{\pi}{180}\right)&amp;
@@ -2076,8 +2089,8 @@ with <m>f(\theta)=10\tan\theta</m> and <m>\theta_0=30\dfrac{\pi}{180}</m> to get
 <md>
 <mrow>
 \De h &amp;=f(\theta_0+\De\theta)-f(\theta_0)\approx f'(\theta_0)\De\theta
-  &amp; \text{which implies that} &amp;
-  &amp;\De\theta &amp;\approx \frac{\De h}{f'(\theta_0)}
+  \quad \text{which implies that} \quad
+  \De\theta \approx \frac{\De h}{f'(\theta_0)}
 </mrow>
 </md>
 <ul>
@@ -2098,8 +2111,8 @@ in place of the approximate formula <xref ref="eq_linApprox"/>, this legality
 is taken care of:
 <md>
 <mrow>
-\De h &amp;=f(\theta_0+\De\theta)-f(\theta_0) =f'(c)\De\theta
-&amp; \text{for some $c$ between $\theta_0$ and $\theta_0+\De\theta$}
+\De h &amp;=f(\theta_0\!+\!\De\theta)-f(\theta_0) =f'(c)\De\theta
+\quad \text{for some $c$ between $\theta_0$ and $\theta_0+\De\theta$}
 </mrow>
 </md>
 We can clean this up a little more since in our example <m>f'(\theta) = 10\sec^2\theta</m>.
@@ -2369,21 +2382,24 @@ that
 <li> We now examine <m>F'(q)</m>. First carefully differentiate <m>F(x)</m>:
 <md>
 <mrow>
-  F'(x) &amp;= \diff{}{x} \left[f(x) - \left( f(a) + f'(a)(x-a) + \frac{1}{2}
-f''(a)(x-a)^2 + \cdots + \frac{1}{k!}f^{(k)}(x-a)^k \right)  \right]
+  F'(x) &amp;= \diff{}{x} \bigg[f(x) - \bigg( f(a) + f'(a)(x-a) + \frac{1}{2}
+f''(a)(x-a)^2 + \cdots 
+  </mrow><mrow>\amp\hskip2.5in+ \frac{1}{k!}f^{(k)}(x-a)^k \bigg)  \bigg]
 </mrow><mrow>
-  &amp;= f'(x) - \left( f'(a) + \frac{2}{2} f''(a)(x-a) + \frac{3}{3!} f'''(a)(x-a)^2 +
-\cdots + \frac{k}{k!}f^{(k)}(a) (x-a)^{k-1} \right)
+  &amp;= f'(x) - \bigg( f'(a) + \frac{2}{2} f''(a)(x-a) + \frac{3}{3!} f'''(a)(x-a)^2 +
+\cdots 
+  </mrow><mrow>\amp\hskip2.5in+ \frac{k}{k!}f^{(k)}(a) (x-a)^{k-1} \bigg)
 </mrow><mrow>
-  &amp;= f'(x) - \left( f'(a) + f''(a)(x-a) + \frac{1}{2} f'''(a)(x-a)^2 +
-\cdots + \frac{1}{(k-1)!}f^{(k)}(a)(x-a)^{k-1} \right)
+  &amp;= f'(x) - \bigg( f'(a) + f''(a)(x-a) + \frac{1}{2} f'''(a)(x-a)^2 +\cdots 
+  </mrow><mrow>\amp\hskip2.5in+ \frac{1}{(k-1)!}f^{(k)}(a)(x-a)^{k-1} \bigg)
 </mrow>
 </md>
 Now notice that if we set <m>f'(x) = g(x)</m> then this becomes
 <md>
 <mrow>
-F'(x) &amp;= g(x) - \left( g(a) + g'(a)(x-a) + \frac{1}{2} g''(a)(x-a)^2 +
-\cdots + \frac{1}{(k-1)!}g^{(k-1)}(a)(x-a)^{k-1} \right)
+F'(x) &amp;= g(x) - \bigg( g(a) + g'(a)(x-a) + \frac{1}{2} g''(a)(x-a)^2 +
+\cdots 
+</mrow><mrow>\amp\hskip2.5in+ \frac{1}{(k-1)!}g^{(k-1)}(a)(x-a)^{k-1} \bigg)
 </mrow>
 </md>
 So <m>F'(x)</m> is then exactly the remainder formula but for a degree <m>k-1</m> approximation
@@ -2394,8 +2410,8 @@ degree <m>k-1</m> Taylor polynomial. The remainder formula, equation<nbsp/><xref
 then tells us that there is a number <m>c</m> between <m>a</m> and <m>q</m> so that
 <md>
 <mrow>
-  F'(q) &amp;= g(q) - \left( g(a) + g'(a)(q-a) + \frac{1}{2} g''(a)(q-a)^2 +
-\cdots + \frac{1}{(k-1)!}g^{(k-1)}(a)(q-a)^{k-1} \right)
+  F'(q) &amp;= g(q) - \bigg( g(a) + g'(a)(q-a) + \frac{1}{2} g''(a)(q-a)^2 + \cdots 
+ </mrow><mrow>\amp\hskip2.5in + \frac{1}{(k-1)!}g^{(k-1)}(a)(q-a)^{k-1} \bigg)
 </mrow><mrow>
   &amp;= \frac{1}{k!} g^{(k)}(c) (q-a)^k = \frac{1}{k!} f^{(k+1)}(c)(q-a)^k
 </mrow>

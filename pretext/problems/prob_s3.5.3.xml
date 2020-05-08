@@ -38,7 +38,7 @@ Note, however, that <m>1</m> is not in the interval <m>[-2,0]</m>.
 
 <p>The global maximum and the  global minimum for <m>f(x)</m> on the interval <m>[-2,0]</m> will occur at <m>x=-2</m>, <m>x=0</m>, or <m>x=-1</m>.</p>
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>c</m> </cell><cell> <m>-2</m> </cell><cell>  <m>0</m> </cell><cell>  <m>-1</m>  </cell>
 </row><row>
@@ -80,7 +80,7 @@ Note, however, that <m>-1</m> is not in the interval <m>[0,2]</m>.
 global minimum for <m>f(x)</m> on the interval <m>[0,2]</m> will occur at <m>x=2</m>, <m>x=0</m>, or <m>x=1</m>.</p>
 
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>c</m> </cell><cell> <m>2</m> </cell><cell>  <m>0</m> </cell><cell>  <m>1</m>  </cell>
 </row><row>
@@ -108,7 +108,7 @@ We compute <m>f'(x)=6x^2 - 12x = 6x(x-2)</m>, which means that <m>f(x)</m> has n
 Note, however, <m>0</m> is not in the interval <m>[1,4]</m>.</p>
 
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>c</m> </cell><cell> <m>1</m> </cell><cell>  <m>4</m> </cell><cell>  <m>2</m>  </cell>
 </row><row>
@@ -150,7 +150,7 @@ Notice as <m>x\to\infty</m>, <m>h(x)\to\infty</m>, and as <m>x\to-\infty</m> <m>
 </p>
 
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m> </cell><cell> <m>(-\infty,-2)</m> </cell><cell>  <m>(-2,2)</m> </cell><cell>  <m>(2,\infty)</m>  </cell>
 </row><row>
@@ -191,7 +191,7 @@ Notice as <m>x\to\infty</m>, <m>h(x)\to\infty</m>, and as <m>x\to-\infty</m> <m>
 </p>
 
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell><m>x</m> </cell><cell> <m>(-\infty,-2)</m> </cell><cell>  <m>(-2,2)</m> </cell><cell>  <m>(2,\infty)</m>  </cell>
 </row><row>
@@ -221,7 +221,7 @@ buggy can travel at an average speed of 15 km/hr through the desert and
 head to minimize your travel time from <m>P</m> to <m>B</m>?
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[gray, line width=5pt, opacity=0.5] (-.5,3) -- (4.5,3);
 \draw (0,3) node[vertex, label=above:$A$](A){};
@@ -241,7 +241,7 @@ head to minimize your travel time from <m>P</m> to <m>B</m>?
 Suppose that <m>Q</m> is a distance of <m>x</m> from <m>A</m>.
 Then it is a distance of <m>18-x</m> from <m>B</m>.</p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[gray, line width=5pt, opacity=0.5] (-.5,3) -- (4.5,3);
 \draw (0,3) node[vertex, label=above:$A$](A){};
@@ -316,12 +316,15 @@ of the box respectively.
  We are told that <m>\ell w h =4500</m> and that
 <m>\ell=3w</m>. Hence <m>h=\dfrac{4500}{\ell w}=\dfrac{4500}{3 w^2}=\dfrac{1500}{w^2}</m>.
 The surface area of the box is
-<me>
-A=2\ell w+2\ell h+2 wh=2\left(3w^2+3w\dfrac{1500}{w^2}+w\dfrac{1500}{w^2}\right)
-=2\left(3w^2+\dfrac{6000}{w}\right)=6\left(w^2+\dfrac{2000}{w}\right)
-</me></p>
+<md>
+<mrow>
+A\amp=2\ell w+2\ell h+2 wh=2\left(3w^2+3w\dfrac{1500}{w^2}+w\dfrac{1500}{w^2}\right)
+</mrow><mrow>
+\amp=2\left(3w^2+\dfrac{6000}{w}\right)=6\left(w^2+\dfrac{2000}{w}\right)
+</mrow>
+</md></p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (0,0) rectangle (2,3);
 \draw[fill=gray!15] (2,3)--(4,4)--(4,1)--(2,0)--cycle;
@@ -432,7 +435,7 @@ is required.
 </p></statement>
 <hint><p>The setup is this:</p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaxis{3}{3}
 \YExcoord{2.5}{X}
@@ -460,7 +463,7 @@ be the <m>x</m>-- and <m>y</m>--intercepts of the line tangent to the circle at
 </me>
 </p>
 
-<sidebyside>
+<sidebyside width="25%">
 <image source="problems/figs/minTriangle"/>
 </sidebyside>
 
@@ -478,7 +481,7 @@ so that one side of the rectangle lies along a diameter of the semicircle.
 Find the largest possible perimeter of such a rectangle, if it exists,
 or explain why it does not. Do the same for the smallest possible perimeter.</p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[thick] (3,0) arc (0:180:3cm) --cycle;
 \draw (2,0)--(2,2.24)-|(-2,0);
@@ -495,7 +498,7 @@ the smallest possible perimeter is <m>2R</m>.
 <solution><p>
 For ease of notation, we place the semicircle on a Cartesian plane with diameter along the <m>x</m>-axis and centre at the origin.</p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \YEaaxis{4}{4}{.5}{4}
 \draw[thick] (3,0) arc (0:180:3cm) --cycle;
@@ -533,7 +536,7 @@ Note that since our perimeter formula was defined to work only for <m>x</m> in <
 </p>
 
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell>
 <m>c</m> </cell><cell> <m>0</m> </cell><cell>  <m>R</m> </cell><cell>  <m>\frac{2}{\sqrt{5}}R</m>  </cell>
@@ -677,7 +680,7 @@ If the circle has radius <m>r</m>, and the entire window has perimeter <m>P</m>,
 <solution><p>
  Denote by <m>r</m> the radius of the semicircle, and let <m>h</m> be the height of the recangle.</p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw (3,0) arc  (0:180:3);
 \draw (3,0)--(3,-2)--(-3,-2)--(-3,0);
@@ -767,7 +770,7 @@ capacity.
       <m>x=y=\sqrt{ \dfrac{A}{3} }</m> and <m>z=\dfrac{1}{2}\sqrt{ \dfrac{A}{3} }</m>.)
 </p></answer>
 <solution>
-<sidebyside>
+<sidebyside width="45%">
 <image><latex-image><![CDATA[\begin{tikzpicture}
 \draw[fill=black, fill opacity=0.1] (0,0)--(3,0)--(3,1)--(0,1)--cycle;
 \draw[fill=black, fill opacity=0.2] (3,0)--(3,1)--(5,2)--(5,1)--cycle;
@@ -942,7 +945,7 @@ A'(\ell)&amp;=0
 </md></p>
 
 <sidebyside>
-<tabular>
+<tabular halign="center" bottom="minor" right="minor" left="minor" top="minor">
 <row>
 <cell> <m>\ell</m> </cell><cell> <m>0</m> </cell><cell>  <m>L</m> </cell><cell>  <m>\textcolor{white}{\dfrac{.^.}{.}}\frac{4L}{\pi+4}</m>  </cell>
 </row><row>

@@ -102,64 +102,66 @@ Find <m>y''</m> if <m>y=y^3+xy+x^3</m>.
 
 <p><alert>Solution</alert> This problem concerns some function <m>y(x)</m> that is not
 given to us explicitly. All that we are told is that <m>y(x)</m> satisfies
-<men xml:id="eq_hoDerivBa">
+<me>
 y(x)=y(x)^3+xy(x)+x^3
-</men>
+\tag{E1}
+</me>
 for all <m>x</m>. We are asked to find <m>y''(x)</m>. We cannot solve this
 equation to get an explicit formula for <m>y(x)</m>.  So we use implicit
 differentiation, as we did in Example <xref ref="eg_DIFFimpldiffD"/>. That is, we apply
-<m>\diff{}{x}</m> to both sides of <xref ref="eq_hoDerivBa"/>. This gives
-<men xml:id="eq_hoDerivBb">
+<m>\diff{}{x}</m> to both sides of (E1). This gives
+<me>
 y'(x)=3y(x)^2\,y'(x)+y(x)+x\,y'(x)+3x^2
-</men>
+\tag{E2}
+</me>
 which we can solve for <m>y'(x)</m>, by moving all <m>y'(x)</m>'s to the left hand
 side, giving
 <me>
  \big[1-x-3y(x)^2\big]y'(x) = y(x)+3x^2
 </me>
 and then dividing across.
-<men xml:id="eq_hoDerivBc">
+<me>
 y'(x) = \frac{y(x)+3x^2}{1-x-3y(x)^2}
-</men>
+\tag{E3}
+</me>
 To get <m>y''(x)</m>, we have two options.
 </p>
 
-<p><em>Method 1.</em>  Apply <m>\diff{}{x}</m> to both sides of
-<xref ref="eq_hoDerivBb"/>.
+<p><em>Method 1.</em>  Apply <m>\diff{}{x}</m> to both sides of (E2).
 This gives
 <me>
 y''(x)=3y(x)^2\,y''(x)+6y(x)\,y'(x)^2+2y'(x)+x\,y''(x)+6x
 </me>
 We can now solve for <m>y''(x)</m>, giving
-<men xml:id="eq_hoDerivBd">
+<me>
 y''(x) = \frac{6x+2y'(x)+6y(x)y'(x)^2}{1-x-3y(x)^2}
-</men>
-Then we can substitute in <xref ref="eq_hoDerivBc"/>, giving
+\tag{E4}
+</me>
+Then we can substitute in (E3), giving
 <md>
 <mrow>
-y''(x) &amp;= 2\frac{3x+ \frac{y(x)+3x^2}{1-x-3y(x)^2}
+\amp y''(x) = 2\frac{3x+ \frac{y(x)+3x^2}{1-x-3y(x)^2}
               +3y(x) \big(\frac{y(x)+3x^2}{1-x-3y(x)^2}\big)^2}
          {1-x-3y(x)^2}
 </mrow><mrow>
-&amp;= 2\frac{3x{[1-x-3y(x)^2]}^2+ [y(x)+3x^2][1-x-3y(x)^2]
-              +3y(x) {[y(x)+3x^2]}^2}{{[1-x-3y(x)^2]}^3}
+&amp;= 2\frac{3x{[1\!-\!x\!-\!3y(x)^2]}^2+ [y(x)\!+\!3x^2][1\!-\!x\!-\!3y(x)^2]
+              +3y(x) {[y(x)\!+\!3x^2]}^2}{{[1-x-3y(x)^2]}^3}
 </mrow>
 </md>
 </p>
 
-<p><em>Method 2.</em>  Alternatively, we can also differentiate
-<xref ref="eq_hoDerivBc"/>.
+<p><em>Method 2.</em>  Alternatively, we can also differentiate (E3).
 <md>
 <mrow>
-y''(x) &amp;= \frac{[y'(x)+6x][1-x-3y(x)^2]-
+\amp y''(x) = \frac{[y'(x)+6x][1\!-\!x\!-\!3y(x)^2]-
            [y(x)+3x^2][-1-6y(x)y'(x)]}{{[1-x-3y(x)^2]}^2}
-</mrow><mrow>[0.05in]
-&amp;= \frac{[\frac{y(x)+3x^2}{1-x-3y(x)^2}+6x][1-x-3y(x)^2]-
+</mrow><mrow>
+&amp;= \frac{\big[\frac{y(x)+3x^2}{1-x-3y(x)^2}+6x\big][1-x-3y(x)^2]-
            [y(x)+3x^2][-1-6y(x)\frac{y(x)+3x^2}{1-x-3y(x)^2}]}
                                        {{[1-x-3y(x)^2]}^2}
-</mrow><mrow>[0.05in]
-&amp;= \frac{2[y(x)+3x^2][1-x-3y(x)^2]+6x{[1-x-3y(x)^2]}^2
-           +6y(x){[y(x)+3x^2]}^2}
+</mrow><mrow>
+&amp;= \frac{2[y(x)+3x^2][1\!-\!x\!-\!3y(x)^2]+6x{[1\!-\!x\!-\!3y(x)^2]}^2
+           +6y(x){[y(x)\!+\!3x^2]}^2}
                                        {{[1-x-3y(x)^2]}^3}
 </mrow>
 </md>
@@ -176,12 +178,12 @@ in general.
 possible to solve equations like this for some special values of <m>x</m>.
 In fact, we saw in Example <xref ref="eg_DIFFimpldiffD"/> that when <m>x=1</m>,
 the given equation reduces to <m>y(1)=y(1)^3+1\cdot y(1)+1^3</m>, or <m>y(1)^3=-1</m>,
-which we can solve to get <m>y(1)=-1</m>. Substituting into <xref ref="eq_hoDerivBb"/>,
+which we can solve to get <m>y(1)=-1</m>. Substituting into (E2),
 as we did in  Example <xref ref="eg_DIFFimpldiffD"/> gives
 <me>
 y'(1) = \frac{-1+3}{1-1-3(-1)^2} = -\frac{2}{3}
 </me>
-and substituting into <xref ref="eq_hoDerivBd"/> gives
+and substituting into (E4) gives
 <me>
 y''(1) = \frac{6+2\big(-\frac{2}{3}\big)+6(-1)\big(-\frac{2}{3}\big)^2}
                              {1-1-3(-1)^2}
@@ -196,7 +198,7 @@ there and, furthermore, the slope of the graph decreases as <m>x</m>
 increases through <m>x=1</m>.
 </p>
 
-<sidebyside width="50%">
+<sidebyside width="33%">
  <image source="text/figs/concaveDown"/>
  </sidebyside>
 

@@ -122,19 +122,30 @@ Velocity is distance over time.
 </p></answer>
 <solution><p>
 <ol label="a">
-<li> Average velocity: <m>\dfrac{\mbox{change in position}}{\mbox{change in time}} = \dfrac{s(5)-s(3)}{5-3} = \dfrac{(3\cdot 5^2+5)-(3\cdot 3^2+5)}{5-3}=24</m> units per second.
+<li> Average velocity: 
+<md>
+<mrow>
+\dfrac{\mbox{change in position}}{\mbox{change in time}} 
+\amp= \dfrac{s(5)-s(3)}{5-3} = \dfrac{(3\cdot 5^2+5)-(3\cdot 3^2+5)}{5-3}
+</mrow><mrow>
+\amp=24 \text{ units per second}.
+</mrow>
+</md>
 </li>
 <li> From the notes, we know the velocity of an object at time <m>a</m> is
 <me>
 v(a)=\lim_{h \rightarrow 0}\frac{s(a+h)-s(a)}{h}
 </me>
 So, in our case:
-<me>
-  v(1)=\lim_{h \rightarrow 0}\frac{s(1+h)-s(1)}{h} =
-\lim_{h \rightarrow 0}\frac{[3(1+h)^2+5]-[3(1)^2+5]}{h} =
-\lim_{h \rightarrow 0}\frac{6h+3h^2}{h}=
-\lim_{h \rightarrow 0}6+3h = 6
-</me>
+<md>
+<mrow>
+  v(1)\amp=\lim_{h \rightarrow 0}\frac{s(1+h)-s(1)}{h} 
+=\lim_{h \rightarrow 0}\frac{[3(1+h)^2+5]-[3(1)^2+5]}{h} 
+</mrow><mrow>
+\amp=\lim_{h \rightarrow 0}\frac{6h+3h^2}{h}
+=\lim_{h \rightarrow 0}6+3h = 6
+</mrow>
+</md>
 So the velocity when <m>t=1</m> is 6 units per second.
 </li>
 </ol>
@@ -172,7 +183,14 @@ Remark: the average velocity is <em>not</em> the average of the two instantaneou
 </p></answer>
 <solution><p>
 <ol label="a">
-<li> Average velocity: <m>\dfrac{\mbox{change in position}}{\mbox{change in time}} = \dfrac{s(9)-s(1)}{9-1} = \dfrac{3-1}{9-1}=\dfrac{1}{4}</m> units per second.
+<li> Average velocity: 
+<md>
+<mrow>
+\dfrac{\text{change in position}}{\text{change in time}} 
+\amp= \dfrac{s(9)-s(1)}{9-1} = \dfrac{3-1}{9-1}
+</mrow><mrow>
+\amp=\dfrac{1}{4}\text{ units per second}.
+</mrow></md>
 </li>
 <li> From the notes, we know the velocity of an object at time <m>a</m> is
 <me>
@@ -181,8 +199,8 @@ Remark: the average velocity is <em>not</em> the average of the two instantaneou
 So, in our case:
 <md>
 <mrow>
-v(1)=\lim_{h \rightarrow 0}\frac{s(1+h)-s(1)}{h}
-&amp;=\lim_{h \rightarrow 0}\frac{\sqrt{1+h}-1}{h}
+v(1)\amp=\lim_{h \rightarrow 0}\frac{s(1+h)-s(1)}{h}
+=\lim_{h \rightarrow 0}\frac{\sqrt{1+h}-1}{h}
 </mrow><mrow>
 &amp;=\lim_{h \rightarrow 0}\frac{\sqrt{1+h}-1}{h}\cdot \left( \dfrac{\sqrt{1+h}+1}{\sqrt{1+h}+1}\right)
 </mrow><mrow>
@@ -194,8 +212,8 @@ v(1)=\lim_{h \rightarrow 0}\frac{s(1+h)-s(1)}{h}
 </li>
 <li> <md>
 <mrow>
-v(9)=\lim_{h \rightarrow 0}\frac{s(9+h)-s(9)}{h}
-&amp;=\lim_{h \rightarrow 0}\frac{\sqrt{9+h}-3}{h}
+v(9)\amp=\lim_{h \rightarrow 0}\frac{s(9+h)-s(9)}{h}
+=\lim_{h \rightarrow 0}\frac{\sqrt{9+h}-3}{h}
 </mrow><mrow>
 &amp;=\lim_{h \rightarrow 0}\frac{\sqrt{9+h}-3}{h}\cdot \left( \dfrac{\sqrt{9+h}+3}{\sqrt{9+h}+3}\right)
 </mrow><mrow>

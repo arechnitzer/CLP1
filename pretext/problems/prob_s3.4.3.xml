@@ -98,8 +98,13 @@ f(x) &amp;\approx f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2
 </mrow><mrow>
 &amp;=0+(x-1)-\frac{1}{2}(x-1)^2
 </mrow>
-<intertext>When <m>x=0.93</m>:</intertext><mrow>
-f(0.93) &amp;\approx (0.93-1)-\frac{1}{2}(0.93-1)^2=-0.07-\frac{1}{2}(0.0049)=-0.07245
+</md>
+When <m>x=0.93</m>:
+<md>
+<mrow>
+f(0.93) &amp;\approx (0.93-1)-\frac{1}{2}(0.93-1)^2=-0.07-\frac{1}{2}(0.0049)
+</mrow><mrow>
+\amp=-0.07245
 </mrow>
 </md>
 </p>
@@ -210,7 +215,8 @@ There are a few functions we could choose to approximate. For example:
 </li>
 </ul>
 There isn't much difference between the first and third bullets. We'll go with <m>f(x)=5\sqrt[3]{x}</m>, centred about <m>x=8</m>.
-<md>
+<md  alignment="alignat">
+&amp;\qquad>
 <mrow>
 f(x)&amp;=5x^{\frac{1}{3}}&amp;&amp;\Rightarrow&amp;
 f(8)&amp;=5\cdot 2 = 10
@@ -218,7 +224,7 @@ f(8)&amp;=5\cdot 2 = 10
 f'(x)&amp;=\frac{5}{3}x^{-\frac{2}{3}}&amp;&amp;\Rightarrow&amp;
 f'(8)&amp;=\frac{5}{3}\left(2^{-2}\right)=\frac{5}{12}
 </mrow><mrow>
-f''(x)&amp;=\frac{5}{3}\left(-\frac{2}{3}\right)x^{-\frac{5}{3}}=-\frac{10}{9}x^{-\frac{5}{3}}&amp;&amp;\Rightarrow&amp;
+f''(x)&amp;=\frac{5}{3}\left(-\frac{2}{3}\right)x^{-\frac{5}{3}}=-\frac{10}{9}x^{-\frac{5}{3}}\quad&amp;&amp;\Rightarrow\ &amp;
 f''(8)&amp;=-\frac{10}{9}\left(2^{-5}\right)=-\frac{5}{144}
 </mrow>
 <intertext>Using the quadratic approximation <m>f(x) \approx f(a)+f'(a)(x-a)+\frac{1}{2}f''(a)(x-a)^2</m>:</intertext><mrow>
@@ -275,12 +281,14 @@ For every value of <m>n</m>, the term being added is simply the constant <m>1</m
 <li><p>[<xref ref="s4_3_4sigma2"/>]
 <md>
 <mrow>
-\sum_{n=1}^3\left[2(n+3)-n^2\right]&amp;=
+\amp\sum_{n=1}^3\left[2(n+3)-n^2\right]
+</mrow><mrow>
+&amp;\hskip0.5in=
 \underbrace{2(1+3)-1^2}_{n=1}+
 \underbrace{2(2+3)-2^2}_{n=2}+
 \underbrace{2(3+3)-3^2}_{n=3}
 </mrow><mrow>
-&amp;=8-1+10-4+12-9=16
+&amp;\hskip0.5in=8-1+10-4+12-9=16
 </mrow>
 </md>
 </p>
@@ -291,15 +299,19 @@ For every value of <m>n</m>, the term being added is simply the constant <m>1</m
 \ds\sum_{n=1}^{10} \left[\frac{1}{n}-\frac{1}{n+1}\right]&amp;=
 \underbrace{\frac{1}{1}-\frac{1}{1+1}}_{n=1}+
 \underbrace{\frac{1}{2}-\frac{1}{2+1}}_{n=2}+
-\underbrace{\frac{1}{3}-\frac{1}{3+1}}_{n=3}+
+\underbrace{\frac{1}{3}-\frac{1}{3+1}}_{n=3}
+</mrow><mrow>
+\amp+
 \underbrace{\frac{1}{4}-\frac{1}{4+1}}_{n=4}+
-\underbrace{\frac{1}{5}-\frac{1}{5+1}}_{n=5}
+\underbrace{\frac{1}{5}-\frac{1}{5+1}}_{n=5}+
+\underbrace{\frac{1}{6}-\frac{1}{6+1}}_{n=6}
 </mrow><mrow>
 &amp;+
-\underbrace{\frac{1}{6}-\frac{1}{6+1}}_{n=6}+
 \underbrace{\frac{1}{7}-\frac{1}{7+1}}_{n=7}+
 \underbrace{\frac{1}{8}-\frac{1}{8+1}}_{n=8}+
-\underbrace{\frac{1}{9}-\frac{1}{9+1}}_{n=9}+
+\underbrace{\frac{1}{9}-\frac{1}{9+1}}_{n=9}
+</mrow><mrow>
+&amp;+
 \underbrace{\frac{1}{10}-\frac{1}{10+1}}_{n=10}
 </mrow>
 <intertext>Most of these cancel!</intertext><mrow>
@@ -437,7 +449,8 @@ f'(0)&amp;=\frac{2}{1}=2
 </mrow><mrow>
 f''(x)&amp;=\diff{}{x}\left\{2(1-x^2)^{-\tfrac{1}{2}}\right\}
 </mrow><mrow>
-&amp;=2\left(-\tfrac{1}{2}\right)(1-x^2)^{-\tfrac{3}{2}}(-2x) \qquad\mbox{(chain rule)}
+&amp;=2\left(-\tfrac{1}{2}\right)(1-x^2)^{-\tfrac{3}{2}}(-2x) 
+\amp\amp\amp\amp\mbox{(chain rule)}
 </mrow><mrow>
 &amp;=\frac{2x}{\left(\sqrt{1-x^2}\right)^3}&amp;&amp;\Rightarrow&amp;
 f''(0)&amp;=0
@@ -505,18 +518,24 @@ Group the expressions below into collections of equivalent expressions.
 <hint><p>
 Be wary of indices: for example <m>\ds\sum_{n=1}^3 n = \ds\sum_{n=5}^7 (n-4)</m>.
 </p></hint>
-<answer><p> [<xref ref="s3_4_3equiv1"/>=<xref ref="s3_4_3equiv2"/>=
-<xref ref="s3_4_3equiv3"/>], and
-[<xref ref="s3_4_3equiv5"/>=<xref ref="s3_4_3equiv6"/>], and
-[<xref ref="s3_4_3equiv7"/>=<xref ref="s3_4_3equiv10"/>]
+<answer><p> 
+<ul>
+<li>[<xref ref="s3_4_3equiv1"/>=<xref ref="s3_4_3equiv2"/>=
+<xref ref="s3_4_3equiv3"/>], and </li>
+<li>[<xref ref="s3_4_3equiv5"/>=<xref ref="s3_4_3equiv6"/>], and </li>
+<li>[<xref ref="s3_4_3equiv7"/>=<xref ref="s3_4_3equiv10"/>]</li>
+</ul>
 </p></answer>
 <solution><p>
 <ul>
 <li><p> First, we'll show that <xref ref="s3_4_3equiv1"/>,<xref ref="s3_4_3equiv2"/>, <xref ref="s3_4_3equiv3"/> are equivalent:
 <md>
 <mrow>
-<xref ref="s3_4_3equiv2"/>&amp;=2\sum_{n=1}^{10} n = 2(1+2+\cdots+10)=
-2(1)+2(2)+\cdots +2(10)=\sum_{n=1}^{10} 2n = <xref ref="s3_4_3equiv1"/>
+<xref ref="s3_4_3equiv2"/>&amp;=2\sum_{n=1}^{10} n = 2(1+2+\cdots+10)
+</mrow><mrow>
+\amp=2(1)+2(2)+\cdots +2(10)=\sum_{n=1}^{10} 2n 
+</mrow><mrow>
+\amp= <xref ref="s3_4_3equiv1"/>
 </mrow>
 <intertext>So <xref ref="s3_4_3equiv1"/> and <xref ref="s3_4_3equiv2"/> are equivalent.</intertext>
 <mrow>
@@ -531,9 +550,11 @@ So <xref ref="s3_4_3equiv3"/> and <xref ref="s3_4_3equiv2"/> are equivalent.
 <mrow>
 <xref ref="s3_4_3equiv6"/>&amp;=\dfrac{1}{4}\ds\sum_{n=1}^{10}\left( \frac{4^{n+1}}{2^n}\right)
 =\frac{1}{4}\sum_{n=1}^{10}\left(\frac{4\cdot4^n}{2^n}\right)
-=\frac{4}{4}\sum_{n=1}^{10}\left(\frac{4^n}{2^n}\right)
+</mrow><mrow>
+\amp=\frac{4}{4}\sum_{n=1}^{10}\left(\frac{4^n}{2^n}\right)
 =\sum_{n=1}^{10}\left(\frac{4}{2}\right)^n
-=\sum_{n=1}^{10} 2^n=<xref ref="s3_4_3equiv5"/>&amp;
+</mrow><mrow>
+\amp=\sum_{n=1}^{10} 2^n=<xref ref="s3_4_3equiv5"/>&amp;
 </mrow>
 </md>
 </p></li>
@@ -541,9 +562,11 @@ So <xref ref="s3_4_3equiv3"/> and <xref ref="s3_4_3equiv2"/> are equivalent.
 Third, we'll show that <xref ref="s3_4_3equiv7"/> and <xref ref="s3_4_3equiv10"/> are equivalent.
 <md>
 <mrow>
-<xref ref="s3_4_3equiv10"/>  =\ds\sum_{n=5}^{14} (n-4)^2
+<xref ref="s3_4_3equiv10"/>  \amp=\ds\sum_{n=5}^{14} (n-4)^2
 =1^2+2^2+\cdots + 10^2
-  =\ds\sum_{n=1}^{10} n^2=<xref ref="s3_4_3equiv7"/>
+  =\ds\sum_{n=1}^{10} n^2
+</mrow><mrow>
+\amp=<xref ref="s3_4_3equiv7"/>
 </mrow>
 </md>
 </p>
@@ -568,11 +591,14 @@ The expressions in the blue group add to less than 200, but the expressions in t
 </li>
 </ul>
 We group our expressions in to collections of equivalent expressions as follows:
-[<xref ref="s3_4_3equiv1"/>=<xref ref="s3_4_3equiv2"/>=<xref ref="s3_4_3equiv3"/>]
-and
-[<xref ref="s3_4_3equiv5"/>=<xref ref="s3_4_3equiv6"/>],
-and
-[<xref ref="s3_4_3equiv7"/>=<xref ref="s3_4_3equiv10"/>].
+<ul>
+<li>[<xref ref="s3_4_3equiv1"/>=<xref ref="s3_4_3equiv2"/>=<xref ref="s3_4_3equiv3"/>]
+and </li>
+<li>[<xref ref="s3_4_3equiv5"/>=<xref ref="s3_4_3equiv6"/>],
+and </li>
+<li>[<xref ref="s3_4_3equiv7"/>=<xref ref="s3_4_3equiv10"/>].
+</li>
+</ul>
 </p></solution>
 </exercise></exercisegroup>
 

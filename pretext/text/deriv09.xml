@@ -36,7 +36,7 @@ Let your position at time <m>t</m> be <m>x(t)</m>. The temperature of the air
 at position <m>x</m> is <m>f(x)</m>. What instantaneous rate of change of
 temperature do you feel at time<nbsp/><m>t</m>?</p>
 
-<sidebyside width="66%">
+<sidebyside width="50%">
 <image source="text/figs/campfire2"/>
 </sidebyside>
 
@@ -427,7 +427,7 @@ So as <m>h\to 0</m> we also have <m>H \to 0</m>.
   &amp;= \lim_{h \to 0}
     \underbrace{\frac{f\big(b + H\big)-f(b)}{H}}_{= \varphi(H) } \cdot
     \underbrace{\frac{H}{h}}_{ = \gamma(h)}
-&amp; \text{remember that } H= h \gamma(h)
+&amp; \text{if } H= h \gamma(h) \ne 0
 </mrow><mrow>
   &amp;= \lim_{h \to 0}\big( \varphi(H) \cdot \gamma(h) \big)
 </mrow><mrow>
@@ -437,7 +437,31 @@ So as <m>h\to 0</m> we also have <m>H \to 0</m>.
   &amp;= f'(b) \cdot g'(a)
 </mrow>
 </md>
-This is exactly the RHS of the product rule.
+This is exactly the RHS of the chain rule. It is possible to have <m>H=0</m> 
+in the second line above. But that possibility is easy to deal with:
+<ul>
+<li>
+If <m>g'(a)\ne 0</m>, then, since <m>\lim_{h \to 0} \gamma(h) = g'(a)</m>, 
+<m>H= h \gamma(h)</m> cannot be <m>0</m> for small nonzero <m>h</m>. 
+Technically, there is an <m>h_0\gt 0</m> such that <m>H= h \gamma(h)\ne 0</m> for all <m>0 \lt |h| \lt h_0</m>. In taking the limit <m>h\to 0</m>, above, we 
+need only consider <m>0 \lt |h| \lt h_0</m> and so, in this case, 
+the above computation is completely correct. 
+</li><li>
+If <m>g'(a)=0</m>, the above computation is still fine provided we exclude all 
+<m>h</m>'s for which <m>H= h \gamma(h)\ne 0</m>. When <m>g'(a)=0</m>, the right hand side, <m>f'\big(g(a)\big) \cdot g'(a)</m>, of the chain rule is <m>0</m>. 
+So the above computation gives  
+<me>
+\lim_{\genfrac{}{}{0pt}{}{h \to 0}{\gamma(h)\ne 0}} \frac{f\big(b + H\big)-f(b)}{h}
+=f'\big(g(a)\big) \cdot g'(a) = 0
+</me>
+On the other hand, when <m>H=0</m>, we have <m>f\big(b + H\big)-f(b)=0</m>. So
+<me>
+\lim_{\genfrac{}{}{0pt}{}{h \to 0}{\gamma(h) = 0}} \frac{f\big(b + H\big)-f(b)}{h}
+=0
+</me>
+too. That's all we need.
+</li>
+</ul>
 </p>
 </subsection>
 
@@ -602,8 +626,8 @@ we can use the product rule to recover the quotient rule.
 Once we know this, a quick application of the product rule will give us the quotient rule.
 <md>
 <mrow>
-\diff{}{x} \left\{ \frac{f(x)}{g(x)} \right\}
-&amp;= \diff{}{x} \left\{ f(x) \cdot \frac{1}{g(x)}  \right\} &amp; \text{use PR}
+\amp\diff{}{x} \left\{ \frac{f(x)}{g(x)} \right\}
+= \diff{}{x} \left\{ f(x) \cdot \frac{1}{g(x)}  \right\} &amp; \text{use PR}
 </mrow><mrow>
 &amp;= f'(x)\cdot \frac{1}{g(x)}  + f(x) \cdot \diff{}{x} \left\{\frac{1}{g(x)}\right\} &amp;
 \text{use the result from above}
@@ -702,8 +726,9 @@ is the same as multiplying <m>{(4+x^2)}^{-3}</m> by <m>-\frac{6x}{4+x^2}</m>.
 Using these sneaky tricks we can write our solution quite neatly:
 <md>
 <mrow>
-\diff{}{x}\cos\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)
-=-\sin\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)\
+\amp\diff{}{x}\cos\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)
+</mrow><mrow>
+\amp=-\sin\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)\
 \frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\
 \bigg\{\frac{5}{x}+\frac{3x^5}{3+x^6}-\frac{6x}{4+x^2}\bigg\}
 </mrow>

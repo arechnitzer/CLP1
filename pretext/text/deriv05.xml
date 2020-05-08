@@ -85,13 +85,13 @@ G(h) &amp;= \frac{g(x+h)-g(x)}{h}.
 So back to that numerator:
 <md>
 <mrow>
-P(x+h)-P(x)
-&amp;=f(x+h)\cdot g(x+h)-f(x) \cdot g(x) &amp; \text{substitute}
+\amp P(x+h)-P(x)
+=f(x+h)\cdot g(x+h)-f(x) \cdot g(x) &amp; \text{substitute}
 </mrow><mrow>
 &amp;=[f(x)+ hF(h)]\ [g(x)+hG(h)]-f(x) \cdot g(x) &amp; \text{expand}
 </mrow><mrow>
 &amp;=f(x)g(x) + f(x)\cdot hG(h) + hF(h)\cdot g(x) + h^2 F(h)\cdot G(h) -f(x) \cdot
-g(x)
+g(x)\hskip-0.5in
 </mrow><mrow>
 &amp;= f(x) \cdot hG(h) + hF(h) \cdot g(x) + h^2F(h) \cdot G(h).
 </mrow>
@@ -135,10 +135,10 @@ This one is relatively messy, so we have made it optional. Let us start by writi
 <md>
 <mrow>
 Q'(x)
-&amp;=\lim_{h\to 0}\frac{Q(x+h)-Q(x)}{h} &amp;&amp; \text{(now substitute in $Q$)}
+&amp;=\lim_{h\to 0}\frac{Q(x+h)-Q(x)}{h} \qquad\qquad \text{(now substitute in $Q$)}
 </mrow><mrow>
 &amp; =\lim_{h\to 0}\frac{1}{h}
-           \left[\frac{f(x+h)}{g(x+h)}-\frac{f(x)}{g(x)}\right] &amp;&amp;
+           \left[\frac{f(x+h)}{g(x+h)}-\frac{f(x)}{g(x)}\right] \qquad
 \text{(and then form a common denominator)}
 </mrow><mrow>
 &amp;=\lim_{h\to 0}
@@ -149,12 +149,12 @@ Q'(x)
 We make use of the same <m>F, G</m> that we used in the proof of the product rule. We use  them to rewrite <m>f(x+h)</m> as <m>f(x) + hF(h)</m> and <m>g(x+h)</m> as <m>g(x+h)=g(x)+hG(h)</m>.  First  concentrate on the numerator of the above expression:
 <md>
 <mrow>
-f(x+h)\cdot g(x) - f(x)\cdot g(x+h)
-&amp;=[f(x)+hF(h)]\cdot g(x) - f(x)\cdot [g(x)+hG(h)]
+\amp f(x+h)\cdot g(x) - f(x)\cdot g(x+h)
+=[f(x)+hF(h)]\cdot g(x) - f(x)\cdot [g(x)+hG(h)]
 </mrow><mrow>
-&amp;=f(x)\cdot g(x) + h g(x) \cdot F(h)  -f(x)\cdot g(x) - h f(x) \cdot G(h)
+&amp;\hskip0.5in=f(x)\cdot g(x) + h g(x) \cdot F(h)  -f(x)\cdot g(x) - h f(x) \cdot G(h)
 </mrow><mrow>
-&amp;= h g(x) \cdot F(h)  - h f(x) \cdot G(h)
+&amp;\hskip0.5in= h g(x) \cdot F(h)  - h f(x) \cdot G(h)
 </mrow>
 </md>
 So dividing this by the denominator, and cancelling the common factor  of <m>h</m>, gives
