@@ -206,7 +206,7 @@ Let <m>f(x) = \frac{x-2}{x^2+x-6}</m> and consider its limit as <m>x \to 2</m>.
 	So it is reasonable to suppose that
 	<md>
 	<mrow>
-	 \lim_{x=2} \frac{x-2}{x^2+x-6} &amp;= 0.2
+	 \lim_{x \to 2} \frac{x-2}{x^2+x-6} &amp;= 0.2
 	</mrow>
 	</md>
 </li>
