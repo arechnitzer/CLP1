@@ -698,30 +698,30 @@ Remark: this is called the sum rule, and we'll learn more about it in Lemma~\ref
 \begin{hint} Set up your usual limit, then split it into two pieces
 \end{hint}
 \begin{answer}\begin{align*}
-p'(x) &= \lim_{x \rightarrow 0} \frac{p(x+h)-p(x)}{h}\\
-&= \lim_{x \rightarrow 0} \frac{f(x+h)+g(x+h)-f(x)-g(x)}{h}\\
-&= \lim_{x \rightarrow 0} \frac{f(x+h)-f(x)+g(x+h)-g(x)}{h}\\
-&= \lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}+
-\frac{g(x+h)-g(x)}{h}\\
-(*)&= \left[\lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}\right]+ \left[\lim_{x \rightarrow 0}
+p'(x) &= \lim_{h \rightarrow 0} \frac{p(x+h)-p(x)}{h}\\
+&= \lim_{h \rightarrow 0} \frac{f(x+h)+g(x+h)-f(x)-g(x)}{h}\\
+&= \lim_{h \rightarrow 0} \frac{f(x+h)-f(x)+g(x+h)-g(x)}{h}\\
+&= \lim_{h \rightarrow 0} \left[\frac{f(x+h)-f(x)}{h}+
+\frac{g(x+h)-g(x)}{h}\right]\\
+(*)&= \left[\lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h}\right]+ \left[\lim_{h \rightarrow 0}
 \frac{g(x+h)-g(x)}{h}\right]\\
 &= f'(x)+g'(x)
 \end{align*}
-At step ($*$), we use the limit law that $\displaystyle\lim_{x \rightarrow a} F(x)+G(x) = \displaystyle\lim_{x \rightarrow a} F(x)+\displaystyle\lim_{x \rightarrow a}G(x)$, as long as  $\displaystyle\lim_{x \rightarrow a} F(x)$ and $\displaystyle\lim_{x \rightarrow a}G(x)$ exist. Because the problem states that $f'(x)$ and $g'(x)$ exist, we know that $\displaystyle\lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}$ and $\displaystyle\lim_{x \rightarrow 0}
+At step ($*$), we use the limit law that $\displaystyle\lim_{x \rightarrow a} \left[F(x)+G(x)\right] = \displaystyle\lim_{x \rightarrow a} F(x)+\displaystyle\lim_{x \rightarrow a}G(x)$, as long as  $\displaystyle\lim_{x \rightarrow a} F(x)$ and $\displaystyle\lim_{x \rightarrow a}G(x)$ exist. Because the problem states that $f'(x)$ and $g'(x)$ exist, we know that $\displaystyle\lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h}$ and $\displaystyle\lim_{h \rightarrow 0}
 \frac{g(x+h)-g(x)}{h}$ exist, so our work is valid.
 \end{answer}
 \begin{solution}
 \begin{align*}
-p'(x) &= \lim_{x \rightarrow 0} \frac{p(x+h)-p(x)}{h}\\
-&= \lim_{x \rightarrow 0} \frac{f(x+h)+g(x+h)-f(x)-g(x)}{h}\\
-&= \lim_{x \rightarrow 0} \frac{f(x+h)-f(x)+g(x+h)-g(x)}{h}\\
-&= \lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}+
-\frac{g(x+h)-g(x)}{h}\\
-(*)&= \left[\lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}\right]+ \left[\lim_{x \rightarrow 0}
+p'(x) &= \lim_{h \rightarrow 0} \frac{p(x+h)-p(x)}{h}\\
+&= \lim_{h \rightarrow 0} \frac{f(x+h)+g(x+h)-f(x)-g(x)}{h}\\
+&= \lim_{h \rightarrow 0} \frac{f(x+h)-f(x)+g(x+h)-g(x)}{h}\\
+&= \lim_{h \rightarrow 0}\left[ \frac{f(x+h)-f(x)}{h}+
+\frac{g(x+h)-g(x)}{h}\right]\\
+(*)&= \left[\lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h}\right]+ \left[\lim_{h \rightarrow 0}
 \frac{g(x+h)-g(x)}{h}\right]\\
 &= f'(x)+g'(x)
 \end{align*}
-At step ($*$), we use the limit law that $\displaystyle\lim_{x \rightarrow a} F(x)+G(x) = \displaystyle\lim_{x \rightarrow a} F(x)+\displaystyle\lim_{x \rightarrow a}G(x)$, as long as  $\displaystyle\lim_{x \rightarrow a} F(x)$ and $\displaystyle\lim_{x \rightarrow a}G(x)$ exist. Because the problem states that $f'(x)$ and $g'(x)$ exist, we know that $\displaystyle\lim_{x \rightarrow 0} \frac{f(x+h)-f(x)}{h}$ and $\displaystyle\lim_{x \rightarrow 0}
+At step ($*$), we use the limit law that $\displaystyle\lim_{x \rightarrow a} \left[F(x)+G(x)\right] = \displaystyle\lim_{x \rightarrow a} F(x)+\displaystyle\lim_{x \rightarrow a}G(x)$, as long as  $\displaystyle\lim_{x \rightarrow a} F(x)$ and $\displaystyle\lim_{x \rightarrow a}G(x)$ exist. Because the problem states that $f'(x)$ and $g'(x)$ exist, we know that $\displaystyle\lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h}$ and $\displaystyle\lim_{h \rightarrow 0}
 \frac{g(x+h)-g(x)}{h}$ exist, so our work is valid.
 \end{solution}
 

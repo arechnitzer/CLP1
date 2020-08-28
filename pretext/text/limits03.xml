@@ -206,7 +206,7 @@ Let <m>f(x) = \frac{x-2}{x^2+x-6}</m> and consider its limit as <m>x \to 2</m>.
 	So it is reasonable to suppose that
 	<md>
 	<mrow>
-	 \lim_{x=2} \frac{x-2}{x^2+x-6} &amp;= 0.2
+	 \lim_{x \to 2} \frac{x-2}{x^2+x-6} &amp;= 0.2
 	</mrow>
 	</md>
 </li>
@@ -391,16 +391,11 @@ That is <mdash/> the limit of <m>f(x)</m> as <m>x</m> approaches <m>a</m> will o
 </p>
 
 <p>
-We can rephrase the above by writing the contrapositive
+We can rephrase the above by writing the contrapositives
 	<fn xml:id="footnote_contrapositive">
-    <p>
-		Given a statement of the form <q>If A then B</q> the contrapositive is <q>If not B then  not A</q>. They are logically equivalent <mdash/> if one is true then so is the  other. We must take care not to confuse the contrapositive with the converse.  Given <q>If A then B</q> then converse is <q>If B then A</q>. These are definitely not the same.
-  </p>
-    <p>
-		To see this consider the statement <q>If he is Shakespeare then he is dead.</q>  The converse is <q>If he is dead then he is Shakespeare</q> <mdash/> clearly garbage  since there are plenty of dead people who are not Shakespeare. The  contrapositive is <q>If he is not dead then he is not Shakespeare</q> <mdash/> which makes much more sense.
-  </p>
+		Given a statement of the form <q>If A then B</q>, the contrapositive is <q>If not B then  not A</q>. They are logically equivalent <mdash/> if one is true then so is the  other. We must take care not to confuse the contrapositive with the converse.  Given <q>If A then B</q>, the converse is <q>If B then A</q>. These are definitely not the same. To see this consider the statement <q>If he is Shakespeare then he is dead.</q>  The converse is <q>If he is dead then he is Shakespeare</q> <mdash/> clearly garbage  since there are plenty of dead people who are not Shakespeare. The  contrapositive is <q>If he is not dead then he is not Shakespeare</q> <mdash/> which makes much more sense.
 	</fn>
-of the statements
+of the above statements.
 <ul>
 <li>
 	If either of the left-hand and right-hand limits as <m>x</m> approaches <m>a</m>  fail to exist, or if they both exist but are different, then the limit as <m>x</m> approaches <m>a</m> does not exist. AND,

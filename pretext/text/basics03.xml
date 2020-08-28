@@ -27,7 +27,7 @@ When a set does not contain too many elements it is fine to specify it by listin
   S &amp;= \{x \st x = k^2 \mbox{ where } k \in \mathbb{Z} \}
 </mrow>
 </md>
-Notice we have used another piece of short-hand here, namely <m>\st</m>, which stands for <q>such that</q> or <q>so that</q>. We read the above statement as <q><m>S</m> is the set of elements <m>x</m> such that <m>x</m> equals <m>k</m>-squared where <m>k</m> is an integer</q>. This is the standard way of writing a set defined by a rule, though there are  several shorthands for <q>such that</q>. We shall use two them:
+Notice we have used another piece of shorthand here, namely <m>\st</m>, which stands for <q>such that</q> or <q>so that</q>. We read the above statement as <q><m>S</m> is the set of elements <m>x</m> such that <m>x</m> equals <m>k</m>-squared where <m>k</m> is an integer</q>. This is the standard way of writing a set defined by a rule, though there are  several shorthands for <q>such that</q>. We shall use two them:
 <md>
 <mrow>
   P &amp;= \{ p \st p \mbox{ is prime} \} = \{ p \,|\, p \mbox{ is prime} \}
@@ -36,9 +36,6 @@ Notice we have used another piece of short-hand here, namely <m>\st</m>, which s
 Other people also use <q>:</q> is shorthand for <q>such that</q>. You should recognise all  three of these shorthands.
 </p>
 
-<p>
-In this text we will use <q><m>|</m></q> or <q><m>\st</m></q> (being the preference of the authors), but some other texts use <q>:</q>. You should recognise all of these.
-</p>
 
 <example><title>examples of sets</title>
 <p>
