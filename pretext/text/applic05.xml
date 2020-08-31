@@ -324,6 +324,15 @@ minimum at <m>x=c</m>, there are two possibilities.
 <li><p> The derivative <m>f'(c)=0</m>. This case is illustrated in the following
 figure.</p>
 <sidebyside width="80%">
+ <image source="text/figs/localMaxMinDE"/>
+</sidebyside>
+<p>
+Observe that, in this example, <m>f'(x)</m> changes continuously from negative to
+positive at the local minimum, taking the value zero at the local minimum (the
+red dot).</p></li>
+<li> <p> The derivative <m>f'(c)</m> does not exist. This case is illustrated in the
+following figure.</p>
+<sidebyside width="80%">
  <image source="text/figs/localMaxMinFG"/>
 </sidebyside>
 <p>
