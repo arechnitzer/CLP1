@@ -41,7 +41,7 @@ The second lemma is more specialised. It proves that if we have a function  <m>f
 
 <lemma xml:id="lem_fx_F1">
 <statement><p>
-Let <m>a \in \mathbb{R}</m> and let <m>f</m> be a function so that <m>\ds \lim_{x \to  a} f(x) =F</m>. Then there exists a <m>\delta  \gt 0</m> so that if <m>|x-a| \lt \delta</m>  then we also have <m>|f(x)| \leq |F|+1</m>.
+Let <m>a \in \mathbb{R}</m> and let <m>f</m> be a function so that <m>\ds \lim_{x \to  a} f(x) =F</m>. Then there exists a <m>\delta  \gt 0</m> so that if <m>0 \lt |x-a| \lt \delta</m>  then we also have <m>|f(x)| \leq |F|+1</m>.
 </p></statement>
 </lemma>
 
@@ -49,7 +49,7 @@ Let <m>a \in \mathbb{R}</m> and let <m>f</m> be a function so that <m>\ds \lim_{
 The proof is mostly just manipulating the <m>\epsilon</m><ndash/><m>\delta</m> definition of  a limit with <m>\epsilon=1</m>.</p>
 <proof>
 <p>
-Let <m>\epsilon = 1</m>. Then since <m>f(x) \to F</m> as <m>x \to a</m>, there exists  <m>\delta \gt 0</m> so that when <m>|x-a| \lt \delta</m>, we also have <m>|f(x)-F| \leq  \epsilon=1</m>. So now assume <m>|x-a| \lt \delta</m>. Then
+Let <m>\epsilon = 1</m>. Then since <m>f(x) \to F</m> as <m>x \to a</m>, there exists  <m>\delta \gt 0</m> so that when <m>0 \lt |x-a| \lt \delta</m>, we also have <m>|f(x)-F| \leq  \epsilon=1</m>. So now assume <m>0 \lt |x-a| \lt \delta</m>. Then
 <md>
 <mrow>
   -\epsilon &amp;\leq f(x) - F \leq \epsilon &amp; \text{rearrange a little}
@@ -69,11 +69,11 @@ Finally our third technical lemma gives us a bound in the other direction; it  t
 
 <lemma xml:id="lem_fx_F2">
 <statement><p>
-Let <m>a \in \mathbb{R}</m> and <m>F\ne0</m> and let <m>f</m> be a function so that <m>\ds \lim_{x \to a}  f(x) = F</m>. Then there exists <m>\delta \gt 0</m> so that when <m>|x-a| \lt \delta</m>, we have  <m>|f(x)| \gt  \frac{|F|}{2}</m>.
+Let <m>a \in \mathbb{R}</m> and <m>F\ne0</m> and let <m>f</m> be a function so that <m>\ds \lim_{x \to a}  f(x) = F</m>. Then there exists <m>\delta \gt 0</m> so that when <m>0 \lt |x-a| \lt \delta</m>, we have  <m>|f(x)| \gt  \frac{|F|}{2}</m>.
 </p></statement>
 <proof>
 <p>
- Set <m>\epsilon = \frac{|F|}{2} \gt 0</m>. Since <m>f(x) \to F</m>, we know there exists  a <m>\delta \gt 0</m> so that when <m>|x-a| \lt \delta</m> we have <m>|f(x)-F| \lt \epsilon</m>. So now  assume <m>|x-a| \lt \delta</m> so that <m>|f(x)-F| \lt \epsilon = \frac{|F|}{2}</m>.  Then
+ Set <m>\epsilon = \frac{|F|}{2} \gt 0</m>. Since <m>f(x) \to F</m>, we know there exists  a <m>\delta \gt 0</m> so that when <m>0 \lt |x-a| \lt \delta</m> we have <m>|f(x)-F| \lt \epsilon</m>. So now  assume <m>0 \lt |x-a| \lt \delta</m> so that <m>|f(x)-F| \lt \epsilon = \frac{|F|}{2}</m>.  Then
 <md>
 <mrow>
   |F| &amp;= |F-f(x)+f(x)| &amp; \text{sneaky trick}
