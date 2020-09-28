@@ -2877,30 +2877,26 @@ So, by the quotient rule,
 \begin{alignat*}{7}
 \diff{}{x}\tan x
 &=\diff{}{x}\,\frac{\sin x}{\cos x} &
-&=\diff{}{x}\,\frac{
-         \overbrace{\big({\ts\diff{}{x}}\sin x\big)}^{\cos x}\cos x
+&=\frac{ \overbrace{\big({\ts\diff{}{x}}\sin x\big)}^{\cos x}\cos x
        -\sin x\overbrace{\big({\ts\diff{}{x}\cos x}\big)}^{-\sin x}}
                          {\cos^2 x} &
 &=\sec^2 x \\[0.05in]
 %%%%%%%%%%%%
 \diff{}{x}\,\csc x
 &=\diff{}{x}\,\frac{1}{\sin x} &
-&=-\diff{}{x}\frac{
-         \overbrace{\big({\ts\diff{}{x}}\sin x\big)}^{\cos x}}
+&=-\frac{ \overbrace{\big({\ts\diff{}{x}}\sin x\big)}^{\cos x}}
                          {\sin^2 x} &
 &=-\csc x\cot x \\[0.05in]
 %%%%%%%%%%%%
 \diff{}{x}\,\sec x
 &=\diff{}{x}\,\frac{1}{\cos x} &
-&=-\diff{}{x}\frac{
-         \overbrace{\big({\ts\diff{}{x}}\cos x\big)}^{-\sin x}}
+&=-\frac{\overbrace{\big({\ts\diff{}{x}}\cos x\big)}^{-\sin x}}
                          {\cos^2 x} &
 &=\sec x\tan x \\[0.05in]
 %%%%%%%%%%%%
 \diff{}{x}\cot x
 &=\diff{}{x}\,\frac{\cos x}{\sin x} &
-&=\diff{}{x}\,\frac{
-         \overbrace{\big({\ts\diff{}{x}}\cos x\big)}^{-\sin x}\sin x
+&=\frac{ \overbrace{\big({\ts\diff{}{x}}\cos x\big)}^{-\sin x}\sin x
        -\cos x\overbrace{{\ts\big(\diff{}{x}}\sin x\big)}^{\cos x}}
                          {\sin^2 x} &
 &=-\csc^2 x
@@ -2911,7 +2907,7 @@ So, by the quotient rule,
 \subsection*{Summary}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 To summarise all this work, we can write this up as a theorem:
-\begin{theorem}[Derivative of trigonometric functions]\label{thm:DIFFtrigDerivs}
+\begin{theorem}[Derivatives of trigonometric functions]\label{thm:DIFFtrigDerivs}
  The derivatives of $\sin x$ and $\cos x$ are
 \begin{align*}
   \diff{}{x} \sin x &= \cos x & \diff{}{x} \cos x &= - \sin x
