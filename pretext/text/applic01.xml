@@ -242,7 +242,7 @@ which is exactly the <m>s(t)</m> used way back in Section<nbsp/><xref ref="sec_v
 
 <p>Let's now do a similar but more complicated example.</p>
 
-<example xml:id="eg_braking"><title>Stopping distance of a breaking car</title>
+<example xml:id="eg_braking"><title>Stopping distance of a braking car</title>
 <p>
 A car's brakes can decelerate the car at 64000<m>\textrm{km/hr}^2</m>.
 How fast can the car be driven if it must be able to stop within a distance
@@ -286,10 +286,10 @@ stopping time.
 </ul></p>
 </li>
 <li> In order to determine <m>x_{stop}</m> we first need to determine <m>t_{stop}</m>, which we
-will do by assuming maximum breaking from a, yet to be determined, initial velocity of
+will do by assuming maximum braking from a, yet to be determined, initial velocity of
 <m>v(0)=q</m> m/sec.
 </li>
-<li><p> Assuming that the car undergoes a constant acceleration at this maximum breaking
+<li><p> Assuming that the car undergoes a constant acceleration at this maximum braking
 power, we have
 <md>
 <mrow>
