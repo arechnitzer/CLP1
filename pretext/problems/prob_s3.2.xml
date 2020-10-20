@@ -793,66 +793,6 @@ Let <m>\theta(t)</m> be the angle shown at time <m>t</m>. Then
 </p></solution>
 </exercise>
 
-<exercise purpose="RQS"><title><fromexam>1996D</fromexam></title>
-<statement><p>
-A ball is dropped from a height of <m>49</m> metres above the ground. The
-height of the ball at time <m>t</m> is <m>h(t)=49-4.9 t^2</m> m. A light, which is
-also <m>49</m> m above the ground, is <m>10</m> m to the left of the ball's original
-position. As the ball descends, the shadow of the ball caused by the light
-moves across the ground. How fast is the shadow moving one second after
-the ball is dropped?
-</p>
-
-<sidebyside width="50%">
-<image><latex-image><![CDATA[\begin{tikzpicture}
-\draw[red, dashed] (0,3)--(6,0);
-\draw[red] (0,3)--(2,3) node[midway, above]{10};
-\draw[ultra thick] (0,0)--(0,3) node[midway, left]{49} node[opendot, label= left:{light}]{};
-\draw[red, thick, \lt -] (2,1.5)--(2,3) ;
-\draw[red, thick] (2,1.5)--(2,0) ;
-\draw (2,2) node[shape=circle, minimum size=3mm, draw, fill=white, label=right:{$h(t)=49-4.9t^2$}]{};
-\draw (1.75,2) node[left]{ball};
-\draw[red] (2,0) -- (6,0) node[midway, below]{$s(t)$};
-\end{tikzpicture}]]></latex-image></image>
-</sidebyside>
-</statement>
-<hint><p> In the diagram, find two similar triangles.
-</p></hint>
-<answer><p> 200 m/s to the left
-</p></answer>
-<solution><p>
-In the diagram, there are two right triangles: one formed by the light, the ball, and the ball's original position, and one formed by the ball, the tip of its shadow, and the ball's eventual position on the ground. The two angles marked below have the same measure, <m>\alpha</m>. (Whenever two straignt lines cross, the opposite angles formed have the same measure.)
-</p>
-<sidebyside width="66%">
-<image><latex-image><![CDATA[\begin{tikzpicture}
-\draw[red, dashed] (0,3)--(6,0);
-\draw[red] (0,3)--(2,3) node[midway, above]{10};
-\draw[dashed,  \lt - \gt , thick](0,0)--(0,2) node[midway,left]{$49-4.9t^2$};
-\draw[dashed,  \lt - \gt , thick](-1,2)--(-1,3) node[midway,left]{$4.9t^2$};
-\draw[red, thick] (2,0)--(2,3) ;
-\draw[red] (2,0) -- (6,0) node[midway, below]{$s(t)$};
-\draw (2,2.25) node[above left]{$\alpha$};
-\draw (2,1.75) node[below right]{$\alpha$};
-\draw (2,2.25) arc(90:145:.25);
-\draw (2,1.75) arc(-90:-35:.25);
-\end{tikzpicture}]]></latex-image></image>
-</sidebyside>
-<p>Since the two triangles share two angles in common (a right angle, and an angle of measure <m>\alpha</m>), they are similar triangles.
-Let's call <m>s(t)</m> the distance from the shadow to the point
-on the ground directly underneath the ball. Since the triangles are similar,
-<md>
-<mrow>
-\frac{4.9 t^2}{10}&amp;=\frac{49-4.9 t^2}{s(t)}
-</mrow><mrow>
- s(t)&amp;=10\frac{49-4.9 t^2}{4.9 t^2}=\frac{100}{t^2}-10
-</mrow><mrow>
- s'(t)&amp;=-2\frac{100}{t^3}
-</mrow>
-</md>
-When <m>t=1</m>, <m>s'(1)=-200</m> m/sec. That is, {the shadow is moving to the
-left at <m>200</m> m/sec.}
-</p></solution>
-</exercise>
 
 <exercise xml:id="s3_2triangleslast">
 <statement><p>

@@ -718,59 +718,59 @@ Let $\theta(t)$ be the angle shown at time $t$. Then
 \end{solution}
 
 
-\begin{Mquestion}[1996D]
-A ball is dropped from a height of $49$ metres above the ground. The
-height of the ball at time $t$ is $h(t)=49-4.9 t^2$ m. A light, which is
-also $49$ m above the ground, is $10$ m to the left of the ball's original
-position. As the ball descends, the shadow of the ball caused by the light
-moves across the ground. How fast is the shadow moving one second after
-the ball is dropped?
-
-\begin{center}
-%\includegraphics{ballShadow}
-\begin{tikzpicture}
-\draw[red, dashed] (0,3)--(6,0);
-\draw[red] (0,3)--(2,3) node[midway, above]{10};
-\draw[ultra thick] (0,0)--(0,3) node[midway, left]{49} node[opendot, label= left:{light}]{};
-\draw[red, thick,<-] (2,1.5)--(2,3) ;
-\draw[red, thick] (2,1.5)--(2,0) ;%node[above right]{ball};
-\draw (2,2) node[shape=circle, minimum size=3mm, draw, fill=white, label=right:{$h(t)=49-4.9t^2$}]{};
-\draw (1.75,2) node[left]{ball};
-\draw[red] (2,0) -- (6,0) node[midway, below]{$s(t)$};
-\end{tikzpicture}\end{center}
-\end{Mquestion}
-\begin{hint} In the diagram, find two similar triangles.
-\end{hint}
-\begin{answer} 200 m/s to the left
-\end{answer}
-\begin{solution}
-In the diagram, there are two right triangles: one formed by the light, the ball, and the ball's original position, and one formed by the ball, the tip of its shadow, and the ball's eventual position on the ground. The two angles marked below have the same measure, $\alpha$. (Whenever two straignt lines cross, the opposite angles formed have the same measure.)
-
-\begin{center}
-\begin{tikzpicture}
-\draw[red, dashed] (0,3)--(6,0);
-\draw[red] (0,3)--(2,3) node[midway, above]{10};
-\draw[dashed, <->, thick](0,0)--(0,2) node[midway,left]{$49-4.9t^2$};
-\draw[dashed, <->, thick](-1,2)--(-1,3) node[midway,left]{$4.9t^2$};
-\draw[red, thick] (2,0)--(2,3) ;
-\draw[red] (2,0) -- (6,0) node[midway, below]{$s(t)$};
-\draw (2,2.25) node[above left]{$\alpha$};
-\draw (2,1.75) node[below right]{$\alpha$};
-\draw (2,2.25) arc(90:145:.25);
-\draw (2,1.75) arc(-90:-35:.25);
-\end{tikzpicture}\end{center}
-
-Since the two triangles share two angles in common (a right angle, and an angle of measure $\alpha$), they are similar triangles.
-Let's call $s(t)$ the distance from the shadow to the point
-on the ground directly underneath the ball. Since the triangles are similar,
-\begin{align*}
-\frac{4.9 t^2}{10}&=\frac{49-4.9 t^2}{s(t)}\\
- s(t)&=10\frac{49-4.9 t^2}{4.9 t^2}=\frac{100}{t^2}-10\\
- s'(t)&=-2\frac{100}{t^3}
-\end{align*}
-When $t=1$, $s'(1)=-200$ m/sec. That is, {the shadow is moving to the
-left at $200$ m/sec.}
-\end{solution}
+%\begin{Mquestion}[1996D]
+%A ball is dropped from a height of $49$ metres above the ground. The
+%height of the ball at time $t$ is $h(t)=49-4.9 t^2$ m. A light, which is
+%also $49$ m above the ground, is $10$ m to the left of the ball's original
+%position. As the ball descends, the shadow of the ball caused by the light
+%moves across the ground. How fast is the shadow moving one second after
+%the ball is dropped?
+%
+%\begin{center}
+%%\includegraphics{ballShadow}
+%\begin{tikzpicture}
+%\draw[red, dashed] (0,3)--(6,0);
+%\draw[red] (0,3)--(2,3) node[midway, above]{10};
+%\draw[ultra thick] (0,0)--(0,3) node[midway, left]{49} node[opendot, label= left:{light}]{};
+%\draw[red, thick,<-] (2,1.5)--(2,3) ;
+%\draw[red, thick] (2,1.5)--(2,0) ;%node[above right]{ball};
+%\draw (2,2) node[shape=circle, minimum size=3mm, draw, fill=white, label=right:{$h(t)=49-4.9t^2$}]{};
+%\draw (1.75,2) node[left]{ball};
+%\draw[red] (2,0) -- (6,0) node[midway, below]{$s(t)$};
+%\end{tikzpicture}\end{center}
+%\end{Mquestion}
+%\begin{hint} In the diagram, find two similar triangles.
+%\end{hint}
+%\begin{answer} 200 m/s to the left
+%\end{answer}
+%\begin{solution}
+%In the diagram, there are two right triangles: one formed by the light, the ball, and the ball's original position, and one formed by the ball, the tip of its shadow, and the ball's eventual position on the ground. The two angles marked below have the same measure, $\alpha$. (Whenever two straignt lines cross, the opposite angles formed have the same measure.)
+%
+%\begin{center}
+%\begin{tikzpicture}
+%\draw[red, dashed] (0,3)--(6,0);
+%\draw[red] (0,3)--(2,3) node[midway, above]{10};
+%\draw[dashed, <->, thick](0,0)--(0,2) node[midway,left]{$49-4.9t^2$};
+%\draw[dashed, <->, thick](-1,2)--(-1,3) node[midway,left]{$4.9t^2$};
+%\draw[red, thick] (2,0)--(2,3) ;
+%\draw[red] (2,0) -- (6,0) node[midway, below]{$s(t)$};
+%\draw (2,2.25) node[above left]{$\alpha$};
+%\draw (2,1.75) node[below right]{$\alpha$};
+%\draw (2,2.25) arc(90:145:.25);
+%\draw (2,1.75) arc(-90:-35:.25);
+%\end{tikzpicture}\end{center}
+%
+%Since the two triangles share two angles in common (a right angle, and an angle of measure $\alpha$), they are similar triangles.
+%Let's call $s(t)$ the distance from the shadow to the point
+%on the ground directly underneath the ball. Since the triangles are similar,
+%\begin{align*}
+%\frac{4.9 t^2}{10}&=\frac{49-4.9 t^2}{s(t)}\\
+% s(t)&=10\frac{49-4.9 t^2}{4.9 t^2}=\frac{100}{t^2}-10\\
+% s'(t)&=-2\frac{100}{t^3}
+%\end{align*}
+%When $t=1$, $s'(1)=-200$ m/sec. That is, {the shadow is moving to the
+%left at $200$ m/sec.}
+%\end{solution}
 
 \begin{question}\label{s3.2triangleslast}
 A clock has a minute hand that is 10 cm long, and an hour hand that is 5 cm long.
@@ -1054,7 +1054,7 @@ A cylindrical sewer pipe with radius 1 metre has a vertical rectangular door tha
 
 The door slides over the pipe, moving vertically at a rate of 1 centimetre per second. How fast is the flow of water changing when the door covers the top 25 centimetres of the pipe?
 
-\begin{center}\begin{tikzpicture}
+\begin{center}\begin{tikzpicture}[scale=0.75]
 \draw (-3,0) arc(180:360:3cm);
 \draw[fill=gray!50] (-4,0) rectangle (4,4);
 \draw[dashed] (3,0) arc(0:180:3cm);
