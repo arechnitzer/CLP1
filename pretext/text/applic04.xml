@@ -1537,16 +1537,16 @@ equation<nbsp/><xref ref="eq_lineDe"/>:
 </mrow>
 </md>
 </li>
-<li> We are told that <m>|\De s|\le\frac{1}{10}</m> m. Consequently, approximately,
+<li> We are told that <m>|\De s|\le\frac{1}{100}</m> m. Consequently, approximately,
 <md>
 <mrow>
- |\De h|\le \frac{12}{4^2}\frac{1}{10}=\frac{3}{40}
+ |\De h|\le \frac{12}{4^2}\frac{1}{100}=\frac{3}{400}
 </mrow>
 </md>
 The percentage error is then approximately
 <md>
 <mrow>
-  100\frac{|\De h|}{h_0} &amp; \le 100\frac{3}{40\times 5}=1.5\%
+  100\frac{|\De h|}{h_0} &amp; \le 100\frac{3}{400\times 5}=0.15\%
 </mrow>
 </md>
 </li>
