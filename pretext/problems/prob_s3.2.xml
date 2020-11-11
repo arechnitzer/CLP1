@@ -765,7 +765,7 @@ z(t)^2&amp;=x(t)^2+0.5^2
 </mrow><mrow>
  2\times 1.3z'(t)&amp;=2\times 1.2\times 2
 </mrow><mrow>
-\color{red}z'(t)&amp;\textcolor{red}{=\frac{2\times 1.2}{1.3}}\approx1.85 \mbox{ km/min}
+\color{red}{z'(t)}&amp;\textcolor{red}{=\frac{2\times 1.2}{1.3}}\approx1.85 \mbox{ km/min}
 </mrow>
 </md>
 </p>
@@ -850,7 +850,7 @@ At 4:00, the minute hand is straight up, and the hour hand is <m>\dfrac{4}{12}=\
 
 <p>To calculate <m>\ds\diff{\theta}{t}</m>, remember that both hands are moving. The hour hand makes a full rotation every 12 hours, so its rotational speed is <m>\dfrac{2\pi}{12}=\dfrac{\pi}{6}</m> radians per hour. The hour hand is being chased by the minute hand. The minute hand makes a full rotation every hour, so its rotational speed is <m>\dfrac{2\pi}{1}=2\pi</m> radians per hour. Therefore, the angle <m>\theta</m> <em>between</em> the two hands is changing at a rate of
 <me>
-\color{red}\ds\diff{\theta}{t}=-\left(2\pi-\dfrac{\pi}{6}\right)=\dfrac{-11\pi}{6}\;\frac{\mathrm{rad}}{\mathrm{hr}}.</me>
+\color{red}{\ds\diff{\theta}{t}=-\left(2\pi-\dfrac{\pi}{6}\right)=\dfrac{-11\pi}{6}\;\frac{\mathrm{rad}}{\mathrm{hr}}.}</me>
 </p>
 
 <p>Now, we plug in <m>D</m>, <m>\theta</m>, and <m>\ds\diff{\theta}{t}</m> to find <m>\ds\diff{D}{t}</m>:
@@ -1638,11 +1638,11 @@ The water will spill out at a rate of <m>-\ds\diff{V}{t}</m> cubic centimetres p
 </mrow><mrow>
 10&amp;=9b+\sqrt{(5b)(7b)}=b\left(9+\sqrt{35}\right)
 </mrow><mrow>
-\color{red}b&amp;\color{red}=\frac{10}{9+\sqrt{35}}
+\color{red}b&amp;\color{red}{=\frac{10}{9+\sqrt{35}}}
 </mrow>
 <intertext>where we use the fact that <m>b</m> is a positive number, so <m>\sqrt{b^2}=|b|=b</m>. </intertext><mrow></mrow>
 <intertext>Since <m>a=2b</m>,</intertext><mrow>
-\color{red}a&amp;\color{red}=\frac{20}{9+\sqrt{35}}
+\color{red}a&amp;\color{red}{=\frac{20}{9+\sqrt{35}}}
 </mrow>
 <intertext>Now we know <m>a</m> and <m>b</m> at the moment when <m>a=2b</m>. We still need to know <m>\ds\diff{a}{t}</m> and <m>\ds\diff{b}{t}</m> at that moment. Since <m>a=5+t</m>, always <m>\textcolor{red}{\ds\diff{a}{t}=1}</m>. The equation from (a) relates <m>a</m> and <m>b</m>, so differentiating both sides with respect to <m>t</m> will give us an equation relating <m>\ds\diff{a}{t}</m> and <m>\ds\diff{b}{t}</m>. When differentiating the portion with a square root, be careful not to forget the chain rule.</intertext><mrow>
 0&amp;=3\left(\diff{a}{t}+\diff{b}{t}\right)+\frac{\left(\diff{a}{t}+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3\diff{a}{t}+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}

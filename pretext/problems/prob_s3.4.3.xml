@@ -575,13 +575,13 @@ Third, we'll show that <xref ref="s3_4_3equiv7"/> and <xref ref="s3_4_3equiv10"/
 Notice that
 <md>
 <mrow>
-\color{red}\sum_{n=1}^{10} 2^n &amp;=2^1+2^2+\cdots + 2^{10}  \gt  2^{10}=1024
+\color{red}{\sum_{n=1}^{10} 2^n} &amp;=2^1+2^2+\cdots + 2^{10}  \gt  2^{10}=1024
 </mrow><mrow>
-\color{green} \sum_{n=1}^{10} n^2 &amp; \lt \sum_{n=1}^{10} 10^2 = 10(100)=1000
+\color{green}{\sum_{n=1}^{10} n^2} &amp; \lt \sum_{n=1}^{10} 10^2 = 10(100)=1000
 </mrow><mrow>
-\color{green} \sum_{n=1}^{10} n^2 &amp;=1^2+2^2+\cdots 8^2+9^2+10^2  \gt  8^2+9^2+10^2=245
+\color{green}{\sum_{n=1}^{10} n^2} &amp;=1^2+2^2+\cdots 8^2+9^2+10^2  \gt  8^2+9^2+10^2=245
 </mrow><mrow>
-\color{blue}\sum_{n=1}^{10} 2n &amp; \lt \sum_{n=1}^{10}20 = 200
+\color{blue}{\sum_{n=1}^{10} 2n} &amp; \lt \sum_{n=1}^{10}20 = 200
 </mrow>
 </md>
 The expressions in the blue group add to less than 200, but the expressions in the green group add to more than 245, and the expressions in the red group add to more than 1024, so the blue groups expressions can't possibly simplify to the same number as the red and green group expressions.

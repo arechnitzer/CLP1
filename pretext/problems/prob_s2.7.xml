@@ -390,19 +390,19 @@ e=a+b.</me>
 \textcolor{red}{\lim_{h \to 0^-}\frac{f(1+h)-f(1)}{h}}&amp;=\textcolor{blue}{\lim_{h \to 0^+}\frac{f(1+h)-f(1)}{h}}
 </mrow>
 <intertext>If <m>h \lt 0</m>, then <m>1+h \lt 1</m>, so <m>f(1+h)=a(1+h)^2+b</m>. If <m>h \gt 0</m>, then <m>1+h \gt 1</m>, so <m>f(1+h)=e^{1+h}</m>. With this in mind, we begin to evaluate the one-sided limits:</intertext><mrow>
-\color{red}\lim_{h \to 0^-}\frac{f(1+h)-f(1)}{h}&amp;\color{red}=
-\lim_{h \to 0^-}\frac{[a(1+h)^2+b]-[a+b]}{h}
+\color{red}{\lim_{h \to 0^-}\frac{f(1+h)-f(1)}{h}}&amp;\color{red}{=
+\lim_{h \to 0^-}\frac{[a(1+h)^2+b]-[a+b]}{h}}
 </mrow><mrow>
-&amp;\color{red}=\lim_{h \to 0^-}\frac{ah^2+2ah}{h}=2a
+&amp;\color{red}={\lim_{h \to 0^-}\frac{ah^2+2ah}{h}=2a}
 </mrow><mrow>
-\color{blue}\lim_{h \to 0^+}\frac{f(1+h)-f(1)}{h}&amp;\color{blue}=
-\lim_{h \to 0^+}\frac{e^{1+h}-(a+b)}{h}
+\color{blue}{\lim_{h \to 0^+}\frac{f(1+h)-f(1)}{h}}&amp;\color{blue}{=
+\lim_{h \to 0^+}\frac{e^{1+h}-(a+b)}{h}}
 </mrow>
 <intertext>Since we take <m>a+b</m> to be equal to <m>e</m> (to ensure continuity):</intertext><mrow>
-&amp;\color{blue}=
-\lim_{h \to 0^+}\frac{e^{1+h}-e^1}{h}
+&amp;\color{blue}{=
+\lim_{h \to 0^+}\frac{e^{1+h}-e^1}{h}}
 </mrow><mrow>
-&amp;\color{blue}=\left.\diff{}{x}\{e^x\}\right|_{x=1}=e^1=e
+&amp;\color{blue}={\left.\diff{}{x}\{e^x\}\right|_{x=1}=e^1=e}
 </mrow>
 </md>
 </p>
