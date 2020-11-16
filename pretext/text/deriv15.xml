@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_cont_deriv">
+<title>(Optional) --- Is <m>\lim_{x\to c}f'(x)</m> Equal to <m>f'(c)</m>?</title>
+
+<p>
+Consider the function
+<me>
+f(x) = \begin{cases}
+            \frac{\sin x^2}{x} \amp\text{if }x\ne 0 \\
+             0                  \amp\text{if }x=0
+        \end{cases}
+</me>
+For any <m>x\ne 0</m> we can easily use our differentiation rules to find
+<me>
+f'(x) = \frac{2x^2\cos x^2 -\sin x^2}{x^2}
+</me>
+But for <m>x=0</m> none of our usual differentation rules apply. So how do we find <m>f'(0)</m>? One obviously legitimate strategy is to directly apply the 
+Definition 2.2.1  of the derivative. As an alternative, we will now consider the question <q>Can one find <m>f'(0)</m> by taking the limit of <m>f'(x)</m> as <m>x</m> tends to zero?</q>.
+There is bad news and there is good news.
+<ul>
+<li>
+The bad news is that, even for functions <m>f(x)</m> that are differentiable for all <m>x</m>, <m>f'(x)</m> need not be continuous. That is, it is <em>not</em> always true that 
+<m>\lim_{x\rightarrow 0}f'(x) = f'(0)</m>. We will see a function for which 
+<m>\lim_{x\rightarrow 0}f'(x) \ne f'(0)</m> in 
+Example<nbsp/><xref ref="eg_discontinuous_derivative"/>, below.
+</li><li>
+The good news is that Theorem<nbsp/><xref ref="thm_continuous_derivative"/>, below 
+provides conditions which are sufficient to guarantee that <m>f(x)</m> is differentiable at <m>x=0</m> and that <m>\lim_{x\rightarrow 0}f'(x) = f'(0)</m>.  
+</li>
+</ul>
+</p>
+
+<example xml:id="eg_discontinuous_derivative">
+<p>
+Consider the function
+<me>
+f(x) = \begin{cases}
+            x^2\sin\frac{1}{x} \amp\text{if }x\ne 0 \\
+             0                  \amp\text{if }x=0
+        \end{cases}
+</me>
+For <m>x\ne 0</m> we have, by the product and chain rules,
+<md>
+<mrow>
+f'(x)  \amp= 2x\, \sin\frac{1}{x} + x^2 \left(\cos\frac{1}{x}\right)
+                     \left(-\frac{1}{x^2}\right) 
+</mrow><mrow>
+       \amp=  2x\, \sin\frac{1}{x} - \cos\frac{1}{x}
+</mrow>
+</md>
+As <m>\left|\sin\frac{1}{x}\right|\le 1</m>, we have
+<me>
+\lim_{x\rightarrow 0}2x\, \sin\frac{1}{x}=0
+</me>
+On the other hand, as <m>x</m> tends to zero, <m>\frac{1}{x}</m> goes to <m>\pm\infty</m>.
+So
+<me>
+\lim_{x\rightarrow 0}\cos\frac{1}{x} = DNE
+\implies 
+\lim_{x\rightarrow 0}f'(x) = DNE
+</me>
+We will now see that, despite this, <m>f'(0)</m> is perfectly well defined.
+By definition
+<md>
+<mrow>
+f'(0) \amp= \lim_{h\to 0}\frac{f(h)-f(0)}{h}  
+</mrow><mrow>
+      \amp = \lim_{h\to 0}\frac{h^2\sin\frac{1}{h}-0}{h} 
+</mrow><mrow>
+      \amp = \lim_{h\to 0} h\sin\frac{1}{h} 
+</mrow><mrow>
+      \amp = 0\qquad\text{since }\left|\sin\frac{1}{h}\right|\le 1
+</mrow>
+</md>
+So <m>f'(0)</m> exists, but is not equal to <m>\lim_{x\rightarrow 0}f'(x)</m>,
+which does not exist.
+</p>
+</example>
+<p>
+Now for the good news.
+</p>
+
+<theorem xml:id="thm_continuous_derivative">
+<p>
+Let <m>a\lt c\lt b</m>. Assume that 
+<ul>
+<li> 
+the function <m>f(x)</m> is continous on the interval <m>a\lt x\lt b</m> and
+</li><li>
+is differentiable at every <m>x</m> in the intervals <m>a\lt x\lt c</m> 
+and <m>c\lt x\lt b</m> and
+</li><li>
+the limit  <m>\lim_{x\rightarrow c}f'(x)</m> exists.
+</li>
+</ul>
+Then <m>f</m> is differentiable at <m>x=c</m> and
+<me>
+f'(c) = \lim_{x\rightarrow c}f'(x)
+</me>
+</p>
+</theorem>
+<proof>
+<p>
+By hypothesis, there is a number <m>L</m> such that
+<me>
+\lim_{x\rightarrow c}f'(x) = L
+</me>
+By definition
+<me>
+f'(c) = \lim_{h\to 0}\frac{f(c+h)-f(c)}{h}
+</me>
+By the Mean Value Theorem  (Theorem <xref ref="thm_DIFFmvt"/> <!-- 2.13.4 -->) 
+there is, for each <m>h</m>,
+an (unknown) number <m>x_h</m> between <m>c</m> and <m>c+h</m> such that 
+<m>f'(x_h)=\frac{f(c+h)-f(c)}{h}</m>. So
+<me>
+f'(c) = \lim_{h\to 0} f'(x_h)
+</me>
+As <m>h</m> tends to zero, <m>c+h</m> tends to <m>c</m>, and so  <m>x_h</m> is forced to tend 
+to <m>c</m>, and <m>f'(x_h)</m> is forced to tend to <m>L</m> so that
+<me>
+f'(c) = \lim_{h\to 0} f'(x_h) = L
+</me>
+</p>
+</proof>
+
+<p>
+In the next example we evaluate <m>f'(0)</m> by applying 
+Theorem <xref ref="thm_continuous_derivative"/>.
+</p>
+<example xml:id="eg_continuous_derivative">
+<p>
+Let 
+<me>
+f(x) = \begin{cases}
+            \frac{\sin x^2}{x} \amp\text{if }x\ne 0 \\
+             0                 \amp\text{if }x=0
+        \end{cases}
+</me>
+We have already observed above that, for <m>x\ne 0</m>,
+<me>
+f'(x) = \frac{2x^2\cos x^2 -\sin x^2}{x^2}
+      = 2\cos x^2 - \frac{\sin x^2}{x^2}
+</me>
+We use Theorem <xref ref="thm_continuous_derivative"/> with <m>c=0</m> to show that <m>f(x)</m> is differentiable at <m>x=0</m> and to evaluate <m>f'(0)</m>. That theorem has two hypotheses that we have not yet verified, namely the continuity of <m>f(x)</m> at <m>x=0</m>, and the existence of the limit <m>\lim_{x\rightarrow 0}f'(x)</m>.
+We verify them now.
+<ul>
+<li>
+We already know, by Lemma <xref ref="lem_sinhoverh"/>, <!--  2.8.1 -->
+that <m>\lim_{h\rightarrow 0}\frac{\sin h}{h}=1</m>. So
+<md>
+<mrow>
+\lim_{x\rightarrow 0}\frac{\sin x^2}{x^2} 
+\amp=\lim_{h\rightarrow 0^+}\frac{\sin h}{h}\qquad\text{with }h=x^2
+</mrow><mrow>
+\amp=1
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\lim_{x\rightarrow 0} f(x) 
+\amp=\lim_{x\rightarrow 0}\frac{\sin x^2}{x}
+=\lim_{x\rightarrow 0}x\,\frac{\sin x^2}{x^2}
+=\lim_{x\rightarrow 0}x\ \lim_{x\rightarrow 0}\frac{\sin x^2}{x^2}
+=0\times 1
+=0
+</mrow>
+</md>
+and <m>f(x)</m> is continuous at <m>x=0</m>.
+</li><li>
+The limit of the derivative is
+<md>
+<mrow>
+\lim_{x\rightarrow 0}f'(x) 
+\amp= \lim_{x\rightarrow 0}\left[2\cos x^2 - \frac{\sin x^2}{x^2}\right]
+=2\times 1 -1 = 1
+</mrow>
+</md>
+</li>
+</ul>
+So, by Theorem <xref ref="thm_continuous_derivative"/>, <m>f(x)</m> is differentiable 
+at <m>x=0</m> and <m>f'(0)=1</m>.
+</p>
+</example>
+
+
+</section>
+

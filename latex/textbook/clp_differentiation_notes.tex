@@ -5509,6 +5509,165 @@ which is false.
 \end{warning}
 
 
+\section{(Optional) --- Is $\lim\limits_{x\to c}f'(x)$ Equal to $f'(c)$?}\label{sec:cont_deriv}
+
+Consider the function
+\begin{equation*}
+f(x) = \begin{cases}
+            \frac{\sin x^2}{x} &\text{if $x\ne 0$} \\
+             0                  &\text{if $x=0$}
+        \end{cases}
+\end{equation*}
+For any $x\ne 0$ we can easily use our differentiation rules to find
+\begin{align*}
+f'(x) = \frac{2x^2\cos x^2 -\sin x^2}{x^2}
+\end{align*}
+But for $x=0$ none of our usual differentation rules apply. So how do we find $f'(0)$? One obviously legitimate strategy is to directly apply the 
+Definition \ref{def:DIFFderiv}
+of the derivative. As an alternative, we will now consider the question ``Can one find $f'(0)$ by taking the limit of $f'(x)$ as $x$ tends to zero?''.
+There is bad news and there is good news.
+\begin{itemize}
+\item
+The bad news is that,
+even for functions $f(x)$ that are differentiable for all $x$, $f'(x)$ need not be continuous. That is, it is \emph{not} always true that 
+$\lim_{x\rightarrow 0}f'(x) = f'(0)$. We will see a function for which 
+$\lim_{x\rightarrow 0}f'(x) \ne f'(0)$ in 
+Example \ref{eg:discontinuous derivative}, below.
+\item
+The good news is that Theorem \ref{thm:continuous derivative}, below 
+provides conditions which are sufficient to guarantee that $f(x)$ is differentiable at $x=0$ and that $\lim_{x\rightarrow 0}f'(x) = f'(0)$.  
+\end{itemize}
+
+
+
+\begin{eg}\label{eg:discontinuous derivative}
+Consider the function
+\begin{equation*}
+f(x) = \begin{cases}
+            x^2\sin\frac{1}{x} &\text{if $x\ne 0$} \\
+             0                  &\text{if $x=0$}
+        \end{cases}
+\end{equation*}
+For $x\ne 0$ we have, by the product and chain rules,
+\begin{align*}
+f'(x)  &= 2x\, \sin\frac{1}{x} + x^2 \left(\cos\frac{1}{x}\right)
+                     \left(-\frac{1}{x^2}\right) \\
+       &=  2x\, \sin\frac{1}{x} - \cos\frac{1}{x}
+\end{align*}
+As $\left|\sin\frac{1}{x}\right|\le 1$, we have
+\begin{equation*}
+\lim_{x\rightarrow 0}2x\, \sin\frac{1}{x}=0
+\end{equation*}
+On the other hand, as $x$ tends to zero, $\frac{1}{x}$ goes to $\pm\infty$.
+So
+\begin{equation*}
+\lim_{x\rightarrow 0}\cos\frac{1}{x} = DNE
+\implies 
+\lim_{x\rightarrow 0}f'(x) = DNE
+\end{equation*}
+We will now see that, despite this, $f'(0)$ is perfectly well defined.
+By definition
+\begin{align*}
+f'(0) &= \lim_{h\to 0}\frac{f(h)-f(0)}{h}  \\
+      & = \lim_{h\to 0}\frac{h^2\sin\frac{1}{h}-0}{h} \\
+      & = \lim_{h\to 0} h\sin\frac{1}{h} \\
+      & = 0\qquad\text{since $\left|\sin\frac{1}{h}\right|\le 1$}
+\end{align*}
+So $f'(0)$ exists, but is not equal to $\lim_{x\rightarrow 0}f'(x)$,
+which does not exist.
+\end{eg}
+Now for the good news.
+%%%%%%%%%%%%%%%
+\begin{theorem}\label{thm:continuous derivative}
+Let $a<c<b$. Assume that 
+\begin{itemize}
+\item 
+the function $f(x)$ is continous on the interval $a<x<b$ and
+\item
+is differentiable at every $x$ in the intervals $a<x<c$ and $c<x<b$ and
+\item
+the limit  $\lim_{x\rightarrow c}f'(x)$ exists.
+\end{itemize}
+Then $f$ is differentiable at $x=c$ and
+\begin{equation*}
+f'(c) = \lim_{x\rightarrow c}f'(x)
+\end{equation*}
+\end{theorem}
+
+\begin{proof}
+By hypothesis, there is a number $L$ such that
+\begin{equation*}
+\lim_{x\rightarrow c}f'(x) = L
+\end{equation*}
+By definition
+\begin{equation*}
+f'(c) = \lim_{h\to 0}\frac{f(c+h)-f(c)}{h}
+\end{equation*}
+By the Mean Value Theorem (Theorem \ref{thm:DIFFmvt}) 
+there is, for each $h$,
+an (unknown) number $x_h$ between $c$ and $c+h$ such that 
+$f'(x_h)=\frac{f(c+h)-f(c)}{h}$. So
+\begin{equation*}
+f'(c) = \lim_{h\to 0} f'(x_h)
+\end{equation*}
+As $h$ tends to zero, $c+h$ tends to $c$, and so  $x_h$ is forced to tend 
+to $c$, and $f'(x_h)$ is forced to tend to $L$ so that
+\begin{equation*}
+f'(c) = \lim_{h\to 0} f'(x_h) = L
+\end{equation*}
+\end{proof}
+
+
+In the next example we evaluate $f'(0)$ by applying 
+Theorem \ref{thm:continuous derivative}.
+\begin{eg}\label{eg:continuous derivative}
+Let 
+\begin{equation*}
+f(x) = \begin{cases}
+            \frac{\sin x^2}{x} &\text{if $x\ne 0$} \\
+             0                  &\text{if $x=0$}
+        \end{cases}
+\end{equation*}
+We have already observed above that, for $x\ne 0$,
+\begin{align*}
+f'(x) = \frac{2x^2\cos x^2 -\sin x^2}{x^2}
+      = 2\cos x^2 - \frac{\sin x^2}{x^2}
+\end{align*}
+We use Theorem~\ref{thm:continuous derivative} with $c=0$ to show that $f(x)$ is differentiable at $x=0$ and to evaluate $f'(0)$. That theorem 
+has two hypotheses that we have not yet verified, namely the continuity of 
+$f(x)$ at $x=0$, and the existence of the limit $\lim_{x\rightarrow 0}f'(x)$.
+We verify them now.
+\begin{itemize}
+\item We already know, by Lemma \ref{lem sinhoverh},
+that $\lim_{h\rightarrow 0}\frac{\sin h}{h}=1$. So
+\begin{align*}
+\lim_{x\rightarrow 0}\frac{\sin x^2}{x^2} 
+&=\lim_{h\rightarrow 0^+}\frac{\sin h}{h}\qquad\text{with $h=x^2$} \\
+&=1
+\end{align*}
+and
+\begin{align*}
+\lim_{x\rightarrow 0} f(x) 
+&=\lim_{x\rightarrow 0}\frac{\sin x^2}{x}
+=\lim_{x\rightarrow 0}x\,\frac{\sin x^2}{x^2}
+=\lim_{x\rightarrow 0}x\ \lim_{x\rightarrow 0}\frac{\sin x^2}{x^2}
+=0\times 1
+=0
+\end{align*}
+and $f(x)$ is continuous at $x=0$.
+\item The limit of the derivative is
+\begin{align*}
+\lim_{x\rightarrow 0}f'(x) 
+&= \lim_{x\rightarrow 0}\left[2\cos x^2 - \frac{\sin x^2}{x^2}\right]
+=2\times 1 -1 = 1
+\end{align*}
+\end{itemize}
+So, by Theorem~\ref{thm:continuous derivative}, $f(x)$ is differentiable 
+at $x=0$ and $f'(0)=1$.
+\end{eg}
+
+
+
 
 
 \begin{comment}
@@ -6355,11 +6514,11 @@ the computed lamp post height is $\De h=h-h_0=f(s_0+\De s)-f(s_0)$. By
 \De h\approx f'(s_0)\De s=-\tfrac{12}{s_0^2}\De s
 =-\tfrac{12}{4^2}\De s
 \end{equation*}
-We are told that $|\De s|\le\tfrac{1}{10}$ m. Consequently
-$|\De h|\le \tfrac{12}{4^2}\tfrac{1}{10}=\tfrac{3}{40}$ (approximately).
+We are told that $|\De s|\le\tfrac{1}{100}$ m. Consequently
+$|\De h|\le \tfrac{12}{4^2}\tfrac{1}{100}=\tfrac{3}{400}$ (approximately).
 The percentage error is then approximately
 \begin{equation*}
-100\tfrac{|\De h|}{h_0}\le 100\tfrac{3}{40\times 5}=1.5\%
+100\tfrac{|\De h|}{h_0}\le 100\tfrac{3}{400\times 5}=0.15\%
 \end{equation*}
 \end{eg}
 \goodbreak
