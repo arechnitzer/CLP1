@@ -1391,7 +1391,7 @@ You have a cylindrical water bottle 20 cm high, filled with water. Its cross sec
 \end{tikzpicture}\end{center}
 
 After $t$ seconds of smooshing the bottle, $a=5+t$ cm. The perimeter of the cross section is unchanged as the bottle deforms. The perimeter of an ellipse is actually quite difficult to calculate, but we will use an approximation derived by Ramanujan and assume that the perimeter $p$ of our ellipse is
-\[p \approx \pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right].\]
+\[p \approx \pi\left[3(a+b)-\sqrt{(a+3b)(3a+b)}\right].\]
 The area of an ellipse is $\pi a b$.
 \begin{enumerate}[(a)]
 \item Give an equation that relates $a$ and $b$ (and no other variables).
@@ -1405,19 +1405,18 @@ The area of an ellipse is $\pi a b$.
 (c) You can use what you know about $a$ and the formula from (a) to find $b$ and $\ds\diff{b}{t}$. Then use the formula from $(b)$.
 \end{hint}
 \begin{answer}
-(a)  $10\pi=\pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right]$ or equivalently,
-$10=3(a+b)+\sqrt{(a+3b)(3a+b)}
+(a)  $10\pi=\pi\left[3(a+b)-\sqrt{(a+3b)(3a+b)}\right]$ or equivalently,
+$10=3(a+b)-\sqrt{(a+3b)(3a+b)}
 $\\
 (b) $20\pi a b$\\
-(c) The water is spilling out at about
-36.64 cubic centimetres per second. The exact amount is
- $-\dfrac{200\pi}{9+\sqrt{35}}\left(1-2\left(\dfrac{3\sqrt{35}+11}{3\sqrt{35}+13}\right)\right)~\dfrac{\mathrm{cm}^3}{\mathrm{sec}}$.
+(c) The water is spilling out at about 375.4 cubic centimetres per second. The exact amount is
+$-\dfrac{200\pi}{9-\sqrt{35}}\left(1-2\left(\dfrac{3\sqrt{35}-11}{3\sqrt{35}-13}\right)\right)~\dfrac{\mathrm{cm}^3}{\mathrm{sec}}$.
 \end{answer}
 \begin{solution}
 (a) Since the perimeter of the bottle is unchanged (you aren't stretching the plastic), it is always the same as the perimeter before it was smooshed, which is the circumference of a circle of radius 5, or $2\pi(5)=10\pi$. So, using our approximation for the perimeter of an ellipse,
 \begin{align*}
-10\pi&=\pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right]\\
-10&=3(a+b)+\sqrt{(a+3b)(3a+b)}
+10\pi&=\pi\left[3(a+b)-\sqrt{(a+3b)(3a+b)}\right]\\
+10&=3(a+b)-\sqrt{(a+3b)(3a+b)}
 \end{align*}
 
 (b) The area of the base of the bottle is $\pi a b$
@@ -1433,33 +1432,33 @@ Using the product rule, we differentiate the equation in (b) implicitly with res
 So, we need to find the values of \textcolor{red}{$a$}, \textcolor{red}{$b$},
 \textcolor{red}{$\ds\diff{a}{t}$}, and \textcolor{red}{$\ds\diff{b}{t}$} at the moment when $a=2b$.
 
-The equation from (a) tells us $10=3(a+b)+\sqrt{(a+3b)(3a+b)}$. So, when $a=2b$,
+The equation from (a) tells us $10=3(a+b)-\sqrt{(a+3b)(3a+b)}$. So, when $a=2b$,
 \begin{align*}
-10&=3(2b+b)+\sqrt{(2b+3b)(6b+b)}\\
-10&=9b+\sqrt{(5b)(7b)}=b\left(9+\sqrt{35}\right)\\
-\color{red}b&\color{red}=\frac{10}{9+\sqrt{35}}
+10&=3(2b+b)-\sqrt{(2b+3b)(6b+b)}\\
+10&=9b-\sqrt{(5b)(7b)}=b\left(9-\sqrt{35}\right)\\
+\color{red}b&\color{red}=\frac{10}{9-\sqrt{35}}
 \intertext{where we use the fact that $b$ is a positive number, so $\sqrt{b^2}=|b|=b$. }\intertext{Since $a=2b$,}
-\color{red}a&\color{red}=\frac{20}{9+\sqrt{35}}
+\color{red}a&\color{red}=\frac{20}{9-\sqrt{35}}
 \intertext{Now we know $a$ and $b$ at the moment when $a=2b$. We still need to know $\ds\diff{a}{t}$ and $\ds\diff{b}{t}$ at that moment. Since $a=5+t$, always
 \textcolor{red}{$\ds\diff{a}{t}=1$}. The equation from (a) relates $a$ and $b$, so differentiating both sides with respect to $t$ will give us an equation relating $\ds\diff{a}{t}$ and $\ds\diff{b}{t}$. When differentiating the portion with a square root, be careful not to forget the chain rule.}
-0&=3\left(\diff{a}{t}+\diff{b}{t}\right)+\frac{\left(\diff{a}{t}+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3\diff{a}{t}+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
+0&=3\left(\diff{a}{t}+\diff{b}{t}\right)-\frac{\left(\diff{a}{t}+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3\diff{a}{t}+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
 \intertext{Since $\ds\diff{a}{t}=1$:}
-0&=3\left(1+\diff{b}{t}\right)+\frac{\left(1+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
+0&=3\left(1+\diff{b}{t}\right)-\frac{\left(1+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
 \intertext{At this point, we could plug in the values we know for $a$ and $b$ at the moment when $a=2b$. However, the algebra goes a little smoother if we start by plugging in $a=2b$:}
-0&=3\left(1+\diff{b}{t}\right)+\frac{\left(1+3\diff{b}{t}\right)(7b)+(5b)\left(3+\diff{b}{t}\right)}{2\sqrt{(5b)(7b)}}\\
-0&=3\left(1+\diff{b}{t}\right)+\frac{b\left(7+21\diff{b}{t}+15+5\diff{b}{t}\right)}{2b\sqrt{35}}\\
-0&=3\left(1+\diff{b}{t}\right)+\frac{22+26\diff{b}{t}}{2\sqrt{35}}\\
-0&=3+3\diff{b}{t}+\frac{11}{\sqrt{35}}+\frac{13}{\sqrt{35}}\diff{b}{t}\\
--3-\frac{11}{\sqrt{35}}&=\left(3+\frac{13}{\sqrt{35}}\right)\diff{b}{t}\\
-\color{red}\diff{b}{t}&=\frac{-3-\frac{11}{\sqrt{35}}}{3+\frac{13}{\sqrt{35}}}=\color{red}\frac{-3\sqrt{35}-11}{3\sqrt{35}+13}
+0&=3\left(1+\diff{b}{t}\right)-\frac{\left(1+3\diff{b}{t}\right)(7b)+(5b)\left(3+\diff{b}{t}\right)}{2\sqrt{(5b)(7b)}}\\
+0&=3\left(1+\diff{b}{t}\right)-\frac{b\left(7+21\diff{b}{t}+15+5\diff{b}{t}\right)}{2b\sqrt{35}}\\
+0&=3\left(1+\diff{b}{t}\right)-\frac{22+26\diff{b}{t}}{2\sqrt{35}}\\
+0&=3+3\diff{b}{t}-\frac{11}{\sqrt{35}}-\frac{13}{\sqrt{35}}\diff{b}{t}\\
+-3+\frac{11}{\sqrt{35}}&=\left(3-\frac{13}{\sqrt{35}}\right)\diff{b}{t}\\
+\color{red}\diff{b}{t}&=\frac{-3+\frac{11}{\sqrt{35}}}{3-\frac{13}{\sqrt{35}}}=\color{red}\frac{-3\sqrt{35}+11}{3\sqrt{35}-13}
 \intertext{Now, we can calculate $\ds\diff{V}{t}$ at the moment when $a=2b$. We already found}
 \diff{V}{t}&=20\pi\left(\diff{a}{t}b+a\diff{b}{t}\right)
 \intertext{So, plugging in the values of $a$, $b$, $\ds\diff{a}{t}$, and $\ds\diff{b}{t}$ at the moment when $a=2b$:}
-\diff{V}{t}&=20\pi\left((1)\left(\frac{10}{9+\sqrt{35}}\right)+\left(\frac{20}{9+\sqrt{35}}\right)\left(\frac{-3\sqrt{35}-11}{3\sqrt{35}+13}\right)\right)\\
-&=\frac{200\pi}{9+\sqrt{35}}\left(1-2\left(\frac{3\sqrt{35}+11}{3\sqrt{35}+13}\right)\right)\\
-&\approx -36.64~\frac{\mathrm{cm}^3}{\mathrm{sec}}
+\diff{V}{t}&=20\pi\left((1)\left(\frac{10}{9-\sqrt{35}}\right)+\left(\frac{20}{9-\sqrt{35}}\right)\left(\frac{-3\sqrt{35}+11}{3\sqrt{35}-13}\right)\right)\\
+&=\frac{200\pi}{9-\sqrt{35}}\left(1-2\left(\frac{3\sqrt{35}-11}{3\sqrt{35}-13}\right)\right)\\
+&\approx -375.4~\frac{\mathrm{cm}^3}{\mathrm{sec}}
 \end{align*}
-So the water is spilling out of the cup at about 36.64 cubic centimetres per second.
+So the water is spilling out of the cup at about 375.4 cubic centimetres per second.
 
 Remark: the algebra in this problem got a little nasty, but the method behind its solution is no more difficult than most of the problems in this section. One of the reasons why calculus is so widely taught in universities is to give you lots of practice with problem-solving: taking a big problem, breaking it into pieces you can manage, solving the pieces, and getting a solution.
 
