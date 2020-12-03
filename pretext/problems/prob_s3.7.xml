@@ -161,7 +161,7 @@ We rearrange the expression to a more natural form:
 	{\mathrm{den}\to\infty}}
 </mrow>
 </md>
-If we plug in <m>x=0</m>, both numerator and denominator go to infinity. So, we can apply l'Hôpital's Rule. In fact, we end up applying it twice.
+Both the numerator and denominator go to infinity as <m>x</m> goes to infinity. So, we can apply l'Hôpital's Rule. In fact, we end up applying it twice.
 <md>
 <mrow>
 \lim_{x\rightarrow\infty}(\log x)^2e^{-x}
