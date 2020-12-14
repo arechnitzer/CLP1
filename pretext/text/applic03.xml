@@ -785,19 +785,19 @@ In 1927 the population of the world was about 2 billion. In 1974 it was about 4 
 	</mrow><mrow>
 	   e^{47b}&amp;=2 &amp; \text{take the log and clean up}
 	</mrow><mrow>
-	   b&amp;=\frac{\log 2}{47} = 0.0147 &amp; \text{to 3 decimal places}
+	   b&amp;=\frac{\log 2}{47} = 0.0147 &amp; \text{to 3 significant digits}
 	 </mrow>
 	</md>
 </li>
 <li>
 	We now know <m>P(t)</m> completely, so we can easily determine the predicted population
 		<fn>
-			The <em>2015 Revision of World Population</em>, a publication of the United Nations, predicts that the world's population in 2100 will be about 11 billion. But <q>about</q> covers a pretty large range. They give an 80<m>\%</m> confidence interval running from 10 billion to 12.5 billion.
-		</fn>
+			The <em>2015 Revision of World Population</em>, a publication of the United Nations, predicts that the world's population in 2100 will be about 11 billion. They are predicting a reduction in the world population growth rate due to lower fertility rates, which the Malthusian growth model does not take into account.
+	</fn>
 	in 2100, i.e. at <m>t=2100-1927 = 173</m>.
 	 <md>
 	<mrow>
-	   P(173) = 2 e^{173 b} = 2 e^{173\times 0.0147} = 12.7\text{ billion}
+	   P(173) = 2 e^{173 b} = 2 e^{173\times 0.0147} = 25.4\text{ billion}
 	 </mrow>
 	</md>
 </li>

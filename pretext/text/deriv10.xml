@@ -382,7 +382,7 @@ f(x) &amp;=\frac{(\sqrt{x}-1)(2-x)(1-x^2)}{\sqrt{x}(3+2x)}
 </md>
 Beware however, that we may only take the logarithm of positive numbers, and this <m>f(x)</m> is often negative.
 For example, if <m> 1 \lt x \lt 2 </m>, the factor <m>(1-x^2)</m> in the definition of <m>f(x)</m> is negative while all of the other factors are positive, so that <m>f(x)\lt 0 </m>.
-None<ndash/>the<ndash/>less, we can use logarithmic differentiation to find <m>f'(x)</m>,  by exploiting the observation that <m>\diff{}{x}|f(x)|=\frac{f'(x)}{f(x)}</m>.
+None<ndash/>the<ndash/>less, we can use logarithmic differentiation to find <m>f'(x)</m>,  by exploiting the observation that <m>\diff{}{x}\log|f(x)|=\frac{f'(x)}{f(x)}</m>.
 (To see this, use the chain rule and Example<nbsp/><xref ref ="eg_diff_log_abs_x"/>.)
 So we take the logarithm of <m>|f(x)|</m> and expand.
 <md>

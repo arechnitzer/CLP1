@@ -270,10 +270,10 @@ stopping time.
 \end{itemize}
 
 \item In order to determine $x_{stop}$ we first need to determine $t_{stop}$, which we
-will do by assuming maximum breaking from a, yet to be determined, initial velocity of
+will do by assuming maximum braking from a, yet to be determined, initial velocity of
 $v(0)=q$ m/sec.
 
-\item Assuming that the car undergoes a constant acceleration at this maximum breaking
+\item Assuming that the car undergoes a constant acceleration at this maximum braking
 power, we have
 \begin{align*}
   v'(t) &= -64000
@@ -1471,17 +1471,18 @@ by Corollary~\ref{cor decay soln} with $-k$ replaced by $b$,
  \begin{align*}
    4 &=2\cdot e^{47b} & \text{clean up}\\
    e^{47b}&=2 & \text{take the log and clean up}\\
-   b&=\frac{\log 2}{47} = 0.0147 & \text{to 3 decimal places}
+   b&=\frac{\log 2}{47} = 0.0147 & \text{to 3 significant digits}
  \end{align*}
  \item We now know $P(t)$ completely, so we can easily determine
 the predicted population\footnote{The \emph{2015 Revision of
 World Population}, a publication of the United Nations, predicts
 that the world's population in 2100 will be about 11 billion.
-But ``about'' covers a pretty large range. They give an 80\% confidence
-interval running from 10 billion to 12.5 billion.} in 2100,
+They are predicting a reduction in the world population growth rate due to 
+lower fertility rates, which the Malthusian growth model does not take 
+into account.} in 2100,
 i.e. at $t=2100-1927 = 173$.
  \begin{align*}
-   P(173) = 2 e^{173 b} = 2 e^{173\times 0.0147} = 12.7\text{ billion}
+   P(173) = 2 e^{173 b} = 2 e^{173\times 0.0147} = 25.4\text{ billion}
  \end{align*}
 
 \item Finally, our crude model predicts that the population is
@@ -3177,8 +3178,8 @@ sufficiently simple that we can compute $\Delta V$ exactly:
 \begin{itemize}
  \item Applying $(a+b)^3=a^3+3a^2b+3ab^2+b^3$ with $a=r_0$ and $b=\De r$, gives
 \begin{align*}
-V(r_0+\De r)-V(r_0)&=\dfrac{4}{3}\pi
-\left[r_0^3+3r_0^2\De r+3r_0\,(\De r)^2+(\De r)^3\right] - \dfrac{4}{3}r_0^3\\
+V(r_0+\De r)-V(r_0)&=\tfrac{4}{3}\pi
+\left[r_0^3+3r_0^2\De r+3r_0\,(\De r)^2+(\De r)^3\right] - \tfrac{4}{3}\pi  r_0^3\\
 &=\tfrac{4}{3}\pi[3r_0^2\De r+3r_0\,(\De r)^2+(\De r)^3]
 \end{align*}
 
@@ -3265,13 +3266,13 @@ equation~\eqref{eq:lineDe}:
 \begin{align*}
 \De h &\approx f'(s_0)\De s =-\frac{12}{s_0^2}\De s =-\frac{12}{4^2}\De s
 \end{align*}
-\item We are told that $|\De s|\le\frac{1}{10}$ m. Consequently, approximately,
+\item We are told that $|\De s|\le\frac{1}{100}$ m. Consequently, approximately,
 \begin{align*}
- |\De h|\le \frac{12}{4^2}\frac{1}{10}=\frac{3}{40}
+ |\De h|\le \frac{12}{4^2}\frac{1}{100}=\frac{3}{400}
 \end{align*}
 The percentage error is then approximately
 \begin{align*}
-  100\frac{|\De h|}{h_0} & \le 100\frac{3}{40\times 5}=1.5\%
+  100\frac{|\De h|}{h_0} & \le 100\frac{3}{400\times 5}=0.15\%
 \end{align*}
 \end{itemize}
 \end{eg}

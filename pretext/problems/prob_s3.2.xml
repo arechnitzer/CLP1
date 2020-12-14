@@ -765,7 +765,7 @@ z(t)^2&amp;=x(t)^2+0.5^2
 </mrow><mrow>
  2\times 1.3z'(t)&amp;=2\times 1.2\times 2
 </mrow><mrow>
-\color{red}z'(t)&amp;\textcolor{red}{=\frac{2\times 1.2}{1.3}}\approx1.85 \mbox{ km/min}
+\color{red}{z'(t)}&amp;\textcolor{red}{=\frac{2\times 1.2}{1.3}}\approx1.85 \mbox{ km/min}
 </mrow>
 </md>
 </p>
@@ -793,66 +793,6 @@ Let <m>\theta(t)</m> be the angle shown at time <m>t</m>. Then
 </p></solution>
 </exercise>
 
-<exercise purpose="RQS"><title><fromexam>1996D</fromexam></title>
-<statement><p>
-A ball is dropped from a height of <m>49</m> metres above the ground. The
-height of the ball at time <m>t</m> is <m>h(t)=49-4.9 t^2</m> m. A light, which is
-also <m>49</m> m above the ground, is <m>10</m> m to the left of the ball's original
-position. As the ball descends, the shadow of the ball caused by the light
-moves across the ground. How fast is the shadow moving one second after
-the ball is dropped?
-</p>
-
-<sidebyside width="50%">
-<image><latex-image><![CDATA[\begin{tikzpicture}
-\draw[red, dashed] (0,3)--(6,0);
-\draw[red] (0,3)--(2,3) node[midway, above]{10};
-\draw[ultra thick] (0,0)--(0,3) node[midway, left]{49} node[opendot, label= left:{light}]{};
-\draw[red, thick, \lt -] (2,1.5)--(2,3) ;
-\draw[red, thick] (2,1.5)--(2,0) ;
-\draw (2,2) node[shape=circle, minimum size=3mm, draw, fill=white, label=right:{$h(t)=49-4.9t^2$}]{};
-\draw (1.75,2) node[left]{ball};
-\draw[red] (2,0) -- (6,0) node[midway, below]{$s(t)$};
-\end{tikzpicture}]]></latex-image></image>
-</sidebyside>
-</statement>
-<hint><p> In the diagram, find two similar triangles.
-</p></hint>
-<answer><p> 200 m/s to the left
-</p></answer>
-<solution><p>
-In the diagram, there are two right triangles: one formed by the light, the ball, and the ball's original position, and one formed by the ball, the tip of its shadow, and the ball's eventual position on the ground. The two angles marked below have the same measure, <m>\alpha</m>. (Whenever two straignt lines cross, the opposite angles formed have the same measure.)
-</p>
-<sidebyside width="66%">
-<image><latex-image><![CDATA[\begin{tikzpicture}
-\draw[red, dashed] (0,3)--(6,0);
-\draw[red] (0,3)--(2,3) node[midway, above]{10};
-\draw[dashed,  \lt - \gt , thick](0,0)--(0,2) node[midway,left]{$49-4.9t^2$};
-\draw[dashed,  \lt - \gt , thick](-1,2)--(-1,3) node[midway,left]{$4.9t^2$};
-\draw[red, thick] (2,0)--(2,3) ;
-\draw[red] (2,0) -- (6,0) node[midway, below]{$s(t)$};
-\draw (2,2.25) node[above left]{$\alpha$};
-\draw (2,1.75) node[below right]{$\alpha$};
-\draw (2,2.25) arc(90:145:.25);
-\draw (2,1.75) arc(-90:-35:.25);
-\end{tikzpicture}]]></latex-image></image>
-</sidebyside>
-<p>Since the two triangles share two angles in common (a right angle, and an angle of measure <m>\alpha</m>), they are similar triangles.
-Let's call <m>s(t)</m> the distance from the shadow to the point
-on the ground directly underneath the ball. Since the triangles are similar,
-<md>
-<mrow>
-\frac{4.9 t^2}{10}&amp;=\frac{49-4.9 t^2}{s(t)}
-</mrow><mrow>
- s(t)&amp;=10\frac{49-4.9 t^2}{4.9 t^2}=\frac{100}{t^2}-10
-</mrow><mrow>
- s'(t)&amp;=-2\frac{100}{t^3}
-</mrow>
-</md>
-When <m>t=1</m>, <m>s'(1)=-200</m> m/sec. That is, {the shadow is moving to the
-left at <m>200</m> m/sec.}
-</p></solution>
-</exercise>
 
 <exercise xml:id="s3_2triangleslast">
 <statement><p>
@@ -910,7 +850,7 @@ At 4:00, the minute hand is straight up, and the hour hand is <m>\dfrac{4}{12}=\
 
 <p>To calculate <m>\ds\diff{\theta}{t}</m>, remember that both hands are moving. The hour hand makes a full rotation every 12 hours, so its rotational speed is <m>\dfrac{2\pi}{12}=\dfrac{\pi}{6}</m> radians per hour. The hour hand is being chased by the minute hand. The minute hand makes a full rotation every hour, so its rotational speed is <m>\dfrac{2\pi}{1}=2\pi</m> radians per hour. Therefore, the angle <m>\theta</m> <em>between</em> the two hands is changing at a rate of
 <me>
-\color{red}\ds\diff{\theta}{t}=-\left(2\pi-\dfrac{\pi}{6}\right)=\dfrac{-11\pi}{6}\;\frac{\mathrm{rad}}{\mathrm{hr}}.</me>
+\color{red}{\ds\diff{\theta}{t}=-\left(2\pi-\dfrac{\pi}{6}\right)=\dfrac{-11\pi}{6}\;\frac{\mathrm{rad}}{\mathrm{hr}}.}</me>
 </p>
 
 <p>Now, we plug in <m>D</m>, <m>\theta</m>, and <m>\ds\diff{\theta}{t}</m> to find <m>\ds\diff{D}{t}</m>:
@@ -1628,7 +1568,7 @@ You have a cylindrical water bottle 20 cm high, filled with water. Its cross sec
 </sidebyside>
 <p>After <m>t</m> seconds of smooshing the bottle, <m>a=5+t</m> cm. The perimeter of the cross section is unchanged as the bottle deforms. The perimeter of an ellipse is actually quite difficult to calculate, but we will use an approximation derived by Ramanujan and assume that the perimeter <m>p</m> of our ellipse is
 <me>
-p \approx \pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right].</me>
+p \approx \pi\left[3(a+b)-\sqrt{(a+3b)(3a+b)}\right].</me>
 </p>
 
 <p>The area of an ellipse is <m>\pi a b</m>.
@@ -1649,8 +1589,8 @@ p \approx \pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right].</me>
 (c) You can use what you know about <m>a</m> and the formula from (a) to find <m>b</m> and <m>\ds\diff{b}{t}</m>. Then use the formula from <m>(b)</m>.
 </p></hint>
 <answer><p>
-(a)  <m>10\pi=\pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right]</m> or equivalently,
-<m>10=3(a+b)+\sqrt{(a+3b)(3a+b)}
+(a)  <m>10\pi=\pi\left[3(a+b)-\sqrt{(a+3b)(3a+b)}\right]</m> or equivalently,
+<m>10=3(a+b)-\sqrt{(a+3b)(3a+b)}
 </m>
 </p>
 <p>
@@ -1658,16 +1598,16 @@ p \approx \pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right].</me>
 </p>
 <p>
 (c) The water is spilling out at about
-36.64 cubic centimetres per second. The exact amount is
- <m>-\dfrac{200\pi}{9+\sqrt{35}}\left(1-2\left(\dfrac{3\sqrt{35}+11}{3\sqrt{35}+13}\right)\right)\;\dfrac{\mathrm{cm}^3}{\mathrm{sec}}</m>.
+375.4 cubic centimetres per second. The exact amount is
+ <m>-\dfrac{200\pi}{9-\sqrt{35}}\left(1-2\left(\dfrac{3\sqrt{35}-11}{3\sqrt{35}-13}\right)\right)\;\dfrac{\mathrm{cm}^3}{\mathrm{sec}}</m>.
 </p></answer>
 <solution><p>
 (a) Since the perimeter of the bottle is unchanged (you aren't stretching the plastic), it is always the same as the perimeter before it was smooshed, which is the circumference of a circle of radius 5, or <m>2\pi(5)=10\pi</m>. So, using our approximation for the perimeter of an ellipse,
 <md>
 <mrow>
-10\pi&amp;=\pi\left[3(a+b)+\sqrt{(a+3b)(3a+b)}\right]
+10\pi&amp;=\pi\left[3(a+b)-\sqrt{(a+3b)(3a+b)}\right]
 </mrow><mrow>
-10&amp;=3(a+b)+\sqrt{(a+3b)(3a+b)}
+10&amp;=3(a+b)-\sqrt{(a+3b)(3a+b)}
 </mrow>
 </md>
 </p>
@@ -1691,41 +1631,41 @@ The water will spill out at a rate of <m>-\ds\diff{V}{t}</m> cubic centimetres p
 <m>\textcolor{red}{\ds\diff{a}{t}}</m>, and <m>\textcolor{red}{\ds\diff{b}{t}}</m> at the moment when <m>a=2b</m>.
 </p>
 
-<p>The equation from (a) tells us <m>10=3(a+b)+\sqrt{(a+3b)(3a+b)}</m>. So, when <m>a=2b</m>,
+<p>The equation from (a) tells us <m>10=3(a+b)-\sqrt{(a+3b)(3a+b)}</m>. So, when <m>a=2b</m>,
 <md>
 <mrow>
-10&amp;=3(2b+b)+\sqrt{(2b+3b)(6b+b)}
+10&amp;=3(2b+b)-\sqrt{(2b+3b)(6b+b)}
 </mrow><mrow>
-10&amp;=9b+\sqrt{(5b)(7b)}=b\left(9+\sqrt{35}\right)
+10&amp;=9b-\sqrt{(5b)(7b)}=b\left(9-\sqrt{35}\right)
 </mrow><mrow>
-\color{red}b&amp;\color{red}=\frac{10}{9+\sqrt{35}}
+\color{red}b&amp;\color{red}{=\frac{10}{9-\sqrt{35}}}
 </mrow>
 <intertext>where we use the fact that <m>b</m> is a positive number, so <m>\sqrt{b^2}=|b|=b</m>. </intertext><mrow></mrow>
 <intertext>Since <m>a=2b</m>,</intertext><mrow>
-\color{red}a&amp;\color{red}=\frac{20}{9+\sqrt{35}}
+\color{red}a&amp;\color{red}{=\frac{20}{9-\sqrt{35}}}
 </mrow>
 <intertext>Now we know <m>a</m> and <m>b</m> at the moment when <m>a=2b</m>. We still need to know <m>\ds\diff{a}{t}</m> and <m>\ds\diff{b}{t}</m> at that moment. Since <m>a=5+t</m>, always <m>\textcolor{red}{\ds\diff{a}{t}=1}</m>. The equation from (a) relates <m>a</m> and <m>b</m>, so differentiating both sides with respect to <m>t</m> will give us an equation relating <m>\ds\diff{a}{t}</m> and <m>\ds\diff{b}{t}</m>. When differentiating the portion with a square root, be careful not to forget the chain rule.</intertext><mrow>
-0&amp;=3\left(\diff{a}{t}+\diff{b}{t}\right)+\frac{\left(\diff{a}{t}+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3\diff{a}{t}+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
+0&amp;=3\left(\diff{a}{t}+\diff{b}{t}\right)-\frac{\left(\diff{a}{t}+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3\diff{a}{t}+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
 </mrow>
 <intertext>Since <m>\ds\diff{a}{t}=1</m>:</intertext><mrow>
-0&amp;=3\left(1+\diff{b}{t}\right)+\frac{\left(1+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
+0&amp;=3\left(1+\diff{b}{t}\right)-\frac{\left(1+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
 </mrow>
 </md>
 At this point, we could plug in the values we know for <m>a</m> and <m>b</m> at the moment when <m>a=2b</m>. However, the algebra goes a little smoother if we start by plugging in <m>a=2b</m>:
 <md>
 <mrow>
-0&amp;=3\left(1+\diff{b}{t}\right)+\frac{\left(1+3\diff{b}{t}\right)(7b)+(5b)\left(3+\diff{b}{t}\right)}{2\sqrt{(5b)(7b)}}
+0&amp;=3\left(1+\diff{b}{t}\right)-\frac{\left(1+3\diff{b}{t}\right)(7b)+(5b)\left(3+\diff{b}{t}\right)}{2\sqrt{(5b)(7b)}}
 </mrow><mrow>
-0&amp;=3\left(1+\diff{b}{t}\right)+\frac{b\left(7+21\diff{b}{t}+15+5\diff{b}{t}\right)}{2b\sqrt{35}}
+0&amp;=3\left(1+\diff{b}{t}\right)-\frac{b\left(7+21\diff{b}{t}+15+5\diff{b}{t}\right)}{2b\sqrt{35}}
 </mrow><mrow>
-0&amp;=3\left(1+\diff{b}{t}\right)+\frac{22+26\diff{b}{t}}{2\sqrt{35}}
+0&amp;=3\left(1+\diff{b}{t}\right)-\frac{22+26\diff{b}{t}}{2\sqrt{35}}
 </mrow><mrow>
-0&amp;=3+3\diff{b}{t}+\frac{11}{\sqrt{35}}+\frac{13}{\sqrt{35}}\diff{b}{t}
+0&amp;=3+3\diff{b}{t}-\frac{11}{\sqrt{35}}-\frac{13}{\sqrt{35}}\diff{b}{t}
 </mrow><mrow>
--3-\frac{11}{\sqrt{35}}&amp;=\left(3+\frac{13}{\sqrt{35}}\right)\diff{b}{t}
+-3+\frac{11}{\sqrt{35}}&amp;=\left(3-\frac{13}{\sqrt{35}}\right)\diff{b}{t}
 </mrow><mrow>
-\diff{b}{t}&amp;=\frac{-3-\frac{11}{\sqrt{35}}}{3+\frac{13}{\sqrt{35}}}
-=\frac{-3\sqrt{35}-11}{3\sqrt{35}+13}
+\diff{b}{t}&amp;=\frac{-3+\frac{11}{\sqrt{35}}}{3-\frac{13}{\sqrt{35}}}
+=\frac{-3\sqrt{35}+11}{3\sqrt{35}-13}
 </mrow>
 </md>
 Now, we can calculate <m>\ds\diff{V}{t}</m> at the moment when <m>a=2b</m>. We already found
@@ -1737,14 +1677,14 @@ Now, we can calculate <m>\ds\diff{V}{t}</m> at the moment when <m>a=2b</m>. We a
 So, plugging in the values of <m>a</m>, <m>b</m>, <m>\ds\diff{a}{t}</m>, and <m>\ds\diff{b}{t}</m> at the moment when <m>a=2b</m>: 
 <md>
 <mrow>
-\diff{V}{t}&amp;=20\pi\left((1)\left(\frac{10}{9+\sqrt{35}}\right)+\left(\frac{20}{9+\sqrt{35}}\right)\left(\frac{-3\sqrt{35}-11}{3\sqrt{35}+13}\right)\right)
+\diff{V}{t}&amp;=20\pi\left((1)\left(\frac{10}{9-\sqrt{35}}\right)+\left(\frac{20}{9-\sqrt{35}}\right)\left(\frac{-3\sqrt{35}+11}{3\sqrt{35}-13}\right)\right)
 </mrow><mrow>
-&amp;=\frac{200\pi}{9+\sqrt{35}}\left(1-2\left(\frac{3\sqrt{35}+11}{3\sqrt{35}+13}\right)\right)
+&amp;=\frac{200\pi}{9-\sqrt{35}}\left(1-2\left(\frac{3\sqrt{35}-11}{3\sqrt{35}-13}\right)\right)
 </mrow><mrow>
-&amp;\approx -36.64\;\frac{\mathrm{cm}^3}{\mathrm{sec}}
+&amp;\approx -375.4\;\frac{\mathrm{cm}^3}{\mathrm{sec}}
 </mrow>
 </md>
-So the water is spilling out of the cup at about 36.64 cubic centimetres per second.
+So the water is spilling out of the cup at about 375.4 cubic centimetres per second.
 </p>
 
 <p>Remark: the algebra in this problem got a little nasty, but the method behind its solution is no more difficult than most of the problems in this section. One of the reasons why calculus is so widely taught in universities is to give you lots of practice with problem-solving: taking a big problem, breaking it into pieces you can manage, solving the pieces, and getting a solution.

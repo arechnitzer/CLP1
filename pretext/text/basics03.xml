@@ -152,11 +152,11 @@ We sometimes also need unbounded intervals
   [a, \infty) &amp;= \{ x \in \mathbb{R} : a \leq x \}
   &amp; (a, \infty) &amp;= \{ x \in \mathbb{R} : a  \lt  x \}
 </mrow><mrow>
-  (\infty, b] &amp;= \{ x \in \mathbb{R} : x \leq b \}
-  &amp; (\infty, b) &amp;= \{ x \in \mathbb{R} : x  \lt  b \}
+  (-\infty, b] &amp;= \{ x \in \mathbb{R} : x \leq b \}
+  &amp; (-\infty, b) &amp;= \{ x \in \mathbb{R} : x  \lt  b \}
   </mrow>
 </md>
-These unbounded intervals do not include <q><m>\infty</m></q>, so that end of the interval is always open
+These unbounded intervals do not include <q><m>\pm\infty</m></q>, so that end of the interval is always open
 	<fn>
 	Infinity is not a real number. As mentioned in an earlier footnote, Cantor proved that there are an infinite number of different infinities and so it is incorrect to think of <m>\infty</m> as being a single number. As such it cannot be an element in an interval of the real line. We suggest that the reader that wants to learn  more about how mathematics handles infinity look up transfinite numbers and  transfinite arithmetic. Needless to say these topics are beyond the scope of this text.
 	</fn>.

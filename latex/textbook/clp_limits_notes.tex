@@ -3220,15 +3220,15 @@ us that $|f(x)|$ cannot be bigger than $|F|+1$ when $x$ is very close to $a$.
 \begin{lemma}
 \label{lem fx F1}
  Let $a \in \mathbb{R}$ and let $f$ be a function so that $\ds \lim_{x \to
-a} f(x) =F$. Then there exists a $\delta >0$ so that if $|x-a|<\delta$
+a} f(x) =F$. Then there exists a $\delta >0$ so that if $0<|x-a|<\delta$
 then we also have $|f(x)| \leq |F|+1$.
 \end{lemma}
 The proof is mostly just manipulating the $\epsilon$--$\delta$ definition of
 a limit with $\epsilon=1$.
 \begin{proof}
-  Let $\epsilon = 1$. Then since $f(x) \to F$ as $x \to a$, there exists
-$\delta>0$ so that when $|x-a|<\delta$, we also have $|f(x)-F| \leq
-\epsilon=1$. So now assume $|x-a|<\delta$. Then
+  Let $\epsilon = 1$. Then since $f(x) \to F$ as $x \to a$, there exists a
+$\delta>0$ so that when $0<|x-a|<\delta$, we also have $|f(x)-F| \leq
+\epsilon=1$. So now assume $0<|x-a|<\delta$. Then
 \begin{align*}
   -\epsilon &\leq f(x) - F \leq \epsilon & \text{rearrange a little} \\
   -\epsilon+F &\leq f(x) \leq \epsilon+F
@@ -3244,13 +3244,13 @@ smaller than $|F|$.
 \begin{lemma}
 \label{lem fx F2}
  Let $a \in \mathbb{R}$ and $F\ne0$ and let $f$ be a function so that $\ds \lim_{x \to a}
-f(x) = F$. Then there exists $\delta>0$ so that when $|x-a|<\delta$, we have
+f(x) = F$. Then there exists $\delta>0$ so that when $0<|x-a|<\delta$, we have
 $|f(x)|> \nicefrac{|F|}{2}$.
 \end{lemma}
 \begin{proof}
- Set $\epsilon = \nicefrac{|F|}{2}>0$. Since $f(x) \to F$, we know there exists
-a $\delta>0$ so that when $|x-a|<\delta$ we have $|f(x)-F|<\epsilon$. So now
-assume $|x-a|<\delta$ so that $|f(x)-F|<\epsilon = \nicefrac{|F|}{2}$.  Then
+ Set $\epsilon = \nicefrac{|F|}{2}>0$. Then since $f(x) \to F$, we know there exists
+a $\delta>0$ so that when $0<|x-a|<\delta$ we have $|f(x)-F|<\epsilon$. So now
+assume $0<|x-a|<\delta$ so that $|f(x)-F|<\epsilon = \nicefrac{|F|}{2}$.  Then
 \begin{align*}
   |F| &= |F-f(x)+f(x)| & \text{sneaky trick} \\
   & \leq |f(x) - F| + |f(x)| & \text{ but $|f(x)-F|<\epsilon$}\\

@@ -221,7 +221,7 @@ Compare the given polynomial to the more standard form of the <m>n</m>th degree 
 <solution><p>
 The <m>n</m>th degree Taylor polynomial for <m>f(x)</m> about <m>x=5</m> is
 <md>
-<mrow>T_n(x)&amp;=\color{red}\sum_{k=0}^{n} \frac{1}{k!}f^{(k)}(5)(x-5)^{k}
+<mrow>T_n(x)&amp;=\color{red}{\sum_{k=0}^{n} \frac{1}{k!}f^{(k)}(5)(x-5)^{k}}
 </mrow>
 </md>
 We expand this somewhat:
