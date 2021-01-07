@@ -53,6 +53,23 @@ f'(x)&amp;=\frac{2(x+1)\textcolor{red}{-}2x}{(x+1)^2}
 </md>
 </p></solution>
 </exercise>
+
+<exercise purpose="RQS">
+<statement><p>
+True or false: <m>\ds\diff{}{x}\{2^x\}=x2^{x-1}</m>.
+</p></statement>
+<hint><p> Read Lemma<nbsp/><xref ref="lem_dxn"/> carefully.
+</p></hint>
+<answer><p> False
+</p></answer>
+<solution><p>
+False: Lemma<nbsp/><xref ref="lem_dxn"/> tells us that, for a constant <m>n</m>, <m>\ds\diff{}{x}\{x^n\}=nx^{n-1}</m>. Note that the base <m>x</m> is the variable and the exponent <m>n</m> is a constant. In the equation given in the question, the base <m>2</m> is a constant, and the exponent <m>x</m> is the variable: this is the opposite of the situation where Lemma<nbsp/><xref ref="lem_dxn"/> applies.
+</p>
+
+<p>We do not yet know how to differentiate <m>2^x</m>. We'll learn about it in Section<nbsp/><xref ref="sec_exp_func"/>
+</p></solution>
+</exercise>
+
 </exercisegroup>
 
 <exercisegroup><title><procedural/></title>

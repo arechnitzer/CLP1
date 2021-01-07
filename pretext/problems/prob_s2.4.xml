@@ -52,21 +52,6 @@ True or false: <m>\ds\diff{}{x}\{f(x)g(x)\}=f'(x)g'(x)</m> when <m>f</m> and <m>
 
 </exercise>
 
-<exercise purpose="RQS">
-<statement><p>
-True or false: <m>\ds\diff{}{x}\{2^x\}=x2^{x-1}</m>.
-</p></statement>
-<hint><p> When can you use the power rule?
-</p></hint>
-<answer><p> False
-</p></answer>
-<solution><p>
-False: the power rule tells us that, for a constant <m>n</m>, <m>\ds\diff{}{x}\{x^n\}=nx^{n-1}</m>. In the equation shown, the base is a constant, and the exponent is the variable: this is the opposite of the situation where the power rule applies.
-</p>
-
-<p>We do not yet know how to differentiate this function. We'll learn about it in Section<nbsp/><xref ref="sec_exp_func"/>
-</p></solution>
-</exercise>
 
 <exercise>
 <statement><p>Let <m>f</m> be a differentiable function. Use at least three different rules to differentiate <m>g(x)=3f(x)</m>, and verify that they all give the same answer.
