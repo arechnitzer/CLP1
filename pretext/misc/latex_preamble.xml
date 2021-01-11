@@ -4,8 +4,8 @@
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
 <latex-preamble>
-	<package>mathrsfs</package>
+	<!-- <package>mathrsfs</package> -->
 	<package>cancel</package>
-	<package>palatino</package>
-	<package>nicefrac</package>
+	<!-- <package>palatino</package> -->
+	<!-- <package>nicefrac</package> -->
 </latex-preamble>
