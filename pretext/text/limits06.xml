@@ -542,7 +542,7 @@ Look at the rightmost figure and do it again <mdash/> test the point half-way be
 
 <p>Consider the following zero-finding example</p>
 
-<example><title>Show that <m>f(x)=x-1+\sin(\pi x/2)</m> has a zero</title>
+<example xml:id="eg_pre_bisection"><title>Show that <m>f(x)=x-1+\sin(\pi x/2)</m> has a zero</title>
 <p>
 Show that the function <m>f(x) = x-1+\sin(\pi x/2)</m> has a zero  in <m>0 \leq x \leq 1</m>.
 </p>
