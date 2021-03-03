@@ -326,7 +326,7 @@ This requires us to apply the chain rule twice.
 </md>
 Remark: it looks strange to see a negative sign in the argument of a square root. Since the cosine function always gives values that are at  most 1, <m>\log(\cos x)</m> is always negative or zero over its domain.
 So, <m>\sqrt{\log(\cos x)}</m> is only defined for the points where <m>\cos x=1</m> (and so <m>\log(\cos x) = 0</m>--this isn't a very interesting function!
-In contrast, <m>-\log(\cos x)</m> is always positive or zero over its domain--and therefore we can always take its square root.
+In contrast, <m>-\log(\cos x)</m> is always positive or zero over its domain -- and therefore we can always take its square root.
 </p></solution>
 </exercise>
 
@@ -336,12 +336,12 @@ Calculate and simplify the derivative of
 <m>\log\big(x+\sqrt{x^2+4}\big)</m>.
 </p></statement>
 <hint><p>
-Use the chain rule to differentiate. It won't simplify to something particularly nice.
+Use the chain rule to differentiate.
 </p></hint>
-<answer><p> <m>\dfrac{\sqrt{x^2+4}+x}{x\sqrt{x^2+4}+x^2+4}</m>
+<answer><p> <m>\dfrac{\sqrt{x^2+4}+x}{x\sqrt{x^2+4}+x^2+4}=\dfrac{1}{\sqrt{x^2+4}}</m>
 </p></answer>
 <solution><p>
-Using the chain rule,
+Under the chain rule, <m>\diff{}{x}\log f(x)=\frac{1}{f(x)}f'(x)</m>. So
 <md>
 <mrow>
 \diff{}{x}\left\{\log\big(x+\sqrt{x^2+4}\big)\right\}
@@ -349,9 +349,12 @@ Using the chain rule,
 </mrow><mrow>
 &amp;=\frac{1}{x+\sqrt{x^2+4}}\cdot\left(1+\frac{2x}{2\sqrt{x^2+4}}\right)
 </mrow><mrow>
-&amp;=\frac{1+\frac{x}{\sqrt{x^2+4}}}{x+\sqrt{x^2+4}}\cdot \frac{\sqrt{x^2+4}}{\sqrt{x^2+4}}
+&amp;=\frac{1}{\textcolor{red}{x+\sqrt{x^2+4}}}\cdot
+\left(\frac{\textcolor{blue}{2}\textcolor{red}{\sqrt{x^2+4}}
+                           +\textcolor{blue}{2}\textcolor{red}{x}}
+           {\textcolor{blue}{2}\sqrt{x^2+4}}\right)
 </mrow><mrow>
-&amp;=\frac{\sqrt{x^2+4}+x}{x\sqrt{x^2+4}+x^2+4} .
+&amp;=\frac{1}{\sqrt{x^2+4}}
 </mrow>
 </md>
 </p></solution>
