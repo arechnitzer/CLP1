@@ -1910,6 +1910,8 @@ is
 \diff{}{x} x^a = a x^{a-1}
 \end{equation}
 \end{cor}
+\noindent We shall show, in Example \ref{eg diff power}, that the formula 
+$\diff{}{x} x^a = a x^{a-1}$ in fact applies for all real numbers $a$, not just rational numbers.
 
 Back in Example~\ref{eg:DIFFderivXsqrt} we computed the derivative of $\sqrt{x}$ from the
 definition of the derivative. The above corollary (correctly) gives
@@ -3687,15 +3689,15 @@ differentiate and then simplify. Neither is difficult.
 \end{align*}
 \end{itemize}
 \end{eg}
-\begin{eg}
-Notice we can extend the previous example for any non-zero constant --- not
-just 3. Let $c$ be a non-zero constant, then
+\begin{eg}[The derivative of $\log cx$]
+Notice that we can extend the previous example for any positive constant --- not
+just 3. Let $c>0$ be a constant, then
 \begin{align*}
   \diff{}{x} \log cx &= \diff{}{x}\left(\log c + \log x \right)\\
   &= \frac{1}{x}
 \end{align*}
 \end{eg}
-\begin{eg}\label{eg diff log abs x}
+\begin{eg}[The derivative of $\log|x|$]\label{eg diff log abs x}
  We can push this further still. Let $g(x) = \log | x |$, then\footnote{It's
 probably a good moment to go back and look at Example~\ref{eg diff abs}.}
 \begin{itemize}
@@ -3703,10 +3705,16 @@ probably a good moment to go back and look at Example~\ref{eg diff abs}.}
 \begin{align*}
   g'(x) &= \diff{}{x} \log x = \frac{1}{x}
 \end{align*}
-\item If $x<0$ then $|x|= -x =-1\cdot x$ and so
+\item If $x<0$ then $|x|= -x$. If $|h|$ is strictly smaller than $|x|$, 
+then we also have  that $x+h<0$ and $|x+h|=-(x+h)=|x|-h$. 
+Write $X=|x|$ and $H=-h$. Then, by the definition of the derivative,
 \begin{align*}
-  g'(x) &= \diff{}{x} \log(-1 \cdot x) = \frac{1}{x} &\text{by the previous
-example}
+  g'(x) &= \lim_{h\rightarrow 0} \frac{\log|x+h|-\log|x|}{h}
+        = \lim_{h\rightarrow 0} \frac{\log(|x|-h)-\log|x|}{h} \\
+        &= \lim_{H\rightarrow 0} \frac{\log(X+H)-\log X}{-H}
+        = -\lim_{H\rightarrow 0} \frac{\log(X+H)-\log X}{H} \\
+        &=-\diff{}{X}\log X =-\frac{1}{X} = -\frac{1}{|x|} \\
+        &=\frac{1}{x}
 \end{align*}
 \item Since $\log 0$ is undefined, $g'(0)$ does not exist.
 \end{itemize}
@@ -3714,6 +3722,20 @@ Putting this together gives:
 \begin{align*}
   \diff{}{x} \log | x | &= \frac{1}{x}
 \end{align*}
+\end{eg}
+
+\begin{eg}[The derivative of $x^a$]\label{eg diff power}
+Just after Corollary \ref{cor:DIFFxtoa}, we said that we would, in the future, find the derivative of $x^a$ for all real numbers. The future is here. 
+Let $x>0$ and $a$ be any real number. Exponentiating both sides of 
+$\log\big(x^a\big)=a\log x$ gives us $x^a=e^{a\log x}$ and then
+\begin{align*}
+  \diff{}{x} x^a &= \diff{}{x} e^{a\log x}
+                  = e^{a\log x} \diff{}{x}(a\log x) &\text{by the chain rule} \\
+                 &=\frac{a}{x} e^{a\log x}
+                  =\frac{a}{x} x^a \\
+                 &=a x^{a-1}
+\end{align*}
+as expected.
 \end{eg}
 
 
@@ -5108,7 +5130,7 @@ given by
 
 \end{eg}
 
-\begin{eg}
+\begin{eg}\label{eg:mvtg}
 We can return to our initial car-motivated examples. Say you are driving along a straight
 road in a car that can go at most $80km/h$. How far can you go in 2 hours? --- the answer
 is easy, but we can also solve this using MVT.

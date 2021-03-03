@@ -198,8 +198,8 @@ differentiate and then simplify. Neither is difficult.
 </example>
 
 <example><title>The derivative of <m>\log cx</m></title>
-<p>Notice we can extend the previous example for any non-zero constant <mdash/> not
-just 3. Let <m>c</m> be a non-zero constant, then
+<p>Notice that we can extend the previous example for any positive constant <mdash/> not
+just 3. Let <m>c\gt 0</m> be a constant, then
 <md>
 <mrow>
   \diff{}{x} \log cx &amp;= \diff{}{x}\left(\log c + \log x \right)
@@ -224,13 +224,21 @@ probably a good moment to go back and look at Example<nbsp/><xref ref="eg_diff_a
 </mrow>
 </md>
 </li>
-<li> If <m>x \lt 0</m> then <m>|x|= -x =-1\cdot x</m> and so
-<md>
-<mrow>
-  g'(x) &amp;= \diff{}{x} \log(-1 \cdot x) = \frac{1}{x} 
+<li> If <m>x\lt 0</m> then <m>|x|= -x</m>. If <m>|h|</m> is strictly smaller than <m>|x|</m>, 
+then we also have  that <m>x+h\lt 0</m> and <m>|x+h|=-(x+h)=|x|-h</m>. 
+Write <m>X=|x|</m> and <m>H=-h</m>. Then, by the definition of the derivative,
+<md><mrow>
+  g'(x) &amp;= \lim_{h\rightarrow 0} \frac{\log|x+h|-\log|x|}{h}
+        = \lim_{h\rightarrow 0} \frac{\log(|x|-h)-\log|x|}{h} 
+</mrow><mrow>
+        &amp;= \lim_{H\rightarrow 0} \frac{\log(X+H)-\log X}{-H}
+        = -\lim_{H\rightarrow 0} \frac{\log(X+H)-\log X}{H} 
+</mrow><mrow>
+        &amp;=-\diff{}{X}\log X =-\frac{1}{X} = -\frac{1}{|x|} 
+</mrow><mrow>
+        &amp;=\frac{1}{x}
 </mrow>
 </md>
-by the previous example.
 </li>
 <li> Since <m>\log 0</m> is undefined, <m>g'(0)</m> does not exist.
 </li>
@@ -242,6 +250,25 @@ Putting this together gives:
 </mrow>
 </md>
 </p></example>
+
+<example xml:id="eg_diff_power"><title>The derivative of <m>x^a</m></title>
+<p>
+Just after Corollary<nbsp/><xref ref="cor_DIFFxtoa"/>, we said that we would, in the future, find the derivative of <m>x^a</m> for all real numbers. The future is here. 
+Let <m>x\gt 0</m> and <m>a</m> be any real number. Exponentiating both sides of <m>\log\big(x^a\big)=a\log x</m> gives us <m>x^a=e^{a\log x}</m> and then
+<md>
+<mrow>
+  \diff{}{x} x^a &amp;= \diff{}{x} e^{a\log x}
+                  = e^{a\log x} \diff{}{x}(a\log x) &amp;\text{by the chain rule} 
+</mrow><mrow>
+                &amp;=\frac{a}{x} e^{a\log x}
+                  =\frac{a}{x} x^a 
+</mrow><mrow>
+                &amp;=a x^{a-1}
+</mrow>
+</md>
+as expected.
+</p>
+</example>
 
 
 <p>We can extend Theorem<nbsp/><xref ref="thm_diff_log"/> to compute the derivative of
