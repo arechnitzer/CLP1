@@ -433,6 +433,14 @@ then
   &amp;= \left(\lim_{x \to a} f(x) \right)^{1/n} = F^{1/n}
 </mrow>
 </md>
+More generally<fn>You may not know the definition of the power
+<m>b^p</m> when <m>p</m> is not a rational number, so here it is. If <m>b>0</m> and <m>p</m>
+is any real number, then <m>b^p</m> is the limit of <m>b^r</m> as <m>r</m> approaches <m>p</m> 
+through rational numbers. We won't do so here, but it is possible to prove that the limit exists.</fn>, if <m>F>0</m> and <m>p</m> is any real number,
+<me>
+  \lim_{x \to a} \left( f(x) \right)^p
+  = \left(\lim_{x \to a} f(x) \right)^p = F^p
+</me>
 </p></statement>
 </theorem>
 

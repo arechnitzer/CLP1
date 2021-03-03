@@ -569,7 +569,7 @@ There are infinitely many places where it does <em>not</em> exist.
 All values of <m>x</m> except <m>x=\frac{\pi}{2}+n\pi</m>, for any integer <m>n</m>.
 </p></answer>
 <solution><p>
-In order for <m>f'(x)</m> to exist, <m>f(x)</m> has to exist. We already know that <m>\tan x </m> does not exist whenever <m>x=\frac{\pi}{2}+n\pi</m> for any integer <m>n</m>. If we look a little deeper, since <m>\tan x = \frac{\sin x}{\cos x}</m>, the points where tangent does not exist correspond exactly to the points where cosine doesn't exist.
+In order for <m>f'(x)</m> to exist, <m>f(x)</m> has to exist. We already know that <m>\tan x </m> does not exist whenever <m>x=\frac{\pi}{2}+n\pi</m> for any integer <m>n</m>. If we look a little deeper, since <m>\tan x = \frac{\sin x}{\cos x}</m>, the points where tangent does not exist correspond exactly to the points where cosine is zero.
 </p>
 
 <p>From its graph, tangent looks like a smooth curve over its domain, so we might guess that everywhere tangent is defined, its derivative is defined. We can check this: <m>f'(x) = \sec^2 x = \left(\frac{1}{\cos x}\right)^2</m>. Indeed, wherever <m>\cos x</m> is nonzero, <m>f'</m> exists.

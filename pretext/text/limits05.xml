@@ -90,9 +90,9 @@ exist. Then the following limits hold
 </mrow><mrow>
   \lim_{x \to \infty} \frac{f(x)}{ g(x) } &amp;= \frac{F}{G} &amp; \text{provided } G \neq 0
 </mrow>
-<intertext>and for rational numbers <m>r</m></intertext>
+<intertext>and for real numbers <m>p</m></intertext>
 <mrow>
-  \lim_{x \to \infty} f(x)^r &amp;= F^r &amp; \text{provided $f(x)^r$ is defined for all $x$}
+  \lim_{x \to \infty} f(x)^p &amp;= F^p &amp; \text{provided $F^p$ and $f(x)^p$ are defined for all $x$}
 </mrow>
 </md>
 The analogous results hold for limits to <m>-\infty</m>.
@@ -448,6 +448,14 @@ Let <m>a,c,H \in \mathbb{R}</m> and let <m>f,g,h</m> be functions defined in  an
 	\end{cases}</m>
 </li>
 <li> <m>\ds \lim_{x \to a} \frac{h(x)}{f(x)} = 0</m> </li>
+<li>
+	<m>\ds \lim_{x \to a} f(x)^p =
+	\begin{cases}
+	+\infty &amp; p \gt 0 \\
+	0 &amp; p \lt 0\\
+	1 &amp; p=0
+	\end{cases}</m>
+</li>
 </ul>
 </p></statement>
 </theorem>
