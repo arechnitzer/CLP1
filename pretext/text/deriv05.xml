@@ -131,80 +131,47 @@ And so we recover the product rule.
 
 <subsection><title>(Optional) <mdash/> Proof of the Quotient Rule (Theorem <xref ref="thm_DIFFquotRule"/>)</title>
 <p>
-This one is relatively messy, so we have made it optional. Let us start by writing the  quotient of our two functions as <m>Q(x) = f(x) / g(x)</m>, and we assume that <m>g(x) \neq 0</m>.  As before, we start our manipulations from the definition of the derivative
+We now give the proof of the quotient rule in two steps<fn>We thank
+Serban Raianu for suggesting this approach.</fn>. We assume throughout that 
+<m>g(x) \neq 0</m> and that <m>f(x)</m> and <m>g(x)</m> are differentiable, meaning 
+that the limits defining <m>f'(x)</m>, <m>g'(x)</m> exist.
+<ul>
+<li>
+In the first step, we prove the quotient rule under the assumption that <m>f(x)/g(x)</m> is differentiable.
+</li><li>
+In the second step, we prove that <m>1/g(x)</m> differentiable. Once we know that 
+<m>1/g(x)</m> is differentiable, the product rule implies that <m>f(x)/g(x)</m> is
+differentiable. 
+</li>
+</ul>
+<em>Step 1: the proof of the quotient rule assumng that <m>\frac{f(x)}{g(x)}</m> is differentiable.<m>\ \ \ </m></em>
+Write <m>Q(x)=\frac{f(x)}{g(x)}</m>. Then <m>f(x) = g(x)\,Q(x)</m> so that <m>f'(x) = g'(x)\,Q(x) + g(x)\,Q'(x)</m>, by the product rule, and
 <md>
 <mrow>
-Q'(x)
-&amp;=\lim_{h\to 0}\frac{Q(x+h)-Q(x)}{h} \qquad\qquad \text{(now substitute in $Q$)}
+Q'(x) &amp;= \frac{f'(x)-g'(x)\,Q(x)}{g(x)}
+       = \frac{f'(x)-g'(x)\,\frac{f(x)}{g(x)}}{g(x)}
 </mrow><mrow>
-&amp; =\lim_{h\to 0}\frac{1}{h}
-           \left[\frac{f(x+h)}{g(x+h)}-\frac{f(x)}{g(x)}\right] \qquad
-\text{(and then form a common denominator)}
-</mrow><mrow>
-&amp;=\lim_{h\to 0}
-    \frac{ f(x+h)\cdot g(x) - f(x)\cdot g(x+h) }
-                            {h \cdot g(x+h)\cdot g(x)}
+      &amp;= \frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}
 </mrow>
 </md>
-We make use of the same <m>F, G</m> that we used in the proof of the product rule. We use  them to rewrite <m>f(x+h)</m> as <m>f(x) + hF(h)</m> and <m>g(x+h)</m> as <m>g(x+h)=g(x)+hG(h)</m>.  First  concentrate on the numerator of the above expression:
+<em>Step 2: the proof that <m>1/g(x)</m> is differentiable.<m>\ \ \ </m></em> 
+By definition
 <md>
 <mrow>
-\amp f(x+h)\cdot g(x) - f(x)\cdot g(x+h)
-=[f(x)+hF(h)]\cdot g(x) - f(x)\cdot [g(x)+hG(h)]
+\diff{}{x}\frac{1}{g(x)}
+&amp;=\lim_{h\rightarrow 0}\frac{1}{h}\left[\frac{1}{g(x+h)}-\frac{1}{g(x)}\right]
+=\lim_{h\rightarrow 0}\frac{g(x)-g(x+h)}{h\,g(x)\,g(x+h)}
 </mrow><mrow>
-&amp;\hskip0.5in=f(x)\cdot g(x) + h g(x) \cdot F(h)  -f(x)\cdot g(x) - h f(x) \cdot G(h)
+&amp;=-\lim_{h\rightarrow 0}\frac{1}{g(x)}\ \frac{1}{g(x+h)}\ 
+                                        \frac{g(x+h)-g(x)}{h}
 </mrow><mrow>
-&amp;\hskip0.5in= h g(x) \cdot F(h)  - h f(x) \cdot G(h)
-</mrow>
-</md>
-So dividing this by the denominator, and cancelling the common factor  of <m>h</m>, gives
-<md>
-<mrow>
-\frac{Q(x+h)-Q(x)}{h}
-  &amp;= \frac{F(h) \cdot g(x) - f(x)\cdot G(h)}{g(x+h)\cdot g(x)}
-</mrow>
-</md>
-To arrive at <m>Q'(x)</m> we take the limit of the above as <m>h \to 0</m>; since it  is the limit of a ratio with a non-zero denominator, the result is a ratio  of limits:
-<md>
-<mrow>
-Q'(x)
-&amp;=\lim_{h\to 0}
-\frac{F(h) \cdot g(x) - f(x)\cdot G(h)}{g(x+h)\cdot g(x)}
+&amp;=-\frac{1}{g(x)}\ 
+   \lim_{h\rightarrow 0}\frac{1}{g(x+h)}\ 
+   \lim_{h\rightarrow 0}\frac{g(x+h)-g(x)}{h}
 </mrow><mrow>
-&amp;=
-\frac{\ds \lim_{h\to 0} \left[ F(h) \cdot g(x) - f(x)\cdot G(h)\right]}
-{\ds \lim_{h \to 0} \left[ g(x+h)\cdot g(x)\right]}
+&amp;=-\frac{1}{g(x)^2}g'(x)
 </mrow>
 </md>
-Processing the denominator gives
-<md>
-<mrow>
-\lim_{h \to 0} \left[ g(x+h)\cdot g(x)\right]
-&amp;= g(x) \cdot \lim_{h\to0}g(x+h) &amp; \text{since $g(x)$ doesn't change with $h$}
-</mrow><mrow>
-&amp;= g(x)^2
-</mrow>
-</md>
-While the numerator is
-<md>
-<mrow>
-\lim_{h\to 0} \left[ F(h) \cdot g(x) - f(x)\cdot G(h)\right]
-&amp;= \lim_{h\to0} F(h)\cdot g(x) - \lim_{h\to 0} f(x)\cdot G(h)
-</mrow>
-<intertext>Now because <m>f(x),g(x)</m> do not change with <m>h</m> we can factor them  out.</intertext>
-<mrow>
-&amp;= g(x) \lim_{h\to0} F(h) - f(x) \lim_{h\to 0} G(h)
-</mrow><mrow>
-&amp;= g(x) f'(x) - f(x) g'(x)
-</mrow>
-</md>
-Putting these pieces back together finally gives
-<md>
-<mrow>
-Q(x) &amp;= \frac{g(x) f'(x) - f(x) g'(x)}{g(x)^2}.
-</mrow>
-</md>
-And we arrive at the quotient rule. Note that we have assumed that the  derivatives <m>f'(x), g'(x)</m> exist and that <m>g(x) \neq 0</m>.
 </p>
 </subsection>
 

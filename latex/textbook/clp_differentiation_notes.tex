@@ -1412,68 +1412,43 @@ And so we recover the product rule.
 \subsection*{(optional) --- Proof of the Quotient Rule
                 (Theorem \ref{thm:DIFFquotRule})}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This one is relatively messy, so we have made it optional. Let us start by writing the
-quotient of our two functions as $Q(x) = f(x) / g(x)$, and we assume that $g(x) \neq 0$.
-As before, we start our manipulations from the definition of the derivative
-\begin{align*}
-Q'(x)
-&=\lim_{h\to 0}\frac{Q(x+h)-Q(x)}{h} && \text{(now substitute in Q)}\\
-& =\lim_{h\to 0}\frac{1}{h}
-           \left[\frac{f(x+h)}{g(x+h)}-\frac{f(x)}{g(x)}\right] &&
-\text{(and then form a common denominator)}\\
-&=\lim_{h\to 0}
-    \frac{ f(x+h)\cdot g(x) - f(x)\cdot g(x+h) }
-                            {h \cdot g(x+h)\cdot g(x)}
-\end{align*}
-We make use of the same $F, G$ that we used in the proof of the product rule. We use
-them to rewrite $f(x+h)$ as $f(x) + hF(h)$ and $g(x+h)$ as $g(x+h)=g(x)+hG(h)$.
-First
-concentrate on the numerator of the above expression:
-\begin{align*}
-f(x+h)\cdot g(x) - f(x)\cdot g(x+h)
-&=[f(x)+hF(h)]\cdot g(x) - f(x)\cdot [g(x)+hG(h)]\\
-&=f(x)\cdot g(x) + h g(x) \cdot F(h)  -f(x)\cdot g(x) - h f(x) \cdot G(h) \\
-&= h g(x) \cdot F(h)  - h f(x) \cdot G(h) \\
-\end{align*}
-So dividing this by the denominator, and cancelling the common factor
-of $h$, gives
-\begin{align*}
-\frac{Q(x+h)-Q(x)}{h}
-  &= \frac{F(h) \cdot g(x) - f(x)\cdot G(h)}{g(x+h)\cdot g(x)}
-\end{align*}
-To arrive at $Q'(x)$ we take the limit of the above as $h \to 0$; since it
-is the limit of a ratio with a non-zero denominator, the result is a ratio
-of limits:
-\begin{align*}
-Q'(x)
-&=\lim_{h\to 0}
-\frac{F(h) \cdot g(x) - f(x)\cdot G(h)}{g(x+h)\cdot g(x)}\\
-&=
-\frac{\ds \lim_{h\to 0} \left[ F(h) \cdot g(x) - f(x)\cdot G(h)\right]}
-{\ds \lim_{h \to 0} \left[ g(x+h)\cdot g(x)\right]}\\
-\end{align*}
-Processing the denominator gives
-\begin{align*}
-\lim_{h \to 0} \left[ g(x+h)\cdot g(x)\right]
-&= g(x) \cdot \lim_{h\to0}g(x+h) & \text{since $g(x)$ doesn't change with $h$}\\
-&= g(x)^2
-\end{align*}
-While the numerator is
-\begin{align*}
-\lim_{h\to 0} \left[ F(h) \cdot g(x) - f(x)\cdot G(h)\right]
-&= \lim_{h\to0} F(h)\cdot g(x) - \lim_{h\to 0} f(x)\cdot G(h)
-\intertext{Now because $f(x),g(x)$ do not change with $h$ we can factor them
-out.}
-&= g(x) \lim_{h\to0} F(h) - f(x) \lim_{h\to 0} G(h) \\
-&= g(x) f'(x) - f(x) g'(x)
-\end{align*}
-Putting these pieces back together finally gives
-\begin{align*}
-Q(x) &= \frac{g(x) f'(x) - f(x) g'(x)}{g(x)^2}.
-\end{align*}
-And we arrive at the quotient rule. Note that we have assumed that the
-derivatives $f'(x), g'(x)$ exist and that $g(x) \neq 0$.
 
+We now give the proof of the quotient rule in two steps\footnote{We thank
+Serban Raianu for suggesting this approach.}. We assume throughout that 
+$g(x) \neq 0$ and that $f(x)$ and $g(x)$ are differentiable, meaning 
+that the limits defining $f'(x)$, $g'(x)$ exist.
+\begin{itemize}
+\item
+In the first step, we prove the quotient rule under the assumption that $f(x)/g(x)$ is differentiable.
+\item
+In the second step, we prove that $1/g(x)$ differentiable. Once we know that 
+$1/g(x)$ is differentiable, the product rule implies that $f(x)/g(x)$ is
+differentiable. 
+\end{itemize}
+
+\noindent\emph{Step 1: the proof of the quotient rule assumng that 
+$\frac{f(x)}{g(x)}$ is differentiable.}\ \ \ Write $Q(x)=\frac{f(x)}{g(x)}$. Then $f(x) = g(x)\,Q(x)$
+so that $f'(x) = g'(x)\,Q(x) + g(x)\,Q'(x)$, by the product rule, and
+\begin{align*}
+Q'(x) &= \frac{f'(x)-g'(x)\,Q(x)}{g(x)}
+       = \frac{f'(x)-g'(x)\,\frac{f(x)}{g(x)}}{g(x)} \\
+      &= \frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}
+\end{align*}
+
+\noindent\emph{Step 2: the proof that $1/g(x)$ is differentiable.}\ \ \ 
+By definition
+\begin{align*}
+\diff{}{x}\frac{1}{g(x)}
+&=\lim_{h\rightarrow 0}\frac{1}{h}\left[\frac{1}{g(x+h)}-\frac{1}{g(x)}\right]
+=\lim_{h\rightarrow 0}\frac{g(x)-g(x+h)}{h\,g(x)\,g(x+h)}
+\\
+&=-\lim_{h\rightarrow 0}\frac{1}{g(x)}\ \frac{1}{g(x+h)}\ 
+                                        \frac{g(x+h)-g(x)}{h}\\
+&=-\frac{1}{g(x)}\ 
+   \lim_{h\rightarrow 0}\frac{1}{g(x+h)}\ 
+   \lim_{h\rightarrow 0}\frac{g(x+h)-g(x)}{h}\\
+&=-\frac{1}{g(x)^2}g'(x)
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Using the Arithmetic of Derivatives --  Examples}
