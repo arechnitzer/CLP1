@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2021 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<appendix  xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="app_root_finding">
+<title>Root Finding</title>
+<introduction>
+<p>
+To this point you have found solutions to equations almost
+exclusively by algebraic manipulation. This is possible only
+for the artificially simple equations of problem sets and
+tests. In the <q>real world</q> it is very common to encounter
+equations that cannot be solved by algebraic manipulation.
+For example, you found, by completing a square, that the 
+solutions to the quadratic equation <m>ax^2+bx+c=0</m> are 
+<m>x=\big(-b\pm\sqrt{b^2-4ac}\big)/2a</m>.
+But it is known that there simply does not exist a corresponding formula
+for the roots of a general polynomial of degree five or more.
+Fortunately, encountering such an equation is not the end of the
+world, because usually one does not need to know the solutions
+exactly. One only needs to know them to within some specified 
+degree of accuracy. For example, one rarely needs to know <m>\pi</m> 
+to more than a few decimal places. There is a whole subject, 
+called numerical analysis, that concerns using algorithms to solve 
+equations (and perform other tasks) approximately, to any desired 
+degree of accuracy. 
+</p>
+
+<p>
+We have already had, in Examples <xref ref="eg_pre_bisection"/> and <xref ref="eg_bisection"/>,
+and the lead up to them, a really quick introduction to the bisection method, 
+which is a crude, but effective, algorithm for finding approximate solutions to equations 
+of the form <m>f(x)=0</m>. We shall shortly use a little calculus
+to derive a very efficient algorithm for finding approximate solutions
+to such equations. But first here is a simple
+example which provides a review of some of the basic ideas of root
+finding and the bisection method.
+</p>
+
+<example xml:id="eg_rootFindingA"><title>Bisection method</title>
+<p>
+Suppose that we are given some function <m>f(x)</m> and we have to find
+solutions to the equation <m>f(x)=0</m>. To be concrete, suppose
+that <m>f(x) = 8x^3+12x^2+6x-15</m>. How do we go about solving
+<m>f(x)=0</m>? To get a rough idea of the lay of the land, sketch
+the graph of <m>f(x)</m>. First observe that
+<ul>
+<li> 
+when <m>x</m> is very large and negative, <m>f(x)</m> is very large 
+and negative
+</li><li>
+when <m>x</m> is very large and positive, <m>f(x)</m> is very large 
+and positive
+</li><li>
+when <m>x=0</m>, <m>f(x) =f(0) = -15\lt 0</m>
+</li><li>
+when <m>x=1</m>, <m>f(x) =f(1) = 11\gt 0</m>
+</li><li>
+<m>f'(x) = 24x^2+24x+6 = 24\big(x^2+x+\frac{1}{4}\big)
+          =24\big(x+\frac{1}{2}\big)^2\ge 0</m> for all <m>x</m>.
+      So <m>f(x)</m> increases monotonically with <m>x</m>. The graph has
+      a tangent of slope <m>0</m> at <m>x=-\frac{1}{2}</m> and tangents of
+      strictly positive slope everywhere else.
+</li>
+</ul>
+This tells us that the graph of <m>f(x)</m> looks like
+</p>
+<sidebyside width="68%">
+<image source="text/figs/rootFindingCubic"/>
+</sidebyside>
+
+<p>
+Since <m>f(x)</m> strictly increases<fn>By <q><m>f(x)</m> is strictly increasing</q> 
+we mean that <m>f(a)\lt f(b)</m> whenever <m>a\lt b</m>.  As <m>f'(x)\gt 0</m> for all 
+<m>x\ne-\frac{1}{2}</m>, <m>f(x)</m> is strictly increasing even as <m>x</m> passes 
+through <m>-\frac{1}{2}</m>. For example, for any <m>x\gt -\frac{1}{2}</m>, the mean 
+value theorem (Theorem<nbsp/><xref ref="thm_DIFFmvt"/>) tells us that there is a <m>c</m> strictly 
+between <m>-\frac{1}{2}</m> and <m>x</m> such that <m>f(x)-f\big(-\frac{1}{2}\big) 
+= f'(c)\big(x+\frac{1}{2}\big)\gt 0</m>.</fn> as <m>x</m> increases, <m>f(x)</m> can
+take the value zero for at most one value of <m>x</m>.
+<ul>
+<li>
+Since <m>f(0)\lt 0</m> and <m>f(1)\gt 0</m> and <m>f</m> is continuous, <m>f(x)</m> must
+pass through <m>0</m> as <m>x</m> travels from <m>x=0</m> to <m>x=1</m>, by Theorem 
+<xref ref="thm_ivt"/> (the intermediate value theorem). So <m>f(x)</m> takes the value zero 
+for some <m>x</m> between <m>0</m> and <m>1</m>. We will often write this as  <q>the root is 
+ <m>x=0.5\pm 0.5</m></q> to indicate the uncertainty. 
+</li><li> 
+To get closer to the root, we evaluate <m>f(x)</m> halfway between <m>0</m> and <m>1</m>.
+<me>
+f\big(\tfrac{1}{2}\big) = 8\big(\tfrac{1}{2}\big)^3+12\big(\tfrac{1}{2}\big)^2
+                             +6\big(\tfrac{1}{2}\big)-15
+                        = -8
+</me>
+Since <m>f\big(\frac{1}{2}\big)\lt 0</m> and <m>f(1)\gt 0</m> and <m>f</m> is continuous, 
+<m>f(x)</m> must take the value zero for some <m>x</m> 
+between <m>\frac{1}{2}</m> and <m>1</m>. The root is <m>0.75\pm 0.25</m>.
+
+</li><li> 
+To get still closer to the root, we evaluate <m>f(x)</m> halfway between 
+<m>\frac{1}{2}</m> and <m>1</m>.
+<me>
+f\big(\tfrac{3}{4}\big) = 8\big(\tfrac{3}{4}\big)^3+12\big(\tfrac{3}{4}\big)^2
+                             +6\big(\tfrac{3}{4}\big)-15
+                        = -\tfrac{3}{8}
+</me>
+Since <m>f\big(\frac{3}{4}\big)\lt 0</m> and <m>f(1)\gt 0</m> and <m>f</m> is continuous, 
+<m>f(x)</m> must take the value zero for some <m>x</m> 
+between <m>\frac{3}{4}</m> and <m>1</m>. The root is <m>0.875\pm 0.125</m>.
+</li><li>
+ And so on.
+</li>
+</ul>
+</p>
+</example>
+
+<p>
+The root finding strategy used in Example <xref ref="eg_rootFindingA"/> is 
+called the bisection method. The bisection method will home in on a root of the
+function <m>f(x)</m> whenever
+<ul>
+<li>
+<m>f(x)</m> is continuous (<m>f(x)</m> need not have a derivative) and
+</li><li>
+you can find two numbers <m>a_1\lt b_1</m> with <m>f(a_1)</m> and <m>f(b_1)</m> being of opposite 
+sign. 
+</li>
+</ul>
+Denote by <m>I_1</m> the interval <m>[a_1,b_1]=\big\{x\ \big|\ a_1\le x\le b_1\big\}</m>.
+Once you have found the interval <m>I_1</m>, the bisection method generates a sequence <m>I_1</m>, 
+         <m>I_2</m>, 
+         <m>I_3</m>, <m>\cdots</m> 
+of intervals by the following rule.
+</p>
+<fact xml:id="eq_APPbisection"><title>(bisection method)</title>
+<statement><p>
+Denote by <m>c_n=\frac{a_n+b_n}{2}</m> the midpoint of the interval <m>I_n=[a_n,b_n]</m>. 
+If <m>f(c_n)</m> has the same sign as <m>f(a_n)</m>, then
+<me>
+    I_{n+1}=[a_{n+1},b_{n+1}]\quad\text{with}\quad
+               a_{n+1}=c_n,\  b_{n+1}=b_n
+</me>
+and if 
+<m>f(c_n)</m> and <m>f(a_n)</m> have opposite signs, then
+<me>
+    I_{n+1}=[a_{n+1},b_{n+1}]\quad\text{with}\quad
+             a_{n+1}=a_n,\  b_{n+1}=c_n
+</me>
+</p>
+</statement>
+</fact>
+<p>
+This rule was chosen so that <m>f(a_n)</m> and <m>f(b_n)</m> have opposite sign for 
+every <m>n</m>.
+Since <m>f(x)</m> is continuous, <m>f(x)</m> has a zero in each interval <m>I_n</m>.
+Thus each step reduces the error bars by a factor of <m>2</m>. That isn't too 
+bad, but we can come up with something that is much more efficient. 
+We just need a little calculus.
+
+</p>
+</introduction>
+
+<section><title>Newton's Method</title>
+<p>
+Newton's method<fn>The algorithm that we are about to describe grew out of a method that Newton wrote about in 1669. But the modern method incorporates substantial changes introduced by Raphson in 1690 and Simpson in 1740.</fn>,  also known as the Newton-Raphson method, is another technique for generating numerical approximate solutions to equations of the form <m>f(x)=0</m>. For example, one can easily get a good approximation to <m>\sqrt{2}</m> by applying Newton's method to the
+equation <m>x^2-2=0</m>. This will be done in Example <xref ref="eg_NTMsqrttwo"/>, below.
+</p>
+
+<p>
+Here is the derivation of Newton's method. We start by simply making a
+guess for the solution. For example, we could base the guess on a sketch
+of the graph of <m>f(x)</m>. Call the initial guess <m>x_1</m>. 
+Next recall, from Theorem<nbsp/><xref ref="thm_DIFFtangentLine"/>, that the tangent 
+line to <m>y=f(x)</m> at <m>x=x_1</m> is <m>y=F(x)</m>, where
+<me>
+F(x) = f(x_1) + f'(x_1)\,(x-x_1)
+</me>
+Usually <m>F(x)</m> is a pretty good approximation to <m>f(x)</m> for <m>x</m> near <m>x_1</m>. 
+So, instead of trying to solve <m>f(x)=0</m>, we solve the linear equation
+<m>F(x)=0</m> and call the solution <m>x_2</m>.
+<md>
+<mrow>
+0=F(x)=f(x_1) + f'(x_1)\,(x-x_1)
+\amp \iff x-x_1=-\frac{f(x_1)}{f'(x_1)} 
+</mrow><mrow>
+\amp \iff x= x_2= x_1 -\frac{f(x_1)}{f'(x_1)}
+</mrow>
+</md>
+Note that if <m>f(x)</m> were a linear function, then <m>F(x)</m> would be exactly <m>f(x)</m>
+and <m>x_2</m> would solve <m>f(x)=0</m> exactly.
+</p>
+
+<sidebyside width="80%">
+<image source="text/figs/NewtonM"/>
+</sidebyside>
+
+<p>
+Now we repeat, but starting with the (second) guess <m>x_2</m> rather than <m>x_1</m>.
+This gives the (third) guess <m>x_3= x_2 -\frac{f(x_2)}{f'(x_2)}</m>. And so
+on. By way of summary, Newton's method is
+<ol label="1">
+<li>
+Make a preliminary guess <m>x_1</m>.
+</li><li>
+Define <m>x_2=x_1-\frac{f(x_1)}{f'(x_1)}</m>.
+</li><li> 
+<p>
+Iterate. That is, for each natural number <m>n</m>,
+    once you have computed <m>x_n</m>, define 
+</p>
+<fact xml:id="eq_APPnewton"><title>(Newton's method)</title>
+<statement><p>
+<me>
+    x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}
+</me>
+</p>
+</statement>
+</fact>
+</li>
+</ol>
+</p>
+
+<example xml:id="eg_NTMsqrttwo"><title>(Approximating <m>\sqrt{2}</m>)</title>
+<p>
+In this example we compute, approximately, the square root of two. We will of course pretend that we do not already know that <m>\sqrt{2}=1.41421\cdots</m>. So we cannot find it by solving, approximately, 
+the equation <m>f(x)=x-\sqrt{2}=0</m>. Instead we apply Newton's method to the equation
+<me>
+f(x)=x^2-2=0
+</me>
+Since <m>f'(x)=2x</m>, Newton's method says that we should generate
+approximate solutions by iteratively applying
+<me>
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}=x_n-\frac{x_n^2-2}{2x_n}
+=\frac{x_n}{2} +\frac{1}{x_n}
+</me>
+We need a starting point.
+Since <m>1^2=1\lt 2</m> and <m>2^2=4\gt 2</m>, the square root of two must be between <m>1</m>
+and <m>2</m>, so let's start Newton's method with the initial guess <m>x_1=1.5</m>.
+Here goes<fn>The following computations have been carried out in double precision, which is computer speak for about 15 significant digits. We are displaying each <m>x_n</m> rounded to 10 significant digits (9 decimal places). So each displayed <m>x_n</m> has not been impacted by roundoff error, and still contains more decimal places than are usually needed.</fn>:
+<md>
+<mrow>
+x_1\amp =1.5
+</mrow><mrow>
+x_2\amp =\frac{1}{2} x_1+\frac{1}{x_1}
+=\frac{1}{2}(1.5)+\frac{1}{1.5}
+</mrow><mrow>
+\amp =1.416666667 
+</mrow><mrow>
+x_3\amp =\frac{1}{2} x_2+\frac{1}{x_2}
+=\frac{1}{2}(1.416666667)+\frac{1}{1.416666667} 
+</mrow><mrow> 
+\amp =1.414215686  
+</mrow><mrow> 
+x_4\amp =\frac{1}{2} x_3+\frac{1}{x_3}
+=\frac{1}{2}(1.414215686)+\frac{1}{1.414215686} 
+</mrow><mrow> 
+\amp =1.414213562 
+</mrow><mrow> 
+x_5\amp =\frac{1}{2} x_4+\frac{1}{x_4}
+=\frac{1}{2}(1.414213562)+\frac{1}{1.414213562}
+</mrow><mrow>
+\amp =1.414213562
+</mrow>
+</md>
+It looks like the <m>x_n</m>'s, rounded to nine decimal places, have stabilized
+to <m>1.414213562</m>. So it is reasonable to guess that <m>\sqrt{2}</m>, rounded
+to nine decimal places, is exactly <m>1.414213562</m>. Recalling that all numbers
+<m>1.4142135615 \le y \lt 1.4142135625</m> round to <m>1.414213562</m>, we can
+check our guess by evaluating <m>f(1.4142135615)</m> and <m>f(1.4142135625)</m>.
+Since  <m>f(1.4142135615)=-2.5\times 10^{-9}\lt 0</m> and
+       <m>f(1.4142135625)=3.6\times 10^{-10}\gt 0</m>
+the square root of two must indeed be between <m>1.4142135615</m> and
+<m>1.4142135625</m>.
+</p>
+</example>
+
+<example xml:id="eg_exNTMpi"><title>(Approximating <m>\pi</m>)</title>
+<p>
+In this example we compute, approximately, <m>\pi</m> by
+applying Newton's method to the equation
+<me>
+f(x)=\sin x=0
+</me>
+starting with <m>x_1=3</m>. 
+Since <m>f'(x)=\cos x</m>, Newton's method says that we should generate
+approximate solutions by iteratively applying
+<me>
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}=x_n-\frac{\sin x_n}{\cos x_n}
+=x_n-\tan x_n
+</me>
+Here goes
+<md>
+<mrow>
+x_1\amp =3
+</mrow><mrow>
+x_2\amp =x_1-\tan x_1
+=3-\tan 3
+</mrow><mrow>
+\amp =3.142546543
+</mrow><mrow>
+x_3\amp 
+=3.142546543-\tan 3.142546543
+</mrow><mrow>
+\amp =3.141592653
+</mrow><mrow>
+x_4\amp 
+=3.141592653-\tan 3.141592653
+</mrow><mrow>
+\amp =3.141592654
+</mrow><mrow>
+x_5\amp 
+=3.141592654-\tan 3.141592654
+</mrow><mrow>
+\amp =3.141592654
+</mrow>
+</md>
+Since  <m>f(3.1415926535)=9.0\times 10^{-11}\gt 0</m> and
+<m>f(3.1415926545)=-9.1\times 10^{-11}\lt 0</m>,
+<m>\pi</m> must be between <m>3.1415926535</m> and <m>3.1415926545</m>.
+Of course to compute <m>\pi</m> in this way, we (or at least our computers) have to be able to evaluate <m>\tan x</m> for various values of <m>x</m>. Taylor expansions can 
+help us do that. See Example<nbsp/><xref ref="eg_taylorapprox"/>.
+</p>
+</example>
+
+<example xml:id="eg_NTMbad"><title>wild instability</title>
+<p>
+This example illustrates how Newton's method can go badly wrong if your
+initial guess is not good enough. We'll try to solve the equation
+<me>
+f(x)=\arctan x=0
+</me>
+starting with <m>x_1=1.5</m>. (Of course the solution to <m>f(x)=0</m> is just <m>x=0</m>; we chose <m>x_1=1.5</m> for demonstration purposes.) Since the derivative
+<m>
+f'(x)=\frac{1}{1+x^2}
+</m>,
+Newton's method gives
+<me>
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}=x_n-(1+x_n^2)\arctan x_n
+</me>
+So<fn>Once again, the following computations have been carried 
+out in double precision. This time, it is clear that the <m>x_n</m>'s are 
+growing madly as <m>n</m> increases.  So there is not much point to displaying 
+many decimal places and we have not done so.</fn>
+<md>
+<mrow>
+x_1\amp =1.5
+</mrow><mrow>
+x_2\amp =1.5-(1+1.5^2)\arctan 1.5=-1.69
+</mrow><mrow>
+x_3\amp =-1.69-(1+1.69^2)\arctan (-1.69)=2.32
+</mrow><mrow>
+x_4\amp =2.32-(1+2.32^2)\arctan (2.32)=-5.11
+</mrow><mrow>
+x_5\amp =-5.11-(1+5.11^2)\arctan (-5.11)=32.3
+</mrow><mrow>
+x_6\amp =32.3-(1+32.3^2)\arctan (32.3)=-1575
+</mrow><mrow>
+x_7\amp =3,894,976
+</mrow>
+</md>
+Looks pretty bad! Our <m>x_n</m>'s are not settling down at all!
+</p>
+
+<p>
+The figure below shows what went wrong. In this figure,
+<m>y=F_1(x)</m> is the tangent line to <m>y=\arctan x</m> at <m>x=x_1</m>.
+Under Newton's method, this tangent line crosses the <m>x</m>-axis at <m>x=x_2</m>.
+Then <m>y=F_2(x)</m> is the tangent to <m>y=\arctan x</m> at <m>x=x_2</m>.
+Under Newton's method, this tangent line crosses the <m>x</m>-axis at <m>x=x_3</m>.
+And so on.
+</p> 
+
+<p>
+The problem arose because the <m>x_n</m>'s were far enough from the solution, <m>x=0</m>, that the tangent line approximations, while good approximations to <m>f(x)</m> for <m>x\approx x_n</m>, were very 
+poor approximations to <m>f(x)</m> for <m>x\approx 0</m>. 
+In particular, <m>y=F_1(x)</m> (i.e. the tangent line at <m>x=x_1</m>)
+was a bad enough approximation to <m>y=\arctan x</m> for <m>x\approx0</m> that <m>x=x_2</m> (i.e. the value of <m>x</m> where <m>y=F_1(x)</m> crosses the <m>x</m>-axis) is farther from the solution <m>x=0</m> than our original guess <m>x=x_1</m>. 
+</p>
+<sidebyside width="96%">
+<image source="text/figs/badNewtonF"/>
+</sidebyside>
+
+<p>
+If we had started with
+<m>x_1=0.5</m> instead of <m>x_1=1.5</m>, Newton's method would have succeeded very nicely:
+<md>
+<mrow>
+x_1=0.5\qquad
+x_2=-0.0796\qquad
+x_3=0.000335\qquad
+x_4=-2.51\times 10^{-11}
+</mrow>
+</md>
+</p>
+</example>
+
+<example xml:id="eg_NTMcar"><title>interest rate</title>
+<p>
+A car dealer sells a new car for &#x24;23,520. He also offers to finance the same
+car for payments of &#x24;420 per month for five years. What interest rate
+is this dealer charging?
+</p>
+
+<p>
+<alert>Solution.</alert> 
+By way of preparation, we'll start with a simpler problem.
+Suppose that you will have to make a single &#x24;420 payment <m>n</m> months 
+in the future. The simpler problem is to determine how much money you have 
+to deposit now in an account that pays an interest rate of  <m>100 r\%</m> per month, 
+compounded monthly<fn><q>Compounded monthly</q>, means that, each month, interest is paid on the accumulated interest that was paid in all previous months.</fn>, in order to be able to make the &#x24;420 payment in <m>n</m> months.
+</p>
+
+<p>
+Let's denote by <m>P</m> the initial deposit. Because the  interest rate is  
+<m>100 r\%</m> per month, compounded monthly,
+<ul>
+<li>
+the first month's interest is <m>P\times r</m>. 
+So at the end of month &#x23;1, the account balance is <m>P+P\,r=P(1+r)</m>.
+</li><li>
+The second month's interest is <m>[P(1+r)]\times r</m>. So at the end of month &#x23;2, 
+the account balance is <m>P(1+r)+P(1+r)\,r=P(1+r)^2</m>.
+</li><li>
+ And so on.
+</li><li>
+So at the end of <m>n</m> months, the account balance is <m>P(1+r)^n</m>.
+</li>
+</ul>
+In order for the balance at the end of <m>n</m> months, <m>P(1+r)^n</m>, to be &#x24;420,
+the initial deposit has to be <m>P=420(1+r)^{-n}</m>. That is what is meant by the statement <q>The present value<fn>Inflation means that prices of goods (typically) increase with time, and hence &#x24;100 now is worth more than &#x24;100 in 10 years time. The term <q>present value</q> is widely used in economics and finance to mean <q>the current amount of money that will have a specified value at a specified time in the future</q>. It takes inflation into account.  If the money is invested, it takes into account the rate of return of the investment.  We recommend that the interested reader do some search-engining to find out more.</fn> of a &#x24;420 payment made <m>n</m> months in the
+future, when the interest rate is <m>100 r\%</m> per month, compounded monthly,
+is <m>420(1+r)^{-n}</m>.</q>
+</p>
+
+<p>
+Now back to the original problem. We will be making 60 monthly payments of &#x24;420.
+The present value of all 60 payments is<fn>Don't worry if you don't
+know how to evaluate such sums. They are called geometric sums, and will be covered in the CLP-2 text. (See (1.1.3) in the CLP-2 text. In any event,
+you can check that this is correct, by multiplying the whole equation by <m>1-(1+r)^{-1}</m>. When you simplify the left hand side, you should get the 
+right hand side.</fn>
+<md>
+<mrow>
+\amp 420(1+r)^{-1}+420(1+r)^{-2}+\cdots +420(1+r)^{-60} 
+</mrow><mrow>
+\amp \hskip1in
+   =420\frac{(1+r)^{-1}-(1+r)^{-61} }{1-(1+r)^{-1} } 
+</mrow><mrow>
+\amp \hskip1in=420\frac{1-(1+r)^{-60} }{(1+r)-1}
+</mrow><mrow>
+\amp \hskip1in
+=420\frac{1-(1+r)^{-60} }{r}
+</mrow>
+</md>
+The interest rate <m>100r\%</m> being charged by the car dealer is such that 
+the present value of 60 monthly payments of &#x24;420 is &#x24;23520. 
+ That is, the monthly interest rate being charged by the car dealer 
+is the solution of
+<md>
+<mrow>
+ 23520=420\frac{1-(1+r)^{-60} }{r} 
+\qquad\amp \text{or}\qquad 
+56=\frac{1-(1+r)^{-60} }{r} 
+</mrow><mrow>
+\amp \text{or}\qquad 
+56r=1-(1+r)^{-60} 
+</mrow><mrow>
+\amp \text{or}\qquad 
+56r(1+r)^{60}=(1+r)^{60}-1 
+</mrow><mrow>
+\amp \text{or}\qquad 
+(1-56r)(1+r)^{60}=1
+</mrow>
+</md>
+Set <m>f(r)=(1-56r)(1+r)^{60}-1</m>. Then 
+<me>
+f'(r)=-56(1+r)^{60}+60(1-56r)(1+r)^{59}
+</me>
+or 
+<me>
+f'(r)=\big[-56(1+r)+60(1-56r)\big](1+r)^{59}
+     =(4-3416r)(1+r)^{59}
+</me> 
+Apply Newton's method with an initial guess of <m>r_1=.002</m>. 
+(That's <m>0.2</m>&#x25; per month or 2.4&#x25; per year.) Then
+<md>
+<mrow>
+r_2\amp =r_1-\frac{(1-56r_1)(1+r_1)^{60}-1}{(4-3416r_1)(1+r_1)^{59}}=0.002344
+</mrow><mrow>\
+r_3\amp =r_2-\frac{(1-56r_2)(1+r_2)^{60}-1}{(4-3416r_2)(1+r_2)^{59}}=0.002292
+</mrow><mrow>
+r_4\amp =r_3-\frac{(1-56r_3)(1+r_3)^{60}-1}{(4-3416r_3)(1+r_3)^{59}}=0.002290
+</mrow><mrow>
+r_5\amp =r_4-\frac{(1-56r_4)(1+r_4)^{60}-1}{(4-3416r_4)(1+r_4)^{59}}=0.002290
+</mrow>
+</md>
+So the interest rate is 0.229&#x25; per month or 2.75&#x25; per year.
+</p>
+</example>
+</section>
+
+<section><title>The Error Behaviour of Newton's Method</title>
+
+<p>
+Newton's method usually works spectacularly well, provided your
+initial guess is reasonably close to a solution of <m>f(x)=0</m>. A good way
+to select this initial guess is to sketch the graph of <m>y=f(x)</m>. We
+now explain why <q>Newton's method usually works spectacularly 
+well, provided your initial guess is reasonably close to a solution 
+of <m>f(x)=0</m></q>. 
+</p>
+
+<p>
+Let <m>r</m> be any solution of <m>f(x)=0</m>. Then <m>f(r)=0</m>. Suppose that we have
+already computed <m>x_n</m>. The error in <m>x_n</m> is <m>\big|x_n-r\big|</m>.
+We now derive a formula that relates the error after the next step,
+<m>\big|x_{n+1}-r\big|</m>, to <m>\big|x_n-r\big|</m>. We have seen in (<xref ref="eq_taylorErrorQ"/>)
+that
+<md>
+<mrow>
+f(x)=f(x_n)+f'(x_n)(x-x_n)+\frac{1}{2} f''(c)(x-x_n)^2
+</mrow>
+</md>
+for some <m>c</m> between <m>x_n</m> and <m>x</m>. In particular, choosing <m>x=r</m>,
+<me>
+0=f(r)=f(x_n)+f'(x_n)(r-x_n)+\frac{1}{2} f''(c)(r-x_n)^2
+\tag{E1}</me>
+Recall that <m>x_{n+1}</m> is the solution of <m>0=f(x_n)+f'(x_n)(x-x_n)</m>. So
+<me>
+0=f(x_n)+f'(x_n)(x_{n+1}-x_n)
+\tag{E2}</me>
+We need to get an expression for <m>x_{n+1}-r</m>.
+Subtracting (E2) from (E1) gives
+<md>
+<mrow>
+0=f'(x_n)(r-x_{n+1})+\frac{1}{2} f''(c)(r-x_n)^2
+\ \amp \implies\  x_{n+1}-r=\frac{f''(c)}{2f'(x_n)}(x_n-r)^2
+</mrow><mrow>
+\amp \implies\  \big|x_{n+1}-r\big| =\frac{|f''(c)|}{2|f'(x_n)|}|x_n-r|^2
+</mrow>
+</md>
+If the guess <m>x_n</m> is close to <m>r</m>, then <m>c</m>, which must be between <m>x_n</m>
+and <m>r</m>, is also close to <m>r</m> and we will have <m>f''(c)\approx f''(r)</m> 
+and <m>f'(x_n)\approx f'(r)</m> and
+<me>
+\big|x_{n+1}-r\big| \approx\frac{|f''(r)|}{2|f'(r)|}|x_n-r|^2
+\tag{E3}</me>
+Even when <m>x_n</m> is not close to <m>r</m>, if we know that there are two 
+numbers <m>L,M\gt 0</m> such that <m>f</m> obeys:
+<ol  label="(H1)">
+<li>
+ <m>\big|f'(x_n)\big|\ge L</m> 
+</li><li>
+<m>\big|f''(c)\big|\le M</m>
+</li>
+</ol>
+(we'll see examples of this below) then we will have
+<me>
+ \big|x_{n+1}-r\big| \le\frac{M}{2L}|x_n-r|^2
+\tag{E4}</me>
+Let's denote by <m>\varepsilon_1</m> the error, <m>|x_1-r|</m>, of our initial guess. In
+fact, let's denote  by <m>\varepsilon_n</m> the error, <m>|x_n-r|</m>, in <m>x_n</m>. Then 
+(E4) says
+<me>
+\varepsilon_{n+1}\le \frac{M}{2L}\varepsilon_n^2
+</me>
+In particular
+<md alignment="alignat">
+<mrow>
+\varepsilon_2\amp \le \frac{M}{2L}\varepsilon_1^2
+</mrow><mrow>
+\varepsilon_3\amp \le \frac{M}{2L}\varepsilon_2^2 \amp 
+       \amp \le \frac{M}{2L}\left( \frac{M}{2L}\varepsilon_1^2\right)^2 \amp 
+       \amp = \left( \frac{M}{2L}\right)^3\varepsilon_1^4
+</mrow><mrow>
+\varepsilon_4\amp \le \frac{M}{2L}\varepsilon_3^2 \amp 
+       \amp \le \frac{M}{2L}\left[\left( \frac{M}{2L}\right)^3\varepsilon_1^4\right]^2 \amp 
+       \amp = \left( \frac{M}{2L}\right)^7\varepsilon_1^8
+</mrow><mrow>
+\varepsilon_5\amp \le \frac{M}{2L}\varepsilon_4^2 \amp 
+       \amp \le \frac{M}{2L}\left[\left( \frac{M}{2L}\right)^7\varepsilon_1^8\right]^2 \amp 
+       \amp = \left( \frac{M}{2L}\right)^{15}\varepsilon_1^{16}
+</mrow>
+</md>
+By now we can see a pattern forming, that is easily verified by induction<fn>Mathematical induction is a technique for proving a sequence <m>S_1</m>, <m>S_2</m>, <m>S_3</m>, <m>\cdots</m> of statements. That technique consists of first proving that <m>S_1</m> is true, and then proving that, for any natural 
+number <m>n</m>, if <m>S_n</m> is true then <m>S_{n+1}</m> is true.</fn>.
+<me>
+\varepsilon_n\le \left( \frac{M}{2L}\right)^{2^{n-1}-1}\varepsilon_1^{2^{n-1}}
+=\frac{2L}{M}\left(\frac{M}{2L}\varepsilon_1\right)^{2^{n-1}}
+\tag{E5}</me>
+As long as <m>\frac{M}{2L}\varepsilon_1\lt 1</m> (which gives us a quantitative idea
+as to how good our first guess has to be in order for Newton's method 
+to work), this goes to zero extremely quickly as <m>n</m> increases. 
+For example, suppose that <m>\frac{M}{2L}\varepsilon_1\le \frac{1}{2}</m>. Then
+<me>
+\varepsilon_n\le \frac{2L}{M}\left(\frac{1}{2}\right)^{2^{n-1}}
+\le \frac{2L}{M}\cdot\begin{cases}
+                        0.25 \amp \text{if }n=2 \\
+                        0.0625\amp \text{if }n=3 \\
+                        0.0039=3.9\times 10^{-3}\amp \text{if }n=4 \\
+                        0.000015=1.5\times 10^{-5}\amp \text{if }n=5 \\
+                        0.00000000023=2.3\times 10^{-10}\amp \text{if }n=6 \\
+                        0.000000000000000000054=5.4\times 10^{-20}
+                                   \amp \text{if }n=7
+                \end{cases}
+</me>
+Each time you increase <m>n</m> by one, the number of zeroes after the decimal
+place roughly doubles. You can see why from (E5). Since
+<me>
+\left(\frac{M}{2L}\varepsilon_1\right)^{2^{(n+1)-1}}
+=\left(\frac{M}{2L}\varepsilon_1\right)^{2^{n-1}\times 2}
+=\left[\left(\frac{M}{2L}\varepsilon_1\right)^{2^{n-1}}\right]^2
+</me>
+we have, <em>very</em> roughly speaking, <m>\varepsilon_{n+1}\approx\varepsilon_n^2</m>.
+This <em>quadratic</em> behaviour is the reason that Newton's method is so useful.
+</p>
+
+<example xml:id="eg_NTMsqrttwoB">
+  <title>(Example <xref ref="eg_NTMsqrttwo"/>, continued)</title>
+<p>
+Let's consider, as we did in Example<nbsp/><xref ref="eg_NTMsqrttwo"/>, 
+<m>f(x)=x^2-2</m>, starting with <m>x_1=\frac{3}{2}</m>. Then
+<me>
+f'(x)=2x\qquad
+f''(x)=2
+</me>
+Recalling, from (H1) and (H2), that <m>L</m> is a lower bound on <m>|f'|</m> and
+<m>M</m> is an upper bound on <m>|f''|</m>,
+we may certainly take <m>M=2</m> and if, for example, <m>x_n\ge 1</m> for all
+<m>n</m> (as happened in Example<nbsp/><xref ref="eg_NTMsqrttwo"/>), we may take <m>L=2</m> too.
+While we do not know what <m>r</m> is, we do know that <m>1\le r\le 2</m> 
+(since <m>f(1)=1^1-2\lt 0</m> and <m>f(2)=2^2-2>0</m>). As we took <m>x_1=\frac{3}{2}</m>,
+we have <m>\varepsilon_1=|x_1-r|\le \frac{1}{2}</m>, so that 
+<m>\frac{M}{2L}\varepsilon_1\le\frac{1}{4}</m> and
+<me>
+\varepsilon_{n+1}\le  \frac{2L}{M}\left(\frac{M}{2L}\varepsilon_1\right)^{2^{n-1}}
+\le 2\left(\frac{1}{4}\right)^{2^{n-1}}
+\tag{E6}</me>
+This tends to zero very quickly as <m>n</m> increases.  Furthermore this is an
+upper bound on the error and not the actual error. In fact 
+(E6) is a very crude upper bound. For example, setting <m>n=3</m> gives the bound
+<me>
+\varepsilon_4\le 2\left(\frac{1}{4}\right)^{2^2} = 7\times 10^{-3}
+</me>
+and we saw in Example<nbsp/><xref ref="eg_NTMsqrttwo"/> that the actual error in <m>x_4</m> 
+was smaller than <m>5\times 10^{-10}</m>.
+</p>
+</example>
+
+<example xml:id="eg_NTMpi"><title>(Example <xref ref="eg_NTMpi"/>, continued)</title>
+<p>
+Let's consider, as we did in Example<nbsp/><xref ref="eg_NTMpi"/>, <m>f(x)=\sin x</m>, 
+starting with <m>x_1=3</m>. Then
+<md>
+<mrow>
+f'(x)=\cos x\qquad
+f''(x)=-\sin x
+</mrow>
+</md>
+As <m>|-\sin x|\le 1</m>, we may certainly take <m>M=1</m>. 
+In Example<nbsp/><xref ref="eg_NTMpi"/>, all <m>x_n</m>'s were between <m>3</m> and <m>3.2</m>. 
+Since (to three decimal places)
+<md>
+<mrow>
+\sin(3)=0.141>0\qquad
+\sin(3.2)=-0.058\lt 0
+</mrow>
+</md>
+the IVT (intermediate value theorem) tells us that <m>3\lt r\lt 3.2</m> and <m>\varepsilon_1=|x_1-r|\lt 0.2</m>. 
+</p>
+
+<p>
+So <m>r</m> and all <m>x_n</m>'s and hence all <m>c</m>'s
+lie in the interval <m>(3,3.2)</m>.  Since
+<md>
+<mrow>
+-0.9990=\cos(3)\lt \cos c \lt \cos(3.2) =- 0.9983
+</mrow>
+</md>
+we necessarily have <m>\big|f'(c)\big|=\big|\cos c\big|\ge 0.9</m> and we may 
+take <m>L=0.9</m>.  So
+<md>
+<mrow>
+\varepsilon_{n+1}\le  \frac{2L}{M}\left(\frac{M}{2L}\varepsilon_1\right)^{2^{n-1}}
+\le \frac{2\times0.9}{1}\left(\frac{1}{2\times0.9}0.2\right)^{2^{n-1}}
+\le 2\left(\frac{1}{9}\right)^{2^{n-1}}
+</mrow>
+</md>
+This tends to zero very quickly as <m>n</m> increases.
+</p>
+</example>
+
+<p>
+We have now seen two procedures for finding roots of a function <m>f(x)</m> <mdash/>
+   the bisection method (which does not use the derivative of <m>f(x)</m>, but which 
+       is not very efficient) and
+   Newton's method  (which does use the derivative of <m>f(x)</m>, and which 
+       is very efficient). 
+In fact, there is a whole constellation of other methods<fn>What does it say about mathematicians that they have developed so many ways of finding zero?</fn> 
+and the interested reader should search engine their way to, for example, Wikipedia's article on root finding algorithms. Here, we will just mention two other methods, one being a variant of the bisection method and 
+the other being a variant of Newton's method.
+</p>
+</section>
+
+<section><title>The false position (regula falsi) method</title>
+
+<p>
+Let <m>f(x)</m> be a continuous function and let <m>a_1\lt b_1</m> with <m>f(a_1)</m> and <m>f(b_1)</m> being of opposite sign.
+</p>
+
+<p>
+As we have seen, the bisection method generates a sequence of intervals <m>I_n=[a_n,b_n]</m>,
+<m>n=1,2,3,\cdots</m> with, for each <m>n</m>, <m>f(a_n)</m> and <m>f(b_n)</m> having opposite sign
+(so that, by continuity, <m>f</m> has a root in <m>I_n</m>). Once we have <m>I_n</m>,
+we choose <m>I_{n+1}</m> based on the sign of <m>f</m> at the midpoint, 
+<m>\frac{a_n+b_n}{2}</m>, of <m>I_n</m>.  Since we always test the midpoint, the possible error decreases by a factor of 2 each step.
+</p>
+
+<p>
+The false position method tries to make the whole procedure more efficient by testing the sign of <m>f</m> at a point that is closer to the end of <m>I_n</m> where the magnitude of <m>f</m> is smaller. 
+ To be precise, we approximate <m>y=f(x)</m> by the equation of the straight line
+ through <m>\big(a_n,f(a_n)\big)</m> and <m>\big(b_n,f(b_n)\big)</m>.  
+</p>
+<sidebyside width="89%">
+<image source="text/figs/falsePosition"/>
+</sidebyside>
+<p>
+The equation of that straight line is
+<me>
+y = F(x) = f(a_n) + \frac{f(b_n)-f(a_n)}{b_n-a_n}(x-a_n)
+</me>
+Then the false position method tests the sign of <m>f(x)</m> at the value of 
+<m>x</m> where <m>F(x)=0</m>.
+<md>
+<mrow>
+\amp F(x) = f(a_n) + \frac{f(b_n)-f(a_n)}{b_n-a_n}(x-a_n)
+  =0 
+</mrow><mrow>
+\amp  \iff x= a_n - \frac{b_n-a_n}{f(b_n)-f(a_n)} f(a_n)
+           = \frac{a_n f(b_n) - b_n f(a_n) }{f(b_n)-f(a_n)}
+</mrow>
+</md>
+So once we have the interval <m>I_n</m>, the false position method generates the interval <m>I_{n+1}</m> by the following rule.<fn>The convergence behaviour of the false position method is relatively complicated. So we do not discuss it here. As always, we invite the interested reader to visit their favourite search engine.</fn>
+</p>
+<fact xml:id="eq_APPfalsePosition"><title>fale position method</title>
+<statement><p>
+Set <m>c_n=\frac{a_n f(b_n) - b_n f(a_n) }{f(b_n)-f(a_n)}</m>. 
+If <m>f(c_n)</m> has the same sign as <m>f(a_n)</m>, then
+<me>
+    I_{n+1}=[a_{n+1},b_{n+1}]\quad\text{with}\quad
+               a_{n+1}=c_n,\  b_{n+1}=b_n
+</me>
+and if 
+<m>f(c_n)</m> and <m>f(a_n)</m> have opposite signs, then
+<me>
+    I_{n+1}=[a_{n+1},b_{n+1}]\quad\text{with}\quad
+             a_{n+1}=a_n,\  b_{n+1}=c_n
+</me>
+</p>
+</statement>
+</fact>
+</section>
+
+<section><title>The secant method</title>
+<p>
+Let <m>f(x)</m> be a continuous function. The secant method is a variant of 
+Newton's method that avoids the use of the derivative of <m>f(x)</m> <mdash/> which can be very helpful when dealing with the derivative is not easy. It avoids the use of the derivative  by approximating  <m>f'(x)</m> by <m>\frac{f(x+h)-f(x)}{h}</m> for some <m>h</m>. That is, it approximates the tangent line to <m>f</m> at <m>x</m> by a secant line for <m>f</m> that passes through <m>x</m>. To limit the number of evaluations of <m>f(x)</m> required, it uses <m>x=x_{n-1}</m> and <m>x+h=x_n</m>. Here is how it works.
+</p>
+
+<p>
+Suppose that we have already found <m>x_n</m>. Then we denote by <m>y=F(x)</m> the equation of the (secant) line that passes through 
+<m>\big(x_{n-1}, f(x_{n-1})\big)</m>  and <m>\big(x_n,f(x_n)\big)</m> and we choose <m>x_{n+1}</m> to be the value of <m>x</m> where <m>F(x)=0</m>. 
+</p>
+
+<sidebyside width="70%">
+<image source="text/figs/secant"/>
+</sidebyside>
+
+<p>
+The equation of the secant line is
+<me>
+y = F(x) = f(x_{n-1}) + \frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}(x-x_{n-1})
+</me>
+so that <m>x_{n+1}</m> is determined by
+<md>
+<mrow>
+\amp 0=F(x_{n+1}) = f(x_{n-1}) + 
+    \frac{f(x_n)-f(x_{n-1})}{x_n-x_{n-1}}(x_{n+1}-x_{n-1})
+</mrow><mrow>
+\amp  \iff x_{n+1}= x_{n-1} - \frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})} f(x_{n-1})
+</mrow>
+</md>
+or, simplifying,
+</p>
+<fact xml:id="eq_APPsecant"><title>secant method</title>
+<statement><p>
+<me>
+    x_{n+1}=\frac{x_{n-1} f(x_n) - x_n f(x_{n-1}) }{f(x_n)-f(x_{n-1})}
+</me>
+</p>
+</statement>
+</fact>
+<p>
+Of course, to get started with <m>n=1</m>, we need two initial guesses, <m>x_0</m> and <m>x_1</m>, for the root.
+</p>
+
+<example xml:id="eg_NTMsqrttwoC"><title>Approximating <m>\sqrt{2}</m>, again</title>
+<p>
+In this example we compute, approximately, the square root of two by
+applying the secant method to the equation
+<me>
+f(x)=x^2-2=0
+</me>
+and we'll compare the secant method results with the corresponding Newton's method results.
+(See Example<nbsp/><xref ref="eg_NTMsqrttwo"/>.)
+</p>
+
+<p>
+Since <m>f'(x)=2x</m>, (<xref ref="eq_APPnewton"/>) says that, under Newton's method, 
+we should iteratively apply
+<me>
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}=x_n-\frac{x_n^2-2}{2x_n}
+=\frac{x_n}{2} +\frac{1}{x_n}
+</me>
+while (<xref ref="eq_APPsecant"/>) says that, under the secant method, 
+we should iteratively apply  (after a little simplifying algebra)
+<md>
+<mrow>
+x_{n+1}\amp =\frac{x_{n-1} f(x_n) - x_n f(x_{n-1}) }{f(x_n)-f(x_{n-1})}
+       =\frac{x_{n-1}[x_n^2-2] - x_n[x_{n-1}^2-2] }{x_n^2-x_{n-1}^2} 
+</mrow><mrow>
+       \amp =\frac{x_{n-1}x_n[x_n-x_{n-1}]+2[x_n-x_{n-1}]}{x_n^2-x_{n-1}^2} 
+</mrow><mrow>
+       \amp =\frac{x_{n-1}x_n+2}{x_{n-1}+x_n}
+</mrow>
+</md>
+Here are the results, starting Newton's method with <m>x_1=4</m> and starting
+the secant method with <m>x_0=4</m>, <m>x_1=3</m>. (So we are giving the secant method 
+a bit of a head start.)
+<md alignment="alignat">
+<mrow>
+\amp   \amp \amp \text{secant method}\qquad \amp \amp \text{Newton's method} 
+</mrow><mrow>
+\amp x_0\quad \amp \amp  4 \amp \amp  
+</mrow><mrow>
+\amp x_1 \amp \amp  3 \amp \amp  4 
+</mrow><mrow>
+\amp x_2 \amp \amp  2 \amp \amp  2.25 
+</mrow><mrow>
+\amp x_3 \amp \amp  1.6 \amp \amp  1.57 
+</mrow><mrow>
+\amp x_4 \amp \amp  1.444 \amp \amp  1.422 
+</mrow><mrow>
+\amp x_5 \amp \amp  1.4161 \amp \amp  1.414234 
+</mrow><mrow>
+\amp x_6 \amp \amp  1.414233 \amp \amp  1.414213562525 
+</mrow><mrow>
+\amp x_7 \amp \amp  1.414213575 \amp \amp  1.414213562373095
+</mrow>
+</md>
+For comparison purposes, the square root of <m>2</m>, to 15 decimal places,
+is <m>1.414213562373095</m>.
+So the secant method <m>x_7</m> is accurate to 7 decimal places 
+and the Newton's method <m>x_7</m> is accurate to at least 15 decimal places.
+</p>
+</example>
+<p>
+The advantage that the secant method has over Newton's method is that it does not use the derivative of <m>f</m>. This can be a substantial advantage, for example  
+when  evaluation of the derivative is computationally difficult or expensive. 
+On the other hand, the above example suggests that the secant method is not 
+as fast as Newton's method. The following subsection shows that this is indeed the case.
+</p>
+</section>
+
+<section><title>The Error Behaviour of the Secant Method</title>
+<p>
+Let <m>f(x)</m> have two continuous derivatives, and let <m>r</m> be any solution 
+of <m>f(x)=0</m>. 
+We will now get a pretty good handle on the error behaviour of the secant method 
+near <m>r</m>.
+</p>
+
+<p>
+Denote by <m>\tilde\varepsilon_n=x_n-r</m> the (signed) error in <m>x_n</m> and by
+<m>\varepsilon_n=|x_n-r|</m> the (absolute) error in <m>x_n</m>. Then, 
+<m>x_n =r+\tilde\varepsilon_n</m>, and, by (<xref ref="eq_APPsecant"/>), 
+<md>
+<mrow>
+\tilde\varepsilon_{n+1} 
+         \amp = \frac{x_{n-1} f(x_n) - x_n f(x_{n-1}) }{f(x_n)-f(x_{n-1})} -r 
+</mrow><mrow>
+         \amp = \frac{[r+\tilde\varepsilon_{n-1}] f(x_n) - [r+\tilde\varepsilon_n] f(x_{n-1}) }
+                                            {f(x_n)-f(x_{n-1})} -r 
+</mrow><mrow>
+         \amp = \frac{\tilde\varepsilon_{n-1} f(x_n) - \tilde\varepsilon_n f(x_{n-1}) }
+                                            {f(x_n)-f(x_{n-1})}
+</mrow>
+</md>
+</p>
+
+<p>
+
+By the Taylor expansion (<xref ref="eq_taylorErrorQ"/>)
+and the mean value theorem (Theorem<nbsp/><xref ref="thm_DIFFmvt"/>),
+<md>
+<mrow>
+f(x_n)\amp = f(r) + f'(r)\tilde\varepsilon_n +\frac{1}{2} f''(c_1) \tilde\varepsilon_n^2 
+</mrow><mrow>
+      \amp = f'(r)\tilde\varepsilon_n +\frac{1}{2} f''(c_1) \tilde\varepsilon_n^2 
+</mrow><mrow>
+f(x_n)-f(x_{n-1})\amp = f'(c_2)[x_n-x_{n-1}] 
+</mrow><mrow>
+                \amp = f'(c_2)[\tilde\varepsilon_n-\tilde\varepsilon_{n-1}]
+</mrow>
+</md>
+for some <m>c_1</m> between <m>r</m> and <m>x_n</m> and some <m>c_2</m> between <m>x_{n-1}</m> and <m>x_n</m>. 
+So, for <m>x_{n-1}</m> and <m>x_n</m> near <m>r</m>, <m>c_1</m> and <m>c_2</m> also have to be near <m>r</m> and
+<md>
+<mrow>
+f(x_n)\amp \approx f'(r)\tilde\varepsilon_n +\frac{1}{2} f''(r) \tilde\varepsilon_n^2 
+</mrow><mrow>
+f(x_{n-1})\amp \approx f'(r)\tilde\varepsilon_{n-1} +\frac{1}{2} f''(r) \tilde\varepsilon_{n-1}^2 
+</mrow><mrow>
+f(x_n)-f(x_{n-1})\amp \approx f'(r)[\tilde\varepsilon_n-\tilde\varepsilon_{n-1}] 
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\tilde\varepsilon_{n+1} \amp = \frac{\tilde\varepsilon_{n-1} f(x_n) - \tilde\varepsilon_n f(x_{n-1}) }
+                                              {f(x_n)-f(x_{n-1})} 
+</mrow><mrow>
+ \amp \approx \frac{ \tilde\varepsilon_{n-1} [f'(r)\tilde\varepsilon_n +\frac{1}{2} f''(r) \tilde\varepsilon_n^2]
+               -  \tilde\varepsilon_n [f'(r)\tilde\varepsilon_{n-1} +\frac{1}{2} f''(r) \tilde\varepsilon_{n-1}^2] }
+                    { f'(r)[\tilde\varepsilon_n-\tilde\varepsilon_{n-1}] }  
+</mrow><mrow>
+  \amp = \frac{\frac{1}{2}\tilde\varepsilon_{n-1}\tilde\varepsilon_nf''(r)[\tilde\varepsilon_n-\tilde\varepsilon_{n-1}]}
+               { f'(r)[\tilde\varepsilon_n-\tilde\varepsilon_{n-1}] } 
+</mrow><mrow>
+\amp = \frac{f''(r)} {2f'(r)} \tilde\varepsilon_{n-1}\tilde\varepsilon_n
+</mrow>
+</md>
+Taking absolute values, we have
+<me>
+\varepsilon_{n+1}\approx K \varepsilon_{n-1}\varepsilon_n\qquad
+\text{with }K = \left|\frac{f''(r)} {2f'(r)} \right|
+\tag{E7}</me> 
+We have seen that Newton's method obeys a similar formula <mdash/>
+(E3) says that, when <m>x_n</m> is near <m>r</m>, Newton's method obeys <m>\varepsilon_{n+1}\approx K\varepsilon_n^2</m>, also with 
+<m>K = \left|\frac{f''(r)} {2f'(r)} \right|</m>.
+As we shall now see, the change from <m>\varepsilon_n^2</m>, in 
+<m>\varepsilon_{n+1}\approx K\varepsilon_n^2</m>, to <m>\varepsilon_{n-1}\varepsilon_n</m>, in 
+<m>\varepsilon_{n+1}\approx K\varepsilon_{n-1}\varepsilon_n</m>,
+does have a substantial impact on the behaviour of <m>\varepsilon_n</m> for large <m>n</m>.
+</p>
+
+<p>
+To see the large <m>n</m> behaviour, we now iterate (E7). The formulae will look simpler if we multiply (E7) by <m>K</m> and write <m>\delta_n=K\varepsilon_n</m>.
+Then (E7) becomes <m>\delta_{n+1}\approx\delta_{n-1}\delta_n</m> (and we have eliminated <m>K</m>). 
+The first iterations are
+<md alignment="alignat">
+<mrow>
+\delta_2\amp \amp  \amp \approx \delta_0\delta_1 
+</mrow><mrow>
+\delta_3\amp \approx \delta_1\delta_2 
+       \amp \amp \approx \delta_0\delta_1^2 
+</mrow><mrow>
+\delta_4\amp \approx \delta_2\delta_3 
+       \amp \amp \approx \delta_0^2\delta_1^3 
+</mrow><mrow>
+\delta_5\amp \approx \delta_3\delta_4 
+       \amp \amp \approx \delta_0^3\delta_1^5 
+</mrow><mrow>
+\delta_6\amp \approx \delta_4\delta_5 
+       \amp \amp \approx \delta_0^5\delta_1^8 
+</mrow><mrow>
+\delta_7\amp \approx \delta_5\delta_6 
+       \amp \amp \approx \delta_0^8\delta_1^{13}
+</mrow>
+</md>
+Notice that every <m>\delta_n</m> is of the form 
+                <m>\delta_0^{\alpha_n}\delta_1^{\beta_n}</m>.
+Substituting  <m>\delta_n=\delta_0^{\alpha_n}\delta_1^{\beta_n}</m> into <m>\delta_{n+1}\approx\delta_{n-1}\delta_n</m> gives
+<me>
+\delta_0^{\alpha_{n+1}}\delta_1^{\beta_{n+1}} 
+           \approx \delta_0^{\alpha_{n-1}}\delta_1^{\beta_{n-1}}
+                               \delta_0^{\alpha_n}\delta_1^{\beta_n}
+</me>
+and we have
+<me>
+\alpha_{n+1}=\alpha_{n-1}+\alpha_{n} \qquad
+\beta_{n+1}=\beta_{n-1}+\beta_{n} 
+\tag{E8}</me>
+</p>
+
+<p>
+The recursion rule in (E8) is famous<fn>Plug <q>Fibonacci sequence in nature</q> into your search engine of choice.</fn>. The 
+Fibonacci<fn>Fibonacci (1170-1250) was an Italian mathematician who was also known as Leonardo of Pisa, Leonardo Bonacci and Leonardo Biglio Pisano.</fn> 
+sequence (which is <m>0</m>, <m>1</m>, <m>1</m>, <m>2</m>, <m>3</m>, <m>5</m>, <m>8</m>, <m>13</m>, <m>\cdots</m>), 
+is defined by 
+<md>
+<mrow>
+F_0\amp =0 
+</mrow><mrow> 
+F_1\amp =1 
+</mrow><mrow> 
+F_n\amp =F_{n-1}+F_{n-2}\qquad\text{for }n>1
+</mrow>
+</md>
+So, for <m>n\ge 2</m>, <m>\alpha_n = F_{n-1}</m> and <m>\beta_n=F_n</m> and
+<me>
+\delta_n \approx \delta_0^{\alpha_n}\delta_1^{\beta_n}
+         = \delta_0^{F_{n-1}}\delta_1^{F_n}
+</me>
+One of the known properties of the Fibonacci sequence is that, for large <m>n</m>,
+<me>
+F_n\approx\frac{\varphi^n}{\sqrt{5}}\qquad\text{where }
+\varphi=\frac{1+\sqrt{5}}{2} \approx 1.61803
+</me>
+This <m>\varphi</m> is the golden ratio<fn>Also worth a quick trip to your search engine.</fn>.  So, for large <m>n</m>,
+<md>
+<mrow>
+K\varepsilon_n \amp = \delta_n
+         \approx \delta_0^{F_{n-1}}\delta_1^{F_n}
+         \approx \delta_0^{\frac{\varphi^{n-1}}{\sqrt{5}}}
+                               \delta_1^{\frac{\varphi^n}{\sqrt{5}}}
+         = \delta_0^{\frac{1}{\sqrt{5}\varphi}\times\varphi^n}
+                          \delta_1^{\frac{1}{\sqrt{5}}\times\varphi^n}
+</mrow><mrow>
+\amp = d^{\varphi^n}\qquad\text{where}\quad
+   d=\delta_0^{\frac{1}{\sqrt{5}\,\varphi}}\delta_1^{\frac{1}{\sqrt{5}}}
+</mrow><mrow>
+\amp \approx d^{1.6^n}
+</mrow>
+</md>
+Assuming that <m>0\lt \delta_0=K\varepsilon_0\lt 1</m> and <m>0\lt \delta_1=K\varepsilon_1\lt 1</m>,
+we will have <m>0\lt d\lt 1</m>. 
+</p>
+
+<p>
+By way of contrast, for Newton's method, for large <m>n</m>,
+<md>
+<mrow>
+K\varepsilon_n\approx d^{2^n}\qquad\text{where}\quad
+                d=(K\varepsilon_1)^{1/2}
+</mrow>
+</md>
+As <m>2^n</m> grows quite a bit more quickly than <m>1.6^n</m> 
+(for example, 
+        when n=5, <m>2^n=32</m> and <m>1.6^n=10.5</m>, 
+    and when <m>n=10</m>, <m>2^n=1024</m> and <m>1.6^n=110</m>)
+Newton's method homes in on the root quite a bit faster than the secant method,
+assuming that you start reasonably close to the root.
+</p>
+
+</section>
+</appendix>
