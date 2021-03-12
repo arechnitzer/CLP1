@@ -316,7 +316,7 @@ Suppose that we are driving to class. We start at <m>x=0</m> at time <m>t=0</m>.
 </p>
 
 <p>
-<alert>Solution</alert>. Let's denote by <m>x(t)</m> our position at time <m>t</m>. We are told that
+<alert>Solution</alert> Let's denote by <m>x(t)</m> our position at time <m>t</m>. We are told that
 <ul>
 <li> <m>x(0) = 0</m> </li>
 <li> <m>x'(t) = 50\sin t</m> </li>
