@@ -647,9 +647,9 @@ was smaller than <m>5\times 10^{-10}</m>.
 </p>
 </example>
 
-<example xml:id="eg_NTMpi"><title>(Example <xref ref="eg_NTMpi"/>, continued)</title>
+<example xml:id="eg_NTMpi"><title>(Example <xref ref="eg_exNTMpi"/>, continued)</title>
 <p>
-Let's consider, as we did in Example<nbsp/><xref ref="eg_NTMpi"/>, <m>f(x)=\sin x</m>, 
+Let's consider, as we did in Example<nbsp/><xref ref="eg_exNTMpi"/>, <m>f(x)=\sin x</m>, 
 starting with <m>x_1=3</m>. Then
 <md>
 <mrow>
@@ -658,7 +658,7 @@ f''(x)=-\sin x
 </mrow>
 </md>
 As <m>|-\sin x|\le 1</m>, we may certainly take <m>M=1</m>. 
-In Example<nbsp/><xref ref="eg_NTMpi"/>, all <m>x_n</m>'s were between <m>3</m> and <m>3.2</m>. 
+In Example<nbsp/><xref ref="eg_exNTMpi"/>, all <m>x_n</m>'s were between <m>3</m> and <m>3.2</m>. 
 Since (to three decimal places)
 <md>
 <mrow>
