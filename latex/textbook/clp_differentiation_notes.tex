@@ -1412,68 +1412,43 @@ And so we recover the product rule.
 \subsection*{(optional) --- Proof of the Quotient Rule
                 (Theorem \ref{thm:DIFFquotRule})}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This one is relatively messy, so we have made it optional. Let us start by writing the
-quotient of our two functions as $Q(x) = f(x) / g(x)$, and we assume that $g(x) \neq 0$.
-As before, we start our manipulations from the definition of the derivative
-\begin{align*}
-Q'(x)
-&=\lim_{h\to 0}\frac{Q(x+h)-Q(x)}{h} && \text{(now substitute in Q)}\\
-& =\lim_{h\to 0}\frac{1}{h}
-           \left[\frac{f(x+h)}{g(x+h)}-\frac{f(x)}{g(x)}\right] &&
-\text{(and then form a common denominator)}\\
-&=\lim_{h\to 0}
-    \frac{ f(x+h)\cdot g(x) - f(x)\cdot g(x+h) }
-                            {h \cdot g(x+h)\cdot g(x)}
-\end{align*}
-We make use of the same $F, G$ that we used in the proof of the product rule. We use
-them to rewrite $f(x+h)$ as $f(x) + hF(h)$ and $g(x+h)$ as $g(x+h)=g(x)+hG(h)$.
-First
-concentrate on the numerator of the above expression:
-\begin{align*}
-f(x+h)\cdot g(x) - f(x)\cdot g(x+h)
-&=[f(x)+hF(h)]\cdot g(x) - f(x)\cdot [g(x)+hG(h)]\\
-&=f(x)\cdot g(x) + h g(x) \cdot F(h)  -f(x)\cdot g(x) - h f(x) \cdot G(h) \\
-&= h g(x) \cdot F(h)  - h f(x) \cdot G(h) \\
-\end{align*}
-So dividing this by the denominator, and cancelling the common factor
-of $h$, gives
-\begin{align*}
-\frac{Q(x+h)-Q(x)}{h}
-  &= \frac{F(h) \cdot g(x) - f(x)\cdot G(h)}{g(x+h)\cdot g(x)}
-\end{align*}
-To arrive at $Q'(x)$ we take the limit of the above as $h \to 0$; since it
-is the limit of a ratio with a non-zero denominator, the result is a ratio
-of limits:
-\begin{align*}
-Q'(x)
-&=\lim_{h\to 0}
-\frac{F(h) \cdot g(x) - f(x)\cdot G(h)}{g(x+h)\cdot g(x)}\\
-&=
-\frac{\ds \lim_{h\to 0} \left[ F(h) \cdot g(x) - f(x)\cdot G(h)\right]}
-{\ds \lim_{h \to 0} \left[ g(x+h)\cdot g(x)\right]}\\
-\end{align*}
-Processing the denominator gives
-\begin{align*}
-\lim_{h \to 0} \left[ g(x+h)\cdot g(x)\right]
-&= g(x) \cdot \lim_{h\to0}g(x+h) & \text{since $g(x)$ doesn't change with $h$}\\
-&= g(x)^2
-\end{align*}
-While the numerator is
-\begin{align*}
-\lim_{h\to 0} \left[ F(h) \cdot g(x) - f(x)\cdot G(h)\right]
-&= \lim_{h\to0} F(h)\cdot g(x) - \lim_{h\to 0} f(x)\cdot G(h)
-\intertext{Now because $f(x),g(x)$ do not change with $h$ we can factor them
-out.}
-&= g(x) \lim_{h\to0} F(h) - f(x) \lim_{h\to 0} G(h) \\
-&= g(x) f'(x) - f(x) g'(x)
-\end{align*}
-Putting these pieces back together finally gives
-\begin{align*}
-Q(x) &= \frac{g(x) f'(x) - f(x) g'(x)}{g(x)^2}.
-\end{align*}
-And we arrive at the quotient rule. Note that we have assumed that the
-derivatives $f'(x), g'(x)$ exist and that $g(x) \neq 0$.
 
+We now give the proof of the quotient rule in two steps\footnote{We thank
+Serban Raianu for suggesting this approach.}. We assume throughout that 
+$g(x) \neq 0$ and that $f(x)$ and $g(x)$ are differentiable, meaning 
+that the limits defining $f'(x)$, $g'(x)$ exist.
+\begin{itemize}
+\item
+In the first step, we prove the quotient rule under the assumption that $f(x)/g(x)$ is differentiable.
+\item
+In the second step, we prove that $1/g(x)$ differentiable. Once we know that 
+$1/g(x)$ is differentiable, the product rule implies that $f(x)/g(x)$ is
+differentiable. 
+\end{itemize}
+
+\noindent\emph{Step 1: the proof of the quotient rule assumng that 
+$\frac{f(x)}{g(x)}$ is differentiable.}\ \ \ Write $Q(x)=\frac{f(x)}{g(x)}$. Then $f(x) = g(x)\,Q(x)$
+so that $f'(x) = g'(x)\,Q(x) + g(x)\,Q'(x)$, by the product rule, and
+\begin{align*}
+Q'(x) &= \frac{f'(x)-g'(x)\,Q(x)}{g(x)}
+       = \frac{f'(x)-g'(x)\,\frac{f(x)}{g(x)}}{g(x)} \\
+      &= \frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}
+\end{align*}
+
+\noindent\emph{Step 2: the proof that $1/g(x)$ is differentiable.}\ \ \ 
+By definition
+\begin{align*}
+\diff{}{x}\frac{1}{g(x)}
+&=\lim_{h\rightarrow 0}\frac{1}{h}\left[\frac{1}{g(x+h)}-\frac{1}{g(x)}\right]
+=\lim_{h\rightarrow 0}\frac{g(x)-g(x+h)}{h\,g(x)\,g(x+h)}
+\\
+&=-\lim_{h\rightarrow 0}\frac{1}{g(x)}\ \frac{1}{g(x+h)}\ 
+                                        \frac{g(x+h)-g(x)}{h}\\
+&=-\frac{1}{g(x)}\ 
+   \lim_{h\rightarrow 0}\frac{1}{g(x+h)}\ 
+   \lim_{h\rightarrow 0}\frac{g(x+h)-g(x)}{h}\\
+&=-\frac{1}{g(x)^2}g'(x)
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Using the Arithmetic of Derivatives --  Examples}
@@ -1910,6 +1885,8 @@ is
 \diff{}{x} x^a = a x^{a-1}
 \end{equation}
 \end{cor}
+\noindent We shall show, in Example \ref{eg diff power}, that the formula 
+$\diff{}{x} x^a = a x^{a-1}$ in fact applies for all real numbers $a$, not just rational numbers.
 
 Back in Example~\ref{eg:DIFFderivXsqrt} we computed the derivative of $\sqrt{x}$ from the
 definition of the derivative. The above corollary (correctly) gives
@@ -3687,15 +3664,15 @@ differentiate and then simplify. Neither is difficult.
 \end{align*}
 \end{itemize}
 \end{eg}
-\begin{eg}
-Notice we can extend the previous example for any non-zero constant --- not
-just 3. Let $c$ be a non-zero constant, then
+\begin{eg}[The derivative of $\log cx$]
+Notice that we can extend the previous example for any positive constant --- not
+just 3. Let $c>0$ be a constant, then
 \begin{align*}
   \diff{}{x} \log cx &= \diff{}{x}\left(\log c + \log x \right)\\
   &= \frac{1}{x}
 \end{align*}
 \end{eg}
-\begin{eg}\label{eg diff log abs x}
+\begin{eg}[The derivative of $\log|x|$]\label{eg diff log abs x}
  We can push this further still. Let $g(x) = \log | x |$, then\footnote{It's
 probably a good moment to go back and look at Example~\ref{eg diff abs}.}
 \begin{itemize}
@@ -3703,10 +3680,16 @@ probably a good moment to go back and look at Example~\ref{eg diff abs}.}
 \begin{align*}
   g'(x) &= \diff{}{x} \log x = \frac{1}{x}
 \end{align*}
-\item If $x<0$ then $|x|= -x =-1\cdot x$ and so
+\item If $x<0$ then $|x|= -x$. If $|h|$ is strictly smaller than $|x|$, 
+then we also have  that $x+h<0$ and $|x+h|=-(x+h)=|x|-h$. 
+Write $X=|x|$ and $H=-h$. Then, by the definition of the derivative,
 \begin{align*}
-  g'(x) &= \diff{}{x} \log(-1 \cdot x) = \frac{1}{x} &\text{by the previous
-example}
+  g'(x) &= \lim_{h\rightarrow 0} \frac{\log|x+h|-\log|x|}{h}
+        = \lim_{h\rightarrow 0} \frac{\log(|x|-h)-\log|x|}{h} \\
+        &= \lim_{H\rightarrow 0} \frac{\log(X+H)-\log X}{-H}
+        = -\lim_{H\rightarrow 0} \frac{\log(X+H)-\log X}{H} \\
+        &=-\diff{}{X}\log X =-\frac{1}{X} = -\frac{1}{|x|} \\
+        &=\frac{1}{x}
 \end{align*}
 \item Since $\log 0$ is undefined, $g'(0)$ does not exist.
 \end{itemize}
@@ -3714,6 +3697,20 @@ Putting this together gives:
 \begin{align*}
   \diff{}{x} \log | x | &= \frac{1}{x}
 \end{align*}
+\end{eg}
+
+\begin{eg}[The derivative of $x^a$]\label{eg diff power}
+Just after Corollary \ref{cor:DIFFxtoa}, we said that we would, in the future, find the derivative of $x^a$ for all real numbers. The future is here. 
+Let $x>0$ and $a$ be any real number. Exponentiating both sides of 
+$\log\big(x^a\big)=a\log x$ gives us $x^a=e^{a\log x}$ and then
+\begin{align*}
+  \diff{}{x} x^a &= \diff{}{x} e^{a\log x}
+                  = e^{a\log x} \diff{}{x}(a\log x) &\text{by the chain rule} \\
+                 &=\frac{a}{x} e^{a\log x}
+                  =\frac{a}{x} x^a \\
+                 &=a x^{a-1}
+\end{align*}
+as expected.
 \end{eg}
 
 
@@ -5108,7 +5105,7 @@ given by
 
 \end{eg}
 
-\begin{eg}
+\begin{eg}\label{eg:mvtg}
 We can return to our initial car-motivated examples. Say you are driving along a straight
 road in a car that can go at most $80km/h$. How far can you go in 2 hours? --- the answer
 is easy, but we can also solve this using MVT.
@@ -5295,7 +5292,7 @@ $a,b \in [A,B]$  with $a<b$. Then the MVT tells us that there is $c \in (a,b)$ s
 \end{align*}
 Since $b>a$, the denominator is positive. Now if $f(b) < f(a)$ the numerator would be
 negative, making the right-hand side negative, and contradicting what we are told about
-$f'(x)$. Hence we must have $f(b)>f(a)$.
+$f'(x)$. Hence we must have $f(b)\ge f(a)$.
 \end{itemize}
 
 A nice corollary of the above corollary is the following:

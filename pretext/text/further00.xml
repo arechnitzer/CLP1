@@ -189,7 +189,7 @@ In your next calculus course you will develop a lot of machinery to help you fin
                   </cell><cell> <m>\arcsin x</m> </cell><cell> <m>\arctan x</m>
            </cell>
 </row><row>
-<cell>            <m>f(x)=\diff{}{x}F(x)</m> </cell><cell> <m>0</m> </cell><cell> <m>nax^{n-1}</m> </cell><cell> <m>\cos x</m>
+<cell>            <m>f(x)=\diff{}{x}F(x)</m> </cell><cell> <m>0</m> </cell><cell> <m>nx^{n-1}</m> </cell><cell> <m>\cos x</m>
                   </cell><cell> <m>-\sin x</m>
                   </cell><cell>  <m>\sec^2 x</m> </cell><cell> <m>e^x</m> </cell><cell> <m>\frac{1}{x}</m>
                   </cell><cell> <m>\frac{1}{\sqrt{1-x^2}}</m> </cell><cell> <m>\frac{1}{1+x^2}</m>

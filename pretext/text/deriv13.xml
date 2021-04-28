@@ -364,7 +364,7 @@ given by
 </p>
 </example>
 
-<example><title>MVT, speed and distance</title>
+<example xml:id="eg_mvtg"><title>MVT, speed and distance</title>
 <p>
 We can return to our initial car-motivated examples. Say you are driving along a straight
 road in a car that can go at most <m>80km/h</m>. How far can you go in 2 hours? <mdash/> the answer
@@ -596,7 +596,7 @@ told about <m>f'(x)</m>. Thus we must have that <m>f(b)=f(a)</m>.
 </md>
 Since <m>b \gt a</m>, the denominator is positive. Now if <m>f(b)  \lt  f(a)</m> the numerator would be
 negative, making the right-hand side negative, and contradicting what we are told about
-<m>f'(x)</m>. Hence we must have <m>f(b) \gt f(a)</m>.
+<m>f'(x)</m>. Hence we must have <m>f(b) \ge f(a)</m>.
 </li>
 </ul>
 </p>

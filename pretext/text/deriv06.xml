@@ -548,6 +548,10 @@ Let <m>a</m> be a rational number, then
 </me>
 </p></statement>
 </corollary>
+<p>
+We shall show, in Example<nbsp/><xref ref="eg_diff_power"/>, that the formula 
+<m>\diff{}{x} x^a = a x^{a-1}</m> in fact applies for all real numbers <m>a</m>, not just rational numbers.
+</p>
 
 <p>
 Back in Example<nbsp/><xref ref="eg_DIFFderivXsqrt"/> we computed the derivative of <m>\sqrt{x}</m> from the  definition of the derivative. The above corollary (correctly) gives

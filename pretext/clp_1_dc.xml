@@ -34,12 +34,13 @@
 		<xi:include href="text/basics00.xml" />
 		<xi:include href="text/limits00.xml" />
 		<xi:include href="text/deriv00.xml" />
-		<xi:include href="text/applic00.xml" />
- 		<xi:include href="text/further00.xml" />
+	        <xi:include href="text/applic00.xml" /> 
+ 		<xi:include href="text/further00.xml" /> 
 		<backmatter>
 			<title>Appendices</title>
 			<xi:include href="text/app01.xml" />
 			<xi:include href="text/app02.xml" />
+			<xi:include href="text/rootFinding.xml" />
 
 			<solutions xml:id="app_hint" divisional="hint">
 				<title>Hints for Exercises</title>

@@ -890,8 +890,7 @@ where <m>f'(x)=\pm\infty</m>.
 a cubic polynomial that does not factor nicely
 <fn>With the aid of a computer we
 can find the <m>x</m>-intercepts numerically: <m>x\approx -1.879385242, 0.3472963553</m>, and
-<m>1.532088886</m>. If you are interested in more details then try googling
-<q>Newton's method</q> or <q>root finding</q>.</fn>
+<m>1.532088886</m>. If you are interested in more details check out Appendix<nbsp/><xref ref="app_root_finding"/>.</fn>
 . So for this example we don't worry
 about finding them.
 </li>

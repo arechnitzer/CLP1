@@ -252,14 +252,16 @@ the ships changing?
 \begin{solution}
 \begin{center}\includegraphics{ship}\end{center}
 
-If $x(t),\ y(t)$ and $z(t)$ are the distances shown, at time
-$t$, then
+As in the above figure, let $x(t)$ be the distance between H (Hawaii)
+and ship B, and $y(t)$ be the distance between H and ship A,
+and $z(t)$ be the distance between ships A and B, all  at time $t$. Then
 \begin{align*}
 x(t)^2+y(t)^2&=z(t)^2
 \intertext{Differentiating with respect to $t$,}
 2x(t)x'(t)+2y(t)y'(t)&=2z(t)z'(t)\\
 x(t)x'(t)+y(t)y'(t)&=z(t)z'(t)
-\intertext{At the specified time, $x(t)$ is decreasing, so $x'(t)$ is negative.}
+\intertext{At the specified time, $x(t)$ is decreasing, so $x'(t)$ is negative,
+and $y(t)$ is increasing, so $y'(t)$ is positive.}
  (300)(-15)+(400)(20) &= \sqrt{300^2+400^2}z'(t)\\
 500 z'(t)&=3500\\
 z'(t)&=7 \mbox{ mph}
@@ -1467,6 +1469,22 @@ A problem like this can sometimes derail people. Breaking it up into pieces isn'
                 $\diff{V}{t} = ...$. We still need to find $a$, $b$,
                 $\diff{a}{t}$ and $\diff{b}{t}$."
                 % ``need to know $a$, $b$, $\diff{a}{t}$, and $\diff{b}{t}$ for equation $\diff{V}{t}=20\pi\left(\diff{a}{t}b+a\diff{b}{t}\right)$."
+
+\begin{comment}
+Remark: here is a check on the reasonableness of our answer.
+\begin{itemize}
+\item 
+The circumference of the original circular cross section is $2\pi(5)=10\pi
+\approx 31.4\mathrm{cm}$. When $a$ hits 
+$\frac{10\pi}{4}\approx 7.9\mathrm{cm}$, the bottle is completely flattened
+and so has volume $0$. This happens at time $t=7.9-5=2.9\mathrm{sec}$.
+\item
+The original bottle has volume $20\times \pi(5^2)\approx 1571\mathrm{cm}^3$.
+\item
+So, on average, the volume decreased at a rate of $\frac{1571}{2.9}
+=542\frac{\mathrm{cm}^3}{\mathrm{sec}}$
+\end{itemize}
+\end{comment}
 \end{solution}
 
 

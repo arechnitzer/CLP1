@@ -302,8 +302,9 @@ the ships changing?
 <sidebyside width="33%">
 <image source="problems/figs/ship"/>
 </sidebyside>
-<p>If <m>x(t),\ y(t)</m> and <m>z(t)</m> are the distances shown, at time
-<m>t</m>, then
+<p>As in the above figure, let <m>x(t)</m> be the distance between H (Hawaii)
+and ship B, and <m>y(t)</m> be the distance between H and ship A,
+and <m>z(t)</m> be the distance between ships A and B, all  at time <m>t</m>. Then
 <md>
 <mrow>
 x(t)^2+y(t)^2&amp;=z(t)^2
@@ -313,7 +314,7 @@ x(t)^2+y(t)^2&amp;=z(t)^2
 </mrow><mrow>
 x(t)x'(t)+y(t)y'(t)&amp;=z(t)z'(t)
 </mrow>
-<intertext>At the specified time, <m>x(t)</m> is decreasing, so <m>x'(t)</m> is negative.</intertext><mrow>
+<intertext>At the specified time, <m>x(t)</m> is decreasing, so <m>x'(t)</m> is negative, and <m>y(t)</m> is increasing, so <m>y'(t)</m> is positive.</intertext><mrow>
  (300)(-15)+(400)(20) &amp;= \sqrt{300^2+400^2}z'(t)
 </mrow><mrow>
 500 z'(t)&amp;=3500

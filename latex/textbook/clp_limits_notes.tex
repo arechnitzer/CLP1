@@ -1138,7 +1138,7 @@ as the tree shown in Figure~\ref{fig parse me} below.
 \begin{fig}
 \label{fig parse me}
  \begin{center}
-  \includegraphics{tree3}
+  \includegraphics[scale=0.5]{tree3}
  \end{center}
 \end{fig}
 Such trees were discussed in Section~\ref{sec parsing} (now is not a bad time to quickly
@@ -1378,6 +1378,14 @@ then
 \begin{align*}
   \lim_{x \to a} \left( f(x) \right)^{1/n}
   &= \left(\lim_{x \to a} f(x) \right)^{1/n} = F^{1/n}
+\end{align*}
+More generally\footnote{You may not know the definition of the power
+$b^p$ when $p$ is not a rational number, so here it is. If $b>0$ and $p$
+is any real number, then $b^p$ is the limit of $b^r$ as $r$ approaches $p$ 
+through rational numbers. We won't do so here, but it is possible to prove that the limit exists.}, if $F>0$ and $p$ is any real number,
+\begin{align*}
+  \lim_{x \to a} \left( f(x) \right)^p
+  &= \left(\lim_{x \to a} f(x) \right)^p = F^p
 \end{align*}
 \end{theorem}
 Notice that we have to be careful when taking roots of limits that might be
@@ -1876,8 +1884,8 @@ Let $f(x), g(x)$ be two functions for which the limits
   \lim_{x \to \infty} f(x) g(x) &= F  G \\
   \lim_{x \to \infty} \frac{f(x)}{ g(x) } &= \frac{F}{G} & \text{provided $G
 \neq 0$}
-\intertext{and for rational numbers $r$}
-  \lim_{x \to \infty} f(x)^r &= F^r & \text{provided $f(x)^r$ is defined for all $x$}
+\intertext{and for real numbers $p$}
+  \lim_{x \to \infty} f(x)^p &= F^p & \text{provided $F^p$ and $f(x)^p$ are defined for all $x$}
 \end{align*}
 The analogous results hold for limits to $-\infty$.
 \end{theorem}
@@ -2148,14 +2156,28 @@ $
 \end{cases}
 $
 \item $\ds \lim_{x \to a} \frac{f(x)}{g(x)}$ undetermined
-
 \item $\ds \lim_{x \to a} \frac{f(x)}{h(x)} =
 \begin{cases}
 +\infty & H>0 \\
 -\infty & H<0\\
 \text{undetermined} & H=0
 \end{cases}$
+
+%\end{itemize}
+%\end{theorem}
+%
+%\addtocounter{theorem}{-1}
+%\begin{theorem}[continued]
+%\begin{itemize}
+
 \item $\ds \lim_{x \to a} \frac{h(x)}{f(x)} = 0$
+
+\item $\ds \lim_{x \to a} f(x)^p =
+\begin{cases}
++\infty & p>0 \\
+0 & p<0\\
+1 & p=0
+\end{cases}$
 \end{itemize}
 \end{theorem}
 Note that by ``undetermined'' we mean that the limit may or may not exist, but
@@ -2592,7 +2614,7 @@ middle figure above. The IVT\footnote{Often with big important useful theorems
 like this one, writing out the full name again and again becomes tedious, so we
 abbreviate it. Such abbreviations are okay provided the reader knows this is
 what you are doing, so the first time you use an abbreviation you should let
-the reader know. Much like we are doing here in this footnote.} tells us that
+the reader know. Much like we are doing here in this footnote: ``IVT'' stands for ``intermediate value theorem'', which is Theorem~\ref{thm ivt}.} tells us that
 there must be some $x$-value that when plugged into the function gives us $Y$.
 That is, there is some $c$ between $a$ and $b$ so that $f(c) = Y$. We can also interpret
 this graphically; the IVT tells us that the horizontal straight line $y=Y$ must intersect
@@ -2718,7 +2740,7 @@ process the range will halve each time until we know that the zero is inside
 some tiny range of possible values. This process is called the bisection method.
 
 Consider the following zero-finding example
-\begin{eg}
+\begin{eg}\label{eg pre bisection}
 Show that the function $f(x) = x-1+\sin(\pi x/2)$ has a zero
 in $0 \leq x \leq 1$.
 
@@ -3454,7 +3476,6 @@ $\left|\frac{G}{2g(x)}\right|<1$}\\
 Thus we have shown that for any $\epsilon>0$ there exists $\delta>0$ so that
 when $|x-a|<\delta$ we also have $|\nicefrac{1}{g(x)} -
 \nicefrac{1}{G}|<\epsilon$. Hence $\nicefrac{1}{g(x)} \to \nicefrac{1}{G}$.
-
 \end{proof}
 
 \begin{proof}{Proof of Theorem~\ref{thm squeeze} --- Squeeze / sandwich / pinch.}\ \ \

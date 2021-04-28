@@ -5,7 +5,7 @@
 
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_cont_deriv">
-<title>(Optional) --- Is <m>\lim_{x\to c}f'(x)</m> Equal to <m>f'(c)</m>?</title>
+<title>(Optional) <mdash/> Is <m>\lim_{x\to c}f'(x)</m> Equal to <m>f'(c)</m>?</title>
 
 <p>
 Consider the function

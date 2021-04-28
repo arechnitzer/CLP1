@@ -447,7 +447,7 @@ So that breaks down the proof statement by statement, but what does it actually 
 <li>
 	Now we can pick any <m>Y</m> that lies between <m>f(a)</m> and <m>f(b)</m> <mdash/> see the  middle figure above. The IVT
 	<fn>
-		Often with big important useful theorems  like this one, writing out the full name again and again becomes tedious, so we  abbreviate it. Such abbreviations are okay provided the reader knows this is  what you are doing, so the first time you use an abbreviation you should let  the reader know. Much like we are doing here in this footnote.
+		Often with big important useful theorems  like this one, writing out the full name again and again becomes tedious, so we  abbreviate it. Such abbreviations are okay provided the reader knows this is  what you are doing, so the first time you use an abbreviation you should let  the reader know. Much like we are doing here in this footnote: : <q>IVT</q> stands for <q>intermediate value theorem</q>, which is Theorem<nbsp/><xref ref="thm_ivt"/>.
 	</fn>
 	tells us that  there must be some <m>x</m>-value that when plugged into the function gives us <m>Y</m>.  That is, there is some <m>c</m> between <m>a</m> and <m>b</m> so that <m>f(c) = Y</m>. We can also interpret  this graphically; the IVT tells us that the horizontal straight line <m>y=Y</m> must intersect  the graph <m>y=f(x)</m> at some point <m>(c,Y)</m> with <m>a\le c\le b</m>.
 </li>
@@ -542,7 +542,7 @@ Look at the rightmost figure and do it again <mdash/> test the point half-way be
 
 <p>Consider the following zero-finding example</p>
 
-<example><title>Show that <m>f(x)=x-1+\sin(\pi x/2)</m> has a zero</title>
+<example xml:id="eg_pre_bisection"><title>Show that <m>f(x)=x-1+\sin(\pi x/2)</m> has a zero</title>
 <p>
 Show that the function <m>f(x) = x-1+\sin(\pi x/2)</m> has a zero  in <m>0 \leq x \leq 1</m>.
 </p>
