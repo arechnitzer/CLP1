@@ -7,20 +7,19 @@ It is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.
 
 <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
 
-
 ## Source files
-In this repository we give two sets of source files - latex and pretext.
+In this repository we give two sets of source files -- LaTeX and PreTeXt.
 
-### Latex sources
-* See the latex directory
+### LaTeX sources
+* See the LaTeX directory
 * Separate subdirectories for the textbook and problembook
-* Sources written in (reasonably) standard latex
+* Sources written in (reasonably) standard LaTeX
 * Some extra files for styling and handling problem sets
-* Compile into PDFs using pdflatex
+* Compile into PDFs using pdfTeX (`pdflatex`)
 
-### Pretext sources 
-* See the pretext directory
+### PreTeXt sources 
+* See the `pretext` directory
 * Single directory for the textbook with exercises included.
-* Sources written in (reasonably) standard [pretext](https://pretextbook.org/)
+* Sources written in (reasonably) standard [PreTeXt](https://pretextbook.org/)
 * The hints, answers and solutions are included in appendices.
-* The source files can be compiled into html or a PDF (via a .tex intermediary)
+* The source files can be compiled into HTML or a PDF (via a `.tex` intermediary)
