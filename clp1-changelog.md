@@ -7,6 +7,7 @@ permalink: /CLP1-changelog/
 ---
 
 # CLP-1 Differential Calculus textbook
+* 2021 May 12 - Added a figure to Example 3.4.12.
 * 2021 March 12 - Typo correction just after Example 4.1.3.
 * 2021 March 9 - Added an appendix about numerical root finding.
 * 2021 March 5 - Simplified the proof of the quotient rule.

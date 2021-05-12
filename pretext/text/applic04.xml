@@ -792,7 +792,14 @@ Thus we can write down the seventh Maclaurin polynomial very easily:
 \frac{x^6}{720} + \frac{x^7}{5040}
 </mrow>
 </md>
-Also notice that if we use this to approximate the value of <m>e^1</m> we obtain:
+The following figure contains sketches of the graphs of <m>e^x</m> and its Taylor 
+polynomials <m>T_n(x)</m> for <m>n=0,1,2,3,4</m>.
+</p>
+<sidebyside width="95%">
+<image source="text/figs/expT"/>
+</sidebyside>
+<p>
+Also notice that if we use <m>T_7(1)</m> to approximate the value of <m>e^1</m> we obtain:
 <md>
 <mrow>
   e^1 \approx T_7(1) &amp;= 1 + 1 + \frac{1}{2} + \frac{1}{6} + \frac{1}{24} + \frac{1}{120}
