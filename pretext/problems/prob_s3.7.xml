@@ -493,7 +493,7 @@ so that <m>e^{1/x^2}\rightarrow\infty</m> and <m>e^{-1/x^2}\rightarrow 0</m>.
 <li> Solution 2.
 <me>
 \lim_{x\rightarrow 0}\frac{e^{-1/x^2}}{x^4}
-=\lim_{t={1\over x^2}\rightarrow \infty}\frac{e^{-t}}{t^{-2}}
+=\lim_{t=\frac{1}{x^2}\rightarrow \infty}\frac{e^{-t}}{t^{-2}}
 =\lim_{t\rightarrow \infty}\underbrace{\frac{t^2}{e^{t}}}_{\atp
 	{\mathrm{num}\to\infty}
 	{\mathrm{den}\to\infty}}

@@ -50,7 +50,7 @@ is a horizontal asymptote to <m>y=f(x)</m> as <m>x\rightarrow\infty</m>.
 </ul>
 </p>
 
-<example><title>Domain, intercepts and asymptotes of <m>\frac{x+1}{(x+3)(x-2)}</m></title>
+<example xml:id="eg_3_6_1"><title>Domain, intercepts and asymptotes of <m>\frac{x+1}{(x+3)(x-2)}</m></title>
 <p>
  Consider the function
 <md>
@@ -331,7 +331,7 @@ lines.
 
 <p>More generally</p>
 
-<definition>
+<definition xml:id="def_3_6_1">
 <statement><p>
 Let <m>f(x)</m> be a continuous function on the interval <m>[a,b]</m> and suppose its first and
 second derivatives exist on that interval.
@@ -372,7 +372,7 @@ To avoid confusion we recommend the reader stick with the terms <q>concave up</q
 <p>Let's now continue Example<nbsp/><xref ref="eg_sketch_simple_poly"/> by discussing the
 concavity of the curve.</p>
 
-<example><title>Continuation of <xref ref="eg_sketch_simple_poly"/></title>
+<example xml:id="eg_3_6_2"><title>Continuation of <xref ref="eg_sketch_simple_poly"/></title>
 <p>
 Consider again the function
 <md>
@@ -454,7 +454,7 @@ A function <m>f(x)</m> is said to be odd if <m>f(-x)=-f(x)</m> for all <m>x</m>.
 </p></statement>
 </definition>
 
-<example><title>An even function and an odd funtion</title>
+<example xml:id="eg_3_6_3"><title>An even function and an odd funtion</title>
 <p>
   Let <m>f(x) = x^2</m> and <m>g(x)=x^3</m>. Then
 <md>
@@ -592,7 +592,7 @@ paper), we add in the reflection in the <m>y</m><ndash/>axis.</p>
 
 <p>Let's do a more substantial example of an even function</p>
 
-<example><title>An even rational function</title>
+<example xml:id="eg_3_6_4"><title>An even rational function</title>
 <p>
  Consider the function
 <md>
@@ -797,7 +797,7 @@ an example. Here is a sketch of one period</p>
 
 </subsection>
 
-<subsection>
+<subsection xml:id="ssec_sketch_check">
 <title>A Checklist for Sketching</title>
 <introduction>
 <p>Above we have described how we can use our accumulated knowledge of derivatives
@@ -1075,7 +1075,7 @@ Putting all this information together gives us the following sketch.</p>
 
 
 
-<example><title><m>f(x) = x^3 - 6x^2 + 9x - 54</m></title>
+<example xml:id="eg_3_6_5"><title><m>f(x) = x^3 - 6x^2 + 9x - 54</m></title>
 <p>
 <ol label="1">
 <li><p> Reading from <m>f(x)</m>:
@@ -1190,7 +1190,7 @@ inflection point), we have</p>
 </example>
 
 <p>An example of sketching a simple rational function.</p>
-<example><title><m>f(x) = \dfrac{x}{x^2-4}</m></title>
+<example xml:id="eg_3_6_6"><title><m>f(x) = \dfrac{x}{x^2-4}</m></title>
 <p>
 <ol label="1">
 <li><p> Reading from <m>f(x)</m>:

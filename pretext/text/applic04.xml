@@ -233,7 +233,7 @@ approximation.
 </p>
 
 <p>But before then, back to our example:</p>
-<example><title>A better approximation of <m>e^{0.1}</m></title>
+<example xml:id="eg_3_4_1"><title>A better approximation of <m>e^{0.1}</m></title>
 <p>
  Use the linear approximation to estimate <m>e^{0.1}</m>.
 </p>
@@ -265,7 +265,7 @@ almost correct to 3 digits.
 
 
 <p>It is worth doing another simple example here.</p>
-<example><title>A linear approximation of <m>\sqrt{4.1}</m></title>
+<example xml:id="eg_3_4_2"><title>A linear approximation of <m>\sqrt{4.1}</m></title>
 <p>
  Use a linear approximation to estimate <m>\sqrt{4.1}</m>.
 </p>
@@ -410,7 +410,7 @@ on.
 </p>
 
 <p>Return to our example:</p>
-<example><title>An even better approximation of <m> e^{0.1}</m></title>
+<example xml:id="eg_3_4_3"><title>An even better approximation of <m> e^{0.1}</m></title>
 <p>
  Use the quadratic approximation to estimate <m>e^{0.1}</m>.
 </p>
@@ -482,7 +482,7 @@ This is read as </p>
 </blockquote>
 
 <p>More generally</p>
-<definition>
+<definition xml:id="ntn_3_4_1">
 <statement><p>
 Let <m>m\leq n</m> be integers and let <m>f(x)</m> be a function defined on the integers.
 Then we write
@@ -603,7 +603,7 @@ its <m>k^\mathrm{th}</m> derivative with respect to <m>x</m> by
 </p>
 
 <p>Additionally we will need</p>
-<definition><title>Factorial</title>
+<definition xml:id="def_3_4_1"><title>Factorial</title>
 <statement><p>
   Let <m>n</m> be a positive integer
 <fn>It is actually possible to define the
@@ -712,7 +712,7 @@ Putting this all together we have</p>
 </fact>
 
 <p>Let us formalise this definition.</p>
-<definition><title>Taylor polynomial</title>
+<definition xml:id="def_3_4_2"><title>Taylor polynomial</title>
 <statement><p>
   Let <m>a</m> be a constant and let <m>n</m> be a non-negative integer. The <m>n^\mathrm{th}</m>
 degree Taylor polynomial for <m>f(x)</m> about <m>x=a</m> is
@@ -1057,7 +1057,7 @@ function <m>f</m>. One of the most important applications of calculus is to help
 what happens to <m>y</m> when we make a small change in <m>x</m>.
 </p>
 
-<definition>
+<definition xml:id="ntn_3_4_2">
 <statement><p>
  Let <m>x,y</m> be variables related by a function <m>f</m>. That is <m>y = f(x)</m>. Then we denote a
   small change in the variable <m>x</m> by <m>\De x</m> (read as <q>delta <m>x</m></q>). The corresponding
@@ -1073,7 +1073,7 @@ small change in the variable <m>y</m> is denoted <m>\De y</m> (read as <q>delta 
 <p>In many situations we do not need to compute <m>\De y</m> exactly and are instead happy with
 an approximation. Consider the following example.</p>
 
-<example><title>Estimate the increase in cost for a given change in production</title>
+<example xml:id="eg_3_4_4"><title>Estimate the increase in cost for a given change in production</title>
 <p>
 Let <m>x</m> be the number of cars manufactured per week in some factory and let <m>y</m> the cost
 of manufacturing those <m>x</m> cars. Given that the factory currently produces <m>a</m> cars per
@@ -1923,7 +1923,7 @@ c|\le 1</m> and <m>|\cos c|\le 1</m>. Hence
 
 </example>
 
-<example><title>Showing <m>e \lt 3</m></title>
+<example xml:id="eg_3_4_5"><title>Showing <m>e \lt 3</m></title>
 <p>
 In Example<nbsp/><xref ref="eg_zero_approx_of_e"/> above we used the fact that <m>e \lt 3</m> without actually
 proving it. Let's do so now.
@@ -2080,7 +2080,7 @@ at most <m>\frac{3}{(n+1)!}</m> <mdash/> so it converges very quickly.
 </p>
 </example>
 
-<example><title><xref ref="eg_taylorPole" text="type-global" /> Revisited</title>
+<example xml:id="eg_3_4_6"><title><xref ref="eg_taylorPole" text="type-global" /> Revisited</title>
 <p>
 Recall
 <fn>Now is a good time to go back and re-read it.</fn>

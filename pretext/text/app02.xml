@@ -3,11 +3,11 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<appendix xmlns:xi="http://www.w3.org/2001/XInclude">
+<appendix xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chap_app_B">
 <title>Origin of Trig, Area and Volume Formulas</title>
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section  xml:id="sec_B_1" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Theorems about Triangles</title>
-<subsection>
+<subsection xml:id="ssec_B_1_1">
 <title>Thales' Theorem</title>
 
 <p>
@@ -32,7 +32,7 @@ So we split the triangle <m>ABC</m> by drawing a line from the centre of the cir
 So the angle at <m>C = \pi - (\alpha+\beta) = \pi/2</m>.
 </p>
 </subsection>
-<subsection>
+<subsection xml:id="ssec_B_1_2">
 <title>Pythagoras</title>
 
 <p>
@@ -59,7 +59,7 @@ We start with a right-angled triangle with sides labeled <m>a,b</m> and <m>c</m>
 </subsection>
 </section>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section  xml:id="sec_B_2" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Trigonometry</title>
 <subsection xml:id="ssec_rad_deg">
 <title>Angles <mdash/> Radians vs Degrees</title>
@@ -98,7 +98,7 @@ More generally, consider a circle of radius <m>r</m>. Let <m>L(\theta)</m> denot
 </p>
 </subsection>
 
-<subsection>
+<subsection xml:id="ssec_B_2_2">
 <title>Trig Function Definitions</title>
 <p>The trigonometric functions are defined as ratios of the lengths of the sides of a
 right-angle triangle as shown in the left of the diagram below . These ratios depend only
@@ -298,7 +298,7 @@ The second can then be obtained by dividing this by <m>\cos^2\theta</m> and the 
 </p>
 </subsection>
 
-<subsection>
+<subsection xml:id="ssec_B_2_3">
 <title>Important Triangles</title>
 <p>
 Computing sine and cosine is non-trivial for general angles <mdash/> we need Taylor series (or  similar tools) to do this. However there are some special angles (usually small  integer fractions of <m>\pi</m>) for which we can use a little geometry to help. Consider the  following two triangles.
@@ -388,7 +388,7 @@ The first results from cutting a square along its diagonal, while the second is 
 
 </subsection>
 
-<subsection>
+<subsection xml:id="ssec_B_2_4">
 <title>Some More Simple Identities</title>
 <p>Consider the figure below</p>
 <sidebyside width="80%">
@@ -449,7 +449,7 @@ From which we can get the rules for the other four trigonometric functions.
 
 </subsection>
 
-<subsection>
+<subsection xml:id="ssec_B_2_5">
 <title>Identities <mdash/> Adding Angles</title>
 <p>We wish to explain the origins of the identity
 <md>
@@ -575,7 +575,7 @@ The formulas for tangent are a bit more work, but
 </p>
 </subsection>
 
-<subsection>
+<subsection xml:id="ssec_B_2_6">
 <title>Identities <mdash/> Double-angle Formulas</title>
 
 <p>
@@ -599,7 +599,7 @@ $\tan(\alpha)$}
 </p>
 </subsection>
 
-<subsection>
+<subsection xml:id="ssec_B_2_7">
 <title>Identities <mdash/> Extras</title>
 <subsubsection><title>Sums to Products</title>
 <p>
@@ -689,7 +689,7 @@ Hence
 </subsection>
 </section>
 
-<section><title>Inverse Trigonometric Functions</title>
+<section xml:id="sec_B_3"><title>Inverse Trigonometric Functions</title>
 <p>
 In order to construct inverse trigonometric functions we first have to  restrict their domains so as to make them one-to-one (or injective). We do this as shown below
 </p>
@@ -963,7 +963,7 @@ Completing the 9 possibilities gives:
 </p>
 </section>
 
-<section><title>Cosine and Sine Laws</title>
+<section xml:id="sec_B_4"><title>Cosine and Sine Laws</title>
 <subsection xml:id="app_cosine_law">
 <title>Cosine Law or Law of Cosines</title>
 <p>
@@ -1009,7 +1009,7 @@ as required.
 </p>
 </subsection>
 
-<subsection>
+<subsection xml:id="ssec_B_4_2">
 <title>Sine Law or Law of Sines</title>
 <p>
 The sine law says that, if a triangle has sides of length <m>a, b</m> and <m>c</m> and  the angles opposite those sides are <m>\alpha</m>, <m>\beta</m> and <m>\gamma</m>, then
@@ -1046,10 +1046,10 @@ as required.
 </subsection>
 </section>
 
-<section>
+<section xml:id="sec_B_5">
 <title>Circles, cones and spheres</title>
 
-<subsection>
+<subsection xml:id="ssec_B_5_1">
 <title>Where Does the Formula for the Area of a Circle Come From?</title>
 <p>
 Typically when we come across <m>\pi</m> for the first time it is as the ratio of the circumference of a circle to its diameter

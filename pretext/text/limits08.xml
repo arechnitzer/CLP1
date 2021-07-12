@@ -9,7 +9,7 @@
 <p>
 For those of you who made it through the formal <m>\epsilon-\delta</m> definition of  limits we give the formal definition of limits at infinity:</p>
 
-<definition><title>Limits at infinity <mdash/> formal</title>
+<definition xml:id="def_1_8_1"><title>Limits at infinity <mdash/> formal</title>
 <statement><p>
  Let <m>f</m> be a function defined on the whole real line. We say that</p>
 <blockquote>

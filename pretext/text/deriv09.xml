@@ -186,7 +186,7 @@ Set <m>f(u) = u^n</m>. Then follow the same steps and we arrive at
 very frequently <mdash/> when we need to differentiate the power of
 some simpler function. More generally we have the following.</p>
 
-<example><title>Derivative of a power of a function</title>
+<example xml:id="eg_2_9_1"><title>Derivative of a power of a function</title>
 <p>
  Let <m>f(u) = u^n</m> and let <m>g(x)</m> be any differentiable function.
 Set <m>F(x) = f\big(g(x)\big) = g(x)^n</m>. Then
@@ -200,7 +200,7 @@ Lemma<nbsp/><xref ref="lem_diff_ftothen"/>.
 </p></example>
 
 
-<example><title>Derivative of <m>\cos(3x-2)</m></title>
+<example xml:id="eg_2_9_2"><title>Derivative of <m>\cos(3x-2)</m></title>
 <p>
   Let <m>f(u) = \cos(u)</m> and <m>g(x) = 3x-2</m>. Find the derivative of
 <md>
@@ -570,7 +570,7 @@ F'(x)&amp;= f'\big(g(x)\big)\,y'(x)
 </p></example>
 
 
-<example><title>Derivative of a double-composition</title>
+<example xml:id="eg_2_9_3"><title>Derivative of a double-composition</title>
 <p>
  Find the derivative of <m>\diff{}{x} f(g(h(x)))</m>.
 </p>
@@ -605,7 +605,7 @@ f'_4(x)
 
 </example>
 
-<example><title>Finding the quotient rule from the chain rule</title>
+<example xml:id="eg_2_9_4"><title>Finding the quotient rule from the chain rule</title>
 <p>
  We can also use the chain rule to recover Corollary<nbsp/><xref ref="cor_diff_recip"/> and from there
 we can use the product rule to recover the quotient rule.

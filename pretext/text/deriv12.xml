@@ -313,7 +313,7 @@ is the unique number obeying</intertext><mrow>
 </p></statement>
 </definition>
 
-<example><title>The derivative of <m>\arccos x</m></title>
+<example xml:id="eg_2_12_1"><title>The derivative of <m>\arccos x</m></title>
 <p>
 To find the derivative of <m>\arccos</m> we can follow the same steps:
 <ul>
@@ -354,7 +354,7 @@ derivative is <m>\diff{\theta}{x}</m>.
 </ul>
 </p></example>
 
-<example><title>The derivative of <m>\arctan x</m></title>
+<example xml:id="eg_2_12_2"><title>The derivative of <m>\arctan x</m></title>
 <p>
 Very similar steps give the derivative of <m>\arctan x</m>:
 <ul>
@@ -419,7 +419,7 @@ from the triangle
 </example>
 
 
-<example><title>The derivative of <m>\arccsc x</m></title>
+<example xml:id="eg_2_12_3"><title>The derivative of <m>\arccsc x</m></title>
 <p>
  To find the derivative of <m>\arccsc</m> we can use its definition and the chain rule.
 <md>

@@ -11,7 +11,7 @@ One important application of differential calculus is to find the maximum (or mi
 value of a function. This often finds real world applications in problems such as the
 following.</p>
 
-<example><title>Enclosing a paddock</title>
+<example xml:id="eg_3_5_1"><title>Enclosing a paddock</title>
 <p>
 A farmer has 400m of fencing materials. What is the largest rectangular paddock
 that can be enclosed?

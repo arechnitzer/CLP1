@@ -141,7 +141,7 @@ Multiplication is also associative:
 </md>
 </p>
 
-<example><title>parsing a formula</title>
+<example xml:id="eg_0_5_1"><title>parsing a formula</title>
 <p>
 Consider the formula
 <md>

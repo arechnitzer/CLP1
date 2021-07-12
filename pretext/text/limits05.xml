@@ -2,7 +2,7 @@
 <!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec_1_5" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Limits at Infinity</title>
 <subsection><title>Limits at Infinity</title>
 
@@ -18,7 +18,7 @@ The definition of a limit at infinity has a similar flavour to the definition of
 Again we give an informal definition; the full formal definition can be found  in (the optional) Section<nbsp/><xref ref="sec_lim_inf_formal"/> near the end of this chapter.
 </p>
 
-<definition><title>Limits at infinity <mdash/> informal</title>
+<definition xml:id="def_1_5_1"><title>Limits at infinity <mdash/> informal</title>
 <statement><p>
 We write
 <md>
@@ -42,7 +42,7 @@ when the value of the function <m>f(x)</m> gets closer and closer to <m>L</m> as
 </definition>
 
 
-<example><title>Limits to <m>+\infty</m> and <m>-\infty</m></title>
+<example xml:id="eg_1_5_1"><title>Limits to <m>+\infty</m> and <m>-\infty</m></title>
 <p>Consider the two functions depicted below</p>
 
 <sidebyside width="80%">
@@ -141,7 +141,7 @@ For example
 Our first application of limits at infinity will be to examine the behaviour of  a rational function for very large <m>x</m>. To do this we use a <q>trick</q>.
 </p>
 
-<example><title><m>\ds \lim_{x \to \infty} \frac{x^2-3x+4}{3x^2+8x+1}</m></title>
+<example xml:id="eg_1_5_2"><title><m>\ds \lim_{x \to \infty} \frac{x^2-3x+4}{3x^2+8x+1}</m></title>
 <p>
 Compute the following limit:
 <md>
@@ -340,7 +340,7 @@ Here is a sketch of the function in question.</p>
 <image source="text/figs/neg_inf_lim"/>
 </sidebyside>
 
-<example><title>Do not try to add and subtract infinity</title>
+<example xml:id="eg_1_5_3"><title>Do not try to add and subtract infinity</title>
 <p>
 Compute the following limit:
 <md>
@@ -464,7 +464,7 @@ Let <m>a,c,H \in \mathbb{R}</m> and let <m>f,g,h</m> be functions defined in  an
 Note that by <q>undetermined</q> we mean that the limit may or may not exist, but  cannot be determined from the information given in the theorem. See  Example<nbsp/><xref ref="eg_lim_rat"/> for an example of what we mean by  <q>undetermined</q>. Additionally consider the following example.
 </p>
 
-<example><title>Be careful with the arithmetic of infinite limits</title>
+<example xml:id="eg_1_5_4"><title>Be careful with the arithmetic of infinite limits</title>
 <p>
 Consider the following 3 functions:
 <md>

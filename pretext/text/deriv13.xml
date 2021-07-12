@@ -115,7 +115,7 @@ very similar to the intermediate value theorem (see Theorem<nbsp/><xref ref="thm
 <p>does not tell us the value of <m>c</m>, just that such a <m>c</m> must exist.
 </p>
 
-<example><title>A simple application of Rolle's theorem</title>
+<example xml:id="eg_2_13_1"><title>A simple application of Rolle's theorem</title>
 <p>
 We can use Rolle's theorem to show that the function
 <md>
@@ -170,7 +170,7 @@ Hence <m>c = \frac{3\pi}{4}</m>. We have sketched the function and the relevant 
 value theorem <mdash/> Theorem<nbsp/><xref ref="thm_ivt"/>) is to show that a function does not have
 multiple zeros in an interval:</p>
 
-<example><title>Showing an equation has exactly 1 solution</title>
+<example xml:id="eg_2_13_2"><title>Showing an equation has exactly 1 solution</title>
 <p>
 Show that the equation <m>2x-1=\sin(x)</m> has exactly 1 solution.
 <ul>
@@ -287,7 +287,7 @@ f'(c)&amp;=\frac{f(b)-f(a)}{b-a}
 <p>Let us start to explore the mean value theorem <mdash/> which is very frequently known as the
 MVT. A simple example to start:</p>
 
-<example><title>Apply MVT to a polynomial</title>
+<example xml:id="eg_2_13_3"><title>Apply MVT to a polynomial</title>
 <p>
 Consider the polynomial <m>f(x)=3x^2-4x+2</m> on <m>[-1,1]</m>.
 <ul>
@@ -397,7 +397,7 @@ is easy, but we can also solve this using MVT.
 <p> More generally if we have some information about the derivative, then we can use the
 MVT to leverage this information to tell us something about the function.</p>
 
-<example><title>Using MVT to bound a function</title>
+<example xml:id="eg_2_13_4"><title>Using MVT to bound a function</title>
 <p>
 Let <m>f(x)</m> be a differentiable function so that
 <md>
@@ -614,7 +614,7 @@ If <m>f'(x) = g'(x)</m> for all <m>x</m> in the open interval <m>(a,b)</m>, then
 corollary tells us that <m>h(x)</m> is constant.
 </p>
 
-<example><title>Summing <m>\arcsin</m> and <m>\arccos</m></title>
+<example xml:id="eg_2_13_5"><title>Summing <m>\arcsin</m> and <m>\arccos</m></title>
 <p>
 Using this corollary we can prove results like the following:
 <md>

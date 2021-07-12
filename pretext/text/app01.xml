@@ -50,7 +50,7 @@ Two triangles <m>T_1,T_2</m> are similar when
 </p>
 </section>
 
-<section><title>Pythagoras</title>
+<section xml:id="sec_A_2"><title>Pythagoras</title>
 <p>
 For a right-angled triangle the length of the hypotenuse is related to the lengths of the other two sides by
 </p>
@@ -64,7 +64,7 @@ For a right-angled triangle the length of the hypotenuse is related to the lengt
 </p>
 </section>
 
-<section>
+<section xml:id="sec_A_3">
 <title>Trigonometry <mdash/> Definitions</title>
 <sidebyside width="50%">
 <image source="text/figs/right_triangle"/>
@@ -149,7 +149,7 @@ For a circle of radius <m>r</m> and angle of <m>\theta</m> radians:
 
 </section>
 
-<section>
+<section xml:id="sec_A_6">
 <title>Trigonometry <mdash/> Special Triangles</title>
 <sidebyside width="66%">
 <image source="text/figs/special_triangles"/>
@@ -170,7 +170,7 @@ From the above pair of special triangles we have
 </p>
 
 </section>
-<section>
+<section xml:id="sec_A_7">
 <title>Trigonometry <mdash/> Simple Identities</title>
 <p>
 <ul>

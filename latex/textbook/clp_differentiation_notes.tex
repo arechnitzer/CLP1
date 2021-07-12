@@ -49,7 +49,7 @@ for another century.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Revisiting Tangent Lines}
+\section{Revisiting Tangent Lines}\label{sec_2_1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -932,12 +932,13 @@ $\frac{f(a+h)-f(a)}{h}\ h$ converges to $f'(a)\cdot 0=0$ too.
 
 Notice that while this theorem is useful as stated, it is (arguably) more often applied in its contrapositive\footnote{If you have forgotten what the contrapositive is, then quickly reread Footnote~\ref{footnote contrapositive} in Section~\ref{sec lim func}.} form:
 \begin{theorem}[The contrapositive of Theorem~\ref{thm:DIFFdiffGivesCont}]
+\label{thm_2_2_1}
  If $f(x)$ is not continuous at $x=a$ then it is not differentiable at $x=a$.
 \end{theorem}
 As the above examples illustrate, this statement does not tell us what happens if $f$ \emph{is} continuous at $x=a$ --- we have to think!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Interpretations of the Derivative}
+\section{Interpretations of the Derivative}\label{sec_2_3}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -1156,7 +1157,7 @@ delineate each step in the process of computing the tangent line.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Arithmetic of Derivatives - a Differentiation Toolbox}
+\section{Arithmetic of Derivatives - a Differentiation Toolbox}\label{sec_2_4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 So far, we have evaluated derivatives only by applying
@@ -1451,7 +1452,7 @@ By definition
 \end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Using the Arithmetic of Derivatives --  Examples}
+\section{Using the Arithmetic of Derivatives --  Examples}\label{sec_2_6}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In this section we illustrate the computation of derivatives using the arithmetic of
 derivatives --- Theorems~\ref{thm:DIFFlinearity},~\ref{thm:DIFFprodRule}
@@ -2221,7 +2222,7 @@ It is the inverse function of $f(x)=q^x$. Of course we are free
 to rename the dummy variables $X$ and $Y$. If, for example,
 we wish to graph our logarithm function, it is natural to rename
 $Y\rightarrow x$ and $X\rightarrow y$, giving
-\begin{defn}
+\begin{defn}\label{def_2_7_1}
 Let $q>1$. Then the logarithm with base $q$ is defined\footnote{
 We can also define logarithms with base $0<r<1$ but doing so is not necessary.
 To see this, set $q=1/r>1$. Then it is reasonable to define $\log_r(x) = -
@@ -2361,7 +2362,7 @@ later in
 the course.
 
 To summarise
-\begin{theorem}
+\begin{theorem}\label{thm_2_7_1}
 The constant $e$ is the unique real number that satisfies
 \begin{align*}
 	\lim_{h \to 0} \frac{e^h-1}{h} &= 1
@@ -2736,7 +2737,7 @@ that the limit of a product is the product of limits (i.e. Lemma~\ref{lem sinhov
 Theorem~\ref{thm arith lim}).
 
 Thus we have now produced two proofs of the following lemma:
-\begin{lemma}
+\begin{lemma}\label{lem_2_8_1}
 \begin{align*}
   \lim_{h \to 0} \frac{\cos h -1}{h} &= 0
 \end{align*}
@@ -3042,7 +3043,7 @@ Set $f(u) = u^n$. Then follow the same steps and we arrive at
 This example shows one of the ways that the chain rule appears
 very frequently --- when we need to differentiate the power of
 some simpler function. More generally we have the following.
-\begin{eg}
+\begin{eg}\label{eg_2_9_1}
  Let $f(u) = u^n$ and let $g(x)$ be any differentiable function.
 Set $F(x) = f\big(g(x)\big) = g(x)^n$. Then
 \begin{align*}
@@ -3052,7 +3053,7 @@ This is precisely the result in Example~\ref{eg:DIFFsimpleToolsA}  and
 Lemma~\ref{lem diff ftothen}.
 \end{eg}
 
-\begin{eg}
+\begin{eg}\label{eg_2_9_2}
   Let $f(u) = \cos(u)$ and $g(x) = 3x-2$. Find the derivative of
 \begin{align*}
   F(x) &= f\big(g(x)\big) = \cos(3x-2).
@@ -3402,7 +3403,7 @@ F'(x)&= f'\big(g(x)\big)\,y'(x)
 \end{align*}
 \end{eg}
 
-\begin{eg}
+\begin{eg}\label{eg_2_9_3}
  Find the derivative of $\diff{}{x} f(g(h(x)))$.
 
 This is very similar to the previous example. Let us set $F(x) = f(g(h(x)))$
@@ -3426,7 +3427,7 @@ f'_4(x)
 
 \end{eg}
 
-\begin{eg}
+\begin{eg}\label{eg_2_9_4}
  We can also use the chain rule to recover Corollary~\ref{cor diff recip} and from there
 we can use the product rule to recover the quotient rule.
 
@@ -3643,7 +3644,7 @@ Thus we have proved:
 where $\log x$ is the logarithm base $e$.
 \end{theorem}
 
-\begin{eg}
+\begin{eg}\label{eg_2_10_1}
  Let $f(x) = \log 3x$. Find $f'(x)$.
 
 There are two ways to approach this --- we can simplify then differentiate, or
@@ -3664,7 +3665,7 @@ differentiate and then simplify. Neither is difficult.
 \end{align*}
 \end{itemize}
 \end{eg}
-\begin{eg}[The derivative of $\log cx$]
+\begin{eg}[The derivative of $\log cx$]\label{eg_2_10_2}
 Notice that we can extend the previous example for any positive constant --- not
 just 3. Let $c>0$ be a constant, then
 \begin{align*}
@@ -3771,7 +3772,7 @@ Example~\ref{eg log est})
 We want to go back to some previous slightly messy examples
 (Examples~\ref{eg:DIFFsimpleToolsA}  and~\ref{eg:DIFFsimpleToolsNB}) and now
 show you how they can be done more easily.
-\begin{eg}
+\begin{eg}\label{eg_2_10_3}
  Consider again the derivative of the product of 3 functions:
 \begin{align*}
 P(x) &= F(x) \cdot G(x) \cdot H(x)
@@ -3800,7 +3801,7 @@ than 3 functions.
 This same trick of ``take a logarithm and then differentiate'' --- or
 logarithmic differentiation --- will work any time you have a product (or
 ratio) of functions.
-\begin{eg}
+\begin{eg}\label{eg_2_10_4}
 Let's use logarithmic differentiation on the function from
 Example~\ref{eg:DIFFsimpleToolsNB}:
 \begin{align*}
@@ -3836,7 +3837,7 @@ just as we found previously.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Implicit Differentiation}
+\section{Implicit Differentiation}\label{sec_2_11}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -4702,7 +4703,7 @@ is the unique number obeying
 \end{align*}
 \end{defn}
 
-\begin{eg}
+\begin{eg}\label{eg_2_12_1}
 To find the derivative of $\arccos$ we can follow the same steps:
 \begin{itemize}
  \item Write $\arccos(x) =\theta(x)$ so that $\cos\theta = x$ and the desired
@@ -4730,7 +4731,7 @@ from which we see
 \end{itemize}
 \end{eg}
 
-\begin{eg}
+\begin{eg}\label{eg_2_12_2}
 Very similar steps give the derivative of $\arctan x$:
 \begin{itemize}
  \item Start with $\theta = \arctan x$, so $\tan \theta = x$.
@@ -4777,7 +4778,7 @@ An almost identical computation gives the derivative of $\arccot x$:
 
 
 
-\begin{eg}
+\begin{eg}\label{eg_2_12_3}
  To find the derivative of $\arccsc$ we can use its definition and the chain rule.
 \begin{align*}
   \theta &= \arccsc x & \text{take cosecant of both sides}\\
@@ -4913,7 +4914,7 @@ there must always be at least one. Notice, however, the theorem\footnote{Notice 
 very similar to the intermediate value theorem (see Theorem~\ref{thm ivt})}
 does not tell us the value of $c$, just that such a $c$ must exist.
 
-\begin{eg}
+\begin{eg}\label{eg_2_13_1}
 We can use Rolle's theorem to show that the function
 \begin{align*}
   f(x) &= \sin(x)-\cos(x)
@@ -4953,7 +4954,7 @@ Hence $c = \frac{3\pi}{4}$. We have sketched the function and the relevant point
 A more substantial application of Rolle's theorem (in conjunction with the intermediate
 value theorem --- Theorem~\ref{thm ivt}) is to show that a function does not have
 multiple zeros in an interval:
-\begin{eg}
+\begin{eg}\label{eg_2_13_2}
 Show that the equation $2x-1=\sin(x)$ has exactly 1 solution.
 \begin{itemize}
 \item Start with a rough sketch of each side of the equation
@@ -5047,7 +5048,7 @@ f'(c)&=\frac{f(b)-f(a)}{b-a}
 
 Let us start to explore the mean value theorem --- which is very frequently known as the
 MVT. A simple example to start:
-\begin{eg}
+\begin{eg}\label{eg_2_13_3}
 Consider the polynomial $f(x)=3x^2-4x+2$ on $[-1,1]$.
 \begin{itemize}
  \item Since $f$ is a polynomial it is continuous on the interval and also differentiable
@@ -5126,7 +5127,7 @@ $-160 \leq q=s(2) \leq 160$.
 \end{eg}
 More generally if we have some information about the derivative, then we can use the
 MVT to leverage this information to tell us something about the function.
-\begin{eg}
+\begin{eg}\label{eg_2_13_4}
 Let $f(x)$ be a differentiable function so that
 \begin{align*}
   f(1)&=10 &\text{ and }&& -1 \leq f'(x) \leq 2 \text{ everywhere}
@@ -5303,7 +5304,7 @@ $(a,b)$. That is $f(x)=g(x)+c$, where $c$ is some constant.
 We can prove this by setting $h(x)=f(x)-g(x)$. Then $h'(x)=0$ and so the previous
 corollary tells us that $h(x)$ is constant.
 
-\begin{eg}
+\begin{eg}\label{eg_2_13_5}
 Using this corollary we can prove results like the following:
 \begin{align*}
   \arcsin x + \arccos x &= \frac{\pi}{2} & \mbox{for all } -1 < x < 1
@@ -5379,7 +5380,7 @@ If $m>n$, then
 \end{align*}
 \end{eg}
 
-\begin{eg}
+\begin{eg}\label{eg_2_14_1}
 Recall that the derivative $v'(a)$ is the (instantaneous) rate of
 change of the function $v(t)$ at $t=a$. Suppose that you are walking on
 the $x$--axis and that $x(t)$ is your $x$--coordinate at time $t$.

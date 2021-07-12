@@ -2,7 +2,7 @@
 <!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec_4_7" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>L'Hôpital's Rule and Indeterminate Forms</title>
 <subsection><title>L'Hôpital's Rule and Indeterminate Forms</title>
 <introduction>
@@ -62,7 +62,7 @@ that cancels.
 <p>Because the limit that results from these <m>0/0</m> situations is not immediately obvious,
 but also leads to some interesting mathematics, we should give it a name.</p>
 
-<definition><title>First indeterminate forms</title>
+<definition xml:id="def_3_7_1"><title>First indeterminate forms</title>
 <statement><p>
 Let <m>a \in \mathbb{R}</m> and let <m>f(x)</m> and <m>g(x)</m> be functions. If
 <md>
@@ -242,7 +242,7 @@ as required.
 
 </subsection>
 
-<subsection>
+<subsection  xml:id="ssec_3_7_1">
 <title>Standard Examples</title>
 
 <p>Here are some simple examples using L'Hôpital's rule.</p>
@@ -327,7 +327,7 @@ so we again have a <m>\frac00</m> indeterminate form.
 </p></example>
 
 
-<example><title><m>\ds \lim_{x \to0} \frac{q^x - 1}{x}</m></title>
+<example xml:id="eg_3_7_1"><title><m>\ds \lim_{x \to0} \frac{q^x - 1}{x}</m></title>
 <p>
  Let <m>q \gt 1</m> and compute the limit
 <md>
@@ -699,7 +699,7 @@ does not exist.
 </p>
 </subsection>
 
-<subsection><title>Variations</title>
+<subsection xml:id="ssec_3_7_2"><title>Variations</title>
 <introduction>
 <p>Theorem <xref ref="thm_APPlhopital"/> is the basic form of L'Hôpital's
 rule, but there are also many variations. Here are a bunch of them.
@@ -773,11 +773,11 @@ We have applied L'Hôpital's rule with
 <p>
 L'Hôpital's rule also applies when
 <m>\lim\limits_{x\rightarrow a}f(x)=0</m>, <m>\lim\limits_{x\rightarrow a}g(x)=0</m>
-is replaced <m>\lim\limits_{x\rightarrow a}f(x)=\pm\infty</m>,
+is replaced by <m>\lim\limits_{x\rightarrow a}f(x)=\pm\infty</m>,
 <m>\lim\limits_{x\rightarrow a}g(x)=\pm\infty</m>.
 </p>
 
-<example><title>Compute <m>\ds \lim_{x \to \infty} \frac{\log x}{x}</m></title>
+<example xml:id="eg_3_7_2"><title>Compute <m>\ds \lim_{x \to \infty} \frac{\log x}{x}</m></title>
 <p>
  Consider the limit
 <md>
@@ -802,7 +802,7 @@ is replaced <m>\lim\limits_{x\rightarrow a}f(x)=\pm\infty</m>,
 </p></example>
 
 
-<example><title>Find <m>\ds \lim_{x \to \infty} \frac{5x^2+3x-3}{x^2+1}</m></title>
+<example xml:id="eg_3_7_3"><title>Find <m>\ds \lim_{x \to \infty} \frac{5x^2+3x-3}{x^2+1}</m></title>
 <p>
  Consider the limit
 <md>
@@ -885,7 +885,7 @@ and the second time with
 <p>Sometimes things don't quite work out as we would like and l'Hôpital's rule can get
 stuck in a loop. Remember to think about the problem before you apply any rule.</p>
 
-<example><title>Stuck in a loop</title>
+<example xml:id="eg_3_7_4"><title>Stuck in a loop</title>
 <p>
  Consider the limit
 <md>
@@ -1274,7 +1274,7 @@ Combining (E1), (E2) and (E3) gives our final answer
 to multiply by the conjugate and take the limit using the tools of
 Chapter<nbsp/><xref ref="chap_limits"/>.</p>
 
-<example><title>Compute <m>\ds \lim_{x\to \infty} \sqrt{x^2+4x}-\sqrt{x^2-3x}</m></title>
+<example xml:id="eg_3_7_5"><title>Compute <m>\ds \lim_{x\to \infty} \sqrt{x^2+4x}-\sqrt{x^2-3x}</m></title>
 <p>
 Consider the limit
 <md>

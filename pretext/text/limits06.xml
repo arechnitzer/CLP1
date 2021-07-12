@@ -2,7 +2,7 @@
 <!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec_1_6" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Continuity</title>
 <subsection><title>Continuity</title>
 
@@ -20,7 +20,7 @@ That is, the the limit as <m>x</m> approaches <m>a</m> is just <m>f(a)</m>. Roug
 Many other functions have this property, <m>\sin(x)</m> for example. A function  with this property is called <q>continuous</q> and there is a precise mathematical definition  for it. If you do not recall interval notation, then now is a good time to take a quick  look back at Definition<nbsp/><xref ref="def_intervals"/>.
 </p>
 
-<definition>
+<definition xml:id="def_1_6_1">
 <statement><p>
 A function <m>f(x)</m> is continuous at <m>a</m> if
 <md>
@@ -87,7 +87,7 @@ Now the first of these one-sided limits involves examining the behaviour of <m>f
 One way around this problem is to generalise the idea of continuity to one-sided  continuity, just as we generalised limits to get one-sided limits.
 </p>
 
-<definition>
+<definition> xml:id="def_1_6_2"
 <statement><p>
   A function <m>f(x)</m> is continuous from the right at <m>a</m> if
   <md>
@@ -108,7 +108,7 @@ One way around this problem is to generalise the idea of continuity to one-sided
 Using the definition of one-sided continuity we can now define what it means for a  function to be continuous on a closed interval.
 </p>
 
-<definition>
+<definition> xml:id="def_1_6_3"
 <statement><p>
  A function <m>f(x)</m> is continuous on the closed interval <m>[a,b]</m> when
 <ul>
@@ -138,7 +138,7 @@ We already know from our work above that polynomials are continuous, and that  r
 
 <p>But first, a few examples<ellipsis/></p>
 
-<example><title>Simple continuous and discontinuous functions</title>
+<example xml:id="eg_1_6_1"><title>Simple continuous and discontinuous functions</title>
 <p>Consider the functions drawn below</p>
 
 <sidebyside width="80%">
@@ -232,7 +232,7 @@ Let <m>a,c \in \mathbb{R}</m> and let <m>f(x)</m> and <m>g(x)</m> be functions t
 Above we stated that polynomials and rational functions are  continuous (being careful about domains of rational functions <mdash/>  we must avoid the denominators being zero) without making it a formal  statement. This is easily fixed<ellipsis/>
 </p>
 
-<lemma>
+<lemma xml:id="lem_1_6_1">
 <statement><p>
  Let <m>c \in \mathbb{R}</m>. The functions
 <md>
@@ -279,7 +279,7 @@ We haven't encountered inverse trigonometric functions, nor exponential  functio
 Using a combination of the above results you can show that many complicated  functions are continuous except at a few points (usually where a denominator is  equal to zero).
 </p>
 
-<example><title>Continuity of <m>\frac{\sin(x)}{2+\cos(x)}</m></title>
+<example xml:id="eg_1_6_2"><title>Continuity of <m>\frac{\sin(x)}{2+\cos(x)}</m></title>
 <p>
 Where is the function <m>f(x) = \frac{\sin(x)}{2+\cos(x)}</m> continuous?
 </p>
@@ -354,7 +354,7 @@ Hence if <m>g</m> is continuous at <m>a</m> and <m>f</m> is continuous at <m>g(a
 <p>So when we compose two continuous functions we get a new continuous function.</p>
 
 <p>We can put this to use</p>
-<example><title>Continuity of composed functions</title>
+<example xml:id="eg_1_6_3"><title>Continuity of composed functions</title>
 <p>
 Where are the following functions continuous?
 <md>
@@ -472,7 +472,7 @@ In the left-hand example we see that a discontinuous function can <q>jump</q> ov
 
 <p>If you are still confused then here is a <q>real-world</q> example</p>
 
-<example><title>The IVT in the <q>real world</q></title>
+<example xml:id="eg_1_6_4"><title>The IVT in the <q>real world</q></title>
 <p>
 You are climbing the Grouse-grind
 	<fn>If you don't know it then google it.</fn>

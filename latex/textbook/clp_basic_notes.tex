@@ -13,7 +13,7 @@ pieces you should remember about sets and numbers. The material in this chapter 
 be (directly) examined.
 
 
-\section{Numbers}
+\section{Numbers}\label{sec_0_1}
 Before we do anything else, it is very important that we agree on the definitions
 and names of some important collections of numbers.
 
@@ -117,7 +117,7 @@ always find a rational number that is extremely close. Mathematicians refer
 to this property by saying that $\mathbb{Q}$ is \emph{dense} in $\mathbb{R}$.
 \end{itemize}
 So to summarise
-\begin{defn}[Sets of numbers]
+\begin{defn}[Sets of numbers]\label{def_0_1_1}
   This is not really a definition, but you should know these symbols
  \begin{itemize}
   \item $\mathbb{N} = $ the natural numbers,
@@ -188,7 +188,7 @@ example
 \end{align*}
 We can formalise this result in the following theorem (which we haven't proved
 in general, but it's beyond the scope of the text to do so):
-\begin{theorem}
+\begin{theorem}\label{thm_0_1_1}
  Let $x$ be a real number. Then $x$ must fall into one of the following two
 categories,
 \begin{itemize}
@@ -241,7 +241,7 @@ and ``Zermelo-Fraenkel set theory'' for a more complete and \emph{far} more
 detailed discussion of the basics of sets and why, when you dig into them a
 little, they are not so basic.}.
 
-\begin{defn}[A not-so-formal definition of set]
+\begin{defn}[A not-so-formal definition of set]\label{def_0_2_1}
  A ``set'' is a collection of distinct objects. The objects are referred to as
 ``elements'' or ``members'' of the set.
 \end{defn}
@@ -384,11 +384,11 @@ save the reader (and yourself) a lot of confusion.
 
 
 
-\section{Other Important Sets}
+\section{Other Important Sets}\label{sec_0_3}
 We have seen a few important sets above --- namely $\mathbb{N}, \mathbb{Z},
 \mathbb{Q}$ and $\mathbb{R}$. However, arguably the most important set in
 mathematics is the empty set.
-\begin{defn}[Empty set]
+\begin{defn}[Empty set]\label{def_0_3_1}
   The empty set (or null set or void set) is the set which contains no
 elements. It is denoted $\es$. For any object $x$, we always
 have $x \notin \es$; hence $\es = \{ \}$.
@@ -430,7 +430,7 @@ several shorthands for ``such that''. We shall use two them:
 Other people also use ``:'' as shorthand for ``such that''. You should 
 recognise all three of these shorthands.
 
-\begin{eg}[examples of sets]
+\begin{eg}[examples of sets]\label{eg_0_3_1}
   Even more examples\dots
 \begin{itemize}
  \item Let $A = \{2,3,5,7,11,13,17,19\}$ and let
@@ -473,7 +473,7 @@ $S = \set{n^2 | n \in \mathbb{Z}, n \geq 0}$ and $S=\set{n^2 | n=0,1,2,\dots}$.
 
 The sets $A$ and $B$ in the above example illustrate an important point. Every
 element in $B$ is an element in $A$, and so we say that $B$ is a subset of $A$
-\begin{defn}
+\begin{defn}\label{def_0_3_2}
 Let $A$ and $B$ be sets. We say ``$A$ is a subset of $B$'' if every
 element of $A$ is also an element of $B$. We denote this $A \subseteq B$ (or $B
 \supseteq A$). If $A$ is a subset of $B$ and $A$ and $B$ are not the same , so
@@ -487,7 +487,7 @@ Two things to note about subsets:
 the same as saying that there is some element of $A$ that is not in $B$. That
 is, there is some $a \in A$ such that $a \notin B$.
 \end{itemize}
-\begin{eg}[subsets]
+\begin{eg}[subsets]\label{eg_0_3_2}
 Let $S = \{1,2\}$. What are all the subsets of $S$? Well --- each element of
 $S$ can either be in the subset or not (independent of the other elements of
 the set). So we have $2\times2 = 4$ possibilities: neither $1$ nor $2$ is in the
@@ -548,7 +548,7 @@ So we now know how to say that one set is contained within another. We will now
 define some other operations on sets. Let us also start to be a bit more precise
 with our definitions and set them out carefully as we get deeper into the
 text.
-\begin{defn}
+\begin{defn}\label{def_0_3_3}
  Let $A$ and $B$ be sets. We define the union of $A$ and $B$, denoted $A \cup
 B$, to be the set of all elements that are in at least one of $A$ or $B$.
 \begin{align*}
@@ -574,7 +574,7 @@ definitions will be very difficult to follow. As writers we must try to be nice
 to our readers\footnote{If you are finding this text difficult to follow then
 please complain to us authors and we will do our best to improve it.}.
 
-\begin{defn}
+\begin{defn}\label{def_0_3_4}
  Let $A$ and $B$ be sets. We define the intersection of $A$ and $B$, denoted $A
 \cap B$, to be the set of elements that belong to both $A$ and $B$.
 \begin{align*}
@@ -584,7 +584,7 @@ please complain to us authors and we will do our best to improve it.}.
 Again note that we are using the word ``and'' in a careful mathematical sense
 (which is pretty close to the usual use in English).
 
-\begin{eg}[Union and intersection]
+\begin{eg}[Union and intersection]\label{eg_0_3_3}
 Let $A = \{1,2,3,4 \}$, $B = \{p : p \mbox{ is prime} \}$,
 $C = \{5,7,9\}$ and $D = \{\mbox{even positive integers}\}$. Then
 \begin{align*}
@@ -597,7 +597,7 @@ In this last case we see that the two sets have no elements in common --- they
 are said to be~\emph{disjoint}.
 \end{eg}
 
-\section{Functions}
+\section{Functions}\label{sec_0_4}
 Now that we have reviewed basic ideas about sets we can start doing more
 interesting things with them --- functions.
 
@@ -683,7 +683,7 @@ We must include the input and output sets $A$ and $B$ in the definition of the
 function. This is one of the reasons that we should not think of
 functions as just formulas. The input and output sets have proper mathematical
 names, which we give below:
-\begin{defn}
+\begin{defn}\label{def_0_4_1}
 Let $f:A \to B$ be a function. Then
 \begin{itemize}
 \item the set $A$ of inputs to our function is the ``domain'' of $f$,
@@ -706,7 +706,7 @@ images of elements in $A$.
 \end{defn}
 
 
-\begin{eg}[domains and ranges]
+\begin{eg}[domains and ranges]\label{eg_0_4_1}
 Let us go back to the ``days of the week'' function example that we
 worked on above, we can define the domain, codomain and range:
 \begin{itemize}
@@ -716,7 +716,7 @@ worked on above, we can define the domain, codomain and range:
 images of inputs from $A$.
 \end{itemize}
 \end{eg}
-\begin{eg}[more domains and ranges]
+\begin{eg}[more domains and ranges]\label{eg_0_4_2}
 A more numerical example --- let $g: \mathbb{R} \to \mathbb{R}$ be defined
 by the formula $g(x) = x^2$. Then
 \begin{itemize}
@@ -942,7 +942,7 @@ Multiplication is also associative:
   a \times b \times c &= (a \times b) \times c = a \times (b \times c).
 \end{align*}
 
-\begin{eg}[parsing a formula]
+\begin{eg}[parsing a formula]\label{eg_0_5_1}
 Consider the formula
   \begin{align*}
   g(t) &= \left(\frac{t+\pi}{t-\pi} \right) \cdot \sin\left( \frac{t+\pi}{2}
@@ -1078,7 +1078,7 @@ mapped to by many different $x$-values. So when we look for an \emph{unique} ans
 the question ``When is $\sin x = \half$?'' we cannot answer it.
 
 This ``uniqueness'' condition can be made more precise:
-\begin{defn}
+\begin{defn}\label{def_0_6_1}
  A function $f$ is one-to-one (injective) when it never takes the same $y$
 value more than once. That is
 \begin{align*}
@@ -1087,7 +1087,7 @@ value more than once. That is
 \end{defn}
 There is an easy way to test this when you have a plot of the function --- the
 horizontal line test.
-\begin{defn}[Horizontal line test]
+\begin{defn}[Horizontal line test]\label{def_0_6_2}
  A function is one-to-one if and only if no horizontal line $y=c$ intersects
 the graph $y=f(x)$ more than once.
 \end{defn}
@@ -1125,7 +1125,7 @@ $f$. Because of this we have
 We have to be careful not to confuse $f^{-1}(x)$ with $\ds \frac{1}{f(x)}$. The ``$-1$''
 is not an exponent.
 
-\begin{eg}
+\begin{eg}\label{eg_0_6_1}
 Let $f(x)=x^5+3$ on domain $\mathbb{R}$. To find its inverse we do the following
 \begin{itemize}
  \item Write $y=f(x)$; that is $y=x^5+3$.
@@ -1143,7 +1143,7 @@ replace every $y$ in $f^{-1}(y)$ with an $x$.
 \end{eg}
 
 
-\begin{eg}
+\begin{eg}\label{eg_0_6_2}
 Let $g(x) = \sqrt{x-1}$ on the domain $x \geq 1$. We can find the inverse in the same way:
 \begin{align*}
   y &= \sqrt{x-1} \\
@@ -1157,7 +1157,7 @@ Let us now turn to finding the inverse of $\sin(x)$ --- it is a little more tric
 have to think carefully about domains.
 
 
-\begin{eg}
+\begin{eg}\label{eg_0_6_3}
 We have seen (back in Figure~\ref{fig inv1}) that $\sin(x)$ takes each value $y$
 between $-1$ and $+1$ for infinitely many different values of $x$ (see
 the left-hand graph in the figure below). Consequently $\sin(x)$, with domain

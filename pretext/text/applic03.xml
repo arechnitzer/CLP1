@@ -299,7 +299,7 @@ is about 37 centuries old.
 We have stated that the half-life of <m>{}^{14}C</m> is 5730 years. How can this be  determined? We can explain this using the following example.
 </p>
 
-<example><title>Computing a half-life</title>
+<example xml:id="eg_3_3_1"><title>Computing a half-life</title>
 <p>
 A scientist in a B-grade science fiction film is studying a sample of the rare  and fictitious   element, implausium
 	<fn>

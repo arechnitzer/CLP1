@@ -161,7 +161,7 @@ where <m>\log x</m> is the logarithm base <m>e</m>.
 </p></statement>
 </theorem>
 
-<example><title>The derivative of <m>\log 3x</m></title>
+<example xml:id="eg_2_10_1"><title>The derivative of <m>\log 3x</m></title>
 <p>
  Let <m>f(x) = \log 3x</m>. Find <m>f'(x)</m>.
 </p>
@@ -197,7 +197,7 @@ differentiate and then simplify. Neither is difficult.
 </p>
 </example>
 
-<example><title>The derivative of <m>\log cx</m></title>
+<example xml:id="eg_2_10_2"><title>The derivative of <m>\log cx</m></title>
 <p>Notice that we can extend the previous example for any positive constant <mdash/> not
 just 3. Let <m>c\gt 0</m> be a constant, then
 <md>
@@ -357,7 +357,7 @@ Example<nbsp/><xref ref="eg_log_est"/>)
 (Examples<nbsp/><xref ref="eg_DIFFsimpleToolsA"/>  and<nbsp/><xref ref="eg_DIFFsimpleToolsNB"/>) and now show you how they can be done more easily.
 </p>
 
-<example><title>Derivative of a triple product</title>
+<example xml:id="eg_2_10_3"><title>Derivative of a triple product</title>
 <p>
  Consider again the derivative of the product of 3 functions:
 <md>
@@ -398,7 +398,7 @@ than 3 functions.
 logarithmic differentiation <mdash/> will work any time you have a product (or
 ratio) of functions.</p>
 
-<example><title>Derivative of a messy product</title>
+<example xml:id="eg_2_10_4"><title>Derivative of a messy product</title>
 <p>
 Lets use logarithmic differentiation on the function from
 Example<nbsp/><xref ref="eg_DIFFsimpleToolsNB"/>:
