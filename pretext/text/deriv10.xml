@@ -323,7 +323,7 @@ We will see <m>\diff{}{x} \log f(x)</m> more below in the subsection on
 </p>
 
 <p>To summarise the results above:</p>
-<corollary>
+<corollary xml:id="cor_2_10">
 <statement><p>
 <md>
 <mrow>

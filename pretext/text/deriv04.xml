@@ -98,7 +98,7 @@ Before we proceed to the derivative of the ratio of two functions, it is worth n
 	</fn>:
 </p>
 
-<corollary><title>Derivative of a square</title>
+<corollary xml:id="cor_2_4"><title>Derivative of a square</title>
 <statement><p>
 Let <m>f(x)</m> be a differentiable function, then the derivative of its square is:
 <md>
