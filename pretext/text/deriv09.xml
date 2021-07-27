@@ -252,7 +252,7 @@ Set  <m>g(x) = ax+b</m>. Then
 So the derivative of <m>f(ax+b)</m> with respect to <m>x</m> is just <m>a f'(ax+b)</m>.
 </p></example>
 
-<p>The above is a very useful result that follows from the chain rule, so lets make it a
+<p>The above is a very useful result that follows from the chain rule, so let's make it a
 corollary to highlight it.</p>
 
 <corollary xml:id="cor_f_of_axb">

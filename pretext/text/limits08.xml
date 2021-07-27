@@ -50,7 +50,7 @@ Note that we can loosen the above requirement that <m>f</m> be defined on the wh
 </p>
 
 <p>
-For completeness lets prove Theorem<nbsp/><xref ref="thm_basic_lim_inf"/> using this form  definition. The layout of the proof will be very similar to our proof of Theorem<nbsp/><xref ref="thm_easy_lim"/>.
+For completeness let's prove Theorem<nbsp/><xref ref="thm_basic_lim_inf"/> using this form  definition. The layout of the proof will be very similar to our proof of Theorem<nbsp/><xref ref="thm_easy_lim"/>.
 </p>
 
 <proof>
