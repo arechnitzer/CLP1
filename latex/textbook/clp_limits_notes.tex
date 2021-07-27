@@ -3140,8 +3140,10 @@ This completes the proof.
 \section{(Optional) --- Making Infinite Limits a Little More Formal}
 \label{sec lim inf formal}
 For those of you who made it through the formal $\epsilon-\delta$ definition of
-limits we give the formal definition of limits at infinity:
-\begin{defn}[Limits at infinity --- formal]\label{def_1_8_1}
+limits we give the formal definition of limits involving infinity:
+\begin{defn}[Limits involving infinity --- formal]\label{def_1_8_1}
+\begin{enumerate}[(a)]
+\item 
  Let $f$ be a function defined on the whole real line. We say that
 \begin{quote}
   the limit as $x$ approaches $\infty$ of $f(x)$ is $L$
@@ -3164,13 +3166,32 @@ Similarly we write
 if and only if for every $\epsilon>0$ there exists $N \in \mathbb{R}$ so that
 $|f(x)-K| < \epsilon$ whenever $x<N$.
 
-\end{defn}
-Note that we can loosen the above requirement that $f$ be defined on the whole real line
---- all we actually require is that it is defined all $x$ larger than some value. It
-would be sufficient to require ``there is some $x_0 \in \mathbb{R}$ so that $f$ is
-defined for all $x>x_0$.
+\item 
+ Let $a$ be a real number and $f(x)$ be a function defined for all $x\ne a$.
+We write
+\begin{align*}
+  \lim_{x \to a} f(x) &= \infty
+\end{align*}
+if and only if for every $P >0$  there exists $\delta>0$ so that
+$f(x) > P$ whenever $0<|x-a|<\delta$.
 
-For completeness let's prove Theorem~\ref{thm basic lim inf} using this form
+\item 
+Let $f$ be a function defined on the whole real line. We write
+\begin{align*}
+  \lim_{x \to \infty} f(x) &= \infty
+\end{align*}
+if and only if for every $P > 0$  there exists $M>0$ so that
+$f(x) > P$ whenever $x>M$.
+
+\end{enumerate}
+
+\end{defn}
+Note that we can loosen the above requirements on the domain of definition of $f$ --- for example, in part (a) all we actually require is that $f(x)$ be
+defined for all $x$ larger than some value. It would be sufficient to 
+require ``there is some $x_0 \in \mathbb{R}$ so that $f(x)$ is
+defined for all $x>x_0$''. Also note that there are obvious variations of parts (b) and (c) with $\infty$ replaced by $-\infty$.
+
+For completeness let's prove Theorem~\ref{thm basic lim inf} using this formal
 definition. The layout of the proof will be very similar to our proof of
 Theorem~\ref{thm easy lim}.
 \begin{proof}[Proof of Theorem~\ref{thm basic lim inf}.]

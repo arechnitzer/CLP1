@@ -7,10 +7,12 @@
 <introduction>
 
 <p>
-For those of you who made it through the formal <m>\epsilon-\delta</m> definition of  limits we give the formal definition of limits at infinity:</p>
+For those of you who made it through the formal <m>\epsilon-\delta</m> definition of  limits we give the formal definition of limits involving infinity:</p>
 
-<definition xml:id="def_1_8_1"><title>Limits at infinity <mdash/> formal</title>
+<definition xml:id="def_1_8_1"><title>Limits involving infinity <mdash/> formal</title>
 <statement><p>
+<ol label="a">
+<li><p>
  Let <m>f</m> be a function defined on the whole real line. We say that</p>
 <blockquote>
 <p>
@@ -42,11 +44,29 @@ Similarly we write
 </md>
 if and only if for every <m>\epsilon \gt 0</m> there exists <m>N \in \mathbb{R}</m> so that  <m>|f(x)-K|  \lt  \epsilon</m> whenever <m>x \lt N</m>.
 </p>
+</li><li>
+ Let <m>a</m> be a real number and <m>f(x)</m> be a function defined for all <m>x\ne a</m>.
+We write
+<me>
+  \lim_{x \to a} f(x) = \infty
+</me>
+if and only if for every <m>P \gt 0</m>  there exists <m>\delta\gt 0</m> so that
+<m>f(x) \gt P</m> whenever <m>0\lt |x-a|\lt \delta</m>.
+</li><li>
+Let <m>f</m> be a function defined on the whole real line. We write
+<me>
+  \lim_{x \to \infty} f(x) = \infty
+</me>
+if and only if for every <m>P \gt 0</m>  there exists <m>M\gt 0</m> so that
+<m>f(x) \gt P</m> whenever <m>x \gt M</m>.
+</li>
+</ol>
+</p>
 </statement>
 </definition>
 
 <p>
-Note that we can loosen the above requirement that <m>f</m> be defined on the whole real line  <mdash/> all we actually require is that it is defined all <m>x</m> larger than some value. It  would be sufficient to require <q>there is some <m>x_0 \in \mathbb{R}</m> so that <m>f</m> is  defined for all <m>x \gt x_0</m></q>.
+Note that we can loosen the above requirements on the domain of definition of <m>f</m>  <mdash/> for example, in part (a) all we actually require is that <m>f(x)</m> be defined for all <m>x</m> larger than some value. It  would be sufficient to require <q>there is some <m>x_0 \in \mathbb{R}</m> so that <m>f</m> is  defined for all <m>x \gt x_0</m></q>. Also note that there are obvious variations of parts (b) and (c) with <m>\infty</m> replaced by <m>-\infty</m>.
 </p>
 
 <p>
