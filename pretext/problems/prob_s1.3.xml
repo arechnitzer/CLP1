@@ -296,12 +296,12 @@ In Questions<nbsp/><xref ref="s1_3first"/> through <xref ref="s1_3last"/>, evalu
 </exercise>
 <exercise>
 <statement><p>
-<m>\displaystyle\lim_{x \rightarrow 0^+} \ln x</m>
+<m>\displaystyle\lim_{x \rightarrow 0^+} \log x</m>
 </p></statement>
 <answer><p>
-<m>\displaystyle\lim_{x \rightarrow 0^+} \ln x = -\infty</m>
+<m>\displaystyle\lim_{x \rightarrow 0^+} \log x = -\infty</m>
 </p></answer>
-<solution><p><m>\displaystyle\lim_{x \rightarrow 0^+} \ln x = -\infty</m>: as <m>x</m> approaches 0 from the right, <m>\ln x</m> is negative and increasingly large, growing without bound.
+<solution><p><m>\displaystyle\lim_{x \rightarrow 0^+} \log x = -\infty</m>: as <m>x</m> approaches 0 from the right, <m>\log x</m> is negative and increasingly large, growing without bound.
 </p></solution>
 </exercise>
 <exercise>
