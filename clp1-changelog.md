@@ -7,6 +7,9 @@ permalink: /CLP1-changelog/
 ---
 
 # CLP-1 Differential Calculus textbook
+* 2021 July 27 - Expanded the definition at the beginning of Section 1.8.
+* 2021 July 26 - Corrected lets typos.
+* 2021 July 12 - Renamed/renumbered some Appendix B subsections in clp_1_dc_text.pdf to match the .html version.
 * 2021 May 12 - Added a figure to Example 3.4.12.
 * 2021 March 12 - Typo correction just after Example 4.1.3.
 * 2021 March 9 - Added an appendix about numerical root finding.
@@ -80,6 +83,8 @@ permalink: /CLP1-changelog/
 ---
 
 # CLP-1 Differential Calculus problem book
+* 2020 August 25 - Typo corrections in Q[11] of Section 1.3 and Q[14] of Section 1.4.
+* 2021 May 27 - Spelling correction in Q[21] in Section 3.2.
 * 2021 March 9 - Slight expansion of S[7] in Section 3.2.
 * 2021 March 3 - Simplification of S[13] in Section 2.10.
 * 2021 March 2 - Typo correction in S[19] of Section 2.8.
