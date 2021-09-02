@@ -737,7 +737,7 @@ Notice that while this theorem is useful as stated, it is (arguably) more often 
 form:
 </p>
 
-<theorem><title>The contrapositive of Theorem<nbsp/><xref ref="thm_DIFFdiffGivesCont"/></title>
+<theorem xml:id="thm_2_2_1"><title>The contrapositive of Theorem<nbsp/><xref ref="thm_DIFFdiffGivesCont"/></title>
 <statement><p>
 If <m>f(x)</m> is not continuous at <m>x=a</m> then it is not differentiable at <m>x=a</m>.
 </p></statement>

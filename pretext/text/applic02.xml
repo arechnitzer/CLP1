@@ -94,7 +94,7 @@ of one quantity to another.
 
 <p>Another balloon example</p>
 
-<example><title>A rising balloon</title>
+<example xml:id="eg_3_2_1"><title>A rising balloon</title>
 <p>
 Consider a helium balloon rising vertically from a fixed point 200m away from
 you. You are trying to work out how fast it is rising. Now <mdash/> computing the
@@ -147,7 +147,7 @@ by <m>h</m> and time (in seconds) by <m>t</m>. Then trigonometry tells us
 
 <p>The following problem is perhaps <em>the</em> classic related rate problem.</p>
 
-<example><title>A sliding ladder</title>
+<example xml:id="eg_3_2_2"><title>A sliding ladder</title>
 <p>
  A 5m ladder is leaning against a wall. The floor is quite slippery and the
 base of the ladder slides out from the wall at a rate of <m>1m/s</m>. How fast is
@@ -339,7 +339,7 @@ to the left at <m>200</m>m/sec.
 
 <p>A more nautical example.</p>
 
-<example><title>The distance between moving boats</title>
+<example xml:id="eg_3_2_3"><title>The distance between moving boats</title>
 <p>
 Two boats spot each other in the ocean at midday <mdash/> Boat <m>A</m> is 15km west of
 Boat <m>B</m>. Boat <m>A</m> is travelling east at 3km/h and boat <m>B</m> is travelling north at 4km/h.

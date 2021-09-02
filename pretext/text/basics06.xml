@@ -55,7 +55,7 @@ Recall (from Definition<nbsp/><xref ref="def_function"/>) that for any given inp
 This <q>uniqueness</q> condition can be made more precise:
 </p>
 
-<definition>
+<definition xml:id="def_0_6_1">
 <statement><p>
 A function <m>f</m> is one-to-one (injective) when it never takes the same <m>y</m> value more than once. That is
 <md>
@@ -70,7 +70,7 @@ A function <m>f</m> is one-to-one (injective) when it never takes the same <m>y<
 There is an easy way to test this when you have a plot of the function <mdash/> the  horizontal line test.
 </p>
 
-<definition><title>Horizontal line test</title>
+<definition xml:id="def_0_6_2"><title>Horizontal line test</title>
 <statement><p>
 A function is one-to-one if and only if no horizontal line <m>y=c</m> intersects the graph <m>y=f(x)</m> more than once.
 </p></statement>
@@ -115,7 +115,7 @@ So if <m>f</m> maps <m>x</m> to <m>y</m>, then <m>f^{-1}</m> maps <m>y</m> back 
 We have to be careful not to confuse <m>f^{-1}(x)</m> with <m>\ds \frac{1}{f(x)}</m>. The <q><m>-1</m></q> is not an exponent.
 </p>
 
-<example><title>Inverse of <m>x^5+3</m></title>
+<example xml:id="eg_0_6_1"><title>Inverse of <m>x^5+3</m></title>
 <p>
 Let <m>f(x)=x^5+3</m> on domain <m>\mathbb{R}</m>. To find its inverse we do the following
 <ul>
@@ -131,7 +131,7 @@ Let <m>f(x)=x^5+3</m> on domain <m>\mathbb{R}</m>. To find its inverse we do the
 </ul>
 </p></example>
 
-<example><title>Inverse of <m>\sqrt{x-1}</m></title>
+<example xml:id="eg_0_6_2"><title>Inverse of <m>\sqrt{x-1}</m></title>
 <p>
 Let <m>g(x) = \sqrt{x-1}</m> on the domain <m>x \geq 1</m>. We can find the inverse in the same way:
 <md>
@@ -153,7 +153,7 @@ Let <m>g(x) = \sqrt{x-1}</m> on the domain <m>x \geq 1</m>. We can find the inve
 Let us now turn to finding the inverse of <m>\sin(x)</m> <mdash/> it is a little more tricky and we  have to think carefully about domains.
 </p>
 
-<example><title>Inverse of <m>\sin(x)</m></title>
+<example xml:id="eg_0_6_3"><title>Inverse of <m>\sin(x)</m></title>
 <p>
 We have seen (back in Figure<nbsp/><xref ref="fig_inv1"/>) that <m>\sin(x)</m> takes each value <m>y</m>  between <m>-1</m> and <m>+1</m> for infinitely many different values of <m>x</m> (see  the left-hand graph in the figure below). Consequently <m>\sin(x)</m>, with domain  <m>-\infty  \lt x  \lt \infty</m> does not have an inverse function.
 </p>

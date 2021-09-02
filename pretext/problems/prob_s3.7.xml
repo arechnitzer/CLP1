@@ -358,7 +358,7 @@ If we plug <m>x=0</m> into the denominator, we get 1. However, the numerator is 
 </p></solution>
 </exercise>
 
-<exercise purpose="RQS">
+<exercise  xml:id="lhopA" purpose="RQS">
 <statement><p>Evaluate <m>\ds\lim_{x \to \infty}\sqrt{2x^2+1}-\sqrt{x^2+x}</m>.
 </p></statement>
 <hint><p> Rationalize, then remember your training.
@@ -493,7 +493,7 @@ so that <m>e^{1/x^2}\rightarrow\infty</m> and <m>e^{-1/x^2}\rightarrow 0</m>.
 <li> Solution 2.
 <me>
 \lim_{x\rightarrow 0}\frac{e^{-1/x^2}}{x^4}
-=\lim_{t={1\over x^2}\rightarrow \infty}\frac{e^{-t}}{t^{-2}}
+=\lim_{t=\frac{1}{x^2}\rightarrow \infty}\frac{e^{-t}}{t^{-2}}
 =\lim_{t\rightarrow \infty}\underbrace{\frac{t^2}{e^{t}}}_{\atp
 	{\mathrm{num}\to\infty}
 	{\mathrm{den}\to\infty}}
@@ -525,7 +525,7 @@ Evaluate <m>\lim\limits_{x\rightarrow 0}
 </p></solution>
 </exercise>
 
-<exercise purpose="RQS">
+<exercise xml:id="lhopB" purpose="RQS">
 <statement><p>
 Evaluate <m>\lim\limits_{x \to 0}\sqrt[x^2]{\sin^2 x}</m>.
 </p></statement>
@@ -537,7 +537,7 @@ Evaluate <m>\lim\limits_{x \to 0}\sqrt[x^2]{\sin^2 x}</m>.
 </p></solution>
 </exercise>
 
-<exercise purpose="RQS">
+<exercise  xml:id="lhopC" purpose="RQS">
 <statement><p>
 Evaluate <m>\lim\limits_{x \to 0}\sqrt[x^2]{\cos x}</m>.
 </p></statement>

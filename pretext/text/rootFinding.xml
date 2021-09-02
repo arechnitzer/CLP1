@@ -161,7 +161,7 @@ We just need a little calculus.
 </p>
 </introduction>
 
-<section><title>Newton's Method</title>
+<section xml:id="sec_C_1"><title>Newton's Method</title>
 <p>
 Newton's method<fn>The algorithm that we are about to describe grew out of a method that Newton wrote about in 1669. But the modern method incorporates substantial changes introduced by Raphson in 1690 and Simpson in 1740.</fn>,  also known as the Newton-Raphson method, is another technique for generating numerical approximate solutions to equations of the form <m>f(x)=0</m>. For example, one can easily get a good approximation to <m>\sqrt{2}</m> by applying Newton's method to the
 equation <m>x^2-2=0</m>. This will be done in Example <xref ref="eg_NTMsqrttwo"/>, below.
@@ -499,7 +499,7 @@ So the interest rate is 0.229&#x25; per month or 2.75&#x25; per year.
 </example>
 </section>
 
-<section><title>The Error Behaviour of Newton's Method</title>
+<section xml:id="sec_C_2"><title>The Error Behaviour of Newton's Method</title>
 
 <p>
 Newton's method usually works spectacularly well, provided your
@@ -702,7 +702,7 @@ the other being a variant of Newton's method.
 </p>
 </section>
 
-<section><title>The false position (regula falsi) method</title>
+<section xml:id="sec_C_3"><title>The false position (regula falsi) method</title>
 
 <p>
 Let <m>f(x)</m> be a continuous function and let <m>a_1\lt b_1</m> with <m>f(a_1)</m> and <m>f(b_1)</m> being of opposite sign.
@@ -761,7 +761,7 @@ and if
 </fact>
 </section>
 
-<section><title>The secant method</title>
+<section xml:id="sec_C_4"><title>The secant method</title>
 <p>
 Let <m>f(x)</m> be a continuous function. The secant method is a variant of 
 Newton's method that avoids the use of the derivative of <m>f(x)</m> <mdash/> which can be very helpful when dealing with the derivative is not easy. It avoids the use of the derivative  by approximating  <m>f'(x)</m> by <m>\frac{f(x+h)-f(x)}{h}</m> for some <m>h</m>. That is, it approximates the tangent line to <m>f</m> at <m>x</m> by a secant line for <m>f</m> that passes through <m>x</m>. To limit the number of evaluations of <m>f(x)</m> required, it uses <m>x=x_{n-1}</m> and <m>x+h=x_n</m>. Here is how it works.
@@ -872,7 +872,7 @@ as fast as Newton's method. The following subsection shows that this is indeed t
 </p>
 </section>
 
-<section><title>The Error Behaviour of the Secant Method</title>
+<section xml:id="sec_C_5"><title>The Error Behaviour of the Secant Method</title>
 <p>
 Let <m>f(x)</m> have two continuous derivatives, and let <m>r</m> be any solution 
 of <m>f(x)=0</m>. 

@@ -2,7 +2,7 @@
 <!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec_0_1" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Numbers</title>
 <introduction>
 	<p>
@@ -86,7 +86,7 @@
 		So to summarise
 		</p>
 
-		<definition><title>Sets of numbers</title>
+		<definition xml:id="def_0_1_1"><title>Sets of numbers</title>
 		<statement>
 		<p>
 		This is not really a definition, but you should know these symbols

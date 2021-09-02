@@ -2,7 +2,7 @@
 <!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec_2_4" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Arithmetic of Derivatives - a Differentiation Toolbox</title>
 <subsection><title>Arithmetic of Derivatives - a Differentiation Toolbox</title>
 
@@ -98,7 +98,7 @@ Before we proceed to the derivative of the ratio of two functions, it is worth n
 	</fn>:
 </p>
 
-<corollary><title>Derivative of a square</title>
+<corollary xml:id="cor_2_4"><title>Derivative of a square</title>
 <statement><p>
 Let <m>f(x)</m> be a differentiable function, then the derivative of its square is:
 <md>

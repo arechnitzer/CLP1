@@ -2,7 +2,7 @@
 <!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec_0_4" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Functions</title>
 <introduction>
 
@@ -89,7 +89,7 @@ and if <m>f</m> takes <m>a \in A</m> as an input and returns <m>b\in B</m> then 
 We must include the input and output sets <m>A</m> and <m>B</m> in the definition of the function. This is one of the reasons that we should not think of functions as just formulas. The input and output sets have proper mathematical names, which we give below:
 </p>
 
-<definition>
+<definition xml:id="def_0_4_2">
 <statement><p>
 Let <m>f:A \to B</m> be a function. Then
 <ul>
@@ -115,7 +115,7 @@ Let <m>f:A \to B</m> be a function. Then
 </definition>
 
 
-<example><title>domains and ranges</title>
+<example xml:id="eg_0_4_1"><title>domains and ranges</title>
 <p>
 Let us go back to the <q>days of the week</q> function example that we worked on above, we can define the domain, codomain and range:
 <ul>
@@ -125,7 +125,7 @@ Let us go back to the <q>days of the week</q> function example that we worked on
 </ul>
 </p></example>
 
-<example><title>more domains and ranges</title>
+<example xml:id="eg_0_4_2"><title>more domains and ranges</title>
 <p>
 A more numerical example <mdash/> let <m>g: \mathbb{R} \to \mathbb{R}</m> be defined by the formula <m>g(x) = x^2</m>. Then
 <ul>

@@ -239,7 +239,7 @@ Hence the limit is <m>\ds \lim_{h \to 0} \left(\frac{h}{2}+2\right) = 2</m>.
 <exercise><title><fromexam>2012H</fromexam></title>
 <statement>
 <p>
-<m>\lim\limits_{x\rightarrow 1}\dfrac{\log(1+x)-x}{x^2}</m> (where <m>\log x</m> denotes the logarithm base <m>e</m> of <m>x</m>)
+<m>\lim\limits_{x\rightarrow 1}\dfrac{\log(1+x)-x}{x^2}</m>
 </p></statement>
 <hint><p> Try the simplest method first.
 </p></hint>

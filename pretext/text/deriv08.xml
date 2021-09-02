@@ -383,7 +383,7 @@ that the limit of a product is the product of limits (i.e. Lemma<nbsp/><xref ref
 <conclusion>
 <p>Thus we have now produced two proofs of the following lemma:</p>
 
-<lemma>
+<lemma xml:id="lem_2_8_1">
 <statement><p>
 <md>
 <mrow>

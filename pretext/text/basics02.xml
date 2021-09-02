@@ -33,7 +33,7 @@
 		</fn>.
 	</p>
 
-	<definition><title>A not-so-formal definition of set</title>
+	<definition xml:id="def_0_2_1"><title>A not-so-formal definition of set</title>
 	<statement><p>
 	A <q>set</q> is a collection of distinct objects. The objects are referred to as <q>elements</q> or <q>members</q> of the set.
 	</p></statement>

@@ -35,7 +35,7 @@ the angle between them is the same. For example
 \end{itemize}
 
 
-\section{Pythagoras}
+\section{Pythagoras}\label{sec_A_2}
 For a right-angled triangle the length of the hypotenuse is related to the lengths of the other two sides by
 \begin{center}
 \begin{tabular}{m{4cm}cm{9cm}}
@@ -43,7 +43,7 @@ For a right-angled triangle the length of the hypotenuse is related to the lengt
 $(\text{adjacent})^2+(\text{opposite})^2 = (\text{hypotenuse})^2$
 \end{tabular}
 \end{center}
-\section{Trigonometry --- Definitions}
+\section{Trigonometry --- Definitions}\label{sec_A_3}
 \begin{center}
 \begin{tabular}{m{6cm}cm{8cm}}
   \includegraphics[height=4cm]{right_triangle} & \qquad&
@@ -111,7 +111,7 @@ $\sin \theta$ & $\cos \theta$ & $\tan \theta$
 \end{tabular}
 \end{center}
 
-\section{Trigonometry --- Special Triangles}
+\section{Trigonometry --- Special Triangles}\label{sec_A_6}
 \begin{center}
   \includegraphics[height=4cm]{special_triangles}
 \end{center}
@@ -123,7 +123,7 @@ From the above pair of special triangles we have
 \frac{\pi}{3} &= \sqrt{3}
 \end{align*}
 
-\section{Trigonometry --- Simple Identities}
+\section{Trigonometry --- Simple Identities}\label{sec_A_7}
 \begin{itemize}
  \item Periodicity
 \begin{align*}
@@ -539,9 +539,9 @@ $\csc \theta$ & $\sec \theta$ & $\cot \theta$ \\
 and similar expressions.
 \end{itemize}
 
-\chapter{Origin of Trig, Area and Volume Formulas}
-\section{Theorems about Triangles}
-\subsection{Thales' Theorem}
+\chapter{Origin of Trig, Area and Volume Formulas}\label{chap_app_B}
+\section{Theorems about Triangles}\label{sec_B_1}
+\subsection{Thales' Theorem}\label{ssec_B_1_1}
 We want to get at right-angled triangles. A classic construction for this is to
 draw a triangle inside a circle, so that all three corners lie on the circle
 and the longest side forms the diameter of the circle. See the figure below in
@@ -565,7 +565,7 @@ So we split the triangle $ABC$ by drawing a line from the centre of the circle t
 So the angle at $C = \pi - (\alpha+\beta) = \pi/2$.
 
 
-\subsection{Pythagoras}
+\subsection{Pythagoras}\label{ssec_B_1_2}
 Since trigonometry, at its core, is the study of lengths and angles in right-angled
 triangles, we must include a result you all know well, but likely do not know how to
 prove.
@@ -583,7 +583,7 @@ There are many ways to prove this, but we can do so quite simply by studying the
 We start with a right-angled triangle with sides labeled $a,b$ and $c$. Then we construct a square of side-length $a+b$ and draw inside it 4 copies of the triangle arranged as shown in the centre of the above figure. The area in white is then $a^2+b^2$. Now move the triangles around to create the arrangement shown on the right of the above figure. The area in white is bounded by a square of side-length $c$ and so its area is $c^2$. The area of the outer square didn't change when the triangles were moved, nor did the area of the triangles, so the white area cannot have changed either. This proves $a^2+b^2=c^2$.
 
 
-\section{Trigonometry}
+\section{Trigonometry}\label{sec_B_2}
 \subsection{Angles --- Radians vs Degrees}\label{ssec rad deg}
 For mathematics, and especially in calculus, it is much better to measure angles in units
 called radians rather than degrees. By definition, an arc of length $\theta$ on a circle
@@ -614,7 +614,7 @@ fraction $\nicefrac{\theta}{2\pi}$ of a whole circle, we have
   A(\theta) &= \pi r^2 \cdot \frac{\theta}{2\pi} = \frac{\theta}{2} r^2
 \end{align*}
 
-\subsection{Trig Function Definitions}
+\subsection{Trig Function Definitions}\label{ssec_B_2_2}
 The trigonometric functions are defined as ratios of the lengths of the sides of a
 right-angle triangle as shown in the left of the diagram below . These ratios depend only
 on the angle~$\theta$.
@@ -784,7 +784,7 @@ The second can then be obtained by dividing this by $\cos^2\theta$ and the third
 dividing by $\sin^2\theta$.
 
 
-\subsection{Important Triangles}
+\subsection{Important Triangles}\label{ssec_B_2_3}
 Computing sine and cosine is non-trivial for general angles --- we need Taylor series (or
 similar tools) to do this. However there are some special angles (usually small
 integer fractions of $\pi$) for which we can use a little geometry to help. Consider the
@@ -824,7 +824,7 @@ values
 
 
 
-\subsection{Some More Simple Identities}
+\subsection{Some More Simple Identities}\label{ssec_B_2_4}
 Consider the figure below
 \begin{center}
  \includegraphics[height=55mm]{trig_defn4}
@@ -869,7 +869,7 @@ This implies that
 From which we can get the rules for the other four trigonometric functions.
 
 
-\subsection{Identities --- Adding Angles}
+\subsection{Identities --- Adding Angles}\label{ssec_B_2_5}
 We wish to explain the origins of the identity
 \begin{align*}
   \sin(\alpha+\beta) &= \sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta).
@@ -941,7 +941,7 @@ The formulas for tangent are a bit more work, but
   \tan(\alpha - \beta) &=  \frac{\tan(\alpha) - \tan(\beta)}{1 + \tan(\alpha)\tan(\beta) }
 \end{align*}
 
-\subsection{Identities --- Double-angle Formulas}
+\subsection{Identities --- Double-angle Formulas}\label{ssec_B_2_6}
 If we set $\beta=\alpha$ in the angle-addition formulas we get
 \begin{align*}
   \sin(2\alpha) &= 2\sin(\alpha)\cos(\alpha) \\
@@ -953,7 +953,7 @@ If we set $\beta=\alpha$ in the angle-addition formulas we get
 $\tan(\alpha)$}
 \end{align*}
 
-\subsection{Identities --- Extras}
+\subsection{Identities --- Extras}\label{ssec_B_2_7}
 \subsubsection{Sums to Products}
 Consider the identities
 \begin{align*}
@@ -1010,6 +1010,7 @@ Hence
 \end{align*}
 
 \longsection{Inverse Trigonometric Functions}{Inverse Trig Functions}
+\label{sec_B_3}
 In order to construct inverse trigonometric functions we first have to
 restrict their domains so as to make them one-to-one (or injective). We do this as shown
 below
@@ -1226,7 +1227,7 @@ Completing the 9 possibilities gives:
 
 % \end{comment}
 
-\section{Geometry}
+\section{Cosine and Sine Laws}\label{sec_B_4}
 \subsection{Cosine Law or Law of Cosines}\label{app cosine law}
 The cosine law says that, if a triangle has sides of length $a$, $b$ and $c$ and
 the angle opposite the side of length $c$ is $\gamma$, then
@@ -1256,7 +1257,7 @@ Now combining these:
 \end{align*}
 as required.
 
-\subsection{Sine Law or Law of Sines}
+\subsection{Sine Law or Law of Sines}\label{ssec_B_4_2}
 The sine law says that, if a triangle has sides of length $a, b$ and $c$ and
 the angles opposite those sides are $\alpha$, $\beta$ and $\gamma$, then
 \begin{align*}
@@ -1279,7 +1280,9 @@ Dividing these expressions by $abc$ gives
 \end{align*}
 as required.
 
+\section{Circles, cones and spheres}\label{sec_B_5}
 \subsection{Where Does the Formula for the Area of a Circle Come From?}
+\label{ssec_B_5_1}
 Typically when we come across $\pi$ for the first time it is as the ratio of the
 circumference of a circle to its diameter
 \begin{align*}

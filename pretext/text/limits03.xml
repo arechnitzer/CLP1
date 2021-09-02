@@ -11,7 +11,7 @@
 Before we come to definitions, let us start with a little notation for limits.
 </p>
 
-<definition>
+<definition xml:id="ntn_1_3_1">
 <statement><p>
 We will often write
 <md>
@@ -56,14 +56,14 @@ They mean exactly the same thing in mathematics, even though they might be  writ
 </p>
 
 <p>
-To arrive at the definition of limit, I want to start
+To arrive at the definition of limit, we want to start
 	<fn>
 		Well, we  had two limits in the previous sections, so perhaps we really want to  <q>restart</q> with a very simple example.
 	</fn>
 with a very simple example.
 </p>
 
-<example><title>A simple limit</title>
+<example xml:id="eg_1_3_1"><title>A simple limit</title>
 <p>
 Consider the following function.
 <md>
@@ -144,7 +144,7 @@ So for <m>x</m> very close to <m>3</m>, without being exactly 3, the function is
 We now have enough to make an informal definition of a limit, which is actually  sufficient for most of what we will do in this text.
 </p>
 
-<definition><title>Informal definition of limit</title>
+<definition xml:id="def_1_3_1"><title>Informal definition of limit</title>
 <statement><p>
 We write
 <md>
@@ -168,7 +168,7 @@ In order to make this definition more mathematically correct, we need to  make t
 For now, let us use the above definition to examine a more substantial  example.
 </p>
 
-<example><title><m>\ds \lim_{x \to 2} \frac{x-2}{x^2+x-6}</m></title>
+<example xml:id="eg_1_3_2"><title><m>\ds \lim_{x \to 2} \frac{x-2}{x^2+x-6}</m></title>
 <p>
 Let <m>f(x) = \frac{x-2}{x^2+x-6}</m> and consider its limit as <m>x \to 2</m>.
 </p>
@@ -260,7 +260,7 @@ It's not very inventive notation, however it is clear. We frequently abbreviate 
 In the following example, the limit we are interested in does not exist.  However the way in which things go wrong is quite different from what we just saw.
 </p>
 
-<example><title>A non-existant limit</title>
+<example xml:id="eg_1_3_3"><title>A non-existant limit</title>
 <p>
 Consider the function
 <md>
@@ -408,7 +408,7 @@ of the above statements.
 
 <p>Here is another limit example</p>
 
-<example><title>Left- and right-handed limits</title>
+<example xml:id="eg_1_3_4"><title>Left- and right-handed limits</title>
 <p>
 Consider the following two functions and compute their limits and one-sided  limits as <m>x</m> approaches 1:
 </p>
@@ -565,7 +565,7 @@ and for function<nbsp/>4
 
 <p>More examples:</p>
 
-<example><title><m>\ds \lim_{x \to \pi} \frac{1}{\sin(x)}</m></title>
+<example xml:id="eg_1_3_5"><title><m>\ds \lim_{x \to \pi} \frac{1}{\sin(x)}</m></title>
 <p>
 Consider the function
 <md>

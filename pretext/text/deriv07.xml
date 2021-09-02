@@ -143,7 +143,7 @@ Consequently, for any <m>0 \lt Y \lt \infty</m>, the horizontal straight line <m
 The <m>x</m><ndash/>coordinate of that intersection point, denoted <m>X</m> in the figure, is <m>\log_q(Y)</m>.  So <m>\log_q(Y)</m> is the power to which you have to raise <m>q</m> to get <m>Y</m>.  It is the inverse function of <m>f(x)=q^x</m>. Of course we are free to rename the dummy variables <m>X</m> and <m>Y</m>. If, for example,  we wish to graph our logarithm function, it is natural to rename  <m>Y\rightarrow x</m> and <m>X\rightarrow y</m>, giving
 </p>
 
-<definition>
+<definition xml:id="def_2_7_1">
 <statement><p>
 Let <m>q \gt 1</m>. Then the logarithm with base <m>q</m> is defined
 	<fn>

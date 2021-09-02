@@ -11,7 +11,7 @@
 Perhaps the most useful theorem of this chapter is Theorem<nbsp/><xref ref="thm_arith_lim"/>  which shows how limits interact with arithmetic. In this (optional) section we will prove both the arithmetic of limits Theorem<nbsp/><xref ref="thm_arith_lim"/> and the Squeeze Theorem<nbsp/><xref ref="thm_squeeze"/>. Before we get to the proofs it  is very helpful to prove three technical lemmas that we'll need. The first is a very general result about absolute values of numbers:
 </p>
 
-<lemma><title>The triangle inequality</title>
+<lemma xml:id="lem_1_9_1"><title>The triangle inequality</title>
 <statement><p>
  For any <m>x,y \in \mathbb{R}</m>
 <md>

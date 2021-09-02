@@ -40,7 +40,7 @@ Let us concentrate on the numerator of the expression inside the limit and then 
 &amp;=\alpha\big[f(x+h)-f(x)]+\beta\big[g(x+h)-g(x)\big]
 </mrow>
 </md>
-Now it is easy to see the structures we need <mdash/> namely, we almost have the expressions  for the derivatives <m>f'(x)</m> and <m>g'(x)</m>. Indeed, all we need to do is divide by <m>h</m> and  take the limit. So lets finish things off.
+Now it is easy to see the structures we need <mdash/> namely, we almost have the expressions  for the derivatives <m>f'(x)</m> and <m>g'(x)</m>. Indeed, all we need to do is divide by <m>h</m> and  take the limit. So let's finish things off.
 <md>
 <mrow>
   S'(x) &amp;= \lim_{h \to 0} \frac{S(x+h)-S(x)}{h} &amp; \text{from above}

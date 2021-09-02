@@ -80,7 +80,7 @@ If <m>m \gt n</m>, then
 </md>
 </p></example>
 
-<example><title>Position, velocity and acceleration</title>
+<example xml:id="eg_2_14_1"><title>Position, velocity and acceleration</title>
 <p>
 Recall that the derivative <m>v'(a)</m> is the (instantaneous) rate of
 change of the function <m>v(t)</m> at <m>t=a</m>. Suppose that you are walking on

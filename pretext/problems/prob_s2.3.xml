@@ -45,11 +45,11 @@ Think about units.
 </exercise>
 
 <exercise>
-<statement><p> <m>T(d)</m> gives the temperature of water at a particular location <m>d</m> metres below the surface. What is the physical interpretation of <m>T'(d)</m>? Would you expect <m>T'(d)</m> to be higher when <m>d</m> is near 0, or when <m>d</m> is very large?
+<statement><p> <m>T(d)</m> gives the temperature of water at a particular location <m>d</m> metres below the surface. What is the physical interpretation of <m>T'(d)</m>? Would you expect the magnitude of <m>T'(d)</m> to be larger when <m>d</m> is near 0, or when <m>d</m> is very large?
 </p></statement>
-<answer><p> <m>T'(d)</m> measures how quickly the temperature is changing per unit change of depth, measured in degrees per metre. <m>T'(d)</m> will probably be largest when <m>d</m> is near zero, unless there are hot springs or other underwater heat sources.
+<answer><p> <m>T'(d)</m> measures how quickly the temperature is changing per unit change of depth, measured in degrees per metre. <m>|T'(d)|</m> will probably be largest when <m>d</m> is near zero, unless there are hot springs or other underwater heat sources.
 </p></answer>
-<solution><p> How quickly the temperature is changing per unit change of depth, measured in degrees per metre. In an ordinary body of water, the temperature near the surface (<m>d=0</m>) is pretty variable, depending on the sun, but deep down it is more stable (unless there are heat sources). So, one might reasonably expect that <m>T'(d)</m> is larger when <m>d</m> is near 0.
+<solution><p> How quickly the temperature is changing per unit change of depth, measured in degrees per metre. In an ordinary body of water, the temperature near the surface (<m>d=0</m>) is pretty variable, depending on the sun, but deep down it is more stable (unless there are heat sources). So, one might reasonably expect that <m>|T'(d)|</m> is larger when <m>d</m> is near 0.
 </p></solution>
 </exercise>
 

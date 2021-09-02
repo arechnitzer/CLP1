@@ -5,7 +5,7 @@
 %
 \graphicspath{{figures/applications/}}
 
-\chapter{Applications of Derivatives}
+\chapter{Applications of Derivatives}\label{chap_appl_deriv}
 
 In Section~\ref{sec def deriv} we defined the derivative at $x=a$, $f'(a)$, of an
 abstract function $f(x)$, to be its instantaneous rate of change at $x=a$:
@@ -401,7 +401,7 @@ of one quantity to another.
 \end{itemize}
 
 Another balloon example
-\begin{eg}
+\begin{eg}\label{eg_3_2_1}
 Consider a helium balloon rising vertically from a fixed point 200m away from
 you. You are trying to work out how fast it is rising. Now --- computing the
 velocity directly is difficult, but you can measure angles. You observe that
@@ -439,7 +439,7 @@ by $h$ and time (in seconds) by $t$. Then trigonometry tells us
 
 
 The following problem is perhaps \emph{the} classic related rate problem.
-\begin{eg}
+\begin{eg}\label{eg_3_2_2}
  A 5m ladder is leaning against a wall. The floor is quite slippery and the
 base of the ladder slides out from the wall at a rate of $1m/s$. How fast is
 the top of the ladder sliding down the wall when the base of the ladder is 3m
@@ -579,7 +579,7 @@ to the left at $200$m/sec.
 \end{eg}
 
 A more nautical example.
-\begin{eg}
+\begin{eg}\label{eg_3_2_3}
 Two boats spot each other in the ocean at midday --- Boat $A$ is 15km west of
 Boat $B$. Boat $A$ is travelling east at 3km/h and boat $B$ is travelling north at 4km/h.
 At 3pm how fast is the distance between the boats changing.
@@ -1067,7 +1067,7 @@ text from the seventeenth century B.C.} is about 37 centuries old.
 
 We have stated that the half-life of ${}^{14}C$ is 5730 years. How can this be
 determined? We can explain this using the following example.
-\begin{eg}
+\begin{eg}\label{eg_3_3_1}
 A scientist in a B-grade science fiction film is studying a sample of the rare
 and fictitious   element, implausium\footnote{Implausium leads to even weaker plots than
 unobtainium.}. With great effort he has produced
@@ -2143,6 +2143,7 @@ Note that $e^{0.1} = 1.105170918\dots$, so even this approximation isn't too bad
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{First Approximation --- the Linear approximation}
+\label{ssec_first_approx}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Our first\footnote{Recall that we started counting from
 zero.} approximation improves on our zeroth approximation by allowing the approximating
@@ -2197,7 +2198,7 @@ use a function that curves down rather than being perfectly straight. That is ou
 approximation.
 
 But before then, back to our example:
-\begin{eg}
+\begin{eg}\label{eg_3_4_1}
  Use the linear approximation to estimate $e^{0.1}$.
 
 \soln First set $f(x) = e^x$ and $a=0$ as before.
@@ -2218,7 +2219,7 @@ almost correct to 3 digits.
 \end{eg}
 
 It is worth doing another simple example here.
-\begin{eg}
+\begin{eg}\label{eg_3_4_2}
  Use a linear approximation to estimate $\sqrt{4.1}$.
 
 \soln First set $f(x)=\sqrt{x}$. Hence $f'(x) = \frac{1}{2\sqrt{x}}$. Then we are trying
@@ -2248,6 +2249,7 @@ Notice that the true value is $\sqrt{4.1} = 2.024845673\dots$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Second Approximation --- the Quadratic Approximation}
+\label{ssec_second_approx}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We next develop a still better approximation by now allowing the
@@ -2324,7 +2326,7 @@ clear how to extend this to a cubic approximation and a quartic approximation an
 on.
 
 Return to our example:
-\begin{eg}
+\begin{eg}\label{eg_3_4_3}
  Use the quadratic approximation to estimate $e^{0.1}$.
 
 \soln Set $f(x) = e^x$ and $a=0$ as before.
@@ -2377,7 +2379,7 @@ This is read as
  The sum from $k$ equals 1 to 11 of $k^2$.
 \end{quote}
 More generally
-\begin{notn}
+\begin{notn}\label{ntn_3_4_1}
 Let $m\leq n$ be integers and let $f(x)$ be a function defined on the integers.
 Then we write
 \begin{align*}
@@ -2426,6 +2428,7 @@ book ``Bendable learnings: the wisdom of modern management'' by Don Watson.}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Still Better Approximations --- Taylor Polynomials}
+\label{ssec_taylor_poly}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 We can use the same strategy to generate still better approximations by
 polynomials\footnote{Polynomials are generally a good choice for an approximating
@@ -2466,7 +2469,7 @@ its $k^\mathrm{th}$ derivative with respect to $x$ by
 \end{itemize}
 
 Additionally we will need
-\begin{defn}[Factorial]
+\begin{defn}[Factorial]\label{def_3_4_1}
   Let $n$ be a positive integer\footnote{It is actually possible to define the
 factorial of positive real numbers and even negative numbers but it requires more
 advanced calculus and is outside the scope of this course. The interested reader should
@@ -2561,7 +2564,7 @@ f^{(n)}(a) \cdot (x-a)^n \\
  \end{align*}
 \end{impeqn}
 Let us formalise this definition.
-\begin{defn}[Taylor polynomial]
+\begin{defn}[Taylor polynomial]\label{def_3_4_2}
   Let $a$ be a constant and let $n$ be a non-negative integer. The $n^\mathrm{th}$
 degree Taylor polynomial for $f(x)$ about $x=a$ is
 \begin{align*}
@@ -2594,7 +2597,7 @@ approximation, because then we can produce $T_{n+1}(x)$ without having to start
 again from scratch.
 \end{itemize}
 
-\subsection{Some Examples}
+\subsection{Some Examples}\label{ssec_taylor_eg}
 Let us return to our running example of $e^x$:
 \begin{eg}\label{eg taylor e to the x}
  The constant, linear and quadratic approximations we used above were the first few
@@ -2617,7 +2620,14 @@ Thus we can write down the seventh Maclaurin polynomial very easily:
   T_7(x) &= 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \frac{x^5}{120} +
 \frac{x^6}{720} + \frac{x^7}{5040}
 \end{align*}
-Also notice that if we use this to approximate the value of $e^1$ we obtain:
+The following figure contains sketches of the graphs of $e^x$ and its Taylor 
+polynomials $T_n(x)$ for $n=0,1,2,3,4$.
+\begin{efig}
+\begin{center}
+   \includegraphics{expT}
+\end{center}
+\end{efig}
+Also notice that if we use $T_7(1)$ to approximate the value of $e^1$ we obtain:
 \begin{align*}
   e^1 \approx T_7(1) &= 1 + 1 + \frac{1}{2} + \frac{1}{6} + \frac{1}{24} + \frac{1}{120}
 + \frac{1}{720} + \frac{1}{5040} \\
@@ -2719,6 +2729,8 @@ approximations:
   \includegraphics{approx1d} \qquad\qquad
   \includegraphics{approx2d}
 \end{center}
+\end{efig}
+\begin{efig}
 \begin{center}
   \includegraphics{approx3d} \qquad\qquad
   \includegraphics{approx4d}
@@ -2804,6 +2816,7 @@ bounds on our Taylor polynomial approximations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Estimating Change and $\De x$, $\De y$ Notation}
+\label{ssec_est_change}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -2811,7 +2824,7 @@ Suppose that we have two variables $x$ and $y$ that are related by $y=f(x)$, for
 function $f$. One of the most important applications of calculus is to help us understand
 what happens to $y$ when we make a small change in $x$.
 
-\begin{notn}
+\begin{notn}\label{ntn_3_4_2}
  Let $x,y$ be variables related by a function $f$. That is $y = f(x)$. Then we denote a
   small change in the variable $x$ by $\De x$ (read as ``delta $x$''). The corresponding
 small change in the variable $y$ is denoted $\De y$ (read as ``delta $y$'').
@@ -2822,7 +2835,7 @@ small change in the variable $y$ is denoted $\De y$ (read as ``delta $y$'').
 
 In many situations we do not need to compute $\De y$ exactly and are instead happy with
 an approximation. Consider the following example.
-\begin{eg}
+\begin{eg}\label{eg_3_4_4}
 Let $x$ be the number of cars manufactured per week in some factory and let $y$ the cost
 of manufacturing those $x$ cars. Given that the factory currently produces $a$ cars per
 week, we would like to estimate the increase in cost if we make a small change in the
@@ -2878,7 +2891,7 @@ which simplifies to
 \end{eg}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Further Examples}
+\subsection{Further Examples}\label{ssec_taylor_more}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In this subsection we give further examples of computation and use of Taylor
 approximations.
@@ -3577,7 +3590,7 @@ c|\le 1$ and $|\cos c|\le 1$. Hence
 \end{itemize}
 
 \end{eg}
-\begin{eg}[Showing $e<3$]
+\begin{eg}[Showing $e<3$]\label{eg_3_4_5}
 In Example~\ref{eg zero approx of e} above we used the fact that $e<3$ without actually
 proving it. Let's do so now.
 
@@ -3757,7 +3770,7 @@ at most $\frac{3}{(n+1)!}$ --- so it converges very quickly.
 
 \end{eg}
 
-\begin{eg}[Example \ref{eg:taylorPole} Revisited]
+\begin{eg}[Example \ref{eg:taylorPole} Revisited]\label{eg_3_4_6}
 Recall\footnote{Now is a good time to go back and re-read it.} that in Example
 \ref{eg:taylorPole} (measuring the height of the pole), we
 used the linear approximation
@@ -4719,7 +4732,7 @@ $n=0,1,2,\dots$.
 One important application of differential calculus is to find the maximum (or minimum)
 value of a function. This often finds real world applications in problems such as the
 following.
-\begin{eg}
+\begin{eg}\label{eg_3_5_1}
 A farmer has 400m of fencing materials. What is the largest rectangular paddock
 that can be enclosed?
 
@@ -6341,7 +6354,7 @@ goal of this section is to highlight features of the graph $y=f(x)$ that are eas
 \item read from $f''(x)$.
 \end{itemize}
 We will then use the ideas to sketch several examples.
-\subsection{Domain, Intercepts and Asymptotes}
+\subsection{Domain, Intercepts and Asymptotes}\label{ssec_sketch_DIA}
 Given a function $f(x)$, there are several important features that we can determine from
 that expression before examining its derivatives.
 
@@ -6365,7 +6378,7 @@ $L$. If, for example, $\lim\limits_{x\rightarrow+\infty}f(x)=L$, then $y=L$
 is a horizontal asymptote to $y=f(x)$ as $x\rightarrow\infty$.
 \end{itemize}
 
-\begin{eg}
+\begin{eg}\label{eg_3_6_1}
  Consider the function
 \begin{align*}
   f(x) &= \frac{x+1}{(x+3)(x-2)}
@@ -6412,7 +6425,7 @@ and smooth them out to get the a good sketch of this function (below right).
 \end{eg}
 
 
-\subsection{First Derivative --- Increasing or Decreasing}
+\subsection{First Derivative --- Increasing or Decreasing}\label{ssec_sketch_FD}
 Now we move on to the first derivative, $f'(x)$. This is a good time to revisit the
 mean-value theorem (Theorem~\ref{thm:DIFFmvt}) and some of its consequences
 (Corollary~\ref{cor:DIFFmvtcons}). In particular, let us assume that $f(x)$ is continuous
@@ -6553,7 +6566,7 @@ To improve upon this further we will examine the second derivative.
 \end{eg}
 
 
-\subsection{Second Derivative --- Concavity}
+\subsection{Second Derivative --- Concavity}\label{ssec_sketch_SD}
 The second derivative $f''(x)$ tells us the rate at which the derivative changes. Perhaps
 the easiest way to understand how to interpret the sign of the second derivative is to
 think about what it implies about the slope of the tangent line to the graph of the
@@ -6591,7 +6604,7 @@ lines.
 \end{itemize}
 
 More generally
-\begin{defn}
+\begin{defn}\label{def_3_6_1}
 Let $f(x)$ be a continuous function on the interval $[a,b]$ and suppose its first and
 second derivatives exist on that interval.
 \begin{itemize}
@@ -6631,7 +6644,7 @@ To avoid confusion we recommend the reader stick with the terms ``concave up'' a
 Let's now continue Example~\ref{eg sketch simple poly} by discussing the
 concavity of the
 curve.
-\begin{eg}[Continuation of Example~\ref{eg sketch simple poly}]
+\begin{eg}[Continuation of Example~\ref{eg sketch simple poly}]\label{eg_3_6_2}
 Consider again the function
 \begin{align*}
   f(x) &= x^4-6x^3
@@ -6718,7 +6731,7 @@ following sketch
 % \end{efig}
 
 
-\subsection{Symmetries}
+\subsection{Symmetries}\label{ssec_sketch_SYM}
 Before we proceed to some examples, we should examine some simple symmetries possessed by
 some functions. We'll look at three symmetries --- evenness, oddness and periodicity.
 If a function possesses one of these symmetries then it can be exploited to reduce the
@@ -6731,7 +6744,7 @@ A function $f(x)$ is said to be even if $f(-x)=f(x)$ for all $x$.
 \begin{defn}\label{def:APPodd} %%%%%%%%%%%%%%%%%%%%%
 A function $f(x)$ is said to be odd if $f(-x)=-f(x)$ for all $x$.
 \end{defn}
-\begin{eg}
+\begin{eg}\label{eg_3_6_3}
   Let $f(x) = x^2$ and $g(x)=x^3$. Then
 \begin{align*}
   f(-x) &= (-x)^2 = x^2 = f(x) \\
@@ -6840,7 +6853,7 @@ and then remove the dashed line.
 
 
 Let's do a more substantial example of an even function
-\begin{eg}
+\begin{eg}\label{eg_3_6_4}
  Consider the function
 \begin{align*}
   g(x) &= \frac{x^2-9}{x^2+3}
@@ -6994,7 +7007,7 @@ and here is the full sketch.
 \end{center}
 \end{efig}
 
-\subsection{A Checklist for Sketching}
+\subsection{A Checklist for Sketching}\label{ssec_sketch_check}
 Above we have described how we can use our accumulated knowledge of derivatives
 to quickly identify the most important qualitative features of
 graphs $y=f(x)$. Here we give the reader a quick checklist of things to examine
@@ -7053,7 +7066,7 @@ where $f'(x)=\pm\infty$.
 \end{itemize}
 \end{enumerate}
 
-\subsection{Sketching Examples}
+\subsection{Sketching Examples}\label{ssec_sketch_SE}
 
 \begin{eg}[Sketch $f(x)=x^3-3x+1$]\label{APPsketchA}
 
@@ -7206,7 +7219,7 @@ Putting all this information together gives us the following sketch.
 \end{efig}
 \end{eg}
 
-\begin{eg}[$f(x) = x^3 - 6x^2 + 9x - 54$]
+\begin{eg}[$f(x) = x^3 - 6x^2 + 9x - 54$]\label{eg_3_6_5}
 \begin{enumerate}[(1)]
 \item Reading from $f(x)$:
 \begin{itemize}
@@ -7292,7 +7305,7 @@ inflection point), we have
 \end{eg}
 
 An example of sketching a simple rational function.
-\begin{eg}[$f(x) = \dfrac{x}{x^2-4}$]
+\begin{eg}[$f(x) = \dfrac{x}{x^2-4}$]\label{eg_3_6_6}
 \begin{enumerate}[(1)]
 \item Reading from $f(x)$:
 \begin{itemize}
@@ -7605,7 +7618,7 @@ And if we zoom in even more we have
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{L'H\^opital's Rule and Indeterminate Forms}
+\section{L'H\^opital's Rule and Indeterminate Forms}\label{sec_3_7}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Let us return to limits (Chapter~\ref{chap limits}) and see how we can use derivatives to
 simplify certain families of limits called indeterminate forms. We know, from
@@ -7647,7 +7660,7 @@ that cancels.
 
 Because the limit that results from these $0/0$ situations is not immediately obvious,
 but also leads to some interesting mathematics, we should give it a name.
-\begin{defn}[First indeterminate forms]
+\begin{defn}[First indeterminate forms]\label{def_3_7_1}
 Let $a \in \mathbb{R}$ and let $f(x)$ and $g(x)$ be functions. If
 \begin{align*}
   \lim_{x\to a} f(x) &= 0 & \text{and } &&
@@ -7773,7 +7786,7 @@ where $c \in (a,x)$. As we take the limit as $x\to a$, we also have that $c\to a
 \end{align*}
 as required.
 
-\subsection{Standard Examples}
+\subsection{Standard Examples}\label{ssec_3_7_1}
 Here are some simple examples using L'H\^opital's rule.
 \begin{eg}\label{eg:hopitalA}
 Consider the limit
@@ -7827,7 +7840,7 @@ so we again have a $\nicefrac00$ indeterminate form.
 \end{itemize}
 \end{eg}
 
-\begin{eg}
+\begin{eg}\label{eg_3_7_1}
  Let $q>1$ and compute the limit
 \begin{align*}
   \lim_{x \to0} \frac{q^x - 1}{x}
@@ -8096,7 +8109,7 @@ does not exist.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Variations}
+\subsection{Variations}\label{ssec_3_7_2}
 Theorem \ref{thm:APPlhopital} is the basic form of L'H\^opital's
 rule, but there are also many variations. Here are a bunch of them.
 
@@ -8152,10 +8165,10 @@ We have applied L'H\^opital's rule with
 \item $\frac{\infty}{\infty}$ \emph{indeterminate form}:\ \ \
 L'H\^opital's rule also applies when
 $\lim\limits_{x\rightarrow a}f(x)=0$, $\lim\limits_{x\rightarrow a}g(x)=0$
-is replaced $\lim\limits_{x\rightarrow a}f(x)=\pm\infty$,
+is replaced by $\lim\limits_{x\rightarrow a}f(x)=\pm\infty$,
 $\lim\limits_{x\rightarrow a}g(x)=\pm\infty$.
 
-\begin{eg}
+\begin{eg}\label{eg_3_7_2}
  Consider the limit
 \begin{align*}
   \lim_{x \to \infty} \frac{\log x}{x}
@@ -8172,7 +8185,7 @@ $\nicefrac\infty\infty$ indeterminate form. An application of l'H\^opital's rule
 \end{align*}
 \end{eg}
 
-\begin{eg}
+\begin{eg}\label{eg_3_7_3}
  Consider the limit
 \begin{align*}
   \lim_{x \to \infty} \frac{5x^2+3x-3}{x^2+1}
@@ -8234,7 +8247,7 @@ and the second time with
 
 Sometimes things don't quite work out as we would like and l'H\^opital's rule can get
 stuck in a loop. Remember to think about the problem before you apply any rule.
-\begin{eg}
+\begin{eg}\label{eg_3_7_4}
  Consider the limit
 \begin{align*}
   \lim_{x\to\infty} \frac{ e^x + e^{-x} }{e^x - e^{-x}}
@@ -8581,7 +8594,7 @@ Combining (E1), (E2) and (E3) gives our final answer
 The following example can be done by l'H\^opital's rule, but it is actually far simpler
 to multiply by the conjugate and take the limit using the tools of
 Chapter~\ref{chap limits}.
-\begin{eg}
+\begin{eg}\label{eg_3_7_5}
 Consider the limit
 \begin{align*}
   \lim_{x\to \infty} \sqrt{x^2+4x}-\sqrt{x^2-3x}
@@ -8861,7 +8874,7 @@ precisely because we can always add or subtract a constant to an antiderivative 
 when we differentiate we'll get the same answer.  We can write this as a lemma,
 but it is actually just Corollary~\ref{cor equal diff} (from back in the section
 on the mean-value theorem) in disguise.
-\begin{lemma}
+\begin{lemma}\label{lem_4_1_1}
  Let $F(x)$ be an antiderivative of $f(x)$, then for any constant $c$, the function
 $F(x)+c$ is also an antiderivative of $f(x)$.
 \end{lemma}
@@ -9020,7 +9033,7 @@ $-\cos x+c$
 \renewcommand{\arraystretch}{1.0}
 
 Here are a couple more examples.
-\begin{eg}
+\begin{eg}\label{eg_4_1_1}
 Consider the functions
 \begin{align*}
   f(x) &= \sin x + \cos 2x & g(x) &= \frac{1}{1+4x^2}
@@ -9113,7 +9126,7 @@ Recalling our special triangles, we see that $T=\frac{\pi}{3}$.
 \end{eg}
 
 The example below shows how antiderivatives arise naturally when studying differential equations.
-\begin{eg}[Theorem~\ref{thm:growthDEsoln} revisited.]
+\begin{eg}[Theorem~\ref{thm:growthDEsoln} revisited.]\label{eg_4_1_2}
 Back in Section~\ref{sec:ExpGthDecay} we encountered a simple differential
 equation, namely equation~\ref{eq:carbonDating}. We were able to solve this
 equation by guessing the answer and then checking it carefully. We can derive

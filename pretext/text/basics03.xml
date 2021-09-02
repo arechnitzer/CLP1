@@ -2,7 +2,7 @@
 <!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec_0_3" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Other Important Sets</title>
 <introduction>
 
@@ -10,7 +10,7 @@
 We have seen a few important sets above <mdash/> namely <m>\mathbb{N}, \mathbb{Z}, \mathbb{Q}</m> and <m>\mathbb{R}</m>. However, arguably the most important set in mathematics is the empty set.
 </p>
 
-<definition><title>Empty set</title>
+<definition xml:id="def_0_3_1"><title>Empty set</title>
 <statement><p>
 	The empty set (or null set or void set) is the set which contains no elements. It is denoted <m>\es</m>. For any object <m>x</m>, we always have <m>x \notin \es</m>; hence <m>\es = \{ \}</m>.
 </p></statement>
@@ -37,7 +37,7 @@ Other people also use <q>:</q> is shorthand for <q>such that</q>. You should rec
 </p>
 
 
-<example><title>examples of sets</title>
+<example xml:id="eg_0_3_1"><title>examples of sets</title>
 <p>
 Even more examples<ellipsis/>
 <ul>
@@ -89,7 +89,7 @@ The set
 The sets <m>A</m> and <m>B</m> in the above example illustrate an important point. Every element in <m>B</m> is an element in <m>A</m>, and so we say that <m>B</m> is a subset of <m>A</m>
 </p>
 
-<definition>
+<definition xml:id="def_0_3_2">
 <statement><p>
 Let <m>A</m> and <m>B</m> be sets. We say <q><m>A</m> is a subset of <m>B</m></q> if every element of <m>A</m> is also an element of <m>B</m>. We denote this <m>A \subseteq B</m> (or <m>B \supseteq A</m>). If <m>A</m> is a subset of <m>B</m> and <m>A</m> and <m>B</m> are not the same , so that there is some element of <m>B</m> that is not in <m>A</m> then we say that <m>A</m> is a proper subset of <m>B</m>. We denote this by <m>A \subset B</m> (or <m>B \supset A</m>).
 </p></statement>
@@ -105,7 +105,7 @@ If <m>A</m> is not a subset of <m>B</m> then we write <m>A \not\subseteq B</m>. 
 </ul>
 </p>
 
-<example><title>subsets</title>
+<example xml:id="eg_0_3_2"><title>subsets</title>
 <p>
 Let <m>S = \{1,2\}</m>. What are all the subsets of <m>S</m>? Well <mdash/> each element of <m>S</m> can either be in the subset or not (independent of the other elements of the set). So we have <m>2\times2 = 4</m> possibilities: neither <m>1</m> nor <m>2</m> is in the subset, <m>1</m> is but <m>2</m> is not, <m>2</m> is but <m>1</m> is not, and both <m>1</m> and <m>2</m> are. That is
 <md>
@@ -170,7 +170,7 @@ So we now know how to say that one set is contained within another. We will now 
 </p>
 
 
-<definition>
+<definition xml:id="def_0_3_3">
 <statement><p>
 Let <m>A</m> and <m>B</m> be sets. We define the union of <m>A</m> and <m>B</m>, denoted <m>A \cup B</m>, to be the set of all elements that are in at least one of <m>A</m> or <m>B</m>.
 <md>
@@ -199,7 +199,7 @@ It is vital that we make our definitions clear otherwise anything we do with the
 	</fn>.
 </p>
 
-<definition>
+<definition xml:id="def_0_3_4">
 <statement><p>
 Let <m>A</m> and <m>B</m> be sets. We define the intersection of <m>A</m> and <m>B</m>, denoted <m>A \cap B</m>, to be the set of elements that belong to both <m>A</m> and <m>B</m>.
 <md>
@@ -214,7 +214,7 @@ Let <m>A</m> and <m>B</m> be sets. We define the intersection of <m>A</m> and <m
 Again note that we are using the word <q>and</q> in a careful mathematical sense (which is pretty close to the usual use in English).
 </p>
 
-<example><title>Union and intersection</title>
+<example xml:id="eg_0_3_3"><title>Union and intersection</title>
 <p>
 Let <m>A = \{1,2,3,4 \}</m>, <m>B = \{p : p \mbox{ is prime} \}</m>, <m>C = \{5,7,9\}</m> and <m>D = \{\mbox{even positive integers}\}</m>. Then
 <md>

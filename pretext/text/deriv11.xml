@@ -2,7 +2,7 @@
 <!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec_2_11" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Implicit Differentiation</title>
 <subsection><title>Implicit Differentiation</title>
 
@@ -212,7 +212,7 @@ and hence less vulnerable to mechanical errors, to use implicit
 differentiation. So that's what we'll do.</p>
 </li>
 <li> Now we could again <q>pretend</q> that we have solved the equation for the
-ellipse for <m>y=f(x)</m>  near <m>(x_0,y_0)</m>, but lets not do that. Instead (as we
+ellipse for <m>y=f(x)</m>  near <m>(x_0,y_0)</m>, but let's not do that. Instead (as we
 did just before this example) just remember that when we differentiate <m>y</m> is
 really a function of <m>x</m>. So starting from
 <md>
@@ -351,7 +351,7 @@ lines are parallel.
 </example>
 
 
-<p>Okay <mdash/> lets get away from curves and do something a little different.
+<p>Okay <mdash/> let's get away from curves and do something a little different.
 </p>
 
 <example xml:id="eg_DIFFimpldiffC"><title>A rough game of baseball</title>

@@ -14,7 +14,7 @@ As we noted above, the definition of limits that we have been working with was  
 Here is the formal definition <mdash/> we will work through it all very slowly and  carefully afterwards, so do not panic.
 </p>
 
-<definition>
+<definition xml:id="def_1_7_1">
 <statement><p>
 Let <m>a \in \mathbb{R}</m> and let <m>f(x)</m> be a function defined everywhere in a  neighbourhood of <m>a</m>, except possibly at <m>a</m>. We say that
 </p>
@@ -55,7 +55,7 @@ Note that an equivalent way of writing this very last statement is
 
 <p>This is quite a lot to take in, so let us break it down into pieces.</p>
 
-<definition><title>The typical 3 pieces of a definition</title>
+<definition xml:id="def_1_7_2"><title>The typical 3 pieces of a definition</title>
 <statement><p>
 Usually a definition can be broken down into three pieces.
 <ul>
@@ -170,10 +170,10 @@ i.e. <mdash/> no matter what <m>\epsilon \gt 0</m> is chosen, if we put <m>\delt
 </p>
 
 <p>
-The above work gives us the argument we need, but it still need to be written  up properly. We do this below.
+The above work gives us the argument we need, but it still needs to be written up properly. We do this below.
 </p>
 
-<example><title>Formal limit of a simple function</title>
+<example xml:id="eg_1_7_1"><title>Formal limit of a simple function</title>
 <p>
 Find the limit as <m>x \to 3</m> of the following function
 <md>
@@ -218,7 +218,7 @@ Because of the <m>\epsilon</m> and <m>\delta</m> in the definition of limits, we
 In the above example everything works, but it can be very instructive to see  what happens in an example that doesn't work.
 </p>
 
-<example><title>Formal limit where limit does not exist</title>
+<example xml:id="eg_1_7_2"><title>Formal limit where limit does not exist</title>
 <p>
 Look again at the function
 <md>

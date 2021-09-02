@@ -142,7 +142,7 @@ bad, but we can come up with something that is much more efficient.
 We just need a little calculus.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Newton's Method}
+\section{Newton's Method}\label{sec_C_1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Newton's method\footnote{The algorithm that we are about to describe grew out of a method that Newton wrote about in 1669. But the modern method incorporates
 substantial changes introduced by Raphson in 1690 and Simpson in 1740.},  
@@ -437,7 +437,7 @@ r_5&=r_4-\frac{(1-56r_4)(1+r_4)^{60}-1}{(4-3416r_4)(1+r_4)^{59}}=0.002290
 So the interest rate is 0.229\% per month or 2.75\% per year.
 \end{eg}
 
-\section{The Error Behaviour of Newton's Method}
+\section{The Error Behaviour of Newton's Method}\label{sec_C_2}
 
 Newton's method usually works spectacularly well, provided your
 initial guess is reasonably close to a solution of $f(x)=0$. A good way
@@ -662,7 +662,7 @@ and the interested reader should search engine their way to, for example, Wikipe
 the other being a variant of Newton's method.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The false position (regula falsi) method}
+\section{The false position (regula falsi) method}\label{sec_C_3}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Let $f(x)$ be a continuous function and let $a_1<b_1$ with $f(a_1)$ and $f(b_1)$ being of opposite sign.
@@ -753,7 +753,7 @@ is negative at $x=0.0$ and positive at $x=0.4142135624$
 \end{eg}
 \end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The secant method}
+\section{The secant method}\label{sec_C_4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Let $f(x)$ be a continuous function. The secant method is a variant of 
 Newton's method that avoids the use of the derivative of $f(x)$ --- which can be very helpful when dealing with the derivative is not easy. It avoids the use of the derivative  by approximating  $f'(x)$ by $\frac{f(x+h)-f(x)}{h}$ for some $h$. That is, it approximates the tangent line to $f$ at $x$ by a secant line 
@@ -839,7 +839,7 @@ when  evaluation of the derivative is computationally difficult or expensive.
 On the other hand, the above example suggests that the secant method is not 
 as fast as Newton's method. The following section shows that this is indeed the case.
 
-\section{The Error Behaviour of the Secant Method}
+\section{The Error Behaviour of the Secant Method}\label{sec_C_5}
 
 Let $f(x)$ have two continuous derivatives, and let $r$ be any solution 
 of $f(x)=0$. 
