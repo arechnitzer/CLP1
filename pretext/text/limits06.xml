@@ -25,7 +25,7 @@ Many other functions have this property, <m>\sin(x)</m> for example. A function 
 A function <m>f(x)</m> is continuous at <m>a</m> if
 <md>
 <mrow>
-	\lim_{x \to a} f(x) &amp;= f(a)
+	\lim_{x \to a} f(x) &amp;= f(a).
 </mrow>
 </md>
 If a function is not continuous at <m>a</m> then it is said to be discontinuous at<nbsp/><m>a</m>.
