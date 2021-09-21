@@ -746,7 +746,7 @@ Consider what happens to a rational function as
 The amount of the substance that will linger long-term is some positive number--the substance will stick around. One example of a substance that does this is the ink in a tattoo. (If the injection was of medicine, probably it will be metabolized, and <m>\displaystyle\lim_{t \rightarrow \infty} c(t)=0</m>.)
 </p>
 
-<p>Remark: it actually doesn't make much sense to let <m>t</m> go to infinity: after a few million hours,  you won't even have a body, so what is <m>c(t)</m> measuring? Often when we use formulas in the real world, there is an understanding that the are only good for some fixed range. We often use the limit as <m>t</m> goes to infinity as a stand-in for the function's long-term behaviour.
+<p>Remark: it actually doesn't make much sense to let <m>t</m> go to infinity: after a few million hours,  you won't even have a body, so what is <m>c(t)</m> measuring? Often when we use formulas in the real world, there is an understanding that they are only good for some fixed range. We often use the limit as <m>t</m> goes to infinity as a stand-in for the function's long-term behaviour.
 </p></solution>
 </exercise>
 
