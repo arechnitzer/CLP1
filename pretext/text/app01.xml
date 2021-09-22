@@ -583,7 +583,7 @@ In the following, <m>x</m> and <m>y</m> are arbitrary real numbers that  are str
 </li>
 <li> <m>\log_q(x^y)=y\log_q x</m>
 </li>
-<li> <m>\lim\limits_{x\rightarrow\infty}\log_q x=\infty, \qquad \lim\limits_{x\rightarrow0}\log_q x=-\infty</m>
+<li> <m>\lim\limits_{x\rightarrow\infty}\log_q x=\infty, \qquad \lim\limits_{x\rightarrow0+}\log_q x=-\infty</m>
 </li>
 <li><p>
 The graph of <m>\log_{10} x</m> is given below. The graph of  <m>\log_q x</m>, for any <m>q \gt 1</m>, is similar.</p>
