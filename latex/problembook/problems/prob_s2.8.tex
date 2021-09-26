@@ -358,18 +358,74 @@ y -  \pi = 1\cdot (x-\pi/2).
 %%%%%%%%%%%%%%%%%%
 
 \begin{question}[2015Q]
- Evaluate $\displaystyle \lim_{x\to \pi/3}\left(
-\dfrac{\cos(x)-1/2}{x-\pi/3}\right).$  Use any method.
+ Evaluate $\displaystyle \lim_{x\to 2015}\left(
+\dfrac{\cos(x)-\cos(2015)}{x-2015}\right).$
 \end{question}
-\begin{hint} This looks like a derivative that you know how to compute.
+\begin{hint}
+Compare this to one of the forms given in the text for the definition of the derivative.
 \end{hint}
-\begin{answer}  $-\sqrt{3}/2$
+\begin{answer}
+{$-\sin(2015)$}
+\end{answer}
+\begin{solution}
+This limit represents the derivative computed at $x=2015$ of the function
+$f(x)=\cos(x)$. To see this, simply use the definition of the derivative at $a=2015$ with $f(x)=\cos x$:
+\begin{align*}
+\left.\diff{}{x}\{f(x)\}\right|_{a} &= \lim_{x \to a}\frac{f(x)-f(a)}{x-a}\\
+\left.\diff{}{x}\{\cos x\}\right|_{2015} &= \lim_{x\to2015}\frac{\cos(x)-\cos(2015)}{x-2015}
+\end{align*}
+Since the derivative of $f(x)$ is $-\sin(x)$, its value at
+$x=2015$ is exactly $-\sin(2015)$.
+\end{solution}
+
+
+
+
+\begin{question}[2015Q]
+Evaluate $\displaystyle \lim_{x\to \pi/3}\left(
+\dfrac{\cos(x)-1/2}{x-\pi/3}\right).$
+\end{question}
+\begin{hint}
+Compare this to one of the forms given in the text for the definition of the derivative.
+\end{hint}
+\begin{answer}
+{$-\sqrt{3}/2$}
 \end{answer}
 \begin{solution}
 This limit represents the derivative computed at $x=\pi/3$ of the function
-$f(x)=\cos x$. Since the derivative of $f(x)$ is $-\sin x$, then its
-value at $x=\pi/3$ is exactly $-\sqrt{3}/2$.
+$f(x)=\cos x$. To see this, simply use the definition of the derivative at $a=\pi/3$ with $f(x)=\cos x$:
+\begin{align*}
+\left.\diff{}{x}\{f(x)\}\right|_{a} &= \lim_{x \to a}\frac{f(x)-f(a)}{x-a}\\
+\left.\diff{}{x}\{\cos x\}\right|_{\pi/3} &= \lim_{x\to\pi/3}\frac{\cos(x)-\cos(\pi/3)}{x-\pi/3}\\
+&=\lim_{x\to\pi/3} \frac{\cos(x)-1/2}{x-\pi/3}
+\end{align*}
+Since the derivative of $f(x)$ is $-\sin x$, then its
+value at $x=\pi/3$ is exactly\\ $-\sin(\pi/3)=-\sqrt{3}/2$.
 \end{solution}
+
+
+
+\begin{question}[2015Q]
+Evaluate $\displaystyle \lim_{x\to \pi}\left(\dfrac{\sin(x)}{x-\pi}\right).$
+\end{question}
+\begin{hint}
+Compare this to one of the forms given in the text for the definition of the derivative.
+\end{hint}
+\begin{answer} $-1$
+\end{answer}
+\begin{solution}
+    This limit represents the derivative computed at $x=\pi$ of the function $f(x)=\sin(x)$.
+    To see this, simply use the definition of the derivative at $a=\pi$ with $f(x)=\sin x$:
+\begin{align*}
+\left.\diff{}{x}\{f(x)\}\right|_{a} &= \lim_{x \to a}\frac{f(x)-f(a)}{x-a}\\
+\left.\diff{}{x}\{\sin x\}\right|_{\pi} &=\lim_{x\to\pi} \frac{\sin(x)-\sin(\pi)}{x-\pi}\\
+ &=\lim_{x\to\pi} \frac{\sin(x)}{x-\pi}
+\end{align*}
+    Since the derivative of $f(x)$ is $\cos(x)$, then its value at $x=\pi$ is exactly\\
+     $\cos(\pi)=-1$.
+\end{solution}
+
+
 
 \begin{question}
 Show how you can use the quotient rule to find the derivative of tangent, if you already know the derivatives of sine and cosine.
