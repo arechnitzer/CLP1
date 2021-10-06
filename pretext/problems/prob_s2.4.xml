@@ -32,7 +32,7 @@ True or false: <m>\ds\diff{}{x}\{f(x)g(x)\}=f'(x)g'(x)</m> when <m>f</m> and <m>
 </exercise>
 
 <exercise>
-<statement><p>True or false: <m>\ds\diff{}{x}\left\{\dfrac{f(x}{g(x)}\right\}=\dfrac{f'(x)}{g(x)}-\dfrac{f(x)g'(x)}{g^2(x)}</m> when <m>f</m> and <m>g</m> are differentiable functions.
+<statement><p>True or false: <m>\ds\diff{}{x}\left\{\dfrac{f(x)}{g(x)}\right\}=\dfrac{f'(x)}{g(x)}-\dfrac{f(x)g'(x)}{g^2(x)}</m> when <m>f</m> and <m>g</m> are differentiable functions.
 </p></statement>
 <hint><p> Simplify.
 </p></hint>
@@ -41,7 +41,7 @@ True or false: <m>\ds\diff{}{x}\{f(x)g(x)\}=f'(x)g'(x)</m> when <m>f</m> and <m>
 <solution><p> True: the quotient rule tells us 
 <md>
 <mrow>
-\diff{}{x}\left\{\frac{f(x}{g(x)}\right\}
+\diff{}{x}\left\{\frac{f(x)}{g(x)}\right\}
 \amp=\frac{g(x)f'(x)-f(x)g'(x)}{g^2(x)} = \frac{g(x)f'(x)}{g^2(x)}-\frac{f(x)g'(x)}{g^2(x)} 
 </mrow><mrow>
 \amp= \frac{f'(x)}{g(x)}-\frac{f(x)g'(x)}{g^2(x)}
