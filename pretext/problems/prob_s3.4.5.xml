@@ -533,24 +533,22 @@ Compare this to the Maclaurin polynomial for <m>e^x</m>.
 </p></hint>
 <answer><p>
 <me>
-1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\approx e</me>
+1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\approx e-1</me>
 </p></answer>
 <solution><p>
 From Example<nbsp/><xref ref="eg_taylor_e_to_the_x"/>
-</p>
-
-<p>in the text, we see that the <m>n</m>th Maclaurin polynomial for <m>f(x)=e^x</m> is
+in the text, we see that the <m>n</m>th Maclaurin polynomial for <m>f(x)=e^x</m> is
 <md>
 <mrow>
-T_n(x)&amp;=\sum_{k=0}^n\frac{1}{k!}x^k
+T_n(x)&amp;=\sum_{k=0}^n\frac{1}{k!}x^k=1+x+\frac{x^2}{2}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots +\frac{x^n}{n!}
 </mrow>
 <intertext>If <m>n=157</m> and <m>x=1</m>,</intertext><mrow>
-T_{157}(1)&amp;=\sum_{k=0}^{157}\frac{1}{k!}=1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}
+T_{157}(1)&amp;=\sum_{k=0}^{157}\frac{1}{k!}=1+1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}
 </mrow>
 </md>
-Although we wouldn't expect <m>T_{157}(1)</m>  to be exactly equal to <m>e^1</m>, it's probably pretty close since <m>T_{157}(x)</m> is the Maclaurin polynomial for <m>e^x</m>, and 0 is pretty close to 1. So, we estimate
+Although we wouldn't expect <m>T_{157}(1)</m>  to be exactly equal to <m>e^1</m>, it's probably pretty close. So, we estimate
 <me>
-1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\approx e</me>
+1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\approx e-1</me>
 </p></solution>
 </exercise>
 
