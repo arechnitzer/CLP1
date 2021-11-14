@@ -525,7 +525,7 @@ We are tempted to say that the derivative doesn't exist when <m>x=-7</m> and <m>
 <p>So, all together:
 </p>
 
-<p><m>x=-1</m> is a critical point, and <m>x=-7</m> and <m>x=5</m> are critical points or singular pints (but we don't know which).
+<p><m>x=-1</m> is a critical point, and <m>x=-7</m> and <m>x=5</m> are critical points or singular points (but we don't know which).
 </p>
 
 <p>Remark: if you would like a review of how to use the definition of the derivative, below we show that <m>f(x)</m> is not differentiable at <m>x=-7</m>. (In fact, <m>x=-7</m> and <m>x=5</m> are both singular points.)
