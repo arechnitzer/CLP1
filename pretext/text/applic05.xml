@@ -1653,13 +1653,15 @@ and so
 <li><p> If we allow the viewer to stand at any point in front of the statue, then <m>0\le x
  \lt \infty</m>. Further observe that as <m>x \rightarrow \infty</m> or <m>x \rightarrow 0</m> the angle
 <m>\theta \rightarrow 0</m>,  since
-<md>
-<mrow>
-  \lim_{x\rightarrow 0} \arctan \frac{p+h}{x} &amp;= \frac{\pi}{2}
-</mrow><mrow>
-  \lim_{x\rightarrow 0} \arctan \frac{p}{x} &amp;= \frac{\pi}{2}
-</mrow>
-</md>
+<me>
+  \lim_{x\rightarrow\infty} \arctan \frac{p+h}{x} =
+  \lim_{x\rightarrow\infty} \arctan \frac{p}{x} = 0
+</me>
+and
+<me>
+  \lim_{x\rightarrow 0^+} \arctan \frac{p+h}{x} =
+  \lim_{x\rightarrow 0^+} \arctan \frac{p}{x} = \frac{\pi}{2}
+</me>
 Clearly the largest value of <m>\theta</m> will be strictly positive and so has to be taken for
 some <m>0 \lt x \lt \infty</m>. (Note the strict inequalities.) This <m>x</m> will be a local maximum as
 well as a global maximum. As <m>\theta</m> is not singular at any <m>0 \lt x \lt \infty</m>, we need only

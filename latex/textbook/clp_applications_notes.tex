@@ -5992,8 +5992,13 @@ and so
 <\infty$. Further observe that as $x \rightarrow \infty$ or $x \rightarrow 0$ the angle
 $\theta \rightarrow 0$,  since
 \begin{align*}
-  \lim_{x\rightarrow 0} \arctan \frac{p+h}{x} &= \frac{\pi}{2} \\
-  \lim_{x\rightarrow 0} \arctan \frac{p}{x} &= \frac{\pi}{2} \\
+  \lim_{x\rightarrow \infty} \arctan \frac{p+h}{x} =
+  \lim_{x\rightarrow \infty} \arctan \frac{p}{x} = 0 
+\end{align*}
+and
+\begin{align*}
+  \lim_{x\rightarrow 0^+} \arctan \frac{p+h}{x} = 
+  \lim_{x\rightarrow 0^+} \arctan \frac{p}{x} = \frac{\pi}{2} 
 \end{align*}
 Clearly the largest value of $\theta$ will be strictly positive and so has to be taken for
 some $0<x<\infty$. (Note the strict inequalities.) This $x$ will be a local maximum as

@@ -88,7 +88,7 @@ Give the 100th degree Taylor polynomial for <m>s(t)=4.9t^2-t+10</m> about <m>t=5
 You are approximating a polynomial with a polynomial.
 </p></hint>
 <answer><p>
-<m>T_{100}(t)=4.9t^2-t+10</m>
+<m>T_{100}(t)=127.5+48(t-5)+4.9(t-5)^2=4.9t^2-t+10</m>
 </p></answer>
 <solution><p>
 A Taylor polynomial gives a polynomial approximation for a function <m>s(t)</m>. Since <m>s(t)</m> is itself a polynomial, any <m>n</m>th-degree Taylor polynomial, with <m>n</m> greater than or equal to the degree of <m>s(t)</m>, will simply give <m>s(t)</m>. So, in our case, <m>T_{100}(t)=s(t)=4.9t^2-t+10</m>.
@@ -97,9 +97,9 @@ A Taylor polynomial gives a polynomial approximation for a function <m>s(t)</m>.
 <p>If that isn't satisfying, you can go through the normal method of calculating <m>T_{100}(t)</m>.
 <md>
 <mrow>
-s(t)&amp;=4.9t^2-t+10 &amp; s(5)&amp;=4.9(25)-5+10=4.9(25)+5
+s(t)&amp;=4.9t^2-t+10 &amp; s(5)&amp;=4.9(25)-5+10=127.5
 </mrow><mrow>
-s'(t)&amp;=9.8t-1 &amp; s'(5)&amp;=9.8(5)-1
+s'(t)&amp;=9.8t-1 &amp; s'(5)&amp;=9.8(5)-1=48
 </mrow><mrow>
 s''(t)&amp;=9.8 &amp; s''(5)&amp;=9.8
 </mrow>
@@ -107,13 +107,19 @@ s''(t)&amp;=9.8 &amp; s''(5)&amp;=9.8
 The rest of the derivatives of <m>s(t)</m> are identically zero, so they are (in particular) zero when <m>t=5</m>. Therefore,
 <md>
 <mrow>
-T_{100}(t)&amp;=4.9(25)+5+(9.8(5)-1)(t-5)+\frac{1}{2}9.8(t-5)^2
+T_{100}(t)&amp;=127.5+48(t-5)+\frac{1}{2}9.8(t-5)^2
 </mrow><mrow>
-&amp;=4.9(25)+5+(9.8(5)-1)(t-5)+4.9(t^2-10t+25)
+&amp;=127.5+48(t-5)+4.9(t-5)^2
+</mrow>
+</md>
+We can now check that <m>T_{100}(t)</m> really is the same as <m>s(t)</m>.
+<md>
+<mrow>
+T_{100}(t)&amp;=127.5+48(t-5)+4.9(t-5)^2
 </mrow><mrow>
-&amp;=[4.9(25)+5+(9.8(5)-1)(-5)+4.9(25)]
+&amp;=127.5+48(t-5)+4.9(t^2-10t+25)
 </mrow><mrow>
-\amp\hskip1in+[9.8(5)-1-4.9(10)]t+4.9t^2
+&amp;=[127.5+48(-5)+4.9(25)]+[48-4.9(10)]t+4.9t^2
 </mrow><mrow>
 &amp;=10-t+4.9t^2=s(t)
 </mrow>

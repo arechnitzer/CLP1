@@ -78,7 +78,7 @@ Give the 100th degree Taylor polynomial for $s(t)=4.9t^2-t+10$ about $t=5$.
 You are approximating a polynomial with a polynomial.
 \end{hint}
 \begin{answer}
-$T_{100}(t)=4.9t^2-t+10$
+$T_{100}(t)=127.5+48(t-5)+4.9(t-5)^2=4.9t^2-t+10$
 \end{answer}
 \begin{solution}
 A Taylor polynomial gives a polynomial approximation for a function $s(t)$. Since $s(t)$ is itself a polynomial, any $n$th-degree Taylor polynomial, with $n$ greater than or equal to the degree of $s(t)$, will simply give $s(t)$. So, in our case, $T_{100}(t)=s(t)=4.9t^2-t+10$.
@@ -86,17 +86,23 @@ A Taylor polynomial gives a polynomial approximation for a function $s(t)$. Sinc
 
 If that isn't satisfying, you can go through the normal method of calculating $T_{100}(t)$.
 \begin{align*}
-s(t)&=4.9t^2-t+10 & s(5)&=4.9(25)-5+10=4.9(25)+5\\
-s'(t)&=9.8t-1 & s'(5)&=9.8(5)-1\\
+s(t)&=4.9t^2-t+10 & s(5)&=4.9(25)-5+10=127.5\\
+s'(t)&=9.8t-1 & s'(5)&=9.8(5)-1=48\\
 s''(t)&=9.8 & s''(5)&=9.8
 \end{align*}
 The rest of the derivatives of $s(t)$ are identically zero, so they are (in particular) zero when $t=5$. Therefore,
 \begin{align*}
-T_{100}(t)&=4.9(25)+5+(9.8(5)-1)(t-5)+\frac{1}{2}9.8(t-5)^2\\
-&=4.9(25)+5+(9.8(5)-1)(t-5)+4.9(t^2-10t+25)\\
-&=[4.9(25)+5+(9.8(5)-1)(-5)+4.9(25)]+[9.8(5)-1-4.9(10)]t+4.9t^2\\
+T_{100}(t)&=127.5+48(t-5)+\frac{1}{2}9.8(t-5)^2\\
+&=127.5+48(t-5)+4.9(t-5)^2
+\end{align*}
+We can now check that $T_{100}(t)$ really is the same as $s(t)$.
+\begin{align*}
+T_{100}(t)&=127.5+48(t-5)+4.9(t-5)^2\\
+&=127.5+48(t-5)+4.9(t^2-10t+25)\\
+&=[127.5+48(-5)+4.9(25)]+[48-4.9(10)]t+4.9t^2\\
 &=10-t+4.9t^2=s(t)
 \end{align*}
+as expected.
 \end{solution}
 
 \begin{question}
