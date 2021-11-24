@@ -814,7 +814,7 @@ off from <m>f(x)</m>, <m>f'(x)</m> and <m>f''(x)</m>.
 <ul>
 <li> First check where <m>f(x)</m> is defined. Then
 </li>
-<li> y=f(x) is plotted only for <m>x</m>'s in the domain of <m>f(x)</m>, i.e. where
+<li> <m>y=f(x)</m> is plotted only for <m>x</m>'s in the domain of <m>f(x)</m>, i.e. where
 <m>f(x)</m> is defined.
 </li>
 <li> <m>y = f(x)</m> has vertical asymptotes at the points where <m>f(x)</m> blows up to

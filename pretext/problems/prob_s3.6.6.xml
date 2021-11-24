@@ -2091,9 +2091,9 @@ f''(x)=20x^3\qquad
 <li> <m>f'(x) \gt  0</m> (i.e. <m>f</m> is increasing) for
    <m>|x| \gt  \dfrac{1}{\root{4}\of{5}}</m>
 </li>
-<li>{}<m>f'(x)=0</m> (i.e. <m>f</m> has critical points) for <m>x= \pm\dfrac{1}{\root{4}\of{5}} \approx \pm 0.67</m>
+<li> <m>f'(x)=0</m> (i.e. <m>f</m> has critical points) for <m>x= \pm\dfrac{1}{\root{4}\of{5}} \approx \pm 0.67</m>
 </li>
-<li>{}<m>f'(x) \lt  0</m> (i.e. <m>f</m> is decreasing) for <m>|x|  \lt  \dfrac{1}{\root{4}\of{5}}</m>
+<li> <m>f'(x) \lt  0</m> (i.e. <m>f</m> is decreasing) for <m>|x|  \lt  \dfrac{1}{\root{4}\of{5}}</m>
 </li>
 <li> <m>f\left(\pm\dfrac{1}{\sqrt[4]{5}}\right)=\mp\dfrac{4}{5\sqrt[4]{5}}\approx\mp0.53</m>
 </li>
