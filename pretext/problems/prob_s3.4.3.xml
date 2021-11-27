@@ -76,6 +76,9 @@ So, our approximation is <m>f(x) \approx 2x+5</m>.
 <exercise purpose="RQS">
 <statement><p>
 Use a quadratic approximation to estimate <m>\log(0.93)</m>.
+</p>
+
+<p>(Remember that in CLP-1 we use <m>\log x</m> to mean the natural logarithm of <m>x</m>, <m>\log_e x</m>.)
 </p></statement>
 <hint><p>
 Approximate <m>f(x)=\log x</m>.

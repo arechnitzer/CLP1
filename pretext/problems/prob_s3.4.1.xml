@@ -63,7 +63,7 @@ Question<nbsp/><xref ref="s3_4_1endapprox"/> are simply for you to practice the 
 Use a constant approximation to estimate the value of <m>\log(x)</m> when <m>x=0.93</m>. Sketch the curve <m>y=f(x)</m> and your constant approximation.
 </p>
 
-<p>(Remember we use <m>\log x</m> to mean the natural logarithm of <m>x</m>, <m>\log_e x</m>.)
+<p>(Remember that in CLP-1 we use <m>\log x</m> to mean the natural logarithm of <m>x</m>, <m>\log_e x</m>.)
 </p></statement>
 <hint><p>
 You'll need some constant <m>a</m> to approximation <m>\log(0.93) \approx \log(a)</m>.
