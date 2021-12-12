@@ -477,22 +477,19 @@ T_{100}(x)&amp;=\sum_{k=0}^{100}\frac{f^{(k)}(1)}{k!}(x-1)^k
 Write the <m>(2n)</m>th-degree Taylor polynomial for <m>f(x)=\sin x</m> about <m>x=\dfrac{\pi}{4}</m> in sigma notation.
 </p></statement>
 <hint><p>
-You'll have to deal with <q>doubles</q> of coefficients in the Taylor polynomial. The following is a way of getting them into sigma notation:
-<md>
-<mrow>
-&amp;1+1-1-1+1+1-1-1
-</mrow><mrow>
-= &amp;(1+1)+(-1-1)+(1+1)+(-1-1)
-</mrow><mrow>
-=&amp;\sum_{k=0}^3 \left[(-1)^k+(-1)^k\right]</mrow>
-</md>
+Treat the even and odd powers separately.
 </p></hint>
 <answer><p>
-<m>T_{2n}(x)=\ds\sum_{k=0}^n \left[\dfrac{(-1)^k}{(2k)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k}
-+
-\dfrac{(-1)^k}{(2k+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k+1}\right]</m>
+<me>
+T_{2n}(x)=\sum_{\ell=0}^{n}\frac{(-1)^\ell}{(2\ell)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell}
++\sum_{\ell=0}^{n-1}\frac{(-1)^\ell}{(2\ell+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell+1}
+</me>
 </p></answer>
 <solution><p>
+Recall that
+<me>
+T_{2n}(x)=\sum_{k=0}^{2n} \frac{f^{(k)}\left(\frac{\pi}{4}\right)}{k!}\left(x-\frac{\pi}{4}\right)^k
+</me>
 Let's start by taking some derivatives. Of course, since we're differentiating sine, the derivatives will repeat every four iterations.
 <md>
 <mrow>
@@ -505,23 +502,50 @@ f''(x)&amp;=-\sin x &amp; f''\left(\frac{\pi}{4}\right)&amp;=-\frac{1}{\sqrt 2}
 f'''(x)&amp;=-\cos x &amp; f'''\left(\frac{\pi}{4}\right)&amp;=-\frac{1}{\sqrt{2}}
 </mrow>
 </md>
-So, the pattern of derivatives is <m>\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, etc. This is a little tricky to write in sigma notation. We can deal with the <q>doubles</q> by pairing consecutive even and odd terms, as shown below.
-<md>
-<mrow>
-T_{2n}(x)&amp;=\sum_{k=0}^{2n} \frac{f^{(k)}\left(\frac{\pi}{4}\right)}{k!}\left(x-\frac{\pi}{4}\right)^k
-</mrow><mrow>
-&amp;=\sum_{k=0}^{n} \left[
-\underbrace{\frac{f^{(2k)}\left(\frac{\pi}{4}\right)}{(2k)!}\left(x-\frac{\pi}{4}\right)^{2k}}_{\mbox{even term}}
-+
-\underbrace{\frac{f^{(2k+1)}\left(\frac{\pi}{4}\right)}{(2k+1)!}\left(x-\frac{\pi}{4}\right)^{2k+1}}_{\mbox{odd term}}\right]
-</mrow><mrow>
-&amp;=\sum_{k=0}^n \left[\frac{(-1)^k}{(2k)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k}
-+
-\frac{(-1)^k}{(2k+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k+1}\right]
-</mrow>
-</md>
-To verify that the first sum really is the same as the second
-            sum, write out the first few terms of each explicitly.
+So, the pattern of derivatives is <m>\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, etc. This is a little tricky to write in sigma notation. We can deal with the <q>doubles</q> by separating the even and odd powers. The first few terms of <m>T_{2n}</m> that contain even powers of <m>\left(x-\frac{\pi}{4}\right)</m> are
+<me>
+\underbrace{\frac{1}{\sqrt{2}}}_{k=0}
+-\underbrace{\frac{1}{2!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2}}_{k=2}
++\underbrace{\frac{1}{4!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{4}}_{k=4}
+</me>
+Observe that the signs alternate between successive terms. So if we rename <m>k</m> to <m>2\ell</m> these terms are
+<me>
+\underbrace{\frac{1}{\sqrt{2}}}_{\ell=0}
+-\underbrace{\frac{1}{2!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2}}_{\ell=1}
++\underbrace{\frac{1}{4!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{4}}_{\ell=2}
+</me>
+and the <m>\ell^{\rm th}</m> term here is 
+<m>\frac{(-1)^\ell}{(2\ell)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell}</m>. To verify that this really is the <m>\ell^{\rm th}</m> term, evaluate this for <m>\ell=0,1,2</m> explicitly. When <m>k=2n</m>, <m>\ell=n</m> so that
+<me>
+\sum_{\atp{0\le k\le 2n}{k{\rm\ even}}} \frac{f^{(k)}\left(\frac{\pi}{4}\right)}{k!}\left(x-\frac{\pi}{4}\right)^k
+=\sum_{\ell=0}^{n}\frac{(-1)^\ell}{(2\ell)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell}
+</me>
+Now for the odd powers.  The first few terms of <m>T_{2n}</m> that contain odd powers of <m>\left(x-\frac{\pi}{4}\right)</m> are
+<me>
+\underbrace{\frac{1}{\sqrt{2}}\left(x-\frac{\pi}{4}\right)}_{k=1}
+-\underbrace{\frac{1}{3!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{3}}_{k=3}
++\underbrace{\frac{1}{5!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{5}}_{k=5}
+</me>
+Observe that the signs again alternate between successive terms. So if we rename <m>k</m> to <m>2\ell+1</m> these terms are
+<me>
+\underbrace{\frac{1}{\sqrt{2}}\left(x-\frac{\pi}{4}\right)}_{\ell=0}
+-\underbrace{\frac{1}{3!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{3}}_{\ell=1}
++\underbrace{\frac{1}{5!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{5}}_{\ell=2}
+</me>
+and the <m>\ell^{\rm th}</m> term here is 
+<m>\frac{(-1)^\ell}{(2\ell+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell+1}</m>. 
+To verify that this really is the <m>\ell^{\rm th}</m> term, evaluate this for <m>\ell=0,1,2</m> explicitly.
+The largest odd integer that is smaller than <m>2n</m> is <m>2n-1</m> and when <m>k=2n-1=2\ell+1</m>, 
+<m>\ell=n-1</m> so that
+<me>
+\sum_{\atp{0\le k\le 2n}{k{\rm\ odd}}} \frac{f^{(k)}\left(\frac{\pi}{4}\right)}{k!}\left(x-\frac{\pi}{4}\right)^k
+=\sum_{\ell=0}^{n-1}\frac{(-1)^\ell}{(2\ell+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell+1}
+</me>
+Putting the even and odd powers together
+<me>
+T_{2n}(x)=\sum_{\ell=0}^{n}\frac{(-1)^\ell}{(2\ell)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell}
++\sum_{\ell=0}^{n-1}\frac{(-1)^\ell}{(2\ell+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell+1}
+</me>
 </p></solution>
 </exercise>
 
