@@ -1,0 +1,108 @@
+%!PS-Adobe-3.0
+%%BoundingBox:       0.0 7.2     144.0 115.2
+%%Title:              
+%%Created by:        Figure.java
+%%Date:              Mon Dec 13 22:15:58 PST 2021
+%%EndComments
+
+gsave
+
+%% ellipse library
+
+/ellipsedict 10 dict def        %% arguments: xcentre ycentre xradius yradius
+ellipsedict /emtrx matrix put  %%            startangle endangle closetype
+
+/ellipse                       %% closetype: 0 for open, 1 for chord, 2 for wedge
+    {ellipsedict begin
+       /closetype exch def
+       /endangle exch def      /startangle exch def
+       /yrad exch def          /xrad exch def
+       /y exch def             /x exch def
+       /savematrix emtrx currentmatrix def
+    x y translate
+    xrad  yrad  scale
+    newpath
+    closetype 2 eq  {0 0 moveto} if
+    0 0 1 startangle endangle arc
+    closetype 1 eq  {closepath} if
+    closetype 2 eq  {closepath} if
+    savematrix setmatrix
+    end
+    } def
+
+%%  Figure2ps dictionary
+
+/Figure2psDict 30 dict def
+Figure2psDict begin
+  /iscp false def
+  {pop pop /iscp true def} {pop pop} {pop pop pop pop pop pop} {} pathforall
+  iscp {currentpoint translate} if
+  /setpsfont {exch findfont exch scalefont setfont} bind def
+  /stringsize {/temp exch def gsave newpath 0 0 moveto
+               temp true charpath flattenpath pathbbox
+               /strh exch def /strw exch def pop  pop grestore} bind def
+
+newpath -1.0 6.2 moveto 145.0 6.2 lineto 145.0 116.2 lineto -1.0 116.2 lineto closepath clip
+/Helvetica 10 setpsfont
+0.5 setlinewidth
+newpath
+0.0  22.628571428571433  moveto
+144.0  22.628571428571433  lineto stroke
+newpath
+72.0  7.200000000000003  moveto
+72.0  115.20000000000002  lineto stroke
+newpath
+132.0  22.628571428571433  moveto
+132.0  18.771428571428576  lineto stroke
+newpath
+12.0  22.628571428571433  moveto
+12.0  18.771428571428576  lineto stroke
+1.0 setlinewidth
+newpath
+  12.0  99.77142857142859  moveto
+  24.0  89.10827043526957  lineto
+  29.999999999999993  83.44595697252618  lineto
+  35.99999999999999  77.50635384070384  lineto
+  41.99999999999999  71.22552621023084  lineto
+  48.0  64.50815751317857  lineto
+  54.0  57.19940804486957  lineto
+  57.0  53.242734573672436  lineto
+  60.0  49.01105746301191  lineto
+  62.99999999999999  44.40683381124668  lineto
+  66.0  39.24849618024598  lineto
+  67.5  36.34801703160454  lineto
+  69.0  33.09846794972323  lineto
+  69.75  31.27128058264598  lineto
+  70.5  29.224192937181563  lineto
+  71.25  26.78355261649008  lineto
+  71.625  25.246045558859397  lineto
+  71.8125  24.277476805723982  lineto
+  71.90625  23.667316725551117  lineto
+  71.953125  23.28293996114345  lineto
+  72.0  22.62857142969401  lineto
+  72.046875  23.282939961143388  lineto
+  72.09375  23.667316725551068  lineto
+  72.1875  24.277476805723943  lineto
+  72.375  25.246045558859365  lineto
+  72.75  26.783552616490056  lineto
+  73.5  29.22419293718154  lineto
+  74.25  31.271280582645957  lineto
+  75.0  33.098467949723215  lineto
+  76.5  36.34801703160453  lineto
+  78.0  39.248496180245965  lineto
+  81.0  44.40683381124666  lineto
+  84.0  49.0110574630119  lineto
+  87.0  53.24273457367242  lineto
+  90.0  57.199408044869564  lineto
+  96.0  64.50815751317856  lineto
+  102.0  71.22552621023084  lineto
+  108.0  77.50635384070384  lineto
+  114.0  83.44595697252618  lineto
+  120.0  89.10827043526957  lineto
+  132.0  99.77142857142859  lineto
+stroke
+
+
+%%Trailer
+end
+grestore
