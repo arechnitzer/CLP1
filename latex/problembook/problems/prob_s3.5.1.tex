@@ -106,9 +106,6 @@ The $x$-coordinate corresponding to the blue dot (let's call it $a$) is a critic
 
 If a function is not continuous at a point, then it is not differentiable at that point. So, the $x$-coordinate  corresponding to the discontinuity (let's call it $b$) is a singular point. Values of $f(x)$ immediately to the right of $b$ are lower, and values immediately to the left of $b$ are higher, so $f(x)$ has no local (or global) extremum at $x=b$.
 
-If we wanted to know the derivative of the function at the left endpoint, we would take the derivative from the right. This looks to be some negative real number: so it exists (therefore, the left endpoint is not a singular point) and is not zero (therefore, the left endpoint is not a critical point). Endpoints \emph{can} be critical and singular points, but this one happens to be neither.
-
-Similarly, at the right endpoint of the interval $f'(x)$ is some negative real number, so this point is neither critical nor singular.
 
 Remark: $f(x)$ has a global maximum at the left-most endpoint of the interval. However, we do not call this a local maximum. In order for $f(x)$ to have a local maximum at $x=c$, $c$ must be strictly inside the domain of the function. In short: \emph{endpoints can't be local extrema}.
 
@@ -161,7 +158,7 @@ For every $x$ in the red interval shown below, $f(2) \geq f(x)$, so $f(2)$ is a 
 
 
 \begin{Mquestion}
-Suppose $f(x)=\dfrac{x^2-10}{x-5}$.
+Suppose $f(x)=\dfrac{x-1}{x^2+3}$.
 \begin{enumerate}[(a)]
 \item Find all critical points.
 \item Find all singular points.
@@ -169,35 +166,33 @@ Suppose $f(x)=\dfrac{x^2-10}{x-5}$.
 \end{enumerate}
 \end{Mquestion}
 \begin{hint}
-Critical points are those values of $x$ in the domain of $f(x)$  for which $f'(x)=0$.
+Critical points are those values of $x$ for which $f'(x)=0$.
 \\
-Singular points are those values of $x$ in the domain of $f(x)$ for which $f(x)$ is not differentiable.
+Singular points are those values of $x$ for which $f(x)$ is not differentiable.
 \end{hint}
 \begin{answer}
-The critical points are $x=5+\sqrt{15}$ and $x=5-\sqrt{15}$.
+The critical points are $x=3$ and $x=-1$.
 These two points are the only places where local extrema might exist.
 There are no singular points.
 \end{answer}
 \begin{solution}
-Critical points are those values of $x$ in the domain of $f(x)$  for which $f'(x)=0$, and
-singular points are those values of $x$  in the domain of $f(x)$ for which $f(x)$ is not differentiable.
+Critical points are those values of $x$ for which $f'(x)=0$, and
+singular points are those values of $x$ for which $f(x)$ is not differentiable.
 So, we ought to find $f'(x)$.
 Using the quotient rule,
 \begin{align*}
-f'(x)&=\frac{(x-5)(2x)-(x^2-10)}{(x-5)^2}\\
-&=\frac{x^2-10x+10}{(x-5)^2}
-\intertext{The only place where this function doesn't exist is $x=5$. Since $5$ is not in the domain of $f(x)$,}
-\intertext{(b) $f(x)$ has no singular points. }
-\intertext{To find the critical points, we find where $f'(x)=0$. That is:}
-0&=x^2-10x+10
-\intertext{Using the quadratic formula,}
-x&=\dfrac{10\pm\sqrt{10^2-4(1)(10)}}{2}\\
-&=5 \pm \sqrt{15}
+f'(x)&=\frac{(1)(x^2+3)-(x-1)(2x)}{{(x^2+3)}^2}\\
+&=\frac{-x^2+2x+3}{{(x^2+3)}^2} \\
+&=-\frac{(x-3)(x+1)}{{(x^2+3)}^2}
 \end{align*}
-(a) So the critical points of $f(x)$ are $x=5+\sqrt{15}$ and $x=5-\sqrt{15}$.
+
+(a) The derivative $f'(x)$ is zero when $x=3$ and when $x=-1$, so those are the critical points.
+
+(b) The denominator of $f'(x)$ is never zero, so the derivative $f'(x)$ exists for all $x$ and $f(x)$ has no singular points.
+
 
 (c) Theorem~\ref*{thm:APPlocalMaxMin} tells us that local extrema of $f(x)$ can only occur at critical points and singular points.
-So, the possible points where extrema of $f(x)$ may exist are $x=5+\sqrt{15}$ and $x=5-\sqrt{15}$.
+So, the possible points where extrema of $f(x)$ may exist are $x=3$ and $x=-1$.
 \end{solution}
 
 
@@ -395,7 +390,8 @@ There are many possible answers. Every answer must have $x=2$ as a singular poin
 \end{center}
 \end{answer}
 \begin{solution}
-By Theorem~\ref*{thm:APPlocalMaxMin}, if $x=2$ not a critical point, then it must be a singular point. That is, $f(x)$ is not differentiable at $x=2$. Also, remember that endpoints are not local extrema. Two possibilities are shown below, but there are infinitely many possible answers.
+As $f(2)$ is to be a local maximum, $x=2$ must be in the domain of $f$ and must not be an endpoint.
+By Theorem~\ref*{thm:APPlocalMaxMin}, if $x=2$ not a critical point, then it must be a singular point. That is, $f(x)$ is not differentiable at $x=2$. Two possibilities are shown below, but there are infinitely many possible answers.
 \begin{center}
 \begin{tikzpicture}
 \YEaxis{2}{2}

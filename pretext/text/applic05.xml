@@ -346,12 +346,13 @@ we give these points names.</p>
 
 <definition xml:id="def_APPcriticalPoint">
 <statement><p>
-Let <m>f(x)</m> be a function and let <m>c</m> be a point in its domain. Then
+Let <m>f(x)</m> be a function  that is defined on the interval <m>a\lt x\lt b</m> 
+             and let <m>a \lt c\lt b</m>. Then
 <ul>
 <li> if <m>f'(c)</m> exists and is zero we call <m>x=c</m> a critical point of the
 function, and
 </li>
-<li> if <m>f'(c)</m> does not exist then we call <m>x=c</m> a singular point of the
+<li> if <m>f'(c)</m> does not exist then we call <m>x=c</m> a singular point<fn>For <m>c</m> to be a local maximum or minimum of <m>f</m>, the function <m>f</m> must obviously be defined at <m>c</m>. So here we are considering only points <m>c</m> in the domain of <m>f</m>. We will later, in &#xA7;<xref ref="ssec_sketch_FD"/>, extend the definition of singular points of <m>f</m> to points that are not in the domain of <m>f</m>.</fn> of the
 function.
 </li>
 </ul>
@@ -464,7 +465,7 @@ minimum</em> for the function.
 is true, then observe Q and conclude P <mdash/> this is false. <q>If he is Shakespeare then he
 is dead</q> <q>That man is dead</q> <q>He must be Shakespeare</q>. Or you may have also seen
 someone use this reasoning: <q>If a person is a genius before their time then they are
-misunderstood.</q> <q>I am misunderstood</q> <q>So I must be a genius before my time.</q>.
+misunderstood.</q> <q>I am misunderstood</q> <q>So I must be a genius before my time</q>.
 </fn>
 that, <q>if <m>f(x)</m> has a local maximum/minimum at <m>x=c</m> and if <m>f</m> is differentiable at
 <m>x=c</m>, then <m>f'(c)=0</m></q>. It <alert>does not say</alert> that <q>if <m>f'(c)=0</m> then <m>f</m>
@@ -473,7 +474,7 @@ has a local maximum/minimum at <m>x=c</m></q>.
 </ul>
 </p></example>
 
-<example xml:id="eg_localMinMaxC"><title>Local max and min of <m>|x|</m></title>
+<example xml:id="eg_localMinMaxC"><title>Local max and min of <m>|x|</m> and <m>x^{2/3}</m></title>
 <p>
 In this example, we'll look for local maxima and minima of the function
 <md>
@@ -485,32 +486,45 @@ f(x) = |x| = \begin{cases}
        \end{cases}
 </mrow>
 </md>
+on the interval <m>-1\le x\le 1</m> and we'll also look for local maxima and minima of the function
+<me>
+g(x) = x^{2/3}
+</me>
 on the interval <m>-1\le x\le 1</m>.
 <ul>
-<li> Again, start by computing the derivative (reread Example<nbsp/><xref ref="eg_diff_abs"/>):
+<li> Again, start by computing the derivatives (reread Example<nbsp/><xref ref="eg_diff_abs"/>):
 <md>
 <mrow>
-f'(x) = \begin{cases}
+f'(x) &amp;= \begin{cases}
            1  &amp; \text{if }x  \gt  0
-</mrow><mrow>
+           </mrow><mrow>
            \text{undefined}  &amp; \text{if }x = 0
 </mrow><mrow>
            -1 &amp; \text{if }x  \lt   0
        \end{cases}
+</mrow><mrow>
+g'(x) &amp;= \begin{cases}
+           \frac{2}{3} x^{-1/3} &amp; \text{if }x \ne 0 
+          </mrow><mrow>
+           \text{undefined}  &amp; \text{if }x = 0 
+       \end{cases}
 </mrow>
 </md>
 </li>
-<li> This derivative <em>never</em> takes the value <m>0</m>, so the function does
-not have any critical points. However the derivative does not exist at the
-point <m>x=0</m>, so that point is a singular point.
+<li> These derivatives <em>never</em> take the value <m>0</m>, so the functions <m>f(x)</m> and <m>g(x)</m> do not have any critical points. However both derivatives do not exist at the
+point <m>x=0</m>, so that point is a singular point for both <m>f(x)</m> and <m>g(x)</m>.
 </li>
-<li><p> Here is a sketch of the graph of <m>f(x)</m>.</p>
-
-<sidebyside width="50%">
+<li><p> Here is a sketch of the graph of <m>f(x)</m></p>
+<sidebyside width="55%">
 <image source="text/figs/localMaxMinC"/>
 </sidebyside>
-<p>From the figure we see that <m>f(x)</m> has a local (and in fact global)
-minimum at <m>x=0</m> despite the fact that <m>f'(0)</m> is not a critical point.</p>
+<p>and a sketch of the graph of <m>g(x)</m>.</p>
+<sidebyside width="57%">
+<image source="text/figs/localMaxMinCC"/>
+</sidebyside>
+
+<p>From the figures we see that both <m>f(x)</m> and <m>g(x)</m> have a local (and in fact global)
+minimum at <m>x=0</m> despite the fact that <m>x=0</m> is not a critical point.</p>
 </li>
 <li> Reread Theorem <xref ref="thm_APPlocalMaxMin"/> yet again. It says that,
 <q>if <m>f(x)</m> has a local maximum/minimum at <m>x=c</m>

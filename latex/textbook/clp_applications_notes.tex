@@ -5008,12 +5008,15 @@ This theorem demonstrates that the points at which the derivative is zero or
 does not exist are very important. It simplifies the discussion that follows if
 we give these points names.
 \begin{defn}\label{def:APPcriticalPoint} %%%%%%%%%%%%%%%%%%%%%
-Let $f(x)$ be a function and let $c$ be a point in its domain. Then
+Let $f(x)$ be a function that is defined on the interval $a<x<b$ and let $a<c<b$. Then
 \begin{itemize}
  \item if $f'(c)$ exists and is zero we call $x=c$ a critical point of the
 function, and
- \item if $f'(c)$ does not exist then we call $x=c$ a singular point of the
-function.
+ \item if $f'(c)$ does not exist then we call $x=c$ a 
+singular point\footnote{For $c$ to be a local maximum or minimum of $f$, the function $f$ must obviously be defined at $c$. So here we are 
+considering only points $c$ in the domain of $f$. We will later,
+in Section \ref{ssec_sketch_FD}, extend the definition of singular points
+of $f$ to points that are not in the domain of $f$.} of the function.
 \end{itemize}
 \end{defn}
 
@@ -5104,7 +5107,7 @@ error of logic that people make is ``Affirming the consequent''. ``If P then Q''
 is true, then observe Q and conclude P --- this is false. ``If he is Shakespeare then he
 is dead'' ``That man is dead'' ``He must be Shakespeare''. Or you may have also seen
 someone use this reasoning: ``If a person is a genius before their time then they are
-misunderstood.'' ``I am misunderstood'' ``So I must be a genius before my time.''. Or }
+misunderstood.'' ``I am misunderstood'' ``So I must be a genius before my time''.}
 that, ``if $f(x)$ has a local maximum/minimum at $x=c$ and if $f$ is differentiable at
 $x=c$, then $f'(c)=0$''. It \emph{does not say} that ``if $f'(c)=0$ then $f$
 has a local maximum/minimum at $x=c$''.
@@ -5120,29 +5123,43 @@ f(x) = |x| = \begin{cases}
            -x & \text{if }x <  0
        \end{cases}
 \end{align*}
+on the interval $-1\le x\le 1$ and we'll also look for local maxima and minima of the function
+\begin{align*}
+g(x) = x^{2/3}
+\end{align*}
 on the interval $-1\le x\le 1$.
 \begin{itemize}
- \item Again, start by computing the derivative (reread Example~\ref{eg diff
+ \item Again, start by computing the derivatives (reread Example~\ref{eg diff
 abs}):
 \begin{align*}
-f'(x) = \begin{cases}
+f'(x) &= \begin{cases}
            1  & \text{if }x > 0 \\
            \text{undefined}  & \text{if }x = 0 \\
            -1 & \text{if }x <  0
        \end{cases}
+\\
+g'(x) &= \begin{cases}
+           \frac{2}{3} x^{-1/3} & \text{if }x \ne 0 \\
+           \text{undefined}  & \text{if }x = 0 
+       \end{cases}
 \end{align*}
-\item This derivative \emph{never} takes the value $0$, so the function does
-not have any critical points. However the derivative does not exist at the
-point $x=0$, so that point is a singular point.
+\item These derivatives \emph{never} take the value $0$, so the functions
+$f(x)$ and $g(x)$ do not have any critical points. However both derivatives do not exist at the point $x=0$, so that point is a singular point for both $f(x)$ and $g(x)$.
 
-\item Here is a sketch of the graph of $f(x)$.
+\item Here is a sketch of the graph of $f(x)$
 \begin{efig}
 \begin{center}
    \includegraphics{localMaxMinC}
 \end{center}
 \end{efig}
-From the figure we see that $f(x)$ has a local (and in fact global)
-minimum at $x=0$ despite the fact that $f'(0)$ is not a critical point.
+and a sketch of the graph of $g(x)$.
+\begin{efig}
+\begin{center}
+   \includegraphics{localMaxMinCC}
+\end{center}
+\end{efig}
+From the figures we see that both $f(x)$ and $g(x)$ have a local 
+(and in fact global) minimum at $x=0$ despite the fact that $x=0$ is not a critical point.
 \item Reread Theorem \ref{thm:APPlocalMaxMin} yet again. It says that,
 ``if $f(x)$ has a local maximum/minimum at $x=c$
 \emph{and if $f$ is differentiable at $x=c$}, then $f'(c)=0$''.
@@ -6433,8 +6450,8 @@ and smooth them out to get the a good sketch of this function (below right).
 \subsection{First Derivative --- Increasing or Decreasing}\label{ssec_sketch_FD}
 Now we move on to the first derivative, $f'(x)$. This is a good time to revisit the
 mean-value theorem (Theorem~\ref{thm:DIFFmvt}) and some of its consequences
-(Corollary~\ref{cor:DIFFmvtcons}). In particular, let us assume that $f(x)$ is continuous
-on an interval $[A,B]$ and differentiable on $(A,B)$. Then
+(Corollary~\ref{cor:DIFFmvtcons}). There we considered any function $f(x)$ that is 
+continuous on an interval $A\le x\le B$ and is differentiable on $A<x<B$. Then
 \begin{itemize}
  \item if $f'(x)>0$ for all $A<x<B$, then $f(x)$ is increasing on $(A,B)$\\
   --- that is, for all $A<a<b<B$, $f(a)< f(b)$.
@@ -6443,8 +6460,13 @@ on an interval $[A,B]$ and differentiable on $(A,B)$. Then
 \end{itemize}
 Thus the sign of the derivative indicates to us whether the function is increasing or
 decreasing. Further, as we discussed in Section~\ref{ssec maxmin}, we should also examine
-points at which the derivative is zero --- critical points --- and where the derivative
-does not exist --- singular points. These points may indicate a local maximum or minimum.
+points at which the derivative is zero --- critical points --- and points where the derivative
+does not exist. These points may indicate a local maximum or minimum.
+
+We will now consider a function $f(x)$ that is defined on an interval $I$, 
+\emph{except possibly} at finitely many points of $I$. If $f$ or its derivative $f'$ 
+is not defined at a point $a$ of $I$, then we call $a$ a 
+\emph{singular point}\footnote{This is the extension of the definition of ``singular point'' that was mentioned in the footnote in Definition 3.5.6.} of $f$.
 
 After studying the function $f(x)$ as described above, we should compute its derivative
 $f'(x)$.

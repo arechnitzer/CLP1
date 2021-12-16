@@ -111,8 +111,7 @@ and smooth them out to get the a good sketch of this function (below right).</p>
 <title>First Derivative <mdash/> Increasing or Decreasing</title>
 <p>Now we move on to the first derivative, <m>f'(x)</m>. This is a good time to revisit the
 mean-value theorem (Theorem<nbsp/><xref ref="thm_DIFFmvt"/>) and some of its consequences
-(Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>). In particular, let us assume that <m>f(x)</m> is continuous
-on an interval <m>[A,B]</m> and differentiable on <m>(A,B)</m>. Then
+(Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>). There we considered any function  <m>f(x)</m> that is continuous on an interval <m>A\le x\le B</m> and differentiable on <m>A\lt x\lt B</m>. Then
 <ul>
 <li><p> if <m>f'(x) \gt 0</m> for all <m>A \lt x \lt B</m>, then <m>f(x)</m> is increasing on <m>(A,B)</m></p>
   <p><mdash/> that is, for all <m>A \lt a \lt b \lt B</m>, <m>f(a) \lt  f(b)</m>.</p>
@@ -123,8 +122,14 @@ on an interval <m>[A,B]</m> and differentiable on <m>(A,B)</m>. Then
 </ul>
 Thus the sign of the derivative indicates to us whether the function is increasing or
 decreasing. Further, as we discussed in Section<nbsp/><xref ref="ssec_maxmin"/>, we should also examine
-points at which the derivative is zero <mdash/> critical points <mdash/> and where the derivative
-does not exist <mdash/> singular points. These points may indicate a local maximum or minimum.
+points at which the derivative is zero <mdash/> critical points <mdash/> and points where the derivative
+does not exist. These points may indicate a local maximum or minimum.
+</p>
+
+<p>
+We will now consider a function <m>f(x)</m> that is defined on an interval <m>I</m>, 
+<em>except possibly</em> at finitely many points of <m>I</m>. If <m>f</m> or its derivative <m>f'</m> 
+is not defined at a point <m>a</m> of <m>I</m>, then we call <m>a</m> a <em>singular point</em><fn>This is the extension of the definition of <q>singular point</q> mentioned in the footnote in Definition <xref ref="def_APPcriticalPoint"/>.  </fn> of <m>f</m>.
 </p>
 
 <p>After studying the function <m>f(x)</m> as described above, we should compute its derivative

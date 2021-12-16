@@ -105,6 +105,37 @@ so the
 In particular, if you are walking along the <m>x</m><ndash/>axis and your <m>x</m><ndash/>coordinate at time <m>t</m> is <m>x(t)</m>, then <m>x'(a)</m> is the instantaneous rate of change (per unit time) of your <m>x</m><ndash/>coordinate at time <m>t=a</m>, which is  your velocity at time <m>a</m>. If <m>v(t)</m> is your velocity at time <m>t</m>, then <m>v'(a)</m> is the instantaneous rate of change of your velocity at time  <m>a</m>. This is called your acceleration at time <m>a</m>.
 </p>
 
+<p>
+You might expect that if the instantaneous rate of change of a function at time <m>c</m> is strictly positive, then, in some sense, the function is increasing at <m>t=c</m>. You would be right. Indeed, if <m>f'(c)\gt 0</m>, then, by definition, the limit of <m>\frac{f(t)-f(c)}{t-c}</m> as <m>t</m> approaches <m>c</m> is strictly bigger than zero. So 
+<ul>
+<li>
+for all <m>t\gt c</m> that are sufficiently close<fn>This is typical mathematician speak <mdash/> it allows us to be completely correct, without being terribly precise. In this context, <em>sufficiently close</em> means <em>The following need not be true for all <m>t</m> bigger than <m>c</m>, but there must exist some <m>b\gt c</m> so that the following is true for all <m>c\lt t\lt b</m></em>. Typically we do not know what <m>b</m> is. And typically it does not matter what the exact value of <m>b</m> is. All that matters is that <m>b</m> exists and is strictly bigger than <m>c</m>.</fn> to <m>c</m>
+<md>
+<mrow>
+         \frac{f(t)-f(c)}{t-c}\gt 0
+          \amp \implies f(t)-f(c) \gt 0\qquad (\text{since }t-c\gt 0) 
+</mrow><mrow>
+          \amp \implies f(t)\gt f(c)
+</mrow>
+</md>
+</li><li>
+for all <m>t\lt c</m> that are sufficiently close to <m>c</m>
+<md>
+<mrow>
+       \frac{f(t)-f(c)}{t-c}\gt 0
+          \amp \implies f(t)-f(c) \lt 0\qquad (\text{since }t\lt c) 
+</mrow><mrow>
+          \amp \implies f(t)\lt f(c)
+</mrow>
+</md>
+</li>
+</ul>
+Consequently we say that <q><m>f(t)</m> is increasing at <m>t=c</m></q>. If we wish
+to emphasise that the inequalities above are the strict inequalities
+<m>\gt</m> and <m>\lt</m>, as opposed to <m>\ge</m> and <m>\le</m>, we will say that
+<q><m>f(t)</m> is strictly increasing at <m>t=c</m></q>.
+</p>
+
 </subsection>
 <subsection><title>Slope</title>
 
