@@ -6717,6 +6717,167 @@ following sketch
 \end{eg}
 
 
+\begin{eg}[Optional ---  $y=x^{1/3}$ and $y = x^{2/3}$]\label{eg_InflectSing}
+
+In our Definition~\ref{def_3_6_1}, concerning concavity and inflection points,
+we considered only functions having first and second derivatives on the entire
+interval of interest. In this example, we will consider the functions
+\begin{equation*}
+f(x)=x^{1/3}\qquad g(x)=x^{2/3}
+\end{equation*}
+We shall see that $x=0$ is a singular point for both of those functions.
+There is no universal agreement as to precisely when a singular point should 
+also be called an inflection point. We choose to extend our definition of
+inflection point in Definition~\ref{def_3_6_1} as follows. If 
+\begin{itemize}
+\item 
+the function $f(x)$ is defined and continuous on an interval $a<x<b$ and
+if
+\item 
+the first and second derivatives $f'(x)$ and $f''(x)$ exist on $a<x<b$
+except possibly at the single point $a<c<b$ and if
+\item 
+$f$ is concave up on one side of $c$ and is concave down on the other 
+side of $c$
+\end{itemize}
+then we say that $\big(c\,,\,f(c)\big)$ is an inflection point of $y=f(x)$. 
+Now let's check out $y=f(x)$ and $y=g(x)$ from this point of view.
+\begin{enumerate}[(1)]
+\item Features of $y=f(x)$ and $y=g(x)$ that are read off of $f(x)$ and $g(x)$: 
+\begin{itemize}
+ \item 
+    Since $f(0)=0^{1/3}=0$ and $g(0)=0^{2/3}=0$, the origin $(0,0)$ lies on 
+    both $y=f(x)$ and $y=g(x)$.
+ \item
+    For example, $1^3=1$ and $(-1)^3=-1$ so that the cube root of $1$ is 
+    $1^{1/3}=1$ and the cube root of $-1$ is $(-1)^{1/3}=-1$. In general,
+    \begin{equation*}
+       x^{1/3}\begin{cases}
+               <0 & \text{if }x< 0 \\
+               =0 & \text{if }x=0 \\
+               >0 & \text{if }x> 0 
+              \end{cases}
+    \end{equation*}
+   Consequently the graph $y=f(x)=x^{1/3}$ lies below the $x$-axis when $x<0$
+   and lies above the $x$-axis when $x>0$. On the other hand, the graph
+   $y=g(x)=x^{2/3}=\big[x^{1/3}\big]^2$ lies on or above the $x$-axis for all
+   $x$.
+  \item As $x\rightarrow+\infty$,  both $y=f(x)=x^{1/3}$ and   
+   $y=g(x)=x^{2/3}$ tend to $+\infty$.
+  \item As $x\rightarrow-\infty$, $y=f(x)=x^{1/3}$ tends to $-\infty$ and   
+   $y=g(x)=x^{2/3}$ tends to $+\infty$.
+\end{itemize}
+\item Features of $y=f(x)$ and $y=g(x)$ that are read off of $f'(x)$ 
+      and $g'(x)$:
+      \begin{align*}
+         f'(x) &=  \left.\begin{cases}
+                      \tfrac{1}{3}x^{-2/3} & \text{if }x\ne 0 \\
+                      \text{undefined} & \text{if }x =0  
+              \end{cases}\right\}
+              \implies f'(x)>0\text{ for all }x\ne 0 
+              \\
+          g'(x) &=  \left.\begin{cases}
+                      \tfrac{2}{3}x^{-1/3} & \text{if }x\ne 0 \\
+                      \text{undefined} & \text{if }x =0  
+              \end{cases}\right\}
+               \implies g'(x)
+                    \begin{cases}<0&\text{if }x< 0\\ 
+                                 >0&\text{if }x> 0
+                    \end{cases} 
+      \end{align*}
+      So the graph $y=f(x)$ is increasing on both sides of the singular point   
+      $x=0$, while the graph $y=g(x)$ is decreasing to the left of $x=0$ and
+      is increasing to the right of $x=0$. As $x\rightarrow 0$, $f'(x)$ and
+      $g'(x)$ become infinite. That is, the slopes of the tangent lines at
+      $\big(x,f(x)\big)$ and $\big(x,g(x)\big)$ become infinite and the 
+      tangent lines become vertical.
+ 
+\item Features of $y=f(x)$ and $y=g(x)$ that are read off of $f''(x)$ 
+      and $g''(x)$:
+      \begin{align*}
+         f''(x) &=  \left.\begin{cases}
+                      -\tfrac{2}{9}x^{-5/3} =-\tfrac{2}{9}{\big[x^{-1/3}]}^{5}
+                                                   & \text{if }x\ne 0 \\
+                      \text{undefined} & \text{if }x =0  
+              \end{cases}\right\}
+              \implies f''(x) 
+                      \begin{cases}>0&\text{if }x< 0\\ 
+                                   <0&\text{if }x> 0
+                    \end{cases} 
+              \\
+          g''(x) &=  \left.\begin{cases}
+                      -\tfrac{2}{9}x^{-4/3} =-\tfrac{2}{9}{\big[x^{-1/3}]}^{4} 
+                                               & \text{if }x\ne 0 \\
+                      \text{undefined} & \text{if }x =0  
+              \end{cases}\right\}
+             \implies g''(x)<0\text{ for all }x\ne 0 
+      \end{align*}
+      So the graph $y=g(x)$ is concave down on both sides of the singular point   
+      $x=0$, while the graph $y=f(x)$ is concave up to the left of $x=0$ and
+      is concave down to the right of $x=0$.
+
+\end{enumerate}
+By way of summary, we have, for $f(x)$,
+\begin{center}
+\begin{tabular}{|c||c||c||c||}
+\hline
+interval & $(-\infty,0)$ & 0 & $(0,\infty)$\\
+\hline
+$f(x)$ & negative & 0 & positive  \\
+\hline
+$f'(x)$ & positive & undefined & positive  \\
+\hline
+   & increasing &  & increasing \\
+\hline
+$f''(x)$ & positive & undefined & negative  \\
+\hline
+ & concave up & inflection & concave down 
+\\
+\hline
+\end{tabular}
+\end{center}
+and for $g(x)$,
+\begin{center}
+\begin{tabular}{|c||c||c||c||}
+\hline
+interval & $(-\infty,0)$ & 0 & $(0,\infty)$\\
+\hline
+$g(x)$ & positive & 0 & positive  \\
+\hline
+$g'(x)$ & negative & undefined & positive  \\
+\hline
+       & decreasing &  & increasing \\
+\hline
+$g''(x)$ & negative & undefined & negative  \\
+\hline
+   & concave down &  & concave down 
+\\
+\hline
+\end{tabular}
+\end{center}
+Since the concavity changes at $x=0$ for $y=f(x)$, but not for $y=g(x)$,
+$(0,0)$ is an inflection point for $y=f(x)$, but not for $y=g(x)$.
+We have the following sketch for $y=f(x)=x^{1/3}$,
+\begin{efig}
+ \begin{center}
+  \includegraphics{sketch9} 
+ \end{center}
+\end{efig}
+and the following sketch for $y=g(x)=x^{2/3}$.
+\begin{efig}
+ \begin{center}
+  \includegraphics{sketch10}
+ \end{center}
+\end{efig}
+Note that the curve $y=f(x)=x^{1/3}$ looks perfectly smooth, even though 
+$f'(x)\rightarrow\infty$ as $x\rightarrow 0$. There is no kink or discontinuity at $(0,0)$. The singularity at $x=0$ has caused the $y$-axis to be a vertical tangent to the curve, but has not prevented the curve from looking smooth.
+
+
+\end{eg}
+
+
+
+
 %
 %
 % Suppose that $f''(x)>0$ for all $a<x<b$. Since $f''(x)=\diff{}{x}f'(x)$,
