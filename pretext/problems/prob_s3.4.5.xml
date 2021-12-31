@@ -88,7 +88,7 @@ Give the 100th degree Taylor polynomial for <m>s(t)=4.9t^2-t+10</m> about <m>t=5
 You are approximating a polynomial with a polynomial.
 </p></hint>
 <answer><p>
-<m>T_{100}(t)=4.9t^2-t+10</m>
+<m>T_{100}(t)=127.5+48(t-5)+4.9(t-5)^2=4.9t^2-t+10</m>
 </p></answer>
 <solution><p>
 A Taylor polynomial gives a polynomial approximation for a function <m>s(t)</m>. Since <m>s(t)</m> is itself a polynomial, any <m>n</m>th-degree Taylor polynomial, with <m>n</m> greater than or equal to the degree of <m>s(t)</m>, will simply give <m>s(t)</m>. So, in our case, <m>T_{100}(t)=s(t)=4.9t^2-t+10</m>.
@@ -97,9 +97,9 @@ A Taylor polynomial gives a polynomial approximation for a function <m>s(t)</m>.
 <p>If that isn't satisfying, you can go through the normal method of calculating <m>T_{100}(t)</m>.
 <md>
 <mrow>
-s(t)&amp;=4.9t^2-t+10 &amp; s(5)&amp;=4.9(25)-5+10=4.9(25)+5
+s(t)&amp;=4.9t^2-t+10 &amp; s(5)&amp;=4.9(25)-5+10=127.5
 </mrow><mrow>
-s'(t)&amp;=9.8t-1 &amp; s'(5)&amp;=9.8(5)-1
+s'(t)&amp;=9.8t-1 &amp; s'(5)&amp;=9.8(5)-1=48
 </mrow><mrow>
 s''(t)&amp;=9.8 &amp; s''(5)&amp;=9.8
 </mrow>
@@ -107,13 +107,19 @@ s''(t)&amp;=9.8 &amp; s''(5)&amp;=9.8
 The rest of the derivatives of <m>s(t)</m> are identically zero, so they are (in particular) zero when <m>t=5</m>. Therefore,
 <md>
 <mrow>
-T_{100}(t)&amp;=4.9(25)+5+(9.8(5)-1)(t-5)+\frac{1}{2}9.8(t-5)^2
+T_{100}(t)&amp;=127.5+48(t-5)+\frac{1}{2}9.8(t-5)^2
 </mrow><mrow>
-&amp;=4.9(25)+5+(9.8(5)-1)(t-5)+4.9(t^2-10t+25)
+&amp;=127.5+48(t-5)+4.9(t-5)^2
+</mrow>
+</md>
+We can now check that <m>T_{100}(t)</m> really is the same as <m>s(t)</m>.
+<md>
+<mrow>
+T_{100}(t)&amp;=127.5+48(t-5)+4.9(t-5)^2
 </mrow><mrow>
-&amp;=[4.9(25)+5+(9.8(5)-1)(-5)+4.9(25)]
+&amp;=127.5+48(t-5)+4.9(t^2-10t+25)
 </mrow><mrow>
-\amp\hskip1in+[9.8(5)-1-4.9(10)]t+4.9t^2
+&amp;=[127.5+48(-5)+4.9(25)]+[48-4.9(10)]t+4.9t^2
 </mrow><mrow>
 &amp;=10-t+4.9t^2=s(t)
 </mrow>
@@ -471,22 +477,19 @@ T_{100}(x)&amp;=\sum_{k=0}^{100}\frac{f^{(k)}(1)}{k!}(x-1)^k
 Write the <m>(2n)</m>th-degree Taylor polynomial for <m>f(x)=\sin x</m> about <m>x=\dfrac{\pi}{4}</m> in sigma notation.
 </p></statement>
 <hint><p>
-You'll have to deal with <q>doubles</q> of coefficients in the Taylor polynomial. The following is a way of getting them into sigma notation:
-<md>
-<mrow>
-&amp;1+1-1-1+1+1-1-1
-</mrow><mrow>
-= &amp;(1+1)+(-1-1)+(1+1)+(-1-1)
-</mrow><mrow>
-=&amp;\sum_{k=0}^3 \left[(-1)^k+(-1)^k\right]</mrow>
-</md>
+Treat the even and odd powers separately.
 </p></hint>
 <answer><p>
-<m>T_{2n}(x)=\ds\sum_{k=0}^n \left[\dfrac{(-1)^k}{(2k)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k}
-+
-\dfrac{(-1)^k}{(2k+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k+1}\right]</m>
+<me>
+T_{2n}(x)=\sum_{\ell=0}^{n}\frac{(-1)^\ell}{(2\ell)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell}
++\sum_{\ell=0}^{n-1}\frac{(-1)^\ell}{(2\ell+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell+1}
+</me>
 </p></answer>
 <solution><p>
+Recall that
+<me>
+T_{2n}(x)=\sum_{k=0}^{2n} \frac{f^{(k)}\left(\frac{\pi}{4}\right)}{k!}\left(x-\frac{\pi}{4}\right)^k
+</me>
 Let's start by taking some derivatives. Of course, since we're differentiating sine, the derivatives will repeat every four iterations.
 <md>
 <mrow>
@@ -499,23 +502,50 @@ f''(x)&amp;=-\sin x &amp; f''\left(\frac{\pi}{4}\right)&amp;=-\frac{1}{\sqrt 2}
 f'''(x)&amp;=-\cos x &amp; f'''\left(\frac{\pi}{4}\right)&amp;=-\frac{1}{\sqrt{2}}
 </mrow>
 </md>
-So, the pattern of derivatives is <m>\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, etc. This is a little tricky to write in sigma notation. We can deal with the <q>doubles</q> by pairing consecutive even and odd terms, as shown below.
-<md>
-<mrow>
-T_{2n}(x)&amp;=\sum_{k=0}^{2n} \frac{f^{(k)}\left(\frac{\pi}{4}\right)}{k!}\left(x-\frac{\pi}{4}\right)^k
-</mrow><mrow>
-&amp;=\sum_{k=0}^{n} \left[
-\underbrace{\frac{f^{(2k)}\left(\frac{\pi}{4}\right)}{(2k)!}\left(x-\frac{\pi}{4}\right)^{2k}}_{\mbox{even term}}
-+
-\underbrace{\frac{f^{(2k+1)}\left(\frac{\pi}{4}\right)}{(2k+1)!}\left(x-\frac{\pi}{4}\right)^{2k+1}}_{\mbox{odd term}}\right]
-</mrow><mrow>
-&amp;=\sum_{k=0}^n \left[\frac{(-1)^k}{(2k)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k}
-+
-\frac{(-1)^k}{(2k+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2k+1}\right]
-</mrow>
-</md>
-To verify that the first sum really is the same as the second
-            sum, write out the first few terms of each explicitly.
+So, the pattern of derivatives is <m>\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, <m>-\dfrac{1}{\sqrt{2}}</m>, etc. This is a little tricky to write in sigma notation. We can deal with the <q>doubles</q> by separating the even and odd powers. The first few terms of <m>T_{2n}</m> that contain even powers of <m>\left(x-\frac{\pi}{4}\right)</m> are
+<me>
+\underbrace{\frac{1}{\sqrt{2}}}_{k=0}
+-\underbrace{\frac{1}{2!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2}}_{k=2}
++\underbrace{\frac{1}{4!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{4}}_{k=4}
+</me>
+Observe that the signs alternate between successive terms. So if we rename <m>k</m> to <m>2\ell</m> these terms are
+<me>
+\underbrace{\frac{1}{\sqrt{2}}}_{\ell=0}
+-\underbrace{\frac{1}{2!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2}}_{\ell=1}
++\underbrace{\frac{1}{4!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{4}}_{\ell=2}
+</me>
+and the <m>\ell^{\rm th}</m> term here is 
+<m>\frac{(-1)^\ell}{(2\ell)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell}</m>. To verify that this really is the <m>\ell^{\rm th}</m> term, evaluate this for <m>\ell=0,1,2</m> explicitly. When <m>k=2n</m>, <m>\ell=n</m> so that
+<me>
+\sum_{\atp{0\le k\le 2n}{k{\rm\ even}}} \frac{f^{(k)}\left(\frac{\pi}{4}\right)}{k!}\left(x-\frac{\pi}{4}\right)^k
+=\sum_{\ell=0}^{n}\frac{(-1)^\ell}{(2\ell)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell}
+</me>
+Now for the odd powers.  The first few terms of <m>T_{2n}</m> that contain odd powers of <m>\left(x-\frac{\pi}{4}\right)</m> are
+<me>
+\underbrace{\frac{1}{\sqrt{2}}\left(x-\frac{\pi}{4}\right)}_{k=1}
+-\underbrace{\frac{1}{3!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{3}}_{k=3}
++\underbrace{\frac{1}{5!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{5}}_{k=5}
+</me>
+Observe that the signs again alternate between successive terms. So if we rename <m>k</m> to <m>2\ell+1</m> these terms are
+<me>
+\underbrace{\frac{1}{\sqrt{2}}\left(x-\frac{\pi}{4}\right)}_{\ell=0}
+-\underbrace{\frac{1}{3!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{3}}_{\ell=1}
++\underbrace{\frac{1}{5!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{5}}_{\ell=2}
+</me>
+and the <m>\ell^{\rm th}</m> term here is 
+<m>\frac{(-1)^\ell}{(2\ell+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell+1}</m>. 
+To verify that this really is the <m>\ell^{\rm th}</m> term, evaluate this for <m>\ell=0,1,2</m> explicitly.
+The largest odd integer that is smaller than <m>2n</m> is <m>2n-1</m> and when <m>k=2n-1=2\ell+1</m>, 
+<m>\ell=n-1</m> so that
+<me>
+\sum_{\atp{0\le k\le 2n}{k{\rm\ odd}}} \frac{f^{(k)}\left(\frac{\pi}{4}\right)}{k!}\left(x-\frac{\pi}{4}\right)^k
+=\sum_{\ell=0}^{n-1}\frac{(-1)^\ell}{(2\ell+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell+1}
+</me>
+Putting the even and odd powers together
+<me>
+T_{2n}(x)=\sum_{\ell=0}^{n}\frac{(-1)^\ell}{(2\ell)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell}
++\sum_{\ell=0}^{n-1}\frac{(-1)^\ell}{(2\ell+1)!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^{2\ell+1}
+</me>
 </p></solution>
 </exercise>
 
@@ -533,24 +563,22 @@ Compare this to the Maclaurin polynomial for <m>e^x</m>.
 </p></hint>
 <answer><p>
 <me>
-1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\approx e</me>
+1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\approx e-1</me>
 </p></answer>
 <solution><p>
 From Example<nbsp/><xref ref="eg_taylor_e_to_the_x"/>
-</p>
-
-<p>in the text, we see that the <m>n</m>th Maclaurin polynomial for <m>f(x)=e^x</m> is
+in the text, we see that the <m>n</m>th Maclaurin polynomial for <m>f(x)=e^x</m> is
 <md>
 <mrow>
-T_n(x)&amp;=\sum_{k=0}^n\frac{1}{k!}x^k
+T_n(x)&amp;=\sum_{k=0}^n\frac{1}{k!}x^k=1+x+\frac{x^2}{2}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots +\frac{x^n}{n!}
 </mrow>
 <intertext>If <m>n=157</m> and <m>x=1</m>,</intertext><mrow>
-T_{157}(1)&amp;=\sum_{k=0}^{157}\frac{1}{k!}=1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}
+T_{157}(1)&amp;=\sum_{k=0}^{157}\frac{1}{k!}=1+1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}
 </mrow>
 </md>
-Although we wouldn't expect <m>T_{157}(1)</m>  to be exactly equal to <m>e^1</m>, it's probably pretty close since <m>T_{157}(x)</m> is the Maclaurin polynomial for <m>e^x</m>, and 0 is pretty close to 1. So, we estimate
+Although we wouldn't expect <m>T_{157}(1)</m>  to be exactly equal to <m>e^1</m>, it's probably pretty close. So, we estimate
 <me>
-1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\approx e</me>
+1+\frac{1}{2}+\frac{1}{3!}+\frac{1}{4!}+\cdots +\frac{1}{157!}\approx e-1</me>
 </p></solution>
 </exercise>
 

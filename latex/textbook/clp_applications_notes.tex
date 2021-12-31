@@ -1617,7 +1617,7 @@ passes through $\big(t,P(t)\big)$
       \text{positive slope,}& \text{i.e. is increasing, \ \ if }
                                                        0<P(t)<2000  \\
      \text{slope zero,}& \text{i.e. is horizontal, \ \ if }P(t)=2000  \\
-          \text{negative slope,}& \text{i.e. is decreasing, \ \ if }0<P(t)<2000
+          \text{negative slope,}& \text{i.e. is decreasing, \ \ if }P(t)>2000
   \end{cases}
 \end{align*}
 as illustrated in the figure
@@ -5008,12 +5008,15 @@ This theorem demonstrates that the points at which the derivative is zero or
 does not exist are very important. It simplifies the discussion that follows if
 we give these points names.
 \begin{defn}\label{def:APPcriticalPoint} %%%%%%%%%%%%%%%%%%%%%
-Let $f(x)$ be a function and let $c$ be a point in its domain. Then
+Let $f(x)$ be a function that is defined on the interval $a<x<b$ and let $a<c<b$. Then
 \begin{itemize}
  \item if $f'(c)$ exists and is zero we call $x=c$ a critical point of the
 function, and
- \item if $f'(c)$ does not exist then we call $x=c$ a singular point of the
-function.
+ \item if $f'(c)$ does not exist then we call $x=c$ a 
+singular point\footnote{For $c$ to be a local maximum or minimum of $f$, the function $f$ must obviously be defined at $c$. So here we are 
+considering only points $c$ in the domain of $f$. We will later,
+in Section \ref{ssec_sketch_FD}, extend the definition of singular points
+of $f$ to points that are not in the domain of $f$.} of the function.
 \end{itemize}
 \end{defn}
 
@@ -5104,7 +5107,7 @@ error of logic that people make is ``Affirming the consequent''. ``If P then Q''
 is true, then observe Q and conclude P --- this is false. ``If he is Shakespeare then he
 is dead'' ``That man is dead'' ``He must be Shakespeare''. Or you may have also seen
 someone use this reasoning: ``If a person is a genius before their time then they are
-misunderstood.'' ``I am misunderstood'' ``So I must be a genius before my time.''. Or }
+misunderstood.'' ``I am misunderstood'' ``So I must be a genius before my time''.}
 that, ``if $f(x)$ has a local maximum/minimum at $x=c$ and if $f$ is differentiable at
 $x=c$, then $f'(c)=0$''. It \emph{does not say} that ``if $f'(c)=0$ then $f$
 has a local maximum/minimum at $x=c$''.
@@ -5120,29 +5123,43 @@ f(x) = |x| = \begin{cases}
            -x & \text{if }x <  0
        \end{cases}
 \end{align*}
+on the interval $-1\le x\le 1$ and we'll also look for local maxima and minima of the function
+\begin{align*}
+g(x) = x^{2/3}
+\end{align*}
 on the interval $-1\le x\le 1$.
 \begin{itemize}
- \item Again, start by computing the derivative (reread Example~\ref{eg diff
+ \item Again, start by computing the derivatives (reread Example~\ref{eg diff
 abs}):
 \begin{align*}
-f'(x) = \begin{cases}
+f'(x) &= \begin{cases}
            1  & \text{if }x > 0 \\
            \text{undefined}  & \text{if }x = 0 \\
            -1 & \text{if }x <  0
        \end{cases}
+\\
+g'(x) &= \begin{cases}
+           \frac{2}{3} x^{-1/3} & \text{if }x \ne 0 \\
+           \text{undefined}  & \text{if }x = 0 
+       \end{cases}
 \end{align*}
-\item This derivative \emph{never} takes the value $0$, so the function does
-not have any critical points. However the derivative does not exist at the
-point $x=0$, so that point is a singular point.
+\item These derivatives \emph{never} take the value $0$, so the functions
+$f(x)$ and $g(x)$ do not have any critical points. However both derivatives do not exist at the point $x=0$, so that point is a singular point for both $f(x)$ and $g(x)$.
 
-\item Here is a sketch of the graph of $f(x)$.
+\item Here is a sketch of the graph of $f(x)$
 \begin{efig}
 \begin{center}
    \includegraphics{localMaxMinC}
 \end{center}
 \end{efig}
-From the figure we see that $f(x)$ has a local (and in fact global)
-minimum at $x=0$ despite the fact that $f'(0)$ is not a critical point.
+and a sketch of the graph of $g(x)$.
+\begin{efig}
+\begin{center}
+   \includegraphics{localMaxMinCC}
+\end{center}
+\end{efig}
+From the figures we see that both $f(x)$ and $g(x)$ have a local 
+(and in fact global) minimum at $x=0$ despite the fact that $x=0$ is not a critical point.
 \item Reread Theorem \ref{thm:APPlocalMaxMin} yet again. It says that,
 ``if $f(x)$ has a local maximum/minimum at $x=c$
 \emph{and if $f$ is differentiable at $x=c$}, then $f'(c)=0$''.
@@ -5992,8 +6009,13 @@ and so
 <\infty$. Further observe that as $x \rightarrow \infty$ or $x \rightarrow 0$ the angle
 $\theta \rightarrow 0$,  since
 \begin{align*}
-  \lim_{x\rightarrow 0} \arctan \frac{p+h}{x} &= \frac{\pi}{2} \\
-  \lim_{x\rightarrow 0} \arctan \frac{p}{x} &= \frac{\pi}{2} \\
+  \lim_{x\rightarrow \infty} \arctan \frac{p+h}{x} =
+  \lim_{x\rightarrow \infty} \arctan \frac{p}{x} = 0 
+\end{align*}
+and
+\begin{align*}
+  \lim_{x\rightarrow 0^+} \arctan \frac{p+h}{x} = 
+  \lim_{x\rightarrow 0^+} \arctan \frac{p}{x} = \frac{\pi}{2} 
 \end{align*}
 Clearly the largest value of $\theta$ will be strictly positive and so has to be taken for
 some $0<x<\infty$. (Note the strict inequalities.) This $x$ will be a local maximum as
@@ -6428,8 +6450,8 @@ and smooth them out to get the a good sketch of this function (below right).
 \subsection{First Derivative --- Increasing or Decreasing}\label{ssec_sketch_FD}
 Now we move on to the first derivative, $f'(x)$. This is a good time to revisit the
 mean-value theorem (Theorem~\ref{thm:DIFFmvt}) and some of its consequences
-(Corollary~\ref{cor:DIFFmvtcons}). In particular, let us assume that $f(x)$ is continuous
-on an interval $[A,B]$ and differentiable on $(A,B)$. Then
+(Corollary~\ref{cor:DIFFmvtcons}). There we considered any function $f(x)$ that is 
+continuous on an interval $A\le x\le B$ and is differentiable on $A<x<B$. Then
 \begin{itemize}
  \item if $f'(x)>0$ for all $A<x<B$, then $f(x)$ is increasing on $(A,B)$\\
   --- that is, for all $A<a<b<B$, $f(a)< f(b)$.
@@ -6438,8 +6460,13 @@ on an interval $[A,B]$ and differentiable on $(A,B)$. Then
 \end{itemize}
 Thus the sign of the derivative indicates to us whether the function is increasing or
 decreasing. Further, as we discussed in Section~\ref{ssec maxmin}, we should also examine
-points at which the derivative is zero --- critical points --- and where the derivative
-does not exist --- singular points. These points may indicate a local maximum or minimum.
+points at which the derivative is zero --- critical points --- and points where the derivative
+does not exist. These points may indicate a local maximum or minimum.
+
+We will now consider a function $f(x)$ that is defined on an interval $I$, 
+\emph{except possibly} at finitely many points of $I$. If $f$ or its derivative $f'$ 
+is not defined at a point $a$ of $I$, then we call $a$ a 
+\emph{singular point}\footnote{This is the extension of the definition of ``singular point'' that was mentioned in the footnote in Definition 3.5.6.} of $f$.
 
 After studying the function $f(x)$ as described above, we should compute its derivative
 $f'(x)$.
@@ -6688,6 +6715,167 @@ following sketch
 \end{efig}
 
 \end{eg}
+
+
+\begin{eg}[Optional ---  $y=x^{1/3}$ and $y = x^{2/3}$]\label{eg_InflectSing}
+
+In our Definition~\ref{def_3_6_1}, concerning concavity and inflection points,
+we considered only functions having first and second derivatives on the entire
+interval of interest. In this example, we will consider the functions
+\begin{equation*}
+f(x)=x^{1/3}\qquad g(x)=x^{2/3}
+\end{equation*}
+We shall see that $x=0$ is a singular point for both of those functions.
+There is no universal agreement as to precisely when a singular point should 
+also be called an inflection point. We choose to extend our definition of
+inflection point in Definition~\ref{def_3_6_1} as follows. If 
+\begin{itemize}
+\item 
+the function $f(x)$ is defined and continuous on an interval $a<x<b$ and
+if
+\item 
+the first and second derivatives $f'(x)$ and $f''(x)$ exist on $a<x<b$
+except possibly at the single point $a<c<b$ and if
+\item 
+$f$ is concave up on one side of $c$ and is concave down on the other 
+side of $c$
+\end{itemize}
+then we say that $\big(c\,,\,f(c)\big)$ is an inflection point of $y=f(x)$. 
+Now let's check out $y=f(x)$ and $y=g(x)$ from this point of view.
+\begin{enumerate}[(1)]
+\item Features of $y=f(x)$ and $y=g(x)$ that are read off of $f(x)$ and $g(x)$: 
+\begin{itemize}
+ \item 
+    Since $f(0)=0^{1/3}=0$ and $g(0)=0^{2/3}=0$, the origin $(0,0)$ lies on 
+    both $y=f(x)$ and $y=g(x)$.
+ \item
+    For example, $1^3=1$ and $(-1)^3=-1$ so that the cube root of $1$ is 
+    $1^{1/3}=1$ and the cube root of $-1$ is $(-1)^{1/3}=-1$. In general,
+    \begin{equation*}
+       x^{1/3}\begin{cases}
+               <0 & \text{if }x< 0 \\
+               =0 & \text{if }x=0 \\
+               >0 & \text{if }x> 0 
+              \end{cases}
+    \end{equation*}
+   Consequently the graph $y=f(x)=x^{1/3}$ lies below the $x$-axis when $x<0$
+   and lies above the $x$-axis when $x>0$. On the other hand, the graph
+   $y=g(x)=x^{2/3}=\big[x^{1/3}\big]^2$ lies on or above the $x$-axis for all
+   $x$.
+  \item As $x\rightarrow+\infty$,  both $y=f(x)=x^{1/3}$ and   
+   $y=g(x)=x^{2/3}$ tend to $+\infty$.
+  \item As $x\rightarrow-\infty$, $y=f(x)=x^{1/3}$ tends to $-\infty$ and   
+   $y=g(x)=x^{2/3}$ tends to $+\infty$.
+\end{itemize}
+\item Features of $y=f(x)$ and $y=g(x)$ that are read off of $f'(x)$ 
+      and $g'(x)$:
+      \begin{align*}
+         f'(x) &=  \left.\begin{cases}
+                      \tfrac{1}{3}x^{-2/3} & \text{if }x\ne 0 \\
+                      \text{undefined} & \text{if }x =0  
+              \end{cases}\right\}
+              \implies f'(x)>0\text{ for all }x\ne 0 
+              \\
+          g'(x) &=  \left.\begin{cases}
+                      \tfrac{2}{3}x^{-1/3} & \text{if }x\ne 0 \\
+                      \text{undefined} & \text{if }x =0  
+              \end{cases}\right\}
+               \implies g'(x)
+                    \begin{cases}<0&\text{if }x< 0\\ 
+                                 >0&\text{if }x> 0
+                    \end{cases} 
+      \end{align*}
+      So the graph $y=f(x)$ is increasing on both sides of the singular point   
+      $x=0$, while the graph $y=g(x)$ is decreasing to the left of $x=0$ and
+      is increasing to the right of $x=0$. As $x\rightarrow 0$, $f'(x)$ and
+      $g'(x)$ become infinite. That is, the slopes of the tangent lines at
+      $\big(x,f(x)\big)$ and $\big(x,g(x)\big)$ become infinite and the 
+      tangent lines become vertical.
+ 
+\item Features of $y=f(x)$ and $y=g(x)$ that are read off of $f''(x)$ 
+      and $g''(x)$:
+      \begin{align*}
+         f''(x) &=  \left.\begin{cases}
+                      -\tfrac{2}{9}x^{-5/3} =-\tfrac{2}{9}{\big[x^{-1/3}]}^{5}
+                                                   & \text{if }x\ne 0 \\
+                      \text{undefined} & \text{if }x =0  
+              \end{cases}\right\}
+              \implies f''(x) 
+                      \begin{cases}>0&\text{if }x< 0\\ 
+                                   <0&\text{if }x> 0
+                    \end{cases} 
+              \\
+          g''(x) &=  \left.\begin{cases}
+                      -\tfrac{2}{9}x^{-4/3} =-\tfrac{2}{9}{\big[x^{-1/3}]}^{4} 
+                                               & \text{if }x\ne 0 \\
+                      \text{undefined} & \text{if }x =0  
+              \end{cases}\right\}
+             \implies g''(x)<0\text{ for all }x\ne 0 
+      \end{align*}
+      So the graph $y=g(x)$ is concave down on both sides of the singular point   
+      $x=0$, while the graph $y=f(x)$ is concave up to the left of $x=0$ and
+      is concave down to the right of $x=0$.
+
+\end{enumerate}
+By way of summary, we have, for $f(x)$,
+\begin{center}
+\begin{tabular}{|c||c||c||c||}
+\hline
+interval & $(-\infty,0)$ & 0 & $(0,\infty)$\\
+\hline
+$f(x)$ & negative & 0 & positive  \\
+\hline
+$f'(x)$ & positive & undefined & positive  \\
+\hline
+   & increasing &  & increasing \\
+\hline
+$f''(x)$ & positive & undefined & negative  \\
+\hline
+ & concave up & inflection & concave down 
+\\
+\hline
+\end{tabular}
+\end{center}
+and for $g(x)$,
+\begin{center}
+\begin{tabular}{|c||c||c||c||}
+\hline
+interval & $(-\infty,0)$ & 0 & $(0,\infty)$\\
+\hline
+$g(x)$ & positive & 0 & positive  \\
+\hline
+$g'(x)$ & negative & undefined & positive  \\
+\hline
+       & decreasing &  & increasing \\
+\hline
+$g''(x)$ & negative & undefined & negative  \\
+\hline
+   & concave down &  & concave down 
+\\
+\hline
+\end{tabular}
+\end{center}
+Since the concavity changes at $x=0$ for $y=f(x)$, but not for $y=g(x)$,
+$(0,0)$ is an inflection point for $y=f(x)$, but not for $y=g(x)$.
+We have the following sketch for $y=f(x)=x^{1/3}$,
+\begin{efig}
+ \begin{center}
+  \includegraphics{sketch9} 
+ \end{center}
+\end{efig}
+and the following sketch for $y=g(x)=x^{2/3}$.
+\begin{efig}
+ \begin{center}
+  \includegraphics{sketch10}
+ \end{center}
+\end{efig}
+Note that the curve $y=f(x)=x^{1/3}$ looks perfectly smooth, even though 
+$f'(x)\rightarrow\infty$ as $x\rightarrow 0$. There is no kink or discontinuity at $(0,0)$. The singularity at $x=0$ has caused the $y$-axis to be a vertical tangent to the curve, but has not prevented the curve from looking smooth.
+
+
+\end{eg}
+
+
 
 
 %
@@ -7020,7 +7208,7 @@ off from $f(x)$, $f'(x)$ and $f''(x)$.
 \item Features of $y = f(x)$ that are read off of $f(x)$:
 \begin{itemize}
  \item First check where $f(x)$ is defined. Then
-\item y=f(x) is plotted only for $x$'s in the domain of $f(x)$, i.e. where
+\item $y=f(x)$ is plotted only for $x$'s in the domain of $f(x)$, i.e. where
 $f(x)$ is defined.
 \item $y = f(x)$ has vertical asymptotes at the points where $f(x)$ blows up to
 $\pm\infty$.

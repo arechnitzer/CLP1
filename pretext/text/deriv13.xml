@@ -545,7 +545,9 @@ which, in this example, happens to be exactly half way between <m>x=a</m> and
 
 </example>
 
-<p>A simple consequence of the mean value theorem is that if you know the
+<p>Recall from Section <xref ref="sec_2_3"/> that if <m>f'(c)>0</m>, then <m>f(x)</m> is 
+increasing at <m>x=c</m>.
+A simple consequence of the mean value theorem is that if you know the
 sign of <m>f'(c)</m> for all <m>c</m>'s between <m>a</m> and <m>b</m>, with <m>b \gt a</m>, then
 <m>f(b)-f(a) = f'(c) (b-a)</m> must have the same sign.</p>
 

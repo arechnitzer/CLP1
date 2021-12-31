@@ -920,7 +920,7 @@ Two spheres are centred at the same point. The radius <m>R</m> of the bigger sph
 The volume of a sphere with radius <m>R</m> is <m>\dfrac{4}{3}\pi r^3</m>.
 </p></hint>
 <answer><p>
-<m>288</m> cubic units per unit time
+<m>288\pi</m> cubic units per unit time
 </p></answer>
 <solution><p>
 The volume between the spheres, while the little one is inside the big one, is
@@ -938,7 +938,7 @@ V=\frac{4}{3}\pi R^3 - \frac{4}{3}\pi r^3</me>
 \diff{V}{t}=4\pi\left(12^2\right)(2)-4\pi\left(6^2\right)(6)=288\pi</me>
 </p>
 
-<p>So the volume between the two spheres is increasing at 288 cubic units per unit time.
+<p>So the volume between the two spheres is increasing at <m>288\pi</m> cubic units per unit time.
 </p>
 
 <p>Remark: when the radius of the inner sphere increases, we are <q>subtracting</q> more area. Since the radius of the inner sphere grows faster than the radius of the outer sphere, we might expect the area between the spheres to be decreasing. Although the radius of the outer sphere grows more slowly, a small increase in the radius of the outer sphere results in a larger change in volume than the same increase in the radius of the inner sphere. So, a result showing that the volume between the spheres is increasing is not unreasonable.

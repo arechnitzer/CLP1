@@ -512,7 +512,7 @@ If <m>f(x)=0</m>, then <m>|x^3|=\left|\sin\left(x^5\right)\right| \leq 1</m>. Wh
 <ul>
 <li> We can see by inspection that <m>f(0)=0</m>, so there is at least one root.
 </li>
-<li> To hunt for other roots, notice than when <m>f(x)=0</m>, <m>x^3=\sin\left(x^5\right)</m>, and since the sine function only takes on values in <m>[-1,1]</m>, this means <m>-1 \leq x^3 \leq 1</m>. That is, all roots of <m>f(x)</m> are in the interval <m>[-1,1]</m>. (An equivalent way to see this is to notice that for all <m>x  \gt 1</m>, <m>f(x) \gt 0</m>, and for all <m>x \lt 1</m>, <m>f(x) \lt 0</m>.)
+<li> To hunt for other roots, notice than when <m>f(x)=0</m>, <m>x^3=-\sin\left(x^5\right)</m>, and since the sine function only takes on values in <m>[-1,1]</m>, this means <m>-1 \leq x^3 \leq 1</m>. That is, all roots of <m>f(x)</m> are in the interval <m>[-1,1]</m>. (An equivalent way to see this is to notice that for all <m>x  \gt 1</m>, <m>f(x) \gt 0</m>, and for all <m>x \lt 1</m>, <m>f(x) \lt 0</m>.)
 </li>
 <li> If there is a root <m>a \neq 0</m>, then by Rolle's Theorem (since <m>f(x)</m> is continuous and differentiable for all real numbers) <m>f'(c)=0</m> for some <m>c</m> strictly between 0 and <m>a</m>. In particular, since we already know any roots <m>a</m> will be between <m>-1</m> and <m>1</m>, if <m>f(x)</m> has two roots then <m>f'(c)=0</m> for some <m>c \in (-1,0) \cup (0,1)</m>.
 </li>

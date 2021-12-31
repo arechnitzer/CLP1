@@ -722,7 +722,7 @@ When we plug in <m>r=-5</m> to the denominator, we find that it becomes 0, so we
 <answer><p> <m>\sqrt{\dfrac{2}{3}}</m>
 </p></answer>
 <solution><p>
-First, we find <m>\displaystyle\lim_{x \rightarrow -1}\dfrac{x^3+x^2+x+1}{3x+3}</m>. When we plug in <m>x=-1</m> to the top and the bottom, both become zero. In a polynomial, where there is a root, there is a factor, so this tells us we can factor out <m>(x+1)</m> from both the top and the bottom. It's pretty easy to see how to do this in the bottom. For the top, if you're having a hard time, one factoring method (of many) to try is long division of polynomials; another is to factor out <m>(x+1)</m> from the first two terms and the last two terms. (Long division is covered in Appendix A.14 of CLP-II Integral Calculus.)
+First, we find <m>\displaystyle\lim_{x \rightarrow -1}\dfrac{x^3+x^2+x+1}{3x+3}</m>. When we plug in <m>x=-1</m> to the top and the bottom, both become zero. In a polynomial, where there is a root, there is a factor, so this tells us we can factor out <m>(x+1)</m> from both the top and the bottom. It's pretty easy to see how to do this in the bottom. For the top, if you're having a hard time, one factoring method (of many) to try is long division of polynomials; another is to factor out <m>(x+1)</m> from the first two terms and the last two terms. (Detailed examples of long division are given in Appendix A.16 and Examples 1.10.2 and 1.10.3 of the CLP-2 Integral Calculus text.)
 </p>
 <p><md>
 <mrow>
@@ -1159,7 +1159,7 @@ so the limit exists when <m>a=\dfrac{7}{2}</m>.
 <ol label="a">
 <li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)=0</m>: as <m>x</m> approaches 0, so does <m>2x</m>.
 </li>
-<li> <m>\displaystyle\lim_{x \rightarrow 0} g(x)=</m> DNE: the left and right limits do not agree, so the limit does not exist. In particular: <m>\displaystyle\lim_{x \rightarrow 0^-} g(x)=-\infty</m> and <m>\displaystyle\lim_{x \rightarrow 0^-} g(x)=\infty</m>.
+<li> <m>\displaystyle\lim_{x \rightarrow 0} g(x)=</m> DNE: the left and right limits do not agree, so the limit does not exist. In particular: <m>\displaystyle\lim_{x \rightarrow 0^-} g(x)=-\infty</m> and <m>\displaystyle\lim_{x \rightarrow 0^+} g(x)=\infty</m>.
 </li>
 <li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)g(x)=\displaystyle\lim_{x \rightarrow 0} 2x\cdot\dfrac{1}{x}=\displaystyle\lim_{x \rightarrow 0} 2=2</m>.
 Remark:  although the limit of <m>g(x)</m> does not exist here, the limit of <m>f(x)g(x)</m> does.

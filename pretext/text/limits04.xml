@@ -158,7 +158,9 @@ exist with <m>F,G \in \mathbb{R}</m>. Then the following limits hold
 <li>
 	<m>\ds \lim_{x \to a} ( f(x) \cdot g(x) ) = F \cdot G</m> <mdash/> limit of  the product is the product of limits.
 </li>
-<li> If <m>G \neq 0</m> then <m>\ds \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{F}{G}</m> </li>
+<li> If <m>G \neq 0</m> then <m>\ds \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{F}{G}</m> and, in particular, <m>\ds \lim_{x \to a} \frac{1}{g(x)} = \frac{1}{G}</m>.
+</li> 
+
 </ul>
 Note <mdash/> be careful with this last one <mdash/> the denominator cannot be zero.
 </p></statement>

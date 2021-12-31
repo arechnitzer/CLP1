@@ -879,7 +879,7 @@ Thus if <m>P(t)</m> is some function that obeys  <m>\diff{P}{t}(t)=\big(6000-3P(
      \\
      \text{slope zero,}&amp; \text{i.e. is horizontal, if }P(t)=2000
      \\
-     \text{negative slope,}&amp; \text{i.e. is decreasing, if }0 \lt P(t) \lt 2000
+     \text{negative slope,}&amp; \text{i.e. is decreasing, if }P(t) \gt 2000
   \end{cases}
 </mrow>
 </md>

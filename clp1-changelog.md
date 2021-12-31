@@ -7,6 +7,10 @@ permalink: /CLP1-changelog/
 ---
 
 # CLP-1 Differential Calculus textbook
+* 2021 September 25 - Typo correction in the title of Example 2.6.15.
+* 2021 September 21 - Typo correction in Appendix A.13.
+* 2021 September 14 - Typo correction in Equation C.3.1.
+* 2021 September 9 - Typo correction shortly before Theorem 0.1.2.
 * 2021 July 27 - Expanded the definition at the beginning of Section 1.8.
 * 2021 July 26 - Corrected lets typos.
 * 2021 July 12 - Renamed/renumbered some Appendix B subsections in clp_1_dc_text.pdf to match the .html version.
@@ -83,7 +87,11 @@ permalink: /CLP1-changelog/
 ---
 
 # CLP-1 Differential Calculus problem book
-* 2020 August 25 - Typo corrections in Q[11] of Section 1.3 and Q[14] of Section 1.4.
+* 2021 September 25 - Moved questions 19, 20, 21 of Section 2.6 to Section 2.8.
+* 2021 September 25 - Adjustments to Q[5] and S[5,6,7,8,13] of Section 2.4.
+* 2021 September 20 - Typo correction in S[28] of Section 1.5.
+* 2021 September 15 - Typo correction in S[44] of Section 1.4.
+* 2021 August 25 - Typo corrections in Q[11] of Section 1.3 and Q[14] of Section 1.4.
 * 2021 May 27 - Spelling correction in Q[21] in Section 3.2.
 * 2021 March 9 - Slight expansion of S[7] in Section 3.2.
 * 2021 March 3 - Simplification of S[13] in Section 2.10.

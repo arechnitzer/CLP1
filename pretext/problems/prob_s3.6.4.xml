@@ -93,7 +93,7 @@ The function is not even, because it is not mirrored across the <m>y</m>-axis.
 
 <exercise>
 <statement><p>
-Suppose <m>f(x)</m> is an even function defined for all real numbers. Below is the curve <m>y=f(x)</m> when <m>x \lt 0</m>. Complete the sketch of the curve.</p>
+Suppose <m>f(x)</m> is an even function defined for all real numbers. Below is the curve <m>y=f(x)</m> when <m>x \gt 0</m>. Complete the sketch of the curve.</p>
 
 <sidebyside>
 <image><latex-image><![CDATA[\begin{tikzpicture}
@@ -128,7 +128,7 @@ Since the function is even, we simply reflect the portion shown across the <m>y<
 
 <exercise purpose="RQS">
 <statement><p>
-Suppose <m>f(x)</m> is an odd function defined for all real numbers. Below is the curve <m>y=f(x)</m> when <m>x \lt 0</m>. Complete the sketch of the curve.</p>
+Suppose <m>f(x)</m> is an odd function defined for all real numbers. Below is the curve <m>y=f(x)</m> when <m>x \gt 0</m>. Complete the sketch of the curve.</p>
 
 <sidebyside>
 <image><latex-image><![CDATA[\begin{tikzpicture}

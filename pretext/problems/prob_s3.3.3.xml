@@ -241,7 +241,7 @@ One way to investigate the sign of <m>k</m> is to think about <m>f'(t)</m>: is i
 </li>
 <li>[(b)] Since <m>f(t)</m> gives the size of the population at time <m>t</m>, the number of individuals in the population when <m>t=0</m> is <m>f(0)=100e^0=100</m>. Since the population is growing,  <m>f(t)</m> is increasing, so <m>f'(t)</m> is positive. Differentiating, <m>f'(t)=k(100e^{kt})</m>. Since <m>100e^{kt}</m> is positive and <m>f'(t)</m> is positive, <m>k</m> is also positive.
 </li>
-<li>[(c)] Newton's Law of Cooling give the temperature of an object at time <m>t</m> as
+<li>[(c)] Newton's Law of Cooling gives the temperature of an object at time <m>t</m> as
 <m>f(t)=[f(0)-A]e^{kt}+A</m>, where <m>A</m> is the ambient temperature surrounding the object. In our case, the ambient temperature is 0 degrees. In an object whose temperature is being modelled by Newton's Law of Cooling,  it doesn't matter whether the object is heating or cooling, <m>k</m> is negative. We saw this in Question<nbsp/><xref ref="s3_3_2Knegative"/> of Section<nbsp/><xref ref="sec_newtonCooling"/>,
  but it bears repeating. Since <m>f(t)</m> approaches the ambient temperature (in this case, 0) as <m>t</m> goes to infinty:
 <me>

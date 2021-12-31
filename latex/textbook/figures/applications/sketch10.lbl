@@ -1,0 +1,56 @@
+lbl file prepared by figPac Fri Dec 17 11:52:53 PST 2021
+173.45
+116.44
+0
+0
+0
+2
+ 
+173.45
+116.44
+2
+0
+ 
+88.89
+88.40
+0
+2
+$(0, 0)$
+173.45
+90.56
+2
+2
+$x$
+84.56
+ 0.00
+2
+2
+$y$
+130.09
+40.54
+0
+2
+$y=g(x)=x^{2/3}$
+130.52
+107.81
+1
+2
+${\scriptstyle g'>0,\ g{\rm\  increasing}}$
+130.52
+118.59
+1
+2
+${\ \ \ \ \scriptstyle g''<0,\ g{\rm\  concave\ down}}$
+42.93
+107.81
+1
+2
+${\scriptstyle g'<0,\ g{\rm\  decreasing}}$
+42.93
+118.59
+1
+2
+${\scriptstyle g''<0,\ g{\rm\  concave\ down}}$
+-1000
+0/1/2 left/center/right
+0/1/2 bottom/center/top

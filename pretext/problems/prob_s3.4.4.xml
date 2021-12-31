@@ -140,7 +140,7 @@ T_4(x)=x^4+x^3-9</me>
 <p>What is the third degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m>?
 </p></statement>
 <hint><p>
-The third-degree Maclaurin polynomial for <m>f(x)</m> about <m>x=1</m> is
+The third-degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m> is
 <me>
 T_3(x)=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3</me>
 </p>
@@ -160,15 +160,15 @@ T_4(x)&amp;=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3
 </mrow><mrow>
 \amp\hskip2in+\frac{1}{4!}f^{(4)}(1)(x-1)^4
 </mrow>
-<intertext>while the third-degree Maclaurin polynomial for <m>f(x)</m> about <m>x=1</m> is</intertext><mrow>
+<intertext>while the third-degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m> is</intertext><mrow>
 T_3(x)&amp;=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3
 </mrow>
 </md>
-So, we <q>chopped off</q> the term of degree 4 to get <m>T_3(x)</m>. However, <em>our polynomial is not in this form</em>. It's not clear, right away, what the term <m>f^{(4)}(x-1)^4</m> is in our given <m>T_4(x)</m>. So, we will use a different method from Question<nbsp/><xref ref="s3_4_4chop1"/>.
+In in Question<nbsp/><xref ref="s3_4_4chop1"/> we <q>chopped off</q> the term of degree 4 to get <m>T_3(x)</m>. However, <em>our polynomial is not in this form</em>. It's not clear, right away, what the term <m>f^{(4)}(x-1)^4</m> is in our given <m>T_4(x)</m>. So, we will use a different method from Question<nbsp/><xref ref="s3_4_4chop1"/>.
 </p>
 
 <p>
-One option is to do some fancy factoring to get <m>T_4(x)</m> into the more standard form of a Taylor polynomial. Another option (which we will use) is to recover <m>f(1)</m>, <m>f'(1)</m>, <m>f''(1)</m>, and <m>f'''(1)</m> from <m>T_4(x)</m>.
+One option is to do some fancy algebra to get <m>T_4(x)</m> into the standard form of a Taylor polynomial. Another option (which we will use) is to recover <m>f(1)</m>, <m>f'(1)</m>, <m>f''(1)</m>, and <m>f'''(1)</m> from <m>T_4(x)</m>.
 <md>
 <mrow>
 </mrow>

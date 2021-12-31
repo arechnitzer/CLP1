@@ -742,7 +742,7 @@ Then the false position method tests the sign of <m>f(x)</m> at the value of
 </md>
 So once we have the interval <m>I_n</m>, the false position method generates the interval <m>I_{n+1}</m> by the following rule.<fn>The convergence behaviour of the false position method is relatively complicated. So we do not discuss it here. As always, we invite the interested reader to visit their favourite search engine.</fn>
 </p>
-<fact xml:id="eq_APPfalsePosition"><title>fale position method</title>
+<fact xml:id="eq_APPfalsePosition"><title>false position method</title>
 <statement><p>
 Set <m>c_n=\frac{a_n f(b_n) - b_n f(a_n) }{f(b_n)-f(a_n)}</m>. 
 If <m>f(c_n)</m> has the same sign as <m>f(a_n)</m>, then

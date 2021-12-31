@@ -111,8 +111,7 @@ and smooth them out to get the a good sketch of this function (below right).</p>
 <title>First Derivative <mdash/> Increasing or Decreasing</title>
 <p>Now we move on to the first derivative, <m>f'(x)</m>. This is a good time to revisit the
 mean-value theorem (Theorem<nbsp/><xref ref="thm_DIFFmvt"/>) and some of its consequences
-(Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>). In particular, let us assume that <m>f(x)</m> is continuous
-on an interval <m>[A,B]</m> and differentiable on <m>(A,B)</m>. Then
+(Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>). There we considered any function  <m>f(x)</m> that is continuous on an interval <m>A\le x\le B</m> and differentiable on <m>A\lt x\lt B</m>. Then
 <ul>
 <li><p> if <m>f'(x) \gt 0</m> for all <m>A \lt x \lt B</m>, then <m>f(x)</m> is increasing on <m>(A,B)</m></p>
   <p><mdash/> that is, for all <m>A \lt a \lt b \lt B</m>, <m>f(a) \lt  f(b)</m>.</p>
@@ -123,8 +122,14 @@ on an interval <m>[A,B]</m> and differentiable on <m>(A,B)</m>. Then
 </ul>
 Thus the sign of the derivative indicates to us whether the function is increasing or
 decreasing. Further, as we discussed in Section<nbsp/><xref ref="ssec_maxmin"/>, we should also examine
-points at which the derivative is zero <mdash/> critical points <mdash/> and where the derivative
-does not exist <mdash/> singular points. These points may indicate a local maximum or minimum.
+points at which the derivative is zero <mdash/> critical points <mdash/> and points where the derivative
+does not exist. These points may indicate a local maximum or minimum.
+</p>
+
+<p>
+We will now consider a function <m>f(x)</m> that is defined on an interval <m>I</m>, 
+<em>except possibly</em> at finitely many points of <m>I</m>. If <m>f</m> or its derivative <m>f'</m> 
+is not defined at a point <m>a</m> of <m>I</m>, then we call <m>a</m> a <em>singular point</em><fn>This is the extension of the definition of <q>singular point</q> mentioned in the footnote in Definition <xref ref="def_APPcriticalPoint"/>.  </fn> of <m>f</m>.
 </p>
 
 <p>After studying the function <m>f(x)</m> as described above, we should compute its derivative
@@ -430,6 +435,176 @@ following sketch
 
 </example>
 
+<example xml:id="eg_InflectSing"><title>Optional <mdash/> <m>y=x^{1/3}</m> and <m>y = x^{2/3}</m> </title>
+<p>
+In our Definition<nbsp/><xref ref="def_3_6_1"/>, concerning concavity and inflection points,
+we considered only functions having first and second derivatives on the entire
+interval of interest. In this example, we will consider the functions
+<me>
+f(x)=x^{1/3}\qquad g(x)=x^{2/3}
+</me>
+We shall see that <m>x=0</m> is a singular point for both of those functions.
+There is no universal agreement as to precisely when a singular point should 
+also be called an inflection point. We choose to extend our definition of
+inflection point in Definition<nbsp/><xref ref="def_3_6_1"/> as follows. If 
+<ul>
+<li> 
+the function <m>f(x)</m> is defined and continuous on an interval <m>a\lt x\lt b</m> and if
+</li><li>
+the first and second derivatives <m>f'(x)</m> and <m>f''(x)</m> exist on <m>a\lt x\lt b</m>
+except possibly at the single point <m>a\lt c\lt b</m> and if
+</li><li> 
+<m>f</m> is concave up on one side of <m>c</m> and is concave down on the other 
+side of <m>c</m>
+</li>
+</ul>
+then we say that <m>\big(c\,,\,f(c)\big)</m> is an inflection point of <m>y=f(x)</m>. 
+Now let's check out <m>y=f(x)</m> and <m>y=g(x)</m> from this point of view.
+<ol label="1">
+<li> <p>Features of <m>y=f(x)</m> and <m>y=g(x)</m> that are read off of <m>f(x)</m> and <m>g(x)</m>: 
+  <ul>
+  <li> 
+    Since <m>f(0)=0^{1/3}=0</m> and <m>g(0)=0^{2/3}=0</m>, the origin <m>(0,0)</m> lies on 
+    both <m>y=f(x)</m> and <m>y=g(x)</m>.
+ </li><li>
+    For example, <m>1^3=1</m> and <m>(-1)^3=-1</m> so that the cube root of <m>1</m> is 
+    <m>1^{1/3}=1</m> and the cube root of <m>-1</m> is <m>(-1)^{1/3}=-1</m>. In general,
+    <me>
+       x^{1/3}\begin{cases}
+               \lt 0 \amp \text{if }x\lt 0 \\
+               =0 \amp \text{if }x=0 \\
+               \gt 0 \amp \text{if }x> 0 
+              \end{cases}
+   </me>
+   Consequently the graph <m>y=f(x)=x^{1/3}</m> lies below the <m>x</m>-axis when <m>x\lt 0</m>
+   and lies above the <m>x</m>-axis when <m>x>0</m>. On the other hand, the graph
+   <m>y=g(x)=x^{2/3}=\big[x^{1/3}\big]^2</m> lies on or above the <m>x</m>-axis for all
+   <m>x</m>.
+ </li><li> As <m>x\rightarrow+\infty</m>,  both <m>y=f(x)=x^{1/3}</m> and   
+   <m>y=g(x)=x^{2/3}</m> tend to <m>+\infty</m>.
+ </li><li>  As <m>x\rightarrow-\infty</m>, <m>y=f(x)=x^{1/3}</m> tends to <m>-\infty</m> and   
+   <m>y=g(x)=x^{2/3}</m> tends to <m>+\infty</m>.
+  </li>
+ </ul>
+ </p>
+
+ </li><li> Features of <m>y=f(x)</m> and <m>y=g(x)</m> that are read off of <m>f'(x)</m> 
+      and <m>g'(x)</m>:
+      <md>
+      <mrow>
+         f'(x) \amp=  \left.\begin{cases}
+                      \tfrac{1}{3}x^{-2/3} \amp \text{if }x\ne 0 \\
+                      \text{undefined} \amp \text{if }x =0  
+              \end{cases}\right\}
+              \implies f'(x)\gt 0\text{ for all }x\ne 0 
+        </mrow><mrow>
+          g'(x) \amp=  \left.\begin{cases}
+                      \tfrac{2}{3}x^{-1/3} \amp \text{if }x\ne 0 \\
+                      \text{undefined} \amp \text{if }x =0  
+              \end{cases}\right\}
+               \implies g'(x)
+                    \begin{cases}\lt 0\amp\text{if }x\lt 0\\ 
+                                 \gt 0\amp\text{if }x\gt 0
+                    \end{cases} 
+      </mrow>
+      </md>
+      So the graph <m>y=f(x)</m> is increasing on both sides of the singular point   
+      <m>x=0</m>, while the graph <m>y=g(x)</m> is decreasing to the left of <m>x=0</m> and
+      is increasing to the right of <m>x=0</m>. As <m>x\rightarrow 0</m>, <m>f'(x)</m> and
+      <m>g'(x)</m> become infinite. That is, the slopes of the tangent lines at
+      <m>\big(x,f(x)\big)</m> and <m>\big(x,g(x)\big)</m> become infinite and the 
+      tangent lines become vertical.
+
+
+  </li><li> Features of <m>y=f(x)</m> and <m>y=g(x)</m> that are read off of <m>f''(x)</m> and 
+       <m>g''(x)</m>:
+       <md>
+       <mrow>
+         f''(x) \amp=  \left.\begin{cases}
+                      -\tfrac{2}{9}x^{-5/3} =-\tfrac{2}{9}{\big[x^{-1/3}]}^{5}
+                                                   \amp \text{if }x\ne 0 \\
+                      \text{undefined} \amp \text{if }x =0  
+              \end{cases}\right\} \\
+             \amp \implies f''(x) 
+                      \begin{cases}\gt 0 \amp \text{if }x\lt 0\\ 
+                                   \lt 0 \amp \text{if }x\gt 0
+                    \end{cases} 
+          </mrow><mrow>
+          g''(x) \amp=  \left.\begin{cases}
+                      -\tfrac{2}{9}x^{-4/3} =-\tfrac{2}{9}{\big[x^{-1/3}]}^{4} 
+                                               \amp \text{if }x\ne 0 \\
+                      \text{undefined} \amp \text{if }x =0  
+              \end{cases}\right\} \\
+           \amp  \implies g''(x)\lt 0\text{ for all }x\ne 0 
+        </mrow>
+        </md>
+      So the graph <m>y=g(x)</m> is concave down on both sides of the singular point   
+      <m>x=0</m>, while the graph <m>y=f(x)</m> is concave up to the left of <m>x=0</m> and
+      is concave down to the right of <m>x=0</m>.
+</li>
+</ol>
+By way of summary, we have, for <m>f(x)</m>,
+</p>
+
+<sidebyside>
+<tabular top="minor" bottom="minor" left="minor" right="minor">
+<row>
+<cell></cell><cell> <m>(-\infty,0)</m> </cell><cell> 0 </cell><cell> <m>(0,\infty)</m></cell>
+</row><row>
+<cell><m>f(x)</m>  </cell><cell> negative  </cell><cell> 0 </cell><cell> positive </cell>
+</row><row>
+<cell><m>f'(x)</m>  </cell><cell> positive  </cell><cell> undefined </cell><cell> positive </cell>
+</row><row>
+<cell></cell><cell> increasing </cell><cell>  </cell><cell> increasing </cell>
+</row><row>
+<cell><m>f''(x)</m>  </cell><cell> positive  </cell><cell> undefined </cell><cell> negative </cell>
+</row><row>
+<cell></cell><cell> concave up </cell><cell> inflection </cell><cell> concave down </cell>
+</row></tabular>
+</sidebyside>
+
+<p>
+and for <m>g(x)</m>,
+</p>
+
+<sidebyside>
+<tabular top="minor" bottom="minor" left="minor" right="minor">
+<row>
+<cell></cell><cell> <m>(-\infty,0)</m> </cell><cell> 0 </cell><cell> <m>(0,\infty)</m></cell>
+</row><row>
+<cell><m>g(x)</m>  </cell><cell> positive  </cell><cell> 0 </cell><cell> positive </cell>
+</row><row>
+<cell><m>g'(x)</m>  </cell><cell> negative  </cell><cell> undefined </cell><cell> positive </cell>
+</row><row>
+<cell></cell><cell> decreasing </cell><cell>  </cell><cell> increasing </cell>
+</row><row>
+<cell><m>g''(x)</m>  </cell><cell> negative  </cell><cell> undefined </cell><cell> negative </cell>
+</row><row>
+<cell></cell><cell> concave down </cell><cell> inflection </cell><cell> concave down </cell>
+</row></tabular>
+</sidebyside>
+
+<p>
+Since the concavity changes at <m>x=0</m> for <m>y=f(x)</m>, but not for <m>y=g(x)</m>,
+<m>(0,0)</m> is an inflection point for <m>y=f(x)</m>, but not for <m>y=g(x)</m>.
+We have the following sketch for <m>y=f(x)=x^{1/3}</m>
+</p>
+<sidebyside width="62%">
+<image source="text/figs/sketch9"/>
+</sidebyside>
+<p>
+and the following sketch for <m>y=g(x)=x^{2/3}</m>.
+</p>
+<sidebyside width="59%">
+<image source="text/figs/sketch10"/>
+</sidebyside>
+<p>
+Note that the curve <m>y=f(x)=x^{1/3}</m> looks perfectly smooth, even though 
+<m>f'(x)\rightarrow\infty</m> as <m>x\rightarrow 0</m>. There is no kink or discontinuity at <m>(0,0)</m>. The singularity at <m>x=0</m> has caused the <m>y</m>-axis to be a vertical tangent to the curve, but has not prevented the curve from looking smooth.
+</p>
+
+
+</example>
 </subsection>
 
 <subsection xml:id="ssec_sketch_SYM">
@@ -814,7 +989,7 @@ off from <m>f(x)</m>, <m>f'(x)</m> and <m>f''(x)</m>.
 <ul>
 <li> First check where <m>f(x)</m> is defined. Then
 </li>
-<li> y=f(x) is plotted only for <m>x</m>'s in the domain of <m>f(x)</m>, i.e. where
+<li> <m>y=f(x)</m> is plotted only for <m>x</m>'s in the domain of <m>f(x)</m>, i.e. where
 <m>f(x)</m> is defined.
 </li>
 <li> <m>y = f(x)</m> has vertical asymptotes at the points where <m>f(x)</m> blows up to

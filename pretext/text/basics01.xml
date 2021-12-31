@@ -158,7 +158,7 @@
 	Thankfully this sort of thing only happens with rational numbers of a particular form <mdash/> those whose denominators are products of 2s and 5s. For example
 	<md>
 	<mrow>
-	  \frac{3}{25} &amp;= 1.200000\dots = 1.19999999\dots
+	  \frac{3}{25} &amp;= 0.1200000\dots = 0.119999999\dots
 	</mrow><mrow>
 	  -\frac{7}{32} &amp;= -0.2187500000\dots = -0.2187499999\dots
 	</mrow><mrow>

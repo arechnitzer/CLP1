@@ -1020,6 +1020,36 @@ your velocity at time $a$. If $v(t)$ is your velocity at time $t$, then
 $v'(a)$ is the instantaneous rate of change of your velocity at time
 $a$. This is called your acceleration at time $a$.
 
+You might expect that if the instantaneous rate of change of a function at  
+time $c$ is strictly positive, then, in some sense, the function is 
+increasing at $t=c$. You would be right. Indeed, if $f'(c)>0$, then, by definition, the limit of $\frac{f(t)-f(c)}{t-c}$ as $t$ approaches $c$ is strictly bigger than zero. So 
+\begin{itemize}
+\item
+for all $t>c$ that are sufficiently close\footnote{This is typical mathematician speak --- it allows us to be completely correct, without 
+being terribly precise. In this context, ``sufficiently close'' means ``The following need not be true for all $t$ bigger than $c$, but there must 
+exist some $b>c$ so that the following is true for all $c<t<b$''. Typically
+we do not know what $b$ is. And typically it does not matter what the 
+exact value of $b$ is. All that matters is that $b$ exists and is 
+strictly bigger than $c$.} to $c$
+  \begin{align*}
+         \frac{f(t)-f(c)}{t-c}>0
+          & \implies f(t)-f(c) > 0\qquad \text{(since $t-c>0$)} \\
+          & \implies f(t)>f(c)
+  \end{align*}
+\item 
+for all $t<c$ that are sufficiently close to $c$
+   \begin{align*}
+         \frac{f(t)-f(c)}{t-c}>0
+          & \implies f(t)-f(c) < 0\qquad \text{(since $t-c<0$)} \\
+          & \implies f(t)<f(c)
+  \end{align*}
+\end{itemize}
+Consequently we say that ``$f(t)$ is increasing at $t=c$''. If we wish
+to emphasise that the inequalities above are the strict inequalities
+$>$ and $<$, as opposed to $\ge$ and $\le$, we will say that
+``$f(t)$ is strictly increasing at $t=c$''.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Slope}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1846,7 +1876,7 @@ number, not just a positive integer.
 
 
 
-\begin{eg}[Derivative of $x^{-n}$]\label{eg:DIFFsimpleToolsI}
+\begin{eg}[Derivative of $x^{-m}$]\label{eg:DIFFsimpleToolsI}
 In this example we'll use the quotient rule to find the derivative of
 $x^{-m}$, for any natural number $m$.
 
@@ -5254,6 +5284,8 @@ $x=b$.
     \end{efig}
 \end{eg}
 
+Recall from Section \ref{sec_2_3} that if $f'(c)>0$, then $f(x)$ is 
+increasing at $x=c$.
 A simple consequence of the mean value theorem is that if you know the
 sign of $f'(c)$ for all $c$'s between $a$ and $b$, with $b>a$, then
 $f(b)-f(a) = f'(c) (b-a)$ must have the same sign.

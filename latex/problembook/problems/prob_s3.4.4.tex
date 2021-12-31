@@ -106,7 +106,7 @@ The 4th degree Taylor polynomial for $f(x)$ about $x=1$ is
 What is the third degree Taylor polynomial for $f(x)$ about $x=1$?
 \end{Mquestion}
 \begin{hint}
-The third-degree Maclaurin polynomial for $f(x)$ about $x=1$ is
+The third-degree Taylor polynomial for $f(x)$ about $x=1$ is
 \[T_3(x)=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3\]
 How can you recover $f(1)$, $f'(1)$, $f''(1)$, and $f'''(1)$ from $T_4(x)$?
 \end{hint}
@@ -119,11 +119,11 @@ We saw this kind of problem in Question~\ref{s3.4.4chop1}.
 The fourth-degree Taylor polynomial for $f(x)$ about $x=1$ is
 \begin{align*}
 T_4(x)&=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3+\frac{1}{4!}f^{(4)}(1)(x-1)^4
-\intertext{while the third-degree Maclaurin polynomial for $f(x)$ about $x=1$ is}
+\intertext{while the third-degree Taylor polynomial for $f(x)$ about $x=1$ is}
 T_3(x)&=f(1)+f'(1)(x-1)+\frac{1}{2}f''(1)(x-1)^2+\frac{1}{3!}f'''(1)(x-1)^3
-\intertext{So, we ``chopped off" the term of degree 4 to get $T_3(x)$. However, \emph{our polynomial is not in this form}. It's not clear, right away, what the term $f^{(4)}(x-1)^4$ is in our given $T_4(x)$. So, we will use a different method from Question~\ref{s3.4.4chop1}.}
+\intertext{In Question~\ref{s3.4.4chop1} we ``chopped off" the term of degree 4 to get $T_3(x)$. However, \emph{our polynomial is not in this form}. It's not clear, right away, what the term $f^{(4)}(x-1)^4$ is in our given $T_4(x)$. So, we will use a different method from Question~\ref{s3.4.4chop1}.}
 \end{align*}
-One option is to do some fancy factoring to get $T_4(x)$ into the more standard form of a Taylor polynomial. Another option (which we will use) is to recover $f(1)$, $f'(1)$, $f''(1)$, and $f'''(1)$ from $T_4(x)$.
+One option is to do some fancy algebra to get $T_4(x)$ into the standard form of a Taylor polynomial. Another option (which we will use) is to recover $f(1)$, $f'(1)$, $f''(1)$, and $f'''(1)$ from $T_4(x)$.
 \begin{align*}
 \intertext{Recall that $T_4(x)$ and $f(x)$ have the same values at $x=1$ (although maybe not anywhere else!), and they also have the same first, second, third, and fourth derivatives at $x=1$ (but again, maybe not anywhere else, and maybe their fifth derivatives don't agree). This tells us the following:}
 T_4(x)&=x^4+x^3-9&&\Rightarrow&

@@ -331,7 +331,7 @@ The sign of the first derivative is determined entirely by the numerator, but th
 <li><p>  Intervals of increase and decrease:
 </p>
 
-<p>We note that <m>f'(x)</m> is defined for all <m>x \neq -1</m>, so <m>f'(x)</m> is defined for all <m>x</m> in the domain of <m>f(x)</m>. Therefore, <m>f(x)</m> has no singular points.
+<p>We note that <m>f'(x)</m> is defined for all <m>x \neq -1</m> and is not defined for <m>x=-1</m>. Therefore, the only singular point for <m>f(x)</m> is <m>x=-1</m>.
 </p>
 
 <p>To find critical points, we set
@@ -535,7 +535,7 @@ f(-x)=\frac{(-x)^3}{1-(-x)^2}=\frac{-x^3}{1-x^2}=-f(x)</me>
 f'(x)=\dfrac{3x^2-x^4}{(1-x^2)^2}=\frac{x^2(3-x^2)}{(1-x^2)^2}</me>
 </p>
 
-<p>There are no singular points (but remember the domain of <m>f(x)</m> does not include <m>x=\pm 1</m> ). The critical points are:
+<p>The only singular points are <m>x=\pm 1</m>, where <m>f(x)</m>, and hence <m>f'(x)</m>, is not defined.  The critical points are:
 <md>
 <mrow>
 f'(x)&amp;=0
@@ -2091,9 +2091,9 @@ f''(x)=20x^3\qquad
 <li> <m>f'(x) \gt  0</m> (i.e. <m>f</m> is increasing) for
    <m>|x| \gt  \dfrac{1}{\root{4}\of{5}}</m>
 </li>
-<li>{}<m>f'(x)=0</m> (i.e. <m>f</m> has critical points) for <m>x= \pm\dfrac{1}{\root{4}\of{5}} \approx \pm 0.67</m>
+<li> <m>f'(x)=0</m> (i.e. <m>f</m> has critical points) for <m>x= \pm\dfrac{1}{\root{4}\of{5}} \approx \pm 0.67</m>
 </li>
-<li>{}<m>f'(x) \lt  0</m> (i.e. <m>f</m> is decreasing) for <m>|x|  \lt  \dfrac{1}{\root{4}\of{5}}</m>
+<li> <m>f'(x) \lt  0</m> (i.e. <m>f</m> is decreasing) for <m>|x|  \lt  \dfrac{1}{\root{4}\of{5}}</m>
 </li>
 <li> <m>f\left(\pm\dfrac{1}{\sqrt[4]{5}}\right)=\mp\dfrac{4}{5\sqrt[4]{5}}\approx\mp0.53</m>
 </li>

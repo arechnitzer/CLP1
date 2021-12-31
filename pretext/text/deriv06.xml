@@ -503,7 +503,7 @@ So finally
 Notice that this has the same form as Lemma <xref ref="lem_dxn"/>, above,  except with <m>n=\frac{p}{q}</m> allowed to be any positive rational  number, not just a positive integer.
 </p></example>
 
-<example xml:id="eg_DIFFsimpleToolsI"><title>Derivative of <m>x^{-n}</m></title>
+<example xml:id="eg_DIFFsimpleToolsI"><title>Derivative of <m>x^{-m}</m></title>
 <p>
 In this example we'll use the quotient rule to find the derivative of  <m>x^{-m}</m>, for any natural number <m>m</m>.
 </p>

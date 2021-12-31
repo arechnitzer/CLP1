@@ -31,13 +31,13 @@ True or false: $\ds\diff{}{x}\{f(x)g(x)\}=f'(x)g'(x)$ when $f$ and $g$ are diffe
 \end{solution}
 
 
-\begin{question}True or false: $\ds\diff{}{x}\left\{\dfrac{f(x}{g(x)}\right\}=\dfrac{f'(x)}{g(x)}-\dfrac{f(x)g'(x)}{g^2(x)}$ when $f$ and $g$ are differentiable functions.
+\begin{question}True or false: $\ds\diff{}{x}\left\{\dfrac{f(x)}{g(x)}\right\}=\dfrac{f'(x)}{g(x)}-\dfrac{f(x)g'(x)}{g^2(x)}$ when $f$ and $g$ are differentiable functions.
 \end{question}
 \begin{hint} Simplify
 \end{hint}
 \begin{answer} True
 \end{answer}
-\begin{solution} True: the quotient rule tells us \[\diff{}{x}\left\{\frac{f(x}{g(x)}\right\}=\frac{g(x)f'(x)-f(x)g'(x)}{g^2(x)} = \frac{g(x)f'(x)}{g^2(x)}-\frac{f(x)g'(x)}{g^2(x)} = \frac{f'(x)}{g(x)}-\frac{f(x)g'(x)}{g^2(x)}.\]
+\begin{solution} True: the quotient rule tells us \[\diff{}{x}\left\{\frac{f(x)}{g(x)}\right\}=\frac{g(x)f'(x)-f(x)g'(x)}{g^2(x)} = \frac{g(x)f'(x)}{g^2(x)}-\frac{f(x)g'(x)}{g^2(x)} = \frac{f'(x)}{g(x)}-\frac{f(x)g'(x)}{g^2(x)}.\]
 \end{solution}
 
 
@@ -68,15 +68,20 @@ All rules give $g'(x)=3f'(x)$.
 \subsection*{\Procedural}
 %%%%%%%%%%%%%%%%%%
 
-\begin{question}Differentiate $f(x)=3x^5+4x^{2/3}$.
+\begin{question}Differentiate $f(x)=3x^2+4x^{1/2}$ for $x>0$.
 \end{question}
-\begin{hint} Use linearity
+\begin{hint} Use linearity and the known derivatives of $x^2$ and $x^{1/2}$.
 \end{hint}
-\begin{answer} $f'(x)=15x^4+\frac{8}{3}x^{-1/3}$
+\begin{answer} $f'(x)=6x+\frac{2}{\sqrt{x}}$
 \end{answer}
 \begin{solution}
-$f'(x)=5\cdot 3x^4+\frac{2}{3}\cdot 4x^{2/3-1}
-=15x^4+\frac{8}{3}x^{-1/3}$
+We know, from Examples~\ref*{eg:DIFFderivX2} and \ref*{eg:DIFFderivXsqrt} 
+in the CLP-1 text, that $\diff{}{x}x^2=2x$ and 
+$\diff{}{x}x^{1/2}=\frac{1}{2\sqrt{x}}$. So, by linearity,
+\begin{equation*}
+f'(x)=3\cdot 2x+ 4\cdot \frac{1}{2\sqrt{x}}
+=6x+\frac{2}{\sqrt{x}}
+\end{equation*}
 \end{solution}
 
 
@@ -85,13 +90,12 @@ $f'(x)=5\cdot 3x^4+\frac{2}{3}\cdot 4x^{2/3-1}
 
 \begin{Mquestion}Use the product rule to differentiate $f(x)=(2x+5)(8\sqrt{x}-9x)$.
 \end{Mquestion}
-\begin{hint} You have already seen $\diff{}{x}\{\sqrt{x}\}$
+\begin{hint} You have already seen $\diff{}{x}\{\sqrt{x}\}$.
 \end{hint}
 \begin{answer} $-36x+24\sqrt{x}+\frac{20}{\sqrt{x}}-45$
 \end{answer}
-\begin{solution} We have already seen $\diff{}{x}\{\sqrt{x}\}=\frac{1}{2\sqrt{x}}$, but if you forget the formula, it's easy to find using the power rule:
- $\diff{}{x}\{\sqrt{x}\}=\diff{}{x}\left\{x^{1/2}\right\}=\frac{1}{2}x^{-1/2}=\frac{1}{2\sqrt{x}}$.
-
+\begin{solution} We have already seen $\diff{}{x}\{\sqrt{x}\}=\frac{1}{2\sqrt{x}}$ in 
+Example~\ref*{eg:DIFFderivXsqrt}  of the CLP-1 text. 
  Now:
  \begin{align*}f'(x) &= (2)(8\sqrt{x}-9x)+(2x+5)\left(\frac{8}{2\sqrt{x}}-9\right)\\
  &= 16\sqrt{x}-18x+(2x+5)\left(\frac{4}{\sqrt{x}}-9\right)\\
@@ -102,17 +106,22 @@ $f'(x)=5\cdot 3x^4+\frac{2}{3}\cdot 4x^{2/3-1}
 
 
 
-\begin{Mquestion}[2015Q]
+\begin{Mquestion}[2015Q]\label{derivxcube}
 Find the equation of the tangent line to the graph of $y=x^3$ at
 $x=\dfrac{1}{2}$.
 \end{Mquestion}
-\begin{hint} The equation of a line can be determined using a point, and the slope.
+\begin{hint} The equation of a line can be determined using a point, and the slope. The derivative of $x^3$ can be found by writing $x^3=(x)(x^2)$.
 \end{hint}
 \begin{answer} $y -  \frac{1}{8} = \frac{3}{4}\cdot \left(x-\frac{1}{2}\right)$, or $y= \tfrac{3}{4} x - \tfrac{1}{4}$
 \end{answer}
-\begin{solution} We compute the derivative of $x^3$ as being $3x^2$, which evaluated at
-$x=\frac{1}{2}$ yields $\frac{3}{4}$. Since we also compute
-$\left( \frac{1}{2}\right)^3=\frac{1}{8}$, then the equation of the tangent line is
+\begin{solution} 
+We already know that $\diff{}{x}x=1$ and $\diff{}{x}x^2=2x$, so we can
+compute the derivative of $x^3$ by writing $x^3=(x)(x^2)$,
+\begin{equation*}
+\diff{}{x} x^3 =\diff{}{x} (x)(x^2) = (1)(x^2)+(x)(2x)=3x^2
+\end{equation*}
+When this is evaluated at $x=\frac{1}{2}$ we get $\frac{3}{4}$. Since we 
+also compute $\left( \frac{1}{2}\right)^3=\frac{1}{8}$, the equation of the tangent line is
 \begin{align*}
 y -  \frac{1}{8} = \frac{3}{4}\cdot \left(x-\frac{1}{2}\right).
 \end{align*}
@@ -136,7 +145,8 @@ A particle moves along the $x$--axis so that its position
 \eqref{s2.4particle3} decreasing
 \end{answer}
 \begin{solution}
-Let $f(t)=t^3-4t^2+1$. Then
+Let $f(t)=t^3-4t^2+1$. We saw in Question~\ref{derivxcube} that 
+$\diff{}{t}t^3=3t^2$. So
 \begin{align*}
 f'(t)&=3t^2-8t & f'(2)&=3\times 4-8\times 2=-4\cr
 f''(t)&=6t-8 & f''(2)&=6\times 2-8=4\cr
@@ -228,7 +238,8 @@ line passes through $(2,9)$.
 \begin{answer}{$(1,3),\ (3,27)$}
 \end{answer}
 \begin{solution}
-The slope of $y=3x^2$ at $x=a$ is $6a$. The tangent line to
+We already know that $\diff{}{x}x^2=2x$. So
+the slope of $y=3x^2$ at $x=a$ is $6a$. The tangent line to
 $y=3x^2$ at $x=a, y=3a^2$ is $y-3a^2=6a(x-a)$. This tangent line passes
 through $(2,9)$ if
 \begin{align*}
