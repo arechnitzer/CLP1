@@ -510,19 +510,55 @@ If <m>f(x)=0</m>, then <m>|x^3|=\left|\sin\left(x^5\right)\right| \leq 1</m>. Wh
 </p></answer>
 <solution><p>
 <ul>
-<li> We can see by inspection that <m>f(0)=0</m>, so there is at least one root.
+<li> We can see by inspection that <m>f(0)=0</m>, so there is at least one root. We have to determine how many any other roots there are, if any.
 </li>
-<li> To hunt for other roots, notice than when <m>f(x)=0</m>, <m>x^3=-\sin\left(x^5\right)</m>, and since the sine function only takes on values in <m>[-1,1]</m>, this means <m>-1 \leq x^3 \leq 1</m>. That is, all roots of <m>f(x)</m> are in the interval <m>[-1,1]</m>. (An equivalent way to see this is to notice that for all <m>x  \gt 1</m>, <m>f(x) \gt 0</m>, and for all <m>x \lt 1</m>, <m>f(x) \lt 0</m>.)
-</li>
-<li> If there is a root <m>a \neq 0</m>, then by Rolle's Theorem (since <m>f(x)</m> is continuous and differentiable for all real numbers) <m>f'(c)=0</m> for some <m>c</m> strictly between 0 and <m>a</m>. In particular, since we already know any roots <m>a</m> will be between <m>-1</m> and <m>1</m>, if <m>f(x)</m> has two roots then <m>f'(c)=0</m> for some <m>c \in (-1,0) \cup (0,1)</m>.
-</li>
-<li>
-<me>
-f'(x)=3x^2+5x^4\cos\left(x^5\right)=x^2\left(3+5x^2\cos\left(x^5\right)\right)</me>
-So, if <m>f'(x)=0</m>, then <m>x=0</m> or <m>\left(3+5x^2\cos\left(x^5\right)\right)=0</m>. If <m>x \in (-1,0) \cup (0,1)</m>, then <m>|x| \lt 1</m> and so <m>|x^5| \lt 1 \lt \frac{\pi}{2}</m>, so <m>\cos\left(x^5\right) \gt 0</m>. Then <m>3+5x^2\cos\left(x^5\right)  \gt  3</m>, so <m>f'(x) \neq 0</m>. That is, there is no <m>c \in (-1,0) \cup (0,1)</m> with <m>f'(c)=0</m>. Therefore, following our last  bullet point, <m>f(x)</m> has only one root.
+<li> 
+The function <m>f(x)</m> is the sum of the two terms <m>x^3</m> and <m>\sin(x^5)</m>. 
+A number <m>x</m> is a root of <m>f(x)</m> if and only if the two terms cancel each other exactly for that value of <m>x</m>. That is, <m>x</m> is a root of <m>f</m> if and only if <m>x^3=-\sin(x^5)</m>. To develope some intuition in our hunt for other roots, we sketch, in the same figure, the graphs <m>y=x^3</m> and 
+<m>y=-\sin(x^5)</m>. Then the roots of <m>f(x)</m> are precisely the <m>x</m>'s where the two curves 
+<m>y=x^3</m> and <m>y= -\sin(x^5)</m> intersect.
 </li>
 </ul>
-Note here that <m>f'(x)</m> has many zeroes--infinitely many, in fact. However, <m>x=0</m> is the only root of <m>f'(x)</m> in the interval <m>(-1,1)</m>.
+</p>
+<sidebyside width="62%">
+<image source="problems/figs/graphXcubeSin"/>
+</sidebyside>
+<p>
+<ul>
+<li>Looking at the sketch, we see that the two curves cannot possibly intersect at any point having 
+<m>|x|>1</m> <mdash/> if <m>|x|>1</m>, then <m>|x^3|>1</m> but <m>|-\sin (x^5)|\le 1</m> and we cannot possibly have <m>x^3=-\sin(x^5)</m>. That is, all roots of <m>f(x)</m> are in the interval <m>[-1,1]</m>. 
+</li>
+<li> From the sketch, we would probably guess that <m>y=x^3</m> and <m>y=-\sin(x^5)</m> cross only at 
+<m>x=0</m>. We can use Rolle's Theorem to verify that that is indeed the case.
+</li>
+<li>
+If there is a root <m>a \neq 0</m>, then by Rolle's Theorem (since <m>f(x)</m> is continuous and differentiable for all real numbers <m>x</m>) <m>f'(c)=0</m> for some <m>c</m> strictly between <m>0</m> and 
+<m>a</m>. In particular, since we already know any roots <m>a</m> will be between <m>-1</m> and <m>1</m>, if 
+<m>f(x)</m> has two roots then <m>f'(c)=0</m> for some <m>c \in (-1,0) \cup (0,1)</m>.
+</li>
+<li>
+The derivative of <m>f</m> is
+<me>
+f'(x)=3x^2+5x^4\cos\big(x^5\big)=x^2\left(3+5x^2\cos\big(x^5\big)\right)
+</me>
+So, if <m>f'(x)=0</m>, then <m>x=0</m> or <m>\left(3+5x^2\cos\left(x^5\right)\right)=0</m>. 
+If <m>x \in (-1,0) \cup (0,1)</m>, then 
+<md>
+<mrow>
+|x|\lt 1 \amp\implies |x^5|\lt 1\lt \tfrac{\pi}{2}
+      \implies \cos\big(x^5\big)>0 
+</mrow>
+<mrow>
+     \amp\implies 3+5x^2\cos\big(x^5\big) > 3 
+</mrow>
+<mrow>
+      \amp\implies f'(x) \neq 0
+</mrow>
+</md>
+That is, there is no <m>c \in (-1,0) \cup (0,1)</m> with <m>f'(c)=0</m>. Therefore, following our last  bullet point, <m>f(x)</m> has only one root.
+</li>
+</ul>
+Note here that <m>f'(x)</m> has many zeroes <mdash/> infinitely many, in fact. However, <m>x=0</m> is the only root of <m>f'(x)</m> in the interval <m>(-1,1)</m>.
 </p></solution>
 </exercise>
 
