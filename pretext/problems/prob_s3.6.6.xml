@@ -36,7 +36,8 @@ You'll find the intervals of increase and decrease. These will give you a basic 
 <xref ref="s3_62007_1"/> <m>(-\infty,3]</m>
 </p>
 <p>
-<xref ref="s3_62007_2"/> <m>f(x)</m> in increasing on <m>(-\infty,2)</m> and decreasing on <m>(2,3)</m>. There is a local maximum at <m>x=2</m>.
+<xref ref="s3_62007_2"/> <m>f(x)</m> in increasing on <m>(-\infty,2)</m> and decreasing on <m>(2,3)</m>. There is a local maximum at <m>x=2</m> and a local minimum at the endpoint 
+<m>x=3</m>.
 </p>
 <p>
 <xref ref="s3_62007_3"/> <m>f(x)</m> is always concave down and has no inflection points.
@@ -78,8 +79,8 @@ f'(x)=\sqrt{3-x}-\frac{x}{2\sqrt{3-x}}
 </row>
 </tabular>
 </sidebyside>
-<p>So, <m>f</m> is increasing for <m>x \lt 2</m>, has a local (in fact global) maximum at <m>x=2</m>,
-and is decreasing for <m>2 \lt x \lt 3</m>.
+<p>So, <m>f</m> is increasing for <m>x \lt 2</m>, has a local (in fact global) maximum at 
+<m>x=2</m>, is decreasing for <m>2 \lt x \lt 3</m>, and has a local minimum at <m>x=3</m>.
 </p>
 
 <p>Remark: this shows us the basic skeleton of the graph. It consists of a single hump.</p>
@@ -1939,7 +1940,7 @@ The range of <m>g</m> is <m>[0,\infty)</m>.
 You should be familiar with the graph of <m>y=e^x</m>. You can construct the
 graph of <m>y=e^{-x}</m> just by reflecting the graph of <m>y=e^x</m> across the
 <m>y</m>--axis. To see why this is the case, imagine swapping each value of
-<m>x</m> its negative: for example, swapping the point at <m>x = -1</m> with the
+<m>x</m> with its negative: for example, swapping the point at <m>x = -1</m> with the
 point at <m>x = 1</m>, etc. Alternatively, you can graph <m>y=f(x)=e^{-x}</m>,
 <m>x\ge 0</m>, using the methods of this section: at <m>x=0</m>,
 <m>y=f(0)=1</m>; as <m>x</m> increases, <m>y=f(x)=e^{-x}</m> decreases, with no
@@ -1962,32 +1963,22 @@ local extrema; and as <m>x\rightarrow+\infty</m>, <m>y=f(x)\rightarrow 0</m>.
 </p>
 
 <p>Recall that, to graph the inverse of a function, we reflect the original function across the line <m>y=x</m>.
-</p>
-
-<p>You should be familiar with the graph of <m>y=e^x</m>. You can construct the
-graph of <m>y=e^{-x}</m> just by reflecting the graph of <m>y=e^x</m> across the
-<m>y</m>--axis. To see why this is the case, imagine swapping each value of
-<m>x</m> its negative: for example, swapping the point at <m>x = -1</m> with the
-point at <m>x = 1</m>, etc.
-</p>
-
-<p> Alternatively, you can graph <m>y=f(x)=e^{-x}</m>, <m>x\ge 0</m>, using the
-methods of this section: at <m>x=0</m>, <m>y=f(0)=1</m>; as <m>x</m> increases,
-<m>y=f(x)=e^{-x}</m> decreases, with no local extrema; and as
-<m>x\rightarrow+\infty</m>, <m>y=f(x)\rightarrow 0</m>.
-</p>
-
-<p> To see why this is true, consider the following. Since <m>g(x)</m> is the
-inverse of <m>f(x)</m>, then, for any pair of numbers <m>x</m> and <m>y</m>, we
-have <me> f(x) = y\text{ if and only }g(y) = x </me> That is, <m>g</m> is the
-function that swaps the input and output of <m>f</m>.  Now the point <m>(x,y)</m>lies on the graph of <m>f</m> if and only if <m>y=f(x)</m>. Similarly, the point
-<m>(X,Y)</m> lies on the graph of <m>g</m> if and only if <m>Y=g(X)</m>. Setting
-<m>Y=x</m> and <m>X=y</m> we see that the point <m>(y,x)</m> lies on the graph
+To see why this is true, consider the following. By definition, the inverse function
+<m>g</m> of <m>f</m> is obtained by solving <m>y=f(x)</m> for <m>x</m> as a function of <m>y</m>. 
+So, for any pair of numbers <m>x</m> and <m>y</m>, we have
+<me> 
+  f(x) = y\text{ if and only }g(y) = x 
+</me> 
+That is, <m>g</m> is the function that swaps the input and output of <m>f</m>.  Now the point 
+<m>(x,y)</m> lies on the graph of <m>f</m> if and only if <m>y=f(x)</m>. Similarly, the point
+<m>(X,Y)</m> lies on the graph of <m>g</m> if and only if <m>Y=g(X)</m>. Choosing
+<m>Y=x</m> and <m>X=y</m>, we see that the point <m>(X,Y)=(y,x)</m> lies on the graph
 of <m>g</m> if and only if <m>x=g(y)</m>, which in turn is the case if and only
 if <m>y=f(x)</m>. So</p>
 
 <blockquote>
-<p><m>(y,x)</m> is on the graph of <m>g</m> if and only if <m>(x,y)</m> is on the graph of <m>f</m>. </p>
+<p><m>(y,x)</m> is on the graph of <m>g</m> if and only if <m>(x,y)</m> is on the graph of 
+  <m>f</m>. </p>
 </blockquote>
 
 <p>To get from the point<m>(x,y)</m> to the point <m>(y,x)</m> we have to exchange <m>x \leftrightarrow y</m>, which we can do by reflecting over the line <m>y=x</m>. Thus we can
@@ -2061,7 +2052,10 @@ depend on the value of <m>k</m>.)
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 <p>
-Local extrema are shown; inflection point at the origin.
+Local  maximum at <m>x=-\frac{1}{\sqrt[4]{5}}</m>; 
+local  minimum at <m>x=\frac{1}{\sqrt[4]{5}}</m>; 
+inflection point at the origin; 
+concave down for <m> x\lt 0</m> ; concave up for <m> x\gt 0</m>.
 </p>
 
 <p>(b) The number of distinct real roots of <m>x^5-x+k</m> is:
@@ -2117,9 +2111,9 @@ This gives us a first idea of the shape of the graph. </p>
 <ul>
 <li> <m>f''(x) \gt  0</m> (i.e. <m>f</m> is concave up) for <m>x \gt  0</m>,
 </li>
-<li>{}<m>f''(x)=0</m> (i.e. <m>f</m> has an inflection point) for <m>x=0</m>, and
+<li><m>f''(x)=0</m> (i.e. <m>f</m> has an inflection point) for <m>x=0</m>, and
 </li>
-<li>{}<m>f''(x) \lt  0</m> (i.e. <m>f</m> is concave down) for <m>x \lt 0</m>
+<li><m>f''(x) \lt  0</m> (i.e. <m>f</m> is concave down) for <m>x \lt 0</m>
 </li>
 </ul>
 Thus

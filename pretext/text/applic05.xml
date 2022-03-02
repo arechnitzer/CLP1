@@ -220,27 +220,18 @@ to be more careful distinguishing between these cases.
 
 <definition xml:id="def_APPlocalMaxMin">
 <statement><p>
-Let <m>a\le b</m> and let the function <m>f(x)</m> be defined for all <m>x \in [a,b]</m>. Now
-let <m>a \leq c \leq b</m>, then
+Let <m>I</m> be an interval, like <m>(a,b)</m> or <m>[a,b]</m> for example, and let the function <m>f(x)</m> be defined for all <m>x \in I</m>. Now let <m>c\in I</m>. Then
 <ul>
-<li> We say that <m>f(x)</m> has a global (or absolute)
-minimum at <m>x=c</m> if <m>f(x)\ge f(c)</m> for all <m>a\le x\le b</m>.
+<li> we say that <m>f(x)</m> has a <em>global (or absolute) minimum on the interval <m>I</m></em> at the point <m>x=c</m> if <m>f(x)\ge f(c)</m> for all <m>x\in I</m>.
 </li>
-<li> Similarly, we say that <m>f(x)</m> has a global (or absolute)
-maximum at <m>x=c</m> if <m>f(x)\le f(c)</m> for all <m>a\le x\le b</m>.
+<li> Similarly, we say that <em><m>f(x)</m> has a global (or absolute)
+maximum on <m>I</m></em> at <m>x=c</m> if <m>f(x)\le f(c)</m> for all <m>x\in I</m>.
 </li>
-</ul>
-Now let <m>a  \lt  c  \lt b</m> (note the strict inequalities), then
-<ul>
-<li> We say that <m>f(x)</m> has a local minimum at <m>x=c</m>
-if there are <m>a'</m> and <m>b'</m> obeying <m>a\le a' \lt c \lt b'\le b</m> such that
-<m>f(x)\ge f(c)</m> for all <m>x</m> obeying <m>a' \lt x \lt b'</m>.  Note the <em>strict</em>
-inequalities in <m>a' \lt c \lt b'</m>.
+<li> We say that <m>f(x)</m> has a <em>local<fn>Beware that, while many textbooks use these definitions of local minimum and maximum, some textbooks exclude the endpoints <m>a</m>, <m>b</m> of the interval <m>[a,b]</m> from their definitions. Our definitions allow the endpoints <m>a</m> and <m>b</m> to be local minima and maxima. Note that, under our definitions, every global minimum (maximum) is also a local minimum (maximum).</fn> minimum on <m>I</m></em> at <m>x=c</m>
+if <m>f(x)\ge f(c)</m> for all <m>x\in I</m> that are near <m>c</m>. Precisely, if there is a <m>\delta>0</m> such that <m>f(x)\ge f(c)</m> for all <m>x\in I</m> that are within a distance <m>\delta</m> of <m>c</m>.
 </li>
-<li> Similarly, we say that <m>f(x)</m> has a local maximum at <m>x=c</m>
-if there are <m>a'</m> and <m>b'</m> obeying <m>a\le a' \lt c \lt b'\le b</m> such that
-<m>f(x)\le f(c)</m> for all <m>x</m> obeying <m>a' \lt x \lt b'</m>.  Note the <em>strict</em>
-inequalities in <m>a' \lt c \lt b'</m>.
+<li> Similarly, we say that <m>f(x)</m> has a <em>local maximum on <m>I</m></em> at <m>x=c</m>
+if <m>f(x)\le f(c)</m> for all <m>x\in I</m> that are near <m>c</m>. Precisely, if there is a <m>\delta>0</m> such that <m>f(x)\le f(c)</m> for all <m>x\in I</m> that are within a distance <m>\delta</m> of <m>c</m>.
 </li>
 </ul>
 The global maxima and minima of a function are called the
@@ -250,12 +241,11 @@ extrema.
 </definition>
 
 <p>Consider again the function we showed in the figure above</p>
-<sidebyside width="50%">
- <image source="text/figs/maxmin2"/>
+<sidebyside width="60%">
+ <image source="text/figs/maxmin3"/>
  </sidebyside>
-<p>It has 2 local maxima and 2 local minima. The global maximum occurs at the middle green
-point (which is also a local maximum), while the global minimum occurs at the rightmost
-blue point (which is not a local minimum).
+<p>It has 3 local maxima and 3 local minima on the interval <m>[a,b]</m>. The global maximum occurs at the middle green point (which is also a local maximum), and the global minimum occurs at the rightmost
+blue point (which is also a local minimum).
 </p>
 
 <p>Using the above definition we can summarise what we have learned above
@@ -267,7 +257,8 @@ the seventeenth century.
 
 <theorem xml:id="thm_APPlocalMaxMin">
 <statement><p>
-If a function <m>f(x)</m> has a local maximum or local minimum at <m>x=c</m>
+Let the function <m>f(x)</m> be defined on the interval <m>I</m> and let <m>a</m>, <m>b</m>, <m>c</m> be points in <m>I</m> with <m>a\lt c\lt b</m>.
+If <m>f(x)</m> has a local maximum or local minimum at <m>x=c</m>
 and if <m>f'(c)</m> exists, then <m>f'(c)=0</m>.
 </p></statement>
 </theorem>
@@ -284,8 +275,8 @@ increases through <m>c</m>, that <m>f''(c) \lt 0</m>.
 </li>
 <li>
 Conversely, if <m>f'(c)=0</m> and <m>f''(c) \lt 0</m>,
-  then, just to the right of <m>c</m> <m>f'(x)</m> must be negative, so that
-  <m>f(x)</m> is decreasing, and  just to the left of <m>c</m> <m>f'(x)</m> must
+  then, just to the right of <m>c</m>, <m>f'(x)</m> must be negative, so that
+  <m>f(x)</m> is decreasing, and  just to the left of <m>c</m>, <m>f'(x)</m> must
   be positive, so that <m>f(x)</m> is increasing.
   So <m>f(x)</m> has a local maximum at <m>c</m>.
 </li>
@@ -296,8 +287,8 @@ Conversely, if <m>f'(c)=0</m> and <m>f''(c) \lt 0</m>,
 </li>
 <li>
 Conversely, if <m>f'(c)=0</m> and <m>f''(c) \gt 0</m>,
-  then, just to the right of <m>c</m> <m>f'(x)</m> must be positive, so that
-  <m>f(x)</m> is increasing, and, just to the left of <m>c</m> <m>f'(x)</m> must be
+  then, just to the right of <m>c</m>, <m>f'(x)</m> must be positive, so that
+  <m>f(x)</m> is increasing, and, just to the left of <m>c</m>, <m>f'(x)</m> must be
   negative, so that <m>f(x)</m> is decreasing.
   So <m>f(x)</m> has a local minimum at <m>c</m>.
 </li>
@@ -306,6 +297,10 @@ Conversely, if <m>f'(c)=0</m> and <m>f''(c) \gt 0</m>,
 
 <theorem xml:id="thm_APPsecondDerivTest">
 <statement><p>
+Let <m>f(x)</m> be defined on the interval <m>I</m> and let <m>a, b, c \in I</m> with <m>a\lt c\lt b</m>.
+</p>
+
+<p>
 If <m>f'(c)=0</m> and <m>f''(c)  \lt 0</m>, then <m>f(x)</m> has a local maximum at <m>c</m>.
 </p>
 
@@ -319,7 +314,7 @@ If <m>f'(c)=0</m> and <m>f''(c)  \lt 0</m>, then <m>f(x)</m> has a local maximum
 </theorem>
 
 <p>Theorem<nbsp/><xref ref="thm_APPlocalMaxMin"/> says that, when <m>f(x)</m> has a local maximum or
-minimum at <m>x=c</m>, there are two possibilities.
+minimum at <m>x=c</m>, there are three possibilities.
 <ul>
 <li><p> The derivative <m>f'(c)=0</m>. This case is illustrated in the following
 figure.</p>
@@ -333,11 +328,16 @@ red dot).</p></li>
 <li> <p> The derivative <m>f'(c)</m> does not exist. This case is illustrated in the
 following figure.</p>
 <sidebyside width="80%">
- <image source="text/figs/localMaxMinFG"/>
+ <image source="text/figs/localMaxMinFGP"/>
 </sidebyside>
 <p>
 Observe that, in this example, <m>f'(x)</m> changes discontinuously from negative to
 positive at the local minimum (<m>x=0</m>) and <m>f'(0)</m> does not exist.</p>
+</li>
+<li>
+The point <m>c</m> is an endpoint of the interval <m>I</m>. This case is also illustrated in the
+above figure. The endpoints <m>a</m> and <m>b</m> are both local maxima. But <m>f'(a)</m> and 
+<m>f'(b)</m> are not zero.
 </li>
 </ul>
 This theorem demonstrates that the points at which the derivative is zero or
@@ -406,11 +406,17 @@ This derivative takes the value <m>0</m> at two different values of <m>x</m>. Na
 
 <p> From the figure we see that
 <ul>
+<li> <m>f(x)</m> has a local minimum at the endpoint <m>x=-2</m> (i.e. we have 
+<m>f(x)\ge f(-2)</m> whenever <m>x\ge -2</m> is close to <m>-2</m>) and
+</li>
 <li> <m>f(x)</m> has a local minimum at <m>x=c_+</m> (i.e. we have <m>f(x)\ge f(c_+)</m>
 whenever <m>x</m> is close to <m>c_+</m>) and
 </li>
 <li> <m>f(x)</m> has a local maximum at <m>x=c_-</m> (i.e. we have <m>f(x)\le f(c_-)</m>
 whenever <m>x</m> is close to <m>c_-</m>) and
+</li>
+<li> <m>f(x)</m> has a local maximum at the endpoint <m>x=3</m> (i.e. we have <m>f(x)\le f(3)</m>
+whenever <m>x\le 3</m> is close to <m>3</m>) and
 </li>
 <li> the global minimum of <m>f(x)</m>, for <m>x</m> in the interval <m>-2\le x\le 3</m>, is
 at <m>x=c_+</m> (i.e. we have <m>f(x)\ge f(c_+)</m> whenever <m>-2\le x\le 3</m>) and
@@ -422,7 +428,7 @@ at <m>x=3</m> (i.e. we have <m>f(x)\le f(3)</m> whenever <m>-2\le x\le 3</m>).
 </p></li>
 <li> Note that we have carefully constructed this example to illustrate that
 the global maximum (or minimum) of a function on an interval may or may not also
-be a local maximum (or minimum) of the function.
+be a critical point of the function.
 </li>
 </ul>
 </p>
@@ -432,7 +438,7 @@ be a local maximum (or minimum) of the function.
 <example xml:id="eg_localMinMaxB"><title>Local max and min of <m>x^3</m></title>
 <p>
 In this example, we'll look for local maxima and minima of the function
-<m>f(x) = x^3</m> on the interval <m>-1\le x\le 1</m>.
+<m>f(x) = x^3</m> on the interval <m>-1\lt x\lt 1</m>.
 <ul>
 <li> First compute the derivative:
 <md>
@@ -460,15 +466,12 @@ the fact that <m>f'(c)=0</m> <mdash/> we have <m>f(x) \lt f(c)=0</m> for all <m>
 point (or singular point) of a function <em>need not be a local maximum or
 minimum</em> for the function.
 </li>
-<li> Reread Theorem <xref ref="thm_APPlocalMaxMin"/>. It says
-<fn>A very common error of logic that people make is <q>Affirming the consequent</q>. <q>If P then Q</q>
-is true, then observe Q and conclude P <mdash/> this is false. <q>If he is Shakespeare then he
-is dead</q> <q>That man is dead</q> <q>He must be Shakespeare</q>. Or you may have also seen
+<li> Reread Theorem <xref ref="thm_APPlocalMaxMin"/>. It says<fn>A very common error of logic that people make is <q>Affirming the consequent</q>. When the statement <q>if P then Q</q> is true, observing Q does <em>not</em> imply P. (<q>Affirming the consequent</q> eliminates <q>not</q> from the previous sentence.) For example, <q>If he is Shakespeare then he
+is dead.</q> and <q>That man is dead.</q> does not imply <q>He must be Shakespeare.</q>. Or you may have also seen
 someone use this reasoning: <q>If a person is a genius before their time then they are
-misunderstood.</q> <q>I am misunderstood</q> <q>So I must be a genius before my time</q>.
+misunderstood.</q> <q>I am misunderstood.</q> <q>So I must be a genius before my time.</q>.
 </fn>
-that, <q>if <m>f(x)</m> has a local maximum/minimum at <m>x=c</m> and if <m>f</m> is differentiable at
-<m>x=c</m>, then <m>f'(c)=0</m></q>. It <alert>does not say</alert> that <q>if <m>f'(c)=0</m> then <m>f</m>
+<q>Let <m>\cdots</m>. If <m>f(x)</m> has a local maximum/minimum at <m>x=c</m> and if <m>f'(c)</m> exists, then <m>f'(c)=0</m></q>. It <alert>does not say</alert> that <q>if <m>f'(c)=0</m> then <m>f</m>
 has a local maximum/minimum at <m>x=c</m></q>.
 </li>
 </ul>
@@ -486,11 +489,11 @@ f(x) = |x| = \begin{cases}
        \end{cases}
 </mrow>
 </md>
-on the interval <m>-1\le x\le 1</m> and we'll also look for local maxima and minima of the function
+on the interval <m>-1\lt x\lt 1</m> and we'll also look for local maxima and minima of the function
 <me>
 g(x) = x^{2/3}
 </me>
-on the interval <m>-1\le x\le 1</m>.
+on the interval <m>-1\lt x\lt 1</m>.
 <ul>
 <li> Again, start by computing the derivatives (reread Example<nbsp/><xref ref="eg_diff_abs"/>):
 <md>
@@ -526,8 +529,8 @@ point <m>x=0</m>, so that point is a singular point for both <m>f(x)</m> and <m>
 <p>From the figures we see that both <m>f(x)</m> and <m>g(x)</m> have a local (and in fact global)
 minimum at <m>x=0</m> despite the fact that <m>x=0</m> is not a critical point.</p>
 </li>
-<li> Reread Theorem <xref ref="thm_APPlocalMaxMin"/> yet again. It says that,
-<q>if <m>f(x)</m> has a local maximum/minimum at <m>x=c</m>
+<li> Reread Theorem <xref ref="thm_APPlocalMaxMin"/> yet again. It says
+<q>Let <m>\cdots</m>. If <m>f(x)</m> has a local maximum or local minimum at <m>x=c</m>
 <em>and if <m>f</m> is differentiable at <m>x=c</m></em>, then <m>f'(c)=0</m></q>.
 It says nothing about what happens at points where the derivative does
 not exist. Indeed that is why we have to consider both critical points and
@@ -540,8 +543,7 @@ singular points when we look for maxima and minima.
 <subsection xml:id="ssec_find_maxmin">
 <title>Finding Global Maxima and Minima</title>
 <p>
-We now have a technique for finding local maxima and minima <mdash/> just look
-for values of <m>x</m> for which either <m>f'(x)=0</m> or <m>f'(x)</m> does not exist.
+We now have a technique for finding local maxima and minima <mdash/> just look at endpoints of the interval of interest and for values of <m>x</m> for which either <m>f'(x)=0</m> or <m>f'(x)</m> does not exist.
 What about finding global maxima and minima? We'll start by stating
 explicitly that, under appropriate hypotheses, global maxima
 and minima are guaranteed to exist.</p>
