@@ -123,7 +123,7 @@ Note, however, <m>0</m> is not in the interval <m>[1,4]</m>.</p>
 </p></solution>
 </exercise>
 
-<introduction><p>For Questions<nbsp/><xref ref="s3_5_3firstderivfirst"/> and <xref ref="s3_5_3firstderivlast"/>, you  can decide whether a critical point is a local extrema by considering the derivative of the function.</p></introduction>
+<introduction><p>For Questions<nbsp/><xref ref="s3_5_3firstderivfirst"/> and <xref ref="s3_5_3firstderivlast"/>, you  can decide whether a critical point is a local extremum by considering the derivative of the function.</p></introduction>
 
 <exercise xml:id="s3_5_3firstderivfirst" purpose="RQS"><title><fromexam>2015Q</fromexam></title>
 <statement><p>

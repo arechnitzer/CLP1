@@ -31,7 +31,7 @@ You'll find the intervals of increase and decrease. These will give you a basic 
 \begin{answer}
 \eqref{s3.62007_1} $(-\infty,3]$
 \\
-\eqref{s3.62007_2} $f(x)$ in increasing on $(-\infty,2)$ and decreasing on $(2,3)$. There is a local maximum at $x=2$.
+\eqref{s3.62007_2} $f(x)$ in increasing on $(-\infty,2)$ and decreasing on $(2,3)$. There is a local maximum at $x=2$ and a local minimum at the endpoint $x=3$.
 \\
 \eqref{s3.62007_3} $f(x)$ is always concave down and has no inflection points.
 \\
@@ -69,7 +69,7 @@ $f(x)$ & increasing & maximum & decreasing & endpoint \\
 \end{center}
 
 So, $f$ is increasing for $x<2$, has a local (in fact global) maximum at $x=2$,
-and is decreasing for $2<x<3$.
+is decreasing for $2<x<3$, and has a local minimum at $x=3$.
 
 Remark: this shows us the basic skeleton of the graph. It consists of a single hump.
 \begin{center}\begin{tikzpicture}
@@ -1609,7 +1609,7 @@ $g'(\half)=-2$
 You should be familiar with the graph of $y=e^x$. You can
            construct the graph of $y=e^{-x}$ just by reflecting the graph
            of $y=e^x$ across the $y$--axis. To see why this is the case,
-           imagine swapping each value of $x$ its negative: for example,
+           imagine swapping each value of $x$ with its negative: for example,
                       swapping the point at $x = -1$ with the point at $x = 1$, etc.
            Alternatively, you can graph $y=f(x)=e^{-x}$, $x\ge 0$,
            using the methods of this section: at $x=0$, $y=f(0)=1$;
@@ -1628,41 +1628,26 @@ There are no inflection points or extrema, except the endpoint $(0,1)$.
 
 \eqref{s3.62010exp4}
 
-Recall that, to graph the inverse of a function, we reflect the original function across the line $y=x$.
-
-You should be familiar with the graph of $y=e^x$. You can
-           construct the graph of $y=e^{-x}$ just by reflecting the graph
-           of $y=e^x$ across the $y$--axis. To see why this is the case,
-           imagine swapping each value of $x$ its negative: for example,
-           swapping the point at $x = -1$ with the point at $x = 1$, etc.
-
-           Alternatively, you can graph $y=f(x)=e^{-x}$, $x\ge 0$,
-           using the methods of this section: at $x=0$, $y=f(0)=1$;
-           as $x$ increases, $y=f(x)=e^{-x}$ decreases, with no local
-           extrema; and as $x\rightarrow+\infty$, $y=f(x)\rightarrow 0$.
-
-
-           To see why this is true, consider the following. Since $g(x)$
-           is the inverse of $f(x)$, then, for any pair of numbers $x$ and
-           $y$, we have
-           \begin{equation*}
-                  f(x) = y\text{ if and only  }g(y) = x
-          \end{equation*}
-           That is, $g$ is the function that swaps the input and output
-           of $f$. Now the point $(x,y)$ lies on the graph of $f$
-           if and only if $y=f(x)$. Similarly, the point $(X,Y)$ lies
-           on the graph of $g$ if and only if $Y=g(X)$. Setting $Y=x$
-           and $X=y$ we see that the point $(y,x)$ lies on the graph of
-           $g$ if and only if $x=g(y)$, which in turn is the case
-           if and only if $y=f(x)$. So
-           \begin{equation*}
-                 \text{$(y,x)$ is on the graph of $g$ if and only
-                        if $(x,y)$ is on the graph of $f$.}
-           \end{equation*}
-           To get from the point $(x,y)$ to the point $(y,x)$ we have to
-           exchange $x \leftrightarrow y$, which we can do by reflecting
-           over the line $y=x$.  Thus we can construct the graph of $g$
-           by reflecting the curve $y = f(x)$ over the line  $y = x$.
+Recall that, to graph the inverse of a function, we reflect the original function across the 
+line $y=x$. To see why this is true, consider the following. By definition, the inverse function
+$g$ of $f$ is obtained by solving $y=f(x)$ for $x$ as a function of $y$. So, for any pair of 
+numbers $x$ and $y$, we have
+ \begin{equation*}
+              f(x) = y\text{ if and only  }g(y) = x
+ \end{equation*}
+ That is, $g$ is the function that swaps the input and output of $f$. Now the point $(x,y)$ 
+ lies on the graph of $f$ if and only if $y=f(x)$. Similarly, the point $(X,Y)$ lies
+ on the graph of $g$ if and only if $Y=g(X)$. Choosing $Y=x$ and $X=y$, we see that the point 
+ $(X,Y)=(y,x)$ lies on the graph of $g$ if and only if $x=g(y)$, which in turn is the case
+ if and only if $y=f(x)$. So
+ \begin{equation*}
+         \text{$(y,x)$ is on the graph of $g$ if and only
+                      if $(x,y)$ is on the graph of $f$.}
+ \end{equation*}
+  To get from the point $(x,y)$ to the point $(y,x)$ we have to
+  exchange $x \leftrightarrow y$, which we can do by reflecting
+  over the line $y=x$.  Thus we can construct the graph of $g$
+  by reflecting the curve $y = f(x)$ over the line  $y = x$.
 
 
 \begin{center}\begin{tikzpicture}
@@ -1709,9 +1694,9 @@ $-\infty<k<\infty$. How many roots does the function have? (Your answer might
 depend on the value of $k$.)
 \end{enumerate}
 \end{question}
-\begin{hint}
-
-\end{hint}
+%\begin{hint}
+%
+%\end{hint}
 \begin{answer}
 (a)
 \begin{center}\begin{tikzpicture}
@@ -1722,7 +1707,10 @@ depend on the value of $k$.)
 \draw (.2,.78)--(-.2,.78) node[left]{$\frac{4}{5\sqrt[4]{5}}$};
 \draw (.2,-.78)--(-.2,-.78) node[left]{$\frac{-4}{5\sqrt[4]{5}}$};
 \end{tikzpicture}\end{center}
-Local extrema are shown; inflection point at the origin.
+Local  maximum at $x=-\frac{1}{\sqrt[4]{5}}$; 
+local  minimum at $x=\frac{1}{\sqrt[4]{5}}$; 
+inflection point at the origin; 
+concave down for $x<0$ ; concave up for $x>0$.
 
 (b) The number of distinct real roots of $x^5-x+k$ is:
 \begin{itemize}

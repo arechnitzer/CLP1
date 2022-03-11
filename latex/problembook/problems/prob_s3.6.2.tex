@@ -86,7 +86,7 @@ For the functions $D(x)$ and $E(x)$ we consider their behaviour
 
 
 \begin{question}[2015Q]
-Find the interval(s) where $f(x)=\dfrac{e^x}{x+3}$ is increasing.
+Find the largest open interval on which $f(x)=\dfrac{e^x}{x+3}$ is increasing.
 \end{question}
 \begin{hint}
 Where is $f'(x)>0$?
@@ -96,37 +96,41 @@ $(-2,\infty)$
 \end{answer}
 \begin{solution}
 The domain of $f(x)$ is all real numbers except $-3$ (because when $x=-3$ the denominator is zero). For $x\neq -3$, we differentiate using the quotient rule:
-$$f'(x)=\frac{e^x(x+3) - e^x(1)}{(x+3)^2} = \frac{e^x}{(x+3)^2} (x+2)\,.$$
+$$
+f'(x)=\frac{e^x(x+3) - e^x(1)}{(x+3)^2} = \frac{e^x}{(x+3)^2} (x+2)
+$$
 Since $e^x$ and $(x+3)^2$ are  positive for every $x$ in the domain of $f(x)$, the sign of $f'(x)$ is the same as the sign of $x+2$. We conclude that $f(x)$
-is increasing for every $x$ in its domain with $x+2>0$. That is, over the interval $(-2,\infty)$.
+is increasing for every $x$ in its domain with $x+2>0$. That is, over the open interval $(-2,\infty)$.
 \end{solution}
 
 
-
-
-\begin{question}[2015Q] Find the interval(s) where $f(x)=\dfrac{\sqrt{x-1}}{2x+4}$ is increasing.
+\begin{question}[2015Q] 
+ Find the largest open interval on which $f(x)=\dfrac{\sqrt{x-1}}{2x+4}$ is increasing.
 \end{question}
 \begin{hint}
 Consider the signs of the numerator and the denominator of $f'(x)$.
 \end{hint}
 \begin{answer}
-$(1,4)$ and $[1,4)$ are both acceptable answers
+$(1,4)$
 \end{answer}
 \begin{solution}
 Since we can't take the square root of a negative number,  $f(x)$ is only defined
-when $x \ge 1$. Furthermore, since we can't have a zero as a denominator, $x=-2$ is  not in the domain--but as long as $x \ge 1$, also $x \ne -2$. So, the domain of the function is $[1,\infty)$.
+when $x \ge 1$. Furthermore, since we can't have zero as a denominator, $x=-2$ is  not in the domain --- but as long as $x \ge 1$, we also have $x \ne -2$. So, the domain of the function is $[1,\infty)$.
 
- In order to find where is $f(x)$ increasing, we find where is $f'(x)$ positive.
-$$f'(x)=\frac{\frac{2x+4}{2\sqrt{x-1}}-2\sqrt{x-1}}{(2x+4)^2}=\frac{(x+2)-2(x-1)}{\sqrt{x-1}(2x+4)^2}
-=\frac{-x+4}{\sqrt{x-1}(2x+4)^2}$$
-The denominator is never negative, so  $f(x)$ is increasing when the numerator of $f'(x)$ is positive, i.e. when $4-x>0$, or $x<4$. Recalling that the domain of definition for $f(x)$ is $[1,+\infty)$, we conclude that $f(x)$ is increasing on the interval $(1,4)$.
+ In order to find where $f(x)$ is increasing, we find where $f'(x)$ is positive.
+$$
+f'(x)=\frac{\frac{2x+4}{2\sqrt{x-1}}-2\sqrt{x-1}}{(2x+4)^2}
+=\frac{(x+2)-2(x-1)}{\sqrt{x-1}(2x+4)^2}
+=\frac{-x+4}{\sqrt{x-1}(2x+4)^2}
+$$
+The denominator is never negative, so  $f(x)$ is increasing when the numerator of $f'(x)$ is positive, i.e. when $4-x>0$, or $x<4$. Recalling that the domain of definition for $f(x)$ is 
+$[1,+\infty)$, we conclude that $f(x)$ is increasing on the open interval $(1,4)$.
 
-Remark: $[1,4)$ is also an acceptable answer, but $[1,4]$ is not. At $x=4$ the function has a local maximum: $f(x)$ is increasing before $x=4$ and decreasing after.
 \end{solution}
 
 
 \begin{Mquestion}[2015Q]
-Find the interval(s) where $f(x)=2\arctan (x) - \log(1+x^2)$ is increasing.
+Find the largest open interval on which $f(x)=2\arctan (x) - \log(1+x^2)$ is increasing.
 \end{Mquestion}
 \begin{hint}
 Remember $\ds\diff{}{x}\{\arctan x\}=\dfrac{1}{1+x^2}$.
@@ -136,8 +140,10 @@ Remember $\ds\diff{}{x}\{\arctan x\}=\dfrac{1}{1+x^2}$.
 \begin{solution}
 The domain of arctangent is all real numbers. The domain of the logarithm function is all positive numbers, and $1+x^2$ is positive for all $x$. So, the domain of $f(x)$ is all real numbers.
 
-In order to find where is $f(x)$ increasing, we find where is $f'(x)$ positive.
-$$f'(x)= \frac 2 {1+x^2} - \frac{2x}{1+x^2} = \frac{2-2x}{1+x^2}$$
+In order to find where $f(x)$ is increasing, we find where $f'(x)$ is positive.
+$$
+f'(x)= \frac 2 {1+x^2} - \frac{2x}{1+x^2} = \frac{2-2x}{1+x^2}
+$$
 Since the denominator is always positive, $f(x)$ is increasing
-when when $2-2x>0$.We conclude that $f(x)$ is increasing on the interval $(-\infty,1)$.
+when when $2-2x>0$. We conclude that $f(x)$ is increasing on the open interval $(-\infty,1)$.
 \end{solution}

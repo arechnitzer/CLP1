@@ -96,7 +96,7 @@ If the graph is discontinuous at a point, it is not differentiable at that point
 \draw[thick] (1,.2)--(1,-.2) node[below]{$b$};
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
-<p>The <m>x</m>-coordinate corresponding to the blue dot (let's call it <m>a</m>) is a critical point, and <m>f(x)</m> has a local and global minimum at <m>x=a</m>. The <m>x</m>-coordinate corresponding to the discontinuity (let's call it <m>b</m>) is a singular point, but there is no a global or local extremum at <m>x=b</m>.
+<p>The <m>x</m>-coordinate corresponding to the blue dot (let's call it <m>a</m>) is a critical point, and <m>f(x)</m> has a local and global minimum at <m>x=a</m>. The <m>x</m>-coordinate corresponding to the discontinuity (let's call it <m>b</m>) is a singular point, but there is not a global or local extremum at <m>x=b</m>.
 </p></answer>
 <solution>
 <sidebyside width="66%">
@@ -120,16 +120,12 @@ If the graph is discontinuous at a point, it is not differentiable at that point
 
 <p>If a function is not continuous at a point, then it is not differentiable at that point. So, the <m>x</m>-coordinate  corresponding to the discontinuity (let's call it <m>b</m>) is a singular point. Values of <m>f(x)</m> immediately to the right of <m>b</m> are lower, and values immediately to the left of <m>b</m> are higher, so <m>f(x)</m> has no local (or global) extremum at <m>x=b</m>.
 </p>
-
-
-<p>Remark: <m>f(x)</m> has a global maximum at the left-most endpoint of the interval. However, we do not call this a local maximum. In order for <m>f(x)</m> to have a local maximum at <m>x=c</m>, <m>c</m> must be strictly inside the domain of the function. In short: <em>endpoints can't be local extrema</em>.
-</p>
 </solution>
 </exercise>
 
 <exercise>
 <statement><p>
-Draw a graph <m>y=f(x)</m> where a <m>f(2)</m> is a local maximum, but it is not a  global maximum.
+Draw a graph <m>y=f(x)</m> where <m>f(2)</m> is a local maximum, but it is not a  global maximum.
 </p></statement>
 <hint><p>
 Try making a little bump at <m>x=2</m>, the letting the function get quite large somewhere else.
@@ -386,11 +382,11 @@ If there is some interval around <m>x=2</m> where nothing is bigger than <m>f(2)
 
 <exercise>
 <statement><p>
-Draw a graph <m>y=f(x)</m> where <m>f(2)</m> is a local maximum, but <m>x=2</m> is not a critical point.
+Draw a graph <m>y=f(x)</m> where <m>f(2)</m> is a local maximum, but <m>x=2</m> is not a critical point or an endpoint.
 </p></statement>
 <hint><p>
 By Theorem<nbsp/><xref ref="thm_APPlocalMaxMin"/>,
-if <m>x=2</m> not a critical point, then it must be a singular point. Remember that <em>endpoints</em> can't be local extrema.
+if <m>x=2</m> not a critical point, then it must be a singular point. 
 </p></hint>
 <answer><p>
 There are many possible answers. Every answer must have <m>x=2</m> as a singular point strictly inside the domain of <m>f(x)</m>. Two possibilities are shown below.</p>
@@ -411,7 +407,7 @@ There are many possible answers. Every answer must have <m>x=2</m> as a singular
 </sidebyside>
 </answer>
 <solution><p>
-As <m>f(2)</m> is to be a local maximum, <m>x=2</m> must be in the domain of <m>f</m> and must not be an endpoint.
+The question specifies that <m>x=2</m> must not be an endpoint.
 By Theorem<nbsp/><xref ref="thm_APPlocalMaxMin"/>, if <m>x=2</m> not a critical point, then it must be a singular point. That is, <m>f(x)</m> is not differentiable at <m>x=2</m>. Two possibilities are shown below, but there are infinitely many possible answers.</p>
 <sidebyside widths="40% 40%">
 <image><latex-image><![CDATA[\begin{tikzpicture}

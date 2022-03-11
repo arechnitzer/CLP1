@@ -162,10 +162,10 @@ In general, false.
 An inflection point is where the concavity of a function changes. It is possible that <m>x=3</m> is an inflection point, but it is also possible that is not. So, the statement is false, in general.
 </p>
 
-<p>For example, let <m>f(x)=(x-3)^4</m>. Since <m>f(x)</m> is a polynomial, all its derivatives exist and are continuous. <m>f''(x)=12(x-3)^2</m>, so <m>f(3)=0</m>. However, since <m>f''(x)</m> is something squared, it is never negative, so <m>f(x)</m> is never concave down. Since <m>f(x)</m> is never concave down, it never changes concavity, so it has no inflection points.
+<p>For example, let <m>f(x)=(x-3)^4</m>. Since <m>f(x)</m> is a polynomial, all its derivatives exist and are continuous. <m>f''(x)=12(x-3)^2</m>, so <m>f''(3)=0</m>. However, since <m>f''(x)</m> is something squared, it is never negative, so <m>f(x)</m> is never concave down. Since <m>f(x)</m> is never concave down, it never changes concavity, so it has no inflection points.
 </p>
 
-<p>Remark: finding inflection points is somewhat reminiscent of finding local extrema. To find local extrema, we first find all critical and singular points, since local extrema can only occur there. Then, we have to figure out which critical and singular points are actually local extrema. Similarly, if you want to find inflection points, start by finding where <m>f''(x)</m> is zero or non-existant, because inflection points can only occur there (see Question<nbsp/><xref ref="s3_6_3IVT"/>). Then, you still have to check whether those points are actually inflection points.
+<p>Remark: finding inflection points is somewhat reminiscent of finding local extrema. To find local extrema, we first find all critical and singular points, since local extrema can only occur there or at endpoints. Then, we have to figure out which critical and singular points are actually local extrema. Similarly, if you want to find inflection points, start by finding where <m>f''(x)</m> is zero or non-existant, because inflection points can only occur there (see Question<nbsp/><xref ref="s3_6_3IVT"/>). Then, you still have to check whether those points are actually inflection points.
 </p></solution>
 </exercise>
 </exercisegroup>
@@ -202,7 +202,7 @@ the concavity changes between concave up and concave down at
 
 <exercisegroup><title><application/></title>
 
-<introduction><p>Questions<nbsp/><xref ref="s3_6_3proof1"/> through <xref ref="s3_6_3IVT"/> ask you to show that certain things are true. Give a clear explanation using concepts and theorems from this semester.</p></introduction>
+<introduction><p>Questions<nbsp/><xref ref="s3_6_3proof1"/> through <xref ref="s3_6_3IVT"/> ask you to show that certain things are true. Give a clear explanation using concepts and theorems from this textbook.</p></introduction>
 
 <exercise xml:id="s3_6_3proof1" purpose="RQS"><title><fromexam>1997A</fromexam></title>
 <statement><p>

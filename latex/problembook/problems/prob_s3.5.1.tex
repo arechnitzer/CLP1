@@ -85,7 +85,7 @@ If the graph is discontinuous at a point, it is not differentiable at that point
 \color{red}
 \draw[thick] (1,.2)--(1,-.2) node[below]{$b$};
 \end{tikzpicture}\end{center}
-The $x$-coordinate corresponding to the blue dot (let's call it $a$) is a critical point, and $f(x)$ has a local and global minimum at $x=a$. The $x$-coordinate corresponding to the discontinuity (let's call it $b$) is a singular point, but there is no a global or local extremum at $x=b$.
+The $x$-coordinate corresponding to the blue dot (let's call it $a$) is a critical point, and $f(x)$ has a local and global minimum at $x=a$. The $x$-coordinate corresponding to the discontinuity (let's call it $b$) is a singular point, but there is not a global or local extremum at $x=b$.
 \end{answer}
 \begin{solution}
 \begin{center}\begin{tikzpicture}[scale=0.8]
@@ -105,16 +105,11 @@ The $x$-coordinate corresponding to the blue dot (let's call it $a$) is a critic
 The $x$-coordinate corresponding to the blue dot (let's call it $a$) is a critical point, because the tangent line to $f(x)$ at $x=a$ is horizontal. There is no lower point nearby, and actually no lower point on the whole interval shown, so $f(x)$ has both a local minimum and  a global minimum at $x=a$.
 
 If a function is not continuous at a point, then it is not differentiable at that point. So, the $x$-coordinate  corresponding to the discontinuity (let's call it $b$) is a singular point. Values of $f(x)$ immediately to the right of $b$ are lower, and values immediately to the left of $b$ are higher, so $f(x)$ has no local (or global) extremum at $x=b$.
-
-
-Remark: $f(x)$ has a global maximum at the left-most endpoint of the interval. However, we do not call this a local maximum. In order for $f(x)$ to have a local maximum at $x=c$, $c$ must be strictly inside the domain of the function. In short: \emph{endpoints can't be local extrema}.
-
-
 \end{solution}
 
 
 \begin{question}
-Draw a graph $y=f(x)$ where a $f(2)$ is a local maximum, but it is not a  global maximum.
+Draw a graph $y=f(x)$ where $f(2)$ is a local maximum, but it is not a  global maximum.
 \end{question}
 \begin{hint}
 Try making a little bump at $x=2$, the letting the function get quite large somewhere else.
@@ -364,11 +359,11 @@ In the final curve, $f(2)$ (remember--this is the $y$-value of the solid dot) is
 \end{solution}
 
 \begin{question}
-Draw a graph $y=f(x)$ where $f(2)$ is a local maximum, but $x=2$ is not a critical point.
+Draw a graph $y=f(x)$ where $f(2)$ is a local maximum, but $x=2$ is not a critical point and is not an endpoint.
 \end{question}
 \begin{hint}
 By Theorem~\ref*{thm:APPlocalMaxMin},
-if $x=2$ not a critical point, then it must be a singular point. Remember that \emph{endpoints} can't be local extrema.
+if $x=2$ not a critical point, then it must be a singular point. 
 \end{hint}
 \begin{answer}
 There are many possible answers. Every answer must have $x=2$ as a singular point strictly inside the domain of $f(x)$. Two possibilities are shown below.
@@ -390,7 +385,7 @@ There are many possible answers. Every answer must have $x=2$ as a singular poin
 \end{center}
 \end{answer}
 \begin{solution}
-As $f(2)$ is to be a local maximum, $x=2$ must be in the domain of $f$ and must not be an endpoint.
+The question specifies that $x=2$ must not be an endpoint.
 By Theorem~\ref*{thm:APPlocalMaxMin}, if $x=2$ not a critical point, then it must be a singular point. That is, $f(x)$ is not differentiable at $x=2$. Two possibilities are shown below, but there are infinitely many possible answers.
 \begin{center}
 \begin{tikzpicture}

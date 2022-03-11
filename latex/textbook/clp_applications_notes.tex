@@ -4890,27 +4890,22 @@ to be more careful distinguishing between these cases.
 
 
 \begin{defn}\label{def:APPlocalMaxMin} %%%%%%%%%%%%%%%%%%%%%
-Let $a\le b$ and let the function $f(x)$ be defined for all $x \in [a,b]$. Now
-let $a \leq c \leq b$, then
+Let $I$ be an interval, like $(a,b)$ or $[a,b]$ for example, and let the function $f(x)$ be defined for all $x \in I$. Now let $c\in I$. Then
 \begin{itemize}
-\item We say that $f(x)$ has a global (or absolute)
-minimum at $x=c$ if $f(x)\ge f(c)$ for all $a\le x\le b$.
+\item we say that $f(x)$ has a \emph{global (or absolute)
+minimum on the interval $I$} at the point $x=c$ if $f(x)\ge f(c)$ for all $x\in I$.
 
-\item Similarly, we say that $f(x)$ has a global (or absolute)
-maximum at $x=c$ if $f(x)\le f(c)$ for all $a\le x\le b$.
+\item Similarly, we say that $f(x)$ has a \emph{global (or absolute)
+maximum on $I$} at $x=c$ if $f(x)\le f(c)$ for all $x\in I$.
 
-\end{itemize}
-Now let $a < c <b$ (note the strict inequalities), then
-\begin{itemize}
-\item We say that $f(x)$ has a local minimum at $x=c$
-if there are $a'$ and $b'$ obeying $a\le a'<c<b'\le b$ such that
-$f(x)\ge f(c)$ for all $x$ obeying $a'<x<b'$.  Note the \emph{strict}
-inequalities in $a'<c<b'$.
+\item We say that $f(x)$ has a \emph{local\footnote{Beware that, while many textbooks use these definitions of local minimum and maximum, some textbooks exclude the endpoints $a$, $b$ of the interval $[a,b]$ from their definitions. Our definitions allow the endpoints $a$ and $b$ to be local minima and maxima.
+Note that, under our definitions, every global minimum (maximum) is also a local minimum (maximum).} minimum on $I$} at $x=c$
+if $f(x)\ge f(c)$ for all $x\in I$ that are near $c$. Precisely, if there is a $\delta>0$ such that 
+$f(x)\ge f(c)$ for all $x\in I$ that are within a distance $\delta$ of $c$.
 
-\item Similarly, we say that $f(x)$ has a local maximum at $x=c$
-if there are $a'$ and $b'$ obeying $a\le a'<c<b'\le b$ such that
-$f(x)\le f(c)$ for all $x$ obeying $a'<x<b'$.  Note the \emph{strict}
-inequalities in $a'<c<b'$.
+\item Similarly, we say that $f(x)$ has a \emph{local maximum on $I$} at $x=c$
+if $f(x)\le f(c)$ for all $x\in I$ that are near $c$. Precisely, if there is a $\delta>0$ such that 
+$f(x)\le f(c)$ for all $x\in I$ that are within a distance $\delta$ of $c$.
 \end{itemize}
 The global maxima and minima of a function are called the
 global extrema of the function, while the local maxima and minima are called the local
@@ -4920,12 +4915,12 @@ extrema.
 Consider again the function we showed in the figure above
 \begin{efig}
  \begin{center}
-  \includegraphics[height=5cm]{extra/maxmin2}
+  \includegraphics[height=5cm]{maxmin3}
  \end{center}
 \end{efig}
-It has 2 local maxima and 2 local minima. The global maximum occurs at the middle green
-point (which is also a local maximum), while the global minimum occurs at the rightmost
-blue point (which is not a local minimum).
+It has 3 local maxima and 3 local minima on the interval $[a,b]$. The global maximum occurs at 
+the middle green point (which is also a local maximum), and the global minimum occurs at the rightmost
+blue point (which is also a local minimum).
 
 
 Using the above definition we can summarise what we have learned above
@@ -4934,7 +4929,7 @@ mathematical contributions made by Pierre de Fermat, a French government
 lawyer and amateur mathematician, who lived in the first half of
 the seventeenth century. }:
 \begin{theorem}\label{thm:APPlocalMaxMin}
-If a function $f(x)$ has a local maximum or local minimum at $x=c$
+Let the function $f(x)$ be defined on the interval $I$ and let $a$, $b$, $c$ be points in $I$ with $a<c<b$. If $f(x)$ has a local maximum or local minimum at $x=c$
 and if $f'(c)$ exists, then $f'(c)=0$.
 \end{theorem}
 
@@ -4949,8 +4944,8 @@ Then, it is often the case, because $f'(x)$ is decreasing as $x$ increases throu
 
 \item
 Conversely, if $f'(c)=0$ and $f''(c)<0$,
-  then, just to the right of $c$ $f'(x)$ must be negative, so that
-  $f(x)$ is decreasing, and  just to the left of $c$ $f'(x)$ must
+  then, just to the right of $c$, $f'(x)$ must be negative, so that
+  $f(x)$ is decreasing, and  just to the left of $c$, $f'(x)$ must
   be positive, so that $f(x)$ is increasing.
   So $f(x)$ has a local maximum at $c$.
 
@@ -4961,8 +4956,8 @@ Conversely, if $f'(c)=0$ and $f''(c)<0$,
 
 \item
 Conversely, if $f'(c)=0$ and $f''(c)>0$,
-  then, just to the right of $c$ $f'(x)$ must be positive, so that
-  $f(x)$ is increasing, and, just to the left of $c$ $f'(x)$ must be
+  then, just to the right of $c$, $f'(x)$ must be positive, so that
+  $f(x)$ is increasing, and, just to the left of $c$, $f'(x)$ must be
   negative, so that $f(x)$ is decreasing.
   So $f(x)$ has a local minimum at $c$.
 
@@ -4970,6 +4965,8 @@ Conversely, if $f'(c)=0$ and $f''(c)>0$,
 
 
 \begin{theorem}\label{thm:APPsecondDerivTest}
+Let $f(x)$ be defined on the interval $I$ and let $a, b, c\in I$ with $a<c<b$. 
+
 If $f'(c)=0$ and $f''(c) <0$, then $f(x)$ has a local maximum at $c$.
 
 If $f'(c)=0$ and $f''(c) >0$, then $f(x)$ has a local minimum at $c$.
@@ -4981,7 +4978,7 @@ If $f'(c)=0$ and $f''(c) >0$, then $f(x)$ has a local minimum at $c$.
 
 
 Theorem~\ref{thm:APPlocalMaxMin} says that, when $f(x)$ has a local maximum or
-minimum at $x=c$, there are two possibilities.
+minimum on an interval $I$ at the point $x=c$, there are three possibilities.
 \begin{itemize}
  \item The derivative $f'(c)=0$. This case is illustrated in the following
 figure.
@@ -4998,11 +4995,15 @@ red dot).
 following figure.
 \begin{efig}
  \begin{center}
-  \includegraphics[]{localMaxMinFG}
+  \includegraphics[]{localMaxMinFGP}
  \end{center}
 \end{efig}
 Observe that, in this example, $f'(x)$ changes discontinuously from negative to
 positive at the local minimum ($x=0$) and $f'(0)$ does not exist.
+
+\item 
+The point $c$ is an endpoint of the interval $I=[a,b]$. This case is also 
+illustrated in the above figure. The endpoints $a$ and $b$ are both local maxima. But $f'(a)$ and $f'(b)$ are not zero.
 \end{itemize}
 This theorem demonstrates that the points at which the derivative is zero or
 does not exist are very important. It simplifies the discussion that follows if
@@ -5059,10 +5060,14 @@ $f(x)$.
 \end{efig}
 From the figure we see that
 \begin{itemize}
+\item $f(x)$ has a local minimum at the endpoint $x=-2$ (i.e. we have 
+$f(x)\ge f(-2)$ whenever $x\ge -2$ is close to $-2$) and
 \item $f(x)$ has a local minimum at $x=c_+$ (i.e. we have $f(x)\ge f(c_+)$
 whenever $x$ is close to $c_+$) and
 \item $f(x)$ has a local maximum at $x=c_-$ (i.e. we have $f(x)\le f(c_-)$
 whenever $x$ is close to $c_-$) and
+\item $f(x)$ has a local maximum at the endpoint $x=3$ (i.e. we have 
+$f(x)\le f(3)$ whenever $x\le 3$ is close to $3$) and
 \item the global minimum of $f(x)$, for $x$ in the interval $-2\le x\le 3$, is
 at $x=c_+$ (i.e. we have $f(x)\ge f(c_+)$ whenever $-2\le x\le 3$) and
 \item the global maximum of $f(x)$, for $x$ in the interval $-2\le x\le 3$, is
@@ -5070,14 +5075,14 @@ at $x=3$ (i.e. we have $f(x)\le f(3)$ whenever $-2\le x\le 3$).
 \end{itemize}
 \item Note that we have carefully constructed this example to illustrate that
 the global maximum (or minimum) of a function on an interval may or may not also
-be a local maximum (or minimum) of the function.
+be a critical point of the function.
 \end{itemize}
 
 \end{eg}
 
 \begin{eg}\label{eg:localMinMaxB}
 In this example, we'll look for local maxima and minima of the function
-$f(x) = x^3$ on the interval $-1\le x\le 1$.
+$f(x) = x^3$ on the interval $-1 < x < 1$.
 \begin{itemize}
  \item First compute the derivative:
 \begin{align*}
@@ -5103,13 +5108,13 @@ $f(x)>f(c)=0$ for all $x>c=0$.
 point (or singular point) of a function \emph{need not be a local maximum or
 minimum} for the function.
 \item Reread Theorem \ref{thm:APPlocalMaxMin}. It says\footnote{A very common
-error of logic that people make is ``Affirming the consequent''. ``If P then Q''
-is true, then observe Q and conclude P --- this is false. ``If he is Shakespeare then he
-is dead'' ``That man is dead'' ``He must be Shakespeare''. Or you may have also seen
-someone use this reasoning: ``If a person is a genius before their time then they are
-misunderstood.'' ``I am misunderstood'' ``So I must be a genius before my time''.}
-that, ``if $f(x)$ has a local maximum/minimum at $x=c$ and if $f$ is differentiable at
-$x=c$, then $f'(c)=0$''. It \emph{does not say} that ``if $f'(c)=0$ then $f$
+error of logic that people make is ``Affirming the consequent''.
+When the statement ``if P then Q'' is true, observing Q does \emph{not} imply P. 
+(``Affirming the consequent'' eliminates ``not'' from the previous sentence.) For example, ``If he is Shakespeare, then he
+is dead,'' and ``That man is dead.'' does not imply ``He must be Shakespeare.''. Or you may have also 
+seen someone use this reasoning: ``If a person is a genius before their time 
+then they are misunderstood.'' ``I am misunderstood.'' ``So I must be a genius before my time.''.}
+``Let $\cdots$. If $f(x)$ has a local maximum/minimum at $x=c$ and if $f'(c)$ exists, then $f'(c)=0$''. It \emph{does not say} that ``if $f'(c)=0$ then $f$
 has a local maximum/minimum at $x=c$''.
 \end{itemize}
 \end{eg}\goodbreak
@@ -5123,11 +5128,11 @@ f(x) = |x| = \begin{cases}
            -x & \text{if }x <  0
        \end{cases}
 \end{align*}
-on the interval $-1\le x\le 1$ and we'll also look for local maxima and minima of the function
+on the interval $-1< x< 1$ and we'll also look for local maxima and minima of the function
 \begin{align*}
 g(x) = x^{2/3}
 \end{align*}
-on the interval $-1\le x\le 1$.
+on the interval $-1< x< 1$.
 \begin{itemize}
  \item Again, start by computing the derivatives (reread Example~\ref{eg diff
 abs}):
@@ -5160,8 +5165,8 @@ and a sketch of the graph of $g(x)$.
 \end{efig}
 From the figures we see that both $f(x)$ and $g(x)$ have a local 
 (and in fact global) minimum at $x=0$ despite the fact that $x=0$ is not a critical point.
-\item Reread Theorem \ref{thm:APPlocalMaxMin} yet again. It says that,
-``if $f(x)$ has a local maximum/minimum at $x=c$
+\item Reread Theorem \ref{thm:APPlocalMaxMin} yet again. It says
+``Let $\cdots$. If $f(x)$ has a local maximum or local minimum at $x=c$
 \emph{and if $f$ is differentiable at $x=c$}, then $f'(c)=0$''.
 It says nothing about what happens at points where the derivative does
 not exist. Indeed that is why we have to consider both critical points and
@@ -5174,6 +5179,7 @@ singular points when we look for maxima and minima.
 
 \subsection{Finding Global Maxima and Minima}\label{ssec find maxmin}
 We now have a technique for finding local maxima and minima --- just look
+at endpoints of the interval of interest and 
 for values of $x$ for which either $f'(x)=0$ or $f'(x)$ does not exist.
 What about finding global maxima and minima? We'll start by stating
 explicitly that, under appropriate hypotheses, global maxima
