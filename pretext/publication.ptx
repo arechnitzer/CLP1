@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<publication>
+  <common>
+    <exercise-divisional hint="no" answer="no" solution="no"/>
+  </common>
+
+  <chunking level="3"/>
+  
+  <source>
+    <directories external="./assets" generated="./generated"/>
+  </source>
+ 
+  <numbering>
+    <!-- The next elements say how the levels deep to break up the    -->
+    <!-- numbering of the respective elements. Can't be more than the -->
+    <!-- @level on divisions above.                                   -->
+    <blocks level="2"/>
+    <equations level="2"/>
+    <footnotes level="2"/>
+    <divisions chapter-start="0"/>
+  </numbering>
+
+    <!-- LaTeX specific options: set @print="yes" to get pdf set up   -->
+    <!-- for printing; set @sides="two" if the printing woudl be two- -->
+    <!-- sided.  The asymptote/@links set to "yes" would produce      -->
+    <!-- links the html version of asymptote graphics.                -->
+  <latex print="no" sides="one">
+  </latex>
+  
+  <html platform="web">
+    <knowl remark="no" example="yes" proof="yes"/>
+    <css style="default" colors="blue_red"/>
+
+    <!-- uncomment line below on real build to enable google analytics-->
+    <!-- <analytics google-gst="UA-105798942-1"/> -->
+
+
+
+  </html>
+
+
+</publication>
