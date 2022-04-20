@@ -188,7 +188,7 @@ We use quotient rule:
 </p></hint>
 <answer><p> 7
 </p></answer>
-<solution><p> Instead of multiplying to get our usual form of this polynomial, we can use the quotient rule. If <m>f_1(x)=3x^3+4x^2+x+1</m> and <m>f_2(x)=2x+5</m>, then
+<solution><p> Instead of multiplying to get our usual form of this polynomial, we can use the product rule. If <m>f_1(x)=3x^3+4x^2+x+1</m> and <m>f_2(x)=2x+5</m>, then
 <m>f_1'(x)=9x^2+8x+1</m> and <m>f_2'(x)=2</m>. Then
 <md>
 <mrow>
