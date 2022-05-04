@@ -38,7 +38,7 @@ In general, this is false. For example, the function <m>f(x) = \dfrac{x^2-9}{x^2
 
 <exercise purpose="RQS">
 <statement><p>
-Match the functions <m>f(x)</m>, <m>g(x)</m>, <m>h(x)</m>, and <m>k(x)</m> to the curves <m>y=A(x)</m> through <m>y=D(x)</m>.</p>
+Match the functions <m>f(x)</m>, <m>g(x)</m>, <m>h(x)</m>, and <m>k(x)</m> to the curves <m>y=A(x)</m> through <m>y=D(x)</m>.
 <md>
   <mrow>
 f(x) &amp; =\sqrt{x^2+1} &amp;
@@ -48,6 +48,7 @@ h(x) &amp;=\sqrt{x^2+4} &amp;
 k(x) &amp;=\sqrt{x^2-4} 
 </mrow>
 </md>
+</p>
 
 <sidebyside>
 <image><latex-image><![CDATA[\begin{tikzpicture}

@@ -219,7 +219,6 @@ There are a few functions we could choose to approximate. For example:
 </ul>
 There isn't much difference between the first and third bullets. We'll go with <m>f(x)=5\sqrt[3]{x}</m>, centred about <m>x=8</m>.
 <md  alignment="alignat">
-&amp;\qquad>
 <mrow>
 f(x)&amp;=5x^{\frac{1}{3}}&amp;&amp;\Rightarrow&amp;
 f(8)&amp;=5\cdot 2 = 10

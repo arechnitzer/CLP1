@@ -399,7 +399,7 @@ An almost identical computation gives the derivative of <m>\arccot x</m>:
 <ul>
 <li> Start with <m>\theta = \arccot x</m>, so <m>\cot \theta = x</m>.
 </li>
-<li> Differentiate implicitly:
+<li><p> Differentiate implicitly:
   <md>
 <mrow>
   -\csc^2 \theta \diff{\theta}{x} &amp;= 1
@@ -408,7 +408,7 @@ An almost identical computation gives the derivative of <m>\arccot x</m>:
 </mrow>
 </md>
 from the triangle
-
+</p>
 <sidebyside width="30%">
 <image source="text/figs/triangleAcot"/>
 </sidebyside>

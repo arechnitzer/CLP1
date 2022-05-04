@@ -1032,7 +1032,7 @@ T_4(1)&amp;=\sum_{n=0}^4\frac{1^n}{n!}=\sum_{n=0}^4\frac{1}{n!}
 <p><xref ref="s3_4_8e"/> Using Equation<nbsp/><xref ref="eq_taylorErrorN"/>,
 <md>
 <mrow>
-e^1-T_4(1)&amp;=\frac{1}{5!}e^c\qquad\mbox{for some <m>c</m> strictly between 0 and 1. So,}
+e^1-T_4(1)&amp;=\frac{1}{5!}e^c\qquad\mbox{for some \(c\) strictly between 0 and 1. So,}
 </mrow><mrow>
 e-\frac{65}{24}&amp;=\frac{e^c}{120}
 </mrow><mrow>

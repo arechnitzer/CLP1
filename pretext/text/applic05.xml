@@ -107,7 +107,7 @@ For the moment think of maximum as <q>the biggest value</q> and minimum as
 </p>
 
 <warning>
-<statement><p>
+<p>
 It is important to distinguish between <q>the smallest value</q> and <q>the smallest
 magnitude</q>. For example, because
 <md>
@@ -119,7 +119,7 @@ the number <m>-5</m> is smaller than <m>-1</m>. But the magnitude of <m>-1</m>, 
 smaller than the magnitude of <m>-5</m>, which is <m>|-5|=5</m>. Thus the smallest number in the set
 <m>\{-1, -5\}</m> is <m>-5</m>, while the number in the set <m>\{-1,-5\}</m> that has the smallest
 magnitude is <m>-1</m>.
-</p></statement>
+</p>
 </warning>
 
 <p>Now back to thinking about what happens around a maximum. Suppose that the maximum value
@@ -359,7 +359,8 @@ function.
 </p></statement>
 </definition>
 
-<warning><statement><p>
+<warning>
+  <p>
 Note that some people (and texts) will combine both of these cases and call
 <m>x=c</m> a critical point when either the derivative is zero or does not exist.
 The reader should be aware of the lack of convention on this point
@@ -369,7 +370,6 @@ pun intended.</fn>
 definition of critical point is being used, or if the text is using the more
 precise definition that distinguishes critical and singular points.
 </p>
-</statement>
 </warning>
 
 <p>We'll now look at a few simple examples involving local maxima and

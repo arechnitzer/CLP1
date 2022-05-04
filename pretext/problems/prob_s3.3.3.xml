@@ -48,8 +48,11 @@ Since <m>b</m> is a positive constant, <m>\ds\lim_{t \to \infty}e^{bt}=\infty</m
 <exercise purpose="RQS">
 <statement><p>
 In the 1950s, pure-bred wood bison were thought to be extinct. However, a small population was found in Canada. For decades, a captive breeding program has been working to increase their numbers, and from time to time wood bison are released to the wild. Suppose in 2015, a released herd numbered 121 animals, and a year later, there were 136
-<fn>These numbers are loosely based on animals actually released near Shageluk, Alaska in 2015. Watch the first batch being released <url href="https://www.youtube.com/watch?v=GqRHe769AQM">here</url>.</fn>.
-If the wood bison adhere to the Malthusian model (a big assumption!), and if there are no more releases of captive animals, how many animals will the herd have in 2020?
+<fn>
+  These numbers are loosely based on animals actually released near Shageluk, Alaska in 2015. Watch the first batch being released
+  <url href="https://www.youtube.com/watch?v=GqRHe769AQM" visual="www.youtube.com">here</url>.
+  </fn>.
+  If the wood bison adhere to the Malthusian model (a big assumption!), and if there are no more releases of captive animals, how many animals will the herd have in 2020?
 </p></statement>
 <hint><p>
 The assumption that the animals grow according to the Malthusian model tells us that their population  <m>t</m> years after 2015 is given by

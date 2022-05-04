@@ -87,7 +87,7 @@ Now the first of these one-sided limits involves examining the behaviour of <m>f
 One way around this problem is to generalise the idea of continuity to one-sided  continuity, just as we generalised limits to get one-sided limits.
 </p>
 
-<definition> xml:id="def_1_6_2"
+<definition xml:id="def_1_6_2">
 <statement><p>
   A function <m>f(x)</m> is continuous from the right at <m>a</m> if
   <md>
@@ -108,7 +108,7 @@ One way around this problem is to generalise the idea of continuity to one-sided
 Using the definition of one-sided continuity we can now define what it means for a  function to be continuous on a closed interval.
 </p>
 
-<definition> xml:id="def_1_6_3"
+<definition xml:id="def_1_6_3">
 <statement><p>
  A function <m>f(x)</m> is continuous on the closed interval <m>[a,b]</m> when
 <ul>
@@ -419,7 +419,7 @@ Like the <m>\epsilon-\delta</m> definition of limits
 we should  break this  theorem down into pieces. Before we do that, keep the following pictures in mind.
 </p>
 
-<sidebyside widht="100%">
+<sidebyside width="100%">
 <image source="text/figs/IVT"/>
 </sidebyside>
 

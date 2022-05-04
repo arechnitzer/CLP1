@@ -17,7 +17,12 @@
 		<!-- use to replace impeqn -->
 
 		<feedback>
-			<url href="mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext" visual="clp@ugrad.math.ubc.ca" />
+		  <url
+		      href="mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext"
+		      visual="clp@ugrad.math.ubc.ca"
+		      >
+		    clp@ugrad.math.ubc.ca
+		  </url>
 			<text>Feedback</text>
 		</feedback>
 
