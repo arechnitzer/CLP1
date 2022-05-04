@@ -21,7 +21,7 @@ Suppose the amount of kelp in a harbour depends on the number of urchins. Urchin
 <li xml:id="s2_9otter3"> Is <m>\diff{K}{O}</m> positive or negative?
 </li>
 </ol>
-Remark: An urchin barren is an area where unchecked sea urchin grazing has decimated the kelp population, which in turn causes the other species that shelter in the kelp forests to leave. Introducing otters to urchin barrens is one intervention to increase biodiversity. A short video with a more complex view of otters and urchins in Canadian waters is available on YouTube: <url href="https://youtu.be/ASJ82wyHisE" />
+Remark: An urchin barren is an area where unchecked sea urchin grazing has decimated the kelp population, which in turn causes the other species that shelter in the kelp forests to leave. Introducing otters to urchin barrens is one intervention to increase biodiversity. A short video with a more complex view of otters and urchins in Canadian waters is available on YouTube: <url href="https://youtu.be/ASJ82wyHisE" visual="youtube.com"/>
 </p></statement>
 <hint><p>
 For  parts<nbsp/><xref ref="s2_9otter1"/> and <xref ref="s2_9otter2"/>, remember the definition of a derivative: <me>
