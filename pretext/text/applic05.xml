@@ -796,10 +796,10 @@ the problem.
 <example xml:id="APPglobalMaxMinB"><title>Constructing a container of maximal volume</title>
 <p>
 A closed rectangular container with a square base is to be made
-from two different materials. The material for the base costs <dollar />5 per square
-meter, while the material for the other five sides costs <dollar />1 per square
+from two different materials. The material for the base costs $5 per square
+meter, while the material for the other five sides costs $1 per square
 meter. Find the dimensions of the container which has the largest possible
-volume if the total cost of materials is <dollar />72.
+volume if the total cost of materials is $72.
 </p>
 
 <p><alert>Solution</alert> We can follow the steps we outlined above to find the solution.
@@ -832,7 +832,7 @@ and the area of the other fives sides be <m>A_s</m> (both in <m>m^2</m>), and th
 </mrow>
 </md>
 </li>
-<li> To eliminate one of the variables we use the fact that the total cost is <dollar />72.
+<li> To eliminate one of the variables we use the fact that the total cost is $72.
 <md>
 <mrow>
   C &amp;= 6b^2+4bh = 72 &amp; \text{rearrange}

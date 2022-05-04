@@ -13,11 +13,11 @@
 
 
 		<cross-references text="global" />
-		<rename element="fact" lang="en-US">Equation</rename>
+		<rename element="fact">Equation</rename>
 		<!-- use to replace impeqn -->
 
 		<feedback>
-			<url>mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext</url>
+			<url href="mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext" visual="clp@ugrad.math.ubc.ca" />
 			<text>Feedback</text>
 		</feedback>
 

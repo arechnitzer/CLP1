@@ -366,10 +366,10 @@ The dimensions of the box with minimum surface area are <m>10 \times 30 \times 1
 <exercise purpose="RQS"><title><fromexam>1996D</fromexam></title>
 <statement><p>
 A closed rectangular container with a square base is to be made
-from two different materials. The material for the base costs <dollar />5 per square
-metre, while the material for the other five sides costs <dollar />1 per square
+from two different materials. The material for the base costs $5 per square
+metre, while the material for the other five sides costs $1 per square
 metre. Find the dimensions of the container which has the largest possible
-volume if the total cost of materials is <dollar />72.
+volume if the total cost of materials is $72.
 </p></statement>
 <hint><p> Find a formula for the cost of the base, and another formula for the cost of the other sides. The total cost is the sum of these two formulas.
 </p></hint>

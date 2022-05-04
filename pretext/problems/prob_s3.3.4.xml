@@ -86,7 +86,7 @@ T(t)&amp;=\left[T(0)+\frac{9}{7}\right]e^{7t}-\frac{9}{7}
 
 <exercise><title><fromexam>1998H</fromexam></title>
 <statement><p>
-It takes 8 days for 20<percent /> of a particular
+It takes 8 days for 20% of a particular
 radioactive material to decay. How long does it take for 100 grams of the
 material to decay to 40 grams?
 </p></statement>
@@ -175,10 +175,10 @@ The room temperature is 25<m>^\circ</m> C.
 
 <exercise purpose="RQS"><title><fromexam>1997D</fromexam></title>
 <statement><p>
-  A 25-year-old graduate of UBC is given <dollar />50,000 which is invested
-at 5<percent /> per year compounded continuously. The graduate also intends to
-deposit money continuously at the rate of <dollar />2000 per year. Assuming that
-the interest rate remains 5<percent />, the amount <m>A(t)</m> of money at time <m>t</m> satisfies
+  A 25-year-old graduate of UBC is given $50,000 which is invested
+at 5% per year compounded continuously. The graduate also intends to
+deposit money continuously at the rate of $2000 per year. Assuming that
+the interest rate remains 5%, the amount <m>A(t)</m> of money at time <m>t</m> satisfies
 the equation
 <me>
 \diff{A}{t}= 0.05 A+2000
@@ -199,9 +199,9 @@ The differential equation in the problem has the same form as the differential e
 <answer><p>
 <ol label="a">
 <li> <m>A(t)=90,\!000\cdot e^{0.05t}-40,\!000</m>.
-When the graduate is 65, they will have <dollar />625,015.05 in the account.
+When the graduate is 65, they will have $625,015.05 in the account.
 </li>
-<li> <dollar />49,437.96
+<li> $49,437.96
 </li>
 </ol>
 </p></answer>
@@ -220,7 +220,7 @@ A(t)&amp;=[A(0)+40,\!000]e^{0.05t}-40,\!000
 <intertext>where <m>t=0</m> corresponds to the year when the graduate is 25.</intertext><mrow>
 </mrow>
 <intertext>When the graduate is 65 years old, <m>t=40</m>, so</intertext><mrow>
-A(40)&amp;=90,\!000\, e^{0.05 \times 40}-40,000\approx <dollar />625,015.05
+A(40)&amp;=90,\!000\, e^{0.05 \times 40}-40,000\approx \$625,015.05
 </mrow>
 </md>
 </li>
@@ -232,7 +232,7 @@ starts withdrawing money at a rate <m>W</m>, the equation for <m>A</m> becomes
 \diff{A}{t}&amp;= 0.05 A-W= 0.05 [A(t)-20 W]
 </mrow>
 <intertext>
-Using Corollary<nbsp/><xref ref="cor_coolingDEsoln"/> and assuming that the interest rate remains 5<percent /></intertext><mrow>
+Using Corollary<nbsp/><xref ref="cor_coolingDEsoln"/> and assuming that the interest rate remains 5%</intertext><mrow>
 A(t)&amp;=[A(0)-20W]e^{0.05t}+20W
 </mrow><mrow>
 &amp;=[625,015.05-20W]e^{0.05t}+20W
@@ -259,9 +259,9 @@ W&amp;=\frac{625,015.05e}{20(e-1)}\approx\$49,437.96
 
 <exercise><title><fromexam>1996D</fromexam></title>
 <statement><p>
-  An investor puts <dollar />120,000 which into a bank account which pays
-6<percent /> annual interest, compounded continuously. She plans to withdraw
-money continuously from the account at the rate of <dollar />9000 per year. If
+  An investor puts $120,000 which into a bank account which pays
+6% annual interest, compounded continuously. She plans to withdraw
+money continuously from the account at the rate of $9000 per year. If
  <m>A(t)</m> is the amount of money at time <m>t</m>, then
 <me>
 \diff{A}{t}= 0.06 A-9000

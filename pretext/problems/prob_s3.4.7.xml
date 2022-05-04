@@ -44,7 +44,7 @@ False. The linear approximation is an <em>approximation</em>. It tells us
 
 <exercise>
 <statement><p>
-Suppose the exact amount you are supposed to tip is <dollar />5.83, but you approximate and tip <dollar />6. What is the absolute error in your tip? What is the percent error in your tip?
+Suppose the exact amount you are supposed to tip is $5.83, but you approximate and tip $6. What is the absolute error in your tip? What is the percent error in your tip?
 </p></statement>
 <hint><p>
 When an exact value <m>Q_0</m> is measured as <m>Q_0+\Delta Q</m>,

@@ -337,7 +337,7 @@ The half-life of Polonium-210 is <m>\dfrac{\log 2}{\log 6}</m> years, or about 1
 
 <exercise>
 <statement><p>
-Radium-221 has a half-life of 30 seconds. How long does it take for only 0.01<percent /> of an original sample to be left?
+Radium-221 has a half-life of 30 seconds. How long does it take for only 0.01% of an original sample to be left?
 </p></statement>
 <hint><p>
 The amount of Radium-221 in a sample at time <m>t</m> will be <m>Q(t)=Ce^{-kt}</m> for some positive constants <m>C</m> and <m>k</m>. You can leave <m>C</m> as a variable--it's the original amount in the sample, which isn't specified. What you want to find is the value of <m>t</m> such that <m>Q(t)=0.0001Q(0)=0.0001C</m>.
@@ -361,7 +361,7 @@ Q(t)&amp;=Ce^{-kt}
 <intertext>So,</intertext><mrow>
 Q(t)&amp;=C\left(e^{-k}\right)^t=C\cdot2^{-\tfrac{t}{30}}
 </mrow>
-<intertext>When only 0.01<percent /> of the original sample is left, <m>Q(t)=0.0001C</m>:</intertext><mrow>
+<intertext>When only 0.01% of the original sample is left, <m>Q(t)=0.0001C</m>:</intertext><mrow>
 0.0001C=Q(t)&amp;=C\cdot 2^{-\tfrac{t}{30}}
 </mrow><mrow>
 0.0001&amp;=2^{-\tfrac{t}{30}}
@@ -375,10 +375,10 @@ Q(t)&amp;=C\left(e^{-k}\right)^t=C\cdot2^{-\tfrac{t}{30}}
 t&amp;=120\cdot\frac{\log10}{\log2}\approx 398.6
 </mrow>
 </md>
-It takes about 398.6 seconds (that is, roughly 6 and a half minutes) for all but <m>0.01</m><percent /> of the sample to decay.
+It takes about 398.6 seconds (that is, roughly 6 and a half minutes) for all but <m>0.01</m>% of the sample to decay.
 </p>
 
-<p>Remark: we can do another reality check here. The half-life is 30 seconds. 6 and a half minutes represents 13 half-lives. So, the sample is halved 13 times: <m>\left(\tfrac{1}{2}\right)^{13}\approx 0.00012=0.012\%</m>. So these 13 half-lives should reduce the sample to about 0.01<percent /> of its original amount, as desired.
+<p>Remark: we can do another reality check here. The half-life is 30 seconds. 6 and a half minutes represents 13 half-lives. So, the sample is halved 13 times: <m>\left(\tfrac{1}{2}\right)^{13}\approx 0.00012=0.012\%</m>. So these 13 half-lives should reduce the sample to about 0.01% of its original amount, as desired.
 </p></solution>
 </exercise>
 </exercisegroup>
@@ -391,7 +391,7 @@ It takes about 398.6 seconds (that is, roughly 6 and a half minutes) for all but
 Polonium-210 has a half life of 138 days. What percentage of a sample of Polonium-210 decays in a day?
 </p></statement>
 <hint><p>
-You don't need to know the original amount of Polonium-210 in order to answer this question: you can leave it as some constant <m>C</m>, or you can call it 100<percent />.
+You don't need to know the original amount of Polonium-210 in order to answer this question: you can leave it as some constant <m>C</m>, or you can call it 100%.
 </p></hint>
 <answer><p>
 About <m>0.5\%</m> of the sample decays in a day. The exact amount is
@@ -407,7 +407,7 @@ Q(t)&amp;=Ce^{-kt}
 where <m>C</m> is the original amount of the sample, and <m>k</m> is some positive constant.
 </p>
 <p>
-The question asks us what percentage of the sample decays in a day. Since <m>t</m> is measured in days, the amount that decays in a day is <m>Q(t)-Q(t+1)</m>. The percentage of <m>Q(t)</m> that this represents is <m>100\dfrac{Q(t)-Q(t+1)}{Q(t)}</m>. (For example, if there were two grams at time <m>t</m>, and one gram at time <m>t+1</m>, then <m>100\dfrac{2-1}{1}=50</m>: 50<percent /> of the sample decayed in a day.) 
+The question asks us what percentage of the sample decays in a day. Since <m>t</m> is measured in days, the amount that decays in a day is <m>Q(t)-Q(t+1)</m>. The percentage of <m>Q(t)</m> that this represents is <m>100\dfrac{Q(t)-Q(t+1)}{Q(t)}</m>. (For example, if there were two grams at time <m>t</m>, and one gram at time <m>t+1</m>, then <m>100\dfrac{2-1}{1}=50</m>: 50% of the sample decayed in a day.) 
 </p>
 <p>
 In order to simplify, we should figure out a better expression for <m>Q(t)</m>. As usual, we make use of the half-life.
@@ -436,13 +436,13 @@ Q(t)&amp;=C\cdot2^{-\tfrac{t}{138}}
 &amp;=100\left(1-2^{-\tfrac{1}{138}}\right)\approx 0.5
 </mrow>
 </md>
-About 0.5<percent /> of the sample decays in a day.
+About 0.5% of the sample decays in a day.
 </p>
 
 <p>Remark: when we say that half a percent of the sample decays in a day, we don't mean half a percent of the <em>original</em> sample. If a day starts out with, say, 1 microgram, then what decays in the next 24 hours is about half a percent of that 1 microgram, regardless of what the <q>original</q> sample (at some time <m>t=0</m>) held.
 </p>
 
-<p>In particular, since the sample is getting smaller and smaller, that half of a percent that decays every day represents fewer and fewer actual atoms decaying. That's why we can't say that half of the sample (50<percent />) will decay after about 100 days, even though 0.5<percent /> decays every day and <m>100\times 0.5 = 50</m>.
+<p>In particular, since the sample is getting smaller and smaller, that half of a percent that decays every day represents fewer and fewer actual atoms decaying. That's why we can't say that half of the sample (50%) will decay after about 100 days, even though 0.5% decays every day and <m>100\times 0.5 = 50</m>.
 </p></solution>
 </exercise>
 
