@@ -7,6 +7,16 @@ permalink: /CLP1-changelog/
 ---
 
 # CLP-1 Differential Calculus textbook
+* 2022 March 21 - Updated some URL's. 
+* 2022 March 2 - Adjusted the Definition 3.5.3 of "local maximum and minimum". Brought the rest of Section 3.5 into line with the adjusted definition.
+* 2021 December 17 - Added an example to Section 3.6.3 which included an expansion of the definition of "inflection point".
+* 2021 December 14 - Expanded the definition of "singular point" in Definition 3.5.6 and Section 3.6.2.
+* 2021 December 14 - Expanded Example 3.5.10. 
+* 2021 December 14 - Added the definition of "function is increasing at a point" to the subsection "Instantaneous rate of change" in Section 2.3.
+* 2021 November 23 - Formatting correction in Section 3.6.5.
+* 2021 November 23 - Typo correction in the optional subsection "Logistic Population Growth" of Section 3.3.
+* 2021 November 16 - Tweaked Example 3.5.24.
+* 2021 October 28 - Tweaked Theorem 1.4.2.
 * 2021 September 25 - Typo correction in the title of Example 2.6.15.
 * 2021 September 21 - Typo correction in Appendix A.13.
 * 2021 September 14 - Typo correction in Equation C.3.1.
@@ -87,6 +97,31 @@ permalink: /CLP1-changelog/
 ---
 
 # CLP-1 Differential Calculus problem book
+* 2022 July 8 - Typo correction in S[45] of Section 1.4.
+* 2022 April 20 - Typo correction in S[8] of Section 2.6.
+* 2022 March 21 - Updated some URL's. 
+* 2022 March 2 - Brought the problems in Sections 3.5.1, 3.6.2, 3.6.3, 3.6.6 into line with the adjusted Definition 3.5.3 of "local maximum and minimum".
+* 2022 January 19 - Expanded S-13 of Section 2.13.
+* 2021 December 15 - Typo correction in H[4] and S[4] of Section 3.4.4.
+* 2021 December 14 - Tweaks to S-2 and S-6, in Section 3.5.1 and S-3 and S-4 in Section 3.6.6. 
+* 2021 December 14 - Modified Q[4] of Section 3.5.1.
+* 2021 December 12 - Corrected A[9] and S[9] of Section 3.4.5. Expanded S[9].
+* 2021 December 11 - Typo correction in A[16] and S[16] of Section 3.2.
+* 2021 November 27 - Expanded Q[4] of Section 3.4.2 and Q[3] of Section 3.4.3 slightly.
+* 2021 November 23 - Typo correction in S[6] of Section 3.3.3.
+* 2021 November 19 - Typo correction in Q[3] and Q[4] of Section 3.6.4.
+* 2021 November 16 - misc minor fixes
+  * Link update in Q[11] of Section 3.5.3.
+  * Typo correction to S[13] of Section 2.13.
+  * Blank H[15] removed from Section 2.11.
+  * Expanded S[2] in Section 3.4.5.
+* 2021 November 13 - Typo correction in S[7] of Section 3.5.1.
+* 2021 November 11 - Correction to A[10] and S[10] of Section 3.4.5.
+* 2021 November 5 - Typo corrections in A[6] and S[6] of Section 3.4.7.
+* 2021 November 1 - Improved the wording of A[2], S[2], A[4] and S[4] of Section2.3.
+* 2021 October 21 - Corrected a reference in S[30] of Section 1.4.
+* 2021 October 6 - Typo correction in Q[3] and S[3] of Section 2.4.
+* 2021 October 3 - Typo correction in A[25] and S[25] of Section 1.6.
 * 2021 September 25 - Moved questions 19, 20, 21 of Section 2.6 to Section 2.8.
 * 2021 September 25 - Adjustments to Q[5] and S[5,6,7,8,13] of Section 2.4.
 * 2021 September 20 - Typo correction in S[28] of Section 1.5.
@@ -141,6 +176,8 @@ m*   2017 Aug 31 - Title changes to reflect move to Calc-I convention.
 ---
 
 # CLP-1 Differential Calculus combined text
+* 2021 August 24 - Typo corrections in S[13] of Section 3.6.6.
+* 2021 August 23 - Typo correction in S[7] of Section 3.3.2.
 * 2020 August 31 - Filled in a hole in Section 3.5.
 * 2020 August 4 - Typo corrections in  "Using the Exercises in this Book".
 * 2020 January - April: Misc clean up of pretext code as per changes listed above for text and problem books.
