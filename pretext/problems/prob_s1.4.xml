@@ -1270,7 +1270,7 @@ Note that <m>\frac{1}{f(x)}</m> is undefined when <m>f(x) = 0</m>.
 </sidebyside>
 
 <p>The big question that remains is the behaviour of <m>\frac{1}{f(x)}</m> when <m>x</m> is near -2 and 2. We can answer this question with limits. As <m>x</m> approaches <m>-2</m> from the <em>left</em>, <m>f(x)</m> gets closer to zero, and is negative. So <m>\frac{1}{f(x)}</m> will be negative, and will increase in magnitude without bound; that is, <m>\displaystyle\lim_{x \rightarrow -2^-}\dfrac{1}{f(x)}=-\infty</m>. Similarly, as
-<m>x</m> approaches <m>-2</m> from the <em>right</em>, <m>f(x)</m> gets closer to zero, and is positive. So <m>\frac{1}{f(x)}</m> will be positive, and will increase in magnitude without bound; that is, <m>\displaystyle\lim_{x \rightarrow -2^-}\dfrac{1}{f(x)}=\infty</m>. We add this behaviour to our graph:
+<m>x</m> approaches <m>-2</m> from the <em>right</em>, <m>f(x)</m> gets closer to zero, and is positive. So <m>\frac{1}{f(x)}</m> will be positive, and will increase in magnitude without bound; that is, <m>\displaystyle\lim_{x \rightarrow -2^+}\dfrac{1}{f(x)}=\infty</m>. We add this behaviour to our graph:
 </p>
 
 <sidebyside width="66%">

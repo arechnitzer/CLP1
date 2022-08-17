@@ -260,7 +260,7 @@ It's not very inventive notation, however it is clear. We frequently abbreviate 
 In the following example, the limit we are interested in does not exist.  However the way in which things go wrong is quite different from what we just saw.
 </p>
 
-<example xml:id="eg_1_3_3"><title>A non-existant limit</title>
+<example xml:id="eg_1_3_3"><title>A non-existent limit</title>
 <p>
 Consider the function
 <md>

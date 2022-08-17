@@ -334,7 +334,7 @@ v\left(\frac{6}{3600}\right) =100-\left(\frac{360000}{7}\right)\left(\frac{6}{36
 About 8.5 minutes after liftoff, the US space shuttle has reached orbital velocity, 17 500 miles per hour. Assuming its acceleration was constant, how far did it travel in those 8.5 minutes?
 </p>
 
-<p>Source: <url href="http://www.nasa.gov/mission_pages/shuttle/shuttlemissions/sts121/launch/qa-leinbach.html"></url>
+<p>Source: <url href="https://www.nasa.gov/mission_pages/shuttle/shuttlemissions/sts121/launch/qa-leinbach.html"></url>
 </p></statement>
 <hint><p>
 Let <m>a</m> be the acceleration of the shuttle. Start by finding <m>a</m>, then find the position function of the shuttle.
@@ -393,7 +393,7 @@ h(t)=-4.9t^2+at+b</me> for some constant <m>b</m>. You can find this by guessing
 <p>So, <m>h(t)=-4.9t^2+at = t(-4.9t+a)</m>. The baseball is at height zero when it is pitched (<m>t=0</m>) and when it hits the ground (which we want to be <m>t=10</m>). So, we want <m>(-4.9)(10)+a=0</m>. That is, <m>a=49</m>. So, the initial pitch should be at <m>49</m> metres per second.
 </p>
 
-<p>Incidentally, this is on par with the fastest pitch in baseball, as recorded by Guiness World Records: <url href="http://www.guinnessworldrecords.com/world-records/fastest-baseball-pitch-(male)"/>
+<p>Incidentally, this is on par with the fastest pitch in baseball, as recorded by Guiness World Records: <url href="https://www.guinnessworldrecords.com/world-records/fastest-baseball-pitch-(male)"/>
 </p></solution>
 </exercise>
 
