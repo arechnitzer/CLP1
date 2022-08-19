@@ -104,7 +104,7 @@ if the limit exists.
 
 <example xml:id="eg_DIFFderivX0"><title>Derivative of <m>f(x)=c</m></title>
 <p>
-Let <m>a, c \in \bbbr</m> be a constants. Compute the derivative of the constant function  <m>f(x) = c</m> at <m>x=a</m>.
+Let <m>a, c \in \bbbr</m> be two constants. Compute the derivative of the constant function  <m>f(x) = c</m> at <m>x=a</m>.
 </p>
 
 <p>
