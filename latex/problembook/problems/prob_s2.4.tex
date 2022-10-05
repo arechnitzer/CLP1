@@ -137,7 +137,7 @@ A particle moves along the $x$--axis so that its position
 \item\label{s2.4particle3}At $t=2$, is the particle's speed increasing or decreasing?
 \end{enumerate}
 \end{Mquestion}
-\begin{hint} Be careful to distinguish between speed and velocity.
+\begin{hint} Be careful to distinguish between speed and velocity. The speed is the absolute value of the velocity.
 \end{hint}
 \begin{answer}
 \eqref{s2.4particle1} $4$\qquad
@@ -149,13 +149,15 @@ Let $f(t)=t^3-4t^2+1$. We saw in Question~\ref{derivxcube} that
 $\diff{}{t}t^3=3t^2$. So
 \begin{align*}
 f'(t)&=3t^2-8t & f'(2)&=3\times 4-8\times 2=-4\cr
-f''(t)&=6t-8 & f''(2)&=6\times 2-8=4\cr
+f''(t)&=6t-8 & f''(2)&=6\times 2-8=4
 \end{align*}
-Hence at $t=2$, \eqref{s2.4particle1}~the particle has speed of magnitude {4}, and \eqref{s2.4particle2}~is
+and the speed is
+\begin{align*}
+|f'(t)|&=|3t^2-8t| & |f'(2)|&=|-4|=4
+\end{align*}
+Hence at $t=2$, \eqref{s2.4particle1}~the particle has speed {4}, and \eqref{s2.4particle2}~is
 moving {towards the left}.
-At $t=2$, $f''(2)>0$, so $f'$ is increasing, i.e.
-becoming less negative. Since $f'$ is getting closer to zero, \eqref{s2.4particle3}~the magnitude of the speed is
-{decreasing}.
+At $t=2$, $f''(2)>0$, so $f'$ is increasing. For $t$ near $2$, $f'(t)$ is negative so that the speed $|f'(t)|=-f'(t)$ is decreasing. Thus \eqref{s2.4particle3}~the speed is {decreasing}.
 \end{solution}
 
 
