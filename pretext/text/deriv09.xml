@@ -389,7 +389,7 @@ which gives us
   &amp;= \lim_{h \to 0} \frac{f\big(g(a+h)\big)-f\big(g(a)\big)}{h}
 </mrow>
 </md>
-We know that <m>g(a) = b</m> and <m>g(a+h) = g(a) + h \gamma(h))</m>, so
+We know that <m>g(a) = b</m> and <m>g(a+h) = g(a) + h\, \gamma(h)</m>, so
 <md>
 <mrow>
   F'(a)
