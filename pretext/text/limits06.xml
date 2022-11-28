@@ -13,7 +13,7 @@ We have seen that computing the limits some functions <mdash/> polynomials and  
   \lim_{x \to a} f(x) &amp;= f(a).
 </mrow>
 </md>
-That is, the the limit as <m>x</m> approaches <m>a</m> is just <m>f(a)</m>. Roughly speaking,  the reason we can compute the limit this way is that these functions do not  have any abrupt jumps near <m>a</m>.
+That is, the limit as <m>x</m> approaches <m>a</m> is just <m>f(a)</m>. Roughly speaking,  the reason we can compute the limit this way is that these functions do not  have any abrupt jumps near <m>a</m>.
 </p>
 
 <p>

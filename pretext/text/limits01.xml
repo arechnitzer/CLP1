@@ -106,7 +106,7 @@ As we zoom in, the graph of <m>\sin(x)</m> looks more and more like a straight l
 </p>
 
 <p>
-Using this idea of zooming in at a particular point, drawing a tangent line is  not too hard. However,  finding the equation of the tangent line presents us  with a few challenges. Rather than leaping into the general  theory, let us do a  specific example. Let us find the the equation of the tangent line to the curve  <m>y=x^2</m> at the point <m>P</m> with coordinates
+Using this idea of zooming in at a particular point, drawing a tangent line is  not too hard. However,  finding the equation of the tangent line presents us  with a few challenges. Rather than leaping into the general  theory, let us do a  specific example. Let us find the equation of the tangent line to the curve  <m>y=x^2</m> at the point <m>P</m> with coordinates
 	<fn>
 		Note that the <em>coordinates</em> <m>(x,y)</m> is an ordered pair of two numbers <m>x</m>  and <m>y</m>. Traditionally the first number is called the <em>abscissa</em> while the  second is the <em>ordinate</em>, but these terms are a little archaic. It is now  much more common to hear people refer to the first number as  the <em><m>x</m>-coordinate</em> and the second as <em><m>y</m>-coordinate</em>.
 	</fn>
