@@ -1971,7 +1971,7 @@ Moving the <m>\frac{e}{2}</m> to the left hand side and the <m>T_1(1)</m> to the
 hand side gives
 <md>
 <mrow>
-  \frac{e}{2} \leq T_1(1) = 2
+  \frac{e}{2} \lt T_1(1) = 2
 </mrow>
 </md>
 So <m>e \lt 4</m>.
