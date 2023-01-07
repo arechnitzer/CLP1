@@ -312,7 +312,7 @@ zero, any function of the form
 </mrow>
 </md>
 with constant <m>c</m>, has the correct derivative. Finally, the requirement that the initial
-velocity <m>v(0)=q</m>" forces <m>c=q</m>, so
+velocity <m>v(0)=q</m> forces <m>c=q</m>, so
 <md>
 <mrow>
   v(t) = q - 64000\,t
