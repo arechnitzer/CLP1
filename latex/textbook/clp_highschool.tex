@@ -1335,7 +1335,7 @@ construct $p_n$ by cutting slices from the circle.
  \item Let $E_n$ be the difference between the area of the circle and $p_n$: $E_n = A -
 A(p_n)$ (see the left of the previous figure). By the previous point we know $E_n>0$.
 Now as we increase the number of sides, this difference becomes smaller. To be more
-precise
+precise, we will now show that
   \begin{align*}
   E_{2n} & \leq \frac{1}{2} E_n.
   \end{align*}
@@ -1373,7 +1373,7 @@ However we know from point 2 that we can make $n$ large enough so that $E_n < d$
 (each time we double $n$ we halve the error). But now we have a contradiction to
 step~3, since we have just shown that
 \begin{align*}
-  E_n = A-A(p_n) & < A-T & \text{which implies that}\\
+  E_n = A-A(p_n) & < d = A-T & \text{which implies that}\\
   A(p_n) & > T.
 \end{align*}
 \end{enumerate}
@@ -1395,7 +1395,7 @@ can construct the circle by trimming the polygon $P_n$.
  \item Let $E_n$ be the difference between the area of the polygon and the circle: $E_n =
 A(P_n)-A$ (see the left of the previous figure). By the previous point we know $E_n>0$.
 Now as we increase the number of sides, this difference becomes smaller. To be more
-precise we will show
+precise, we will now show
   \begin{align*}
   E_{2n} & \leq \frac{1}{2} E_n.
   \end{align*}
@@ -1449,11 +1449,11 @@ than $C/n$ (this is a subtle point and its proof is equivalent to showing that $
 
 \item If we assume that $T>A$, then $T-A = d$ where $d$ is some positive number.
 However we know from point 2 that we can make $n$ large enough so that $E_n < d$ (each
-time we double $n$ we halve the error). But now we have a contradiction since we have just
+time we double $n$ we halve the error). But now we have a contradiction to step~3, since we have just
 shown that
 \begin{align*}
-  E_n = A(P_n) - A & < T-A & \text{which implies that}\\
-  A(p_n) & > T.
+  E_n = A(P_n) - A & < d = T-A & \text{which implies that}\\
+  A(P_n) & < T.
 \end{align*}
 \end{enumerate}
 Thus we cannot have $T>A$. The only possibility that remains is that $T=A$.
