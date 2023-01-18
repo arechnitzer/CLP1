@@ -88,7 +88,7 @@ white,%
     }
     \newenvironment{#2}[1][]{%
     \@ifnotempty{#4}{\refstepcounter{#4}}
-    \begin{boite}[#1]{\textbf{#3\@ifnotempty{#4}{ \csname
+    \begin{boite}[#1]{\textbf{#3 \@ifnotempty{#4}{ \csname
 the#4\endcsname}}\@ifnotempty{##1}{
     (##1)}\textbf{.}}
     }%
