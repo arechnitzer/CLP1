@@ -715,14 +715,13 @@ Putting this all together we have</p>
 <definition xml:id="def_3_4_2"><title>Taylor polynomial</title>
 <statement><p>
   Let <m>a</m> be a constant and let <m>n</m> be a non-negative integer. The <m>n^\mathrm{th}</m>
-degree Taylor polynomial for <m>f(x)</m> about <m>x=a</m> is
+order<fn>It is sometimes called the <m>n^\mathrm{th}</m> degree Taylor polynomial, but its degree will actually be less than <m>n</m> if <m>f^{(n)}(a)=0</m>.</fn> Taylor polynomial for <m>f(x)</m> about <m>x=a</m> is
 <md>
 <mrow>
   T_n(x) &amp;= \sum_{k=0}^n \frac{1}{k!} f^{(k)}(a) \cdot (x-a)^k.
 </mrow>
 </md>
-  The special case <m>a=0</m> is called a Maclaurin
-<fn>The polynomials are named after
+  The special case <m>a=0</m> is called a Maclaurin<fn>The polynomials are named after
 Brook Taylor who devised a general method for constructing them in 1715. Slightly
 later, Colin Maclaurin made extensive use of the special case <m>a=0</m> (with attribution of
 the general case to Taylor) and it is now named after him. The special case of
@@ -826,10 +825,10 @@ defined at <m>x=0</m>.</p>
 
 <example xml:id="eg_expand_logx"><title>Taylor approximation of <m>\log x</m></title>
 <p>
-Compute the <m>5^\mathrm{th}</m> Taylor polynomial for <m>\log x</m> about <m>x=1</m>.
+Compute the <m>5^\mathrm{th}</m> order Taylor polynomial for <m>\log x</m> about <m>x=1</m>.
 </p>
 
-<p><alert>Solution</alert> We have been told <m>a=1</m> and fifth degree, so we should start by writing down the
+<p><alert>Solution</alert> We have been told <m>a=1</m> and fifth order, so we should start by writing down the
 function and its first five derivatives:
 <md>
 <mrow>
@@ -861,7 +860,7 @@ Substituting this into equation<nbsp/><xref ref="eq_taylorPoly"/> gives
 </mrow>
 </md>
 Again, it is not too hard to generalise the above work to find the Taylor polynomial of
-degree <m>n</m>:
+order <m>n</m>:
 With a little work one can show that
 <md>
 <mrow>
@@ -873,7 +872,7 @@ With a little work one can show that
 <p>For cosine:</p>
 <example xml:id="eg_expand_cosx"><title>Maclaurin polynomial for <m>\cos x</m></title>
 <p>
- Find the 4th degree Maclaurin polynomial for <m>\cos x</m>.
+ Find the 4th order Maclaurin polynomial for <m>\cos x</m>.
 </p>
 
 <p><alert>Solution</alert> We have <m>a=0</m> and we need to find the first 4 derivatives of <m>\cos x</m>.
@@ -918,7 +917,7 @@ derivatives are
  f^{(8)}(x) &amp;= \cos x &amp; f^{(8)}(0) &amp;= 1
 </mrow>
 </md>
-Using this we can find the <m>8^\mathrm{th}</m> degree Maclaurin polynomial:
+Using this we can find the <m>8^\mathrm{th}</m> order Maclaurin polynomial:
 <md>
 <mrow>
   T_8(x) &amp;=
@@ -957,7 +956,7 @@ approximations:</p>
 
 <example xml:id="eg_expand_sinx"><title>Maclaurin polynomial for <m>\sin x</m></title>
 <p>
- Find the 5th degree Maclaurin polynomial for <m>\sin x</m>.
+ Find the 5th order Maclaurin polynomial for <m>\sin x</m>.
 </p>
 
 <p><alert>Solution</alert> We could simply work as before and compute the first five derivatives of <m>\sin x</m>.
@@ -1042,7 +1041,7 @@ terms in the Taylor polynomials for <m>\sin x</m> are bounded by
 </mrow>
 </md>
 From these inequalities, and the graphs on the previous pages, it certainly looks like,
-for <m>x</m> not too large, even relatively low degree Taylor polynomials give very good
+for <m>x</m> not too large, even relatively low order Taylor polynomials give very good
 approximations. In Section<nbsp/><xref ref="ssec_taylor_error"/> we'll see how to get rigorous error
 bounds on our Taylor polynomial approximations.
 </p>
@@ -1800,8 +1799,8 @@ gives</p>
 </fact>
 
 <p>That is, the error introduced when <m>f(x)</m> is approximated by its Taylor
-polynomial of degree <m>n</m>, is precisely the last term of the Taylor polynomial
-of degree <m>n+1</m>, but with the derivative evaluated at some point between
+polynomial of order <m>n</m>, is precisely the last term of the Taylor polynomial
+of order <m>n+1</m>, but with the derivative evaluated at some point between
 <m>a</m> and <m>x</m>, rather than exactly at <m>a</m>. These error formulae are proven
 in the optional Section<nbsp/><xref ref="subsec_GMVT"/> later in this chapter.
 </p>
@@ -2022,7 +2021,7 @@ So <m>e \lt 3</m> as required.
 
 <example xml:id="eg_exp"><title>More on <m>e^x</m></title>
 <p>
-We wrote down the general <m>n^\mathrm{th}</m> degree Maclaurin polynomial approximation of
+We wrote down the general <m>n^\mathrm{th}</m> order Maclaurin polynomial approximation of
 <m>e^x</m> in Example<nbsp/><xref ref="eg_taylor_e_to_the_x"/> above.
 <ul>
 <li> Recall that
@@ -2185,7 +2184,7 @@ equation<nbsp/><xref ref="eq_taylorErrorN"/> <mdash/> namely
 </mrow>
 </md>
 for some <m>c</m> strictly between <m>a</m> and <m>x</m>, and where <m>T_n(x)</m> is the <m>n^\mathrm{th}</m>
-degree Taylor polynomial approximation of <m>f(x)</m> about <m>x=a</m>:
+order Taylor polynomial approximation of <m>f(x)</m> about <m>x=a</m>:
 <md>
 <mrow>
   T_n(x) &amp;= \sum_{k=0}^n \frac{1}{k!} f^{(k)}(a).
@@ -2409,11 +2408,11 @@ F'(x) &amp;= g(x) - \bigg( g(a) + g'(a)(x-a) + \frac{1}{2} g''(a)(x-a)^2 +
 </mrow><mrow>\amp\hskip2.5in+ \frac{1}{(k-1)!}g^{(k-1)}(a)(x-a)^{k-1} \bigg)
 </mrow>
 </md>
-So <m>F'(x)</m> is then exactly the remainder formula but for a degree <m>k-1</m> approximation
+So <m>F'(x)</m> is then exactly the remainder formula but for an order <m>k-1</m> approximation
 to the function <m>g(x) = f'(x)</m>.
 </li>
-<li> Hence the function <m>F'(q)</m> is the remainder when we approximate <m>f'(q)</m> with a
-degree <m>k-1</m> Taylor polynomial. The remainder formula, equation<nbsp/><xref ref="eq_taylorErrorN"/>,
+<li> Hence the function <m>F'(q)</m> is the remainder when we approximate <m>f'(q)</m> with an
+order <m>k-1</m> Taylor polynomial. The remainder formula, equation<nbsp/><xref ref="eq_taylorErrorN"/>,
 then tells us that there is a number <m>c</m> between <m>a</m> and <m>q</m> so that
 <md>
 <mrow>

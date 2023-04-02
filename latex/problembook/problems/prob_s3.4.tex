@@ -13,7 +13,7 @@
 
 
 \begin{question}[2015Q]
-Consider a function $f(x)$ whose third-degree Maclaurin polynomial is $4 +
+Consider a function $f(x)$ whose third order Maclaurin polynomial is $4 +
 3x^2 + \frac{1}{2}x^3$.
  What is $f'(0)$? What is $f''(0)$?
 \end{question}
@@ -35,7 +35,7 @@ The coefficient of $x$ is $f'(0)$ on  one side, and $0$ on the other, so
 
 
 \begin{question}[2015Q]
-Consider a function $h(x)$ whose third-degree Maclaurin polynomial is
+Consider a function $h(x)$ whose third order Maclaurin polynomial is
 $1+4x-\dfrac{1}{3}x^2 + \dfrac{2}{3}x^3$. What is $h^{(3)}(0)$?
 \end{question}
 \begin{answer}
@@ -54,7 +54,7 @@ The third Maclaurin polynomial for $h(x)$ is
 
 
 \begin{question}[2015Q]
-The third-degree Taylor polynomial of $h(x)$ about $x=2$ is $3 + \dfrac{1}{2}(x-2) + 2(x-2)^3$.
+The third order Taylor polynomial of $h(x)$ about $x=2$ is $3 + \dfrac{1}{2}(x-2) + 2(x-2)^3$.
 
 What is $h'(2)$?
 What is $h''(2)$?
@@ -67,7 +67,7 @@ $h'(2)=\dfrac{1}{2}$,
 $h''(2)=0$
 \end{answer}
 \begin{solution}
-The third-degree Taylor polynomial for $h(x)$ about $x=2$ is
+The third order Taylor polynomial for $h(x)$ about $x=2$ is
 \[
 h(2) + h'(2)(x-2) +\frac{h''(2)}{2}\cdot (x-2)^2 + \frac{h'''(2)}{6}\cdot (x-2)^3\]
  The coefficient of $(x-2)$ is $h'(2)$ in the definition, and
@@ -352,7 +352,7 @@ T_3(x)&=1+x+\frac{4}{2!}x^2+\frac{28}{3!}x^3\\
 
 \begin{question}[2015Q]
 Consider a function $f(x)$ which has $f^{(3)}(x)=\dfrac{x}{22-x^2}$.  Show
-that when we approximate $f(2)$ using its second degree Taylor polynomial at $a=1$, the
+that when we approximate $f(2)$ using its second order Taylor polynomial at $a=1$, the
 absolute value of the error is less than $\frac{1}{50}=0.02$.
 \end{question}
 \begin{hint}
@@ -413,7 +413,7 @@ increasing function of $c$ and takes its largest value at $c=2$. Hence
 
 \begin{Mquestion}[2015Q]
 Consider a function $f(x)$ which has $f^{(4)}(x)=\dfrac{\cos(x^2)}{3-x}$.  Show
-that when we approximate $f(0.5)$ using its third-degree Maclaurin polynomial,
+that when we approximate $f(0.5)$ using its third order Maclaurin polynomial,
 the absolute value of the error is less than $\frac{1}{500}=0.002$.
 \end{Mquestion}
 \begin{answer}
@@ -455,7 +455,7 @@ $$ \left| R_4 \right| \leq \frac{1}{2.5\cdot 24\cdot 16} = \frac{1}{60\cdot 16}<
 
 \begin{Mquestion}[2015Q]
 Consider a function $f(x)$ which has $f^{(3)}(x)=\dfrac{e^{-x}}{8+x^2}$.  Show
-that when we approximate $f(1)$ using its second degree Maclaurin polynomial, the
+that when we approximate $f(1)$ using its second order Maclaurin polynomial, the
 absolute value of the error is less than $1/40$.
 \end{Mquestion}
 \begin{answer}
@@ -569,25 +569,25 @@ $\frac{4}{9}25^{-5/3}<\frac{4}{9}2.9^{-5}=0.0022$.
 %%%%%%%%%%%%%%%%%%
 
 \begin{question}
-The 4th degree Maclaurin polynomial for $f(x)$ is
+The 4th order Maclaurin polynomial for $f(x)$ is
 \[T_4(x)=5x^2-9\]
-What is the third degree Maclaurin polynomial for $f(x)$?
+What is the third order Maclaurin polynomial for $f(x)$?
 \end{question}
 \begin{hint}
-The fourth-degree Maclaurin polynomial for $f(x)$ is
+The fourth order Maclaurin polynomial for $f(x)$ is
 \begin{align*}
 T_4(x)&=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3+\frac{1}{4!}f^{(4)}(0)x^4
-\intertext{while the third-degree Maclaurin polynomial for $f(x)$ is}
+\intertext{while the third order Maclaurin polynomial for $f(x)$ is}
 T_3(x)&=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3\end{align*}
 \end{hint}
 \begin{answer}
 $T_3(x)=5x^2-9$
 \end{answer}
 \begin{solution}
-The fourth-degree Maclaurin polynomial for $f(x)$ is
+The fourth order Maclaurin polynomial for $f(x)$ is
 \begin{align*}
 T_4(x)&=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3+\frac{1}{4!}f^{(4)}(0)x^4
-\intertext{while the third-degree Maclaurin polynomial for $f(x)$ is}
+\intertext{while the third order Maclaurin polynomial for $f(x)$ is}
 T_3(x)&=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3
 \intertext{So, we simply ``chop off" the part of $T_4(x)$ that includes $x^4$. Since that's already 0, in this case $T_3(x)=T_4(x)$.}
 T_3(x)&=5x^2-9

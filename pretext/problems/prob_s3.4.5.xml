@@ -10,7 +10,7 @@
 
 <exercise purpose="RQS">
 <statement><p>
-Give the 16th degree Maclaurin polynomial for <m>f(x)=\sin x+ \cos x</m>.
+Give the 16th order Maclaurin polynomial for <m>f(x)=\sin x+ \cos x</m>.
 </p></statement>
 <hint><p>
 The derivatives of <m>f(x)</m> repeat themselves.
@@ -40,7 +40,7 @@ T_{16}(x)&amp;=1\textcolor{blue}{+}x
 </md>
 </p></answer>
 <solution><p>
-If we were to find the 16th degree Maclaurin polynomial for a generic function, we might expect to have to differentiate 16 times (ugh). But, we know that the derivatives of sines and cosines repeat themselves. So, it's enough to figure out the pattern:
+If we were to find the 16th order Maclaurin polynomial for a generic function, we might expect to have to differentiate 16 times (ugh). But, we know that the derivatives of sines and cosines repeat themselves. So, it's enough to figure out the pattern:
 <md>
 <mrow>
 f(x)&amp;=\sin x + \cos x &amp; f(0)&amp;=1
@@ -82,7 +82,7 @@ T_{16}(x)&amp;=1\textcolor{blue}{+}x
 
 <exercise purpose="RQS">
 <statement><p>
-Give the 100th degree Taylor polynomial for <m>s(t)=4.9t^2-t+10</m> about <m>t=5</m>.
+Give the 100th order Taylor polynomial for <m>s(t)=4.9t^2-t+10</m> about <m>t=5</m>.
 </p></statement>
 <hint><p>
 You are approximating a polynomial with a polynomial.
@@ -91,7 +91,7 @@ You are approximating a polynomial with a polynomial.
 <m>T_{100}(t)=127.5+48(t-5)+4.9(t-5)^2=4.9t^2-t+10</m>
 </p></answer>
 <solution><p>
-A Taylor polynomial gives a polynomial approximation for a function <m>s(t)</m>. Since <m>s(t)</m> is itself a polynomial, any <m>n</m>th-degree Taylor polynomial, with <m>n</m> greater than or equal to the degree of <m>s(t)</m>, will simply give <m>s(t)</m>. So, in our case, <m>T_{100}(t)=s(t)=4.9t^2-t+10</m>.
+A Taylor polynomial gives a polynomial approximation for a function <m>s(t)</m>. Since <m>s(t)</m> is itself a polynomial, any <m>n</m>th order Taylor polynomial, with <m>n</m> greater than or equal to the degree of <m>s(t)</m>, will simply give <m>s(t)</m>. So, in our case, <m>T_{100}(t)=s(t)=4.9t^2-t+10</m>.
 </p>
 
 <p>If that isn't satisfying, you can go through the normal method of calculating <m>T_{100}(t)</m>.
@@ -129,7 +129,7 @@ T_{100}(t)&amp;=127.5+48(t-5)+4.9(t-5)^2
 
 <exercise>
 <statement><p>
-Write the <m>n</m>th-degree Taylor polynomial for <m>f(x)=2^x</m> about <m>x=1</m> in sigma notation.
+Write the <m>n</m>th order Taylor polynomial for <m>f(x)=2^x</m> about <m>x=1</m> in sigma notation.
 </p></statement>
 <hint><p>
 Recall <m>\ds\diff{}{x}\left\{2^x\right\}=2^x\log 2</m>, where <m>\log 2</m> is the constant <m>\log_e2</m>.
@@ -159,7 +159,7 @@ f^{(k)}(x)&amp;=2^x\left(\log 2\right)^k
 <intertext>We notice that this formula works even when <m>k=0</m> and <m>k=1</m>. When <m>x=1</m>,</intertext><mrow>
 f^{(k)}(1)&amp;=2\left(\log 2\right)^k
 </mrow>
-<intertext>The <m>n</m>th degree Taylor polynomial of <m>f(x)</m> about <m>x=1</m> is</intertext><mrow>
+<intertext>The <m>n</m>th order Taylor polynomial of <m>f(x)</m> about <m>x=1</m> is</intertext><mrow>
 T_{n}(x)&amp;=\sum_{k=0}^n \frac{f^{(k)}(1)}{k!}(x-1)^k
 </mrow><mrow>
 &amp;=\sum_{k=0}^n \frac{2(\log 2)^k}{k!}(x-1)^k
@@ -170,7 +170,7 @@ T_{n}(x)&amp;=\sum_{k=0}^n \frac{f^{(k)}(1)}{k!}(x-1)^k
 
 <exercise purpose="RQS">
 <statement><p>
-Find the 6th degree Taylor polynomial of <m>f(x)=x^2\log x+2x^2+5</m> about <m>x=1</m>, remembering that <m>\log x</m> is the natural logarithm of <m>x</m>, <m>\log_ex</m>.
+Find the 6th order Taylor polynomial of <m>f(x)=x^2\log x+2x^2+5</m> about <m>x=1</m>, remembering that <m>\log x</m> is the natural logarithm of <m>x</m>, <m>\log_ex</m>.
 </p></statement>
 <hint><p>
 Just keep differentiating--it gets easier!
@@ -234,7 +234,7 @@ T_6(x)&amp;=\textcolor{red}{f(1)}+\textcolor{red}{f'(1)}(x-1)+\frac{1}{2}\textco
 
 <exercise>
 <statement><p>
-Give the <m>n</m>th degree Maclaurin polynomial for <m>\dfrac{1}{1-x}</m> in sigma notation.
+Give the <m>n</m>th order Maclaurin polynomial for <m>\dfrac{1}{1-x}</m> in sigma notation.
 </p></statement>
 <hint><p>
 Start by differentiating, and finding the pattern for <m>f^{(k)}(0)</m>. Remember the chain rule!
@@ -264,7 +264,7 @@ f^{(k)}(x)&amp;=k!(1-x)^{-(k+1)}
 </mrow><mrow>
 f^{(k)}(0)&amp;=k!(1)^{-(k+1)}=k!
 </mrow>
-<intertext>The <m>n</m>th degree Maclaurin polynomial for <m>f(x)</m> is</intertext><mrow>
+<intertext>The <m>n</m>th order Maclaurin polynomial for <m>f(x)</m> is</intertext><mrow>
 T_n(x)&amp;=\sum_{k=0}^n \frac{f^{(k)}(0)}{k!}x^k
 </mrow><mrow>
 &amp;=\sum_{k=0}^n \frac{k!}{k!}x^k
@@ -281,7 +281,7 @@ T_n(x)&amp;=\sum_{k=0}^n \frac{f^{(k)}(0)}{k!}x^k
 
 <exercise purpose="RQS">
 <statement><p>
-Calculate the <m>3</m>rd-degree Taylor Polynomial for <m>f(x)=x^x</m> about <m>x=1</m>.
+Calculate the <m>3</m>rd order Taylor Polynomial for <m>f(x)=x^x</m> about <m>x=1</m>.
 </p></statement>
 <hint><p>
 You'll need to differentiate <m>x^x</m>. This is accomplished using logarithmic differentiation, covered in Section<nbsp/><xref ref="sec_diff_logs"/>.
@@ -345,7 +345,7 @@ T_3(x)&amp;=\textcolor{red}{f(1)}+\textcolor{red}{f'(1)}(x-1)+\frac{1}{2}\textco
 
 <exercise>
 <statement><p>
-Use a 5th-degree Maclaurin polynomial for <m>6\arctan x</m> to approximate <m>\pi</m>.
+Use a 5th order Maclaurin polynomial for <m>6\arctan x</m> to approximate <m>\pi</m>.
 </p></statement>
 <hint><p>
 What is <m>6\arctan \left(\dfrac{1}{\sqrt{3}}\right)</m>?
@@ -354,7 +354,7 @@ What is <m>6\arctan \left(\dfrac{1}{\sqrt{3}}\right)</m>?
 <m>\pi=6\arctan\left(\dfrac{1}{\sqrt3}\right)\approx\dfrac{82}{45}\sqrt{3}\approx3.156</m>
 </p></answer>
 <solution><p>
-We note that <m>6\arctan\left(\dfrac{1}{\sqrt3}\right)=6\left(\dfrac{\pi}{6}\right)=\pi</m>. We will find the 5th-degree Maclaurin polynomial <m>T_5(x)</m> for <m>f(x)=6\arctan x</m>.
+We note that <m>6\arctan\left(\dfrac{1}{\sqrt3}\right)=6\left(\dfrac{\pi}{6}\right)=\pi</m>. We will find the 5th order Maclaurin polynomial <m>T_5(x)</m> for <m>f(x)=6\arctan x</m>.
 Then <m>\pi=f\left(\dfrac{1}{\sqrt{3}}\right) \approx T_5\left(\dfrac{1}{\sqrt{3}}\right)</m>. Let's begin by finding the first five derivatives of <m>f(x)=6\arctan x</m>.
 <md>
 <mrow>
@@ -395,7 +395,7 @@ f^{(5)}(x)&amp;=144\left(\frac{(1+x^2)^4(1-3x^2)-(x-x^3)\cdot4(1+x^2)^3(2x)}{(1+
 \amp\implies f^{(5)}(0)=144
 </mrow>
 </md>
-We now use these values to compute the 5th-degree Maclaurin polynomial for <m>f(x)</m>.
+We now use these values to compute the 5th order Maclaurin polynomial for <m>f(x)</m>.
 <md>
 <mrow>
 T_5(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3+\frac{1}{4!}f^{(4)}(0)x^4
@@ -425,7 +425,7 @@ T_5(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3+\frac{1}{4!}
 
 <exercise>
 <statement><p>
-Write the <m>100</m>th-degree Taylor polynomial for <m>f(x)=x(\log x -1)</m> about <m>x=1</m>
+Write the <m>100</m>th order Taylor polynomial for <m>f(x)=x(\log x -1)</m> about <m>x=1</m>
 in sigma notation.
 </p></statement>
 <hint><p>
@@ -474,7 +474,7 @@ T_{100}(x)&amp;=\sum_{k=0}^{100}\frac{f^{(k)}(1)}{k!}(x-1)^k
 
 <exercise>
 <statement><p>
-Write the <m>(2n)</m>th-degree Taylor polynomial for <m>f(x)=\sin x</m> about <m>x=\dfrac{\pi}{4}</m> in sigma notation.
+Write the <m>(2n)</m>th order Taylor polynomial for <m>f(x)=\sin x</m> about <m>x=\dfrac{\pi}{4}</m> in sigma notation.
 </p></statement>
 <hint><p>
 Treat the even and odd powers separately.
@@ -604,7 +604,7 @@ While you're working with sums, it's easy to mistake a constant for a function. 
 <p>From Example<nbsp/><xref ref="eg_expand_cosx"/>
 </p>
 
-<p> in the text, we see that the <m>(2n)</m>th-degree Maclaurin polynomial for <m>f(x)=\cos x</m> is
+<p> in the text, we see that the <m>(2n)</m>th order Maclaurin polynomial for <m>f(x)=\cos x</m> is
 <md>
 <mrow>
 T_{2n}(x)&amp;=\sum_{k=0}^n  \frac{(-1)^k}{(2k)! }\cdot x^{2k}
