@@ -931,12 +931,13 @@ Continuing this process gives us the <m>2n^\mathrm{th}</m> Maclaurin polynomial
 </mrow>
 </md>
 </p>
+
 <warning>
-<statement><p>
+<p>
 The above formula only works when x is measured in radians, because all of our
 derivative formulae for trig functions were developed under the assumption that
 angles are measured in radians.
-</p></statement>
+</p>
 </warning>
 
 <p>Below we plot <m>\cos x</m> against its first few Maclaurin polynomial
@@ -992,11 +993,11 @@ extend our work to compute the <m>(2n+1)^\mathrm{th}</m> Maclaurin polynomial fo
 </md>
 </p>
 <warning>
-<statement><p>
+<p>
 The above formula only works when x is measured in radians, because all of our
 derivative formulae for trig functions were developed under the assumption that
 angles are measured in radians.
-</p></statement>
+</p>
 </warning>
 
 <p>Below we plot <m>\sin x</m> against its first few Maclaurin polynomial approximations.</p>
@@ -1229,13 +1230,13 @@ places.
 </example>
 
 <warning xml:id="warning_radians">
-<statement><p>
+<p>
 All of our derivative formulae for trig functions were developed under
 the assumption that angles are measured in radians.
 Those derivatives appeared in the approximation formulae that we used
 in Example <xref ref="eg_taylorapprox"/>, so we were obliged to express <m>x-a</m>
 in radians.
-</p></statement>
+</p>
 </warning>
 
 

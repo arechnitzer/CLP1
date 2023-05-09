@@ -10,7 +10,7 @@
 <exercise purpose="RQS"><title><fromexam>2007H</fromexam></title>
 <statement><p>
  Let <m>f(x) = x\sqrt{3 - x}</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_62007_1"> Find the domain of <m>f(x)</m>.
 </li>
 <li xml:id="s3_62007_2"> Determine the <m>x</m>-coordinates of the local
@@ -686,11 +686,11 @@ e^x &amp;x \lt 0\\
 </me>
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li xml:id="s3_6_2006_a"> Explain why <m>f(x)</m> is continuous everywhere.
 </li>
 <li xml:id="s3_6_2006_b"><p> Determine all of the following if they are present:
-<ol label="i">
+<ol marker="i">
 <li xml:id="s3_6_2006_i"> <m>x</m>--coordinates of local maxima and minima, intervals where <m>f(x)</m> is increasing or decreasing;
 </li>
 <li xml:id="s3_6_2006_ii"> intervals where <m>f(x)</m> is concave upwards or downwards;
@@ -978,7 +978,7 @@ Consider the function <m>f(x) = xe^{-x^2/2}</m>.
 </p>
 
 <p>Note: <m>\ds\lim_{x \to \pm\infty}f(x)=0</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_62009_2"> Find all inflection points and intervals of increase, decrease,
  convexity up, and convexity down. You may use without proof the formula
 <m>f''(x) = (x^3-3x)e^{-x^2/2}</m>.
@@ -1695,7 +1695,7 @@ f'(x)=K(2x-x^2)e^{-x}
 for some positive constant <m>K</m>. (Read carefully: you are given the <em>derivative</em> of <m>f(x)</m>, not <m>f(x)</m> itself.)
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li xml:id="s3_6K1"> Determine the intervals on which <m>f</m> is increasing and decreasing
 and the location of any local maximum and minimum values of <m>f</m>.
 </li>
@@ -1881,7 +1881,7 @@ where the last line can be found using the quadratic equation. So,
 <exercise><title><fromexam>2010H</fromexam></title>
 <statement><p>
  Let <m>f(x) = e^{-x}</m> , <m>x \ge 0</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_62010exp1"> Sketch the graph of the equation <m>y = f(x)</m>. Indicate any
 local extrema and inflection points.
 </li>
@@ -2028,7 +2028,7 @@ g'\left(\frac{1}{2}\right)&amp;=-2
 
 <exercise><title><fromexam>2011H</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li> Sketch the graph of <m>y=f(x)=x^5-x</m>, indicating asymptotes,
 local maxima and minima, inflection points, and where the
 graph is concave up/concave down.
@@ -2177,7 +2177,7 @@ of <m>\sin(x)</m> and <m>\cos(x)</m>. In particular, it is easy to see that
 \cosh^2(x)-\sinh^2(x)=1
 </me>
 You may use these properties in your solution to this question.
-<ol label="a">
+<ol marker="a">
 <li> Sketch the graphs of <m>\sinh(x)</m> and <m>\cosh(x)</m>.
 </li>
 <li> Define inverse hyperbolic trigonometric functions

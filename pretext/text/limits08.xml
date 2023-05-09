@@ -11,7 +11,7 @@ For those of you who made it through the formal <m>\epsilon-\delta</m> definitio
 
 <definition xml:id="def_1_8_1"><title>Limits involving infinity <mdash/> formal</title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li><p>
  Let <m>f</m> be a function defined on the whole real line. We say that</p>
 <blockquote>

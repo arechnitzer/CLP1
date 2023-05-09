@@ -205,7 +205,7 @@ Since <m>f(x)</m> is differentiable for all <m>x \in (0,10)</m>, then <m>f(x)</m
 <statement><p>
 For each of the parts below, sketch a function <m>f(x)</m> (different in each part) that is continuous and differentiable over all real numbers, with <m>f(1)=f(2)=0</m>, and with
 the listed property, or explain why no such function exists.
-<ol label="a">
+<ol marker="a">
 <li> <m>f'(c)=0</m> for <em>no</em> point <m>c \in (1,2)</m>
 </li>
 <li> <m>f'(c)=0</m> for <em>exactly one</em> point <m>c \in (1,2)</m>
@@ -606,7 +606,7 @@ Let <m>f(x)=e^x-4\cos(2x)</m>, and use Rolle's Theorem. What is the interval whe
 <exercise purpose="RQS"><title><fromexam>1997H</fromexam></title>
 <statement><p>
 Let <m>f(x)=3x^5-10x^3+15x+a</m>, where <m>a</m> is some constant.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_131997_1">  Prove that, regardless of the value <m>a</m>, <m>f'(x) \gt 0</m>
 for all <m>x</m> in <m>(-1,1)</m>.
 </li>

@@ -933,7 +933,7 @@ f(x) =\left\{\begin{array}{ll} 0 &amp; x\le 0\\
 </p>
 
 <p>which of the following statements is correct?
-<ol label="i">
+<ol marker="i">
 <li xml:id="s2_8_2006i"> <m>f</m> is undefined at <m>x = 0</m>.
 </li>
 <li xml:id="s2_8_2006ii">  <m>f</m> is neither continuous nor differentiable at <m>x = 0</m>.

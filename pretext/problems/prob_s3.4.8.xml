@@ -12,7 +12,7 @@
 <statement><p>
 Suppose <m>f(x)</m> is a function that we approximated by <m>F(x)</m>. Further, suppose
  <m>f(10)=-3</m>, while our approximation was <m>F(10)=5</m>. Let <m>R(x)=f(x)-F(x)</m>.
- <ol label="a">
+ <ol marker="a">
 <li> True or false: <m>|R(10)| \leq 7</m>
 </li>
 <li> True or false: <m>|R(10)| \leq 8</m>
@@ -989,7 +989,7 @@ If you got tighter bounds than asked for in the problem, congratulations!
 <exercise>
 <statement><p>
 In this question, we use the remainder of a Maclaurin polynomial to approximate <m>e</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_4_8Tx"> Write out the 4th order Maclaurin polynomial <m>T_4(x)</m> of the function <m>e^x</m>.
 </li>
 <li xml:id="s3_4_8T1"> Compute <m>T_4(1)</m>.
@@ -1032,7 +1032,7 @@ T_4(1)&amp;=\sum_{n=0}^4\frac{1^n}{n!}=\sum_{n=0}^4\frac{1}{n!}
 <p><xref ref="s3_4_8e"/> Using Equation<nbsp/><xref ref="eq_taylorErrorN"/>,
 <md>
 <mrow>
-e^1-T_4(1)&amp;=\frac{1}{5!}e^c\qquad\mbox{for some <m>c</m> strictly between 0 and 1. So,}
+e^1-T_4(1)&amp;=\frac{1}{5!}e^c\qquad\mbox{for some \(c\) strictly between 0 and 1. So,}
 </mrow><mrow>
 e-\frac{65}{24}&amp;=\frac{e^c}{120}
 </mrow><mrow>

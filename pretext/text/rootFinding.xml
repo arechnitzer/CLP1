@@ -199,7 +199,7 @@ and <m>x_2</m> would solve <m>f(x)=0</m> exactly.
 Now we repeat, but starting with the (second) guess <m>x_2</m> rather than <m>x_1</m>.
 This gives the (third) guess <m>x_3= x_2 -\frac{f(x_2)}{f'(x_2)}</m>. And so
 on. By way of summary, Newton's method is
-<ol label="1">
+<ol marker="1">
 <li>
 Make a preliminary guess <m>x_1</m>.
 </li><li>
@@ -547,7 +547,7 @@ and <m>f'(x_n)\approx f'(r)</m> and
 \tag{E3}</me>
 Even when <m>x_n</m> is not close to <m>r</m>, if we know that there are two 
 numbers <m>L,M\gt 0</m> such that <m>f</m> obeys:
-<ol  label="(H1)">
+<ol  marker="(H1)">
 <li>
  <m>\big|f'(x_n)\big|\ge L</m> 
 </li><li>

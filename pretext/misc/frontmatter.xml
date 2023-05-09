@@ -3,7 +3,7 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<frontmatter xml:id="index" xmlns:xi="http://www.w3.org/2001/XInclude">
+<frontmatter xml:id="front" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<titlepage>
 		<author>
 			<personname>Joel Feldman</personname>
@@ -33,7 +33,7 @@
 	<colophon>
 		<credit>
         <role>Cover Design</role>
-				<entity>Nick Loewen <mdash/> licensed under the <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0 License</url>.</entity>
+				<entity>Nick Loewen <mdash/> licensed under the <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/" visual="creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0 License</url>.</entity>
     </credit>
 
 		<edition>CLP-1 Differential Calculus: May 2021</edition>
@@ -50,7 +50,7 @@
 			<holder>Joel Feldman, Andrew Rechnitzer, Elyse Yeager</holder>
 			<minilicense>CC-BY-NC-SA 4.0 License</minilicense>
 			<shortlicense>
-				This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You can view a copy of the license <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/">here</url>.
+				This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You can view a copy of the license <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/" visual="creativecommons.org/licenses/by-nc-sa/4.0/">here</url>.
 
 					<image source = "text/figs/by-nc-sa" width="25%"/>
 			</shortlicense>
@@ -59,14 +59,14 @@
 		<credit>
 			<role>Source files</role>
 			<entity>
-				A link to the source files for this document can be found at the <url href="https://www.math.ubc.ca/~CLP/">CLP textbook website</url>. The sources are licensed under the <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0 License</url>.
+				A link to the source files for this document can be found at the <url href="https://www.math.ubc.ca/~CLP/" visual="www.math.ubc.ca/~CLP/">CLP textbook website</url>. The sources are licensed under the <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/" visual="creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0 License</url>.
 		</entity>
 		</credit>
 
 	</colophon>
 	<preface>
 		<p>
-		This text is a merger of the CLP Differential Calculus textbook and problembook. It is, at the time that we write this, still a work in progress; some bits and pieces around the edges still need polish. Consequently we recommend to the student that they still consult the <url href="https://www.math.ubc.ca/~CLP/CLP1">textbook webpage</url> for links to the <url href="https://www.math.ubc.ca/~CLP/01c-errata.html">errata</url> <mdash/> especially if they think there might be a typo or error. We also request that you send us an email at <url href="mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext"> <c>clp@ugrad.math.ubc.ca</c></url>
+		This text is a merger of the CLP Differential Calculus textbook and problembook. It is, at the time that we write this, still a work in progress; some bits and pieces around the edges still need polish. Consequently we recommend to the student that they still consult the <url href="https://www.math.ubc.ca/~CLP/CLP1" visual="www.math.ubc.ca/~CLP/CLP1">textbook webpage</url> for links to the <url href="https://www.math.ubc.ca/~CLP/01c-errata.html" visual="www.math.ubc.ca/~CLP/01c-errata.html">errata</url> <mdash/> especially if they think there might be a typo or error. We also request that you send us an email at <url href="mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext" visual="clp@ugrad.math.ubc.ca"> <c>clp@ugrad.math.ubc.ca</c></url>
 		</p>
 
 		<p>
@@ -125,7 +125,7 @@
 		<p>
 		  Finally, we'd like to thank those students who reported typos and errors they found in the text.
 			Many of these students did so through our <q>bug bounty</q> program which was supported by the
-			<url href="https://www.math.ubc.ca/">Department of Mathematics</url>, <url href="https://skylight.science.ubc.ca/">Skylight</url> and the <url href="http://loafecafe.com/">Loafe Cafe</url> all at UBC.
+			<url href="https://www.math.ubc.ca/" visual="www.math.ubc.ca">Department of Mathematics</url>, <url href="https://skylight.science.ubc.ca/" visual="skylight.science.ubc.ca">Skylight</url> and the <url href="http://loafecafe.com/" visual="loafecafe.com">Loafe Cafe</url> all at UBC.
 		</p>
 
 
@@ -150,7 +150,7 @@
 		<p>
 		One of the reasons so many students are required to study calculus is the hope that it will improve their problem-solving skills. In this class, you will learn lots of concepts, and be asked to apply them in a variety of situations. Often, this will involve answering one really big problem by breaking it up into manageable chunks, solving those chunks, then putting the pieces back together. When you see a particularly long question, remain calm and look for a way to break it into pieces you can handle.
 		</p>
-
+		<p>
 		<ul>
 			<li><p><alert>Working with Friends:</alert></p>
 			<p>
@@ -206,7 +206,8 @@
 			In exams, as in life, you will encounter questions of varying difficulty. A good skill to practice is recognizing the level of difficulty a problem poses. Exams will have some easy questions, some standard questions, and some harder questions.
 			</p>
 		</li>
-	</ul>
+		</ul>
+		</p>
 	</preface>
 
 	<preface>
@@ -214,12 +215,12 @@
 		<p>
 		This combined edition of the CLP differential calculus text is still undergoing testing and changes. Because of this we request that if you find a problem or error in the text then:
 		<ol>
-		<li>Please check the <url href="https://www.math.ubc.ca/~CLP/01c-errata.html">errata list</url> that can be found at the <url href="https://www.math.ubc.ca/~CLP/CLP1">textbook webpage</url>.</li>
+		<li>Please check the <url href="https://www.math.ubc.ca/~CLP/01c-errata.html" visual="www.math.ubc.ca/~CLP/01c-errata.html">errata list</url> that can be found at the <url href="https://www.math.ubc.ca/~CLP/CLP1" visual="www.math.ubc.ca/~CLP/CLP1">textbook webpage</url>.</li>
 		<li>Is the problem in the online version or the PDF version or both?</li>
 		<li>Note the URL of the online version and the page number in the PDF</li>
 		<li>
 			<p>Send an email to
-			<url href="mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext"> <c>clp@ugrad.math.ubc.ca</c></url>.
+			<url href="mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext" visual="clp@ugrad.math.ubc.ca"> <c>clp@ugrad.math.ubc.ca</c></url>.
 			Please be sure to include
 			<ul>
 			<li>a description of the error</li>

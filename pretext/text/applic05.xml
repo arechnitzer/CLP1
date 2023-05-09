@@ -107,7 +107,7 @@ For the moment think of maximum as <q>the biggest value</q> and minimum as
 </p>
 
 <warning>
-<statement><p>
+<p>
 It is important to distinguish between <q>the smallest value</q> and <q>the smallest
 magnitude</q>. For example, because
 <md>
@@ -119,7 +119,7 @@ the number <m>-5</m> is smaller than <m>-1</m>. But the magnitude of <m>-1</m>, 
 smaller than the magnitude of <m>-5</m>, which is <m>|-5|=5</m>. Thus the smallest number in the set
 <m>\{-1, -5\}</m> is <m>-5</m>, while the number in the set <m>\{-1,-5\}</m> that has the smallest
 magnitude is <m>-1</m>.
-</p></statement>
+</p>
 </warning>
 
 <p>Now back to thinking about what happens around a maximum. Suppose that the maximum value
@@ -359,7 +359,8 @@ function.
 </p></statement>
 </definition>
 
-<warning><statement><p>
+<warning>
+  <p>
 Note that some people (and texts) will combine both of these cases and call
 <m>x=c</m> a critical point when either the derivative is zero or does not exist.
 The reader should be aware of the lack of convention on this point
@@ -369,7 +370,6 @@ pun intended.</fn>
 definition of critical point is being used, or if the text is using the more
 precise definition that distinguishes critical and singular points.
 </p>
-</statement>
 </warning>
 
 <p>We'll now look at a few simple examples involving local maxima and
@@ -759,7 +759,7 @@ procedure to follow for these problems.
 </p>
 
 <p>
-<ol label="1">
+<ol marker="1">
 <li> Read <mdash/> read the problem carefully. Work out what information is given in the
 statement of the problem and what we are being asked to compute.
 </li>
@@ -796,10 +796,10 @@ the problem.
 <example xml:id="APPglobalMaxMinB"><title>Constructing a container of maximal volume</title>
 <p>
 A closed rectangular container with a square base is to be made
-from two different materials. The material for the base costs <dollar />5 per square
-meter, while the material for the other five sides costs <dollar />1 per square
+from two different materials. The material for the base costs $5 per square
+meter, while the material for the other five sides costs $1 per square
 meter. Find the dimensions of the container which has the largest possible
-volume if the total cost of materials is <dollar />72.
+volume if the total cost of materials is $72.
 </p>
 
 <p><alert>Solution</alert> We can follow the steps we outlined above to find the solution.
@@ -832,7 +832,7 @@ and the area of the other fives sides be <m>A_s</m> (both in <m>m^2</m>), and th
 </mrow>
 </md>
 </li>
-<li> To eliminate one of the variables we use the fact that the total cost is <dollar />72.
+<li> To eliminate one of the variables we use the fact that the total cost is $72.
 <md>
 <mrow>
   C &amp;= 6b^2+4bh = 72 &amp; \text{rearrange}
@@ -1023,7 +1023,7 @@ real number.
 </p>
 
 <p>
-<ol label="a">
+<ol marker="a">
 <li><p> If <m>\displaystyle \lim_{x\rightarrow+\infty} f(x)=+\infty</m> and
 <m>\displaystyle \lim_{x\rightarrow-\infty} f(x)=+\infty</m> and if <m>f(x)</m> has a global
 minimum at <m>x = c</m>, then there are 2 possibilities. Either

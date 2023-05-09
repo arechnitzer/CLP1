@@ -22,7 +22,7 @@
 <exercise purpose="RQS">
 <statement><p>
 Suppose <m>f(x)</m> is a differentiable function, with <m>f'(x) \gt 0</m> and <m>f''(x) \gt 0</m> for every <m>x \in (a,b)</m>. Which of the following must be true?
-<ol label="i">
+<ol marker="i">
 <li xml:id="s2_14pi"> <m>f(x)</m> is positive over <m>(a,b)</m>
 </li>
 <li xml:id="s2_14pii"> <m>f(x)</m> is increasing over <m>(a,b)</m>
@@ -385,7 +385,7 @@ Remark: a common mistake is to stop at the equation
 <exercise purpose="RQS">
 <statement><p>
 Which statements below are true, and which false?
-<ol label="a">
+<ol marker="a">
 <li> <m>\ds\ddiff{4}{}{x} \sin x = \sin x</m>
 </li>
 <li> <m>\ds\ddiff{4}{}{x} \cos x = \cos x</m>
@@ -575,7 +575,7 @@ In the above work, remember that <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m> are 
 <me>
 f(x)=e^{x+x^2}\qquad \qquad \qquad h(x)=1+x+\frac{3}{2}x^2
 </me>
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_14ineq1"> Find the first and second derivatives of both functions
 </li>
 <li xml:id="s2_14ineq2"> Evaluate both functions and their first and second derivatives at 0.
@@ -624,7 +624,7 @@ h''(x)&amp;=3
 <statement><p>
  The equation <m>x^3y+y^3=10x</m> defines <m>y</m> implicitly as a function
 of <m>x</m> near the point <m>(1,2)</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_11p2_1"> Compute <m>y'</m> at this point.
 </li>
 <li xml:id="s2_11p2_2"> It can be shown that <m>y''</m> is negative when <m>x=1</m>. Use this
@@ -636,7 +636,7 @@ the curve to its tangent line at <m>(1,2)</m>.
 <hint><p> For <xref ref="s2_11p2_2"/>, you know a point where the curve and tangent line intersect, and you know what the tangent line looks like. What do the derivatives tell you about the shape of the curve?
 </p></hint>
 <answer><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>y'(1)=\dfrac{4}{13}</m>
 </li>
 <li><sidebyside width="40%">
@@ -646,7 +646,7 @@ the curve to its tangent line at <m>(1,2)</m>.
 </ol>
 </p></answer>
 <solution><p>
-<ol label="a">
+<ol marker="a">
 <li>
 We differentiate implicitly.
 <md>
@@ -682,7 +682,7 @@ So the slope of the curve is decreasing as <m>x</m> passes through 1. That is, t
 <statement><p>
 Let <m>g(x)=f(x)e^x</m>.
 In Question<nbsp/><xref ref="s2_7expprod"/>, Section<nbsp/><xref ref="sec_exp_func"/>, we learned that <m>g'(x)=[f(x)+f'(x)]e^x</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_14expprod1"> What is <m>g''(x)</m>?
 </li>
 <li xml:id="s2_14expprod2"> What is <m>g'''(x)</m>?
@@ -851,7 +851,7 @@ Therefore, <m>f(x)</m> has a second root, so <m>f(x)</m> has precisely two roots
 <exercise purpose="RQS"><title><fromexam>2007H</fromexam></title>
 <statement><p>
 Let <m>f(x) = x|x|</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_14_2007_1"> Show that
 <m>f(x)</m> is differentiable at <m>x = 0</m>, and find <m>f'(0)</m>.
 </li>

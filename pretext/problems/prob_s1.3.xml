@@ -11,7 +11,7 @@
 <exercise>
 <statement><p>
 Given the function shown below, evaluate the following:
-<ol label="a">
+<ol marker="a">
 <li> <m>\displaystyle \lim_{x \rightarrow -2} f(x)</m>
 </li>
 <li> <m>\displaystyle \lim_{x \rightarrow 0}f(x)</m>
@@ -33,7 +33,7 @@ Given the function shown below, evaluate the following:
 </sidebyside>
 </statement>
 <answer><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>\displaystyle \lim_{x \rightarrow -2} f(x)=1</m>
 </li>
 <li> <m>\displaystyle \lim_{x \rightarrow 0}f(x)=0</m>
@@ -43,7 +43,7 @@ Given the function shown below, evaluate the following:
 </ol>
 </p></answer>
 <solution><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>\displaystyle \lim_{x \rightarrow -2} f(x)=1</m>: as <m>x</m> gets very close to <m>-2</m>, <m>y</m> gets very close to <m>1</m>.
 </li>
 <li> <m>\displaystyle \lim_{x \rightarrow 0}f(x)=0</m>: as <m>x</m> gets very close to <m>0</m>, <m>y</m> also gets very close to <m>0</m>.
@@ -83,7 +83,7 @@ The limit does not exist. As <m>x</m> approaches 0 <em>from the left</em>, <m>y<
 <exercise purpose="RQS">
 <statement><p>
 Given the function shown below, evaluate:
-<ol label="a">
+<ol marker="a">
 <li> <m>\displaystyle \lim_{x \rightarrow -1^{-}} f(x)</m>
 </li>
 <li> <m>\displaystyle \lim_{x \rightarrow -1^{+}} f(x)</m>
@@ -117,7 +117,7 @@ Given the function shown below, evaluate:
 Pay careful attention to which limits are one-sided and which are not.
 </p></hint>
 <answer><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>\displaystyle \lim_{x \rightarrow -1^{-}} f(x)=2</m>
 </li>
 <li> <m>\displaystyle \lim_{x \rightarrow -1^{+}} f(x)=-2</m>
@@ -131,7 +131,7 @@ Pay careful attention to which limits are one-sided and which are not.
 </ol>
 </p></answer>
 <solution><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>\displaystyle \lim_{x \rightarrow -1^{-}} f(x)=2</m>: as <m>x</m> approaches <m>-1</m> from the left, <m>y</m> approaches 2. It doesn't matter that the function isn't defined at <m>x=-1</m>, and it doesn't matter what happens to the right of <m>x=-1</m>.
 </li>
 <li> <m>\displaystyle \lim_{x \rightarrow -1^{+}} f(x)=-2</m>: as <m>x</m> approaches <m>-1</m> from the right, <m>y</m> approaches -2. It doesn't matter that the function isn't defined at <m>-1</m>, and it doesn't matter what happens to the left of <m>-1</m>.

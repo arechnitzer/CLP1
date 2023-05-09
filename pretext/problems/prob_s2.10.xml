@@ -51,7 +51,7 @@ V(100P)&amp;=10\log_{10}\left(\frac{100P}{S}\right)=10\log_{10}\left(\frac{P}{S}
 
 <exercise purpose="RQS">
 <statement><p>
-An investment of <dollar />1000 with an interest rate of 5<percent /> per year grows to
+An investment of $1000 with an interest rate of 5% per year grows to
 <me>
 A(t)=1000e^{t/20}</me>
 </p>
@@ -65,7 +65,7 @@ The question asks you when <m>A(t)=2000</m>. So, solve <m>2000=1000e^{t/20}</m> 
 <m>20\log2 \approx 14</m> years
 </p></answer>
 <solution><p>
-The investment doubles when it hits <dollar />2000. So, we find the value of  <m>t</m>
+The investment doubles when it hits $2000. So, we find the value of  <m>t</m>
 that gives <m>A(t)=2000</m>:
 <md>
 <mrow>

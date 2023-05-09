@@ -108,7 +108,7 @@ Let <m>a\in\mathbb{R}</m> and assume that
 </mrow>
 </md>
 Then
-<ol label="a">
+<ol marker="a">
 <li> if <m>f'(a)</m> and <m>g'(a)</m> exist and <m>g'(a)\ne 0</m>, then
 <md>
 <mrow>
@@ -488,7 +488,7 @@ things that can go wrong.
 </p>
 
 <warning xml:id="warning_lhopital1"><title>Denominator limit nonzero</title>
-<statement><p>
+<p>
 If
 <md>
 <mrow>
@@ -528,12 +528,12 @@ Then
 =\frac{3}{5}
 </mrow>
 </md>
-</p></statement>
+</p>
 </warning>
 
 
 <warning xml:id="warning_lhopital2"><title>Numerator limit nonzero</title>
-<statement><p>
+<p>
 If
 <md>
 <mrow>
@@ -570,7 +570,7 @@ Then
 =\frac{5}{3}
 </mrow>
 </md>
-</p></statement>
+</p>
 </warning>
 
 
@@ -580,7 +580,7 @@ not<nbsp/>exist.
 </p>
 
 <warning xml:id="warning_lhopital3"><title>Limit of ratio of derivatives DNE</title>
-<statement><p>
+<p>
 If
 <md>
 <mrow>
@@ -646,7 +646,7 @@ l'Hôpital's rule.
 </mrow>
 </md>
 since <m>|x\sin(1/x)| \lt |x|</m> and <m>|x| \to 0</m> as <m>x\to 0</m>.
-</p></statement>
+</p>
 </warning>
 
 

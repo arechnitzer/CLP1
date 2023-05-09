@@ -2,7 +2,7 @@
 <!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
-<mathbook xmlns:xi="http://www.w3.org/2001/XInclude">
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
 	<docinfo>
 
 	<covers front="cover/clp1-cover"/>
@@ -13,19 +13,11 @@
 
 
 		<cross-references text="global" />
-		<rename element="fact" lang="en-US">Equation</rename> <!-- use to replace impeqn -->
+		<rename element="fact">Equation</rename>
+		<!-- use to replace impeqn -->
 
-		<feedback>
-			<url>mailto:clp@ugrad.math.ubc.ca?subject=clp-pretext</url>
-			<text>Feedback</text>
-		</feedback>
-
-		<analytics>
-		<google-universal tracking="UA-105798942-1"/>
-		</analytics>
 
 	</docinfo>
-
 
 	<book xml:id="clp_1_dc">
 		<title>CLP-1 Differential Calculus</title>
@@ -34,8 +26,8 @@
 		<xi:include href="text/basics00.xml" />
 		<xi:include href="text/limits00.xml" />
 		<xi:include href="text/deriv00.xml" />
-	        <xi:include href="text/applic00.xml" /> 
- 		<xi:include href="text/further00.xml" /> 
+	        <xi:include href="text/applic00.xml" />
+ 		<xi:include href="text/further00.xml" />
 		<backmatter>
 			<title>Appendices</title>
 			<xi:include href="text/app01.xml" />
@@ -54,4 +46,4 @@
 
 		</backmatter>
 	</book>
-</mathbook>
+</pretext>

@@ -247,7 +247,7 @@ g(x)=f''(x)=x^3+5x-20.</me>
 <exercise purpose="RQS"><title><fromexam>1996D</fromexam></title>
 <statement><p>
 Let <m>f(x)</m> be a function whose first two derivatives exist everywhere, and <m>f''(x) \gt 0</m> for all <m>x</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_6interval1"> Show that <m>f(x)</m> has at most one critical point and that any critical point is an absolute minimum for <m>f(x)</m>.
 </li>
 <li xml:id="s3_6interval2"> Show that the maximum value of <m>f(x)</m> on any finite interval

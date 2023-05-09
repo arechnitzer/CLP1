@@ -887,7 +887,7 @@ At step (<m>*</m>), we use the limit law that <m>\displaystyle\lim_{x \rightarro
 
 <exercise>
 <statement><p>Let <m>f(x)=2x</m>, <m>g(x)=x</m>, and <m>p(x)=f(x) \cdot g(x)</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_2prod1"> Find <m>f'(x)</m> and <m>g'(x)</m>.
 </li>
 <li xml:id="s2_2prod2"> Find <m>p'(x)</m>.

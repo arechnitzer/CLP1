@@ -102,7 +102,7 @@ The velocity is positive when the object is going in the increasing direction; i
 <statement><p>
 Suppose the position of a body at time <m>t</m> (measured in seconds) is given by
 <m>s(t)=3t^2+5</m>.
-<ol label="a">
+<ol marker="a">
 <li> What is the average velocity of the object from 3 seconds to 5 seconds?
 </li>
 <li> What is the velocity of the object at time <m>t=1</m>?
@@ -113,7 +113,7 @@ Suppose the position of a body at time <m>t</m> (measured in seconds) is given b
 Velocity is distance over time.
 </p></hint>
 <answer><p>
-<ol label="a">
+<ol marker="a">
 <li> 24 units per second.
 </li>
 <li> 6 units per second
@@ -121,7 +121,7 @@ Velocity is distance over time.
 </ol>
 </p></answer>
 <solution><p>
-<ol label="a">
+<ol marker="a">
 <li> Average velocity: 
 <md>
 <mrow>
@@ -155,7 +155,7 @@ So the velocity when <m>t=1</m> is 6 units per second.
 <statement><p>
 Suppose the position of a body at time <m>t</m> (measured in seconds) is given by
 <m>s(t)=\sqrt{t}</m>.
-<ol label="a">
+<ol marker="a">
 <li> What is the average velocity of the object from <m>t=1</m> second to <m>t=9</m> seconds?
 </li>
 <li> What is the velocity of the object at time <m>t=1</m>?
@@ -171,7 +171,7 @@ Use that <m>\frac{\sqrt{a}-b}{c}
                   = \frac{a-b^2}{c(\sqrt{a}+b)}</m>.
  </p></hint>
 <answer><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>\frac{1}{4}</m> units per second
 </li>
 <li> <m>\frac{1}{2}</m> units per second
@@ -182,7 +182,7 @@ Use that <m>\frac{\sqrt{a}-b}{c}
 Remark: the average velocity is <em>not</em> the average of the two instantaneous velocities.
 </p></answer>
 <solution><p>
-<ol label="a">
+<ol marker="a">
 <li> Average velocity: 
 <md>
 <mrow>

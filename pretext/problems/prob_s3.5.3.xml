@@ -366,10 +366,10 @@ The dimensions of the box with minimum surface area are <m>10 \times 30 \times 1
 <exercise purpose="RQS"><title><fromexam>1996D</fromexam></title>
 <statement><p>
 A closed rectangular container with a square base is to be made
-from two different materials. The material for the base costs <dollar />5 per square
-metre, while the material for the other five sides costs <dollar />1 per square
+from two different materials. The material for the base costs $5 per square
+metre, while the material for the other five sides costs $1 per square
 metre. Find the dimensions of the container which has the largest possible
-volume if the total cost of materials is <dollar />72.
+volume if the total cost of materials is $72.
 </p></statement>
 <hint><p> Find a formula for the cost of the base, and another formula for the cost of the other sides. The total cost is the sum of these two formulas.
 </p></hint>
@@ -423,7 +423,7 @@ The desired dimensions are <m>2\times 2\times 6</m>.
 <statement><p>
 Find a point <m>X</m> on the positive <m>x</m>--axis and a point <m>Y</m>
 on the positive <m>y</m>--axis such that (taking <m>O=(0,0)</m>)
-<ol label="i">
+<ol marker="i">
 <li xml:id="s3_5inscribed1"> The triangle <m>XOY</m> contains the first quadrant portion of
 the unit circle <m>x^2+y^2=1</m> and
 </li>
@@ -567,8 +567,7 @@ the smallest possible perimeter is <m>2R</m>.
 Find the maximal possible volume of a cylinder with surface
 area <m>A</m>.
 <fn>Food is often packaged in cylinders, and companies wouldn't want to waste the metal they are made out of. So, you might expect the dimensions you find in this problem to describe a tin of, say, cat food.
-<url href="https://tenreasonsfornotnamingyourcatcalculus.pressbooks.com/chapter/you-do-the-calculus-well-do-the-cat-food/">
-Read here</url> about why this <em>isn't</em> the case.</fn>
+<url href="https://tenreasonsfornotnamingyourcatcalculus.pressbooks.com/chapter/you-do-the-calculus-well-do-the-cat-food/" visual="tenreasonsfornotnamingyourcatcalculus.pressbooks.com">Read here</url> about why this <em>isn't</em> the case.</fn>
 </p></statement>
 <hint><p>
 The surface area consists of two discs and a
@@ -744,7 +743,7 @@ Consider an open-top rectangular baking pan with base dimensions
 <m>x</m> centimetres by <m>y</m> centimetres and height <m>z</m> centimetres that is
 made from <m>A</m> square centimetres of tin plate. Suppose <m>y = px</m> for some
 fixed constant <m>p</m>.
-<ol label="a">
+<ol marker="a">
 <li> Find the dimensions of the baking pan with the maximum
 capacity (i.e., maximum volume). Prove that your answer yields the
 baking pan with maximum capacity. Your answer will depend on the value of <m>p</m>.
@@ -783,7 +782,7 @@ capacity.
 </sidebyside>
 
 <p>
-<ol label="a">
+<ol marker="a">
 <li><p>The surface area of the pan is
 <md>
 <mrow>
@@ -843,7 +842,8 @@ the volume is increasing with <m>p</m> for <m>p \lt 1</m> and decreasing with <m
 
 <exercise purpose="RQS"><title><fromexam>1999H</fromexam></title>
 <statement><p>
-Let <m>f(x)=x^x</m> for <m>x \gt 0</m>.<ol label="a">
+  Let <m>f(x)=x^x</m> for <m>x \gt 0</m>.
+  <ol marker="a">
 <li xml:id="s2_10xx1"> Find <m>f'(x)</m>.
 </li>
 <li xml:id="s2_10xx2"> At what value of <m>x</m> does the curve <m>y=f(x)</m> have a horizontal
@@ -861,7 +861,8 @@ or neither of these at the point <m>x</m> found in part <xref ref="s2_10xx2"/>?
 </p>
 <p>
 <xref ref="s2_10xx2"/> <m>x=\dfrac{1}{e}</m>
-<p></p>
+</p>
+<p>
 <xref ref="s2_10xx3"/> local minimum
 </p></answer>
 <solution><p>

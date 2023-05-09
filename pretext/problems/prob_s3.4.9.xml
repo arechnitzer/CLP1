@@ -94,7 +94,7 @@ h(2) + h'(2)(x-2) +\frac{h''(2)}{2}\cdot (x-2)^2 + \frac{h'''(2)}{6}\cdot (x-2)^
 <statement><p>
 The function <m>f(x)</m> has the property that <m>f(3)=2,\ f'(3)=4</m>
 and <m>f''(3)=-10</m>.
-<ol label="a">
+<ol marker="a">
 <li> Use the linear approximation to <m>f(x)</m> centred at <m>x=3</m> to
 approximate <m>f(2.98)</m>.
 </li>
@@ -110,7 +110,7 @@ approximate <m>f(2.98)</m>.
 (b) <m>1.918</m>
 </p></answer>
 <solution><p>
-<ol label="a">
+<ol marker="a">
 <li> For <m>x</m> near 3,
 <me>
 f(x)\approx f(3)+f'(3)(x-3)=2+4(x-3)
@@ -617,7 +617,7 @@ decreasing function of <m>c</m> and takes its largest value at <m>c=0</m>. Hence
 
 <exercise><title><fromexam>1997H</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_4twoestimates1"> By using an appropriate linear approximation for
 <m>f(x)=x^{1/3}</m>, estimate <m>5^{2/3}</m>.
 </li>
@@ -740,7 +740,7 @@ T_3(x)&amp;=5x^2-9
 <statement><p>
  The equation <m>y^4+xy=x^2-1</m> defines <m>y</m> implicitly as a function
 of <m>x</m> near the point <m>x=2,\ y=1</m>.
-<ol label="a">
+<ol marker="a">
 <li> Use the tangent line approximation at the given point to
 estimate the value of <m>y</m> when <m>x=2.1</m>.
 </li>
@@ -827,7 +827,7 @@ to its quadratic approximation, <m>1+\frac{1}{2}(x-2)-\frac{1}{6}(x-2)^2</m>.</p
 <statement><p>
 The equation <m>x^4+y+xy^4=1</m> defines <m>y</m> implicitly as a function
 of <m>x</m> near the point <m>x=-1, y=1</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_4tan1">  Use the tangent line approximation at the given point to
 estimate the value of <m>y</m> when <m>x=-0.9</m>.
 </li>
@@ -953,7 +953,7 @@ it must be between <m>-\dfrac{1}{10^2}</m> and <m>-\dfrac{1}{10.3^2}</m>. This f
 <exercise><title><fromexam>2012H</fromexam></title>
 <statement><p>
 Consider <m>f(x)=e^{e^x}</m>.
-<ol label="a">
+<ol marker="a">
 <li> Give the linear approximation for <m>f</m> near <m>x=0</m> (call this
 <m>L(x)</m>).
 </li>

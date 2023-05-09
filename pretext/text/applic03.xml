@@ -3,7 +3,7 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 <section xml:id="sec_ExpGthDecay"  xmlns:xi="http://www.w3.org/2001/XInclude">
-<title title-simple="ARGH">Exponential Growth and Decay <mdash/> a First Look at Differential Equations</title>
+<title>Exponential Growth and Decay <mdash/> a First Look at Differential Equations</title>
 <shorttitle>Exponential Growth and Decay</shorttitle>
 <introduction>
 <p>
@@ -454,7 +454,7 @@ Just before we put this into action, we remind the reader that <m>\log x = \log_
 <example xml:id="eg_SDEcoolingA"><title>Warming iced tea</title>
 <p>
 The temperature of a glass of iced tea is initially <m>5^\circ</m>. After 5 minutes, the tea has heated to <m>10^\circ</m> in a room where the air temperature is <m>30^\circ</m>.
-<ol label="a">
+<ol marker="a">
 <li>   Determine the temperature as a function of time. </li>
 <li>   What is the temperature after 10 minutes? </li>
 <li>  Determine when the tea will reach a temperature of <m>20^\circ</m>. </li>
