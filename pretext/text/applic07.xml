@@ -108,7 +108,7 @@ Let <m>a\in\mathbb{R}</m> and assume that
 </mrow>
 </md>
 Then
-<ol label="a">
+<ol marker="a">
 <li> if <m>f'(a)</m> and <m>g'(a)</m> exist and <m>g'(a)\ne 0</m>, then
 <md>
 <mrow>

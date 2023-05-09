@@ -64,7 +64,7 @@ Theorem<nbsp/><xref ref="thm_growthDEsoln"/> tells us that a function is a solut
 </p>
 
 <p>We don't actually need a theorem to answer this question, though: we can just test every option.
-<ol label="a">
+<ol marker="a">
 <li> <m>\ds\diff{Q}{t}=0</m>, so <m>Q(t)=0=5\cdot 0 = 5\ds\diff{Q}{t}</m>, so (a) is a solution.
 </li>
 <li> <m>\ds\diff{Q}{t}=5e^t=Q(t)</m>, so <m>Q(t)=\ds\diff{Q}{t} \neq 5 \ds\diff{Q}{t}</m>, so (b) is not a solution.

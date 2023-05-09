@@ -86,7 +86,7 @@ Consider the unit circle, formed by all points <m>(x,y)</m> that satisfy <m>x^2+
 </sidebyside>
 
 <p>
-<ol label="a">
+<ol marker="a">
 <li> Is there a function <m>f(x)</m> so that <m>y=f(x)</m> completely describes the unit circle? That is, so that the points <m>(x,y)</m> that make the equation <m>y=f(x)</m> true are exactly the same points that make the equation <m>x^2+y^2=1</m> true?
 </li>
 <li> Is there a function <m>f'(x)</m> so that <m>y=f'(x)</m> completely describes the slope of the unit circle? That is, so that for every point <m>(x,y)</m> on the unit circle, the slope of the tangent line to the circle at that point is given by <m>f'(x)</m>?

@@ -10,7 +10,7 @@
 <exercise purpose="RQS">
 <statement><p>Suppose <m>\displaystyle\lim_{x \rightarrow a} f(x)=0</m> and
 <m>\displaystyle\lim_{x \rightarrow a} g(x)=0</m>. Which of the following limits can you compute, given this information?
-<ol label="a">
+<ol marker="a">
 <li xml:id="s1_4right1"> <m>\displaystyle\lim_{x \rightarrow a} \frac{f(x)}{2}</m>
 </li>
 <li> <m>\displaystyle\lim_{x \rightarrow a} \frac{2}{f(x)}</m>
@@ -1124,7 +1124,8 @@ so the limit exists when <m>a=\dfrac{7}{2}</m>.
 </p></solution>
 </exercise>
 <exercise purpose="RQS">
-<statement><p>Suppose <m>f(x)=2x</m> and <m>g(x)=\frac{1}{x}</m>. Evaluate the following limits.<ol label="a">
+  <statement><p>Suppose <m>f(x)=2x</m> and <m>g(x)=\frac{1}{x}</m>. Evaluate the following limits.
+  <ol marker="a">
 <li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)</m>
 </li>
 <li> <m>\displaystyle\lim_{x \rightarrow 0} g(x)</m>
@@ -1140,7 +1141,7 @@ so the limit exists when <m>a=\dfrac{7}{2}</m>.
 </ol>
 </p></statement>
 <answer><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)=0</m>
 </li>
 <li> <m>\displaystyle\lim_{x \rightarrow 0} g(x)=</m> DNE
@@ -1156,7 +1157,7 @@ so the limit exists when <m>a=\dfrac{7}{2}</m>.
 </ol>
 </p></answer>
 <solution><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>\displaystyle\lim_{x \rightarrow 0} f(x)=0</m>: as <m>x</m> approaches 0, so does <m>2x</m>.
 </li>
 <li> <m>\displaystyle\lim_{x \rightarrow 0} g(x)=</m> DNE: the left and right limits do not agree, so the limit does not exist. In particular: <m>\displaystyle\lim_{x \rightarrow 0^-} g(x)=-\infty</m> and <m>\displaystyle\lim_{x \rightarrow 0^+} g(x)=\infty</m>.
@@ -1455,7 +1456,7 @@ We can start by examining points.</p>
 
 <exercise purpose="RQS">
 <statement><p>Let <m>f(x) = \frac{1}{x}</m> and <m>g(x) = \frac{-1}{x}</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s1_4sum1"> Evaluate <m>\displaystyle\lim_{x \rightarrow 0} f(x)</m> and
 <m>\displaystyle\lim_{x \rightarrow 0} g(x)</m>.
 </li>
@@ -1499,7 +1500,7 @@ f(x) &amp;=\begin{cases}
 \end{cases}
 </mrow>
 </md>
-<ol label="a">
+<ol marker="a">
 <li xml:id="s1_4q49_1"> Evaluate <m>\displaystyle\lim_{x \rightarrow 0^-} f(x)</m>.
 </li>
 <li xml:id="s1_4q49_2"> Evaluate <m>\displaystyle\lim_{x \rightarrow 0^+} f(x)</m>.
@@ -1553,7 +1554,7 @@ f(x) &amp;=\begin{cases}
 \end{cases}
 </mrow>
 </md>
-<ol label="a">
+<ol marker="a">
 <li xml:id="s1_4q50_1"> Evaluate <m>\displaystyle\lim_{x \rightarrow -4^-} f(x)</m>.
 </li>
 <li xml:id="s1_4q50_2"> Evaluate <m>\displaystyle\lim_{x \rightarrow -4^+} f(x)</m>.

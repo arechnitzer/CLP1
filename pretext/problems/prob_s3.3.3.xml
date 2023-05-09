@@ -216,7 +216,7 @@ The farmer should use an initial population of (at least) about 1603 individuals
 <exercise purpose="RQS">
 <statement><p>
 Let <m>f(t)=100e^{kt}</m>, for some constant <m>k</m>.
-<ol label="a">
+<ol marker="a">
 <li> If <m>f(t)</m> is the amount of a decaying radioactive isotope in a sample at time <m>t</m>,
 what is the amount of the isotope in the sample when <m>t=0</m>? What is the sign of <m>k</m>?
 </li>

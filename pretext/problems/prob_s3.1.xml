@@ -138,7 +138,7 @@ h'\left(\sqrt{\frac{20}{9.8}}\right)&amp;=-9.8\left(\sqrt{\frac{20}{9.8}}\right)
 <exercise purpose="RQS">
 <statement><p>
 You want to know how deep a well is, so you drop a stone down and count the seconds until you hear it hit bottom.
-<ol label="a">
+<ol marker="a">
 <li> If the stone took <m>x</m> seconds to hit bottom, how deep is the well?
 </li>
 <li> Suppose you think you dropped the stone down the well, but actually you <em>tossed</em> it down, so instead of an initial velocity of 0 metres per second, you accidentally imparted an initial speed of <m>1</m> metres per second. What is the actual depth of the well, if the stone fell for <m>x</m> seconds?

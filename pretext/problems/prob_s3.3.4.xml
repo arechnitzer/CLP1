@@ -183,7 +183,7 @@ the equation
 <me>
 \diff{A}{t}= 0.05 A+2000
 </me>
-<ol label="a">
+<ol marker="a">
 <li> Solve this equation and determine the amount of money in the account when the graduate
 is 65.
 </li>
@@ -197,7 +197,7 @@ is 85, what is the largest possible value of <m>W</m>?
 The differential equation in the problem has the same form as the differential equation from Newton's Law of Cooling.
 </p></hint>
 <answer><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>A(t)=90,\!000\cdot e^{0.05t}-40,\!000</m>.
 When the graduate is 65, they will have $625,015.05 in the account.
 </li>
@@ -206,7 +206,7 @@ When the graduate is 65, they will have $625,015.05 in the account.
 </ol>
 </p></answer>
 <solution><p>
-<ol label="a">
+<ol marker="a">
 <li> The amount of money at time <m>t</m> obeys
 <md>
 <mrow>
@@ -266,7 +266,7 @@ money continuously from the account at the rate of $9000 per year. If
 <me>
 \diff{A}{t}= 0.06 A-9000
 </me>
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_3investor1"> Solve this equation for <m>A(t)</m>.
 </li>
 <li xml:id="s3_3investor2"> When will the money run out?
@@ -371,7 +371,7 @@ velocity <m>v</m> satisfies the differential equation
 \dfrac{dv}{dt}=-g-kv
 </me>
 where <m>g</m> and <m>k</m> are positive constants.
-<ol label="a">
+<ol marker="a">
 <li> Find the velocity of the object as a function of time <m>t</m>,
 given that it was <m>v_0</m> at <m>t=0</m>.
 </li>

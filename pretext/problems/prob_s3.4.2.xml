@@ -12,7 +12,7 @@
 <statement><p>
 Suppose <m>f(x)</m> is a function, and we calculated its linear approximation near <m>x=5</m> to be
 <m>f(x) \approx 3x-9</m>.
-<ol label="a">
+<ol marker="a">
 <li> What is <m>f(5)</m>?
 </li>
 <li> What is <m>f'(5)</m>?

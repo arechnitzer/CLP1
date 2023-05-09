@@ -460,7 +460,7 @@ side of <m>c</m>
 </ul>
 then we say that <m>\big(c\,,\,f(c)\big)</m> is an inflection point of <m>y=f(x)</m>. 
 Now let's check out <m>y=f(x)</m> and <m>y=g(x)</m> from this point of view.
-<ol label="1">
+<ol marker="1">
 <li> <p>Features of <m>y=f(x)</m> and <m>y=g(x)</m> that are read off of <m>f(x)</m> and <m>g(x)</m>: 
   <ul>
   <li> 
@@ -984,7 +984,7 @@ off from <m>f(x)</m>, <m>f'(x)</m> and <m>f''(x)</m>.
 </introduction>
 <subsubsection><title>A Sketching Checklist</title>
 <p>
-<ol label="1">
+<ol marker="1">
 <li><p>Features of <m>y = f(x)</m> that are read off of <m>f(x)</m>:
 <ul>
 <li> First check where <m>f(x)</m> is defined. Then
@@ -1054,7 +1054,7 @@ where <m>f'(x)=\pm\infty</m>.
 
 <example xml:id="APPsketchA"><title>Sketch <m>f(x)=x^3-3x+1</m></title>
 
-<p><ol label="1">
+<p><ol marker="1">
 <li><p> Reading from <m>f(x)</m>:
 <ul>
 <li> The function is a polynomial so it is defined everywhere.
@@ -1148,7 +1148,7 @@ Putting this all together gives:</p>
 
 <example xml:id="APPsketchB"><title>Sketch <m>f(x)=x^4-4x^3</m></title>
 <p>
-<ol label="1">
+<ol marker="1">
 <li><p> Reading from <m>f(x)</m>:
 <ul>
 <li> The function is a polynomial so it is defined everywhere.
@@ -1252,7 +1252,7 @@ Putting all this information together gives us the following sketch.</p>
 
 <example xml:id="eg_3_6_5"><title><m>f(x) = x^3 - 6x^2 + 9x - 54</m></title>
 <p>
-<ol label="1">
+<ol marker="1">
 <li><p> Reading from <m>f(x)</m>:
 <ul>
 <li> The function is a polynomial so it is defined everywhere.
@@ -1367,7 +1367,7 @@ inflection point), we have</p>
 <p>An example of sketching a simple rational function.</p>
 <example xml:id="eg_3_6_6"><title><m>f(x) = \dfrac{x}{x^2-4}</m></title>
 <p>
-<ol label="1">
+<ol marker="1">
 <li><p> Reading from <m>f(x)</m>:
 <ul>
 <li> The function is rational so it is defined except where its denominator
@@ -1500,7 +1500,7 @@ Putting all this information together gives the following sketch for <m>x \geq 0
 
 <example xml:id="APPsketchC"><title><m>f(x)=\root{3}\of{\frac{x^2}{(x-6)^2}} </m></title>
 <p>
-<ol label="1">
+<ol marker="1">
 <li><p> Reading from <m>f(x)</m>:
 <ul>
 <li> First notice that we can rewrite
