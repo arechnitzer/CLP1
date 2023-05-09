@@ -11,6 +11,9 @@
       <source>clp_1_dc.xml</source>
       <publication>publication.ptx</publication>
       <output-dir>site</output-dir>
+      <xsl>style_html_clp.xsl</xsl>
+      <stringparam key="html.css.extra" value="external/RQS.css"/>.
+
     </target>
     <target name="latex">
       <format>latex</format>

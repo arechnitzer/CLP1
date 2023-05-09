@@ -6,7 +6,8 @@
 ]>
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-  <xsl:import pretext-href="pretext-html.xsl"/>
+  <xsl:import href="./core/pretext-html.xsl"/>
+  <!-- <xsl:import pretext-href="pretext-html.xsl"/> -->
   
 <!-- Replace exercise types with stages -->
 <xsl:template match="conceptual">

@@ -31,9 +31,9 @@
   
   <html platform="web">
     <knowl remark="no" example="yes" proof="yes"/>
-    <css style="default" colors="blue_red"/>
+    <css style="default" colors="blue_red" extra="external/RQS.css"/>
     <feedback href="mailto:clp@ugrad.math.ubc.ca?subject=clp1-pretext" visual="clp@ugrad.math.ubc.ca">Feedback</feedback>
-
+    
     <!-- uncomment line below on real build to enable google analytics-->
     <!-- <analytics google-gst="UA-105798942-1"/> -->
 
