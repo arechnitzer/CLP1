@@ -9,7 +9,7 @@
 
 <exercise><title><fromexam>2015Q</fromexam></title>
 <statement><p>
-Consider a function <m>f(x)</m> whose third-degree Maclaurin polynomial is <m>4 +
+Consider a function <m>f(x)</m> whose third order Maclaurin polynomial is <m>4 +
 3x^2 + \frac{1}{2}x^3</m>.
  What is <m>f'(0)</m>? What is <m>f''(0)</m>?
 </p></statement>
@@ -38,7 +38,7 @@ The coefficient of <m>x</m> is <m>f'(0)</m> on  one side, and <m>0</m> on the ot
 
 <exercise><title><fromexam>2015Q</fromexam></title>
 <statement><p>
-Consider a function <m>h(x)</m> whose third-degree Maclaurin polynomial is
+Consider a function <m>h(x)</m> whose third order Maclaurin polynomial is
 <m>1+4x-\dfrac{1}{3}x^2 + \dfrac{2}{3}x^3</m>. What is <m>h^{(3)}(0)</m>?
 </p></statement>
 <answer><p>
@@ -58,7 +58,7 @@ The third Maclaurin polynomial for <m>h(x)</m> is
 
 <exercise><title><fromexam>2015Q</fromexam></title>
 <statement><p>
-The third-degree Taylor polynomial of <m>h(x)</m> about <m>x=2</m> is <m>3 + \dfrac{1}{2}(x-2) + 2(x-2)^3</m>.
+The third order Taylor polynomial of <m>h(x)</m> about <m>x=2</m> is <m>3 + \dfrac{1}{2}(x-2) + 2(x-2)^3</m>.
 </p>
 
 <p>What is <m>h'(2)</m>?
@@ -72,7 +72,7 @@ Compare the given polynomial to the definition of a Taylor polynomial.
 <m>h''(2)=0</m>
 </p></answer>
 <solution><p>
-The third-degree Taylor polynomial for <m>h(x)</m> about <m>x=2</m> is
+The third order Taylor polynomial for <m>h(x)</m> about <m>x=2</m> is
 <me>
 h(2) + h'(2)(x-2) +\frac{h''(2)}{2}\cdot (x-2)^2 + \frac{h'''(2)}{6}\cdot (x-2)^3</me>
 </p>
@@ -421,7 +421,7 @@ T_3(x)&amp;=1+x+\frac{4}{2!}x^2+\frac{28}{3!}x^3
 <exercise><title><fromexam>2015Q</fromexam></title>
 <statement><p>
 Consider a function <m>f(x)</m> which has <m>f^{(3)}(x)=\dfrac{x}{22-x^2}</m>.  Show
-that when we approximate <m>f(2)</m> using its second degree Taylor polynomial at <m>a=1</m>, the
+that when we approximate <m>f(2)</m> using its second order Taylor polynomial at <m>a=1</m>, the
 absolute value of the error is less than <m>\frac{1}{50}=0.02</m>.
 </p></statement>
 <hint><p>
@@ -496,7 +496,7 @@ increasing function of <m>c</m> and takes its largest value at <m>c=2</m>. Hence
 <exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
 <statement><p>
 Consider a function <m>f(x)</m> which has <m>f^{(4)}(x)=\dfrac{\cos(x^2)}{3-x}</m>.  Show
-that when we approximate <m>f(0.5)</m> using its third-degree Maclaurin polynomial,
+that when we approximate <m>f(0.5)</m> using its third order Maclaurin polynomial,
 the absolute value of the error is less than <m>\frac{1}{500}=0.002</m>.
 </p></statement>
 <answer><p>
@@ -546,7 +546,7 @@ so that <me>\left|\frac{\cos(c^2)}{3-c}\right| \leq \frac{1}{2.5}\,.</me>
 <exercise purpose="RQS"><title><fromexam>2015Q</fromexam></title>
 <statement><p>
 Consider a function <m>f(x)</m> which has <m>f^{(3)}(x)=\dfrac{e^{-x}}{8+x^2}</m>.  Show
-that when we approximate <m>f(1)</m> using its second degree Maclaurin polynomial, the
+that when we approximate <m>f(1)</m> using its second order Maclaurin polynomial, the
 absolute value of the error is less than <m>1/40</m>.
 </p></statement>
 <answer><p>
@@ -700,20 +700,20 @@ is {<m>\dfrac{4}{9}25^{-5/3}</m>}.
 
 <exercise>
 <statement><p>
-The 4th degree Maclaurin polynomial for <m>f(x)</m> is
+The 4th order Maclaurin polynomial for <m>f(x)</m> is
 <me>
 T_4(x)=5x^2-9</me>
 </p>
 
-<p>What is the third degree Maclaurin polynomial for <m>f(x)</m>?
+<p>What is the third order Maclaurin polynomial for <m>f(x)</m>?
 </p></statement>
 <hint><p>
-The fourth-degree Maclaurin polynomial for <m>f(x)</m> is
+The fourth order Maclaurin polynomial for <m>f(x)</m> is
 <md>
 <mrow>
 T_4(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3+\frac{1}{4!}f^{(4)}(0)x^4
 </mrow>
-<intertext>while the third-degree Maclaurin polynomial for <m>f(x)</m> is</intertext><mrow>
+<intertext>while the third order Maclaurin polynomial for <m>f(x)</m> is</intertext><mrow>
 T_3(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3</mrow>
 </md>
 </p></hint>
@@ -721,12 +721,12 @@ T_3(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3</mrow>
 <m>T_3(x)=5x^2-9</m>
 </p></answer>
 <solution><p>
-The fourth-degree Maclaurin polynomial for <m>f(x)</m> is
+The fourth order Maclaurin polynomial for <m>f(x)</m> is
 <md>
 <mrow>
 T_4(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3+\frac{1}{4!}f^{(4)}(0)x^4
 </mrow>
-<intertext>while the third-degree Maclaurin polynomial for <m>f(x)</m> is</intertext><mrow>
+<intertext>while the third order Maclaurin polynomial for <m>f(x)</m> is</intertext><mrow>
 T_3(x)&amp;=f(0)+f'(0)x+\frac{1}{2}f''(0)x^2+\frac{1}{3!}f'''(0)x^3
 </mrow>
 <intertext>So, we simply <q>chop off</q> the part of <m>T_4(x)</m> that includes <m>x^4</m>. Since that's already 0, in this case <m>T_3(x)=T_4(x)</m>.</intertext><mrow>

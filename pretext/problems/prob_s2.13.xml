@@ -462,7 +462,7 @@ This means the function must look something like the graph below:</p>
 \draw[thick] plot[domain=-2:1](\x,{(\x+0.5)*(\x+0.5)*(\x+0.5)*(\x+0.5)*0.5-0.5});
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
-<p>except we are unsure of the locations of the <m>x</m>-intercepts. At present we only know that one is to the left of <m>x=1/2</m> and one is to the right.
+<p>except we are unsure of the locations of the <m>x</m>-intercepts. At present we only know that one is to the left of <m>x=-1/2</m> and one is to the right.
 </p>
 
 <p>Note what happens to <m>f(x)</m> as <m>x</m> increases from strongly negative values to strongly positive

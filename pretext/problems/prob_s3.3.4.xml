@@ -26,7 +26,7 @@ f(x)&amp;=Ce^{\pi x}
 2&amp;=f(0)=Ce^{0}=C
 </mrow>
 <intertext>Now, we know <m>f(x)</m> entirely:</intertext><mrow>
-f(x)&amp;=2e^{\pi t}
+f(x)&amp;=2e^{\pi x}
 </mrow>
 <intertext>So, we can evaluate <m>f(2)</m></intertext><mrow>
 f(2)&amp;=2e^{2\pi}

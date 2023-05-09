@@ -54,7 +54,7 @@ From the given information,
 
 <exercise purpose="RQS">
 <statement><p>
-Let <m>f(x)=e^x</m>, and let <m>T_3(x)</m> be the third-degree Maclaurin polynomial for <m>f(x)</m>,
+Let <m>f(x)=e^x</m>, and let <m>T_3(x)</m> be the third order Maclaurin polynomial for <m>f(x)</m>,
 <me>
 T_3(x)=1+x+\frac{1}{2}x^2+\frac{1}{3!}x^3</me>
 </p>
@@ -74,7 +74,7 @@ Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us
 Equation<nbsp/><xref ref="eq_taylorErrorN"/> gives us the bound <m>|f(2)-T_3(2)| \lt 6</m>. A calculator tells us actually <m>|f(2)-T_3(2)|\approx 1.056</m>.
 </p></answer>
 <solution><p>
-Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th order Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
 <md>
 <mrow>
 |f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
@@ -113,10 +113,10 @@ We conclude that the error <m>|f(2)-T_3(2)|</m> is <em>less than</em> 6.
 
 <exercise>
 <statement><p>
-Let <m>f(x)= 5x^3-24x^2+ex-\pi^4</m>, and let <m>T_5(x)</m> be the fifth-degree Taylor polynomial for <m>f(x)</m> about <m>x=1</m>. Give the best bound you can on the error <m>|f(37)-T(37)|</m>.
+Let <m>f(x)= 5x^3-24x^2+ex-\pi^4</m>, and let <m>T_5(x)</m> be the fifth order Taylor polynomial for <m>f(x)</m> about <m>x=1</m>. Give the best bound you can on the error <m>|f(37)-T(37)|</m>.
 </p></statement>
 <hint><p>
-You are approximating a third-degree polynomial with a fifth-degree Taylor polynomial. You should be able to tell how  good your approximation will be without a long calculation.
+You are approximating a third order polynomial with a fifth order Taylor polynomial. You should be able to tell how  good your approximation will be without a long calculation.
 </p></hint>
 <answer><p>
 <m>|f(37)-T(37)|=0</m>
@@ -128,7 +128,7 @@ Whenever you approximate a polynomial with a Taylor polynomial of greater or equ
 
 <exercise>
 <statement><p>
-You and your friend both want to approximate <m>\sin(33)</m>. Your friend uses the first-degree Maclaurin polynomial for <m>f(x)=\sin x</m>, while you use the zeroth-degree (constant) Maclaurin polynomial for <m>f(x)=\sin x</m>. Who has a better approximation, you or your friend?
+You and your friend both want to approximate <m>\sin(33)</m>. Your friend uses the first order Maclaurin polynomial for <m>f(x)=\sin x</m>, while you use the zeroth order (constant) Maclaurin polynomial for <m>f(x)=\sin x</m>. Who has a better approximation, you or your friend?
 </p></statement>
 <hint><p>
 Draw a picture <mdash/> it should be clear how the two approximations behave.
@@ -171,7 +171,7 @@ Since <m>-1 \leq \sin(33)\leq 1</m>, the constant approximation is better. (But 
 <statement><p>
 Suppose a function <m>f(x)</m> has sixth derivative <me>
 f^{(6)}(x)=\dfrac{6!(2x-5)}{x+3}.</me>
- Let <m>T_5(x)</m> be the 5th-degree Taylor polynomial for <m>f(x)</m> about <m>x=11</m>.
+ Let <m>T_5(x)</m> be the 5th order Taylor polynomial for <m>f(x)</m> about <m>x=11</m>.
 </p>
 
 <p>Give a bound for the error
@@ -187,7 +187,7 @@ In this case, Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that
 <m>|f(11.5)-T_5(11.5)| \lt \dfrac{9}{7\cdot 2^6} \lt 0.02</m>
 </p></answer>
 <solution><p>
-Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th order Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
 <md>
 <mrow>
 |f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
@@ -221,7 +221,7 @@ Our error is less than 0.02.
 
 <exercise>
 <statement><p>
-Let <m>f(x)= \tan x</m>, and let <m>T_2(x)</m> be the second-degree Taylor polynomial for <m>f(x)</m> about <m>x=0</m>. Give a reasonable bound on the error <m>|f(0.1)-T(0.1)|</m> using Equation<nbsp/><xref ref="eq_taylorErrorN"/>.
+Let <m>f(x)= \tan x</m>, and let <m>T_2(x)</m> be the second order Taylor polynomial for <m>f(x)</m> about <m>x=0</m>. Give a reasonable bound on the error <m>|f(0.1)-T(0.1)|</m> using Equation<nbsp/><xref ref="eq_taylorErrorN"/>.
 </p></statement>
 <hint><p>
 In this case, Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that
@@ -231,7 +231,7 @@ In this case, Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that
 <m>\left|f(0.1)-T_2(0.1)\right|  \lt  \dfrac{1}{1125}</m>
 </p></answer>
 <solution><p>
-Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th order Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
 <md>
 <mrow>
 |f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
@@ -291,7 +291,7 @@ The error is less than <m>\dfrac{1}{1125}</m>.
 
 <exercise purpose="RQS">
 <statement><p>
-Let <m>f(x)=\log (1-x)</m>, and let <m>T_5(x)</m> be the fifth-degree Maclaurin polynomial for <m>f(x)</m>. Use Equation<nbsp/><xref ref="eq_taylorErrorN"/> to give a bound on the error <m>|f\left(-\frac{1}{4}\right)-T_5\left(-\frac{1}{4}\right)|</m>.
+Let <m>f(x)=\log (1-x)</m>, and let <m>T_5(x)</m> be the fifth order Maclaurin polynomial for <m>f(x)</m>. Use Equation<nbsp/><xref ref="eq_taylorErrorN"/> to give a bound on the error <m>|f\left(-\frac{1}{4}\right)-T_5\left(-\frac{1}{4}\right)|</m>.
 </p>
 
 <p>(Remember <m>\log x=\log_ex</m>, the natural logarithm of <m>x</m>.)
@@ -308,7 +308,7 @@ In our case, Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us
 <m>\left|f\left(-\dfrac{1}{4}\right)-T_5\left(-\dfrac{1}{4}\right)\right|  \lt  \dfrac{1}{6\cdot 4^6} \lt 0.00004</m>
 </p></answer>
 <solution><p>
-Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th order Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
 <md>
 <mrow>
 |f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
@@ -365,7 +365,7 @@ Finally, we conclude
 
 <exercise>
 <statement><p>
-Let <m>f(x)=\sqrt[5]{x}</m>, and let <m>T_3(x)</m> be the third-degree Taylor polynomial for <m>f(x)</m> about <m>x=32</m>. Give a bound on the error <m>|f(30)-T_3(30)|</m>.
+Let <m>f(x)=\sqrt[5]{x}</m>, and let <m>T_3(x)</m> be the third order Taylor polynomial for <m>f(x)</m> about <m>x=32</m>. Give a bound on the error <m>|f(30)-T_3(30)|</m>.
 </p></statement>
 <hint><p>
 In this case, Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that
@@ -381,7 +381,7 @@ Another reasonable answer is
 <m>\left|f(30)-T_3(30)\right| \lt \dfrac{14}{5^7\cdot9} \lt 0.00002</m>.
 </p></answer>
 <solution><p>
-Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th order Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
 <md>
 <mrow>
 |f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
@@ -448,7 +448,7 @@ We conclude <m>\left|f(30)-T_3(30)\right| \lt 0.000002</m>.
 <statement><p>
 Let <me>
 f(x)= \sin\left(\dfrac{1}{x}\right),</me>
- and let <m>T_1(x)</m> be the first-degree Taylor polynomial for <m>f(x)</m> about <m>x=\dfrac{1}{\pi}</m>. Give a bound on the error <m>|f(0.01)-T_1(0.01)|</m>, using Equation<nbsp/><xref ref="eq_taylorErrorN"/>. You may leave your answer in terms of <m>\pi</m>.
+ and let <m>T_1(x)</m> be the first order Taylor polynomial for <m>f(x)</m> about <m>x=\dfrac{1}{\pi}</m>. Give a bound on the error <m>|f(0.01)-T_1(0.01)|</m>, using Equation<nbsp/><xref ref="eq_taylorErrorN"/>. You may leave your answer in terms of <m>\pi</m>.
 </p>
 
 <p>Then, give a <em>reasonable</em> bound on the error <m>|f(0.01)-T_1(0.01)|</m>.
@@ -465,7 +465,7 @@ Equation<nbsp/><xref ref="eq_taylorErrorN"/>  gives the bound
 <p>A more reasonable bound on the error is that it is less than 5.
 </p></answer>
 <solution><p>
-Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th order Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
 <md>
 <mrow>
 |f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
@@ -589,7 +589,7 @@ A more reasonable bound on the error is that it is less than 5.
 
 <exercise purpose="RQS">
 <statement><p>
-Let <m>f(x)=\arcsin x</m>, and let <m>T_2(x)</m> be the second-degree Maclaurin polynomial for <m>f(x)</m>. Give a reasonable bound on the error <m>\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right|</m>
+Let <m>f(x)=\arcsin x</m>, and let <m>T_2(x)</m> be the second order Maclaurin polynomial for <m>f(x)</m>. Give a reasonable bound on the error <m>\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right|</m>
 using Equation<nbsp/><xref ref="eq_taylorErrorN"/>. What is the exact value of the error <m>\left|f\left(\frac{1}{2}\right)-T_2\left(\frac{1}{2}\right)\right|</m>?
 </p></statement>
 <hint><p>
@@ -608,7 +608,7 @@ Using Equation<nbsp/><xref ref="eq_taylorErrorN"/>,
 which is about 0.02.
 </p></answer>
 <solution><p>
-Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th degree Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
+Equation<nbsp/><xref ref="eq_taylorErrorN"/> tells us that, when <m>T_n(x)</m> is the <m>n</m>th order Taylor polynomial for a function <m>f(x)</m> about <m>x=a</m>, then
 <md>
 <mrow>
 |f(x)-T_n(x)| &amp;= \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|
@@ -730,7 +730,7 @@ A calculator tells us that this is about 0.02.
 
 <exercise>
 <statement><p>
-Let <m>f(x)=\log(x)</m>, and let <m>T_n(x)</m> be the <m>n</m>th-degree Taylor polynomial for <m>f(x)</m> about
+Let <m>f(x)=\log(x)</m>, and let <m>T_n(x)</m> be the <m>n</m>th order Taylor polynomial for <m>f(x)</m> about
 <m>x=1</m>. You use <m>T_n(1.1)</m> to estimate <m>\log (1.1)</m>.
 If your estimation needs to have an error of no more than <m>10^{-4}</m>, what is an acceptable value of <m>n</m> to use?
 </p></statement>
@@ -799,8 +799,8 @@ Give an estimation of <m>\sqrt[7]{2200}</m> using a Taylor polynomial. Your esti
 You can approximate the function <m>f(x)=x^{\tfrac{1}{7}}</m>.
 </p>
 <p>It's a good bit of trivia to know <m>3^7=2187</m>.</p>
-<p>A low-degree Taylor approximation will give you a good enough estimation.
-If you guess a degree, and take that Taylor polynomial, the error will <em>probably</em> be less than 0.001 (but you still need to check).
+<p>A low order Taylor approximation will give you a good enough estimation.
+If you guess an order, and take that Taylor polynomial, the error will <em>probably</em> be less than 0.001 (but you still need to check).
 </p></hint>
 <answer><p>
 <m>\sqrt[7]{2200}\approx3+\dfrac{13}{7\cdot 3^6}
@@ -810,7 +810,7 @@ If you guess a degree, and take that Taylor polynomial, the error will <em>proba
 We will approximate <m>f(x)=x^{\tfrac{1}{7}}</m> using a Taylor polynomial. Since <m>3^7=2187</m>, we will use <m>x=2187</m> as our centre.
 </p>
 
-<p> <textred>We need to figure out which degree Taylor polynomial will result in a  small-enough error. </textred>
+<p> <textred>We need to figure out which order Taylor polynomial will result in a  small-enough error. </textred>
 </p>
 
 <p>If we use the <m>n</m>th Taylor polynomial, our error will be
@@ -855,7 +855,7 @@ we have <m>\left|f^{(n+1)}(c)\right| \lt \frac{ (n+1)!}{1000\cdot13^{n+1}}</m>
 when <m>n=1</m>.
 </p>
 
-<p>That is: if we use the first-degree Taylor polynomial, then for some <m>c</m> between <m>2187</m> and <m>2200</m>,
+<p>That is: if we use the first order Taylor polynomial, then for some <m>c</m> between <m>2187</m> and <m>2200</m>,
 <md>
 <mrow>
 |f(2200)-T_1(2200)|&amp;=\left|f''(c)\right|\cdot\frac{13^2}{2!}
@@ -869,10 +869,10 @@ when <m>n=1</m>.
 </md>
 </p>
 
-<p>So, actually, the linear Taylor polynomial (or any higher-degree Taylor polynomial) will result in an approximation that is much more accurate than required. (We don't know, however, that the constant approximation will be accurate enough--so we'd better stick with <m>n \geq 1</m>.)
+<p>So, actually, the linear Taylor polynomial (or any higher order Taylor polynomial) will result in an approximation that is much more accurate than required. (We don't know, however, that the constant approximation will be accurate enough--so we'd better stick with <m>n \geq 1</m>.)
 </p>
 
-<p> <textred>Now that we know we can take the first-degree Taylor polynomial, let's compute <m>T_1(x)</m>.</textred> Recall we are taking the Taylor polynomial for <m>f(x)=x^{\tfrac{1}{7}}</m> about <m>x=2187</m>.
+<p> <textred>Now that we know we can take the first order Taylor polynomial, let's compute <m>T_1(x)</m>.</textred> Recall we are taking the Taylor polynomial for <m>f(x)=x^{\tfrac{1}{7}}</m> about <m>x=2187</m>.
 <md>
 <mrow>
 f(2187)&amp;=2187^{\tfrac{1}{7}}=3
@@ -905,11 +905,11 @@ Use Equation<nbsp/><xref ref="eq_taylorErrorN"/> to show that
 
 </statement>
 <hint><p>
-Use the 6th-degree Maclaurin approximation for <m>f(x)=\sin x</m>.
+Use the 6th order Maclaurin approximation for <m>f(x)=\sin x</m>.
 </p></hint>
 <answer><p>
 If we're going to use  Equation<nbsp/><xref ref="eq_taylorErrorN"/>, then we'll probably be taking a Taylor polynomial. Using Example<nbsp/><xref ref="eg_expand_sinx"/>,
-the 6th-degree Maclaurin polynomial for <m>\sin x</m> is
+the 6th order Maclaurin polynomial for <m>\sin x</m> is
 <me>
 T_6(x)=T_5(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}</me>
 </p>
@@ -935,7 +935,7 @@ f(1)-T_6(1)&amp;=f^{(7)}(c)\frac{1^7}{7!}
 </md>
 </p>
 
-<p>Remark: there are lots of ways to play with this idea to get better estimates. One way is to take a higher-degree Maclaurin polynomial. Another is to note that, since <m>0 \lt c \lt 1 \lt \dfrac{\pi}{3}</m>, then <m>\dfrac{1}{2} \lt \cos c  \lt  1</m>, so
+<p>Remark: there are lots of ways to play with this idea to get better estimates. One way is to take a higher order Maclaurin polynomial. Another is to note that, since <m>0 \lt c \lt 1 \lt \dfrac{\pi}{3}</m>, then <m>\dfrac{1}{2} \lt \cos c  \lt  1</m>, so
 <md>
 <mrow>
 \dfrac{4242-1}{7!} \lt \sin(1) \lt \dfrac{4242-\frac{1}{2}}{7!}
@@ -947,7 +947,7 @@ If you got tighter bounds than asked for in the problem, congratulations!
 </p></answer>
 <solution><p>
 If we're going to use  Equation<nbsp/><xref ref="eq_taylorErrorN"/>, then we'll probably be taking a Taylor polynomial. Using Example<nbsp/><xref ref="eg_expand_sinx"/>,
-the 6th-degree Maclaurin polynomial for <m>\sin x</m> is
+the 6th order Maclaurin polynomial for <m>\sin x</m> is
 <me>
 T_6(x)=T_5(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}</me>
 </p>
@@ -973,7 +973,7 @@ f(1)-T_6(1)&amp;=f^{(7)}(c)\frac{1^7}{7!}
 </md>
 </p>
 
-<p>Remark: there are lots of ways to play with this idea to get better estimates. One way is to take a higher-degree Maclaurin polynomial. Another is to note that, since <m>0 \lt c \lt 1 \lt \dfrac{\pi}{3}</m>, then <m>\dfrac{1}{2} \lt \cos c  \lt  1</m>, so
+<p>Remark: there are lots of ways to play with this idea to get better estimates. One way is to take a higher order Maclaurin polynomial. Another is to note that, since <m>0 \lt c \lt 1 \lt \dfrac{\pi}{3}</m>, then <m>\dfrac{1}{2} \lt \cos c  \lt  1</m>, so
 <md>
 <mrow>
 \dfrac{4242-1}{7!} \lt \sin(1) \lt \dfrac{4242-\frac{1}{2}}{7!}
@@ -990,7 +990,7 @@ If you got tighter bounds than asked for in the problem, congratulations!
 <statement><p>
 In this question, we use the remainder of a Maclaurin polynomial to approximate <m>e</m>.
 <ol marker="a">
-<li xml:id="s3_4_8Tx"> Write out the 4th degree Maclaurin polynomial <m>T_4(x)</m> of the function <m>e^x</m>.
+<li xml:id="s3_4_8Tx"> Write out the 4th order Maclaurin polynomial <m>T_4(x)</m> of the function <m>e^x</m>.
 </li>
 <li xml:id="s3_4_8T1"> Compute <m>T_4(1)</m>.
 </li>

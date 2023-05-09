@@ -181,7 +181,7 @@ A particle moves along the <m>x</m>--axis so that its position
 </li>
 </ol>
 </p></statement>
-<hint><p> Be careful to distinguish between speed and velocity.
+<hint><p> Be careful to distinguish between speed and velocity. The speed is the absolute value of the velocity.
 </p></hint>
 <answer><p>
 <xref ref="s2_4particle1"/> <m>4</m>
@@ -197,15 +197,19 @@ Let <m>f(t)=t^3-4t^2+1</m>.  We saw in Question<nbsp/><xref ref="derivxcube"/> t
 <m>\diff{}{t}t^3=3t^2</m>. So
 <md>
 <mrow>
-f'(t)&amp;=3t^2-8t &amp; f'(2)&amp;=3\times 4-8\times 2=-4\cr
-f''(t)&amp;=6t-8 &amp; f''(2)&amp;=6\times 2-8=4\cr
+f'(t)&amp;=3t^2-8t &amp; f'(2)&amp;=3\times 4-8\times 2=-4
+</mrow><mrow>
+f''(t)&amp;=6t-8 &amp; f''(2)&amp;=6\times 2-8=4
 </mrow>
 </md>
-Hence at <m>t=2</m>, <xref ref="s2_4particle1"/><nbsp/>the particle has speed of magnitude {4}, and <xref ref="s2_4particle2"/><nbsp/>is
-moving {towards the left}.
-At <m>t=2</m>, <m>f''(2) \gt 0</m>, so <m>f'</m> is increasing, i.e.
-becoming less negative. Since <m>f'</m> is getting closer to zero, <xref ref="s2_4particle3"/><nbsp/>the magnitude of the speed is
-{decreasing}.
+and the speed is
+<md>
+<mrow>
+|f'(t)|&amp;=|3t^2-8t| &amp; |f'(2)|&amp;=|-4|=4
+</mrow>
+</md>
+Hence at <m>t=2</m>, <xref ref="s2_4particle1"/><nbsp/>the particle has speed {4}, and <xref ref="s2_4particle2"/><nbsp/>is moving {towards the left}.
+At <m>t=2</m>, <m>f''(2) \gt 0</m>, so <m>f'</m> is increasing. For <m>t</m> near <m>2</m>, <m>f'(t)</m> is negative so that the speed <m>|f'(t)|=-f'(t)</m> is decreasing. Thus <xref ref="s2_4particle3"/><nbsp/>the speed is {decreasing}.
 </p></solution>
 </exercise>
 

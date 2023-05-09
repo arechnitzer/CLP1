@@ -290,7 +290,7 @@ The domain of <m>\arcsec x</m> is <m>|x| \geq 1</m>: that is, we can plug into a
 \diff{}{x}\left\{\arcsec(-x^2-2)\right\}&amp;=
 \dfrac{1}{|-x^2-2|\sqrt{(-x^2-2)^2-1}}\cdot(-2x)
 </mrow><mrow>
-&amp;=\dfrac{-2x}{(x^2+2)\sqrt{x^4+4x+3}}.
+&amp;=\dfrac{-2x}{(x^2+2)\sqrt{x^4+4x^2+3}}.
 </mrow>
 </md>
 </p></solution>

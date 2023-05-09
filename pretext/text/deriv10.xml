@@ -87,7 +87,7 @@ x=\tfrac{\log_a x}{\log_a e}</m>
            <m>\lim\limits_{x\rightarrow0}\log x=-\infty</m>
 </li>
 </ul>
-And finally we should remember that <m>\log x</m> has domain (i.e. is defined for) <m>x  \gt  0</m> and range (i.e. takes all values in) <m>-\infty  \lt x  \lt \infty</m>.
+And finally we should remember that <m>\log x</m> has domain (i.e. is defined for) <m>x  \gt  0</m> and range (i.e. takes all of the values in) the set of all real numbers.
 </p>
 
 <sidebyside width="66%">
