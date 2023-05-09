@@ -1125,7 +1125,7 @@ We need 4 steps.
 </li>
 <li>
 <p>
-	Let <m>E_n</m> be the difference between the area of the circle and <m>p_n</m>: <m>E_n = A -  A(p_n)</m> (see the left of the previous figure). By the previous point we know <m>E_n \gt 0</m>.  Now as we increase the number of sides, this difference becomes smaller. To be more  precise
+	Let <m>E_n</m> be the difference between the area of the circle and <m>p_n</m>: <m>E_n = A -  A(p_n)</m> (see the left of the previous figure). By the previous point we know <m>E_n \gt 0</m>.  Now as we increase the number of sides, this difference becomes smaller. To be more  precise, we will now show that
 	<md>
 	<mrow>
 	  E_{2n} &amp; \leq \frac{1}{2} E_n.
@@ -1168,7 +1168,7 @@ We need 4 steps.
 	If we assume that <m>T \lt A</m>, then <m>A-T = d</m> where <m>d</m> is some positive number.  However we know from point 2 that we can make <m>n</m> large enough so that <m>E_n  \lt  d</m>  (each time we double <m>n</m> we halve the error). But now we have a contradiction to  step<nbsp/>3, since we have just shown that
 	<md>
 	<mrow>
-	  E_n = A-A(p_n) &amp;  \lt  A-T &amp; \text{which implies that}
+	  E_n = A-A(p_n) &amp;  \lt  d = A-T &amp; \text{which implies that}
 	</mrow><mrow>
 	  A(p_n) &amp;  \gt  T.
 	</mrow>
@@ -1197,7 +1197,7 @@ The proof can be broken into 4 similar steps.
 </li>
 <li>
 <p>
-	Let <m>E_n</m> be the difference between the area of the polygon and the circle: <m>E_n =  A(P_n)-A</m> (see the left of the previous figure). By the previous point we know <m>E_n \gt 0</m>.  Now as we increase the number of sides, this difference becomes smaller. To be more  precise we will show
+	Let <m>E_n</m> be the difference between the area of the polygon and the circle: <m>E_n =  A(P_n)-A</m> (see the left of the previous figure). By the previous point we know <m>E_n \gt 0</m>.  Now as we increase the number of sides, this difference becomes smaller. To be more  precise, we will now show
 	<md>
 	<mrow>
 	  E_{2n} &amp; \leq \frac{1}{2} E_n.
@@ -1259,12 +1259,12 @@ The proof can be broken into 4 similar steps.
 	</md>
 </li>
 <li>
-	If we assume that <m>T \gt A</m>, then <m>T-A = d</m> where <m>d</m> is some positive number.  However we know from point 2 that we can make <m>n</m> large enough so that <m>E_n  \lt  d</m> (each  time we double <m>n</m> we halve the error). But now we have a contradiction since we have just  shown that
+	If we assume that <m>T \gt A</m>, then <m>T-A = d</m> where <m>d</m> is some positive number.  However we know from point 2 that we can make <m>n</m> large enough so that <m>E_n  \lt  d</m> (each  time we double <m>n</m> we halve the error). But now we have a contradiction to  step<nbsp/>3, since we have just  shown that
 	<md>
 	<mrow>
-	  E_n = A(P_n) - A &amp;  \lt  T-A &amp; \text{which implies that}
+	  E_n = A(P_n) - A &amp;  \lt d = T-A &amp; \text{which implies that}
 	</mrow><mrow>
-	  A(p_n) &amp;  \gt  T.
+	  A(P_n) &amp;  \lt  T.
 	</mrow>
 	</md>
 </li>

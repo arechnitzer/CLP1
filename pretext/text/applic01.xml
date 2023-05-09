@@ -8,7 +8,7 @@
 
 <p>If you are moving along the <m>x</m><ndash/>axis and your position at time <m>t</m>
 is <m>x(t)</m>, then your velocity at time <m>t</m> is <m>v(t)=x'(t)</m> and your
-acceleration at time <m>t</m> is <m>a(t)=v'(t) = x''(t)</m>.
+acceleration at time <m>t</m> is <m>a(t)=v'(t) = x''(t)</m>.  Your speed, i.e. the distance that you are travelling per unit time, is <m>|v(t)|=|x'(t)|</m>.
 </p>
 
 <example xml:id="eg_velaccelA"><title>Velocity as derivative of position</title>
@@ -312,7 +312,7 @@ zero, any function of the form
 </mrow>
 </md>
 with constant <m>c</m>, has the correct derivative. Finally, the requirement that the initial
-velocity <m>v(0)=q</m>" forces <m>c=q</m>, so
+velocity <m>v(0)=q</m> forces <m>c=q</m>, so
 <md>
 <mrow>
   v(t) = q - 64000\,t
