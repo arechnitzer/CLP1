@@ -172,7 +172,7 @@ y -  \frac{1}{8} = \frac{3}{4}\cdot \left(x-\frac{1}{2}\right).
 <statement><p>
 A particle moves along the <m>x</m>--axis so that its position
  at time <m>t</m> is given by <m>x=t^3-4t^2+1</m> .
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_4particle1"> At <m>t=2</m>, what is the particle's speed?
 </li>
 <li xml:id="s2_4particle2"> At <m>t=2</m>, in what direction is the particle moving?

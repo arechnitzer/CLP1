@@ -44,7 +44,7 @@ T(t)=[T(0)-20]e^{5t}+20</me>
 </p>
 
 <p>Instead of using the corollary, we can also just check each function for ourselves.
-<ol  label="a">
+<ol  marker="a">
 <li> <m>\ds\diff{T}{t}=0=5\cdot0=5[T(t)-20]</m>, so (a) gives a solution to the differential equation.
 </li>
 <li> <m>\ds\diff{T}{t}=5[20e^{5t}]=5[T+20] \neq 5[T-20]</m>, so (b) does not give a solution to the differential equation.
@@ -299,7 +299,7 @@ to <m>54^\circ</m> C.
  Newton wonders if his coffee would be hotter (and by how much) if he
 waited until just before drinking it to add the cream. Analyze this question,
 assuming that:
-<ol label="i">
+<ol marker="i">
 <li> The temperature of the dining room is constant at <m>22^\circ</m> C.
 </li>
 <li> When a volume <m>V_1</m> of liquid at temperature <m>T_1</m> is mixed
@@ -373,7 +373,7 @@ ends up cooler by <m>0.85^\circ</m> C<m>\,</m>.
  The temperature of a glass of iced tea is initially <m>5^\circ</m>.
 After 5 minutes, the tea has heated to <m>10^\circ</m> in a room where the air
 temperature is <m>30^\circ</m>.
-<ol label="a">
+<ol marker="a">
 <li> Use Newton's law of cooling to obtain a differential equation
 for the temperature <m>T(t)</m> at time <m>t</m>.
 </li>
@@ -390,7 +390,7 @@ T(t)=[T(0)-A]e^{Kt}+A</me>
 <p>where <m>A</m> is the ambient temperature, <m>T(0)</m> is the initial temperature of the tea, and <m>K</m> is some constant.
 </p></hint>
 <answer><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>\ds\diff{T}{t}=\frac{1}{5}\log\left(\frac{4}{5}\right)(T-30)</m>
 </li>
 <li> <m>\dfrac{5\log(2/5)}{\log(4/5)}\approx 20.53</m> min
@@ -398,7 +398,7 @@ T(t)=[T(0)-A]e^{Kt}+A</me>
 </ol>
 </p></answer>
 <solution><p>
-<ol label="a">
+<ol marker="a">
 <li><p> By Newton's law of cooling, the rate of change of temperature
 is proportional to the difference between <m>T(t)</m> and the ambient temperature,
 which in this case is <m>30^\circ</m>. Thus

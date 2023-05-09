@@ -9,7 +9,7 @@
 <exercise purpose="RQS">
 <statement>
 <p>On the graph below, draw:
-<ol label="a">
+<ol marker="a">
 <li> The tangent line to <m>y=f(x)</m> at <m>P</m>,
 </li>
 <li>  the tangent line to <m>y=f(x)</m> at <m>Q</m>, and
@@ -66,7 +66,7 @@ The tangent line to <m>y=f(x)</m> at a point should go through the point, and be
 <statement>
 <p>
 Suppose a curve <m>y=f(x)</m> has tangent line <m>y=2x+3</m> at the point <m>x=2</m>.
-<ol label="a">
+<ol marker="a">
 <li> True or False: <m>f(2)=7</m> </li>
 <li> True or False: <m>f(3)=9</m> </li>
 </ol>
@@ -79,7 +79,7 @@ The tangent line to a curve at point <m>P</m> passes through <m>P</m>.
 </hint>
 <answer>
 <p>
-<ol label="a">
+<ol marker="a">
 <li> True </li>
 <li> In general, this is false. For most functions <m>f(x)</m> this will be false, but there are some functions for which it is true.
 </li>
@@ -88,7 +88,7 @@ The tangent line to a curve at point <m>P</m> passes through <m>P</m>.
 </answer>
 <solution>
 <p>
-<ol label="a">
+<ol marker="a">
 <li xml:id="test">
 	True: since <m>y=2x+3</m> is the tangent line to <m>y=f(x)</m> <em>at the point</em> <m>x=2</m>, this means the function and the tangent line have the same value at <m>x=2</m>. So <m>f(2)=2(2)+3=7</m>.
 </li>

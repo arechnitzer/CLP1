@@ -13,7 +13,7 @@ Suppose the amount of kelp in a harbour depends on the number of urchins. Urchin
 </p>
 
 <p>Let <m>O</m>, <m>U</m>, and <m>K</m> be the populations of otters, urchins, and kelp, respectively.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_9otter1"> Is <m>\diff{K}{U}</m> positive or negative?
 </li>
 <li xml:id="s2_9otter2"> Is <m>\diff{U}{O}</m> positive or negative?
@@ -1129,7 +1129,7 @@ Now, we plug these into our equation for <m>f'(x)</m>:
 <exercise>
 <statement><p>
 Suppose a particle is moving in the Cartesian plane over time. For any real number <m>t \geq 0</m>, the coordinate of the particle at time <m>t</m> is given by <m>(\sin t, \cos^2 t)</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_9_parametricwiggle1"> Sketch a graph of the curve traced by the particle in the plane by plotting points, and describe how the particle moves along it over time.
 </li>
 <li xml:id="s2_9_parametricwiggle2"> What is the slope of the curve traced by the particle at time <m>t=\dfrac{10\pi}{3}</m>?

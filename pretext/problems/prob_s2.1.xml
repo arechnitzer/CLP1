@@ -32,7 +32,7 @@ If <m>Q</m> is to the right of the <m>y</m> axis, the line through <m>Q</m> and 
 
 <exercise purpose="RQS">
 <statement><p> Shown below is the graph <m>y=f(x)</m>.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_1p2_1"> If we want the slope of the secant line through <m>P</m> and <m>Q</m> to <em>increase</em>, should we slide <m>Q</m> closer to <m>P</m>, or further away?
 </li>
 <li xml:id="s2_1p2_2"> Which is larger, the slope of the tangent line at <m>P</m>, or the slope of the secant line through <m>P</m> and <m>Q</m>?

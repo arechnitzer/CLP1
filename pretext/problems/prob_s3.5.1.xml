@@ -170,7 +170,7 @@ Try making a little bump at <m>x=2</m>, the letting the function get quite large
 <exercise purpose="RQS">
 <statement><p>
 Suppose <m>f(x)=\dfrac{x-1}{x^2+3}</m>.
-<ol label="a">
+<ol marker="a">
 <li> Find all critical points.
 </li>
 <li> Find all singular points.

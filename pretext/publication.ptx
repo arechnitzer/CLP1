@@ -26,11 +26,13 @@
     <!-- sided.  The asymptote/@links set to "yes" would produce      -->
     <!-- links the html version of asymptote graphics.                -->
   <latex print="no" sides="one">
+    <feedback href="mailto:clp@ugrad.math.ubc.ca?subject=clp1-pretext" visual="clp@ugrad.math.ubc.ca">Feedback</feedback>
   </latex>
   
   <html platform="web">
     <knowl remark="no" example="yes" proof="yes"/>
     <css style="default" colors="blue_red"/>
+    <feedback href="mailto:clp@ugrad.math.ubc.ca?subject=clp1-pretext" visual="clp@ugrad.math.ubc.ca">Feedback</feedback>
 
     <!-- uncomment line below on real build to enable google analytics-->
     <!-- <analytics google-gst="UA-105798942-1"/> -->

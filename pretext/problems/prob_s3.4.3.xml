@@ -246,7 +246,7 @@ a calculator gives <m>5^{4/3}\approx 8.5499</m>. Although 5 and 8 are somewhat f
 <exercise>
 <statement><p>
 Evaluate the expressions below.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s4_3_4sigma1"> <m>\ds\sum_{n=5}^{30} 1</m>
 </li>
 <li xml:id="s4_3_4sigma2"> <m>\ds\sum_{n=1}^{3} \left[ 2(n+3)-n^2 \right]</m>
@@ -358,7 +358,7 @@ For every value of <m>n</m>, the term being added is simply the constant <m>1</m
 <exercise purpose="RQS">
 <statement><p>
 Write the following in sigma notation:
-<ol label="a">
+<ol marker="a">
 <li> <m>1+2+3+4+5</m>
 </li>
 <li> <m>2+4+6+8</m>
@@ -385,7 +385,7 @@ To get an alternating sign, consider  powers of <m>(-1)</m>.
 </p></hint>
 <answer><p>
 For each of these, there are many solutions. We provide some below.
-<ol label="a">
+<ol marker="a">
 <li> <m>1+2+3+4+5 = \ds\sum_{n=1}^5n</m>
 </li>
 <li> <m>2+4+6+8=\ds\sum_{n=1}^42n</m>
@@ -404,7 +404,7 @@ For each of these, there are many solutions. We provide some below.
 </p></answer>
 <solution><p>
 For each of these, there are many solutions. We provide some below.
-<ol label="a">
+<ol marker="a">
 <li> <m>1+2+3+4+5 = \ds\sum_{n=1}^5n</m>
 </li>
 <li> <m>2+4+6+8=\ds\sum_{n=1}^4 2n</m>
@@ -500,7 +500,7 @@ e=e^1 \approx 1+1+\frac{1}{2}=2.5</me>
 <exercise purpose="RQS">
 <statement><p>
 Group the expressions below into collections of equivalent expressions.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_4_3equiv1"> <m>\ds\sum_{n=1}^{10} 2n</m>
 </li>
 <li xml:id="s3_4_3equiv5"> <m>\ds\sum_{n=1}^{10} 2^n</m>

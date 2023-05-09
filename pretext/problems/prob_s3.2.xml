@@ -11,7 +11,7 @@
 <exercise purpose="RQS">
 <statement><p>
 Suppose the quantities <m>P</m> and <m>Q</m> are related by the formula <m>P=Q^3</m>. <m>P</m> and <m>Q</m> are changing with respect to time, <m>t</m>. Given this information, which of the following are problems you could solve?
-<ol label="i">
+<ol marker="i">
 <li> Given <m>\ds\diff{P}{t}(0)</m>, find <m>\ds\diff{Q}{t}(0)</m>. (Remember: the notation <m>\ds\diff{P}{t}(0)</m> means the derivative of <m>P</m> with respect to <m>t</m> at the time <m>t=0</m>.)
 </li>
 <li> Given <m>\ds\diff{P}{t}(0)</m> and the value of <m>Q</m> when <m>t=0</m>, find <m>\ds\diff{Q}{t}(0)</m>.
@@ -118,7 +118,7 @@ Three quantities, <m>F</m>, <m>P</m> and <m>Q</m> all depend upon time
 <me>
 F=\frac{P}{Q}
 </me>
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_2FPQ1"> Assume that at a particular moment in time <m>P=25</m> and <m>P</m>
 is increasing at the instantaneous rate of 5 units/min. At the same moment,
 <m>Q=5</m> and <m>Q</m> is increasing at the instantaneous rate of 1 unit/min. What
@@ -727,7 +727,7 @@ h\left(\frac{1}{60}\right)&amp;=\frac{61750}{3600}=\frac{1235}{72}
 A high speed train is traveling at 2 km/min
 along a straight track. The train is moving away from a movie camera which
 is located 0.5 km from the track.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s3_2train1"> How fast is the distance between the train and the camera
 increasing when they are 1.3 km apart?
 </li>
@@ -1330,7 +1330,7 @@ A floating buoy is anchored to the bottom of a river. As the river flows, the bu
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 <p>
-<ol label="a">
+<ol marker="a">
 <li> If <m>\theta = \dfrac{\pi}{4}</m> and <m>\ds\diff{\theta}{t}=0.25\;\frac{\mathrm{rad}}{\mathrm{hr}}</m>, how fast is the depth <m>D</m> of the water changing?
 </li>
 <li> A measurement shows <m>\ds\diff{\theta}{t}=0</m>, but <m>\ds\diff{D}{t}\neq0</m>. Under what circumstances does this occur?
@@ -1343,7 +1343,7 @@ A floating buoy is anchored to the bottom of a river. As the river flows, the bu
 If you were to install the buoy, how would you choose the length of rope? For which values of <m>\theta</m> do <m>\sin\theta</m> and <m>\cos\theta</m> have different signs? How would those values of <m>\theta</m> look on the diagram?
 </p></hint>
 <answer><p>
-<ol label="a">
+<ol marker="a">
 <li> <m>\ds\diff{D}{t}=\dfrac{1}{2\sqrt{2}}</m> metres per hour </li>
 <li> The river is higher than 2 metres.</li>
 <li> The river's flow has reversed direction. (This can happen near an ocean at high tide.)</li>
@@ -1415,7 +1415,7 @@ A point is moving in the <m>xy</m>-plane along the quadrilateral shown below.
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 <p>
-<ol label="a">
+<ol marker="a">
 <li> When the point is at <m>(0,-2)</m>, it is moving to the right. An observer stationed at the origin must turn at a rate of one radian per second to keep looking directly at the point. How fast is the point moving?
 </li>
 <li> When the point is at <m>(0,2)</m>, its <m>x</m>-coordinate is increasing at a rate of one unit per second. How fast it its <m>y</m>-coordinate changing? How fast is  the point moving?
@@ -1573,7 +1573,7 @@ p \approx \pi\left[3(a+b)-\sqrt{(a+3b)(3a+b)}\right].</me>
 </p>
 
 <p>The area of an ellipse is <m>\pi a b</m>.
-<ol label="a">
+<ol marker="a">
 <li> Give an equation that relates <m>a</m> and <m>b</m> (and no other variables).
 </li>
 <li> Give an expression for the volume of the bottle as it is being smooshed, in terms of <m>a</m> and <m>b</m> (and no other variables).

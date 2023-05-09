@@ -12,7 +12,7 @@
 <exercise xml:id="s3_7indet1" purpose="RQS">
 <statement><p>
 Give two functions <m>f(x)</m> and <m>g(x)</m> with the following properties:
-<ol label="i">
+<ol marker="i">
 <li> <m>\ds\lim_{x \to \infty} f(x)=\infty</m>
 </li>
 <li> <m>\ds\lim_{x \to \infty} g(x)=\infty</m>
@@ -33,7 +33,7 @@ Then <m>\ds\lim_{x \rightarrow\infty}f(x)=\ds\lim_{x\to\infty}g(x)=\infty</m>, a
 
 <exercise purpose="RQS">
 <statement><p>Give two functions <m>f(x)</m> and <m>g(x)</m> with the following properties:
-<ol label="i">
+<ol marker="i">
 <li> <m>\ds\lim_{x \to \infty} f(x)=\infty</m>
 </li>
 <li> <m>\ds\lim_{x \to \infty} g(x)=\infty</m>
@@ -55,7 +55,7 @@ Then <m>\ds\lim_{x \rightarrow\infty}f(x)=\ds\lim_{x\to\infty}g(x)=\infty</m>, a
 <exercise xml:id="s3_7indet3" purpose="RQS">
 <statement><p>
 Give two functions <m>f(x)</m> and <m>g(x)</m> with the following properties:
-<ol label="i">
+<ol marker="i">
 <li xml:id="s3_7conc1"> <m>\ds\lim_{x \to \infty} f(x)=1</m>
 </li>
 <li xml:id="s3_7conc2"> <m>\ds\lim_{x \to \infty} g(x)=\infty</m>

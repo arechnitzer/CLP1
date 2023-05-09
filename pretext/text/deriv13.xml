@@ -557,7 +557,7 @@ Let <m>A</m> and <m>B</m> be real numbers with <m>A \lt B</m>.
 Let function <m>f(x)</m> be defined and continuous on
 the closed interval <m>A\le x\le B</m> and be differentiable on the
 open interval <m>A \lt x \lt B</m>.
-<ol label="a">
+<ol marker="a">
 <li><p> If <m>f'(c)=0</m> for all <m>A \lt c \lt B</m>, then <m>f(b)=f(a)</m> for all
 <m>A\le a \lt b\le B</m>.</p>
 <p><mdash/> That is, <m>f(x)</m> is constant on <m>A\le x\le B</m>.</p>

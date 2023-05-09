@@ -759,7 +759,7 @@ procedure to follow for these problems.
 </p>
 
 <p>
-<ol label="1">
+<ol marker="1">
 <li> Read <mdash/> read the problem carefully. Work out what information is given in the
 statement of the problem and what we are being asked to compute.
 </li>
@@ -1023,7 +1023,7 @@ real number.
 </p>
 
 <p>
-<ol label="a">
+<ol marker="a">
 <li><p> If <m>\displaystyle \lim_{x\rightarrow+\infty} f(x)=+\infty</m> and
 <m>\displaystyle \lim_{x\rightarrow-\infty} f(x)=+\infty</m> and if <m>f(x)</m> has a global
 minimum at <m>x = c</m>, then there are 2 possibilities. Either

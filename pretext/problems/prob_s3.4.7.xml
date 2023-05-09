@@ -174,7 +174,7 @@ A circle with radius 3 has a sector cut out of it. It's a smallish sector, no mo
 </sidebyside>
 
 <p>
-<ol label="a">
+<ol marker="a">
 <li>
 Suppose the angle of the sector is <m>\theta</m>. What is the area of the sector?
 </li>

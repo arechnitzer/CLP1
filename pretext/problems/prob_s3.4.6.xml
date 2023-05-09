@@ -94,7 +94,7 @@ The question tells us that <m>5\Delta y \approx \Delta x</m>. So, if <m>\Delta x
 <exercise purpose="RQS">
 <statement><p>
 Let <m>f(x)=\arctan x</m>.
-<ol label="a">
+<ol marker="a">
 <li> Use a linear approximation to estimate <m>f(5.1)-f(5)</m>.
 </li>
 <li> Use a quadratic approximation to estimate <m>f(5.1)-f(5)</m>.
@@ -149,7 +149,7 @@ s(x)=\sqrt{19.6x}\;\frac{\mathrm{m}}{\mathrm{sec}}</me>
 </p>
 
 <p>Your last dive was from a height of 4 metres.
-<ol label="a">
+<ol marker="a">
 <li> Use a linear approximation of <m>\Delta y</m>
 to estimate how much faster you will be falling when you hit the water if you jump from a height of 5 metres.
 </li>

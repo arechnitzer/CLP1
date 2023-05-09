@@ -423,7 +423,7 @@ The desired dimensions are <m>2\times 2\times 6</m>.
 <statement><p>
 Find a point <m>X</m> on the positive <m>x</m>--axis and a point <m>Y</m>
 on the positive <m>y</m>--axis such that (taking <m>O=(0,0)</m>)
-<ol label="i">
+<ol marker="i">
 <li xml:id="s3_5inscribed1"> The triangle <m>XOY</m> contains the first quadrant portion of
 the unit circle <m>x^2+y^2=1</m> and
 </li>
@@ -743,7 +743,7 @@ Consider an open-top rectangular baking pan with base dimensions
 <m>x</m> centimetres by <m>y</m> centimetres and height <m>z</m> centimetres that is
 made from <m>A</m> square centimetres of tin plate. Suppose <m>y = px</m> for some
 fixed constant <m>p</m>.
-<ol label="a">
+<ol marker="a">
 <li> Find the dimensions of the baking pan with the maximum
 capacity (i.e., maximum volume). Prove that your answer yields the
 baking pan with maximum capacity. Your answer will depend on the value of <m>p</m>.
@@ -782,7 +782,7 @@ capacity.
 </sidebyside>
 
 <p>
-<ol label="a">
+<ol marker="a">
 <li><p>The surface area of the pan is
 <md>
 <mrow>
@@ -842,7 +842,8 @@ the volume is increasing with <m>p</m> for <m>p \lt 1</m> and decreasing with <m
 
 <exercise purpose="RQS"><title><fromexam>1999H</fromexam></title>
 <statement><p>
-Let <m>f(x)=x^x</m> for <m>x \gt 0</m>.<ol label="a">
+  Let <m>f(x)=x^x</m> for <m>x \gt 0</m>.
+  <ol marker="a">
 <li xml:id="s2_10xx1"> Find <m>f'(x)</m>.
 </li>
 <li xml:id="s2_10xx2"> At what value of <m>x</m> does the curve <m>y=f(x)</m> have a horizontal

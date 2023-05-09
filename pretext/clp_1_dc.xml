@@ -16,10 +16,6 @@
 		<rename element="fact">Equation</rename>
 		<!-- use to replace impeqn -->
 
-		<feedback>
-			<url visual="clp@ugrad.math.ubc.ca">mailto:clp@ugrad.math.ubc.ca?subject=clp1-pretext</url>
-			<text>Feedback</text>
-		</feedback>
 
 	</docinfo>
 

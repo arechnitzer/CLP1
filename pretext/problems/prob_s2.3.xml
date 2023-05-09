@@ -10,7 +10,7 @@
 <exercise purpose="RQS">
 <statement><p>
 Suppose <m>h(t)</m> gives the height at time <m>t</m> of the water at a dam, where the units of <m>t</m> are hours and the units of <m>h</m> are meters.
-<ol label="a">
+<ol marker="a">
 <li xml:id="s2_1dam1"> What is the physical interpretation of the slope of the secant line through the points <m>(0,h(0))</m> and <m>(24,h(24))</m>?
 </li>
 <li xml:id="s2_1dam2"> What is the physical interpretation of the slope of the tangent line to the curve <m>y=h(t)</m> at the point <m>(0,h(0))</m>?
