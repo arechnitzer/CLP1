@@ -140,7 +140,7 @@ Let <m>g(x) = \sqrt{x-1}</m> on the domain <m>x \geq 1</m>. We can find the inve
 </mrow><mrow>
   y^2 &amp;= x-1
 </mrow><mrow>
-  x &amp;= y^2+1 = f^{-1}(y) &amp; \text{or, writing input variable as ``$x$'':}
+  x &amp;= y^2+1 = f^{-1}(y) &amp; \text{or, writing input variable as "$x$":}
 </mrow><mrow>
   f^{-1}(x) &amp;= x^2+1.
 </mrow>
