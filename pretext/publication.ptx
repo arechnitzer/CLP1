@@ -27,6 +27,7 @@
     <!-- links the html version of asymptote graphics.                -->
   <latex print="no" sides="one">
     <feedback href="mailto:clp@ugrad.math.ubc.ca?subject=clp1-pretext" visual="clp@ugrad.math.ubc.ca">Feedback</feedback>
+    <cover front="cover/clp1-cover"/>
   </latex>
   
   <html platform="web">

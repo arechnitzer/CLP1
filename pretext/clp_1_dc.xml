@@ -5,8 +5,6 @@
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude">
 	<docinfo>
 
-	<covers front="cover/clp1-cover"/>
-
 	<xi:include href="misc/latex_macros.xml" />
 	<xi:include href="misc/latex_preamble.xml" />
 	<xi:include href="misc/latex_image_preamble.xml" />
