@@ -1323,7 +1323,7 @@ so we need Corollary<nbsp/><xref ref="cor_find_maxmin"/> rather than Theorem<nbs
 </mrow>
 </md>
 </li>
-<li><p> Since <m>(x,y)</m> lie on the ellipse we have
+<li><p> Since <m>(x,y)</m> lies on the ellipse we have
 <md>
 <mrow>
 \frac{x^2}{4}+y^2=1
@@ -1744,7 +1744,7 @@ corridor.</p>
 </li>
 <li> Suppose that the angle between the rod and the inner wall of the <m>3</m>m
 corridor is <m>\theta</m>, as illustrated in the figure above. At the same time it will make an
-angle of <m>\frac{\pi}{2}-\theta</m> with the outer wall of the 2m corridor. Denote by
+angle of <m>\frac{\pi}{2}-\theta</m> with the outer wall of the 3m corridor. Denote by
 <m>\ell_1(\theta)</m> the length of the part of the rod forming the hypotenuse of the upper
 triangle in the figure above. Similarly, denote by <m>\ell_2(\theta)</m> the length of the part
 of the rod forming the hypotenuse of the lower triangle in the figure above.  Then

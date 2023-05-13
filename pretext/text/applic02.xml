@@ -572,7 +572,7 @@ stated in terms of <m>h</m>). From the triangle</p>
 <image source="text/figs/fuel6"/>
 </sidebyside>
 
-<p> and Pythagoras we have
+<p> and by Pythagoras we have
 <md>
 <mrow>
   \sin\theta =\frac{\sqrt{r^2-(r-h)^2}}{r}=\frac{\sqrt{2rh-h^2}}{r}

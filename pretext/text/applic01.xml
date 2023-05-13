@@ -197,7 +197,7 @@ satisfy <m>v'(t)=g</m>. Then <m>f'(t)=h'(t) = g</m> and so <m>f'(t)-h'(t) = 0</m
 \diff{}{t}\left( f(t)-h(t) \right) = 0.
 </m>
 The only function whose derivative is zero everywhere is the constant function (see
-Section<nbsp/><xref ref="sec_mvt"/> and Theorem<nbsp/><xref ref="cor_DIFFmvtcons"/>). Thus <m>f(t)-h(t) =
+Section<nbsp/><xref ref="sec_mvt"/> and Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>). Thus <m>f(t)-h(t) =
 \text{constant}</m>. So all the functions that satisfy <m>v'(t)=g</m> must be of the form <m>gt +
 \text{constant}</m>.
 </fn> that <m>v'(t)=g</m>. Using the fact that <m>v(0)=0</m> we must then have <m>c=0</m> and so

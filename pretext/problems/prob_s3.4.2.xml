@@ -301,7 +301,7 @@ which is not exactly the correct value.</p>
 \draw[thick, blue] (-1.5,-1.5)--(3.25,3.25) node[ right]{linear};
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
-<p>Remark: in reality, we wouldn't estimate <m>\sin(\pi)</m>, because we know its value exactly. The purpose of this problem is to demonstrate that fancier approximations are not <em>always</em> more accurate. At the of this section, we'll talk about how to bound the error of your estimations, to make sure that you are finding something sufficiently accurate.
+<p>Remark: in reality, we wouldn't estimate <m>\sin(\pi)</m>, because we know its value exactly. The purpose of this problem is to demonstrate that fancier approximations are not <em>always</em> more accurate. At the end of this section, we'll talk about how to bound the error of your estimations, to make sure that you are finding something sufficiently accurate.
 </p></solution>
 </exercise>
 

@@ -57,7 +57,7 @@ Thus the derivative of <m>a^x</m> is <m>a^x</m> multiplied by some constant <mda
 <p>
 To try finding an <m>a</m> that obeys <m>C(a)=1</m>, let us investigate how <m>C(a)</m> changes  with  <m>a</m>. Unfortunately (though this fact is not at all obvious) there is no way to  write  <m>C(a)</m> as a finite combination of any of the functions we have examined  so far
 	<fn>
-		To a bit more be precise, we say that a number <m>q</m> is algebraic  if we can write <m>q</m> as the zero of a polynomial with integer coefficients. When <m>a</m> is any  positive algebraic number other <m>1</m>, <m>C(a)</m> is not algebraic. A number that is not  algebraic is called transcendental. The best known example of a transcendental number is  <m>\pi</m> (which follows from the Lindemann-Weierstrass Theorem <mdash/> way beyond the scope of this  course).
+		To a bit more be precise, we say that a number <m>q</m> is algebraic  if we can write <m>q</m> as the zero of a polynomial with integer coefficients. When <m>a</m> is any  positive algebraic number other than <m>1</m>, <m>C(a)</m> is not algebraic. A number that is not  algebraic is called transcendental. The best known example of a transcendental number is  <m>\pi</m> (which follows from the Lindemann-Weierstrass Theorem <mdash/> way beyond the scope of this  course).
 	</fn>.
 To get started, we'll try to guess <m>C(a)</m>, for a few values of <m>a</m>, by plugging in some small values of <m>h</m>.
 </p>

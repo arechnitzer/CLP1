@@ -388,7 +388,7 @@ towards building up a toolbox for computing derivatives of complicated functions
 this process will very much parallel what we did in Chapter~\ref{chap limits} with
 limits. The two simplest functions we know are $f(x)=c$ and $g(x)=x$.
 \begin{eg}[Derivative of $f(x)=c$]\label{eg:DIFFderivX0}
-Let $a, c \in \bbbr$ be a constants. Compute the derivative of the constant function
+Let $a, c \in \bbbr$ be two constants. Compute the derivative of the constant function
 $f(x) = c$ at $x=a$.
 
 We compute the desired derivative by just substituting the function
@@ -2041,7 +2041,7 @@ so far\footnote{To a bit more be precise, we say that a number $q$ is algebraic
 if we can
 write $q$ as the zero of a polynomial with integer coefficients. When $a$ is any
 positive
-algebraic number other $1$, $C(a)$ is not algebraic. A number that is not
+algebraic number other than $1$, $C(a)$ is not algebraic. A number that is not
 algebraic is
 called transcendental. The best known example of a transcendental number is
 $\pi$ (which
@@ -3964,7 +3964,7 @@ Let $(x_0,y_0)$ be a point on the ellipse $3x^2+5y^2=7$. Find the equation for
 the tangent lines when $x=1$ and $y$ is positive. Then find an equation
 for the tangent line to the ellipse at a general point $(x_0,y_0)$.
 
-Since we are not given an specific point $x_0$ we are going to have to be
+Since we are not given a specific point $x_0$ we are going to have to be
 careful with the second half of this question.
 \begin{itemize}
  \item When $x=1$ the equation simplifies to
@@ -5292,7 +5292,7 @@ $f(b)-f(a) = f'(c) (b-a)$ must have the same sign.
 \begin{cor}[Consequences of the mean value theorem]
 \label{cor:DIFFmvtcons}
 Let $A$ and $B$ be real numbers with $A<B$.
-Let function $f(x)$ be defined and continuous on
+Let the function $f(x)$ be defined and continuous on
 the closed interval $A\le x\le B$ and be differentiable on the
 open interval $A<x<B$.
 \begin{enumerate}[(a)]
@@ -5302,9 +5302,15 @@ $A\le a<b\le B$.\\
 \item If $f'(c)\ge 0$ for all $A<c<B$, then $f(b)\ge f(a)$ for all
 $A\le a\le b\le B$.\\
 --- That is, $f(x)$ is increasing on $A\le x\le B$.
+\item If $f'(c)> 0$ for all $A<c<B$, then $f(b) > f(a)$ for all
+$A\le a < b\le B$.\\
+--- That is, $f(x)$ is strictly increasing on $A\le x\le B$.
 \item If $f'(c)\le 0$ for all $A<c<B$, then $f(b)\le f(a)$ for all
 $A\le a \le b\le B$.\\
 --- That is, $f(x)$ is decreasing on $A\le x\le B$.
+\item If $f'(c)< 0$ for all $A<c<B$, then $f(b) < f(a)$ for all
+$A\le a < b\le B$.\\
+--- That is, $f(x)$ is strictly decreasing on $A\le x\le B$.
 \end{enumerate}
 
 \end{cor}
@@ -5326,6 +5332,8 @@ $a,b \in [A,B]$  with $a<b$. Then the MVT tells us that there is $c \in (a,b)$ s
 Since $b>a$, the denominator is positive. Now if $f(b) < f(a)$ the numerator would be
 negative, making the right-hand side negative, and contradicting what we are told about
 $f'(x)$. Hence we must have $f(b)\ge f(a)$.
+
+\item The other parts are similar.
 \end{itemize}
 
 A nice corollary of the above corollary is the following:
