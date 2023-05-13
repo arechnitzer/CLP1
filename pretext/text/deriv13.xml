@@ -554,7 +554,7 @@ sign of <m>f'(c)</m> for all <m>c</m>'s between <m>a</m> and <m>b</m>, with <m>b
 <corollary xml:id="cor_DIFFmvtcons"><title>Consequences of the mean value theorem</title>
 <statement><p>
 Let <m>A</m> and <m>B</m> be real numbers with <m>A \lt B</m>.
-Let function <m>f(x)</m> be defined and continuous on
+Let the function <m>f(x)</m> be defined and continuous on
 the closed interval <m>A\le x\le B</m> and be differentiable on the
 open interval <m>A \lt x \lt B</m>.
 <ol marker="a">
@@ -567,9 +567,18 @@ open interval <m>A \lt x \lt B</m>.
 <p>
 <mdash/> That is, <m>f(x)</m> is increasing on <m>A\le x\le B</m>.</p>
 </li>
+<li><p> If <m>f'(c)\gt 0</m> for all <m>A \lt c \lt B</m>, then <m>f(b)\gt f(a)</m> for all
+<m>A\le a\lt b\le B</m>.</p>
+<p>
+<mdash/> That is, <m>f(x)</m> is strictly increasing on <m>A\le x\le B</m>.</p>
+</li>
 <li><p> If <m>f'(c)\le 0</m> for all <m>A \lt c \lt B</m>, then <m>f(b)\le f(a)</m> for all
 <m>A\le a \le b\le B</m>.</p>
 <p><mdash/> That is, <m>f(x)</m> is decreasing on <m>A\le x\le B</m>.</p>
+</li>
+<li><p> If <m>f'(c)\lt 0</m> for all <m>A \lt c \lt B</m>, then <m>f(b)\lt f(a)</m> for all
+<m>A\le a \lt b\le B</m>.</p>
+<p><mdash/> That is, <m>f(x)</m> is strictly decreasing on <m>A\le x\le B</m>.</p>
 </li>
 </ol>
 </p>
@@ -599,6 +608,9 @@ told about <m>f'(x)</m>. Thus we must have that <m>f(b)=f(a)</m>.
 Since <m>b \gt a</m>, the denominator is positive. Now if <m>f(b)  \lt  f(a)</m> the numerator would be
 negative, making the right-hand side negative, and contradicting what we are told about
 <m>f'(x)</m>. Hence we must have <m>f(b) \ge f(a)</m>.
+</li>
+<li>
+The other parts are similar.
 </li>
 </ul>
 </p>

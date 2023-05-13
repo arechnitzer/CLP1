@@ -119,7 +119,7 @@ Using the definition of one-sided continuity we can now define what it means for
 <li> <m>f(x)</m> is continuous from the left at <m>b</m>.
 </li>
 </ul>
-Note that the last two condition are equivalent to
+Note that the last two conditions are equivalent to
 <md>
 <mrow>
    \lim_{x\to a^+} f(x) &amp;= f(a) &amp; \text{ and }&amp;&amp;  \lim_{x\to b^-} f(x) &amp;= f(b).
@@ -436,7 +436,7 @@ Now the break-down
 	<alert>there exists some number <m>c \in [a,b]</m> so that <m>f(c) = Y</m></alert> <mdash/> so  if we satisfy all of the above conditions, then there has to be some real  number <m>c</m> lying between <m>a</m> and <m>b</m> so that when we evaluate <m>f(c)</m> it is <m>Y</m>.
 </li>
 </ul>
-So that breaks down the proof statement by statement, but what does it actually  mean?
+So that breaks down the theorem statement by statement, but what does it actually  mean?
 <ul>
 <li>
 	Draw any continuous function you like between <m>a</m> and <m>b</m> <mdash/> it must be continuous.

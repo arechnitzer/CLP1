@@ -113,11 +113,11 @@ and smooth them out to get the a good sketch of this function (below right).</p>
 mean-value theorem (Theorem<nbsp/><xref ref="thm_DIFFmvt"/>) and some of its consequences
 (Corollary<nbsp/><xref ref="cor_DIFFmvtcons"/>). There we considered any function  <m>f(x)</m> that is continuous on an interval <m>A\le x\le B</m> and differentiable on <m>A\lt x\lt B</m>. Then
 <ul>
-<li><p> if <m>f'(x) \gt 0</m> for all <m>A \lt x \lt B</m>, then <m>f(x)</m> is increasing on <m>(A,B)</m></p>
-  <p><mdash/> that is, for all <m>A \lt a \lt b \lt B</m>, <m>f(a) \lt  f(b)</m>.</p>
+<li><p> if <m>f'(x) \gt 0</m> for all <m>A \lt x \lt B</m>, then <m>f(x)</m> is increasing on <m>[A,B]</m></p>
+  <p><mdash/> that is, for all <m>A \le a \lt b \le B</m>, <m>f(a) \lt  f(b)</m>.</p>
 </li>
-<li><p> if <m>f'(x) \lt 0</m> for all <m>A \lt x \lt B</m>, then <m>f(x)</m> is decreasing on <m>(A,B)</m></p>
-  <p><mdash/> that is, for all <m>A \lt a \lt b \lt B</m>, <m>f(a)  \gt  f(b)</m>.</p>
+<li><p> if <m>f'(x) \lt 0</m> for all <m>A \lt x \lt B</m>, then <m>f(x)</m> is decreasing on <m>[A,B]</m></p>
+  <p><mdash/> that is, for all <m>A \le a \lt b \le B</m>, <m>f(a)  \gt  f(b)</m>.</p>
 </li>
 </ul>
 Thus the sign of the derivative indicates to us whether the function is increasing or

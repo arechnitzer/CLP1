@@ -205,7 +205,7 @@ satisfy $v'(t)=g$. Then $f'(t)=h'(t) = g$ and so $f'(t)-h'(t) = 0$. Equivalently
   \diff{}{t}\left( f(t)-h(t) \right) &= 0.
 \end{align*}
 The only function whose derivative is zero everywhere is the constant function (see
-Section~\ref{sec mvt} and Theorem~\ref{cor:DIFFmvtcons}). Thus $f(t)-h(t) =
+Section~\ref{sec mvt} and Corollary~\ref{cor:DIFFmvtcons}). Thus $f(t)-h(t) =
 \text{constant}$. So all the functions that satisfy $v'(t)=g$ must be of the form $gt +
 \text{constant}$.
 } that $v'(t)=g$. Using the fact that $v(0)=0$ we must then have $c=0$ and so
@@ -753,7 +753,7 @@ stated in terms of $h$). From the triangle
        \includegraphics{fuel6}
 \end{center}
 \end{efig}
-and Pythagoras we have
+and by Pythagoras we have
 \begin{align*}
   \sin\theta =\frac{\sqrt{r^2-(r-h)^2}}{r}=\frac{\sqrt{2rh-h^2}}{r}
 \end{align*}
@@ -5737,7 +5737,7 @@ $(1,0)$. As was the case above, we will maximise the squared-distance.
 \begin{align*}
   \ell^2 &= (x-1)^2 + y^2.
 \end{align*}
-\item Since $(x,y)$ lie on the ellipse we have
+\item Since $(x,y)$ lies on the ellipse we have
 \begin{align*}
 \frac{x^2}{4}+y^2=1
 \end{align*}
@@ -6220,7 +6220,7 @@ corridor.
 
 \item Suppose that the angle between the rod and the inner wall of the $3$m
 corridor is $\theta$, as illustrated in the figure above. At the same time it will make an
-angle of $\frac{\pi}{2}-\theta$ with the outer wall of the 2m corridor. Denote by
+angle of $\frac{\pi}{2}-\theta$ with the outer wall of the 3m corridor. Denote by
 $\ell_1(\theta)$ the length of the part of the rod forming the hypotenuse of the upper
 triangle in the figure above. Similarly, denote by $\ell_2(\theta)$ the length of the part
 of the rod forming the hypotenuse of the lower triangle in the figure above.  Then
@@ -6459,10 +6459,10 @@ mean-value theorem (Theorem~\ref{thm:DIFFmvt}) and some of its consequences
 (Corollary~\ref{cor:DIFFmvtcons}). There we considered any function $f(x)$ that is 
 continuous on an interval $A\le x\le B$ and is differentiable on $A<x<B$. Then
 \begin{itemize}
- \item if $f'(x)>0$ for all $A<x<B$, then $f(x)$ is increasing on $(A,B)$\\
-  --- that is, for all $A<a<b<B$, $f(a)< f(b)$.
- \item if $f'(x)<0$ for all $A<x<B$, then $f(x)$ is decreasing on $(A,B)$\\
-  --- that is, for all $A<a<b<B$, $f(a) > f(b)$.
+ \item if $f'(x)>0$ for all $A<x<B$, then $f(x)$ is increasing on $[A,B]$\\
+  --- that is, for all $A\le a<b\le B$, $f(a)< f(b)$.
+ \item if $f'(x)<0$ for all $A<x<B$, then $f(x)$ is decreasing on $[A,B]$\\
+  --- that is, for all $A\le a<b\le B$, $f(a) > f(b)$.
 \end{itemize}
 Thus the sign of the derivative indicates to us whether the function is increasing or
 decreasing. Further, as we discussed in Section~\ref{ssec maxmin}, we should also examine
