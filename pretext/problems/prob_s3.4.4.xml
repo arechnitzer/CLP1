@@ -229,7 +229,7 @@ We expand this somewhat:
 <mrow>
 T_n(x)&amp;=\color{red}{f(5)+f'(x-5) + \cdots +
 \boxed{\frac{1}{10!}f^{(10)}(5)(x-5)^{10}}+\cdots }
-</mrow><mrow>\amp\hskip2in\color{red}{+ \frac{1}{n!}f^{(n)}(5)(x-1)^n}
+</mrow><mrow>\amp\hskip2in\color{red}{+ \frac{1}{n!}f^{(n)}(5)(x-5)^n}
 </mrow>
 </md>
 So, the coefficient of <m>(x-5)^{10}</m> is <m>\dfrac{1}{10!}f^{(10)}(5)</m>. Expanding the given form of the Taylor polynomial:
