@@ -11,5 +11,5 @@
 * We have tried to give the figure source files where practical.
 
 ## Cover art
-* The cover page art is by [Nick Lowen](http://nloewen.com/).
+* The cover page art is by [Nick Loewen](http://nloewen.com/).
 * It is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
