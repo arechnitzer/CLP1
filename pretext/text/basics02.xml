@@ -91,17 +91,18 @@
 
 	<p>
 	Notice that both of these statements, though they are written down as short strings of three symbols, are really complete sentences. That is, when we read them out we have
-	<md>
+	<md alignment="alignat">
 	<mrow>
-	  \text{``$4 \in A$''}
-	  &amp;&amp;&amp; \text{is read as} &amp;&amp; \text{``Four is an element of $A$.''}
+	  &amp;4 \in A\qquad&amp;
+	  &amp;{\rm is\ read\ as}\qquad &amp; 
+	  &amp;{\rm Four\ is\ an\ element\ of\ }A.
 	</mrow><mrow>
-	  \text{``$3 \notin A$''}
-	  &amp;&amp;&amp; \text{is read as} &amp;&amp;  \text{``Three is not an element of $A$.''}
+	  &amp;3 \notin A&amp;
+	  &amp;{\rm is\ read\ as} &amp;  
+	  &amp;{\rm Three\ is\ not\ an\ element\ of\ }A.
 	</mrow>
 	</md>
-	The mathematical symbols like <q><m>+</m></q>, <q><m>=</m></q> and <q><m>\in</m></q> are shorthand
-	<fn>
+	The mathematical symbols like <q><m>+</m></q>, <q><m>=</m></q> and <q><m>\in</m></q> are shorthand<fn>
 	Precise definitions aside, by <q>shorthand</q> we mean a collection of accepted symbols and abbreviations to allow us to write more quickly and hopefully more clearly. People have been using various systems of shorthand as long as people have been writing. Many of these are used and understood only by the individual, but if you want people to be able to understand what you have written, then you need to use shorthand that is commonly understood.
 	</fn>
 	and mathematical statements like <q><m>4+3=7</m></q> are complete sentences.
