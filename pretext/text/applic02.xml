@@ -41,7 +41,7 @@ Since both the volume and radius are changing with time, both <m>V</m> and <m>r<
 implicitly functions of time; we could really write
 <md>
 <mrow>
-  V(t) &amp;= \frac{4}{3}\pi r(t)^3.
+  V(t) &amp;= \frac{4}{3}\pi r(t)^3
 </mrow>
 </md>
 We are told the rate at which the volume is changing and we need to find the
@@ -59,19 +59,19 @@ change of another, related, quantity.</fn>
   \diff{V}{t} &amp;= 4 \pi r^2 \diff{r}{t}
 </mrow>
 <intertext>This can then be rearranged to give</intertext><mrow>
-  \diff{r}{t} &amp;= \frac{1}{4\pi r^2} \diff{V}{t}.
+  \diff{r}{t} &amp;= \frac{1}{4\pi r^2} \diff{V}{t}
 </mrow>
 </md>
 Now we were told that <m>\diff{V}{t} = 13</m>, so
 <md>
 <mrow>
-  \diff{r}{t} &amp;= \frac{13}{4\pi r^2}.
+  \diff{r}{t} &amp;= \frac{13}{4\pi r^2}
 </mrow>
 </md>
 We were also told that the radius is <m>15cm</m>, so at that moment in time
 <md>
 <mrow>
-  \diff{r}{t} &amp;= \frac{13}{\pi 4 \times 15^2}.
+  \diff{r}{t} &amp;= \frac{13}{\pi 4 \times 15^2}
 </mrow>
 </md>
 </p>

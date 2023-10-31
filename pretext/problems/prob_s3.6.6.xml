@@ -522,9 +522,9 @@ f(-x)=\frac{(-x)^3}{1-(-x)^2}=\frac{-x^3}{1-x^2}=-f(x)</me>
 </li>
 <li> When <m>x \gt 1</m>: <m>1-x^2 \lt 0</m> and <m>x^3 \gt 0</m>, so <m>f(x) \lt 0</m>.
 </li>
-<li> When <m>-1 \lt x \lt 0</m>, <m>1-x^2 \gt 0</m> and <m>x^3 \lt 0</m> so <m>f(x) \lt 0</m>.
+<li> When <m>-1 \lt x \lt 0</m>, <m>1-x^2 \gt 0</m> and <m>x^3 \lt 0</m>, so <m>f(x) \lt 0</m>.
 </li>
-<li> When <m>0 \lt x \lt 1</m>, <m>1-x^2 \gt 0</m> and <m>x^3 \gt 0</m> so <m>f(x) \gt 0</m>.
+<li> When <m>0 \lt x \lt 1</m>, <m>1-x^2 \gt 0</m> and <m>x^3 \gt 0</m>, so <m>f(x) \gt 0</m>.
 </li>
 </ul>
 </p>
@@ -558,11 +558,11 @@ x=0\qquad&amp;\mbox{or}\qquad x=\pm\sqrt{3}\approx\pm 1.7
 <sidebyside>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
-<cell><m>x</m>  </cell><cell> <m>(-\infty,-\sqrt{3})</m> </cell><cell><m>-\sqrt{3}</m></cell><cell><m>(-\sqrt 3,-1)</m></cell><cell><m>-1</m></cell>
+<cell><m>x</m>  </cell><cell> <m>(-\infty,-\sqrt{3})</m> </cell><cell><m>-\sqrt{3}</m></cell><cell><m>(-\sqrt 3,-1)</m></cell><cell><m>-1</m></cell><cell> <m>(-1,0)</m> </cell>
 </row><row>
-<cell><m>f'(x)</m>  </cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>DNE</cell>
+<cell><m>f'(x)</m>  </cell><cell>negative</cell><cell>0</cell><cell>positive</cell><cell>DNE</cell><cell>positive</cell>
 </row><row>
-<cell><m>f(x)</m> </cell><cell> decreasing</cell><cell>local min</cell><cell>increasing</cell><cell>VA</cell>
+<cell><m>f(x)</m> </cell><cell> decreasing</cell><cell>local min</cell><cell>increasing</cell><cell>VA</cell><cell>increasing </cell>
 </row>
 </tabular>
 </sidebyside>
@@ -570,11 +570,11 @@ x=0\qquad&amp;\mbox{or}\qquad x=\pm\sqrt{3}\approx\pm 1.7
 <sidebyside>
 <tabular  bottom="minor" right="minor" left="minor" top="minor">
 <row>
-<cell><m>x</m>  </cell><cell> <m>(-1,0)</m> </cell><cell><m>0</m></cell><cell><m>(0,\sqrt 3)</m></cell><cell><m>\sqrt{3}</m></cell><cell><m>(\sqrt{3},\infty)</m></cell>
+<cell><m>x</m>  </cell><cell><m>0</m></cell><cell><m>(0,1)</m></cell><cell><m>1</m></cell><cell><m>(1,\sqrt 3)</m></cell><cell><m>\sqrt{3}</m></cell><cell><m>(\sqrt{3},\infty)</m></cell>
 </row><row>
-<cell><m>f'(x)</m>  </cell><cell>positive</cell><cell>0</cell><cell>positive</cell><cell>0</cell><cell>negative</cell>
+<cell><m>f'(x)</m>  </cell><cell>0</cell><cell>positive</cell><cell>DNE</cell><cell>positive</cell><cell>0</cell><cell>negative</cell>
 </row><row>
-<cell><m>f(x)</m> </cell><cell>increasing </cell><cell> </cell><cell> increasing </cell><cell> local max </cell><cell> decreasing </cell>
+<cell><m>f(x)</m> </cell><cell> </cell><cell> increasing </cell><cell> VA </cell><cell> increasing </cell><cell> local max </cell><cell> decreasing </cell>
 </row></tabular>
 </sidebyside>
 
