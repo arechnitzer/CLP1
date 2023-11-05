@@ -934,7 +934,7 @@ Continuing this process gives us the <m>2n^\mathrm{th}</m> Maclaurin polynomial
 
 <warning>
 <p>
-The above formula only works when x is measured in radians, because all of our
+The above formula only works when <m>x</m> is measured in radians, because all of our
 derivative formulae for trig functions were developed under the assumption that
 angles are measured in radians.
 </p>
@@ -994,7 +994,7 @@ extend our work to compute the <m>(2n+1)^\mathrm{th}</m> Maclaurin polynomial fo
 </p>
 <warning>
 <p>
-The above formula only works when x is measured in radians, because all of our
+The above formula only works when <m>x</m> is measured in radians, because all of our
 derivative formulae for trig functions were developed under the assumption that
 angles are measured in radians.
 </p>
