@@ -942,10 +942,8 @@ In the problem statement, we are told:
 \draw[blue] (-3,-1.75) node{decreasing};
 \draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-2,-1)--(1,-1);
 \draw[red] (-.5,-1.75) node{increasing};
-\draw[blue, decorate, decoration={brace, amplitude=6pt, mirror}] (1,-1)--(2,-1);
-\draw[blue] (1.5,-1.75) node{decr};
-\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (2,-1)--(4,-1);
-\draw[red] (3,-1.75) node{increasing};
+\draw[blue, decorate, decoration={brace, amplitude=6pt, mirror}] (1,-1)--(4,-1);
+\draw[blue] (2.5,-1.75) node{decreasing};
 \end{tikzpicture}]]></latex-image></image>
 </sidebyside>
 
