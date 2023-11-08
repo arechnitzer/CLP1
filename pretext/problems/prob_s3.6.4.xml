@@ -276,8 +276,9 @@ even
 <mrow>
 f(-x)&amp;=(-x)^4+5(-x)^2+\cos\left((-x)^3\right)
 </mrow><mrow>
-&amp;=x^4+5x^3+\cos(-x)
-</mrow><mrow>&amp;=x^4+5x^3+\cos(x)
+&amp;=x^4+5x^2+\cos(-x^3)
+</mrow><mrow>
+&amp;=x^4+5x^2+\cos(x^3)
 </mrow><mrow>
 &amp;=f(x)
 </mrow>
