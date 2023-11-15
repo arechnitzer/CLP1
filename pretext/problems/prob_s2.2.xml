@@ -777,7 +777,7 @@ yields that also <m>\lim_{x\to 1^+}(x-1)\sin\left(\frac{1}{x-1}\right) =0</m>, a
 </p></solution>
 </exercise>
 
-<exercise purpose="RQS"><title></title>
+<exercise purpose="RQS">
 <statement><p>
 Sketch a function <m>f(x)</m> with <m>f'(0)=-1</m> that takes the following values:
 </p>
