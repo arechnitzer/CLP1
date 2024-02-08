@@ -334,7 +334,7 @@ Recall <m>\dfrac{1}{x^2}=x^{-2}</m> and <m>\sqrt{x^2-1}=(x^2-1)^{1/2}</m>.
 </p></hint>
 <answer><p>
  <m>f'(x)= -\dfrac{2}{x^3}+\dfrac{x}{\sqrt{x^2-1}}</m> is defined
-for <m>x</m> in <m>(-\infty,1) \cup (1,\infty)</m>.
+for <m>x</m> in <m>(-\infty,-1) \cup (1,\infty)</m>.
 </p></answer>
 <solution><p>
 First, we manipulate our function to make it easier to differentiate:
