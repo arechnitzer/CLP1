@@ -9135,6 +9135,20 @@ Example~\ref{eg diff log abs x}. So
 	    \text{ then } F(x) = \log|x| + c
 \end{align*}
 
+Note that both $\frac{1}{x}$ and $\log|x|$ are not defined at $x=0$. 
+If you are interested, for example, in functions that are defined all $x\ne 0$, then, for any
+constants $c_1$ and $c_2$,
+\begin{equation*}
+F(x) = \begin{cases}
+             \log|x| + c_1 & \text{if }x>0 \\
+             \log|x| + c_2 & \text{if }x<0
+       \end{cases}
+\end{equation*}
+obeys $F'(x) = \frac{1}{x}$ for all $x\ne 0$. However, typically, 
+in applications, either all of the $x$'s of interest are strictly positive, or all of the $x$'s of 
+interest are negative. In both of those cases, the general $F(x)$ is $\log|x| + c$.
+So, typically, in tables of antiderivatives, the antiderivative of $1/x$ is listed as $\log|x| + c$. 
+
 \begin{eg}\label{eg antidiff poly}
  Let $f(x) = 3x^5-7x^2+2x+3 + x^{-1} - x^{-2}$. Then the antiderivative of $f(x)$ is
 \begin{align*}

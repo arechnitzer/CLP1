@@ -346,8 +346,8 @@ Therefore, $f(x)=\dfrac{1}{2}\sin(2x)+\pi$.
 
 
 
-\begin{question}
-Find the function $f(x)$ with $f'(x)=\dfrac{1}{x}$ and $f(-1)=0$.
+\begin{question}\label{s4.1log}
+Find the function $f(x)$ that is defined and obeys $f'(x)=\dfrac{1}{x}$ for all $x<0$, and also obeys $f(-1)=0$.
 \end{question}
 \begin{hint}
 An antiderivative of $\dfrac{1}{x}$ is $\log(x)+C$, but this is not the most general antiderivative.
@@ -364,7 +364,7 @@ Looking at the table in the notes, we see the antiderivative of $\dfrac{1}{x}$ i
 \end{align*}
 So, $f(x)=\log|x|$.
 
-Remark: it is true that $\log x$ is an antiderivative of $\dfrac{1}{x}$, since the derivative of $\log x$ is $\dfrac{1}{x}$. However, $\log x$ is only defined for positive values of $x$. Since the given information tells you that $f(x)$ is defined when $x=-1$, you need to use a more general antiderivative of $\dfrac{1}{x}$: $\log|x|+C$.
+Remark: it is true that $\log x$ is an antiderivative of $\dfrac{1}{x}$, since the derivative of $\log x$ is $\dfrac{1}{x}$. However, $\log x$ is only defined for positive values of $x$. Since the desired $f(x)$ is defined for $x<0$, you need to use a more general antiderivative of $\dfrac{1}{x}$: $\log|x|+C$.
 \end{solution}
 
 
@@ -760,3 +760,35 @@ V(H)&=2\pi\left(\frac{1}{5}H^5+\frac{2}{3}H^3+H\right)+C
 V(H)&=2\pi\left(\frac{1}{5}H^5+\frac{2}{3}H^3+H\right).
 \end{align*}
 \end{solution}
+
+
+\begin{question}
+Find all functions $f(x)$ that are defined and obey $f'(x)=\dfrac{1}{x}$ for all $x\ne 0$, and also obey $f(-1)=0$.
+\end{question}
+\begin{hint}
+Treat $x<0$ and $x>0$ separately.
+\end{hint}
+\begin{answer}
+$f(x)=\left.\begin{cases}
+             \log|x| &\text{for }x<0 \\
+             \log x + C &\text{for }x>0
+      \end{cases}\right\}$
+      where $C$ is an arbitrary constant.
+\end{answer}
+\begin{solution}
+In Question~\ref{s4.1log}, we found that $f(x)=\log|x|$ for all $x<0$. For all $x>0$, $f(x)=\log x +C$,
+with $C$ any constant, is the antiderivative of $1/x$. So
+\begin{align*}
+f(x)=\begin{cases}
+             \log|x| &\text{for }x<0 \\
+             \log x + C &\text{for }x>0
+      \end{cases}
+\end{align*}
+
+
+Remark: Note that $1/x$ and $\log|x|$ are both not defined for $x=0$. If $\log|x|$ were defined at $x=0$ and we also required that $f(x)$ be continuous at $x=0$, $C$ would be determined 
+by the requirement that $\log|x|$ and $\log x + C$ take the same value at $x=0$.
+
+\end{solution}
+
+
