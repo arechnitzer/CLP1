@@ -46,7 +46,7 @@ More urchins means less kelp, and fewer urchins means more kelp. This means kelp
 </p>
 
 <p>If you aren't sure why that is, we give a more detailed explanation here, using the definition of the derivative.
-When <m>h</m> is a positive number, <m>U+h</m> is greater than <m>U</m>, so <m>K(U+h)</m> is less than <m>U</m>, hence <m>K(U+h)-K(U) \lt 0</m>.
+When <m>h</m> is a positive number, <m>U+h</m> is greater than <m>U</m>, so <m>K(U+h)</m> is less than <m>K(U)</m>, hence <m>K(U+h)-K(U) \lt 0</m>.
  Therefore:
 <me>
 \ds\lim_{h \rightarrow 0^+}\dfrac{K(U+h)-K(U)}{h} = \dfrac{\mbox{negative}}{\mbox{positive}} \lt 0.</me>
