@@ -157,6 +157,23 @@ Of course this breaks down when <m>n=-1</m>. In order to find an antiderivative 
 </md>
 </p>
 
+<p>
+Note however, that both <m>\frac{1}{x}</m> and <m>\log|x|</m> are not defined at <m>x=0</m>. 
+If you are interested, for example, in functions that are defined all <m>x\ne 0</m>, then,  for any
+constants <m>c_1</m> and <m>c_2</m>,
+<me>
+F(x)=\left\{\begin{array}{rl}
+\log |x| + c_1 &amp; x \gt 0\\
+\log |x| + c_2 &amp; x \lt 0
+\end{array}\right.
+</me>
+obeys <m>F'(x) = \frac{1}{x}</m> for all <m>x\ne 0</m>. However, typically, 
+in applications, either all of the <m>x</m>'s of interest are strictly positive, or all of the <m>x</m>'s of 
+interest are negative.  In both of those cases, the general <m>F(x)</m> is <m>\log|x| + c</m>.
+So, typically, in tables of antiderivatives, the antiderivative 
+of <m>1/x</m> is listed as <m>\log|x| + c</m>. 
+</p>
+
 <example xml:id="eg_antidiff_poly"><title>Antiderivative of <m>3x^5-7x^2+2x+3 + x^{-1} - x^{-2}</m></title>
 <p>
  Let <m>f(x) = 3x^5-7x^2+2x+3 + x^{-1} - x^{-2}</m>. Then the antiderivative of <m>f(x)</m> is

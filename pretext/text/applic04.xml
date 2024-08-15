@@ -934,7 +934,7 @@ Continuing this process gives us the <m>2n^\mathrm{th}</m> Maclaurin polynomial
 
 <warning>
 <p>
-The above formula only works when x is measured in radians, because all of our
+The above formula only works when <m>x</m> is measured in radians, because all of our
 derivative formulae for trig functions were developed under the assumption that
 angles are measured in radians.
 </p>
@@ -994,7 +994,7 @@ extend our work to compute the <m>(2n+1)^\mathrm{th}</m> Maclaurin polynomial fo
 </p>
 <warning>
 <p>
-The above formula only works when x is measured in radians, because all of our
+The above formula only works when <m>x</m> is measured in radians, because all of our
 derivative formulae for trig functions were developed under the assumption that
 angles are measured in radians.
 </p>
@@ -2391,7 +2391,7 @@ that
 <mrow>
   F'(x) &amp;= \diff{}{x} \bigg[f(x) - \bigg( f(a) + f'(a)(x-a) + \frac{1}{2}
 f''(a)(x-a)^2 + \cdots 
-  </mrow><mrow>\amp\hskip2.5in+ \frac{1}{k!}f^{(k)}(x-a)^k \bigg)  \bigg]
+  </mrow><mrow>\amp\hskip2.5in+ \frac{1}{k!}f^{(k)}(a)(x-a)^k \bigg)  \bigg]
 </mrow><mrow>
   &amp;= f'(x) - \bigg( f'(a) + \frac{2}{2} f''(a)(x-a) + \frac{3}{3!} f'''(a)(x-a)^2 +
 \cdots 

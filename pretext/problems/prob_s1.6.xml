@@ -454,9 +454,9 @@ Use the definition of continuity to justify your answer.
 </p></hint>
 <answer><p> <m>c=1</m>, <m>c=-1</m>
 </p></answer>
-<solution><p> The function is continuous for <m>x\ne c</m> since each of those two branches are
+<solution><p> The function is continuous for <m>x\ne 2c</m> since each of those two branches are
 polynomials. So, the only question is whether the function is continuous at
-<m>x=c</m>; for this we need
+<m>x=2c</m>; for this we need
 <me>\lim_{x\to 2c^-}f(x)=f(2c)=\lim_{x\to 2c+}f(x).</me>
 We compute
 <me>\lim_{x\to 2c^-}f(x)=\lim_{x\to 2c^-}6-cx = 6-2c^2;</me>

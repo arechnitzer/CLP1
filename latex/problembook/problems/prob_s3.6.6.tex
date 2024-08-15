@@ -343,7 +343,7 @@ $f(x)$ & concave down & VA&concave up&&concave up&IP&concave down\\
  \end{tabular}
 \end{center}
 
-Now we can refine our skeleton by adding concavity.
+Now we can refine our skeleton by adding concavity. In the sketch below, closed dots are critical points, and the open dot is an inflection point.
 \begin{center}\begin{tikzpicture}
 \YEaxis{6}{4}
 \draw plot[domain=-3:-1.1, samples=50](2*\x,{\x*\x*\x*\x/(1+\x*\x*\x)});
@@ -442,8 +442,8 @@ The only intercept of $f(x)$ is the origin. In particular, that means that out o
 \begin{itemize}
 \item When $x<-1$:\quad $1-x^2<0$ and $x^3<0$, so $f(x)>0$.
 \item When $x>1$:\qquad $1-x^2<0$ and $x^3>0$, so $f(x)<0$.
-\item When $-1<x<0$, $1-x^2>0$ and $x^3<0$ so $f(x)<0$.
-\item When $0<x<1$, $1-x^2>0$ and $x^3>0$ so $f(x)>0$.
+\item When $-1<x<0$, $1-x^2>0$ and $x^3<0$, so $f(x)<0$.
+\item When $0<x<1$, $1-x^2>0$ and $x^3>0$, so $f(x)>0$.
 \end{itemize}
 
 \item Intervals of increase and decrease:
@@ -464,21 +464,21 @@ Notice the sign of $f'(x)$ is the same as the sign of $3-x^2$.
 \begin{center}
  \begin{tabular}{|c||c|c|c|c|c|c|c|}
 \hline
-$x$  & $(-\infty,-\sqrt{3})$ &$-\sqrt{3}$&$(-\sqrt 3,-1)$&$-1$\\
+$x$  & $(-\infty,-\sqrt{3})$ &$-\sqrt{3}$&$(-\sqrt 3,-1)$&$-1$&$(-1,0)$\\
 \hline
-$f'(x)$  &negative&0&positive&DNE\\
+$f'(x)$  &negative&0&positive&DNE&positive\\
 \hline
-$f(x)$ & decreasing&local min&increasing&VA\\
+$f(x)$ & decreasing&local min&increasing&VA&increasing\\
 \hline
  \end{tabular}
 
  \begin{tabular}{|c||c|c|c|c|c|c|c|}
 \hline
-$x$  & $(-1,0)$ &$0$&$(0,\sqrt 3)$&$\sqrt{3}$&$(\sqrt{3},\infty)$\\
+$x$   &$0$&$(0,1)$&$1$&$(1,\sqrt 3)$&$\sqrt{3}$&$(\sqrt{3},\infty)$\\
 \hline
-$f'(x)$  &positive&0&positive&0&negative\\
+$f'(x)$ &0&positive&DNE&positive&0&negative\\
 \hline
-$f(x)$ &increasing & & increasing & local max & decreasing \\
+$f(x)$ & & increasing & VA &increasing & local max & decreasing \\
 \hline
  \end{tabular}
 \end{center}
@@ -531,7 +531,7 @@ $f(x)$ & concave up&concave down&inflection point&concave up&concave down\\
 \hline
  \end{tabular}
 \end{center}
-Now, we can refine our skeleton.
+Now, we can refine our skeleton. In the sketch below, closed dots are critical points, and the open dot is an inflection point.
 
 \begin{center}
 \begin{tikzpicture}
@@ -778,10 +778,8 @@ From here, we can sketch a skeleton of the graph.
 \draw[blue] (-3,-1.75) node{decreasing};
 \draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (-2,-1)--(1,-1);
 \draw[red] (-.5,-1.75) node{increasing};
-\draw[blue, decorate, decoration={brace, amplitude=6pt, mirror}] (1,-1)--(2,-1);
-\draw[blue] (1.5,-1.75) node{decr};
-\draw[red, decorate, decoration={brace, amplitude=10pt, mirror}] (2,-1)--(4,-1);
-\draw[red] (3,-1.75) node{increasing};
+\draw[blue, decorate, decoration={brace, amplitude=6pt, mirror}] (1,-1)--(4,-1);
+\draw[blue] (2.5,-1.75) node{decreasing};
 %\draw[thick] plot[domain=-2:2](2*\x,{(1+2*\x)/(exp(\x*\x))});
 \end{tikzpicture}
 \end{center}

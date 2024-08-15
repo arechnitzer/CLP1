@@ -326,7 +326,7 @@ Since these functions are inverses of each other we have
 </mrow><mrow>
   \arccos(\cos \theta) &amp;= \theta &amp; 0 \leq \theta \leq \pi
 </mrow><mrow>
-  \arctan(\tan \theta) &amp;= \theta &amp; -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}
+  \arctan(\tan \theta) &amp;= \theta &amp; -\frac{\pi}{2} \lt \theta \lt \frac{\pi}{2}
 </mrow>
 </md>
 and also

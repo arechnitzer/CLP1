@@ -426,9 +426,9 @@ Therefore, <m>f(x)=\dfrac{1}{2}\sin(2x)+\pi</m>.
 </p></solution>
 </exercise>
 
-<exercise>
+<exercise xml:id="s4_1log">
 <statement><p>
-Find the function <m>f(x)</m> with <m>f'(x)=\dfrac{1}{x}</m> and <m>f(-1)=0</m>.
+Find the function <m>f(x)</m> that is defined and obeys <m>f'(x)=\dfrac{1}{x}</m> for all <m>x\lt 0</m>, and also obeys <m>f(-1)=0</m>.
 </p></statement>
 <hint><p>
 An antiderivative of <m>\dfrac{1}{x}</m> is <m>\log(x)+C</m>, but only for <m>x\gt 0</m>.
@@ -450,7 +450,7 @@ Looking at the table in the notes, we see the antiderivative of <m>\dfrac{1}{x}<
 So, <m>f(x)=\log|x|</m>.
 </p>
 
-<p>Remark: it is true that <m>\log x</m> is an antiderivative of <m>\dfrac{1}{x}</m>, since the derivative of <m>\log x</m> is <m>\dfrac{1}{x}</m>. However, <m>\log x</m> is only defined for positive values of <m>x</m>. Since the given information tells you that <m>f(x)</m> is defined when <m>x=-1</m>, you need to use a more general antiderivative of <m>\dfrac{1}{x}</m>: <m>\log|x|+C</m>.
+<p>Remark: it is true that <m>\log x</m> is an antiderivative of <m>\dfrac{1}{x}</m>, since the derivative of <m>\log x</m> is <m>\dfrac{1}{x}</m>. However, <m>\log x</m> is only defined for positive values of <m>x</m>. Since the desired <m>f(x)</m> is defined for <m>x\lt 0</m>, you need to use a more general antiderivative of <m>\dfrac{1}{x}</m>: <m>\log|x|+C</m>.
 </p></solution>
 </exercise>
 
@@ -918,6 +918,38 @@ V(H)&amp;=2\pi\left(\frac{1}{5}H^5+\frac{2}{3}H^3+H\right).
 </md>
 </p></solution>
 </exercise>
+
+<exercise>
+<statement><p>
+Find all functions <m>f(x)</m> that are defined and obey <m>f'(x)=\dfrac{1}{x}</m> for all <m>x\ne 0</m>, and also obey <m>f(-1)=0</m>.
+</p></statement>
+<hint><p>
+Treat <m>x\lt 0</m> and <m>x\gt 0</m> separately.
+</p></hint>
+<answer><p>
+<me>
+f(x)=\left\{\begin{array}{rl}
+\log|x|&amp;x \lt 0\\
+\log x + C&amp;x \gt 0
+\end{array}\right.
+</me>
+ where <m>C</m> is an arbitrary constant.
+</p></answer>
+<solution><p>
+In Question<nbsp/><xref ref="s4_1log"/>, we found that <m>f(x)=\log|x|</m> for all <m>x\lt 0</m>. For all <m>x\gt 0</m>, <m>f(x)=\log x +C</m>, with <m>C</m> any constant, is the antiderivative of <m>1/x</m>. So
+<me>
+f(x)=\left\{\begin{array}{rl}
+\log|x|&amp;x \lt 0\\
+\log x + C&amp;x \gt 0
+\end{array}\right.
+</me>
+</p>
+
+<p>
+Remark: Note that <m>1/x</m> and <m>\log|x|</m> are both not defined for <m>x=0</m>. If <m>\log|x|</m> were defined at <m>x=0</m> and we also required that <m>f(x)</m> be continuous at <m>x=0</m>, <m>C</m> would be determined by the requirement that <m>\log|x|</m> and <m>\log x + C</m> take the same value at <m>x=0</m>.
+</p></solution>
+</exercise>
+
 
 </exercisegroup>
 

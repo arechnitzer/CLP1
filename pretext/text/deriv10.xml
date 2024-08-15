@@ -102,7 +102,7 @@ definition of the derivative
 </mrow><mrow>
   &amp;= \lim_{h\to 0} \frac{\log( (x+h)/x )}{h}
 </mrow><mrow>
-  &amp;= \text{um\dots}
+  &amp;= \text{um}\dots
 </mrow>
 </md>
 This doesn't look good. But all is not lost <mdash/> we have the chain rule, and we

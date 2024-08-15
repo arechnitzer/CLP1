@@ -890,7 +890,7 @@ V(2) &amp;= 18\times2 - \frac{3}{2} \times 2^3
   &amp;= 36 - 12 = 24.
 </mrow>
 </md>
-So by Corollary<nbsp/><xref ref="cor_find_maxmin"/>, the maximum volume is when 24 when <m>b=2</m> and
+So by Corollary<nbsp/><xref ref="cor_find_maxmin"/>, the maximum volume is 24 when <m>b=2</m> and
 <md>
 <mrow>
   h &amp;= \frac{3}{2} \cdot \frac{12-b^2}{b} = \frac{3}{2} \frac{12-4}{2} = 6.

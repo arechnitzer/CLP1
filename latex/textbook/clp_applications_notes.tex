@@ -365,7 +365,7 @@ Appendix~\ref{sec volumes}.} that
 Since both the volume and radius are changing with time, both $V$ and $r$ are
 implicitly functions of time; we could really write
 \begin{align*}
-  V(t) &= \frac{4}{3}\pi r(t)^3.
+  V(t) &= \frac{4}{3}\pi r(t)^3
 \end{align*}
 We are told the rate at which the volume is changing and we need to find the
 rate at which the radius is changing. That is, from a knowledge of
@@ -377,15 +377,15 @@ In this case, we can just differentiate our equation by $t$ to get
 \begin{align*}
   \diff{V}{t} &= 4 \pi r^2 \diff{r}{t}
 \intertext{This can then be rearranged to give}
-  \diff{r}{t} &= \frac{1}{4\pi r^2} \diff{V}{t}.
+  \diff{r}{t} &= \frac{1}{4\pi r^2} \diff{V}{t}
 \end{align*}
 Now we were told that $\diff{V}{t} = 13$, so
 \begin{align*}
-  \diff{r}{t} &= \frac{13}{4\pi r^2}.
+  \diff{r}{t} &= \frac{13}{4\pi r^2}
 \end{align*}
 We were also told that the radius is $15cm$, so at that moment in time
 \begin{align*}
-  \diff{r}{t} &= \frac{13}{\pi 4 \times 15^2}.
+  \diff{r}{t} &= \frac{13}{\pi 4 \times 15^2}
 \end{align*}
 
 This is a very typical example of a related rate problem. This section is really
@@ -429,7 +429,7 @@ by $h$ and time (in seconds) by $t$. Then trigonometry tells us
 \begin{align*}
   \diff{h}{t} &= 200 \cdot \sec^2(\pi/4) \cdot 0.05 \\
   &= 200 \cdot 0.05 \cdot \left( \sqrt{2} \right)^2 \\
-  &= 200 \cdot \frac{5}{100} \cdot 2
+  &= 200 \cdot \frac{5}{100} \cdot 2 \\
   &= 20 m/s
 \end{align*}
 \item So the balloon is rising at a rate of 20m/s.
@@ -2716,7 +2716,7 @@ Continuing this process gives us the $2n^\mathrm{th}$ Maclaurin polynomial
   T_{2n}(x) &= \sum_{k=0}^n \frac{(-1)^k}{(2k)!} \cdot x^{2k}
 \end{align*}
 \begin{warning}
-The above formula only works when x is measured in radians, because all of our
+The above formula only works when $x$ is measured in radians, because all of our
 derivative formulae for trig functions were developed under the assumption that
 angles are measured in radians.
 \end{warning}
@@ -4605,7 +4605,7 @@ that
 \item We now examine $F'(q)$. First carefully differentiate $F(x)$:
 \begin{align*}
   F'(x) &= \diff{}{x} \left[f(x) - \left( f(a) + f'(a)(x-a) + \frac{1}{2}
-f''(a)(x-a)^2 + \cdots + \frac{1}{k!}f^{(k)}(x-a)^k \right)  \right] \\
+f''(a)(x-a)^2 + \cdots + \frac{1}{k!}f^{(k)}(a)(x-a)^k \right)  \right] \\
   &= f'(x) - \left( f'(a) + \frac{2}{2} f''(a)(x-a) + \frac{3}{3!} f'''(a)(x-a)^2 +
 \cdots + \frac{k}{k!}f^{(k)}(a) (x-a)^{k-1} \right)\\
   &= f'(x) - \left( f'(a) + f''(a)(x-a) + \frac{1}{2} f'''(a)(x-a)^2 +
@@ -5426,7 +5426,7 @@ volume is
 V(2) &= 18\times2 - \frac{3}{2} \times 2^3 \\
   &= 36 - 12 = 24.
 \end{align*}
-So by Corollary~\ref{cor find maxmin}, the maximum volume is when 24 when $b=2$ and
+So by Corollary~\ref{cor find maxmin}, the maximum volume is 24 when $b=2$ and
 \begin{align*}
   h &= \frac{3}{2} \cdot \frac{12-b^2}{b} = \frac{3}{2} \frac{12-4}{2} = 6.
 \end{align*}
@@ -9134,6 +9134,20 @@ Example~\ref{eg diff log abs x}. So
 	    \text{if } f(x)=\frac{1}{x}
 	    \text{ then } F(x) = \log|x| + c
 \end{align*}
+
+Note that both $\frac{1}{x}$ and $\log|x|$ are not defined at $x=0$. 
+If you are interested, for example, in functions that are defined all $x\ne 0$, then, for any
+constants $c_1$ and $c_2$,
+\begin{equation*}
+F(x) = \begin{cases}
+             \log|x| + c_1 & \text{if }x>0 \\
+             \log|x| + c_2 & \text{if }x<0
+       \end{cases}
+\end{equation*}
+obeys $F'(x) = \frac{1}{x}$ for all $x\ne 0$. However, typically, 
+in applications, either all of the $x$'s of interest are strictly positive, or all of the $x$'s of 
+interest are negative. In both of those cases, the general $F(x)$ is $\log|x| + c$.
+So, typically, in tables of antiderivatives, the antiderivative of $1/x$ is listed as $\log|x| + c$. 
 
 \begin{eg}\label{eg antidiff poly}
  Let $f(x) = 3x^5-7x^2+2x+3 + x^{-1} - x^{-2}$. Then the antiderivative of $f(x)$ is

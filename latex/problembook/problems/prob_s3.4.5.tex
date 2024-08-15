@@ -428,7 +428,7 @@ Although we wouldn't expect $T_{157}(1)$  to be exactly equal to $e^1$, it's pro
 
 \begin{Mquestion}
 Estimate the sum below
-\[\sum_{k=0}^{100}\frac{(-1)^k}{2k!}\left(\frac{5\pi}{4}\right)^{2k}\]
+\[\sum_{k=0}^{100}\frac{(-1)^k}{(2k)!}\left(\frac{5\pi}{4}\right)^{2k}\]
 by interpreting it as a Maclaurin polynomial.
 \end{Mquestion}
 \begin{hint}
@@ -438,7 +438,7 @@ Compare this to the Maclaurin polynomial for cosine.
 We estimate that the sum is close to $-\dfrac{1}{\sqrt{2}}$.
 \end{answer}
 \begin{solution}
-While you're working with sums, it's easy to mistake a constant for a function. The sum given in this question is some \emph{number}: $\pi$ is a constant, and $k$ is an index-- if you wrote out all 100 terms of this sum, there would be no letter $k$. So, the sum given is indeed a number, but we don't want to have to add 100 terms to get a good idea of what number it is.
+While you're working with sums, it's easy to mistake a constant for a function. The sum given in this question is some \emph{number}: $k$ is an index-- if you wrote out all 100 terms of this sum, there would be no letter $k$. So, the sum given is indeed a number, but we don't want to have to add 100 terms to get a good idea of what number it is.
 
 From Example~\ref*{eg expand cosx}
 %3.4.14
@@ -449,5 +449,5 @@ T_{2n}(x)&=\sum_{k=0}^n  \frac{(-1)^k}{(2k)! }\cdot x^{2k}
 T_{200}\left(\frac{5\pi}{4}\right)&=\sum_{k=0}^{100}  \frac{(-1)^k}{(2k)! }\cdot \left(\frac{5\pi}{4}\right)^{2k}
 \end{align*}
 So, the sum corresponds to the 200th Maclaurin polynomial for $f(x)=\cos x$ evaluated at $x=\frac{5\pi}{4}$. We should be careful to understand that $T_{200}(x)$ is \emph{not} equal to $f(x)$, in general. However, when $x$ is reasonably close to $0$, these two functions are approximations of one another. So, we estimate
-\[\sum_{k=0}^{100}\frac{(-1)^k}{2k!}\left(\frac{5\pi}{4}\right)^{2k} = T_{200}\left(\frac{5\pi}{4}\right) \approx \cos\left(\frac{5\pi}{4}\right)=-\frac{1}{\sqrt{2}}\]
+\[\sum_{k=0}^{100}\frac{(-1)^k}{(2k)!}\left(\frac{5\pi}{4}\right)^{2k} = T_{200}\left(\frac{5\pi}{4}\right) \approx \cos\left(\frac{5\pi}{4}\right)=-\frac{1}{\sqrt{2}}\]
 \end{solution}

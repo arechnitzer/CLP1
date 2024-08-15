@@ -615,12 +615,12 @@ so we think about using the Squeeze Theorem. We'll need to bound the expression
 For any non-zero value we plug in for <m>x</m>, <m>\sin^2\left(\dfrac{1}{x}\right)</m> is a number in the interval <m>[0,1]</m>. If <m>a</m> is a number in the interval <m>[0,1]</m>, then:
 <md>
 <mrow>
-0 \lt &amp;xa \lt x &amp; &amp;\mbox{ when $x$ is positive}
+0 \leq &amp;xa \leq x &amp; &amp;\mbox{ when $x$ is positive}
 </mrow><mrow>
-x \lt &amp;xa \lt 0 &amp; &amp;\mbox{ when $x$ is negative}
+x \leq &amp;xa \leq 0 &amp; &amp;\mbox{ when $x$ is negative}
 </mrow>
 </md>
- We'll show you two ways to use this information to create bound that will allow you to apply the Squeeze Theorem.
+ We'll show you two ways to use this information to create bounds that will allow you to apply the Squeeze Theorem.
 </p>
 
 <p>

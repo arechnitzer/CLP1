@@ -204,7 +204,7 @@ One way to go about this is to approximate the function
      <m>5^{4/3} = 5 \cdot 5^{1/3} =f(5)</m>.
 </p></hint>
 <answer><p>
-One approximation: <m>e^{\tfrac{4}{3}}\approx\dfrac{275}{32}</m>
+One approximation: <m>5^{\tfrac{4}{3}}\approx\dfrac{275}{32}</m>
 </p></answer>
 <solution><p>
 There are a few functions we could choose to approximate. For example:
