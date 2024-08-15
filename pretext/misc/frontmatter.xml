@@ -36,17 +36,14 @@
 				<entity>Nick Loewen <mdash/> licensed under the <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/" visual="creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0 License</url>.</entity>
     </credit>
 
-		<edition>CLP-1 Differential Calculus: May 2021</edition>
+		<edition>CLP-1 Differential Calculus: August 2024</edition>
 
 		<website>
-			<name>
-				<c>CLP-1</c>
-			</name>
-			<address>https://www.math.ubc.ca/~CLP/</address>
+			<url href="https://www.math.ubc.ca/~CLP/">CLP-1</url>
 		</website>
 
 		<copyright>
-			<year>2015 <ndash/> 2021</year>
+			<year>2015 <ndash/> 2024</year>
 			<holder>Joel Feldman, Andrew Rechnitzer, Elyse Yeager</holder>
 			<minilicense>CC-BY-NC-SA 4.0 License</minilicense>
 			<shortlicense>
