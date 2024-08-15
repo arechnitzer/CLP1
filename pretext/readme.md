@@ -4,6 +4,10 @@
 ```
 pip3 install pretext
 ```
+If you have an existing pretext installation then you can upgrade it with 
+```
+pip3 install --upgrade pretext
+```
 
 * Then build using the pretext-cli (much easier)
 ```
