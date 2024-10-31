@@ -1304,7 +1304,7 @@ g'(x) &amp;= - \frac{1}{x^2}
 Hence
 <md>
 <mrow>
-  \frac{f'(x)}{g'(x)} &amp;= \frac{4}{2\sqrt{1+4/x}} + \frac{3}{\sqrt{1-3/x}}
+  \frac{f'(x)}{g'(x)} &amp;= \frac{4}{2\sqrt{1+4/x}} + \frac{3}{2\sqrt{1-3/x}}
 </mrow>
 </md>
 And so in the limit as <m>x\to \infty</m>
