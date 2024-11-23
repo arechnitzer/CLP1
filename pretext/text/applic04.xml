@@ -2188,7 +2188,7 @@ for some <m>c</m> strictly between <m>a</m> and <m>x</m>, and where <m>T_n(x)</m
 order Taylor polynomial approximation of <m>f(x)</m> about <m>x=a</m>:
 <md>
 <mrow>
-  T_n(x) &amp;= \sum_{k=0}^n \frac{1}{k!} f^{(k)}(a).
+  T_n(x) &amp;= \sum_{k=0}^n \frac{1}{k!} f^{(k)}(a)\cdot (x-a)^k
 </mrow>
 </md>
 Recall that we have already proved a special case of this formula for the constant

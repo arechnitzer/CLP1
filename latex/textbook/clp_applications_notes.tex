@@ -4464,7 +4464,7 @@ equation~\eqref{eq:taylorErrorN} --- namely
 for some $c$ strictly between $a$ and $x$, and where $T_n(x)$ is the $n^\mathrm{th}$
 order Taylor polynomial approximation of $f(x)$ about $x=a$:
 \begin{align*}
-  T_n(x) &= \sum_{k=0}^n \frac{1}{k!} f^{(k)}(a).
+  T_n(x) &= \sum_{k=0}^n \frac{1}{k!} f^{(k)}(a)\cdot (x-a)^k
 \end{align*}
 Recall that we have already proved a special case of this formula for the constant
 approximation using the Mean-Value Theorem (Theorem~\ref{thm:DIFFmvt}). To prove the
