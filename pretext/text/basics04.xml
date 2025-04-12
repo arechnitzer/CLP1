@@ -33,7 +33,7 @@ Consider the set of days of the week, and the set containing the alphabet
   B &amp;= \set{\text{a,b,c,d,e}, \dots,\text{x,y,z}}
 </mrow>
 </md>
-We can define a function <m>f</m> that takes a day (that is, an element of <m>A</m>) and turns it into the first letter of that day (that is, an element of <m>B</m>). This is a valid function, though there is no formula. We can draw a picture of the function as
+We can define a function <m>f</m> that takes a day (that is, an element of <m>A</m>) and turns it into the first letter of that day in lower case (that is, an element of <m>B</m>). This is a valid function, though there is no formula. We can draw a picture of the function as
 </p>
 <sidebyside  width="66%">
 <image source="text/figs/days"/>
@@ -52,7 +52,7 @@ This example is pretty simple, but this serves to illustrate some important poin
 	on the other hand, we don't have to <q>hit</q> every element from <m>B</m>. In the above example, we miss almost all the letters in <m>B</m>. A function that does reach every element of <m>B</m> is said to be <q>surjective</q> or <q>onto</q>.
 </li>
 <li>
-	a given element of <m>B</m> may be reached by more than one element of <m>A</m>. In the above example, the days <q>Tuesday</q> and <q>Thursday</q> both map to the letter <m>T</m> and similarly the letters <m>S</m> is mapped to by both <q>Sunday</q> and <q>Saturday</q>. A function which does not do this, that is, every element in <m>A</m> maps to a different element in <m>B</m> is called <q>injective</q> or  <q>one-to-one</q> <mdash/> again we will come back to this later when we discuss inverse function in <xref text="type-global" ref="sec_inverse_functions"/>.
+	a given element of <m>B</m> may be reached by more than one element of <m>A</m>. In the above example, the days <q>Tuesday</q> and <q>Thursday</q> both map to the letter <m>t</m> and similarly the letter <m>s</m> is mapped to by both <q>Sunday</q> and <q>Saturday</q>. A function which does not do this, that is, every element in <m>A</m> maps to a different element in <m>B</m> is called <q>injective</q> or  <q>one-to-one</q> <mdash/> again we will come back to this later when we discuss inverse function in <xref text="type-global" ref="sec_inverse_functions"/>.
 </li>
 </ul>
 </p>
