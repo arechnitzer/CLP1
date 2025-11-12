@@ -138,12 +138,20 @@ is not defined at a point <m>a</m> of <m>I</m>, then we call <m>a</m> a <em>sing
 <li> Critical points <mdash/> determine where <m>f'(x)=0</m>. At a critical point, <m>f</m> has a
 horizontal tangent.
 </li>
-<li> Singular points <mdash/> determine where <m>f'(x)</m> is not defined.  If <m>f'(x)</m>
-approaches <m>\pm\infty</m> as <m>x</m> approaches a singular point <m>a</m>, then <m>f</m> has a
+<li> <p>Singular points <mdash/> determine where <m>f'(x)</m> is not defined.  If <m>f'(x)</m>
+approaches <m>\pm\infty</m> as <m>x</m> approaches a singular point <m>a</m>, then
+<ul>
+<li>
+ <m>f</m> has a
 vertical tangent there when <m>f</m> approaches a finite value as <m>x</m> approaches <m>a</m>
-(or possibly approaches <m>a</m> from one side) and a vertical asymptote when <m>f(x)</m>
+(or possibly approaches <m>a</m> from one side) and 
+</li><li>
+<m>f</m> has a vertical asymptote when <m>f(x)</m>
 approaches <m>\pm\infty</m> as <m>x</m> approaches <m>a</m> (or possibly approaches <m>a</m> from
 one side).
+</li>
+</ul>
+</p>
 </li>
 <li> Increasing and decreasing <mdash/> where is the derivative positive and where is it
 negative. Notice that in order for the derivative to change sign, it must either pass
