@@ -97,7 +97,7 @@ f'(x)=\sqrt{3-x}-\frac{x}{2\sqrt{3-x}}
 f''(x) = \frac{1}{4}(3x -12)(3 - x)^{-3/2} \lt 0</me>
 </p>
 
-<p>The domain of <m>f''(x)</m> is <m>(-\infty,-3)</m>, and over its domain it is always negative
+<p>The domain of <m>f''(x)</m> is <m>(-\infty,3)</m>, and over its domain it is always negative
  (the factor
               <m>(3x-12)</m> is negative for all <m>x \lt 4</m> and the factor
               <m>(3-x)^{-3/2}</m> is positive for all <m>x \lt 3</m>). So, <m>f(x)</m> has no inflection points and is concave
