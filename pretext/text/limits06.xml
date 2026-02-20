@@ -7,7 +7,7 @@
 <subsection><title>Continuity</title>
 
 <p>
-We have seen that computing the limits some functions <mdash/> polynomials and  rational functions <mdash/> is very easy because
+We have seen that computing the limits of some functions <mdash/> polynomials and  rational functions <mdash/> is very easy because
 <md>
 <mrow>
   \lim_{x \to a} f(x) &amp;= f(a).
@@ -337,7 +337,7 @@ Note that this example raises a subtle point about checking continuity when  num
 </example>
 
 <p>
-So we know what happens when we add subtract multiply and divide, what about  when we compose functions? Well - limits and compositions work nicely when  things are continuous.
+So we know what happens when we add, subtract, multiply, and divide. What about  when we compose functions? Well - limits and compositions work nicely when  things are continuous.
 </p>
 
 <theorem xml:id="thm_comp_cont"><title>Compositions and continuity</title>

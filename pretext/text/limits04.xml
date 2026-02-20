@@ -90,7 +90,7 @@ Since we have not seen too many theorems yet, let us examine it carefully piece 
 </p>
 
 <p>
-Armed with only these two limits, we cannot do very much. But combining these  limits with some arithmetic we can do quite a lot. For a moment, take a step  back from limits for a moment and think about how we construct functions. To  make the discussion a little more precise think about how we might construct  the function
+Armed with only these two limits, we cannot do very much. But combining these  limits with some arithmetic we can do quite a lot. For a moment, take a step  back from limits and think about how we construct functions. To  make the discussion a little more precise think about how we might construct  the function
 <md>
 <mrow>
   h(x) &amp;= \frac{2x-3}{x^2+5x-6}

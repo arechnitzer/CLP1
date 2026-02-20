@@ -58,7 +58,7 @@ We see that as we zoom in on the point <m>P</m>, the graph of the function looks
 </p>
 
 <p>
-Now let's zoom in on the <q>bad</q> example we see that the blue line looks very  different from the function; because of this, the blue line is not the tangent  line at <m>P</m>.
+Now let's zoom in on the <q>bad</q> example. We see that the blue line looks very  different from the function; because of this, the blue line is not the tangent  line at <m>P</m>.
 </p>
 
 <figure xml:id="fig_tang1ab">
@@ -145,7 +145,7 @@ It is not immediately obvious how we can use the second method, since we only  h
 </li>
 <li>
 <p>
-	We don't quite know how to find a line given just 1 point, however we do  know how to find a line passing through 2 points. So pick another point on the  curves whose coordinates are very close to <m>P</m>. Now rather than picking some  actual numbers, I am going to write our second point as <m>Q = (1+h, (1+h)^2)</m>.  That is, a point <m>Q</m> whose <m>x</m>-coordinate is equal to that of <m>P</m> plus a little  bit <mdash/> where the little bit is some small number <m>h</m>.  And since this point  lies on the curve <m>y=x^2</m>, and <m>Q</m>'s x-coordinate is <m>1+h</m>, <m>Q</m>'s y-coordinate must  be <m>(1+h)^2</m>.
+	We don't quite know how to find a line given just 1 point, however we do  know how to find a line passing through 2 points. So pick another point on the  curve whose coordinates are very close to <m>P</m>. Now rather than picking some  actual numbers, I am going to write our second point as <m>Q = (1+h, (1+h)^2)</m>.  That is, a point <m>Q</m> whose <m>x</m>-coordinate is equal to that of <m>P</m> plus a little  bit <mdash/> where the little bit is some small number <m>h</m>.  And since this point  lies on the curve <m>y=x^2</m>, and <m>Q</m>'s x-coordinate is <m>1+h</m>, <m>Q</m>'s y-coordinate must  be <m>(1+h)^2</m>.
 </p>
 
 <p>

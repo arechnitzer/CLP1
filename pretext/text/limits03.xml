@@ -358,7 +358,7 @@ Note <mdash/> be careful to include the superscript <m>+</m> and <m>-</m> when w
 \lim_{x \nearrow a} f(x) = L &amp; \text{left-hand limit}
 </mrow>
 </md>
-but please use with the notation in Definition<nbsp/><xref ref="def_informal_onesided_limits"/> above.
+but please use the notation in Definition<nbsp/><xref ref="def_informal_onesided_limits"/> above.
 </p>
 
 <p>
@@ -494,7 +494,7 @@ when the value of the function <m>f(x)</m> becomes arbitrarily large and negativ
 </definition>
 
 <p>
-A good examples of the above is
+A good example of the above is
 <md>
 <mrow>
   \lim_{x \to 0} \frac{1}{x^2} &amp;= +\infty  &amp; \lim_{x \to 0} -\frac{1}{x^2} &amp;= -\infty

@@ -388,7 +388,7 @@ Consider what happens to each of the factors as <m>x \to \infty</m>
 	</md>
 </li>
 </ul>
-So the product of these two factors will be come larger and larger (and  positive) as <m>x</m> moves off to infinity. Hence we have
+So the product of these two factors will become larger and larger (and  positive) as <m>x</m> moves off to infinity. Hence we have
 <md>
 <mrow>
   \lim_{x \to \infty} x^{7/5} \left(1 - 1/x^{2/5} \right) &amp;= + \infty
@@ -401,7 +401,7 @@ But remember <m>+\infty</m> and <m>-\infty</m> are not numbers; the last equatio
 </p>
 
 <p>
-In the previous section we saw that finite limits and arithmetic interact very nicely  (see Theorems<nbsp/><xref ref="thm_arith_lim"/> and<nbsp/><xref ref="thm_lim_powers"/>). This enabled us to compute  the limits of more complicated function in terms of simpler ones. When limits of  functions go to plus or minus infinity we are quite a bit more restricted in what we can  deduce. The next theorem states some results concerning the sum, difference, ratio and  product of infinite limits <mdash/> unfortunately in many cases we cannot make general  statements and the results will depend on the details of the problem at hand.
+In the previous section we saw that finite limits and arithmetic interact very nicely  (see Theorems<nbsp/><xref ref="thm_arith_lim"/> and<nbsp/><xref ref="thm_lim_powers"/>). This enabled us to compute  the limits of more complicated functions in terms of simpler ones. When limits of  functions go to plus or minus infinity we are quite a bit more restricted in what we can  deduce. The next theorem states some results concerning the sum, difference, ratio and  product of infinite limits <mdash/> unfortunately in many cases we cannot make general  statements and the results will depend on the details of the problem at hand.
 </p>
 
 <theorem xml:id="thm_arith_inf_lim"><title>Arithmetic of infinite limits</title>
