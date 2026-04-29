@@ -10,13 +10,13 @@
 There is one last thing that we should review before we get into the main material of the  course and that is inverse functions. As we have seen above functions are really just  rules for taking an input (almost always a number), processing it somehow (usually by a  formula) and then returning an output (again, almost always a number).
 <md>
 <mrow>
- \text{input number}\;\; x \quad \mapsto \quad f\;\; \text{does ``stuff'' to}\;\; x \quad  \mapsto \quad \text{return number}\;\; y
+ \text{input number}\;\; x \quad \mapsto \quad f\;\; \text{does "stuff" to}\;\; x \quad  \mapsto \quad \text{return number}\;\; y
 </mrow>
 </md>
-In many situations it will turn out to be very useful if we can undo whatever it is that  our function has done. ie
+In many situations it will turn out to be very useful if we can undo whatever it is that  our function has done. That is,
 <md>
 <mrow>
- \text{take output}\;\;y \quad \mapsto \quad \text{do ``stuff'' to}\;\; y  \quad \mapsto \quad \text{return the original}\;\; x
+ \text{take output}\;\;y \quad \mapsto \quad \text{do "stuff" to}\;\; y  \quad \mapsto \quad \text{return the original}\;\; x
 </mrow>
 </md>
 When it exists, the function <q>which undoes</q> the function <m>f(x)</m> is found by solving  <m>y=f(x)</m> for <m>x</m> as a function of <m>y</m> and is called the inverse function of <m>f</m>.  It turns out that it is not always possible to solve <m>y=f(x)</m> for <m>x</m> as a  function of <m>y</m>. Even when it is possible, it can be really hard to do
